@@ -1,0 +1,74 @@
+# Directories #
+/build/
+/bin/
+target/
+# OS Files #
+.DS_Store
+*.class
+# Package Files #
+*.war
+*.ear
+*.db
+######################
+# Windows
+######################
+# Windows image file caches
+Thumbs.db
+# Folder config file
+Desktop.ini
+######################
+# OSX
+######################
+.DS_Store
+.svn
+# Thumbnails
+._*
+# Files that might appear on external disk
+.Spotlight-V100
+.Trashes
+######################
+# Eclipse
+######################
+#.project
+#.metadata
+#.classpath
+#.settings/
+#.loadpath
+*.pydevproject
+bin/**
+tmp/**
+tmp/**/*
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+/src/main/resources/rebel.xml
+# External tool builders
+.externalToolBuilders/
+# Locally stored "Eclipse launch configurations"
+*.launch
+# CDT-specific
+.cproject
+# PDT-specific
+.buildpath
+/.metadata/*
+.project
+.idea
+.git
+/static/system/components/**/*
+/resources-ext/documentation/**/*
+
+#ci
+/jenkins_dist/
+
+# sass styles
+/static/custom/css/app.css
+/static/custom/css/modules/**/*
+
+# npm
+/static/custom/modules/horizontal/config/environment.json
+/node_modules/**/*
+
+/static/custom/modules/horizontal/templates.js
+/static/custom/modules/vertical/templates.js
