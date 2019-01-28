@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CDADescriptor>
+   <DataSources>
+      <Connection id="dvt_conn" type="sql.jndi">
+         <Jndi>jdbcEuOshaBarometer</Jndi>
+      </Connection>
+   </DataSources>
+
+   <!-- Get data by Indicator -->
+   <DataAccess access="public" connection="dvt_conn" id="getIndicatorData" type="sql">
+       <Cache duration="3600" enabled="true"/>
+       <Columns/>
+       <Parameters>
+           <Parameter default="1" name="pIndicator" type="Numeric" />
+       </Parameters>
+       <Query>SELECT i.INDICATOR_NAME as Indicator, IFNULL(f.COUNTRY,f.REGION) AS Country, f.MEASURE AS Value
+           FROM figure f
+           INNER JOIN indicator i
+           ON i.INDICATOR_ID = f.INDICATOR_ID
+           WHERE f.INDICATOR_ID = ${pIndicator}
+           ORDER BY Measure ASC
+       </Query>
+   </DataAccess>
+
+   <!-- GET INDICATOR DATA FOR REGIONS (INDICATOR SPLIT) -->
+       <DataAccess access="public" connection="dvt_conn" id="getTwoIndicatorsData" type="sql">
+         <Cache duration="3600" enabled="true"/>
+         <Columns/>
+         <Parameters>
+           <Parameter default="6" name="pIndicator1" type="Numeric" />
+           <Parameter default="4" name="pIndicator2" type="Numeric" />
+         </Parameters>
+         <Query>
+           (
+             SELECT i.INDICATOR_NAME as Indicator, IFNULL(ff.COUNTRY,ff.REGION) AS Country, ff.MEASURE AS Value
+             FROM figure ff
+             INNER JOIN indicator i
+             ON i.INDICATOR_ID = ff.INDICATOR_ID
+             WHERE ff.INDICATOR_ID = ${pIndicator1}
+
+           )UNION(
+             SELECT i.INDICATOR_NAME as Indicator, IFNULL(f.COUNTRY,f.REGION) AS Country, f.MEASURE AS Value
+             FROM figure f
+             INNER JOIN indicator i
+             ON i.INDICATOR_ID = f.INDICATOR_ID
+             WHERE f.INDICATOR_ID = ${pIndicator2}
+           )
+           ORDER BY Indicator ASC, Value ASC
+         </Query>
+      </DataAccess>
+    <!-- Get data by Year for Indicator with two countries -->
+   <DataAccess access="public" connection="dvt_conn" id="getHistIndicatorData" type="sql">
+       <Cache duration="3600" enabled="true"/>
+       <Columns/>
+       <Parameters>
+           <Parameter default="1" name="pIndicator" type="Numeric" />
+           <Parameter default="Austria" name="pCountry1" type="String" />
+       </Parameters>
+       <Query>SELECT IFNULL(f.COUNTRY,f.REGION) AS Country, f.YEAR AS Year, f.MEASURE AS Value
+            FROM figure f
+            INNER JOIN country_code c
+            ON IFNULL(f.COUNTRY,f.REGION) = c.COUNTRY_NAME
+            WHERE f.INDICATOR_ID= ${pIndicator}
+            AND c.COUNTRY_NAME IN (REPLACE(${pCountry1}, '_', ' '),'EU28')
+            ORDER BY YEAR ASC, FIELD(c.COUNTRY_NAME, ${pCountry1},'EU28') ASC
+       </Query>
+   </DataAccess>
+
+  <!-- Get country list without the one on the parameters -->
+  <DataAccess access="public" connection="dvt_conn" id="getCountryList" type="sql">
+      <Cache duration="3600" enabled="true" />
+      <Columns/>
+      <Parameters>
+        <Parameter default="Austria" name="pCountry" type="String" />
+      </Parameters>
+      <Query>SELECT DISTINCT(REPLACE(COUNTRY_NAME, ' ', '_')) AS Id, COUNTRY_NAME AS Description FROM country_code
+          WHERE COUNTRY_NAME not in (REPLACE(${pCountry}, '_', ' '))
+          ORDER BY COUNTRY_NAME ASC
+      </Query>
+  </DataAccess>
+
+  <!-- Get country list without the one on the parameters and without EU -->
+  <DataAccess access="public" connection="dvt_conn" id="getStrategiesCountryList" type="sql">
+      <Cache duration="3600" enabled="true" />
+      <Columns/>
+      <Parameters>
+        <Parameter default="" name="pCountry" type="String" />
+      </Parameters>
+      <Query>SELECT REPLACE(cc.COUNTRY_NAME, ' ', '_') AS ID, cc.COUNTRY_NAME AS Description
+        FROM strategy s 
+        INNER JOIN country_code cc 
+        ON s.COUNTRY = cc.COUNTRY_NAME
+        WHERE cc.COUNTRY_NAME not in (REPLACE(${pCountry}, '_', ' '))
+        ORDER BY s.COUNTRY ASC
+      </Query>
+  </DataAccess>
+
+  <!-- Get country code list without the EU -->
+  <DataAccess access="public" connection="dvt_conn" id="getStrategiesCountryCode" type="sql">
+      <Cache duration="3600" enabled="true" />
+      <Columns/>
+      <Query>SELECT cc.COUNTRY_CODE AS ID, cc.COUNTRY_NAME AS Description
+        FROM strategy s 
+        INNER JOIN country_code cc 
+        ON s.COUNTRY = cc.COUNTRY_NAME
+        WHERE cc.COUNTRY_NAME != "EU28"
+        ORDER BY s.COUNTRY ASC
+      </Query>
+  </DataAccess>
+
+  <!-- Get information for country profile National Strategies -->
+  <DataAccess access="public" connection="dvt_conn" id="getAllCountries" type="sql">
+      <Cache duration="3600" enabled="true" />
+      <Columns />
+      <Query>SELECT DISTINCT(COUNTRY_CODE) AS Id, COUNTRY_NAME AS Description FROM country_code
+          ORDER BY COUNTRY_NAME ASC
+      </Query>
+  </DataAccess>
+
+  <!-- Get information for country profile National Strategies -->
+  <DataAccess access="public" connection="dvt_conn" id="getCountryStrategies" type="sql">
+      <Cache duration="3600" enabled="true" />
+      <Columns />
+      <Parameters>
+        <Parameter default="Austria" name="pCountry" type="String" />
+      </Parameters>
+      <Query>SELECT cc.COUNTRY_NAME, IFNULL (s.BASIC_INFO, "") AS BasicInfo, IFNULL(s.BACKGROUND, "") AS Background, IFNULL(s.STRATEGYS_MAIN_CHARACTERISTICS,"") AS StMainChar, IFNULL(s.STRATEGYS_DETAILS_AND_ACTIVITY_PLAN,"") AS StDetActPlan, IFNULL(s.ACTORS_STAKEHOLDERS,"") AS ActStake, IFNULL(s.RESOURCES_TIMEFRAME,"") AS ResTime, IFNULL(s.EVALUATION_LEARNED,"") AS EvalLearned, IFNULL(s.EU_STRATEGIC_FRAMEWORK,"") AS EUStFrwk, cc.COUNTRY_CODE
+        FROM strategy s
+        INNER JOIN country_code cc
+        ON s.COUNTRY=cc.COUNTRY_NAME
+        WHERE cc.COUNTRY_NAME = REPLACE(${pCountry}, '_', ' ')
+      </Query>
+  </DataAccess>
+
+  <DataAccess access="public" connection="dvt_conn" id="getAllMatrix" type="sql">
+      <Cache duration="3600" enabled="true" />
+      <Columns />
+      <Parameters>
+        <Parameter default="" name="pFilter" type="String" />
+      </Parameters>
+      <Query>SELECT DISTINCT(m.ITEM_ID) AS Id, c.COUNTRY_NAME AS Country, m.IMPROVING_THE_IMPLEMENTATION_RECORD AS implementation,m.IMPROVING_THE_PREVENTION AS prevention, m.TACKLING AS tackling ,m.OBJECTIVES AS objectives ,m.DETAIL AS detail,c.COUNTRY_CODE AS country_code
+        FROM matrix m
+        INNER JOIN country_code c
+        ON c.COUNTRY_CODE = m.COUNTRY
+        ORDER BY Country ASC
+      </Query>
+  </DataAccess>
+  <DataAccess access="public" connection="dvt_conn" id="getMatrixCountries" type="sql">
+      <Cache duration="3600" enabled="true" />
+      <Columns />
+      <Query>SELECT DISTINCT (c.COUNTRY_NAME) AS Country, c.COUNTRY_CODE AS country_code
+        FROM matrix m
+        INNER JOIN country_code c
+        ON c.COUNTRY_CODE = m.COUNTRY
+        ORDER BY Country ASC
+      </Query>
+  </DataAccess>
+
+  <!--Results-->
+    <DataAccess access="public" connection="dvt_conn" id="getSearchList" type="sql">
+        <Cache duration="3600" enabled="true"/>
+        <Columns/>
+        <Parameters>            
+            <Parameter default=".*" name="countries" type="String"/>
+        </Parameters>
+        <Query>
+            SELECT
+            c.COUNTRY_NAME as `country`,
+            m.OBJECTIVES as `objectives`,
+            m.IMPROVING_THE_IMPLEMENTATION_RECORD AS implementation,
+            m.IMPROVING_THE_PREVENTION AS prevention, 
+            m.TACKLING AS tackling,
+            m.DETAIL as `detail`,
+            c.COUNTRY_CODE as `country_code`
+            FROM matrix m
+            INNER JOIN country_code c
+            ON c.COUNTRY_CODE = m.COUNTRY
+
+            /*JOIN condition*/
+             WHERE c.COUNTRY_NAME REGEXP ${countries}
+
+            order by Country ASC
+        </Query>
+    </DataAccess>
+
+    <DataAccess access="public" connection="dvt_conn" id="getSearchListChallenges" type="sql">
+        <Cache duration="3600" enabled="true"/>
+        <Columns/>
+        <Parameters>
+            <Parameter default="null" name="challenge1" type="Numeric"/>
+            <Parameter default="null" name="challenge2" type="Numeric"/>
+            <Parameter default="null" name="challenge3" type="Numeric"/>
+            <Parameter default=".*" name="countries" type="String"/>
+        </Parameters>
+        <Query>
+            SELECT
+            c.COUNTRY_NAME as `country`,
+            m.OBJECTIVES as `objectives`,
+            m.IMPROVING_THE_IMPLEMENTATION_RECORD AS implementation,
+            m.IMPROVING_THE_PREVENTION AS prevention, 
+            m.TACKLING AS tackling,
+            m.DETAIL as `detail`,
+            c.COUNTRY_CODE as `country_code`
+            FROM matrix m
+            INNER JOIN country_code c
+            ON c.COUNTRY_CODE = m.COUNTRY
+
+            /*JOIN condition*/
+             WHERE c.COUNTRY_NAME REGEXP ${countries}
+             AND (m.IMPROVING_THE_IMPLEMENTATION_RECORD=${challenge1}
+             OR m.IMPROVING_THE_PREVENTION=${challenge2}
+             OR m.TACKLING=${challenge3})
+
+            order by Country ASC
+        </Query>
+    </DataAccess>
+</CDADescriptor>

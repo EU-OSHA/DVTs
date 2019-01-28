@@ -1,0 +1,27 @@
+<div class="col-xs-12">
+    <dvt-dashboard promises="promises" parameters="dashboard.parameters">
+        <div class="modal-body">
+           <span class="btn pull-right" role="button" aria-hidden="true" ng-click="ok()"><i class="fa fa-2x fa-times" aria-hidden="true"></i></span>
+            <!--style ESTRICTAMENTE temporal-->
+            <dvt-radar-chart
+                    is-maximized="true"
+                    data-ng-cloack
+                    id="{{ parameters.id }}"
+                    long-title="{{ parameters.longTitle }}"
+                    show-legend="true"
+                    css-class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center"
+                    width="600" height="600"
+                    radio="250"
+                    axis-fixed-max="{{ parameters.max }}"
+                    axis-fixed-max="{{ parameters.radio }}"
+                    css-class="parameters.cssClass"
+                    promises="parameters.promises"
+                    country1="dashboard.parameters.pCountry1"
+                    country2="dashboard.parameters.pCountry2"
+                    values-format="{{ parameters.valuesFormat }}"
+                    mesh-size=" {{ parameters.meshSize }}"
+                    max-functional-legend="{{ parameters.maxFunctionalLegend }}"
+            ></dvt-radar-chart>
+        </div>
+    </dvt-dashboard>
+</div>

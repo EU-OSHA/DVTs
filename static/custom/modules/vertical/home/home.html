@@ -1,0 +1,56 @@
+<!-- home.html -->
+<dvt-dashboard promises="promises" parameters="dashboard.parameters">
+	<div class="page-content">
+		<section class="container-fluid section-carrousel">
+			<div id="carouselHome" class="carousel slide container" data-ride="carousel">
+				<!-- Wrapper for slides -->
+				<div class="carousel-inner">
+					<div class="item" ng-class="{'active': $index == 0 }" data-ng-repeat="slide in slides">
+						<img data-ng-src="{{slide.image}}" alt="{{slide.alt}}">
+						<div class="carousel-caption">
+							<p data-ng-bind-html="slide.text"></p>
+						</div>
+					</div>
+				</div>
+
+				<!-- Left and right controls -->
+				<a class="left carousel-control" href="#carouselHome" data-slide="prev" data-ng-non-bindable>
+					<i class="fa fa-chevron-left prev " aria-hidden="true"></i>
+					<span class="sr-only">Previous</span>
+				</a>
+				<a class="right carousel-control" href="#carouselHome" data-slide="next" data-ng-non-bindable>
+					<i class="fa fa-chevron-right next" aria-hidden="true"></i>
+					<span class="sr-only">Next</span>
+				</a>
+				<!-- Indicators -->
+				<ol class="carousel-indicators">
+					<li data-target="#carouselHome" data-slide-to="0" class="active"></li>
+					<li data-target="#carouselHome" data-slide-to="1"></li>
+					<li data-target="#carouselHome" data-slide-to="2"></li>
+					<li data-target="#carouselHome" data-slide-to="3"></li>
+					<li data-target="#carouselHome" data-slide-to="4"></li>
+				</ol>
+			</div>
+		</section>
+		<section class="container home-spotlight row">
+			<article  data-ng-click="goto('accidents-trends')" role="button" class="col-xs-12 col-md-12 col-lg-4">
+				<a ui-sref='accidents-trends'>
+					<div class="article-background col-xs-12 col-md-12 col-lg-10 col-lg-offset-1">
+						<h2 data-ng-bind-html="i18n.L10"></h2>
+						<p data-ng-bind-html="i18n.L13" data-ng-click="$event.stopPropagation()"></p>
+						<p class="article-more-info"><img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/home/homeArrow.png" title="More info"></p>
+					</div>
+				</a>
+			</article>
+			<article  data-ng-click="goto('country-profiles')" role="button" class="col-xs-12 col-md-12 col-lg-4">
+				<a ui-sref='country-profiles'>
+					<div class="article-background col-xs-12 col-md-12 col-lg-10 col-lg-offset-1">
+						<h2 data-ng-bind-html="i18n.L11"></h2>
+						<p data-ng-bind-html="i18n.L14" data-ng-click="$event.stopPropagation()"></p>
+						<p class="article-more-info"><img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/home/homeArrow.png" title="More info"></p>
+					</div>
+				</a>
+			</article>
+		</section>
+	</div>
+</dvt-dashboard>

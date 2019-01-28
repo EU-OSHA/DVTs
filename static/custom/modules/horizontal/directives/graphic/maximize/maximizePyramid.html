@@ -1,0 +1,31 @@
+<div class="col-xs-12">
+    <dvt-dashboard promises="promises" parameters="dashboard.parameters">
+        <div class="modal-body">
+            <span class="btn pull-right" role="button" aria-hidden="true" ng-click="ok()"><i class="fa fa-2x fa-times" aria-hidden="true"></i></span>
+                <dvt-pyramid-chart
+                        data-ng-cloack
+                        is-maximized="true"
+                        id="{{ parameters.id }}"
+                        long-title="{{ parameters.longTitle }}"
+                        female-colour="{{parameters.femaleColour}}"
+                        male-colour="{{parameters.maleColour}}"
+                        show-legend="true"
+                        css-class="col-xs-12 col-sm-12 col-md-12 col-lg-12"
+                        width=830 height=410
+                        p-x-labels="1" p-y-labels="1"
+                        axis-label-font="20"
+                        colors="parameters.chartDefinition.colors" colors2="parameters.chartDefinition.colors"
+                        color2-axis-colors="parameters.chartDefinition.color2AxisColors"
+                        listen-to="parameters.listeners" params="parameters.parameters"
+                        plots="parameters.chartDefinition.plots" calculations="parameters.chartDefinition.calculations"
+                        dimensions="parameters.chartDefinition.dimensions" readers="parameters.chartDefinition.readers"
+                        post-fetch="parameters.postFetch" legend-pos="right"
+                        main-bar-size="15"
+                        css-class="parameters.cssClass"
+                        max-functional-legend="{{ parameters.maxFunctionalLegend }}"
+
+                >
+                </dvt-pyramid-chart>
+        </div>
+    </dvt-dashboard>
+</div>

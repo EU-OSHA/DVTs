@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project default="test" basedir="." name="jsdoc3-ant-task">
+    <description>
+        This build file is used to create the dvt project
+        and works with the common_build.xml file.
+    </description>
+    <property file="more_tasks.properties" />
+
+    <target name="test" description="Run documentation">
+        <echo>Using:</echo>
+        <echo> * Java:  ${ant.java.version}</echo>
+        <echo> * Ant:   ${ant.version}</echo>
+        <echo> * Rhino: ${rhino.version}</echo>
+
+        <taskdef name="jsdoc" classname="net.jannon.ant.tasks.JsDoc3" classpath="${jsdoc3-task-jar}:${rhino-jar}"/>
+
+        <echo message="Testing basic file..."/>
+        <jsdoc jsdochome="${jsdoc.home}" to="${docs.dir}" dir="${src.dir}" />
+        <echo message="Done."/>
+    </target>
+
+
+    <target name="documentation" description="Run documentation">
+
+        <echo>Using:</echo>
+        <echo> * Java:  ${ant.java.version}</echo>
+        <echo> * Ant:   ${ant.version}</echo>
+        <echo> * Rhino: ${rhino.version}</echo>
+
+        <taskdef name="jsdoc3" classname="net.jannon.ant.tasks.JsDoc3" classpath="${jar.location}:${rhino.jar.location}"/>
+
+
+
+
+        <!-- basic file test -->
+        <echo message="Testing basic file..."/>
+        <jsdoc3 jsdochome="${jsdoc.home}"
+                to="${report.dir}/testone"
+                file="${test.dir}/${test.file}" />
+        <echo message="Done."/>
+
+        <!-- basic dir test -->
+        <echo message="Testing basic directory..."/>
+        <jsdoc3 jsdochome="${jsdoc.home}"
+                to="${report.dir}/testtwo"
+                dir="${test.dir}/" />
+        <echo message="Done."/>
+
+        <!-- nested fileset element test -->
+        <echo message="Testing nested fileset..."/>
+        <jsdoc3 jsdochome="${jsdoc.home}"
+                to="${report.dir}/testthree">
+            <fileset dir="${test.dir}/" />
+        </jsdoc3>
+        <echo message="Done."/>
+
+        <!-- nested filelist element test -->
+        <echo message="Testing nested filelist..."/>
+        <jsdoc3 jsdochome="${jsdoc.home}"
+                to="${report.dir}/testfour">
+            <filelist dir="${test.dir}" files="test.js" />
+        </jsdoc3>
+        <echo message="Done."/>
+
+        <!-- nested arg element test -->
+        <echo message="Testing nested argument..."/>
+        <jsdoc3 jsdochome="${jsdoc.home}"
+                to="${report.dir}/testfive"
+                dir="${test.dir}">
+            <arg line="-X" />
+        </jsdoc3>
+        <echo message="Done."/>
+
+    </target>
+
+
+</project>

@@ -1,0 +1,17 @@
+[
+    {
+        "id": "home",
+        "name":"<i class='fa fa-home' aria-hidden='true'></i> <span>Home</span>",
+        "sref": "home",
+        "accesskey": "H",
+        "tabindex":"1"
+    },
+    {
+        "id": "about",
+        "name":"L64",
+        "sref": "about-tool",
+        "accesskey": "T",
+        "tabindex":"4"
+
+    }
+]

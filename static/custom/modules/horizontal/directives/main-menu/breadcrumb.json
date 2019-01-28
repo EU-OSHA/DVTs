@@ -1,0 +1,22 @@
+{
+    "sections": {
+        "EU-challenges-response": "national-strategies",
+        "country-strategies": "national-strategies",
+        "accidents-trends":"eu-countries",
+        "fatal-accidents-ranking":"eu-countries",
+        "non-fatal-accidents-estimation":"eu-countries",
+        "non-fatal-accidents-reporting-level":"eu-countries"
+    },
+    "home": "<span>Home</span>",
+
+    "_SECCTION-ABOUT-TOOL": null,
+    "about-tool": "<span>About the OSH barometer</span>",
+
+    "_SECCTION-FOOTER-PAGES": null,
+    "site-map": "<span>Site map</span>",
+    "accessibility": "<span>Accessibility info</span>",
+    "privacy-policy":"<span>Privacy notice</span>",
+    "legal-notice":"<span>Legal notice</span>",
+
+    "404": "<span>Page not found</span>"
+}

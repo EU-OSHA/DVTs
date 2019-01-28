@@ -1,0 +1,225 @@
+<?xml version="1.0"?>
+<!--
+    * release
+        1. release
+        2. release-publish
+        3. release-publish-snapshots
+-->
+
+<project name="osha-dvt" basedir="." default="remote-copy">
+
+    <property file="jenkins_build.properties"/>
+
+    <!--
+        release vars
+    -->
+    <property name="release_solution_name"      value="osha-dvt-barometer"/>
+    <property name="release-dir"                value="/opt/pentaho/biserver-ce/pentaho-solutions/system/"/>
+    <property name="release-dir-snapshots"      value="/opt/pentaho/biserver-ce/pentaho-solutions/system/${release_solution_name}/static/custom/seo/snapshots/"/>
+
+    <!--
+            jenkins vars
+    -->
+    <property name="jenkins-environment"        value="local"/>
+    <property name="do_db"                      value="false"/>
+    <property name="db_pass"                    value=""/>
+    <property name="do_track"                   value="false"/>
+    <property name="packed"                     value="false"/>
+    <property name="cache"                      value="false"/>
+    <property name="seo"                        value="false"/>
+    <property name="seo_url"                    value=""/>
+    <property name="wipeLibraries"              value="false"/>
+
+    <!-- Ant 1.7.1 or lower: A 'property' is initilised to evaluate it in a conditional statement -->
+    <condition property="do_db_prop" value="true">
+        <istrue value="${do_db}"/>
+    </condition>
+
+    <condition property="wipe_libraries_prop" value="true">
+        <istrue value="${wipeLibraries}"/>
+    </condition>
+
+    <echo>jenkins-environment: ${jenkins-environment}</echo>
+    <echo>do_db: ${do_db}</echo>
+    <echo>do_track: ${do_track}</echo>
+    <echo>packed: ${packed}</echo>
+    <echo>cache: ${cache}</echo>
+    <echo>seo: ${seo}</echo>
+    <echo>seo_url: ${seo_url}</echo>
+    <echo>wipeLibraries: ${wipeLibraries}</echo>
+
+    <!--
+            jenkins commands to have installed
+            - npm
+            - bower
+    -->
+
+    <!--
+        environment constants
+    -->
+
+    <property name="solution_name"      value="osha-dvt-barometer"/>
+    <property name="db_name"            value="osha_dvt_barometer"/>
+
+    <tstamp>
+        <format property="ts" pattern="yyyyMMdd-HHmmss"/>
+    </tstamp>
+
+    <!--
+        =========================
+            solution prepare
+        =========================
+    -->
+    <target name="clean">
+        <delete dir="jenkins_dist"/>
+    </target>
+
+    <target name="clean-prepare" depends="clean, clean-modules">
+        <delete dir="static/system/components"/>
+        <delete dir="resources-ext/documentation"/>
+        <delete>
+            <fileset dir="static/custom" includes="**/*.min.js"/>
+        </delete>
+    </target>
+
+    <target name="clean-modules" if="wipe_libraries_prop">
+        <delete dir="node_modules"/>
+    </target>
+
+    <target name="setup-modules" if="wipe_libraries_prop">
+        <exec executable="node" spawn="false">
+            <arg value="-v"/>
+        </exec>
+        <exec executable="npm" spawn="false">
+            <arg value="install"/>
+        </exec>
+    </target>
+
+    <target name="local-prepare" depends="clean-prepare, setup-modules">
+        <exec executable="gulp" spawn="false">
+            <arg value="bower"/>
+        </exec>
+        <exec executable="gulp" spawn="false">
+            <arg value="dvt-sass"/>
+        </exec>
+
+        <exec executable="gulp" spawn="false">
+            <arg value="ci-environment"/>
+            <arg value="--pentaho"/>
+            <arg value="${jenkins-environment}"/>
+            <arg value="--piwik"/>
+            <arg value="${jenkins-environment}"/>
+            <arg value="--do_track"/>
+            <arg value="${do_track}"/>
+            <arg value="--packed"/>
+            <arg value="${packed}"/>
+            <arg value="--cache"/>
+            <arg value="${cache}"/>
+            <arg value="--seo"/>
+            <arg value="${seo}"/>
+        </exec>
+        <exec executable="gulp" spawn="false">
+            <arg value="setup-environment"/>
+        </exec>
+    </target>
+
+
+    <target name="prepare" depends="local-prepare">
+
+        <exec executable="gulp" spawn="false">
+            <arg value="clean-min"/>
+        </exec>
+        <exec executable="gulp" spawn="false">
+            <arg value="documentation"/>
+            <arg value="--documentation"/>
+            <arg value="${documentation}"/>
+        </exec>
+        <exec executable="gulp" spawn="false">
+            <arg value="package"/>
+            <arg value="--packed"/>
+            <arg value="${packed}"/>
+        </exec>
+        <exec executable="gulp" spawn="false">
+            <arg value="cache"/>
+            <arg value="--cache"/>
+            <arg value="${cache}"/>
+        </exec>
+
+    </target>
+
+    <target name="prepare-dist">
+        <mkdir dir="jenkins_dist"/>
+        <copy todir="jenkins_dist/${solution_name}">
+            <fileset dir=".">
+                <exclude name="**/**build**/**"/>
+                <exclude name="**/jenkins_dist/**"/>
+                <exclude name="**/resources-ext/**"/>
+                <exclude name="**/static/custom/seo/snapshots/**/*"/>
+                <exclude name="**/.git/**"/>
+            </fileset>
+        </copy>
+        <!-- add resources-ext content -->
+        <copy file="resources-ext/dbdump/${db_name}.sql" todir="jenkins_dist/${solution_name}/resources-ext/dbdump/"/>
+        <copy todir="jenkins_dist/${solution_name}/resources-ext/pentaho-610-extension">
+            <fileset dir="resources-ext/pentaho-610-extension"/>
+        </copy>
+        <copy todir="jenkins_dist/${solution_name}/resources-ext/pentaho-610-extension-original">
+            <fileset dir="resources-ext/pentaho-610-extension-original"/>
+        </copy>
+        <copy todir="jenkins_dist/${solution_name}/resources-ext/apache">
+            <fileset dir="resources-ext/apache"/>
+        </copy>
+    </target>
+
+    <target name="prepare-snapshots">
+
+        <delete>
+            <fileset dir="static/custom/seo/snapshots" includes="*.html"/>
+        </delete>
+
+        <exec executable="gulp" spawn="false">
+            <arg value="seo"/>
+            <arg value="--seo"/>
+            <arg value="${seo}"/>
+            <arg value="--seo_url"/>
+            <arg value="${seo_url}"/>
+        </exec>
+        <exec executable="gulp" spawn="false">
+            <arg value="seo-clean"/>
+        </exec>
+
+    </target>
+
+    <!--
+        =========================
+            release
+        =========================
+    -->
+    <target name="release" depends="prepare, prepare-dist">
+        <zip destfile="jenkins_dist/${release_solution_name}-${release_solution_version}.zip" basedir="jenkins_dist"/>
+    </target>
+
+    <target name="import-database" if="do_db_prop">
+        <echo message="Import database dump" />
+        <exec executable="/bin/bash">
+            <arg value="-c"/>
+            <arg value="mysql -uroot -p${db_pass} ${db_name} &lt; resources-ext/dbdump/${db_name}.sql"/>
+        </exec>
+    </target>
+
+    <target name="release-publish" depends="release, import-database">
+        <delete dir="${release-dir}/${release_solution_name}"/>
+        <mkdir dir="${release-dir}/${release_solution_name}"/>
+        <unzip src="jenkins_dist/${release_solution_name}-${release_solution_version}.zip" dest="${release-dir}"/>        
+    </target>
+
+    <!--
+        =========================
+            release - snapshots
+        =========================
+    -->
+    <target name="release-snapshots" depends="prepare-snapshots">
+        <zip destfile="jenkins_dist/${release_solution_name}-${release_solution_version}-snapshots.zip" basedir="static/custom/seo/snapshots"/>
+        <unzip src="jenkins_dist/${release_solution_name}-${release_solution_version}-snapshots.zip" dest="${release-dir-snapshots}"/>
+    </target>
+</project>

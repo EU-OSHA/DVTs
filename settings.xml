@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings>
+	<resources>
+		<downloadable-formats>css,json,js,svg,html,htm,png,jpg,jpeg,gif,swf,htc,ttf,otf,woff,woff2,ico,doc,docx,xls,xlsx,pdf,ppt,pptx,map,txt,xml</downloadable-formats>
+	</resources>
+	<cache-messages>false</cache-messages>
+	<max-age>0</max-age>
+	<cache>false</cache>
+	<packager>
+		<minification>MINIFY</minification>
+	</packager>
+	<cde-styles>
+		<path>system/osha-dvt-barometer/resources/styles</path>
+	</cde-styles>
+  	<cde-datasources/>
+	<cde-components>
+	  <!-- paths from solution with cde component definitions to be loaded-->
+	  <path>system/osha-dvt-barometer/resources/components</path>
+	  <path>osha-dvt-barometer/components</path>
+	</cde-components>
+	<allow-cross-domain-resources>true</allow-cross-domain-resources>
+</settings>

@@ -1,0 +1,11 @@
+<div id="filter-{{filter.name}}" class="col-xs-12 pull-left">
+    <div class="col-xs-12"><h1 class="title" data-ng-bind="filter.name"></h1></div>
+
+    <div class="col-xs-12">
+        <div class="filters" data-ng-repeat='item in filter.items'>
+            <input id='country-filter-{{ item.Id}}' type="checkbox" value="{{ item.Id}}"
+                   data-ng-click="toogleFilterClick($event, $index)"/>
+            <label for='country-filter-{{ item.Id}}' data-ng-bind="item.Description"></label>
+        </div>
+    </div>
+</div>

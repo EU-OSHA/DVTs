@@ -1,0 +1,2 @@
+# all
+$ mysqldump osha_dvt_barometer -u<user> -p<password> osha_dvt_barometer.sql

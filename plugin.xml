@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin title="osha-dvt-barometer" loader="DEFAULT">
+    <overlays>
+        <overlay id="dataaccess" resourcebundle="api/messages/messages" loadatstart="false"></overlay>
+    </overlays>
+    <lifecycle-listener class="pt.webdetails.cpk.CpkLifecycleListener"/>
+    <static-paths>
+        <static-path url="/osha-dvt-barometer/static" localFolder="static"/>
+        <static-path url="/osha-dvt-barometer/resources" localFolder="resources"/>
+        <static-path url="/osha-dvt-barometer/seo" localFolder="static/custom/seo/"/>
+    </static-paths>
+    <content-types>
+        <content-type>
+            <title>European Agency for Safety &amp; Health at Work - Data Visualisation Tool - DVT</title>
+            <description>BAROMETER</description>
+            <company name="" url="" logo=""></company>
+            <icon-url>api/repos/osha-dvt-barometer/static/custom/img/favicon.ico</icon-url>
+        </content-type>
+    </content-types>
+    <content-generator
+        id="osha-dvt-barometer"
+        title="DVT BAROMETER"
+        type="osha-dvt-barometer"
+        class="pt.webdetails.cpk.CpkContentGenerator"/>
+    <!-- Menu entry -->
+    <menu-items>
+        <!--<main-menu-item id="dvt_main" anchor="tools-submenu" label="Older Workers Pilot" command="content/dvt/" type="MENU_ITEM" how="LAST_CHILD"/>-->
+    </menu-items>
+
+    <external-resources>
+        <!--<file context="dvt">api/repos/dvt/static/dvt-require-js-cfg.js</file>-->
+    </external-resources>
+</plugin>

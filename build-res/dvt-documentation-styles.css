@@ -1,0 +1,12 @@
+.container {
+    width: 1260px !important;
+}
+
+.row .span3 {
+    width: 300px;
+}
+
+.form-search .search-query {
+    width: 263px;
+}
+

@@ -1,0 +1,2 @@
+Sitemap: https://visualisation.osha.europa.eu/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/seo/sitemap.xml
+User-agent: *

@@ -1,0 +1,87 @@
+<!-- search.html -->
+<div class="home row page-content">
+
+    <div id="country-card-structure" class="container">
+        <div class="container">
+            <div class="row searcher">
+                <div class="search">
+                    <div class="input-group">
+                        <input ng-keypress="clickEnter($event)" id="search-input" type="text" class="form-control" placeholder="{{i18nSearchPlaceholder}}" data-ng-model="query"/>
+                        <span class="input-group-btn">
+                            <button data-ng-click="clear($event)" id="policy-clear" class="btn btn-default" type="button"><i class="fa fa-eraser" aria-hidden="true"></i></button>
+                            <button data-ng-click="search($event)" id="policy-search" class="btn btn-default" type="button"><i class="fa fa-search" aria-hidden="true"></i></button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div data-ng-if="havefilters" class="col-xs-12 col-sm-3 col-md-3 col-lg-2 pull-left"><!-- col-xs-offset-4 col-sm-offset-0 -->
+
+            <div class="col-xs-12"  data-ng-repeat='filter in filters' ng-include="filterTemplate">
+
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 pull-right pagination-block">
+
+            <div class="col-sm-7 pagination-wrapper" data-ng-if="!!results.length" ng-hide="paginationHidden">
+                <ul class="pagination">
+                    <li role=button data-ng-click="firstPage()" ng-class="(currentPage+1==numberOfPages() && currentPage+1==1 || currentPage+1==1)?'invisible':''">
+                        <span aria-hidden="currentPage == 0">&laquo;</span>
+                    </li>
+                    <li role=button data-ng-click="previousPage()" ng-class="(currentPage+1==numberOfPages() && currentPage+1==1 || currentPage+1==1)?'invisible':''">
+                        <span aria-hidden="currentPage == 0">&lsaquo;</span>
+                    </li>
+                    <li>
+                        <span>{{currentPage+1}}/{{numberOfPages()}}</span>
+                    </li>
+                    <li role=button data-ng-click="nextPage()" ng-class="(currentPage+1==numberOfPages() && currentPage+1==numberOfPages())?'invisible':''">
+                        <span aria-hidden="currentPage >= results.length/pageSize - 1">&rsaquo;</span>
+                    </li>
+                    <li role=button data-ng-click="lastPage()" ng-class="(currentPage+1==numberOfPages() && currentPage+1==numberOfPages())?'invisible':''">
+                        <span>&rsaquo;&rsaquo;</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-sm-5 pag-numbers-wrapper" data-ng-if="!!results.length">
+                <span class="pag-numbers" data-ng-bind="paginationText"></span>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 pull-right search-results">
+            <div data-ng-repeat="result in results | pagination:currentPage*pageSize | limitTo:pageSize track by $index" ng-include="itemTemplate" class="col-xs-12"></div>
+            <div class="col-sm-6" ng-hide="results.length>0" data-ng-bind="i18n['no-results']"></div>
+
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 pull-right pagination-block">
+            <div class="col-sm-7 pagination-wrapper" data-ng-if="!!results.length" ng-hide="seeAllCountryPolicy">
+                <ul class="pagination">
+                    <li role=button data-ng-click="firstPage()" ng-class="(currentPage+1==numberOfPages() && currentPage+1==1 || currentPage+1==1)?'invisible':''">
+                        <span aria-hidden="currentPage == 0">&laquo;</span>
+                    </li>
+                    <li role=button data-ng-click="previousPage()" ng-class="(currentPage+1==numberOfPages() && currentPage+1==1 || currentPage+1==1)?'invisible':''">
+                        <span aria-hidden="currentPage == 0">&lsaquo;</span>
+                    </li>
+                    <li>
+                        <span>{{currentPage+1}}/{{numberOfPages()}}</span>
+                    </li>
+                    <li role=button data-ng-click="nextPage()" ng-class="(currentPage+1==numberOfPages() && currentPage+1==numberOfPages())?'invisible':''">
+                        <span aria-hidden="currentPage >= results.length/pageSize - 1">&rsaquo;</span>
+                    </li>
+                    <li role=button data-ng-click="lastPage()" ng-class="(currentPage+1==numberOfPages() && currentPage+1==numberOfPages())?'invisible':''">
+                        <span>&rsaquo;&rsaquo;</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-sm-5  pag-numbers-wrapper" data-ng-if="!!results.length">
+                <span class="pag-numbers" data-ng-bind="paginationText"></span>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+

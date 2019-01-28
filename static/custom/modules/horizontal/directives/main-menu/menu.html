@@ -1,0 +1,152 @@
+<header class="ilo-header col-xs-12 nopadding container-header" >
+    <div id="containerMenu">
+        <div class="eu-osha-logo col-xs-7 col-sm-3 col-md-3">
+            <a href="https://osha.europa.eu" role="link" title="{{i18n_menu.OSHAWebpage}}" tabindex="0">
+                <picture>
+                    <source srcset="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/EU-OSHA-en-respx2.png" media="(max-width: 440px)">
+                    <source srcset="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/EU-OSHA-en-resp.png" media="(max-width: 991px)">
+                    <source srcset="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/EU-OSHA-en-resp2.png" media="(max-width: 1120px">
+                    <source srcset="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/EU-OSHA-en.png">
+                    <img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/EU-OSHA-en.png" alt="{{i18n_menu.OSHA}}">
+                </picture>
+            </a>
+        </div>
+
+        <!-- nav tools top -->
+        <nav class="menu-tools-top col-xs-4 col-sm-8 col-md-9">
+            <div class="submenu-icon">
+                <a href="javascript:" title="{{i18n_menu.Submenu}}">
+                    <i class="three-points"></i><span class="sr-only" data-ng-bind="i18n_menu.SocialMenu"></span>
+                </a>
+            </div>
+            <ul class="social-network list-inline navbar-right" id="osha-menu-social">
+                <!--<li>
+                    <a target="_blank" href="https://osha.europa.eu/es/tools-and-publications/blog" title="{{i18n_menu.OSHABlog}}">
+                        <i class="blogger-icon"></i><span class="sr-only" data-ng-bind="i18n_menu.OSHABlog"></span>
+                    </a>
+                </li>-->
+                <li class="item-print">
+                    <a class="print" href="javascript:"  title="{{i18n_menu.PrintPage}}" onclick="window.print()">
+                        <i class="fa fa-lg fa-print" aria-hidden="true"></i><span class="sr-only" data-ng-bind="i18n_menu.Print"></span>
+                    </a>
+                </li>
+                <li class="zoom-text">
+                    <span class="a_small"><a onclick="zoomSmall()" title="Smaller text">a</a></span>
+                    <span class="a_medium"><a onclick="zoomMedium()" title="Optimized defaults">a</a></span>
+                    <span class="a_big"><a onclick="zoomBig()" title="Bigger text">a</a></span>
+                </li>
+            </ul>
+        </nav>
+        <!-- /. nav tools top -->
+
+        <nav id="main-menu" class="ilo-main-menu col-sm-8 col-md-8 navbar navbar-default">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#osha-menu-collapse" aria-expanded="false">
+                        <span class="sr-only" data-ng-bind="i18n_menu.Toggle"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse pull-right" id="osha-menu-collapse">
+                    <ul class="nav navbar-nav">
+                        <!--<li>-->
+                        <!--<a ui-sref="home" role="button">-->
+                        <!--<span>Home</span>-->
+                        <!--</a>-->
+                        <!--</li>-->
+                        <li ng-repeat="level0 in structure">
+                            <a ng-if='level0.levels && level0.target' class="dropdown-toggle" data-toggle="dropdown" role="button"
+                               aria-haspopup="true" target="_self" aria-expanded="false" tabindex="{{level0.tabindex}}">
+                                <span ng-class="isCurrentSection('{{ level0.id }}')" data-ng-bind-html="i18n_literals[level0.name]"></span>
+                                <span class="caret"></span>
+                            </a>
+                            <a ng-if='level0.levels && level0.sref' ui-sref= '{{ level0.sref}}'
+                               class="dropdown-toggle {{level0.class}}"
+                               data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" tabindex="{{level0.tabindex}}">
+                                <span ng-class="isCurrentStateMenu('{{ level0.id }}')" data-ng-bind-html="i18n_literals[level0.name]"></span>
+                                <span class="caret"></span>
+                            </a>
+                            <a ng-if='!level0.levels && level0.sref' ui-sref='{{ level0.sref}}' accesskey="{{level0.accesskey}}" tabindex="{{level0.tabindex}}">
+                                <span ng-if="level0.id == 'home'" ng-class="isCurrentStateMenu('{{ level0.id }}')" data-ng-bind-html="level0.name"></span>
+                                <span ng-if="level0.id != 'home'" ng-class="isCurrentStateMenu('{{ level0.id }}')" data-ng-bind-html="i18n_literals[level0.name]"></span>
+                            </a>
+                            <ul class="dropdown-menu" ng-if="level0.levels">
+                                <li>
+                                    <a ng-if="level1.target" target="{{level1.target}}" id="{{level1.id }}"
+                                       ng-repeat="level1 in level0.levels">
+                                        <span ng-class="isCurrentStateMenu('{{ level1.id }}')" data-ng-bind-html="i18n_literals[level1.name]"></span>
+                                    </a>
+                                    <a ng-if="level1.sref" ui-sref='{{ level1.sref }}' id='{{ level1.id }}'
+                                       ng-repeat="level1 in level0.levels" accesskey="{{level1.accesskey}}">
+                                        <span ng-class="isCurrentStateMenu('{{ level1.id }}')" data-ng-bind-html="i18n_literals[level1.name]"></span>
+                                    </a>
+                                </li>
+                                <!--<li role="separator" class="divider"></li>-->
+                                <!--<li><a class="disabled" id="evolution" target="_self">Evolution</a></li>-->
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+        </nav>
+
+
+        <pre ng-show="false">{{  structure | json }}</pre>
+
+    </div>
+
+    <div data-ng-if="isHome" id="home-cover" class="nopadding">
+        <a ui-sref="home" role="button" title="Access to Home page">
+            <div class="container">
+                <p class="title-banner" data-ng-bind="i18n_literals.L61"></p>
+            </div>
+        </a>
+    </div>
+
+    <div data-ng-if="!isHome" id="not-home-cover" class="nopadding">
+        <a ui-sref="home" role="button" title="{{i18n_menu.AccessHomepage}}">
+            <div class="container">
+                <p class="title-banner" data-ng-bind-html="i18n_literals.L61"></p>
+            </div>
+        </a>
+    </div>
+
+    <div class="col-xs-12 col-md-12  titleAndWidget">
+        <p class="path col-xs-12 col-sm-8 col-md-8 col-lg-8" data-ng-bind-html="breadCrumb" id="breadCrumbs"></p>
+
+        <ul class="social-network list-inline navbar-right col-md-4" id="osha-menu-social">
+            <li>Share this on:
+                <ul>
+                    <li>
+                        <a target="_blank" socialshare socialshare-provider="twitter" title ="{{i18n_menu.OSHATwitter}}" socialshare-text="{{i18n_literals[title]}}" socialshare-url="{{pathURLDVT}}">
+                            <i class="fa fa-lg fa-twitter" aria-hidden="true"></i><span class="sr-only" data-ng-bind="i18n_menu.OSHATwitter"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a target="_blank" socialshare socialshare-provider="facebook" title="{{i18n_menu.OSHAFacebook}}" socialshare-url="{{pathURLDVT}}">
+                            <i class="fa fa-lg fa-facebook" aria-hidden="true"></i><span class="sr-only" data-ng-bind="i18n_menu.OSHAFacebook"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a target="_blank" socialshare socialshare-provider="linkedin" title="{{i18n_menu.OSHALinkedin}}" socialshare-url="{{pathURLDVT}}">
+                            <i class="fa fa-lg fa-linkedin" aria-hidden="true"></i><span class="sr-only" data-ng-bind="i18n_menu.OSHALinkedin"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a target="_blank" title="{{i18n_menu.OSHAGoogle}}" href="{{pathURLDVTGoogle}}">
+                            <i class="fa fa-lg fa-google-plus" aria-hidden="true"></i><span class="sr-only" data-ng-bind="i18n_menu.OSHAGoogle"></span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+
+        <div data-ng-if="!isHome" class="page-header-wrapper container">
+        <h1 class="page-header text-center" data-ng-bind-html="i18n_literals[title]"></h1>
+        <p class="subject-section" data-ng-bind-html="i18n_literals[subtitle]"></p>
+        </div>
+    </div>
+</header>

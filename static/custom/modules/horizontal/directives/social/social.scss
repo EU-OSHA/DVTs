@@ -1,0 +1,110 @@
+#socialNetworksBlue {
+
+    width: 100%;
+    margin-top: 0px;
+    border-top:4px solid #002f9d;
+
+
+}
+
+
+
+#socialNetworksBlue #icons {
+
+
+    background: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/dvt/static/custom/img/socialBorderLeft.png) no-repeat scroll 0 0px,url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/dvt/static/custom/img/socialBorderRight.png) no-repeat scroll 100% 0px,none repeat scroll 0 0 #002f9d;
+
+
+
+    height: 26px;
+    margin: -5px auto 0;
+    text-align: center;
+    width: 260px;
+   // padding-top: 4px;
+    //border:1px solid green;
+
+
+    .enlaces {
+        background-color: #002f9d;
+        width: 200px;
+        display: inline-block;
+        vertical-align: top;
+        height:25px;
+
+        a {
+            padding: 0;
+            margin:0 6px;
+            vertical-align: top;
+        }
+    }
+}
+
+
+#socialNetworksBlue .goog-te-gadget {
+    margin-top: -25px;
+}
+
+#socialNetworksBlue ul#links {
+    margin-top: -16px;
+}
+
+#socialNetworksBlue .goog-te-gadget-simple {
+    background-color: $colorA;
+    border-left: 1px solid #d5d5d5;
+    border-top: 1px solid #9b9b9b;
+    border-bottom: 1px solid #e8e8e8;
+    border-right: 1px solid #d5d5d5;
+    border: none;
+    font-size: 10pt;
+    display: inline-block;
+    padding-top: 1px;
+    padding-bottom: 2px;
+    cursor: pointer;
+    zoom: 1;
+    margin: 8px 0 0 10px;
+
+
+    .goog-te-menu-value {
+
+        &:hover {
+            color: white;
+        }
+
+        span {
+            font-family: arial, sans-serif;
+            font-size:13px;
+            line-height: 15px;
+            color: white;
+            border: 0 !important;
+
+            &:hover {
+                color: white;
+            }
+        }
+    }
+}
+
+
+#socialNetworksBlue  #links {
+
+    margin: 8px 10px 0 0;
+
+    li {
+        display: inline-block;
+
+        a {
+            color: white;
+        }
+
+    }
+
+
+    li + li {
+        border-left: 1px solid white;
+        padding-left:8px;
+        margin-left: 3px;
+    }
+
+
+
+}
