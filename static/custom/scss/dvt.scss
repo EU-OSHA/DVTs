@@ -42,26 +42,10 @@
 
 /*****  VERTICAL  ****/
 
-/* National Strategies */
-@import '../modules/vertical/national-strategies/country-details/country-details.scss';
-@import '../modules/vertical/national-strategies/country-profiles/country-profiles.scss';
-@import '../modules/vertical/national-strategies/matrix/matrix.scss';
-
 
 /* About the estimates */
 @import '../modules/vertical/about-tool/about-tool.scss';
 
-/* EU countries */
-@import '../modules/vertical/eu-countries/eu-countries.scss';
-
-/* EU ranking countries */
-@import '../modules/vertical/work-accidents/ranking-countries/ranking-countries.scss';
-
-/* EU work accidents estimations*/
-@import '../modules/vertical/work-accidents/work-accidents-estimation/work-accidents-estimation.scss';
-
-/* Geographies comparision */
-@import '../modules/vertical/geographies-comparison/geographies-comparison.scss';
 /****** GENERAL *******/
 @mixin no-padding($side) {
   @if $side == 'all' {
