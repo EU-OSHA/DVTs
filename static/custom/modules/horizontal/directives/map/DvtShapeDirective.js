@@ -324,18 +324,19 @@ define(function (require) {
                                 };
 
 
-                                /* Crete map shape */
-                                var paper = Raphael(scope.id, attributes.width || 200, attributes.height || 200);
-                                paper.setViewBox(attributes.x || 0, attributes.y || 0, attributes.zoomH || 640, attributes.zoomW || 640, false);
+                                /* Create map shape */
+                                var paper = Raphael(scope.id, attributes.width || 800, attributes.height || 800);
+
+                                if (!!attributes.useViewbox && attributes.useViewbox=="true")
+                                {
+                                    paper.setViewBox(attributes.x || 0, attributes.y || 0, attributes.zoomH || 640, attributes.zoomW || 640, false);
+                                }                                
 
                                 var svg = document.querySelector("#" + scope.id + " svg");
                                 svg.removeAttribute("width");
                                 if(!configService.isIE())svg.removeAttribute("height");
 
-
-                                if (state != 'country-profiles') {
-                                    svg.setAttribute("style","width:76%");
-                                }
+                                svg.setAttribute("style", "width:100%");
 
                                 paper.canvas.setAttribute('preserveAspectRatio', 'xMaxYMin'); // always scale to fill container, preserving aspect ratio.
 
@@ -393,6 +394,7 @@ define(function (require) {
                 }
                 else{
                     $log.error("Link function of " + scope.id+ ": Promise is undefined");
+                    console.log("Link function of " + scope.id + ": Promise is undefined");
                 }
             }
         }
