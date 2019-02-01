@@ -2894,9 +2894,9 @@ tbody.collapse.in {
       box-shadow: none; }
       .navbar-collapse.collapse {
         display: block;
-        height: auto !important;
+        height: auto ;
         padding-bottom: 0;
-        overflow: visible !important; }
+        overflow: visible; }
       .navbar-collapse.in {
         overflow-y: visible; }
       .navbar-fixed-top .navbar-collapse,

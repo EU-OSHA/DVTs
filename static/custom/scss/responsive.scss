@@ -1,1153 +1,189 @@
-/** fluid 100% to 1650 px **/
-@media only screen and (min-width : $ful1650)  {
-  .container{
-    //width: 1650px !important;
-  }
-  .home-spotlight{
-   // width: 1650px !important;
-  }
-}
-@media only screen and (max-width : $ful1650)  {
-  .container{
-    //width: 100% !important;
-  }
-}
-
-@media only screen  and (min-width : 1280px) and (max-width : $ful1650)  {
-
-}
-/** end fluid 100% to 1650 px **/
-
-
-@media screen and (max-width: 1200px) {
-  .ilo-header{
-    #not-home-cover {
-      background: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/not-home-banner.png) #529FA2 no-repeat right top;
-      background-size: cover;
-      height: 10.1rem;
-      clear: both;
-      p.title-banner {
-        text-shadow: 0px 1px 5px black;
-      }
-    }
-  }
-  #cookiesConsent{
-    .text{
-      width: 100%;
-    }
-    .buttons{
-      float: left;
-      width: 100%;
-      margin-top: 1rem;
-    }
-  }
-  .section-first-home{
-    .chart1-section-first {
-      width: 100%;
-    }
-    .chart2-section-first{
-      width: 100%;
-    }
-  }
-  .home-spotlight{
-    article {
-      .article-background{
-        .article-more-info {
-          right:0rem;
-        }
-      } 
-    }
-  } 
-}
-@media only screen  and (min-width : 1281px) and (max-width : $ful1650)  {
-  .page-header {
-      width: 80%;
-  }
-  .carousel-caption {
-      right: 10%;
-      left: 10%;
-  }
-}
-@media only screen and (min-device-width : 1024px) and (max-device-width : 1366px) and (orientation : portrait) {
-  #carouselHome {
-    .carousel-inner {
-      li.item {
-        width: 96% !important;
-        .carousel-chart{
-          width: 95% !important;
-        }
-      }
-    }
-  }
-}
-@media only screen and (min-width : 768px) and (max-width : 1024px) and (orientation : landscape) {
-  .ilo-header{
-    #home-cover {
-      p.title-banner {
-        width:100%;
-        margin-top: 67px;
-        text-shadow: 0px 1px 5px rgba(0, 0, 0, 1);
-      }
-    }
-  }
-  /** EU-ESTIMATES **/
-  .eu-countries{
-    .osha-eu-estimates-wrapper{
-      .carousel-indicators{
-        li {
-          width: 45%;
-        }
-      }
-      .carousel-control{
-        &.left {
-          left:0px !important;
-          i{
-            top: 370px;
-          }
-        }
-        &.right {
-          right:0px;
-          i{
-            top: 370px;
-          }
-        }
-      }
-    }
-  }
-  .osha-global-estimates-wrapper {
-    .carousel-control{
-      &.left {
-        left:0px !important;
-      }
-      &.right {
-        right:0px;
-      }
-    }
-  }
-  .eu-analysis-illness-wrapper {
-    .compare-buttons{
-      .compare-buttons-list{
-        li {
-          margin-right: 1%;
-          width: 48%;
-        }
-      }
-    }
-  }
-}
-@media only screen and (min-width : 768px) and (max-width : 1024px) and (-webkit-min-device-pixel-ratio: 2) and (orientation : landscape){
-  #not-home-cover {
-    margin-top: 20px !important;
-    background-size: cover !important;
-    height: 9.1rem !important;
-    p.title-banner {
-      text-shadow: 0px 1px 5px rgba(0, 0, 0, 1);
-    }
-  }
-// HOME
-  .section-carrousel{
-    #carouselHome {
-      //min-height: 330px;
-      min-height: auto;
-      .carousel-inner {
-        li.item {
-          width: 100% !important;
-          .carousel-chart{
-            width: 90% !important;
-            margin: 0 auto!important;
-            padding: 15px !important;
-            overflow: hidden;
-            img{
-              width: 100%;
-            }
-          }
-        }
-      }
-      .carousel-control{
-       .prev{
-         top: 270px !important;
-       }
-        .next{
-          top: 270px !important;
-        }
-      }
-    }
-  }
-  .modal-dialog {
-    width: 98%;
-    .modal-content{
-      .modal-header{
-        .modal-title{
-        }
-      }
-      .modal-body{
-        img{
-          width: 60%;
-          padding: 1%;
-        }
-      }
-      .modal-footer {
-      }
-    }
-  }
-  .ilo-container-footer{
-    .footer-elements{
-      .footer-nav-accessibility{
-        width: 50%;
-      }
-      .footer-social-network {
-        float: left;
-        clear: both;
-        margin: 2rem auto;
-        width: 100%;
-        text-align: center;
-      }
-    }
-  }
-}
-@media only screen and (max-width: 1024px) {
-  body{
-    overflow-x: hidden;
-  }
-  .mainBody {
-    overflow-x: hidden;
-  }
-  .home-spotlight {
-    margin: 2rem;
-    width: auto;
-    article{
-      .article-background{
-        min-height: auto;
-        min-height: inherit;
-        padding-bottom: 2rem;
-      }
-    }
-  }
-}
-@media only screen and (min-width : 768px) and (max-width : 1024px) {
-  body{
-    padding-top: 80px;
-  }
-  .ilo-header{
-    #home-cover {
-      p.title-banner {
-        width:100%;
-        margin-top: 67px;
-        text-shadow: 0px 1px 5px rgba(0, 0, 0, 1);
-      }
-    }
-    #not-home-cover {
-      margin-top: 1rem !important;
-      background-size: cover;
-      height: 9.1rem;
-      p.title-banner {
-        text-shadow: 0px 1px 5px rgba(0, 0, 0, 1);
-      }
-    }
-    .path {
-      margin-top:0px;
-    }
-  }
-  .page-header-wrapper .page-header {
-    margin: 2rem auto 0;
-  }
-  /** HOME **/
-  #carouselHome {
-    //min-height: 330px;
-    min-height: 1% !important;
-    .carousel-inner {
-      li.item {
-        width: 100% !important;
-        .carousel-chart{
-          width: 90% !important;
-          margin: 0 auto !important;
-          padding: 15px !important;
-          overflow: hidden;
-          img{
-            width: 100%;
-          }
-          p.carousel-note {
-            margin-top: 4rem;
-          }
-        }
-      }
-    }
-    .carousel-control .prev, .carousel-control .next{
-      top: 235px !important;
-    }
-  }
-
-  .modal-dialog {
-    width: 98%;
-    .modal-content{
-      .modal-header{
-        .modal-title{
-        }
-      }
-      .modal-body{
-        > img{
-          width: 100% !important;
-          padding: 1%;
-        }
-      }
-      .modal-footer {
-      }
-    }
-  }
-  .compare-buttons{
-    .compare-buttons-list{
-      li, li:last-child {
-        margin-right: 0px;
-        margin: 2rem auto;
-        width: 90%;
-        display: block;
-      }
-    }
-  }
-  /** EU-ESTIMATES **/
-  .eu-countries{
-    .osha-eu-estimates-wrapper{
-      .carousel-indicators{
-        li {
-          width: 45%;
-        }
-      }
-      .carousel-control{
-        &.left {
-          left: -25px;
-          i{
-            top: 370px;
-          }
-        }
-        &.right {
-          left: 100%;
-          i{
-            top: 370px;
-          }
-        }
-      }
-    }
-    .compare-buttons{
-      .compare-buttons-list{
-        li {
-          width: 90%;
-          margin:2rem auto !important;
-        }
-      }
-    }
-  }
-  .osha-analysis-illnesses{
-    .chart-analysis-illnesses{
-      .chart-analysis-illnesses-box{
-        .chart-wrapper{
-          .dvt-chart{
-            .wrapper-contextual-menu{
-              img{
-                margin: 10px -10px 0 0;
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-  .osha-analysis-illnesses{
-    .chart-analysis-illnesses.affix{
-      top: 90px;
-      ul.legend-list {
-        width: 63% !important;
-        float: right;
-      }
-      h2{
-        margin-top: 0;
-        width: 63% !important;
-      }
-      .dvt-chart {
-        width: 35% !important;
-      }
-    }
-    .chart-analysis-illnesses {
-      .chart-analysis-illnesses-box{
-        .chart-wrapper{
-          .chart-description > p {
-            position: relative;
-            transform: translateY(0%);
-            -webkit-transform: translateY(0%);
-            -ms-transform: translateY(60%);
-            margin-top: 30px;
-          }
-        }
-      }
-    }
-  }
-
-  .chart-analysis-illnesses.affix ~ .compare-buttons {
-    margin-top: 250px;
-  }
-  .ilo-container-footer{
-    .logos{
-      height:auto;
-    }
-    .footer-elements{
-      text-align: center;
-      ul{
-       margin: 10px 0 20px !important;
-      }
-    }
-  }
-
-  /** ANALYSIS ILNESSES **/
-  .eu-analysis-illness-wrapper{
-    .compare-buttons{
-      .compare-buttons-list li {
-        margin-right: 1%;
-        width: 48%;
-      }
-    }
-  }
-
-  /** footer **/
-  .ilo-container-footer{
-    .logos{
-      .footer-logotypes li {
-        width: 32%;
-      }
-    }
-    .footer-elements{
-      .copyright{
-        width: 100%;
-        text-align: center;
-        float: none;
-      }
-      .footer-nav-accessibility{
-        margin: auto;
-        float: none;
-      }
-      .footer-social-network{
-        margin: 30px auto 20px !important;
-        float: none;
-      }
-    }
-  }
-} /** end media query 768 - 1024 portrait **/
-@media only screen and (min-width : 768px) and (max-width : 1024px) and (orientation : portrait){
-  .osha-global-estimates-wrapper {
-    .carousel-control{
-      &.left {
-        left:0px !important;
-      }
-      &.right {
-        right:0px;
-      }
+@media (max-width: 1080px) {
+  .bar-main-menu{
+    #main-menu{
+    	padding: 0;
+			.nav {
+				> li {
+					> a{
+						padding-left:8px;
+						padding-right:8px;
+					}
+				}
+			}
     }
   }
 }
 
-@media screen and (max-width:767px){
-  #google_translate_element_wrapper {
-    top: 0px;
-    right: -29px;
-  }
-
-  .item-print{
-    display: none !important;
-  }
-  .modal-dialog {
-    width: 98%;
-    height:auto;
-    padding: 1%;
-    margin: 1%;
-  }
-  .page-header-wrapper .page-header {
-    margin: 6rem auto 0;
-  }
-  .ilo-header{
-    #home-cover {
-      background-size: cover;
-      //height: 135px;
-    }
-    #not-home-cover {
-      margin-top: 5px !important;
-      background-size: cover;
-      height: 9.1rem;
-      p.title-banner {
-        text-shadow: 0px 1px 5px rgba(0, 0, 0, 1);
-      }
-    }
-    #containerMenu {
-      min-height: 105px;
-      .menu-tools-top {
-        padding: 0;
-        position: absolute;
-        right: 16px;
-        top: 41px;
-        width: auto;
-      }
-    }
-    .social-network.indvt {
-      top: 32px;
-    }
-  }
-  .section-carrousel{
-    #carouselHome{
-      .carousel-inner{
-        li.item{
-          .carousel-chart {
-            position: relative;
-            width: 80%;
-            margin: auto;
-            padding: 15px 0px;
-            img{
-              width:100%;
-            }
-          }
-          picture {
-            width: 100% !important;
-            float: none !important;
-            margin-top: 4rem !important;
-          }
-          p.carousel-note {
-            padding: 0 5% !important;
-            width: 100% !important;
-            float: none !important;
-            margin-top: 0 !important;
-          }
-        }
-      }
-      .carousel-control.right {
-        right:0;
-      }
+/* breakpoint for respopnsive menu  */
+@media (max-width: 1180px) {
+  .navbar-nav {
+    >li {
+	    >a {
+	        padding-left: 8px;
+	        padding-right: 8px;
+	    }
     }
   }
 
-  .chart1-section-first, .chart2-section-first{
-    img{
-      width:100%;
-    }
-  }
-  .chart-section-second{
-    img{
-      width:100%;
-    }
-  }
-  .compare-buttons {
-    .compare-buttons-list{
-      li {
-        margin-right: 0;
-        margin-bottom: 15px;
-        width: 100%;
-      }
-    }
-  }
-  .osha-eu-estimates-wrapper{
-    .carousel-indicators {
-      li {
-        width: 100%;
-      }
-    }
-  }
-  .osha-global-estimates-wrapper {
-    .carousel-control{
-      &.left {
-        left: -33px;
-      }
-      &.right {
-        left: 98%;
-      }
-    }
-  }
+	.bar-header {
+		.header--top{
+			.menu-tools-top{
+				li {
+					padding-left: 1rem;
+				}
+			}
+		}
+	} 
+}
+@media (max-width: 1023px) {
+	.bar-header{
+	  z-index: 1;
+	  position: relative;
+	  display: flex;
+	  justify-content: flex-end;
+	  flex-direction: row;
+		.bar-main-menu {
+	    .navbar-header {
+	        float: none;
+	    }
+	    .navbar-left,.navbar-right {
+	        float: none !important;
+	    }
+	    .navbar-toggle {
+	        display: block;
+	    }
+	    .navbar-collapse {
+	        border-top: 1px solid transparent;
+	        box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+	    }
+	    .navbar-fixed-top {
+	        top: 0;
+	        border-width: 0 0 1px;
+	    }
+	    .navbar-collapse.collapse {
+	        display: none!important;
+	    }
+	    .navbar-nav {
+	        float: none!important;
+	        margin-top: 7.5px;
+		    >li {
+		        float: none;
+			    >a {
+			        padding-top: 10px;
+			        padding-bottom: 10px;
+			    }
+		    }
+	    }
+	    .collapse.in{
+	        //display:block !important;
+	    }			
+		}
+		.header--top{
+			justify-content: flex-start;
+			width: 100%;
+			.eu-osha-logo{
+				width: auto;
+			}
+			.menu-tools-top{
+				width: auto;
+				padding: 1.5rem 0;
+				flex-grow: 2;
+				float: none;
+		    .menu-tools-top--items{
+		    	padding: 1.5rem;
+		    	margin: 0;
+		      .zoom--text{
+		        display: none;        
+		      }
+		      .search--block{
+		        .search--form{
+		          .form-group {
+								width: 100%;
+		          }
+		          input.form-control {
+		            padding-right: 20px;
+		          }
+		          .form-group:hover,
+		          .form-group.hover {
+		            //width: 100%;
+		            //border-radius: 4px 25px 25px 4px;
+		          }
+		          span.form-control-feedback {
+		          }
+		        }       
+		      }
+		      .print--block{
+		        display: none;
+		      }
+		      #google_translate_element_wrapper{
+		      	margin: 0;
+		      }
+		    }
+			}
+		}
+		.bar-main-menu {
+		  display: block;
+		  width: auto;
+		  padding: 1.5rem 0;
+	    margin: 0;
+	    &.exposed{
+				display: block;
+				width: auto;
+				padding: 1.5rem 0;
+				margin: 0;
+				position: initial;
+				left: 0;
+				top: 0;
+				.collapse{
+					&.exposed{
+						display: block !important;
+						background: #FFF;
+						position: absolute;
+						width: 100%;
+						top: 9rem;
+						left: 0;
+					}
+				}
+	    }
+		  .navbar-toggle {
+		  	margin: 1rem;
+		  	.icon-bar {
+				  color: $aquamarine;
+				  background: $aquamarine;
+				  width: 32px;
+				  height: 4px;
+		  	}
+		  }
+		}
+	}
 
-  .osha-analysis-illnesses{
-    .chart-analysis-illnesses.affix ~ .compare-buttons {
-      margin-top: 15px;
-    }
-    .chart-analysis-illnesses.affix {
-      top: 95px;
-      width: 100%;
-      height: auto;
-      z-index: 9;
-      overflow: hidden;
-      background: $colorWhite;
-      padding: 20px 0 0 0 !important;
-      position: initial;
-      .chart-analysis-illnesses-box {
-        border-bottom: 0 !important;
-        -webkit-transition:none;
-        transition: none;
-        h2 {
-          width: 100%;
-          float: none;
-          text-align: left;
-          padding-left: 15px;
-          text-align: center;
-          width: 100%;
-          font-size: 2.6rem;
-          color:$subheader;
-        }
-        .dvt-chart {
-          width: 100%;
-          float: none;
-          text-align: center;
-          .backGraps {
-            svg{
-              //zoom:1;
-              -moz-transform: scale(1);
-              -webkit-transform: scale(1);
-              transform: scale(1);
-            }
-          }
-        }
-        ul.legend-list {
-          margin-top: 2rem;
-          width: 100%;
-          transform: translateY(0%);
-          -webkit-transform: translateY(0%);
-          column-count: 1;
-          -webkit-column-count: 1;
-          -moz-column-count: 1;
-          li{
-            margin: 0px 10px 10px 0;
-          }
-        }
-        .chart-description {
-          display: block;
-        }
-      }
-
-      text {
-        font-size: 1.4rem !important;
-        font-family: Open Sans !important;
-        }
-      /*
-      text:nth-child(2) {
-        -ms-transform: translate(202px,143px) ;
-        -webkit-transform: translate(202px,143px) ;
-        transform: translate(202px,143px) ;
-      }
-
-      text:nth-child(3) {
-        -ms-transform: translate(163px,169px) !important;
-        -webkit-transform: translate(163px,169px) !important;
-        transform: translate(163px,169px) !important;
-      }
-
-      text:nth-child(4) {
-        -ms-transform: translate(123px,159px) !important;
-        -webkit-transform: translate(123px,159px) !important;
-        transform: translate(123px,159px) !important;
-      }
-     */
-    }
-
-    .countries-analysis-by-illnesses{
-      .country-analysis-by-illnesses {
-        padding:0;
-        .country-wrapper {
-          position: relative;
-          background: $colorWhite !important;
-          padding: 20px 0 !important;
-          margin: 0px auto 20px;
-        }
-      }
-    }
-    .chart-analysis-illnesses{
-      .chart-analysis-illnesses-box{
-        .chart-wrapper{
-          .chart-description{
-            > p {
-              transform: translateY(0%);
-              -webkit-transform: translateY(0%);
-              -ms-transform: translateY(0%);
-            }
-          }
-        }
-      }
-    }
-  }
-  .chart-analysis-illnesses.affix ~ .countries-analysis-by-illnesses {
-    margin-top:4rem !important;
-  }
-  .eu-countries{
-    .modal{
-      &.in{
-        .modal-dialog{
-          height: auto;
-          padding: 0;
-          .modal-content{
-            margin: 5px;
-            .modal-body{
-              padding:0;
-              > img{
-                width: 100%;
-                padding:0;
-              }
-              p{
-                padding:2%;
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-  .dvt-modal .modal-wrapper {
-    padding: 0px;
-  }
-  // GLOBAL ESTIMATES
-  .global-estimates-countries-regions {
-    p.countries-regions-text {
-      width: 100% !important;
-    }
-    .countries-regions-select {
-      width: 100% !important;
-      display: inline-block;
-      vertical-align: top;
-      margin-top: 0px;
-      padding: 15px 30px;
-      select {
-        width: 100% !important;
-        margin: 0 0 15px 0;
-        option {
-        }
-        &:focus {
-        }
-      }
-      input {
-        width: 80%!important;
-      }
-    }
-  }
-
-  /** footer **/
-  .ilo-container-footer{
-    .footer-elements{
-      .copyright{
-        width: 100%;
-        text-align: center;
-        float: none;
-      }
-      .footer-nav-accessibility{
-        margin: auto;
-        float: none;
-        text-align: center;
-      }
-      .footer-social-network{
-        margin: 30px auto 20px !important;
-        float: none;
-        text-align: center;
-      }
-    }
-    .footer-logotypes {
-      padding: 2rem 0;
-      margin: 0;
-      li {
-        width: 45%;
-        padding: 0;
-        margin: 1rem 0;
-      }
-    }
-  }
-  // glossary
-  .glossary {
-    .pagination-block {
-      text-align: center;
-      .pag-numbers-wrapper {
-        padding: 7px 21px;
-        margin: 0;
-      }
-    }
-  }
+	.home-cover{
+		top: 0;
+	}
 }
 
-@media screen and (max-width:600px) {
-  .gtranslator-msg {
-    width: 100%;
-    top: 28px;
-    right: 0;
-  }
-  #carouselHome {
-    .carousel-chart {
-      picture {
-        img {
-          width: auto;
-        }
-      }
-    }
-    .carousel-control{
-      .prev{
-        top: 50% !important;
-      }
-      .next{
-        top: 50% !important;
-      }
-    }
-  }
-  .ilo-header {
-    #home-cover{
-      height: 23.1rem !important;
-      p.title-banner{
-        text-shadow: 0px 1px 5px rgba(0, 0, 0, 1);
-        width: auto;
-      }
-    }
-    #not-home-cover {
-      margin-top: 5px !important;
-      background-size: cover !important;
-      height: 17.1rem !important;
-      p.title-banner {
-        text-shadow: 0px 1px 5px rgba(0, 0, 0, 1);
-      }
-    }
-  }
 
-  .osha-global-estimates-wrapper{
-    .carousel-control{
-      &.left{
-        left: 0px;
-        i{
-          left:10px;
-        }
-      }
-      &.right {
-        right: 0;
-        i{
-          right: 12px;
-        }
-      }
-    }
-    .carousel-inner{
-      li{
-        .dvt-chart {
-          padding: 0 0px 0 !important;
-        }
-      }
-    }
-    .carousel-countries{
-      .global-estimates-countries-regions{
-        .countries-regions-select{
-          .countries-regions-info {
-            margin-left: 0.5rem;
-          }
-        }
-      }
-    }
-  }
-  .compare-buttons .compare-buttons-list li {
-    margin-right: 0px !important;
-    width: 100% !important;
-  }
-  .ilo-container-footer{
-    .footer-logotypes {
-      padding: 2rem 0;
-      margin: 0;
-      li {
-        width: 45%;
-        padding: 0;
-        margin: 1rem 0;
-      }
-    }
-  }
-  .footer-elements{
-    .footer-nav-accessibility {
-      margin: 10px 0 10px;
-      text-align: center;
-    }
-    .footer-social-network {
-      text-align: center;
-      margin: 30px auto !important;
-      float: none !important;
-    }
-  }
 
-  // GLOSSARY
-  .glossary {
-    .search-results{
-      .glossary-def, .glossary-term{
-        display: block !important;
-        width: 100% !important;
-      }
-    }
-    .pagination-block {
-      text-align: center;
-      .pag-numbers-wrapper {
-        padding: 7px 21px;
-        margin: 0;
-      }
-    }
-  }
-}
-@media screen and (max-width:440px) {
-  #carouselHome {
-    .carousel-chart {
-      picture {
-        img {
-          width: 100%;
-        }
-      }
-    }
-  }
 
-  .osha-global-estimates-wrapper .carousel-control.right {
-    left: 93.5%;
-  }
-  .global-estimates-countries-regions{
-    .countries-regions-select{
-      input {
-        width: 70% !important;
-      }
-    }
-  }
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px)  { 
 
-  .modal-dialog .modal-content .modal-body img{
-    width: 100%;
-    background: $colorWhite;
-    padding: 2rem 0;
-    margin: auto;
-  }
-  .ilo-container-footer{
-    .footer-logotypes{
-      li {
-        width: 100%;
-      }
-    }
-  }
-}
-@media screen and (max-width:340px) {
-  .osha-global-estimates-wrapper .carousel-control.right {
-    left: 93.5%;
-  }
-
-  #google_translate_element_wrapper {
-    top: -1px;
-    right:0px;
-    #google_translate_element {
-      .goog-te-gadget-simple {
-        .goog-te-menu-value > span {
-          text-decoration: none;
-          top: 0px;
-          position: relative;
-        }
-      }
-    }
-    .google_translate_span{
-      font-size: 11px;
-      position: relative;
-      left: 0px;
-      top: 0px;
-    }
-    .gtranslator-info {
-      right: -20px;
-      top: 5px;
-    }
-  }
-  .ilo-header #containerMenu .menu-tools-top {
-    right: 7px;
-    top: 47px;
-    width: auto;
-  }
 }
 
-@media screen and (min-width:426px) and (max-width:1024px){
-  .dvt-modal{
-    .modal-wrapper{
-      #chart-1{
-        .backGraps{
-          svg{
-            g > g:nth-child(1) > g > g > g > g:nth-child(1){
-              transform:translate(0px,0px) !important;
-            }
-            g > g:nth-child(1) > g > g > g > g:nth-child(2){
-              transform:translate(0px,29px) !important;
-            }
-            g > g:nth-child(1) > g > g > g > g {
-              text{
-                font-size: 1.6rem !important;
-              }
-            }
-            g > g:nth-child(2) > g > g:nth-child(5) > g > g {
-              text{
-                font-size: 1.3rem !important;
-              }
-            }
-            g > g:nth-child(2) > g > g:nth-child(4) > g > g  {
-              text{
-                font-size: 1.3rem !important;
-                transform: translateX(-5px) rotate(-60deg);
-              }
-            }
-          }
-        }
-      }
-      #chart-12{
-        .backGraps{
-          svg{
-            g > g:nth-child(1) > g > g > g > g:nth-child(1){
-              transform:translate(0px,0px) !important;
-            }
-            g > g:nth-child(1) > g > g > g > g:nth-child(2){
-              transform:translate(0px,29px) !important;
-            }
-            g > g:nth-child(1) > g > g > g > g {
 
-              text{
-                font-size: 1.6rem !important;
-              }
-            }
-            g > g:nth-child(2) > g > g:nth-child(4) > g > g {
-              text{
-                font-size: 1.3rem !important;
-                transform: translateX(-5px) rotate(-60deg);
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : landscape) { 
 
-              }
-            }
-            g > g:nth-child(2) > g > g:nth-child(5)  {
-              text{
-                font-size: 1.3rem !important;
-              }
-            }
-          }
-        }
-      }
-      #chart-13{
-        .backGraps{
-          svg{
-            g > g:nth-child(1) > g > g > g > g:nth-child(1){
-              transform:translate(0px,0px) !important;
-            }
-            g > g:nth-child(1) > g > g > g > g:nth-child(2){
-              transform:translate(0px,29px) !important;
-            }
-            g > g:nth-child(1) > g > g > g > g {
-
-              text{
-                font-size: 1.6rem !important;
-              }
-            }
-            g > g:nth-child(2) > g > g:nth-child(5) > g > g {
-              text{
-                font-size: 1.3rem !important;
-                transform: translateX(-5px) rotate(-60deg);
-              }
-            }
-            g > g:nth-child(2) > g > g:nth-child(6) > g > g  {
-              text{
-                font-size: 1.3rem !important;
-              }
-            }
-          }
-        }
-      }
-    }
-  }
 }
-@media screen and (max-width:425px){
-  .dvt-modal{
-    .modal-wrapper{
-      #chart-1{
-        .backGraps{
-          svg{
-            g > g:nth-child(1) > g > g > g > g:nth-child(1){
-              transform:translate(0px,0px) !important;
-            }
-            g > g:nth-child(1) > g > g > g > g:nth-child(2){
-              transform:translate(0px,29px) !important;
-            }
-            g > g:nth-child(1) > g > g > g > g {
-
-              text{
-                font-size: 1.6rem !important;
-              }
-            }
-            g > g:nth-child(2) > g > g:nth-child(4){
-              transform: translateY(-7px);
-            }
-            g > g:nth-child(2) > g > g:nth-child(4) > g > g {
-              text{
-                font-size: 1.3rem !important;
 
 
-              }
-            }
-            g > g:nth-child(2) > g > g:nth-child(5)  {
-              text{
-                font-size: 1.3rem !important;
-                transform: translate(-11px,20px) rotate(-40deg);
-              }
-            }
-          }
-        }
-      }
-      #chart-12{
-        .backGraps{
-          svg{
-            g > g:nth-child(1) > g > g > g > g:nth-child(1){
-              transform:translate(0px,0px) !important;
-            }
-            g > g:nth-child(1) > g > g > g > g:nth-child(2){
-              transform:translate(0px,29px) !important;
-            }
-            g > g:nth-child(1) > g > g > g > g {
 
-              text{
-                font-size: 1.6rem !important;
-              }
-            }
-            g > g:nth-child(2) > g > g:nth-child(4) > g > g {
-              text{
-                font-size: 1.3rem !important;
-                transform: initital !important;
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : portrait) { 
 
-              }
-            }
-            g > g:nth-child(2) > g > g:nth-child(5)  {
-              text{
-                font-size: 1.3rem !important;
-              }
-            }
-          }
-        }
-      }
-      #chart-13{
-        .backGraps{
-          svg{
-            g > g:nth-child(1) > g > g > g > g:nth-child(1){
-              transform:translate(0px,0px) !important;
-            }
-            g > g:nth-child(1) > g > g > g > g:nth-child(2){
-              transform:translate(0px,29px) !important;
-            }
-            g > g:nth-child(1) > g > g > g > g {
-
-              text{
-                font-size: 1.6rem !important;
-              }
-            }
-            g > g:nth-child(2) > g > g:nth-child(5){
-              transform: translateY(-9px);
-            }
-            g > g:nth-child(2) > g > g:nth-child(5) > g > g {
-              text{
-                font-size: 1.3rem !important;
-
-              }
-            }
-            g > g:nth-child(2) > g > g:nth-child(6) > g > g  {
-              text{
-                font-size: 1rem !important;
-                transform: translate(-12px, 20px) rotate(-60deg);
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-}
-@media screen and (max-width:380px){
-  #cookiesConsent{
-    button {
-    padding: .7em 1.5em .7em 0.5em;
-    margin: 0.5em .5em;
-  }
-  } 
 }

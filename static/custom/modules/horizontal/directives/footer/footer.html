@@ -1,25 +1,17 @@
-<footer class="ilo-container-footer nopadding container-fluid">
-    <!--
-    <div class="logos">
-    <ul class="footer-logotypes list-inline container">
-        <li><a href="http://www.ilo.org/global/lang--en/index.htm" title="Go to website" target="_blank">
-            <img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/ilo-logo.svg" alt="{{footer.ilo}}" height="80" alt="ILO"></a></li>
-        <li><a href="http://stm.fi/en/working-life" title="{{footer.goWebsite}}" target="_blank">
-            <img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/ministry-social-affairs-health-finland.svg"  height="50" alt="{{footer.finnish2}}"></a></li>
-        <li><a href="http://www.ttl.fi/wp-content/uploads/2016/09/Tyoterveyslaitoksen-brandikirja.pdf" title="{{footer.goWebsite}}" target="_blank">
-            <img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/FIOH-logo.svg" height="80" alt="{{footer.finnish}}"></a></li>
-        <li><a href="https://www.wshc.sg" title="{{footer.goWebsite}}" target="_blank">
-            <img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/wsh-institute-logo.svg" height="80" alt="{{footer.WSH}}"></a></li>
-        <li><a href="http://www.icohweb.org" title="{{footer.goWebsite}}" target="_blank">
-            <img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/LogoICOH.svg" height="80" alt="{{footer.icoh}}"></a></li>
-        <li><a href="https://osha.europa.eu/" title="{{footer.goWebsite}}" target="_blank">
-            <img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/osha-logo.svg"  height="80" alt="{{footer.OSHA}}"></a></li>
-    </ul>
+<footer class="bar-container nopadding container-fluid">
+    <div class="logos-footer container-fluid">
+        <ul class="footer-logotypes container">
+            <li><a href="#" title=""><img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/ilo-logo.svg" alt=""></a></li>
+            <li><a href="#" title=""><img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/ministry-social-affairs-health-finland.svg" alt=""></a></li>
+            <li><a href="#" title=""><img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/FIOH-logo.svg" alt=""></a></li>
+            <li><a href="#" title=""><img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/wsh-institute-logo.svg" alt=""></a></li>
+            <li><a href="#" title=""><img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/LogoICOH.svg" alt=""></a></li>
+            <li><a href="#" title=""><img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/osha-logo.svg" alt=""></a></li>
+        </ul>
     </div>
-    -->
     <div class="footer-elements">
-        <p class="copyright">© {{CurrentDate | date:'yyyy'}} EU-OSHA | <a href="https://osha.europa.eu/" target="_blank" data-ng-bind="footer.EUAgency"></a></p>
-        <ul class="footer-nav-accessibility list-inline col-md-12 col-lg-6">
+        <p class="copyright col-xs-12 col-md-5">© {{CurrentDate | date:'yyyy'}} 2015 EU-OSHA | <a href="https://osha.europa.eu/" target="_blank" data-ng-bind="footer.EUAgency"></a></p>
+        <ul class="footer-nav-accessibility list-inline col-xs-12 col-md-5">
             <li>
                 <a ui-sref="site-map()" accesskey="M" class="menu__link"><span data-ng-bind="i18n.L15"></span></a>
             </li>
@@ -36,7 +28,7 @@
                 <a ui-sref='legal-notice()' accesskey="L" class="menu__link"> <span data-ng-bind="i18n.L19"></span></a>
             </li>
         </ul>
-        <ul class="footer-social-network list-inline">
+        <ul class="footer-social-network list-inline col-xs-12 col-md-2">
             <li>
                 <a target="_blank" href="https://twitter.com/eu_osha" title="{{footer.OSHATwitter}}" class="menu__link">
                     <i class="fa fa-twitter" aria-hidden="true"></i>
@@ -61,11 +53,6 @@
                     <span class="sr-only" data-ng-bind="footer.Youtube"></span>
                 </a>
             </li>
-            <!--<li>
-                <a target="_blank" href="https://osha.europa.eu/es/tools-and-publications/blog" title="{{footer.OSHABlog}}">
-                    <i class="blogger-icon"></i><span class="sr-only" data-ng-bind="footer.Blog"></span>
-                </a>
-            </li>-->
             <li>
                 <a target="_blank" href="https://www.flickr.com/photos/euosha/albums" title="{{footer.OSHAFlickr}}" class="menu__link">
                     <i class="flickr-icon"></i><span class="sr-only" data-ng-bind="footer.Flickr"></span>

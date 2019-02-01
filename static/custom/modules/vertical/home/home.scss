@@ -1,438 +1,78 @@
-
-.homepage.page-content{
-  width:auto;
-  float:none;
-  margin:0 auto;
-  padding-left: 15px;
-  padding-right: 15px;
-  clear:both;
-}
-.section-carrousel {
-  background: #DBECED;
-  padding: 0px 0 15px;
-  height: 28rem;
-  min-height:28rem;
-  #carouselHome {
-    .carousel-inner {
-      > .item.next.left,
-      > .item.prev.right,
-      > .item.active {
-        // display: flex;
-        // align-items: center;
-        // justify-content: center;
-
-      }
-      > .item {
-        > img {
-          display: block;
-          width: auto;
-          height:28rem;
-          line-height: normal;
-          margin: auto;
-        }
-        .carousel-caption {
-
-          // bottom: auto !important;
-          //top:auto !important;
-          top: 50%;
-          transform: translateY(-50%);
-          bottom: auto !important;
-
-           }
-        &:nth-child(1) .carousel-caption{
-          //bottom: 3% !important;
-        }
-
-        &:nth-child(1) .carousel-caption p {
-          color: $home-slide4;
-        }
-        &:nth-child(2) .carousel-caption p {
-          color: $home-slide2;
-        }
-        &:nth-child(3) .carousel-caption p {
-          color: $home-slide3;
-        }
-        &:nth-child(4) .carousel-caption p {
-          color: $home-slide4;
-        }
-        &:nth-child(5) .carousel-caption p {
-          color: $home-slide5;
-        }
-        .carousel-caption {
-          font-family: Oswald, sans-serif;
-          text-shadow: 0 0 0 transparent;
-          font-size: 2.4rem;
-          //bottom: 8rem;
-          text-align: left;
-          p.carousel.link {
-            text-align: center;
-            font-size: 1.4rem;
-            color: $plt-eu01 !important;
-            a{
-              color: $plt-eu01 !important;
-            }
-          }
-          p span.carrousel-number {
-            font-size: 7.2rem;
-            display: inline-block;
-            float: left;
-            margin-right: 0.2em;
-            margin-bottom: 7rem;
-            padding: 0;
-            margin-top: -1.3rem;
-            span {
-              font-size: 4.8rem;
-            }
-          }
-        }
-      }
+.home-cover {
+    background: url(../img/home-header-bg.png) center top no-repeat #529fa2;
+    height:23.6rem;
+    background-size: cover;
+    clear: both;
+    border-top:6px solid #C7E2E3;
+    position: relative;
+    top: -7px;
+    .main-title{
+      font-weight: 500;
+      font-size: 4.6rem;
+      width: auto;
+      padding-top: 2rem;
+      padding-left:1.5rem;
+      margin-bottom: 1rem;
+      color: $white;
+      line-height:3.6rem;
+      width: 100%;
     }
-    .carousel-control{
-      background-image:none;
-      background-image:none;
-      background-image: none;
-      background-repeat:none;
-      text-shadow: none;
-      color:#1C6669;
-      cursor: pointer;
-      &.left {
-        top: 43%;
-        left: 14px;
-        position: absolute;
-        color: #449FA2;
-      }
-      &.right{
-        top: 43%;
-        right: 14px;
-        position: absolute;
-        color: #449FA2;
-      }
+    .lead-title{
+      font-family: Oswald-Light,sans-serif;
+      color: $white;
+      padding-top: 0rem;
+      padding-left:1.5rem;
+      font-size: 2.6rem;
     }
-    .carousel-indicators {
-      bottom: 0;
-      text-align: center;
-      width:100%;
-      li {
-        background: white !important;
-        margin:0 8px;
-        cursor: pointer;
-        &.active {
-          background-color: $item-active !important;
-        }
-      }
-    }
-  }
 }
 
-.home-spotlight {
-  padding: 0;
-  margin:2.2rem auto 2.2rem;
-  article {
-    text-align: left;
-    background: #F9F9F9;
-    width: 48%;
-    min-height: 425px;
-    margin-right: 2%;
-    color: $font-grey;
-    font-size: 1.4rem;
-    &:hover{
-      background-color: rgba(219,236,237,0.7) !important;
-    }
-    &:nth-child(1) {
-      background: #f3f4f4 url("/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/home/homeBckAbout.png") no-repeat bottom left;
-    }
-    &:nth-child(2) {
-      background: #f3f4f4 url("/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/home/homeBckPolicy.png") no-repeat bottom left;
-    }
-    &:nth-child(3) {
-      background: #f3f4f4 url("/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/home/homeBckCountry.png") no-repeat bottom left;
-      margin: 0 !important;
-    }
-    > a{
-      color: $font-grey;
-    }
-    .article-background {
-      min-height: 300px;
-      position: relative;
-      .article-more-info {
-        position: absolute;
-        top: 375px;
-        right: -3rem;
-      }
-    }
-    h1 {
-      font-size: 2.4rem;
-      font-weight: 300;
-      margin-bottom: 0;
-
-    }
-    h2 {
-      margin-top: 3.5rem;
-      margin-bottom: 2.5rem !important;
-      font-size: 2.8rem !important;
-      color:$colorA;
-    }
+/** ICONS */
+  .forum-icon{
+    background: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/forum.png) center top no-repeat;
   }
-}
-
-
-.cdfNotification{
-  background: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/error_processing.png) no-repeat scroll 5% 12px;
-  min-height: 11em !important;
-  .cdfNotificationBody{
-    .cdfNotificationTitle{
-      color: #FF8000;
-      font-family: Open Sans !important;
-      font-size: 1.6rem !important;
-    }
+  .economic-chart-icon{
+    background: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/economic-chart.png) center top no-repeat;
   }
-}
-
-.modal-dialog {
-  width: 60%;
-  background: $colorWhite;
-  padding: 1rem;
-  border-radius: 8px;
-  .modal-content{
-    margin:1rem;
-    background: $backGraps;
-    -webkit-box-shadow: none;
-    box-shadow: none;
-    border: none;
-    .modal-header{
-      padding: 10px 20px;
-      border-bottom: none;
-      .modal-title{
-        font-family: "Oswald", sans-serif;
-        font-size: 2.7rem;
-        font-weight: normal;
-        color: #000 !important;
-      }
-    }
-    .modal-body{
-      padding: 1px 10px;
-      background: $colorWhite;
-      text-align: center;
-      width: 96%;
-      margin: auto;
-      img{
-        width:75%;
-        background: $colorWhite;
-        padding: 2%;
-        margin: auto;
-      }
-      .logoGraphics-wrapper{
-        float: none;
-        text-align: right;
-        img{
-          width: 100px;
-          height: auto;
-          display: block;
-          padding: 0;
-          float: none;
-          display: inline-block;
-        }
-      }
-    }
-    .modal-footer {
-      padding: 20px 20px;
-      text-align: right;
-      border-top: none;
-      p{
-        color: #000;
-        text-align: left;
-      }
-    }
+  .people-group-icon{
+    background: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/people-group.png) center top no-repeat;
   }
-}
-.modal.in .modal-dialog {
-  overflow-y: auto;
-}
-.modal.in .modal-dialog::-webkit-scrollbar {
-  width:8px;
-  background-color: #F5F5F5;
-}
-.modal.in .modal-dialog::-webkit-scrollbar-thumb {
-  background-color: #000000;
-}
-select::-ms-expand{
-  display: none;
-}
-
-/** landscape **/
-@media only screen and (min-width : 768px) and (max-width : 1024px) and (orientation : landscape) {
-  .home-spotlight{
-    article {
-      .article-background{
-        .article-more-info{
-          top: 3.6rem;
-          right: 0;
-        }
-      }
-    }
+  .culture-icon{
+    background: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/culture.png) center top no-repeat;
   }
-  .ilo-container-footer{
-    .footer-elements{
-      .footer-nav-accessibility {
-        width: 100% !important;
-      }
-    }
+  .dialogue-icon{
+    background: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/dialogue.png) center top no-repeat;
   }
-}
-/** portrait **/
-@media only screen and (min-width : 768px) and (max-width : 1024px) and (orientation : portrait) {
-  .home-spotlight{
-    margin: 0;
-    article {
-      width:100%;
-      min-height: auto;
-      min-height: inherit;
-      margin-bottom: 2rem;
-      .article-background{
-        .article-more-info{
-          position: absolute;
-          top: 3.5rem;
-          right: 0;
-        }
-      }
-    }
+  .enforcement-icon{
+    background: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/enforcement.png) center top no-repeat;
   }
-}
-
-@media screen and (max-width: 767px) {
-  .section-carrousel {
-    height: 40vh;
-    min-height:auto;
-    #carouselHome {
-      height: 40vh;
-      min-height:auto;
-      .carousel-inner {
-        overflow: visible;
-        height: 40vh;
-        min-height:auto;
-        > .item {
-          height: 40vh;;
-          min-height:auto;
-          > img {
-
-          }
-          .carousel-caption {
-            left: 20%;
-            right: 15%;
-            //bottom: 10%;
-            z-index: 10;
-            padding-top: 0;
-            padding-bottom: 0;
-            text-align: center;
-            p.carousel.link {
-
-              a{
-
-              }
-            }
-            p span.carrousel-number {
-              font-size: 7.2rem;
-              display: block;
-              float: none;
-              margin:0;
-              padding: 0;
-              span {
-                font-size: 4.8rem;
-              }
-            }
-          }
-        }
-
-      }
-      .carousel-control{
-        &.left {
-        }
-        &.right{
-        }
-      }
-      .carousel-indicators {
-        li {
-          &.active {
-
-          }
-        }
-      }
-    }
+  .health-icon{
+    background: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/health.png) center top no-repeat;
   }
-
-  .home-spotlight{
-    margin: 0;
-    article {
-      width:100%;
-      min-height: auto;
-      min-height: inherit;
-      margin-bottom: 2rem;
-      .article-background{
-        .article-more-info{
-          right: -1rem;
-          top: 4.1rem;
-          margin-bottom: 0;
-          img{
-            width: 60%;
-          }
-        }
-      }
-    }
+  .national-icon{
+    background: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/national.png) center top no-repeat;
   }
-  .ilo-container-footer{
-    .footer-elements{
-      .copyright {
-        padding-left: 0;
-
-      }
-    }
+  .prevention-icon{
+    background: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/prevention.png) center top no-repeat;
   }
-}
-
-/*medias for carousel texts*/
-@media screen and (max-width: 991px) {
-  .section-carrousel #carouselHome .carousel-inner > .item:nth-child(1) .carousel-caption p {
-    font-size: 2rem;
+  .regulation-icon{
+    background: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/regulation.png) center top no-repeat;
   }
-}
-@media screen and (max-width: 631px) {
-  .section-carrousel #carouselHome .carousel-inner > .item:nth-child(1) .carousel-caption p {
-    font-size: 2rem;
+  .statistics-icon{
+    background: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/statistics.png) center top no-repeat;
   }
-}
-@media screen and (max-width: 545px) {
-  .section-carrousel #carouselHome .carousel-inner > .item:nth-child(2) .carousel-caption p {
-    font-size: 2rem;
+  .working-conditons-icon{
+    background: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/working-conditons.png) center top no-repeat;
   }
-  .section-carrousel {
-    height: 50vh;
-    #carouselHome {
-      height: 50vh;
-      .carousel-inner {
-        height: 50vh;
-        > .item {
-          height: 50vh;
-        }
-      }
-    }
+  .work-accidents-icon{
+    background: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/work-accidents.png) center top no-repeat;
   }
-}
-@media screen and (max-width: 525px) {
-  .section-carrousel #carouselHome .carousel-inner > .item:nth-child(1) .carousel-caption p {
-    font-size: 1.6rem;
+  .workers-icon{
+    background: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/workers.png) center top no-repeat;
   }
-  .section-carrousel #carouselHome .carousel-inner > .item > img {
-    height:auto;
+  .mental-risk-icon{
+    background: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/mental-risk.png) center top no-repeat;
   }
-}
-@media screen and (max-width: 459px) {
-  .section-carrousel #carouselHome .carousel-inner > .item .carousel-caption p {
-    font-size: 1.6rem;
+  .physical-risk-icon{
+    background: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/physical-risk.png) center top no-repeat;
   }
-}
-@media screen and (max-width: 360px) {
-  .section-carrousel #carouselHome .carousel-inner > .item:nth-child(1) .carousel-caption p,
-  .section-carrousel #carouselHome .carousel-inner > .item:nth-child(2) .carousel-caption p  {
-    font-size: 1.6rem;
-  }
-}
+/** END ICONS **/

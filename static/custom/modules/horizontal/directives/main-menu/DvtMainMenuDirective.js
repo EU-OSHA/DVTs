@@ -46,6 +46,10 @@ define(function (require) {
                 function ($rootScope, $scope, $state, configService, $http, $log, dataService) {
 
 
+                    // Load google translate element
+                    new google.translate.TranslateElement({pageLanguage: 'en', autoDisplay: false, layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+
+
                     //hide print icon in mobile
                     if(configService.isMobile()) {
                         angular.element(".a2a_button_print").remove();
@@ -134,12 +138,11 @@ define(function (require) {
                                 setBreadCrumbs();
                             }
 
-                            if(collapse.hasClass( "indvt" ) == true) {
-                                collapse.removeClass("indvt");
+                            if(collapse.hasClass( "exposed" ) == true) {
+                                collapse.removeClass("exposed");
                                 collapse.removeClass("in");
                             }
 
-                            //lo pongo en el title
                             //angular.element("title").html($scope.titleHeader);
 
                         }, $scope);
@@ -163,6 +166,31 @@ define(function (require) {
                         console.warn("unfoundState.options: " + unfoundState.options );
                     });
 
+
+
+
+                    var buttonToggle = angular.element( "button.navbar-toggle" );
+                    var navMainMenu = angular.element( "nav.bar-main-menu" );
+                    var collapse = angular.element(".collapse.navbar-collapse");
+
+                    buttonToggle.click(function() {
+                        collapse.removeClass('in');
+                        collapse.toggleClass('exposed');
+                        navMainMenu.toggleClass('exposed');
+
+                        if (toggle.hasClass('closeIcon')) {
+                            toggle.removeClass('closeIcon');
+                            toggle.addClass('openIcon');
+                        }
+                    });
+
+
+
+
+
+
+
+/*
 
                     // la clase intdvt es nuestra y sustituye a la de bootstrap.
                     // la clase in de bootstrap siempre la quitamos, no nos interesa
@@ -228,7 +256,7 @@ define(function (require) {
                             $('ul#osha-menu-social').removeClass('indvt');
                         }
                     });
-
+*/
             }],
             templateUrl: configService.getHorizontalDirectiveTplPath("main-menu", "menu")
         }

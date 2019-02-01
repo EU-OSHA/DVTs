@@ -6,134 +6,35 @@
 *  Components
 *
 ******/
-@import "../../system/components/font-awesome/css/font-awesome.min.css";
-@import 'inputs/range.scss';
+// @import 'inputs/range.scss';
 @import "../../system/components/angular-tooltips/dist/angular-tooltips.min.css";
 @import '../modules/horizontal/directives/search/search.scss';
+@import "../../system/components/font-awesome/css/font-awesome.min.css";
 @import '../css/mapglyphs/mapglyphs.css';
 @import 'maps/maps.scss';
 
 /*****  HORIZONTAL  ****/
 
-/* Header */
-//@import '../modules/horizontal/directives/header/header.scss';
-
 /* Menu */
 @import '../modules/horizontal/directives/main-menu/menu.scss';
-
-/* Footer */
-@import '../modules/horizontal/directives/footer/footer.scss';
-
-/* Social */
-@import '../modules/horizontal/directives/social/social.scss';
-
-
-
-
-/* Advanced searchbox */
-//@import '../modules/horizontal/directives/advanced-searchbox/angular-advanced-searchbox.min.scss';
-
-/* Radio */
-@import '../modules/horizontal/directives/radio/radio.scss';
-
-
-/* Select */
-@import '../modules/horizontal/directives/select/select.scss';
-
-/*****  VERTICAL  ****/
-
-/* National Strategies */
-@import '../modules/vertical/national-strategies/country-details/country-details.scss';
-@import '../modules/vertical/national-strategies/country-profiles/country-profiles.scss';
-@import '../modules/vertical/national-strategies/matrix/matrix.scss';
-
-
-/* About the estimates */
-@import '../modules/vertical/about-tool/about-tool.scss';
-
-/* EU countries */
-@import '../modules/vertical/eu-countries/eu-countries.scss';
-
-/* EU ranking countries */
-@import '../modules/vertical/work-accidents/ranking-countries/ranking-countries.scss';
-
-/* EU work accidents estimations*/
-@import '../modules/vertical/work-accidents/work-accidents-estimation/work-accidents-estimation.scss';
-
-/* Geographies comparision */
-@import '../modules/vertical/geographies-comparison/geographies-comparison.scss';
-/****** GENERAL *******/
-@mixin no-padding($side) {
-  @if $side == 'all' {
-    .no-padding {
-      padding: 0 !important;
-    }
-  } @else {
-    .no-padding-#{$side} {
-      padding-#{$side}: 0 !important;
-    }
-  }
-}
-
-@include no-padding("left");
-@include no-padding("right");
-@include no-padding("top");
-@include no-padding("bottom");
-@include no-padding("all");
-
-
-/*****  VERTICAL  ****/
 
 /* Home */
 @import '../modules/vertical/home/home.scss';
 
+/* Footer */
+@import '../modules/horizontal/directives/footer/footer.scss';
 
-/* Footer Pages*/
-@import '../modules/vertical/footer-pages/footer-pages.scss';
 
-/*General Responsive*/
+
+
+
+/*****  VERTICAL  ****/
 @import 'responsive.scss';
 
-/*General Print*/
-@import 'print.scss';
-
-/*General Responsive*/
-/** fluid 100% to 1650 px **/
-@media only screen and (min-width: 1650px) {
-  .container.centered,
-  /*zylk-dashboard.container,*/
-  div#country-card-structure.container,
-  .additional-resources.container {
-    width: 1650px; }
-/*  zylk-dashboard zylk-country-csp-panel {
-    width: 25%;
-    float: left;
-    -webkit-transition: width 1s;
-    /* Safari */
-    /*transition: width 1s; }*/
-/*  .radar > div[id^="zylk_radarChart"] {
-    width: 86%;
-    text-align: center;
-    margin-left: 7%; } */
-
-  }
-
-@media only screen and (max-width: 1650px) {
-  .container.centered,
-
-  div#country-card-structure.container,
-  .additional-resources.container {
-    padding: 0 !important;
-    width: 100%;
-    margin: 0; }
-/*  zylk-dashboard zylk-country-csp-panel[country="Europe"] .main-country-card {
-    padding: 10px 0 !important; }*/
-  .country-card-bg .mapEU {
-    text-align: center; } }
-
-@media only screen and (min-width: 1280px) and (max-width: 1650px) {
 
 
-   }
 
-/** end fluid 100% to 1650 px **/
+
+
+
+
