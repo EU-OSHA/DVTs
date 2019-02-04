@@ -177,6 +177,7 @@ define(function (require) {
                         collapse.removeClass('in');
                         collapse.toggleClass('exposed');
                         navMainMenu.toggleClass('exposed');
+                        buttonToggle.toggleClass('exposed');
 
                         if (toggle.hasClass('closeIcon')) {
                             toggle.removeClass('closeIcon');
@@ -184,79 +185,6 @@ define(function (require) {
                         }
                     });
 
-
-
-
-
-
-
-/*
-
-                    // la clase intdvt es nuestra y sustituye a la de bootstrap.
-                    // la clase in de bootstrap siempre la quitamos, no nos interesa
-
-                    var toggle = angular.element( "button.navbar-toggle" );
-                    var collapse = angular.element("#osha-menu-collapse");
-
-                    collapse.click(function() {
-                        if (toggle.hasClass('closeIcon')) {
-                            toggle.removeClass('closeIcon');
-                            toggle.addClass('openIcon');
-                        }
-                    });
-
-                    toggle.click(function() {
-                        if(collapse.hasClass( "indvt" ) == true){
-                            collapse.removeClass("indvt");
-                            //$log.debug('cerrado');
-                            collapse.removeClass("in");
-                            toggle.addClass('openIcon');
-                            toggle.removeClass('closeIcon');
-                        }else{
-                            collapse.addClass("indvt");
-                            collapseSocial.removeClass("indvt");
-                            //$log.debug('abierto');
-                            collapse.removeClass("in");
-                            toggle.addClass('closeIcon');
-                            toggle.removeClass('openIcon');
-                        }
-                    });
-
-                    // Trigger drop-up menu when you click on the burger buttton
-                    angular.element( "#osha-menu-collapse .dropdown-menu a" ).click(function() {
-                        collapse.removeClass("indvt");
-                        collapse.removeClass("in");
-                    });
-
-
-                    // Social network responsive menu
-                    var toggleSocial = angular.element( ".submenu-icon > a" );
-                    var collapseSocial = angular.element("#osha-menu-social");
-
-                    toggleSocial.click(function() {
-                        if(collapseSocial.hasClass( "indvt" ) == true){
-                            collapseSocial.removeClass("indvt");
-                            //$log.debug('cerrado');
-                            collapseSocial.removeClass("in");
-                        }else{
-                            collapseSocial.addClass("indvt");
-                            collapse.removeClass("indvt");
-                            //$log.debug('abierto');
-                            collapseSocial.removeClass("in");
-                        }
-                    });
-
-                    // Hide Social Menu if it is displayed
-                    angular.element('div.submenu-icon').click(function(e) {
-                        e.stopPropagation();
-                    });
-
-                    angular.element(document).click(function() {
-                        if ($('ul#osha-menu-social').hasClass('indvt')) {
-                            $('ul#osha-menu-social').removeClass('indvt');
-                        }
-                    });
-*/
             }],
             templateUrl: configService.getHorizontalDirectiveTplPath("main-menu", "menu")
         }
