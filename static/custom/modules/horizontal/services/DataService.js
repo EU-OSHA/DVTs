@@ -13,10 +13,6 @@ define(function () {
                 return $http.get(url);
             }
 
-            // Query inserted so the connection with the DB is stablished and no errors are shown
-            var url = configService.getBarometerDataPath() + "&dataAccessId=getAllCountries";
-            var dataset = promise(url);
-
         return {
 
             /**
