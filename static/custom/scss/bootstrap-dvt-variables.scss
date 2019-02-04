@@ -5,6 +5,27 @@
 */
 
 $bootstrap-sass-asset-helper: false !default;
+
+
+
+
+/******
+/*
+/*  FONTS
+/*
+/******
+
+/* OSWALD */
+@import '../fonts/Oswald/Oswald-Bold/font-face.scss';
+@import '../fonts/Oswald/Oswald-Light/font-face.scss';
+@import '../fonts/Oswald/Oswald-Regular/font-face.scss';
+
+/* OPEN SANS */
+@import '../fonts/OpenSans/OpenSans-Bold/font-face.scss';
+@import '../fonts/OpenSans/OpenSans-Light/font-face.scss';
+@import '../fonts/OpenSans/OpenSans-Regular/font-face.scss';
+
+
 //
 // Variables
 // --------------------------------------------------
