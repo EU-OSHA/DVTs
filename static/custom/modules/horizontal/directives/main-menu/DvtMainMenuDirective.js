@@ -172,17 +172,25 @@ define(function (require) {
                     var buttonToggle = angular.element( "button.navbar-toggle" );
                     var navMainMenu = angular.element( "nav.bar-main-menu" );
                     var collapse = angular.element(".collapse.navbar-collapse");
+                    var glassIcon = angular.element(".icon-glass-tablet");
+                    var formSearch = angular.element(".search--form");
 
                     buttonToggle.click(function() {
+                        formSearch.removeClass('exposed');
                         collapse.removeClass('in');
+                        glassIcon.removeClass('exposed');
                         collapse.toggleClass('exposed');
                         navMainMenu.toggleClass('exposed');
-                        buttonToggle.toggleClass('exposed');
+                        buttonToggle.toggleClass('exposed');                                               
+                    });
 
-                        if (toggle.hasClass('closeIcon')) {
-                            toggle.removeClass('closeIcon');
-                            toggle.addClass('openIcon');
-                        }
+                    glassIcon.click(function() {
+                        collapse.removeClass('in'); 
+                        collapse.removeClass('exposed'); 
+                        navMainMenu.removeClass('exposed');
+                        buttonToggle.removeClass('exposed');
+                        glassIcon.toggleClass('exposed');
+                        formSearch.toggleClass('exposed');
                     });
 
             }],

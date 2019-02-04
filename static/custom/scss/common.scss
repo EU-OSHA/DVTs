@@ -87,6 +87,9 @@
   .nopadding{
     padding: 0;
   }
+  .tablet-show{
+    display: none;
+  }
   .vertical-nopadding{
     padding-top: 0;
     padding-bottom: 0;
@@ -554,6 +557,7 @@
         padding:3rem;
         .icon--card{
           height: 20rem;
+          background-size: contain;
         }
         .title--card{
           font-size: 3.4rem;
