@@ -138,11 +138,6 @@ define(function (require) {
                                 setBreadCrumbs();
                             }
 
-                            if(collapse.hasClass( "exposed" ) == true) {
-                                collapse.removeClass("exposed");
-                                collapse.removeClass("in");
-                            }
-
                             //angular.element("title").html($scope.titleHeader);
 
                         }, $scope);
@@ -175,20 +170,29 @@ define(function (require) {
                     var glassIcon = angular.element(".icon-glass-tablet");
                     var formSearch = angular.element(".search--form");
 
+
+                    if(collapse.hasClass( "exposed" ) == true) {
+                        collapse.removeClass("exposed");
+                        collapse.removeClass("in");
+                    }   
+
                     buttonToggle.click(function() {
                         formSearch.removeClass('exposed');
                         collapse.removeClass('in');
                         glassIcon.removeClass('exposed');
+
                         collapse.toggleClass('exposed');
                         navMainMenu.toggleClass('exposed');
                         buttonToggle.toggleClass('exposed');                                               
                     });
+
 
                     glassIcon.click(function() {
                         collapse.removeClass('in'); 
                         collapse.removeClass('exposed'); 
                         navMainMenu.removeClass('exposed');
                         buttonToggle.removeClass('exposed');
+
                         glassIcon.toggleClass('exposed');
                         formSearch.toggleClass('exposed');
                     });
