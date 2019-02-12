@@ -81,6 +81,18 @@ define(function (require) {
 
         /**
          * @ngdoc method
+         * @name dvt.configModule.configService#getCountriesDataPath
+         * @param {string} carl is awesome
+         * @methodOf dvt.configModule.configService
+         * @description
+         * My Description rules
+         */
+        getCountriesDataPath:function() {
+            return dataPath + configuration.paths.data.cda.countryCard;
+        },
+
+        /**
+         * @ngdoc method
          * @name dvt.configModule.configService#isDebugMode
          * @param {string} carl is awesome
          * @methodOf dvt.configModule.configService
@@ -305,6 +317,10 @@ define(function (require) {
          */
         getBarometerCda:function() {
             return  configuration.paths.data['cda-path'] + configuration.paths.data.cda.barometer;
+        },
+
+        getInfosystemCda:function() {
+            return configuration.paths.data['cda-path'] + configuration.paths.data.cda.infosystem;
         },
 
         // ----------------------------------

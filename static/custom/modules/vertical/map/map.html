@@ -1,0 +1,13 @@
+<!-- map.html -->
+<dvt-dashboard promises="promises" parameters="dashboard.parameters">
+	<div class="page-content">
+		<dvt-map country-key="section.country" promise="mapPromise"
+                  country="EU" width="550" height="550" use-viewbox="true" zoom-w="550" zoom-h="550" x="0" y="0"
+                  css-class="col-xs-12 col-sm-12 col-md-6 col-lg-6" is-colored="1"
+                  group-list="groupList"
+                  color-index="{{ :: colorIndex }}"
+                  background-shape-color="{{ :: backgroundShapeColor }}"
+                  group-color="groupColor">
+        </dvt-map>
+	</div>
+</dvt-dashboard>
