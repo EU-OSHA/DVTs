@@ -58,6 +58,8 @@ local.properties
 .git
 /static/system/components/**/*
 /resources-ext/documentation/**/*
+/bower_components/*
+package-lock.json
 
 #ci
 /jenkins_dist/
