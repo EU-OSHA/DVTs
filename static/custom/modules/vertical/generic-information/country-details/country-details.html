@@ -1,0 +1,310 @@
+<!-- additional-resources.html -->
+<!--<div>Additional resources</div>-->
+<!-- <div class="col-xs-12">-->
+<dvt-dashboard promises="promises" parameters="dashboard.parameters" class="countries-comparison">
+
+    <div class="intro-country-detail container">
+        <p data-ng-bind-html="i18nLiterals.L381" class="intro-additional"></p>
+    </div>
+
+    <div class="col-xs-12 col-md-12 col-lg-12 story-combo-compared">
+        <form class="selecter container" style="z-index: 1">
+            <div class="col-xs-12 col-sm-12 col-md-5 first-comparator">
+                <label data-ng-bind="i18n.country"></label>
+                <dvt-select data-ng-cloak ng-model="pCountry1" parameter="pCountry1" params="[['pCountry',pCountry2]]"
+                    listen-to="[pCountry2,pCountry1]" query="getStrategiesCountryList"
+                    cda="{{cda}}"
+                    ng-change="countryChange()">
+                </dvt-select>
+            </div>
+            <div class="compared-icon col-xs-12 col-sm-12 col-md-2"></div>
+            <div class="col-xs-12 col-sm-12 col-md-5 second-comparator">
+                <label class="pruebas" data-ng-bind="i18n.compare"></label>
+                <dvt-select data-ng-cloak invalidate-default-selection="true" ng-model="pCountry2" parameter="pCountry2" 
+                    params="[['pCountry',pCountry1]]"
+                    listen-to="[pCountry1]" query="getStrategiesCountryList"
+                    cda="{{cda}}"
+                    ng-change="countryChange()">
+                </dvt-select>
+            </div>
+        </form>
+    </div>
+
+
+
+    <!-- Menú tabs -->
+    <div class=" country-details-tabs container-full" bs-affix="" data-offset-top="350">
+        <ul class="nav nav-tabs">
+            <li data-ng-class="{'active': pAnchor==null || pAnchor == 'basic-info'}"><a data-toggle="tab" href="#tab1" data-ng-bind-html="i18nLiterals.L246" data-ng-click="goToAnchor('basic-info')"></a></li>
+            <li data-ng-class="{'active': pAnchor == 'background'}"><a data-toggle="tab" href="#tab2" data-ng-bind-html="i18nLiterals.L247" data-ng-click="goToAnchor('background')"></a></li>
+            <li data-ng-class="{'active': pAnchor == 'characteristics'}"><a data-toggle="tab" href="#tab3" data-ng-bind-html="i18nLiterals.L248" data-ng-click="goToAnchor('characteristics')"></a></li>
+            <li data-ng-class="{'active': pAnchor == 'details'}"><a data-toggle="tab" href="#tab4" data-ng-bind-html="i18nLiterals.L249" data-ng-click="goToAnchor('details')"></a></li>
+            <li data-ng-class="{'active': pAnchor == 'actors'}"><a data-toggle="tab" href="#tab5" data-ng-bind-html="i18nLiterals.L250" data-ng-click="goToAnchor('actors')"></a></li>
+            <li data-ng-class="{'active': pAnchor == 'resources'}"><a data-toggle="tab" href="#tab6" data-ng-bind-html="i18nLiterals.L251" data-ng-click="goToAnchor('resources')"></a></li>
+            <li data-ng-class="{'active': pAnchor == 'evaluation'}"><a data-toggle="tab" href="#tab7" data-ng-bind-html="i18nLiterals.L252" data-ng-click="goToAnchor('evaluation')"></a></li>
+            <li data-ng-class="{'active': pAnchor == 'EU-framework'}"><a data-toggle="tab" href="#tab8" data-ng-bind-html="i18nLiterals.L253" data-ng-click="goToAnchor('EU-framework')"></a></li>
+        </ul>
+    </div>
+
+    <!-- content of countries -->
+    <div class="country-details-content"  ng-class="pCountry2!=''?'container-full':'container'">
+        <div id="tab1" class="tab-pane" data-ng-class="{'active': pAnchor==null || pAnchor == 'basic-info'}">
+            <div ng-class="pCountry2!=''?'col-md-6 country1':'col-md-12 country1'">
+                <div class="country-shape col-lg-3">
+                    <i class="mg map-{{pCountry1Strategies.countryCode | lowercase}} mg-sm-6x mg-md-5x mg-lg-7x mg-xl-8x"></i>
+                    <p><a href="/osh-barometer/national-strategies/National-Strategies-Mapping_{{pdfCountry1Name}}.pdf" class="download-pdf" data-ng-bind-html="i18n.download" target="_blank"></a></p>
+                </div>
+                <div class="country-description col-lg-9">
+                    <h3 data-ng-bind="pCountry1Strategies.country"></h3>
+                    <h4 data-ng-bind="i18nLiterals.L246"></h4>
+                    <p data-ng-if="pCountry2==''" data-ng-bind-html="i18nLiterals[pCountry1Strategies.basicInfo]"></p>
+                </div>
+                <p data-ng-if="pCountry2!=''" class="arrow-pane arrow-country1"><i class="fa fa-arrow-down" aria-hidden="true"></i></p>
+                <div data-ng-if="pCountry2!=''" data-ng-bind-html="i18nLiterals[pCountry1Strategies.basicInfo]" class="col-lg-12 description-country1">
+                </div>
+            </div>
+            <div data-ng-if="pCountry2!=''" class="col-md-6 country2">
+                <div class="country-shape col-lg-3">
+                    <i class="mg map-{{pCountry2Strategies.countryCode | lowercase}} mg-sm-6x mg-md-5x mg-lg-7x mg-xl-8x"></i>
+                    <p><a href="/osh-barometer/national-strategies/National-Strategies-Mapping_2017_{{pdfCountry2Name}}.pdf" class="download-pdf" data-ng-bind-html="i18n.download" target="_blank"></a></p>
+                </div>
+                <div class="country-description col-lg-9">
+                    <h3 data-ng-bind="pCountry2Strategies.country"></h3>
+                    <h4 data-ng-bind="i18nLiterals.L246"></h4>
+                </div>
+                <p class="arrow-pane arrow-country2"><i class="fa fa-arrow-down" aria-hidden="true"></i></p>
+                <div class="col-lg-12 description-country2" data-ng-bind-html="i18nLiterals[pCountry2Strategies.basicInfo]">
+
+                </div>
+            </div>
+        </div>
+
+        <div id="tab2" class="tab-pane" data-ng-class="{'active': pAnchor == 'background'}">
+            <div ng-class="pCountry2!=''?'col-md-6 country1':'col-md-12 country1'">
+                <div class="country-shape col-lg-3">
+                    <i class="mg map-{{pCountry1Strategies.countryCode | lowercase}} mg-sm-6x mg-md-5x mg-lg-7x mg-xl-8x"></i>
+                    <p><a href="/osh-barometer/national-strategies/National-Strategies-Mapping_2017_{{pdfCountry1Name}}.pdf" class="download-pdf" data-ng-bind-html="i18n.download" target="_blank"></a></p>
+                </div>
+                <div class="country-description col-lg-9">
+                    <h3 data-ng-bind="pCountry1Strategies.country"></h3>
+                    <h4 data-ng-bind="i18nLiterals.L247"></h4>
+                    <p data-ng-if="pCountry2==''" data-ng-bind-html="i18nLiterals[pCountry1Strategies.background]"></p>
+                </div>
+                <p data-ng-if="pCountry2!=''" class="arrow-pane arrow-country1"><i class="fa fa-arrow-down" aria-hidden="true"></i></p>
+                <div data-ng-if="pCountry2!=''" data-ng-bind-html="i18nLiterals[pCountry1Strategies.background]" class="col-lg-12 description-country1">
+                </div>
+            </div>
+            <div data-ng-if="pCountry2!=''" class="col-md-6 country2">
+                <div class="country-shape col-lg-3">
+                    <i class="mg map-{{pCountry2Strategies.countryCode | lowercase}} mg-sm-6x mg-md-5x mg-lg-7x mg-xl-8x"></i>
+                    <p><a href="/osh-barometer/national-strategies/National-Strategies-Mapping_2017_{{pdfCountry2Name}}.pdf" class="download-pdf" data-ng-bind-html="i18n.download" target="_blank"></a></p>
+                </div>
+                <div class="country-description col-lg-9">
+                    <h3 data-ng-bind="pCountry2Strategies.country"></h3>
+                    <h4 data-ng-bind="i18nLiterals.L247"></h4>
+                </div>
+                <p class="arrow-pane arrow-country2"><i class="fa fa-arrow-down" aria-hidden="true"></i></p>
+                <div class="col-lg-12 description-country2" data-ng-bind-html="i18nLiterals[pCountry2Strategies.background]">
+
+                </div>
+            </div>
+        </div>
+
+        <div id="tab3" class="tab-pane" data-ng-class="{'active': pAnchor == 'characteristics'}">
+            <div ng-class="pCountry2!=''?'col-md-6 country1':'col-md-12 country1'">
+                <div class="country-shape col-lg-3">
+                    <i class="mg map-{{pCountry1Strategies.countryCode | lowercase}} mg-sm-6x mg-md-5x mg-lg-7x mg-xl-8x"></i>
+                    <p><a href="/osh-barometer/national-strategies/National-Strategies-Mapping_2017_{{pdfCountry1Name}}.pdf" class="download-pdf" data-ng-bind-html="i18n.download" target="_blank"></a></p>
+                </div>
+                <div class="country-description col-lg-9">
+                    <h3 data-ng-bind="pCountry1Strategies.country"></h3>
+                    <h4 data-ng-bind="i18nLiterals.L248"></h4>
+                    <p data-ng-if="pCountry2==''" data-ng-bind-html="i18nLiterals[pCountry1Strategies.stMainChar]"></p>
+                </div>
+                <p data-ng-if="pCountry2!=''" class="arrow-pane arrow-country1"><i class="fa fa-arrow-down" aria-hidden="true"></i></p>
+                <div data-ng-if="pCountry2!=''" class="col-lg-12 description-country1">
+                    <p data-ng-bind-html="i18nLiterals[pCountry1Strategies.stMainChar]"></p>
+                </div>
+            </div>
+            <div data-ng-if="pCountry2!=''" class="col-md-6 country2">
+                <div class="country-shape col-lg-3">
+                    <i class="mg map-{{pCountry2Strategies.countryCode | lowercase}} mg-sm-6x mg-md-5x mg-lg-7x mg-xl-8x"></i>
+                    <p><a href="/osh-barometer/national-strategies/National-Strategies-Mapping_2017_{{pdfCountry2Name}}.pdf" class="download-pdf" data-ng-bind-html="i18n.download" target="_blank"></a></p>
+                </div>
+                <div class="country-description col-lg-9">
+                    <h3 data-ng-bind="pCountry2Strategies.country"></h3>
+                    <h4 data-ng-bind="i18nLiterals.L248"></h4>
+                </div>
+                <p class="arrow-pane arrow-country2"><i class="fa fa-arrow-down" aria-hidden="true"></i></p>
+                <div class="col-lg-12 description-country2">
+                    <p data-ng-bind-html="i18nLiterals[pCountry2Strategies.stMainChar]"></p>
+                </div>
+            </div>
+        </div>
+
+        <div id="tab4" class="tab-pane" data-ng-class="{'active': pAnchor == 'details'}">
+            <div ng-class="pCountry2!=''?'col-md-6 country1':'col-md-12 country1'">
+                <div class="country-shape col-lg-3">
+                    <i class="mg map-{{pCountry1Strategies.countryCode | lowercase}} mg-sm-6x mg-md-5x mg-lg-7x mg-xl-8x"></i>
+                    <p><a href="/osh-barometer/national-strategies/National-Strategies-Mapping_2017_{{pdfCountry1Name}}.pdf" class="download-pdf" data-ng-bind-html="i18n.download" target="_blank"></a></p>
+                </div>
+                <div class="country-description col-lg-9">
+                    <h3 data-ng-bind="pCountry1Strategies.country"></h3>
+                    <h4 data-ng-bind="i18nLiterals.L249"></h4>
+                    <p data-ng-if="pCountry2==''" data-ng-bind-html="i18nLiterals[pCountry1Strategies.stDetActPlan]"></p>
+                </div>
+                <p data-ng-if="pCountry2!=''" class="arrow-pane arrow-country1"><i class="fa fa-arrow-down" aria-hidden="true"></i></p>
+                <div data-ng-if="pCountry2!=''" class="col-lg-12 description-country1">
+                    <p data-ng-bind-html="i18nLiterals[pCountry1Strategies.stDetActPlan]"></p>
+                </div>
+            </div>
+            <div data-ng-if="pCountry2!=''" class="col-md-6 country2">
+                <div class="lg-12">
+                    <div class="country-shape col-lg-3">
+                        <i class="mg map-{{pCountry2Strategies.countryCode | lowercase}} mg-sm-6x mg-md-5x mg-lg-7x mg-xl-8x"></i>
+                        <p><a  href="/osh-barometer/national-strategies/National-Strategies-Mapping_2017_{{pdfCountry2Name}}.pdf" class="download-pdf" data-ng-bind-html="i18n.download" target="_blank"></a></p>
+                    </div>
+                    <div class="country-description col-lg-9">
+                        <h3 data-ng-bind="pCountry2Strategies.country"></h3>
+                        <h4 data-ng-bind="i18nLiterals.L249"></h4>
+                    </div>
+                </div>
+                <p class="arrow-pane arrow-country2"><i class="fa fa-arrow-down" aria-hidden="true"></i></p>
+                <div class="col-lg-12 description-country2">
+                    <p data-ng-bind-html="i18nLiterals[pCountry2Strategies.stDetActPlan]"></p>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="tab5" class="tab-pane" data-ng-class="{'active': pAnchor == 'actors'}">
+            <div ng-class="pCountry2!=''?'col-md-6 country1':'col-md-12 country1'">
+                <div class="country-shape col-lg-3">
+                    <i class="mg map-{{pCountry1Strategies.countryCode | lowercase}} mg-sm-6x mg-md-5x mg-lg-7x mg-xl-8x"></i>
+                    <p><a href="/osh-barometer/national-strategies/National-Strategies-Mapping_2017_{{pdfCountry1Name}}.pdf" class="download-pdf" data-ng-bind-html="i18n.download" target="_blank"></a></p>
+                </div>
+                <div class="country-description col-lg-9">
+                    <h3 data-ng-bind="pCountry1Strategies.country"></h3>
+                    <h4 data-ng-bind="i18nLiterals.L250"></h4>
+                    <p data-ng-if="pCountry2==''" data-ng-bind-html="i18nLiterals[pCountry1Strategies.actStake]"></p>
+                </div>
+                <p data-ng-if="pCountry2!=''" class="arrow-pane arrow-country1"><i class="fa fa-arrow-down" aria-hidden="true"></i></p>
+                <div data-ng-if="pCountry2!=''" class="col-lg-12 description-country1">
+                    <p data-ng-bind-html="i18nLiterals[pCountry1Strategies.actStake]"></p>
+                </div>
+            </div>
+            <div data-ng-if="pCountry2!=''" class="col-md-6 country2">
+                <div class="country-shape col-lg-3">
+                    <i class="mg map-{{pCountry2Strategies.countryCode | lowercase}} mg-sm-6x mg-md-5x mg-lg-7x mg-xl-8x"></i>
+                    <p><a href="/osh-barometer/national-strategies/National-Strategies-Mapping_2017_{{pdfCountry2Name}}.pdf" class="download-pdf" data-ng-bind-html="i18n.download" target="_blank"></a></p>
+                </div>
+                <div class="country-description col-lg-9">
+                    <h3 data-ng-bind="pCountry2Strategies.country"></h3>
+                    <h4 data-ng-bind="i18nLiterals.L250"></h4>
+                </div>
+                <p class="arrow-pane arrow-country2"><i class="fa fa-arrow-down" aria-hidden="true"></i></p>
+                <div class="col-lg-12 description-country2">
+                    <p data-ng-bind-html="i18nLiterals[pCountry2Strategies.actStake]"></p>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="tab6" class="tab-pane" data-ng-class="{'active': pAnchor == 'resources'}">
+            <div ng-class="pCountry2!=''?'col-md-6 country1':'col-md-12 country1'">
+                <div class="country-shape col-lg-3">
+                    <i class="mg map-{{pCountry1Strategies.countryCode | lowercase}} mg-sm-6x mg-md-5x mg-lg-7x mg-xl-8x"></i>
+                    <p><a href="/osh-barometer/national-strategies/National-Strategies-Mapping_2017_{{pdfCountry1Name}}.pdf" class="download-pdf" data-ng-bind-html="i18n.download" target="_blank"></a></p>
+                </div>
+                <div class="country-description col-lg-9">
+                    <h3 data-ng-bind="pCountry1Strategies.country"></h3>
+                    <h4 data-ng-bind="i18nLiterals.L251"></h4>
+                    <p data-ng-if="pCountry2==''" data-ng-bind-html="i18nLiterals[pCountry1Strategies.resTime]"></p>
+                </div>
+                <p data-ng-if="pCountry2!=''" class="arrow-pane arrow-country1"><i class="fa fa-arrow-down" aria-hidden="true"></i></p>
+                <div data-ng-if="pCountry2!=''" class="col-lg-12 description-country1">
+                    <p data-ng-bind-html="i18nLiterals[pCountry1Strategies.resTime]"></p>
+                </div>
+            </div>
+            <div data-ng-if="pCountry2!=''" class="col-md-6 country2">
+                <div class="country-shape col-lg-3">
+                    <i class="mg map-{{pCountry2Strategies.countryCode | lowercase}} mg-sm-6x mg-md-5x mg-lg-7x mg-xl-8x"></i>
+                    <p><a href="/osh-barometer/national-strategies/National-Strategies-Mapping_2017_{{pdfCountry2Name}}.pdf" class="download-pdf" data-ng-bind-html="i18n.download" target="_blank"></a></p>
+                </div>
+                <div class="country-description col-lg-9">
+                    <h3 data-ng-bind="pCountry2Strategies.country"></h3>
+                    <h4 data-ng-bind="i18nLiterals.L251"></h4>
+                </div>
+                <p class="arrow-pane arrow-country2"><i class="fa fa-arrow-down" aria-hidden="true"></i></p>
+                <div class="col-lg-12 description-country2">
+                    <p data-ng-bind-html="i18nLiterals[pCountry2Strategies.resTime]"></p>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="tab7" class="tab-pane" data-ng-class="{'active': pAnchor == 'evaluation'}">
+            <div ng-class="pCountry2!=''?'col-md-6 country1':'col-md-12 country1'">
+                <div class="country-shape col-lg-3">
+                    <i class="mg map-{{pCountry1Strategies.countryCode | lowercase}} mg-sm-6x mg-md-5x mg-lg-7x mg-xl-8x"></i>
+                    <p><a href="/osh-barometer/national-strategies/National-Strategies-Mapping_2017_{{pdfCountry1Name}}.pdf" class="download-pdf" data-ng-bind-html="i18n.download" target="_blank"></a></p>
+                </div>
+                <div class="country-description col-lg-9">
+                    <h3 data-ng-bind="pCountry1Strategies.country"></h3>
+                    <h4 data-ng-bind="i18nLiterals.L252"></h4>
+                    <p data-ng-if="pCountry2==''" data-ng-bind-html="i18nLiterals[pCountry1Strategies.evalLearned]"></p>
+                </div>
+                <p data-ng-if="pCountry2!=''" class="arrow-pane arrow-country1"><i class="fa fa-arrow-down" aria-hidden="true"></i></p>
+                <div data-ng-if="pCountry2!=''" class="col-lg-12 description-country1">
+                    <p data-ng-bind-html="i18nLiterals[pCountry1Strategies.evalLearned]"></p>
+                </div>
+            </div>
+            <div data-ng-if="pCountry2!=''" class="col-md-6 country2">
+                <div class="country-shape col-lg-3">
+                    <i class="mg map-{{pCountry2Strategies.countryCode | lowercase}} mg-sm-6x mg-md-5x mg-lg-7x mg-xl-8x"></i>
+                    <p><a href="/osh-barometer/national-strategies/National-Strategies-Mapping_2017_{{pdfCountry2Name}}.pdf" class="download-pdf" data-ng-bind-html="i18n.download" target="_blank"></a></p>
+                </div>
+                <div class="country-description col-lg-9">
+                    <h3 data-ng-bind="pCountry2Strategies.country"></h3>
+                    <h4 data-ng-bind="i18nLiterals.L252"></h4>
+                </div>
+                <p class="arrow-pane arrow-country2"><i class="fa fa-arrow-down" aria-hidden="true"></i></p>
+                <div class="col-lg-12 description-country2">
+                    <p data-ng-bind-html="i18nLiterals[pCountry2Strategies.evalLearned]"></p>
+                </div>
+            </div>
+        </div>
+
+        <div id="tab8" class="tab-pane" data-ng-class="{'active': pAnchor == 'EU-framework'}">
+            <div ng-class="pCountry2!=''?'col-md-6 country1':'col-md-12 country1'">
+                <div class="country-shape col-lg-3">
+                    <i class="mg map-{{pCountry1Strategies.countryCode | lowercase}} mg-sm-6x mg-md-5x mg-lg-7x mg-xl-8x"></i>
+                    <p><a href="/osh-barometer/national-strategies/National-Strategies-Mapping_2017_{{pdfCountry1Name}}.pdf" class="download-pdf" data-ng-bind-html="i18n.download" target="_blank"></a></p>
+                </div>
+                <div class="country-description col-lg-9">
+                    <h3 data-ng-bind="pCountry1Strategies.country"></h3>
+                    <h4 data-ng-bind="i18nLiterals.L253"></h4>
+                    <p data-ng-if="pCountry2==''" data-ng-bind-html="i18nLiterals[pCountry1Strategies.euStFrwk]"></p>
+                </div>
+                <p data-ng-if="pCountry2!=''" class="arrow-pane arrow-country1"><i class="fa fa-arrow-down" aria-hidden="true"></i></p>
+                <div data-ng-if="pCountry2!=''" class="col-lg-12 description-country1">
+                    <p data-ng-bind-html="i18nLiterals[pCountry1Strategies.euStFrwk]"></p>
+                </div>
+            </div>
+            <div data-ng-if="pCountry2!=''" class="col-md-6 country2">
+                <div class="country-shape col-lg-3">
+                    <i class="mg map-{{pCountry2Strategies.countryCode | lowercase}} mg-sm-6x mg-md-5x mg-lg-7x mg-xl-8x"></i>
+                    <p><a href="/osh-barometer/national-strategies/National-Strategies-Mapping_2017_{{pdfCountry2Name}}.pdf" class="download-pdf" data-ng-bind-html="i18n.download" target="_blank"></a></p>
+                </div>
+                <div class="country-description col-lg-9">
+                    <h3 data-ng-bind="pCountry2Strategies.country"></h3>
+                    <h4 data-ng-bind="i18nLiterals.L253"></h4>
+                </div>
+                <p class="arrow-pane arrow-country2"><i class="fa fa-arrow-down" aria-hidden="true"></i></p>
+                <div class="col-lg-12 description-country2">
+                    <p data-ng-bind-html="i18nLiterals[pCountry2Strategies.euStFrwk]"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</dvt-dashboard>

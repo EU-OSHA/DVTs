@@ -18,5 +18,8 @@
     "privacy-policy":"<span>Privacy notice</span>",
     "legal-notice":"<span>Legal notice</span>",
 
-    "404": "<span>Page not found</span>"
+    "404": "<span>Page not found</span>",
+
+    "_SECTION-GENERIC-INFORMATION": null,
+    "osh-authorities": "Generic Information >> <span>OSH Authorities</span>"
 }

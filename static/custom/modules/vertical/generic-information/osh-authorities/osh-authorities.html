@@ -1,0 +1,214 @@
+<div class="intro-country-detail container">
+  <p data-ng-bind-html="i18nLiterals.L397" class="intro-additional"></p>
+</div>
+
+<div class="home row page-content page-content-matrix" ng-controller="OSHAuthoritiesController">
+  <!-- FILTERS -->
+  <!-- SEARCH FILTER -->
+  <div class="col-xs-12 col-sm-3 col-md-3 col-lg-4">
+    <div class="row-centered">
+        <div class="search">
+            <div class="input-group">
+                <input ng-keypress="clickEnter($event)" id="search-input" type="text" class="form-control" placeholder="{{i18nSearchPlaceholder}}" data-ng-model="searchText"/>
+                <span class="input-group-btn">
+                    <button data-ng-click="clear($event)" id="policy-clear" class="btn btn-default" type="button"><i class="fa fa-eraser" aria-hidden="true"></i></button>
+                    <button data-ng-click="search($event)" id="policy-search" class="btn btn-default" type="button"><i class="fa fa-search" aria-hidden="true"></i></button>
+                </span>
+            </div>
+        </div>
+    </div>
+  </div>
+
+  <!-- INSTITUTION TYPE FILTER -->
+  <div id="filter1" class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+    <!--<div class="form-group">
+      <select name="institutionSelect" id="institutionSelect" class="form-control">
+        <option value="-1" data-ng-bind="i18nLiterals.L402"></option>
+        <option id='institution-filter-1' value="L396" data-ng-bind="i18nLiterals.L396"></option>
+        <option id='institution-filter-2' value="L399" data-ng-bind="i18nLiterals.L399"></option>
+        <option id='institution-filter-3' value="L400" data-ng-bind="i18nLiterals.L400"></option>
+        <option id='institution-filter-4' value="L401" data-ng-bind="i18nLiterals.L401"></option>
+      </select>
+    </div>-->
+    <button type="button" class="form-control" data-toggle="dropdown" data-ng-bind="i18nLiterals.L402"></button>
+    <ul class="dropdown-menu">
+      <li>
+        <input id='institution-filter-1' type="checkbox" data-ng-click="toggleChallengeClick($event, 1)"/>
+        <label for='institution-filter-1' data-ng-bind-html="i18nLiterals.L396"></label>
+      </li>
+      <li>
+        <input id='institution-filter-2' type="checkbox" data-ng-click="toggleChallengeClick($event, 2)"/>
+        <label for='institution-filter-2' data-ng-bind-html="i18nLiterals.L399"></label>
+      </li>
+      <li>
+        <input id='institution-filter-3' type="checkbox" data-ng-click="toggleChallengeClick($event, 2)"/>
+        <label for='institution-filter-3' data-ng-bind-html="i18nLiterals.L400"></label>
+      </li>
+      <li>
+        <input id='institution-filter-4' type="checkbox" data-ng-click="toggleChallengeClick($event, 2)"/>
+        <label for='institution-filter-4' data-ng-bind-html="i18nLiterals.L401"></label>
+      </li>
+      <button class="form-control" ng-click="confirmSelection($event, 'country')">Confirm</button>
+    </ul>
+  </div>
+  
+  <!-- COUNTRY FILTER -->
+  <!--<div id="filter2" class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+    <div class="form-group">
+      <select class="form-control" name="countrySelect" id="countrySelect" data-ng-model="selectedCountry" data-ng-change="toggleCountrySelect()">
+        <option value="-1" data-ng-bind="i18nLiterals.L22"></option>
+        <option value="{{country.country}}" data-ng-repeat='country in countries' data-ng-bind="country.country"></option>
+      </select>
+    </div>
+  </div>-->
+
+  <!-- COUNTRY FILTER -->
+  <div id="filter2" class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+    <button type="button" class="form-control" data-toggle="dropdown" data-ng-bind="i18nLiterals.L22"></button>
+    <ul class="dropdown-menu">
+      <li data-ng-repeat='country in countries'>
+        <input id='country-filter-{{::country.country_code}}' ng-checked="!!country.param && country.param ==country.country_code"
+          data-ng-click="toggleCountryClick($event, $index)" type="checkbox" value="{{ ::country.country}}"/>
+        <label for="country-filter-{{::country.country_code}}" data-ng-bind="::country.country"></label>
+      </li>
+      <button class="form-control" ng-click="confirmSelection($event)">Confirm</button>
+    </ul>
+  </div>
+
+
+  <div id="country-card-structure" class="container-full">
+
+    <!-- FILTERS -->
+    <!--<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 pull-left filters-container">
+      <!-- CHALLENGES FILTERS -->
+      <!--<div id="filter1" class="col-xs-12 col-md-12 col-lg-8 pull-right">
+        <div class="col-xs-12">
+          <h2 class="title">CHALLENGES</h2>
+        </div>
+        <div class="col-xs-12">
+          <div class="filters" >
+            <input id='challenge-filter-1' type="checkbox" data-ng-click="toggleChallengeClick($event, 1)"/>
+            <label for='challenge-filter-1' data-ng-bind-html="i18nLiterals.L67"></label>
+          </div>
+          <div class="filters" >
+            <input id='challenge-filter-2' type="checkbox" data-ng-click="toggleChallengeClick($event, 2)"/>
+            <label for='challenge-filter-2' data-ng-bind-html="i18nLiterals.L68"></label>
+          </div>
+          <div class="filters" >
+            <input id='challenge-filter-3' type="checkbox" data-ng-click="toggleChallengeClick($event, 3)"/>
+            <label for='challenge-filter-3' data-ng-bind-html="i18nLiterals.L69"></label>
+          </div>
+        </div>
+      </div>-->
+      <!-- COUNTRIES FILTERS -->
+      <!--<div id="filter2" class="col-xs-12 col-md-12 col-lg-8 pull-right">
+        <div class="col-xs-12" data-ng-click="toggleFilters()">
+          <h2 class="title">COUNTRIES</h2>
+        </div>
+        <div class="col-xs-12 countries-filters">
+          <div class="filters" data-ng-repeat='country in countries'>
+            <input id='country-filter-{{::country.country_code}}' ng-checked="!!country.param && country.param ==country.country_code"
+              data-ng-click="toggleCountryClick($event, $index)" type="checkbox" value="{{ ::country.country}}"/>
+            <label for="country-filter-{{::country.country_code}}" data-ng-bind="::country.country"></label>
+          </div>
+        </div>
+      </div>
+    </div>-->
+
+    <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9 policies">
+      <!-- PAGINATION -->
+      <!--<div class="col-xs-12 col-sm-6 matrix-pag hidden-print" data-ng-if="!!amatrix.length" >
+        <ul class="pagination col-xs-12">
+          <li role=button data-ng-click="firstPage()" ng-class="(currentPage+1==numberOfPages() && currentPage+1==1 || currentPage+1==1)?'invisible':''">
+            <span aria-hidden="currentPage == 0">&laquo;</span>
+          </li>
+          <li role=button data-ng-click="previousPage()" ng-class="(currentPage+1==numberOfPages() && currentPage+1==1 || currentPage+1==1)?'invisible':''">
+            <span aria-hidden="currentPage == 0">&lsaquo;</span>
+          </li>
+          <li>
+            <span>{{currentPage+1}}/{{numberOfPages()}}</span>
+          </li>
+          <li role=button data-ng-click="nextPage()" ng-class="(currentPage+1==numberOfPages() && currentPage+1==numberOfPages())?'invisible':''">
+            <span aria-hidden="currentPage >= results.length/pageSize - 1">&rsaquo;</span>
+          </li>
+          <li role=button data-ng-click="lastPage()" ng-class="(currentPage+1==numberOfPages() && currentPage+1==numberOfPages())?'invisible':''">
+            <span>&rsaquo;&rsaquo;</span>
+          </li>
+        </ul>
+      </div>-->
+      <!-- PAGINATION TEXT -->
+      <!--<div class="col-sm-4 col-md-3 pull-right  m20" data-ng-if="!!amatrix.length">
+        <span class="pag-numbers" data-ng-bind="paginationText"></span>
+      </div>-->
+      <!-- MATRIX ELEMENTS --> 
+      <div data-ng-repeat="matrix in amatrix | limitTo:pageSize:elementsStart | filter:searchText" class="col-xs-11 policy-items">
+        <!--<div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 policy-maps">-->
+        <div class="col-xs-12 policy-maps">
+          <div class="col-xs-2 image">
+            <i class="mg map-{{::matrix.country_code.toLowerCase()}} mg-6x"></i>
+          </div>
+          <div class="col-xs-10">
+            <h3 class="title">
+              <span class="country ng-binding" data-ng-bind="::matrix.country"></span>
+            </h3>
+          </div>
+          <!--<div class="col-xs-12 text-center nopadding external-container">
+            <a ui-sref='country-details({pCountry1:matrix.country_code})' title="Country profile"> Country profile <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
+          </div>-->
+        </div>
+        <!--<div class="col-xs-12 col-sm-8 col-md-9 col-lg-10 nopadding policy-country">-->
+        <div class="col-xs-12 nopadding policy-country">
+          <!--<h3 class="title">
+            <span class="country ng-binding" data-ng-bind="::matrix.country"></span>
+          </h3>-->
+          <h4 class="subtitle ng-binding" ng-if="::matrix.implementation==1" data-ng-bind-html="i18nLiterals.L67"></h4>
+          <h4 class="subtitle ng-binding" ng-if="::matrix.prevention==1" data-ng-bind-html="i18nLiterals.L68"></h4>
+          <h4 class="subtitle ng-binding" ng-if="::matrix.tackling==1" data-ng-bind-html="i18nLiterals.L69"></h4>
+
+          <!--<h4 class="subtitle ng-binding" ng-if="::matrix.authority==1" data-ng-bind-html="i18nLiterals.L396"></h4>
+          <h4 class="subtitle ng-binding" ng-if="::matrix.insurance==1" data-ng-bind-html="i18nLiterals.L399"></h4>
+          <h4 class="subtitle ng-binding" ng-if="::matrix.prevention==1" data-ng-bind-html="i18nLiterals.L400"></h4>
+          <h4 class="subtitle ng-binding" ng-if="::matrix.standardization==1" data-ng-bind-html="i18nLiterals.L401"></h4>-->
+
+          <div class="policy-description col-xs-12 nopadding"  data-ng-bind-html="i18nLiterals[matrix.objectives]"></div>
+          <div class="policy-content col-xs-12 nopadding" data-ng-bind-html="trimtext(i18nLiterals[matrix.detail], 300)"></div>
+          <div data-ng-if="i18nLiterals[matrix.detail].length > 300" class="more-wrapper"> 
+            <button ng-click='toggleText($event)' data-ng-bind="i18n.read" class="more"></button>
+            <button ng-click='toggleText($event)' data-ng-bind="i18n.less" class="less" style="display:none"></button>
+          </div>
+          <div class="col-xs-12 text-center nopadding external-container">
+            <a ui-sref='home' title="Country infrastructure" data-ng-bind="i18nLiterals.L403"></a>
+          </div>
+        </div>
+        <hr class="separator-items">
+      </div>
+      <!-- PAGINATION -->
+      <div class="col-xs-12 col-sm-10 matrix-pag hidden-print" data-ng-if="!!amatrix.length" >
+        <ul class="pagination col-xs-12">
+          <li role=button data-ng-click="firstPage()" ng-class="(currentPage+1==numberOfPages() && currentPage+1==1 || currentPage+1==1)?'invisible':''">
+            <span aria-hidden="currentPage == 0">&laquo;</span>
+          </li>
+          <li role=button data-ng-click="previousPage()" ng-class="(currentPage+1==numberOfPages() && currentPage+1==1 || currentPage+1==1)?'invisible':''">
+            <span aria-hidden="currentPage == 0">&lsaquo;</span>
+          </li>
+          <!--<li>
+            <span>{{currentPage+1}}/{{numberOfPages()}}</span>
+          </li>-->
+          <li data-ng-repeat="page in pagination()">
+            <span data-ng-bind="page+1" data-ng-click="goToPage($index)" ng-class="(currentPage == page)?'active':''"></span>
+          </li>
+          <li role=button data-ng-click="nextPage()" ng-class="(currentPage+1==numberOfPages() && currentPage+1==numberOfPages())?'invisible':''">
+            <span aria-hidden="currentPage >= results.length/pageSize - 1">&rsaquo;</span>
+          </li>
+          <li role=button data-ng-click="lastPage()" ng-class="(currentPage+1==numberOfPages() && currentPage+1==numberOfPages())?'invisible':''">
+            <span>&rsaquo;&rsaquo;</span>
+          </li>
+        </ul>
+      </div>
+      <!-- PAGINATION TEXT -->
+      <!--<div class="col-sm-4 col-md-3 pull-right  m20" data-ng-if="!!amatrix.length">
+        <span class="pag-numbers" data-ng-bind="paginationText"></span>
+      </div>-->
+    </div>
+  </div>
+</div>

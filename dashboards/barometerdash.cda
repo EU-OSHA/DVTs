@@ -2,7 +2,8 @@
 <CDADescriptor>
    <DataSources>
       <Connection id="dvt_conn" type="sql.jndi">
-         <Jndi>jdbcEuOshaBarometer</Jndi>
+         <!--<Jndi>jdbcEuOshaBarometer</Jndi>-->
+         <Jndi>jdbcEuOshaInfosystem</Jndi>
       </Connection>
    </DataSources>
 

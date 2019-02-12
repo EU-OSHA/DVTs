@@ -3,9 +3,7 @@
   "version": "1.0.0",
   "description": "Gulp: Barometer dashboard",
   "main": "gulpfile.js",
-  "scripts": {
-
-  },
+  "scripts": {},
   "keywords": [
     "EU-OSHA",
     "dvt",

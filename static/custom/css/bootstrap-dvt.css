@@ -3293,7 +3293,8 @@ tbody.collapse.in {
       border-top-right-radius: 4px; }
   .pagination > li > a:hover, .pagination > li > a:focus,
   .pagination > li > span:hover,
-  .pagination > li > span:focus {
+  .pagination > li > span:focus,
+  .pagination > li > span.active {
     z-index: 2;
     color: #23527c;
     background-color: #eeeeee;

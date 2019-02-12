@@ -2,5 +2,6 @@
   "no-results": "No results found",
   "Displaying": "Displaying",
   "of": "of",
-  "search-placeholder": "Search for a word by term name or description"
+  "search-placeholder": "Search for a word by term name or description",
+  "authorities-search-placeholder" : "Search for a OSH authority or institution"
 }

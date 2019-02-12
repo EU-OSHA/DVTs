@@ -28,7 +28,8 @@ define(function (require) {
             restrict: 'E',
             priority: 1,
             transclude: true,
-            require: ['ngModel', '^dvtDashboard'],
+            /*require: ['ngModel', '^dvtDashboard'],*/
+            require: ['ngModel'],
             scope: {
                 params: '=',
                 listenTo: '='

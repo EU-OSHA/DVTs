@@ -146,6 +146,13 @@
     requirePaths['vertical/home/HomeController'] = verticalModules + '/home/HomeController' + suffix;
     requirePaths['vertical/home/i18n'] = verticalModules + '/home/HP-i18n' + suffix + '.json';
 
+    /* GENERIC INFORMATION */
+    requirePaths['vertical/generic-information/generic-information-module'] = verticalModules + '/generic-information/generic-information-module' + suffix;
+
+    /* OSH AUTHORITIES */
+    requirePaths['vertical/osh-authorities/OSHAuthoritiesController'] = verticalModules + '/generic-information/osh-authorities/OSHAuthoritiesController' + suffix;
+    requirePaths['vertical/osh-authorities/i18n'] = verticalModules + '/generic-information/osh-authorities/osh-authorities-i18n' + suffix +'.json';
+
     /* GEOGRAPHIES COMPARISON */
     // requirePaths['vertical/geographies-comparison/GeographiesComparisonController'] = verticalModules + '/geographies-comparison/GeographiesComparisonController' + suffix;
     // requirePaths['vertical/geographies-comparison/services/GeographiesComparisonService'] = verticalModules + '/geographies-comparison/services/GeographiesComparisonService' + suffix;
