@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <CDADescriptor>
+        <DataSources>
+            <Connection id="connection" type="sql.jndi">
+                <Jndi>jdbcEuOshaAllAges</Jndi>
+            </Connection>
+        </DataSources>
+        <!--New data access for CC & CCC -->
+        <!--CC2CCC zylk-select-->
+
+          <DataAccess access="public" connection="connection" id="getCountryListWithoutFilter" type="sql">
+            <Cache duration="3600" enabled="true" />
+            <Columns/>
+            <Parameters>
+                <Parameter default="RO" name="pCountry1" type="String" />
+            </Parameters>
+            <Query>SELECT DISTINCT(Id), Description FROM Country
+                    WHERE Id not in ("EU")
+                    ORDER BY Description ASC
+            </Query>
+        </DataAccess>
+
+        <DataAccess access="public" connection="connection" id="getCountryListWithout" type="sql">
+            <Cache duration="3600" enabled="true" />
+            <Columns/>
+            <Parameters>
+                <Parameter default="RO" name="pCountry1" type="String" />
+            </Parameters>
+            <Query>SELECT DISTINCT(Id), Description FROM Country
+                    WHERE Id not in ("EU",${pCountry1})
+                    <!--AND Id in ("NL", "RO", "DE","LT")-->
+                    ORDER BY Description ASC
+            </Query>
+        </DataAccess>
+        <!--CCCinCCC zylk-select 2 TEMP //TODO design new SQL for two selectors-->
+        <DataAccess access="public" connection="connection" id="getCountryListWithout2" type="sql">
+            <Cache duration="3600" enabled="true" />
+            <Columns/>
+            <Parameters>
+                <Parameter default="RO" name="pCountry2" type="String" />
+            </Parameters>
+            <Query>SELECT DISTINCT(Id), Description FROM Country
+                    WHERE Id not in ("EU",${pCountry2})
+                    <!--AND Id in ("NL", "RO", "DE","LT")-->
+                    ORDER BY Description ASC
+
+            </Query>
+        </DataAccess>
+        <!--Section Grouping-->
+        <DataAccess access="public" connection="connection" id="getCCSectionGrouping" type="sql">
+            <Cache duration="3600" enabled="true" />
+            <Columns/>
+            <Parameters>
+                <Parameter default="RO" name="pCountry" type="String" />
+            </Parameters>
+            <Query>SELECT ApproachID, a.Approach, ShortD FROM Country as c, Approach as a WHERE c.ApproachID = a.Id AND c.Id = ${pCountry}
+            </Query>
+        </DataAccess>
+
+
+        <DataAccess access="public" connection="connection" id="getCountryInsightPoliciesClassifications" type="sql">
+            <Cache duration="3600" enabled="true" />
+            <Columns/>
+            <Parameters>
+            </Parameters>
+            <Query>
+                SELECT DISTINCT Subject FROM PSP
+            </Query>
+        </DataAccess>
+        <!--Section - Main Policies, Strategic and Programme-->
+        <!--Section - Other Initiatives pSubject = Others-->
+<!--        OSH groups, send another pSubject in order to obtain another groups -->
+        <DataAccess access="public" connection="connection" id="getCCMainPolicies" type="sql">
+            <Cache duration="3600" enabled="true" />
+            <Columns/>
+            <Parameters>
+                <Parameter default="RO" name="pCountry" type="String" />
+                <Parameter default="OSH" name="subject" type="String" />
+            </Parameters>
+            <Query>SELECT Id, PSP as Name, ShortD as Decription, Subject as classification,OOthers
+                    FROM PSP WHERE PSP.Main = 1
+                    AND Subject in (${subject})
+                    AND CountryId = ${pCountry}
+            </Query>
+        </DataAccess>
+
+        <DataAccess access="public" connection="connection" id="getCCMainPolicies2" type="sql">
+                    <Cache duration="3600" enabled="true" />
+                    <Columns/>
+                    <Parameters>
+                        <Parameter default="RO" name="pCountry" type="String" />
+                    </Parameters>
+                    <Query>SELECT Id, PSP as Name, ShortD as Decription, Subject as classification,OOthers
+                            FROM PSP WHERE PSP.Main = 1
+                            AND Subject in ('OSH','RTW')
+                            AND CountryId = ${pCountry} ORDER BY Year DESC LIMIT 2
+                    </Query>
+                </DataAccess>
+
+        <DataAccess access="public" connection="connection" id="getCCOtherPolicies" type="sql">
+            <Cache duration="3600" enabled="true" />
+            <Columns/>
+            <Parameters>
+                <Parameter default="RO" name="pCountry" type="String" />
+            </Parameters>
+            <Query>SELECT Id, PSP as Name, ShortD as Decription, Subject as classification
+                FROM PSP WHERE CountryId = ${pCountry} AND Subject='OTHERS' ORDER BY Year DESC LIMIT 4
+            </Query>
+        </DataAccess>
+        <!--Circumtansces-->
+        <DataAccess access="public" connection="connection" id="getCountryCardCirumstances" type="sql">
+            <Cache duration="3600" enabled="true" />
+            <Columns/>
+            <Parameters>
+                <Parameter default="RO" name="param_country" type="String" />
+            </Parameters>
+            <Query>SELECT Country.Ci1, Country.Ci2, Country.Ci3, Country.Ci4, Country.Ci5 FROM Country where Country.Id = ${param_country}</Query>
+        </DataAccess>
+        <!-- Pending Changes-->
+        <DataAccess access="public" connection="connection" id="getCountryCardChallenges" type="sql">
+            <Cache duration="3600" enabled="true" />
+            <Columns/>
+            <Parameters>
+                <Parameter default="RO" name="param_country" type="String" />
+            </Parameters>
+            <Query>SELECT Country.Ch1, Country.Ch2, Country.Ch3, Country.Ch4, Country.Ch5 FROM Country where Country.Id = ${param_country}</Query>
+        </DataAccess>
+        <!--StakeHolders-->
+        <DataAccess access="public" connection="connection" id="getCountryCardStakeholders" type="sql">
+            <Cache duration="3600" enabled="true" />
+            <Columns/>
+            <Parameters>
+                <Parameter default="RO" name="param_country" type="String" />
+            </Parameters>
+            <Query>SELECT Country.SS, Country.OSHwiki FROM Country WHERE Id=${param_country}</Query>
+        </DataAccess>
+    <!-- group & country list -->
+    <DataAccess access="public" connection="connection" id="getGroupCountryList" type="sql">
+        <Cache duration="3600" enabled="true" />
+        <Columns/>
+        <Parameters>
+        </Parameters>
+        <Query>SELECT Id as countryKey, Description as country, ApproachID as `group`
+            FROM Country
+            ORDER BY country ASC</Query>
+    </DataAccess>
+    <!--@Gonza-->
+        <DataAccess access="public" connection="connection" id="getLinkReport" type="sql">
+            <Cache duration="3600" enabled="true" />
+            <Columns/>
+            <Parameters>
+                <Parameter default="RO" name="param_country" type="String" />
+            </Parameters>
+            <Query>SELECT Country.Report FROM Country WHERE Id=${param_country}</Query>
+        </DataAccess>
+    </CDADescriptor>
