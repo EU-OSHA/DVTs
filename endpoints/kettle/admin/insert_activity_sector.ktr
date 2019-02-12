@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>access_literals_to_json_2</name>
+    <name>insert activity sector</name>
     <description/>
     <extended_description/>
     <trans_version/>
     <trans_type>Normal</trans_type>
+    <trans_status>0</trans_status>
     <directory>&#x2f;</directory>
     <parameters>
+        <parameter>
+            <name>access_file</name>
+            <default_value>&#x24;&#x7b;Internal.Transformation.Filename.Directory&#x7d;&#x2f;resources&#x2f;origin&#x2f;EU-OSHA_DVILO_Dataset.accdb</default_value>
+            <description/>
+        </parameter>
     </parameters>
     <log>
 <trans-log-table><connection/>
@@ -66,20 +72,20 @@
     <clusterschemas>
     </clusterschemas>
   <created_user>-</created_user>
-  <created_date>2017&#x2f;09&#x2f;05 08&#x3a;24&#x3a;33.570</created_date>
+  <created_date>2017&#x2f;05&#x2f;02 12&#x3a;54&#x3a;01.729</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2017&#x2f;09&#x2f;05 08&#x3a;24&#x3a;33.570</modified_date>
+  <modified_date>2017&#x2f;05&#x2f;02 12&#x3a;54&#x3a;01.729</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
   <notepads>
   </notepads>
   <connection>
-    <name>osha_dvt_infosystem</name>
+    <name>osha_dvt</name>
     <server/>
     <type>MYSQL</type>
     <access>JNDI</access>
-    <database>osha_dvt_infosystem</database>
+    <database>osha_dvt</database>
     <port>1521</port>
     <username/>
     <password>Encrypted </password>
@@ -102,13 +108,13 @@
     </attributes>
   </connection>
   <order>
-  <hop> <from>Modified Java Script Value</from><to>Blocking Step</to><enabled>Y</enabled> </hop>
-  <hop> <from>Blocking Step</from><to>Text file output&#x3a; Literals.json</to><enabled>Y</enabled> </hop>
-  <hop> <from>Microsoft Access Input</from><to>Modified Java Script Value</to><enabled>Y</enabled> </hop>
+  <hop> <from>Table input</from><to>Filter rows</to><enabled>Y</enabled> </hop>
+  <hop> <from>Filter rows</from><to>Execute SQL script in trans</to><enabled>Y</enabled> </hop>
+  <hop> <from>Get Variables</from><to>Table input</to><enabled>Y</enabled> </hop>
   </order>
   <step>
-    <name>Blocking Step</name>
-    <type>BlockingStep</type>
+    <name>Execute SQL script in trans</name>
+    <type>ExecSQL</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -117,22 +123,31 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-      <pass_all_rows>N</pass_all_rows>
-      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
-      <prefix>block</prefix>
-      <cache_size>5000</cache_size>
-      <compress>Y</compress>
+    <connection>osha_dvt</connection>
+    <execute_each_row>Y</execute_each_row>
+    <single_statement>N</single_statement>
+    <replace_variables>Y</replace_variables>
+    <quoteString>N</quoteString>
+    <sql>SET &#x40;maxLiteralId &#x3d; &#x28;SELECT MAX&#x28;id&#x29;&#x2b;1 FROM literal WHERE id&#x3c;10000&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;INSERT INTO literal &#x28;id, chart_id, section_id, type&#x29;&#xd;&#xa;VALUES &#x28;&#xd;&#xa;	&#x40;maxLiteralId, NULL, NULL, &#x22;SPLIT_ACTIVITY_SECTOR_NAME&#x22;&#xd;&#xa;&#x29;&#x3b;&#xd;&#xa;INSERT INTO translation &#x28;literal_id, language, is_default, text&#x29;&#xd;&#xa;VALUE &#x28;&#xd;&#xa;	&#x40;maxLiteralId, &#x22;EN&#x22;, 1, &#x22;&#x3f;&#x22;&#xd;&#xa;&#x29;&#x3b;&#xd;&#xa;INSERT INTO split_activity_sector &#x28;literal_id&#x29;&#xd;&#xa;VALUES&#x28;&#xd;&#xa;	&#x40;maxLiteralId&#xd;&#xa;&#x29;&#x3b;</sql>
+    <set_params>N</set_params>
+    <insert_field/>
+    <update_field/>
+    <delete_field/>
+    <read_field/>
+    <arguments>
+       <argument><name>varName</name></argument>
+    </arguments>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>624</xloc>
-      <yloc>176</yloc>
+      <xloc>528</xloc>
+      <yloc>160</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>Microsoft Access Input</name>
-    <type>AccessInput</type>
+    <name>Filter rows</name>
+    <type>FilterRows</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -141,159 +156,79 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <include>N</include>
-    <include_field/>
-    <tablename>N</tablename>
-    <filename_Field/>
-    <tablename_field/>
-    <rownum>N</rownum>
-    <isaddresult>Y</isaddresult>
-    <filefield>N</filefield>
-    <rownum_field/>
-    <resetrownumber>N</resetrownumber>
-    <table_name>LITERAL</table_name>
-    <file>
-      <name>C&#x3a;&#x5c;biserver-ce&#x5c;pentaho-solutions&#x5c;system&#x5c;osha-dvt-infosystem&#x5c;endpoints&#x5c;kettle&#x5c;admin&#x5c;resources&#x5c;origin&#x5c;EU-OSHA_DVTOSH_Dataset.accdb</name>
-      <filemask/>
-      <exclude_filemask/>
-      <file_required>N</file_required>
-      <include_subfolders>N</include_subfolders>
-    </file>
+<send_true_to>Execute SQL script in trans</send_true_to>
+<send_false_to/>
+    <compare>
+<condition>
+ <negated>N</negated>
+ <leftvalue>activitySectorCount</leftvalue>
+ <function>&#x3d;</function>
+ <rightvalue/>
+ <value><name>constant</name><type>Integer</type><text>0</text><length>-1</length><precision>0</precision><isnull>N</isnull><mask>&#x23;</mask></value> </condition>
+    </compare>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>384</xloc>
+      <yloc>160</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Get Variables</name>
+    <type>GetVariable</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
     <fields>
       <field>
-        <name>LITERAL_ID</name>
-        <attribut>LITERAL_ID</attribut>
-        <type>Number</type>
-        <format/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <currency/>
-        <decimal/>
-        <group/>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-      </field>
-      <field>
-        <name>LITERAL</name>
-        <attribut>LITERAL</attribut>
+        <name>varName</name>
+        <variable>&#x24;&#x7b;varName&#x7d;</variable>
         <type>String</type>
         <format/>
-        <length>-1</length>
-        <precision>-1</precision>
         <currency/>
         <decimal/>
         <group/>
+        <length>-1</length>
+        <precision>-1</precision>
         <trim_type>none</trim_type>
-        <repeat>N</repeat>
       </field>
     </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>64</xloc>
+      <yloc>160</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Table input</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>osha_dvt</connection>
+    <sql>SELECT COUNT&#x28;&#x2a;&#x29; AS activitySectorCount&#xd;&#xa;FROM literal l &#xd;&#xa;INNER JOIN translation t&#xd;&#xa;ON t.literal_id &#x3d; l.id&#xd;&#xa;WHERE l.type &#x3d; &#x22;SPLIT_ACTIVITY_SECTOR_NAME&#x22;&#xd;&#xa;AND t.text&#x3d;&#x22;&#x24;&#x7b;varName&#x7d;&#x22;&#x3b;</sql>
     <limit>0</limit>
-    <shortFileFieldName/>
-    <pathFieldName/>
-    <hiddenFieldName/>
-    <lastModificationTimeFieldName/>
-    <uriNameFieldName/>
-    <rootUriNameFieldName/>
-    <extensionFieldName/>
-    <sizeFieldName/>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>Y</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>208</xloc>
-      <yloc>368</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Modified Java Script Value</name>
-    <type>ScriptValueMod</type>
-    <description/>
-    <distribute>N</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <compatible>N</compatible>
-    <optimizationLevel>9</optimizationLevel>
-    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
-        <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>&#x2f;&#x2f;var json &#x3d; &#x7b;&#x7d;&#x3b;&#xd;&#xa;var json&#x3b;&#xd;&#xa;&#xd;&#xa;if &#x28;json&#x3d;&#x3d;undefined&#x29; &#x7b;&#xd;&#xa;	json &#x3d; &#x7b;&#x7d;&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;&#xd;&#xa;var literal &#x3d; LITERAL&#x3b;&#xd;&#xa;&#xd;&#xa;if &#x28;literal &#x3d;&#x3d; null&#x29; &#x7b;&#xd;&#xa;	literal &#x3d; &#x27;&#x27;&#x3b;&#xd;&#xa;&#x7d; &#xd;&#xa;&#xd;&#xa;var key &#x3d; &#x27;L&#x27;&#x2b;&#x28;20000&#x2b;LITERAL_ID&#x29;&#x3b;&#xd;&#xa;json&#x5b;key&#x5d; &#x3d; literal&#x3b;&#xd;&#xa;var jsonString &#x3d; JSON.stringify&#x28;json&#x29;&#x3b;&#xd;&#xa;jsonString &#x3d; jsonString.replace&#x28;&#x22;&#x7b;&#x22;,&#x22;&#x7b;&#x5c;n  &#x22;&#x29;&#x3b;&#xd;&#xa;jsonString &#x3d; jsonString.replace&#x28;new RegExp&#x28;&#x27;,&#x22;L&#x27;,&#x27;g&#x27;&#x29;,&#x27;,&#x5c;n  &#x22;L&#x27;&#x29;&#x3b;&#xd;&#xa;jsonString &#x3d; jsonString.substring&#x28;0, jsonString.lastIndexOf&#x28;&#x27;&#x7d;&#x27;&#x29;&#x29; &#x2b; &#x27;&#x5c;n&#x7d;&#x27;&#x3b;&#xd;&#xa;&#xd;&#xa;</jsScript_script>
-      </jsScript>    </jsScripts>    <fields>      <field>        <name>jsonString</name>
-        <rename>jsonString</rename>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <replace>N</replace>
-      </field>    </fields>     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>416</xloc>
-      <yloc>176</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Text file output&#x3a; Literals.json</name>
-    <type>TextFileOutput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <separator/>
-    <enclosure/>
-    <enclosure_forced>Y</enclosure_forced>
-    <enclosure_fix_disabled>N</enclosure_fix_disabled>
-    <header>N</header>
-    <footer>N</footer>
-    <format>UNIX</format>
-    <compression>None</compression>
-    <encoding>UTF-8</encoding>
-    <endedLine/>
-    <fileNameInField>N</fileNameInField>
-    <fileNameField/>
-    <create_parent_folder>N</create_parent_folder>
-    <file>
-      <name>C&#x3a;&#x5c;biserver-ce&#x5c;pentaho-solutions&#x5c;system&#x5c;osha-dvt-infosystem&#x5c;static&#x5c;custom&#x5c;modules&#x5c;horizontal&#x5c;model&#x5c;Literals</name>
-      <is_command>N</is_command>
-      <servlet_output>N</servlet_output>
-      <do_not_open_new_file_init>N</do_not_open_new_file_init>
-      <extention>json</extention>
-      <append>N</append>
-      <split>N</split>
-      <haspartno>N</haspartno>
-      <add_date>N</add_date>
-      <add_time>N</add_time>
-      <SpecifyFormat>N</SpecifyFormat>
-      <date_time_format/>
-      <add_to_result_filenames>Y</add_to_result_filenames>
-      <pad>N</pad>
-      <fast_dump>Y</fast_dump>
-      <splitevery>0</splitevery>
-    </file>
-    <fields>
-      <field>
-        <name>jsonString</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-    </fields>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>816</xloc>
-      <yloc>176</yloc>
+      <xloc>224</xloc>
+      <yloc>160</yloc>
       <draw>Y</draw>
       </GUI>
     </step>

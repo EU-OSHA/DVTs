@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <job>
-  <name>osha_dvt_barometer</name>
+  <name>read_literals</name>
     <description/>
     <extended_description/>
     <job_version/>
     <job_status>0</job_status>
   <directory>&#x2f;</directory>
   <created_user>-</created_user>
-  <created_date>2017&#x2f;05&#x2f;02 12&#x3a;42&#x3a;53.707</created_date>
+  <created_date>2017&#x2f;05&#x2f;03 08&#x3a;23&#x3a;05.133</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2017&#x2f;05&#x2f;02 12&#x3a;42&#x3a;53.707</modified_date>
+  <modified_date>2017&#x2f;05&#x2f;03 08&#x3a;23&#x3a;05.133</modified_date>
     <parameters>
     </parameters>
   <connection>
-    <name>osha_dvt</name>
-    <server>localhost</server>
+    <name>osha_dvt_ilo</name>
+    <server/>
     <type>MYSQL</type>
     <access>JNDI</access>
-    <database>osha_dvt</database>
-    <port>3307</port>
+    <database>osha_dvt_ilo</database>
+    <port>1521</port>
     <username/>
     <password>Encrypted </password>
     <servername/>
@@ -30,7 +30,7 @@
       <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
       <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
       <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
-      <attribute><code>PORT_NUMBER</code><attribute>3307</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>1521</attribute></attribute>
       <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
       <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
       <attribute><code>STREAM_RESULTS</code><attribute>Y</attribute></attribute>
@@ -78,63 +78,16 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>48</xloc>
-      <yloc>256</yloc>
-      </entry>
-    <entry>
-      <name>SQL Script&#x3a; Delete Literals from Barometer</name>
-      <description>Delete the existing literals created for DVT-Barometer&#xd;&#xa;These literal IDs will be between 20000 and 30000 on the Database</description>
-      <type>SQL</type>
-      <sql/>
-      <useVariableSubstitution>F</useVariableSubstitution>
-      <sqlfromfile>T</sqlfromfile>
-      <sqlfilename>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x2f;resources&#x2f;sql&#x2f;delete_barometer_literals.sql</sqlfilename>
-      <sendOneStatement>F</sendOneStatement>
-      <connection>osha_dvt</connection>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
       <xloc>224</xloc>
-      <yloc>256</yloc>
+      <yloc>320</yloc>
       </entry>
     <entry>
-      <name>Job&#x3a; Normalize figures</name>
-      <description/>
-      <type>JOB</type>
-      <specification_method>filename</specification_method>
-      <job_object_id/>
-      <filename>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x2f;normalize_facts_figures.kjb</filename>
-      <jobname/>
-      <arg_from_previous>N</arg_from_previous>
-      <params_from_previous>N</params_from_previous>
-      <exec_per_row>N</exec_per_row>
-      <set_logfile>N</set_logfile>
-      <logfile/>
-      <logext/>
-      <add_date>N</add_date>
-      <add_time>N</add_time>
-      <loglevel>Nothing</loglevel>
-      <slave_server_name/>
-      <wait_until_finished>Y</wait_until_finished>
-      <follow_abort_remote>N</follow_abort_remote>
-      <expand_remote_job>N</expand_remote_job>
-      <create_parent_folder>N</create_parent_folder>
-      <pass_export>N</pass_export>
-      <parameters>        <pass_all_parameters>Y</pass_all_parameters>
-      </parameters>      <set_append_logfile>N</set_append_logfile>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>640</xloc>
-      <yloc>256</yloc>
-      </entry>
-    <entry>
-      <name>Literals to JSON</name>
+      <name>Literal-Translation</name>
       <description/>
       <type>TRANS</type>
       <specification_method>filename</specification_method>
       <trans_object_id/>
-      <filename>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x2f;access_literals_to_json.ktr</filename>
+      <filename>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x2f;trans_literal_translation.ktr</filename>
       <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -158,16 +111,16 @@
       </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>928</xloc>
-      <yloc>256</yloc>
+      <xloc>544</xloc>
+      <yloc>320</yloc>
       </entry>
     <entry>
-      <name>Links List</name>
+      <name>Section</name>
       <description/>
       <type>TRANS</type>
       <specification_method>filename</specification_method>
       <trans_object_id/>
-      <filename>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x2f;get_links_list.ktr</filename>
+      <filename>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x2f;trans_literal_section.ktr</filename>
       <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -190,46 +143,15 @@
       <parameters>        <pass_all_parameters>Y</pass_all_parameters>
       </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
-      <nr>1</nr>
-      <xloc>928</xloc>
-      <yloc>352</yloc>
-      </entry>
-    <entry>
-      <name>Access to MySQL</name>
-      <description/>
-      <type>JOB</type>
-      <specification_method>filename</specification_method>
-      <job_object_id/>
-      <filename>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x2f;access_to_mysql.kjb</filename>
-      <jobname/>
-      <arg_from_previous>N</arg_from_previous>
-      <params_from_previous>N</params_from_previous>
-      <exec_per_row>N</exec_per_row>
-      <set_logfile>N</set_logfile>
-      <logfile/>
-      <logext/>
-      <add_date>N</add_date>
-      <add_time>N</add_time>
-      <loglevel>Nothing</loglevel>
-      <slave_server_name/>
-      <wait_until_finished>Y</wait_until_finished>
-      <follow_abort_remote>N</follow_abort_remote>
-      <expand_remote_job>N</expand_remote_job>
-      <create_parent_folder>N</create_parent_folder>
-      <pass_export>N</pass_export>
-      <parameters>        <pass_all_parameters>Y</pass_all_parameters>
-      </parameters>      <set_append_logfile>N</set_append_logfile>
-      <parallel>N</parallel>
-      <draw>Y</draw>
       <nr>0</nr>
-      <xloc>416</xloc>
-      <yloc>256</yloc>
+      <xloc>368</xloc>
+      <yloc>320</yloc>
       </entry>
   </entries>
   <hops>
     <hop>
       <from>START</from>
-      <to>SQL Script&#x3a; Delete Literals from Barometer</to>
+      <to>Section</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -237,35 +159,8 @@
       <unconditional>Y</unconditional>
     </hop>
     <hop>
-      <from>Job&#x3a; Normalize figures</from>
-      <to>Literals to JSON</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>Job&#x3a; Normalize figures</from>
-      <to>Links List</to>
-      <from_nr>0</from_nr>
-      <to_nr>1</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>SQL Script&#x3a; Delete Literals from Barometer</from>
-      <to>Access to MySQL</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>Access to MySQL</from>
-      <to>Job&#x3a; Normalize figures</to>
+      <from>Section</from>
+      <to>Literal-Translation</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
