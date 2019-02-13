@@ -52,6 +52,39 @@ define(function (require) {
       $scope.paginationText = i18n.displaying + ($scope.elementsStart+1)+'-'+$scope.elementsEnd + i18n.of + $scope.amatrix.length;
     }*/
 
+
+    $scope.selectOpened = "";
+
+    $scope.openSelect = function($event){
+
+      if( $event.target.nodeName == "LABEL" ){
+        var currentSelect = $event.target.offsetParent;
+      } else {
+        var currentSelect = $event.target.offsetParent.offsetParent;
+       
+      }
+
+      if( currentSelect.className.indexOf('viewOptions') > 0 ){
+        currentSelect.className = 'filter--dropdown--wrapper';
+      } else {
+        currentSelect.className += ' viewOptions';
+      }
+
+
+/*
+      if ($scope.selectOpened == "viewOptions")
+      {
+        $scope.selectOpened = "";
+      }
+      else
+      {
+        $scope.selectOpened = "viewOptions";
+      }
+*/
+    }
+
+
+
     // Read more
     $scope.trimtext = function(pVal, pNumCharacters){
       var shortText = pVal;
@@ -141,7 +174,7 @@ define(function (require) {
         $scope.elementsStart=0;
         $scope.pageStart = 0;
         $scope.elementsEnd=$scope.pageSize;
-        $scope.pagestart = 13;
+        $scope.pagestart = 10;
 
         if($scope.elementsEnd>$scope.amatrix.length) {
           $scope.elementsEnd=$scope.amatrix.length;

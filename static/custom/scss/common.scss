@@ -37,8 +37,15 @@
   }
   h1, h2, h3, h4 {
     font-family:$font-header;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top:2rem;
+    margin-bottom:2rem;
+  }
+  h2{
+    font-size: 3.6rem;
+  }
+  h4{
+    font-family:$font-body-bold;
+    font-size: 2.6rem;
   }
   a{
     text-decoration: none;
@@ -138,6 +145,17 @@
         }
       }
     }
+    .btn--block-filter{
+      padding: 0rem;
+      margin: 0;
+      border: 0;
+      a{
+        position: relative;
+        padding: 0.5rem;
+        text-align: center;
+        cursor: pointer;
+      }
+    }
     .btn-default{
       padding: 1.4rem 2rem;
       margin-bottom: 0;
@@ -171,6 +189,22 @@
     .btn-full{
       display: block;
       width: 100%;
+    }
+    .btn--card{
+      font-weight: bold;
+      position: relative;
+      &:after{
+        content: "\f105";
+        font-family: FontAwesome;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        font-size: 2.6rem;
+        position: relative;
+        top: 0.3rem;
+        left: 0.5rem;
+        color: $orange;
+      }
     }
   /** END BUTTONS ELEMENT AND BLOCK  **/
 
@@ -219,7 +253,7 @@
       background: $aquamarine-light;
     }
     .background-gray{
-      background: $gray-light;
+      background: $gray-lighter;
     }
     .background-white{
       background: $white;

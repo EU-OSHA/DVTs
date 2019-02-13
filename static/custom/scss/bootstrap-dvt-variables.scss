@@ -37,8 +37,8 @@ $black:#000;
 $white:#FFF;
 $gray-darker:            lighten($black, 13.5%); // #222
 $gray-dark:              lighten($black, 20%);   // #333
-$gray:                   lighten($black, 33.5%); // #555
-$gray-light:             #E8E8E8;
+$gray:                   #57575A;
+$gray-light:             #B1B3B4;
 $gray-lighter:           #EEEEEE;
 
 $brand-primary:         darken(#428bca, 6.5%); // #337ab7
@@ -49,10 +49,18 @@ $brand-danger:          #d9534f !default;
 
 $gray-icon:#A2ACB4;
 $gray-footer:#B0B2B3;
-$orange:#f6a400;
-$aquamarine:#00A0A4;
+$orange:#F6A400;
+$orange-light:#FBDB99;
+$aquamarine:#529FA2;
 $aquamarine-light:#C7E2E3;
 $aquamarine-dark:#00696C;
+$eu:#003399;
+
+
+$mainCountry:#F6A400;
+$mapGroup:#CEDFE1;
+$mapOthers:#B1B3B4;
+
 $link-menu:$gray-base;
 $backgroundCookies:$aquamarine;
 /** END COLORS **/
@@ -65,7 +73,8 @@ $brand-warning:         #f0ad4e !default;
 $brand-danger:          #d9534f !default;
 
 $font-header:'Oswald',sans-serif;
-$font-body: 'Open Sans';
+$font-body: 'OpenSans';
+$font-body-bold: 'OpenSans-bold';
 
 //== Scaffolding
 //

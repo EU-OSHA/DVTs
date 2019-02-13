@@ -1,454 +1,233 @@
 
-
-/*MATRIX*/
-
-.searcher {
-  text-align: center;
-  //border: 1px solid red;
-  background-color: #fdedcc;
-  padding-top: 18px;
-  padding-bottom: 18px;
-  .search {
-    width: 50%;
-    margin:0 auto;
-  }
-
-}
-.page-content-matrix{
-  /*background-color:#EBEBEB;*/
-}
-div.filters-container {
-  background-color:#EBEBEB;
-  margin: 20px 0 0 0;
-  .title {
-    font-family: $font-header;
-    font-size: 22px;
-    color: $colorA;
-    font-weight: 500;
-    text-transform: uppercase;
-    line-height: 100%;
-    margin: 4rem 0 2rem;
-  }
-  input[type="file"]:focus, input[type="radio"]:focus, input[type="checkbox"]:focus {
-    outline: 0px auto -webkit-focus-ring-color;
-    outline-offset: 0;
-  }
-  input[type=checkbox]{
-    background: #fff;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    border: 1px solid #000;
-    width: 17px;
-    height: 17px;
-    content: "\2714";
-    padding: 0;
-    margin: 0;
-    overflow: visible;
-  }
-  input[type=checkbox]:checked:before{
-    content: "\f00c";
-    font-family: fontawesome;
-    font-size: 17px;
-    position: relative;
-    top: -4px;
-    left: -2px;
-    color: #3da2b4;
-  }
-}
-
-#filter1,
-#filter2 {
-  padding:0 !important;
-  margin:0 !important;
-  margin-bottom:0 !important;
-}
-
-
-#country-card-structure label {
-  font-weight: normal;
-  vertical-align: top;
-  width: 88%;
-  display: inline-block;
-  font-size: 1.4rem !important;
-  margin-bottom: 0rem;
-}
-
-#country-card-structure .input-group .form-control:first-child {
-  margin-left:0;
-}
-
-#country-card-structure .input-group-btn:last-child > .btn,
-#country-card-structure .input-group-btn:last-child > .btn-group {
-  margin-left: -1px;
-  margin-top: 0px;
-}
-
-div.external-container {
-  height: 3em;
-  text-align:center;
-}
-#country-card-structure .policies {
-  margin:0px 0px 0px 0px;
-  background-color: #F7F7F8;
-  float: left;
-  padding: 10px;
+.block--filter--wrapper{
+  margin: 2rem 0 6rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   position: relative;
-  /*Provisional*/
-  right: -10%;
-  z-index: 10;
-  .matrix-pag{
-    ul{
-      float: right;
-      padding-left: 0;
-      width: auto;
-    }
-  }
-  .title {
-    font-family: "Oswald-light", sans-serif;
-    color: #00A0A4;
-    font-size: 2.8rem;
-    text-align: left;
-    color: #00A0A4 !important;
-    margin: 15px auto 10px !important;
-  }
-  .subtitle {
-    margin:0px 0 10px;
-    font-size: 18px;
-    line-height: 24px;
-    font-weight: 500;
-  }
-  .date {
-    font-size: 15px;
-    font-weight: 100;
-    color: $colorA;
-  }
-  .image {
-    padding-top: 0px;
-    color: #EDA308;
-    padding-left:0;
-    padding-right:0;
-    text-align: center;
-  }
-  .policy-items {
-    margin-left: 0;
-    margin-bottom: 1rem;
-    width: 100%;
-    .external-container{
-      a{
-        margin-right: 1em;
-        color: black !important;
-        font-family: "oswald";
-        font-size: 1.5rem;
-        transition: color 0.5s ease-out;
-        &:hover{
-          color: #b1b3b4 !important;
-          text-decoration: none;
-          transition: color 0.5s ease-out;
-        }
-        .fa {
-          margin-left: .2em;
-          color: #EDA308;
-        }
-      }
-    }
-    .policy-description {
-      margin-bottom:10px !important;
-      color: #222;
-      font-weight: bold;
-    }
-    .policy-content{
-      samp{
-        font-family: "Open Sans", sans-serif;
-        font-size: 1.6rem;
-      }
-    }
-    .more-wrapper{
-      margin-top: 1rem;
-      text-align: right;
-      button, input[type="button"] {
-        margin-top: 2rem;
-        text-align: right;
-        display: block;
-        float: left;
-        background: transparent;
-        border:none;
-        font-size: 1.5rem;
-        padding: 0;
-        font-family: "oswald";
-        color: #000;
-        &:focus, &:active{
-          outline: 0;
-        }
-        &.more:after{
-          content:"\f107";
-          font-family: 'fontawesome';
-          font-weight: bold;
-          font-size: 1.6rem;
-          margin-left: 1em;
-          color: #ECA215;
-        }
-        &.less:after{
-          content:"\f106";
-          font-family: 'fontawesome';
-          font-weight: bold;
-          font-size: 1.6rem;
-          margin-left: 1em;
-          color: #ECA215;
-        }
-        &:hover{
-          background-color: #f2f2f2;
-        }
-      }
-    }
-    hr.separator-items {
-      border: 1px;
-      height: 1px;
-      background-image: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.5), transparent);
-      clear: both;
-      margin: 3rem 20% 0;
-      float: left;
-      width: 60%;
-    }
-  }
-  .btn-link {
-    padding: 0 !important;
-    float: none;
-    display: inline;
-    color: $colorB;
-    text-decoration: underline;
-  }
-  .more-links {
-    .item, .item-data {
-      font-family: Oswald;
-      text-decoration: none;
-    }
-    .item {
-      color: #000;
-      font-size: 1.0em;
-    }
-    .item-data {
-      color: #0033B1;
-      font-size: 1.4rem;
-    }
-    padding: 10px;
-    /*background: #f8f8f8;*/
-    margin-bottom: 20px;
-    a {
-      /*color: $colorB !important;*/
-      /*text-decoration: underline;*/
-      font-size: 1.1em !important;
-      float: right;
-    }
-    div {
-      padding: 0;
-    }
-  }
-}
+  z-index: 10; 
 
-
-@media only screen and (min-width : 1024px) and (max-width : 1366px) and (orientation : landscape) {
-  #country-card-structure{
-    .filters-container {
-
-    }
-    .policies {
-      .policy-items {
-        margin-left: 0;
-        margin-bottom: 1rem;
-        width: 100%;
-        padding: 0;
-        .policy-maps{
-          .mg-7x {
-            font-size: 7em;
-          }
-        }
-      }
-    }
-  }
-}
-@media only screen and (min-width : 768px) and (max-width : 1024px) and (orientation : portrait) {
-  #country-card-structure{
-    .filters-container {
-      label {
-        font-weight: normal;
-        vertical-align: text-top;
-        width: 80%;
-      }
-    }
-    .policies {
-      .policy-items {
-        margin-left: 0;
-        margin-bottom: 1rem;
-        width: 100%;
-        padding: 0;
-        .policy-maps{
-          .mg-7x {
-            font-size: 7em;
-          }
-        }
-      }
-    }
-  }
-}
-@media only screen and (min-width : 768px) and (max-width : 1024px) and (orientation : landscape) {
-  #country-card-structure{
-    label{
-      width: 85%;
-    }
-    .filters-container {
-
-    }
-    .policies {
-      .policy-items {
-        margin-left: 0;
-        margin-bottom: 1rem;
-        width: 100%;
-        padding: 0;
-        .policy-maps{
-          .mg-7x {
-            font-size: 7em;
-          }
-        }
-      }
-    }
-  }
-}
-
-
-@media only screen and (max-width : 767px) {
-  #country-card-structure .policies {
-    margin: 20px 0 0;
-    background-color: #fff;
-    padding: 10px;
-    border-left: 0;
-    .matrix-pag{
-      ul {
-        float: left;
-        padding-left: 12%;
-        width: auto;
-      }
-    }
-    .policy-items {
-      background-color: #fff;
-      margin-left: 0;
-      margin-bottom: 10px;
+  .filter--dropdown--wrapper{
+    position: relative;
+    flex-basis:30%;
+    .filter--dropdown--list{
+      position: absolute;
+      height: 4rem;
+      border: 1px solid $aquamarine;
+      background: $white;
+      border-radius: 6px;
+      overflow: hidden;
       width: 100%;
-    }
-    .image {
-      padding-top: 0px;
-      padding-left:0;
-      padding-right:0;
-      text-align:center;
-    }
-    .m20 {
-      margin-top:0px;
-      text-align:center;
-      width:100%;
-    }
-  }
-
-  .filters-container{
-    .navbar-toggle{
-      .icon-bar {
-        background: #000;
-      }
-    }
-    #filter2 {
-      h2{
-        border-bottom: 1px dotted;
-        cursor: pointer;
+      .option-title{
+        padding: 1rem;
+        margin: 0;
+        font-size: 1.4rem;
+        cursor:pointer;
+        color:$aquamarine;
         &:after{
-          content: "\f106";
+          content: "\f107";
           display: inline-block;
-          font: normal normal normal 26px/1 FontAwesome;
+          font-size:2.5rem !important;
+          font-family:'FontAwesome';
+          font-size: inherit;
           text-rendering: auto;
           -webkit-font-smoothing: antialiased;
-          -moz-osx-font-smoothing: grayscale;
-          float: right;
-          background: #f6a400;
-          color: #FFF;
-          padding: 0 5px;
-          position: relative;
-          top: -3px;
+          position: absolute;
+          right: 0.7rem;
+          top: 0.2rem;
+          color: $aquamarine;
         }
-        &.showChallenges{
+      }
+      .filter--dropdown--options{      
+        list-style-type: none;
+        padding: 1rem;
+        margin: 0;
+        font-size: 1.4rem;
+        font-weight: normal;
+        max-height: 20rem;
+        overflow-y: auto;
+        &::-webkit-scrollbar {
+            width: 8px;
+        }       
+        &::-webkit-scrollbar-track {
+            //-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,1); 
+            border-radius: 4px;
+        }       
+        &::-webkit-scrollbar-thumb {
+            border-radius: 4px;
+            background: #CCC;
+            //-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,1); 
+        }
+        li{
+          label{
+            font-weight: normal;
+          }
+          input{
+
+          }
+        }
+      }    
+    }
+    &.viewOptions{
+      .filter--dropdown--list{
+        display: block;
+        height: auto;
+        .option-title{
           &:after{
-            content: "\f107";
+            content: "\f106";
           }
         }
       }
     }
   }
-}
-@media only screen and (min-width : 768px){
-  #filter2 .countries-filters{
-    display: block !important;
-  }
-}
-@media only screen and (min-width : 768px) and (max-width : 990px) {
-  #country-card-structure label {
-    width: 82%;
-  }
-}
-@media only screen and (max-width : 767px){
-  .filters-container {
-    .countries-filters {
-      .filters {
-        width: 25%;
-        display: inline-block;
-        label {
-          width: 85% !important;
-        }
-      }
-    }
-  }
-}
-@media only screen and (max-width : 600px){
-  .filters-container {
-    .countries-filters {
-      .filters {
-        width: 33%;
-        display: inline-block;
-        label {
-          width: 85% !important;
-        }
-      }
-    }
-  }
-}
-@media only screen and (max-width : 500px){
-  .filters-container {
-    .countries-filters {
-      .filters {
-        width: 50%;
-        display: inline-block;
-        label {
-          width: 85% !important;
-        }
-      }
-    }
-  }
-}
-@media only screen and (max-width : 380px){
-  .filters-container {
-    .countries-filters {
-      .filters {
+
+  .filter-text{
+    flex-basis:33.3%;
+    margin-top: 3rem;
+    position: relative;
+    #search-input{
+        padding: 1rem 4rem 1rem 1rem;
+        font-size: 1.4rem;
+        margin: 0;
+        border: 1px solid $aquamarine;
+        background: $white;
+        border-radius: 6px;
         width: 100%;
-        display: block;
-        label {
-          width: 90% !important;
-        }
+      }
+      #search-input {
+      box-shadow: none;
+      display:block;
+      &::-webkit-input-placeholder {
+        display: none;
+      }
+      &:-moz-placeholder {
+        /* Firefox 18- */
+        display: none;
+      }
+      &::-moz-placeholder {
+        /* Firefox 19+ */
+        display: none;
+      }
+      &:-ms-input-placeholder {
+        display: none;
+      }
+    }
+    button{
+      background: none;
+      border: 0px;
+      position: absolute;
+      top: 0.7rem;
+      right: 0.7rem;
+      color: $aquamarine;
+    } 
+  }
+}  
+
+
+.matrix--elements--wrapper{
+  .matrix--element{
+    background:$gray-lighter;
+    border-radius: 50px 0 50px 0;
+    padding: 2rem 5rem; 
+    margin-bottom: 2rem;
+    .matrix--header--elements{
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      .title-section{
+        margin: 1rem 0;
+      }
+    }
+    .matrix--content--elements{
+      samp{
+        font-family: "OpenSans";
+        font-size: 1.8rem;
+        line-height: 1.42857;
+      }
+      .btn--card {
+        margin-top: 1.4rem;
+        display: inline-block;
       }
     }
   }
 }
 
-@media only screen and (min-width : 1200px) and (max-width : 1440px){
-  #filter1, #filter2{
-    width: 80%;
+
+.see--more--wrapper{
+  text-align: right;
+  font-size: 1.4rem;
+  .see-more{
+    position: relative;
+    cursor: pointer;
+    &:after{
+      content: "\f107";
+      display: inline-block;
+      font-size:1.8rem !important;
+      font-family:'FontAwesome';
+      font-size: inherit;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+      position: relative;
+      right: -4px;
+      top: 4px;
+      color: $aquamarine;
+    }
+  }
+  .see-less{
+    position: relative;
+    cursor: pointer;
+    &:after{
+      content: "\f106";
+      display: inline-block;
+      font-size:1.8rem !important;
+      font-family:'FontAwesome';
+      font-size: inherit;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+      position: relative;
+      right: -4px;
+      top: 4px;
+      color: $aquamarine;
+    }
   }
 }
 
-.dropdown-menu {
-  left: 15px;
+
+.pagination--wrapper{
+  .pagination--elements{
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 0 6rem;
+    li{
+      margin: 0 0.5rem;
+      span{
+        padding: 6px;
+        text-align: center;
+        height: 4rem;
+        width: 4rem;
+        border-radius: 8px;
+        border: 1px solid $gray-light;
+        display: block;
+        font-size: 2rem;
+        font-family: 'Oswald';
+        opacity: 0.3;
+        cursor: pointer;
+        &.active{
+          opacity: 1;
+        }
+      }
+      &.arrow {
+        span{
+          border:0px;
+          opacity: 1;
+          color: $gray-light; 
+          
+        }
+      }
+    }
+  }
 }

@@ -12,11 +12,9 @@
 
 /** HEADER **/
     .bar-header{
-        /*-webkit-box-shadow: 0px 2px 2px 0px rgba(204,204,204,1);
-        -moz-box-shadow: 0px 2px 2px 0px rgba(204,204,204,1);
-        box-shadow: 0px 2px 2px 0px rgba(204,204,204,1);*/
         z-index: 1;
         position: relative;
+        padding: 0;
         .header--top{
             display: flex;
             flex-direction: row;
@@ -24,6 +22,7 @@
             .eu.osha-logo{
                 justify-items: self-start;
                 margin: 0;
+                padding: 0 1.5rem;
             }
             .menu-tools-top{
               padding: 1.5rem 1.5rem 0;
@@ -38,7 +37,7 @@
             }
             .menu-tools-top--items{
                 .zoom--text{
-                    padding-bottom: 5px;
+                  padding-bottom: 5px;
                   span {
                     display: inline-block;
                     vertical-align: sub;
@@ -66,10 +65,10 @@
                 .search--block{
                         .search--form{
                             .form-group {
-                                width: 40rem;
+                              width: 40rem;
                               margin: 0;
-                                background-color: $white;
-                                border:2px solid $gray-icon;
+                              background-color: $white;
+                              border:2px solid $gray-icon;
                             }
                             input.form-control {
                               padding-right: 20px;
