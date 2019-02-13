@@ -98,37 +98,6 @@
       <yloc>256</yloc>
       </entry>
     <entry>
-      <name>Job&#x3a; Normalize figures</name>
-      <description/>
-      <type>JOB</type>
-      <specification_method>filename</specification_method>
-      <job_object_id/>
-      <filename>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x2f;normalize_facts_figures.kjb</filename>
-      <jobname/>
-      <arg_from_previous>N</arg_from_previous>
-      <params_from_previous>N</params_from_previous>
-      <exec_per_row>N</exec_per_row>
-      <set_logfile>N</set_logfile>
-      <logfile/>
-      <logext/>
-      <add_date>N</add_date>
-      <add_time>N</add_time>
-      <loglevel>Nothing</loglevel>
-      <slave_server_name/>
-      <wait_until_finished>Y</wait_until_finished>
-      <follow_abort_remote>N</follow_abort_remote>
-      <expand_remote_job>N</expand_remote_job>
-      <create_parent_folder>N</create_parent_folder>
-      <pass_export>N</pass_export>
-      <parameters>        <pass_all_parameters>Y</pass_all_parameters>
-      </parameters>      <set_append_logfile>N</set_append_logfile>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>640</xloc>
-      <yloc>256</yloc>
-      </entry>
-    <entry>
       <name>Literals to JSON</name>
       <description/>
       <type>TRANS</type>
@@ -158,7 +127,7 @@
       </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>928</xloc>
+      <xloc>688</xloc>
       <yloc>256</yloc>
       </entry>
     <entry>
@@ -191,7 +160,7 @@
       </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>1</nr>
-      <xloc>928</xloc>
+      <xloc>688</xloc>
       <yloc>352</yloc>
       </entry>
     <entry>
@@ -237,7 +206,16 @@
       <unconditional>Y</unconditional>
     </hop>
     <hop>
-      <from>Job&#x3a; Normalize figures</from>
+      <from>SQL Script&#x3a; Delete Literals from Barometer</from>
+      <to>Access to MySQL</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>N</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Access to MySQL</from>
       <to>Literals to JSON</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
@@ -246,28 +224,10 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Job&#x3a; Normalize figures</from>
+      <from>Access to MySQL</from>
       <to>Links List</to>
       <from_nr>0</from_nr>
       <to_nr>1</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>SQL Script&#x3a; Delete Literals from Barometer</from>
-      <to>Access to MySQL</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>Access to MySQL</from>
-      <to>Job&#x3a; Normalize figures</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
       <enabled>Y</enabled>
       <evaluation>Y</evaluation>
       <unconditional>N</unconditional>

@@ -76,11 +76,11 @@
   <notepads>
   </notepads>
   <connection>
-    <name>osha_dvt_infosystem</name>
+    <name>osha_dvt</name>
     <server/>
     <type>MYSQL</type>
     <access>JNDI</access>
-    <database>osha_dvt_infosystem</database>
+    <database>osha_dvt</database>
     <port>1521</port>
     <username/>
     <password>Encrypted </password>
@@ -105,7 +105,7 @@
   <order>
   <hop> <from>Modified Java Script Value</from><to>Blocking Step</to><enabled>Y</enabled> </hop>
   <hop> <from>Blocking Step</from><to>Text file output&#x3a; Links-List.txt</to><enabled>Y</enabled> </hop>
-  <hop> <from>Microsoft Access Input</from><to>Modified Java Script Value</to><enabled>Y</enabled> </hop>
+  <hop> <from>Table input</from><to>Modified Java Script Value</to><enabled>Y</enabled> </hop>
   </order>
   <step>
     <name>Blocking Step</name>
@@ -132,80 +132,6 @@
     </step>
 
   <step>
-    <name>Microsoft Access Input</name>
-    <type>AccessInput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <include>N</include>
-    <include_field/>
-    <tablename>N</tablename>
-    <filename_Field/>
-    <tablename_field/>
-    <rownum>N</rownum>
-    <isaddresult>Y</isaddresult>
-    <filefield>N</filefield>
-    <rownum_field/>
-    <resetrownumber>N</resetrownumber>
-    <table_name>LITERAL</table_name>
-    <file>
-      <name>C&#x3a;&#x5c;biserver-ce&#x5c;pentaho-solutions&#x5c;system&#x5c;osha-dvt-infosystem&#x5c;endpoints&#x5c;kettle&#x5c;admin&#x5c;resources&#x5c;origin&#x5c;EU-OSHA_DVTOSH_Dataset.accdb</name>
-      <filemask/>
-      <exclude_filemask/>
-      <file_required>N</file_required>
-      <include_subfolders>N</include_subfolders>
-    </file>
-    <fields>
-      <field>
-        <name>LITERAL_ID</name>
-        <attribut>LITERAL_ID</attribut>
-        <type>Number</type>
-        <format/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <currency/>
-        <decimal/>
-        <group/>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-      </field>
-      <field>
-        <name>LITERAL</name>
-        <attribut>LITERAL</attribut>
-        <type>String</type>
-        <format/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <currency/>
-        <decimal/>
-        <group/>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-      </field>
-    </fields>
-    <limit>0</limit>
-    <shortFileFieldName/>
-    <pathFieldName/>
-    <hiddenFieldName/>
-    <lastModificationTimeFieldName/>
-    <uriNameFieldName/>
-    <rootUriNameFieldName/>
-    <extensionFieldName/>
-    <sizeFieldName/>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>192</xloc>
-      <yloc>176</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
     <name>Modified Java Script Value</name>
     <type>ScriptValueMod</type>
     <description/>
@@ -220,7 +146,7 @@
     <optimizationLevel>9</optimizationLevel>
     <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
         <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>var list&#x3b;&#xd;&#xa;&#xd;&#xa;if &#x28;list&#x3d;&#x3d;undefined&#x29; &#x7b;&#xd;&#xa;	list &#x3d; &#x27;&#x27;&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;&#xd;&#xa;var literal &#x3d; LITERAL&#x3b;&#xd;&#xa;var id &#x3d; LITERAL_ID&#x3b;&#xd;&#xa;&#xd;&#xa;if &#x28;literal &#x3d;&#x3d; null&#x29; &#x7b;&#xd;&#xa;	literal &#x3d; &#x27;&#x27;&#x3b;&#xd;&#xa;&#x7d; &#xd;&#xa;if &#x28;id &#x3d;&#x3d; null&#x29; &#x7b;&#xd;&#xa;	id &#x3d; 0&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;&#xd;&#xa;var link &#x3d; &#x27;&#x27;&#x3b;&#xd;&#xa;&#xd;&#xa;while &#x28;literal.indexOf&#x28;&#x27;&#x3c;a&#x27;&#x29; &#x3e; -1&#x29; &#x7b;&#xd;&#xa;	literal &#x3d; literal.substr&#x28;literal.indexOf&#x28;&#x27;&#x3c;a&#x27;&#x29;&#x29;&#x3b;&#xd;&#xa;	&#xd;&#xa;	link &#x3d; literal.substr&#x28;literal.indexOf&#x28;&#x27;&#x3c;a&#x27;&#x29;, literal.indexOf&#x28;&#x27;&#x3c;&#x2f;a&#x27;&#x29;&#x29;&#x3b;&#xd;&#xa;	link &#x3d; link.substr&#x28;link.indexOf&#x28;&#x27;href&#x3d;&#x22;&#x27;&#x29;&#x2b;6&#x29;&#x3b;&#xd;&#xa;	link &#x3d; link.substr&#x28;0, link.indexOf&#x28;&#x27;&#x22;&#x27;&#x29;&#x29;&#x3b;&#xd;&#xa;	if &#x28;link.charAt&#x28;0&#x29; &#x3d;&#x3d; &#x27;&#x3a;&#x27;&#x29; &#x7b;&#xd;&#xa;		link &#x3d; link.substr&#x28;1&#x29;&#x3b;&#xd;&#xa;	&#x7d;&#xd;&#xa;	if &#x28;link.charAt&#x28;0&#x29; &#x3d;&#x3d; &#x27; &#x27;&#x29; &#x7b;&#xd;&#xa;		link &#x3d; link.substr&#x28;1&#x29;&#x3b;&#xd;&#xa;	&#x7d;&#xd;&#xa;	list &#x3d; list &#x2b; id &#x2b; &#x27;-&#x27; &#x2b; link &#x2b; &#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;	&#xd;&#xa;&#xd;&#xa;	literal &#x3d; literal.substr&#x28;literal.indexOf&#x28;&#x27;&#x3c;&#x2f;a&#x27;&#x29;&#x29;&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;&#xd;&#xa;var jsonString &#x3d; list&#x3b;&#xd;&#xa;&#xd;&#xa;</jsScript_script>
+        <jsScript_script>var list&#x3b;&#xd;&#xa;&#xd;&#xa;if &#x28;list&#x3d;&#x3d;undefined&#x29; &#x7b;&#xd;&#xa;	list &#x3d; &#x27;&#x27;&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;&#xd;&#xa;var literal &#x3d; LITERAL&#x3b;&#xd;&#xa;var id &#x3d; LITERAL_ID&#x3b;&#xd;&#xa;&#xd;&#xa;if &#x28;literal &#x3d;&#x3d; null&#x29; &#x7b;&#xd;&#xa;	literal &#x3d; &#x27;&#x27;&#x3b;&#xd;&#xa;&#x7d; &#xd;&#xa;if &#x28;id &#x3d;&#x3d; null&#x29; &#x7b;&#xd;&#xa;	id &#x3d; 0&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;else &#x7b;&#xd;&#xa;	id &#x3d; id - 20000&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;&#xd;&#xa;var link &#x3d; &#x27;&#x27;&#x3b;&#xd;&#xa;&#xd;&#xa;while &#x28;literal.indexOf&#x28;&#x27;&#x3c;a&#x27;&#x29; &#x3e; -1&#x29; &#x7b;&#xd;&#xa;	literal &#x3d; literal.substr&#x28;literal.indexOf&#x28;&#x27;&#x3c;a&#x27;&#x29;&#x29;&#x3b;&#xd;&#xa;	&#xd;&#xa;	link &#x3d; literal.substr&#x28;literal.indexOf&#x28;&#x27;&#x3c;a&#x27;&#x29;, literal.indexOf&#x28;&#x27;&#x3c;&#x2f;a&#x27;&#x29;&#x29;&#x3b;&#xd;&#xa;	link &#x3d; link.substr&#x28;link.indexOf&#x28;&#x27;href&#x3d;&#x22;&#x27;&#x29;&#x2b;6&#x29;&#x3b;&#xd;&#xa;	link &#x3d; link.substr&#x28;0, link.indexOf&#x28;&#x27;&#x22;&#x27;&#x29;&#x29;&#x3b;&#xd;&#xa;	if &#x28;link.charAt&#x28;0&#x29; &#x3d;&#x3d; &#x27;&#x3a;&#x27;&#x29; &#x7b;&#xd;&#xa;		link &#x3d; link.substr&#x28;1&#x29;&#x3b;&#xd;&#xa;	&#x7d;&#xd;&#xa;	if &#x28;link.charAt&#x28;0&#x29; &#x3d;&#x3d; &#x27; &#x27;&#x29; &#x7b;&#xd;&#xa;		link &#x3d; link.substr&#x28;1&#x29;&#x3b;&#xd;&#xa;	&#x7d;&#xd;&#xa;	list &#x3d; list &#x2b; id &#x2b; &#x27;-&#x27; &#x2b; link &#x2b; &#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;	&#xd;&#xa;&#xd;&#xa;	literal &#x3d; literal.substr&#x28;literal.indexOf&#x28;&#x27;&#x3c;&#x2f;a&#x27;&#x29;&#x29;&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;&#xd;&#xa;var jsonString &#x3d; list&#x3b;&#xd;&#xa;&#xd;&#xa;</jsScript_script>
       </jsScript>    </jsScripts>    <fields>      <field>        <name>jsonString</name>
         <rename>jsonString</rename>
         <type>String</type>
@@ -260,7 +186,7 @@
     <fileNameField/>
     <create_parent_folder>N</create_parent_folder>
     <file>
-      <name>C&#x3a;&#x5c;biserver-ce&#x5c;pentaho-solutions&#x5c;system&#x5c;osha-dvt-infosystem&#x5c;resources-ext&#x5c;Links-List</name>
+      <name>C&#x3a;&#x5c;biserver-ce&#x5c;pentaho-solutions&#x5c;system&#x5c;osha-dvt-barometer&#x5c;resources-ext&#x5c;Links-List</name>
       <is_command>N</is_command>
       <servlet_output>N</servlet_output>
       <do_not_open_new_file_init>N</do_not_open_new_file_init>
@@ -294,6 +220,32 @@
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>816</xloc>
+      <yloc>176</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Table input</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>osha_dvt</connection>
+    <sql>SELECT l.id AS LITERAL_ID, t.text AS LITERAL FROM literal l &#xd;&#xa;INNER JOIN translation t &#xd;&#xa;ON l.id&#x3d;t.literal_id&#xd;&#xa;WHERE l.id &#x3e; 20000 AND l.id &#x3c; 30000&#x3b;</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>192</xloc>
       <yloc>176</yloc>
       <draw>Y</draw>
       </GUI>

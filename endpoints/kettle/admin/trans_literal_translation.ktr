@@ -127,7 +127,7 @@
     <single_statement>N</single_statement>
     <replace_variables>Y</replace_variables>
     <quoteString>N</quoteString>
-    <sql>SET &#x40;sectionId &#x3d; &#x28;SELECT id FROM section WHERE name&#x3d;&#x22;&#x3f;&#x22;&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;INSERT INTO literal &#x28;id, chart_id, section_id, type&#x29;&#xd;&#xa;VALUES &#x28;&#xd;&#xa;	20000&#x2b;&#x3f;, NULL, &#x40;sectionId, &#x22;&#x3f;&#x22;&#xd;&#xa;&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;INSERT INTO translation &#x28;literal_id, language, is_default, text&#x29;&#xd;&#xa;VALUES &#x28;&#xd;&#xa;	20000&#x2b;&#x3f;, &#x22;EN&#x22;, 1, &#x22;&#x3f;&#x22;&#xd;&#xa;&#x29;&#x3b;</sql>
+    <sql>SET &#x40;toolId &#x3d; &#x28;SELECT id FROM tool WHERE name&#x3d;&#x22;osha_dvt_barometer&#x22;&#x29;&#x3b;&#xd;&#xa;SET &#x40;sectionId &#x3d; &#x28;SELECT id FROM section WHERE name&#x3d;&#x22;&#x3f;&#x22; AND tool_id&#x3d;&#x40;toolId&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;INSERT INTO literal &#x28;id, chart_id, section_id, type&#x29;&#xd;&#xa;VALUES &#x28;&#xd;&#xa;	20000&#x2b;&#x3f;, NULL, &#x40;sectionId, &#x22;&#x3f;&#x22;&#xd;&#xa;&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;INSERT INTO translation &#x28;literal_id, language, is_default, text&#x29;&#xd;&#xa;VALUES &#x28;&#xd;&#xa;	20000&#x2b;&#x3f;, &#x22;EN&#x22;, 1, &#x22;&#x3f;&#x22;&#xd;&#xa;&#x29;&#x3b;</sql>
     <set_params>N</set_params>
     <insert_field/>
     <update_field/>
@@ -213,7 +213,7 @@
       <field>
         <name>LITERAL_ID</name>
         <attribut>LITERAL_ID</attribut>
-        <type>Number</type>
+        <type>Integer</type>
         <format/>
         <length>-1</length>
         <precision>-1</precision>
