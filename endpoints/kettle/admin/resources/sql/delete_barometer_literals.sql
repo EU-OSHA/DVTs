@@ -108,7 +108,7 @@ CREATE TABLE IF NOT EXISTS `strategies_page` (
   KEY `strategies_text_10_literal_id` (`text_10_literal_id`),
   KEY `strategies_text_11_literal_id` (`text_11_literal_id`),
   KEY `strategies_text_12_literal_id` (`text_12_literal_id`),
-  KEY `strategies_text_1_literal_id` (`text_1_literal_id`),
+  KEY `strategies_text_13_literal_id` (`text_13_literal_id`),
   CONSTRAINT `strategies_nuts_id_fk` FOREIGN KEY (`nuts_id`) REFERENCES `nuts` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `strategies_text_1_literal_id` FOREIGN KEY (`text_1_literal_id`) REFERENCES `literal` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `strategies_text_2_literal_id` FOREIGN KEY (`text_2_literal_id`) REFERENCES `literal` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
