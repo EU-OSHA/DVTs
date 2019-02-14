@@ -262,21 +262,24 @@ define(function (require) {
     /******************************************************************************|
     |                                DATA LOAD                                     |
     |******************************************************************************/
-      dataService.getAllMatrix().then(function (data) {
-        $log.debug('getAllMatrix');
-        $log.debug(data);
+      dataService.getAllMatrixAuthorities().then(function (data) {
+        $log.debug('getAllMatrixAuthorities');
+        //$log.debug(data);
+        $log.warn(data);
 
         data.data.resultset.map(function (elem) {
           var param = (!!$stateParams.filter) ? $stateParams.filter : undefined;
           $scope.amatrix.push({
               id: elem[0],
               country: elem[1],
-              implementation: elem[2],
-              prevention: elem[3],
-              tackling: elem[4],
-              objectives: elem[5],
-              detail: elem[6],
-              country_code: elem[7],
+              country_code: elem[2],
+              osh_authority: elem[3],
+              compensation: elem[4],
+              prevention: elem[5],
+              standardisation: elem[6],
+              name_authority: "L"+elem[7],
+              link_authority: "L"+elem[8],
+              detail_authority: "L"+elem[9],
               param: param
           });
         });
@@ -450,12 +453,13 @@ define(function (require) {
             }).catch(function (err) {
               throw err;
           });
-        } else if($scope.searchText != '') {
+        } else if(filter=="search") {
           $log.warn('BUSCANDO....');
-          /*dataService.getSearchList($scope.searchText)
+          dataService.getSearchTerm($scope.searchText)
             .then(function (data) {
               $scope.amatrix = dataService.dataMapper(data);
 
+              $log.warn($scope.amatrix);
 
               $scope.firstPage();
 
@@ -465,33 +469,7 @@ define(function (require) {
 
             }).catch(function (err) {
               throw err;
-          });*/
-
-          // Search all ages
-          /*var queryFunction = dataService[$attrs.searchQuery];
-          queryFunction.apply($attrs.searchQuery, [searchText]).then(function (results) {
-
-              $scope.results = dataService.dataMapper(results);
-              $log.warn("Results in pretty-print mode");
-              $log.warn(JSON.stringify($scope.results, undefined, 2));
-
-              $scope.firstPage();
-
-          }).catch(function (err) {
-              throw err;
           });
-
-          $scope.currentPage = 0;
-
-          if($scope.elementsStart>9) {
-              $scope.elementsStart=$scope.elementsStart+1;
-          }
-          $scope.elementsEnd= $scope.elementsStart+($scope.pageSize-1);
-
-          if($scope.elementsEnd>$scope.results.length) {
-              $scope.elementsEnd=$scope.results.length;
-          }*/
-          $log.warn($scope.searchText);
         } else {
           dataService.getSearchListChallenges($scope.searchParams.challenges, $scope.searchParams.countries)
             .then(function (data) {
@@ -514,8 +492,8 @@ define(function (require) {
 
       /*Clear search input*/
       $scope.clear = function ($event) {
-        angular.element('#search-input').val("");
-        //$scope.search();
+        $scope.searchText = '';
+        $scope.search($event,'search');
         $scope.currentPage = 0;
 
       };
@@ -523,14 +501,12 @@ define(function (require) {
       //CLICK ENTER --------------------------------------------------------------------------------------
       $scope.clickEnter=function($event) {
          if($event.which === 13) {
-             search($event);
+             search($event, 'search');
          }
       }
 
     /******************************END FILTERS************************************/
       $scope.search = search;
-
-      var options = [];
 
       $scope.confirmSelection = function($event){
         var check1 = $('#challenge-filter-1:checked').length > 0;
