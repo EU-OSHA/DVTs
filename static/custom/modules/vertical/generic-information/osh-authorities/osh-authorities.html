@@ -19,7 +19,7 @@
     <div id="filter1" class="filter--dropdown--wrapper">
       <label class="main-color dropdwon-open" data-ng-bind="i18nLiterals.L402" data-ng-click="openSelect($event)" ></label>
       <div class="filter--dropdown--list">
-        <p class="option-title" data-ng-click="openSelect($event)">Select a option </p>
+        <p class="option-title" data-ng-click="openSelect($event)">Filters apply</p>
         <ul class="filter--dropdown--options">
           <li>
             <input id='institution-filter-1' type="checkbox" data-ng-click="toggleChallengeClick($event, 1)"/>
@@ -46,7 +46,7 @@
       <label data-ng-bind="i18nLiterals.L22" class="main-color  dropdwon-open" data-ng-click="openSelect($event)"></label>
       <div class="filter--dropdown--list">
         <div class="selected--tags-wrapper"><span class="selected-tag">ES</span><span class="selected-tag">FR</span></div>
-        <p class="option-title" data-ng-click="openSelect($event)">Select a option</p>
+        <p class="option-title" data-ng-click="openSelect($event)">Select an option</p>
         <ul class="filter--dropdown--options">
           <li data-ng-repeat='country in countries'>
             <input id='country-filter-{{::country.country_code}}' ng-checked="!!country.param && country.param ==country.country_code"
