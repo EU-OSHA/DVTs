@@ -26,11 +26,11 @@ define(function (require) {
     $scope.countries = [];
     $scope.amatrix = [];
     $scope.searchParams = {
-      challenges:{
+      institutions:{
         filter1:0,
         filter2:0,
-        filter3:0
-        //,filter4:0
+        filter3:0,
+        filter4:0
       },
       countries: [] //challenges
     };
@@ -39,11 +39,12 @@ define(function (require) {
     $scope.selectedCountry = "-1";
 
     //Variables pagination
+   
     $scope.currentPage = 0;
-    /*$scope.pageSize = 10;*/
     $scope.pageSize = 5;
     $scope.elementsStart=0;
     $scope.elementsEnd=$scope.pageSize;
+    $scope.maxPageButtons = 9;
 
     // Pagination Text
     //$scope.paginationText = i18n.displaying + ($scope.elementsStart+1)+'-'+$scope.elementsEnd + i18n.of + $scope.amatrix.length;
@@ -143,9 +144,14 @@ define(function (require) {
       */
       $scope.pagination = function() {
         $scope.arrayNumPages = [];
+        $scope.filterPages = [];
         for(var i=0; i<$scope.numberOfPages();i++){
           $scope.arrayNumPages.push(i);
+          if(i<$scope.maxPageButtons){
+            $scope.filterPages.push(i);
+          }
         }
+
         return $scope.arrayNumPages;
       }
 
@@ -160,6 +166,35 @@ define(function (require) {
         $scope.currentPage = $index;
         $scope.elementsStart = $scope.currentPage * $scope.pageSize;
         $scope.elementsEnd= $scope.elementsStart + $scope.pageSize;
+
+      }
+
+      $scope.morePagination = function() { 
+
+        $log.warn("$scope.currentPage: "+$scope.currentPage);
+        $log.warn("$scope.maxPageButtons: "+$scope.maxPageButtons);
+
+        for(var i=0; i<$scope.filterPages.length;i++){
+            $log.warn($scope.filterPages[i]);
+          }
+
+        if($scope.currentPage+1 == $scope.maxPageButtons){
+          $log.warn("Entra");
+          $scope.filterPages.shift();
+          $scope.prueba = $scope.currentPage+2;
+          $log.warn("Añadir numero "+$scope.prueba);
+          $scope.filterPages.push($scope.prueba);
+
+          for(var i=0; i<$scope.filterPages.length;i++){
+            $log.warn($scope.filterPages[i]);
+          }
+
+          if($scope.currentPage+2 <= $scope.numberOfPages()){
+            $log.warn("Añadir mas numeros a la paginacion");
+          }else{
+            $log.warn("No añadir mas numeros a la paginacion");
+          }
+        }
       }
 
       /**
@@ -264,25 +299,25 @@ define(function (require) {
     |******************************************************************************/
       dataService.getAllMatrixAuthorities().then(function (data) {
         $log.debug('getAllMatrixAuthorities');
-        //$log.debug(data);
-        $log.warn(data);
+        //$log.warn(data);
 
         data.data.resultset.map(function (elem) {
           var param = (!!$stateParams.filter) ? $stateParams.filter : undefined;
           $scope.amatrix.push({
               id: elem[0],
-              country: elem[1],
+              country_name: elem[1],
               country_code: elem[2],
               osh_authority: elem[3],
               compensation: elem[4],
               prevention: elem[5],
               standardisation: elem[6],
-              name_authority: "L"+elem[7],
-              link_authority: "L"+elem[8],
-              detail_authority: "L"+elem[9],
+              name_authority: elem[7],
+              link_authority: elem[8],
+              detail_authority: elem[9],
               param: param
           });
         });
+        //$log.warn($scope.amatrix);
 
         //updateText();
 
@@ -299,7 +334,7 @@ define(function (require) {
           throw err;
       });
 
-      dataService.getMatrixCountries().then(function (data) {
+      dataService.getMatrixAuthsCountries().then(function (data) {
 
         data.data.resultset.map(function (elem) {
           var param = (!!$stateParams.filter) ? $stateParams.filter : undefined;
@@ -308,6 +343,8 @@ define(function (require) {
               country_code: elem[1]
           });
         });
+
+        //$log.warn($scope.countries);
       }).catch(function (err) {
           throw err;
       });
@@ -333,52 +370,7 @@ define(function (require) {
         } else {
           $scope.searchParams.countries.splice($scope.searchParams.countries.indexOf(element.attr('value')), 1);
         }
-        /*var check1 = $('#challenge-filter-1:checked').length > 0;
-        var check2 = $('#challenge-filter-2:checked').length > 0;
-        var check3 = $('#challenge-filter-3:checked').length > 0;*/
-        //var check4 = $('#institution-filter-4:checked').length > 0;
-
-        /*var par="country";
-        if(check1) {
-          $scope.searchParams.challenges.filter1=1;
-          par="challenge";
-        }
-        if(check2) {
-          $scope.searchParams.challenges.filter2=1;
-          par="challenge";
-        }
-        if(check3) {
-          $scope.searchParams.challenges.filter3=1;
-          par="challenge";
-        }*/
-        /*if(check4) {
-          $scope.searchParams.institutions.filter3=1;
-          par="institution";
-        }*/
-
-        /*search($event,par);
-        $scope.searchParams.challenges.filter1=0;
-        $scope.searchParams.challenges.filter2=0;
-        $scope.searchParams.challenges.filter3=0;*/
-        //$scope.searchParams.institutions.filter4=0;
-
-        //updateText();
-      };
-
-      /**
-       * @ngdoc method
-       * @name ng.controller:OSHAuthoritiesController#toggleCountrySelect
-       * @methodOf barometer.osh-authorities.controller:OSHAuthoritiesController
-       * @description
-       * Function launched after changing the value of the country selection
-       */
-      $scope.toggleCountrySelect = function () {
         $log.warn($scope.searchParams.countries);
-        $scope.searchCountry = $scope.selectedCountry;
-        if($scope.searchCountry != undefined){
-          $scope.searchParams.countries.push($scope.selectedCountry);
-          search(null,"country");
-        }
       };
 
       /**
@@ -392,36 +384,37 @@ define(function (require) {
        */
       $scope.toggleChallengeClick = function ($event, $index) {
 
-        var check1 = $('#challenge-filter-1:checked').length > 0;
-        var check2 = $('#challenge-filter-2:checked').length > 0;
-        var check3 = $('#challenge-filter-3:checked').length > 0;
+        var check1 = $('#institutions-filter-1:checked').length > 0;
+        var check2 = $('#institutions-filter-2:checked').length > 0;
+        var check3 = $('#institutions-filter-3:checked').length > 0;
+        var check4 = $('#institutions-filter-4:checked').length > 0;
         var par="country";
 
         var element = angular.element($event.currentTarget);
 
         if(check1) {
-          $scope.searchParams.challenges.filter1=1;
-          par="challenge";
+          $scope.searchParams.institutions.filter1=1;
+          par="institutions";
         }
         if(check2) {
-          $scope.searchParams.challenges.filter2=1;
-          par="challenge";
+          $scope.searchParams.institutions.filter2=1;
+          par="institutions";
         }
         if(check3) {
-          $scope.searchParams.challenges.filter3=1;
-          par="challenge";
+          $scope.searchParams.institutions.filter3=1;
+          par="institutions";
         }
-        /*if(check4) {
+        if(check4) {
           $scope.searchParams.institutions.filter3=1;
           par="institution";
-        }*/
+        }
 
         search($event,par);
 
-        $scope.searchParams.challenges.filter1=0;
-        $scope.searchParams.challenges.filter2=0;
-        $scope.searchParams.challenges.filter3=0;
-        //$scope.searchParams.institutions.filter4=0;
+        $scope.searchParams.institutions.filter1=0;
+        $scope.searchParams.institutions.filter2=0;
+        $scope.searchParams.institutions.filter3=0;
+        $scope.searchParams.institutions.filter4=0;
 
         //updateText();
       };
@@ -438,10 +431,11 @@ define(function (require) {
        * Apply the filters and load the filtered content
        */
       function search($event,filter) {
-        if ((filter=="country")&&($scope.searchParams.challenges.filter1!=1)&&($scope.searchParams.challenges.filter2!=1)&&($scope.searchParams.challenges.filter3!=1)){
+        if ((filter=="country")&&($scope.searchParams.institutions.filter1!=1)&&($scope.searchParams.institutions.filter2!=1)&&($scope.searchParams.institutions.filter3!=1)&&($scope.searchParams.institutions.filter4!=1)){
           dataService.getSearchList($scope.searchParams.countries)
             .then(function (data) {
               $scope.amatrix = dataService.dataMapper(data);
+
               $log.warn($scope.amatrix);
 
               $scope.firstPage();
@@ -459,7 +453,7 @@ define(function (require) {
             .then(function (data) {
               $scope.amatrix = dataService.dataMapper(data);
 
-              $log.warn($scope.amatrix);
+              //$log.warn($scope.amatrix);
 
               $scope.firstPage();
 
@@ -471,10 +465,12 @@ define(function (require) {
               throw err;
           });
         } else {
-          dataService.getSearchListChallenges($scope.searchParams.challenges, $scope.searchParams.countries)
+          dataService.getSearchListInstitutions($scope.searchParams.institutions, $scope.searchParams.countries)
             .then(function (data) {
 
               $scope.amatrix = dataService.dataMapper(data);
+
+              $log.warn($scope.amatrix);
 
               $scope.firstPage();
 
@@ -509,29 +505,36 @@ define(function (require) {
       $scope.search = search;
 
       $scope.confirmSelection = function($event){
-        var check1 = $('#challenge-filter-1:checked').length > 0;
-        var check2 = $('#challenge-filter-2:checked').length > 0;
-        var check3 = $('#challenge-filter-3:checked').length > 0;
-        //var check4 = $('#institution-filter-4:checked').length > 0;
+        var check1 = $('#institution-filter-1:checked').length > 0;
+        var check2 = $('#institution-filter-2:checked').length > 0;
+        var check3 = $('#institution-filter-3:checked').length > 0;
+        var check4 = $('#institution-filter-4:checked').length > 0;
 
         var par="country";
         if(check1) {
-          $scope.searchParams.challenges.filter1=1;
-          par="challenge";
+          $scope.searchParams.institutions.filter1=1;
+          par="institution";
         }
         if(check2) {
-          $scope.searchParams.challenges.filter2=1;
-          par="challenge";
+          $scope.searchParams.institutions.filter2=1;
+          par="institution";
         }
         if(check3) {
-          $scope.searchParams.challenges.filter3=1;
-          par="challenge";
+          $scope.searchParams.institutions.filter3=1;
+          par="institution";
+        }
+        if(check4) {
+          $scope.searchParams.institutions.filter4=1;
+          par="institution";
         }
 
+
         search($event,par);
-        $scope.searchParams.challenges.filter1=0;
-        $scope.searchParams.challenges.filter2=0;
-        $scope.searchParams.challenges.filter3=0;
+
+        $scope.searchParams.institutions.filter1=0;
+        $scope.searchParams.institutions.filter2=0;
+        $scope.searchParams.institutions.filter3=0;
+        $scope.searchParams.institutions.filter4=0;
       }
   }
 

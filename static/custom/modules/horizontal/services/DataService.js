@@ -111,28 +111,6 @@ define(function () {
                 return promise(url);
             },
 
-            /**
-             * @ngdoc method
-             * @name dvt.configModule.DataService#getSearchList
-             * @param {string} policy text to match with policy name o policy description
-             * @param {string} classifications classifications filters
-             * @param {string} countries countries filters
-             * @methodOf dvt.configModule.DataService
-             * @description
-             * Policies list data accesss services
-             *
-             */
-            getSearchList: function (countries) {
-                //var block1 = !policy ? ".*" : ".*" + policy;
-                var block1 = countries.length <= 0 ? ".*" : countries.join("|");;
-
-                //var url = configService.getBarometerDataPath() + "&dataAccessId=getSearchList" + "&paramcountries=" + block1;
-                var url = configService.getInfosystemDataPath() + "&dataAccessId=getSearchList" + "&paramcountries=" + block1;
-
-                $log.debug('getSearchList url: ' + url);
-                return promise(url);
-            },
-
             getSearchTerm: function (term) {
                 $log.warn("Entra en getSearchTerm");
                 var term2 = !term ? ".*" : ".*" + term;
@@ -230,6 +208,27 @@ define(function () {
 
             /**
              * @ngdoc method
+             * @name dvt.configModule.DataService#getSearchList
+             * @param {string} policy text to match with policy name o policy description
+             * @param {string} classifications classifications filters
+             * @param {string} countries countries filters
+             * @methodOf dvt.configModule.DataService
+             * @description
+             * Policies list data accesss services
+             *
+             */
+            getSearchList: function (countries) {
+                $log.warn(countries);
+                var block1 = countries.length <= 0 ? ".*" : countries.join("|");;
+
+                var url = configService.getBarometerDataPath() + "&dataAccessId=getSearchList" + "&paramcountries=" + block1;
+
+                $log.debug('getSearchList url: ' + url);
+                return promise(url);
+            },
+
+            /**
+             * @ngdoc method
              * @name dvt.configModule.DataService#getSearchListInstitutions
              * @param {string} institutions institutions filters
              * @param {string} countries countries filters
@@ -240,6 +239,9 @@ define(function () {
              */
             getSearchListInstitutions: function ( institutions, countries) {
                 var block1,block2,block3,block4,block5;
+                $log.warn("Llega a getSearchListInstitutions");
+                $log.warn(countries);
+                $log.warn(institutions);
 
                 if (institutions.filter1==1){
                   block1 = 1;

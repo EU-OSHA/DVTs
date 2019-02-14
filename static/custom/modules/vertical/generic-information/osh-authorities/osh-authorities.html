@@ -62,27 +62,34 @@
 
   <div class="container">
     <!-- CONTENT -->
+    <div class="selected--tags-wrapper"><span class="selected-tag">ES</span><span class="selected-tag">FR</span></div>
     <div class="matrix--elements--wrapper">
       <!-- MATRIX ELEMENTS --> 
-      <div data-ng-repeat="matrix in amatrix | limitTo:pageSize:elementsStart | filter:searchText" class="matrix--element">
+      <div data-ng-repeat="matrix in amatrix | limitTo:pageSize:elementsStart" class="matrix--element">
         <div class="matrix--header--elements">
           <div>
             <i class="mg map-{{::matrix.country_code.toLowerCase()}} mg-5x"></i>
           </div>
           <div class="">
-              <h3 class="country ng-binding title-section main-color" data-ng-bind="::matrix.country"></h3>
+              <h3 class="country ng-binding title-section main-color" data-ng-bind="::matrix.country_name"></h3>
           </div>
         </div>
 
         <div class="matrix--content--elements">
-          <h4 class="" ng-if="::matrix.implementation==1" data-ng-bind-html="i18nLiterals.L67"></h4>
+          <!--<h4 class="" ng-if="::matrix.implementation==1" data-ng-bind-html="i18nLiterals.L67"></h4>
           <h4 class="" ng-if="::matrix.prevention==1" data-ng-bind-html="i18nLiterals.L68"></h4>
-          <h4 class="" ng-if="::matrix.tackling==1" data-ng-bind-html="i18nLiterals.L69"></h4>
+          <h4 class="" ng-if="::matrix.tackling==1" data-ng-bind-html="i18nLiterals.L69"></h4>-->
 
-          <div data-ng-bind-html="i18nLiterals[matrix.objectives]"></div>
-          <div data-ng-bind-html="trimtext(i18nLiterals[matrix.detail], 300)"></div>
+          <h4 class="" ng-if="::matrix.osh_authority==1" data-ng-bind-html="i18nLiterals.L67"></h4>
+          <h4 class="" ng-if="::matrix.compensation==1" data-ng-bind-html="i18nLiterals.L68"></h4>
+          <h4 class="" ng-if="::matrix.prevention==1" data-ng-bind-html="i18nLiterals.L69"></h4>
+          <h4 class="" ng-if="::matrix.standardisation==1" data-ng-bind-html="i18nLiterals.L69"></h4>
 
-          <p data-ng-if="i18nLiterals[matrix.detail].length > 300" class="see--more--wrapper"> 
+          <div data-ng-bind-html="i18nLiterals['L'+matrix.name_authority]"></div>
+          <div data-ng-bind-html="i18nLiterals['L'+matrix.link_authority]"></div>
+          <div data-ng-bind-html="trimtext(i18nLiterals['L'+matrix.detail_authority], 300)"></div>
+
+          <p data-ng-if="i18nLiterals['L'+matrix.detail_authority].length > 300" class="see--more--wrapper"> 
             <a ng-click='toggleText($event)' data-ng-bind="i18n.read" class="see-more main-color"></a>
             <a ng-click='toggleText($event)' data-ng-bind="i18n.less" class="see-less main-color" style="display:none"></a>
           </p>
@@ -103,11 +110,17 @@
         <li role=button class="arrow previouspage" data-ng-click="previousPage()" ng-class="(currentPage+1==numberOfPages() && currentPage+1==1 || currentPage+1==1)?'invisible':''">
           <span aria-hidden="currentPage == 0">&lsaquo;</span>
         </li>
+
         <!--<li>
           <span>{{currentPage+1}}/{{numberOfPages()}}</span>
         </li>-->
+
         <li data-ng-repeat="page in pagination()">
           <span data-ng-bind="page+1" data-ng-click="goToPage($index)" ng-class="(currentPage == page)?'active':''"></span>
+        </li>
+
+        <li role=button ng-class="(currentPage+1==numberOfPages())?'invisible':''">
+          <span aria-hidden="currentPage == 0">...</span>
         </li>
 
         <li role=button class="arrow nextpage" data-ng-click="nextPage()" ng-class="(currentPage+1==numberOfPages() && currentPage+1==numberOfPages())?'invisible':''">

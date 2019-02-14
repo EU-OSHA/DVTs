@@ -156,64 +156,37 @@
       </Query>
   </DataAccess>
 
-  <!--Results-->
-    <DataAccess access="public" connection="dvt_conn" id="getSearchList" type="sql">
-        <Cache duration="3600" enabled="true"/>
-        <Columns/>
-        <Parameters>            
-            <Parameter default=".*" name="countries" type="String"/>
-        </Parameters>
-        <Query>
-            SELECT
-            c.COUNTRY_NAME as `country`,
-            m.OBJECTIVES as `objectives`,
-            m.IMPROVING_THE_IMPLEMENTATION_RECORD AS implementation,
-            m.IMPROVING_THE_PREVENTION AS prevention, 
-            m.TACKLING AS tackling,
-            m.DETAIL as `detail`,
-            c.COUNTRY_CODE as `country_code`
-            FROM matrix m
-            INNER JOIN country_code c
-            ON c.COUNTRY_CODE = m.COUNTRY
+  <DataAccess access="public" connection="dvt_conn" id="getSearchListChallenges" type="sql">
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters>
+          <Parameter default="null" name="challenge1" type="Numeric"/>
+          <Parameter default="null" name="challenge2" type="Numeric"/>
+          <Parameter default="null" name="challenge3" type="Numeric"/>
+          <Parameter default=".*" name="countries" type="String"/>
+      </Parameters>
+      <Query>
+          SELECT
+          c.COUNTRY_NAME as `country`,
+          m.OBJECTIVES as `objectives`,
+          m.IMPROVING_THE_IMPLEMENTATION_RECORD AS implementation,
+          m.IMPROVING_THE_PREVENTION AS prevention, 
+          m.TACKLING AS tackling,
+          m.DETAIL as `detail`,
+          c.COUNTRY_CODE as `country_code`
+          FROM matrix m
+          INNER JOIN country_code c
+          ON c.COUNTRY_CODE = m.COUNTRY
 
-            /*JOIN condition*/
-             WHERE c.COUNTRY_NAME REGEXP ${countries}
+          /*JOIN condition*/
+           WHERE c.COUNTRY_NAME REGEXP ${countries}
+           AND (m.IMPROVING_THE_IMPLEMENTATION_RECORD=${challenge1}
+           OR m.IMPROVING_THE_PREVENTION=${challenge2}
+           OR m.TACKLING=${challenge3})
 
-            order by Country ASC
-        </Query>
-    </DataAccess>
-
-    <DataAccess access="public" connection="dvt_conn" id="getSearchListChallenges" type="sql">
-        <Cache duration="3600" enabled="true"/>
-        <Columns/>
-        <Parameters>
-            <Parameter default="null" name="challenge1" type="Numeric"/>
-            <Parameter default="null" name="challenge2" type="Numeric"/>
-            <Parameter default="null" name="challenge3" type="Numeric"/>
-            <Parameter default=".*" name="countries" type="String"/>
-        </Parameters>
-        <Query>
-            SELECT
-            c.COUNTRY_NAME as `country`,
-            m.OBJECTIVES as `objectives`,
-            m.IMPROVING_THE_IMPLEMENTATION_RECORD AS implementation,
-            m.IMPROVING_THE_PREVENTION AS prevention, 
-            m.TACKLING AS tackling,
-            m.DETAIL as `detail`,
-            c.COUNTRY_CODE as `country_code`
-            FROM matrix m
-            INNER JOIN country_code c
-            ON c.COUNTRY_CODE = m.COUNTRY
-
-            /*JOIN condition*/
-             WHERE c.COUNTRY_NAME REGEXP ${countries}
-             AND (m.IMPROVING_THE_IMPLEMENTATION_RECORD=${challenge1}
-             OR m.IMPROVING_THE_PREVENTION=${challenge2}
-             OR m.TACKLING=${challenge3})
-
-            order by Country ASC
-        </Query>
-    </DataAccess>
+          order by Country ASC
+      </Query>
+  </DataAccess>
 
     <!-- MATRIX OSH AUTHORITIES SEARCHER -->
     <DataAccess access="public" connection="dvt_conn" id="getSearchTerm" type="sql">
@@ -276,6 +249,34 @@
       </Query>
     </DataAccess>
 
+    <DataAccess access="public" connection="dvt_conn" id="getSearchList" type="sql">
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters>            
+          <Parameter default=".*" name="countries" type="String"/>
+      </Parameters>
+      <Query>
+            SELECT n.literal_id as country_name,
+            mp.check_1 AS osh_authority,
+            mp.check_2 AS compensation, 
+            mp.check_3 AS prevention,
+            mp.check_4 AS standardisation,
+            mp.text_1_literal_id as name_authority,
+            mp.text_2_literal_id as link_authority,
+            mp.text_3_literal_id as detail_authority,
+            n.country_code as country_code
+            FROM matrix_page mp
+            INNER JOIN nuts n
+            ON n.id = mp.nuts_id
+
+            /*JOIN condition*/
+             WHERE n.literal_id REGEXP ${countries}
+             AND mp.page = 'MATRIX_AUTHORITY'
+
+            order by country_name ASC
+      </Query>
+    </DataAccess>
+
     <!-- GET MATRIX OSH AUTHORITIES DATA APPLYING PAGE FILTERS -->
     <DataAccess access="public" connection="dvt_conn" id="getSearchListInstitutions" type="sql">
       <Cache duration="3600" enabled="true"/>
@@ -288,7 +289,7 @@
         <Parameter default=".*" name="countries" type="String"/>
       </Parameters>
       <Query>
-        SELECT n.name as country_name,
+        SELECT n.literal_id as country_name,
         mp.check_1 AS osh_authority,
         mp.check_2 AS compensation, 
         mp.check_3 AS prevention,
@@ -302,7 +303,8 @@
         ON n.id = mp.nuts_id
         
         /*JOIN condition*/
-         WHERE n.name REGEXP ${countries}
+         WHERE mp.page = 'MATRIX_AUTHORITY'
+         AND n.literal_id REGEXP ${countries}
          AND (mp.check_1=${institution1}
          OR mp.check_2=${institution2}
          OR mp.check_3=${institution3}
