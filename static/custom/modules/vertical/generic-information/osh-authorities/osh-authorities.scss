@@ -24,6 +24,7 @@
         font-size: 1.4rem;
         cursor:pointer;
         color:$aquamarine;
+        position: relative;
         &:after{
           content: "\f107";
           display: inline-block;
@@ -50,13 +51,11 @@
             width: 8px;
         }       
         &::-webkit-scrollbar-track {
-            //-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,1); 
             border-radius: 4px;
         }       
         &::-webkit-scrollbar-thumb {
             border-radius: 4px;
             background: #CCC;
-            //-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,1); 
         }
         li{
           label{
@@ -193,6 +192,34 @@
   }
 }
 
+.selected--tags-wrapper{
+  min-height: 0px;
+  &:empty{
+    display:none;
+  } 
+  .selected-tag {
+    background: $aquamarine;
+    font-size: 1.4rem;
+    margin: 0.8rem 0rem 0.6rem 0.6rem;
+    padding: 2px 18px 2px 5px;
+    display: inline-block;
+    border-radius: 4px;
+    color:$white;
+    position: relative;
+    &:after{
+      content: "\f00d";
+      font-family: 'FontAwesome';
+      position: absolute;
+      top: 0;
+      right: 4px;
+      font-size: 1rem;
+      cursor: pointer;
+      &:hover{
+        opacity:0.6;
+      }
+    }
+  }
+}
 
 .pagination--wrapper{
   .pagination--elements{

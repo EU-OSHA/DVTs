@@ -45,6 +45,7 @@
     <div id="filter2"class="filter--dropdown--wrapper">
       <label data-ng-bind="i18nLiterals.L22" class="main-color  dropdwon-open" data-ng-click="openSelect($event)"></label>
       <div class="filter--dropdown--list">
+        <div class="selected--tags-wrapper"><span class="selected-tag">ES</span><span class="selected-tag">FR</span></div>
         <p class="option-title" data-ng-click="openSelect($event)">Select a option</p>
         <ul class="filter--dropdown--options">
           <li data-ng-repeat='country in countries'>
@@ -90,8 +91,6 @@
             <a ui-sref='home' class="btn--card main-color" title="Country infrastructure" data-ng-bind="i18nLiterals.L403"></a>
           </div>
         </div>
-
-        <hr class="separator-items">
       </div>
     </div>
 
@@ -104,7 +103,6 @@
         <li role=button class="arrow previouspage" data-ng-click="previousPage()" ng-class="(currentPage+1==numberOfPages() && currentPage+1==1 || currentPage+1==1)?'invisible':''">
           <span aria-hidden="currentPage == 0">&lsaquo;</span>
         </li>
-
         <!--<li>
           <span>{{currentPage+1}}/{{numberOfPages()}}</span>
         </li>-->
