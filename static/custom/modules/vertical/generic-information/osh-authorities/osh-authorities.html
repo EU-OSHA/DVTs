@@ -66,12 +66,8 @@
       <!-- MATRIX ELEMENTS --> 
       <div data-ng-repeat="matrix in amatrix | limitTo:pageSize:elementsStart" class="matrix--element">
         <div class="matrix--header--elements">
-          <div>
-            <i class="mg map-{{::matrix.country_code.toLowerCase()}} mg-5x"></i>
-          </div>
-          <div class="">
-              <h3 class="country ng-binding title-section main-color" data-ng-bind="commonLiterals['L'+matrix.country_name]"></h3>
-          </div>
+          <img  class="flags--wrapper" src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/flag/{{::matrix.country_code.toLowerCase()}}.png">
+          <h3 class="country ng-binding title-section main-color" data-ng-bind="commonLiterals['L'+matrix.country_name]"></h3>
         </div>
 
         <div class="matrix--content--elements">

@@ -582,6 +582,21 @@ and (max-device-width :767px)  {
   	}
 	}
 
+	.block--filter--wrapper{
+		display: block !important;
+		.filter-text{
+			margin-top: 0!important;
+		}
+		.filter--dropdown--wrapper{
+			.filter--dropdown--list{
+				position: relative !important;
+			}
+		} 
+	}
+	.matrix--elements--wrapper {
+	  word-break: break-word;
+	}
+
 	footer{
 		.footer-elements{
 			text-align: center;
@@ -592,3 +607,56 @@ and (max-device-width :767px)  {
 	}
 
 }
+
+
+@media only screen 
+and (max-device-width :370px){
+
+	.bar-header{
+		flex-direction: column;		
+		.header--top{
+			  flex-direction: column;
+			  background: $white;
+			.eu-osha-logo{
+				> a{
+				  display: block;
+				  text-align: center;
+				}
+			}
+			.menu-tools-top{
+				padding: 0;
+				flex-grow: initial;
+				width: 70%;
+				.menu-tools-top--items{
+					.search--block{
+						.search--form{							
+							&.exposed{
+  							top: 13rem;
+							  border-bottom: 6px solid $orange;
+							}
+						}
+					}
+				}
+			}
+		}
+		.bar-main-menu{
+			position: absolute;
+			right: 0;
+			bottom: -1.2rem;
+			&.exposed{
+			  position: absolute;
+			  left: 0;
+			  top: auto;
+				.collapse{
+					&.exposed{
+						top: 9rem;
+						min-height: 38.5vh;
+					}
+				}
+			}
+		}
+	}
+
+}
+
+

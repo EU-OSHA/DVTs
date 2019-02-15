@@ -2,8 +2,13 @@
     <section class="bar-header container-fluid">
         <div class="header--top">
             <div class="eu-osha-logo">
-                <a href="https://osha.europa.eu" role="link" title="{{i18n_menu.OSHAWebpage}}" tabindex="0">        
-                    <img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/EU-OSHA-en.png" alt="European Agency for Safety and Health at Work">
+                <a href="https://osha.europa.eu" role="link" title="{{i18n_menu.OSHAWebpage}}" tabindex="0">
+                    <picture>
+                      <source 
+                        media="(max-width:495px)"
+                        srcset="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/EU-OSHA-en-x2.png">
+                        <img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/EU-OSHA-en.png" alt="European Agency for Safety and Health at Work">
+                    </picture>
                 </a>
             </div>
             <!-- nav tools top -->
