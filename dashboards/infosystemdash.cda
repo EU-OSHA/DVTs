@@ -214,4 +214,28 @@
             order by Country ASC
         </Query>
     </DataAccess>
+
+    <!-- SEARCHER -->
+    <DataAccess access="public" connection="dvt_conn" id="getSearchTerm" type="sql">
+      <Cache duration="3600" enabled="true" />
+      <Columns/>
+      <Parameters>
+          <Parameter default=".*" name="term" type="String" />
+      </Parameters>
+      <Query>
+          SELECT
+          c.COUNTRY_NAME as `country`,
+          m.OBJECTIVES as `objectives`,
+          m.IMPROVING_THE_IMPLEMENTATION_RECORD AS implementation,
+          m.IMPROVING_THE_PREVENTION AS prevention, 
+          m.TACKLING AS tackling,
+          m.DETAIL as `detail`,
+          c.COUNTRY_CODE as `country_code`
+          FROM matrix m
+          INNER JOIN country_code c
+          ON c.COUNTRY_CODE = m.COUNTRY
+          WHERE c.COUNTRY_NAME REGEXP ${term} OR m.OBJECTIVES REGEXP ${term} OR m.DETAIL REGEXP ${term}
+          order by Country ASC
+      </Query>
+    </DataAccess>
 </CDADescriptor>

@@ -308,6 +308,10 @@ define(function (require) {
             return dataPath + configuration.paths.data.cda.barometer;
         },
 
+        getInfosystemDataPath:function() {
+            return dataPath + configuration.paths.data.cda.infosystem;
+        },
+
         /**
          * @ngdoc method
          * @name dvt.configModule.configService#getDvtDataPath

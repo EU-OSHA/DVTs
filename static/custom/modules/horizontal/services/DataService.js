@@ -105,29 +105,22 @@ define(function () {
              * My Description rules
              */
             getMatrixCountries: function () {
-                var url = configService.getBarometerDataPath() + "&dataAccessId=getMatrixCountries";
+                //var url = configService.getBarometerDataPath() + "&dataAccessId=getMatrixCountries";
+                var url = configService.getInfosystemDataPath() + "&dataAccessId=getMatrixCountries";
                 $log.debug('getMatrixCountries url:' + url);
                 return promise(url);
             },
 
-            /**
-             * @ngdoc method
-             * @name dvt.configModule.DataService#getSearchList
-             * @param {string} policy text to match with policy name o policy description
-             * @param {string} classifications classifications filters
-             * @param {string} countries countries filters
-             * @methodOf dvt.configModule.DataService
-             * @description
-             * Policies list data accesss services
-             *
-             */
-            getSearchList: function (countries) {
+            getSearchTerm: function (term) {
+                $log.warn("Entra en getSearchTerm");
+                var term2 = !term ? ".*" : ".*" + term;
+
+                $log.warn(term2);
                 //var block1 = !policy ? ".*" : ".*" + policy;
-                var block1 = countries.length <= 0 ? ".*" : countries.join("|");;
 
-                var url = configService.getBarometerDataPath() + "&dataAccessId=getSearchList" + "&paramcountries=" + block1;
+                var url = configService.getInfosystemDataPath() + "&dataAccessId=getSearchTerm" + "&paramterm=" + term2;
 
-                $log.debug('getSearchList url: ' + url);
+                $log.debug('getSearchTerm url: ' + url);
                 return promise(url);
             },
 
@@ -177,11 +170,110 @@ define(function () {
              * My Description rules
              */
             getAllMatrix: function () {
-                var url = configService.getBarometerDataPath() + "&dataAccessId=getAllMatrix";
+                //var url = configService.getBarometerDataPath() + "&dataAccessId=getAllMatrix";
+                var url = configService.getInfosystemDataPath() + "&dataAccessId=getAllMatrix";
                 $log.debug('getAllMatrix url:' + url);
 
                 return promise(url);
             },
+
+            /* OSH AUTHORITIES */
+
+            /**
+             * @ngdoc method
+             * @name dvt.configModule.DataService#getAllMatrixAuthorities
+             * @methodOf dvt.configModule.DataService
+             * @description
+             * Gets all data for OSH Authorities view
+             */
+            getAllMatrixAuthorities: function () {
+                var url = configService.getBarometerDataPath() + "&dataAccessId=getAllMatrixAuthorities";
+                $log.debug('getAllMatrixAuthorities url:' + url);
+
+                return promise(url);
+            },
+
+            /**
+             * @ngdoc method
+             * @name dvt.configModule.DataService#getMatrixAuthsCountries
+             * @methodOf dvt.configModule.DataService
+             * @description
+             * Gets all countries available in OSH Authorities view
+             */
+            getMatrixAuthsCountries: function () {
+                var url = configService.getBarometerDataPath() + "&dataAccessId=getMatrixAuthsCountries";
+                $log.debug('getMatrixAuthsCountries url:' + url);
+                return promise(url);
+            },
+
+            /**
+             * @ngdoc method
+             * @name dvt.configModule.DataService#getSearchList
+             * @param {string} policy text to match with policy name o policy description
+             * @param {string} classifications classifications filters
+             * @param {string} countries countries filters
+             * @methodOf dvt.configModule.DataService
+             * @description
+             * Policies list data accesss services
+             *
+             */
+            getSearchList: function (countries) {
+                $log.warn(countries);
+                var block1 = countries.length <= 0 ? ".*" : countries.join("|");;
+
+                var url = configService.getBarometerDataPath() + "&dataAccessId=getSearchList" + "&paramcountries=" + block1;
+
+                $log.debug('getSearchList url: ' + url);
+                return promise(url);
+            },
+
+            /**
+             * @ngdoc method
+             * @name dvt.configModule.DataService#getSearchListInstitutions
+             * @param {string} institutions institutions filters
+             * @param {string} countries countries filters
+             * @methodOf dvt.configModule.DataService
+             * @description
+             * Gets Matrix OSH Authorities data applying countries and institution filters
+             *
+             */
+            getSearchListInstitutions: function ( institutions, countries) {
+                var block1,block2,block3,block4,block5;
+                $log.warn("Llega a getSearchListInstitutions");
+                $log.warn(countries);
+                $log.warn(institutions);
+
+                if (institutions.filter1==1){
+                  block1 = 1;
+                }else {
+                  block1 = 2;
+                }
+                if (institutions.filter2==1){
+                  block2 = 1;
+                }else {
+                  block2 = 2;
+                }
+                if (institutions.filter3==1){
+                  block3 = 1;
+                }else {
+                  block3 = 2;
+                }
+                if (institutions.filter4==1){
+                  block4 = 1;
+                }else {
+                  block4 = 2;
+                }
+
+
+                var block5 = countries.length <= 0 ? ".*" : countries.join("|");
+
+                var url = configService.getBarometerDataPath() + "&dataAccessId=getSearchListInstitutions" + "&paraminstitution1=" + block1 +"&paraminstitution2=" + block2 +"&paraminstitution3=" + block3 +"&paraminstitution4=" + block4 + "&paramcountries=" + block5;
+
+                $log.debug('getSearchListInstitutions url: ' + url);
+                return promise(url);
+            },
+
+            /* END OSH AUTHORITIES*/
 
             /**
              * @ngdoc method
@@ -212,8 +304,6 @@ define(function () {
             /* CSP, Country insight and comparison */
 
             /* Country insight and comparison */
-
-            /* */
 
             /**
              * @ngdoc method
