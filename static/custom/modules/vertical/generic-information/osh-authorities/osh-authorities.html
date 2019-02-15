@@ -44,8 +44,7 @@
     <!-- COUNTRY FILTER -->
     <div id="filter2"class="filter--dropdown--wrapper">
       <label data-ng-bind="i18nLiterals.L22" class="main-color  dropdwon-open" data-ng-click="openSelect($event)"></label>
-      <div class="filter--dropdown--list">
-        <div class="selected--tags-wrapper"><span class="selected-tag">ES</span><span class="selected-tag">FR</span></div>
+      <div class="filter--dropdown--list">        
         <p class="option-title" data-ng-click="openSelect($event)">Select an option</p>
         <ul class="filter--dropdown--options">
           <li data-ng-repeat='country in countries'>
@@ -62,6 +61,7 @@
 
   <div class="container">
     <!-- CONTENT -->
+    <div class="selected--tags-wrapper"><span class="selected-tag">ES</span><span class="selected-tag">FR</span></div>
     <div class="matrix--elements--wrapper">
       <!-- MATRIX ELEMENTS --> 
       <div data-ng-repeat="matrix in amatrix | limitTo:pageSize:elementsStart | filter:searchText" class="matrix--element">
