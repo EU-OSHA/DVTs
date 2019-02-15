@@ -22,6 +22,7 @@ define(function (require) {
     var horizontalPathDiretive = horizontalPath + "directives/";
 
     var i18n = require('json!horizontal/model/literals');
+    var commonLiterals = require('json!horizontal/model/commonliterals');
 
     /*gtranslator info*/
     setTimeout (function() {
@@ -341,6 +342,17 @@ define(function (require) {
          */
         getLiterals: function () {
             return i18n;
+        },
+
+        /**
+         * @ngdoc method
+         * @name dvt.configModule.configService#getCommonLiterals
+         * @methodOf dvt.configModule.configService
+         * @description
+         * Get the Common Literals list
+         */
+        getCommonLiterals: function() { 
+            return commonLiterals;
         },
 
         // ----------------------------------

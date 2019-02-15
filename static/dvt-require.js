@@ -105,6 +105,7 @@
     /* MODEL */
     /* LITERALS */
     requirePaths['horizontal/model/literals'] = horizontalModules + '/model/Literals' + suffix + '.json';
+    requirePaths['horizontal/model/commonliterals'] = horizontalModules + '/model/CommonLiterals' + suffix + '.json';
 
     /* COLORS */
     requirePaths['horizontal/model/colors'] = horizontalModules + '/model/Colors' + suffix + '.json';

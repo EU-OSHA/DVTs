@@ -12,12 +12,14 @@ define(function (require) {
   'use strict';
 
 
-  function controller($scope, $stateParams, $state, configService, $log, $document,dataService, $window, $sce) {
+  function controller($scope, $stateParams, $state, configService, $log, $document,dataService, $window, $sce, $compile, $timeout) {
 
     var i18n = require('json!vertical/osh-authorities/i18n');
     var i18nLiterals = configService.getLiterals();
+    var commonLiterals = configService.getCommonLiterals();
     $scope.i18n = i18n;
     $scope.i18nLiterals = i18nLiterals;
+    $scope.commonLiterals = commonLiterals;
 
     var i18nSearch = require('json!horizontal/search/i18n');
     $scope.i18nSearch = i18nSearch;
@@ -167,34 +169,6 @@ define(function (require) {
         $scope.elementsStart = $scope.currentPage * $scope.pageSize;
         $scope.elementsEnd= $scope.elementsStart + $scope.pageSize;
 
-      }
-
-      $scope.morePagination = function() { 
-
-        $log.warn("$scope.currentPage: "+$scope.currentPage);
-        $log.warn("$scope.maxPageButtons: "+$scope.maxPageButtons);
-
-        for(var i=0; i<$scope.filterPages.length;i++){
-            $log.warn($scope.filterPages[i]);
-          }
-
-        if($scope.currentPage+1 == $scope.maxPageButtons){
-          $log.warn("Entra");
-          $scope.filterPages.shift();
-          $scope.prueba = $scope.currentPage+2;
-          $log.warn("Añadir numero "+$scope.prueba);
-          $scope.filterPages.push($scope.prueba);
-
-          for(var i=0; i<$scope.filterPages.length;i++){
-            $log.warn($scope.filterPages[i]);
-          }
-
-          if($scope.currentPage+2 <= $scope.numberOfPages()){
-            $log.warn("Añadir mas numeros a la paginacion");
-          }else{
-            $log.warn("No añadir mas numeros a la paginacion");
-          }
-        }
       }
 
       /**
@@ -365,12 +339,12 @@ define(function (require) {
        */
       $scope.toggleCountryClick = function ($event, $index) {
         var element = angular.element($event.currentTarget);
+        var tags = angular.element('div.selected--tags-wrapper');
         if (element.prop('checked')) {
           $scope.searchParams.countries.push(element.attr('value'));
         } else {
           $scope.searchParams.countries.splice($scope.searchParams.countries.indexOf(element.attr('value')), 1);
         }
-        $log.warn($scope.searchParams.countries);
       };
 
       /**
@@ -382,43 +356,99 @@ define(function (require) {
        * @description
        * Function launched after clicking on a Challenge Filter
        */
-      $scope.toggleChallengeClick = function ($event, $index) {
+      $scope.toggleInstitutionClick = function () {
 
         var check1 = $('#institutions-filter-1:checked').length > 0;
         var check2 = $('#institutions-filter-2:checked').length > 0;
         var check3 = $('#institutions-filter-3:checked').length > 0;
         var check4 = $('#institutions-filter-4:checked').length > 0;
+
+        if(!check1) {
+          $scope.searchParams.institutions.filter1=0;
+        }
+        if(!check2) {
+          $scope.searchParams.institutions.filter2=0;
+        }
+        if(!check3) {
+          $scope.searchParams.institutions.filter3=0;
+        }
+        if(!check4) {
+          $scope.searchParams.institutions.filter4=0;
+        }
+      };
+
+      $scope.confirmSelection = function($event){
+        var check1 = $('#institution-filter-1:checked').length > 0;
+        var check2 = $('#institution-filter-2:checked').length > 0;
+        var check3 = $('#institution-filter-3:checked').length > 0;
+        var check4 = $('#institution-filter-4:checked').length > 0;
+
+        var tags = angular.element('div.selected--tags-wrapper');
+        tags.empty();
+
         var par="country";
-
-        var element = angular.element($event.currentTarget);
-
         if(check1) {
           $scope.searchParams.institutions.filter1=1;
-          par="institutions";
+          par="institution";
+
+          var html = '<span class="selected-tag" id="institutionFilter1" data-ng-click="deleteTag($event)">Authorities</span>';
+          tags.append( $compile(html)($scope) );
         }
         if(check2) {
           $scope.searchParams.institutions.filter2=1;
-          par="institutions";
+          par="institution";
+          var html = '<span class="selected-tag" id="institutionFilter2" data-ng-click="deleteTag($event)">Insurance</span>';
+          tags.append( $compile(html)($scope) );
         }
         if(check3) {
           $scope.searchParams.institutions.filter3=1;
-          par="institutions";
+          par="institution";
+          var html = '<span class="selected-tag" id="institutionFilter3" data-ng-click="deleteTag($event)">Prevention</span>';
+          tags.append( $compile(html)($scope) );
         }
         if(check4) {
-          $scope.searchParams.institutions.filter3=1;
+          $scope.searchParams.institutions.filter4=1;
           par="institution";
+          var html = '<span class="selected-tag" id="institutionFilter4" data-ng-click="deleteTag($event)">Standardisation</span>';
+          tags.append( $compile(html)($scope) );
+        }
+
+        $scope.searchParams.countries.sort();
+        
+        for(var i = 0; i < $scope.searchParams.countries.length;i++){
+          var html = '<span class="selected-tag" id="country'+$scope.searchParams.countries[i] +'" data-ng-click="deleteTag($event)">'+$scope.searchParams.countries[i]+'</span>';
+          tags.append( $compile(html)($scope) );
         }
 
         search($event,par);
+      }
 
-        $scope.searchParams.institutions.filter1=0;
-        $scope.searchParams.institutions.filter2=0;
-        $scope.searchParams.institutions.filter3=0;
-        $scope.searchParams.institutions.filter4=0;
+      $scope.deleteTag = function($event){
+        var element = angular.element($event.currentTarget);
+        var quitChecked;
+        if($event.target.id.indexOf('country') != -1){
+          $scope.searchParams.countries.splice($scope.searchParams.countries.indexOf(element.html()), 1);
+          quitChecked = angular.element('.filter--dropdown--options #country-filter-'+element.html());
+        }else if($event.target.id == 'institutionFilter1'){
+          quitChecked = angular.element('.filter--dropdown--options #institution-filter-1');
+          $scope.searchParams.institutions.filter1=0;
+        }else if($event.target.id == 'institutionFilter2'){
+          quitChecked = angular.element('.filter--dropdown--options #institution-filter-2');
+          $scope.searchParams.institutions.filter2=0;
+        }else if($event.target.id == 'institutionFilter3'){
+          quitChecked = angular.element('.filter--dropdown--options #institution-filter-3');
+          $scope.searchParams.institutions.filter3=0;
+        }else if($event.target.id == 'institutionFilter4'){
+          quitChecked = angular.element('.filter--dropdown--options #institution-filter-4');
+          $scope.searchParams.institutions.filter4=0;
+        }
+        
+        element.remove();
+        quitChecked.prop('checked', false);
 
-        //updateText();
-      };
-
+        search($event, 'country');
+        
+      }
 
       // SEARCH START 
       /**
@@ -436,7 +466,7 @@ define(function (require) {
             .then(function (data) {
               $scope.amatrix = dataService.dataMapper(data);
 
-              $log.warn($scope.amatrix);
+              //$log.warn($scope.amatrix);
 
               $scope.firstPage();
 
@@ -448,8 +478,8 @@ define(function (require) {
               throw err;
           });
         } else if(filter=="search") {
-          $log.warn('BUSCANDO....');
-          dataService.getSearchTerm($scope.searchText)
+          $log.warn($scope.searchParams.institutions);
+          dataService.getSearchTerm($scope.searchText, $scope.searchParams.institutions, $scope.searchParams.countries)
             .then(function (data) {
               $scope.amatrix = dataService.dataMapper(data);
 
@@ -470,7 +500,7 @@ define(function (require) {
 
               $scope.amatrix = dataService.dataMapper(data);
 
-              $log.warn($scope.amatrix);
+              //$log.warn($scope.amatrix);
 
               $scope.firstPage();
 
@@ -503,42 +533,9 @@ define(function (require) {
 
     /******************************END FILTERS************************************/
       $scope.search = search;
-
-      $scope.confirmSelection = function($event){
-        var check1 = $('#institution-filter-1:checked').length > 0;
-        var check2 = $('#institution-filter-2:checked').length > 0;
-        var check3 = $('#institution-filter-3:checked').length > 0;
-        var check4 = $('#institution-filter-4:checked').length > 0;
-
-        var par="country";
-        if(check1) {
-          $scope.searchParams.institutions.filter1=1;
-          par="institution";
-        }
-        if(check2) {
-          $scope.searchParams.institutions.filter2=1;
-          par="institution";
-        }
-        if(check3) {
-          $scope.searchParams.institutions.filter3=1;
-          par="institution";
-        }
-        if(check4) {
-          $scope.searchParams.institutions.filter4=1;
-          par="institution";
-        }
-
-
-        search($event,par);
-
-        $scope.searchParams.institutions.filter1=0;
-        $scope.searchParams.institutions.filter2=0;
-        $scope.searchParams.institutions.filter3=0;
-        $scope.searchParams.institutions.filter4=0;
-      }
   }
 
-  controller.$inject = ['$scope', '$stateParams', '$state', 'configService', '$log', '$document','dataService', '$window', '$sce'];
+  controller.$inject = ['$scope', '$stateParams', '$state', 'configService', '$log', '$document','dataService', '$window', '$sce', '$compile', '$timeout'];
   return controller;
 
 

@@ -194,9 +194,14 @@
       <Columns/>
       <Parameters>
         <Parameter default=".*" name="term" type="String" />
+        <Parameter default="null" name="institution1" type="Numeric"/>
+        <Parameter default="null" name="institution2" type="Numeric"/>
+        <Parameter default="null" name="institution3" type="Numeric"/>
+        <Parameter default="null" name="institution4" type="Numeric"/>
+        <Parameter default=".*" name="countries" type="String"/>
       </Parameters>
         <Query>
-        SELECT DISTINCT(mp.id) AS id, n.NAME AS country_name, n.country_code as country_code, mp.check_1 AS osh_authority, mp.check_2 AS compensation, 
+        SELECT DISTINCT(mp.id) AS id, n.literal_id AS country_name, n.country_code as country_code, mp.check_1 AS osh_authority, mp.check_2 AS compensation, 
         mp.check_3 AS prevention, mp.check_4 AS standardisation, mp.text_1_literal_id AS name_authority, mp.text_2_literal_id AS link_authority, mp.text_3_literal_id AS detail_authority
         FROM matrix_page mp
         INNER JOIN nuts n
@@ -213,7 +218,13 @@
         ON l2.id = t2.literal_id
         INNER JOIN translation t3
         ON l3.id = t3.literal_id
-        WHERE mp.page = 'MATRIX_AUTHORITY' AND (n.name REGEXP ${term} OR t.text REGEXP ${term} OR t2.text REGEXP ${term} OR t3.text REGEXP ${term});
+        WHERE mp.page = 'MATRIX_AUTHORITY' 
+        AND n.country_code REGEXP ${countries}
+        AND (mp.check_1=${institution1}
+        OR mp.check_2=${institution2}
+        OR mp.check_3=${institution3}
+        OR mp.check_4=${institution4})
+        AND (n.name REGEXP ${term} OR t.text REGEXP ${term} OR t2.text REGEXP ${term} OR t3.text REGEXP ${term});
       </Query>
     </DataAccess>
 
@@ -270,7 +281,7 @@
             ON n.id = mp.nuts_id
 
             /*JOIN condition*/
-             WHERE n.literal_id REGEXP ${countries}
+             WHERE n.country_code REGEXP ${countries}
              AND mp.page = 'MATRIX_AUTHORITY'
 
             order by country_name ASC
@@ -304,7 +315,7 @@
         
         /*JOIN condition*/
          WHERE mp.page = 'MATRIX_AUTHORITY'
-         AND n.literal_id REGEXP ${countries}
+         AND n.country_code REGEXP ${countries}
          AND (mp.check_1=${institution1}
          OR mp.check_2=${institution2}
          OR mp.check_3=${institution3}

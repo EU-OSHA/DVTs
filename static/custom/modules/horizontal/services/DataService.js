@@ -111,19 +111,6 @@ define(function () {
                 return promise(url);
             },
 
-            getSearchTerm: function (term) {
-                $log.warn("Entra en getSearchTerm");
-                var term2 = !term ? ".*" : ".*" + term;
-
-                $log.warn(term2);
-                //var block1 = !policy ? ".*" : ".*" + policy;
-
-                var url = configService.getInfosystemDataPath() + "&dataAccessId=getSearchTerm" + "&paramterm=" + term2;
-
-                $log.debug('getSearchTerm url: ' + url);
-                return promise(url);
-            },
-
             /**
              * @ngdoc method
              * @name dvt.configModule.DataService#getSearchListChallenges
@@ -218,7 +205,6 @@ define(function () {
              *
              */
             getSearchList: function (countries) {
-                $log.warn(countries);
                 var block1 = countries.length <= 0 ? ".*" : countries.join("|");;
 
                 var url = configService.getBarometerDataPath() + "&dataAccessId=getSearchList" + "&paramcountries=" + block1;
@@ -239,9 +225,6 @@ define(function () {
              */
             getSearchListInstitutions: function ( institutions, countries) {
                 var block1,block2,block3,block4,block5;
-                $log.warn("Llega a getSearchListInstitutions");
-                $log.warn(countries);
-                $log.warn(institutions);
 
                 if (institutions.filter1==1){
                   block1 = 1;
@@ -270,6 +253,39 @@ define(function () {
                 var url = configService.getBarometerDataPath() + "&dataAccessId=getSearchListInstitutions" + "&paraminstitution1=" + block1 +"&paraminstitution2=" + block2 +"&paraminstitution3=" + block3 +"&paraminstitution4=" + block4 + "&paramcountries=" + block5;
 
                 $log.debug('getSearchListInstitutions url: ' + url);
+                return promise(url);
+            },
+
+            getSearchTerm: function (term, institutions, countries) {
+                var term2 = !term ? ".*" : ".*" + term;
+
+                if (institutions.filter1==1){
+                  block1 = 1;
+                }else {
+                  block1 = 2;
+                }
+                if (institutions.filter2==1){
+                  block2 = 1;
+                }else {
+                  block2 = 2;
+                }
+                if (institutions.filter3==1){
+                  block3 = 1;
+                }else {
+                  block3 = 2;
+                }
+                if (institutions.filter4==1){
+                  block4 = 1;
+                }else {
+                  block4 = 2;
+                }
+
+
+                var block5 = countries.length <= 0 ? ".*" : countries.join("|");
+
+                var url = configService.getBarometerDataPath() + "&dataAccessId=getSearchTerm" + "&paramterm=" + term2+ "&paraminstitution1=" + block1 +"&paraminstitution2=" + block2 +"&paraminstitution3=" + block3 +"&paraminstitution4=" + block4 + "&paramcountries=" + block5;
+
+                $log.debug('getSearchTerm url: ' + url);
                 return promise(url);
             },
 
