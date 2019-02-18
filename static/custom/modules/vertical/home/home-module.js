@@ -33,8 +33,8 @@ define(function (require) {
                 }
             },
             metaTags: {
-                title: "Home | " + i18n.L62,
-                description: i18n.L4,
+                title: "Home | " + i18n.L20062,
+                //description: i18n.L4,
             }
         });
     });

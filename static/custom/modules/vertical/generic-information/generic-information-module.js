@@ -48,29 +48,33 @@ define(function (require) {
             }
         });*/
 
-        /*$stateProvider.state('matrix', {*/
         $stateProvider.state('osh-authorities', {
           /*url: "/national-strategies/EU-challenges-response/:country",*/
-          url: "/generic-information/osh-authorities/:country",
+          url: "/generic-information/osh-authorities/:pCountry/:pInstitution/:pSearch",
           params: {
-              policy: {
-                  value: "",
+            pCountry: {
+                  value: null,
                   squash: true
-              }
+            },
+            pInstitution: {
+                value: null,
+                squash: true
+            },
+            pSearch: {
+              value: null,
+              squash: true
+            }
           },
           views: {
               "content-main": {
-                  /*templateUrl: configService.getVerticalTplPath("national-strategies/matrix", "matrix"),*/
                   templateUrl: configService.getVerticalTplPath("generic-information/osh-authorities", "osh-authorities"),
-                  /*controller: 'MatrixController',*/
                   controller: 'OSHAuthoritiesController',
-                  /*resolve: configService.dynamicallyRegisterController($controllerProvider, 'vertical/matrix/MatrixController', 'matrix', 'MatrixController')*/
                   resolve: configService.dynamicallyRegisterController($controllerProvider, 'vertical/osh-authorities/OSHAuthoritiesController', 'osh-authorities', 'OSHAuthoritiesController')
               }
           },
           metaTags: {
-              title: i18n.L396 +" | "+ i18n.L62 ,
-              description: i18n.L397
+              title: i18n.L22001 +" | "+ i18n.L22002 ,
+              //description: i18n.L397
           }
       });
 

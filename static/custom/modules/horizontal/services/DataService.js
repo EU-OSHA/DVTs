@@ -262,22 +262,22 @@ define(function () {
                 if (institutions.filter1==1){
                   block1 = 1;
                 }else {
-                  block1 = 2;
+                  block1 = 0;
                 }
                 if (institutions.filter2==1){
                   block2 = 1;
                 }else {
-                  block2 = 2;
+                  block2 = 0;
                 }
                 if (institutions.filter3==1){
                   block3 = 1;
                 }else {
-                  block3 = 2;
+                  block3 = 0;
                 }
                 if (institutions.filter4==1){
                   block4 = 1;
                 }else {
-                  block4 = 2;
+                  block4 = 0;
                 }
 
 
@@ -286,6 +286,7 @@ define(function () {
                 var url = configService.getBarometerDataPath() + "&dataAccessId=getSearchTerm" + "&paramterm=" + term2+ "&paraminstitution1=" + block1 +"&paraminstitution2=" + block2 +"&paraminstitution3=" + block3 +"&paraminstitution4=" + block4 + "&paramcountries=" + block5;
 
                 $log.debug('getSearchTerm url: ' + url);
+                
                 return promise(url);
             },
 

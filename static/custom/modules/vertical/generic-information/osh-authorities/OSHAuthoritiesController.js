@@ -1,6 +1,6 @@
 /**
  * @ngdoc controller
- * @name all-ages.countries.controller:NationalStrategiesController
+ * @name barometer.generic-information-osh-authorities.controller:OSHAuthoritiesController
  * @requires $scope
  * @requires $stateParams
  * @requires $state
@@ -38,15 +38,13 @@ define(function (require) {
     };
 
     $scope.searchText = '';
-    $scope.selectedCountry = "-1";
+    //$scope.selectedCountry = "-1";
 
     //Variables pagination
-   
     $scope.currentPage = 0;
     $scope.pageSize = 5;
     $scope.elementsStart=0;
     $scope.elementsEnd=$scope.pageSize;
-    $scope.maxPageButtons = 9;
 
     // Pagination Text
     //$scope.paginationText = i18n.displaying + ($scope.elementsStart+1)+'-'+$scope.elementsEnd + i18n.of + $scope.amatrix.length;
@@ -109,7 +107,7 @@ define(function (require) {
         }
       });
       angular.element(' span.see-more', angular.element($event.target).parent().parent()).slideToggle();
-      angular.element(' button', angular.element($event.target).parent()).toggle();
+      angular.element(' a', angular.element($event.target).parent()).toggle();
     }
 
     // Show/hide the Countries Filter List
@@ -128,8 +126,8 @@ define(function (require) {
     |******************************************************************************/
       /**
        * @ngdoc method
-       * @name ng.controller:NationalStrategiesController#numberOfPages
-       * @methodOf dvt.controller:NationalStrategiesController
+       * @name ng.controller:OSHAuthoritiesController#numberOfPages
+       * @methodOf barometer.osh-authorities.controller:OSHAuthoritiesController
        * @description
        * My Description rules
        */
@@ -139,8 +137,8 @@ define(function (require) {
 
       /**
        * @ngdoc method
-       * @name ng.controller:NationalStrategiesController#pagination
-       * @methodOf dvt.controller:NationalStrategiesController
+       * @name ng.controller:OSHAuthoritiesController#pagination
+       * @methodOf barometer.osh-authorities.controller:OSHAuthoritiesController
        * @description
        * Get an array of all pages to paginate
       */
@@ -159,8 +157,8 @@ define(function (require) {
 
       /**
        * @ngdoc method
-       * @name ng.controller:NationalStrategiesController#goToPage
-       * @methodOf dvt.controller:NationalStrategiesController
+       * @name ng.controller:OSHAuthoritiesController#goToPage
+       * @methodOf barometer.osh-authorities.controller:OSHAuthoritiesController
        * @description
        * Navigates to a specific page given the pagination index
       */
@@ -173,8 +171,8 @@ define(function (require) {
 
       /**
        * @ngdoc method
-       * @name ng.controller:MatrixController#firstPage
-       * @methodOf dvt.controller:MatrixController
+       * @name ng.controller:OSHAuthoritiesController#firstPage
+       * @methodOf barometer.osh-authorities.controller:OSHAuthoritiesController
        * @description
        * Go to the first page of the pagination
        */
@@ -193,8 +191,8 @@ define(function (require) {
 
       /**
        * @ngdoc method
-       * @name ng.controller:MatrixController#previousPage
-       * @methodOf dvt.controller:MatrixController
+       * @name ng.controller:OSHAuthoritiesController#previousPage
+       * @methodOf barometer.osh-authorities.controller:OSHAuthoritiesController
        * @description
        * Go to the previous page of the pagination
        */
@@ -211,8 +209,8 @@ define(function (require) {
 
       /**
        * @ngdoc method
-       * @name ng.controller:MatrixController#nextPage
-       * @methodOf dvt.controller:MatrixController
+       * @name ng.controller:OSHAuthoritiesController#nextPage
+       * @methodOf barometer.osh-authorities.controller:OSHAuthoritiesController
        * @description
        * Go to the next page of the pagination
        */
@@ -236,8 +234,8 @@ define(function (require) {
 
       /**
        * @ngdoc method
-       * @name ng.controller:MatrixController#lastPage
-       * @methodOf dvt.controller:MatrixController
+       * @name ng.controller:OSHAuthoritiesController#lastPage
+       * @methodOf barometer.osh-authorities.controller:OSHAuthoritiesController
        * @description
        * Go to the last page of the pagination
        */
@@ -307,7 +305,7 @@ define(function (require) {
       }).catch(function (err) {
           throw err;
       });
-
+      
       dataService.getMatrixAuthsCountries().then(function (data) {
 
         data.data.resultset.map(function (elem) {
@@ -330,10 +328,10 @@ define(function (require) {
     |******************************************************************************/
       /**
        * @ngdoc method
-       * @name ng.controller:MatrixController#toogleCountryClick
+       * @name ng.controller:OSHAuthoritiesController#toogleCountryClick
        * @param {$event} $event from the browser
        * @param {$index} $index track by ng-repeat
-       * @methodOf infosystem.matrix.controller:MatrixController
+       * @methodOf barometer.osh-authorities.controller:OSHAuthoritiesController
        * @description
        * Function launched after clicking on Country Filter
        */
@@ -349,12 +347,10 @@ define(function (require) {
 
       /**
        * @ngdoc method
-       * @name ng.controller:MatrixController#toogleChallengeClick
-       * @param {$event} $event from the browser
-       * @param {number} $index track by ng-repeat
-       * @methodOf infosystem.matrix.controller:MatrixController
+       * @name ng.controller:OSHAuthoritiesController#toggleInstitutionClick
+       * @methodOf barometer.osh-authorities.controller:OSHAuthoritiesController
        * @description
-       * Function launched after clicking on a Challenge Filter
+       * Function launched when clicking an Institution Filter
        */
       $scope.toggleInstitutionClick = function () {
 
@@ -377,6 +373,14 @@ define(function (require) {
         }
       };
 
+      /**
+       * @ngdoc method
+       * @name ng.controller:OSHAuthoritiesController#confirmSelection
+       * @param {$event} $event from the browser
+       * @methodOf barometer.osh-authorities.controller:OSHAuthoritiesController
+       * @description
+       * Function launched when clicking confirm button of Institutions and Countries Select
+       */
       $scope.confirmSelection = function($event){
         var check1 = $('#institution-filter-1:checked').length > 0;
         var check2 = $('#institution-filter-2:checked').length > 0;
@@ -423,6 +427,14 @@ define(function (require) {
         search($event,par);
       }
 
+      /**
+       * @ngdoc method
+       * @name ng.controller:OSHAuthoritiesController#deleteTag
+       * @param {$event} $event from the browser
+       * @methodOf barometer.osh-authorities.controller:OSHAuthoritiesController
+       * @description
+       * Deletes the clicked tag and applies the new filters
+       */
       $scope.deleteTag = function($event){
         var element = angular.element($event.currentTarget);
         var quitChecked;
@@ -450,17 +462,17 @@ define(function (require) {
         
       }
 
-      // SEARCH START 
       /**
        * @ngdoc method
-       * @name ng.controller:MatrixController#search
+       * @name ng.controller:OSHAuthoritiesController#search
        * @param {$event} $event from the browser
        * @param {filter} type of filter applied
-       * @methodOf nfosystem.matrix.controller:MatrixController
+       * @methodOf barometer.osh-authorities.controller:OSHAuthoritiesController
        * @description
        * Apply the filters and load the filtered content
        */
       function search($event,filter) {
+
         if ((filter=="country")&&($scope.searchParams.institutions.filter1!=1)&&($scope.searchParams.institutions.filter2!=1)&&($scope.searchParams.institutions.filter3!=1)&&($scope.searchParams.institutions.filter4!=1)){
           dataService.getSearchList($scope.searchParams.countries)
             .then(function (data) {
@@ -477,8 +489,8 @@ define(function (require) {
             }).catch(function (err) {
               throw err;
           });
-        } else if(filter=="search") {
-          $log.warn($scope.searchParams.institutions);
+        } else if(filter=="search" && $scope.searchText != '') {
+          $log.warn($scope.searchText);
           dataService.getSearchTerm($scope.searchText, $scope.searchParams.institutions, $scope.searchParams.countries)
             .then(function (data) {
               $scope.amatrix = dataService.dataMapper(data);
@@ -494,7 +506,7 @@ define(function (require) {
             }).catch(function (err) {
               throw err;
           });
-        } else {
+        } else if(filter=="institution"){
           dataService.getSearchListInstitutions($scope.searchParams.institutions, $scope.searchParams.countries)
             .then(function (data) {
 
@@ -516,23 +528,14 @@ define(function (require) {
         $scope.currentPage = 0;
       }
 
-      /*Clear search input*/
-      $scope.clear = function ($event) {
-        $scope.searchText = '';
-        $scope.search($event,'search');
-        $scope.currentPage = 0;
-
-      };
-
       //CLICK ENTER --------------------------------------------------------------------------------------
       $scope.clickEnter=function($event) {
-         if($event.which === 13) {
+         if($event.which === 13 || $event.which === 1) {
              search($event, 'search');
          }
       }
 
     /******************************END FILTERS************************************/
-      $scope.search = search;
   }
 
   controller.$inject = ['$scope', '$stateParams', '$state', 'configService', '$log', '$document','dataService', '$window', '$sce', '$compile', '$timeout'];

@@ -11,7 +11,7 @@
     <!-- SEARCH FILTER -->
     <div class="filter-text">      
       <input ng-keypress="clickEnter($event)" id="search-input" type="text" placeholder="{{i18nSearchPlaceholder}}" data-ng-model="searchText"/>
-      <button data-ng-click="search($event,'search')"  id="policy-search" type="button">
+      <button data-ng-click="clickEnter($event)"  id="policy-search" type="button">
         <i class="fa fa-search" aria-hidden="true"></i>
       </button>
     </div>
@@ -79,7 +79,6 @@
           <div data-ng-bind-html="i18nLiterals['L'+matrix.name_authority]"></div>
           <div data-ng-bind-html="i18nLiterals['L'+matrix.link_authority]"></div>
           <div data-ng-bind-html="trimtext(i18nLiterals['L'+matrix.detail_authority], 300)"></div>
-
           <p data-ng-if="i18nLiterals['L'+matrix.detail_authority].length > 300" class="see--more--wrapper"> 
             <a ng-click='toggleText($event)' data-ng-bind="i18n.read" class="see-more main-color"></a>
             <a ng-click='toggleText($event)' data-ng-bind="i18n.less" class="see-less main-color" style="display:none"></a>
