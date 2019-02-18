@@ -100,10 +100,42 @@
           <h1 class="main-title" data-ng-bind-html="i18n_literals.L22020">
           <!--OSH BAROMETER Data Visulisation Tool-->
           </h1>
-          <!--<p class="lead-title">Status of Occupational Safety and Health in the European Union</p>-->
+          <p class="lead-title">Status of Occupational Safety and Health in the European Union</p>
       </div>
     </section>
-    <section data-ng-if="!isHome" id="not-home-cover" class="advice--block background-main-light container-fluid section--page">
+
+    <section class="breadcrumbs--social--network">
+        <div class="breadcrumbs">
+            <p class="path" data-ng-bind-html="breadCrumb" id="breadCrumbs"></p>
+        </div>
+        <div class="social--network--nav" id="osha-menu-social">
+            <label>Share this on:</label>
+            <ul>
+                <li>
+                    <a class="main-color" target="_blank" socialshare socialshare-provider="twitter" title ="{{i18n_menu.Share}}" socialshare-text="{{i18n_literals[title]}}" socialshare-url="{{pathURLDVT}}">
+                        <i class="fa fa-lg fa-twitter" aria-hidden="true"></i><span class="sr-only" data-ng-bind="i18n_menu.OSHATwitter"></span>
+                    </a>
+                </li>
+                <li>
+                    <a class="main-color" target="_blank" socialshare socialshare-provider="facebook" title="{{i18n_menu.OSHAFacebook}}" socialshare-url="{{pathURLDVT}}">
+                        <i class="fa fa-lg fa-facebook" aria-hidden="true"></i><span class="sr-only" data-ng-bind="i18n_menu.OSHAFacebook"></span>
+                    </a>
+                </li>
+                <li>
+                    <a class="main-color" target="_blank" socialshare socialshare-provider="linkedin" title="{{i18n_menu.OSHALinkedin}}" socialshare-url="{{pathURLDVT}}">
+                        <i class="fa fa-lg fa-linkedin" aria-hidden="true"></i><span class="sr-only" data-ng-bind="i18n_menu.OSHALinkedin"></span>
+                    </a>
+                </li>
+                <li>
+                    <a class="main-color" target="_blank" title="{{i18n_menu.OSHAGoogle}}" href="{{pathURLDVTGoogle}}">
+                        <i class="fa fa-lg fa-google-plus" aria-hidden="true"></i><span class="sr-only" data-ng-bind="i18n_menu.OSHAGoogle"></span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section data-ng-if="!isHome" id="not-home-cover" class="advice--block advice--block-not-home background-main-light container-fluid section--page">
         <div class="container">
             <h2 class="main-color left-text" data-ng-bind="i18n_literals.L22024"></h2>
             <p data-ng-bind="i18n_literals.L22025"></p>

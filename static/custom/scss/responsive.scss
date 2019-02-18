@@ -156,7 +156,7 @@
 			          }
 			          input.form-control {
 			            padding: 2.5rem;
-	  							font-size: 1.6rem;
+	  							font-size: $font-size-body;
 			          }
 			          .form-group:hover,
 			          .form-group.hover {
@@ -237,7 +237,7 @@
 								  li{
 								  	padding: 0.5rem 0;
 								  	a{
-								  		font-size: 1.6rem !important;
+								  		font-size: $font-size-body !important;
 								  	}
 								  }
 								}
@@ -273,7 +273,9 @@
 		  }
 		}
 	}
-
+	.breadcrumbs--social--network{
+		top: 0;
+	}
 	.home-cover{
 		top: 0;
 		> .container{
@@ -456,6 +458,23 @@ and (max-device-width :767px)  {
 			line-height: 4.7rem;
 		}
 	}
+	footer{
+	  top: 10rem;
+	  position: relative;
+	}
+	.breadcrumbs--social--network{
+		top: 10rem;
+		flex-direction: column-reverse;
+		padding: 1rem 0 1rem 1rem;
+		.social--network--nav{
+			align-self: flex-end;
+			ul{
+				li{
+					padding: 0 0.8rem 0.8rem;
+				}
+			}
+		}		  
+	}
 	.mainBody{
 		position: relative;
 		top: 10rem;
@@ -532,6 +551,9 @@ and (max-device-width :767px)  {
 	/** ELEMENTS  **/
 		.advice--block{
 			top: 10rem;
+			&.advice-home{
+				top: 0rem;
+			}
 			.title--section{
 			  font-family: 'Oswald';
 			  font-size: 3.6rem;
@@ -707,6 +729,18 @@ and (max-device-width :370px){
 		  padding: 2rem 2rem;
 		}
 	}
+	.pagination--wrapper{
+		.pagination--elements{
+			li {
+			  margin: 0;
+			  &.arrow{
+			  	span{
+			  		font-size: 2.5rem;
+			  	}
+			  }
+			}
+		} 
+	} 
 }
 
 

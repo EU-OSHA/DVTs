@@ -132,6 +132,7 @@
       a{
         font-weight: bold;
         position: relative;
+        white-space: normal;
         &:after{
           font-weight:normal;
           content: "\f105";
@@ -328,13 +329,76 @@
     font-size: 3.6rem;
     margin: 2rem 0 6rem;
   }
+  .breadcrumbs--social--network{
+    position: relative;
+    top: -7px;
+    padding: 1rem 2rem; 
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+    .breadcrumbs{
+      .path{
+        margin: 0;
+        padding: 0;
+        font-size: 1.4rem;
+        color: $aquamarine;
+        i{
+          color: $orange;
+          font-size: 1.8rem;
+          padding: 0 5px;
+        }
+        span {
+          font-weight: bold;
+        }
+      }    
+    }
+    .social--network--nav{
+      list-style-type: none;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-right: 1rem; 
+      label{
+        padding-left: 5px;
+        padding-right: 5px;
+        font-size: 1rem;
+        font-weight: normal;
+      }
+      ul{
+        padding: 0;
+        margin: 0;
+        list-style-type: none;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around; 
+        li{
+          padding:0 0.8rem;
+          a{
+            cursor: pointer;
+            &:hover{
+              color:$orange;
+            }
+          }
+        }
+      }
+    }
+  }
+
   .advice--block{
     position: relative;
     top: -7px;
     padding: 6rem 0;
+    &.advice--block-not-home{
+      padding: 2rem 0;
+      h2{
+        margin-bottom: 1rem;
+      }
+    }
     .title--section{
       font-family: 'Oswald';
-      font-size: 3.6rem;
+      font-size: 3rem;
       padding: 1rem 18rem 1rem 18rem;
       text-align: center;
     }
@@ -345,7 +409,7 @@
     padding: 6rem 0;
     .title--section{
       font-family: 'Oswald';
-      font-size: 3.6rem;
+      font-size: 3rem;
       padding: 0;
       text-align: left;
     }
@@ -540,7 +604,7 @@
           }
           .text-area{
             font-family: Oswald;
-            font-size: 1.6rem;
+            font-size: $font-size-body;
             position: relative;
             top: -1rem;
           }
@@ -594,7 +658,7 @@
           background-size: contain;
         }
         .title--card{
-          font-size: 3.4rem;
+          font-size:2.8rem;
         }
         .btn--card--block{
           margin-top:auto;
@@ -629,7 +693,7 @@
           width: 100%;
         }
         .title--card{
-          font-size: 3.4rem;
+          font-size: 2.8rem;
         }
         .btn--card{
           font-weight: bold;
@@ -691,7 +755,7 @@
           }
         }
         .title--card{
-          font-size: 3.4rem;
+          font-size: 2.8rem;
           margin-top: 0;
           text-align: left;
         }
@@ -795,7 +859,8 @@
       flex-wrap: wrap;
       justify-content: center;
       align-items: center;
-      margin: 2rem 0 6rem;
+      margin: 2rem 0;
+      padding: 0;
       li{
         margin: 0 0.5rem;
         span{
