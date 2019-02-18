@@ -11,6 +11,7 @@
   .filter--dropdown--wrapper{
     position: relative;
     flex-basis:30%;
+    //align-self: flex-end;
     .filter--dropdown--list{
       position: absolute;
       height: 4rem;
@@ -82,8 +83,8 @@
 
   .filter-text{
     flex-basis:33.3%;
-    margin-top: 3rem;
     position: relative;
+    //align-self: flex-end;
     #search-input{
         padding: 1rem 4rem 1rem 1rem;
         font-size: 1.4rem;
@@ -225,37 +226,3 @@
   }
 }
 
-.pagination--wrapper{
-  .pagination--elements{
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    margin: 2rem 0 6rem;
-    li{
-      margin: 0 0.5rem;
-      span{
-        padding: 0.8rem;
-        text-align: center;
-        width: auto;
-        border-radius: 8px;
-        border: 1px solid #B1B3B4;
-        display: block;
-        font-size: 2rem;
-        font-family: 'Oswald';
-        &.active{
-          opacity: 1;
-        }
-      }
-      &.arrow {
-        span{
-          border:0px;
-          opacity:0.6;
-          color: $gray-light; 
-          font-size: 3.5rem;          
-        }
-      }
-    }
-  }
-}

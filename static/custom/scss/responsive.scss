@@ -147,8 +147,9 @@
 						  transition: 0.4s;		
 						  &.exposed{
 						  	visibility: visible;
-						  	top: 9.7rem;
-						  	transition: 0.6s;							  
+						  	top: 8.7rem;
+						  	transition: 0.6s;	
+						  	box-shadow: 0 0px 2px #ccc;						  
 			          .form-group {
 									width: 100%;
 									border: 1px solid #A2ACB4;
@@ -298,7 +299,7 @@
 and (min-device-width : 768px) 
 and (max-device-width : 1024px)  {
 
-/** WIDTH CARDS  **/
+	/** WIDTH CARDS  **/
 	.card--grid{
 	  justify-content: flex-start;
 	}
@@ -372,9 +373,9 @@ and (max-device-width : 1024px)  {
 		  margin: 0 1% 3rem;
 		}
 	}
-/** END WIDTH CARDS  **/ 
+	/** END WIDTH CARDS  **/ 
 
-/** ELEMENTS  **/
+	/** ELEMENTS  **/
 	.advice--block{
 		.title--section{
 		  font-family: 'Oswald';
@@ -418,7 +419,7 @@ and (max-device-width : 1024px)  {
 			width: 100% !important;
 		}
 	}
-/** END ELEMENTS  **/
+	/** END ELEMENTS  **/
 
 	.footer-elements{
 	  text-align: center;
@@ -449,9 +450,15 @@ and (orientation : portrait) {
 and (max-device-width :767px)  { 
 
 	.home-cover{
+		top: 10rem;
+		height: auto;
 		.main-title{
 			line-height: 4.7rem;
 		}
+	}
+	.mainBody{
+		position: relative;
+		top: 10rem;
 	}
 	.section--page {
 	  padding: 3rem 2rem;
@@ -524,6 +531,7 @@ and (max-device-width :767px)  {
 
 	/** ELEMENTS  **/
 		.advice--block{
+			top: 10rem;
 			.title--section{
 			  font-family: 'Oswald';
 			  font-size: 3.6rem;
@@ -551,8 +559,27 @@ and (max-device-width :767px)  {
 
 
 @media only screen 
-and (max-device-width :767px)  { 
+and (max-device-width :767px)  {
+
+  .hide-header{
+    position: fixed;
+    top: -10rem;
+    -webkit-transition: all 0.8s;
+    transition: all 0.8s;
+  }
+  .show-header{
+    position: fixed;
+    top:0rem;
+    -webkit-transition: all 0.8s; 
+    transition: all 0.8s;
+  }
+
 	.bar-header{
+		position: fixed;
+    background: $white;
+  	box-shadow: 0 0px 2px #ccc;
+    width: 100%;
+    z-index: 1000;
   	.header--top{
 
 			.eu-osha-logo {
@@ -565,7 +592,8 @@ and (max-device-width :767px)  {
 						.search--form{
 							padding:4rem;
 							.form-group{
-								width: 80%;
+								//width: 80%;
+								width: 100%;
 							}
 						}
 					}
@@ -576,6 +604,9 @@ and (max-device-width :767px)  {
 			}
   	}
   	.bar-main-menu{
+  		position: relative;
+  		z-index: 1000;
+  		background:$white;
 			.navbar-toggle{
 				margin: 2.7rem 1rem 0 1rem;
 			}
@@ -586,15 +617,24 @@ and (max-device-width :767px)  {
 		display: block !important;
 		.filter-text{
 			margin-top: 0!important;
+			margin: 1.8rem 0 0 0;
 		}
 		.filter--dropdown--wrapper{
 			.filter--dropdown--list{
 				position: relative !important;
+				margin: 1.8rem 0 0 0;
 			}
 		} 
 	}
 	.matrix--elements--wrapper {
 	  word-break: break-word;
+	  .matrix--element{
+	  	.matrix--header--elements{
+				.flags--wrapper{
+					width: 5rem;
+				}
+	  	}
+	  }
 	}
 
 	footer{
@@ -611,8 +651,13 @@ and (max-device-width :767px)  {
 
 @media only screen 
 and (max-device-width :370px){
-
+	.hide-header {
+	  top: -16rem;
+	  -webkit-transition: all 0.8s;
+	  transition: all 0.8s;
+	}
 	.bar-header{
+	  position: fixed;
 		flex-direction: column;		
 		.header--top{
 			  flex-direction: column;
@@ -643,20 +688,25 @@ and (max-device-width :370px){
 			position: absolute;
 			right: 0;
 			bottom: -1.2rem;
+			background: transparent;
 			&.exposed{
 			  position: absolute;
 			  left: 0;
 			  top: auto;
 				.collapse{
 					&.exposed{
-						top: 9rem;
+						top: 8.6rem;
 						min-height: 38.5vh;
 					}
 				}
 			}
 		}
 	}
-
+	.matrix--elements--wrapper{
+	 .matrix--element {
+		  padding: 2rem 2rem;
+		}
+	}
 }
 
 

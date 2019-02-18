@@ -6,7 +6,7 @@
   }
   body{
     font-family: $font-body;
-    font-size: 18px;
+    font-size: 16px;
     color: $gray-base;
   }
   body.hasCookies{
@@ -81,6 +81,9 @@
         }
       }
     }
+  }
+  label:empty{
+    display: none;
   }
 /** END DGENERAL TAGS  **/
 
@@ -783,6 +786,43 @@
     }
   /* END GOOGLE TRANSLATE */
 
+
+  /** PAGINATION **/
+  .pagination--wrapper{
+    .pagination--elements{
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      margin: 2rem 0 6rem;
+      li{
+        margin: 0 0.5rem;
+        span{
+          padding: 0.8rem;
+          text-align: center;
+          width: auto;
+          border-radius: 8px;
+          border: 1px solid #B1B3B4;
+          display: block;
+          font-size: 2rem;
+          font-family: 'Oswald';
+          &.active{
+            opacity: 1;
+          }
+        }
+        &.arrow {
+          span{
+            border:0px;
+            opacity:0.6;
+            color: $gray-light; 
+            font-size: 3.5rem;          
+          }
+        }
+      }
+    }
+  }
+  /** END PAGINATION **/
 /** END ELEMENTS  **/
 
 

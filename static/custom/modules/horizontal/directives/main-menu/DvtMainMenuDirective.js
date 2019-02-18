@@ -42,13 +42,30 @@ define(function (require) {
             transclude: true,
             replace: true,
             scope: {},
-            controller: ['$rootScope', '$scope', '$state', 'configService', '$http', '$log','dataService',
-                function ($rootScope, $scope, $state, configService, $http, $log, dataService) {
+            controller: ['$rootScope', '$scope', '$state', '$window' , 'configService', '$http', '$log','dataService',
+                function ($rootScope, $scope, $state, $window, configService, $http, $log, dataService) {
 
 
                     // Load google translate element
                     new google.translate.TranslateElement({pageLanguage: 'en', autoDisplay: false, layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
 
+
+                    /** HEADER SHOW HIDE **/
+                    var prevScrollpos = $window.pageYOffset;
+
+                    $window.onscroll = function() {
+                      
+                      var currentScrollPos = $window.pageYOffset;
+                      
+                      if (prevScrollpos > currentScrollPos) {
+                        angular.element(".bar-header").addClass('show-header');
+                        angular.element(".bar-header").removeClass('hide-header');
+                      } else {
+                        angular.element(".bar-header").addClass('hide-header');
+                        angular.element(".bar-header").removeClass('show-header');
+                      }
+                      prevScrollpos = currentScrollPos;
+                    } 
 
                     //hide print icon in mobile
                     if(configService.isMobile()) {

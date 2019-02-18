@@ -63,27 +63,16 @@ define(function (require) {
       } else {
         var currentSelect = $event.target.offsetParent.offsetParent;
        
-      }
-
+      }      
+      
       if( currentSelect.className.indexOf('viewOptions') > 0 ){
-        currentSelect.className = 'filter--dropdown--wrapper';
+        //currentSelect.className = 'filter--dropdown--wrapper';
+        angular.element('.filter--dropdown--wrapper').removeClass('viewOptions');        
       } else {
+        angular.element('.filter--dropdown--wrapper').removeClass('viewOptions');
         currentSelect.className += ' viewOptions';
       }
-
-
-/*
-      if ($scope.selectOpened == "viewOptions")
-      {
-        $scope.selectOpened = "";
-      }
-      else
-      {
-        $scope.selectOpened = "viewOptions";
-      }
-*/
     }
-
 
 
     // Read more
@@ -101,6 +90,7 @@ define(function (require) {
     }
 
     $scope.toggleText = function($event) {
+
       angular.element(' samp', angular.element($event.target).parent().parent()).slideToggle('medium', function() {
         if ($(this).is(':visible')) {
           $(this).css('display','inline');
