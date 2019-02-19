@@ -47,7 +47,7 @@
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-menu" aria-expanded="false">
-                    <span class="sr-only" data-ng-bind="i18n_menu.Toggle"></span>
+                    <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar bar1"></span>
                     <span class="icon-bar bar2"></span>
                     <span class="icon-bar bar3"></span>
@@ -109,26 +109,21 @@
             <p class="path" data-ng-bind-html="breadCrumb" id="breadCrumbs"></p>
         </div>
         <div class="social--network--nav" id="osha-menu-social">
-            <label>Share this on:</label>
+            <label data-ng-bind="i18n_literals.L22082"></label>
             <ul>
                 <li>
-                    <a class="main-color" target="_blank" socialshare socialshare-provider="twitter" title ="{{i18n_menu.Share}}" socialshare-text="{{i18n_literals[title]}}" socialshare-url="{{pathURLDVT}}">
-                        <i class="fa fa-lg fa-twitter" aria-hidden="true"></i><span class="sr-only" data-ng-bind="i18n_menu.OSHATwitter"></span>
+                    <a class="main-color" target="_blank" socialshare socialshare-provider="twitter" title ="{{i18n_literals.L22082}} {{i18n_literals.L22083}}" socialshare-text="{{i18n_literals[title]}}" socialshare-url="{{pathURLDVT}}">
+                        <i class="fa fa-lg fa-twitter" aria-hidden="true"></i><span class="sr-only" data-ng-bind="(i18n_literals.L22082) + (i18n_literals.L22083)"></span>
                     </a>
                 </li>
                 <li>
-                    <a class="main-color" target="_blank" socialshare socialshare-provider="facebook" title="{{i18n_menu.OSHAFacebook}}" socialshare-url="{{pathURLDVT}}">
-                        <i class="fa fa-lg fa-facebook" aria-hidden="true"></i><span class="sr-only" data-ng-bind="i18n_menu.OSHAFacebook"></span>
+                    <a class="main-color" target="_blank" socialshare socialshare-provider="facebook" title="{{i18n_literals.L22082}} {{i18n_literals.L22084}}" socialshare-url="{{pathURLDVT}}">
+                        <i class="fa fa-lg fa-facebook" aria-hidden="true"></i><span class="sr-only" data-ng-bind="(i18n_literals.L22082) + (i18n_literals.L22084)"></span>
                     </a>
                 </li>
                 <li>
-                    <a class="main-color" target="_blank" socialshare socialshare-provider="linkedin" title="{{i18n_menu.OSHALinkedin}}" socialshare-url="{{pathURLDVT}}">
-                        <i class="fa fa-lg fa-linkedin" aria-hidden="true"></i><span class="sr-only" data-ng-bind="i18n_menu.OSHALinkedin"></span>
-                    </a>
-                </li>
-                <li>
-                    <a class="main-color" target="_blank" title="{{i18n_menu.OSHAGoogle}}" href="{{pathURLDVTGoogle}}">
-                        <i class="fa fa-lg fa-google-plus" aria-hidden="true"></i><span class="sr-only" data-ng-bind="i18n_menu.OSHAGoogle"></span>
+                    <a class="main-color" target="_blank" socialshare socialshare-provider="linkedin" title="{{i18n_literals.L22082}} {{i18n_literals.L22085}}" socialshare-url="{{pathURLDVT}}">
+                        <i class="fa fa-lg fa-linkedin" aria-hidden="true"></i><span class="sr-only" data-ng-bind="(i18n_literals.L22082) + (i18n_literals.L22085)"></span>
                     </a>
                 </li>
             </ul>

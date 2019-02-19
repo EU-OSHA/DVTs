@@ -76,17 +76,17 @@ define(function (require) {
                     var i18n_literals = configService.getLiterals();
                     $scope.i18n_literals = i18n_literals;
 
-                    var path = configService.getHorizontalDirectiveDataPath("main-menu", "i18n_menu");
+                    /*var path = configService.getHorizontalDirectiveDataPath("main-menu", "i18n_menu");
                     $http.get(path).success(function(i18n_menu) {
                         $scope.i18n_menu = i18n_menu;
                     }).error(function(data,error){
                         //TODO process error
-                    });
+                    });*/
 
                     var breadCrumbStructure = require('json!dvt/directives/breadcrumb-items');
                     var titleStructure = require('json!dvt/directives/title-items');
 
-                    path = configService.getHorizontalDirectiveDataPath("main-menu", "menu");
+                    var path = configService.getHorizontalDirectiveDataPath("main-menu", "menu");
                     $http.get(path, { data: "", headers: {"Content-Type": "application/json"}}).success(function (menuStructure) {
                         $scope.structure = menuStructure;
                     });
@@ -133,11 +133,11 @@ define(function (require) {
                             var path = $location.path();
                             $log.debug(path);
                             $log.warn($state.current.name);
+
                             var cadena = "";
-
-
+                            
                             $scope.breadCrumb = breadCrumbStructure[$state.current.name];
-                            $scope.titleHeader = $scope.i18n_menu.Header;
+                            $scope.titleHeader = $scope.i18n_literals.L22020;
 
                             if ($state.current.name == 'home') {
                                 $scope.isHome = true;                                
@@ -159,6 +159,12 @@ define(function (require) {
 
                         }, $scope);
 
+                    //Hides menu whenever the user changes the current view
+                    $rootScope.$on('$locationChangeSuccess', function () {
+                        collapse.removeClass("exposed");
+                        navMainMenu.removeClass('exposed');
+                        buttonToggle.removeClass('exposed');
+                    });
 
                     $rootScope.$on('$stateNotFound', function(event, unfoundState, fromState, fromParams) {
 
@@ -177,9 +183,7 @@ define(function (require) {
                         console.warn("unfoundState.to: " + unfoundState.to);
                         console.warn("unfoundState.options: " + unfoundState.options );
                     });
-
-
-
+                    
 
                     var buttonToggle = angular.element( "button.navbar-toggle" );
                     var navMainMenu = angular.element( "nav.bar-main-menu" );
