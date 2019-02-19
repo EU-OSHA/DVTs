@@ -10,15 +10,20 @@
 	.menu-tools-top, 
 	.bar-main-menu, 
 	.icon--card, 
-	.btn--block, .btn--card, .btn-default   {
+	.btn--block, .btn--card, .btn-default, 
+	.block--filter--wrapper, 
+	.see-more, .see-less{
 	  display: none !important;
 	}
 	a[href]:after {
 	  content: "";
 	}
+	.matrix--content--elements  samp{
+		display: block !important;
+	}
 	@page {
    size: auto;
-  	margin: 25mm 25mm 25mm 25mm; 
+  	margin: 10mm 25mm 25mm 25mm; 
 	}
 	h2{
 		font-size: 2.8rem !important;
@@ -61,6 +66,7 @@
 
 	.bar-header{
 		display: block;
+		position: relative !important;
 		.header--top{
 			display: block;
 		}
@@ -71,6 +77,9 @@
 	}
 	.advice--block{
 		top: 0;
+		&.advice--block-not-home{
+  		padding: 2rem 1.5rem;
+		}
 		.title--section{
 			font-size: 2.4rem;
 			font-family: 'Oswald-light';
@@ -86,6 +95,7 @@
 			}
 		}		
 	}
+
 	.title-section{
 		margin: 1.5rem 0;
 	}
