@@ -143,7 +143,7 @@
            <schema_name/>
            </partitioning>
     <connection>osha_dvt</connection>
-    <sql>SELECT l.id AS LITERAL_ID, t.text AS LITERAL FROM literal l &#xd;&#xa;INNER JOIN translation t &#xd;&#xa;ON l.id&#x3d;t.literal_id&#xd;&#xa;WHERE l.id &#x3c; 10000 OR &#x28;l.id &#x3e; 20000 AND l.id &#x3c; 30000&#x29;&#x3b;</sql>
+    <sql>SELECT l.id AS LITERAL_ID, t.text AS LITERAL FROM literal l &#xd;&#xa;INNER JOIN translation t &#xd;&#xa;ON l.id&#x3d;t.literal_id&#xd;&#xa;WHERE l.id &#x3c; 10000 OR &#x28;l.id &#x3e; 20000 AND l.id &#x3c; 30000&#x29;&#xd;&#xa;ORDER BY l.id ASC&#x3b;</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
