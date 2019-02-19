@@ -1,6 +1,7 @@
 .home-cover {
     background: url(../img/home-header-bg.png) center top no-repeat #529fa2;
-    height:15.6rem;
+    min-height:15.6rem;
+    height: auto;
     background-size: cover;
     clear: both;
     border-top:6px solid #C7E2E3;

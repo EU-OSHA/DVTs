@@ -53,13 +53,15 @@
 }
 @media (max-width: 1023px) {
 	
+	body{
+	  padding-top: 97px;
+	}
 	.tablet-show{
 		display: block;
 	}
 
 	.bar-header{
-	  z-index: 1;
-	  position: relative;
+	  //position: relative;
 	  display: flex;
 	  justify-content: flex-end;
 	  flex-direction: row;
@@ -450,20 +452,22 @@ and (orientation : portrait) {
 
 @media only screen 
 and (max-device-width :767px)  { 
-
+	body{
+		padding-top: 10rem;
+	}
 	.home-cover{
-		top: 10rem;
+		top: 0rem;
 		height: auto;
 		.main-title{
 			line-height: 4.7rem;
 		}
 	}
 	footer{
-	  top: 10rem;
+	  top: 0rem;
 	  position: relative;
 	}
 	.breadcrumbs--social--network{
-		top: 10rem;
+		top:0rem;
 		flex-direction: column-reverse;
 		padding: 1rem 0 1rem 1rem;
 		.social--network--nav{
@@ -477,7 +481,7 @@ and (max-device-width :767px)  {
 	}
 	.mainBody{
 		position: relative;
-		top: 10rem;
+		top: 0rem;
 	}
 	.section--page {
 	  padding: 3rem 2rem;
@@ -550,7 +554,7 @@ and (max-device-width :767px)  {
 
 	/** ELEMENTS  **/
 		.advice--block{
-			top: 10rem;
+			top: 0rem;
 			&.advice-home{
 				top: 0rem;
 			}

@@ -12,9 +12,12 @@
 
 /** HEADER **/
     .bar-header{
-        z-index: 1;
-        position: relative;
-        padding: 0;
+      position: fixed;
+      z-index: 1001;
+      top: 0;
+      padding: 0;
+      width: 100%;
+      background: #FFF;
         .header--top{
             display: flex;
             flex-direction: row;
@@ -151,7 +154,7 @@
                         -o-transition: all 0.8s ease-out;
                         transition: all 0.8s ease-out;
                         .fa-home:before{
-                            font-size: 2.5rem;
+                            font-size:18px;
                         }
                         &:hover{
                             color: $aquamarine;
@@ -182,7 +185,7 @@
                     }
                     &:nth-child(1){
                         a{
-                        padding-top: 1rem;                  
+                        //padding-top: 1rem;                  
                         }
                     } 
                     .dropdown-menu{
