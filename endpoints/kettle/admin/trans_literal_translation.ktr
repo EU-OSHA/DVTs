@@ -108,12 +108,14 @@
     </attributes>
   </connection>
   <order>
+  <hop> <from>Modified Java Script Value</from><to>Filter rows</to><enabled>Y</enabled> </hop>
   <hop> <from>literals_in</from><to>Replace in string</to><enabled>Y</enabled> </hop>
   <hop> <from>Replace in string</from><to>Modified Java Script Value</to><enabled>Y</enabled> </hop>
-  <hop> <from>Modified Java Script Value</from><to>Execute SQL script</to><enabled>Y</enabled> </hop>
+  <hop> <from>Filter rows</from><to>Insert Specific Literal</to><enabled>Y</enabled> </hop>
+  <hop> <from>Filter rows</from><to>Insert Common Literal</to><enabled>Y</enabled> </hop>
   </order>
   <step>
-    <name>Execute SQL script</name>
+    <name>Insert Specific Literal</name>
     <type>ExecSQL</type>
     <description/>
     <distribute>Y</distribute>
@@ -144,8 +146,38 @@
     </arguments>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>704</xloc>
-      <yloc>304</yloc>
+      <xloc>896</xloc>
+      <yloc>192</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Modified Java Script Value</name>
+    <type>ScriptValueMod</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <compatible>N</compatible>
+    <optimizationLevel>9</optimizationLevel>
+    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
+        <jsScript_name>Script 1</jsScript_name>
+        <jsScript_script>var chartID &#x3d; &#x22;null&#x22;&#x3b;&#xd;&#xa;&#xd;&#xa;if &#x28;CHART_ID &#x21;&#x3d; undefined&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	chartID &#x3d; 20000&#x2b;CHART_ID&#xd;&#xa;&#x7d;&#xd;&#xa;&#xd;&#xa;</jsScript_script>
+      </jsScript>    </jsScripts>    <fields>      <field>        <name>chartID</name>
+        <rename>chartID</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>560</xloc>
+      <yloc>192</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -176,8 +208,8 @@
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>432</xloc>
-      <yloc>304</yloc>
+      <xloc>416</xloc>
+      <yloc>192</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -277,6 +309,19 @@
         <trim_type>none</trim_type>
         <repeat>N</repeat>
       </field>
+      <field>
+        <name>IS_COMMON</name>
+        <attribut>IS_COMMON</attribut>
+        <type>Boolean</type>
+        <format/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <currency/>
+        <decimal/>
+        <group/>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
     </fields>
     <limit>0</limit>
     <shortFileFieldName/>
@@ -289,15 +334,15 @@
     <sizeFieldName/>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>304</xloc>
-      <yloc>304</yloc>
+      <xloc>288</xloc>
+      <yloc>192</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>Modified Java Script Value</name>
-    <type>ScriptValueMod</type>
+    <name>Filter rows</name>
+    <type>FilterRows</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -306,21 +351,54 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <compatible>N</compatible>
-    <optimizationLevel>9</optimizationLevel>
-    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
-        <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>var chartID &#x3d; &#x22;null&#x22;&#x3b;&#xd;&#xa;&#xd;&#xa;if &#x28;CHART_ID &#x21;&#x3d; undefined&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	chartID &#x3d; 20000&#x2b;CHART_ID&#xd;&#xa;&#x7d;&#xd;&#xa;&#xd;&#xa;</jsScript_script>
-      </jsScript>    </jsScripts>    <fields>      <field>        <name>chartID</name>
-        <rename>chartID</rename>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <replace>N</replace>
-      </field>    </fields>     <cluster_schema/>
+<send_true_to>Insert Specific Literal</send_true_to>
+<send_false_to>Insert Common Literal</send_false_to>
+    <compare>
+<condition>
+ <negated>N</negated>
+ <leftvalue>IS_COMMON</leftvalue>
+ <function>&#x3d;</function>
+ <rightvalue/>
+ <value><name>constant</name><type>Boolean</type><text>N</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value> </condition>
+    </compare>
+     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>576</xloc>
-      <yloc>304</yloc>
+      <xloc>720</xloc>
+      <yloc>192</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Insert Common Literal</name>
+    <type>ExecSQL</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>osha_dvt</connection>
+    <execute_each_row>Y</execute_each_row>
+    <single_statement>N</single_statement>
+    <replace_variables>Y</replace_variables>
+    <quoteString>N</quoteString>
+    <sql>SET &#x40;maxId &#x3d; IFNULL&#x28;&#x28;SELECT MAX&#x28;l.id&#x29; AS maxID FROM literal l WHERE l.id &#x3c; 10000&#x29;&#x2b;1,1&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;INSERT INTO literal &#x28;id, chart_id, section_id, type&#x29;&#xd;&#xa;VALUES &#x28;&#xd;&#xa;	&#x40;maxId, null, null, &#x22;&#x3f;&#x22;&#xd;&#xa;&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;INSERT INTO translation &#x28;literal_id, language, is_default, text&#x29;&#xd;&#xa;VALUES &#x28;&#xd;&#xa;	&#x40;maxId, &#x22;EN&#x22;, 1, &#x22;&#x3f;&#x22;&#xd;&#xa;&#x29;&#x3b;</sql>
+    <set_params>N</set_params>
+    <insert_field/>
+    <update_field/>
+    <delete_field/>
+    <read_field/>
+    <arguments>
+       <argument><name>LITERAL_TYPE</name></argument>
+       <argument><name>literal_escaped</name></argument>
+    </arguments>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>896</xloc>
+      <yloc>272</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
