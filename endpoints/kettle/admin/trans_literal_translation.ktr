@@ -109,7 +109,8 @@
   </connection>
   <order>
   <hop> <from>literals_in</from><to>Replace in string</to><enabled>Y</enabled> </hop>
-  <hop> <from>Replace in string</from><to>Execute SQL script</to><enabled>Y</enabled> </hop>
+  <hop> <from>Replace in string</from><to>Modified Java Script Value</to><enabled>Y</enabled> </hop>
+  <hop> <from>Modified Java Script Value</from><to>Execute SQL script</to><enabled>Y</enabled> </hop>
   </order>
   <step>
     <name>Execute SQL script</name>
@@ -127,7 +128,7 @@
     <single_statement>N</single_statement>
     <replace_variables>Y</replace_variables>
     <quoteString>N</quoteString>
-    <sql>SET &#x40;toolId &#x3d; &#x28;SELECT id FROM tool WHERE name&#x3d;&#x22;osha_dvt_barometer&#x22;&#x29;&#x3b;&#xd;&#xa;SET &#x40;sectionId &#x3d; &#x28;SELECT id FROM section WHERE name&#x3d;&#x22;&#x3f;&#x22; AND tool_id&#x3d;&#x40;toolId&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;INSERT INTO literal &#x28;id, chart_id, section_id, type&#x29;&#xd;&#xa;VALUES &#x28;&#xd;&#xa;	20000&#x2b;&#x3f;, NULL, &#x40;sectionId, &#x22;&#x3f;&#x22;&#xd;&#xa;&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;INSERT INTO translation &#x28;literal_id, language, is_default, text&#x29;&#xd;&#xa;VALUES &#x28;&#xd;&#xa;	20000&#x2b;&#x3f;, &#x22;EN&#x22;, 1, &#x22;&#x3f;&#x22;&#xd;&#xa;&#x29;&#x3b;</sql>
+    <sql>SET &#x40;toolId &#x3d; &#x28;SELECT id FROM tool WHERE name&#x3d;&#x22;osha_dvt_barometer&#x22;&#x29;&#x3b;&#xd;&#xa;SET &#x40;sectionId &#x3d; &#x28;SELECT id FROM section WHERE name&#x3d;&#x22;&#x3f;&#x22; AND tool_id&#x3d;&#x40;toolId&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;INSERT INTO literal &#x28;id, chart_id, section_id, type&#x29;&#xd;&#xa;VALUES &#x28;&#xd;&#xa;	20000&#x2b;&#x3f;, &#x3f;, &#x40;sectionId, &#x22;&#x3f;&#x22;&#xd;&#xa;&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;INSERT INTO translation &#x28;literal_id, language, is_default, text&#x29;&#xd;&#xa;VALUES &#x28;&#xd;&#xa;	20000&#x2b;&#x3f;, &#x22;EN&#x22;, 1, &#x22;&#x3f;&#x22;&#xd;&#xa;&#x29;&#x3b;</sql>
     <set_params>N</set_params>
     <insert_field/>
     <update_field/>
@@ -136,13 +137,14 @@
     <arguments>
        <argument><name>SECTION</name></argument>
        <argument><name>LITERAL_ID</name></argument>
+       <argument><name>chartID</name></argument>
        <argument><name>LITERAL_TYPE</name></argument>
        <argument><name>LITERAL_ID</name></argument>
        <argument><name>literal_escaped</name></argument>
     </arguments>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>576</xloc>
+      <xloc>704</xloc>
       <yloc>304</yloc>
       <draw>Y</draw>
       </GUI>
@@ -152,7 +154,7 @@
     <name>Replace in string</name>
     <type>ReplaceString</type>
     <description/>
-    <distribute>Y</distribute>
+    <distribute>N</distribute>
     <custom_distribution/>
     <copies>1</copies>
          <partitioning>
@@ -288,6 +290,36 @@
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>304</xloc>
+      <yloc>304</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Modified Java Script Value</name>
+    <type>ScriptValueMod</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <compatible>N</compatible>
+    <optimizationLevel>9</optimizationLevel>
+    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
+        <jsScript_name>Script 1</jsScript_name>
+        <jsScript_script>var chartID &#x3d; &#x22;null&#x22;&#x3b;&#xd;&#xa;&#xd;&#xa;if &#x28;CHART_ID &#x21;&#x3d; undefined&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	chartID &#x3d; 20000&#x2b;CHART_ID&#xd;&#xa;&#x7d;&#xd;&#xa;&#xd;&#xa;</jsScript_script>
+      </jsScript>    </jsScripts>    <fields>      <field>        <name>chartID</name>
+        <rename>chartID</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>576</xloc>
       <yloc>304</yloc>
       <draw>Y</draw>
       </GUI>

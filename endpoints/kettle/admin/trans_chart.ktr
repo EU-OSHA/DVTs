@@ -108,10 +108,10 @@
     </attributes>
   </connection>
   <order>
+  <hop> <from>join_indicator</from><to>Modified Java Script Value</to><enabled>Y</enabled> </hop>
   <hop> <from>indicators_in</from><to>join_indicator</to><enabled>Y</enabled> </hop>
   <hop> <from>charts_in</from><to>Filter rows</to><enabled>Y</enabled> </hop>
   <hop> <from>Filter rows</from><to>join_indicator</to><enabled>Y</enabled> </hop>
-  <hop> <from>join_indicator</from><to>Modified Java Script Value</to><enabled>Y</enabled> </hop>
   <hop> <from>Modified Java Script Value</from><to>insert chart and relationship with indicator</to><enabled>Y</enabled> </hop>
   </order>
   <step>
@@ -130,7 +130,7 @@
     <compare>
 <condition>
  <negated>Y</negated>
- <leftvalue>c.INDICATOR_ID</leftvalue>
+ <leftvalue>cINDICATOR_ID</leftvalue>
  <function>&#x3d;</function>
  <rightvalue/>
  <value><name>constant</name><type>Number</type><text/><length>-1</length><precision>-1</precision><isnull>Y</isnull><mask>&#x23;.&#x23;&#x3b;-&#x23;.&#x23;</mask></value> </condition>
@@ -139,6 +139,48 @@
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>208</xloc>
       <yloc>176</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Modified Java Script Value</name>
+    <type>ScriptValueMod</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <compatible>N</compatible>
+    <optimizationLevel>9</optimizationLevel>
+    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
+        <jsScript_name>Script 1</jsScript_name>
+        <jsScript_script>var startDate, finnishDate, chartID&#x3b;&#xd;&#xa;&#xd;&#xa;if &#x28;iYEAR &#x21;&#x3d; undefined&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	if &#x28;iYEAR.indexOf&#x28;&#x22;-&#x22;&#x29; &#x21;&#x3d; -1&#x29;&#xd;&#xa;	&#x7b;&#xd;&#xa;		&#x2f;&#x2f; There are two years&#xd;&#xa;		var years &#x3d; iYEAR.split&#x28;&#x22;-&#x22;&#x29;&#x3b;&#xd;&#xa;		startDate &#x3d; years&#x5b;0&#x5d; &#x2b; &#x22;-01-01&#x22;&#x3b;&#xd;&#xa;		finnishDate &#x3d; years&#x5b;1&#x5d; &#x2b; &#x22;-12-31&#x22;&#x3b;&#xd;&#xa;	&#x7d;&#xd;&#xa;	else&#xd;&#xa;	&#x7b;&#xd;&#xa;		startDate &#x3d; iYEAR &#x2b; &#x22;-01-01&#x22;&#x3b;&#xd;&#xa;	&#x7d;&#xd;&#xa;&#x7d;&#xd;&#xa;&#xd;&#xa;chartID &#x3d; cCHART_ID &#x2b; 20000&#x3b;</jsScript_script>
+      </jsScript>    </jsScripts>    <fields>      <field>        <name>startDate</name>
+        <rename>startDate</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>finnishDate</name>
+        <rename>finnishDate</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>chartID</name>
+        <rename>chartID</rename>
+        <type>Integer</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>512</xloc>
+      <yloc>224</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -174,9 +216,9 @@
     </file>
     <fields>
       <field>
-        <name>c.CHART_ID</name>
+        <name>cCHART_ID</name>
         <attribut>CHART_ID</attribut>
-        <type>Number</type>
+        <type>Integer</type>
         <format/>
         <length>-1</length>
         <precision>-1</precision>
@@ -187,9 +229,9 @@
         <repeat>N</repeat>
       </field>
       <field>
-        <name>c.INDICATOR_ID</name>
+        <name>cINDICATOR_ID</name>
         <attribut>INDICATOR_ID</attribut>
-        <type>Number</type>
+        <type>Integer</type>
         <format/>
         <length>-1</length>
         <precision>-1</precision>
@@ -200,7 +242,7 @@
         <repeat>N</repeat>
       </field>
       <field>
-        <name>c.SECTION</name>
+        <name>cSECTION</name>
         <attribut>SECTION</attribut>
         <type>String</type>
         <format/>
@@ -261,9 +303,9 @@
     </file>
     <fields>
       <field>
-        <name>i.INDICATOR_ID</name>
+        <name>iINDICATOR_ID</name>
         <attribut>INDICATOR_ID</attribut>
-        <type>None</type>
+        <type>Integer</type>
         <format/>
         <length>-1</length>
         <precision>-1</precision>
@@ -274,7 +316,7 @@
         <repeat>N</repeat>
       </field>
       <field>
-        <name>i.INDICATOR_NAME</name>
+        <name>iINDICATOR_NAME</name>
         <attribut>INDICATOR_NAME</attribut>
         <type>String</type>
         <format/>
@@ -287,7 +329,7 @@
         <repeat>N</repeat>
       </field>
       <field>
-        <name>i.SOURCE</name>
+        <name>iSOURCE</name>
         <attribut>SOURCE</attribut>
         <type>String</type>
         <format/>
@@ -300,7 +342,7 @@
         <repeat>N</repeat>
       </field>
       <field>
-        <name>i.YEAR</name>
+        <name>iYEAR</name>
         <attribut>YEAR</attribut>
         <type>String</type>
         <format/>
@@ -331,6 +373,34 @@
     </step>
 
   <step>
+    <name>join_indicator</name>
+    <type>MergeJoin</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+<join_type>INNER</join_type>
+<step1>Filter rows</step1>
+<step2>indicators_in</step2>
+    <keys_1>
+      <key>cINDICATOR_ID</key>
+    </keys_1>
+    <keys_2>
+      <key>iINDICATOR_ID</key>
+    </keys_2>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>352</xloc>
+      <yloc>224</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
     <name>insert chart and relationship with indicator</name>
     <type>ExecSQL</type>
     <description/>
@@ -346,86 +416,23 @@
     <single_statement>N</single_statement>
     <replace_variables>Y</replace_variables>
     <quoteString>N</quoteString>
-    <sql>INSERT INTO CHART &#x28;section_id&#x29;&#xd;&#xa;VALUES&#xd;&#xa;&#x28;&#xd;&#xa;	&#x28;&#xd;&#xa;		SELECT s.id &#xd;&#xa;		FROM section s &#xd;&#xa;		INNER JOIN tool t ON s.tool_id&#x3d;t.id &#xd;&#xa;		WHERE s.name&#x3d;&#x22;&#x3f;&#x22; AND t.name&#x3d;&#x22;osha_dvt_barometer&#x22;&#xd;&#xa;	&#x29;&#xd;&#xa;&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;SET &#x40;chartId &#x3d; &#x28;SELECT MAX&#x28;id&#x29; FROM chart&#x29;&#x3b;&#xd;&#xa;SET &#x40;indicatorId &#x3d; &#x28;SELECT id FROM indicator WHERE name&#x3d;&#x22;&#x3f;&#x22;&#x29;&#x3b;&#xd;&#xa;SET &#x40;datasetId &#x3d; &#x28;SELECT id FROM dataset WHERE source&#x3d;&#x22;&#x3f;&#x22; AND date_from&#x3d;&#x22;&#x3f;&#x22; AND date_to&#x3d;&#x22;&#x3f;&#x22;&#x3b;&#xd;&#xa;INSERT INTO indicators_by_chart &#x28;chart_id, indicator_id, dataset_id&#x29;&#xd;&#xa;VALUES &#x28;&#x40;chartId, &#x40;indicatorId, &#x40;datasetId&#x29;&#x3b;</sql>
+    <sql>INSERT INTO CHART &#x28;id, section_id&#x29;&#xd;&#xa;VALUES&#xd;&#xa;&#x28;&#xd;&#xa;	&#x3f;,&#xd;&#xa;	&#x28;&#xd;&#xa;		SELECT s.id &#xd;&#xa;		FROM section s &#xd;&#xa;		INNER JOIN tool t ON s.tool_id&#x3d;t.id &#xd;&#xa;		WHERE s.name&#x3d;&#x22;&#x3f;&#x22; AND t.name&#x3d;&#x22;osha_dvt_barometer&#x22;&#xd;&#xa;	&#x29;&#xd;&#xa;&#x29;&#x3b;&#xd;&#xa;SET &#x40;indicatorId &#x3d; &#x28;SELECT id FROM indicator WHERE name&#x3d;&#x22;&#x3f;&#x22;&#x29;&#x3b;&#xd;&#xa;SET &#x40;datasetId &#x3d; &#x28;SELECT id FROM dataset WHERE source&#x3d;&#x22;&#x3f;&#x22; AND date_from&#x3d;&#x22;&#x3f;&#x22;&#x29;&#x3b;&#xd;&#xa;INSERT INTO indicators_by_chart &#x28;chart_id, indicator_id, dataset_id&#x29;&#xd;&#xa;VALUES &#x28;&#x3f;, &#x40;indicatorId, &#x40;datasetId&#x29;&#x3b;</sql>
     <set_params>N</set_params>
     <insert_field/>
     <update_field/>
     <delete_field/>
     <read_field/>
     <arguments>
-       <argument><name>c.SECTION</name></argument>
-       <argument><name>i.INDICATOR_NAME</name></argument>
-       <argument><name>i.SOURCE</name></argument>
+       <argument><name>chartID</name></argument>
+       <argument><name>cSECTION</name></argument>
+       <argument><name>iINDICATOR_NAME</name></argument>
+       <argument><name>iSOURCE</name></argument>
        <argument><name>startDate</name></argument>
-       <argument><name>finnishDate</name></argument>
+       <argument><name>chartID</name></argument>
     </arguments>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>736</xloc>
-      <yloc>224</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>join_indicator</name>
-    <type>MergeJoin</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-<join_type>INNER</join_type>
-<step1>Filter rows</step1>
-<step2>indicators_in</step2>
-    <keys_1>
-      <key>c.INDICATOR_ID</key>
-    </keys_1>
-    <keys_2>
-      <key>i.INDICATOR_ID</key>
-    </keys_2>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>352</xloc>
-      <yloc>224</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Modified Java Script Value</name>
-    <type>ScriptValueMod</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <compatible>N</compatible>
-    <optimizationLevel>9</optimizationLevel>
-    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
-        <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>var startDate, finnishDate&#x3b;&#xd;&#xa;&#xd;&#xa;if &#x28;YEAR &#x21;&#x3d; undefined&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	if &#x28;YEAR.indexOf&#x28;&#x22;-&#x22;&#x29; &#x21;&#x3d; -1&#x29;&#xd;&#xa;	&#x7b;&#xd;&#xa;		&#x2f;&#x2f; There are two years&#xd;&#xa;		var years &#x3d; YEAR.split&#x28;&#x22;-&#x22;&#x29;&#x3b;&#xd;&#xa;		startDate &#x3d; years&#x5b;0&#x5d; &#x2b; &#x22;-01-01&#x22;&#x3b;&#xd;&#xa;		finnishDate &#x3d; years&#x5b;1&#x5d; &#x2b; &#x22;-12-31&#x22;&#x3b;&#xd;&#xa;	&#x7d;&#xd;&#xa;	else&#xd;&#xa;	&#x7b;&#xd;&#xa;		startDate &#x3d; YEAR &#x2b; &#x22;-01-01&#x22;&#x3b;&#xd;&#xa;	&#x7d;&#xd;&#xa;&#x7d;</jsScript_script>
-      </jsScript>    </jsScripts>    <fields>      <field>        <name>startDate</name>
-        <rename>startDate</rename>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <replace>N</replace>
-      </field>      <field>        <name>finnishDate</name>
-        <rename>finnishDate</rename>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <replace>N</replace>
-      </field>    </fields>     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>512</xloc>
+      <xloc>720</xloc>
       <yloc>224</yloc>
       <draw>Y</draw>
       </GUI>
