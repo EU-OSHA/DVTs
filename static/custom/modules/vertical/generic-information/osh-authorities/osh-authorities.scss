@@ -12,6 +12,9 @@
     position: relative;
     flex-basis:30%;
     //align-self: flex-end;
+    > label{
+      min-height: 50px;
+    }
     .filter--dropdown--list{
       position: absolute;
       height: 4rem;
@@ -84,17 +87,16 @@
   .filter-text{
     flex-basis:33.3%;
     position: relative;
+    top: 55px;
     //align-self: flex-end;
     #search-input{
-        padding: 1rem 4rem 1rem 1rem;
-        font-size: 1.4rem;
-        margin: 0;
-        border: 1px solid $aquamarine;
-        background: $white;
-        border-radius: 6px;
-        width: 100%;
-      }
-      #search-input {
+      padding: 1rem 4rem 1rem 1rem;
+      font-size: 1.4rem;
+      margin: 0;
+      border: 1px solid $aquamarine;
+      background: $white;
+      border-radius: 6px;
+      width: 100%;
       box-shadow: none;
       display:block;
       &::-webkit-input-placeholder {
@@ -199,6 +201,7 @@
 
 .selected--tags-wrapper{
   min-height: 0px;
+  margin-top: 2rem;
   &:empty{
     display:none;
   } 
@@ -221,6 +224,7 @@
       cursor: pointer;
       &:hover{
         opacity:0.6;
+        color: $orange;
       }
     }
   }

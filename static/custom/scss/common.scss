@@ -33,7 +33,7 @@
     }
   } 
   .section--page{
-    padding: 6rem 0;
+    padding: 2rem 0;
   }
   h1, h2, h3, h4 {
     font-family:$font-header;
@@ -82,9 +82,7 @@
       }
     }
   }
-  label:empty{
-    display: none;
-  }
+
 /** END DGENERAL TAGS  **/
 
 
@@ -389,7 +387,7 @@
   .advice--block{
     position: relative;
     top: -7px;
-    padding: 6rem 0;
+    padding: 3rem 0;
     &.advice--block-not-home{
       padding: 2rem 0;
       h2{

@@ -72,6 +72,11 @@ define(function (require) {
                         angular.element(".a2a_button_print").remove();
                     }
 
+                    // when click banner link to Home
+                    $scope.goto = function (pState) {
+                       $state.go(pState, {});
+                    };
+
                     // Literals / i18n
                     var i18n_literals = configService.getLiterals();
                     $scope.i18n_literals = i18n_literals;

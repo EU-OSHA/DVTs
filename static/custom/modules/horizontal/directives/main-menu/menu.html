@@ -95,11 +95,9 @@
         </nav>
         <!-- /. main menu -->
     </section>
-    <section class="home-cover">
+    <section class="home-cover" title="Access to Home page" data-ng-click="goto('home')" >
       <div class="container">
-          <h1 class="main-title" data-ng-bind-html="i18n_literals.L22020">
-          <!--OSH BAROMETER Data Visulisation Tool-->
-          </h1>
+          <h1 class="main-title" data-ng-bind-html="i18n_literals.L22020"></h1>
           <p class="lead-title">Status of Occupational Safety and Health in the European Union</p>
       </div>
     </section>
@@ -126,6 +124,13 @@
                         <i class="fa fa-lg fa-linkedin" aria-hidden="true"></i><span class="sr-only" data-ng-bind="(i18n_literals.L22082) + (i18n_literals.L22085)"></span>
                     </a>
                 </li>
+                <!--
+                <li>
+                    <a class="main-color" target="_blank" title="{{i18n_menu.OSHAGoogle}}" href="{{pathURLDVTGoogle}}">
+                        <i class="fa fa-lg fa-google-plus" aria-hidden="true"></i><span class="sr-only" data-ng-bind="i18n_menu.OSHAGoogle"></span>
+                    </a>
+                </li>
+                -->
             </ul>
         </div>
     </section>

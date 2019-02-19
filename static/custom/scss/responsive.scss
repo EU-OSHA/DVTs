@@ -636,15 +636,20 @@ and (max-device-width :767px)  {
 	}
 
 	.block--filter--wrapper{
+		
 		display: block !important;
 		.filter-text{
-			margin-top: 0!important;
-			margin: 1.8rem 0 0 0;
+			margin: 0!important;
+			top:auto !important;
 		}
 		.filter--dropdown--wrapper{
+			margin: 1.8rem 0 0 0;
+			> label{
+				min-height: auto !important;
+			}
 			.filter--dropdown--list{
 				position: relative !important;
-				margin: 1.8rem 0 0 0;
+				margin:0;
 			}
 		} 
 	}
