@@ -33,7 +33,7 @@ define(function (require) {
                 }
             },
             metaTags: {
-                title: "Home | " + i18n.L20062,
+                title: "OSH Barometer | Home",
                 //description: i18n.L4,
             }
         });

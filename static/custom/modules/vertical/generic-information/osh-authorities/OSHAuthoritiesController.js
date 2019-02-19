@@ -47,11 +47,11 @@ define(function (require) {
     $scope.elementsEnd=$scope.pageSize;
 
     // Pagination Text
-    //$scope.paginationText = i18n.displaying + ($scope.elementsStart+1)+'-'+$scope.elementsEnd + i18n.of + $scope.amatrix.length;
+    $scope.paginationText = 'Displaying ' + ($scope.elementsStart+1)+'-'+$scope.elementsEnd + ' of ' + $scope.amatrix.length;
 
-    /*var updateText = function() {
-      $scope.paginationText = i18n.displaying + ($scope.elementsStart+1)+'-'+$scope.elementsEnd + i18n.of + $scope.amatrix.length;
-    }*/
+    var updateText = function() {
+      $scope.paginationText = 'Displaying ' + ($scope.elementsStart+1)+'-'+$scope.elementsEnd + ' of ' + $scope.amatrix.length;
+    }
 
 
     $scope.selectOpened = "";
@@ -176,7 +176,7 @@ define(function (require) {
         if($scope.elementsEnd>$scope.amatrix.length) {
           $scope.elementsEnd=$scope.amatrix.length;
         }
-        //updateText();
+        updateText();
       };
 
       /**
@@ -194,7 +194,7 @@ define(function (require) {
         if($scope.elementsEnd>$scope.amatrix.length) {
           $scope.elementsEnd=$scope.amatrix.length;
         }
-        //updateText();
+        updateText();
       };
 
       /**
@@ -219,7 +219,7 @@ define(function (require) {
           }
             $scope.pageStart = $scope.elementsStart;
         }
-        //updateText();
+        updateText();
       };
 
       /**
@@ -248,7 +248,7 @@ define(function (require) {
 
         $scope.pageStart = $scope.elementsStart;
 
-        //updateText();
+        updateText();
       };
 
       $document.scrollTo(0, 0, 0);
@@ -278,10 +278,11 @@ define(function (require) {
               detail_authority: elem[9],
               param: param
           });
+
         });
         //$log.warn($scope.amatrix);
 
-        //updateText();
+        updateText();
 
         $scope.readMore = function (pMatrix) {
           if (angular.element('div.'+pMatrix).length) {

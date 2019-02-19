@@ -10,32 +10,32 @@
   <form class="row block--filter--wrapper">
     <!-- SEARCH FILTER -->
     <div class="filter-text">      
-      <input ng-keypress="clickEnter($event)" id="search-input" type="text" placeholder="{{i18nSearchPlaceholder}}" data-ng-model="searchText"/>
+      <input ng-keypress="clickEnter($event)" id="search-input" type="text" placeholder="{{i18nLiterals.L22091}}" data-ng-model="searchText"/>
       <button data-ng-click="clickEnter($event)"  id="policy-search" type="button">
         <i class="fa fa-search" aria-hidden="true"></i>
       </button>
     </div>
     <!-- INSTITUTION TYPE FILTER -->
     <div id="filter1" class="filter--dropdown--wrapper">
-      <label class="main-color dropdwon-open" data-ng-bind="i18nLiterals.L402" data-ng-click="openSelect($event)" ></label>
+      <label class="main-color dropdwon-open" data-ng-click="openSelect($event)" ></label>
       <div class="filter--dropdown--list">
-        <p class="option-title" data-ng-click="openSelect($event)">Filters apply</p>
+        <p class="option-title" data-ng-click="openSelect($event)">Institution type</p>
         <ul class="filter--dropdown--options">
           <li>
             <input id='institution-filter-1' type="checkbox" ng-click="toggleInstitutionClick()"/>
-            <label for='institution-filter-1' >OSH authorities</label>
+            <label for='institution-filter-1' data-ng-bind="i18nLiterals.L20614"></label>
           </li>
           <li>
             <input id='institution-filter-2' type="checkbox" ng-click="toggleInstitutionClick()"/>
-            <label for='institution-filter-2' >Compensation and insurance bodies</label>
+            <label for='institution-filter-2' data-ng-bind="i18nLiterals.L20611"></label>
           </li>
           <li>
             <input id='institution-filter-3' type="checkbox" ng-click="toggleInstitutionClick()"/>
-            <label for='institution-filter-3' >Prevention institute</label>
+            <label for='institution-filter-3' data-ng-bind="i18nLiterals.L20612"></label>
           </li>
           <li>
             <input id='institution-filter-4' type="checkbox" ng-click="toggleInstitutionClick()"/>
-            <label for='institution-filter-4' >Standardisation bodies</label>
+            <label for='institution-filter-4' data-ng-bind="i18nLiterals.L20613"></label>
           </li>
         </ul>
         <p class="btn--block-filter" data-ng-click="openSelect($event)"><a class="btn-main-color btn-full" ng-click="confirmSelection($event)">Confirm</a></p>
@@ -43,14 +43,14 @@
     </div>
     <!-- COUNTRY FILTER -->
     <div id="filter2"class="filter--dropdown--wrapper">
-      <label data-ng-bind="i18nLiterals.L22" class="main-color  dropdwon-open" data-ng-click="openSelect($event)"></label>
+      <label class="main-color  dropdwon-open" data-ng-click="openSelect($event)"></label>
       <div class="filter--dropdown--list">
-        <p class="option-title" data-ng-click="openSelect($event)">Select an option</p>
+        <p class="option-title" data-ng-click="openSelect($event)">Country</p>
         <ul class="filter--dropdown--options">
           <li data-ng-repeat='country in countries'>
             <input id='country-filter-{{::country.country_code}}' ng-checked="!!country.param && country.param ==country.country_code"
               data-ng-click="toggleCountryClick($event, $index)" type="checkbox" value="{{::country.country_code}}"/>
-            <label for="country-filter-{{::country.country_code}}" data-ng-bind="commonLiterals['L'+country.country]"></label>
+            <label for="country-filter-{{::country.country_code}}" data-ng-bind="i18nLiterals['L'+country.country]"></label>
           </li>
         </ul>
         <p class="btn--block-filter" data-ng-click="openSelect($event)"><a class="btn-main-color btn-full" ng-click="confirmSelection($event)">Confirm</a></p>
@@ -67,14 +67,14 @@
       <div data-ng-repeat="matrix in amatrix | limitTo:pageSize:elementsStart" class="matrix--element">
         <div class="matrix--header--elements">
           <img  class="flags--wrapper" src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/flag/{{::matrix.country_code.toLowerCase()}}.png">
-          <h3 class="country ng-binding title-section main-color" data-ng-bind="commonLiterals['L'+matrix.country_name]"></h3>
+          <h3 class="country ng-binding title-section main-color" data-ng-bind="i18nLiterals['L'+matrix.country_name]"></h3>
         </div>
 
         <div class="matrix--content--elements">
-          <h4 class="" ng-if="::matrix.osh_authority==1" >OSH authorities</h4>
-          <h4 class="" ng-if="::matrix.compensation==1">Compensation and insurance bodies</h4>
-          <h4 class="" ng-if="::matrix.prevention==1">Prevention institute</h4>
-          <h4 class="" ng-if="::matrix.standardisation==1">Standardisation bodies</h4>
+          <h4 class="" ng-if="::matrix.osh_authority==1" data-ng-bind="i18nLiterals.L20614"></h4>
+          <h4 class="" ng-if="::matrix.compensation==1" data-ng-bind="i18nLiterals.L20611"></h4>
+          <h4 class="" ng-if="::matrix.prevention==1" data-ng-bind="i18nLiterals.L20612"></h4>
+          <h4 class="" ng-if="::matrix.standardisation==1" data-ng-bind="i18nLiterals.L20613"></h4>
 
           <div data-ng-bind-html="i18nLiterals['L'+matrix.name_authority]"></div>
           <div data-ng-bind-html="i18nLiterals['L'+matrix.link_authority]"></div>
@@ -116,7 +116,11 @@
           <span><i class="fa fa-angle-double-right" aria-hidden="true"></i></span>
         </li>
       </ul>
+
+      <!-- PAGINATION TEXT -->
+      <div class="col-sm-4 col-md-12 text-center m20" data-ng-if="!!amatrix.length">
+        <span class="pag-numbers" data-ng-bind="paginationText"></span>
+      </div>
     </div>
-    
   </div>
 </section>
