@@ -93,33 +93,28 @@
 
     <!-- PAGINATION -->
     <div class="pagination--wrapper" data-ng-if="!!amatrix.length" >
-      <ul class="pagination--elements main-color">
-        <li role=button class="arrow firstpage" data-ng-click="firstPage()" ng-class="(currentPage+1==numberOfPages() && currentPage+1==1 || currentPage+1==1)?'invisible':''">
-          <span aria-hidden="currentPage == 0"><i class="fa fa-angle-double-left" aria-hidden="true"></i></span>
-        </li>
-        <li role=button class="arrow previouspage" data-ng-click="previousPage()" ng-class="(currentPage+1==numberOfPages() && currentPage+1==1 || currentPage+1==1)?'invisible':''">
-          <span aria-hidden="currentPage == 0"><i class="fa fa-angle-left" aria-hidden="true"></i></span>
-        </li>
-
-        <li>
-          <span>{{currentPage+1}}/{{numberOfPages()}}</span>
-        </li>
-
-        <!--<li data-ng-repeat="page in pagination()">
-          <span data-ng-bind="page+1" data-ng-click="goToPage($index)" ng-class="(currentPage == page)?'active':''"></span>
-        </li>-->
-
-        <li role=button class="arrow nextpage" data-ng-click="nextPage()" ng-class="(currentPage+1==numberOfPages() && currentPage+1==numberOfPages())?'invisible':''">
-          <span aria-hidden="currentPage >= results.length/pageSize - 1"><i class="fa fa-angle-right" aria-hidden="true"></i></span>
-        </li>
-        <li role=button class="arrow lastpage" data-ng-click="lastPage()" ng-class="(currentPage+1==numberOfPages() && currentPage+1==numberOfPages())?'invisible':''">
-          <span><i class="fa fa-angle-double-right" aria-hidden="true"></i></span>
-        </li>
-      </ul>
-
-      <!-- PAGINATION TEXT -->
-      <div class="col-sm-4 col-md-12 text-center m20" data-ng-if="!!amatrix.length">
-        <span class="pag-numbers" data-ng-bind="paginationText"></span>
+      <div class="pagination--elements">
+        <ul class="main-color">
+          <li role=button class="arrow firstpage" data-ng-click="firstPage()" ng-class="(currentPage+1==numberOfPages() && currentPage+1==1 || currentPage+1==1)?'invisible':''">
+            <span aria-hidden="currentPage == 0"><i class="fa fa-angle-double-left" aria-hidden="true"></i></span>
+          </li>
+          <li role=button class="arrow previouspage" data-ng-click="previousPage()" ng-class="(currentPage+1==numberOfPages() && currentPage+1==1 || currentPage+1==1)?'invisible':''">
+            <span aria-hidden="currentPage == 0"><i class="fa fa-angle-left" aria-hidden="true"></i></span>
+          </li>
+          <li>
+            <span>{{currentPage+1}}/{{numberOfPages()}}</span>
+          </li>
+          <li role=button class="arrow nextpage" data-ng-click="nextPage()" ng-class="(currentPage+1==numberOfPages() && currentPage+1==numberOfPages())?'invisible':''">
+            <span aria-hidden="currentPage >= results.length/pageSize - 1"><i class="fa fa-angle-right" aria-hidden="true"></i></span>
+          </li>
+          <li role=button class="arrow lastpage" data-ng-click="lastPage()" ng-class="(currentPage+1==numberOfPages() && currentPage+1==numberOfPages())?'invisible':''">
+            <span><i class="fa fa-angle-double-right" aria-hidden="true"></i></span>
+          </li>
+        </ul>
+        <!-- PAGINATION TEXT -->
+        <div class="pag-numbers" data-ng-if="!!amatrix.length">
+          <span data-ng-bind="paginationText"></span>
+        </div>
       </div>
     </div>
   </div>
