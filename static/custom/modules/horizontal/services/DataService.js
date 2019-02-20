@@ -164,6 +164,27 @@ define(function () {
                 return promise(url);
             },
 
+            getStrategiesCountries: function(){
+                var url = configService.getBarometerDataPath() + "&dataAccessId=getStrategiesCountries";
+                $log.debug('getStrategiesCountries url:' + url);
+
+                return promise(url);
+            },
+
+            getRegulationsCountries: function(){
+                var url = configService.getBarometerDataPath() + "&dataAccessId=getRegulationsCountries";
+                $log.debug('getRegulationsCountries url:' + url);
+
+                return promise(url);
+            },
+
+            getCapacitiesCountries: function(){
+                var url = configService.getBarometerDataPath() + "&dataAccessId=getCapacitiesCountries";
+                $log.debug('getCapacitiesCountries url:' + url);
+
+                return promise(url);
+            },
+
             /* OSH AUTHORITIES */
 
             /**

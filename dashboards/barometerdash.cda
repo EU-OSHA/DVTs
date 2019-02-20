@@ -324,4 +324,46 @@
         order by country_name ASC, standardisation ASC, prevention ASC, compensation ASC, osh_authority ASC
       </Query>
 </DataAccess>
+
+<!-- ALL AVAILABLE COUNTRIES FOR NATIONAL STRATEGIES -->
+<DataAccess access="public" connection="dvt_conn" id="getStrategiesCountries" type="sql">
+  <Cache duration="3600" enabled="true" />
+  <Columns />
+  <Query>
+    SELECT DISTINCT (n.literal_id) AS country, n.country_code AS country_code
+    FROM strategies_page sp
+    INNER JOIN nuts n
+    ON n.id = sp.nuts_id
+    WHERE sp.page = 'STRATEGY'
+    ORDER BY country ASC
+  </Query>
+</DataAccess>
+
+<!-- ALL AVAILABLE COUNTRIES FOR REGULATIONS -->
+<DataAccess access="public" connection="dvt_conn" id="getRegulationsCountries" type="sql">
+  <Cache duration="3600" enabled="true" />
+  <Columns />
+  <Query>
+    SELECT DISTINCT (n.literal_id) AS country, n.country_code AS country_code
+    FROM strategies_page sp
+    INNER JOIN nuts n
+    ON n.id = sp.nuts_id
+    WHERE sp.page = 'STRATEGY_REGULATION'
+    ORDER BY country ASC
+  </Query>
+</DataAccess>
+
+<!-- ALL AVAILABLE COUNTRIES FOR ENFORCE CAPACITIES -->
+<DataAccess access="public" connection="dvt_conn" id="getCapacitiesCountries" type="sql">
+  <Cache duration="3600" enabled="true" />
+  <Columns />
+  <Query>
+    SELECT DISTINCT (n.literal_id) AS country, n.country_code AS country_code
+    FROM strategies_page sp
+    INNER JOIN nuts n
+    ON n.id = sp.nuts_id
+    WHERE sp.page = 'STRATEGY_ENFOR_CAPACITY'
+    ORDER BY country ASC
+  </Query>
+</DataAccess>
 </CDADescriptor>

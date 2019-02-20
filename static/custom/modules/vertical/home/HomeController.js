@@ -15,6 +15,9 @@ define(function (require) {
 
         //Country arrays
         $scope.countries = [];
+        $scope.strategiesCountries = [];
+        $scope.regulationsCountries = [];
+        $scope.capacitiesCountries = [];
 
 
         // Literals / i18n
@@ -29,22 +32,42 @@ define(function (require) {
         /******************************************************************************|
         |                                DATA LOAD                                     |
         |******************************************************************************/
-            dataService.getMatrixAuthsCountries().then(function (data) {
+            dataService.getStrategiesCountries().then(function (data) {
 
-            data.data.resultset.map(function (elem) {
-              var param = (!!$stateParams.filter) ? $stateParams.filter : undefined;
-              $scope.countries.push({
-                  country: elem[0],
-                  country_code: elem[1]
+              data.data.resultset.map(function (elem) {
+                var param = (!!$stateParams.filter) ? $stateParams.filter : undefined;
+                $scope.regulationsCountries.push({
+                    country: elem[0],
+                    country_code: elem[1]
+                });
+              });
+            });
+
+            dataService.getRegulationsCountries().then(function (data) {
+
+              data.data.resultset.map(function (elem) {
+                var param = (!!$stateParams.filter) ? $stateParams.filter : undefined;
+                $scope.strategiesCountries.push({
+                    country: elem[0],
+                    country_code: elem[1]
+                });
+              });
+            });
+
+            dataService.getCapacitiesCountries().then(function (data) {
+
+              data.data.resultset.map(function (elem) {
+                var param = (!!$stateParams.filter) ? $stateParams.filter : undefined;
+                $scope.capacitiesCountries.push({
+                    country: elem[0],
+                    country_code: elem[1]
+                });
               });
             });
 
         /******************************END DATA LOAD***********************************/
 
-        //$log.warn($scope.countries);
-      }).catch(function (err) {
-          throw err;
-      });
+        
 
         $scope.status = 'ready';
     }
