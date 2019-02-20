@@ -18,36 +18,6 @@ define(function (require) {
 
         $uiViewScrollProvider.useAnchorScroll();
 
-
-        /*$stateProvider.state('country-details', {
-            url: "/national-strategies/country-strategies/:pAnchor/:pCountry1/:pCountry2",
-            params: {
-                pCountry1: {
-                    value: "Austria",
-                    squash: "Austria"
-                },
-                pCountry2: {
-                    value: null,
-                    squash: true
-                },
-                pAnchor: {
-                  value: "basic-info",
-                  squash: "basic-info"
-                }
-            },
-            views: {
-                "content-main": {
-                    templateUrl: configService.getVerticalTplPath("national-strategies/country-details", "country-details"),
-                    controller: 'CountryDetailsController',
-                    resolve: configService.dynamicallyRegisterController($controllerProvider, 'vertical/country-details/CountryDetailsController', 'country-details', 'CountryDetailsController')
-                }
-            },
-            metaTags: {
-                title: i18n.L378 +" | "+ i18n.L62 ,
-                description: i18n.L381
-            }
-        });*/
-
         $stateProvider.state('osh-authorities', {
           /*url: "/national-strategies/EU-challenges-response/:country",*/
           url: "/generic-information/osh-authorities/:pCountry/:pInstitution/:pSearch",
@@ -76,25 +46,31 @@ define(function (require) {
               title: i18n.L22001 +" | "+ i18n.L22002 ,
               //description: i18n.L397
           }
-      });
+        });
 
-      /*$stateProvider.state('country-profiles', {
-        url: "/national-strategies/country-strategies",
-        params: {
-
-        },
-        views: {
-            "content-main": {
-                templateUrl: configService.getVerticalTplPath("national-strategies/country-profiles", "country-profiles"),
-                controller: 'CountryProfilesController',
-                resolve: configService.dynamicallyRegisterController($controllerProvider, 'vertical/country-profiles/CountryProfilesController', 'country-profiles', 'CountryProfilesController')
+        $stateProvider.state('economic-sector-profile', {
+          url: "/generic-information/economic-sector-profile/:pCountry1/:pCountry2",
+          params: {
+            pCountry1: {
+                  value: "AT",
+                  squash: "AT"
+            },
+            pCountry2: {
+                  value: "BE",
+                  squash: "BE"
             }
-        },
-        metaTags: {
-            title: i18n.L58 +" | "+ i18n.L62 ,
-            description: i18n.L59
-        }
-      });*/
+          },
+          views: {
+              "content-main": {
+                  templateUrl: configService.getVerticalTplPath("generic-information/economic-sector-profile", "economic-sector-profile"),
+                  controller: 'EconomicSectorProfileController',
+                  resolve: configService.dynamicallyRegisterController($controllerProvider, 'vertical/economic-sector-profile/EconomicSectorProfileController', 'economic-sector-profile', 'EconomicSectorProfileController')
+              }
+          },
+          metaTags: {
+              title: i18n.L22001 +" | "+ i18n.L22003
+          }
+        });
     });
 
     return module;

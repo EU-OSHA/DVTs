@@ -2,20 +2,20 @@
 <div data-ng-controller="CookiesController">
     <section id="cookiesConsent" data-ng-if="$consent.hasNotAgreedYet()">
         <div class="text">
-            <p data-ng-bind="i18n_cookies.consent1"></p>
-            <p data-ng-bind="i18n_cookies.consent2"></p>
+            <p data-ng-bind="i18nLiterals.L317"></p>
+            <!--<p data-ng-bind="i18n_cookies.consent2"></p>-->
         </div>
         <div class="buttons">
-            <a ui-sref="privacy-policy()"><button data-ng-bind="i18n_cookies.moreInfo"></button></a>
-            <button id="consentCookies" data-ng-click="$consent.agree(); consentAgree();" data-ng-bind="i18n_cookies.agree"></button>
+            <a ui-sref="privacy-policy()"><button data-ng-bind="i18nLiterals.L320"></button></a>
+            <button id="consentCookies" data-ng-click="$consent.agree(); consentAgree();" data-ng-bind="i18nLiterals.L318"></button>
         </div>
     </section>
     <section  id="widthDisclaimer" data-ng-if="$consent.hasAlreadyAgreed() && showwidthdisclaimer">
         <div class="text">
-            <p data-ng-bind="i18n_cookies.small1"></p>
+            <p data-ng-bind="i18nLiterals.L321"></p>
         </div>
         <div class="buttons">
-            <button id="consentWidth"  data-ng-click="widthAgree();" data-ng-bind="i18n_cookies.close"></button>
+            <button id="consentWidth"  data-ng-click="widthAgree();" data-ng-bind="i18nLiterals.L322"></button>
         </div>
     </section>
 </div>

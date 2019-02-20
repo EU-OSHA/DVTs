@@ -28,7 +28,7 @@ define(function (require) {
                 }
             },
             metaTags: {
-                title: i18n.L19 +  " | " + i18n.L62/*,
+                title: i18n.L298 +  " | OSH BAROMETER"/*,
                 description: i18n.L9,*/
             }
         });
@@ -43,7 +43,7 @@ define(function (require) {
                 }
             },
             metaTags: {
-                title: i18n.L17 +  " | " + i18n.L62/*,
+                title: i18n.L296 +  " | OSH BAROMETER"/*,
                 description: i18n.L10,*/
             }
         });
@@ -58,7 +58,7 @@ define(function (require) {
                 }
             },
             metaTags: {
-                title: i18n.L18 +  " | " + i18n.L62/*,
+                title: i18n.L297 +  " | OSH BAROMETER" /*,
                 description: i18n.L8,*/
             }
         });
@@ -73,7 +73,7 @@ define(function (require) {
                 }
             },
             metaTags: {
-                title: i18n.L15 +  " | " + i18n.L62/*,
+                title: i18n.L294 +  " | OSH BAROMETER"/*,
                 description: i18n.L7,*/
             }
         });
@@ -86,7 +86,7 @@ define(function (require) {
                 }
             },
             metaTags: {
-                title: i18n.L63 +  " | " +i18n.L62/*,
+                title: "Page not found | OSH BAROMETER"/*,
                 description: i18n.L135,*/
             }
         });

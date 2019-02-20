@@ -81,13 +81,6 @@ define(function (require) {
                     var i18n_literals = configService.getLiterals();
                     $scope.i18n_literals = i18n_literals;
 
-                    /*var path = configService.getHorizontalDirectiveDataPath("main-menu", "i18n_menu");
-                    $http.get(path).success(function(i18n_menu) {
-                        $scope.i18n_menu = i18n_menu;
-                    }).error(function(data,error){
-                        //TODO process error
-                    });*/
-
                     var breadCrumbStructure = require('json!dvt/directives/breadcrumb-items');
                     var titleStructure = require('json!dvt/directives/title-items');
 

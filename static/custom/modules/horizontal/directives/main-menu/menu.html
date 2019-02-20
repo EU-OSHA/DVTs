@@ -2,7 +2,7 @@
     <section class="bar-header container-fluid">
         <div class="header--top">
             <div class="eu-osha-logo">
-                <a href="https://osha.europa.eu" role="link" title="{{i18n_literals.L22075}}" tabindex="0">
+                <a href="https://osha.europa.eu" role="link" title="{{i18n_literals.L301}}" tabindex="0">
                     <picture>
                       <source 
                         media="(max-width:495px)"
@@ -18,20 +18,20 @@
                         <i class="fa fa-search icon-glass-tablet tablet-show" aria-hidden="true"></i>
                         <form action="" class="search--form">
                             <div class="form-group has-feedback">
-                                <label for="search" class="sr-only">Search</label>
-                                <input type="text" class="form-control" name="search" id="search" placeholder="search">
+                                <label for="search" class="sr-only" data-ng-bind="i18n_literals.L316"></label>
+                                <input type="text" class="form-control" name="search" id="search" placeholder="{{i18n_literals.L316}}">
                                 <i class="fa fa-search form-control-feedback" aria-hidden="true"></i>
                             </div>
                         </form>
                     </li>                
                     <li class="zoom--text">
-                        <span class="a_small"><a onclick="zoomSmall()" title="{{i18n_literals.L22077}}">a</a></span>
-                        <span class="a_medium"><a onclick="zoomMedium()" title="{{i18n_literals.L22078}}">a</a></span>
-                        <span class="a_big"><a onclick="zoomBig()" title="{{i18n_literals.L22079}}">a</a></span>
+                        <span class="a_small"><a onclick="zoomSmall()" title="{{i18n_literals.L303}}">a</a></span>
+                        <span class="a_medium"><a onclick="zoomMedium()" title="{{i18n_literals.L304}}">a</a></span>
+                        <span class="a_big"><a onclick="zoomBig()" title="{{i18n_literals.L305}}">a</a></span>
                     </li>
-                    <li class="print--block"><a href="javascript:"  title="{{i18n_literals.L22076}}" onclick="window.print()"><i class="fa fa-print" aria-hidden="true"></i><label for="search" class="sr-only" data-ng-bind="i18n_literals.L22076"></label></a></li>
+                    <li class="print--block"><a href="javascript:"  title="{{i18n_literals.L302}}" onclick="window.print()"><i class="fa fa-print" aria-hidden="true"></i><label for="search" class="sr-only" data-ng-bind="i18n_literals.L302"></label></a></li>
                     <li id="google_translate_element_wrapper">
-                        <div id="google_translate_element"  title="{{i18n_literals.L22080}}"></div>
+                        <div id="google_translate_element"  title="{{i18n_literals.L306}}"></div>
                         <span class="google_translate_span">(machine translation)</span>
                         <span class="gtranslator-info">Info-icon</span>
                         <div id="gTranslate-modal" class="gtranslator-msg" style="display:none" data-ng-bind-html="i18n_literals.L22081">    
@@ -95,7 +95,7 @@
         </nav>
         <!-- /. main menu -->
     </section>
-    <section class="home-cover" title="{{i18n_literals.L22098}}" data-ng-click="goto('home')" >
+    <section class="home-cover" title="{{i18n_literals.L323}}" data-ng-click="goto('home')" >
       <div class="container">
           <h1 class="main-title" data-ng-bind-html="i18n_literals.L22020"></h1>
           <p class="lead-title">Status of Occupational Safety and Health in the European Union</p>
@@ -107,21 +107,21 @@
             <p class="path" data-ng-bind-html="breadCrumb" id="breadCrumbs"></p>
         </div>
         <div class="social--network--nav" id="osha-menu-social">
-            <label data-ng-bind="i18n_literals.L22082"></label>
+            <label data-ng-bind="i18n_literals.L307"></label>
             <ul>
                 <li>
-                    <a class="main-color" target="_blank" socialshare socialshare-provider="twitter" title ="{{i18n_literals.L22082}} {{i18n_literals.L22083}}" socialshare-text="{{i18n_literals[title]}}" socialshare-url="{{pathURLDVT}}">
-                        <i class="fa fa-lg fa-twitter" aria-hidden="true"></i><span class="sr-only" data-ng-bind="(i18n_literals.L22082) + (i18n_literals.L22083)"></span>
+                    <a class="main-color" target="_blank" socialshare socialshare-provider="twitter" title ="{{i18n_literals.L307}} {{i18n_literals.L308}}" socialshare-text="{{i18n_literals[title]}}" socialshare-url="{{pathURLDVT}}">
+                        <i class="fa fa-lg fa-twitter" aria-hidden="true"></i><span class="sr-only" data-ng-bind="(i18n_literals.L307) + (i18n_literals.L308)"></span>
                     </a>
                 </li>
                 <li>
-                    <a class="main-color" target="_blank" socialshare socialshare-provider="facebook" title="{{i18n_literals.L22082}} {{i18n_literals.L22084}}" socialshare-url="{{pathURLDVT}}">
-                        <i class="fa fa-lg fa-facebook" aria-hidden="true"></i><span class="sr-only" data-ng-bind="(i18n_literals.L22082) + (i18n_literals.L22084)"></span>
+                    <a class="main-color" target="_blank" socialshare socialshare-provider="facebook" title="{{i18n_literals.L307}} {{i18n_literals.L309}}" socialshare-url="{{pathURLDVT}}">
+                        <i class="fa fa-lg fa-facebook" aria-hidden="true"></i><span class="sr-only" data-ng-bind="(i18n_literals.L307) + (i18n_literals.L309)"></span>
                     </a>
                 </li>
                 <li>
-                    <a class="main-color" target="_blank" socialshare socialshare-provider="linkedin" title="{{i18n_literals.L22082}} {{i18n_literals.L22085}}" socialshare-url="{{pathURLDVT}}">
-                        <i class="fa fa-lg fa-linkedin" aria-hidden="true"></i><span class="sr-only" data-ng-bind="(i18n_literals.L22082) + (i18n_literals.L22085)"></span>
+                    <a class="main-color" target="_blank" socialshare socialshare-provider="linkedin" title="{{i18n_literals.L307}} {{i18n_literals.L310}}" socialshare-url="{{pathURLDVT}}">
+                        <i class="fa fa-lg fa-linkedin" aria-hidden="true"></i><span class="sr-only" data-ng-bind="(i18n_literals.L307) + (i18n_literals.L310)"></span>
                     </a>
                 </li>
                 <!--
@@ -135,12 +135,12 @@
         </div>
     </section>
 
-    <section data-ng-if="!isHome" id="not-home-cover" class="advice--block advice--block-not-home background-main-light container-fluid section--page">
+    <!--<section data-ng-if="!isHome" id="not-home-cover" class="advice--block advice--block-not-home background-main-light container-fluid section--page">
         <div class="container">
             <h2 class="main-color left-text" data-ng-bind="i18n_literals.L22002"></h2>
             <p data-ng-bind="i18n_literals.L22025"></p>
         </div>
-    </section>
+    </section>-->
 </header>
 
 
