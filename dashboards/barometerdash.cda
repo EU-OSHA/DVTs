@@ -242,7 +242,7 @@
         INNER JOIN nuts n
         ON n.id = mp.nuts_id
         WHERE mp.page = 'MATRIX_AUTHORITY'
-        ORDER BY country_name ASC
+        ORDER BY country_name ASC, standardisation ASC, prevention ASC, compensation ASC, osh_authority ASC
       </Query>
     </DataAccess>
 
@@ -284,7 +284,7 @@
              WHERE n.country_code REGEXP ${countries}
              AND mp.page = 'MATRIX_AUTHORITY'
 
-            order by country_name ASC
+            order by country_name ASC, standardisation ASC, prevention ASC, compensation ASC, osh_authority ASC
       </Query>
     </DataAccess>
 
@@ -321,7 +321,7 @@
          OR mp.check_3=${institution3}
          OR mp.check_4=${institution4})
 
-        order by country_name ASC
+        order by country_name ASC, standardisation ASC, prevention ASC, compensation ASC, osh_authority ASC
       </Query>
 </DataAccess>
 </CDADescriptor>
