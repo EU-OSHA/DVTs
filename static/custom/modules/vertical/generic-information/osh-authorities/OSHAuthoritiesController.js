@@ -527,6 +527,27 @@ define(function (require) {
       }
 
     /******************************END FILTERS************************************/
+
+    /* MODAL FUNCTIONS */
+    $scope.openModal = function(matrix){
+      angular.element('div#modalChart .modal-title').html($scope.i18nLiterals['L'+matrix.country_name]+' infrastructure');
+    }
+
+    angular.element('div#modalChart').click(function(text,$index, matrix ) {
+      angular.element('div#modalChart').modal('hide');
+    }).children().click(function(e){
+      if (!$(e.target).is('a')) {
+          if (!$(e.target).is('button') && !$(e.target).is('font')) {
+              if (!$(e.target).parent().is('button') && !$(e.target).parent().hasClass('close')){
+                  return false;
+              }
+          }else {
+              if (!$(e.target).is('button') && !$(e.target).is('font') && !$(e.target).hasClass('close')) {
+                  return false;
+              }
+          }
+      }
+    });
   }
 
   controller.$inject = ['$scope', '$stateParams', '$state', 'configService', '$log', '$document','dataService', '$window', '$sce', '$compile', '$timeout'];

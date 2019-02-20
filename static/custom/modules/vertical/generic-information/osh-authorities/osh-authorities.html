@@ -88,8 +88,9 @@
             </p>
 
             <div class="">
-              <a ui-sref='home' class="btn--card main-color" title="Country infrastructure">Country infrastructure</a>
+              <a href="" data-toggle="modal" data-target="#modalChart" data-ng-click="openModal(matrix)" class="btn--card main-color" title="Country infrastructure">Country infrastructure</a>
             </div>
+            
           </div>
         </div>
       </div>
@@ -121,6 +122,20 @@
         </div>
       </div>
     </div>
+    <div class="modal fade" id="modalChart" tabindex="-1" role="dialog" aria-labelledby="modalChart" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <p class="modal-title text-center"></p>
+          </div>
+          <div class="modal-body text-center">
+              <img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/survey-map.png" alt="" width="500px">
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
-  
 </dvt-dashboard>
