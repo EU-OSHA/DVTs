@@ -26,10 +26,6 @@ define(function (require) {
         var commonLiterals = configService.getCommonLiterals();
         $scope.commonLiterals = commonLiterals;
 
-        angular.element('#carouselHome').carousel({
-            interval: 1000 * 20
-        });
-
         /******************************************************************************|
         |                                DATA LOAD                                     |
         |******************************************************************************/
