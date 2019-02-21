@@ -38,6 +38,9 @@
       font-family:$font-body;
       font-size: 14px;
       color: #57575a;
+    } 
+    .copyright a {
+      color: #57575a;
     }
     .footer-nav-accessibility {
       margin:5px 0 0;
@@ -58,6 +61,11 @@
           content: '   |';
           display: inline;
           font-weight: normal;
+        }
+        &:last-child{
+         &:after {
+          content: '';
+         }
         }
       }
     }
