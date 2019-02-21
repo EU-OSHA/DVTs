@@ -25,30 +25,50 @@ define(function (require) {
                     var cookieName = "disclaimerCookie";
                     if($window.screen.width<1024 && !$cookies.get("disclaimer")){
                         $cookies.put(cookieName,true,{expires:cookieLife});
-                        $scope.showwidthdisclaimer= true;
+                        //$scope.showwidthdisclaimer= true;
                     }else {
-                        $scope.showwidthdisclaimer = false;
+                        //$scope.showwidthdisclaimer = false;
                         $cookies.put(cookieName,false,{expires:cookieLife});
                         if ($('body').hasClass('hasCookies')) {
                             $('body').removeClass('hasCookies');
                         }
                     }
+                    
+                    $scope.consentAgree = function() {
+                        if ($('body').hasClass('hasCookies')) {
+                            $('body').removeClass('hasCookies');                            
+                        }
+                        $scope.showPopUpMessage = true;
+                    }
+
+                    $scope.consentDecline = function() {
+                        if ($('body').hasClass('hasCookies')) {
+                            $('body').removeClass('hasCookies');                            
+                        }
+                        $('#cookiesConsent').hide();
+                        $scope.showPopUpMessage = true;
+                    }
+
+                    $scope.closePopUp = function () {
+                        $scope.showPopUpMessage = false;
+                        $scope.showwidthdisclaimer=true;
+                    }
+
                     $scope.widthAgree= function () {
 
                         $log.info("widthConsent");
                         $scope.showwidthdisclaimer=false;
                         $cookies.put(cookieName,false,{expires:cookieLife});
                     };
-                    $scope.consentAgree = function() {
-                        if ($('body').hasClass('hasCookies')) {
-                            $('body').removeClass('hasCookies');                            
-                        }
-                    }
 
                     if ($cookies.get('disclaimerCookie') != "false" && !$scope.showwidthdisclaimer) {
                         $('body').addClass('hasCookies');
                     } else if (!$cookies.get('angular-consent.global')) {
                         $('body').addClass('hasCookies');
+                    }
+
+                    if($cookies.get('angular-consent.global')){
+                        $scope.showPopUpMessage = true;
                     }
 
                 });

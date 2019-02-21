@@ -6,10 +6,16 @@
             <!--<p data-ng-bind="i18n_cookies.consent2"></p>-->
         </div>
         <div class="buttons">
-            <a ui-sref="privacy-policy()"><button data-ng-bind="i18nLiterals.L320"></button></a>
+            <button id="consentCookies" data-ng-click="consentDecline();" data-ng-bind="i18nLiterals.L319"></button>
             <button id="consentCookies" data-ng-click="$consent.agree(); consentAgree();" data-ng-bind="i18nLiterals.L318"></button>
+            
+            <a ui-sref="privacy-policy()"><button data-ng-bind="i18nLiterals.L320"></button></a>
         </div>
     </section>
+    <div id="popUpMessage" data-ng-if="showPopUpMessage">
+        <p>Mostrando el mensaje del popup!</p>
+        <button data-ng-click="closePopUp()">Cerrar popup</button>
+    </div>
     <section  id="widthDisclaimer" data-ng-if="$consent.hasAlreadyAgreed() && showwidthdisclaimer">
         <div class="text">
             <p data-ng-bind="i18nLiterals.L321"></p>
