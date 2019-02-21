@@ -34,7 +34,7 @@
     }
   } 
   .section--page{
-    padding: 2rem 0;
+    padding: 6rem 0;
   }
   h1, h2, h3, h4 {
     font-family:$font-header;
@@ -455,6 +455,7 @@
       display: flex;
       justify-content: space-between;
       list-style: none;
+      flex-direction: row;
       li{
         width: 50%;
         label{          
@@ -481,12 +482,19 @@
           text-transform: uppercase;
           font-size: 2.6rem;
           border: 0;
+          padding: 0.2rem 0.5rem;
           -webkit-appearance: none;
           -moz-appearance: none;
-          appearance: none;   
+          appearance: none;
+          cursor: pointer;
+          &:focus {
+            box-shadow: none;
+            outline: none;
+          }  
           option{
             font-family: 'OpenSans';
-            font-size: 1.4rem;  
+            font-size: 1.4rem; 
+            color: $gray-base;
             &:checked{
             
             }
@@ -647,7 +655,7 @@
     .card--grid{
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-around;
+      justify-content:space-between;
       .card--block{
         display: flex;
         flex-direction: column;
@@ -720,7 +728,7 @@
       }
       .card--block--chart{
         background: #EEEEEE;
-        padding:3rem 2rem;
+        padding: 1rem 2rem 3rem 2rem;
         border-radius: 46px 0;
         margin-bottom: 3rem;
         display: flex;
@@ -730,10 +738,10 @@
           display: flex;
           justify-content: flex-end;
           position: relative;
-          top: -2rem;
+          top:0rem;
           right: -2rem;
-          li{
-            a{
+          > li{
+            > a{
               width: 3.5rem;
               height: 2.7rem;
               display: block;

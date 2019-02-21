@@ -178,59 +178,59 @@ define(function (require) {
     function DvtBarChartDirective(dataService, plotsProvider, exportService, $log, maximize, $cookies) {
 
         var _template= ''
-            + '<div class="col-md-12 dvt-chart dvt-bar-chart">'
-            + '<div class="row">'
-            + '<div class="header col-md-12 nopadding">'
-            + '<div class="col-xs-10 col-sm-11 col-md-11 nopadding text-left wrapper-title-graphic">'
-            + '<h2 ng-if="(!!title && !isMaximized && !titleH3) || (isMaximized && !longTitle)" class="title" data-ng-bind-html="title"></h2>'
-            + '<h2 ng-if="!!isMaximized && !!longTitle" class="title" data-ng-bind-html="longTitle"></h2>'
-            + '<h3 data-ng-if="(!!title && !isMaximized && titleH3)" class="title" data-ng-bind-html="title"></h3>'
-            + '</div>'
-            + '<div class="nopadding pull-right wrapper-contextual-menu">'
+        + '<div class="card--block--chart--wrapper">'
+
+            + '<ul class="chart--submenu">'
+                +  '<li><a href=""><label class="sr-only">Maximize</label></a></li>'
+                +  '<li class="dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><a href=""><label class="sr-only">Download</label></a></li>'                  
+                    + '<ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">'
+                    + '<li data-ng-repeat="item in items"><a data-ng-click="open(item.action)" role="button" data-ng-bind="item.text"></a></li>'
+                    + '</ul>'
+            +  '</ul>'
+
+            + '<h3 ng-if="(!!title && !isMaximized && !titleH3) || (isMaximized && !longTitle)" data-ng-bind-html="title" class="title--card ng-binding" >Company size</h3>'
+            + '<h3 ng-if="!!isMaximized && !!longTitle" data-ng-bind-html="longTitle" class="title--card ng-binding" >Company size</h3>'
+            + '<h3 data-ng-if="(!!title && !isMaximized && titleH3)" class="title--card ng-binding" data-ng-bind-html="title"></h3>'
+
             + '<div data-ng-if="haveEnlarge" class="pull-right contextual-menu enlarge-button cursor-pointer">'
-            + '<button data-ng-click="open(items[0].action)" title="Compare with other groups">Compare groups</button>'
+                + '<button data-ng-click="open(items[0].action)" title="Compare with other groups">Compare groups</button>'
             + '</div>'
-            + '<div data-ng-if="!isMaximized && !haveEnlarge" class="pull-right contextual-menu cursor-pointer maximizeImage">'
-       // if(!configService.isMobile()) {
-            _template += '<div class="dropdown" ng-if="!isEnlarge==true">'
-                + '<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">'
-                + '<i class="three-points-vertical" title="Export"></i>'
-                + '</button>'
-                + '<ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">'
-                + '<li data-ng-repeat="item in items"><a data-ng-click="open(item.action)" role="button" data-ng-bind="item.text"></a></li>'
-                + '</ul>'
-                + '</div>';
-      //  }
-        _template+= '</div>'
-            + '<div data-ng-if="!isMaximized && haveEnlarge" class="pull-right contextual-menu cursor-pointer maximizeImage">';
-      //  if(!configService.isMobile()) {
-            _template+='<img alt="Maximize graphic" data-ng-click="open(items[1].action)" title="Maximize graphic" src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/more.png"/>';
-            _template += '<div class="dropdown" ng-if="!isEnlarge==true">'
-                + '<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">'
-                + '<i class="three-points-vertical" title="Export"></i>'
-                + '</button>'
-                + '<ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">'
-                + '<li data-ng-repeat="item in items"><a data-ng-click="open(item.action)" role="button" data-ng-bind="item.text"></a></li>'
-                + '</ul>'
-                + '</div>';
+            
+            _template += '<div data-ng-if="!isMaximized && haveEnlarge" class="pull-right contextual-menu cursor-pointer maximizeImage">';
+
+                _template+='<img alt="Maximize graphic" data-ng-click="open(items[1].action)" title="Maximize graphic" src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/more.png"/>';
+                _template 
+                    += '<div class="dropdown" ng-if="!isEnlarge==true">'
+                        + '<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">'
+                        + '<i class="three-points-vertical" title="Export"></i>'
+                        + '</button>'
+                        + '<ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">'
+                        + '<li data-ng-repeat="item in items"><a data-ng-click="open(item.action)" role="button" data-ng-bind="item.text"></a></li>'
+                        + '</ul>'
+                    + '</div>';
      //   }
-        _template+='</div>'
+            _template+='</div>'            
+        
             + '<div data-ng-if="isMaximized && isEnlarged==undefined && isZoom" class="pull-right contextual-menu export-button-modal">';
-        if(!navigator.userAgent.match('iPad')) {
-            _template += '<div class="dropdown" ng-if="!isEnlarge==true">'
-                + '<a data-ng-click="open(\'exportImageLink\')" role="button"><i class="fa fa-picture-o" aria-hidden="true"></i> Export as Image</a>'
-                + '</div>';
-        }
-        _template +='</div>'
+                if(!navigator.userAgent.match('iPad')) {
+                    _template 
+                        += '<div class="dropdown" ng-if="!isEnlarge==true">'
+                            + '<a data-ng-click="open(\'exportImageLink\')" role="button"><i class="fa fa-picture-o" aria-hidden="true"></i> Export as Image</a>'
+                        + '</div>';
+                }
+            _template +='</div>'
+
+            + '<div class="chart--wrapper">'
+                + '<div data-ng-attr-id="{{ id }}"></div>'
             + '</div>'
-            + '</div>'
-            + '<div class="backGraps">'
-            + '<div data-ng-attr-id="{{ id }}"></div>'
-            + '</div>'
+
             + '<div class="legend-info" ng-if="isMaximized && legendClickMode">Click on each value on the legend to hide/show in on the chart</div>'
-            + '<div class="logoGraphics-wrapper"><img alt="European Agency for Safety and Health at Work" src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/EU-OSHA-trans-en.png" class="logoGraphics"></div>'
+
+            + '<div class="logoGraphics-wrapper"><img alt="European Agency for Safety and Health at Work" src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/osha-logo.svg" class="logoGraphics"></div>'
+
             + '<div ng-if="!!functionalLegend" class="functionalLegend" data-ng-bind-html="functionalLegend"></div>'
-            + '</div>';
+
+        + '</div>';
 
 
 

@@ -1,9 +1,12 @@
 <dvt-dashboard promises="promises" parameters="dashboard.parameters">
 
-  <section data-ng-if="state.current.name != 'home'" id="not-home-cover" class="advice--block advice--block-not-home background-main-light container-fluid section--page">
-      <div class="container">
+  <section data-ng-if="state.current.name != 'home'" id="not-home-cover" class="advice--icon--block advice--block-not-home background-main-light container-fluid section--page">
+      <div class="container horizontal-nopadding">
+        <div class="left-text col-xs-8 col-md-8 nopadding">
           <h2 class="main-color left-text" data-ng-bind="i18nLiterals.L22002"></h2>
           <p data-ng-bind="i18nLiterals.L22025"></p>
+        </div>
+        <div class="icon--advice forum-icon col-xs-4 col-md-4"></div>
       </div>
   </section>
 

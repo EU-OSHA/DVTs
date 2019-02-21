@@ -1,134 +1,148 @@
 <dvt-dashboard promises="promises" parameters="dashboard.parameters">
 
-  <section data-ng-if="state.current.name != 'home'" id="not-home-cover" class="advice--block advice--block-not-home background-main-light container-fluid section--page">
-      <div class="container">
+  <section data-ng-if="state.current.name != 'home'" id="not-home-cover" class="advice--icon--block advice--block-not-home background-main-light container-fluid section--page">
+    <div class="container horizontal-nopadding">        
+      <div class="left-text col-md-8 col-sm-8 col-xs-12  nopadding">
           <h2 class="main-color left-text" data-ng-bind="i18nLiterals.L22003"></h2>
           <p data-ng-bind="i18nLiterals.L22028"></p>
       </div>
+      <div class="icon--advice economic-chart-icon hide-mobile col-sm-4 col-md-4"></div>
+    </div>
   </section>
 
-  <section class="container" ng-controller="EconomicSectorProfileController">
-    <!-- FILTERS -->
-    <form class="row block--filter--wrapper">
-      <!-- 1ST COUNTRY FILTER -->
-      <div id="filter1" class="" >
-        <label data-ng-bind="i18nLiterals.L20609"></label>
-        <div class="select-default">
-            <select class="" ng-model="pCountry1" ng-selected="pCountry1" ng-change="countryChange()">
-                <option data-ng-repeat='country in countries' data-ng-bind="i18nLiterals['L'+country.country]" value="{{::country.country_code}}"></option>
+  <div class="compare--block container">
+      <!-- FILTERS -->
+      <form class="compare--block--form">
+        <ul class="compare--list">
+          <!-- 1ST COUNTRY FILTER -->
+          <li>
+            <label data-ng-bind="i18nLiterals.L20609"></label>
+            <select id="datafor" class="" ng-model="pCountry1" ng-selected="pCountry1" ng-change="countryChange()">
+              <option data-ng-repeat='country in countries' data-ng-bind="i18nLiterals['L'+country.country]" value="{{::country.country_code}}"></option>
             </select>
-        </div>
-      </div>
-      <!-- 2ND COUNTRY FILTER -->
-      <div id="filter2"class="">
-        <label data-ng-bind="i18nLiterals.L20610"></label>
-        <div class="select-default">
-            <select class="" ng-model="pCountry2" ng-selected="pCountry2" ng-change="countryChange()">
-                <option data-ng-repeat='country in countries' data-ng-bind="i18nLiterals['L'+country.country]" value="{{::country.country_code}}" ></option>
+          </li>
+          <!-- 2ND COUNTRY FILTER -->
+          <li>
+            <label data-ng-bind="i18nLiterals.L20610"></label>
+            <select id="comparewith" class="" ng-model="pCountry2" ng-selected="pCountry2" ng-change="countryChange()">
+              <option data-ng-repeat='country in countries' data-ng-bind="i18nLiterals['L'+country.country]" value="{{::country.country_code}}" ></option>
             </select>
-        </div>
-      </div>  
-    </form>
+          </li>
+        </ul>
+      </form>
+  </div>
 
-    <hr>
+  <div class="line background-main-light"></div>
 
-    <div class="container">
+  <section class="container section--page" ng-controller="EconomicSectorProfileController">
+    <div class="card--grid xxs-w1 xs-w2 w3 center-text">
       <!-- CONTENT -->
-      <div class="matrix--elements--wrapper">
         <!-- FIRST ROW CHARTS -->
-        <div class="matrix--element col-md-3">
-          <div class="matrix--header--elements">
-            <h3 class="country ng-binding title-section main-color" >Company size</h3>
-            
-          </div>
-
-          <div class="matrix--content--elements">
-            <dvt-bar-chart
-              data-ng-cloak
-              query="getIndicatorDataRegion" cda="{{::cda }}"
-              angle="1" width="330" height="330"
-              orientation="horizontal"
-              axis-fixed-max="3000" step="{{step.chart2}}"
-              params="[['pIndicator','12']]"
-              color-role="series" colors="stories[1].color"
-              ortho-axis-title="ortho axis title"
-              ortho-axis-title-visible="true"
-              title="title" id="12"
-              long-title="long title"
-              max-functional-legend="max functional legend"
-              plots="stories[1].plots"
-              legend="true"
-              disable-max-legend="true"
-            ></dvt-bar-chart>
+        <div class="card--block--chart">            
+            <div class="chart--block">
+              <dvt-bar-chart
+                data-ng-cloak
+                query="getIndicatorDataRegion" cda="{{::cda }}"
+                angle="1" width="330" height="330"
+                orientation="horizontal"
+                axis-fixed-max="3000" step="{{step.chart2}}"
+                params="[['pIndicator','12']]"
+                color-role="series" colors="stories[1].color"
+                ortho-axis-title="ortho axis title"
+                ortho-axis-title-visible="true"
+                title="title" id="12"
+                long-title="long title"
+                max-functional-legend="max functional legend"
+                plots="stories[1].plots"
+                legend="true"
+                disable-max-legend="true"
+              ></dvt-bar-chart>
+            </div>
             <div class="chart-legend">
               <p data-ng-bind-html="to_trusted('<p>Max functional legend</p>')"></p>
             </div>
             <div >Prueba</div>
-          </div>
+        </div>
+      
+        <div class="card--block--chart">            
+            <div class="chart--block">
+              <dvt-bar-chart
+                data-ng-cloak
+                query="getIndicatorDataRegion" cda="{{::cda }}"
+                angle="1" width="330" height="330"
+                orientation="horizontal"
+                axis-fixed-max="3000" step="{{step.chart2}}"
+                params="[['pIndicator','12']]"
+                color-role="series" colors="stories[1].color"
+                ortho-axis-title="ortho axis title"
+                ortho-axis-title-visible="true"
+                title="title" id="12"
+                long-title="long title"
+                max-functional-legend="max functional legend"
+                plots="stories[1].plots"
+                legend="true"
+                disable-max-legend="true"
+              ></dvt-bar-chart>
+            </div>
+            <div class="chart-legend">
+              <p data-ng-bind-html="to_trusted('<p>Max functional legend</p>')"></p>
+            </div>
+            <div >Prueba</div>
         </div>
 
-        <div class="matrix--element col-md-3">
-          <div class="matrix--header--elements">
-            <h3 class="country ng-binding title-section main-color">Employment per sector</h3>
-          </div>
-
-          <div class="matrix--content--elements">
+        <div class="card--block--chart">            
+            <div class="chart--block">
+              <dvt-bar-chart
+                data-ng-cloak
+                query="getIndicatorDataRegion" cda="{{::cda }}"
+                angle="1" width="330" height="330"
+                orientation="horizontal"
+                axis-fixed-max="3000" step="{{step.chart2}}"
+                params="[['pIndicator','12']]"
+                color-role="series" colors="stories[1].color"
+                ortho-axis-title="ortho axis title"
+                ortho-axis-title-visible="true"
+                title="title" id="12"
+                long-title="long title"
+                max-functional-legend="max functional legend"
+                plots="stories[1].plots"
+                legend="true"
+                disable-max-legend="true"
+              ></dvt-bar-chart>
+            </div>
+            <div class="chart-legend">
+              <p data-ng-bind-html="to_trusted('<p>Max functional legend</p>')"></p>
+            </div>
             <div >Prueba</div>
-            <div >Prueba</div>
-            <div >Prueba</div>
-          </div>
         </div>
 
-        <div class="matrix--element col-md-3">
-          <div class="matrix--header--elements">
-            <h3 class="country ng-binding title-section main-color">Unemployment rate</h3>
-          </div>
-
-          <div class="matrix--content--elements">
-            <div>Prueba</div>
-            <div>Prueba</div>
-            <div>Prueba</div>
-          </div>
-        </div>
-        <!-- SECOND ROW CHARTS -->
-        <div class="matrix--element col-md-3">
-          <div class="matrix--header--elements">
-            <h3 class="country ng-binding title-section main-color">GDP per capita in relation to EU28 average Chart</h3>
-          </div>
-
-          <div class="matrix--content--elements">
+        <div class="card--block--chart">            
+            <div class="chart--block">
+              <dvt-bar-chart
+                data-ng-cloak
+                query="getIndicatorDataRegion" cda="{{::cda }}"
+                angle="1" width="330" height="330"
+                orientation="horizontal"
+                axis-fixed-max="3000" step="{{step.chart2}}"
+                params="[['pIndicator','12']]"
+                color-role="series" colors="stories[1].color"
+                ortho-axis-title="ortho axis title"
+                ortho-axis-title-visible="true"
+                title="title" id="12"
+                long-title="long title"
+                max-functional-legend="max functional legend"
+                plots="stories[1].plots"
+                legend="true"
+                disable-max-legend="true"
+              ></dvt-bar-chart>
+            </div>
+            <div class="chart-legend">
+              <p data-ng-bind-html="to_trusted('<p>Max functional legend</p>')"></p>
+            </div>
             <div >Prueba</div>
-            <div >Prueba</div>
-            <div >Prueba</div>
-          </div>
-        </div>
-
-        <div class="matrix--element col-md-3">
-          <div class="matrix--header--elements">
-            <h3 class="country ng-binding title-section main-color">Income per Capita Line Chart</h3>
-          </div>
-
-          <div class="matrix--content--elements">
-            <div >Prueba</div>
-            <div >Prueba</div>
-            <div >Prueba</div>
-          </div>
         </div>
 
-        <div class="matrix--element col-md-3">
-          <div class="matrix--header--elements">
-            <h3 class="country ng-binding title-section main-color" >Employment rate</h3>
-          </div>
-
-          <div class="matrix--content--elements">
-            <div>Prueba</div>
-            <div>Prueba</div>
-            <div>Prueba</div>
-          </div>
-        </div>
-
-      </div>
+    <!-- END CONTENT -->
     </div>
   </section>
-
 </dvt-dashboard>
