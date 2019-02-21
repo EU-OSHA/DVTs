@@ -180,6 +180,12 @@ define(function (require) {
         var _template= ''
         + '<div class="card--block--chart--wrapper">'
 
+            + '<ul>'
+                + '<li data-ng-repeat="item in items">'
+                +       '<a data-ng-click="open(item.action)" data-ng-class="item.class" role="button" data-ng-bind="item.text"></a>'
+                + '</li>'
+            + '</ul>'
+
             + '<ul class="chart--submenu">'
                 +  '<li><a href=""><label class="sr-only">Maximize</label></a></li>'
                 +  '<li class="dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><a href=""><label class="sr-only">Download</label></a></li>'                  
@@ -395,10 +401,7 @@ define(function (require) {
                     definition.chartDefinition.dimensions = scope.dimensions;
                 }
                 if (!!scope.calculations) {
-                    console.log("DAVID DEV");
-                    console.log(scope.calculations);
                     definition.chartDefinition.calculations = scope.calculations;
-                    console.log(definition.chartDefinition);
                 }
 
                 if (!!scope.plots) {
@@ -670,7 +673,7 @@ define(function (require) {
                         scope.contextuals = [];
                     }
                     if (!attributes.isMaximized && true){
-                        scope.contextuals.push(['Maximize', 'maximize']);
+                        scope.contextuals.push(['Maximize', 'maximize', 'maximize-button']);
                     }
                     // if(!!attributes.isMaximized && attributes.isMaximized == 'true') {
                         var ua = window.navigator.userAgent;
@@ -678,15 +681,15 @@ define(function (require) {
 
                         if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)) {
                             // You use IE. That´s no good.
-                            [['Download raw data', 'exportData']].forEach(function (item) {
+                            [['Download raw data', 'exportData', 'download-button']].forEach(function (item) {
                                 scope.contextuals.push(item);
                             });
                         } else if (!configService.isMobile())  {
-                            [['Export as image', 'exportImage'], ['Download raw data', 'exportData']].forEach(function (item) {
+                            [['Download raw data', 'exportData', 'download-button']].forEach(function (item) {
                                 scope.contextuals.push(item);
                             });
                         } else {
-                            [['Export as image', 'exportImage'], ['Download raw data', 'exportData']].forEach(function (item) {
+                            [['Download raw data', 'exportData', 'download-button']].forEach(function (item) {
                                 scope.contextuals.push(item);
                             });
                         }
@@ -696,7 +699,7 @@ define(function (require) {
                 if (scope.showContextuals){
                     scope.items = [];
                     scope.contextuals.forEach(function (item) {
-                        scope.items.push({text: item[0], action: item[1]});
+                        scope.items.push({text: item[0], action: item[1], class: item[2]});
                     });
                 }
 
