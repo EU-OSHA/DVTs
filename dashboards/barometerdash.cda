@@ -323,47 +323,84 @@
 
         order by country_name ASC, standardisation ASC, prevention ASC, compensation ASC, osh_authority ASC
       </Query>
-</DataAccess>
+  </DataAccess>
 
-<!-- ALL AVAILABLE COUNTRIES FOR NATIONAL STRATEGIES -->
-<DataAccess access="public" connection="dvt_conn" id="getStrategiesCountries" type="sql">
-  <Cache duration="3600" enabled="true" />
-  <Columns />
-  <Query>
-    SELECT DISTINCT (n.literal_id) AS country, n.country_code AS country_code
-    FROM strategies_page sp
-    INNER JOIN nuts n
-    ON n.id = sp.nuts_id
-    WHERE sp.page = 'STRATEGY'
-    ORDER BY country ASC
-  </Query>
-</DataAccess>
+  <!-- ALL AVAILABLE COUNTRIES FOR NATIONAL STRATEGIES -->
+  <DataAccess access="public" connection="dvt_conn" id="getStrategiesCountries" type="sql">
+    <Cache duration="3600" enabled="true" />
+    <Columns />
+    <Query>
+      SELECT DISTINCT (n.literal_id) AS country, n.country_code AS country_code
+      FROM strategies_page sp
+      INNER JOIN nuts n
+      ON n.id = sp.nuts_id
+      WHERE sp.page = 'STRATEGY'
+      ORDER BY country ASC
+    </Query>
+  </DataAccess>
 
-<!-- ALL AVAILABLE COUNTRIES FOR REGULATIONS -->
-<DataAccess access="public" connection="dvt_conn" id="getRegulationsCountries" type="sql">
-  <Cache duration="3600" enabled="true" />
-  <Columns />
-  <Query>
-    SELECT DISTINCT (n.literal_id) AS country, n.country_code AS country_code
-    FROM strategies_page sp
-    INNER JOIN nuts n
-    ON n.id = sp.nuts_id
-    WHERE sp.page = 'STRATEGY_REGULATION'
-    ORDER BY country ASC
-  </Query>
-</DataAccess>
+  <!-- ALL AVAILABLE COUNTRIES FOR REGULATIONS -->
+  <DataAccess access="public" connection="dvt_conn" id="getRegulationsCountries" type="sql">
+    <Cache duration="3600" enabled="true" />
+    <Columns />
+    <Query>
+      SELECT DISTINCT (n.literal_id) AS country, n.country_code AS country_code
+      FROM strategies_page sp
+      INNER JOIN nuts n
+      ON n.id = sp.nuts_id
+      WHERE sp.page = 'STRATEGY_REGULATION'
+      ORDER BY country ASC
+    </Query>
+  </DataAccess>
 
-<!-- ALL AVAILABLE COUNTRIES FOR ENFORCE CAPACITIES -->
-<DataAccess access="public" connection="dvt_conn" id="getCapacitiesCountries" type="sql">
-  <Cache duration="3600" enabled="true" />
-  <Columns />
-  <Query>
-    SELECT DISTINCT (n.literal_id) AS country, n.country_code AS country_code
-    FROM strategies_page sp
-    INNER JOIN nuts n
-    ON n.id = sp.nuts_id
-    WHERE sp.page = 'STRATEGY_ENFOR_CAPACITY'
-    ORDER BY country ASC
-  </Query>
-</DataAccess>
+  <!-- ALL AVAILABLE COUNTRIES FOR ENFORCE CAPACITIES -->
+  <DataAccess access="public" connection="dvt_conn" id="getCapacitiesCountries" type="sql">
+    <Cache duration="3600" enabled="true" />
+    <Columns />
+    <Query>
+      SELECT DISTINCT (n.literal_id) AS country, n.country_code AS country_code
+      FROM strategies_page sp
+      INNER JOIN nuts n
+      ON n.id = sp.nuts_id
+      WHERE sp.page = 'STRATEGY_ENFOR_CAPACITY'
+      ORDER BY country ASC
+    </Query>
+  </DataAccess>
+
+  <!-- ALL AVAILABLE COUNTRIES FOR ECONOMIC AND SECTOR PROFILES INDICATORS -->
+  <DataAccess access="public" connection="dvt_conn" id="getAvailableEconomicSectorCountries" type="sql">
+    <Cache duration="3600" enabled="true" />
+    <Columns />
+    <Query>
+      SELECT DISTINCT(n.literal_id) as country_name, n.country_code as country_code
+      FROM nuts n
+      INNER JOIN profile p
+      ON n.id = p.nuts_id
+      INNER JOIN value v
+      ON v.profile_id = p.id
+      WHERE v.indicator_id IN (31, 36, 37, 38, 39, 40)
+      ORDER BY country_name ASC;
+    </Query>
+  </DataAccess>
+
+  <!-- Get Company size indicators and values -->
+  <DataAccess access="public" connection="dvt_conn" id="getCompanySizeData" type="sql">
+    <Cache duration="3600" enabled="true"/>
+    <Columns/>
+    <Parameters>
+      <Parameter default="1" name="pIndicator" type="Numeric" />
+      <Parameter default="AT" name="pCountry1" type="String" />
+      <Parameter default="BE" name="pCountry2" type="String" />
+    </Parameters>
+    <Query>
+      SELECT n.country_code as country_code, i.literal_id as indicator, v.value, scs.literal_id
+      FROM nuts n, profile p, indicator i, value v, split_company_size scs, dataset d
+      WHERE n.id = p.nuts_id 
+      AND p.company_size_id = scs.id 
+      AND i.id = v.indicator_id 
+      AND v.profile_id = p.id 
+      AND d.id = 4 AND d.id = v.dataset_id 
+      AND n.country_code IN (${pCountry1}, ${pCountry2}, 'EU28') AND i.id = ${pIndicator}
+    </Query>
+  </DataAccess>
 </CDADescriptor>
