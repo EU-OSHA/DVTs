@@ -1208,6 +1208,34 @@
   }
 /**** END MODAL WINDOW ****/
 
+
+/** pop up */
+  #popUpMessage{
+    background: rgba(0,0,0,0.6);
+    position: fixed;
+    width: 100vw;
+    height:100vh;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    .popUpMessage--text--block{
+      background: $white;
+      width: 70vw;
+      height: 70vh;
+      top: 0;      
+      margin: 15vh 15vw; 
+      padding: 15vh 10vw;
+      position: relative;
+      .close-popup{
+        bottom: 5vh;
+        position: absolute;
+        right: 5vw;
+      }
+    }
+  }
+
+
+
 /**** NOSCRIPT PAGE ***/
   #noScript {
     border: 1px solid #ccc;

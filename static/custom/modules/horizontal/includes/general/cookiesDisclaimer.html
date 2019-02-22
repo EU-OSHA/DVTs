@@ -12,10 +12,13 @@
             <a ui-sref="privacy-policy()"><button data-ng-bind="i18nLiterals.L320"></button></a>
         </div>
     </section>
-    <div id="popUpMessage" data-ng-if="showPopUpMessage">
-        <p>Mostrando el mensaje del popup!</p>
-        <button data-ng-click="closePopUp()">Cerrar popup</button>
-    </div>
+    <section id="popUpMessage" data-ng-if="showPopUpMessage">
+        <div class="popUpMessage--text--block">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sollicitudin, ante ac posuere varius, tortor purus euismod risus, eu blandit ante ex eget eros. Proin venenatis libero eget libero porttitor posuere. Nunc imperdiet odio et orci pharetra, at laoreet diam volutpat. Aliquam sagittis urna ex, quis venenatis nibh molestie nec. Pellentesque consequat iaculis varius. Proin vitae metus ac nulla lacinia consectetur id nec dolor. Ut non urna condimentum, interdum massa ac, aliquet tortor. Aenean eu nunc lacus.</p>
+            <p>Aliquam vulputate sapien et volutpat cursus. Nullam arcu ex, ultrices vel egestas et, viverra a metus. Donec quis eros ut nunc pharetra vestibulum vel eu mi. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec sagittis tempus efficitur. Proin porta nunc at lobortis posuere. Praesent convallis finibus leo. Sed ipsum lorem, interdum ac diam in, porttitor convallis turpis. Proin diam ipsum, malesuada non tempus a, suscipit sit amet mauris. Nullam convallis ac orci aliquet efficitur. Etiam augue massa, aliquam luctus ultricies eget, faucibus non mi. Quisque non neque euismod, consectetur metus in, pulvinar purus. Curabitur malesuada varius metus et rhoncus. Curabitur quis rutrum risus. Sed eu est consectetur, ullamcorper lectus in, pulvinar libero. Suspendisse potenti.</p>
+            <p class="close-popup"><a class="btn-default btn-main-color" data-ng-click="closePopUp()">Cerrar popup</a></p>
+        </div>
+    </section>
     <section  id="widthDisclaimer" data-ng-if="$consent.hasAlreadyAgreed() && showwidthdisclaimer">
         <div class="text">
             <p data-ng-bind="i18nLiterals.L321"></p>
