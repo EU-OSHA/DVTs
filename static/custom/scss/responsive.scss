@@ -1,3 +1,31 @@
+
+@media (max-width: 1480px) {
+  /**** COKKIES DIWSCLAIMER ****/
+  #cookiesConsent {
+    background: $backgroundCookies;
+    width: 100%;
+    padding:1.5em;
+    overflow: auto;
+    z-index:1000001;
+    top: 0;
+    position: fixed;
+    color: #666;
+    .text {
+      float:none;
+      width:100%;
+      text-align: center;
+    }
+    .buttons {
+			text-align: center;
+			padding: 3rem 0 1rem;
+    }
+    button {
+      float:none;
+      margin:0 .5em;
+    }
+  }
+}
+
 @media (max-width: 1080px) {
   .bar-main-menu{
     #main-menu{
@@ -302,6 +330,33 @@
 @media only screen 
 and (min-device-width : 768px) 
 and (max-device-width : 1024px)  {
+
+
+/** pop up */
+  #popUpMessage{
+    background: rgba(0,0,0,0.6);
+    position: fixed;
+    width: 100vw;
+    height:100vh;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    .popUpMessage--text--block{
+			background: #FFF;
+			width: 90vw;
+			height: 90vh;
+			top: 0;
+			margin: 5vh 5vw;
+			padding:5vh 5vw;
+			position: relative;
+      .close-popup{
+        bottom: 5vh;
+        position: absolute;
+        right: 5vw;
+      }
+    }
+  }
+
 
 	/** WIDTH CARDS  **/
 	.card--grid{
@@ -641,7 +696,19 @@ and (max-device-width :767px)  {
 			}
   	}
 	}
-	
+/** pop up */
+  #popUpMessage{
+    .popUpMessage--text--block{
+		  width: 90vw;
+		  height: 90vh;
+		  margin: 5vh 5vw;
+		  padding: 5vh 5vw;
+      .close-popup{
+        bottom: 3vh;
+        right: 5vw;
+      }
+    }
+  }
 	form.compare--block--form{
 		text-align: center;
 	}
@@ -710,15 +777,47 @@ and (max-device-width :767px)  {
 
 }
 
+@media only screen 
+and (max-device-width :620px) {
+  
+  #popUpMessage{
+    .popUpMessage--text--block{
+		  width: 90vw;
+		  height: 90vh;
+		  margin: 5vh 5vw;
+		  padding: 5vh 5vw;
+		  overflow-y: auto;
+		  overflow-x: hidden;
+      .close-popup{
+			  bottom: -3rem;
+			  right: auto;
+			  left: 25%;
+			  position: relative;
+			  margin-bottom: 4rem;
+      }
+    }
+  }
 
+  /**** COKKIES DIWSCLAIMER ****/
+  #cookiesConsent {
+    .text {
+    }
+    .buttons {
+    }
+    button {
+      width: 100%;
+      margin: 1.4rem 0;
+    }
+  }
 
+}
 
 @media only screen 
 and (max-device-width :420px){
 
 	form.compare--block--form {
 	  text-align: left;
-	}
+	}	
   .compare--block{
     .compare--list{
 			padding: 0;
