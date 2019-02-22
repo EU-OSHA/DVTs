@@ -164,6 +164,8 @@ define(function () {
                 return promise(url);
             },
 
+            /* HOME */
+
             getStrategiesCountries: function(){
                 var url = configService.getBarometerDataPath() + "&dataAccessId=getStrategiesCountries";
                 $log.debug('getStrategiesCountries url:' + url);
@@ -184,6 +186,8 @@ define(function () {
 
                 return promise(url);
             },
+
+            /* END HOME */
 
             /* OSH AUTHORITIES */
 
@@ -312,6 +316,37 @@ define(function () {
             },
 
             /* END OSH AUTHORITIES*/
+
+
+            /********************** ECONOMIC AND SECTOR PROFILES ******************************/
+
+            /**
+             * @ngdoc method
+             * @name dvt.configModule.DataService#getAvailableEconomicSectorCountries
+             * @methodOf dvt.configModule.DataService
+             * @description
+             * Gets all countries available in Economic and sector profiles view
+             */
+            getAvailableEconomicSectorCountries: function () {
+                var url = configService.getBarometerDataPath() + "&dataAccessId=getAvailableEconomicSectorCountries";
+                $log.debug('getAvailableEconomicSectorCountries url:' + url);
+                return promise(url);
+            },
+
+            /**
+             * @ngdoc method
+             * @name dvt.configModule.DataService#getCompanySizeData
+             * @methodOf dvt.configModule.DataService
+             * @description
+             * Get Company size data
+             */
+            getCompanySizeData: function (pIndicator, pCountry1, pCountry2) {
+                var url = configService.getBarometerDataPath() + "&dataAccessId=getCompanySizeData" + "&pIndicator=" + pIndicator + "&parampCountry1=" + pCountry1 + "&parampCountry2=" + pCountry2;
+                $log.debug('getCompanySizeData url:' + url);
+                return promise(url);
+            },
+
+            /************************ END ECONOMIC AND SECTOR PROFILES ***************************/
 
             /**
              * @ngdoc method

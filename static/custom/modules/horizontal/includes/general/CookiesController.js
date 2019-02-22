@@ -70,6 +70,7 @@ define(function (require) {
                         $('body').addClass('hasCookies');
                     }
 
+                    // IF cookies already accepted, popup should appear directly
                     if($cookies.get('angular-consent.global')){
                         $scope.showPopUpMessage = true;
                     }

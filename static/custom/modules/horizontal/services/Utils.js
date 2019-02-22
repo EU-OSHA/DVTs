@@ -249,7 +249,11 @@ define(function (require) {
                     default:
                         return colors.accidentsColors;
                 }
-            }
+            },
+            
+            getChartSecondaryColor: function() {
+                return colors.chartSecondaryColor;
+             },
 
         }
     };
