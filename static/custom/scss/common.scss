@@ -1234,7 +1234,20 @@
     }
   }
 
-
+/** 404  **/
+.error-404{
+  padding: 0 0 5rem;
+  .img-404{
+   background: url('/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/page-not-found.png') center top no-repeat; 
+   min-height: 30rem;    
+ }
+  .title-section {
+    margin: 1rem 0 1rem;
+  }
+  p{
+    margin: 0;
+  }
+}
 
 /**** NOSCRIPT PAGE ***/
   #noScript {
