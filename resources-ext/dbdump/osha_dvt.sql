@@ -17,6 +17,7 @@ CREATE DATABASE IF NOT EXISTS `osha_dvt` /*!40100 DEFAULT CHARACTER SET latin1 *
 USE `osha_dvt`;
 
 -- Volcando estructura para tabla osha_dvt.chart
+DROP TABLE IF EXISTS `chart`;
 CREATE TABLE IF NOT EXISTS `chart` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `section_id` int(11) NOT NULL DEFAULT '0',
@@ -227,6 +228,7 @@ INSERT INTO `chart` (`id`, `section_id`, `name`) VALUES
 /*!40000 ALTER TABLE `chart` ENABLE KEYS */;
 
 -- Volcando estructura para tabla osha_dvt.country_group
+DROP TABLE IF EXISTS `country_group`;
 CREATE TABLE IF NOT EXISTS `country_group` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `literal_id` int(11) NOT NULL DEFAULT '0',
@@ -260,6 +262,7 @@ INSERT INTO `country_group` (`id`, `literal_id`, `name`, `short_name`) VALUES
 /*!40000 ALTER TABLE `country_group` ENABLE KEYS */;
 
 -- Volcando estructura para tabla osha_dvt.dataset
+DROP TABLE IF EXISTS `dataset`;
 CREATE TABLE IF NOT EXISTS `dataset` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(100) NOT NULL DEFAULT '0',
@@ -300,6 +303,7 @@ INSERT INTO `dataset` (`id`, `name`, `source`, `date_from`, `date_to`) VALUES
 /*!40000 ALTER TABLE `dataset` ENABLE KEYS */;
 
 -- Volcando estructura para tabla osha_dvt.glossary
+DROP TABLE IF EXISTS `glossary`;
 CREATE TABLE IF NOT EXISTS `glossary` (
   `term_literal_id` int(11) NOT NULL,
   `description_literal_id` int(11) NOT NULL,
@@ -346,6 +350,7 @@ INSERT INTO `glossary` (`term_literal_id`, `description_literal_id`) VALUES
 /*!40000 ALTER TABLE `glossary` ENABLE KEYS */;
 
 -- Volcando estructura para tabla osha_dvt.indicator
+DROP TABLE IF EXISTS `indicator`;
 CREATE TABLE IF NOT EXISTS `indicator` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) DEFAULT NULL,
@@ -618,6 +623,7 @@ INSERT INTO `indicator` (`id`, `name`, `literal_id`) VALUES
 /*!40000 ALTER TABLE `indicator` ENABLE KEYS */;
 
 -- Volcando estructura para tabla osha_dvt.indicators_by_chart
+DROP TABLE IF EXISTS `indicators_by_chart`;
 CREATE TABLE IF NOT EXISTS `indicators_by_chart` (
   `chart_id` int(11) NOT NULL,
   `indicator_id` int(11) NOT NULL,
@@ -831,6 +837,7 @@ INSERT INTO `indicators_by_chart` (`chart_id`, `indicator_id`, `dataset_id`) VAL
 /*!40000 ALTER TABLE `indicators_by_chart` ENABLE KEYS */;
 
 -- Volcando estructura para tabla osha_dvt.indicators_in_dataset
+DROP TABLE IF EXISTS `indicators_in_dataset`;
 CREATE TABLE IF NOT EXISTS `indicators_in_dataset` (
   `indicator_id` int(11) NOT NULL,
   `dataset_id` int(11) NOT NULL,
@@ -1103,6 +1110,7 @@ INSERT INTO `indicators_in_dataset` (`indicator_id`, `dataset_id`) VALUES
 /*!40000 ALTER TABLE `indicators_in_dataset` ENABLE KEYS */;
 
 -- Volcando estructura para tabla osha_dvt.literal
+DROP TABLE IF EXISTS `literal`;
 CREATE TABLE IF NOT EXISTS `literal` (
   `id` int(11) NOT NULL,
   `chart_id` int(11) DEFAULT '0',
@@ -6144,6 +6152,7 @@ INSERT INTO `literal` (`id`, `chart_id`, `section_id`, `type`) VALUES
 /*!40000 ALTER TABLE `literal` ENABLE KEYS */;
 
 -- Volcando estructura para tabla osha_dvt.matrix_page
+DROP TABLE IF EXISTS `matrix_page`;
 CREATE TABLE IF NOT EXISTS `matrix_page` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `page` varchar(50) NOT NULL,
@@ -7239,6 +7248,7 @@ INSERT INTO `matrix_page` (`id`, `page`, `nuts_id`, `check_1`, `check_2`, `check
 /*!40000 ALTER TABLE `matrix_page` ENABLE KEYS */;
 
 -- Volcando estructura para tabla osha_dvt.nuts
+DROP TABLE IF EXISTS `nuts`;
 CREATE TABLE IF NOT EXISTS `nuts` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `country_code` varchar(4) NOT NULL,
@@ -7715,6 +7725,7 @@ INSERT INTO `nuts` (`id`, `country_code`, `literal_id`, `level`, `name`) VALUES
 /*!40000 ALTER TABLE `nuts` ENABLE KEYS */;
 
 -- Volcando estructura para tabla osha_dvt.nuts_by_country_group
+DROP TABLE IF EXISTS `nuts_by_country_group`;
 CREATE TABLE IF NOT EXISTS `nuts_by_country_group` (
   `nuts_id` int(11) NOT NULL,
   `country_group_id` int(11) NOT NULL,
@@ -8187,6 +8198,7 @@ INSERT INTO `nuts_by_country_group` (`nuts_id`, `country_group_id`) VALUES
 /*!40000 ALTER TABLE `nuts_by_country_group` ENABLE KEYS */;
 
 -- Volcando estructura para tabla osha_dvt.profile
+DROP TABLE IF EXISTS `profile`;
 CREATE TABLE IF NOT EXISTS `profile` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nuts_id` int(11) DEFAULT NULL,
@@ -8223,7 +8235,7 @@ CREATE TABLE IF NOT EXISTS `profile` (
   CONSTRAINT `profile_subindicator_id` FOREIGN KEY (`subindicator_id`) REFERENCES `split_subindicator` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=508 DEFAULT CHARSET=latin1;
 
--- Volcando datos para la tabla osha_dvt.profile: ~5 rows (aproximadamente)
+-- Volcando datos para la tabla osha_dvt.profile: ~507 rows (aproximadamente)
 /*!40000 ALTER TABLE `profile` DISABLE KEYS */;
 INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
 	(1, 30, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
@@ -9242,6 +9254,7 @@ INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`
 /*!40000 ALTER TABLE `profile` ENABLE KEYS */;
 
 -- Volcando estructura para tabla osha_dvt.section
+DROP TABLE IF EXISTS `section`;
 CREATE TABLE IF NOT EXISTS `section` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `tool_id` int(11) NOT NULL DEFAULT '0',
@@ -9332,6 +9345,7 @@ INSERT INTO `section` (`id`, `tool_id`, `name`) VALUES
 /*!40000 ALTER TABLE `section` ENABLE KEYS */;
 
 -- Volcando estructura para tabla osha_dvt.split_activity_sector
+DROP TABLE IF EXISTS `split_activity_sector`;
 CREATE TABLE IF NOT EXISTS `split_activity_sector` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `literal_id` int(11) NOT NULL,
@@ -9371,6 +9385,7 @@ INSERT INTO `split_activity_sector` (`id`, `literal_id`) VALUES
 /*!40000 ALTER TABLE `split_activity_sector` ENABLE KEYS */;
 
 -- Volcando estructura para tabla osha_dvt.split_age_group
+DROP TABLE IF EXISTS `split_age_group`;
 CREATE TABLE IF NOT EXISTS `split_age_group` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `literal_id` int(11) NOT NULL,
@@ -9392,6 +9407,7 @@ INSERT INTO `split_age_group` (`id`, `literal_id`) VALUES
 /*!40000 ALTER TABLE `split_age_group` ENABLE KEYS */;
 
 -- Volcando estructura para tabla osha_dvt.split_answer
+DROP TABLE IF EXISTS `split_answer`;
 CREATE TABLE IF NOT EXISTS `split_answer` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `literal_id` int(11) NOT NULL,
@@ -9467,6 +9483,7 @@ INSERT INTO `split_answer` (`id`, `literal_id`) VALUES
 /*!40000 ALTER TABLE `split_answer` ENABLE KEYS */;
 
 -- Volcando estructura para tabla osha_dvt.split_company_size
+DROP TABLE IF EXISTS `split_company_size`;
 CREATE TABLE IF NOT EXISTS `split_company_size` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `literal_id` int(11) NOT NULL,
@@ -9492,6 +9509,7 @@ INSERT INTO `split_company_size` (`id`, `literal_id`) VALUES
 /*!40000 ALTER TABLE `split_company_size` ENABLE KEYS */;
 
 -- Volcando estructura para tabla osha_dvt.split_currency
+DROP TABLE IF EXISTS `split_currency`;
 CREATE TABLE IF NOT EXISTS `split_currency` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `literal_id` int(11) NOT NULL,
@@ -9510,6 +9528,7 @@ INSERT INTO `split_currency` (`id`, `literal_id`, `symbol`) VALUES
 /*!40000 ALTER TABLE `split_currency` ENABLE KEYS */;
 
 -- Volcando estructura para tabla osha_dvt.split_gender
+DROP TABLE IF EXISTS `split_gender`;
 CREATE TABLE IF NOT EXISTS `split_gender` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `literal_id` int(11) NOT NULL,
@@ -9529,6 +9548,7 @@ INSERT INTO `split_gender` (`id`, `literal_id`) VALUES
 /*!40000 ALTER TABLE `split_gender` ENABLE KEYS */;
 
 -- Volcando estructura para tabla osha_dvt.split_illness
+DROP TABLE IF EXISTS `split_illness`;
 CREATE TABLE IF NOT EXISTS `split_illness` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `literal_id` int(11) NOT NULL DEFAULT '0',
@@ -9554,6 +9574,7 @@ INSERT INTO `split_illness` (`id`, `literal_id`) VALUES
 /*!40000 ALTER TABLE `split_illness` ENABLE KEYS */;
 
 -- Volcando estructura para tabla osha_dvt.split_subindicator
+DROP TABLE IF EXISTS `split_subindicator`;
 CREATE TABLE IF NOT EXISTS `split_subindicator` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `literal_id` int(11) NOT NULL DEFAULT '0',
@@ -9589,6 +9610,7 @@ INSERT INTO `split_subindicator` (`id`, `literal_id`) VALUES
 /*!40000 ALTER TABLE `split_subindicator` ENABLE KEYS */;
 
 -- Volcando estructura para tabla osha_dvt.strategies_page
+DROP TABLE IF EXISTS `strategies_page`;
 CREATE TABLE IF NOT EXISTS `strategies_page` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `page` varchar(50) NOT NULL,
@@ -9780,6 +9802,7 @@ INSERT INTO `strategies_page` (`id`, `page`, `nuts_id`, `text_1_literal_id`, `te
 /*!40000 ALTER TABLE `strategies_page` ENABLE KEYS */;
 
 -- Volcando estructura para tabla osha_dvt.term_synonym
+DROP TABLE IF EXISTS `term_synonym`;
 CREATE TABLE IF NOT EXISTS `term_synonym` (
   `term_literal_id` int(11) NOT NULL,
   `synonym_literal_id` int(11) NOT NULL,
@@ -9890,13 +9913,14 @@ INSERT INTO `term_synonym` (`term_literal_id`, `synonym_literal_id`) VALUES
 /*!40000 ALTER TABLE `term_synonym` ENABLE KEYS */;
 
 -- Volcando estructura para tabla osha_dvt.tool
+DROP TABLE IF EXISTS `tool`;
 CREATE TABLE IF NOT EXISTS `tool` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(100) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
--- Volcando datos para la tabla osha_dvt.tool: ~1 rows (aproximadamente)
+-- Volcando datos para la tabla osha_dvt.tool: ~2 rows (aproximadamente)
 /*!40000 ALTER TABLE `tool` DISABLE KEYS */;
 INSERT INTO `tool` (`id`, `name`) VALUES
 	(1, 'osha_dvt_ilo');
@@ -9905,6 +9929,7 @@ INSERT INTO `tool` (`id`, `name`) VALUES
 /*!40000 ALTER TABLE `tool` ENABLE KEYS */;
 
 -- Volcando estructura para tabla osha_dvt.translation
+DROP TABLE IF EXISTS `translation`;
 CREATE TABLE IF NOT EXISTS `translation` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `literal_id` int(11) NOT NULL DEFAULT '0',
@@ -9916,7 +9941,7 @@ CREATE TABLE IF NOT EXISTS `translation` (
   CONSTRAINT `translation_literal_id` FOREIGN KEY (`literal_id`) REFERENCES `literal` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=2850 DEFAULT CHARSET=latin1;
 
--- Volcando datos para la tabla osha_dvt.translation: ~2.130 rows (aproximadamente)
+-- Volcando datos para la tabla osha_dvt.translation: ~2.512 rows (aproximadamente)
 /*!40000 ALTER TABLE `translation` DISABLE KEYS */;
 INSERT INTO `translation` (`id`, `literal_id`, `language`, `is_default`, `text`) VALUES
 	(1, 1, 'EN', 1, 'Total cost of the work-related injuries and illnesses (billions of USD/€) Global');
@@ -14945,6 +14970,7 @@ INSERT INTO `translation` (`id`, `literal_id`, `language`, `is_default`, `text`)
 /*!40000 ALTER TABLE `translation` ENABLE KEYS */;
 
 -- Volcando estructura para tabla osha_dvt.value
+DROP TABLE IF EXISTS `value`;
 CREATE TABLE IF NOT EXISTS `value` (
   `dataset_id` int(11) NOT NULL,
   `indicator_id` int(11) NOT NULL,
