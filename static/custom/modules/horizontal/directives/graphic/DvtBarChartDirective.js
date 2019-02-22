@@ -180,20 +180,20 @@ define(function (require) {
         var _template= ''
         + '<div class="card--block--chart--wrapper">'
 
-            + '<ul>'
+            + '<ul class="chart--submenu">'
                 + '<li data-ng-repeat="item in items">'
-                +       '<a data-ng-click="open(item.action)" data-ng-class="item.class" role="button" data-ng-bind="item.text"></a>'
+                +     '<a data-ng-click="open(item.action)" data-ng-class="item.class" role="button"><label class="sr-only" data-ng-bind="item.text"></label></a>'
                 + '</li>'
             + '</ul>'
-
+/*
             + '<ul class="chart--submenu">'
-                +  '<li><a href=""><label class="sr-only">Maximize</label></a></li>'
+                +  '<li data-ng-repeat="item in items"><a href=""><label class="sr-only">Maximize</label></a></li>'
                 +  '<li class="dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><a href=""><label class="sr-only">Download</label></a></li>'                  
                     + '<ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">'
                     + '<li data-ng-repeat="item in items"><a data-ng-click="open(item.action)" role="button" data-ng-bind="item.text"></a></li>'
                     + '</ul>'
             +  '</ul>'
-
+*/
             + '<h3 ng-if="(!!title && !isMaximized && !titleH3) || (isMaximized && !longTitle)" data-ng-bind-html="title" class="title--card ng-binding" >Company size</h3>'
             + '<h3 ng-if="!!isMaximized && !!longTitle" data-ng-bind-html="longTitle" class="title--card ng-binding" >Company size</h3>'
             + '<h3 data-ng-if="(!!title && !isMaximized && titleH3)" class="title--card ng-binding" data-ng-bind-html="title"></h3>'
@@ -229,11 +229,11 @@ define(function (require) {
             + '<div class="chart--wrapper">'
                 + '<div data-ng-attr-id="{{ id }}"></div>'
             + '</div>'
-
+/*
             + '<div class="legend-info" ng-if="isMaximized && legendClickMode">Click on each value on the legend to hide/show in on the chart</div>'
 
             + '<div class="logoGraphics-wrapper"><img alt="European Agency for Safety and Health at Work" src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/osha-logo.svg" class="logoGraphics"></div>'
-
+*/
             + '<div ng-if="!!functionalLegend" class="functionalLegend" data-ng-bind-html="functionalLegend"></div>'
 
         + '</div>';
