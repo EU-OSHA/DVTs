@@ -128,7 +128,7 @@
     <single_statement>N</single_statement>
     <replace_variables>N</replace_variables>
     <quoteString>N</quoteString>
-    <sql>--INSERT INTO tool &#x28;name&#x29; VALUES &#x28;&#x27;osha_dvt_barometer&#x27;&#x29;&#x3b;</sql>
+    <sql>INSERT INTO tool &#x28;name&#x29; VALUES &#x28;&#x27;osha_dvt_barometer&#x27;&#x29;&#x3b;</sql>
     <set_params>N</set_params>
     <insert_field/>
     <update_field/>
@@ -233,7 +233,7 @@
     <optimizationLevel>9</optimizationLevel>
     <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
         <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>var startDate, finnishDate&#x3b;&#xd;&#xa;&#xd;&#xa;if &#x28;YEAR &#x21;&#x3d; undefined&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	if &#x28;YEAR.indexOf&#x28;&#x22;-&#x22;&#x29; &#x21;&#x3d; -1&#x29;&#xd;&#xa;	&#x7b;&#xd;&#xa;		&#x2f;&#x2f; There are two years&#xd;&#xa;		var years &#x3d; YEAR.split&#x28;&#x22;-&#x22;&#x29;&#x3b;&#xd;&#xa;		startDate &#x3d; years&#x5b;0&#x5d; &#x2b; &#x22;-01-01&#x22;&#x3b;&#xd;&#xa;		finnishDate &#x3d; years&#x5b;1&#x5d; &#x2b; &#x22;-12-31&#x22;&#x3b;&#xd;&#xa;	&#x7d;&#xd;&#xa;	else&#xd;&#xa;	&#x7b;&#xd;&#xa;		startDate &#x3d; YEAR &#x2b; &#x22;-01-01&#x22;&#x3b;&#xd;&#xa;	&#x7d;&#xd;&#xa;&#x7d;&#xd;&#xa;&#xd;&#xa;</jsScript_script>
+        <jsScript_script>var startDate, finnishDate&#x3b;&#xd;&#xa;&#xd;&#xa;if &#x28;YEAR &#x21;&#x3d; undefined&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	if &#x28;YEAR.indexOf&#x28;&#x22;-&#x22;&#x29; &#x21;&#x3d; -1&#x29;&#xd;&#xa;	&#x7b;&#xd;&#xa;		&#x2f;&#x2f; There are two years&#xd;&#xa;		var years &#x3d; YEAR.split&#x28;&#x22;-&#x22;&#x29;&#x3b;&#xd;&#xa;		startDate &#x3d; years&#x5b;0&#x5d; &#x2b; &#x22;-01-01&#x22;&#x3b;&#xd;&#xa;		finnishDate &#x3d; years&#x5b;1&#x5d; &#x2b; &#x22;-12-31&#x22;&#x3b;&#xd;&#xa;	&#x7d;&#xd;&#xa;	else&#xd;&#xa;	&#x7b;&#xd;&#xa;		startDate &#x3d; YEAR &#x2b; &#x22;-01-01&#x22;&#x3b;&#xd;&#xa;		finnishDate &#x3d; &#x22;null&#x22;&#x3b;&#xd;&#xa;	&#x7d;&#xd;&#xa;&#x7d;&#xd;&#xa;&#xd;&#xa;</jsScript_script>
       </jsScript>    </jsScripts>    <fields>      <field>        <name>startDate</name>
         <rename>startDate</rename>
         <type>String</type>

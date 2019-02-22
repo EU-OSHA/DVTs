@@ -167,6 +167,19 @@
         <repeat>N</repeat>
       </field>
       <field>
+        <name>INDICATOR_LITERAL</name>
+        <attribut>INDICATOR_LITERAL</attribut>
+        <type>String</type>
+        <format/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <currency/>
+        <decimal/>
+        <group/>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
         <name>SOURCE</name>
         <attribut>SOURCE</attribut>
         <type>String</type>
@@ -230,6 +243,7 @@
     <group_field/>
     <group_time/>
           <parameters>       <variablemapping><variable>varIndicatorName</variable><field>INDICATOR_NAME</field><input/></variablemapping>
+       <variablemapping><variable>varIndicatorLiteral</variable><field>INDICATOR_LITERAL</field><input/></variablemapping>
     <inherit_all_vars>N</inherit_all_vars>
     </parameters>
     <execution_result_target_step/>

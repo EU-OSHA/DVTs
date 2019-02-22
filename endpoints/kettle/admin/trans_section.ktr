@@ -81,11 +81,11 @@
   <notepads>
   </notepads>
   <connection>
-    <name>osha_dvt_ilo</name>
+    <name>osha_dvt</name>
     <server/>
     <type>MYSQL</type>
     <access>JNDI</access>
-    <database>osha_dvt_ilo</database>
+    <database>osha_dvt</database>
     <port>1521</port>
     <username/>
     <password>Encrypted </password>
@@ -191,7 +191,7 @@
     <fields>
       <field>
         <name>SECTION</name>
-        <attribut>Section</attribut>
+        <attribut>SECTION</attribut>
         <type>String</type>
         <format/>
         <length>-1</length>

@@ -108,9 +108,9 @@
     </attributes>
   </connection>
   <order>
-  <hop> <from>Table input</from><to>Filter rows</to><enabled>Y</enabled> </hop>
   <hop> <from>Get Variables</from><to>Table input</to><enabled>Y</enabled> </hop>
   <hop> <from>Filter rows</from><to>Execute SQL script in trans</to><enabled>Y</enabled> </hop>
+  <hop> <from>Table input</from><to>Filter rows</to><enabled>Y</enabled> </hop>
   </order>
   <step>
     <name>Execute SQL script in trans</name>
@@ -128,8 +128,8 @@
     <single_statement>N</single_statement>
     <replace_variables>Y</replace_variables>
     <quoteString>N</quoteString>
-    <sql>SET &#x40;maxId &#x3d; IFNULL&#x28;&#x28;SELECT MAX&#x28;l.id&#x29; AS maxID FROM literal l WHERE l.id &#x3c; 10000&#x29;&#x2b;1,1&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;INSERT INTO literal &#x28;id, chart_id, section_id, type&#x29; &#xd;&#xa;VALUES &#x28;&#xd;&#xa;	&#x40;maxId, NULL, NULL, &#x22;INDICATOR_NAME&#x22;&#xd;&#xa;&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;INSERT INTO translation &#x28;literal_id, language, is_default, text&#x29;&#xd;&#xa;VALUES &#x28;&#xd;&#xa;	&#x40;maxId, &#x22;EN&#x22;, 1, &#x22;&#x24;&#x7b;varIndicatorName&#x7d;&#x22;&#xd;&#xa;&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;INSERT INTO indicator &#x28;name, literal_id&#x29;&#xd;&#xa;VALUES &#x28;&#xd;&#xa;	&#x22;&#x24;&#x7b;varIndicatorName&#x7d;&#x22;, &#x40;maxId&#xd;&#xa;&#x29;&#x3b;</sql>
-    <set_params>N</set_params>
+    <sql>SET &#x40;maxId &#x3d; IFNULL&#x28;&#x28;SELECT MAX&#x28;l.id&#x29; AS maxID FROM literal l WHERE l.id &#x3c; 10000&#x29;&#x2b;1,1&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;INSERT INTO literal &#x28;id, chart_id, section_id, type&#x29; &#xd;&#xa;VALUES &#x28;&#xd;&#xa;	&#x40;maxId, NULL, NULL, &#x22;INDICATOR_NAME&#x22;&#xd;&#xa;&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;INSERT INTO translation &#x28;literal_id, language, is_default, text&#x29;&#xd;&#xa;VALUES &#x28;&#xd;&#xa;	&#x40;maxId, &#x22;EN&#x22;, 1, &#x22;&#x24;&#x7b;varIndicatorLiteral&#x7d;&#x22;&#xd;&#xa;&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;INSERT INTO indicator &#x28;name, literal_id&#x29;&#xd;&#xa;VALUES &#x28;&#xd;&#xa;	&#x22;&#x24;&#x7b;varIndicatorName&#x7d;&#x22;, &#x40;maxId&#xd;&#xa;&#x29;&#x3b;</sql>
+    <set_params>Y</set_params>
     <insert_field/>
     <update_field/>
     <delete_field/>
@@ -197,6 +197,18 @@
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
+      <field>
+        <name>varIndicatorLiteral</name>
+        <variable>&#x24;&#x7b;varIndicatorLiteral&#x7d;</variable>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
@@ -210,7 +222,7 @@
     <name>Table input</name>
     <type>TableInput</type>
     <description/>
-    <distribute>Y</distribute>
+    <distribute>N</distribute>
     <custom_distribution/>
     <copies>1</copies>
          <partitioning>

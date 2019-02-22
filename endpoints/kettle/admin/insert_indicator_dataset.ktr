@@ -128,8 +128,8 @@
     <single_statement>N</single_statement>
     <replace_variables>Y</replace_variables>
     <quoteString>N</quoteString>
-    <sql>SET &#x40;datasetId &#x3d; &#x28;SELECT id FROM dataset WHERE source&#x3d;&#x22;&#x24;&#x7b;varSource&#x7d;&#x22; AND date_from&#x3d;&#x22;&#x24;&#x7b;varStartDate&#x7d;&#x22; AND date_to&#x3d;&#x22;&#x24;&#x7b;varEndDate&#x7d;&#x22;&#x29;&#x3b;&#xd;&#xa;SET &#x40;indicatorId &#x3d; &#x28;SELECT id FROM indicator WHERE name&#x3d;&#x22;&#x24;&#x7b;varIndicatorName&#x7d;&#x22;&#x29;&#x3b;&#xd;&#xa;INSERT INTO indicators_in_dataset &#x28;indicator_id, dataset_id&#x29; &#xd;&#xa;VALUES &#x28;&#x40;indicatorId, &#x40;datasetId&#x29;&#x3b;</sql>
-    <set_params>N</set_params>
+    <sql>SET &#x40;datasetId &#x3d; &#x28;SELECT id FROM dataset WHERE source&#x3d;&#x22;&#x24;&#x7b;varSource&#x7d;&#x22; AND date_from&#x3d;&#x22;&#x24;&#x7b;varStartDate&#x7d;&#x22;&#x29;&#x3b;&#xd;&#xa;SET &#x40;indicatorId &#x3d; &#x28;SELECT id FROM indicator WHERE name&#x3d;&#x22;&#x24;&#x7b;varIndicatorName&#x7d;&#x22;&#x29;&#x3b;&#xd;&#xa;INSERT INTO indicators_in_dataset &#x28;indicator_id, dataset_id&#x29; &#xd;&#xa;VALUES &#x28;&#x40;indicatorId, &#x40;datasetId&#x29;&#x3b;</sql>
+    <set_params>Y</set_params>
     <insert_field/>
     <update_field/>
     <delete_field/>
@@ -221,18 +221,6 @@
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
-      <field>
-        <name>varEndDate</name>
-        <variable>&#x24;&#x7b;varEndDate&#x7d;</variable>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
@@ -254,7 +242,7 @@
            <schema_name/>
            </partitioning>
     <connection>osha_dvt</connection>
-    <sql>SELECT COUNT&#x28;&#x2a;&#x29; AS indicatorsDatasetCount&#xd;&#xa;FROM indicators_in_dataset id&#xd;&#xa;INNER JOIN indicator i&#xd;&#xa;ON id.indicator_id&#x3d;i.id&#xd;&#xa;INNER JOIN dataset d&#xd;&#xa;ON id.dataset_id&#x3d;d.id&#xd;&#xa;WHERE i.name&#x3d;&#x22;&#x24;&#x7b;varIndicatorName&#x7d;&#x22;&#xd;&#xa;AND d.source&#x3d;&#x22;&#x24;&#x7b;varSource&#x7d;&#x22;&#xd;&#xa;AND d.date_from&#x3d;&#x22;&#x24;&#x7b;varStartDate&#x7d;&#x22;&#xd;&#xa;AND d.date_to&#x3d;&#x22;&#x24;&#x7b;varEndDate&#x7d;&#x22;&#x3b;</sql>
+    <sql>SELECT COUNT&#x28;&#x2a;&#x29; AS indicatorsDatasetCount&#xd;&#xa;FROM indicators_in_dataset id&#xd;&#xa;INNER JOIN indicator i&#xd;&#xa;ON id.indicator_id&#x3d;i.id&#xd;&#xa;INNER JOIN dataset d&#xd;&#xa;ON id.dataset_id&#x3d;d.id&#xd;&#xa;WHERE i.name&#x3d;&#x22;&#x24;&#x7b;varIndicatorName&#x7d;&#x22;&#xd;&#xa;AND d.source&#x3d;&#x22;&#x24;&#x7b;varSource&#x7d;&#x22;&#xd;&#xa;AND d.date_from&#x3d;&#x22;&#x24;&#x7b;varStartDate&#x7d;&#x22;&#x3b;</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>

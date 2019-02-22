@@ -128,14 +128,13 @@
     <single_statement>N</single_statement>
     <replace_variables>Y</replace_variables>
     <quoteString>N</quoteString>
-    <sql>SET &#x40;maxLiteralId &#x3d; &#x28;SELECT MAX&#x28;id&#x29;&#x2b;1 FROM literal WHERE id&#x3c;10000&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;INSERT INTO literal &#x28;id, chart_id, section_id, type&#x29;&#xd;&#xa;VALUES &#x28;&#xd;&#xa;	&#x40;maxLiteralId, NULL, NULL, &#x22;SPLIT_ANSWER_NAME&#x22;&#xd;&#xa;&#x29;&#x3b;&#xd;&#xa;INSERT INTO translation &#x28;literal_id, language, is_default, text&#x29;&#xd;&#xa;VALUE &#x28;&#xd;&#xa;	&#x40;maxLiteralId, &#x22;EN&#x22;, 1, &#x22;&#x3f;&#x22;&#xd;&#xa;&#x29;&#x3b;&#xd;&#xa;INSERT INTO split_activity_sector &#x28;literal_id&#x29;&#xd;&#xa;VALUES&#x28;&#xd;&#xa;	&#x40;maxLiteralId&#xd;&#xa;&#x29;&#x3b;</sql>
-    <set_params>N</set_params>
+    <sql>SET &#x40;maxLiteralId &#x3d; &#x28;SELECT MAX&#x28;id&#x29;&#x2b;1 FROM literal WHERE id&#x3c;10000&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;INSERT INTO literal &#x28;id, chart_id, section_id, type&#x29;&#xd;&#xa;VALUES &#x28;&#xd;&#xa;	&#x40;maxLiteralId, NULL, NULL, &#x22;SPLIT_ANSWER_NAME&#x22;&#xd;&#xa;&#x29;&#x3b;&#xd;&#xa;INSERT INTO translation &#x28;literal_id, language, is_default, text&#x29;&#xd;&#xa;VALUE &#x28;&#xd;&#xa;	&#x40;maxLiteralId, &#x22;EN&#x22;, 1, &#x22;&#x24;&#x7b;varName&#x7d;&#x22;&#xd;&#xa;&#x29;&#x3b;&#xd;&#xa;INSERT INTO split_answer &#x28;literal_id&#x29;&#xd;&#xa;VALUES&#x28;&#xd;&#xa;	&#x40;maxLiteralId&#xd;&#xa;&#x29;&#x3b;</sql>
+    <set_params>Y</set_params>
     <insert_field/>
     <update_field/>
     <delete_field/>
     <read_field/>
     <arguments>
-       <argument><name>varName</name></argument>
     </arguments>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>

@@ -128,7 +128,7 @@
     <single_statement>N</single_statement>
     <replace_variables>Y</replace_variables>
     <quoteString>N</quoteString>
-    <sql>INSERT INTO dataset &#x28;name, source, date_from, date_to&#x29;&#xd;&#xa;VALUES &#x28;CONCAT&#x28;&#x22;BAROMETER_DATA&#x22;&#x29;, &#x22;&#x24;&#x7b;varSource&#x7d;&#x22;, &#x22;&#x24;&#x7b;varStartDate&#x7d;&#x22;, &#x22;&#x24;&#x7b;varEndDate&#x7d;&#x22;&#x29;&#x3b;</sql>
+    <sql>INSERT INTO dataset &#x28;name, source, date_from, date_to&#x29;&#xd;&#xa;VALUES &#x28;CONCAT&#x28;&#x22;BAROMETER_DATA&#x22;&#x29;, &#x22;&#x24;&#x7b;varSource&#x7d;&#x22;, &#x22;&#x24;&#x7b;varStartDate&#x7d;&#x22;, null&#x29;&#x3b;</sql>
     <set_params>N</set_params>
     <insert_field/>
     <update_field/>
@@ -139,6 +139,35 @@
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>560</xloc>
+      <yloc>160</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Filter rows</name>
+    <type>FilterRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+<send_true_to>Execute SQL script in trans</send_true_to>
+<send_false_to/>
+    <compare>
+<condition>
+ <negated>N</negated>
+ <leftvalue>datasetCount</leftvalue>
+ <function>&#x3d;</function>
+ <rightvalue/>
+ <value><name>constant</name><type>Integer</type><text>0</text><length>-1</length><precision>0</precision><isnull>N</isnull><mask>&#x23;&#x3b;-&#x23;</mask></value> </condition>
+    </compare>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>368</xloc>
       <yloc>160</yloc>
       <draw>Y</draw>
       </GUI>
@@ -180,18 +209,6 @@
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
-      <field>
-        <name>varEndDate</name>
-        <variable>&#x24;&#x7b;varEndDate&#x7d;</variable>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
@@ -213,7 +230,7 @@
            <schema_name/>
            </partitioning>
     <connection>osha_dvt</connection>
-    <sql>SELECT COUNT&#x28;&#x2a;&#x29; AS datasetCount &#xd;&#xa;FROM dataset&#xd;&#xa;WHERE source &#x3d; &#x22;&#x24;&#x7b;varSource&#x7d;&#x22;&#xd;&#xa;AND date_from&#x3d;&#x22;&#x24;&#x7b;varStartDate&#x7d;&#x22;&#xd;&#xa;AND date_to&#x3d;&#x22;&#x24;&#x7b;varEndDate&#x7d;&#x22;&#x3b;</sql>
+    <sql>SELECT COUNT&#x28;&#x2a;&#x29; AS datasetCount &#xd;&#xa;FROM dataset&#xd;&#xa;WHERE source &#x3d; &#x22;&#x24;&#x7b;varSource&#x7d;&#x22;&#xd;&#xa;AND date_from&#x3d;&#x22;&#x24;&#x7b;varStartDate&#x7d;&#x22;&#x3b;</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -222,35 +239,6 @@
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>240</xloc>
-      <yloc>160</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Filter rows</name>
-    <type>FilterRows</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-<send_true_to>Execute SQL script in trans</send_true_to>
-<send_false_to/>
-    <compare>
-<condition>
- <negated>N</negated>
- <leftvalue>datasetCount</leftvalue>
- <function>&#x3d;</function>
- <rightvalue/>
- <value><name>constant</name><type>Integer</type><text>0</text><length>-1</length><precision>0</precision><isnull>N</isnull><mask>&#x23;&#x3b;-&#x23;</mask></value> </condition>
-    </compare>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>368</xloc>
       <yloc>160</yloc>
       <draw>Y</draw>
       </GUI>

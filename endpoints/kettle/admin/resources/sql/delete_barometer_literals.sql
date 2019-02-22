@@ -4,7 +4,6 @@ DELETE FROM chart WHERE id >= 20000 AND id < 30000;
 
 -- Create Database Tables for the new Splits
 -- Activity Sector, Age Group, Answer, Company Size and Gender
-DROP TABLE IF EXISTS `split_activity_sector`;
 CREATE TABLE IF NOT EXISTS `split_activity_sector` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `literal_id` int(11) NOT NULL,
@@ -13,7 +12,6 @@ CREATE TABLE IF NOT EXISTS `split_activity_sector` (
   CONSTRAINT `activity_sector_literal_id` FOREIGN KEY (`literal_id`) REFERENCES `literal` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-DROP TABLE IF EXISTS `split_age_group`;
 CREATE TABLE IF NOT EXISTS `split_age_group` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `literal_id` int(11) NOT NULL,
@@ -22,7 +20,6 @@ CREATE TABLE IF NOT EXISTS `split_age_group` (
   CONSTRAINT `age_group_literal_id` FOREIGN KEY (`literal_id`) REFERENCES `literal` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-DROP TABLE IF EXISTS `split_answer`;
 CREATE TABLE IF NOT EXISTS `split_answer` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `literal_id` int(11) NOT NULL,
@@ -31,21 +28,17 @@ CREATE TABLE IF NOT EXISTS `split_answer` (
   CONSTRAINT `answer_literal_id` FOREIGN KEY (`literal_id`) REFERENCES `literal` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-DROP TABLE IF EXISTS `split_company_size`;
 CREATE TABLE IF NOT EXISTS `split_company_size` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `literal_id` int(11) NOT NULL,
-  `symbol` char(50) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `company_size_literal_id` (`literal_id`),
   CONSTRAINT `company_size_literal_id` FOREIGN KEY (`literal_id`) REFERENCES `literal` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-DROP TABLE IF EXISTS `split_gender`;
 CREATE TABLE IF NOT EXISTS `split_gender` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `literal_id` int(11) NOT NULL,
-  `symbol` char(50) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `gender_literal_id` (`literal_id`),
   CONSTRAINT `gender_literal_id` FOREIGN KEY (`literal_id`) REFERENCES `literal` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
