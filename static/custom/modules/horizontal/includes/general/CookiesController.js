@@ -51,7 +51,10 @@ define(function (require) {
 
                     $scope.closePopUp = function () {
                         $scope.showPopUpMessage = false;
-                        $scope.showwidthdisclaimer=true;
+                        if($cookies.get('disclaimerCookie') != "false")
+                            $scope.showwidthdisclaimer=true;
+                        else
+                            $scope.showwidthdisclaimer=false;
                     }
 
                     $scope.widthAgree= function () {
