@@ -17,7 +17,6 @@ CREATE DATABASE IF NOT EXISTS `osha_dvt` /*!40100 DEFAULT CHARACTER SET latin1 *
 USE `osha_dvt`;
 
 -- Volcando estructura para tabla osha_dvt.chart
-DROP TABLE IF EXISTS `chart`;
 CREATE TABLE IF NOT EXISTS `chart` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `section_id` int(11) NOT NULL DEFAULT '0',
@@ -228,7 +227,6 @@ INSERT INTO `chart` (`id`, `section_id`, `name`) VALUES
 /*!40000 ALTER TABLE `chart` ENABLE KEYS */;
 
 -- Volcando estructura para tabla osha_dvt.country_group
-DROP TABLE IF EXISTS `country_group`;
 CREATE TABLE IF NOT EXISTS `country_group` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `literal_id` int(11) NOT NULL DEFAULT '0',
@@ -262,7 +260,6 @@ INSERT INTO `country_group` (`id`, `literal_id`, `name`, `short_name`) VALUES
 /*!40000 ALTER TABLE `country_group` ENABLE KEYS */;
 
 -- Volcando estructura para tabla osha_dvt.dataset
-DROP TABLE IF EXISTS `dataset`;
 CREATE TABLE IF NOT EXISTS `dataset` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(100) NOT NULL DEFAULT '0',
@@ -303,7 +300,6 @@ INSERT INTO `dataset` (`id`, `name`, `source`, `date_from`, `date_to`) VALUES
 /*!40000 ALTER TABLE `dataset` ENABLE KEYS */;
 
 -- Volcando estructura para tabla osha_dvt.glossary
-DROP TABLE IF EXISTS `glossary`;
 CREATE TABLE IF NOT EXISTS `glossary` (
   `term_literal_id` int(11) NOT NULL,
   `description_literal_id` int(11) NOT NULL,
@@ -350,7 +346,6 @@ INSERT INTO `glossary` (`term_literal_id`, `description_literal_id`) VALUES
 /*!40000 ALTER TABLE `glossary` ENABLE KEYS */;
 
 -- Volcando estructura para tabla osha_dvt.indicator
-DROP TABLE IF EXISTS `indicator`;
 CREATE TABLE IF NOT EXISTS `indicator` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) DEFAULT NULL,
@@ -623,7 +618,6 @@ INSERT INTO `indicator` (`id`, `name`, `literal_id`) VALUES
 /*!40000 ALTER TABLE `indicator` ENABLE KEYS */;
 
 -- Volcando estructura para tabla osha_dvt.indicators_by_chart
-DROP TABLE IF EXISTS `indicators_by_chart`;
 CREATE TABLE IF NOT EXISTS `indicators_by_chart` (
   `chart_id` int(11) NOT NULL,
   `indicator_id` int(11) NOT NULL,
@@ -837,7 +831,6 @@ INSERT INTO `indicators_by_chart` (`chart_id`, `indicator_id`, `dataset_id`) VAL
 /*!40000 ALTER TABLE `indicators_by_chart` ENABLE KEYS */;
 
 -- Volcando estructura para tabla osha_dvt.indicators_in_dataset
-DROP TABLE IF EXISTS `indicators_in_dataset`;
 CREATE TABLE IF NOT EXISTS `indicators_in_dataset` (
   `indicator_id` int(11) NOT NULL,
   `dataset_id` int(11) NOT NULL,
@@ -1110,7 +1103,6 @@ INSERT INTO `indicators_in_dataset` (`indicator_id`, `dataset_id`) VALUES
 /*!40000 ALTER TABLE `indicators_in_dataset` ENABLE KEYS */;
 
 -- Volcando estructura para tabla osha_dvt.literal
-DROP TABLE IF EXISTS `literal`;
 CREATE TABLE IF NOT EXISTS `literal` (
   `id` int(11) NOT NULL,
   `chart_id` int(11) DEFAULT '0',
@@ -1123,7 +1115,7 @@ CREATE TABLE IF NOT EXISTS `literal` (
   CONSTRAINT `literal_section_id` FOREIGN KEY (`section_id`) REFERENCES `section` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Volcando datos para la tabla osha_dvt.literal: ~1.459 rows (aproximadamente)
+-- Volcando datos para la tabla osha_dvt.literal: ~2.512 rows (aproximadamente)
 /*!40000 ALTER TABLE `literal` DISABLE KEYS */;
 INSERT INTO `literal` (`id`, `chart_id`, `section_id`, `type`) VALUES
 	(1, NULL, NULL, 'INDICATOR_NAME');
@@ -6152,7 +6144,6 @@ INSERT INTO `literal` (`id`, `chart_id`, `section_id`, `type`) VALUES
 /*!40000 ALTER TABLE `literal` ENABLE KEYS */;
 
 -- Volcando estructura para tabla osha_dvt.matrix_page
-DROP TABLE IF EXISTS `matrix_page`;
 CREATE TABLE IF NOT EXISTS `matrix_page` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `page` varchar(50) NOT NULL,
@@ -6175,7 +6166,7 @@ CREATE TABLE IF NOT EXISTS `matrix_page` (
   CONSTRAINT `matrix_text_3_literal_id` FOREIGN KEY (`text_3_literal_id`) REFERENCES `literal` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=535 DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla osha_dvt.matrix_page: ~0 rows (aproximadamente)
+-- Volcando datos para la tabla osha_dvt.matrix_page: ~534 rows (aproximadamente)
 /*!40000 ALTER TABLE `matrix_page` DISABLE KEYS */;
 INSERT INTO `matrix_page` (`id`, `page`, `nuts_id`, `check_1`, `check_2`, `check_3`, `check_4`, `text_1_literal_id`, `text_2_literal_id`, `text_3_literal_id`) VALUES
 	(1, 'MATRIX_AUTHORITY', 13, 1, 0, 0, 0, 22100, 22101, 22102);
@@ -7248,7 +7239,6 @@ INSERT INTO `matrix_page` (`id`, `page`, `nuts_id`, `check_1`, `check_2`, `check
 /*!40000 ALTER TABLE `matrix_page` ENABLE KEYS */;
 
 -- Volcando estructura para tabla osha_dvt.nuts
-DROP TABLE IF EXISTS `nuts`;
 CREATE TABLE IF NOT EXISTS `nuts` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `country_code` varchar(4) NOT NULL,
@@ -7725,7 +7715,6 @@ INSERT INTO `nuts` (`id`, `country_code`, `literal_id`, `level`, `name`) VALUES
 /*!40000 ALTER TABLE `nuts` ENABLE KEYS */;
 
 -- Volcando estructura para tabla osha_dvt.nuts_by_country_group
-DROP TABLE IF EXISTS `nuts_by_country_group`;
 CREATE TABLE IF NOT EXISTS `nuts_by_country_group` (
   `nuts_id` int(11) NOT NULL,
   `country_group_id` int(11) NOT NULL,
@@ -8198,12 +8187,16 @@ INSERT INTO `nuts_by_country_group` (`nuts_id`, `country_group_id`) VALUES
 /*!40000 ALTER TABLE `nuts_by_country_group` ENABLE KEYS */;
 
 -- Volcando estructura para tabla osha_dvt.profile
-DROP TABLE IF EXISTS `profile`;
 CREATE TABLE IF NOT EXISTS `profile` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nuts_id` int(11) DEFAULT NULL,
   `country_group_id` int(11) DEFAULT NULL,
+  `activity_sector_id` int(11) DEFAULT NULL,
+  `age_group_id` int(11) DEFAULT NULL,
+  `answer_id` int(11) DEFAULT NULL,
+  `company_size_id` int(11) DEFAULT NULL,
   `currency_id` int(11) DEFAULT NULL,
+  `gender_id` int(11) DEFAULT NULL,
   `illness_id` int(11) DEFAULT NULL,
   `subindicator_id` int(11) DEFAULT NULL,
   `year` int(11) DEFAULT NULL,
@@ -8213,1033 +8206,1042 @@ CREATE TABLE IF NOT EXISTS `profile` (
   KEY `profile_currency_id` (`currency_id`),
   KEY `profile_illness_id` (`illness_id`),
   KEY `profile_subindicator_id` (`subindicator_id`),
+  KEY `profile_activity_sector_id` (`activity_sector_id`),
+  KEY `profile_age_group_id` (`age_group_id`),
+  KEY `profile_answer_id` (`answer_id`),
+  KEY `profile_company_size_id` (`company_size_id`),
+  KEY `profile_gender_id` (`gender_id`),
+  CONSTRAINT `profile_activity_sector_id` FOREIGN KEY (`activity_sector_id`) REFERENCES `split_activity_sector` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `profile_age_group_id` FOREIGN KEY (`age_group_id`) REFERENCES `split_age_group` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `profile_answer_id` FOREIGN KEY (`answer_id`) REFERENCES `split_answer` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `profile_company_size_id` FOREIGN KEY (`company_size_id`) REFERENCES `split_company_size` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `profile_country_group_id` FOREIGN KEY (`country_group_id`) REFERENCES `country_group` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `profile_currency_id` FOREIGN KEY (`currency_id`) REFERENCES `split_currency` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `profile_gender_id` FOREIGN KEY (`gender_id`) REFERENCES `split_gender` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `profile_illness_id` FOREIGN KEY (`illness_id`) REFERENCES `split_illness` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `profile_nuts_id` FOREIGN KEY (`nuts_id`) REFERENCES `nuts` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `profile_subindicator_id` FOREIGN KEY (`subindicator_id`) REFERENCES `split_subindicator` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=508 DEFAULT CHARSET=latin1;
 
--- Volcando datos para la tabla osha_dvt.profile: ~507 rows (aproximadamente)
+-- Volcando datos para la tabla osha_dvt.profile: ~5 rows (aproximadamente)
 /*!40000 ALTER TABLE `profile` DISABLE KEYS */;
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(1, 30, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(2, 49, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(3, 52, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(4, 62, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(5, 90, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(6, 112, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(7, 118, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(8, 165, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(9, 170, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(10, 187, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(11, 13, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(12, 20, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(13, 51, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(14, 53, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(15, 67, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(16, 68, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(17, 74, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(18, 77, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(19, 96, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(20, 99, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(21, 119, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(22, 127, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(23, 146, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(24, 166, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(25, 188, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(26, 192, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(27, 197, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(28, 217, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(29, 91, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(30, 156, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(31, 30, NULL, NULL, 2, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(32, 49, NULL, NULL, 2, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(33, 52, NULL, NULL, 2, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(34, 62, NULL, NULL, 2, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(35, 90, NULL, NULL, 2, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(36, 112, NULL, NULL, 2, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(37, 118, NULL, NULL, 2, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(38, 165, NULL, NULL, 2, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(39, 170, NULL, NULL, 2, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(40, 187, NULL, NULL, 2, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(41, 13, NULL, NULL, 2, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(42, 20, NULL, NULL, 2, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(43, 51, NULL, NULL, 2, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(44, 53, NULL, NULL, 2, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(45, 67, NULL, NULL, 2, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(46, 68, NULL, NULL, 2, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(47, 74, NULL, NULL, 2, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(48, 77, NULL, NULL, 2, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(49, 96, NULL, NULL, 2, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(50, 99, NULL, NULL, 2, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(51, 119, NULL, NULL, 2, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(52, 127, NULL, NULL, 2, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(53, 146, NULL, NULL, 2, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(54, 166, NULL, NULL, 2, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(55, 188, NULL, NULL, 2, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(56, 192, NULL, NULL, 2, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(57, 197, NULL, NULL, 2, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(58, 217, NULL, NULL, 2, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(59, 91, NULL, NULL, 2, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(60, 156, NULL, NULL, 2, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(61, 30, NULL, NULL, 4, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(62, 49, NULL, NULL, 4, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(63, 52, NULL, NULL, 4, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(64, 62, NULL, NULL, 4, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(65, 90, NULL, NULL, 4, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(66, 112, NULL, NULL, 4, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(67, 118, NULL, NULL, 4, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(68, 165, NULL, NULL, 4, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(69, 170, NULL, NULL, 4, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(70, 187, NULL, NULL, 4, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(71, 13, NULL, NULL, 4, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(72, 20, NULL, NULL, 4, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(73, 51, NULL, NULL, 4, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(74, 53, NULL, NULL, 4, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(75, 67, NULL, NULL, 4, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(76, 68, NULL, NULL, 4, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(77, 74, NULL, NULL, 4, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(78, 77, NULL, NULL, 4, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(79, 96, NULL, NULL, 4, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(80, 99, NULL, NULL, 4, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(81, 119, NULL, NULL, 4, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(82, 127, NULL, NULL, 4, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(83, 146, NULL, NULL, 4, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(84, 166, NULL, NULL, 4, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(85, 188, NULL, NULL, 4, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(86, 192, NULL, NULL, 4, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(87, 197, NULL, NULL, 4, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(88, 217, NULL, NULL, 4, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(89, 91, NULL, NULL, 4, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(90, 156, NULL, NULL, 4, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(91, 30, NULL, NULL, 3, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(92, 49, NULL, NULL, 3, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(93, 52, NULL, NULL, 3, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(94, 62, NULL, NULL, 3, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(95, 90, NULL, NULL, 3, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(96, 112, NULL, NULL, 3, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(97, 118, NULL, NULL, 3, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(98, 165, NULL, NULL, 3, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(99, 170, NULL, NULL, 3, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(100, 187, NULL, NULL, 3, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(101, 13, NULL, NULL, 3, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(102, 20, NULL, NULL, 3, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(103, 51, NULL, NULL, 3, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(104, 53, NULL, NULL, 3, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(105, 67, NULL, NULL, 3, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(106, 68, NULL, NULL, 3, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(107, 74, NULL, NULL, 3, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(108, 77, NULL, NULL, 3, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(109, 96, NULL, NULL, 3, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(110, 99, NULL, NULL, 3, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(111, 119, NULL, NULL, 3, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(112, 127, NULL, NULL, 3, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(113, 146, NULL, NULL, 3, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(114, 166, NULL, NULL, 3, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(115, 188, NULL, NULL, 3, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(116, 192, NULL, NULL, 3, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(117, 197, NULL, NULL, 3, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(118, 217, NULL, NULL, 3, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(119, 91, NULL, NULL, 3, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(120, 156, NULL, NULL, 3, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(121, 30, NULL, NULL, 5, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(122, 49, NULL, NULL, 5, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(123, 52, NULL, NULL, 5, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(124, 62, NULL, NULL, 5, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(125, 90, NULL, NULL, 5, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(126, 112, NULL, NULL, 5, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(127, 118, NULL, NULL, 5, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(128, 165, NULL, NULL, 5, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(129, 170, NULL, NULL, 5, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(130, 187, NULL, NULL, 5, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(131, 13, NULL, NULL, 5, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(132, 20, NULL, NULL, 5, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(133, 51, NULL, NULL, 5, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(134, 53, NULL, NULL, 5, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(135, 67, NULL, NULL, 5, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(136, 68, NULL, NULL, 5, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(137, 74, NULL, NULL, 5, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(138, 77, NULL, NULL, 5, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(139, 96, NULL, NULL, 5, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(140, 99, NULL, NULL, 5, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(141, 119, NULL, NULL, 5, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(142, 127, NULL, NULL, 5, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(143, 146, NULL, NULL, 5, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(144, 166, NULL, NULL, 5, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(145, 188, NULL, NULL, 5, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(146, 192, NULL, NULL, 5, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(147, 197, NULL, NULL, 5, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(148, 217, NULL, NULL, 5, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(149, 91, NULL, NULL, 5, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(150, 156, NULL, NULL, 5, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(151, 30, NULL, NULL, 6, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(152, 49, NULL, NULL, 6, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(153, 52, NULL, NULL, 6, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(154, 62, NULL, NULL, 6, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(155, 90, NULL, NULL, 6, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(156, 112, NULL, NULL, 6, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(157, 118, NULL, NULL, 6, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(158, 165, NULL, NULL, 6, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(159, 170, NULL, NULL, 6, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(160, 187, NULL, NULL, 6, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(161, 13, NULL, NULL, 6, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(162, 20, NULL, NULL, 6, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(163, 51, NULL, NULL, 6, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(164, 53, NULL, NULL, 6, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(165, 67, NULL, NULL, 6, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(166, 68, NULL, NULL, 6, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(167, 74, NULL, NULL, 6, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(168, 77, NULL, NULL, 6, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(169, 96, NULL, NULL, 6, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(170, 99, NULL, NULL, 6, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(171, 119, NULL, NULL, 6, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(172, 127, NULL, NULL, 6, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(173, 146, NULL, NULL, 6, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(174, 166, NULL, NULL, 6, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(175, 188, NULL, NULL, 6, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(176, 192, NULL, NULL, 6, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(177, 197, NULL, NULL, 6, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(178, 217, NULL, NULL, 6, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(179, 91, NULL, NULL, 6, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(180, 156, NULL, NULL, 6, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(181, 30, NULL, NULL, 1, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(182, 49, NULL, NULL, 1, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(183, 52, NULL, NULL, 1, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(184, 62, NULL, NULL, 1, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(185, 90, NULL, NULL, 1, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(186, 112, NULL, NULL, 1, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(187, 118, NULL, NULL, 1, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(188, 165, NULL, NULL, 1, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(189, 170, NULL, NULL, 1, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(190, 187, NULL, NULL, 1, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(191, 13, NULL, NULL, 1, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(192, 20, NULL, NULL, 1, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(193, 51, NULL, NULL, 1, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(194, 53, NULL, NULL, 1, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(195, 67, NULL, NULL, 1, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(196, 68, NULL, NULL, 1, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(197, 74, NULL, NULL, 1, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(198, 77, NULL, NULL, 1, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(199, 96, NULL, NULL, 1, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(200, 99, NULL, NULL, 1, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(201, 119, NULL, NULL, 1, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(202, 127, NULL, NULL, 1, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(203, 146, NULL, NULL, 1, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(204, 166, NULL, NULL, 1, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(205, 188, NULL, NULL, 1, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(206, 192, NULL, NULL, 1, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(207, 197, NULL, NULL, 1, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(208, 217, NULL, NULL, 1, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(209, 91, NULL, NULL, 1, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(210, 156, NULL, NULL, 1, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(211, 30, NULL, NULL, 2, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(212, 49, NULL, NULL, 2, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(213, 52, NULL, NULL, 2, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(214, 62, NULL, NULL, 2, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(215, 90, NULL, NULL, 2, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(216, 112, NULL, NULL, 2, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(217, 118, NULL, NULL, 2, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(218, 165, NULL, NULL, 2, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(219, 170, NULL, NULL, 2, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(220, 187, NULL, NULL, 2, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(221, 13, NULL, NULL, 2, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(222, 20, NULL, NULL, 2, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(223, 51, NULL, NULL, 2, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(224, 53, NULL, NULL, 2, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(225, 67, NULL, NULL, 2, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(226, 68, NULL, NULL, 2, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(227, 74, NULL, NULL, 2, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(228, 77, NULL, NULL, 2, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(229, 96, NULL, NULL, 2, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(230, 99, NULL, NULL, 2, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(231, 119, NULL, NULL, 2, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(232, 127, NULL, NULL, 2, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(233, 146, NULL, NULL, 2, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(234, 166, NULL, NULL, 2, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(235, 188, NULL, NULL, 2, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(236, 192, NULL, NULL, 2, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(237, 197, NULL, NULL, 2, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(238, 217, NULL, NULL, 2, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(239, 91, NULL, NULL, 2, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(240, 156, NULL, NULL, 2, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(241, 30, NULL, NULL, 4, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(242, 49, NULL, NULL, 4, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(243, 52, NULL, NULL, 4, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(244, 62, NULL, NULL, 4, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(245, 90, NULL, NULL, 4, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(246, 112, NULL, NULL, 4, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(247, 118, NULL, NULL, 4, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(248, 165, NULL, NULL, 4, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(249, 170, NULL, NULL, 4, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(250, 187, NULL, NULL, 4, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(251, 13, NULL, NULL, 4, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(252, 20, NULL, NULL, 4, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(253, 51, NULL, NULL, 4, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(254, 53, NULL, NULL, 4, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(255, 67, NULL, NULL, 4, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(256, 68, NULL, NULL, 4, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(257, 74, NULL, NULL, 4, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(258, 77, NULL, NULL, 4, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(259, 96, NULL, NULL, 4, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(260, 99, NULL, NULL, 4, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(261, 119, NULL, NULL, 4, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(262, 127, NULL, NULL, 4, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(263, 146, NULL, NULL, 4, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(264, 166, NULL, NULL, 4, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(265, 188, NULL, NULL, 4, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(266, 192, NULL, NULL, 4, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(267, 197, NULL, NULL, 4, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(268, 217, NULL, NULL, 4, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(269, 91, NULL, NULL, 4, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(270, 156, NULL, NULL, 4, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(271, 30, NULL, NULL, 3, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(272, 49, NULL, NULL, 3, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(273, 52, NULL, NULL, 3, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(274, 62, NULL, NULL, 3, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(275, 90, NULL, NULL, 3, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(276, 112, NULL, NULL, 3, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(277, 118, NULL, NULL, 3, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(278, 165, NULL, NULL, 3, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(279, 170, NULL, NULL, 3, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(280, 187, NULL, NULL, 3, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(281, 13, NULL, NULL, 3, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(282, 20, NULL, NULL, 3, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(283, 51, NULL, NULL, 3, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(284, 53, NULL, NULL, 3, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(285, 67, NULL, NULL, 3, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(286, 68, NULL, NULL, 3, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(287, 74, NULL, NULL, 3, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(288, 77, NULL, NULL, 3, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(289, 96, NULL, NULL, 3, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(290, 99, NULL, NULL, 3, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(291, 119, NULL, NULL, 3, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(292, 127, NULL, NULL, 3, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(293, 146, NULL, NULL, 3, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(294, 166, NULL, NULL, 3, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(295, 188, NULL, NULL, 3, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(296, 192, NULL, NULL, 3, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(297, 197, NULL, NULL, 3, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(298, 217, NULL, NULL, 3, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(299, 91, NULL, NULL, 3, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(300, 156, NULL, NULL, 3, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(301, 30, NULL, NULL, 5, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(302, 49, NULL, NULL, 5, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(303, 52, NULL, NULL, 5, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(304, 62, NULL, NULL, 5, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(305, 90, NULL, NULL, 5, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(306, 112, NULL, NULL, 5, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(307, 118, NULL, NULL, 5, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(308, 165, NULL, NULL, 5, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(309, 170, NULL, NULL, 5, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(310, 187, NULL, NULL, 5, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(311, 13, NULL, NULL, 5, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(312, 20, NULL, NULL, 5, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(313, 51, NULL, NULL, 5, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(314, 53, NULL, NULL, 5, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(315, 67, NULL, NULL, 5, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(316, 68, NULL, NULL, 5, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(317, 74, NULL, NULL, 5, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(318, 77, NULL, NULL, 5, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(319, 96, NULL, NULL, 5, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(320, 99, NULL, NULL, 5, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(321, 119, NULL, NULL, 5, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(322, 127, NULL, NULL, 5, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(323, 146, NULL, NULL, 5, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(324, 166, NULL, NULL, 5, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(325, 188, NULL, NULL, 5, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(326, 192, NULL, NULL, 5, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(327, 197, NULL, NULL, 5, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(328, 217, NULL, NULL, 5, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(329, 91, NULL, NULL, 5, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(330, 156, NULL, NULL, 5, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(331, 30, NULL, NULL, 6, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(332, 49, NULL, NULL, 6, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(333, 52, NULL, NULL, 6, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(334, 62, NULL, NULL, 6, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(335, 90, NULL, NULL, 6, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(336, 112, NULL, NULL, 6, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(337, 118, NULL, NULL, 6, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(338, 165, NULL, NULL, 6, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(339, 170, NULL, NULL, 6, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(340, 187, NULL, NULL, 6, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(341, 13, NULL, NULL, 6, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(342, 20, NULL, NULL, 6, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(343, 51, NULL, NULL, 6, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(344, 53, NULL, NULL, 6, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(345, 67, NULL, NULL, 6, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(346, 68, NULL, NULL, 6, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(347, 74, NULL, NULL, 6, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(348, 77, NULL, NULL, 6, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(349, 96, NULL, NULL, 6, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(350, 99, NULL, NULL, 6, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(351, 119, NULL, NULL, 6, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(352, 127, NULL, NULL, 6, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(353, 146, NULL, NULL, 6, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(354, 166, NULL, NULL, 6, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(355, 188, NULL, NULL, 6, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(356, 192, NULL, NULL, 6, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(357, 197, NULL, NULL, 6, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(358, 217, NULL, NULL, 6, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(359, 91, NULL, NULL, 6, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(360, 156, NULL, NULL, 6, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(361, NULL, 8, 2, NULL, 1, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(362, NULL, 8, 2, NULL, 2, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(363, NULL, 8, 1, NULL, 1, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(364, NULL, 8, 1, NULL, 2, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(365, NULL, 9, 2, NULL, 1, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(366, NULL, 9, 2, NULL, 2, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(367, NULL, 9, 1, NULL, 1, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(368, NULL, 9, 1, NULL, 2, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(369, NULL, 8, NULL, NULL, 3, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(370, NULL, 8, NULL, NULL, 4, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(371, NULL, 9, NULL, NULL, 3, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(372, NULL, 9, NULL, NULL, 4, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(373, NULL, 8, NULL, NULL, 5, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(374, NULL, 8, NULL, NULL, 6, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(375, NULL, 8, NULL, NULL, 7, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(376, NULL, 9, NULL, NULL, 5, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(377, NULL, 9, NULL, NULL, 6, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(378, NULL, 9, NULL, NULL, 7, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(379, NULL, 8, NULL, 2, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(380, NULL, 8, NULL, 3, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(381, NULL, 8, NULL, 5, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(382, NULL, 8, NULL, 6, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(383, NULL, 9, NULL, 2, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(384, NULL, 9, NULL, 3, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(385, NULL, 9, NULL, 5, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(386, NULL, 9, NULL, 6, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(387, NULL, 8, NULL, 4, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(388, NULL, 9, NULL, 4, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(389, NULL, 1, NULL, NULL, 3, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(390, NULL, 2, NULL, NULL, 3, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(391, NULL, 3, NULL, NULL, 3, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(392, NULL, 4, NULL, NULL, 3, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(393, NULL, 5, NULL, NULL, 3, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(394, NULL, 6, NULL, NULL, 3, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(395, NULL, 7, NULL, NULL, 3, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(396, NULL, 1, NULL, NULL, 4, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(397, NULL, 2, NULL, NULL, 4, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(398, NULL, 3, NULL, NULL, 4, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(399, NULL, 4, NULL, NULL, 4, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(400, NULL, 5, NULL, NULL, 4, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(401, NULL, 6, NULL, NULL, 4, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(402, NULL, 7, NULL, NULL, 4, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(403, NULL, 1, NULL, NULL, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(404, NULL, 2, NULL, NULL, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(405, NULL, 3, NULL, NULL, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(406, NULL, 4, NULL, NULL, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(407, NULL, 5, NULL, NULL, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(408, NULL, 6, NULL, NULL, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(409, NULL, 7, NULL, NULL, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(410, NULL, 9, NULL, NULL, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(411, NULL, 1, NULL, NULL, 8, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(412, NULL, 2, NULL, NULL, 8, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(413, NULL, 3, NULL, NULL, 8, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(414, NULL, 4, NULL, NULL, 8, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(415, NULL, 5, NULL, NULL, 8, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(416, NULL, 6, NULL, NULL, 8, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(417, NULL, 7, NULL, NULL, 8, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(418, NULL, 9, NULL, NULL, 8, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(419, NULL, 1, NULL, NULL, 9, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(420, NULL, 2, NULL, NULL, 9, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(421, NULL, 3, NULL, NULL, 9, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(422, NULL, 4, NULL, NULL, 9, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(423, NULL, 5, NULL, NULL, 9, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(424, NULL, 6, NULL, NULL, 9, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(425, NULL, 7, NULL, NULL, 9, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(426, NULL, 9, NULL, NULL, 9, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(427, NULL, 9, NULL, 1, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(428, NULL, 9, NULL, 2, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(429, NULL, 9, NULL, 4, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(430, NULL, 9, NULL, 3, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(431, NULL, 9, NULL, 5, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(432, NULL, 9, NULL, 6, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(433, NULL, 1, NULL, 2, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(434, NULL, 2, NULL, 2, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(435, NULL, 3, NULL, 2, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(436, NULL, 4, NULL, 2, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(437, NULL, 5, NULL, 2, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(438, NULL, 6, NULL, 2, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(439, NULL, 7, NULL, 2, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(440, NULL, 1, NULL, 4, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(441, NULL, 2, NULL, 4, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(442, NULL, 3, NULL, 4, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(443, NULL, 4, NULL, 4, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(444, NULL, 5, NULL, 4, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(445, NULL, 6, NULL, 4, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(446, NULL, 7, NULL, 4, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(447, NULL, 1, NULL, 3, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(448, NULL, 2, NULL, 3, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(449, NULL, 3, NULL, 3, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(450, NULL, 4, NULL, 3, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(451, NULL, 5, NULL, 3, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(452, NULL, 6, NULL, 3, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(453, NULL, 7, NULL, 3, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(454, NULL, 1, NULL, 5, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(455, NULL, 2, NULL, 5, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(456, NULL, 3, NULL, 5, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(457, NULL, 4, NULL, 5, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(458, NULL, 5, NULL, 5, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(459, NULL, 6, NULL, 5, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(460, NULL, 7, NULL, 5, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(461, NULL, 1, NULL, 6, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(462, NULL, 2, NULL, 6, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(463, NULL, 3, NULL, 6, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(464, NULL, 4, NULL, 6, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(465, NULL, 5, NULL, 6, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(466, NULL, 6, NULL, 6, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(467, NULL, 7, NULL, 6, NULL, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(468, NULL, 8, NULL, 2, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(469, NULL, 1, NULL, 2, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(470, NULL, 2, NULL, 2, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(471, NULL, 3, NULL, 2, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(472, NULL, 4, NULL, 2, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(473, NULL, 5, NULL, 2, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(474, NULL, 6, NULL, 2, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(475, NULL, 7, NULL, 2, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(476, NULL, 8, NULL, 4, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(477, NULL, 1, NULL, 4, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(478, NULL, 2, NULL, 4, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(479, NULL, 3, NULL, 4, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(480, NULL, 4, NULL, 4, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(481, NULL, 5, NULL, 4, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(482, NULL, 6, NULL, 4, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(483, NULL, 7, NULL, 4, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(484, NULL, 8, NULL, 3, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(485, NULL, 1, NULL, 3, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(486, NULL, 2, NULL, 3, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(487, NULL, 3, NULL, 3, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(488, NULL, 4, NULL, 3, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(489, NULL, 5, NULL, 3, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(490, NULL, 6, NULL, 3, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(491, NULL, 7, NULL, 3, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(492, NULL, 8, NULL, 5, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(493, NULL, 1, NULL, 5, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(494, NULL, 2, NULL, 5, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(495, NULL, 3, NULL, 5, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(496, NULL, 4, NULL, 5, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(497, NULL, 5, NULL, 5, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(498, NULL, 6, NULL, 5, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(499, NULL, 7, NULL, 5, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(500, NULL, 8, NULL, 6, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(501, NULL, 1, NULL, 6, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(502, NULL, 2, NULL, 6, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(503, NULL, 3, NULL, 6, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(504, NULL, 4, NULL, 6, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(505, NULL, 5, NULL, 6, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(506, NULL, 6, NULL, 6, 11, NULL);
-INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `currency_id`, `illness_id`, `subindicator_id`, `year`) VALUES
-	(507, NULL, 7, NULL, 6, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(1, 30, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2, 49, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(3, 52, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(4, 62, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(5, 90, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(6, 112, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(7, 118, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(8, 165, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(9, 170, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(10, 187, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(11, 13, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(12, 20, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(13, 51, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(14, 53, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(15, 67, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(16, 68, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(17, 74, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(18, 77, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(19, 96, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(20, 99, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(21, 119, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(22, 127, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(23, 146, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(24, 166, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(25, 188, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(26, 192, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(27, 197, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(28, 217, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(29, 91, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(30, 156, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(31, 30, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(32, 49, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(33, 52, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(34, 62, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(35, 90, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(36, 112, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(37, 118, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(38, 165, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(39, 170, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(40, 187, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(41, 13, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(42, 20, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(43, 51, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(44, 53, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(45, 67, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(46, 68, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(47, 74, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(48, 77, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(49, 96, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(50, 99, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(51, 119, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(52, 127, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(53, 146, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(54, 166, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(55, 188, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(56, 192, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(57, 197, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(58, 217, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(59, 91, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(60, 156, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(61, 30, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 4, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(62, 49, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 4, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(63, 52, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 4, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(64, 62, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 4, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(65, 90, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 4, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(66, 112, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 4, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(67, 118, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 4, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(68, 165, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 4, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(69, 170, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 4, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(70, 187, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 4, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(71, 13, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 4, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(72, 20, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 4, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(73, 51, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 4, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(74, 53, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 4, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(75, 67, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 4, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(76, 68, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 4, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(77, 74, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 4, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(78, 77, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 4, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(79, 96, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 4, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(80, 99, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 4, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(81, 119, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 4, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(82, 127, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 4, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(83, 146, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 4, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(84, 166, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 4, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(85, 188, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 4, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(86, 192, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 4, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(87, 197, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 4, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(88, 217, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 4, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(89, 91, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 4, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(90, 156, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 4, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(91, 30, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(92, 49, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(93, 52, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(94, 62, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(95, 90, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(96, 112, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(97, 118, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(98, 165, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(99, 170, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(100, 187, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(101, 13, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(102, 20, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(103, 51, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(104, 53, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(105, 67, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(106, 68, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(107, 74, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(108, 77, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(109, 96, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(110, 99, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(111, 119, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(112, 127, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(113, 146, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(114, 166, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(115, 188, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(116, 192, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(117, 197, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(118, 217, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(119, 91, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(120, 156, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(121, 30, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 5, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(122, 49, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 5, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(123, 52, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 5, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(124, 62, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 5, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(125, 90, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 5, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(126, 112, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 5, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(127, 118, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 5, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(128, 165, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 5, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(129, 170, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 5, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(130, 187, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 5, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(131, 13, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 5, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(132, 20, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 5, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(133, 51, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 5, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(134, 53, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 5, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(135, 67, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 5, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(136, 68, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 5, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(137, 74, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 5, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(138, 77, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 5, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(139, 96, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 5, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(140, 99, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 5, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(141, 119, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 5, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(142, 127, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 5, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(143, 146, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 5, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(144, 166, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 5, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(145, 188, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 5, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(146, 192, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 5, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(147, 197, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 5, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(148, 217, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 5, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(149, 91, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 5, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(150, 156, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 5, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(151, 30, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 6, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(152, 49, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 6, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(153, 52, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 6, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(154, 62, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 6, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(155, 90, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 6, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(156, 112, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 6, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(157, 118, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 6, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(158, 165, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 6, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(159, 170, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 6, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(160, 187, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 6, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(161, 13, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 6, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(162, 20, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 6, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(163, 51, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 6, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(164, 53, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 6, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(165, 67, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 6, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(166, 68, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 6, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(167, 74, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 6, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(168, 77, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 6, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(169, 96, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 6, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(170, 99, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 6, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(171, 119, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 6, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(172, 127, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 6, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(173, 146, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 6, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(174, 166, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 6, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(175, 188, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 6, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(176, 192, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 6, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(177, 197, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 6, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(178, 217, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 6, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(179, 91, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 6, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(180, 156, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 6, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(181, 30, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(182, 49, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(183, 52, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(184, 62, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(185, 90, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(186, 112, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(187, 118, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(188, 165, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(189, 170, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(190, 187, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(191, 13, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(192, 20, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(193, 51, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(194, 53, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(195, 67, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(196, 68, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(197, 74, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(198, 77, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(199, 96, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(200, 99, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(201, 119, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(202, 127, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(203, 146, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(204, 166, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(205, 188, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(206, 192, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(207, 197, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(208, 217, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(209, 91, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(210, 156, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(211, 30, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(212, 49, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(213, 52, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(214, 62, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(215, 90, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(216, 112, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(217, 118, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(218, 165, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(219, 170, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(220, 187, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(221, 13, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(222, 20, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(223, 51, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(224, 53, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(225, 67, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(226, 68, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(227, 74, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(228, 77, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(229, 96, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(230, 99, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(231, 119, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(232, 127, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(233, 146, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(234, 166, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(235, 188, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(236, 192, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(237, 197, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(238, 217, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(239, 91, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(240, 156, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(241, 30, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 4, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(242, 49, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 4, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(243, 52, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 4, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(244, 62, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 4, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(245, 90, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 4, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(246, 112, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 4, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(247, 118, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 4, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(248, 165, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 4, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(249, 170, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 4, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(250, 187, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 4, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(251, 13, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 4, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(252, 20, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 4, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(253, 51, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 4, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(254, 53, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 4, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(255, 67, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 4, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(256, 68, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 4, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(257, 74, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 4, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(258, 77, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 4, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(259, 96, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 4, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(260, 99, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 4, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(261, 119, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 4, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(262, 127, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 4, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(263, 146, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 4, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(264, 166, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 4, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(265, 188, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 4, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(266, 192, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 4, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(267, 197, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 4, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(268, 217, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 4, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(269, 91, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 4, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(270, 156, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 4, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(271, 30, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(272, 49, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(273, 52, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(274, 62, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(275, 90, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(276, 112, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(277, 118, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(278, 165, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(279, 170, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(280, 187, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(281, 13, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(282, 20, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(283, 51, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(284, 53, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(285, 67, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(286, 68, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(287, 74, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(288, 77, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(289, 96, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(290, 99, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(291, 119, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(292, 127, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(293, 146, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(294, 166, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(295, 188, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(296, 192, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(297, 197, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(298, 217, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(299, 91, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(300, 156, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(301, 30, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 5, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(302, 49, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 5, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(303, 52, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 5, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(304, 62, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 5, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(305, 90, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 5, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(306, 112, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 5, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(307, 118, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 5, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(308, 165, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 5, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(309, 170, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 5, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(310, 187, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 5, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(311, 13, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 5, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(312, 20, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 5, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(313, 51, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 5, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(314, 53, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 5, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(315, 67, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 5, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(316, 68, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 5, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(317, 74, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 5, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(318, 77, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 5, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(319, 96, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 5, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(320, 99, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 5, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(321, 119, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 5, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(322, 127, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 5, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(323, 146, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 5, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(324, 166, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 5, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(325, 188, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 5, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(326, 192, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 5, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(327, 197, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 5, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(328, 217, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 5, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(329, 91, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 5, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(330, 156, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 5, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(331, 30, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 6, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(332, 49, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 6, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(333, 52, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 6, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(334, 62, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 6, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(335, 90, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 6, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(336, 112, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 6, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(337, 118, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 6, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(338, 165, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 6, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(339, 170, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 6, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(340, 187, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 6, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(341, 13, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 6, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(342, 20, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 6, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(343, 51, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 6, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(344, 53, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 6, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(345, 67, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 6, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(346, 68, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 6, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(347, 74, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 6, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(348, 77, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 6, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(349, 96, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 6, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(350, 99, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 6, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(351, 119, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 6, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(352, 127, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 6, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(353, 146, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 6, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(354, 166, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 6, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(355, 188, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 6, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(356, 192, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 6, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(357, 197, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 6, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(358, 217, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 6, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(359, 91, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 6, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(360, 156, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 6, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(361, NULL, 8, NULL, NULL, NULL, NULL, 2, NULL, NULL, 1, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(362, NULL, 8, NULL, NULL, NULL, NULL, 2, NULL, NULL, 2, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(363, NULL, 8, NULL, NULL, NULL, NULL, 1, NULL, NULL, 1, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(364, NULL, 8, NULL, NULL, NULL, NULL, 1, NULL, NULL, 2, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(365, NULL, 9, NULL, NULL, NULL, NULL, 2, NULL, NULL, 1, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(366, NULL, 9, NULL, NULL, NULL, NULL, 2, NULL, NULL, 2, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(367, NULL, 9, NULL, NULL, NULL, NULL, 1, NULL, NULL, 1, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(368, NULL, 9, NULL, NULL, NULL, NULL, 1, NULL, NULL, 2, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(369, NULL, 8, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(370, NULL, 8, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 4, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(371, NULL, 9, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(372, NULL, 9, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 4, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(373, NULL, 8, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 5, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(374, NULL, 8, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 6, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(375, NULL, 8, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 7, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(376, NULL, 9, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 5, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(377, NULL, 9, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 6, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(378, NULL, 9, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 7, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(379, NULL, 8, NULL, NULL, NULL, NULL, NULL, NULL, 2, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(380, NULL, 8, NULL, NULL, NULL, NULL, NULL, NULL, 3, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(381, NULL, 8, NULL, NULL, NULL, NULL, NULL, NULL, 5, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(382, NULL, 8, NULL, NULL, NULL, NULL, NULL, NULL, 6, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(383, NULL, 9, NULL, NULL, NULL, NULL, NULL, NULL, 2, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(384, NULL, 9, NULL, NULL, NULL, NULL, NULL, NULL, 3, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(385, NULL, 9, NULL, NULL, NULL, NULL, NULL, NULL, 5, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(386, NULL, 9, NULL, NULL, NULL, NULL, NULL, NULL, 6, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(387, NULL, 8, NULL, NULL, NULL, NULL, NULL, NULL, 4, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(388, NULL, 9, NULL, NULL, NULL, NULL, NULL, NULL, 4, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(389, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(390, NULL, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(391, NULL, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(392, NULL, 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(393, NULL, 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(394, NULL, 6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(395, NULL, 7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(396, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 4, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(397, NULL, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 4, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(398, NULL, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 4, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(399, NULL, 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 4, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(400, NULL, 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 4, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(401, NULL, 6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 4, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(402, NULL, 7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 4, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(403, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(404, NULL, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(405, NULL, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(406, NULL, 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(407, NULL, 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(408, NULL, 6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(409, NULL, 7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(410, NULL, 9, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(411, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 8, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(412, NULL, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 8, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(413, NULL, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 8, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(414, NULL, 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 8, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(415, NULL, 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 8, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(416, NULL, 6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 8, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(417, NULL, 7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 8, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(418, NULL, 9, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 8, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(419, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 9, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(420, NULL, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 9, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(421, NULL, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 9, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(422, NULL, 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 9, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(423, NULL, 5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 9, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(424, NULL, 6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 9, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(425, NULL, 7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 9, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(426, NULL, 9, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 9, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(427, NULL, 9, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(428, NULL, 9, NULL, NULL, NULL, NULL, NULL, NULL, 2, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(429, NULL, 9, NULL, NULL, NULL, NULL, NULL, NULL, 4, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(430, NULL, 9, NULL, NULL, NULL, NULL, NULL, NULL, 3, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(431, NULL, 9, NULL, NULL, NULL, NULL, NULL, NULL, 5, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(432, NULL, 9, NULL, NULL, NULL, NULL, NULL, NULL, 6, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(433, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL, 2, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(434, NULL, 2, NULL, NULL, NULL, NULL, NULL, NULL, 2, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(435, NULL, 3, NULL, NULL, NULL, NULL, NULL, NULL, 2, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(436, NULL, 4, NULL, NULL, NULL, NULL, NULL, NULL, 2, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(437, NULL, 5, NULL, NULL, NULL, NULL, NULL, NULL, 2, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(438, NULL, 6, NULL, NULL, NULL, NULL, NULL, NULL, 2, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(439, NULL, 7, NULL, NULL, NULL, NULL, NULL, NULL, 2, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(440, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL, 4, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(441, NULL, 2, NULL, NULL, NULL, NULL, NULL, NULL, 4, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(442, NULL, 3, NULL, NULL, NULL, NULL, NULL, NULL, 4, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(443, NULL, 4, NULL, NULL, NULL, NULL, NULL, NULL, 4, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(444, NULL, 5, NULL, NULL, NULL, NULL, NULL, NULL, 4, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(445, NULL, 6, NULL, NULL, NULL, NULL, NULL, NULL, 4, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(446, NULL, 7, NULL, NULL, NULL, NULL, NULL, NULL, 4, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(447, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL, 3, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(448, NULL, 2, NULL, NULL, NULL, NULL, NULL, NULL, 3, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(449, NULL, 3, NULL, NULL, NULL, NULL, NULL, NULL, 3, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(450, NULL, 4, NULL, NULL, NULL, NULL, NULL, NULL, 3, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(451, NULL, 5, NULL, NULL, NULL, NULL, NULL, NULL, 3, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(452, NULL, 6, NULL, NULL, NULL, NULL, NULL, NULL, 3, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(453, NULL, 7, NULL, NULL, NULL, NULL, NULL, NULL, 3, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(454, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL, 5, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(455, NULL, 2, NULL, NULL, NULL, NULL, NULL, NULL, 5, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(456, NULL, 3, NULL, NULL, NULL, NULL, NULL, NULL, 5, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(457, NULL, 4, NULL, NULL, NULL, NULL, NULL, NULL, 5, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(458, NULL, 5, NULL, NULL, NULL, NULL, NULL, NULL, 5, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(459, NULL, 6, NULL, NULL, NULL, NULL, NULL, NULL, 5, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(460, NULL, 7, NULL, NULL, NULL, NULL, NULL, NULL, 5, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(461, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL, 6, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(462, NULL, 2, NULL, NULL, NULL, NULL, NULL, NULL, 6, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(463, NULL, 3, NULL, NULL, NULL, NULL, NULL, NULL, 6, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(464, NULL, 4, NULL, NULL, NULL, NULL, NULL, NULL, 6, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(465, NULL, 5, NULL, NULL, NULL, NULL, NULL, NULL, 6, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(466, NULL, 6, NULL, NULL, NULL, NULL, NULL, NULL, 6, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(467, NULL, 7, NULL, NULL, NULL, NULL, NULL, NULL, 6, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(468, NULL, 8, NULL, NULL, NULL, NULL, NULL, NULL, 2, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(469, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL, 2, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(470, NULL, 2, NULL, NULL, NULL, NULL, NULL, NULL, 2, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(471, NULL, 3, NULL, NULL, NULL, NULL, NULL, NULL, 2, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(472, NULL, 4, NULL, NULL, NULL, NULL, NULL, NULL, 2, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(473, NULL, 5, NULL, NULL, NULL, NULL, NULL, NULL, 2, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(474, NULL, 6, NULL, NULL, NULL, NULL, NULL, NULL, 2, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(475, NULL, 7, NULL, NULL, NULL, NULL, NULL, NULL, 2, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(476, NULL, 8, NULL, NULL, NULL, NULL, NULL, NULL, 4, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(477, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL, 4, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(478, NULL, 2, NULL, NULL, NULL, NULL, NULL, NULL, 4, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(479, NULL, 3, NULL, NULL, NULL, NULL, NULL, NULL, 4, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(480, NULL, 4, NULL, NULL, NULL, NULL, NULL, NULL, 4, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(481, NULL, 5, NULL, NULL, NULL, NULL, NULL, NULL, 4, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(482, NULL, 6, NULL, NULL, NULL, NULL, NULL, NULL, 4, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(483, NULL, 7, NULL, NULL, NULL, NULL, NULL, NULL, 4, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(484, NULL, 8, NULL, NULL, NULL, NULL, NULL, NULL, 3, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(485, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL, 3, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(486, NULL, 2, NULL, NULL, NULL, NULL, NULL, NULL, 3, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(487, NULL, 3, NULL, NULL, NULL, NULL, NULL, NULL, 3, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(488, NULL, 4, NULL, NULL, NULL, NULL, NULL, NULL, 3, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(489, NULL, 5, NULL, NULL, NULL, NULL, NULL, NULL, 3, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(490, NULL, 6, NULL, NULL, NULL, NULL, NULL, NULL, 3, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(491, NULL, 7, NULL, NULL, NULL, NULL, NULL, NULL, 3, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(492, NULL, 8, NULL, NULL, NULL, NULL, NULL, NULL, 5, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(493, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL, 5, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(494, NULL, 2, NULL, NULL, NULL, NULL, NULL, NULL, 5, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(495, NULL, 3, NULL, NULL, NULL, NULL, NULL, NULL, 5, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(496, NULL, 4, NULL, NULL, NULL, NULL, NULL, NULL, 5, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(497, NULL, 5, NULL, NULL, NULL, NULL, NULL, NULL, 5, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(498, NULL, 6, NULL, NULL, NULL, NULL, NULL, NULL, 5, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(499, NULL, 7, NULL, NULL, NULL, NULL, NULL, NULL, 5, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(500, NULL, 8, NULL, NULL, NULL, NULL, NULL, NULL, 6, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(501, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL, 6, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(502, NULL, 2, NULL, NULL, NULL, NULL, NULL, NULL, 6, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(503, NULL, 3, NULL, NULL, NULL, NULL, NULL, NULL, 6, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(504, NULL, 4, NULL, NULL, NULL, NULL, NULL, NULL, 6, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(505, NULL, 5, NULL, NULL, NULL, NULL, NULL, NULL, 6, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(506, NULL, 6, NULL, NULL, NULL, NULL, NULL, NULL, 6, 11, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(507, NULL, 7, NULL, NULL, NULL, NULL, NULL, NULL, 6, 11, NULL);
 /*!40000 ALTER TABLE `profile` ENABLE KEYS */;
 
 -- Volcando estructura para tabla osha_dvt.section
-DROP TABLE IF EXISTS `section`;
 CREATE TABLE IF NOT EXISTS `section` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `tool_id` int(11) NOT NULL DEFAULT '0',
@@ -9330,7 +9332,6 @@ INSERT INTO `section` (`id`, `tool_id`, `name`) VALUES
 /*!40000 ALTER TABLE `section` ENABLE KEYS */;
 
 -- Volcando estructura para tabla osha_dvt.split_activity_sector
-DROP TABLE IF EXISTS `split_activity_sector`;
 CREATE TABLE IF NOT EXISTS `split_activity_sector` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `literal_id` int(11) NOT NULL,
@@ -9370,7 +9371,6 @@ INSERT INTO `split_activity_sector` (`id`, `literal_id`) VALUES
 /*!40000 ALTER TABLE `split_activity_sector` ENABLE KEYS */;
 
 -- Volcando estructura para tabla osha_dvt.split_age_group
-DROP TABLE IF EXISTS `split_age_group`;
 CREATE TABLE IF NOT EXISTS `split_age_group` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `literal_id` int(11) NOT NULL,
@@ -9392,7 +9392,6 @@ INSERT INTO `split_age_group` (`id`, `literal_id`) VALUES
 /*!40000 ALTER TABLE `split_age_group` ENABLE KEYS */;
 
 -- Volcando estructura para tabla osha_dvt.split_answer
-DROP TABLE IF EXISTS `split_answer`;
 CREATE TABLE IF NOT EXISTS `split_answer` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `literal_id` int(11) NOT NULL,
@@ -9468,7 +9467,6 @@ INSERT INTO `split_answer` (`id`, `literal_id`) VALUES
 /*!40000 ALTER TABLE `split_answer` ENABLE KEYS */;
 
 -- Volcando estructura para tabla osha_dvt.split_company_size
-DROP TABLE IF EXISTS `split_company_size`;
 CREATE TABLE IF NOT EXISTS `split_company_size` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `literal_id` int(11) NOT NULL,
@@ -9494,7 +9492,6 @@ INSERT INTO `split_company_size` (`id`, `literal_id`) VALUES
 /*!40000 ALTER TABLE `split_company_size` ENABLE KEYS */;
 
 -- Volcando estructura para tabla osha_dvt.split_currency
-DROP TABLE IF EXISTS `split_currency`;
 CREATE TABLE IF NOT EXISTS `split_currency` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `literal_id` int(11) NOT NULL,
@@ -9513,7 +9510,6 @@ INSERT INTO `split_currency` (`id`, `literal_id`, `symbol`) VALUES
 /*!40000 ALTER TABLE `split_currency` ENABLE KEYS */;
 
 -- Volcando estructura para tabla osha_dvt.split_gender
-DROP TABLE IF EXISTS `split_gender`;
 CREATE TABLE IF NOT EXISTS `split_gender` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `literal_id` int(11) NOT NULL,
@@ -9533,7 +9529,6 @@ INSERT INTO `split_gender` (`id`, `literal_id`) VALUES
 /*!40000 ALTER TABLE `split_gender` ENABLE KEYS */;
 
 -- Volcando estructura para tabla osha_dvt.split_illness
-DROP TABLE IF EXISTS `split_illness`;
 CREATE TABLE IF NOT EXISTS `split_illness` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `literal_id` int(11) NOT NULL DEFAULT '0',
@@ -9559,7 +9554,6 @@ INSERT INTO `split_illness` (`id`, `literal_id`) VALUES
 /*!40000 ALTER TABLE `split_illness` ENABLE KEYS */;
 
 -- Volcando estructura para tabla osha_dvt.split_subindicator
-DROP TABLE IF EXISTS `split_subindicator`;
 CREATE TABLE IF NOT EXISTS `split_subindicator` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `literal_id` int(11) NOT NULL DEFAULT '0',
@@ -9595,7 +9589,6 @@ INSERT INTO `split_subindicator` (`id`, `literal_id`) VALUES
 /*!40000 ALTER TABLE `split_subindicator` ENABLE KEYS */;
 
 -- Volcando estructura para tabla osha_dvt.strategies_page
-DROP TABLE IF EXISTS `strategies_page`;
 CREATE TABLE IF NOT EXISTS `strategies_page` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `page` varchar(50) NOT NULL,
@@ -9644,7 +9637,7 @@ CREATE TABLE IF NOT EXISTS `strategies_page` (
   CONSTRAINT `strategies_text_9_literal_id` FOREIGN KEY (`text_9_literal_id`) REFERENCES `literal` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=70 DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla osha_dvt.strategies_page: ~0 rows (aproximadamente)
+-- Volcando datos para la tabla osha_dvt.strategies_page: ~69 rows (aproximadamente)
 /*!40000 ALTER TABLE `strategies_page` DISABLE KEYS */;
 INSERT INTO `strategies_page` (`id`, `page`, `nuts_id`, `text_1_literal_id`, `text_2_literal_id`, `text_3_literal_id`, `text_4_literal_id`, `text_5_literal_id`, `text_6_literal_id`, `text_7_literal_id`, `text_8_literal_id`, `text_9_literal_id`, `text_10_literal_id`, `text_11_literal_id`, `text_12_literal_id`, `text_13_literal_id`) VALUES
 	(1, 'STRATEGY', 96, 20150, 20151, 20152, 20153, 20154, 20155, 20156, 20157, NULL, NULL, NULL, NULL, NULL);
@@ -9787,7 +9780,6 @@ INSERT INTO `strategies_page` (`id`, `page`, `nuts_id`, `text_1_literal_id`, `te
 /*!40000 ALTER TABLE `strategies_page` ENABLE KEYS */;
 
 -- Volcando estructura para tabla osha_dvt.term_synonym
-DROP TABLE IF EXISTS `term_synonym`;
 CREATE TABLE IF NOT EXISTS `term_synonym` (
   `term_literal_id` int(11) NOT NULL,
   `synonym_literal_id` int(11) NOT NULL,
@@ -9898,7 +9890,6 @@ INSERT INTO `term_synonym` (`term_literal_id`, `synonym_literal_id`) VALUES
 /*!40000 ALTER TABLE `term_synonym` ENABLE KEYS */;
 
 -- Volcando estructura para tabla osha_dvt.tool
-DROP TABLE IF EXISTS `tool`;
 CREATE TABLE IF NOT EXISTS `tool` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(100) NOT NULL DEFAULT '0',
@@ -9914,7 +9905,6 @@ INSERT INTO `tool` (`id`, `name`) VALUES
 /*!40000 ALTER TABLE `tool` ENABLE KEYS */;
 
 -- Volcando estructura para tabla osha_dvt.translation
-DROP TABLE IF EXISTS `translation`;
 CREATE TABLE IF NOT EXISTS `translation` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `literal_id` int(11) NOT NULL DEFAULT '0',
@@ -9926,7 +9916,7 @@ CREATE TABLE IF NOT EXISTS `translation` (
   CONSTRAINT `translation_literal_id` FOREIGN KEY (`literal_id`) REFERENCES `literal` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=2850 DEFAULT CHARSET=latin1;
 
--- Volcando datos para la tabla osha_dvt.translation: ~1.729 rows (aproximadamente)
+-- Volcando datos para la tabla osha_dvt.translation: ~2.130 rows (aproximadamente)
 /*!40000 ALTER TABLE `translation` DISABLE KEYS */;
 INSERT INTO `translation` (`id`, `literal_id`, `language`, `is_default`, `text`) VALUES
 	(1, 1, 'EN', 1, 'Total cost of the work-related injuries and illnesses (billions of USD/€) Global');
@@ -14955,7 +14945,6 @@ INSERT INTO `translation` (`id`, `literal_id`, `language`, `is_default`, `text`)
 /*!40000 ALTER TABLE `translation` ENABLE KEYS */;
 
 -- Volcando estructura para tabla osha_dvt.value
-DROP TABLE IF EXISTS `value`;
 CREATE TABLE IF NOT EXISTS `value` (
   `dataset_id` int(11) NOT NULL,
   `indicator_id` int(11) NOT NULL,
