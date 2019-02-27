@@ -36,48 +36,34 @@ define(function (require) {
           color2: dvtUtils.getChartLightGrayColor(),
           color3: dvtUtils.getColorCountry(2),
           color4: dvtUtils.getEUColor(),
-          color5: dvtUtils.getColorCountry(22)
-      }/*,
-      // 1 - Years of Life Lost
-      {
-          color: dvtUtils.getColorCountry(-1),
-          plots: GlobalRegionsService.getStoryMainPlots(dvtUtils.getColorCountry(-1))
+          color5: dvtUtils.getAccidentsColors(4)
       },
-      // 2 - YLL vs YLD
+      // 1 - Employment per sector
       {
-          color1: dvtUtils.getColorCountry(-1),
-          color2: dvtUtils.getIllnessColors(2),
-          plots: GlobalRegionsService.getSplitMainPlots($scope.splits[1], dvtUtils.getColorCountry(-1), dvtUtils.getIllnessColors(2))
+          color1: dvtUtils.getColorCountry(1),
+          color2: dvtUtils.getColorCountry(22),
+          color3: dvtUtils.getColorCountry(2),
+          color4: dvtUtils.getEUColor(),
+          color5: dvtUtils.getAccidentsColors(4),
+          color6: dvtUtils.getColorCountry(12),
+          color7: dvtUtils.getEUColor(2)
       },
-      // 3 - Total Cost
+      // 2 - Employment rate || 3 - Unemployment rate || 4 - GDP PER CAPITA IN RELATION TO EU28 AVERAGE || 5 - INCOME PER CAPITA
       {
-          color1: dvtUtils.getIllnessColors(4),
-          color2: dvtUtils.getIllnessColors(3),
-          plots1: GlobalRegionsService.getStoryMainPlots(dvtUtils.getIllnessColors(4)),
-          plots2: GlobalRegionsService.getStoryMainPlots(dvtUtils.getIllnessColors(3))
-      }*/
+          color1: dvtUtils.getColorCountry(1),
+          color2: dvtUtils.getColorCountry(2),
+          color3: dvtUtils.getEUColor()
+          //plots: GlobalRegionsService.getSplitMainPlots($scope.splits[1], dvtUtils.getColorCountry(-1), dvtUtils.getIllnessColors(2))
+      }
     ];
-
-    // Splits when the indicator has more than 1 split
-    $scope.splits = [
-      // Company sizes splits
-        {
-            split1: 'Fatal work-related illnesses',
-            split2: 'Fatal work-related injuries'
-        },
-        {
-            split1: 'YLL-Fatal injuries and illnesses per 100.000 workers',
-            split2: 'YLD-non fatal injuries and illnesses per 100.000 workers'
-        }
-    ]
 
     $scope.step = {
         chart1: 20,
-        /*chart2: angular.element($window).width() > 425 ? 500 : 1000,
-        chart3: 20,
-        chart4: 1000,
-        chart5: 1,
-        chart6: 20*/
+        chart2: 20,
+        chart3: 10,
+        chart4: 2.50,
+        chart6: 100,
+        chart7: 5000
     }
 
     $scope.countries = [];

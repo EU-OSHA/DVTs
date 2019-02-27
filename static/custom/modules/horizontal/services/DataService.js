@@ -346,6 +346,71 @@ define(function () {
                 return promise(url);
             },
 
+            /**
+             * @ngdoc method
+             * @name dvt.configModule.DataService#getEmploymentPerSectorData
+             * @methodOf dvt.configModule.DataService
+             * @description
+             * Get Company size data
+             */
+            getEmploymentPerSectorData: function (pIndicator, pCountry1, pCountry2) {
+                var url = configService.getBarometerDataPath() + "&dataAccessId=getEmploymentPerSectorData" + "&pIndicator=" + pIndicator + "&parampCountry1=" + pCountry1 + "&parampCountry2=" + pCountry2;
+                $log.debug('getEmploymentPerSectorData url:' + url);
+                return promise(url);
+            },
+
+            /**
+             * @ngdoc method
+             * @name dvt.configModule.DataService#getEmploymentRateData
+             * @methodOf dvt.configModule.DataService
+             * @description
+             * Get Company size data
+             */
+            getEmploymentRateData: function (pIndicator, pCountry1, pCountry2) {
+                var url = configService.getBarometerDataPath() + "&dataAccessId=getEmploymentRateData" + "&pIndicator=" + pIndicator + "&parampCountry1=" + pCountry1 + "&parampCountry2=" + pCountry2;
+                $log.debug('getEmploymentRateData url:' + url);
+                return promise(url);
+            },
+
+            /**
+             * @ngdoc method
+             * @name dvt.configModule.DataService#getUnemploymentRateData
+             * @methodOf dvt.configModule.DataService
+             * @description
+             * Get Company size data
+             */
+            getUnemploymentRateData: function (pIndicator, pCountry1, pCountry2) {
+                var url = configService.getBarometerDataPath() + "&dataAccessId=getUnemploymentRateData" + "&pIndicator=" + pIndicator + "&parampCountry1=" + pCountry1 + "&parampCountry2=" + pCountry2;
+                $log.debug('getUnemploymentRateData url:' + url);
+                return promise(url);
+            },
+
+            /**
+             * @ngdoc method
+             * @name dvt.configModule.DataService#getGDPData
+             * @methodOf dvt.configModule.DataService
+             * @description
+             * Get Company size data
+             */
+            getGDPData: function (pIndicator, pCountry1, pCountry2) {
+                var url = configService.getBarometerDataPath() + "&dataAccessId=getGDPData" + "&pIndicator=" + pIndicator + "&parampCountry1=" + pCountry1 + "&parampCountry2=" + pCountry2;
+                $log.debug('getGDPData url:' + url);
+                return promise(url);
+            },
+
+            /**
+             * @ngdoc method
+             * @name dvt.configModule.DataService#getIncomePerCapitaData
+             * @methodOf dvt.configModule.DataService
+             * @description
+             * Get Company size data
+             */
+            getIncomePerCapitaData: function (pIndicator, pCountry1, pCountry2) {
+                var url = configService.getBarometerDataPath() + "&dataAccessId=getIncomePerCapitaData" + "&pIndicator=" + pIndicator + "&parampCountry1=" + pCountry1 + "&parampCountry2=" + pCountry2;
+                $log.debug('getIncomePerCapitaData url:' + url);
+                return promise(url);
+            },
+
             /************************ END ECONOMIC AND SECTOR PROFILES ***************************/
 
             /**

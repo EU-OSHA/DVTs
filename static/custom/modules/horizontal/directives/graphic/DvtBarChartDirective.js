@@ -233,9 +233,9 @@ define(function (require) {
             + '<div class="legend-info" ng-if="isMaximized && legendClickMode">Click on each value on the legend to hide/show in on the chart</div>'
 
             + '<div class="logoGraphics-wrapper"><img alt="European Agency for Safety and Health at Work" src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/osha-logo.svg" class="logoGraphics"></div>'
-*/
-            + '<div ng-if="!!functionalLegend" class="functionalLegend" data-ng-bind-html="functionalLegend"></div>'
 
+            + '<div ng-if="!!functionalLegend" class="functionalLegend" data-ng-bind-html="functionalLegend"></div>'
+*/
         + '</div>';
 
 
@@ -347,6 +347,7 @@ define(function (require) {
                         plotBg_fillStyle: plotsProvider.getPlotBgColor(),
                         //plot grid styles
                         baseAxisGrid: attributes.baseAxisGrid || false,
+                        baseAxisPosition: attributes.baseAxisPosition || "bottom",
                         orthoAxisGrid: attributes.orthoAxisGrid || true, // Color axes
                         axisGrid_strokeStyle: 'white',
                         axisGrid_lineWidth: 2,
@@ -355,8 +356,9 @@ define(function (require) {
                         valuesVisible: false,
                         valuesMask: attributes.valuesMask || '{series}',
                         valuesFont: attributes.valuesFont || 'emphasis 10px "Open Sans"',
+                        valuesAnchor: attributes.valuesAnchor || 'center',
                         valuesOptimizeLegibility: true,
-                        valuesNormalized: false,
+                        valuesNormalized: attributes.valuesNormalized == 1 || false,
                         valuesFormat: scope.valuesFormat,
                         label_top: scope.labelTop,
                         legend: attributes.legend === 'true' || false,
@@ -371,6 +373,7 @@ define(function (require) {
                         baseAxisLabel_visible: scope.baseAxisLabelVisible,
                         baseAxisLabel_textBaseline: attributes.baseAxisLabelTextBaseline || 'top',
                         baseAxisLabel_font: attributes.baseAxisLabelFont || 'normal 12px "Open Sans"',
+                        baseAxisLabel_textStyle: attributes.baseAxisLabelTextStyle || 'gray' ,
                         baseAxisOverlappedLabelsMode: 'leave',
                         multiChartRole: attributes.multiChart,
                         label_visible: scope.labelVisible,
@@ -744,11 +747,12 @@ define(function (require) {
 
                 /* pass definition to modal */
                 var dvtModal = maximize.setModal(definition);
+                //$log.warn(dvtModal);
 
 
                 /* modal open action function */
                 scope.open = function (action) {
-
+                    $log.warn(action);
                     switch (action) {
                         case "enlarge":
                             var scrollTop=$(window).scrollTop();
