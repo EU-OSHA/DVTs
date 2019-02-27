@@ -182,7 +182,7 @@ define(function (require) {
 
             + '<ul class="chart--submenu">'
                 + '<li data-ng-repeat="item in items">'
-                +     '<a data-ng-click="open(item.action)" data-ng-class="item.class" data-ng-title="item.text" role="button"><label class="sr-only" data-ng-bind="item.text"></label></a>'
+                +     '<a data-ng-click="open(item.action)" class="{{item.class}}" title="{{item.text}}" role="button"><label class="sr-only" data-ng-bind="item.text"></label></a>'
                 + '</li>'
             + '</ul>'
 /*
@@ -194,9 +194,9 @@ define(function (require) {
                     + '</ul>'
             +  '</ul>'
 */
-            + '<h3 ng-if="(!!title && !isMaximized && !titleH3) || (isMaximized && !longTitle)" data-ng-bind-html="title" class="title--card ng-binding" >Company size</h3>'
+            + '<h3 ng-if="(!!chartTitle && !isMaximized && !titleH3) || (isMaximized && !longTitle)" data-ng-bind-html="chartTitle" class="title--card ng-binding">Company size</h3>'
             + '<h3 ng-if="!!isMaximized && !!longTitle" data-ng-bind-html="longTitle" class="title--card ng-binding" >Company size</h3>'
-            + '<h3 data-ng-if="(!!title && !isMaximized && titleH3)" class="title--card ng-binding" data-ng-bind-html="title"></h3>'
+            + '<h3 data-ng-if="(!!chartTitle && !isMaximized && titleH3)" class="title--card ng-binding" data-ng-bind-html="chartTitle"></h3>'
 
             + '<div data-ng-if="haveEnlarge" class="pull-right contextual-menu enlarge-button cursor-pointer">'
                 + '<button data-ng-click="open(items[0].action)" title="Compare with other groups">Compare groups</button>'
@@ -208,7 +208,7 @@ define(function (require) {
                 _template 
                     += '<div class="dropdown" ng-if="!isEnlarge==true">'
                         + '<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">'
-                        + '<i class="three-points-vertical" title="Export"></i>'
+                        + '<i class="three-points-vertical" alt="Export" title="Export"></i>'
                         + '</button>'
                         + '<ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">'
                         + '<li data-ng-repeat="item in items"><a data-ng-click="open(item.action)" role="button" data-ng-bind="item.text"></a></li>'
@@ -292,6 +292,7 @@ define(function (require) {
                 scope.isMaximized = !!attributes.isMaximized;
                 scope.isZoom = !!attributes.isZoom;
                 scope.titleH3 = !!attributes.titleH3;
+                scope.chartTitle = attributes.chartTitle;
                 //scope.title = attributes.title;
                 scope.longTitle = attributes.longTitle;
                 scope.isEnlarge=attributes.isEnlarged;
@@ -722,6 +723,7 @@ define(function (require) {
                     definition ['maxAxisPercent'] = attributes.axisPercent;
                     definition ['maxAxisPercent2'] = attributes.axisPercent2;
                     definition ['longTitle'] = attributes.longTitle;
+                    definition ['chartTitle'] = attributes.chartTitle;
                     definition ['baseAxisLabelLongText'] = scope.baseAxisLabelLongText;
                     definition ['orthoAxisTitle'] = attributes.orthoAxisTitle;
 

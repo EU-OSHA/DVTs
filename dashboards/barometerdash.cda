@@ -424,51 +424,14 @@
       <Parameter default="BE" name="pCountry2" type="String" />
     </Parameters>
     <Query>
-      (SELECT t.text as Size, n.name as Country, v.value as Value
-        FROM nuts n, profile p, indicator i, value v, split_illness si, translation t
-        WHERE n.id = p.nuts_id
-        AND p.illness_id = si.id
-        AND i.id = v.indicator_id
-        AND v.profile_id = p.id
-        AND t.literal_id = si.literal_id
-        AND n.country_code IN ('BG', 'BE', 'HR') AND i.id = 23 AND si.id = 2)
-      UNION(
-        SELECT t.text as Size, n.name as Country, v.value as Value
-        FROM nuts n, profile p, indicator i, value v, split_illness si, translation t
-        WHERE n.id = p.nuts_id
-        AND p.illness_id = si.id
-        AND i.id = v.indicator_id
-        AND v.profile_id = p.id
-        AND t.literal_id = si.literal_id
-        AND n.country_code IN ('BG', 'BE', 'HR') AND i.id = 23 AND si.id = 3
-      )UNION(
-        SELECT t.text as Size, n.name as Country, v.value as Value
-        FROM nuts n, profile p, indicator i, value v, split_illness si, translation t
-        WHERE n.id = p.nuts_id
-        AND p.illness_id = si.id
-        AND i.id = v.indicator_id
-        AND v.profile_id = p.id
-        AND t.literal_id = si.literal_id
-        AND n.country_code IN ('BG', 'BE', 'HR') AND i.id = 23 AND si.id = 4
-      )UNION(
-        SELECT t.text as Size, n.name as Country, v.value as Value
-        FROM nuts n, profile p, indicator i, value v, split_illness si, translation t
-        WHERE n.id = p.nuts_id
-        AND p.illness_id = si.id
-        AND i.id = v.indicator_id
-        AND v.profile_id = p.id
-        AND t.literal_id = si.literal_id
-        AND n.country_code IN ('BG', 'BE', 'HR') AND i.id = 23 AND si.id = 5
-      )UNION(
-        SELECT t.text as Size, n.name as Country, v.value as Value
-        FROM nuts n, profile p, indicator i, value v, split_illness si, translation t
-        WHERE n.id = p.nuts_id
-        AND p.illness_id = si.id
-        AND i.id = v.indicator_id
-        AND v.profile_id = p.id
-        AND t.literal_id = si.literal_id
-        AND n.country_code IN ('BG', 'BE', 'HR') AND i.id = 23 AND si.id = 6
-      )
+      SELECT t.text as Size, n.name as Country, v.value as Value
+      FROM nuts n, profile p, indicator i, value v, split_illness si, translation t
+      WHERE n.id = p.nuts_id
+      AND p.illness_id = si.id
+      AND i.id = v.indicator_id
+      AND v.profile_id = p.id
+      AND t.literal_id = si.literal_id
+      AND n.country_code IN ('BG', 'BE', 'HR') AND i.id = 23 AND si.id IN (2,3,4,5,6)
     </Query>
   </DataAccess>
 
@@ -545,7 +508,7 @@
       <Parameter default="BE" name="pCountry2" type="String" />
     </Parameters>
     <Query>
-      SELECT n.name as Country, v.value as Value, p.year as Year
+      SELECT n.name as Country, v.value as Value
       FROM nuts n, profile p, indicator i, value v, split_illness si, translation t
       WHERE n.id = p.nuts_id
       AND p.illness_id = si.id
