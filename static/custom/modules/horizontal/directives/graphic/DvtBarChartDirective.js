@@ -182,7 +182,7 @@ define(function (require) {
 
             + '<ul class="chart--submenu">'
                 + '<li data-ng-repeat="item in items">'
-                +     '<a data-ng-click="open(item.action)" data-ng-class="item.class" role="button"><label class="sr-only" data-ng-bind="item.text"></label></a>'
+                +     '<a data-ng-click="open(item.action)" data-ng-class="item.class" data-ng-title="item.text" role="button"><label class="sr-only" data-ng-bind="item.text"></label></a>'
                 + '</li>'
             + '</ul>'
 /*

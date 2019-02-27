@@ -835,7 +835,8 @@ and (max-device-width :420px){
         }
         select{
           font-size: 1.8rem;
-          display: block;  
+          display: block; 
+          background: #FFF; 
           option{
             font-size: 1.2rem; 
             &:checked{            
@@ -922,7 +923,9 @@ and (max-device-width :370px){
 	}
 	.matrix--elements--wrapper{
 	 .matrix--element {
-		  padding: 2rem 2rem;
+			border-radius: 20px 0 !important;
+			padding: 2rem !important;
+			margin: 0 0 1.5rem 0 !important;
 		}
 	}
 	.pagination--wrapper{
