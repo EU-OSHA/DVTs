@@ -463,59 +463,58 @@ define(function (require) {
        * Apply the filters and load the filtered content
        */
       function search($event,filter) {
+        //$log.warn($scope.amatrix);
 
-        if ((filter=="country")&&($scope.searchParams.institutions.filter1!=1)&&($scope.searchParams.institutions.filter2!=1)&&($scope.searchParams.institutions.filter3!=1)&&($scope.searchParams.institutions.filter4!=1)){
-          dataService.getSearchList($scope.searchParams.countries)
+        dataService.getSearchTerm($scope.searchText, $scope.searchParams.institutions, $scope.searchParams.countries)
+          .then(function (data) {
+            $scope.amatrix = dataService.dataMapper(data);
+
+            $log.warn($scope.amatrix);
+
+            $scope.firstPage();
+
+            $state.transitionTo('osh-authorities', {}, {notify: false});
+
+            //updateText();
+
+          }).catch(function (err) {
+            throw err;
+        });
+
+        /*if ((filter=="country")&&($scope.searchParams.institutions.filter1!=1)&&($scope.searchParams.institutions.filter2!=1)&&($scope.searchParams.institutions.filter3!=1)&&($scope.searchParams.institutions.filter4!=1)){
+          dataService.getSearchList($scope.searchParams.countries, $scope.searchText)
             .then(function (data) {
               $scope.amatrix = dataService.dataMapper(data);
-
-              //$log.warn($scope.amatrix);
-
               $scope.firstPage();
-
-              /*$state.transitionTo('matrix', {}, {notify: false});*/
               $state.transitionTo('osh-authorities', {}, {notify: false});
-              //updateText();
 
             }).catch(function (err) {
               throw err;
           });
         } else if(filter=="search" && $scope.searchText != '') {
-          $log.warn($scope.searchText);
           dataService.getSearchTerm($scope.searchText, $scope.searchParams.institutions, $scope.searchParams.countries)
             .then(function (data) {
               $scope.amatrix = dataService.dataMapper(data);
 
-              //$log.warn($scope.amatrix);
-
               $scope.firstPage();
 
               $state.transitionTo('osh-authorities', {}, {notify: false});
-
-              //updateText();
-
             }).catch(function (err) {
               throw err;
           });
         } else if(filter=="institution"){
-          dataService.getSearchListInstitutions($scope.searchParams.institutions, $scope.searchParams.countries)
+          dataService.getSearchListInstitutions($scope.searchParams.institutions, $scope.searchParams.countries, $scope.searchText)
             .then(function (data) {
 
               $scope.amatrix = dataService.dataMapper(data);
 
-              //$log.warn($scope.amatrix);
-
               $scope.firstPage();
-
-              /*$state.transitionTo('matrix', {}, {notify: false});*/
               $state.transitionTo('osh-authorities', {}, {notify: false});
-
-              //updateText();
 
             }).catch(function (err) {
               throw err;
           });
-        }
+        }*/
         $scope.currentPage = 0;
       }
 
