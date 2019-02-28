@@ -50,11 +50,11 @@ define(function(require){
              .then(function(canvas) {
                  canvas.toBlob(function(blob){
 
-                     if(scope.title=="undefined" || scope.title==undefined) {
+                     if(scope.chartTitle=="undefined" || scope.chartTitle==undefined) {
                          scope.titleH2=$("#"+scope.id).parents().find("h2:eq(0)").text()
                          var filename = scope.titleH2 + '.png';
                      } else {
-                         var filename = scope.title + '.png';
+                         var filename = scope.chartTitle + '.png';
                     }
 
                      saveAs(blob,filename);
@@ -124,9 +124,9 @@ define(function(require){
 
         var exportData = function(scope, dashboard){
             var title = "chart-data";
-            if (scope.title != "")
+            if (scope.chartTitle != "")
             {
-                title = (scope.title);
+                title = (scope.chartTitle);
             } 
             else if (scope.longTitle != "")
             {

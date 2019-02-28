@@ -180,10 +180,24 @@ define(function (require) {
         var _template= ''
         + '<div class="card--block--chart--wrapper">'
 
-            + '<ul class="chart--submenu">'
-                + '<li data-ng-repeat="item in items">'
-                +     '<a data-ng-click="open(item.action)" class="{{item.class}}" title="{{item.text}}" role="button"><label class="sr-only" data-ng-bind="item.text"></label></a>'
+            + '<ul class="chart--submenu" ng-if="!isMaximized">'
+                + '<li>'
+                    + '<a data-ng-click="open(items[0].action)" class="{{items[0].class}}" title="{{items[0].text}}" role="button"><label class="sr-only" data-ng-bind="items[0].text"></label></a>'
                 + '</li>'
+                +  '<li class="dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><a href=""><label class="sr-only">Download</label></a></li>'                  
+                    + '<ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">'
+                        /*+ '<li>'
+                            + '<a data-ng-click="open(items[1].action)" class="{{items[1].class}}" title="{{items[1].text}}" role="button"><label class="sr-only" data-ng-bind="items[1].text"></label></a>'
+                        + '</li>'
+                        + '<li>'
+                            + '<a data-ng-click="open(items[2].action)" class="{{items[2].class}}" title="{{items[2].text}}" role="button"><label class="sr-only" data-ng-bind="items[2].text"></label></a>'
+                        + '</li>'*/
+                        + '<li><a data-ng-click="open(items[1].action)" role="button" data-ng-bind="items[1].text"></a></li>'
+                        + '<li><a data-ng-click="open(items[2].action)" role="button" data-ng-bind="items[2].text"></a></li>'
+                    + '</ul>'
+              /*  + '<li data-ng-repeat="item in items">'
+                +     '<a data-ng-click="open(item.action)" class="{{item.class}}" title="{{item.text}}" role="button"><label class="sr-only" data-ng-bind="item.text"></label></a>'
+                + '</li>'*/
             + '</ul>'
 /*
             + '<ul class="chart--submenu">'
@@ -688,12 +702,21 @@ define(function (require) {
                             [['Download raw data', 'exportData', 'download-button']].forEach(function (item) {
                                 scope.contextuals.push(item);
                             });
+                            [['Download image', 'exportImage', 'download-button']].forEach(function (item) {
+                                scope.contextuals.push(item);
+                            });
                         } else if (!configService.isMobile())  {
                             [['Download raw data', 'exportData', 'download-button']].forEach(function (item) {
                                 scope.contextuals.push(item);
                             });
+                            [['Download image', 'exportImage', 'download-button']].forEach(function (item) {
+                                scope.contextuals.push(item);
+                            });
                         } else {
-                            [['Download raw data', 'exportData', 'download-button']].forEach(function (item) {
+                            [['Download image', 'exportData', 'download-button']].forEach(function (item) {
+                                scope.contextuals.push(item);
+                            });
+                            [['Download image', 'exportImage', 'download-button']].forEach(function (item) {
                                 scope.contextuals.push(item);
                             });
                         }
@@ -749,12 +772,10 @@ define(function (require) {
 
                 /* pass definition to modal */
                 var dvtModal = maximize.setModal(definition);
-                //$log.warn(dvtModal);
 
 
                 /* modal open action function */
                 scope.open = function (action) {
-                    $log.warn(action);
                     switch (action) {
                         case "enlarge":
                             var scrollTop=$(window).scrollTop();
