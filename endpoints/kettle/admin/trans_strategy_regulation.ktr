@@ -108,8 +108,10 @@
     </attributes>
   </connection>
   <order>
-  <hop> <from>Modified Java Script Value</from><to>Execute SQL script</to><enabled>Y</enabled> </hop>
   <hop> <from>strategy_regulation_in</from><to>Modified Java Script Value</to><enabled>Y</enabled> </hop>
+  <hop> <from>Modified Java Script Value</from><to>Modified Java Script Value 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>Modified Java Script Value 2</from><to>Execute SQL script</to><enabled>Y</enabled> </hop>
+  <hop> <from>Modified Java Script Value 2</from><to>Text file output</to><enabled>Y</enabled> </hop>
   </order>
   <step>
     <name>Execute SQL script</name>
@@ -151,7 +153,109 @@
     </arguments>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>704</xloc>
+      <xloc>848</xloc>
+      <yloc>256</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Modified Java Script Value</name>
+    <type>ScriptValueMod</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <compatible>N</compatible>
+    <optimizationLevel>9</optimizationLevel>
+    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
+        <jsScript_name>Script 1</jsScript_name>
+        <jsScript_script>var secReg1 &#x3d; &#x22;null&#x22;&#x3b;&#xd;&#xa;if &#x28;SecondaryRegulation1 &#x21;&#x3d; undefined&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	secReg1 &#x3d; SecondaryRegulation1.replace&#x28;&#x22;L&#x22;, &#x22;&#x22;&#x29;&#x3b;&#xd;&#xa;	if &#x28;&#x21;isNaN&#x28;secReg1&#x29;&#x29;&#xd;&#xa;	&#x7b;&#xd;&#xa;		secReg1 &#x3d; 20000 &#x2b; parseInt&#x28;secReg1&#x29;&#x3b;&#xd;&#xa;	&#x7d;&#xd;&#xa;&#x7d;&#xd;&#xa;var secReg2 &#x3d; &#x22;null&#x22;&#x3b;&#xd;&#xa;if &#x28;SecondaryRegulation2 &#x21;&#x3d; undefined&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	secReg2 &#x3d; SecondaryRegulation2.replace&#x28;&#x22;L&#x22;, &#x22;&#x22;&#x29;&#x3b;&#xd;&#xa;	if &#x28;&#x21;isNaN&#x28;secReg2&#x29;&#x29;&#xd;&#xa;	&#x7b;&#xd;&#xa;		secReg2 &#x3d; 20000 &#x2b; parseInt&#x28;secReg2&#x29;&#x3b;&#xd;&#xa;	&#x7d;&#xd;&#xa;&#x7d;&#xd;&#xa;var secReg3 &#x3d; &#x22;null&#x22;&#x3b;&#xd;&#xa;if &#x28;SecondaryRegulation3 &#x21;&#x3d; undefined&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	secReg3 &#x3d; SecondaryRegulation3.replace&#x28;&#x22;L&#x22;, &#x22;&#x22;&#x29;&#x3b;&#xd;&#xa;	if &#x28;&#x21;isNaN&#x28;secReg3&#x29;&#x29;&#xd;&#xa;	&#x7b;&#xd;&#xa;		secReg3 &#x3d; 20000 &#x2b; parseInt&#x28;secReg3&#x29;&#x3b;&#xd;&#xa;	&#x7d;&#xd;&#xa;&#x7d;&#xd;&#xa;var secReg4 &#x3d; &#x22;null&#x22;&#x3b;&#xd;&#xa;if &#x28;SecondaryRegulation4 &#x21;&#x3d; undefined&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	secReg4 &#x3d; SecondaryRegulation4.replace&#x28;&#x22;L&#x22;, &#x22;&#x22;&#x29;&#x3b;&#xd;&#xa;	if &#x28;&#x21;isNaN&#x28;secReg4&#x29;&#x29;&#xd;&#xa;	&#x7b;&#xd;&#xa;		secReg4 &#x3d; 20000 &#x2b; parseInt&#x28;secReg4&#x29;&#x3b;&#xd;&#xa;	&#x7d;&#xd;&#xa;&#x7d;&#xd;&#xa;var secReg5 &#x3d; &#x22;null&#x22;&#x3b;&#xd;&#xa;if &#x28;SecondaryRegulation5 &#x21;&#x3d; undefined&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	secReg5 &#x3d; SecondaryRegulation5.replace&#x28;&#x22;L&#x22;, &#x22;&#x22;&#x29;&#x3b;&#xd;&#xa;	if &#x28;&#x21;isNaN&#x28;secReg5&#x29;&#x29;&#xd;&#xa;	&#x7b;&#xd;&#xa;		secReg5 &#x3d; 20000 &#x2b; parseInt&#x28;secReg5&#x29;&#x3b;&#xd;&#xa;	&#x7d;&#xd;&#xa;&#x7d;&#xd;&#xa;var secReg6 &#x3d; &#x22;null&#x22;&#x3b;&#xd;&#xa;if &#x28;SecondaryRegulation6 &#x21;&#x3d; undefined&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	secReg6 &#x3d; SecondaryRegulation6.replace&#x28;&#x22;L&#x22;, &#x22;&#x22;&#x29;&#x3b;&#xd;&#xa;	if &#x28;&#x21;isNaN&#x28;secReg6&#x29;&#x29;&#xd;&#xa;	&#x7b;&#xd;&#xa;		secReg6 &#x3d; 20000 &#x2b; parseInt&#x28;secReg6&#x29;&#x3b;&#xd;&#xa;	&#x7d;&#xd;&#xa;&#x7d;&#xd;&#xa;var secReg7 &#x3d; &#x22;null&#x22;&#x3b;&#xd;&#xa;if &#x28;SecondaryRegulation7 &#x21;&#x3d; undefined&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	secReg7 &#x3d; SecondaryRegulation7.replace&#x28;&#x22;L&#x22;, &#x22;&#x22;&#x29;&#x3b;&#xd;&#xa;	if &#x28;&#x21;isNaN&#x28;secReg7&#x29;&#x29;&#xd;&#xa;	&#x7b;&#xd;&#xa;		secReg7 &#x3d; 20000 &#x2b; parseInt&#x28;secReg7&#x29;&#x3b;&#xd;&#xa;	&#x7d;&#xd;&#xa;&#x7d;&#xd;&#xa;var der1 &#x3d; &#x22;null&#x22;&#x3b;&#xd;&#xa;if &#x28;Derogations1 &#x21;&#x3d; undefined&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	der1 &#x3d; Derogations1.replace&#x28;&#x22;L&#x22;, &#x22;&#x22;&#x29;&#x3b;&#xd;&#xa;	if &#x28;&#x21;isNaN&#x28;der1&#x29;&#x29;&#xd;&#xa;	&#x7b;&#xd;&#xa;		der1 &#x3d; 20000 &#x2b; parseInt&#x28;der1&#x29;&#x3b;&#xd;&#xa;	&#x7d;&#xd;&#xa;&#x7d;&#xd;&#xa;var der2 &#x3d; &#x22;null&#x22;&#x3b;&#xd;&#xa;if &#x28;Derogations2 &#x21;&#x3d; undefined&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	der2 &#x3d; Derogations2.replace&#x28;&#x22;L&#x22;, &#x22;&#x22;&#x29;&#x3b;&#xd;&#xa;	if &#x28;&#x21;isNaN&#x28;der2&#x29;&#x29;&#xd;&#xa;	&#x7b;&#xd;&#xa;		der2 &#x3d; 20000 &#x2b; parseInt&#x28;der2&#x29;&#x3b;&#xd;&#xa;	&#x7d;&#xd;&#xa;&#x7d;&#xd;&#xa;var transPer &#x3d; &#x22;null&#x22;&#x3b;&#xd;&#xa;if &#x28;TransitionalPeriod &#x21;&#x3d; undefined&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	transPer &#x3d; TransitionalPeriod.replace&#x28;&#x22;L&#x22;, &#x22;&#x22;&#x29;&#x3b;&#xd;&#xa;	if &#x28;&#x21;isNaN&#x28;transPer&#x29;&#x29;&#xd;&#xa;	&#x7b;&#xd;&#xa;		transPer &#x3d; 20000 &#x2b; parseInt&#x28;transPer&#x29;&#x3b;&#xd;&#xa;	&#x7d;&#xd;&#xa;&#x7d;&#xd;&#xa;var raComp &#x3d; &#x22;null&#x22;&#x3b;&#xd;&#xa;if &#x28;RAcompliance &#x21;&#x3d; undefined&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	raComp &#x3d; RAcompliance.replace&#x28;&#x22;L&#x22;, &#x22;&#x22;&#x29;&#x3b;&#xd;&#xa;	if &#x28;&#x21;isNaN&#x28;raComp&#x29;&#x29;&#xd;&#xa;	&#x7b;&#xd;&#xa;		raComp &#x3d; 20000 &#x2b; parseInt&#x28;raComp&#x29;&#x3b;&#xd;&#xa;	&#x7d;&#xd;&#xa;&#x7d;&#xd;&#xa;var exemp &#x3d; &#x22;null&#x22;&#x3b;&#xd;&#xa;if &#x28;Exemptions &#x21;&#x3d; undefined&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	exemp &#x3d; Exemptions.replace&#x28;&#x22;L&#x22;, &#x22;&#x22;&#x29;&#x3b;&#xd;&#xa;	if &#x28;&#x21;isNaN&#x28;exemp&#x29;&#x29;&#xd;&#xa;	&#x7b;&#xd;&#xa;		exemp &#x3d; 20000 &#x2b; parseInt&#x28;exemp&#x29;&#x3b;&#xd;&#xa;	&#x7d;&#xd;&#xa;&#x7d;&#xd;&#xa;var sme &#x3d; &#x22;null&#x22;&#x3b;&#xd;&#xa;if &#x28;SMEsDifficulties &#x21;&#x3d; undefined&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	sme &#x3d; SMEsDifficulties.replace&#x28;&#x22;L&#x22;, &#x22;&#x22;&#x29;&#x3b;&#xd;&#xa;	if &#x28;&#x21;isNaN&#x28;sme&#x29;&#x29;&#xd;&#xa;	&#x7b;&#xd;&#xa;		sme &#x3d; 20000 &#x2b; parseInt&#x28;sme&#x29;&#x3b;&#xd;&#xa;	&#x7d;&#xd;&#xa;&#x7d;</jsScript_script>
+      </jsScript>    </jsScripts>    <fields>      <field>        <name>secReg1</name>
+        <rename>secReg1</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>secReg2</name>
+        <rename>secReg2</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>secReg3</name>
+        <rename>secReg3</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>secReg4</name>
+        <rename>secReg4</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>secReg5</name>
+        <rename>secReg5</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>secReg6</name>
+        <rename>secReg6</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>secReg7</name>
+        <rename>secReg7</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>der1</name>
+        <rename>der1</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>der2</name>
+        <rename>der2</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>transPer</name>
+        <rename>transPer</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>raComp</name>
+        <rename>raComp</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>exemp</name>
+        <rename>exemp</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>sme</name>
+        <rename>sme</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>448</xloc>
       <yloc>256</yloc>
       <draw>Y</draw>
       </GUI>
@@ -388,10 +492,74 @@
     </step>
 
   <step>
-    <name>Modified Java Script Value</name>
-    <type>ScriptValueMod</type>
+    <name>Text file output</name>
+    <type>TextFileOutput</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <separator>&#x5c;n</separator>
+    <enclosure/>
+    <enclosure_forced>N</enclosure_forced>
+    <enclosure_fix_disabled>N</enclosure_fix_disabled>
+    <header>Y</header>
+    <footer>N</footer>
+    <format>DOS</format>
+    <compression>None</compression>
+    <encoding>windows-1252</encoding>
+    <endedLine/>
+    <fileNameInField>N</fileNameInField>
+    <fileNameField/>
+    <create_parent_folder>N</create_parent_folder>
+    <file>
+      <name>C&#x3a;&#x5c;biserver-ce&#x5c;pentaho-solutions&#x5c;system&#x5c;osha-dvt-barometer&#x5c;endpoints&#x5c;kettle&#x5c;admin&#x5c;output&#x5c;qualitative_changes</name>
+      <is_command>N</is_command>
+      <servlet_output>N</servlet_output>
+      <do_not_open_new_file_init>N</do_not_open_new_file_init>
+      <extention>sql</extention>
+      <append>Y</append>
+      <split>N</split>
+      <haspartno>N</haspartno>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <SpecifyFormat>N</SpecifyFormat>
+      <date_time_format/>
+      <add_to_result_filenames>Y</add_to_result_filenames>
+      <pad>N</pad>
+      <fast_dump>N</fast_dump>
+      <splitevery>0</splitevery>
+    </file>
+    <fields>
+      <field>
+        <name>query</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>848</xloc>
+      <yloc>384</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Modified Java Script Value 2</name>
+    <type>ScriptValueMod</type>
+    <description/>
+    <distribute>N</distribute>
     <custom_distribution/>
     <copies>1</copies>
          <partitioning>
@@ -402,88 +570,16 @@
     <optimizationLevel>9</optimizationLevel>
     <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
         <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>var secReg1 &#x3d; &#x22;null&#x22;&#x3b;&#xd;&#xa;if &#x28;SecondaryRegulation1 &#x21;&#x3d; undefined&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	secReg1 &#x3d; SecondaryRegulation1.replace&#x28;&#x22;L&#x22;, &#x22;&#x22;&#x29;&#x3b;&#xd;&#xa;	if &#x28;&#x21;isNaN&#x28;secReg1&#x29;&#x29;&#xd;&#xa;	&#x7b;&#xd;&#xa;		secReg1 &#x3d; 20000 &#x2b; parseInt&#x28;secReg1&#x29;&#x3b;&#xd;&#xa;	&#x7d;&#xd;&#xa;&#x7d;&#xd;&#xa;var secReg2 &#x3d; &#x22;null&#x22;&#x3b;&#xd;&#xa;if &#x28;SecondaryRegulation2 &#x21;&#x3d; undefined&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	secReg2 &#x3d; SecondaryRegulation2.replace&#x28;&#x22;L&#x22;, &#x22;&#x22;&#x29;&#x3b;&#xd;&#xa;	if &#x28;&#x21;isNaN&#x28;secReg2&#x29;&#x29;&#xd;&#xa;	&#x7b;&#xd;&#xa;		secReg2 &#x3d; 20000 &#x2b; parseInt&#x28;secReg2&#x29;&#x3b;&#xd;&#xa;	&#x7d;&#xd;&#xa;&#x7d;&#xd;&#xa;var secReg3 &#x3d; &#x22;null&#x22;&#x3b;&#xd;&#xa;if &#x28;SecondaryRegulation3 &#x21;&#x3d; undefined&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	secReg3 &#x3d; SecondaryRegulation3.replace&#x28;&#x22;L&#x22;, &#x22;&#x22;&#x29;&#x3b;&#xd;&#xa;	if &#x28;&#x21;isNaN&#x28;secReg3&#x29;&#x29;&#xd;&#xa;	&#x7b;&#xd;&#xa;		secReg3 &#x3d; 20000 &#x2b; parseInt&#x28;secReg3&#x29;&#x3b;&#xd;&#xa;	&#x7d;&#xd;&#xa;&#x7d;&#xd;&#xa;var secReg4 &#x3d; &#x22;null&#x22;&#x3b;&#xd;&#xa;if &#x28;SecondaryRegulation4 &#x21;&#x3d; undefined&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	secReg4 &#x3d; SecondaryRegulation4.replace&#x28;&#x22;L&#x22;, &#x22;&#x22;&#x29;&#x3b;&#xd;&#xa;	if &#x28;&#x21;isNaN&#x28;secReg4&#x29;&#x29;&#xd;&#xa;	&#x7b;&#xd;&#xa;		secReg4 &#x3d; 20000 &#x2b; parseInt&#x28;secReg4&#x29;&#x3b;&#xd;&#xa;	&#x7d;&#xd;&#xa;&#x7d;&#xd;&#xa;var secReg5 &#x3d; &#x22;null&#x22;&#x3b;&#xd;&#xa;if &#x28;SecondaryRegulation5 &#x21;&#x3d; undefined&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	secReg5 &#x3d; SecondaryRegulation5.replace&#x28;&#x22;L&#x22;, &#x22;&#x22;&#x29;&#x3b;&#xd;&#xa;	if &#x28;&#x21;isNaN&#x28;secReg5&#x29;&#x29;&#xd;&#xa;	&#x7b;&#xd;&#xa;		secReg5 &#x3d; 20000 &#x2b; parseInt&#x28;secReg5&#x29;&#x3b;&#xd;&#xa;	&#x7d;&#xd;&#xa;&#x7d;&#xd;&#xa;var secReg6 &#x3d; &#x22;null&#x22;&#x3b;&#xd;&#xa;if &#x28;SecondaryRegulation6 &#x21;&#x3d; undefined&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	secReg6 &#x3d; SecondaryRegulation6.replace&#x28;&#x22;L&#x22;, &#x22;&#x22;&#x29;&#x3b;&#xd;&#xa;	if &#x28;&#x21;isNaN&#x28;secReg6&#x29;&#x29;&#xd;&#xa;	&#x7b;&#xd;&#xa;		secReg6 &#x3d; 20000 &#x2b; parseInt&#x28;secReg6&#x29;&#x3b;&#xd;&#xa;	&#x7d;&#xd;&#xa;&#x7d;&#xd;&#xa;var secReg7 &#x3d; &#x22;null&#x22;&#x3b;&#xd;&#xa;if &#x28;SecondaryRegulation7 &#x21;&#x3d; undefined&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	secReg7 &#x3d; SecondaryRegulation7.replace&#x28;&#x22;L&#x22;, &#x22;&#x22;&#x29;&#x3b;&#xd;&#xa;	if &#x28;&#x21;isNaN&#x28;secReg7&#x29;&#x29;&#xd;&#xa;	&#x7b;&#xd;&#xa;		secReg7 &#x3d; 20000 &#x2b; parseInt&#x28;secReg7&#x29;&#x3b;&#xd;&#xa;	&#x7d;&#xd;&#xa;&#x7d;&#xd;&#xa;var der1 &#x3d; &#x22;null&#x22;&#x3b;&#xd;&#xa;if &#x28;Derogations1 &#x21;&#x3d; undefined&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	der1 &#x3d; Derogations1.replace&#x28;&#x22;L&#x22;, &#x22;&#x22;&#x29;&#x3b;&#xd;&#xa;	if &#x28;&#x21;isNaN&#x28;der1&#x29;&#x29;&#xd;&#xa;	&#x7b;&#xd;&#xa;		der1 &#x3d; 20000 &#x2b; parseInt&#x28;der1&#x29;&#x3b;&#xd;&#xa;	&#x7d;&#xd;&#xa;&#x7d;&#xd;&#xa;var der2 &#x3d; &#x22;null&#x22;&#x3b;&#xd;&#xa;if &#x28;Derogations2 &#x21;&#x3d; undefined&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	der2 &#x3d; Derogations2.replace&#x28;&#x22;L&#x22;, &#x22;&#x22;&#x29;&#x3b;&#xd;&#xa;	if &#x28;&#x21;isNaN&#x28;der2&#x29;&#x29;&#xd;&#xa;	&#x7b;&#xd;&#xa;		der2 &#x3d; 20000 &#x2b; parseInt&#x28;der2&#x29;&#x3b;&#xd;&#xa;	&#x7d;&#xd;&#xa;&#x7d;&#xd;&#xa;var transPer &#x3d; &#x22;null&#x22;&#x3b;&#xd;&#xa;if &#x28;TransitionalPeriod &#x21;&#x3d; undefined&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	transPer &#x3d; TransitionalPeriod.replace&#x28;&#x22;L&#x22;, &#x22;&#x22;&#x29;&#x3b;&#xd;&#xa;	if &#x28;&#x21;isNaN&#x28;transPer&#x29;&#x29;&#xd;&#xa;	&#x7b;&#xd;&#xa;		transPer &#x3d; 20000 &#x2b; parseInt&#x28;transPer&#x29;&#x3b;&#xd;&#xa;	&#x7d;&#xd;&#xa;&#x7d;&#xd;&#xa;var raComp &#x3d; &#x22;null&#x22;&#x3b;&#xd;&#xa;if &#x28;RAcompliance &#x21;&#x3d; undefined&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	raComp &#x3d; RAcompliance.replace&#x28;&#x22;L&#x22;, &#x22;&#x22;&#x29;&#x3b;&#xd;&#xa;	if &#x28;&#x21;isNaN&#x28;raComp&#x29;&#x29;&#xd;&#xa;	&#x7b;&#xd;&#xa;		raComp &#x3d; 20000 &#x2b; parseInt&#x28;raComp&#x29;&#x3b;&#xd;&#xa;	&#x7d;&#xd;&#xa;&#x7d;&#xd;&#xa;var exemp &#x3d; &#x22;null&#x22;&#x3b;&#xd;&#xa;if &#x28;Exemptions &#x21;&#x3d; undefined&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	exemp &#x3d; Exemptions.replace&#x28;&#x22;L&#x22;, &#x22;&#x22;&#x29;&#x3b;&#xd;&#xa;	if &#x28;&#x21;isNaN&#x28;exemp&#x29;&#x29;&#xd;&#xa;	&#x7b;&#xd;&#xa;		exemp &#x3d; 20000 &#x2b; parseInt&#x28;exemp&#x29;&#x3b;&#xd;&#xa;	&#x7d;&#xd;&#xa;&#x7d;&#xd;&#xa;var sme &#x3d; &#x22;null&#x22;&#x3b;&#xd;&#xa;if &#x28;SMEsDifficulties &#x21;&#x3d; undefined&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	sme &#x3d; SMEsDifficulties.replace&#x28;&#x22;L&#x22;, &#x22;&#x22;&#x29;&#x3b;&#xd;&#xa;	if &#x28;&#x21;isNaN&#x28;sme&#x29;&#x29;&#xd;&#xa;	&#x7b;&#xd;&#xa;		sme &#x3d; 20000 &#x2b; parseInt&#x28;sme&#x29;&#x3b;&#xd;&#xa;	&#x7d;&#xd;&#xa;&#x7d;</jsScript_script>
-      </jsScript>    </jsScripts>    <fields>      <field>        <name>secReg1</name>
-        <rename>secReg1</rename>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <replace>N</replace>
-      </field>      <field>        <name>secReg2</name>
-        <rename>secReg2</rename>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <replace>N</replace>
-      </field>      <field>        <name>secReg3</name>
-        <rename>secReg3</rename>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <replace>N</replace>
-      </field>      <field>        <name>secReg4</name>
-        <rename>secReg4</rename>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <replace>N</replace>
-      </field>      <field>        <name>secReg5</name>
-        <rename>secReg5</rename>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <replace>N</replace>
-      </field>      <field>        <name>secReg6</name>
-        <rename>secReg6</rename>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <replace>N</replace>
-      </field>      <field>        <name>secReg7</name>
-        <rename>secReg7</rename>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <replace>N</replace>
-      </field>      <field>        <name>der1</name>
-        <rename>der1</rename>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <replace>N</replace>
-      </field>      <field>        <name>der2</name>
-        <rename>der2</rename>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <replace>N</replace>
-      </field>      <field>        <name>transPer</name>
-        <rename>transPer</rename>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <replace>N</replace>
-      </field>      <field>        <name>raComp</name>
-        <rename>raComp</rename>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <replace>N</replace>
-      </field>      <field>        <name>exemp</name>
-        <rename>exemp</rename>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <replace>N</replace>
-      </field>      <field>        <name>sme</name>
-        <rename>sme</rename>
+        <jsScript_script>var query &#x3d; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;&#xd;&#xa;query &#x3d; query &#x2b; &#x27;SET &#x40;nutsId &#x3d; &#x28;SELECT id FROM nuts WHERE country_code&#x3d;&#x22;&#x27;&#x2b;COUNTRY&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;&#xd;&#xa;query &#x3d; query &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;&#xd;&#xa;query &#x3d; query &#x2b; &#x27;INSERT INTO strategies_page&#x28;page, nuts_id, text_1_literal_id, text_2_literal_id, text_3_literal_id, text_4_literal_id, text_5_literal_id, text_6_literal_id, text_7_literal_id, text_8_literal_id, text_9_literal_id, text_10_literal_id, text_11_literal_id, text_12_literal_id, text_13_literal_id&#x29; &#x27;&#xd;&#xa;				&#x2b; &#x27; VALUES &#x28;&#x22;STRATEGY_REGULATION&#x22;, &#x40;nutsId, &#x27;&#x2b;secReg1&#x2b;&#x27;, &#x27;&#x2b;secReg2&#x2b;&#x27;, &#x27;&#x2b;secReg3&#x2b;&#x27;, &#x27;&#x2b;secReg4&#x2b;&#x27;, &#x27;&#x2b;secReg5&#x2b;&#x27;, &#x27;&#x2b;secReg6&#x2b;&#x27;, &#x27;&#x2b;secReg7&#x2b;&#x27;, &#x27;&#x2b;der1&#x2b;&#x27;, &#x27;&#x2b;der2&#x2b;&#x27;, &#x27;&#x2b;transPer&#x2b;&#x27;, &#x27;&#x2b;raComp&#x2b;&#x27;, &#x27;&#x2b;exemp&#x2b;&#x27;, &#x27;&#x2b;sme&#x2b;&#x27;&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;&#xd;&#xa;</jsScript_script>
+      </jsScript>    </jsScripts>    <fields>      <field>        <name>query</name>
+        <rename>query</rename>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
         <replace>N</replace>
       </field>    </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>448</xloc>
+      <xloc>656</xloc>
       <yloc>256</yloc>
       <draw>Y</draw>
       </GUI>
