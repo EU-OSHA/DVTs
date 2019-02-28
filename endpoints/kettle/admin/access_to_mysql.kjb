@@ -151,8 +151,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>1168</xloc>
-      <yloc>416</yloc>
+      <xloc>1136</xloc>
+      <yloc>96</yloc>
       </entry>
     <entry>
       <name>Read Matrix Pages</name>
@@ -182,8 +182,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>1008</xloc>
-      <yloc>416</yloc>
+      <xloc>992</xloc>
+      <yloc>96</yloc>
       </entry>
     <entry>
       <name>Read Splits</name>
@@ -386,6 +386,24 @@
     <hop>
       <from>Read Literals</from>
       <to>Read Splits</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Read Splits</from>
+      <to>Read Matrix Pages</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Read Matrix Pages</from>
+      <to>Read Strategies Pages</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
