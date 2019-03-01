@@ -73,5 +73,7 @@ define(function (require) {
         });
     });
 
+    module.factory('EconomicSectorProfileService', require('vertical/economic-sector-profile/services/EconomicSectorProfileService'));
+
     return module;
 });

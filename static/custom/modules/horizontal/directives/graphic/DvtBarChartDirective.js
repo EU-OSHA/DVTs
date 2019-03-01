@@ -208,6 +208,7 @@ define(function (require) {
                     + '</ul>'
             +  '</ul>'
 */
+            + '<h3 ng-if="(!!chartTitle && !isMaximized && !titleH3) || (isMaximized && !longTitle)" data-ng-bind-html="chartTitle" class="title--card ng-binding">Company size</h3>'
             + '<h3 ng-if="!!isMaximized && !!longTitle" data-ng-bind-html="longTitle" class="title--card ng-binding" >Company size</h3>'
             + '<h3 data-ng-if="(!!chartTitle && !isMaximized && titleH3)" class="title--card ng-binding" data-ng-bind-html="chartTitle"></h3>'
 
@@ -234,14 +235,10 @@ define(function (require) {
                 if(!navigator.userAgent.match('iPad')) {
                     _template 
                         += '<div class="dropdown" ng-if="!isEnlarge==true">'
-                            + '<a data-ng-click="open(\'exportImageLink\')" role="button">'
-                            + '<i class="fa fa-arrow-down" aria-hidden="true"></i><i class="fa fa-picture-o" aria-hidden="true"></i>'
-                            + 'Export as Image</a>'
+                            + '<a data-ng-click="open(\'exportImageLink\')" role="button"><i class="fa fa-picture-o" aria-hidden="true"></i> Export as Image</a>'
                         + '</div>';
                 }
             _template +='</div>'
-            
-            + '<h3 ng-if="(!!chartTitle && !isMaximized && !titleH3) || (isMaximized && !longTitle)" data-ng-bind-html="chartTitle" class="title--card modal-title-chart ng-binding">Company size</h3>'
 
             + '<div class="chart--wrapper">'
                 + '<div data-ng-attr-id="{{ id }}"></div>'
@@ -364,6 +361,7 @@ define(function (require) {
                         //plot background styles
                         plotBg_fillStyle: plotsProvider.getPlotBgColor(),
                         //plot grid styles
+                        baseAxisBandSizeRatio: attributes.baseAxisBandSizeRatio || 0.9,
                         baseAxisGrid: attributes.baseAxisGrid || false,
                         baseAxisPosition: attributes.baseAxisPosition || "bottom",
                         orthoAxisGrid: attributes.orthoAxisGrid || true, // Color axes
@@ -372,6 +370,7 @@ define(function (require) {
                         axisBandSizeRatio: 0.6,
                         //show values
                         valuesVisible: false,
+                        valuesOverflow: attributes.valuesOverflow || "",
                         valuesMask: attributes.valuesMask || '{series}',
                         valuesFont: attributes.valuesFont || 'emphasis 10px "Open Sans"',
                         valuesAnchor: attributes.valuesAnchor || 'center',
@@ -390,7 +389,8 @@ define(function (require) {
                         baseAxisLabel_text: !scope.isMaximized?scope.baseAxisLabelText:scope.baseAxisLabelLongText,
                         baseAxisLabel_visible: scope.baseAxisLabelVisible,
                         baseAxisLabel_textBaseline: attributes.baseAxisLabelTextBaseline || 'top',
-                        baseAxisLabel_font: attributes.baseAxisLabelFont || 'normal 12px "Open Sans"',
+                        //baseAxisLabel_font: attributes.baseAxisLabelFont || 'normal 12px "Open Sans"',
+                        axisLabel_font: attributes.baseAxisLabelFont || 'normal 12px "Open Sans"',
                         baseAxisLabel_textStyle: attributes.baseAxisLabelTextStyle || 'gray' ,
                         baseAxisOverlappedLabelsMode: 'leave',
                         multiChartRole: attributes.multiChart,
@@ -403,7 +403,9 @@ define(function (require) {
                         //new tooltip
                         tooltipFormat: scope.tooltipFormat,
                         baseAxisTooltipEnabled : false
+                        //,label_textStyle: undefined
                     }
+
                 };
 
                 //TODO refactor OR condition in to definition where it been possible
@@ -550,6 +552,14 @@ define(function (require) {
                 if (!!scope.valuesVisible) {
                     definition.chartDefinition.valuesVisible = !!attributes.valuesVisible;
                 }
+
+                if (!!attributes.valuesOverflow) {
+                   definition.chartDefinition.valuesOverflow = attributes.valuesOverflow;
+                }
+
+                if (!!attributes.valuesMask) {
+                   definition.chartDefinition.valuesMask = attributes.valuesMask;
+                }      
 
                 definition.chartDefinition.format = {
                     number: "0.00"
@@ -744,6 +754,8 @@ define(function (require) {
                     definition ['country1'] = scope.country1;
                     definition ['country2'] = scope.country2;
                     definition ['valuesVisible'] = scope.valuesVisible;
+                    definition ['valuesMask'] = attributes.valuesMask;
+                    definition ['valuesOverflow'] = attributes.valuesOverflow;
                     definition ['maxLegendPos'] = attributes.maxLegendPos;
                     definition ['maxLabelTop'] = scope.maxLabelTop;
                     definition ['maxAxisPercent'] = attributes.axisPercent;
