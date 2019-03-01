@@ -1157,6 +1157,45 @@
               }
             }
           }
+          .export-button-modal{
+            a{
+              padding: 0.8rem 1rem;
+              border-radius: 0.3rem;
+              background: #f2f2f2;
+              color: #000;
+              font-size: 1.4rem;
+              display: block;
+              overflow-y:hidden; 
+              &:hover{
+                color:$white;
+                background: $aquamarine;
+                .fa-arrow-down{
+                  top:0rem;
+                  -webkit-transition: all 0.8s; 
+                  transition: all 0.8s;
+                }
+                .fa-picture-o{
+                  top:3rem;
+                  -webkit-transition: all 0.8s; 
+                  transition: all 0.8s;
+                }
+              }
+              .fa-arrow-down{
+                position: relative;
+                top: -3rem;
+                left: 3px;
+                -webkit-transition: all 0.8s; 
+                transition: all 0.8s;
+              }
+              .fa-picture-o{
+                position: relative;
+                top:0rem;
+                left:-1rem;
+                -webkit-transition: all 0.8s; 
+                transition: all 0.8s;
+              }
+            }
+          }
           .title--card{
             font-size: 2.8rem;
             margin-top: 0;

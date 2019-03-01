@@ -208,7 +208,6 @@ define(function (require) {
                     + '</ul>'
             +  '</ul>'
 */
-            + '<h3 ng-if="(!!chartTitle && !isMaximized && !titleH3) || (isMaximized && !longTitle)" data-ng-bind-html="chartTitle" class="title--card ng-binding">Company size</h3>'
             + '<h3 ng-if="!!isMaximized && !!longTitle" data-ng-bind-html="longTitle" class="title--card ng-binding" >Company size</h3>'
             + '<h3 data-ng-if="(!!chartTitle && !isMaximized && titleH3)" class="title--card ng-binding" data-ng-bind-html="chartTitle"></h3>'
 
@@ -235,10 +234,14 @@ define(function (require) {
                 if(!navigator.userAgent.match('iPad')) {
                     _template 
                         += '<div class="dropdown" ng-if="!isEnlarge==true">'
-                            + '<a data-ng-click="open(\'exportImageLink\')" role="button"><i class="fa fa-picture-o" aria-hidden="true"></i> Export as Image</a>'
+                            + '<a data-ng-click="open(\'exportImageLink\')" role="button">'
+                            + '<i class="fa fa-arrow-down" aria-hidden="true"></i><i class="fa fa-picture-o" aria-hidden="true"></i>'
+                            + 'Export as Image</a>'
                         + '</div>';
                 }
             _template +='</div>'
+            
+            + '<h3 ng-if="(!!chartTitle && !isMaximized && !titleH3) || (isMaximized && !longTitle)" data-ng-bind-html="chartTitle" class="title--card modal-title-chart ng-binding">Company size</h3>'
 
             + '<div class="chart--wrapper">'
                 + '<div data-ng-attr-id="{{ id }}"></div>'
