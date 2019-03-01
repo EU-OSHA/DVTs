@@ -156,6 +156,7 @@
 
     /* ECONOMIC AND SECTOR PROFILE */
     requirePaths['vertical/economic-sector-profile/EconomicSectorProfileController'] = verticalModules + '/generic-information/economic-sector-profile/EconomicSectorProfileController' + suffix;
+    requirePaths['vertical/economic-sector-profile/services/EconomicSectorProfileService'] = verticalModules + '/generic-information/economic-sector-profile/services/EconomicSectorProfileService' + suffix;
 
     /* GEOGRAPHIES COMPARISON */
     // requirePaths['vertical/geographies-comparison/GeographiesComparisonController'] = verticalModules + '/geographies-comparison/GeographiesComparisonController' + suffix;

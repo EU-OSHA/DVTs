@@ -43,25 +43,27 @@
               <dvt-bar-chart
                 data-ng-cloak
                 query="getCompanySizeData" cda="{{::cda }}"
-                width="330" height="330"
+                width="350" height="530"
                 orientation="horizontal" axis-percent="1"
                 axis-fixed-max="100" step="{{step.chart1}}"
                 params="[['pIndicator','31'],['pCountry1', pCountry1],['pCountry2', pCountry2]]"
                 color-role="series" colors="[stories[0].color1, stories[0].color2, 
                 stories[0].color3, stories[0].color4, stories[0].color5]"
                 chart-title="{{i18nLiterals.L288}}" id="1"
-                tooltip-visible="false"
                 base-axis-label-visible="true"
                 base-axis-label-font="bold 15px 'Open Sans'"
-                base-axis-label-text-style="orange"
+                base-axis-label-text-style=""
                 base-axis-label-text-baseline="center"
-                x-label-font="bold 20px 'Arial'"
+                base-axis-band-size-ratio= "1"
+                base-axis-label-text-align= 'right'
                 values-visible="true"
+                values-overflow="show"
                 values-font="bold 15px 'Open Sans'"
                 values-mask="{value}%"
-                values-anchor="right"
+                dimensions="stories[0].dimensions"
                 legend="true"
                 disable-max-legend="true"
+                plots="stories[0].plots"
               ></dvt-bar-chart>
             </div>
         </div>
@@ -111,7 +113,6 @@
                 params="[['pIndicator','37'],['pCountry1', pCountry1],['pCountry2', pCountry2]]"
                 color-role="category" colors="[stories[2].color3, stories[2].color2, stories[2].color1]"
                 chart-title="{{i18nLiterals.L294}}" id="3"
-                plots="stories[1].plots"
                 disable-max-legend="true"
                 base-axis-label-visible="true"
                 base-axis-label-font="bold 15px 'Open Sans'"
@@ -121,6 +122,7 @@
                 values-mask="{value}%"
                 values-anchor="right"
                 axis-percent="1"
+                plots="stories[2].plots"
               ></dvt-bar-chart>
             </div>
             <!--<div class="chart-legend">
@@ -140,14 +142,14 @@
                 color-role="category" colors="[stories[2].color1, stories[2].color2, stories[2].color3]"
                 chart-title="{{i18nLiterals.L295}}" id="4"
                 long-title="{{i18nLiterals.L295}}"
-                plots="stories[1].plots"
                 disable-max-legend="true"
                 base-axis-label-visible="true"
                 base-axis-label-font="bold 15px 'Open Sans'"
                 values-visible="true"
                 values-font="bold 15px 'Open Sans'"
                 values-mask="{value}%"
-                values-anchor="right"
+                values-anchor="top"
+                plots="stories[2].plots"
               ></dvt-bar-chart>
             </div>
             <!--<div class="chart-legend">

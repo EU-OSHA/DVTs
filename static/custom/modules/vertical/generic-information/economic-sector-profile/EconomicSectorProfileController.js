@@ -12,7 +12,7 @@ define(function (require) {
   'use strict';
 
 
-  function controller($scope, $stateParams, $state, configService, $log, $document,dataService, $window, $sce, $compile, $timeout, dvtUtils) {
+  function controller($scope, $stateParams, $state, configService, $log, $document,dataService, $window, $sce, $compile, $timeout, dvtUtils, EconomicSectorProfileService) {
 
     // CDA
     $scope.cda =  configService.getBarometerCda();
@@ -25,9 +25,13 @@ define(function (require) {
     $scope.pCountry1 = $stateParams.pCountry1;
     $scope.pCountry2 = $stateParams.pCountry2;
 
-    $scope.color1 = $scope.pCountry1 != 'EU' ? dvtUtils.getColorCountry(1) : dvtUtils.getColorCountry();
-    $scope.color2 = $scope.pCountry2 != 'EU' ? dvtUtils.getColorCountry(2) : dvtUtils.getColorCountry();
-    $scope.color3 = dvtUtils.getColorCountry();
+    $scope.dashboard = {};
+    $scope.dashboard = {
+        parameters: {
+            "pCountry1": $scope.pCountry1,
+            "pCountry2": $scope.pCountry2
+        }
+    };  
 
     $scope.stories = [
       //0 - Company size
@@ -36,7 +40,16 @@ define(function (require) {
           color2: dvtUtils.getChartLightGrayColor(),
           color3: dvtUtils.getColorCountry(2),
           color4: dvtUtils.getEUColor(),
-          color5: dvtUtils.getAccidentsColors(4)
+          color5: dvtUtils.getAccidentsColors(4),
+          plots: EconomicSectorProfileService.getCompanySizeMainPlots($scope.pCountry1, $scope.pCountry2),
+          dimensions: {
+            value: {
+              format: {
+                number: "0.#",
+                percent: "#%"
+              }
+            }
+          }
       },
       // 1 - Employment per sector
       {
@@ -52,8 +65,8 @@ define(function (require) {
       {
           color1: dvtUtils.getColorCountry(1),
           color2: dvtUtils.getColorCountry(2),
-          color3: dvtUtils.getEUColor()
-          //plots: GlobalRegionsService.getSplitMainPlots($scope.splits[1], dvtUtils.getColorCountry(-1), dvtUtils.getIllnessColors(2))
+          color3: dvtUtils.getEUColor(),
+          plots: EconomicSectorProfileService.getCategoryMainPlots($scope.pCountry1, $scope.pCountry2)
       }
     ];
 
@@ -67,11 +80,8 @@ define(function (require) {
     }
 
     $scope.countries = [];
-    $scope.amatrix = [];
-
 
     // Show/hide the Countries Filter List
-
     angular.element('div.countries-filters').css( "display",'none' );
     angular.element('#filter2 h2').addClass('showChallenges');
     $scope.toggleFilters = function() {
@@ -84,21 +94,8 @@ define(function (require) {
     /******************************************************************************|
     |                                DATA LOAD                                     |
     |******************************************************************************/      
-      dataService.getMatrixAuthsCountries().then(function (data) {
 
-        data.data.resultset.map(function (elem) {
-          var param = (!!$stateParams.filter) ? $stateParams.filter : undefined;
-          $scope.countries.push({
-              country: elem[0],
-              country_code: elem[1]
-          });
-        });
-        $log.warn($scope.countries);
-      }).catch(function (err) {
-          throw err;
-      });
-
-      /*dataService.getAvailableEconomicSectorCountries().then(function (data) {
+      dataService.getAvailableEconomicSectorCountries().then(function (data) {
         data.data.resultset.map(function (elem) {
           var param = (!!$stateParams.filter) ? $stateParams.filter : undefined;
           $scope.countries.push({
@@ -106,10 +103,10 @@ define(function (require) {
             country_code: elem[1]
           });
         });
-        $log.warn($scope.countries);
+        //$log.warn($scope.countries);
       }).catch(function (err) {
           throw err;
-      });*/
+      });
 
     /******************************END DATA LOAD***********************************/
 
@@ -129,7 +126,7 @@ define(function (require) {
     /******************************END FILTERS************************************/
   }
 
-  controller.$inject = ['$scope', '$stateParams', '$state', 'configService', '$log', '$document','dataService', '$window', '$sce', '$compile', '$timeout', 'dvtUtils'];
+  controller.$inject = ['$scope', '$stateParams', '$state', 'configService', '$log', '$document','dataService', '$window', '$sce', '$compile', '$timeout', 'dvtUtils', 'EconomicSectorProfileService'];
   return controller;
 
 
