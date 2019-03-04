@@ -115,38 +115,6 @@
   <hop> <from>Get Variables</from><to>endDate not defined</to><enabled>Y</enabled> </hop>
   </order>
   <step>
-    <name>Insert dataset without endDate</name>
-    <type>ExecSQL</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <connection>osha_dvt</connection>
-    <execute_each_row>Y</execute_each_row>
-    <single_statement>N</single_statement>
-    <replace_variables>Y</replace_variables>
-    <quoteString>N</quoteString>
-    <sql>INSERT INTO dataset &#x28;name, source, date_from, date_to&#x29;&#xd;&#xa;VALUES &#x28;&#x22;BAROMETER_DATA&#x22;, &#x22;&#x24;&#x7b;varSource&#x7d;&#x22;, &#x22;&#x24;&#x7b;varStartDate&#x7d;&#x22;, null&#x29;&#x3b;</sql>
-    <set_params>N</set_params>
-    <insert_field/>
-    <update_field/>
-    <delete_field/>
-    <read_field/>
-    <arguments>
-    </arguments>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>1008</xloc>
-      <yloc>176</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
     <name>Filter rows</name>
     <type>FilterRows</type>
     <description/>
@@ -233,8 +201,8 @@
     </step>
 
   <step>
-    <name>endDate not defined</name>
-    <type>TableInput</type>
+    <name>Insert dataset without endDate</name>
+    <type>ExecSQL</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -244,15 +212,21 @@
            <schema_name/>
            </partitioning>
     <connection>osha_dvt</connection>
-    <sql>SELECT COUNT&#x28;&#x2a;&#x29; AS datasetCount &#xd;&#xa;FROM dataset&#xd;&#xa;WHERE source &#x3d; &#x22;&#x24;&#x7b;varSource&#x7d;&#x22;&#xd;&#xa;AND date_from&#x3d;&#x22;&#x24;&#x7b;varStartDate&#x7d;&#x22;&#x3b;</sql>
-    <limit>0</limit>
-    <lookup/>
-    <execute_each_row>N</execute_each_row>
-    <variables_active>Y</variables_active>
-    <lazy_conversion_active>Y</lazy_conversion_active>
+    <execute_each_row>Y</execute_each_row>
+    <single_statement>N</single_statement>
+    <replace_variables>Y</replace_variables>
+    <quoteString>N</quoteString>
+    <sql>INSERT INTO dataset &#x28;name, source, date_from, date_to&#x29;&#xd;&#xa;VALUES &#x28;&#x22;BAROMETER_DATA&#x22;, &#x22;&#x24;&#x7b;varSource&#x7d;&#x22;, &#x22;&#x24;&#x7b;varStartDate&#x7d;&#x22;, null&#x29;&#x3b;</sql>
+    <set_params>N</set_params>
+    <insert_field/>
+    <update_field/>
+    <delete_field/>
+    <read_field/>
+    <arguments>
+    </arguments>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>400</xloc>
+      <xloc>1008</xloc>
       <yloc>176</yloc>
       <draw>Y</draw>
       </GUI>
@@ -273,7 +247,7 @@
     <optimizationLevel>9</optimizationLevel>
     <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
         <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>var query &#x3d; &#x27;INSERT INTO dataset &#x28;name, source, date_from, date_to&#x29; &#x27;&#xd;&#xa;			&#x2b; &#x27;VALUES &#x28;&#x22;BAROMETER_DATA&#x22;, &#x22;&#x27;&#x2b;getVariable&#x28;&#x22;varSource&#x22;,&#x22;&#x22;&#x29;&#x2b;&#x27;&#x22;, &#x22;&#x27;&#x2b;getVariable&#x28;&#x22;varStartDate&#x22;,&#x22;&#x22;&#x29;&#x2b;&#x27;&#x22;, null&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;&#xd;&#xa;</jsScript_script>
+        <jsScript_script>var query &#x3d; &#x22;&#x5c;n&#x22; &#x2b; &#x27;INSERT INTO dataset &#x28;name, source, date_from, date_to&#x29; &#x27;&#xd;&#xa;			&#x2b; &#x27;VALUES &#x28;&#x22;BAROMETER_DATA&#x22;, &#x22;&#x27;&#x2b;getVariable&#x28;&#x22;varSource&#x22;,&#x22;&#x22;&#x29;&#x2b;&#x27;&#x22;, &#x22;&#x27;&#x2b;getVariable&#x28;&#x22;varStartDate&#x22;,&#x22;&#x22;&#x29;&#x2b;&#x27;&#x22;, null&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;&#xd;&#xa;</jsScript_script>
       </jsScript>    </jsScripts>    <fields>      <field>        <name>query</name>
         <rename>query</rename>
         <type>String</type>
@@ -348,6 +322,32 @@
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>1008</xloc>
       <yloc>272</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>endDate not defined</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>osha_dvt</connection>
+    <sql>SELECT COUNT&#x28;&#x2a;&#x29; AS datasetCount &#xd;&#xa;FROM dataset&#xd;&#xa;WHERE source &#x3d; &#x22;&#x24;&#x7b;varSource&#x7d;&#x22;&#xd;&#xa;AND date_from&#x3d;&#x22;&#x24;&#x7b;varStartDate&#x7d;&#x22;&#x3b;</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>Y</variables_active>
+    <lazy_conversion_active>Y</lazy_conversion_active>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>400</xloc>
+      <yloc>176</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
