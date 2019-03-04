@@ -19,3 +19,7 @@ ALTER TABLE `profile` ADD COLUMN `company_size_id` INT(11) NULL DEFAULT NULL AFT
 ALTER TABLE `profile` ADD CONSTRAINT `profile_company_size_id` FOREIGN KEY (`company_size_id`) REFERENCES `split_company_size` (`id`) ON UPDATE CASCADE ON DELETE CASCADE;
 ALTER TABLE `profile` ADD COLUMN `gender_id` INT(11) NULL DEFAULT NULL AFTER `currency_id`;
 ALTER TABLE `profile` ADD CONSTRAINT `profile_gender_id` FOREIGN KEY (`gender_id`) REFERENCES `split_gender` (`id`) ON UPDATE CASCADE ON DELETE CASCADE;
+
+-- Change structure of Value table to allow Null values
+ALTER TABLE `value` ALTER `value` DROP DEFAULT;
+ALTER TABLE `value` CHANGE COLUMN `value` `value` DOUBLE NULL AFTER `profile_id`;
