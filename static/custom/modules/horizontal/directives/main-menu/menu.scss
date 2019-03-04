@@ -135,6 +135,7 @@
             flex-direction: row;
             margin: 0 auto;
             z-index: -1;
+            min-height: auto !important;
             .navbar-nav{
                 > li.dropdown{
                     .fa-caret-down:before{
@@ -150,6 +151,7 @@
                         color:$link-menu;
                         font-size:1.8rem;
                         font-weight: 400;
+                        padding-top: 0;
                         //padding-bottom:0.8rem;
                         -webkit-transition: all 0.8s ease-out;
                         -moz-transition: all 0.8s ease-out;

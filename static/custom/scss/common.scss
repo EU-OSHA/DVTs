@@ -8,7 +8,7 @@
     font-family: $font-body;
     font-size:$font-size-body;
     color: $gray-base;
-    padding-top: 146px;
+    padding-top: 130px;
   }
   body.hasCookies{
     padding-top: 12rem;
@@ -34,7 +34,7 @@
     }
   } 
   .section--page{
-    padding: 6rem 0;
+    padding: 4rem 0;
   }
   h1, h2, h3, h4 {
     font-family:$font-header;
@@ -387,8 +387,7 @@
 
   .advice--block{
     position: relative;
-
-    padding: 3rem 0;
+    padding: 2rem 0;
     &.advice--block-not-home{
       padding: 2rem 0;
       h2{
