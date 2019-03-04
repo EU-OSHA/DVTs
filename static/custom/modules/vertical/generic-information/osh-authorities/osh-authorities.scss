@@ -130,7 +130,7 @@
 
 
 .matrix--elements--wrapper{
-  margin-top:4rem; 
+  margin-top:2rem; 
   .matrix--element{
     background:$gray-lighter;
     border-radius: 50px 0 50px 0;
@@ -204,7 +204,7 @@
 
 .selected--tags-wrapper{
   min-height: 0px;
-  margin-top: 2rem;
+  margin-top: 0rem;
   &:empty{
     display:none;
   } 

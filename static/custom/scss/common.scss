@@ -8,7 +8,7 @@
     font-family: $font-body;
     font-size:$font-size-body;
     color: $gray-base;
-    padding-top: 150px;
+    padding-top: 146px;
   }
   body.hasCookies{
     padding-top: 12rem;
@@ -321,17 +321,17 @@
   }
   .relative-top{
     position: relative;
-    top: -7px;
+
   }
   .title-section{
     font-family: 'Oswald';
     font-size: 3.6rem;
-    margin: 2rem 0 6rem;
+    margin: 0rem 0 2rem;
   }
   .breadcrumbs--social--network{
     position: relative;
-    top: -7px;
-    padding: 1rem 2rem; 
+
+    padding: 0.5rem 2rem; 
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -387,7 +387,7 @@
 
   .advice--block{
     position: relative;
-    top: -7px;
+
     padding: 3rem 0;
     &.advice--block-not-home{
       padding: 2rem 0;
@@ -404,8 +404,7 @@
   }
   .advice--icon--block{
     position: relative;
-    top: -7px;
-    padding: 6rem 0;
+    padding: 2rem 0;
     .title--section{
       font-family: 'Oswald';
       font-size: 3rem;

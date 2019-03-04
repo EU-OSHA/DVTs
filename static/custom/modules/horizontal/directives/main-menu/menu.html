@@ -97,7 +97,8 @@
     </section>
     <section class="home-cover" title="{{i18n_literals.L417}}" data-ng-click="goto('home')" >
       <div class="container">
-          <h1 class="main-title" data-ng-bind="i18n_literals.L22020"></h1>
+          <h1 data-ng-if="isHome" class="main-title" data-ng-bind="i18n_literals.L22020"></h1>
+          <p data-ng-if="!isHome" class="main-title" data-ng-bind="i18n_literals.L22020"></h1>
           <p class="lead-title" data-ng-bind="i18n_literals.L22024"></p>
       </div>
     </section>

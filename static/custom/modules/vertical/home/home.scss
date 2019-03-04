@@ -6,7 +6,6 @@
     clear: both;
     border-top:6px solid #C7E2E3;
     position: relative;
-    top: -7px;
     cursor: pointer;
     .main-title{
       font-weight: 500;
@@ -18,6 +17,8 @@
       color: $white;
       line-height:3.6rem;
       width: 100%;
+      font-family: "Oswald", sans-serif;
+      margin-top: 2rem;
     }
     .lead-title{
       font-family: Oswald-Light,sans-serif;
