@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>1-2-1_company_size</name>
+    <name>1-2-2_employment_per_sector</name>
     <description/>
     <extended_description/>
     <trans_version/>
@@ -108,13 +108,12 @@
     </attributes>
   </connection>
   <order>
-  <hop> <from>Get Value Count</from><to>Value exists&#x3f;</to><enabled>Y</enabled> </hop>
   <hop> <from>Modified Java Script Value 2</from><to>Insert Value</to><enabled>Y</enabled> </hop>
   <hop> <from>Modified Java Script Value 3</from><to>Write SQL Sentences 3</to><enabled>Y</enabled> </hop>
   <hop> <from>Value exists&#x3f;</from><to>Modified Java Script Value 2</to><enabled>Y</enabled> </hop>
   <hop> <from>Value exists&#x3f;</from><to>Modified Java Script Value 3</to><enabled>Y</enabled> </hop>
   <hop> <from>Modified Java Script Value 3</from><to>Update Value  </to><enabled>Y</enabled> </hop>
-  <hop> <from>Company Size In</from><to>Normalize Rows</to><enabled>Y</enabled> </hop>
+  <hop> <from>Employment per Sector In</from><to>Normalize Rows</to><enabled>Y</enabled> </hop>
   <hop> <from>Normalize Rows</from><to>Get Profile Count</to><enabled>Y</enabled> </hop>
   <hop> <from>Profile Exists&#x3f;</from><to>Add Profile</to><enabled>Y</enabled> </hop>
   <hop> <from>Add Profile</from><to>Modified Java Script Value</to><enabled>Y</enabled> </hop>
@@ -122,9 +121,11 @@
   <hop> <from>Get Profile Count</from><to>Check if value null</to><enabled>Y</enabled> </hop>
   <hop> <from>Modified Java Script Value 2</from><to>Write SQL Sentences 2</to><enabled>Y</enabled> </hop>
   <hop> <from>Check if value null</from><to>Profile Exists&#x3f;</to><enabled>Y</enabled> </hop>
-  <hop> <from>Write SQL Sentences</from><to>Get Value Count</to><enabled>Y</enabled> </hop>
   <hop> <from>Profile Exists&#x3f;</from><to>Modified Java Script Value 4</to><enabled>Y</enabled> </hop>
-  <hop> <from>Modified Java Script Value 4</from><to>Get Value Count</to><enabled>Y</enabled> </hop>
+  <hop> <from>Get Value Count</from><to>Value exists&#x3f;</to><enabled>Y</enabled> </hop>
+  <hop> <from>Write SQL Sentences</from><to>Blocking Step</to><enabled>Y</enabled> </hop>
+  <hop> <from>Modified Java Script Value 4</from><to>Blocking Step</to><enabled>Y</enabled> </hop>
+  <hop> <from>Blocking Step</from><to>Get Value Count</to><enabled>Y</enabled> </hop>
   </order>
   <step>
     <name>Add Profile</name>
@@ -142,20 +143,44 @@
     <single_statement>N</single_statement>
     <replace_variables>Y</replace_variables>
     <quoteString>N</quoteString>
-    <sql>SET &#x40;companyId &#x3d; &#x28;SELECT cs.id FROM split_company_size cs INNER JOIN translation t ON cs.literal_id&#x3d;t.literal_id WHERE t.text&#x3d;&#x22;&#x3f;&#x22;&#x29;&#x3b;&#xd;&#xa;SET &#x40;nutsId &#x3d; &#x28;SELECT id FROM nuts WHERE country_code&#x3d;&#x22;&#x3f;&#x22;&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;INSERT INTO profile &#x28;nuts_id, company_size_id&#x29;&#xd;&#xa;VALUE &#x28;&#x40;nutsId, &#x40;companyId&#x29;&#x3b;</sql>
+    <sql>SET &#x40;sectorId &#x3d; &#x28;SELECT sas.id FROM split_activity_sector sas INNER JOIN translation t ON sas.literal_id&#x3d;t.literal_id WHERE t.text&#x3d;&#x22;&#x3f;&#x22;&#x29;&#x3b;&#xd;&#xa;SET &#x40;nutsId &#x3d; &#x28;SELECT id FROM nuts WHERE country_code&#x3d;&#x22;&#x3f;&#x22;&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;INSERT INTO profile &#x28;nuts_id, activity_sector_id&#x29;&#xd;&#xa;VALUE &#x28;&#x40;nutsId, &#x40;sectorId&#x29;&#x3b;</sql>
     <set_params>N</set_params>
     <insert_field/>
     <update_field/>
     <delete_field/>
     <read_field/>
     <arguments>
-       <argument><name>companySize</name></argument>
+       <argument><name>sector</name></argument>
        <argument><name>Country</name></argument>
     </arguments>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>528</xloc>
       <yloc>144</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Blocking Step</name>
+    <type>BlockingStep</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <pass_all_rows>Y</pass_all_rows>
+      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
+      <prefix>block</prefix>
+      <cache_size>5000</cache_size>
+      <compress>Y</compress>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>816</xloc>
+      <yloc>32</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -175,7 +200,7 @@
     <optimizationLevel>9</optimizationLevel>
     <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
         <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>var newValue &#x3d; Value&#x3b;&#xd;&#xa;if &#x28;Value &#x3d;&#x3d; undefined &#x7c;&#x7c; Value &#x3d;&#x3d; null&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	newValue&#x3d;&#x22;null&#x22;&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;</jsScript_script>
+        <jsScript_script>var newValue &#x3d; value&#x3b;&#xd;&#xa;if &#x28;value &#x3d;&#x3d; undefined &#x7c;&#x7c; value &#x3d;&#x3d; null&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	newValue&#x3d;&#x22;null&#x22;&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;</jsScript_script>
       </jsScript>    </jsScripts>    <fields>      <field>        <name>newValue</name>
         <rename>newValue</rename>
         <type>String</type>
@@ -191,7 +216,7 @@
     </step>
 
   <step>
-    <name>Company Size In</name>
+    <name>Employment per Sector In</name>
     <type>AccessInput</type>
     <description/>
     <distribute>Y</distribute>
@@ -211,7 +236,7 @@
     <filefield>N</filefield>
     <rownum_field/>
     <resetrownumber>N</resetrownumber>
-    <table_name>1-2-1_COMPANY_SIZE</table_name>
+    <table_name>1-2-2_EMPLOYMENT_PER_SECTOR</table_name>
     <file>
       <name>&#x24;&#x7b;access_file&#x7d;</name>
       <filemask/>
@@ -220,6 +245,19 @@
       <include_subfolders>N</include_subfolders>
     </file>
     <fields>
+      <field>
+        <name>Id</name>
+        <attribut>Id</attribut>
+        <type>Integer</type>
+        <format/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <currency/>
+        <decimal/>
+        <group/>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
       <field>
         <name>Country</name>
         <attribut>Country</attribut>
@@ -234,8 +272,8 @@
         <repeat>N</repeat>
       </field>
       <field>
-        <name>250OrMore</name>
-        <attribut>250OrMore</attribut>
+        <name>Agriculture</name>
+        <attribut>Agriculture</attribut>
         <type>Number</type>
         <format/>
         <length>-1</length>
@@ -247,8 +285,8 @@
         <repeat>N</repeat>
       </field>
       <field>
-        <name>50To249</name>
-        <attribut>50To249</attribut>
+        <name>Manufacturing</name>
+        <attribut>Manufacturing</attribut>
         <type>Number</type>
         <format/>
         <length>-1</length>
@@ -260,8 +298,8 @@
         <repeat>N</repeat>
       </field>
       <field>
-        <name>20To49</name>
-        <attribut>20To49</attribut>
+        <name>Construction</name>
+        <attribut>Construction</attribut>
         <type>Number</type>
         <format/>
         <length>-1</length>
@@ -273,8 +311,8 @@
         <repeat>N</repeat>
       </field>
       <field>
-        <name>10To19</name>
-        <attribut>10To19</attribut>
+        <name>Trade</name>
+        <attribut>Trade</attribut>
         <type>Number</type>
         <format/>
         <length>-1</length>
@@ -286,8 +324,34 @@
         <repeat>N</repeat>
       </field>
       <field>
-        <name>0To9</name>
-        <attribut>0To9</attribut>
+        <name>IT</name>
+        <attribut>IT</attribut>
+        <type>Number</type>
+        <format/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <currency/>
+        <decimal>.</decimal>
+        <group/>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>PublicAdministration</name>
+        <attribut>PublicAdministration</attribut>
+        <type>Number</type>
+        <format/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <currency/>
+        <decimal>.</decimal>
+        <group/>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>Education</name>
+        <attribut>Education</attribut>
         <type>Number</type>
         <format/>
         <length>-1</length>
@@ -320,7 +384,7 @@
     <name>Get Profile Count</name>
     <type>ExecSQL</type>
     <description/>
-    <distribute>Y</distribute>
+    <distribute>N</distribute>
     <custom_distribution/>
     <copies>1</copies>
          <partitioning>
@@ -332,14 +396,14 @@
     <single_statement>N</single_statement>
     <replace_variables>Y</replace_variables>
     <quoteString>N</quoteString>
-    <sql>SELECT &#x2a;&#xd;&#xa;FROM profile p&#xd;&#xa;INNER JOIN nuts n&#xd;&#xa;ON p.nuts_id&#x3d;n.id&#xd;&#xa;INNER JOIN split_company_size cs&#xd;&#xa;ON p.company_size_id&#x3d;cs.id&#xd;&#xa;INNER JOIN translation t&#xd;&#xa;ON cs.literal_id&#x3d;t.literal_id&#xd;&#xa;WHERE t.text&#x3d;&#x22;&#x3f;&#x22;&#xd;&#xa;AND n.country_code&#x3d;&#x22;&#x3f;&#x22;&#x3b;</sql>
+    <sql>SELECT &#x2a;&#xd;&#xa;FROM profile p&#xd;&#xa;INNER JOIN nuts n&#xd;&#xa;ON p.nuts_id&#x3d;n.id&#xd;&#xa;INNER JOIN split_activity_sector sas&#xd;&#xa;ON p.activity_sector_id&#x3d;sas.id&#xd;&#xa;INNER JOIN translation t&#xd;&#xa;ON sas.literal_id&#x3d;t.literal_id&#xd;&#xa;WHERE t.text&#x3d;&#x22;&#x3f;&#x22;&#xd;&#xa;AND n.country_code&#x3d;&#x22;&#x3f;&#x22;&#x3b;</sql>
     <set_params>N</set_params>
     <insert_field/>
     <update_field/>
     <delete_field/>
     <read_field>profileCount</read_field>
     <arguments>
-       <argument><name>companySize</name></argument>
+       <argument><name>sector</name></argument>
        <argument><name>Country</name></argument>
     </arguments>
      <cluster_schema/>
@@ -366,19 +430,19 @@
     <single_statement>N</single_statement>
     <replace_variables>Y</replace_variables>
     <quoteString>N</quoteString>
-    <sql>SET &#x40;profileID &#x3d; &#x28;SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id&#x3d;n.id INNER JOIN split_company_size cs ON p.company_size_id&#x3d;cs.id INNER JOIN translation t ON cs.literal_id&#x3d;t.literal_id WHERE t.text&#x3d;&#x22;&#x3f;&#x22; AND n.country_code&#x3d;&#x22;&#x3f;&#x22;&#x29;&#x3b;&#xd;&#xa;SET &#x40;indicatorID &#x3d; &#x28;SELECT id FROM indicator WHERE name&#x3d;&#x22;Company size&#x22;&#x29;&#x3b;&#xd;&#xa;SET &#x40;datasetID &#x3d; &#x28;SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id&#x3d;&#x40;indicatorID&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;SELECT &#x2a; &#xd;&#xa;FROM value&#xd;&#xa;WHERE profile_id&#x3d;&#x40;profileID&#xd;&#xa;AND indicator_id&#x3d;&#x40;indicatorID&#xd;&#xa;AND dataset_id&#x3d;&#x40;datasetID&#x3b;</sql>
+    <sql>SET &#x40;profileID &#x3d; &#x28;SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id&#x3d;n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id&#x3d;sas.id INNER JOIN translation t ON sas.literal_id&#x3d;t.literal_id WHERE t.text&#x3d;&#x22;&#x3f;&#x22; AND n.country_code&#x3d;&#x22;&#x3f;&#x22;&#x29;&#x3b;&#xd;&#xa;SET &#x40;indicatorID &#x3d; &#x28;SELECT id FROM indicator WHERE name&#x3d;&#x22;Employment per sector&#x22;&#x29;&#x3b;&#xd;&#xa;SET &#x40;datasetID &#x3d; &#x28;SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id&#x3d;&#x40;indicatorID&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;SELECT &#x2a; &#xd;&#xa;FROM value&#xd;&#xa;WHERE profile_id&#x3d;&#x40;profileID&#xd;&#xa;AND indicator_id&#x3d;&#x40;indicatorID&#xd;&#xa;AND dataset_id&#x3d;&#x40;datasetID&#x3b;</sql>
     <set_params>N</set_params>
     <insert_field/>
     <update_field/>
     <delete_field/>
     <read_field>valueCount</read_field>
     <arguments>
-       <argument><name>companySize</name></argument>
+       <argument><name>sector</name></argument>
        <argument><name>Country</name></argument>
     </arguments>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>896</xloc>
+      <xloc>960</xloc>
       <yloc>32</yloc>
       <draw>Y</draw>
       </GUI>
@@ -398,22 +462,22 @@
     <connection>osha_dvt</connection>
     <execute_each_row>Y</execute_each_row>
     <single_statement>N</single_statement>
-    <replace_variables>Y</replace_variables>
+    <replace_variables>N</replace_variables>
     <quoteString>N</quoteString>
-    <sql>SET &#x40;profileID &#x3d; &#x28;SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id&#x3d;n.id INNER JOIN split_company_size cs ON p.company_size_id&#x3d;cs.id INNER JOIN translation t ON cs.literal_id&#x3d;t.literal_id WHERE t.text&#x3d;&#x22;&#x3f;&#x22; AND n.country_code&#x3d;&#x22;&#x3f;&#x22;&#x29;&#x3b;&#xd;&#xa;SET &#x40;indicatorID &#x3d; &#x28;SELECT id FROM indicator WHERE name&#x3d;&#x22;Company size&#x22;&#x29;&#x3b;&#xd;&#xa;SET &#x40;datasetID &#x3d; &#x28;SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id&#x3d;&#x40;indicatorID&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;INSERT INTO value &#x28;dataset_id, indicator_id, profile_id, value&#x29;&#xd;&#xa;VALUES &#x28;&#x40;datasetID, &#x40;indicatorID, &#x40;profileID, &#x3f;&#x29;&#x3b;</sql>
+    <sql>SET &#x40;profileID &#x3d; &#x28;SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id&#x3d;n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id&#x3d;sas.id INNER JOIN translation t ON sas.literal_id&#x3d;t.literal_id WHERE t.text&#x3d;&#x22;&#x3f;&#x22; AND n.country_code&#x3d;&#x22;&#x3f;&#x22;&#x29;&#x3b;&#xd;&#xa;SET &#x40;indicatorID &#x3d; &#x28;SELECT id FROM indicator WHERE name&#x3d;&#x22;Employment per sector&#x22;&#x29;&#x3b;&#xd;&#xa;SET &#x40;datasetID &#x3d; &#x28;SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id&#x3d;&#x40;indicatorID&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;INSERT INTO value &#x28;dataset_id, indicator_id, profile_id, value&#x29;&#xd;&#xa;VALUES &#x28;&#x40;datasetID, &#x40;indicatorID, &#x40;profileID, &#x3f;&#x29;&#x3b;</sql>
     <set_params>N</set_params>
     <insert_field/>
     <update_field/>
     <delete_field/>
     <read_field/>
     <arguments>
-       <argument><name>companySize</name></argument>
+       <argument><name>sector</name></argument>
        <argument><name>Country</name></argument>
        <argument><name>newValue</name></argument>
     </arguments>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>896</xloc>
+      <xloc>960</xloc>
       <yloc>256</yloc>
       <draw>Y</draw>
       </GUI>
@@ -434,7 +498,7 @@
     <optimizationLevel>9</optimizationLevel>
     <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
         <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>queries &#x3d; &#x27;SET &#x40;companyId &#x3d; &#x28;SELECT cs.id&#x27;&#xd;&#xa;				&#x2b; &#x27;FROM split_company_size cs INNER JOIN translation t ON cs.literal_id&#x3d;t.literal_id &#x27;&#xd;&#xa;				&#x2b; &#x27;WHERE t.text&#x3d;&#x22;&#x27; &#x2b; companySize &#x2b; &#x27;&#x22;&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;queries &#x3d; queries &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;queries &#x3d; queries &#x2b; &#x27;SET &#x40;nutsId &#x3d; &#x28;SELECT id FROM nuts WHERE country_code&#x3d;&#x22;&#x27; &#x2b; Country &#x2b; &#x27;&#x22;&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;queries &#x3d; queries &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;&#xd;&#xa;&#xd;&#xa;queries &#x3d; queries &#x2b; &#x22;INSERT INTO profile &#x28;nuts_id, company_size_id&#x29; VALUE &#x28;&#x40;nutsId, &#x40;companyId&#x29;&#x3b;&#x22;&#x3b;&#xd;&#xa;queries &#x3d; queries &#x2b; &#x22;&#x5c;n&#x22;&#x3b;</jsScript_script>
+        <jsScript_script>var queries &#x3d; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;queries &#x3d; &#x27;SET &#x40;sectorId &#x3d; &#x28;SELECT sas.id&#x27;&#xd;&#xa;				&#x2b; &#x27;FROM split_activity_sector sas INNER JOIN translation t ON sas.literal_id&#x3d;t.literal_id &#x27;&#xd;&#xa;				&#x2b; &#x27;WHERE t.text&#x3d;&#x22;&#x27; &#x2b; sector &#x2b; &#x27;&#x22;&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;queries &#x3d; queries &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;queries &#x3d; queries &#x2b; &#x27;SET &#x40;nutsId &#x3d; &#x28;SELECT id FROM nuts WHERE country_code&#x3d;&#x22;&#x27; &#x2b; Country &#x2b; &#x27;&#x22;&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;queries &#x3d; queries &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;&#xd;&#xa;&#xd;&#xa;queries &#x3d; queries &#x2b; &#x22;INSERT INTO profile &#x28;nuts_id, activity_sector_id&#x29; VALUE &#x28;&#x40;nutsId, &#x40;sectorId&#x29;&#x3b;&#x22;&#x3b;&#xd;&#xa;queries &#x3d; queries &#x2b; &#x22;&#x5c;n&#x22;&#x3b;</jsScript_script>
       </jsScript>    </jsScripts>    <fields>      <field>        <name>queries</name>
         <rename>queries</rename>
         <type>String</type>
@@ -464,7 +528,7 @@
     <optimizationLevel>9</optimizationLevel>
     <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
         <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>var queries2 &#x3d; &#x27;SET &#x40;profileID &#x3d; &#x28;SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id&#x3d;n.id &#x27;&#xd;&#xa;				&#x2b; &#x27;INNER JOIN split_company_size cs ON p.company_size_id&#x3d;cs.id &#x27;&#xd;&#xa;				&#x2b; &#x27;INNER JOIN translation t ON cs.literal_id&#x3d;t.literal_id &#x27;&#xd;&#xa;				&#x2b; &#x27;WHERE t.text&#x3d;&#x22;&#x27; &#x2b; companySize &#x2b; &#x27;&#x22; AND n.country_code&#x3d;&#x22;&#x27; &#x2b; Country &#x2b; &#x27;&#x22;&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;queries2 &#x3d; &#x27;SET &#x40;indicatorID &#x3d; &#x28;SELECT id FROM indicator WHERE name&#x3d;&#x22;Company size&#x22;&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x27;SET &#x40;datasetID &#x3d; &#x28;SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id&#x3d;&#x40;indicatorID&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x27;INSERT INTO value &#x28;dataset_id, indicator_id, profile_id, value&#x29;&#x27;&#xd;&#xa;			&#x2b; &#x27;VALUES &#x28;&#x40;datasetID, &#x40;indicatorID, &#x40;profileID, &#x27; &#x2b; newValue &#x2b; &#x27;&#x29;&#x3b;&#x27;&#xd;&#xa;&#xd;&#xa;</jsScript_script>
+        <jsScript_script>var queries2 &#x3d; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;queries2 &#x3d; &#x27;SET &#x40;profileID &#x3d; &#x28;SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id&#x3d;n.id &#x27;&#xd;&#xa;				&#x2b; &#x27;INNER JOIN split_activity_sector sas ON p.activity_sector_id&#x3d;sas.id &#x27;&#xd;&#xa;				&#x2b; &#x27;INNER JOIN translation t ON sas.literal_id&#x3d;t.literal_id &#x27;&#xd;&#xa;				&#x2b; &#x27;WHERE t.text&#x3d;&#x22;&#x27; &#x2b; sector &#x2b; &#x27;&#x22; AND n.country_code&#x3d;&#x22;&#x27; &#x2b; Country &#x2b; &#x27;&#x22;&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;queries2 &#x3d; &#x27;SET &#x40;indicatorID &#x3d; &#x28;SELECT id FROM indicator WHERE name&#x3d;&#x22;Employment per sector&#x22;&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x27;SET &#x40;datasetID &#x3d; &#x28;SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id&#x3d;&#x40;indicatorID&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x27;INSERT INTO value &#x28;dataset_id, indicator_id, profile_id, value&#x29;&#x27;&#xd;&#xa;			&#x2b; &#x27;VALUES &#x28;&#x40;datasetID, &#x40;indicatorID, &#x40;profileID, &#x27; &#x2b; newValue &#x2b; &#x27;&#x29;&#x3b;&#x27;&#xd;&#xa;&#xd;&#xa;</jsScript_script>
       </jsScript>    </jsScripts>    <fields>      <field>        <name>queries2</name>
         <rename>queries2</rename>
         <type>String</type>
@@ -473,7 +537,7 @@
         <replace>N</replace>
       </field>    </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>1024</xloc>
+      <xloc>1088</xloc>
       <yloc>144</yloc>
       <draw>Y</draw>
       </GUI>
@@ -494,7 +558,7 @@
     <optimizationLevel>9</optimizationLevel>
     <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
         <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>var queries2 &#x3d; &#x27;SET &#x40;profileID &#x3d; &#x28;SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id&#x3d;n.id &#x27;&#xd;&#xa;				&#x2b; &#x27;INNER JOIN split_company_size cs ON p.company_size_id&#x3d;cs.id &#x27;&#xd;&#xa;				&#x2b; &#x27;INNER JOIN translation t ON cs.literal_id&#x3d;t.literal_id &#x27;&#xd;&#xa;				&#x2b; &#x27;WHERE t.text&#x3d;&#x22;&#x27; &#x2b; companySize &#x2b; &#x27;&#x22; AND n.country_code&#x3d;&#x22;&#x27; &#x2b; Country &#x2b; &#x27;&#x22;&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x27;SET &#x40;indicatorID &#x3d; &#x28;SELECT id FROM indicator WHERE name&#x3d;&#x22;Company size&#x22;&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x27;SET &#x40;datasetID &#x3d; &#x28;SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id&#x3d;&#x40;indicatorID&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x27;UPDATE value SET value &#x3d; &#x27; &#x2b; newValue &#x2b; &#x27; WHERE profile_id&#x3d;&#x40;profileID&#x27;&#xd;&#xa;			&#x2b; &#x27;AND indicator_id&#x3d;&#x40;indicatorID AND dataset_id&#x3d;&#x3b;&#x27;&#x3b;&#xd;&#xa;&#xd;&#xa;</jsScript_script>
+        <jsScript_script>var queries2 &#x3d; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;queries2 &#x3d; &#x27;SET &#x40;profileID &#x3d; &#x28;SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id&#x3d;n.id &#x27;&#xd;&#xa;				&#x2b; &#x27;INNER JOIN split_activity_sector sas ON p.activity_sector_id&#x3d;sas.id &#x27;&#xd;&#xa;				&#x2b; &#x27;INNER JOIN translation t ON sas.literal_id&#x3d;t.literal_id &#x27;&#xd;&#xa;				&#x2b; &#x27;WHERE t.text&#x3d;&#x22;&#x27; &#x2b; sector &#x2b; &#x27;&#x22; AND n.country_code&#x3d;&#x22;&#x27; &#x2b; Country &#x2b; &#x27;&#x22;&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x27;SET &#x40;indicatorID &#x3d; &#x28;SELECT id FROM indicator WHERE name&#x3d;&#x22;Employment per sector&#x22;&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x27;SET &#x40;datasetID &#x3d; &#x28;SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id&#x3d;&#x40;indicatorID&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x27;UPDATE value SET value &#x3d; &#x27; &#x2b; newValue &#x2b; &#x27; WHERE profile_id&#x3d;&#x40;profileID&#x27;&#xd;&#xa;			&#x2b; &#x27;AND indicator_id&#x3d;&#x40;indicatorID AND dataset_id&#x3d;&#x3b;&#x27;&#x3b;&#xd;&#xa;&#xd;&#xa;</jsScript_script>
       </jsScript>    </jsScripts>    <fields>      <field>        <name>queries2</name>
         <rename>queries2</rename>
         <type>String</type>
@@ -503,7 +567,7 @@
         <replace>N</replace>
       </field>    </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>1216</xloc>
+      <xloc>1280</xloc>
       <yloc>32</yloc>
       <draw>Y</draw>
       </GUI>
@@ -550,22 +614,28 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-   <typefield>companySize</typefield>
-    <fields>      <field>        <name>0To9</name>
-        <value>From 0 to 9 persons employed</value>
-        <norm>Value</norm>
-        </field>      <field>        <name>10To19</name>
-        <value>From 10 to 19 persons employed</value>
-        <norm>Value</norm>
-        </field>      <field>        <name>20To49</name>
-        <value>From 20 to 49 persons employed</value>
-        <norm>Value</norm>
-        </field>      <field>        <name>50To249</name>
-        <value>From 50 to 249 persons employed</value>
-        <norm>Value</norm>
-        </field>      <field>        <name>250OrMore</name>
-        <value>250 persons employed or more</value>
-        <norm>Value</norm>
+   <typefield>sector</typefield>
+    <fields>      <field>        <name>Agriculture</name>
+        <value>Agriculture, forestry and fishing</value>
+        <norm>value</norm>
+        </field>      <field>        <name>Manufacturing</name>
+        <value>Manufacturing</value>
+        <norm>value</norm>
+        </field>      <field>        <name>Construction</name>
+        <value>Construction, waste management, water and electricity supply</value>
+        <norm>value</norm>
+        </field>      <field>        <name>Trade</name>
+        <value>Trade, transport, food&#x2f;accommodation and recreation activities</value>
+        <norm>value</norm>
+        </field>      <field>        <name>IT</name>
+        <value>IT, Finance, real state and other technical scientific or personal service activities</value>
+        <norm>value</norm>
+        </field>      <field>        <name>PublicAdministration</name>
+        <value>Public administration</value>
+        <norm>value</norm>
+        </field>      <field>        <name>Education</name>
+        <value>Education, human health and social work activities</value>
+        <norm>value</norm>
         </field>      </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>192</xloc>
@@ -619,20 +689,20 @@
     <single_statement>N</single_statement>
     <replace_variables>Y</replace_variables>
     <quoteString>N</quoteString>
-    <sql>SET &#x40;profileID &#x3d; &#x28;SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id&#x3d;n.id INNER JOIN split_company_size cs ON p.company_size_id&#x3d;cs.id INNER JOIN translation t ON cs.literal_id&#x3d;t.literal_id WHERE t.text&#x3d;&#x22;&#x3f;&#x22; AND n.country_code&#x3d;&#x22;&#x3f;&#x22;&#x29;&#x3b;&#xd;&#xa;SET &#x40;indicatorID &#x3d; &#x28;SELECT id FROM indicator WHERE name&#x3d;&#x22;Company size&#x22;&#x29;&#x3b;&#xd;&#xa;SET &#x40;datasetID &#x3d; &#x28;SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id&#x3d;&#x40;indicatorID&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;UPDATE value&#xd;&#xa;SET value &#x3d; &#x3f;&#xd;&#xa;WHERE profile_id&#x3d;&#x40;profileID&#xd;&#xa;AND indicator_id&#x3d;&#x40;indicatorID&#xd;&#xa;AND dataset_id&#x3d;&#x40;datasetID&#x3b;</sql>
+    <sql>SET &#x40;profileID &#x3d; &#x28;SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id&#x3d;n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id&#x3d;sas.id INNER JOIN translation t ON cs.literal_id&#x3d;t.literal_id WHERE t.text&#x3d;&#x22;&#x3f;&#x22; AND n.country_code&#x3d;&#x22;&#x3f;&#x22;&#x29;&#x3b;&#xd;&#xa;SET &#x40;indicatorID &#x3d; &#x28;SELECT id FROM indicator WHERE name&#x3d;&#x22;Employment per sector&#x22;&#x29;&#x3b;&#xd;&#xa;SET &#x40;datasetID &#x3d; &#x28;SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id&#x3d;&#x40;indicatorID&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;UPDATE value&#xd;&#xa;SET value &#x3d; &#x3f;&#xd;&#xa;WHERE profile_id&#x3d;&#x40;profileID&#xd;&#xa;AND indicator_id&#x3d;&#x40;indicatorID&#xd;&#xa;AND dataset_id&#x3d;&#x40;datasetID&#x3b;</sql>
     <set_params>N</set_params>
     <insert_field/>
     <update_field/>
     <delete_field/>
     <read_field/>
     <arguments>
-       <argument><name>companySize</name></argument>
+       <argument><name>sector</name></argument>
        <argument><name>Country</name></argument>
        <argument><name>newValue</name></argument>
     </arguments>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>1280</xloc>
+      <xloc>1344</xloc>
       <yloc>144</yloc>
       <draw>Y</draw>
       </GUI>
@@ -661,7 +731,7 @@
     </compare>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>1024</xloc>
+      <xloc>1088</xloc>
       <yloc>32</yloc>
       <draw>Y</draw>
       </GUI>
@@ -671,7 +741,7 @@
     <name>Write SQL Sentences</name>
     <type>TextFileOutput</type>
     <description/>
-    <distribute>Y</distribute>
+    <distribute>N</distribute>
     <custom_distribution/>
     <copies>1</copies>
          <partitioning>
@@ -692,7 +762,7 @@
     <fileNameField/>
     <create_parent_folder>N</create_parent_folder>
     <file>
-      <name>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x2f;resources&#x2f;output&#x2f;1-2-1_company_size</name>
+      <name>&#x24;&#x7b;Internal.Transformation.Filename.Directory&#x7d;&#x2f;resources&#x2f;output&#x2f;1-2-2_employment_per_sector</name>
       <is_command>N</is_command>
       <servlet_output>N</servlet_output>
       <do_not_open_new_file_init>N</do_not_open_new_file_init>
@@ -756,7 +826,7 @@
     <fileNameField/>
     <create_parent_folder>N</create_parent_folder>
     <file>
-      <name>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x2f;resources&#x2f;output&#x2f;1-2-1_company_size</name>
+      <name>&#x24;&#x7b;Internal.Transformation.Filename.Directory&#x7d;&#x2f;resources&#x2f;output&#x2f;1-2-2_employment_per_sector</name>
       <is_command>N</is_command>
       <servlet_output>N</servlet_output>
       <do_not_open_new_file_init>N</do_not_open_new_file_init>
@@ -789,7 +859,7 @@
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>1024</xloc>
+      <xloc>1088</xloc>
       <yloc>256</yloc>
       <draw>Y</draw>
       </GUI>
@@ -820,7 +890,7 @@
     <fileNameField/>
     <create_parent_folder>N</create_parent_folder>
     <file>
-      <name>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x2f;resources&#x2f;output&#x2f;1-2-1_company_size</name>
+      <name>&#x24;&#x7b;Internal.Transformation.Filename.Directory&#x7d;&#x2f;resources&#x2f;output&#x2f;1-2-2_employment_per_sector</name>
       <is_command>N</is_command>
       <servlet_output>N</servlet_output>
       <do_not_open_new_file_init>N</do_not_open_new_file_init>
@@ -853,7 +923,7 @@
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>1168</xloc>
+      <xloc>1232</xloc>
       <yloc>144</yloc>
       <draw>Y</draw>
       </GUI>
