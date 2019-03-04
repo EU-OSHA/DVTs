@@ -402,7 +402,7 @@
       AND d.id = 6 AND d.id = v.dataset_id
       AND t.literal_id = scs.literal_id
       AND n.country_code IN (${pCountry1}, ${pCountry2}, 'EU28') AND i.id = ${pIndicator}
-      ORDER BY FIELD(Country, ${pCountry1}, ${pCountry2}, 'EU28') DESC
+      ORDER BY FIELD(n.country_code, ${pCountry1}, ${pCountry2}, 'EU28') DESC
     </Query>
   </DataAccess>
 

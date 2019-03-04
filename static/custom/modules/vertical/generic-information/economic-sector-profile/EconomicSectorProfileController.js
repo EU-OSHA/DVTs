@@ -31,25 +31,26 @@ define(function (require) {
             "pCountry1": $scope.pCountry1,
             "pCountry2": $scope.pCountry2
         }
-    };  
+    };
 
     $scope.stories = [
       //0 - Company size
       {
-          color1: dvtUtils.getColorCountry(1),
-          color2: dvtUtils.getChartLightGrayColor(),
-          color3: dvtUtils.getColorCountry(2),
-          color4: dvtUtils.getEUColor(),
-          color5: dvtUtils.getAccidentsColors(4),
-          plots: EconomicSectorProfileService.getCompanySizeMainPlots($scope.pCountry1, $scope.pCountry2),
-          dimensions: {
-            value: {
-              format: {
-                number: "0.#",
-                percent: "#%"
-              }
+        color1: dvtUtils.getColorCountry(1),
+        color2: dvtUtils.getChartLightGrayColor(),
+        color3: dvtUtils.getColorCountry(2),
+        color4: dvtUtils.getEUColor(),
+        color5: dvtUtils.getAccidentsColors(4),
+        plots: EconomicSectorProfileService.getCompanySizeMainPlots($scope.pCountry1, $scope.pCountry2),
+        dimensions: {
+          value: {
+            format: {
+              number: "0.#",
+              percent: "#%"
             }
           }
+        },
+        labelTextAlign: 'left'
       },
       // 1 - Employment per sector
       {

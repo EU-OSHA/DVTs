@@ -334,6 +334,8 @@ define(function (require) {
                         axisLabel_font: attributes.axisLabelFont || 'normal 12px "Open Sans"',
                         axisTitleLabel_font: attributes.axisTitleLabelFont || 'normal 12px "Open Sans" gray',
                         axisTitleLabel_textStyle: 'gray',
+                        axisTicks: attributes.axisTicks || false,
+                        axisRule_strokeStyle: attributes.axisRule_strokeStyle || '',
                         clickable: true,
                         clickAction: function (dataset) {
                         },
@@ -373,7 +375,7 @@ define(function (require) {
                         valuesOverflow: attributes.valuesOverflow || "",
                         valuesMask: attributes.valuesMask || '{series}',
                         valuesFont: attributes.valuesFont || 'emphasis 10px "Open Sans"',
-                        valuesAnchor: attributes.valuesAnchor || 'center',
+                        valuesAnchor: attributes.valuesAnchor || undefined,
                         valuesOptimizeLegibility: true,
                         valuesNormalized: attributes.valuesNormalized == 1 || false,
                         valuesFormat: scope.valuesFormat,
@@ -403,7 +405,6 @@ define(function (require) {
                         //new tooltip
                         tooltipFormat: scope.tooltipFormat,
                         baseAxisTooltipEnabled : false
-                        //,label_textStyle: undefined
                     }
 
                 };
@@ -671,6 +672,7 @@ define(function (require) {
                 if (!!scope.labelVisible) {
                     definition.chartDefinition.label_visible = scope.labelVisible;
                 }
+
                 //label top margin
                 if (!!scope.labelTop) {
                     definition.chartDefinition.label_top = scope.labelTop;

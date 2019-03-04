@@ -28,59 +28,10 @@ define (function (require) {
                             }
                             return dvtUtils.getChartLightGrayColor();
                         },
-                        valuesOptimizeLegibility: false,
-                        label_left: 225,
-                    	/*label_right: function(scene) {
-							var v = scene.getValue(),
-							atEnd = v >= 0, // place value at end of bar
-
-							// Horizontal orientation
-							a_beg = 'left', 
-							a_end = 'right', 
-							a_len = 'width',
-
-							p = this.panel._layoutInfo.paddings,
-
-							r = this.panel.axes.ortho.scale.range(),
-
-							rp = [r[0] - p[a_beg], r[1] + p[a_end]];
-
-							// Bar range
-							var barMark = this.sign.getAnchoredToMark(),
-								barBeg  = barMark[a_beg](),
-								rb      = [barBeg, barBeg + barMark[a_len]()],
-								// When FixedMin/Max are used, 
-								// the bar may be clipped.
-								rbVis = [
-									Math.max(rb[0], rp[0]),
-									Math.min(rb[1], rp[1])
-								];
-
-							var tx = this.sign._evalBaseText(),
-								tw = pv.Text.measureWidth(tx, this.pvMark.font()),
-								tm = this.pvMark.textMargin(),
-								tl = tw + 2*tm;
-
-							// The available outside length
-							var outLen = Math.max(
-									0, 
-									v >= 0 
-									? (rp[1] - rbVis[1])
-									: (rbVis[0] - rp[0])),
-								outside = outLen >= tl,
-								fits    = outside;
-
-							if(!outside) {
-								var insLen = rbVis[1] - rbVis[0];
-
-								if(insLen > outLen)
-									fits = (insLen >= tl);
-								else 
-									outside = true;
-							}
-
-							return {outside: outside, atEnd: atEnd, fits: fits};
-						},*/
+                        label_textMargin: 2,
+                        valuesAnchor: 'right',
+                        valuesOptimizeLegibility: true,
+                        //label_left: 225
                         visualRoles:{
                             series:'series',
                             category:'category'
