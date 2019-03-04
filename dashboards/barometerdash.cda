@@ -415,6 +415,18 @@
       <Parameter default="AT" name="pCountry1" type="String" />
       <Parameter default="BE" name="pCountry2" type="String" />
     </Parameters>
+    <!--<Query>
+      SELECT t.text as Employment, n.name as Country, (v.value*100) as Value
+      FROM nuts n, profile p, indicator i, value v, split_activity_sector sas, dataset d, translation t
+      WHERE n.id = p.nuts_id 
+      AND p.activity_sector_id = sas.id 
+      AND i.id = v.indicator_id 
+      AND v.profile_id = p.id
+      AND d.id = 6 AND d.id = v.dataset_id 
+      AND t.literal_id = sas.literal_id
+      AND sas.id IN (1, 2, 3, 4, 5, 6, 7)
+      AND n.country_code IN (${pCountry1}, ${pCountry2}, 'EU28') AND i.id = ${pIndicator};
+    </Query>-->
     <Query>
       SELECT t.text as Size, n.name as Country, v.value as Value
       FROM nuts n, profile p, indicator i, value v, split_illness si, translation t

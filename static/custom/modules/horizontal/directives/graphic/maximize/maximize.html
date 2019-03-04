@@ -4,12 +4,11 @@
             <span class="btn pull-right" role="button" aria-hidden="true" ng-click="ok()"><i class="fa fa-2x fa-times" aria-hidden="true"></i></span>
             <!--style ESTRICTAMENTE temporal-->
             <dvt-bar-chart
-                    data-ng-cloack
+                    data-ng-cloack 
                     is-maximized="true"
                     id="chart-{{ parameters.id }}"
                     is-zoom = "{{parameters.chartDefinition.isZoom}}"
                     title="{{ parameters.title }}"
-                    chart-title="{{ parameters.chartTitle }}"
                     long-title="{{ parameters.longTitle }}"
                     show-legend= "true"
                     legend="true"
@@ -37,13 +36,8 @@
                     stacked="{{ stacked }}"
                     main-bar-size="15"
                     values-visible="parameters.chartDefinition.valuesVisible"
-                    values-overflow="{{parameters.chartDefinition.valuesOverflow}}"
                     values-font='lighter 20px "Open Sans"'
-                    values-mask="{{parameters.chartDefinition.valuesMask}}"
                     label-top="parameters.chartDefinition.label_top"
-                    base-axis-label-text="parameters.chartDefinition.baseAxisLabel_text"
-                    base-axis-label-visible="parameters.chartDefinition.baseAxisLabel_visible"
-                    base-axis-label-font="{{parameters.chartDefinition.baseAxisLabel_font}}"
                     legend-font="{{parameters.chartDefinition.legend_font}}"
                     bar-fill-style="parameters.chartDefinition.bar_fillStyle"
                     base-axis-label-text-align="{{ parameters.chartDefinition.baseAxisLabel_textAlign }}"
@@ -52,6 +46,14 @@
                     legend-dot-stroke-style="{{ parameters.chartDefinition.legendDot_strokeStyle }}"
                     max-functional-legend="{{ parameters.maxFunctionalLegend }}"
                     post-execution="parameters.postExecution"
+                    chart-title="{{ parameters.chartTitle }}"
+                    values-mask="{{parameters.chartDefinition.valuesMask}}"
+                    base-axis-label-text="parameters.chartDefinition.baseAxisLabel_text"
+                    base-axis-label-visible="parameters.chartDefinition.baseAxisLabel_visible"
+                    base-axis-label-font="{{parameters.chartDefinition.baseAxisLabel_font}}"
+                    label-text-margin="{{parameters.labelTextMargin}}"
+                    label-text-align="parameters.labelTextAlign"
+                    values-overflow="{{parameters.chartDefinition.valuesOverflow}}"
             ></dvt-bar-chart>
         </div>
     </dvt-dashboard>

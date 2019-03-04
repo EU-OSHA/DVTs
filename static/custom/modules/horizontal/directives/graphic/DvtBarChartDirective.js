@@ -243,14 +243,14 @@ define(function (require) {
             + '<div class="chart--wrapper">'
                 + '<div data-ng-attr-id="{{ id }}"></div>'
             + '</div>'
-/*
-            + '<div class="legend-info" ng-if="isMaximized && legendClickMode">Click on each value on the legend to hide/show in on the chart</div>'
 
-            + '<div class="logoGraphics-wrapper"><img alt="European Agency for Safety and Health at Work" src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/osha-logo.svg" class="logoGraphics"></div>'
+        //    + '<div class="legend-info" ng-if="isMaximized && legendClickMode">Click on each value on the legend to hide/show in on the chart</div>'
 
-            + '<div ng-if="!!functionalLegend" class="functionalLegend" data-ng-bind-html="functionalLegend"></div>'
-*/
-        + '</div>';
+           // + '<div class="logoGraphics-wrapper"><img alt="European Agency for Safety and Health at Work" src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/osha-logo.svg" class="logoGraphics"></div>'
+
+            //+ '<div ng-if="!!functionalLegend" class="functionalLegend" data-ng-bind-html="functionalLegend"></div>'
+
+        //+ '</div>';
 
 
 
@@ -398,6 +398,7 @@ define(function (require) {
                         multiChartRole: attributes.multiChart,
                         label_visible: scope.labelVisible,
                         label_textAlign: scope.labelTextAlign || 'center',
+                        labelTextMargin: attributes.labelTextMargin || 0,
                         /*Adjust tooltip position*/
                         tooltipGravity: 'sw',
                         //tooltipFollowMouse: true,
@@ -756,17 +757,18 @@ define(function (require) {
                     definition ['country1'] = scope.country1;
                     definition ['country2'] = scope.country2;
                     definition ['valuesVisible'] = scope.valuesVisible;
-                    definition ['valuesMask'] = attributes.valuesMask;
-                    definition ['valuesOverflow'] = attributes.valuesOverflow;
                     definition ['maxLegendPos'] = attributes.maxLegendPos;
                     definition ['maxLabelTop'] = scope.maxLabelTop;
                     definition ['maxAxisPercent'] = attributes.axisPercent;
                     definition ['maxAxisPercent2'] = attributes.axisPercent2;
                     definition ['longTitle'] = attributes.longTitle;
-                    definition ['chartTitle'] = attributes.chartTitle;
                     definition ['baseAxisLabelLongText'] = scope.baseAxisLabelLongText;
                     definition ['orthoAxisTitle'] = attributes.orthoAxisTitle;
-
+                    definition ['chartTitle'] = attributes.chartTitle;
+                    definition ['valuesOverflow'] = attributes.valuesOverflow;
+                    definition ['valuesMask'] = attributes.valuesMask;
+                    definition ['labelTextAlign'] = scope.labelTextAlign;
+                    definition ['labelTextMargin'] = attributes.labelTextMargin;
 
                     if(!!attributes.maxFunctionalLegend){
                         definition['maxFunctionalLegend'] = attributes.maxFunctionalLegend;
