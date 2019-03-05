@@ -18,14 +18,14 @@
           <li>
             <label data-ng-bind="i18nLiterals.L20609"></label>
             <select id="datafor" class="" ng-model="pCountry1" ng-selected="pCountry1" ng-change="countryChange()">
-              <option data-ng-repeat='country in countries' data-ng-bind="i18nLiterals['L'+country.country]" value="{{::country.country_code}}"></option>
+              <option data-ng-repeat='country in countriesDataFor' data-ng-bind="i18nLiterals['L'+country.country]" value="{{::country.country_code}}"></option>
             </select>
           </li>
           <!-- 2ND COUNTRY FILTER -->
           <li>
             <label data-ng-bind="i18nLiterals.L20610"></label>
             <select id="comparewith" class="" ng-model="pCountry2" ng-selected="pCountry2" ng-change="countryChange()">
-              <option data-ng-repeat='country in countries' data-ng-bind="i18nLiterals['L'+country.country]" value="{{::country.country_code}}" ></option>
+              <option data-ng-repeat='country in countriesCompareWith' data-ng-bind="i18nLiterals['L'+country.country]" value="{{::country.country_code}}" ></option>
             </select>
           </li>
         </ul>
@@ -43,7 +43,7 @@
               <dvt-bar-chart
                 data-ng-cloak
                 query="getCompanySizeData" cda="{{::cda }}"
-                width="600" height="480"
+                width="330" height="400"
                 orientation="horizontal" axis-percent="1"
                 axis-fixed-max="100" step="{{step.chart1}}"
                 params="[['pIndicator','31'],['pCountry1', pCountry1],['pCountry2', pCountry2]]"
@@ -53,7 +53,7 @@
                 base-axis-label-visible="true"
                 base-axis-label-font="bold 15px 'Open Sans'"
                 base-axis-label-text-baseline="center"
-                base-axis-band-size-ratio= "1"
+                base-axis-band-size-ratio= "0.9"
                 base-axis-label-text-style="blue"
                 label-text-align="stories[0].labelTextAlign"
                 values-visible="true"
@@ -62,7 +62,6 @@
                 values-mask="{value}%"
                 dimensions="stories[0].dimensions"
                 legend="true"
-                disable-max-legend="true"
                 plots="stories[0].plots"
               ></dvt-bar-chart>
             </div>
@@ -82,7 +81,6 @@
                 stories[1].color3, stories[1].color4, stories[1].color5, stories[1].color6, stories[1].color7]"
                 chart-title="{{i18nLiterals.L293}}" id="2"
                 legend="true"
-                disable-max-legend="true"
                 stacked="1"
                 values-normalized="1"
                 base-axis-band-size-ratio= "0.40"
@@ -114,7 +112,6 @@
                 params="[['pIndicator','37'],['pCountry1', pCountry1],['pCountry2', pCountry2]]"
                 color-role="category" colors="[stories[2].color3, stories[2].color2, stories[2].color1]"
                 chart-title="{{i18nLiterals.L294}}" id="3"
-                disable-max-legend="true"
                 base-axis-label-visible="true"
                 base-axis-label-font="bold 15px 'Open Sans'"
                 base-axis-label-text-baseline="center"
@@ -144,7 +141,6 @@
                 color-role="category" colors="[stories[2].color1, stories[2].color2, stories[2].color3]"
                 chart-title="{{i18nLiterals.L295}}" id="4"
                 long-title="{{i18nLiterals.L295}}"
-                disable-max-legend="true"
                 base-axis-label-visible="true"
                 base-axis-label-font="bold 15px 'Open Sans'"
                 base-axis-band-size-ratio= "0.50"
@@ -170,10 +166,9 @@
               orientation="vertical"
               axis-fixed-max="10" step="{{step.chart5}}"
               params="[['pIndicator','39'],['pCountry1', pCountry1],['pCountry2', pCountry2]]"
-              color-role="category" colors="[stories[2].color1, stories[2].color2, stories[2].color3]"
+              color-role="category" colors="[stories[3].color1, stories[3].color2, stories[3].color3]"
               chart-title="{{i18nLiterals.L296}}" id="5"
-              plots="stories[1].plots"
-              disable-max-legend="true"
+              plots="stories[3].plots"
               base-axis-position="top"
               base-axis-label-visible="true"
               base-axis-label-text="top"
@@ -203,7 +198,6 @@
               color-role="category" colors="[stories[2].color1, stories[2].color2, stories[2].color3]"
               chart-title="{{i18nLiterals.L297}}" id="6"
               plots="stories[1].plots"
-              disable-max-legend="true"
               values-visible="true"
               values-font="bold 15px 'Open Sans'"
               values-mask="{value}€"

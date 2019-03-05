@@ -327,8 +327,8 @@ define(function () {
              * @description
              * Gets all countries available in Economic and sector profiles view
              */
-            getAvailableEconomicSectorCountries: function () {
-                var url = configService.getBarometerDataPath() + "&dataAccessId=getAvailableEconomicSectorCountries";
+            getAvailableEconomicSectorCountries: function (pCountry) {
+                var url = configService.getBarometerDataPath() + "&dataAccessId=getAvailableEconomicSectorCountries"+"&parampCountry="+pCountry;
                 $log.debug('getAvailableEconomicSectorCountries url:' + url);
                 return promise(url);
             },
