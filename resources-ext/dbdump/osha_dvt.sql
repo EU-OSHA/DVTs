@@ -27,7 +27,7 @@ CREATE TABLE IF NOT EXISTS `chart` (
   CONSTRAINT `section_id` FOREIGN KEY (`section_id`) REFERENCES `section` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=20087 DEFAULT CHARSET=latin1;
 
--- Volcando datos para la tabla osha_dvt.chart: ~21 rows (aproximadamente)
+-- Volcando datos para la tabla osha_dvt.chart: ~98 rows (aproximadamente)
 /*!40000 ALTER TABLE `chart` DISABLE KEYS */;
 INSERT INTO `chart` (`id`, `section_id`, `name`) VALUES
 	(1, 1, NULL);
@@ -272,7 +272,7 @@ CREATE TABLE IF NOT EXISTS `dataset` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
 
--- Volcando datos para la tabla osha_dvt.dataset: ~2 rows (aproximadamente)
+-- Volcando datos para la tabla osha_dvt.dataset: ~14 rows (aproximadamente)
 /*!40000 ALTER TABLE `dataset` DISABLE KEYS */;
 INSERT INTO `dataset` (`id`, `name`, `source`, `date_from`, `date_to`) VALUES
 	(1, 'ILO_DATA', 'JT', '2017-01-01', NULL);
@@ -362,7 +362,7 @@ CREATE TABLE IF NOT EXISTS `indicator` (
   CONSTRAINT `indicator_literal_id` FOREIGN KEY (`literal_id`) REFERENCES `literal` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=130 DEFAULT CHARSET=latin1;
 
--- Volcando datos para la tabla osha_dvt.indicator: ~26 rows (aproximadamente)
+-- Volcando datos para la tabla osha_dvt.indicator: ~129 rows (aproximadamente)
 /*!40000 ALTER TABLE `indicator` DISABLE KEYS */;
 INSERT INTO `indicator` (`id`, `name`, `literal_id`) VALUES
 	(1, 'Total cost of the work-related injuries and illnesses (billions of USD/€) Global', 1);
@@ -638,7 +638,7 @@ CREATE TABLE IF NOT EXISTS `indicators_by_chart` (
   CONSTRAINT `indicators_chart_indicator_id` FOREIGN KEY (`indicator_id`) REFERENCES `indicator` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Volcando datos para la tabla osha_dvt.indicators_by_chart: ~21 rows (aproximadamente)
+-- Volcando datos para la tabla osha_dvt.indicators_by_chart: ~98 rows (aproximadamente)
 /*!40000 ALTER TABLE `indicators_by_chart` DISABLE KEYS */;
 INSERT INTO `indicators_by_chart` (`chart_id`, `indicator_id`, `dataset_id`) VALUES
 	(1, 1, 1);
@@ -849,7 +849,7 @@ CREATE TABLE IF NOT EXISTS `indicators_in_dataset` (
   CONSTRAINT `indicator_dataset_indicator_id` FOREIGN KEY (`indicator_id`) REFERENCES `indicator` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Volcando datos para la tabla osha_dvt.indicators_in_dataset: ~26 rows (aproximadamente)
+-- Volcando datos para la tabla osha_dvt.indicators_in_dataset: ~129 rows (aproximadamente)
 /*!40000 ALTER TABLE `indicators_in_dataset` DISABLE KEYS */;
 INSERT INTO `indicators_in_dataset` (`indicator_id`, `dataset_id`) VALUES
 	(1, 1);
@@ -1125,7 +1125,7 @@ CREATE TABLE IF NOT EXISTS `literal` (
   CONSTRAINT `literal_section_id` FOREIGN KEY (`section_id`) REFERENCES `section` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Volcando datos para la tabla osha_dvt.literal: ~576 rows (aproximadamente)
+-- Volcando datos para la tabla osha_dvt.literal: ~2.579 rows (aproximadamente)
 /*!40000 ALTER TABLE `literal` DISABLE KEYS */;
 INSERT INTO `literal` (`id`, `chart_id`, `section_id`, `type`) VALUES
 	(1, NULL, NULL, 'INDICATOR_NAME');
@@ -6311,7 +6311,7 @@ CREATE TABLE IF NOT EXISTS `matrix_page` (
   CONSTRAINT `matrix_text_3_literal_id` FOREIGN KEY (`text_3_literal_id`) REFERENCES `literal` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=535 DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla osha_dvt.matrix_page: ~0 rows (aproximadamente)
+-- Volcando datos para la tabla osha_dvt.matrix_page: ~534 rows (aproximadamente)
 /*!40000 ALTER TABLE `matrix_page` DISABLE KEYS */;
 INSERT INTO `matrix_page` (`id`, `page`, `nuts_id`, `check_1`, `check_2`, `check_3`, `check_4`, `text_1_literal_id`, `text_2_literal_id`, `text_3_literal_id`) VALUES
 	(1, 'MATRIX_AUTHORITY', 13, 1, 0, 0, 0, 22100, 22101, 22102);
@@ -8371,7 +8371,7 @@ CREATE TABLE IF NOT EXISTS `profile` (
   CONSTRAINT `profile_subindicator_id` FOREIGN KEY (`subindicator_id`) REFERENCES `split_subindicator` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=958 DEFAULT CHARSET=latin1;
 
--- Volcando datos para la tabla osha_dvt.profile: ~7 rows (aproximadamente)
+-- Volcando datos para la tabla osha_dvt.profile: ~957 rows (aproximadamente)
 /*!40000 ALTER TABLE `profile` DISABLE KEYS */;
 INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
 	(1, 30, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
@@ -10300,7 +10300,7 @@ CREATE TABLE IF NOT EXISTS `section` (
   CONSTRAINT `Tool_ID` FOREIGN KEY (`tool_id`) REFERENCES `tool` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=42 DEFAULT CHARSET=latin1;
 
--- Volcando datos para la tabla osha_dvt.section: ~15 rows (aproximadamente)
+-- Volcando datos para la tabla osha_dvt.section: ~41 rows (aproximadamente)
 /*!40000 ALTER TABLE `section` DISABLE KEYS */;
 INSERT INTO `section` (`id`, `tool_id`, `name`) VALUES
 	(1, 1, 'HOMEPAGE');
@@ -10396,7 +10396,7 @@ CREATE TABLE IF NOT EXISTS `split_activity_sector` (
   CONSTRAINT `activity_sector_literal_id` FOREIGN KEY (`literal_id`) REFERENCES `literal` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla osha_dvt.split_activity_sector: ~0 rows (aproximadamente)
+-- Volcando datos para la tabla osha_dvt.split_activity_sector: ~13 rows (aproximadamente)
 /*!40000 ALTER TABLE `split_activity_sector` DISABLE KEYS */;
 INSERT INTO `split_activity_sector` (`id`, `literal_id`) VALUES
 	(1, 418);
@@ -10436,7 +10436,7 @@ CREATE TABLE IF NOT EXISTS `split_age_group` (
   CONSTRAINT `age_group_literal_id` FOREIGN KEY (`literal_id`) REFERENCES `literal` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla osha_dvt.split_age_group: ~0 rows (aproximadamente)
+-- Volcando datos para la tabla osha_dvt.split_age_group: ~4 rows (aproximadamente)
 /*!40000 ALTER TABLE `split_age_group` DISABLE KEYS */;
 INSERT INTO `split_age_group` (`id`, `literal_id`) VALUES
 	(1, 431);
@@ -10458,7 +10458,7 @@ CREATE TABLE IF NOT EXISTS `split_answer` (
   CONSTRAINT `answer_literal_id` FOREIGN KEY (`literal_id`) REFERENCES `literal` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla osha_dvt.split_answer: ~0 rows (aproximadamente)
+-- Volcando datos para la tabla osha_dvt.split_answer: ~31 rows (aproximadamente)
 /*!40000 ALTER TABLE `split_answer` DISABLE KEYS */;
 INSERT INTO `split_answer` (`id`, `literal_id`) VALUES
 	(1, 435);
@@ -10534,7 +10534,7 @@ CREATE TABLE IF NOT EXISTS `split_company_size` (
   CONSTRAINT `company_size_literal_id` FOREIGN KEY (`literal_id`) REFERENCES `literal` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla osha_dvt.split_company_size: ~0 rows (aproximadamente)
+-- Volcando datos para la tabla osha_dvt.split_company_size: ~6 rows (aproximadamente)
 /*!40000 ALTER TABLE `split_company_size` DISABLE KEYS */;
 INSERT INTO `split_company_size` (`id`, `literal_id`) VALUES
 	(1, 466);
@@ -10579,7 +10579,7 @@ CREATE TABLE IF NOT EXISTS `split_gender` (
   CONSTRAINT `gender_literal_id` FOREIGN KEY (`literal_id`) REFERENCES `literal` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla osha_dvt.split_gender: ~0 rows (aproximadamente)
+-- Volcando datos para la tabla osha_dvt.split_gender: ~3 rows (aproximadamente)
 /*!40000 ALTER TABLE `split_gender` DISABLE KEYS */;
 INSERT INTO `split_gender` (`id`, `literal_id`) VALUES
 	(1, 472);
@@ -10701,7 +10701,7 @@ CREATE TABLE IF NOT EXISTS `strategies_page` (
   CONSTRAINT `strategies_text_9_literal_id` FOREIGN KEY (`text_9_literal_id`) REFERENCES `literal` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=70 DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla osha_dvt.strategies_page: ~0 rows (aproximadamente)
+-- Volcando datos para la tabla osha_dvt.strategies_page: ~69 rows (aproximadamente)
 /*!40000 ALTER TABLE `strategies_page` DISABLE KEYS */;
 INSERT INTO `strategies_page` (`id`, `page`, `nuts_id`, `text_1_literal_id`, `text_2_literal_id`, `text_3_literal_id`, `text_4_literal_id`, `text_5_literal_id`, `text_6_literal_id`, `text_7_literal_id`, `text_8_literal_id`, `text_9_literal_id`, `text_10_literal_id`, `text_11_literal_id`, `text_12_literal_id`, `text_13_literal_id`) VALUES
 	(1, 'STRATEGY', 96, 20150, 20151, 20152, 20153, 20154, 20155, 20156, 20157, NULL, NULL, NULL, NULL, NULL);
@@ -10962,7 +10962,7 @@ CREATE TABLE IF NOT EXISTS `tool` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
--- Volcando datos para la tabla osha_dvt.tool: ~0 rows (aproximadamente)
+-- Volcando datos para la tabla osha_dvt.tool: ~2 rows (aproximadamente)
 /*!40000 ALTER TABLE `tool` DISABLE KEYS */;
 INSERT INTO `tool` (`id`, `name`) VALUES
 	(1, 'osha_dvt_ilo');
@@ -10983,7 +10983,7 @@ CREATE TABLE IF NOT EXISTS `translation` (
   CONSTRAINT `translation_literal_id` FOREIGN KEY (`literal_id`) REFERENCES `literal` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=2580 DEFAULT CHARSET=latin1;
 
--- Volcando datos para la tabla osha_dvt.translation: ~576 rows (aproximadamente)
+-- Volcando datos para la tabla osha_dvt.translation: ~2.579 rows (aproximadamente)
 /*!40000 ALTER TABLE `translation` DISABLE KEYS */;
 INSERT INTO `translation` (`id`, `literal_id`, `language`, `is_default`, `text`) VALUES
 	(1, 1, 'EN', 1, 'Total cost of the work-related injuries and illnesses (billions of USD/€) Global');
@@ -12454,9 +12454,9 @@ INSERT INTO `translation` (`id`, `literal_id`, `language`, `is_default`, `text`)
 INSERT INTO `translation` (`id`, `literal_id`, `language`, `is_default`, `text`) VALUES
 	(734, 413, 'EN', 1, 'Decline');
 INSERT INTO `translation` (`id`, `literal_id`, `language`, `is_default`, `text`) VALUES
-	(735, 414, 'EN', 1, 'No, give me more info');
+	(735, 20098, 'EN', 1, 'MoLSA (in Czech: MPSV):Ministry of Labour and Social Affairs<br/>MoF (MF): Ministry of Finance<br/>MoH (MZ): Ministry of Health<br/>MoEYS (MŠMT): Ministry of Education, Youth and Sports<br/>MoIT (MPO): Ministry of Industry and Trade<br/>CMA (?BÚ): Czech Mining Authority<br/>MoT (MD): Ministry of Transport<br/>MoI (MV): Ministry of the Interior<br/>MoD (MO): Ministry of Defence<br/>NIPH (SZÚ): National Institute for Public Health<br/>OSRI (VÚBP): Occupational Safety Research Institute');
 INSERT INTO `translation` (`id`, `literal_id`, `language`, `is_default`, `text`) VALUES
-	(736, 20098, 'EN', 1, 'MoLSA (in Czech: MPSV):Ministry of Labour and Social Affairs<br/>MoF (MF): Ministry of Finance<br/>MoH (MZ): Ministry of Health<br/>MoEYS (MŠMT): Ministry of Education, Youth and Sports<br/>MoIT (MPO): Ministry of Industry and Trade<br/>CMA (?BÚ): Czech Mining Authority<br/>MoT (MD): Ministry of Transport<br/>MoI (MV): Ministry of the Interior<br/>MoD (MO): Ministry of Defence<br/>NIPH (SZÚ): National Institute for Public Health<br/>OSRI (VÚBP): Occupational Safety Research Institute');
+	(736, 414, 'EN', 1, 'No, give me more info');
 INSERT INTO `translation` (`id`, `literal_id`, `language`, `is_default`, `text`) VALUES
 	(737, 20099, 'EN', 1, 'No information identified.');
 INSERT INTO `translation` (`id`, `literal_id`, `language`, `is_default`, `text`) VALUES
@@ -13224,7 +13224,7 @@ INSERT INTO `translation` (`id`, `literal_id`, `language`, `is_default`, `text`)
 INSERT INTO `translation` (`id`, `literal_id`, `language`, `is_default`, `text`) VALUES
 	(1119, 20510, 'EN', 1, 'This country has very poor quantitative compliance (0%-39%)');
 INSERT INTO `translation` (`id`, `literal_id`, `language`, `is_default`, `text`) VALUES
-	(1120, 20511, 'EN', 1, 'This country has not applied any exemptions to SMEs nor micro enterprises');
+	(1120, 20511, 'EN', 1, 'No comments made');
 INSERT INTO `translation` (`id`, `literal_id`, `language`, `is_default`, `text`) VALUES
 	(1121, 20512, 'EN', 1, '<p>This country has provided the following&nbsp;lighter regimes for SMEs and micro enterprises:</p><p>Directive 89/391/EEC (framework)</p><p>Directive 93/103/EC (fishing vessels)</p><p>&nbsp;</p><p>This country has provided the following&nbsp;incentives for SMEs and micro enterprises:</p><p>Directive 89/391/EEC (framework)</p><p>Directive 2002/44/EC (vibration)</p><p>Directive 2003/10/EC (noise)</p><p>Directive 2006/25/EC (artificial optical radiation)</p>');
 INSERT INTO `translation` (`id`, `literal_id`, `language`, `is_default`, `text`) VALUES
@@ -13550,7 +13550,7 @@ INSERT INTO `translation` (`id`, `literal_id`, `language`, `is_default`, `text`)
 INSERT INTO `translation` (`id`, `literal_id`, `language`, `is_default`, `text`) VALUES
 	(1282, 22024, 'EN', 1, 'Status of Occupational Safety and Health in the European Union');
 INSERT INTO `translation` (`id`, `literal_id`, `language`, `is_default`, `text`) VALUES
-	(1283, 22025, 'EN', 1, 'This indicator is an overview on OSH Authorities and relevant OSH institutions in the different Member states and at EU level.');
+	(1283, 22025, 'EN', 1, 'This indicator is an overview on OSH Authorities and relevant OSH institutions in the different Member States and at EU level.');
 INSERT INTO `translation` (`id`, `literal_id`, `language`, `is_default`, `text`) VALUES
 	(1284, 22026, 'EN', 1, 'Know more');
 INSERT INTO `translation` (`id`, `literal_id`, `language`, `is_default`, `text`) VALUES
@@ -16160,7 +16160,7 @@ CREATE TABLE IF NOT EXISTS `value` (
   CONSTRAINT `value_profile_id` FOREIGN KEY (`profile_id`) REFERENCES `profile` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Volcando datos para la tabla osha_dvt.value: ~771 rows (aproximadamente)
+-- Volcando datos para la tabla osha_dvt.value: ~1.283 rows (aproximadamente)
 /*!40000 ALTER TABLE `value` DISABLE KEYS */;
 INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
 	(1, 1, 361, 1335.862917473);
