@@ -1,19 +1,31 @@
 -- Insert the new tool
 INSERT INTO tool (name) VALUES ('osha_dvt_barometer');
-INSERT INTO dataset (name, source, date_from, date_to) VALUES ("BAROMETER_DATA", "KOOP and Eurogip files", "2018-01-01", null);
+
 INSERT INTO dataset (name, source, date_from, date_to) VALUES ("BAROMETER_DATA", "EUROSTAT", "2010-01-01", "2016-12-31");
+
+INSERT INTO dataset (name, source, date_from, date_to) VALUES ("BAROMETER_DATA", "KOOP and Eurogip files", "2018-01-01", null);
+
 INSERT INTO dataset (name, source, date_from, date_to) VALUES ("BAROMETER_DATA", "EUROSTAT
 DG Employment Research team – EU-OSHA", "2010-01-01", "2016-12-31");
+
 INSERT INTO dataset (name, source, date_from, date_to) VALUES ("BAROMETER_DATA", "EUROSTAT", "2017-01-01", null);
+
 INSERT INTO dataset (name, source, date_from, date_to) VALUES ("BAROMETER_DATA", "ESENER", "2014-01-01", null);
+
 INSERT INTO dataset (name, source, date_from, date_to) VALUES ("BAROMETER_DATA", "DG EMPL", "2015-01-01", null);
+
 INSERT INTO dataset (name, source, date_from, date_to) VALUES ("BAROMETER_DATA", "OSHWiki
 National Strategies reports", "2018-01-01", null);
+
 INSERT INTO dataset (name, source, date_from, date_to) VALUES ("BAROMETER_DATA", "EUROSTAT
 DG Employment Research team – EU-OSHA", "2016-01-01", null);
+
 INSERT INTO dataset (name, source, date_from, date_to) VALUES ("BAROMETER_DATA", "Eurofound EWCS Data", "2015-01-01", null);
+
 INSERT INTO dataset (name, source, date_from, date_to) VALUES ("BAROMETER_DATA", "EUROSTAT", "2013-01-01", null);
+
 INSERT INTO dataset (name, source, date_from, date_to) VALUES ("BAROMETER_DATA", "SLIC Reports (DG EMPL)", "2018-01-01", null);
+
 INSERT INTO dataset (name, source, date_from, date_to) VALUES ("BAROMETER_DATA", "DG EMPL", "2018-01-01", null);
 
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);
@@ -531,12 +543,12 @@ INSERT INTO literal (id, chart_id, section_id, type) VALUES (@maxId, NULL, NULL,
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@maxId, "EN", 1, "Does your organisation have a health and safety delegate or committee?");
 INSERT INTO indicator (name, literal_id) VALUES ("Does your organisation have a health and safety delegate or committee? - Eurofound EWCS Data", @maxId);
 
-SET @datasetId = (SELECT id FROM dataset  WHERE source="KOOP and Eurogip files" AND date_from="2018-01-01");
-SET @indicatorId = (SELECT id FROM indicator WHERE name="OSH authorities and inspection services");
-INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
-
 SET @datasetId = (SELECT id FROM dataset  WHERE source="EUROSTAT" AND date_from="2010-01-01" AND date_to="2016-12-31");
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Income per capita");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
+
+SET @datasetId = (SELECT id FROM dataset  WHERE source="KOOP and Eurogip files" AND date_from="2018-01-01");
+SET @indicatorId = (SELECT id FROM indicator WHERE name="OSH authorities and inspection services");
 INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
 
 SET @datasetId = (SELECT id FROM dataset  WHERE source="KOOP and Eurogip files" AND date_from="2018-01-01");
@@ -3765,7 +3777,7 @@ INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="WORKACC" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+565, null, @sectionId, "CHART FOOTER");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+565, "EN", 1, "This diagram shows the development of non-fatal accidents from 2010 onwards in percentages. 2010 is equal to 100%.");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+565, "EN", 1, "The diagram shows the development of non-fatal work accidents 2010 to the latest available year. 2010 is the baseline and equal to 100 %. Despite the efforts of EUROSTAT and its ESAW-System to achieve harmonisation, there are major concerns about the comparability of data.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="WORKACC" AND tool_id=@toolId);
@@ -3775,7 +3787,7 @@ INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="WORKACC" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+567, null, @sectionId, "CHART FOOTER");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+567, "EN", 1, "This chart combines official data with estimated data. It shows an estimate of the number of non-fatal accidents based on the number of fatal accidents. The estimate is calculated as follows: In average (from 2010 to 2014) there are 1,098 non-fatal accidents per one fatal accident (EU 15). The registered fatal accident of each member state are multiplied with this ratio, i.e. with 1,098. The result is an estimated figure that is in many cases much higher than the registered number of non-fatal accidents. Background is the assumption that the registration of fatal accidents is close to 100%, whilst there is often a large share of cases that are not reported (so-called ‘Underreporting’) See also: Eurostat. Please note that Eurostat covers the resident population, so that the figures reported for a country include residents working abroad and excludes foreign residents working in the country. This can make a sizeable difference in particular in small countries with relatively many cross-border workers, such as Luxembourg.");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+567, "EN", 1, "<p>This chart combines registered data with estimated data. It shows an estimate of the number of non-fatal accidents based on the number of fatal accidents. The estimate is calculated as follows: In average (from 2010 to 2014) there are 1,098 non-fatal accidents per one fatal accident (EU 15). The registered fatal accident of each member state are multiplied with this ratio, i.e. with 1,098. The result is an estimated figure that is in many cases much higher than the registered number of non-fatal accidents. Background is the assumption that the registration of fatal accidents is close to 100%, whilst there is often a large share of cases on non-fatal work accidents that are not reported (so-called ‘Underreporting’) See also: <a href=\"https://ec.europa.eu/eurostat/statistics-explained/index.php/Accidents_at_work_statistics#Number_of_accidents.\" target=\"_blank\"><strong>Eurostat</strong></a>&nbsp;</p><p>Please note that in general Eurostat covers the resident population, so that the employment figures that are used for these calculations &nbsp;only include only residents working abroad and exclude foreign residents working in the country. &nbsp;In other words: The number of accidents is set into relation to the number of employed country residents. This can make a sizeable difference in particular in small countries with relatively many cross-border workers that are not residents, &nbsp;e.g. for Luxembourg.</p><p><em>[Only for your understanding: Luxembourg; 270.000 national employment workers; 450.000 domestic wage earners = 180.000 employed people (mainly commuters) from other countries, a total of 40%]. If we reduce the Accidents of Luxembourg for 40%, Luxemburg would be an average country.]</em></p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="WORKACC" AND tool_id=@toolId);
@@ -3810,7 +3822,7 @@ INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="OSH_CULTURE" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+574, null, @sectionId, "CHART FOOTER");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+574, "EN", 1, "The diagram presents the responses of the ESENER 2014 Survey to the question: “In the last 3 years, has your establishment used any of the following measures to prevent psychosocial risks? Reorganisation of work in order to reduce job demands and work pressure”");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+574, "EN", 1, "The diagram is based on the ESENER 2014 Survey. It presents one of the possible responses to the question: “In the last 3 years, has your establishment used any of the following measures to prevent psychosocial risks?” The diagram shows the response to the following answer option: “Reorganisation of work in order to reduce job demands and work pressure”");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="OSH_CULTURE" AND tool_id=@toolId);
@@ -3835,7 +3847,7 @@ INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="WORKING_CONDITIONS" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+579, null, @sectionId, "PHYSICAL_RISKS_HEADER");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+579, "EN", 1, "	Under physical risks we display data on exposure to chemical and biological substances, exposure to noise, vibrations and high or low temperatures, and working tasks involving carrying, lifting or work in tiring or painful positions.");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+579, "EN", 1, "	This topic displays data on exposure to chemical and biological substances, exposure to noise, vibrations and high or low temperatures, and working tasks involving carrying, lifting or work in tiring or painful positions.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="OVERALL_OP" AND tool_id=@toolId);
@@ -3865,17 +3877,17 @@ INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="MENTAL_RISKS" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+585, null, @sectionId, "CHART FOOTER");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+585, "EN", 1, "The diagram presents the responses of the ESENER 2014 Survey to the question: “Please tell me for each of the following risks whether or not it is present in the establishment? Time pressure?”");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+585, "EN", 1, "The diagram is based on the ESENER 2014 Survey. It presents one of the possible responses to the question: “Please tell me for each of the following risks whether or not it is present in the establishment?” The diagram shows the response to the following answer option: “Time pressure”.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="MENTAL_RISKS" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+586, null, @sectionId, "CHART FOOTER");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+586, "EN", 1, "The diagram presents the responses of the EUROFOUND European Working Conditions Survey 2015 to the question: “Level of fairness, cooperation and trust”");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+586, "EN", 1, "The diagram presents a composite indicator “Level of fairness, cooperation and trust” that is based on responses to a number of questions of the EUROFOUND European Working Conditions Survey 2015.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="MENTAL_RISKS" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+587, null, @sectionId, "CHART FOOTER");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+587, "EN", 1, "The diagram presents the responses of the ESENER 2014 Survey to the question: “Please tell me for each of the following risks whether or not it is present in the establishment? Poor communication or cooperation?”");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+587, "EN", 1, "The diagram is based on the ESENER 2014 Survey. It presents one of the possible responses to the question: “Please tell me for each of the following risks whether or not it is present in the establishment?” The diagram shows the response to the following answer option: “Poor communication or cooperation.”");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="MENTAL_RISKS" AND tool_id=@toolId);
@@ -3885,17 +3897,17 @@ INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="MENTAL_RISKS" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+589, null, @sectionId, "CHART FOOTER");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+589, "EN", 1, "The diagram presents the responses of the ESENER 2014 Survey to the question: “Please tell me for each of the following risks whether or not it is present in the establishment? Employees’ lack of influence over their work pace or work processes ?”");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+589, "EN", 1, "The diagram is based on the ESENER 2014 Survey. It presents one of the possible responses to the question: “Please tell me for each of the following risks whether or not it is present in the establishment?” The diagram shows the response to the following answer option: “Employees’ lack of influence over their work pace or work processes.”");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="MENTAL_RISKS" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+590, null, @sectionId, "CHART FOOTER");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+590, "EN", 1, "The diagram presents the responses of the EUROFOUND European Working Conditions Survey 2015 to the question: “I might lose my job in the next 6 months?”");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+590, "EN", 1, "The diagram presents the responses of the EUROFOUND European Working Conditions Survey 2015 to the question: “I might lose my job in the next 6 months”");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="MENTAL_RISKS" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+591, null, @sectionId, "CHART FOOTER");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+591, "EN", 1, "The diagram presents the responses of the ESENER 2014 Survey to the question: “Please tell me for each of the following risks whether or not it is present in the establishment? Job insecurity?”");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+591, "EN", 1, "The diagram is based on the ESENER 2014 Survey. It presents one of the possible responses to the question: “Please tell me for each of the following risks whether or not it is present in the establishment?” The diagram shows the response to the following answer option: “Job insecurity.”");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="MENTAL_RISKS" AND tool_id=@toolId);
@@ -3905,7 +3917,7 @@ INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="MENTAL_RISKS" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+593, null, @sectionId, "CHART FOOTER");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+593, "EN", 1, "The diagram presents the responses of the ESENER 2014 Survey to the question: “Please tell me for each of the following risks whether or not it is present in the establishment? Having to deal with difficult customers, patients, pupils etc. “");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+593, "EN", 1, "The diagram is based on the ESENER 2014 Survey. It presents one of the possible responses to the question: “Please tell me for each of the following risks whether or not it is present in the establishment?” The diagram shows the response to the following answer option: “Having to deal with difficult customers, patients, pupils etc“.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="MENTAL_RISKS" AND tool_id=@toolId);
@@ -3915,7 +3927,7 @@ INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="MENTAL_RISKS" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+595, null, @sectionId, "CHART FOOTER");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+595, "EN", 1, "The diagram presents the responses of the ESENER 2014 Survey to the question: “Please tell me for each of the following risks whether or not it is present in the establishment? Long or irregular working hours? “");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+595, "EN", 1, "The diagram is based on the ESENER 2014 Survey. It presents one of the possible responses to the question: “Please tell me for each of the following risks whether or not it is present in the establishment?” The diagram shows the response to the following answer option: “Long or irregular working hours.“");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="MENTAL_RISKS" AND tool_id=@toolId);
@@ -4375,7 +4387,7 @@ INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2050, null, @sectionId, "BOX_MESSAGE");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2050, "EN", 1, "This indicator consists of four major datasets: trends on non-fatal work accidents from 2010, fatal work accidents, estimation of non-fatal accidents based on fatal accidents and level of reporting.");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2050, "EN", 1, "This indicator consists of four major data sets: trends on non-fatal work accidents from 2010, and fatal work accidents (EUROSTAT data); estimation of non-fatal accidents based on fatal accidents, and level of reporting (based on EUROSTAT data).");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
@@ -4390,7 +4402,7 @@ INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2056, null, @sectionId, "BOX_MESSAGE");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2056, "EN", 1, "This indicator includes a variety of data and data sources. You will find data on aspects like workers’ overall perception, physical risks and mental risks (stress, harassment, violence etc.) and OSH and prevention (organisational and technical measures to reduce risks).");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2056, "EN", 1, "This indicator includes a variety of data and data sources. You will find data on aspects like workers’ overall perception, physical risks and mental risks (stress, harassment, violence etc.)");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
@@ -4400,7 +4412,7 @@ INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2060, null, @sectionId, "BOX_MESSAGE");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2060, "EN", 1, "Here quantitative data are displayed showing how workers are represented at company level and how they are involved in the prevention policy of the companies.");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2060, "EN", 1, "In this section mainly quantitative data are displayed that show how workers are represented at company level and how they are involved in the prevention policy of the companies.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
