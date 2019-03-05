@@ -54,27 +54,58 @@ define(function (require) {
       },
       // 1 - Employment per sector
       {
-          color1: dvtUtils.getColorCountry(1),
-          color2: dvtUtils.getColorCountry(22),
-          color3: dvtUtils.getColorCountry(2),
-          color4: dvtUtils.getEUColor(),
-          color5: dvtUtils.getAccidentsColors(4),
-          color6: dvtUtils.getColorCountry(12),
-          color7: dvtUtils.getEUColor(2)
+        color1: dvtUtils.getColorCountry(1),
+        color2: dvtUtils.getColorCountry(22),
+        color3: dvtUtils.getColorCountry(2),
+        color4: dvtUtils.getEUColor(),
+        color5: dvtUtils.getAccidentsColors(4),
+        color6: dvtUtils.getColorCountry(12),
+        color7: dvtUtils.getEUColor(2)
       },
-      // 2 - Employment rate || 3 - Unemployment rate || 5 - INCOME PER CAPITA
+      // 2 - Employment rate
       {
-          color1: dvtUtils.getColorCountry(1),
-          color2: dvtUtils.getColorCountry(2),
-          color3: dvtUtils.getEUColor(),
-          plots: EconomicSectorProfileService.getCategoryMainPlots($scope.pCountry1, $scope.pCountry2)
+        color1: dvtUtils.getColorCountry(1),
+        color2: dvtUtils.getColorCountry(2),
+        color3: dvtUtils.getEUColor(),
+        plots: EconomicSectorProfileService.getEmploymentRateMainPlots($scope.pCountry1, $scope.pCountry2),
+        labelTextAlign: 'left',
+        dimensions: {
+          value: {
+            format: {
+              number: "0.#",
+              percent: "#€"
+            }
+          }
+        },
       },
-      // 3 - GDP PER CAPITA IN RELATION TO EU28 AVERAGE
+      // 3 - Unemployment rate 
+      {
+        color1: dvtUtils.getColorCountry(1),
+        color2: dvtUtils.getColorCountry(2),
+        color3: dvtUtils.getEUColor(),
+        plots: EconomicSectorProfileService.getUnemploymentRateMainPlots($scope.pCountry1, $scope.pCountry2)
+      },
+      // 4 - GDP PER CAPITA IN RELATION TO EU28 AVERAGE
       {
         color1: dvtUtils.getColorCountry(1),
         color2: dvtUtils.getColorCountry(2),
         color3: dvtUtils.getEUColor(),
         plots: EconomicSectorProfileService.getGPDMainPlots($scope.pCountry1, $scope.pCountry2)
+      },
+      // 5 - INCOME PER CAPITA
+      {
+        color1: dvtUtils.getColorCountry(1),
+        color2: dvtUtils.getColorCountry(2),
+        color3: dvtUtils.getEUColor(),
+        plots: EconomicSectorProfileService.getIncomeMainPlots($scope.pCountry1, $scope.pCountry2),
+        dimensions: {
+          value: {
+            format: {
+              number: "0",
+              percent: "#€"
+            }
+          }
+        }
       }
     ];
 
@@ -83,8 +114,8 @@ define(function (require) {
         chart2: 20,
         chart3: 10,
         chart4: 2.50,
-        chart6: 100,
-        chart7: 5000
+        chart5: 100,
+        chart6: 5000
     }
 
     $scope.countriesDataFor = [];
