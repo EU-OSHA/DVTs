@@ -34,6 +34,7 @@
 118-http://www.tyoelama2020.fi/files/104/Strategy_2020.pdf 
 118-http://www.tyoelama2020.fi/files/104/Strategy_2020.pdf
 118-http://urn.fi/URN:ISBN:978-952-00-3145-9
+118-http://urn.fi/URN:ISBN:978-952-00-3145-9
 120-http://www.ilo.org/safework/areasofwork/national-occupational-safety-and-health-systems-and-programmes/WCMS_179869/lang--en/index.htm 
 121-http://www.julkari.fi/handle/10024/112065
 121-http://www.ttl.fi/partner/thf/eng/sivut/default.aspx
@@ -122,7 +123,7 @@
 382-http://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:52014DC0332
 400-http://ncphp.government.bg/index.php?option=com_content&view=article&id=265&catid=127&Itemid=527&lang=bg
 400-http://www.strategy.bg/StrategicDocuments/View.aspx?lang=bg-BG&Id=457
-435-file:///C:/Users/Pilarduyag001/Desktop/EU-OSHA/SC%2020%20-%20OSH%20Barometer%20DVT/10102018%20Dos%20713%20-%20MS%20Strategic%20framework.docx#_ftn1
+567-https://ec.europa.eu/eurostat/statistics-explained/index.php/Accidents_at_work_statistics#Number_of_accidents.
 2081-https://en.wikipedia.org/wiki/Google_Translate
 2101-https://www.sozialministerium.at/siteEN/ 
 2101-https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Austria 
