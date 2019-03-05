@@ -62,12 +62,19 @@ define(function (require) {
           color6: dvtUtils.getColorCountry(12),
           color7: dvtUtils.getEUColor(2)
       },
-      // 2 - Employment rate || 3 - Unemployment rate || 4 - GDP PER CAPITA IN RELATION TO EU28 AVERAGE || 5 - INCOME PER CAPITA
+      // 2 - Employment rate || 3 - Unemployment rate || 5 - INCOME PER CAPITA
       {
           color1: dvtUtils.getColorCountry(1),
           color2: dvtUtils.getColorCountry(2),
           color3: dvtUtils.getEUColor(),
           plots: EconomicSectorProfileService.getCategoryMainPlots($scope.pCountry1, $scope.pCountry2)
+      },
+      // 3 - GDP PER CAPITA IN RELATION TO EU28 AVERAGE
+      {
+        color1: dvtUtils.getColorCountry(1),
+        color2: dvtUtils.getColorCountry(2),
+        color3: dvtUtils.getEUColor(),
+        plots: EconomicSectorProfileService.getGPDMainPlots($scope.pCountry1, $scope.pCountry2)
       }
     ];
 
@@ -80,7 +87,8 @@ define(function (require) {
         chart7: 5000
     }
 
-    $scope.countries = [];
+    $scope.countriesDataFor = [];
+    $scope.countriesCompareWith = [];
 
     // Show/hide the Countries Filter List
     angular.element('div.countries-filters').css( "display",'none' );
@@ -96,15 +104,26 @@ define(function (require) {
     |                                DATA LOAD                                     |
     |******************************************************************************/      
 
-      dataService.getAvailableEconomicSectorCountries().then(function (data) {
+      dataService.getAvailableEconomicSectorCountries($scope.pCountry2).then(function (data) {
         data.data.resultset.map(function (elem) {
           var param = (!!$stateParams.filter) ? $stateParams.filter : undefined;
-          $scope.countries.push({
+          $scope.countriesDataFor.push({
             country: elem[0],
             country_code: elem[1]
           });
         });
-        //$log.warn($scope.countries);
+      }).catch(function (err) {
+          throw err;
+      });
+
+      dataService.getAvailableEconomicSectorCountries($scope.pCountry1).then(function (data) {
+        data.data.resultset.map(function (elem) {
+          var param = (!!$stateParams.filter) ? $stateParams.filter : undefined;
+          $scope.countriesCompareWith.push({
+            country: elem[0],
+            country_code: elem[1]
+          });
+        });
       }).catch(function (err) {
           throw err;
       });

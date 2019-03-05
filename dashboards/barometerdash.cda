@@ -371,6 +371,9 @@
   <DataAccess access="public" connection="dvt_conn" id="getAvailableEconomicSectorCountries" type="sql">
     <Cache duration="3600" enabled="true" />
     <Columns />
+    <Parameters>
+      <Parameter default="AT" name="pCountry" type="String" />
+    </Parameters>
     <Query>
       SELECT DISTINCT(n.literal_id) as country_name, n.country_code as country_code
       FROM nuts n
@@ -378,7 +381,8 @@
       ON n.id = p.nuts_id
       INNER JOIN value v
       ON v.profile_id = p.id
-      WHERE v.indicator_id IN (31, 36, 37, 38, 39, 40)
+      WHERE v.indicator_id IN (31, 36, 37, 38, 39, 40) 
+      AND n.country_code not in (${pCountry})
       ORDER BY country_name ASC;
     </Query>
   </DataAccess>
@@ -415,7 +419,7 @@
       <Parameter default="AT" name="pCountry1" type="String" />
       <Parameter default="BE" name="pCountry2" type="String" />
     </Parameters>
-    <!--<Query>
+    <Query>
       SELECT t.text as Employment, n.name as Country, (v.value*100) as Value
       FROM nuts n, profile p, indicator i, value v, split_activity_sector sas, dataset d, translation t
       WHERE n.id = p.nuts_id 
@@ -426,8 +430,8 @@
       AND t.literal_id = sas.literal_id
       AND sas.id IN (1, 2, 3, 4, 5, 6, 7)
       AND n.country_code IN (${pCountry1}, ${pCountry2}, 'EU28') AND i.id = ${pIndicator};
-    </Query>-->
-    <Query>
+    </Query>
+    <!--<Query>
       SELECT t.text as Size, n.name as Country, v.value as Value
       FROM nuts n, profile p, indicator i, value v, split_illness si, translation t
       WHERE n.id = p.nuts_id
@@ -436,7 +440,7 @@
       AND v.profile_id = p.id
       AND t.literal_id = si.literal_id
       AND n.country_code IN ('BG', 'BE', 'HR') AND i.id = 23 AND si.id IN (2,3,4,5,6)
-    </Query>
+    </Query>-->
   </DataAccess>
 
   <!-- Get Employment rate indicators and values -->
