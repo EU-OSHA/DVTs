@@ -287,6 +287,8 @@ define(function (require) {
             template:_template,
 
             link: function (scope, element, attributes, controllers) {
+                //$log.warn(attributes.params[1]);
+                //$log.warn(controllers[0].dashboard);
 
                 // FIX. enlarged views share same id, a prefix has been added that must be undone
                 if (attributes.id.split("_").length > 1){
@@ -386,6 +388,8 @@ define(function (require) {
                         legendLabel_visible: true,
                         legendDot_strokeStyle: attributes.legendDotStrokeStyle,
                         legendShape: 'square',
+                        legendAlign: attributes.legendAlign || 'center',
+                        legendOverflow: attributes.legendOverflow || 'clip',
                         color2AxisLegendShape: attributes.color2AxisLegendShape || "square",
                         baseAxisLabel_text: !scope.isMaximized?scope.baseAxisLabelText:scope.baseAxisLabelLongText,
                         baseAxisLabel_visible: scope.baseAxisLabelVisible,
@@ -404,10 +408,19 @@ define(function (require) {
                         //tooltipOffset: 76
                         //new tooltip
                         tooltipFormat: scope.tooltipFormat,
-                        baseAxisTooltipEnabled : false
+                        baseAxisTooltipEnabled : false,
+                        orthoAxisTitle: attributes.orthoAxisTitle || '',
+                        multipleLabelColors: attributes.multipleLabelColors || false,
+                        showEuroMask: attributes.showEuroMask === 'true' || false
                     }
 
                 };
+
+                if(!!attributes.showEuroMask){
+                    definition.chartDefinition.yAxisLabel_text= function(){
+                        return this.scene.vars.tick.label+' €';
+                    }
+                }
 
                 //TODO refactor OR condition in to definition where it been possible
 
@@ -432,8 +445,9 @@ define(function (require) {
                     definition.chartDefinition.plots = scope.plots;
                 }
 
-                if (!!scope.params)
+                if (!!scope.params){
                     definition.parameters = scope.params;
+                }
 
                 if (!!scope.listenTo)
                     for (var listen in scope.listenTo) {
@@ -678,6 +692,19 @@ define(function (require) {
                     definition.chartDefinition.label_top = scope.labelTop;
                 }
 
+                //Labels
+                if(!!attributes.multipleLabelColors){
+                    var pCountry1 = definition.parameters[1][1];
+                    var pCountry2 = definition.parameters[2][1];
+
+                    /*definition.chartDefinition.baseAxisLabel_textStyle= function(){
+                        $log.warn(this);
+                        if(this.scene.vars.tick.label == 'EU28'){
+                            $log.warn('helouda');
+                        }
+                    }*/
+                }
+
                 // define main chart type
                 var chart;
                 if (!!attributes.type) {
@@ -699,7 +726,6 @@ define(function (require) {
                 }
 
                 dashboard.register(chart);
-
 
                 if (!scope.contextuals || scope.contextuals.length > 0) {
                     if (!scope.contextuals) {

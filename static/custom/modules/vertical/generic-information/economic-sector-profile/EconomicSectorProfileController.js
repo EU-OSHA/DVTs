@@ -101,14 +101,14 @@ define(function (require) {
         dimensions: {
           value: {
             format: {
-              number: "0",
+              number: "#,0",
               percent: "#€"
             }
           }
         }
       }
     ];
-
+        
     $scope.step = {
         chart1: 20,
         chart2: 20,

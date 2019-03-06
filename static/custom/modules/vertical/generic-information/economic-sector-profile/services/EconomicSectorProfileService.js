@@ -12,6 +12,7 @@ define (function (require) {
                         name: "main",
                         dataPart: "0",
                         label_textStyle: function(scene){
+                        	//$log.warn(this);
                         	var subIndicatorKey = scene.firstAtoms.series;
                             if (subIndicatorKey == 'From 0 to 9 persons employed') {
                                 return dvtUtils.getColorCountry(1);
@@ -97,11 +98,37 @@ define (function (require) {
                     {
                         name: "main",
                         dataPart: "0",
-                        //bar_visible: true,
+                        bar_visible: true,
 						//bar_fillStyle:'',
-                        bar_call: function(){
-
+                        bar_add: function(){
+                            return new pv.Image()
+                                .url('http://www.pollutionprobe.org/wp-content/uploads/person-icon.png')
+                                .height(37)
+                                .width(37)
+                                .top(5)
+                                .right(5);
                         },
+                        /*plot_add: function() {
+							$log.warn(this);
+
+                            var panel = new pv.Panel();
+                            panel.add(pv.Image)
+                                .url('http://www.pollutionprobe.org/wp-content/uploads/person-icon.png')
+                                .height(37)
+                                .width(37)
+                                .top(5)
+                                .right(5)
+                            ;
+
+                            panel.add(pv.Image)
+                                .url('http://www.pollutionprobe.org/wp-content/uploads/person-icon.png')
+                                .height(37)
+                                .width(37)
+                                .top(5)
+                                .left(5)
+                            ;
+                            return panel;
+                        },*/
                         label_textMargin: 2,
 						label_textBaseline: 'bottom',
                         valuesAnchor: 'bottom',
@@ -131,6 +158,7 @@ define (function (require) {
                             }
                             return dvtUtils.getChartLightGrayColor();
                         },
+                        line_lineWidth: 1.5,
                         label_textMargin: 5,
 						label_textBaseline: 'top',
                         visualRoles:{
