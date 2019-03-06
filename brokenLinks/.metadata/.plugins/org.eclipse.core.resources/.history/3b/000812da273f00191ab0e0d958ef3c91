@@ -1,0 +1,132 @@
+package brokenLinks;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.net.UnknownHostException;
+import java.util.ArrayList;
+import java.util.Iterator;
+
+public class BrokenLinks
+{
+	public static void main(String[] args)
+	{
+		ArrayList<String> links = readLinks(args[0]);
+		writeLinks(links);
+	}
+	
+	private static ArrayList<String> readLinks(String pDir) 
+	{
+		ArrayList<String> links = new ArrayList<String>();
+		
+		links.add("Literal ID;Status;Link");
+		
+		try 
+		{
+			BufferedReader br = new BufferedReader(new FileReader(pDir));
+			String line = br.readLine(), id;
+			
+			int code, idPos;
+			
+			while(line != null) 
+			{
+				if (line.trim().length() > 0)
+				{
+					idPos = line.indexOf('-');
+					id = line.substring(0, idPos);
+					line = line.substring(idPos+1);
+					if (line.startsWith("www")) 
+					{
+						line = "http://" + line;
+					}
+					code = getCode(line);
+					if(code != 200) 
+					{
+						String status = "";
+						if (code == 404) 
+						{
+							status = ";Not found;";
+						}
+						else if ((code/100)==3)
+						{
+							status = ";Redirection;";
+						}
+						links.add(id + status + line);
+						System.out.println("LINK ADDED: " + line);
+					}
+				}				
+				line = br.readLine();
+			}
+			
+			System.out.println("EXECUTION FINISHED");
+			
+			br.close();
+			
+		} 
+		catch (FileNotFoundException e) 
+		{
+			e.printStackTrace();
+		} 
+		catch (IOException e) 
+		{
+			e.printStackTrace();
+		} 
+		
+		return links;
+	}
+	
+	private static int getCode(String pLink) 
+	{
+		int code = 0;
+		try	
+		{
+			URL url = new URL(pLink);
+			
+			HttpURLConnection.setFollowRedirects(false);
+			
+			HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+			
+			conn.setRequestMethod("GET");
+			
+			conn.connect();
+			
+			code = conn.getResponseCode();
+		}
+		catch (UnknownHostException uhe) 
+		{
+			code = 404;
+		}
+		catch(IOException ioe)
+		{
+			code = 404;
+		}
+		System.out.println("The code is " + code);
+		return code;
+	}
+	
+	private static void writeLinks (ArrayList<String> pLinks) 
+	{
+		try 
+		{
+			BufferedWriter w = new BufferedWriter(new FileWriter("C:\\broken-links.csv"));
+			
+			Iterator<String> i = pLinks.iterator();
+			while (i.hasNext()) {
+				String link = i.next();
+				w.write(link + '\n');
+			}
+			
+			w.close();
+			
+		}
+		catch (IOException e) 
+		{
+			e.printStackTrace();
+		}
+	}
+}
