@@ -175,7 +175,7 @@ define(function (require) {
         return sequence++;
     }
 
-    function DvtBarChartDirective(dataService, plotsProvider, exportService, $log, maximize, $cookies) {
+    function DvtBarChartDirective(dataService, plotsProvider, exportService, $log, maximize, $cookies, dvtUtils) {
 
         var _template= ''
         + '<div class="card--block--chart--wrapper">'
@@ -697,12 +697,15 @@ define(function (require) {
                     var pCountry1 = definition.parameters[1][1];
                     var pCountry2 = definition.parameters[2][1];
 
-                    /*definition.chartDefinition.baseAxisLabel_textStyle= function(){
-                        $log.warn(this);
+                    definition.chartDefinition.baseAxisLabel_textStyle= function getColor(){
                         if(this.scene.vars.tick.label == 'EU28'){
-                            $log.warn('helouda');
+                            return dvtUtils.getEUColor();
+                        }else if(this.scene.vars.tick.label == pCountry1){
+                            return dvtUtils.getColorCountry(1);
+                        }else if(this.scene.vars.tick.label == pCountry2){
+                            return dvtUtils.getColorCountry(2);
                         }
-                    }*/
+                    }
                 }
 
                 // define main chart type
@@ -866,7 +869,7 @@ define(function (require) {
         }
     }
 
-    DvtBarChartDirective.$inject = ['dataService', 'plotsProvider', 'exportService', '$log', 'maximize', '$cookies'];
+    DvtBarChartDirective.$inject = ['dataService', 'plotsProvider', 'exportService', '$log', 'maximize', '$cookies', 'dvtUtils'];
 
     return DvtBarChartDirective;
 });
