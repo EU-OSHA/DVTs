@@ -293,7 +293,6 @@ define(function (require) {
                     attributes.id = attributes.id.split("_")[1];
                 }
 
-
                 scope.id = 'dvt_bar_chart_' + nextId();
                 var dashboard = controllers[0];
                 scope.divClass = attributes.cssClass || 'col-xs-12 col-sm-6 col-md-3 col-lg-2';
@@ -366,7 +365,7 @@ define(function (require) {
                         baseAxisBandSizeRatio: attributes.baseAxisBandSizeRatio || 0.9,
                         baseAxisGrid: attributes.baseAxisGrid || false,
                         baseAxisPosition: attributes.baseAxisPosition || "bottom",
-                        orthoAxisGrid: attributes.orthoAxisGrid || true, // Color axes
+                        orthoAxisGrid: attributes.orthoAxisGrid === "false" ? false : true, // Color axes
                         axisGrid_strokeStyle: 'white',
                         axisGrid_lineWidth: 2,
                         axisBandSizeRatio: 0.6,

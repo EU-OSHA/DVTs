@@ -54,7 +54,7 @@
                 base-axis-label-font="bold 15px 'Open Sans'"
                 base-axis-label-text-baseline="center"
                 base-axis-band-size-ratio= "0.9"
-                base-axis-label-text-style="blue"
+                base-axis-label-text-style=""
                 label-text-align="stories[0].labelTextAlign"
                 values-visible="true"
                 values-overflow="show"
@@ -72,33 +72,21 @@
               <dvt-bar-chart
                 data-ng-cloak
                 query="getEmploymentPerSectorData" cda="{{::cda }}"
-                width="330" height="330"
-                orientation="horizontal"
-                axis-fixed-max="4000" step="{{step.chart2}}"
-                listen-to="[pCountry1,pCountry2]"
+                width="330" height="400"
+                orientation="horizontal" axis-percent="1"
+                axis-fixed-max="100" step="{{step.chart2}}"
                 params="[['pIndicator','36'],['pCountry1', pCountry1],['pCountry2', pCountry2]]"
                 color-role="series" colors="[stories[1].color1, stories[1].color2, 
                 stories[1].color3, stories[1].color4, stories[1].color5, stories[1].color6, stories[1].color7]"
                 chart-title="{{i18nLiterals.L293}}" id="2"
-                legend="true"
-                stacked="1"
-                values-normalized="1"
+                values-normalized="1" stacked="1"
                 base-axis-band-size-ratio= "0.40"
                 base-axis-label-font="bold 15px 'Open Sans'"
                 base-axis-label-text-baseline="center"
-                axis-percent="1"
+                legend="true"
+                legend-font="normal 14px 'Open Sans'"
               ></dvt-bar-chart>
             </div>
-            <!--<div class="chart-legend">
-              <p data-ng-bind-html="to_trusted('<p>Max functional legend</p>')"></p>
-              <p data-ng-bind="i18nLiterals.L418"></p>
-              <p data-ng-bind="i18nLiterals.L419"></p>
-              <p data-ng-bind="i18nLiterals.L420"></p>
-              <p data-ng-bind="i18nLiterals.L421"></p>
-              <p data-ng-bind="i18nLiterals.L422"></p>
-              <p data-ng-bind="i18nLiterals.L423"></p>
-              <p data-ng-bind="i18nLiterals.L424"></p>
-            </div>-->
         </div>
         <!-- EMPLOYMENT RATE -->
         <div class="card--block--chart">            
@@ -106,7 +94,7 @@
               <dvt-bar-chart
                 data-ng-cloak
                 query="getEmploymentRateData" cda="{{::cda }}"
-                width="330" height="330"
+                width="330" height="360" axis-percent="1"
                 orientation="horizontal" axis-fixed-min="50"
                 axis-fixed-max="100" step="{{step.chart3}}" 
                 params="[['pIndicator','37'],['pCountry1', pCountry1],['pCountry2', pCountry2]]"
@@ -117,11 +105,12 @@
                 base-axis-label-text-baseline="center"
                 base-axis-band-size-ratio= "0.5"
                 values-visible="true"
+                values-overflow="show"
                 values-font="bold 15px 'Open Sans'"
                 values-mask="{value}%"
-                values-anchor="right"
-                axis-percent="1"
                 plots="stories[2].plots"
+                dimensions="stories[2].dimensions"
+                label-text-align="stories[2].labelTextAlign"
               ></dvt-bar-chart>
             </div>
             <!--<div class="chart-legend">
@@ -134,11 +123,11 @@
               <dvt-bar-chart
                 data-ng-cloak
                 query="getUnemploymentRateData" cda="{{::cda }}"
-                width="330" height="330"
+                width="330" height="360"
                 orientation="vertical" axis-percent="1"
                 axis-fixed-max="10" step="{{step.chart4}}"
                 params="[['pIndicator','38'],['pCountry1', pCountry1],['pCountry2', pCountry2]]"
-                color-role="category" colors="[stories[2].color1, stories[2].color2, stories[2].color3]"
+                color-role="category" colors="[stories[3].color1, stories[3].color2, stories[3].color3]"
                 chart-title="{{i18nLiterals.L295}}" id="4"
                 long-title="{{i18nLiterals.L295}}"
                 base-axis-label-visible="true"
@@ -147,15 +136,10 @@
                 values-visible="true"
                 values-font="bold 15px 'Open Sans'"
                 values-mask="{value}%"
-                values-anchor="top"
-                plots="stories[2].plots"
+                plots="stories[3].plots"
               ></dvt-bar-chart>
             </div>
-            <!--<div class="chart-legend">
-              <p data-ng-bind-html="to_trusted('<p>Max functional legend</p>')"></p>
-            </div>-->
         </div>
-
         <!-- GDP PER CAPITA IN RELATION TO EU28 AVERAGE -->
         <div class="card--block--chart">            
           <div class="chart--block">
@@ -164,49 +148,43 @@
               query="getGDPData" cda="{{::cda }}"
               width="330" height="330"
               orientation="vertical"
-              axis-fixed-max="10" step="{{step.chart5}}"
+              axis-fixed-max="1300" step="{{step.chart5}}"
               params="[['pIndicator','39'],['pCountry1', pCountry1],['pCountry2', pCountry2]]"
-              color-role="category" colors="[stories[3].color1, stories[3].color2, stories[3].color3]"
+              color-role="category" colors="[stories[4].color1, stories[4].color2, stories[4].color3]"
               chart-title="{{i18nLiterals.L296}}" id="5"
-              plots="stories[3].plots"
+              plots="stories[4].plots"
               base-axis-position="top"
-              base-axis-label-visible="true"
               base-axis-label-text="top"
               base-axis-label-font="bold 15px 'Open Sans'"
               values-visible="true"
               values-font="bold 15px 'Open Sans'"
               values-mask="{value}%"
-              values-anchor="right"
               axis-percent="1"
+              p-y-labels="0"
+              ortho-axis-grid="false"
             ></dvt-bar-chart>
           </div>
-          <!--<div class="chart-legend">
-            <p data-ng-bind-html="to_trusted('<p>Max functional legend</p>')"></p>
-          </div>-->
         </div>
-
         <!-- INCOME PER CAPITA -->
-        <div class="card--block--chart">            
+        <div class="card--block--chart">
           <div class="chart--block">
             <dvt-bar-chart
               data-ng-cloak
               query="getIncomePerCapitaData" cda="{{::cda }}"
-              width="330" height="330"
-              orientation="vertical" axis-fixed-min="700"
-              axis-fixed-max="3000" step="{{step.chart6}}"
+              width="330" height="370" type="lines"
+              orientation="vertical" axis-fixed-min="10000"
+              axis-fixed-max="30000" step="{{step.chart6}}"
               params="[['pIndicator','40'],['pCountry1', pCountry1],['pCountry2', pCountry2]]"
-              color-role="category" colors="[stories[2].color1, stories[2].color2, stories[2].color3]"
+              color-role="series" colors="[stories[5].color1, stories[5].color2, stories[5].color3]"
               chart-title="{{i18nLiterals.L297}}" id="6"
-              plots="stories[1].plots"
+              base-axis-label-font="bold 15px 'Open Sans'"
+              plots="stories[5].plots"
+              dimensions="stories[5].dimensions"
               values-visible="true"
               values-font="bold 15px 'Open Sans'"
               values-mask="{value}€"
-              type="lines"
             ></dvt-bar-chart>
           </div>
-          <!--<div class="chart-legend">
-            <p data-ng-bind-html="to_trusted('<p>Max functional legend</p>')"></p>
-          </div>-->
         </div>
 
     <!-- END CONTENT -->
