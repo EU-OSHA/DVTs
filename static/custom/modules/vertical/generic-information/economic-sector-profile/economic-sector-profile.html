@@ -152,7 +152,7 @@
             <dvt-bar-chart
               data-ng-cloak
               query="getGDPData" cda="{{::cda }}"
-              width="330" height="330"
+              width="330" height="360"
               orientation="vertical"
               axis-fixed-max="1300" step="{{step.chart5}}"
               params="[['pIndicator','39'],['pCountry1', pCountry1],['pCountry2', pCountry2]]"
@@ -160,13 +160,14 @@
               chart-title="{{i18nLiterals.L296}}" id="5"
               plots="stories[4].plots"
               base-axis-position="top"
-              base-axis-label-font="14px 'OpenSans-bold'"
+              base-axis-label-font="15px 'OpenSans-bold'"
               values-visible="true"
               values-font="14px 'OpenSans-bold'"
               values-mask="{value}%"
               axis-percent="1"
               p-y-labels="0"
               ortho-axis-grid="false"
+              hoverable="false"
               multiple-label-colors="true"
             ></dvt-bar-chart>
           </div>

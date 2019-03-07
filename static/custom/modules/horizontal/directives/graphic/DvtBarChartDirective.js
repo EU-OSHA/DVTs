@@ -349,7 +349,7 @@ define(function (require) {
                         // Chart/Interaction
                         animate: attributes.animate || false,
                         selectable: attributes.selectable || false,
-                        hoverable: attributes.hoverable || true,
+                        hoverable: attributes.hoverable == 'false' ? false: true,
                         // tooltip
                         tooltipClassName: 'light',
                         tooltipOpacity: 0.80,
@@ -375,7 +375,7 @@ define(function (require) {
                         valuesVisible: false,
                         valuesOverflow: attributes.valuesOverflow || "",
                         valuesMask: attributes.valuesMask || '{series}',
-                        valuesFont: attributes.valuesFont || 'emphasis 10px "Open Sans"',
+                        valuesFont: attributes.valuesFont || 'emphasis 10px "OpenSans"',
                         valuesAnchor: attributes.valuesAnchor || undefined,
                         valuesOptimizeLegibility: true,
                         valuesNormalized: attributes.valuesNormalized == 1 || false,
@@ -395,7 +395,7 @@ define(function (require) {
                         baseAxisLabel_visible: scope.baseAxisLabelVisible,
                         baseAxisLabel_textBaseline: attributes.baseAxisLabelTextBaseline || 'top',
                         //baseAxisLabel_font: attributes.baseAxisLabelFont || 'normal 12px "Open Sans"',
-                        axisLabel_font: attributes.baseAxisLabelFont || 'normal 12px "Open Sans"',
+                        axisLabel_font: attributes.baseAxisLabelFont || 'normal 12px "OpenSans"',
                         baseAxisLabel_textStyle: attributes.baseAxisLabelTextStyle || 'gray' ,
                         baseAxisOverlappedLabelsMode: 'leave',
                         multiChartRole: attributes.multiChart,
@@ -697,7 +697,9 @@ define(function (require) {
                     var pCountry1 = definition.parameters[1][1];
                     var pCountry2 = definition.parameters[2][1];
 
-                    definition.chartDefinition.baseAxisLabel_textStyle= function getColor(){
+                    //$log.warn('pCountry1: '+pCountry1+' pCountry2: '+pCountry2);
+
+                    definition.chartDefinition.baseAxisLabel_textStyle= function (){
                         if(this.scene.vars.tick.label == 'EU28'){
                             return dvtUtils.getEUColor();
                         }else if(this.scene.vars.tick.label == pCountry1){

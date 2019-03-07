@@ -1,6 +1,7 @@
 define (function (require) {
 
     var configService = require('horizontal/config/configService');
+    var pv = require('cdf/lib/CCC/protovis');
     var EconomicSectorProfileService = function (dvtUtils, $log) {
         return {
             getCompanySizeMainPlots: function(pCountry1, pCountry2) {
@@ -12,7 +13,6 @@ define (function (require) {
                         name: "main",
                         dataPart: "0",
                         label_textStyle: function(scene){
-                        	//$log.warn(this);
                         	var subIndicatorKey = scene.firstAtoms.series;
                             if (subIndicatorKey == 'From 0 to 9 persons employed') {
                                 return dvtUtils.getColorCountry(1);
@@ -91,46 +91,44 @@ define (function (require) {
                 ];
             },
             getGPDMainPlots: function(pCountry1, pCountry2) {
-
-                var dashboard = this.dashboard;
+            	
 	
                 return [
                     {
                         name: "main",
                         dataPart: "0",
-                        bar_visible: true,
-						//bar_fillStyle:'',
-                        bar_add: function(){
-                            return new pv.Image()
-                                .url('http://www.pollutionprobe.org/wp-content/uploads/person-icon.png')
-                                .height(37)
-                                .width(37)
-                                .top(5)
-                                .right(5);
+						bar_fillStyle: '#f0f0f0',
+						label_textStyle: function(scene){
+							return 'dimgray';
+						},
+                        bar_call: function (){
+
+                            this.add(pv.Image)
+				              .url(/*url*/function(itemScene) {
+				              	var countryKey = itemScene.firstAtoms.category;
+				              	//$log.warn(itemScene);
+				              	if(countryKey == /*pCountry1*/ 'BG'){
+                  					return configService.getImagesPath()+'man_orange.svg'
+				              	}else if(countryKey == pCountry2){
+				              		return configService.getImagesPath()+'man.svg'
+				              	}else if(countryKey == /*'EU28'*/ 'HR'){
+				              		return configService.getImagesPath()+'man_blue.svg'
+				              	}
+                  				})
+				              .height(/*200*/ function(scene){
+				              	/*SVG default values: height: 60, width: 30 */
+				              	var valueKey = scene.firstAtoms.value /100;
+				              	return 60*valueKey/2.5;
+				              })
+				              /*.width(function(scene){
+				              	var valueKey = scene.firstAtoms.value /100;
+				              	return 30*valueKey/3;
+				              })*/
+                              .bottom(20);
                         },
-                        /*plot_add: function() {
-							$log.warn(this);
-
-                            var panel = new pv.Panel();
-                            panel.add(pv.Image)
-                                .url('http://www.pollutionprobe.org/wp-content/uploads/person-icon.png')
-                                .height(37)
-                                .width(37)
-                                .top(5)
-                                .right(5)
-                            ;
-
-                            panel.add(pv.Image)
-                                .url('http://www.pollutionprobe.org/wp-content/uploads/person-icon.png')
-                                .height(37)
-                                .width(37)
-                                .top(5)
-                                .left(5)
-                            ;
-                            return panel;
-                        },*/
                         label_textMargin: 2,
 						label_textBaseline: 'bottom',
+						valuesOptimizeLegibility: false,
                         valuesAnchor: 'bottom',
                         visualRoles:{
                             series:'series',
