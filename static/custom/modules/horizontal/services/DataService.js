@@ -413,6 +413,23 @@ define(function () {
 
             /************************ END ECONOMIC AND SECTOR PROFILES ***************************/
 
+            /************************ WORKFORCE PROFILES ***************************/
+
+            /**
+             * @ngdoc method
+             * @name dvt.configModule.DataService#getGenders
+             * @methodOf dvt.configModule.DataService
+             * @description
+             * Get genders for select option list
+             */
+            getGenders: function(){
+                var url = configService.getBarometerDataPath() + "&dataAccessId=getGenders";
+                $log.debug('getGenders url:' + url);
+                return promise(url);
+            }, 
+            
+            /************************ END WORKFORCE PROFILES ***************************/
+
             /**
              * @ngdoc method
              * @name dvt.configModule.DataService#getCountryStrategies

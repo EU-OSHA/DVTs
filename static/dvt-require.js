@@ -158,6 +158,10 @@
     requirePaths['vertical/economic-sector-profile/EconomicSectorProfileController'] = verticalModules + '/generic-information/economic-sector-profile/EconomicSectorProfileController' + suffix;
     requirePaths['vertical/economic-sector-profile/services/EconomicSectorProfileService'] = verticalModules + '/generic-information/economic-sector-profile/services/EconomicSectorProfileService' + suffix;
 
+    /* WORKFORCE PROFILE */
+    requirePaths['vertical/workforce-profile/WorkforceProfileController'] = verticalModules + '/generic-information/workforce-profile/WorkforceProfileController' + suffix;
+    requirePaths['vertical/workforce-profile/services/WorkforceProfileService'] = verticalModules + '/generic-information/workforce-profile/services/WorkforceProfileService' + suffix;
+
     /* GEOGRAPHIES COMPARISON */
     // requirePaths['vertical/geographies-comparison/GeographiesComparisonController'] = verticalModules + '/geographies-comparison/GeographiesComparisonController' + suffix;
     // requirePaths['vertical/geographies-comparison/services/GeographiesComparisonService'] = verticalModules + '/geographies-comparison/services/GeographiesComparisonService' + suffix;

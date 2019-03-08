@@ -496,7 +496,7 @@
       ORDER BY FIELD(n.country_code, ${pCountry1}, ${pCountry2}, 'EU28') ASC
     </Query>-->
     <Query>
-      SELECT t.text as Size, n.name as Country, v.value as Value
+      SELECT t.text as GPD, n.country_code as Country, v.value as Value
       FROM nuts n, profile p, indicator i, value v, split_illness si, translation t
       WHERE n.id = p.nuts_id
       AND p.illness_id = si.id
@@ -538,4 +538,15 @@
       ORDER BY year ASC
     </Query>-->
   </DataAccess>
+
+  <!-- WORKFORCE PROFILE || get genders for select option of employee groups -->
+  <DataAccess access="public" connection="dvt_conn" id="getGenders" type="sql">
+    <Cache duration="3600" enabled="true" />
+    <Columns />
+    <Query>SELECT sg.id as gender_id, sg.literal_id as gender_name
+      FROM split_gender sg
+      ORDER BY FIELD(gender_id, 2, 3, 1)
+    </Query>
+  </DataAccess>
+
 </CDADescriptor>

@@ -1,0 +1,107 @@
+
+
+.matrix--elements--wrapper{
+  .matrix--element{
+    background:$gray-lighter;
+    border-radius: 50px 0 50px 0;
+    padding: 2rem 5rem; 
+    margin: 0 1.5rem 1.5rem 2rem;
+    //min-height: 45rem;
+    min-height: auto;
+    .matrix--header--elements{
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      .flags--wrapper{
+        margin-right: 1.8rem;
+      }
+      .title-section{
+        margin: 1rem 0;
+      }
+    }
+    .matrix--content--elements{
+      samp{
+        font-family: "OpenSans";
+        font-size:$font-size-body;
+        line-height: 1.42857;
+      }
+      .btn--card {
+        margin-top: 1.4rem;
+        display: inline-block;
+      }
+    }
+  }
+}
+
+
+.see--more--wrapper{
+  text-align: right;
+  font-size: 1.4rem;
+  .see-more{
+    position: relative;
+    cursor: pointer;
+    &:after{
+      content: "\f107";
+      display: inline-block;
+      font-size:1.8rem !important;
+      font-family:'FontAwesome';
+      font-size: inherit;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+      position: relative;
+      right: -4px;
+      top: 4px;
+      color: $aquamarine;
+    }
+  }
+  .see-less{
+    position: relative;
+    cursor: pointer;
+    &:after{
+      content: "\f106";
+      display: inline-block;
+      font-size:1.8rem !important;
+      font-family:'FontAwesome';
+      font-size: inherit;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+      position: relative;
+      right: -4px;
+      top: 4px;
+      color: $aquamarine;
+    }
+  }
+}
+
+.selected--tags-wrapper{
+  min-height: 0px;
+  margin-top: 0rem;
+  &:empty{
+    display:none;
+  } 
+  .selected-tag {
+    background: $aquamarine;
+    font-size: 1.4rem;
+    margin: 0.8rem 0rem 0.6rem 0.6rem;
+    padding: 2px 18px 2px 5px;
+    display: inline-block;
+    border-radius: 4px;
+    color:$white;
+    position: relative;
+    &:after{
+      content: "\f00d";
+      font-family: 'FontAwesome';
+      position: absolute;
+      top: 0;
+      right: 4px;
+      font-size: 1rem;
+      cursor: pointer;
+      &:hover{
+        opacity:0.6;
+        color: $orange;
+      }
+    }
+  }
+}
+

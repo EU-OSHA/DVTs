@@ -17,6 +17,9 @@ define(function (require) {
     // CDA
     $scope.cda =  configService.getBarometerCda();
 
+    //TODO
+    $scope.dataset = 6;
+
     // Literals
     var i18nLiterals = configService.getLiterals();
     $scope.i18nLiterals = i18nLiterals;

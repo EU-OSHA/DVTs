@@ -19,7 +19,6 @@ define(function (require) {
         $uiViewScrollProvider.useAnchorScroll();
 
         $stateProvider.state('osh-authorities', {
-          /*url: "/national-strategies/EU-challenges-response/:country",*/
           url: "/generic-information/osh-authorities/:pCountry/:pInstitution/:pSearch",
           params: {
             pCountry: {
@@ -71,9 +70,25 @@ define(function (require) {
               title: i18n.L22001 +" | "+ i18n.L22003
           }
         });
+
+        $stateProvider.state('workforce-profile', {
+          url: "/generic-information/workforce-profile",
+          params: {},
+          views: {
+              "content-main": {
+                  templateUrl: configService.getVerticalTplPath("generic-information/workforce-profile", "workforce-profile"),
+                  controller: 'WorkforceProfileController',
+                  resolve: configService.dynamicallyRegisterController($controllerProvider, 'vertical/workforce-profile/WorkforceProfileController', 'workforce-profile', 'WorkforceProfileController')
+              }
+          },
+          metaTags: {
+              title: i18n.L22001 +" | "+ i18n.L22003
+          }
+        });
     });
 
     module.factory('EconomicSectorProfileService', require('vertical/economic-sector-profile/services/EconomicSectorProfileService'));
+    module.factory('WorkforceProfileService', require('vertical/workforce-profile/services/WorkforceProfileService'));
 
     return module;
 });
