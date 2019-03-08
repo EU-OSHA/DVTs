@@ -411,7 +411,8 @@ define(function (require) {
                         baseAxisTooltipEnabled : false,
                         orthoAxisTitle: attributes.orthoAxisTitle || '',
                         multipleLabelColors: attributes.multipleLabelColors || false,
-                        showEuroMask: attributes.showEuroMask === 'true' || false
+                        showEuroMask: attributes.showEuroMask === 'true' || false,
+                        leafContentOverflow: attributes.leafContentOverflow || 'auto'
                     }
 
                 };
@@ -645,6 +646,7 @@ define(function (require) {
                 // fix ortho axis max
                 if(!!attributes.axisFixedMax){
                     definition.chartDefinition.orthoAxisFixedMax = attributes.axisFixedMax;
+                    $log.warn(definition.chartDefinition);
                 }
 
                 if(!!attributes.axis2FixedMin){

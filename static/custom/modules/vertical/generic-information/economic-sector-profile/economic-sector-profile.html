@@ -65,6 +65,7 @@
               legend-align="center"
               plots="stories[0].plots"
               multiple-label-colors="true"
+              leaf-content-overflow='visible'
             ></dvt-bar-chart>
           </div>
         </div>
@@ -151,7 +152,7 @@
               query="getGDPData" cda="{{::cda }}"
               width="330" height="360"
               orientation="vertical"
-              axis-fixed-max="1300" step="{{step.chart5}}"
+              axis-fixed-max="300" step="{{step.chart5}}"
               params="[['pIndicator','39'],['pCountry1', pCountry1],['pCountry2', pCountry2]]"
               color-role="category" colors="[stories[4].color1, stories[4].color2, stories[4].color3]"
               chart-title="{{i18nLiterals.L296}}" id="5"
@@ -166,6 +167,7 @@
               ortho-axis-grid="false"
               hoverable="false"
               multiple-label-colors="true"
+              leaf-content-overflow='visible'
             ></dvt-bar-chart>
           </div>
         </div>

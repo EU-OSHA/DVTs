@@ -12,7 +12,7 @@ define(function (require) {
   'use strict';
 
 
-  function controller($scope, $stateParams, $state, configService, $log, $document,dataService, $window, $sce, $compile, $timeout, dvtUtils, WorkforceProfileService) {
+  function controller($scope, $stateParams, $state, configService, $log, $document,dataService, $window, $sce, $compile, $timeout, dvtUtils, WorkforceProfileService, mapProvider) {
 
     // CDA
     $scope.cda =  configService.getBarometerCda();
@@ -23,7 +23,71 @@ define(function (require) {
 
     $scope.selectedIndicator = "41";
 
-    $log.warn('Actual selection: '+$scope.selectedIndicator);
+    /*Building dashboard*/
+    $scope.dashboard = {};
+    $scope.dashboard.parameters = {
+        //approach: $stateParams.pGroup.replace("group", ""),
+        pEurope: "EU",
+        color1: dvtUtils.getGroupColor("1"),
+        color2: dvtUtils.getGroupColor("2"),
+        color3: dvtUtils.getGroupColor("3"),
+        color4: dvtUtils.getGroupColor("4")
+    };
+
+    $scope.dashboard.promises = {
+        promiseShape: mapProvider.getEuropeShape(),
+        //tab2MainPolicies: dataService.getAPTab2MainPolicies(parseInt($stateParams.pGroup.replace("group", ""))),
+        //tab1GroupDescription: dataService.getAPTab1GroupDesc(parseInt($stateParams.pGroup.replace("group", ""))),
+        //countryGroups: dataService.getGroupCountryList()
+    };
+
+    $scope.dashboard.cda = $scope.cda;
+
+    /*$scope.dashboard.promises.countryGroups
+      .then(function (result) {
+          $scope = dataService.createGroupCountryList($scope, result.data);
+      });*/
+
+    /* Get map click action */
+    $scope.map = {
+        clickAction: mapProvider.getCommonClickAction
+    };
+
+    /* GET COLORS */
+
+    //dvtUtils.fixGroupColor($stateParams.pGroup.replace("group", ""), $scope);
+
+    /**
+     * @ngdoc method
+     * @name ng.controller:ApproachesController#fixColorMap
+     * @param {string} carl is awesome
+     * @methodOf all-ages.policies.controller:ApproachesController
+     * @description
+     * My Description rules
+     */
+    $scope.fixColorMap = function () {
+        dvtUtils.fixGroupColor($stateParams.pGroup.replace("group", ""), $scope);
+        var component = this;
+        var dashboard = component.dashboard;
+        var color = dashboard.getParameterValue("pGroupColor");
+        var colorEU = dashboard.getParameterValue("pEUColor");
+        var europe = dashboard.getParameterValue("pEurope");
+        component.chartDefinition.colors = [color];
+        component.chartDefinition.colorMap[europe] = colorEU;
+    };
+
+    /**
+     * @ngdoc method
+     * @name ng.controller:ApproachesController#refreshHash
+     * @methodOf all-ages.policies.controller:ApproachesController
+     * @description
+     * My Description rules
+     */
+    $scope.refreshHash = function () {
+        $state.go('approaches-indicators', {
+            pGroup: "group" + $scope.dashboard.parameters.approach
+        });
+    };
 
     $scope.genders = [];
 
@@ -66,7 +130,7 @@ define(function (require) {
     }
   }
 
-  controller.$inject = ['$scope', '$stateParams', '$state', 'configService', '$log', '$document','dataService', '$window', '$sce', '$compile', '$timeout', 'dvtUtils', 'WorkforceProfileService'];
+  controller.$inject = ['$scope', '$stateParams', '$state', 'configService', '$log', '$document','dataService', '$window', '$sce', '$compile', '$timeout', 'dvtUtils', 'WorkforceProfileService', 'mapProvider'];
   return controller;
 
 

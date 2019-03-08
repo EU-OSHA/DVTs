@@ -82,7 +82,7 @@ define(function (require) {
               }
           },
           metaTags: {
-              title: i18n.L22001 +" | "+ i18n.L22003
+              title: i18n.L22001 +" | "+ i18n.L22004
           }
         });
     });

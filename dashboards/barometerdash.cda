@@ -485,7 +485,7 @@
       <Parameter default="AT" name="pCountry1" type="String" />
       <Parameter default="BE" name="pCountry2" type="String" />
     </Parameters>
-    <!--<Query>
+    <Query>
       SELECT n.country_code as Country, (v.value*100) as Value
       FROM nuts n, profile p, indicator i, value v, dataset d
       WHERE n.id = p.nuts_id
@@ -494,16 +494,6 @@
       AND d.id = 6 AND d.id = v.dataset_id
       AND n.country_code IN (${pCountry1}, ${pCountry2}, 'EU28') AND i.id = ${pIndicator}
       ORDER BY FIELD(n.country_code, ${pCountry1}, ${pCountry2}, 'EU28') ASC
-    </Query>-->
-    <Query>
-      SELECT t.text as GPD, n.country_code as Country, v.value as Value
-      FROM nuts n, profile p, indicator i, value v, split_illness si, translation t
-      WHERE n.id = p.nuts_id
-      AND p.illness_id = si.id
-      AND i.id = v.indicator_id
-      AND v.profile_id = p.id
-      AND t.literal_id = si.literal_id
-      AND n.country_code IN ('BG', 'BE', 'HR') AND i.id = 23 AND si.id = 2
     </Query>
   </DataAccess>
 
@@ -526,17 +516,6 @@
       AND n.country_code IN (${pCountry1}, ${pCountry2}, 'EU28') AND i.id = ${pIndicator}
       ORDER BY FIELD(n.country_code, ${pCountry1}, ${pCountry2}, 'EU28') ASC
     </Query>
-    <!--<Query>
-      SELECT n.name as Country, v.value as Value
-      FROM nuts n, profile p, indicator i, value v, split_illness si, translation t
-      WHERE n.id = p.nuts_id
-      AND p.illness_id = si.id
-      AND i.id = v.indicator_id
-      AND v.profile_id = p.id
-      AND t.literal_id = si.literal_id
-      AND n.country_code IN ('BG', 'BE', 'HR') AND i.id = 23 AND si.id = 2
-      ORDER BY year ASC
-    </Query>-->
   </DataAccess>
 
   <!-- WORKFORCE PROFILE || get genders for select option of employee groups -->

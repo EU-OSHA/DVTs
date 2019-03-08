@@ -12,6 +12,7 @@ define (function (require) {
                     {
                         name: "main",
                         dataPart: "0",
+                        valuesOverflow: 'show',
                         label_textStyle: function(scene){
                         	var subIndicatorKey = scene.firstAtoms.series;
                             if (subIndicatorKey == 'From 0 to 9 persons employed') {
@@ -57,7 +58,6 @@ define (function (require) {
                         valuesAnchor: 'right',
                         valuesOptimizeLegibility: true,
                         visualRoles:{
-                            series:'series',
                             category:'category'
                         }
                     }
@@ -69,6 +69,18 @@ define (function (require) {
                         name: "main",
                         dataPart: "0",
                         label_textStyle: function(scene){
+                        	var countryKey = scene.firstAtoms.category;
+                        	$log.warn(countryKey);
+                            if (countryKey == 'EU28') {
+                                return dvtUtils.getEUColor();
+                            } else if(countryKey == pCountry1){
+                            	return dvtUtils.getColorCountry(1);
+                            } else if(countryKey == pCountry2) {
+                            	return dvtUtils.getColorCountry(2);
+                            }
+                            return dvtUtils.getChartLightGrayColor();
+                        },
+                        bar_fillStyle: function(scene){
                         	var countryKey = scene.firstAtoms.category;
                             if (countryKey == 'EU28') {
                                 return dvtUtils.getEUColor();
@@ -84,7 +96,6 @@ define (function (require) {
                         valuesAnchor: 'top',
                         valuesOptimizeLegibility: true,
                         visualRoles:{
-                            series:'series',
                             category:'category'
                         }
                     }
@@ -97,41 +108,41 @@ define (function (require) {
                     {
                         name: "main",
                         dataPart: "0",
+                        bar_visible: "true",
 						bar_fillStyle: '#f0f0f0',
-						label_textStyle: function(scene){
-							return 'dimgray';
-						},
+						label_textStyle: 'dimgray',
+						label_textMargin: 2,
+						label_textBaseline: 'center',
+						valuesOptimizeLegibility: false,
+                        valuesAnchor: 'bottom',
+                        valuesOverflow: 'show',
+                        overflowMarkersVisible: true,
                         bar_call: function (){
 
                             this.add(pv.Image)
-				              .url(/*url*/function(itemScene) {
+				              .url(function(itemScene) {
 				              	var countryKey = itemScene.firstAtoms.category;
-				              	//$log.warn(itemScene);
-				              	if(countryKey == /*pCountry1*/ 'BG'){
+				              	if(countryKey == pCountry1){
                   					return configService.getImagesPath()+'man_orange.svg'
 				              	}else if(countryKey == pCountry2){
 				              		return configService.getImagesPath()+'man.svg'
-				              	}else if(countryKey == /*'EU28'*/ 'HR'){
+				              	}else if(countryKey == 'EU28'){
 				              		return configService.getImagesPath()+'man_blue.svg'
 				              	}
                   				})
 				              .height(/*200*/ function(scene){
 				              	/*SVG default values: height: 60, width: 30 */
-				              	var valueKey = scene.firstAtoms.value /100;
-				              	return 60*valueKey/2.5;
+				              	var valueKey = scene.firstAtoms.value/10;
+				              	return 60*valueKey/4;
 				              })
+				              .events("all")
+              				  .cursor("hand")
 				              /*.width(function(scene){
-				              	var valueKey = scene.firstAtoms.value /100;
-				              	return 30*valueKey/3;
+				              	return 30
 				              })*/
                               .bottom(20);
                         },
-                        label_textMargin: 2,
-						label_textBaseline: 'bottom',
-						valuesOptimizeLegibility: false,
-                        valuesAnchor: 'bottom',
                         visualRoles:{
-                            series:'series',
                             category:'category'
                         }
                     }

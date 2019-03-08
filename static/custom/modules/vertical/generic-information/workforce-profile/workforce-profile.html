@@ -13,7 +13,7 @@
   <div class="line background-main-light"></div>
 
   <section class="container section--page" ng-controller="WorkforceProfileController">
-        <!-- FILTERS -->
+    <!-- FILTERS -->
     <form class="row block--filter--wrapper">
       <!-- INDICATOR FILTER -->
       <div id="filter1" class="filter--dropdown--wrapper">
@@ -39,7 +39,7 @@
     <div class="card--grid xxs-w1 xs-w2 w3 center-text">
       <!-- CONTENT -->
       <div class="grey clearfix">
-        <dvt-map ng-cloak
+        <!--<dvt-map ng-cloak
           group-key="dashboard.parameters.approach"
           promise="dashboard.promises.promiseShape"
           country="EU" country-key="EU" group-color="dashboard.parameters.pGroupColor"
@@ -47,6 +47,18 @@
           height="250" width="600"
           css-class="col-xs-12 col-sm-12 col-md-12 col-lg-12" is-colored="1" hover="true"
           group-list="groupList"
+          load-countries="true"
+          clickable="1"
+          click-action="map.clickAction"
+        ></dvt-map>-->
+        <dvt-map ng-cloak
+          group-key=""
+          promise="dashboard.promises.promiseShape"
+          country="EU" country-key="EU" group-color=""
+          zoom-w="600" zoom-h="1000" x="280" y="50"
+          height="250" width="600"
+          css-class="col-xs-12 col-sm-12 col-md-12 col-lg-12" is-colored="1" hover="true"
+          group-list=""
           load-countries="true"
           clickable="1"
           click-action="map.clickAction"
