@@ -7,20 +7,20 @@
         "non-fatal-accidents-estimation":"eu-countries",
         "non-fatal-accidents-reporting-level":"eu-countries"
     },
-    "home": "<span>Home</span>",
+    "home": "<span class='current-page'>Home</span>",
 
     "_SECCTION-ABOUT-TOOL": null,
     "about-tool": "<span>About the OSH barometer</span>",
 
     "_SECCTION-FOOTER-PAGES": null,
-    "site-map": "<span>Site map</span>",
-    "accessibility": "<span>Accessibility info</span>",
-    "privacy-policy":"<span>Privacy notice</span>",
-    "legal-notice":"<span>Legal notice</span>",
+    "site-map": "<span class='current-page'>Site map</span>",
+    "accessibility": "<span class='current-page'>Accessibility info</span>",
+    "privacy-policy":"<span class='current-page'>Privacy notice</span>",
+    "legal-notice":"<span class='current-page'>Legal notice</span>",
 
-    "404": "<span>Page not found</span>",
+    "404": "<span class='current-page'>Page not found</span>",
 
     "_SECTION-GENERIC-INFORMATION": null,
-    "osh-authorities": "Generic Information <i class='fa fa-angle-right' aria-hidden='true'></i> <span>OSH Authorities</span>",
-    "economic-sector-profile": "Generic Information <i class='fa fa-angle-right' aria-hidden='true'></i> <span>Economic and sector profile</span>"
+    "osh-authorities": "<a ui-sref='home'>Home</a> <i class='fa fa-angle-right' aria-hidden='true'></i> Generic Information <i class='fa fa-angle-right' aria-hidden='true'></i> <span class='current-page'>OSH Authorities</span>",
+    "economic-sector-profile": "<a ui-sref='home'>Home</a> <i class='fa fa-angle-right' aria-hidden='true'></i> Generic Information <i class='fa fa-angle-right' aria-hidden='true'></i> <span class='current-page'>Economic and sector profile</span>"
 }

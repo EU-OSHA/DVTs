@@ -758,6 +758,8 @@ and (max-device-width :767px)  {
 	.matrix--elements--wrapper {
 	  word-break: break-word;
 	  .matrix--element{
+	  	 padding: 2rem !important;
+	  	 margin: 0 0rem 1.5rem 0rem !important;
 	  	.matrix--header--elements{
 				.flags--wrapper{
 					width: 5rem;
@@ -765,6 +767,94 @@ and (max-device-width :767px)  {
 	  	}
 	  }
 	}
+
+/**** MODAL WINDOW ****/
+  .dvt-modal {
+    width: 95%;
+    height: 98%;
+    .modal-wrapper {
+      .modal-body {
+        .card--block--chart--wrapper {
+          .chart--submenu{
+            width: 95%;
+            > li{
+              float: right;
+              > a{
+                width: 3.5rem;
+                height: 2.7rem;
+                display: block;
+                color: $gray-base;
+                &.download-button:after{
+                  content: "\f019";
+                  font-family: FontAwesome;
+                }
+              }
+            }
+          }
+          .export-button-modal{
+            a{
+              padding: 0.8rem 1rem;
+              border-radius: 0.3rem;
+              background: #f2f2f2;
+              color: #000;
+              font-size: 1.4rem;
+              display: block;
+              overflow-y:hidden; 
+              &:hover{
+                color:$white;
+                background: $aquamarine;
+                .fa-arrow-down{
+                  top:0rem;
+                  -webkit-transition: all 0.8s; 
+                  transition: all 0.8s;
+                }
+                .fa-picture-o{
+                  top:3rem;
+                  -webkit-transition: all 0.8s; 
+                  transition: all 0.8s;
+                }
+              }
+              .fa-arrow-down{
+                position: relative;
+                top: -3rem;
+                left: 3px;
+                -webkit-transition: all 0.8s; 
+                transition: all 0.8s;
+              }
+              .fa-picture-o{
+                position: relative;
+                top:0rem;
+                left:-1rem;
+                -webkit-transition: all 0.8s; 
+                transition: all 0.8s;
+              }
+            }
+          }
+          .title--card{
+            font-size: 2.8rem;
+            margin-top: 0;
+            text-align: left;
+          } 
+          .chart--wrapper{
+						width: 100%;
+						height: auto;
+						margin: 2rem auto;
+            svg{
+              text{
+              }
+            }
+          }      
+        }
+      }
+    }
+    .dvt-chart {
+      h3{
+
+      }
+      .legend-info{
+      }
+    }
+  }
 
 	footer{
 		.footer-elements{
