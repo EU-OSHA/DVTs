@@ -509,10 +509,10 @@
     <Query>
       SELECT n.country_code as Country, p.year as Year, v.value as Income
       FROM nuts n, profile p, indicator i, value v, dataset d
-      WHERE n.id = p.nuts_id -- Relating nuts with profile
-      AND i.id = v.indicator_id -- Relating indicator with value
-      AND v.profile_id = p.id -- Relating value with profile
-      AND d.id = 4 AND d.id = v.dataset_id -- Relating dataset with value
+      WHERE n.id = p.nuts_id
+      AND i.id = v.indicator_id
+      AND v.profile_id = p.id
+      AND d.id = 4 AND d.id = v.dataset_id
       AND n.country_code IN (${pCountry1}, ${pCountry2}, 'EU28') AND i.id = ${pIndicator}
       ORDER BY FIELD(n.country_code, ${pCountry1}, ${pCountry2}, 'EU28') ASC
     </Query>

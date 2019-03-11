@@ -70,7 +70,6 @@ define (function (require) {
                         dataPart: "0",
                         label_textStyle: function(scene){
                         	var countryKey = scene.firstAtoms.category;
-                        	$log.warn(countryKey);
                             if (countryKey == 'EU28') {
                                 return dvtUtils.getEUColor();
                             } else if(countryKey == pCountry1){
@@ -110,6 +109,7 @@ define (function (require) {
                         dataPart: "0",
                         bar_visible: "true",
 						bar_fillStyle: '#f0f0f0',
+						//bar_fillStyle: '#fff',
 						label_textStyle: 'dimgray',
 						label_textMargin: 2,
 						label_textBaseline: 'center',
@@ -120,8 +120,8 @@ define (function (require) {
                         bar_call: function (){
 
                             this.add(pv.Image)
-				              .url(function(itemScene) {
-				              	var countryKey = itemScene.firstAtoms.category;
+				              .url(function(scene) {
+				              	var countryKey = scene.firstAtoms.category;
 				              	if(countryKey == pCountry1){
                   					return configService.getImagesPath()+'man_orange.svg'
 				              	}else if(countryKey == pCountry2){
@@ -130,17 +130,40 @@ define (function (require) {
 				              		return configService.getImagesPath()+'man_blue.svg'
 				              	}
                   				})
-				              .height(/*200*/ function(scene){
-				              	/*SVG default values: height: 60, width: 30 */
-				              	var valueKey = scene.firstAtoms.value/10;
-				              	return 60*valueKey/4;
+				              .bottom(20)
+				              .height(function(scene){
+				              	/*SVG default width:68*150:height proportion W = H*0.45333333333 */
+				              	var axisFixedMax = this.root.sign.chart.options.axisFixedMax;
+				              	var panelHeight = this.root.height();
+				              	var valueKey = scene.firstAtoms.value;
+				              	return valueKey * (panelHeight - this.bottom()) / axisFixedMax;
+				              })
+				              .width(function(scene){
+				              	/*SVG default width:68*150:height proportion W = H*0.45333333333 */
+				              	var valueKey = scene.firstAtoms.value;
+				              	return this.height() * 0.4533333;
+				              })
+				              .left(function(scene){
+				              	//Panel width, Bar width and image width
+				              	var panelWidth = this.root.width();
+				              	var barWidth = panelWidth/3.5;
+				              	var countryKey = scene.firstAtoms.category;
+
+				              	if(panelWidth != 300){ //Default panel value
+									if(countryKey == pCountry1){
+										//$log.warn('panelWidth: '+panelWidth+' imageWidth: '+this.width());
+	                  					return (barWidth - this.width())/2 +5; //5 is the panel margin
+					              	}else if(countryKey == pCountry2){
+					              		//$log.warn('panelWidth: '+panelWidth+' imageWidth: '+this.width());
+					              		return panelWidth/3 + (barWidth - this.width())/2;
+					              	}else if(countryKey == 'EU28'){
+					              		//$log.warn('panelWidth: '+panelWidth+' imageWidth: '+this.width());
+					              		return panelWidth/1.5 + (barWidth - this.width())/2 - 5;
+					              	}
+				              	}
 				              })
 				              .events("all")
-              				  .cursor("hand")
-				              /*.width(function(scene){
-				              	return 30
-				              })*/
-                              .bottom(20);
+              				  .cursor("hand");
                         },
                         visualRoles:{
                             category:'category'
