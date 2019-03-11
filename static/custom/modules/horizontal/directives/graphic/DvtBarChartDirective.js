@@ -335,6 +335,7 @@ define(function (require) {
                         axisLabel_font: attributes.axisLabelFont || 'normal 12px "Open Sans"',
                         axisTitleLabel_font: attributes.axisTitleLabelFont || 'normal 12px "Open Sans" gray',
                         axisTitleLabel_textStyle: 'gray',
+                        axisFixedMax: attributes.axisFixedMax || 100,
                         axisTicks: attributes.axisTicks || false,
                         axisRule_strokeStyle: attributes.axisRule_strokeStyle || '',
                         clickable: true,
@@ -646,7 +647,6 @@ define(function (require) {
                 // fix ortho axis max
                 if(!!attributes.axisFixedMax){
                     definition.chartDefinition.orthoAxisFixedMax = attributes.axisFixedMax;
-                    $log.warn(definition.chartDefinition);
                 }
 
                 if(!!attributes.axis2FixedMin){
