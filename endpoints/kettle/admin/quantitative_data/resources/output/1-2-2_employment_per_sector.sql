@@ -1,4 +1,3 @@
-
 SET @sectorId = (SELECT sas.id FROM split_activity_sector sas INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Agriculture, forestry and fishing");
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="AT");
 INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @sectorId);

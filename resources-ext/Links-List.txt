@@ -4,7 +4,6 @@
 71-http://www.auva.at/portal27/portal/auvaportal/content/contentWindow?contentid=10007.670910&amp;action=2
 72-http://www.gesundearbeit.at/cms/V02/V02_0.c.a/1342556646526/home/aktuelles/die-oesterreichische-arbeitnehmerinnenschutzstrategie#
 72-http://www.arbeitsinspektion.gv.at/cms/inspektorat/download.html?channel=CH3631&amp;doc=CMS1450104956999&amp;permalink=oeas_gemeinsame-resolution
-74-http://www.arbeitsinspektion.gv.at/cms/inspektorat/download.html?channel=CH3631&amp;doc=CMS1450182673100&amp;permalink=oeas_liste-partnerinnenorganisationen
 76-http://www.arbeitsinspektion.gv.at/cms/inspektorat/download.html?channel=CH3633&amp;doc=CMS1450193974056&amp;permalink=oeas_endbericht
 76-http://www.arbeitsinspektion.gv.at/cms/inspektorat/download.html?channel=CH3631&amp;doc=CMS1450107306020&amp;permalink=occupationa-safety-and-health-strategy_oeas
 78-http://www.emploi.belgique.be/WorkArea/DownloadAsset.aspx?id=45387
@@ -50,7 +49,7 @@
 130-http://travail-emploi.gouv.fr/ministere/acteurs/instances-rattachees/article/coct-conseil-d-orientation-des-conditions-de-travail
 133-http://travail-emploi.gouv.fr/sante-au-travail/plans-de-sante-au-travail/article/plan-de-sante-au-travail-2016-2020-pst-3
 134-http://www.gda-portal.de/de/Startseite.html
-134-http://www.gda-portal.de/de/pdf/en-Flyer-Goals.pdf?__blob=publicationFile&v=3
+134-http://www.gda-portal.de/de/pdf/en-Flyer-Goals.pdf?__blob=publicationFile&amp;v=3
 134-http://www.gda-portal.de/en/Downloads/Downloads.html
 134-http://www.gda-portal.de/en/Homepage.html
 135-http://www.gda-portal.de/de/pdf/GDA-Fachkonzept-gesamt.pdf?__blob=publicationFile&v=2
@@ -92,7 +91,7 @@
 180-https://www.e-tar.lt/portal/lt/legalAct/1c12ca80447711e7b66ae890e1368363
 182-http://ohsa.org.mt/Portals/0/Docs/PoliciesProcedures/OHSA%20Strategic%20Plan%202014_%202020.pdf
 183-http://ohsa.org.mt/portals/0/docs/summary_report.pdf
-190-https://www.arboineuropa.nl/wp-content/uploads/2016/10/160728_Visie_en_Strategie_NL_DEF.pdf
+188-http://ohsa.org.mt/Portals/0/Docs/PoliciesProcedures/OHSA%20Strategic%20Plan%202014_%202020.pdf
 190-https://www.arboineuropa.nl/wp-content/uploads/2016/10/160728_Visie_en_Strategie_NL_DEF.pdf
 190-https://www.arboportaal.nl/documenten/publicatie/2016/07/28/dutch-vision-and-strategy-for-occupational-safety-and-health 
 198-http://www.ciop.pl/CIOPPortalWAR/appmanager/ciop/pl?_nfpb=true&_pageLabel=P26800385591408696399667&html_tresc_root_id=21639&html_tresc_id=21642&html_klucz=21639&html_klucz_spis=

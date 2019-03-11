@@ -1,195 +1,195 @@
 
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="AT");
-INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, 2010);
+INSERT INTO profile (nuts_id, year) VALUE (@nutsId, 2010);
 
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="AT");
-INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, 2016);
+INSERT INTO profile (nuts_id, year) VALUE (@nutsId, 2016);
 
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="BE");
-INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, 2010);
+INSERT INTO profile (nuts_id, year) VALUE (@nutsId, 2010);
 
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="BE");
-INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, 2016);
+INSERT INTO profile (nuts_id, year) VALUE (@nutsId, 2016);
 
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="BG");
-INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, 2010);
+INSERT INTO profile (nuts_id, year) VALUE (@nutsId, 2010);
 
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="BG");
-INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, 2016);
+INSERT INTO profile (nuts_id, year) VALUE (@nutsId, 2016);
 
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="CY");
-INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, 2010);
+INSERT INTO profile (nuts_id, year) VALUE (@nutsId, 2010);
 
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="CY");
-INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, 2016);
+INSERT INTO profile (nuts_id, year) VALUE (@nutsId, 2016);
 
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="HR");
-INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, 2010);
+INSERT INTO profile (nuts_id, year) VALUE (@nutsId, 2010);
 
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="HR");
-INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, 2016);
+INSERT INTO profile (nuts_id, year) VALUE (@nutsId, 2016);
 
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="CZ");
-INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, 2010);
+INSERT INTO profile (nuts_id, year) VALUE (@nutsId, 2010);
 
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="CZ");
-INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, 2016);
+INSERT INTO profile (nuts_id, year) VALUE (@nutsId, 2016);
 
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="DK");
-INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, 2010);
+INSERT INTO profile (nuts_id, year) VALUE (@nutsId, 2010);
 
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="DK");
-INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, 2016);
+INSERT INTO profile (nuts_id, year) VALUE (@nutsId, 2016);
 
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="EE");
-INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, 2010);
+INSERT INTO profile (nuts_id, year) VALUE (@nutsId, 2010);
 
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="EE");
-INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, 2016);
+INSERT INTO profile (nuts_id, year) VALUE (@nutsId, 2016);
 
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="FI");
-INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, 2010);
+INSERT INTO profile (nuts_id, year) VALUE (@nutsId, 2010);
 
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="FI");
-INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, 2016);
+INSERT INTO profile (nuts_id, year) VALUE (@nutsId, 2016);
 
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="FR");
-INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, 2010);
+INSERT INTO profile (nuts_id, year) VALUE (@nutsId, 2010);
 
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="FR");
-INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, 2016);
+INSERT INTO profile (nuts_id, year) VALUE (@nutsId, 2016);
 
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="DE");
-INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, 2010);
+INSERT INTO profile (nuts_id, year) VALUE (@nutsId, 2010);
 
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="DE");
-INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, 2016);
+INSERT INTO profile (nuts_id, year) VALUE (@nutsId, 2016);
 
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="EL");
-INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, 2010);
+INSERT INTO profile (nuts_id, year) VALUE (@nutsId, 2010);
 
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="EL");
-INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, 2016);
+INSERT INTO profile (nuts_id, year) VALUE (@nutsId, 2016);
 
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="HU");
-INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, 2010);
+INSERT INTO profile (nuts_id, year) VALUE (@nutsId, 2010);
 
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="HU");
-INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, 2016);
+INSERT INTO profile (nuts_id, year) VALUE (@nutsId, 2016);
 
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="IE");
-INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, 2010);
+INSERT INTO profile (nuts_id, year) VALUE (@nutsId, 2010);
 
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="IE");
-INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, 2016);
+INSERT INTO profile (nuts_id, year) VALUE (@nutsId, 2016);
 
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="IT");
-INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, 2010);
+INSERT INTO profile (nuts_id, year) VALUE (@nutsId, 2010);
 
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="IT");
-INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, 2016);
+INSERT INTO profile (nuts_id, year) VALUE (@nutsId, 2016);
 
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="LV");
-INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, 2010);
+INSERT INTO profile (nuts_id, year) VALUE (@nutsId, 2010);
 
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="LV");
-INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, 2016);
+INSERT INTO profile (nuts_id, year) VALUE (@nutsId, 2016);
 
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="LT");
-INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, 2010);
+INSERT INTO profile (nuts_id, year) VALUE (@nutsId, 2010);
 
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="LT");
-INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, 2016);
+INSERT INTO profile (nuts_id, year) VALUE (@nutsId, 2016);
 
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="LU");
-INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, 2010);
+INSERT INTO profile (nuts_id, year) VALUE (@nutsId, 2010);
 
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="LU");
-INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, 2016);
+INSERT INTO profile (nuts_id, year) VALUE (@nutsId, 2016);
 
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="MT");
-INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, 2010);
+INSERT INTO profile (nuts_id, year) VALUE (@nutsId, 2010);
 
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="MT");
-INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, 2016);
+INSERT INTO profile (nuts_id, year) VALUE (@nutsId, 2016);
 
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="NL");
-INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, 2010);
+INSERT INTO profile (nuts_id, year) VALUE (@nutsId, 2010);
 
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="NL");
-INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, 2016);
+INSERT INTO profile (nuts_id, year) VALUE (@nutsId, 2016);
 
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="PL");
-INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, 2010);
+INSERT INTO profile (nuts_id, year) VALUE (@nutsId, 2010);
 
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="PL");
-INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, 2016);
+INSERT INTO profile (nuts_id, year) VALUE (@nutsId, 2016);
 
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="PT");
-INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, 2010);
+INSERT INTO profile (nuts_id, year) VALUE (@nutsId, 2010);
 
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="PT");
-INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, 2016);
+INSERT INTO profile (nuts_id, year) VALUE (@nutsId, 2016);
 
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="RO");
-INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, 2010);
+INSERT INTO profile (nuts_id, year) VALUE (@nutsId, 2010);
 
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="RO");
-INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, 2016);
+INSERT INTO profile (nuts_id, year) VALUE (@nutsId, 2016);
 
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="SK");
-INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, 2010);
+INSERT INTO profile (nuts_id, year) VALUE (@nutsId, 2010);
 
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="SK");
-INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, 2016);
+INSERT INTO profile (nuts_id, year) VALUE (@nutsId, 2016);
 
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="SI");
-INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, 2010);
+INSERT INTO profile (nuts_id, year) VALUE (@nutsId, 2010);
 
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="SI");
-INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, 2016);
+INSERT INTO profile (nuts_id, year) VALUE (@nutsId, 2016);
 
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="ES");
-INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, 2010);
+INSERT INTO profile (nuts_id, year) VALUE (@nutsId, 2010);
 
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="ES");
-INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, 2016);
+INSERT INTO profile (nuts_id, year) VALUE (@nutsId, 2016);
 
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="SE");
-INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, 2010);
+INSERT INTO profile (nuts_id, year) VALUE (@nutsId, 2010);
 
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="SE");
-INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, 2016);
+INSERT INTO profile (nuts_id, year) VALUE (@nutsId, 2016);
 
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="UK");
-INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, 2010);
+INSERT INTO profile (nuts_id, year) VALUE (@nutsId, 2010);
 
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="UK");
-INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, 2016);
+INSERT INTO profile (nuts_id, year) VALUE (@nutsId, 2016);
 
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="EU28");
-INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, 2010);
+INSERT INTO profile (nuts_id, year) VALUE (@nutsId, 2010);
 
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="EU28");
-INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, 2016);
+INSERT INTO profile (nuts_id, year) VALUE (@nutsId, 2016);
 
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="IS");
-INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, 2010);
+INSERT INTO profile (nuts_id, year) VALUE (@nutsId, 2010);
 
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="IS");
-INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, 2016);
+INSERT INTO profile (nuts_id, year) VALUE (@nutsId, 2016);
 
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="CH");
-INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, 2010);
+INSERT INTO profile (nuts_id, year) VALUE (@nutsId, 2010);
 
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="CH");
-INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, 2016);
+INSERT INTO profile (nuts_id, year) VALUE (@nutsId, 2016);
 
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="NO");
-INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, 2010);
+INSERT INTO profile (nuts_id, year) VALUE (@nutsId, 2010);
 
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="NO");
-INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, 2016);
+INSERT INTO profile (nuts_id, year) VALUE (@nutsId, 2016);
 
 SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE p.year="2010" AND n.country_code="AT" AND p.age_group_id IS NULL AND p.answer_id IS NULL AND p.company_size_id IS NULL AND p.currency_id IS NULL AND p.gender_id IS NULL AND p.illness_id IS NULL AND p.subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Income per capita");
