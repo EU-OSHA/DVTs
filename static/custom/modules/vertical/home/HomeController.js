@@ -26,9 +26,6 @@ define(function (require) {
         var i18n_home = require('json!vertical/home/i18n');
         $scope.i18n_home = i18n_home;
 
-        var commonLiterals = configService.getCommonLiterals();
-        $scope.commonLiterals = commonLiterals;
-
         /******************************************************************************|
         |                                DATA LOAD                                     |
         |******************************************************************************/
