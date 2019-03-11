@@ -88,14 +88,30 @@ define(function (require) {
         color1: dvtUtils.getColorCountry(1),
         color2: dvtUtils.getColorCountry(2),
         color3: dvtUtils.getEUColor(),
-        plots: EconomicSectorProfileService.getUnemploymentRateMainPlots($scope.pCountry1, $scope.pCountry2)
+        plots: EconomicSectorProfileService.getUnemploymentRateMainPlots($scope.pCountry1, $scope.pCountry2),
+        dimensions: {
+          value: {
+            format: {
+              number: "0.#",
+              percent: "#€"
+            }
+          }
+        }
       },
       // 4 - GDP PER CAPITA IN RELATION TO EU28 AVERAGE
       {
         color1: dvtUtils.getColorCountry(1),
         color2: dvtUtils.getColorCountry(2),
         color3: dvtUtils.getEUColor(),
-        plots: EconomicSectorProfileService.getGPDMainPlots($scope.pCountry1, $scope.pCountry2)
+        plots: EconomicSectorProfileService.getGPDMainPlots($scope.pCountry1, $scope.pCountry2),
+        dimensions: {
+          value: {
+            format: {
+              number: "0",
+              percent: "#€"
+            }
+          }
+        },
       },
       // 5 - INCOME PER CAPITA
       {
