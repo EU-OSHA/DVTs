@@ -554,7 +554,7 @@
         <value>At least 1&#x2f;4 of the time</value>
         <norm>Value</norm>
         </field>      <field>        <name>LessQuarter</name>
-        <value>Less then 1&#x2f;4 of the time</value>
+        <value>Less than 1&#x2f;4 of the time</value>
         <norm>Value</norm>
         </field>      </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
