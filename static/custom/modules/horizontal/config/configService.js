@@ -22,6 +22,7 @@ define(function (require) {
     var horizontalPathDiretive = horizontalPath + "directives/";
 
     var i18n = require('json!horizontal/model/literals');
+    var datasets = require('json!horizontal/model/datasets');
 
     /*gtranslator info*/
     setTimeout (function() {
@@ -341,6 +342,21 @@ define(function (require) {
          */
         getLiterals: function () {
             return i18n;
+        },
+
+        // ----------------------------------
+        //  Datasets
+        // ----------------------------------
+
+        /**
+         * @ngdoc method
+         * @name dvt.configModule.configService#getDatasets
+         * @methodOf dvt.configModule.configService
+         * @description
+         * Get the Datasets list
+         */
+        getDatasets: function () {
+            return datasets;
         },
 
         // ----------------------------------

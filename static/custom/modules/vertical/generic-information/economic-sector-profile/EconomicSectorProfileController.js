@@ -17,8 +17,10 @@ define(function (require) {
     // CDA
     $scope.cda =  configService.getBarometerCda();
 
-    //TODO
-    $scope.dataset = 6;
+    // Datasets
+    $scope.datasetList = configService.getDatasets();
+    $scope.datasetEurostat = $scope.datasetList.EUROSTAT;
+    $scope.datasetEurostatBetweenDates = $scope.datasetList.EUROSTATBetweenDates;
 
     // Literals
     var i18nLiterals = configService.getLiterals();
