@@ -62,6 +62,522 @@ SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation 
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="CY");
 INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
 
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 10 to 19 persons employed");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="CY");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 20 to 49 persons employed");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="CY");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 50 to 249 persons employed");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="CY");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="250 persons employed or more");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="CY");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 0 to 9 persons employed");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="HR");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 10 to 19 persons employed");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="HR");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 20 to 49 persons employed");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="HR");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 50 to 249 persons employed");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="HR");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="250 persons employed or more");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="HR");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 0 to 9 persons employed");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="CZ");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 10 to 19 persons employed");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="CZ");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 20 to 49 persons employed");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="CZ");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 50 to 249 persons employed");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="CZ");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="250 persons employed or more");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="CZ");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 0 to 9 persons employed");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="DK");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 10 to 19 persons employed");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="DK");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 20 to 49 persons employed");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="DK");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 50 to 249 persons employed");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="DK");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="250 persons employed or more");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="DK");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 0 to 9 persons employed");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="EE");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 10 to 19 persons employed");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="EE");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 20 to 49 persons employed");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="EE");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 50 to 249 persons employed");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="EE");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="250 persons employed or more");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="EE");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 0 to 9 persons employed");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="FI");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 10 to 19 persons employed");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="FI");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 20 to 49 persons employed");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="FI");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 50 to 249 persons employed");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="FI");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="250 persons employed or more");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="FI");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 0 to 9 persons employed");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="FR");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 10 to 19 persons employed");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="FR");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 20 to 49 persons employed");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="FR");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 50 to 249 persons employed");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="FR");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="250 persons employed or more");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="FR");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 0 to 9 persons employed");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="DE");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 10 to 19 persons employed");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="DE");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 20 to 49 persons employed");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="DE");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 50 to 249 persons employed");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="DE");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="250 persons employed or more");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="DE");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 0 to 9 persons employed");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="EL");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 10 to 19 persons employed");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="EL");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 20 to 49 persons employed");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="EL");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 50 to 249 persons employed");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="EL");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="250 persons employed or more");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="EL");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 0 to 9 persons employed");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="HU");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 10 to 19 persons employed");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="HU");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 20 to 49 persons employed");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="HU");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 50 to 249 persons employed");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="HU");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="250 persons employed or more");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="HU");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 0 to 9 persons employed");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="IE");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 10 to 19 persons employed");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="IE");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 20 to 49 persons employed");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="IE");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 50 to 249 persons employed");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="IE");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="250 persons employed or more");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="IE");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 0 to 9 persons employed");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="IT");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 10 to 19 persons employed");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="IT");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 20 to 49 persons employed");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="IT");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 50 to 249 persons employed");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="IT");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="250 persons employed or more");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="IT");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 0 to 9 persons employed");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="LV");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 10 to 19 persons employed");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="LV");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 20 to 49 persons employed");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="LV");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 50 to 249 persons employed");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="LV");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="250 persons employed or more");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="LV");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 0 to 9 persons employed");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="LT");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 10 to 19 persons employed");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="LT");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 20 to 49 persons employed");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="LT");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 50 to 249 persons employed");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="LT");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="250 persons employed or more");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="LT");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 0 to 9 persons employed");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="LU");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 10 to 19 persons employed");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="LU");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 20 to 49 persons employed");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="LU");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 50 to 249 persons employed");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="LU");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="250 persons employed or more");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="LU");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 0 to 9 persons employed");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="MT");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 10 to 19 persons employed");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="MT");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 20 to 49 persons employed");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="MT");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 50 to 249 persons employed");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="MT");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="250 persons employed or more");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="MT");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 0 to 9 persons employed");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="NL");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 10 to 19 persons employed");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="NL");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 20 to 49 persons employed");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="NL");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 50 to 249 persons employed");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="NL");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="250 persons employed or more");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="NL");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 0 to 9 persons employed");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="PL");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 10 to 19 persons employed");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="PL");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 20 to 49 persons employed");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="PL");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 50 to 249 persons employed");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="PL");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="250 persons employed or more");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="PL");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 0 to 9 persons employed");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="PT");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 10 to 19 persons employed");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="PT");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 20 to 49 persons employed");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="PT");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 50 to 249 persons employed");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="PT");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="250 persons employed or more");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="PT");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 0 to 9 persons employed");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="RO");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 10 to 19 persons employed");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="RO");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 20 to 49 persons employed");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="RO");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 50 to 249 persons employed");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="RO");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="250 persons employed or more");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="RO");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 0 to 9 persons employed");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="SK");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 10 to 19 persons employed");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="SK");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 20 to 49 persons employed");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="SK");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 50 to 249 persons employed");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="SK");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="250 persons employed or more");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="SK");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 0 to 9 persons employed");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="SI");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 10 to 19 persons employed");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="SI");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 20 to 49 persons employed");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="SI");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 50 to 249 persons employed");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="SI");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="250 persons employed or more");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="SI");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 0 to 9 persons employed");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="ES");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 10 to 19 persons employed");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="ES");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 20 to 49 persons employed");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="ES");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 50 to 249 persons employed");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="ES");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="250 persons employed or more");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="ES");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 0 to 9 persons employed");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="SE");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 10 to 19 persons employed");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="SE");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 20 to 49 persons employed");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="SE");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 50 to 249 persons employed");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="SE");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="250 persons employed or more");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="SE");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 0 to 9 persons employed");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="UK");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 10 to 19 persons employed");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="UK");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 20 to 49 persons employed");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="UK");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 50 to 249 persons employed");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="UK");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="250 persons employed or more");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="UK");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 0 to 9 persons employed");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="EU28");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 10 to 19 persons employed");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="EU28");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 20 to 49 persons employed");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="EU28");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 50 to 249 persons employed");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="EU28");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
+SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="250 persons employed or more");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="EU28");
+INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
+
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Company size");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.8700079033811653);
@@ -110,70 +626,6 @@ INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetI
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Company size");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, null);
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 10 to 19 persons employed");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="CY");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 20 to 49 persons employed");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="CY");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 50 to 249 persons employed");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="CY");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="250 persons employed or more");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="CY");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 0 to 9 persons employed");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="HR");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 10 to 19 persons employed");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="HR");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 20 to 49 persons employed");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="HR");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 50 to 249 persons employed");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="HR");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="250 persons employed or more");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="HR");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 0 to 9 persons employed");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="CZ");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 10 to 19 persons employed");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="CZ");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 20 to 49 persons employed");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="CZ");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 50 to 249 persons employed");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="CZ");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="250 persons employed or more");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="CZ");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 0 to 9 persons employed");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="DK");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 10 to 19 persons employed");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="DK");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Company size");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, null);
@@ -222,70 +674,6 @@ INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetI
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Company size");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.0561796210460812);
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 20 to 49 persons employed");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="DK");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 50 to 249 persons employed");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="DK");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="250 persons employed or more");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="DK");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 0 to 9 persons employed");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="EE");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 10 to 19 persons employed");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="EE");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 20 to 49 persons employed");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="EE");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 50 to 249 persons employed");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="EE");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="250 persons employed or more");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="EE");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 0 to 9 persons employed");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="FI");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 10 to 19 persons employed");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="FI");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 20 to 49 persons employed");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="FI");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 50 to 249 persons employed");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="FI");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="250 persons employed or more");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="FI");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 0 to 9 persons employed");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="FR");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 10 to 19 persons employed");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="FR");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 20 to 49 persons employed");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="FR");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Company size");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.03569451244343374);
@@ -334,70 +722,6 @@ INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetI
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Company size");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.015420080962128296);
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 50 to 249 persons employed");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="FR");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="250 persons employed or more");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="FR");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 0 to 9 persons employed");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="DE");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 10 to 19 persons employed");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="DE");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 20 to 49 persons employed");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="DE");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 50 to 249 persons employed");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="DE");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="250 persons employed or more");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="DE");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 0 to 9 persons employed");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="EL");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 10 to 19 persons employed");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="EL");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 20 to 49 persons employed");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="EL");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 50 to 249 persons employed");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="EL");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="250 persons employed or more");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="EL");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 0 to 9 persons employed");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="HU");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 10 to 19 persons employed");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="HU");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 20 to 49 persons employed");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="HU");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 50 to 249 persons employed");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="HU");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Company size");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.006427595137040501);
@@ -446,70 +770,6 @@ INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetI
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Company size");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.008111790671894305);
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="250 persons employed or more");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="HU");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 0 to 9 persons employed");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="IE");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 10 to 19 persons employed");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="IE");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 20 to 49 persons employed");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="IE");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 50 to 249 persons employed");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="IE");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="250 persons employed or more");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="IE");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 0 to 9 persons employed");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="IT");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 10 to 19 persons employed");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="IT");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 20 to 49 persons employed");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="IT");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 50 to 249 persons employed");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="IT");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="250 persons employed or more");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="IT");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 0 to 9 persons employed");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="LV");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 10 to 19 persons employed");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="LV");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 20 to 49 persons employed");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="LV");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 50 to 249 persons employed");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="LV");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="250 persons employed or more");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="LV");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Company size");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.0015984092109011146);
@@ -558,70 +818,6 @@ INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetI
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Company size");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.0017146420035332017);
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 0 to 9 persons employed");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="LT");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 10 to 19 persons employed");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="LT");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 20 to 49 persons employed");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="LT");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 50 to 249 persons employed");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="LT");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="250 persons employed or more");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="LT");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 0 to 9 persons employed");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="LU");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 10 to 19 persons employed");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="LU");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 20 to 49 persons employed");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="LU");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 50 to 249 persons employed");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="LU");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="250 persons employed or more");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="LU");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 0 to 9 persons employed");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="MT");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 10 to 19 persons employed");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="MT");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 20 to 49 persons employed");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="MT");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 50 to 249 persons employed");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="MT");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="250 persons employed or more");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="MT");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 0 to 9 persons employed");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="NL");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Company size");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.9271540375057775);
@@ -670,70 +866,6 @@ INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetI
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Company size");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.9556818171803353);
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 10 to 19 persons employed");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="NL");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 20 to 49 persons employed");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="NL");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 50 to 249 persons employed");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="NL");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="250 persons employed or more");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="NL");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 0 to 9 persons employed");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="PL");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 10 to 19 persons employed");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="PL");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 20 to 49 persons employed");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="PL");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 50 to 249 persons employed");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="PL");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="250 persons employed or more");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="PL");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 0 to 9 persons employed");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="PT");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 10 to 19 persons employed");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="PT");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 20 to 49 persons employed");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="PT");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 50 to 249 persons employed");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="PT");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="250 persons employed or more");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="PT");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 0 to 9 persons employed");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="RO");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 10 to 19 persons employed");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="RO");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Company size");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.021873989253367247);
@@ -782,70 +914,6 @@ INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetI
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Company size");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.05863958230868522);
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 20 to 49 persons employed");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="RO");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 50 to 249 persons employed");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="RO");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="250 persons employed or more");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="RO");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 0 to 9 persons employed");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="SK");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 10 to 19 persons employed");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="SK");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 20 to 49 persons employed");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="SK");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 50 to 249 persons employed");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="SK");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="250 persons employed or more");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="SK");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 0 to 9 persons employed");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="SI");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 10 to 19 persons employed");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="SI");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 20 to 49 persons employed");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="SI");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 50 to 249 persons employed");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="SI");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="250 persons employed or more");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="SI");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 0 to 9 persons employed");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="ES");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 10 to 19 persons employed");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="ES");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 20 to 49 persons employed");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="ES");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Company size");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.03545479342020202);
@@ -894,74 +962,6 @@ INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetI
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Company size");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.016161213311690126);
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 50 to 249 persons employed");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="ES");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="250 persons employed or more");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="ES");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 0 to 9 persons employed");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="SE");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 10 to 19 persons employed");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="SE");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 20 to 49 persons employed");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="SE");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 50 to 249 persons employed");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="SE");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="250 persons employed or more");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="SE");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 0 to 9 persons employed");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="UK");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 10 to 19 persons employed");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="UK");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 20 to 49 persons employed");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="UK");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 50 to 249 persons employed");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="UK");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="250 persons employed or more");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="UK");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 0 to 9 persons employed");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="EU28");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 10 to 19 persons employed");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="EU28");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 20 to 49 persons employed");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="EU28");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="From 50 to 249 persons employed");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="EU28");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
-SET @companyId = (SELECT cs.idFROM split_company_size cs INNER JOIN translation t ON cs.literal_id=t.literal_id WHERE t.text="250 persons employed or more");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="EU28");
-INSERT INTO profile (nuts_id, company_size_id) VALUE (@nutsId, @companyId);
-
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Company size");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.005617791162937189);
