@@ -1,0 +1,67 @@
+<dvt-dashboard promises="promises" parameters="dashboard.parameters">
+
+  <section data-ng-if="state.current.name != 'home'" id="not-home-cover" class="advice--icon--block advice--block-not-home background-main-light container-fluid section--page">
+      <div class="container horizontal-nopadding">
+        <div class="left-text col-md-8 col-sm-8 col-xs-12  nopadding">
+          <h1 class="main-color left-text" data-ng-bind="i18nLiterals.L22006"></h1>
+          <p data-ng-bind="i18nLiterals.L22033"></p>
+        </div>
+        <div class="icon--advice forum-icon hide-mobile col-sm-4 col-md-4"></div>
+      </div>
+  </section>
+
+  <div class="compare--block container">
+    <form class="compare--block--form">
+      <ul class="compare--list">
+        <!-- INDICATORS -->
+        <li data-ng-repeat="indicator in indicators">
+          <label data-ng-bind="i18nLiterals['L'+indicator.text]"></label>
+        </li>
+      </ul>
+    </form>
+  </div>
+
+  <div class="line background-main-light"></div>
+
+  <div class="compare--block container">
+    <!-- FILTERS -->
+    <form class="compare--block--form">
+      <ul class="compare--list">
+        <!-- 1ST COUNTRY FILTER -->
+        <li>
+          <label data-ng-bind="i18nLiterals.L20609"></label>
+          <select id="datafor" class="" ng-model="pCountry1" ng-selected="pCountry1" ng-change="countryChange()">
+            <option data-ng-repeat='country in countriesDataFor' data-ng-bind="i18nLiterals['L'+country.country]" value="{{::country.country_code}}"></option>
+          </select>
+        </li>
+        <!-- 2ND COUNTRY FILTER -->
+        <li>
+          <label data-ng-bind="i18nLiterals.L20610"></label>
+          <select id="comparewith" class="" ng-model="pCountry2" ng-selected="pCountry2" ng-change="countryChange()">
+            <option data-ng-repeat='country in countriesCompareWith' data-ng-bind="i18nLiterals['L'+country.country]" value="{{::country.country_code}}" ></option>
+          </select>
+        </li>
+      </ul>
+    </form>
+  </div>
+
+  <div class="line background-main-light"></div>
+
+  <section class="container section--page" ng-controller="RegulationController">
+    <div class="card--grid xxs-w1 xs-w2 w3 center-text">
+      <!-- CONTENT -->
+        <!-- COUNTRY 1 DATA -->
+        <div class="card--block--chart">            
+          <div class="chart--block">
+          </div>
+        </div>
+        <!-- COUNTRY 2 DATA -->
+        <div class="card--block--chart">            
+          <div class="chart--block">
+          </div>
+        </div>
+
+    <!-- END CONTENT -->
+    </div>
+  </section>
+</dvt-dashboard>

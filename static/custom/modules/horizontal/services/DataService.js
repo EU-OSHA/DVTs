@@ -427,8 +427,38 @@ define(function () {
                 $log.debug('getGenders url:' + url);
                 return promise(url);
             }, 
+
+            /**
+             * @ngdoc method
+             * @name dvt.configModule.DataService#getMedianAgeCountryData
+             * @methodOf dvt.configModule.DataService
+             * @description
+             * Get genders for select option list
+             */
+            getMedianAgeCountryData: function(pIndicator){
+                var url = configService.getBarometerDataPath() + "&dataAccessId=getMedianAgeCountryData"+"&parampIndicator="+pIndicator;
+                $log.debug('getMedianAgeCountryData url:' + url);
+                return promise(url);
+            }, 
             
             /************************ END WORKFORCE PROFILES ***************************/
+
+            /************************ REGULATIONS ***************************/
+
+            /**
+             * @ngdoc method
+             * @name dvt.configModule.DataService#getGenders
+             * @methodOf dvt.configModule.DataService
+             * @description
+             * Get genders for select option list
+             */
+            getRegulationIndicators: function(){
+                var url = configService.getBarometerDataPath() + "&dataAccessId=getRegulationIndicators";
+                $log.debug('getRegulationIndicators url:' + url);
+                return promise(url);
+            },
+            
+            /************************ END REGULATIONS ***************************/
 
             /**
              * @ngdoc method
@@ -470,7 +500,7 @@ define(function () {
              */
             getCountryCardGrouping: function (country) {
                 var url = configService.getCountriesDataPath() + "&dataAccessId=getCCSectionGrouping" + "&parampCountry=" + country;
-                $log.debug('getCountryCardGrouping url: ' + url);
+                $log.warn('getCountryCardGrouping url: ' + url);
                 return promise(url);
             },
 
@@ -790,7 +820,7 @@ define(function () {
              */
             getGroupCountryList:function() {
                 var url = configService.getCountriesDataPath() + "&dataAccessId=getGroupCountryList";
-                $log.debug('getGroupCountryList url: ' + url);
+                $log.warn('getGroupCountryList url: ' + url);
                 return promise(url);
             },
 
@@ -811,10 +841,10 @@ define(function () {
                     if(!$scope.groupList[row[0]])
                         $scope.groupList[row[0]]={};
                     $scope.groupList[row[0]].country = row[1];
-                    $scope.groupList[row[0]].group = row[2];
+                    $scope.groupList[row[0]].group = 1;
                 }
-                $log.debug($scope.groupList);
-                return ($scope)
+                $log.warn($scope.groupList);
+                return ($scope);
             },
 
             /* STORY 2 Main indicator */

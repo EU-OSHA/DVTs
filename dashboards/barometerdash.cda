@@ -534,4 +534,36 @@
     </Query>
   </DataAccess>
 
+    <!-- WORKFORCE PROFILE || get country data for indicator median age -->
+  <DataAccess access="public" connection="dvt_conn" id="getMedianAgeCountryData" type="sql">
+    <Cache duration="3600" enabled="true" />
+    <Columns />
+    <Parameters>
+      <Parameter default="41" name="pIndicator" type="Numeric" />
+    </Parameters>
+    <Query>
+      SELECT n.country_code as countryKey, n.name as Country -- , v.value as Median_Age
+      FROM nuts n, profile p, value v, indicator i, dataset d
+      WHERE n.id = p.nuts_id 
+      AND i.id = v.indicator_id 
+      AND v.profile_id = p.id 
+      AND d.id = 6 AND d.id = v.dataset_id
+      AND i.id = ${pIndicator}
+      ORDER BY Country ASC
+    </Query>
+  </DataAccess>
+
+  <!-- STEERING OF OSH || get indicators for select -->
+  <DataAccess access="public" connection="dvt_conn" id="getRegulationIndicators" type="sql">
+    <Cache duration="3600" enabled="true" />
+    <Columns />
+    <Parameters>
+      <Parameter default="41" name="pIndicator" type="Numeric" />
+    </Parameters>
+    <Query>
+      SELECT id, literal_id 
+      FROM indicator 
+      WHERE id IN (45, 46, 47, 48, 49)
+    </Query>
+  </DataAccess>
 </CDADescriptor>
