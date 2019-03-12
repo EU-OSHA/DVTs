@@ -12,7 +12,7 @@
 
   <div class="line background-main-light"></div>
 
-  <section class="container section--page" ng-controller="WorkforceProfileController">
+  <section class="container section--page" >
     <!-- FILTERS -->
     <form class="row block--filter--wrapper">
       <!-- INDICATOR FILTER -->
@@ -21,7 +21,7 @@
         <select id="indicatorSelect" class="filter--dropdown--list" data-ng-model="selectedIndicator" data-ng-change="selectChange()">
           <option value="41" data-ng-bind="i18nLiterals.L298">
           </option>
-          <option value="L20621" data-ng-bind="i18nLiterals.L20621">
+          <option value="42" data-ng-bind="i18nLiterals.L20621">
           </option>
         </select>
       </div>
@@ -29,16 +29,15 @@
       <div id="filter2"class="filter--dropdown--wrapper">
         <label for="employeeGroupSelect" data-ng-bind="i18nLiterals.L20622"></label>
         <select id="employeeGroupSelect" class="filter--dropdown--list" data-ng-repeat='gender in genders' ng-disabled="selectedIndicator == 41">
-          <option data-ng-bind="i18nLiterals.L299" value="42">
+          <option data-ng-bind="(selectedIndicator == 41)?'Not applied to Median Age':i18nLiterals.L299" value="42">
           </option>
           <option data-ng-repeat='gender in genders' value="gender.gender_id" data-ng-bind="i18nLiterals['L'+gender.gender_name]">
           </option>
         </select>
       </div>  
     </form>
-    <div class="card--grid xxs-w1 xs-w2 w3 center-text">
+    <div class="page-content text-center">
       <!-- CONTENT -->
-      <div class="grey clearfix">
         <!--<dvt-map ng-cloak
           group-key="dashboard.parameters.approach"
           promise="dashboard.promises.promiseShape"
@@ -51,19 +50,15 @@
           clickable="1"
           click-action="map.clickAction"
         ></dvt-map>-->
-        <dvt-map ng-cloak
-          group-key=""
-          promise="dashboard.promises.promiseShape"
-          country="EU" country-key="EU" group-color=""
-          zoom-w="600" zoom-h="1000" x="280" y="50"
-          height="250" width="600"
-          css-class="col-xs-12 col-sm-12 col-md-12 col-lg-12" is-colored="1" hover="true"
-          group-list=""
-          load-countries="true"
-          clickable="1"
-          click-action="map.clickAction"
-        ></dvt-map>
-      </div>
+      <dvt-map ng-cloak
+        country-key="EU" promise="promises.promiseShape"
+        country="EU" width="400" height="400" use-viewbox="true"x="0" y="0"
+        css-class="col-xs-12 col-sm-12 col-md-6 col-lg-6" is-colored="1" hover="true"
+        group-list="groupList"
+        color-index="{{ :: colorIndex }}"
+        background-shape-color="{{ :: backgroundShapeColor }}"
+        group-color="groupColor">
+      </dvt-map>
     <!-- END CONTENT -->
     </div>
   </section>

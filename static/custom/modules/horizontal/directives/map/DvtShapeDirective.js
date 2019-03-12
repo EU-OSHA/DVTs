@@ -29,7 +29,9 @@ define(function (require) {
     }
 
     // Ver:  https://docs.angularjs.org/api/ng/type/ngModel.NgModelController
-    function DvtShapeDirective(dataService, mapProvider, $log, dvtUtils) {
+    function DvtShapeDirective(dataService, mapProvider, $log, dvtUtils, configService) {
+        // Literals
+        var i18nLiterals = configService.getLiterals();
         return {
             restrict: 'E',
             require: ['^dvtDashboard'],
@@ -57,7 +59,7 @@ define(function (require) {
                 };
 
                 $scope.promises = {};
-
+                
                 if (!!$scope.countryKey) {
                     $scope.promises.countryKey = dataService.getGroupId($scope.countryKey);
                     $scope.promises.countryKey
@@ -96,6 +98,7 @@ define(function (require) {
                 //promise with shapes and country names
                 if(!!scope.promise) {
                     scope.promise.then(function (map) {
+                        //debugger;
                         //css style
                         scope.divClass = attributes.cssClass;
 
@@ -188,24 +191,70 @@ define(function (require) {
 
                                                 var lbox = this._label.getBBox();
 
-                                                this._label.group = this._label.paper.text(lbox.x + lbox.width / 2,
-                                                    lbox.y + lbox.height / 2.85,
-                                                    'GROUP ' + tooltipGroup.group)
+                                                this._label.country = this._label.paper.text(lbox.x + lbox.width / 5,
+                                                    lbox.y + lbox.height / 5,
+                                                    /*'GROUP ' + tooltipGroup.group*/ this.label)
                                                     .animate({
                                                         'font-size': tooltipConf.fontSize,
                                                         stroke: tooltipConf.fontColor,
-                                                        "font-weight": "bold",
+                                                        'font-weight': "bold",
                                                         fill: tooltipConf.fontColor,
-                                                        font: "Open Sans",
+                                                        font: "OpenSans",
                                                     }, 0);
-                                                this._label.country = this._label.paper.text(lbox.x + lbox.width / 2,
+
+                                                this._label.medianAge = this._label.paper.text(lbox.x + lbox.width / 4,
+                                                    lbox.y + lbox.height / 2.5, i18nLiterals['L20615'])
+                                                    .animate({
+                                                        'font-size': 10,
+                                                        stroke: 'none',
+                                                        'font-weight': "light",
+                                                        fill: tooltipConf.fontColor,
+                                                        font: "OpenSans",
+                                                    }, 0);
+                                                this._label.ageingWorkers = this._label.paper.text(lbox.x + lbox.width / 2.35,
+                                                    lbox.y + lbox.height / 2, i18nLiterals['L20616'])
+                                                    .animate({
+                                                        'font-size': 10,
+                                                        stroke: 'none',
+                                                        'font-weight': "light",
+                                                        fill: tooltipConf.fontColor,
+                                                        font: "OpenSans",
+                                                    }, 0);
+                                                this._label.eRateTotal = this._label.paper.text(lbox.x + lbox.width / 2.55,
+                                                    lbox.y + lbox.height / 1.65, i18nLiterals['L20617'])
+                                                    .animate({
+                                                        'font-size': 10,
+                                                        stroke: 'none',
+                                                        'font-weight': "light",
+                                                        fill: tooltipConf.fontColor,
+                                                        font: "OpenSans",
+                                                    }, 0);
+                                                this._label.eRateMale = this._label.paper.text(lbox.x + lbox.width / 2.5,
+                                                    lbox.y + lbox.height / 1.4, i18nLiterals['L20618'])
+                                                    .animate({
+                                                        'font-size': 10,
+                                                        stroke: 'none',
+                                                        'font-weight': "light",
+                                                        fill: tooltipConf.fontColor,
+                                                        font: "OpenSans",
+                                                    }, 0);
+                                                this._label.eRateFemale = this._label.paper.text(lbox.x + lbox.width / 2.37,
+                                                    lbox.y + lbox.height / 1.225, i18nLiterals['L20619'])
+                                                    .animate({
+                                                        'font-size': 10,
+                                                        stroke: 'none',
+                                                        'font-weight': "light",
+                                                        fill: tooltipConf.fontColor,
+                                                        font: "OpenSans",
+                                                    }, 0);
+                                                /*this._label.country = this._label.paper.text(lbox.x + lbox.width / 2,
                                                     lbox.y + lbox.height / 1.25,
                                                     this.label)
                                                     .animate({
                                                         'font-size': tooltipConf.fontSize,
                                                         stroke: 'none',
-                                                        font: "Open Sans",
-                                                    }, 0);
+                                                        font: "OpenSans",
+                                                    }, 0);*/
                                             }
                                     },
                                     out = function () {
@@ -216,8 +265,13 @@ define(function (require) {
                                                 opacity:1
                                             },100);
 
-                                           this._label.group.remove();
+                                           //this._label.group.remove();
                                            this._label.country.remove();
+                                           this._label.medianAge.remove();
+                                           this._label.ageingWorkers.remove();
+                                           this._label.eRateTotal.remove();
+                                           this._label.eRateMale.remove();
+                                           this._label.eRateFemale.remove();
                                            this._label.remove();
                                         }
                                     };
@@ -400,7 +454,7 @@ define(function (require) {
         }
     }
 
-    DvtShapeDirective.$inject = ['dataService', 'mapProvider', '$log', 'dvtUtils'];
+    DvtShapeDirective.$inject = ['dataService', 'mapProvider', '$log', 'dvtUtils', 'configService'];
 
     return DvtShapeDirective;
 });

@@ -22,13 +22,13 @@ define(function (require) {
             getTooltipConfiguration: function () {
                 var bColor = dvtUtils.getEUTooltipColor();
                 var conf = {
-                    height: 40,
-                    width: 130,
+                    height: 120,
+                    width: 180,
                     fontColor: dvtUtils.getTooltipFontColor(),
                     backColor: dvtUtils.getEUTooltipColor(),
                     strokeColor: dvtUtils.getEUTooltipStrokeColor(),
                     backOpacity: 0.80,
-                    fontSize: 14,
+                    fontSize: 12,
                     fontWeight: "bold"
                 };
                 return conf;

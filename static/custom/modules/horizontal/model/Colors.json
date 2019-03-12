@@ -16,7 +16,7 @@
     "base": "#C9E3E3",
     "baseOver": "#449FA2",
     "EUTooltip": "#fff",
-    "EUTooltipFontColor": "cadetblue",
+    "EUTooltipFontColor": "gray",
     "EUTooltipStroketColor": "gray",
     "plotsBg": "#f0f0f0",
     "spider": {

@@ -72,8 +72,13 @@ define(function (require) {
         });
 
         $stateProvider.state('workforce-profile', {
-          url: "/generic-information/workforce-profile",
-          params: {},
+          url: "/generic-information/workforce-profile/:pIndicator",
+          params: {
+            pIndicator: {
+                  value: "41",
+                  squash: "41"
+            },
+          },
           views: {
               "content-main": {
                   templateUrl: configService.getVerticalTplPath("generic-information/workforce-profile", "workforce-profile"),

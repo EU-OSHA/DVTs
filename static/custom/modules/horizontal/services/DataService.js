@@ -500,7 +500,7 @@ define(function () {
              */
             getCountryCardGrouping: function (country) {
                 var url = configService.getCountriesDataPath() + "&dataAccessId=getCCSectionGrouping" + "&parampCountry=" + country;
-                $log.warn('getCountryCardGrouping url: ' + url);
+                $log.debug('getCountryCardGrouping url: ' + url);
                 return promise(url);
             },
 
@@ -820,7 +820,7 @@ define(function () {
              */
             getGroupCountryList:function() {
                 var url = configService.getCountriesDataPath() + "&dataAccessId=getGroupCountryList";
-                $log.warn('getGroupCountryList url: ' + url);
+                $log.debug('getGroupCountryList url: ' + url);
                 return promise(url);
             },
 

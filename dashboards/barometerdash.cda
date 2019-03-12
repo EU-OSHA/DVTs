@@ -553,6 +553,27 @@
     </Query>
   </DataAccess>
 
+  <!-- WORKFORCE PROFILE || get country data for indicators -->
+  <DataAccess access="public" connection="dvt_conn" id="getCountryDataIndicators" type="sql">
+    <Cache duration="3600" enabled="true" />
+    <Columns />
+    <Parameters>
+    </Parameters>
+    <Query>
+      SELECT DISTINCT(n.name) as Country, v1.value as Median_Age, v2.value as Employment_Rate
+      FROM nuts n, profile p, value v1, value v2, indicator i, dataset d
+      WHERE n.id = p.nuts_id
+      AND 41 = v1.indicator_id
+      AND v1.profile_id = p.id
+      AND d.id = 6 AND d.id = v1.dataset_id
+      AND 42 = v2.indicator_id
+      AND v2.profile_id = p.id
+      AND d.id = 6 AND d.id = v2.dataset_id
+      AND i.id IN (41, 42, 43)
+      ORDER BY Country ASC;
+    </Query>
+  </DataAccess>
+
   <!-- STEERING OF OSH || get indicators for select -->
   <DataAccess access="public" connection="dvt_conn" id="getRegulationIndicators" type="sql">
     <Cache duration="3600" enabled="true" />
