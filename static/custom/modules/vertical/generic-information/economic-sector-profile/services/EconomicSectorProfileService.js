@@ -146,9 +146,6 @@ define (function (require) {
 				              	/*SVG default width:68*150:height proportion W = H*0.45333333333 */
 				              	var valueKey = scene.firstAtoms.value;
                                 var resul = this.height() * 0.45333;
-                                if(this.height >= 260){
-                                    resul = resul/1.25;
-                                }
 				              	return resul;
 				              })
 				              .left(function(scene){
