@@ -36,6 +36,7 @@ define(function (require) {
 
     $scope.promises = {
         promiseShape: mapProvider.getEuropeShape(),
+        //countryGroups: dataService.getMedianAgeCountryData($scope.selectedIndicator)
         countryGroups: dataService.getGroupCountryList()
     };
     

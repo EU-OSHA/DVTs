@@ -163,6 +163,21 @@ define(function (require) {
                                         return textObj;
                                     };
 
+                                    /*var countryData = [];
+
+                                    dataService.getCountryDataIndicators().then(function(data){
+                                        data.data.resultset.map(function (elem) {
+                                            var row = {};
+                                            row = elem;
+                                            if(!countryData[row[0]])
+                                                countryData[row[0]]={};
+                                            countryData[row[0]].country_name = row[1];
+                                            countryData[row[0]].median_age = row[2];
+                                            countryData[row[0]].employment_rate = row[3];
+                                        });
+                                    });
+
+                                    $log.warn(countryData);*/
 
                                     /* Tooltip mouseover function */
                                     var over = function (e) {
@@ -191,7 +206,7 @@ define(function (require) {
 
                                                 var lbox = this._label.getBBox();
 
-                                                this._label.country = this._label.paper.text(lbox.x + lbox.width / 5,
+                                                this._label.country = this._label.paper.text(lbox.x + lbox.width / 2,
                                                     lbox.y + lbox.height / 5,
                                                     /*'GROUP ' + tooltipGroup.group*/ this.label)
                                                     .animate({
@@ -323,8 +338,8 @@ define(function (require) {
                                             }
                                             else {
                                                 path.attr({
-                                                    stroke: backgroundShapeColor,
-                                                    fill: "#F0F0F0",
+                                                   // stroke: backgroundShapeColor,
+                                                    fill: 'url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/diagonal-stripes.svg)',
                                                     "stroke-opacity": 1.0,
                                                     //title:cName
                                                 });
