@@ -526,6 +526,23 @@
           font-weight: normal;
           letter-spacing: 2px;
           display: block;
+          &.alert-disabled{
+            font-size: 1rem;
+            color: red;
+            text-transform: none;
+            font-family: OpenSans;
+            position: relative;
+            top: -0.6rem;
+            letter-spacing: initial;
+            padding-left: 2rem;
+          }
+        }
+        &.disabled{
+          &:after {
+            opacity: 0.4;
+            color: $gray !important;
+            top: 36%;
+          }
         }
         &:after {
           content: "\f107";
@@ -552,6 +569,12 @@
           -webkit-appearance: none;
           -moz-appearance: none;
           appearance: none;
+          &[disabled="disabled"]{
+            opacity: 0.4;
+            cursor: not-allowed;
+            border: 1px dotted $gray;
+            color: $gray;
+          }
           option{
             &:checked{
             
@@ -566,6 +589,45 @@
         &:nth-child(2){
           select{
 
+          }
+        }
+      }
+    }
+  }
+  .submenu--block{
+    padding: 1rem 0 0.5rem;
+    .submenu--items--wrapper{
+      padding:0; 
+      display: flex;
+      justify-content: space-between;
+      list-style: none;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      li.prev-item {
+        &:after{
+          content: "\f104";
+          font-size: 2.6rem;
+          font-family: 'FontAwesome';
+        }
+      }
+      li.next-item{
+        &:after{
+          content: "\f105";
+          font-size: 2.6rem;
+          font-family: 'FontAwesome';
+        }
+      }
+      li{
+        width: auto;
+        a{          
+          font-family: 'OpenSans-Light';
+          text-transform: uppercase;
+          font-weight: normal;
+          letter-spacing: 2px;
+          padding: 0.5rem 0;
+          border-bottom: 4px solid transparent;
+          &.active, &:hover{
+            border-bottom: 4px solid $orange;
           }
         }
       }
@@ -774,10 +836,15 @@
     }
     .survey--map--block{
       background: $gray-lighter;
-      .map--block{
-        img{
-          width: 100%;
-        }
+      .map--block{        
+        .dvt--map--block, #dvt_map1{
+          width: 70%;
+          text-align: center;
+          margin: auto;
+          svg{
+            overflow: visible !important;
+          }
+        }       
       }
     }
   /** END CARDS TYPE **/

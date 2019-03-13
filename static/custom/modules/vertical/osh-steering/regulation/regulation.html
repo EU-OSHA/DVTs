@@ -6,19 +6,22 @@
           <h1 class="main-color left-text" data-ng-bind="i18nLiterals.L22006"></h1>
           <p data-ng-bind="i18nLiterals.L22033"></p>
         </div>
-        <div class="icon--advice forum-icon hide-mobile col-sm-4 col-md-4"></div>
+        <div class="icon--advice regulation-icon hide-mobile col-sm-4 col-md-4"></div>
       </div>
   </section>
 
   <div class="compare--block container">
-    <form class="compare--block--form">
-      <ul class="compare--list">
+
+
+    <div class="submenu--block">
+      <ul class="submenu--items--wrapper">
         <!-- INDICATORS -->
-        <li data-ng-repeat="indicator in indicators">
-          <label data-ng-bind="i18nLiterals['L'+indicator.text]"></label>
+        <li data-ng-repeat="indicator in indicators" data-ng-class="{'active' : $index == 0 }" class="submenu--item">
+          <a href="#" data-ng-bind="i18nLiterals['L'+indicator.text]" data-ng-class="{'active' : $index == 0 }" ></a>
         </li>
       </ul>
-    </form>
+    </div>
+
   </div>
 
   <div class="line background-main-light"></div>
@@ -27,7 +30,7 @@
     <!-- FILTERS -->
     <form class="compare--block--form">
       <ul class="compare--list">
-        <!-- 1ST COUNTRY FILTER -->
+        <!-- 1ST COUNTRY FILTER -->        
         <li>
           <label data-ng-bind="i18nLiterals.L20609"></label>
           <select id="datafor" class="" ng-model="pCountry1" ng-selected="pCountry1" ng-change="countryChange()">
@@ -40,7 +43,7 @@
           <select id="comparewith" class="" ng-model="pCountry2" ng-selected="pCountry2" ng-change="countryChange()">
             <option data-ng-repeat='country in countriesCompareWith' data-ng-bind="i18nLiterals['L'+country.country]" value="{{::country.country_code}}" ></option>
           </select>
-        </li>
+        </li>        
       </ul>
     </form>
   </div>

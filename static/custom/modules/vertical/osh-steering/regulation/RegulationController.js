@@ -14,6 +14,7 @@ define(function (require) {
 
   function controller($scope, $stateParams, $state, configService, $log, $document,dataService, $window, $sce, $compile, $timeout) {
 
+
     // CDA
     $scope.cda =  configService.getBarometerCda();
 
@@ -97,7 +98,6 @@ define(function (require) {
       };
 
     /******************************END FILTERS************************************/
-
 
   }
 

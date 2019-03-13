@@ -338,8 +338,9 @@ define(function (require) {
                                             }
                                             else {
                                                 path.attr({
-                                                   // stroke: backgroundShapeColor,
-                                                    fill: 'url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/diagonal-stripes.svg)',
+                                                    //stroke: backgroundShapeColor,
+                                                    stroke: '#FFFFFF',
+                                                    fill: 'url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/diagonal-stripes.png)',
                                                     "stroke-opacity": 1.0,
                                                     //title:cName
                                                 });
@@ -398,8 +399,8 @@ define(function (require) {
 
                                 if (!!attributes.useViewbox && attributes.useViewbox=="true")
                                 {
-                                    paper.setViewBox(attributes.x || 0, attributes.y || 0, attributes.zoomH || 640, attributes.zoomW || 640, false);
-                                }                                
+                                    paper.setViewBox(attributes.x || 0, attributes.y || 0, attributes.zoomH || 450, attributes.zoomW || 450, false);
+                                }                               
 
                                 var svg = document.querySelector("#" + scope.id + " svg");
                                 svg.removeAttribute("width");
