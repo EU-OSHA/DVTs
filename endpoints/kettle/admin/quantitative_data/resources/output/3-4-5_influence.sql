@@ -1,372 +1,372 @@
-SET @answerId = (SELECT a.id FROM split_answe a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Always or most of the time");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Always or most of the time");
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="AT");
 INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
 
-SET @answerId = (SELECT a.id FROM split_answe a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Rarely or never");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Rarely or never");
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="AT");
 INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
 
-SET @answerId = (SELECT a.id FROM split_answe a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Sometimes");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Sometimes");
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="AT");
 INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
 
-SET @answerId = (SELECT a.id FROM split_answe a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Always or most of the time");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Always or most of the time");
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="BE");
 INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
 
-SET @answerId = (SELECT a.id FROM split_answe a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Rarely or never");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Rarely or never");
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="BE");
 INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
 
-SET @answerId = (SELECT a.id FROM split_answe a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Sometimes");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Sometimes");
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="BE");
 INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
 
-SET @answerId = (SELECT a.id FROM split_answe a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Always or most of the time");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Always or most of the time");
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="BG");
 INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
 
-SET @answerId = (SELECT a.id FROM split_answe a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Rarely or never");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Rarely or never");
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="BG");
 INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
 
-SET @answerId = (SELECT a.id FROM split_answe a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Sometimes");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Sometimes");
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="BG");
 INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
 
-SET @answerId = (SELECT a.id FROM split_answe a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Always or most of the time");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Always or most of the time");
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="CY");
 INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
 
-SET @answerId = (SELECT a.id FROM split_answe a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Rarely or never");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Rarely or never");
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="CY");
 INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
 
-SET @answerId = (SELECT a.id FROM split_answe a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Sometimes");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Sometimes");
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="CY");
 INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
 
-SET @answerId = (SELECT a.id FROM split_answe a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Always or most of the time");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Always or most of the time");
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="CZ");
 INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
 
-SET @answerId = (SELECT a.id FROM split_answe a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Rarely or never");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Rarely or never");
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="CZ");
 INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
 
-SET @answerId = (SELECT a.id FROM split_answe a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Sometimes");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Sometimes");
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="CZ");
 INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
 
-SET @answerId = (SELECT a.id FROM split_answe a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Always or most of the time");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Always or most of the time");
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="DE");
 INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
 
-SET @answerId = (SELECT a.id FROM split_answe a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Rarely or never");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Rarely or never");
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="DE");
 INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
 
-SET @answerId = (SELECT a.id FROM split_answe a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Sometimes");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Sometimes");
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="DE");
 INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
 
-SET @answerId = (SELECT a.id FROM split_answe a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Always or most of the time");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Always or most of the time");
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="DK");
 INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
 
-SET @answerId = (SELECT a.id FROM split_answe a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Rarely or never");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Rarely or never");
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="DK");
 INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
 
-SET @answerId = (SELECT a.id FROM split_answe a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Sometimes");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Sometimes");
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="DK");
 INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
 
-SET @answerId = (SELECT a.id FROM split_answe a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Always or most of the time");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Always or most of the time");
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="EE");
 INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
 
-SET @answerId = (SELECT a.id FROM split_answe a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Rarely or never");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Rarely or never");
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="EE");
 INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
 
-SET @answerId = (SELECT a.id FROM split_answe a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Sometimes");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Sometimes");
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="EE");
 INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
 
-SET @answerId = (SELECT a.id FROM split_answe a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Always or most of the time");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Always or most of the time");
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="EL");
 INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
 
-SET @answerId = (SELECT a.id FROM split_answe a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Rarely or never");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Rarely or never");
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="EL");
 INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
 
-SET @answerId = (SELECT a.id FROM split_answe a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Sometimes");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Sometimes");
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="EL");
 INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
 
-SET @answerId = (SELECT a.id FROM split_answe a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Always or most of the time");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Always or most of the time");
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="ES");
 INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
 
-SET @answerId = (SELECT a.id FROM split_answe a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Rarely or never");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Rarely or never");
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="ES");
 INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
 
-SET @answerId = (SELECT a.id FROM split_answe a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Sometimes");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Sometimes");
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="ES");
 INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
 
-SET @answerId = (SELECT a.id FROM split_answe a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Always or most of the time");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Always or most of the time");
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="FI");
 INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
 
-SET @answerId = (SELECT a.id FROM split_answe a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Rarely or never");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Rarely or never");
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="FI");
 INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
 
-SET @answerId = (SELECT a.id FROM split_answe a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Sometimes");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Sometimes");
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="FI");
 INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
 
-SET @answerId = (SELECT a.id FROM split_answe a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Always or most of the time");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Always or most of the time");
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="FR");
 INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
 
-SET @answerId = (SELECT a.id FROM split_answe a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Rarely or never");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Rarely or never");
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="FR");
 INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
 
-SET @answerId = (SELECT a.id FROM split_answe a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Sometimes");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Sometimes");
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="FR");
 INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
 
-SET @answerId = (SELECT a.id FROM split_answe a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Always or most of the time");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Always or most of the time");
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="HR");
 INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
 
-SET @answerId = (SELECT a.id FROM split_answe a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Rarely or never");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Rarely or never");
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="HR");
 INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
 
-SET @answerId = (SELECT a.id FROM split_answe a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Sometimes");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Sometimes");
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="HR");
 INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
 
-SET @answerId = (SELECT a.id FROM split_answe a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Always or most of the time");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Always or most of the time");
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="HU");
 INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
 
-SET @answerId = (SELECT a.id FROM split_answe a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Rarely or never");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Rarely or never");
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="HU");
 INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
 
-SET @answerId = (SELECT a.id FROM split_answe a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Sometimes");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Sometimes");
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="HU");
 INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
 
-SET @answerId = (SELECT a.id FROM split_answe a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Always or most of the time");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Always or most of the time");
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="IE");
 INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
 
-SET @answerId = (SELECT a.id FROM split_answe a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Rarely or never");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Rarely or never");
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="IE");
 INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
 
-SET @answerId = (SELECT a.id FROM split_answe a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Sometimes");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Sometimes");
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="IE");
 INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
 
-SET @answerId = (SELECT a.id FROM split_answe a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Always or most of the time");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Always or most of the time");
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="IT");
 INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
 
-SET @answerId = (SELECT a.id FROM split_answe a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Rarely or never");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Rarely or never");
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="IT");
 INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
 
-SET @answerId = (SELECT a.id FROM split_answe a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Sometimes");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Sometimes");
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="IT");
 INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
 
-SET @answerId = (SELECT a.id FROM split_answe a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Always or most of the time");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Always or most of the time");
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="LT");
 INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
 
-SET @answerId = (SELECT a.id FROM split_answe a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Rarely or never");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Rarely or never");
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="LT");
 INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
 
-SET @answerId = (SELECT a.id FROM split_answe a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Sometimes");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Sometimes");
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="LT");
 INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
 
-SET @answerId = (SELECT a.id FROM split_answe a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Always or most of the time");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Always or most of the time");
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="LU");
 INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
 
-SET @answerId = (SELECT a.id FROM split_answe a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Rarely or never");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Rarely or never");
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="LU");
 INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
 
-SET @answerId = (SELECT a.id FROM split_answe a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Sometimes");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Sometimes");
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="LU");
 INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
 
-SET @answerId = (SELECT a.id FROM split_answe a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Always or most of the time");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Always or most of the time");
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="LV");
 INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
 
-SET @answerId = (SELECT a.id FROM split_answe a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Rarely or never");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Rarely or never");
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="LV");
 INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
 
-SET @answerId = (SELECT a.id FROM split_answe a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Sometimes");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Sometimes");
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="LV");
 INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
 
-SET @answerId = (SELECT a.id FROM split_answe a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Always or most of the time");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Always or most of the time");
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="MT");
 INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
 
-SET @answerId = (SELECT a.id FROM split_answe a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Rarely or never");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Rarely or never");
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="MT");
 INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
 
-SET @answerId = (SELECT a.id FROM split_answe a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Sometimes");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Sometimes");
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="MT");
 INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
 
-SET @answerId = (SELECT a.id FROM split_answe a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Always or most of the time");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Always or most of the time");
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="NL");
 INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
 
-SET @answerId = (SELECT a.id FROM split_answe a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Rarely or never");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Rarely or never");
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="NL");
 INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
 
-SET @answerId = (SELECT a.id FROM split_answe a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Sometimes");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Sometimes");
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="NL");
 INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
 
-SET @answerId = (SELECT a.id FROM split_answe a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Always or most of the time");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Always or most of the time");
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="PL");
 INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
 
-SET @answerId = (SELECT a.id FROM split_answe a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Rarely or never");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Rarely or never");
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="PL");
 INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
 
-SET @answerId = (SELECT a.id FROM split_answe a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Sometimes");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Sometimes");
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="PL");
 INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
 
-SET @answerId = (SELECT a.id FROM split_answe a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Always or most of the time");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Always or most of the time");
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="PT");
 INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
 
-SET @answerId = (SELECT a.id FROM split_answe a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Rarely or never");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Rarely or never");
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="PT");
 INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
 
-SET @answerId = (SELECT a.id FROM split_answe a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Sometimes");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Sometimes");
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="PT");
 INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
 
-SET @answerId = (SELECT a.id FROM split_answe a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Always or most of the time");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Always or most of the time");
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="RO");
 INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
 
-SET @answerId = (SELECT a.id FROM split_answe a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Rarely or never");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Rarely or never");
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="RO");
 INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
 
-SET @answerId = (SELECT a.id FROM split_answe a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Sometimes");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Sometimes");
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="RO");
 INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
 
-SET @answerId = (SELECT a.id FROM split_answe a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Always or most of the time");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Always or most of the time");
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="SE");
 INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
 
-SET @answerId = (SELECT a.id FROM split_answe a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Rarely or never");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Rarely or never");
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="SE");
 INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
 
-SET @answerId = (SELECT a.id FROM split_answe a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Sometimes");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Sometimes");
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="SE");
 INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
 
-SET @answerId = (SELECT a.id FROM split_answe a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Always or most of the time");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Always or most of the time");
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="SI");
 INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
 
-SET @answerId = (SELECT a.id FROM split_answe a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Rarely or never");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Rarely or never");
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="SI");
 INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
 
-SET @answerId = (SELECT a.id FROM split_answe a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Sometimes");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Sometimes");
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="SI");
 INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
 
-SET @answerId = (SELECT a.id FROM split_answe a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Always or most of the time");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Always or most of the time");
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="SK");
 INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
 
-SET @answerId = (SELECT a.id FROM split_answe a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Rarely or never");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Rarely or never");
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="SK");
 INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
 
-SET @answerId = (SELECT a.id FROM split_answe a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Sometimes");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Sometimes");
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="SK");
 INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
 
-SET @answerId = (SELECT a.id FROM split_answe a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Always or most of the time");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Always or most of the time");
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="UK");
 INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
 
-SET @answerId = (SELECT a.id FROM split_answe a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Rarely or never");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Rarely or never");
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="UK");
 INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
 
-SET @answerId = (SELECT a.id FROM split_answe a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Sometimes");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Sometimes");
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="UK");
 INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
 
-SET @answerId = (SELECT a.id FROM split_answe a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Always or most of the time");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Always or most of the time");
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="EU28");
 INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
 
-SET @answerId = (SELECT a.id FROM split_answe a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Rarely or never");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Rarely or never");
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="EU28");
 INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
 
-SET @answerId = (SELECT a.id FROM split_answe a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Sometimes");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Sometimes");
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="EU28");
 INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
 
-SET @answerId = (SELECT a.id FROM split_answe a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Always or most of the time");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Always or most of the time");
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="CH");
 INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
 
-SET @answerId = (SELECT a.id FROM split_answe a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Rarely or never");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Rarely or never");
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="CH");
 INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
 
-SET @answerId = (SELECT a.id FROM split_answe a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Sometimes");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Sometimes");
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="CH");
 INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
 
-SET @answerId = (SELECT a.id FROM split_answe a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Always or most of the time");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Always or most of the time");
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="NO");
 INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
 
-SET @answerId = (SELECT a.id FROM split_answe a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Rarely or never");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Rarely or never");
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="NO");
 INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
 
-SET @answerId = (SELECT a.id FROM split_answe a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Sometimes");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Sometimes");
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="NO");
 INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
 

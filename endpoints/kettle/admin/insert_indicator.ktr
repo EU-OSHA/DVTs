@@ -221,6 +221,36 @@
     </step>
 
   <step>
+    <name>Modified Java Script Value</name>
+    <type>ScriptValueMod</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <compatible>N</compatible>
+    <optimizationLevel>9</optimizationLevel>
+    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
+        <jsScript_name>Script 1</jsScript_name>
+        <jsScript_script>var query &#x3d; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;&#xd;&#xa;query &#x3d; query &#x2b; &#x22;SET &#x40;maxId &#x3d; IFNULL&#x28;&#x28;SELECT MAX&#x28;l.id&#x29; AS maxID FROM literal l WHERE l.id &#x3c; 10000&#x29;&#x2b;1,1&#x29;&#x3b;&#x22;&#x3b;&#xd;&#xa;&#xd;&#xa;query &#x3d; query &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;&#xd;&#xa;query &#x3d; query &#x2b; &#x27;INSERT INTO literal &#x28;id, chart_id, section_id, type&#x29; &#x27;&#xd;&#xa;				&#x2b; &#x27;VALUES &#x28;&#x40;maxId, NULL, NULL, &#x22;INDICATOR_NAME&#x22;&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;&#xd;&#xa;query &#x3d; query &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;&#xd;&#xa;query &#x3d; query &#x2b; &#x27;INSERT INTO translation &#x28;literal_id, language, is_default, text&#x29; &#x27;&#xd;&#xa;				&#x2b; &#x27;VALUES &#x28;&#x40;maxId, &#x22;EN&#x22;, 1, &#x22;&#x27;&#x2b;getVariable&#x28;&#x22;varIndicatorLiteral&#x22;,&#x22;&#x22;&#x29;&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;&#xd;&#xa;query &#x3d; query &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;&#xd;&#xa;query &#x3d; query &#x2b; &#x27;INSERT INTO indicator &#x28;name, literal_id&#x29; &#x27;&#xd;&#xa;				&#x2b; &#x27;VALUES &#x28;&#x22;&#x27;&#x2b;getVariable&#x28;&#x22;varIndicatorName&#x22;,&#x22;&#x22;&#x29;&#x2b;&#x27;&#x22;, &#x40;maxId&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;query &#x3d; query &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;&#xd;&#xa;</jsScript_script>
+      </jsScript>    </jsScripts>    <fields>      <field>        <name>query</name>
+        <rename>query</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>640</xloc>
+      <yloc>288</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
     <name>Table input</name>
     <type>TableInput</type>
     <description/>
@@ -247,36 +277,6 @@
     </step>
 
   <step>
-    <name>Modified Java Script Value</name>
-    <type>ScriptValueMod</type>
-    <description/>
-    <distribute>N</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <compatible>N</compatible>
-    <optimizationLevel>9</optimizationLevel>
-    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
-        <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>var query &#x3d; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;&#xd;&#xa;query &#x3d; query &#x2b; &#x22;SET &#x40;maxId &#x3d; IFNULL&#x28;&#x28;SELECT MAX&#x28;l.id&#x29; AS maxID FROM literal l WHERE l.id &#x3c; 10000&#x29;&#x2b;1,1&#x29;&#x3b;&#x22;&#x3b;&#xd;&#xa;&#xd;&#xa;query &#x3d; query &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;&#xd;&#xa;query &#x3d; query &#x2b; &#x27;INSERT INTO literal &#x28;id, chart_id, section_id, type&#x29; &#x27;&#xd;&#xa;				&#x2b; &#x27;VALUES &#x28;&#x40;maxId, NULL, NULL, &#x22;INDICATOR_NAME&#x22;&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;&#xd;&#xa;query &#x3d; query &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;&#xd;&#xa;query &#x3d; query &#x2b; &#x27;INSERT INTO translation &#x28;literal_id, language, is_default, text&#x29; &#x27;&#xd;&#xa;				&#x2b; &#x27;VALUES &#x28;&#x40;maxId, &#x22;EN&#x22;, 1, &#x22;&#x27;&#x2b;getVariable&#x28;&#x22;varIndicatorLiteral&#x22;,&#x22;&#x22;&#x29;&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;&#xd;&#xa;query &#x3d; query &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;&#xd;&#xa;query &#x3d; query &#x2b; &#x27;INSERT INTO indicator &#x28;name, literal_id&#x29; &#x27;&#xd;&#xa;				&#x2b; &#x27;VALUES &#x28;&#x22;&#x27;&#x2b;getVariable&#x28;&#x22;varIndicatorName&#x22;,&#x22;&#x22;&#x29;&#x2b;&#x27;&#x22;, &#x40;maxId&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;&#xd;&#xa;</jsScript_script>
-      </jsScript>    </jsScripts>    <fields>      <field>        <name>query</name>
-        <rename>query</rename>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <replace>N</replace>
-      </field>    </fields>     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>640</xloc>
-      <yloc>288</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
     <name>Text file output</name>
     <type>TextFileOutput</type>
     <description/>
@@ -293,9 +293,9 @@
     <enclosure_fix_disabled>N</enclosure_fix_disabled>
     <header>Y</header>
     <footer>N</footer>
-    <format>DOS</format>
+    <format>None</format>
     <compression>None</compression>
-    <encoding/>
+    <encoding>UTF-8</encoding>
     <endedLine/>
     <fileNameInField>N</fileNameInField>
     <fileNameField/>

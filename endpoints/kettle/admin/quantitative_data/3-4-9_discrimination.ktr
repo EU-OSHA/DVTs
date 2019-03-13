@@ -216,6 +216,106 @@
     </step>
 
   <step>
+    <name>Discrimination In</name>
+    <type>AccessInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <include>N</include>
+    <include_field/>
+    <tablename>N</tablename>
+    <filename_Field/>
+    <tablename_field/>
+    <rownum>N</rownum>
+    <isaddresult>Y</isaddresult>
+    <filefield>N</filefield>
+    <rownum_field/>
+    <resetrownumber>N</resetrownumber>
+    <table_name>3-4-9_DISCRIMINATION</table_name>
+    <file>
+      <name>&#x24;&#x7b;access_file&#x7d;</name>
+      <filemask/>
+      <exclude_filemask/>
+      <file_required>N</file_required>
+      <include_subfolders>N</include_subfolders>
+    </file>
+    <fields>
+      <field>
+        <name>Id</name>
+        <attribut>Id</attribut>
+        <type>Integer</type>
+        <format/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <currency/>
+        <decimal/>
+        <group/>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>Country</name>
+        <attribut>Country</attribut>
+        <type>String</type>
+        <format/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <currency/>
+        <decimal/>
+        <group/>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>No</name>
+        <attribut>No</attribut>
+        <type>Number</type>
+        <format/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <currency/>
+        <decimal/>
+        <group/>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>Yes</name>
+        <attribut>Yes</attribut>
+        <type>Number</type>
+        <format/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <currency/>
+        <decimal/>
+        <group/>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+    </fields>
+    <limit>0</limit>
+    <shortFileFieldName/>
+    <pathFieldName/>
+    <hiddenFieldName/>
+    <lastModificationTimeFieldName/>
+    <uriNameFieldName/>
+    <rootUriNameFieldName/>
+    <extensionFieldName/>
+    <sizeFieldName/>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>64</xloc>
+      <yloc>32</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
     <name>Get Profile Count</name>
     <type>ExecSQL</type>
     <description/>
@@ -333,7 +433,7 @@
     <optimizationLevel>9</optimizationLevel>
     <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
         <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>var queries &#x3d; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;queries &#x3d; &#x27;SET &#x40;answerId &#x3d; &#x28;SELECT a.id &#x27;&#xd;&#xa;				&#x2b; &#x27;FROM split_answe a INNER JOIN translation t ON a.literal_id&#x3d;t.literal_id &#x27;&#xd;&#xa;				&#x2b; &#x27;WHERE t.text&#x3d;&#x22;&#x27; &#x2b; answer &#x2b; &#x27;&#x22;&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;queries &#x3d; queries &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;queries &#x3d; queries &#x2b; &#x27;SET &#x40;nutsId &#x3d; &#x28;SELECT id FROM nuts WHERE country_code&#x3d;&#x22;&#x27; &#x2b; Country &#x2b; &#x27;&#x22;&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;queries &#x3d; queries &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;&#xd;&#xa;&#xd;&#xa;queries &#x3d; queries &#x2b; &#x22;INSERT INTO profile &#x28;nuts_id, answer_id&#x29; VALUE &#x28;&#x40;nutsId, &#x40;answerId&#x29;&#x3b;&#x22;&#x3b;&#xd;&#xa;queries &#x3d; queries &#x2b; &#x22;&#x5c;n&#x22;&#x3b;</jsScript_script>
+        <jsScript_script>var queries &#x3d; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;queries &#x3d; &#x27;SET &#x40;answerId &#x3d; &#x28;SELECT a.id &#x27;&#xd;&#xa;				&#x2b; &#x27;FROM split_answer a INNER JOIN translation t ON a.literal_id&#x3d;t.literal_id &#x27;&#xd;&#xa;				&#x2b; &#x27;WHERE t.text&#x3d;&#x22;&#x27; &#x2b; answer &#x2b; &#x27;&#x22;&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;queries &#x3d; queries &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;queries &#x3d; queries &#x2b; &#x27;SET &#x40;nutsId &#x3d; &#x28;SELECT id FROM nuts WHERE country_code&#x3d;&#x22;&#x27; &#x2b; Country &#x2b; &#x27;&#x22;&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;queries &#x3d; queries &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;&#xd;&#xa;&#xd;&#xa;queries &#x3d; queries &#x2b; &#x22;INSERT INTO profile &#x28;nuts_id, answer_id&#x29; VALUE &#x28;&#x40;nutsId, &#x40;answerId&#x29;&#x3b;&#x22;&#x3b;&#xd;&#xa;queries &#x3d; queries &#x2b; &#x22;&#x5c;n&#x22;&#x3b;</jsScript_script>
       </jsScript>    </jsScripts>    <fields>      <field>        <name>queries</name>
         <rename>queries</rename>
         <type>String</type>
@@ -552,106 +652,6 @@
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>1088</xloc>
-      <yloc>32</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Discrimination In</name>
-    <type>AccessInput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <include>N</include>
-    <include_field/>
-    <tablename>N</tablename>
-    <filename_Field/>
-    <tablename_field/>
-    <rownum>N</rownum>
-    <isaddresult>Y</isaddresult>
-    <filefield>N</filefield>
-    <rownum_field/>
-    <resetrownumber>N</resetrownumber>
-    <table_name>3-4-9_DISCRIMINATION</table_name>
-    <file>
-      <name>&#x24;&#x7b;access_file&#x7d;</name>
-      <filemask/>
-      <exclude_filemask/>
-      <file_required>N</file_required>
-      <include_subfolders>N</include_subfolders>
-    </file>
-    <fields>
-      <field>
-        <name>Id</name>
-        <attribut>Id</attribut>
-        <type>Integer</type>
-        <format/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <currency/>
-        <decimal/>
-        <group/>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-      </field>
-      <field>
-        <name>Country</name>
-        <attribut>Country</attribut>
-        <type>String</type>
-        <format/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <currency/>
-        <decimal/>
-        <group/>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-      </field>
-      <field>
-        <name>No</name>
-        <attribut>No</attribut>
-        <type>Number</type>
-        <format/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <currency/>
-        <decimal/>
-        <group/>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-      </field>
-      <field>
-        <name>Yes</name>
-        <attribut>Yes</attribut>
-        <type>Number</type>
-        <format/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <currency/>
-        <decimal/>
-        <group/>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-      </field>
-    </fields>
-    <limit>0</limit>
-    <shortFileFieldName/>
-    <pathFieldName/>
-    <hiddenFieldName/>
-    <lastModificationTimeFieldName/>
-    <uriNameFieldName/>
-    <rootUriNameFieldName/>
-    <extensionFieldName/>
-    <sizeFieldName/>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>64</xloc>
       <yloc>32</yloc>
       <draw>Y</draw>
       </GUI>
