@@ -116,7 +116,7 @@ define (function (require) {
 						valuesOptimizeLegibility: false,
                         valuesAnchor: 'bottom',
                         valuesOverflow: 'show',
-                        overflowMarkersVisible: true,
+                        overflowMarkersVisible: false,
                         bar_call: function (){
 
                             this.add(pv.Image)
@@ -136,12 +136,20 @@ define (function (require) {
 				              	var axisFixedMax = this.root.sign.chart.options.axisFixedMax;
 				              	var panelHeight = this.root.height();
 				              	var valueKey = scene.firstAtoms.value;
-				              	return valueKey * (panelHeight - this.bottom()) / axisFixedMax;
+                                var resul = valueKey * (panelHeight - this.bottom()) / axisFixedMax;
+                                if(resul >= panelHeight){
+                                    this.root.sign.chart.options.axisFixedMax = 350;
+                                }
+				              	return resul;
 				              })
 				              .width(function(scene){
 				              	/*SVG default width:68*150:height proportion W = H*0.45333333333 */
 				              	var valueKey = scene.firstAtoms.value;
-				              	return this.height() * 0.4533333;
+                                var resul = this.height() * 0.45333;
+                                if(this.height >= 260){
+                                    resul = resul/1.25;
+                                }
+				              	return resul;
 				              })
 				              .left(function(scene){
 				              	//Panel width, Bar width and image width
@@ -151,13 +159,10 @@ define (function (require) {
 
 				              	if(panelWidth != 300){ //Default panel value
 									if(countryKey == pCountry1){
-										//$log.warn('panelWidth: '+panelWidth+' imageWidth: '+this.width());
 	                  					return (barWidth - this.width())/2 +5; //5 is the panel margin
 					              	}else if(countryKey == pCountry2){
-					              		//$log.warn('panelWidth: '+panelWidth+' imageWidth: '+this.width());
 					              		return panelWidth/3 + (barWidth - this.width())/2;
 					              	}else if(countryKey == 'EU28'){
-					              		//$log.warn('panelWidth: '+panelWidth+' imageWidth: '+this.width());
 					              		return panelWidth/1.5 + (barWidth - this.width())/2 - 5;
 					              	}
 				              	}
