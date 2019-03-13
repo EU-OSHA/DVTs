@@ -247,7 +247,7 @@
     <optimizationLevel>9</optimizationLevel>
     <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
         <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>var query &#x3d; &#x22;&#x5c;n&#x22; &#x2b; &#x27;INSERT INTO dataset &#x28;name, source, date_from, date_to&#x29; &#x27;&#xd;&#xa;			&#x2b; &#x27;VALUES &#x28;&#x22;BAROMETER_DATA&#x22;, &#x22;&#x27;&#x2b;getVariable&#x28;&#x22;varSource&#x22;,&#x22;&#x22;&#x29;&#x2b;&#x27;&#x22;, &#x22;&#x27;&#x2b;getVariable&#x28;&#x22;varStartDate&#x22;,&#x22;&#x22;&#x29;&#x2b;&#x27;&#x22;, null&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;&#xd;&#xa;</jsScript_script>
+        <jsScript_script>var query &#x3d; &#x22;&#x5c;n&#x22; &#x2b; &#x27;INSERT INTO dataset &#x28;name, source, date_from, date_to&#x29; &#x27;&#xd;&#xa;			&#x2b; &#x27;VALUES &#x28;&#x22;BAROMETER_DATA&#x22;, &#x22;&#x27;&#x2b;getVariable&#x28;&#x22;varSource&#x22;,&#x22;&#x22;&#x29;&#x2b;&#x27;&#x22;, &#x22;&#x27;&#x2b;getVariable&#x28;&#x22;varStartDate&#x22;,&#x22;&#x22;&#x29;&#x2b;&#x27;&#x22;, null&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;query &#x3d; query &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;&#xd;&#xa;</jsScript_script>
       </jsScript>    </jsScripts>    <fields>      <field>        <name>query</name>
         <rename>query</rename>
         <type>String</type>
@@ -279,9 +279,9 @@
     <enclosure_fix_disabled>N</enclosure_fix_disabled>
     <header>Y</header>
     <footer>N</footer>
-    <format>DOS</format>
+    <format>None</format>
     <compression>None</compression>
-    <encoding/>
+    <encoding>UTF-8</encoding>
     <endedLine/>
     <fileNameInField>N</fileNameInField>
     <fileNameField/>
