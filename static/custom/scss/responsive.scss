@@ -516,11 +516,8 @@ and (orientation : portrait) {
 @media only screen 
 and (max-width :767px)  { 
 	body{
-		padding-top: 10rem;
+		padding-top: 9rem;
 	}
-  .affix {
-    top:0px;
-  }
 	.home-cover{
 		top: 0rem;
 		height: auto;
@@ -680,7 +677,7 @@ and (max-width :767px)  {
     -webkit-transition: all 0.8s;
     transition: all 0.8s;
     &.affix, &.affix-top{
-    	top: -14rem;
+    	top: -18rem;
     	background: $white;
     	width: 100%;
     }
@@ -709,7 +706,7 @@ and (max-width :767px)  {
 
 			}
 			.menu-tools-top{
-				padding: 2.5rem 0 0;
+				padding: 3.5rem 0 0;
 				.menu-tools-top--items {
 					.search--block{
 						.search--form{
@@ -748,36 +745,7 @@ and (max-width :767px)  {
       }
     }
   }
-  .submenu--block{
-    padding: 1rem 0 0.5rem;
-    .submenu--items--wrapper{
-      padding:0; 
-      display: flex;
-      justify-content: space-between;
-      list-style: none;
-      flex-direction: column;
-      flex-wrap: nowrap;
-		  height: 3.5rem;
-		  overflow: hidden;
-      li{
-        width: auto;
-        a{          
-          font-family: "Oswald", sans-serif;
-          font-size: 1.8rem;
-          color: $gray-light;
-          font-weight: normal;
-          padding:0;
-          border-bottom: 4px solid transparent;
-          display: block;
-          padding:1rem; 
-          &.active, &:hover, &:focus, &:visited {
-            border-bottom: 4px solid $orange;
-            text-decoration: none;
-          }
-        }
-      }
-    }
-  }
+
 	form.compare--block--form{
 		text-align: center;
 	}

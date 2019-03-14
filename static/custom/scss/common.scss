@@ -604,6 +604,9 @@
   }
   .submenu--block{
     padding: 1rem 0 0.5rem;
+    label{
+      display: none;
+    }
     .submenu--items--wrapper{
       padding:0; 
       display: flex;

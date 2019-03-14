@@ -99,6 +99,13 @@ define(function (require) {
 
     /******************************END FILTERS************************************/
 
+      // Open indicators list like a select element
+      $scope.openIndicatorsList = function() {
+          console.log(this);
+          angular.element('.submenu--items--wrapper').toggleClass('open-list');
+      }
+
+
   }
 
   controller.$inject = ['$scope', '$stateParams', '$state', 'configService', '$log', '$document','dataService', '$window', '$sce', '$compile', '$timeout'];

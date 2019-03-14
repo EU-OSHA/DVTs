@@ -55,7 +55,8 @@ define(function (require) {
                     $window.onscroll = function() {
                       
                       var currentScrollPos = $window.pageYOffset;
-                      
+                     
+
                       if (prevScrollpos > currentScrollPos) {
                         angular.element(".bar-header").addClass('show-header');
                         angular.element(".affix").addClass('show-header');
@@ -70,6 +71,11 @@ define(function (require) {
                         angular.element(".bar-header").removeClass('show-header');
                       }
                       prevScrollpos = currentScrollPos;
+
+                      if( prevScrollpos <= angular.element('.advice--icon--block').offset().top + angular.element('.advice--icon--block')[0].clientHeight){
+                        //angular.element(".compare--block.regulation-page").removeClass('affix');
+                        angular.element(".compare--block.regulation-page").removeClass('show-header');
+                      }
                     } 
 
                     //hide print icon in mobile
