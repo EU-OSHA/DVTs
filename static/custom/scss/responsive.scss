@@ -82,17 +82,20 @@
 @media (max-width: 1023px) {
 	
 	body{
-	  padding-top: 97px;
+	  padding-top:9rem;
 	}
 	.tablet-show{
 		display: block;
 	}
-
+  .affix {
+    top:88px;
+  }
 	.bar-header{
 	  //position: relative;
 	  display: flex;
 	  justify-content: flex-end;
 	  flex-direction: row;
+	    height: 90px;
 		.bar-main-menu {
 	    .navbar-header {
 	        float: none;
@@ -141,6 +144,9 @@
 			width: 100%;
 			.eu-osha-logo{
 				width: auto;
+				img{
+					  height: 90px;
+				}
 			}
 			.menu-tools-top{
 				width: auto;
@@ -148,6 +154,7 @@
 				flex-grow: 2;
 				float: none;
 				background: $white;
+				height: 90px;
 		    .menu-tools-top--items{
 		    	padding: 1.5rem;
 		    	margin: 0;
@@ -328,8 +335,8 @@
 }
 
 @media only screen 
-and (min-device-width : 768px) 
-and (max-device-width : 1024px)  {
+and (min-width : 768px) 
+and (max-width : 1024px)  {
 
 
 /** pop up */
@@ -356,8 +363,9 @@ and (max-device-width : 1024px)  {
       }
     }
   }
-
-
+  .full-tablet{
+    width: 100% !important;
+  }
 	/** WIDTH CARDS  **/
 	.card--grid{
 	  justify-content: flex-start;
@@ -488,8 +496,8 @@ and (max-device-width : 1024px)  {
 
 
 @media only screen 
-and (min-device-width : 768px) 
-and (max-device-width : 1024px) 
+and (min-width : 768px) 
+and (max-width : 1024px) 
 and (orientation : landscape) { 
 
 }
@@ -497,8 +505,8 @@ and (orientation : landscape) {
 
 
 @media only screen 
-and (min-device-width : 768px) 
-and (max-device-width : 1024px) 
+and (min-width : 768px) 
+and (max-width : 1024px) 
 and (orientation : portrait) { 
 
 }
@@ -506,10 +514,13 @@ and (orientation : portrait) {
 
 
 @media only screen 
-and (max-device-width :767px)  { 
+and (max-width :767px)  { 
 	body{
 		padding-top: 10rem;
 	}
+  .affix {
+    top:0px;
+  }
 	.home-cover{
 		top: 0rem;
 		height: auto;
@@ -633,14 +644,32 @@ and (max-device-width :767px)  {
 				  }
 				}
 			}
-		} 
+		}
+    .column--grid--block{
+      flex-direction: column;
+      .column--item{
+        padding: 0 5rem;
+        h2{
+          font-size: 2.4rem;
+        }
+        &.first{
+        	border-right: 0;
+        	padding-bottom: 2rem;
+          border-bottom: 2px solid $aquamarine-light;
+          margin-bottom: 3rem;
+          .columm--item--content{
+            
+          }
+        }
+      }
+    }
 	/**	END ELEMENTS  **/
 
 }
 
 
 @media only screen 
-and (max-device-width :767px)  {
+and (max-width :767px)  {
 
 	.hide-mobile{
 		display: none;
@@ -650,12 +679,22 @@ and (max-device-width :767px)  {
     top: -10rem;
     -webkit-transition: all 0.8s;
     transition: all 0.8s;
+    &.affix, &.affix-top{
+    	top: -14rem;
+    	background: $white;
+    	width: 100%;
+    }
   }
   .show-header{
     position: fixed;
     top:0rem;
     -webkit-transition: all 0.8s; 
     transition: all 0.8s;
+    &.affix, &.affix-top{
+    	top:9rem;
+    	background: $white;
+    	width: 100%;
+    }
   }
 
 	.bar-header{
@@ -706,6 +745,36 @@ and (max-device-width :767px)  {
       .close-popup{
         bottom: 3vh;
         right: 5vw;
+      }
+    }
+  }
+  .submenu--block{
+    padding: 1rem 0 0.5rem;
+    .submenu--items--wrapper{
+      padding:0; 
+      display: flex;
+      justify-content: space-between;
+      list-style: none;
+      flex-direction: column;
+      flex-wrap: nowrap;
+		  height: 3.5rem;
+		  overflow: hidden;
+      li{
+        width: auto;
+        a{          
+          font-family: "Oswald", sans-serif;
+          font-size: 1.8rem;
+          color: $gray-light;
+          font-weight: normal;
+          padding:0;
+          border-bottom: 4px solid transparent;
+          display: block;
+          padding:1rem; 
+          &.active, &:hover, &:focus, &:visited {
+            border-bottom: 4px solid $orange;
+            text-decoration: none;
+          }
+        }
       }
     }
   }
@@ -868,7 +937,7 @@ and (max-device-width :767px)  {
 }
 
 @media only screen 
-and (max-device-width :620px) {
+and (max-width :620px) {
   
   #popUpMessage{
     .popUpMessage--text--block{
@@ -903,7 +972,7 @@ and (max-device-width :620px) {
 }
 
 @media only screen 
-and (max-device-width :420px){
+and (max-width :420px){
 
 	form.compare--block--form {
 	  text-align: left;
@@ -942,7 +1011,7 @@ and (max-device-width :420px){
 
 
 @media only screen 
-and (max-device-width :370px){
+and (max-width :370px){
 	.hide-header {
 	  top: -16rem;
 	  -webkit-transition: all 0.8s;

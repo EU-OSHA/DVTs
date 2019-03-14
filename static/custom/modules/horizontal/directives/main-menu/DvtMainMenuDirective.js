@@ -58,9 +58,15 @@ define(function (require) {
                       
                       if (prevScrollpos > currentScrollPos) {
                         angular.element(".bar-header").addClass('show-header');
+                        angular.element(".affix").addClass('show-header');
+
+                        angular.element(".affix").removeClass('hide-header');
                         angular.element(".bar-header").removeClass('hide-header');
                       } else {
                         angular.element(".bar-header").addClass('hide-header');
+                        angular.element(".affix").addClass('hide-header');
+
+                        angular.element(".affix").removeClass('show-header');
                         angular.element(".bar-header").removeClass('show-header');
                       }
                       prevScrollpos = currentScrollPos;
