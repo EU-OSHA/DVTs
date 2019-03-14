@@ -72,12 +72,16 @@ define(function (require) {
         });
 
         $stateProvider.state('workforce-profile', {
-          url: "/generic-information/workforce-profile/:pIndicator",
+          url: "/generic-information/workforce-profile/:pIndicator/:pSubIndicator",
           params: {
             pIndicator: {
-                  value: "41",
-                  squash: "41"
+                  value: "37",
+                  squash: "37"
             },
+            pSubIndicator: {
+              value: "38",
+              squash: "38"
+            }
           },
           views: {
               "content-main": {

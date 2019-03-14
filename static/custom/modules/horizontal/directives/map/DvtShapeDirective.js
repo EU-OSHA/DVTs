@@ -29,7 +29,7 @@ define(function (require) {
     }
 
     // Ver:  https://docs.angularjs.org/api/ng/type/ngModel.NgModelController
-    function DvtShapeDirective(dataService, mapProvider, $log, dvtUtils, configService) {
+    function DvtShapeDirective(dataService, mapProvider, $log, dvtUtils, configService, $stateParams) {
         // Literals
         var i18nLiterals = configService.getLiterals();
         return {
@@ -44,21 +44,24 @@ define(function (require) {
                 groupKey: '=',
                 groupColor: '=',
                 groupList: '=',
-                clickAction: '='
+                clickAction: '=',
+                data: '='
             },
             template: '' + '<div data-ng-class="{{ divClass }}" data-ng-attr-id="{{ id }}"></div>',
             controller: ['$scope', 'mapProvider', 'dataService', '$attrs','$state', function ($scope, mapProvider, dataService, $attrs,$state) {
                  state=$state.current.name;
 
-                $scope.getTooltipGroup = function (countryKey) {
+                /*$scope.getTooltipGroup = function (countryKey) {
                     var group = $scope.groupList[countryKey];
                     if (!!group)
                         return group;
                     else
                         return "No group"
-                };
+                };*/
 
                 $scope.promises = {};
+
+                //$log.warn($scope);
                 
                 if (!!$scope.countryKey) {
                     $scope.promises.countryKey = dataService.getGroupId($scope.countryKey);
@@ -94,6 +97,36 @@ define(function (require) {
 
                 //generate id
                 scope.id = "dvt_map" + nextId();
+
+                var indicator = $stateParams.pIndicator;
+                var subIndicator = $stateParams.pSubIndicator
+
+                scope.countryDataToShow = [];
+
+                if(indicator == 37) {
+                    scope.countryDataToShow = scope.data.medianAge;
+                } else if(indicator == 38 && subIndicator == 38){
+                    scope.countryDataToShow = scope.data.ageingWorkers;
+                } else if(indicator == 38 && subIndicator == 1){
+                    scope.countryDataToShow = scope.data.totalEmployment;
+                } else if(indicator == 38 && subIndicator == 2){
+                    scope.countryDataToShow = scope.data.maleEmployment;
+                } else if(indicator == 38 && subIndicator == 3){
+                    scope.countryDataToShow = scope.data.femaleEmployment;
+                }
+
+                scope.indicatorSearch = dataService.getCurrentIndicatorData($stateParams.pIndicator);
+                scope.indicatorSearch
+                    .then(function(data){
+                        var row = {};
+                        data.data.resultset.map(function (elem) {
+                            row = elem;
+                            if(!scope.countryDataToShow[row[0]])
+                                scope.countryDataToShow[row[0]]={};
+                            scope.countryDataToShow[row[0]].country_name = row[1];
+                            scope.countryDataToShow[row[0]].value = row[2];
+                        });
+                    });
 
                 //promise with shapes and country names
                 if(!!scope.promise) {
@@ -135,10 +168,13 @@ define(function (require) {
                             height: attributes.height || 600,
                             htmlObject: scope.id,
                             listeners: [],
+                            data: scope.data,
                             customfunction: function f() {
                                 /* SVG Raphael function */
                                 Raphael.fn.map = function () {
                                     $log.debug("Start Raphael");
+
+                                    //$log.warn(definition.data);
 
                                     var noEU = mapProvider.getNotEUCountries();
 
@@ -149,153 +185,13 @@ define(function (require) {
                                     var groupColor = scope.groupColor || (!!scope.groupId ? dvtUtils.getGroupColor(scope.groupId[0].toString()) : dvtUtils.getEUMapBaseColor());
                                     var selectedCountryColor = attributes.selectedCountryColor || dvtUtils.getColorCountry(colorIndex);
 
-                                    // country labels
-                                    function labelPath(pathObj, text, textattr) {
-                                        if (textattr == undefined)
-                                            textattr = mapProvider.getLabelDefinition;
-                                        var bbox = pathObj.getBBox();
-                                        var textObj = pathObj.paper.text(bbox.x + bbox.width / 2, bbox.y + bbox.height / 2, text).attr(textattr);
-                                        textObj.id = pathObj.id;
-                                        if (noEU.indexOf(pathObj.id) < 0) {
-                                            textObj.click(clicked);
-                                            $log.debug("Country ID: " + pathObj.id);
-                                        }
-                                        return textObj;
-                                    };
-
-                                    /*var countryData = [];
-
-                                    dataService.getCountryDataIndicators().then(function(data){
-                                        data.data.resultset.map(function (elem) {
-                                            var row = {};
-                                            row = elem;
-                                            if(!countryData[row[0]])
-                                                countryData[row[0]]={};
-                                            countryData[row[0]].country_name = row[1];
-                                            countryData[row[0]].median_age = row[2];
-                                            countryData[row[0]].employment_rate = row[3];
-                                        });
-                                    });
-
-                                    $log.warn(countryData);*/
-
-                                    /* Tooltip mouseover function */
-                                    var over = function (e) {
-
-                                            if (noEU.indexOf(this.id) < 0) {
-
-                                                // background
-                                                this.animate({
-                                                    opacity:.5
-                                                },100);
-
-                                                $log.debug("Tooltip group is: ");
-                                                var tooltipGroup = scope.getTooltipGroup(this.id);
-                                                $log.debug(tooltipGroup);
-
-                                                var bbox = this.getBBox();
-                                                var tooltipConf = mapProvider.getTooltipConfiguration();
-                                                this._label = this.paper.rect(bbox.x + bbox.width / 2, bbox.y + bbox.height / 2
-                                                    , tooltipConf.width, tooltipConf.height);
-                                                this._label
-                                                    .animate({
-                                                        fill: tooltipConf.backColor,
-                                                        "fill-opacity": tooltipConf.backOpacity,
-                                                        stroke: tooltipConf.strokeColor
-                                                    }, 0);
-
-                                                var lbox = this._label.getBBox();
-
-                                                this._label.country = this._label.paper.text(lbox.x + lbox.width / 2,
-                                                    lbox.y + lbox.height / 5,
-                                                    /*'GROUP ' + tooltipGroup.group*/ this.label)
-                                                    .animate({
-                                                        'font-size': tooltipConf.fontSize,
-                                                        stroke: tooltipConf.fontColor,
-                                                        'font-weight': "bold",
-                                                        fill: tooltipConf.fontColor,
-                                                        font: "OpenSans",
-                                                    }, 0);
-
-                                                this._label.medianAge = this._label.paper.text(lbox.x + lbox.width / 4,
-                                                    lbox.y + lbox.height / 2.5, i18nLiterals['L20615'])
-                                                    .animate({
-                                                        'font-size': 10,
-                                                        stroke: 'none',
-                                                        'font-weight': "light",
-                                                        fill: tooltipConf.fontColor,
-                                                        font: "OpenSans",
-                                                    }, 0);
-                                                this._label.ageingWorkers = this._label.paper.text(lbox.x + lbox.width / 2.35,
-                                                    lbox.y + lbox.height / 2, i18nLiterals['L20616'])
-                                                    .animate({
-                                                        'font-size': 10,
-                                                        stroke: 'none',
-                                                        'font-weight': "light",
-                                                        fill: tooltipConf.fontColor,
-                                                        font: "OpenSans",
-                                                    }, 0);
-                                                this._label.eRateTotal = this._label.paper.text(lbox.x + lbox.width / 2.55,
-                                                    lbox.y + lbox.height / 1.65, i18nLiterals['L20617'])
-                                                    .animate({
-                                                        'font-size': 10,
-                                                        stroke: 'none',
-                                                        'font-weight': "light",
-                                                        fill: tooltipConf.fontColor,
-                                                        font: "OpenSans",
-                                                    }, 0);
-                                                this._label.eRateMale = this._label.paper.text(lbox.x + lbox.width / 2.5,
-                                                    lbox.y + lbox.height / 1.4, i18nLiterals['L20618'])
-                                                    .animate({
-                                                        'font-size': 10,
-                                                        stroke: 'none',
-                                                        'font-weight': "light",
-                                                        fill: tooltipConf.fontColor,
-                                                        font: "OpenSans",
-                                                    }, 0);
-                                                this._label.eRateFemale = this._label.paper.text(lbox.x + lbox.width / 2.37,
-                                                    lbox.y + lbox.height / 1.225, i18nLiterals['L20619'])
-                                                    .animate({
-                                                        'font-size': 10,
-                                                        stroke: 'none',
-                                                        'font-weight': "light",
-                                                        fill: tooltipConf.fontColor,
-                                                        font: "OpenSans",
-                                                    }, 0);
-                                                /*this._label.country = this._label.paper.text(lbox.x + lbox.width / 2,
-                                                    lbox.y + lbox.height / 1.25,
-                                                    this.label)
-                                                    .animate({
-                                                        'font-size': tooltipConf.fontSize,
-                                                        stroke: 'none',
-                                                        font: "OpenSans",
-                                                    }, 0);*/
-                                            }
-                                    },
-                                    out = function () {
-                                        if (noEU.indexOf(this.id) < 0) {
-
-                                            // background
-                                            this.animate({
-                                                opacity:1
-                                            },100);
-
-                                           //this._label.group.remove();
-                                           this._label.country.remove();
-                                           this._label.medianAge.remove();
-                                           this._label.ageingWorkers.remove();
-                                           this._label.eRateTotal.remove();
-                                           this._label.eRateMale.remove();
-                                           this._label.eRateFemale.remove();
-                                           this._label.remove();
-                                        }
-                                    };
-
                                     var clicked = scope.clickAction || undefined;
 
                                     this.setStart();
 
                                     var paths = [];
+                                    var noDataCountries = [];
+                                    
                                     for (var index in map.shapes) {
 
                                         var shape = map.shapes[index];
@@ -307,15 +203,39 @@ define(function (require) {
                                         path.id = index;
                                         var isInGroup = false;
 
-                                        if (!!scope.groupId)
-                                            isInGroup = scope.getTooltipGroup(index).group == scope.groupId[0];
+                                        var countryInfo = scope.countryDataToShow[index];
+
+                                        //if (!!scope.groupId)
+                                        //    isInGroup = scope.getTooltipGroup(index).group == scope.groupId[0];
+
+                                        if(countryInfo != undefined){
+                                            isInGroup = true; 
+                                            path.medianAge = scope.data.medianAge[index].median_age;
+                                            path.ageingWorkers = scope.data.ageingWorkers[index].ageing_workers;
+                                            path.eRateTotal = scope.data.totalEmployment[index].total_rate;
+                                            path.eRateMale = scope.data.maleEmployment[index].male_rate;
+                                            path.eRateFemale = scope.data.femaleEmployment[index].female_rate.toFixed(1);
+
+                                            var labeltext = labelPath(path, index);
+                                        }else{
+                                            noDataCountries.push(index);
+                                        }
 
                                         if (isInGroup && isColoredMap) {
-                                            path.attr({
-                                                stroke: strokeShapeColor,
-                                                fill: groupColor,
-                                                "stroke-opacity": 1.0
-                                            });
+                                            if(mapProvider.nonEUCountry(index)){
+                                                path.attr({
+                                                    stroke: strokeShapeColor,
+                                                    fill: 'url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/diagonal-stripes.png)',
+                                                    "stroke-opacity": 1.0
+                                                }); 
+                                            }else{
+                                               path.attr({
+                                                    stroke: strokeShapeColor,
+                                                    fill: '#449FA2',
+                                                    "stroke-opacity": 1.0
+                                                }); 
+                                            }
+                                            
                                             path.group = 1;
                                             if (cName === sCountry) {
                                                 path.attr({
@@ -328,7 +248,8 @@ define(function (require) {
                                             }
                                         }
                                         else {
-                                            if (noEU.indexOf(path.id) < 0 || !!attributes.csp) {
+                                            //if (noEU.indexOf(path.id) < 0 || !!attributes.csp) {
+                                            if (noDataCountries.indexOf(path.id) < 0 || !!attributes.csp) {
                                                 path.attr({
                                                     stroke: strokeShapeColor,
                                                     fill: backgroundShapeColor,
@@ -338,9 +259,9 @@ define(function (require) {
                                             }
                                             else {
                                                 path.attr({
-                                                    //stroke: backgroundShapeColor,
-                                                    stroke: '#FFFFFF',
-                                                    fill: 'url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/diagonal-stripes.png)',
+                                                    stroke: backgroundShapeColor,
+                                                    //fill: 'url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/diagonal-stripes.svg)',
+                                                    fill: "#F0F0F0",
                                                     "stroke-opacity": 1.0,
                                                     //title:cName
                                                 });
@@ -358,13 +279,150 @@ define(function (require) {
 
 
                                         /*shape click event control*/
-                                        if (attributes.clickable &&attributes.clickable == "1" && noEU.indexOf(path.id) < 0) {
+                                        //if (attributes.clickable &&attributes.clickable == "1" && noEU.indexOf(path.id) < 0) {
+                                        if (attributes.clickable &&attributes.clickable == "1" && noDataCountries.indexOf(path.id) < 0) {
                                             path.click(clicked);
                                             path.attr({
                                                 cursor: "pointer"
                                             })
                                         }
                                     }
+
+                                    // country labels
+                                    function labelPath(pathObj, text, textattr) {
+                                        if (textattr == undefined)
+                                            textattr = mapProvider.getLabelDefinition;
+                                        var bbox = pathObj.getBBox();
+                                        var textObj = pathObj.paper.text(bbox.x + bbox.width / 2, bbox.y + bbox.height / 2, text).attr(textattr);
+                                        textObj.id = pathObj.id;
+                                        textObj.label = pathObj.label;
+                                        textObj.medianAge = path.medianAge;
+                                        textObj.ageingWorkers = path.ageingWorkers;
+                                        textObj.eRateTotal = path.eRateTotal;
+                                        textObj.eRateMale = path.eRateMale;
+                                        textObj.eRateFemale = path.eRateFemale;
+                                        if (noDataCountries.indexOf(pathObj.id) < 0) {
+                                            textObj.click(clicked);
+                                            $log.debug("Country ID: " + pathObj.id);
+                                        }
+                                        return textObj;
+                                    };
+
+                                    /* Tooltip mouseover function */
+                                    var over = function (e) {
+                                        if (noDataCountries.indexOf(this.id) < 0) {
+
+                                            // background
+                                            this.animate({
+                                                opacity:.5
+                                            },100);
+
+                                            //$log.debug("Tooltip group is: ");
+                                            //var tooltipGroup = scope.getTooltipGroup(this.id);
+                                            //$log.debug(tooltipGroup);
+
+                                            var bbox = this.getBBox();
+
+                                            var tooltipConf = mapProvider.getTooltipConfiguration();
+                                            /*this._label = this.paper.rect(bbox.x + bbox.width / 2, bbox.y + bbox.height / 2
+                                                , tooltipConf.width, tooltipConf.height);*/
+                                            this._label = this.paper.rect(bbox.x + bbox.width, bbox.y + bbox.height / 2
+                                            , tooltipConf.width, tooltipConf.height);
+                                            /*this._label = this.paper.rect(e.clientX - 798/2, e.clientY - 798/2
+                                            , tooltipConf.width, tooltipConf.height);*/
+                                            this._label
+                                                .animate({
+                                                    fill: tooltipConf.backColor,
+                                                    "fill-opacity": tooltipConf.backOpacity,
+                                                    stroke: tooltipConf.strokeColor
+                                                }, 0);
+
+                                            var lbox = this._label.getBBox();
+
+                                            this._label.country = this._label.paper.text(lbox.x + lbox.width / 2,
+                                                lbox.y + lbox.height / 5,
+                                                /*'GROUP ' + tooltipGroup.group*/ this.label)
+                                                .animate({
+                                                    'font-size': tooltipConf.fontSize,
+                                                    stroke: tooltipConf.fontColor,
+                                                    'font-weight': "bold",
+                                                    fill: tooltipConf.fontColor,
+                                                    font: "OpenSans",
+                                                }, 0);
+
+                                            this._label.medianAge = this._label.paper.text(lbox.x + lbox.width / 2,
+                                                lbox.y + lbox.height / 2.5, i18nLiterals['L20615']+' '+this.medianAge+' years')
+                                                .animate({
+                                                    'font-size': 10,
+                                                    stroke: 'none',
+                                                    'font-weight': "light",
+                                                    fill: tooltipConf.fontColor,
+                                                    font: "OpenSans",
+                                                }, 0);
+                                            this._label.ageingWorkers = this._label.paper.text(lbox.x + lbox.width / 2,
+                                                lbox.y + lbox.height / 2, i18nLiterals['L20616']+' '+this.ageingWorkers+' %')
+                                                .animate({
+                                                    'font-size': 10,
+                                                    stroke: 'none',
+                                                    'font-weight': "light",
+                                                    fill: tooltipConf.fontColor,
+                                                    font: "OpenSans",
+                                                }, 0);
+                                            this._label.eRateTotal = this._label.paper.text(lbox.x + lbox.width / 2,
+                                                lbox.y + lbox.height / 1.65, i18nLiterals['L20617']+' '+this.eRateTotal+' %')
+                                                .animate({
+                                                    'font-size': 10,
+                                                    stroke: 'none',
+                                                    'font-weight': "light",
+                                                    fill: tooltipConf.fontColor,
+                                                    font: "OpenSans",
+                                                }, 0);
+                                            this._label.eRateMale = this._label.paper.text(lbox.x + lbox.width / 2,
+                                                lbox.y + lbox.height / 1.4, i18nLiterals['L20618']+' '+this.eRateMale+' %')
+                                                .animate({
+                                                    'font-size': 10,
+                                                    stroke: 'none',
+                                                    'font-weight': "light",
+                                                    fill: tooltipConf.fontColor,
+                                                    font: "OpenSans",
+                                                }, 0);
+                                            this._label.eRateFemale = this._label.paper.text(lbox.x + lbox.width / 2,
+                                                lbox.y + lbox.height / 1.225, i18nLiterals['L20619']+' '+this.eRateFemale+' %')
+                                                .animate({
+                                                    'font-size': 10,
+                                                    stroke: 'none',
+                                                    'font-weight': "light",
+                                                    fill: tooltipConf.fontColor,
+                                                    font: "OpenSans",
+                                                }, 0);
+                                            /*this._label.country = this._label.paper.text(lbox.x + lbox.width / 2,
+                                                lbox.y + lbox.height / 1.25,
+                                                this.label)
+                                                .animate({
+                                                    'font-size': tooltipConf.fontSize,
+                                                    stroke: 'none',
+                                                    font: "OpenSans",
+                                                }, 0);*/
+                                        }
+                                    },
+
+                                    out = function () {
+                                        if (noDataCountries.indexOf(this.id) < 0) {
+                                            // background
+                                            this.animate({
+                                                opacity:1
+                                            },100);
+
+                                           //this._label.group.remove();
+                                           this._label.country.remove();
+                                           this._label.medianAge.remove();
+                                           this._label.ageingWorkers.remove();
+                                           this._label.eRateTotal.remove();
+                                           this._label.eRateMale.remove();
+                                           this._label.eRateFemale.remove();
+                                           this._label.remove();
+                                        }
+                                    };
 
                                     var countryMap = this.setFinish();
 
@@ -470,7 +528,7 @@ define(function (require) {
         }
     }
 
-    DvtShapeDirective.$inject = ['dataService', 'mapProvider', '$log', 'dvtUtils', 'configService'];
+    DvtShapeDirective.$inject = ['dataService', 'mapProvider', '$log', 'dvtUtils', 'configService', '$stateParams'];
 
     return DvtShapeDirective;
 });

@@ -535,42 +535,108 @@
   </DataAccess>
 
     <!-- WORKFORCE PROFILE || get country data for indicator median age -->
-  <DataAccess access="public" connection="dvt_conn" id="getMedianAgeCountryData" type="sql">
+  <DataAccess access="public" connection="dvt_conn" id="getCurrentIndicatorData" type="sql">
     <Cache duration="3600" enabled="true" />
     <Columns />
     <Parameters>
-      <Parameter default="41" name="pIndicator" type="Numeric" />
+      <Parameter default="37" name="pIndicator" type="Numeric" />
     </Parameters>
     <Query>
-      SELECT n.country_code as countryKey, n.name as Country -- , v.value as Median_Age
-      FROM nuts n, profile p, value v, indicator i, dataset d
+      SELECT n.country_code as countryKey, n.name as country_name, v.value as value
+      FROM nuts n, profile p, value v, dataset d
       WHERE n.id = p.nuts_id 
-      AND i.id = v.indicator_id 
       AND v.profile_id = p.id 
       AND d.id = 6 AND d.id = v.dataset_id
-      AND i.id = ${pIndicator}
-      ORDER BY Country ASC
+      AND v.indicator_id = ${pIndicator}
+      ORDER BY country_name ASC
     </Query>
   </DataAccess>
 
-  <!-- WORKFORCE PROFILE || get country data for indicators -->
-  <DataAccess access="public" connection="dvt_conn" id="getCountryDataIndicators" type="sql">
+  <!-- WORKFORCE PROFILE || get median age data -->
+  <DataAccess access="public" connection="dvt_conn" id="getMedianAgeData" type="sql">
     <Cache duration="3600" enabled="true" />
     <Columns />
     <Parameters>
     </Parameters>
     <Query>
-      SELECT DISTINCT(n.name) as Country, v1.value as Median_Age, v2.value as Employment_Rate
-      FROM nuts n, profile p, value v1, value v2, indicator i, dataset d
-      WHERE n.id = p.nuts_id
-      AND 41 = v1.indicator_id
-      AND v1.profile_id = p.id
-      AND d.id = 6 AND d.id = v1.dataset_id
-      AND 42 = v2.indicator_id
-      AND v2.profile_id = p.id
-      AND d.id = 6 AND d.id = v2.dataset_id
-      AND i.id IN (41, 42, 43)
-      ORDER BY Country ASC;
+      SELECT n.country_code as countryKey, n.name as country_name, v.value as median_age
+      FROM nuts n, profile p, value v, dataset d
+      WHERE n.id = p.nuts_id 
+      AND v.profile_id = p.id 
+      AND d.id = 6 AND d.id = v.dataset_id
+      AND v.indicator_id = 37
+      ORDER BY country_name ASC
+    </Query>
+  </DataAccess>
+
+  <!-- WORKFORCE PROFILE || get ageing workers data -->
+  <DataAccess access="public" connection="dvt_conn" id="getAgeingWorkersData" type="sql">
+    <Cache duration="3600" enabled="true" />
+    <Columns />
+    <Parameters>
+    </Parameters>
+    <Query>
+      SELECT n.country_code as countryKey, n.name as country_name, v.value as ageing_workers
+      FROM nuts n, profile p, value v, dataset d
+      WHERE n.id = p.nuts_id 
+      AND v.profile_id = p.id 
+      AND d.id = 6 AND d.id = v.dataset_id
+      AND v.indicator_id = 38
+      ORDER BY country_name ASC
+    </Query>
+  </DataAccess>
+
+  <!-- WORKFORCE PROFILE || get total employment rate data -->
+  <DataAccess access="public" connection="dvt_conn" id="getTotalEmploymentData" type="sql">
+    <Cache duration="3600" enabled="true" />
+    <Columns />
+    <Parameters>
+    </Parameters>
+    <Query>
+      SELECT n.country_code as countryKey, n.name as country_name, (v.value*100) as total_rate
+      FROM nuts n, profile p, value v, dataset d
+      WHERE n.id = p.nuts_id 
+      AND v.profile_id = p.id 
+      AND d.id = 6 AND d.id = v.dataset_id
+      AND v.indicator_id = 39
+      AND p.gender_id = 1
+      ORDER BY country_name ASC
+    </Query>
+  </DataAccess>
+
+  <!-- WORKFORCE PROFILE || get male employment rate data -->
+  <DataAccess access="public" connection="dvt_conn" id="getMaleEmploymentData" type="sql">
+    <Cache duration="3600" enabled="true" />
+    <Columns />
+    <Parameters>
+    </Parameters>
+    <Query>
+      SELECT n.country_code as countryKey, n.name as country_name, (v.value*100) as male_rate
+      FROM nuts n, profile p, value v, dataset d
+      WHERE n.id = p.nuts_id 
+      AND v.profile_id = p.id 
+      AND d.id = 6 AND d.id = v.dataset_id
+      AND v.indicator_id = 39
+      AND p.gender_id = 2
+      ORDER BY country_name ASC
+    </Query>
+  </DataAccess>
+
+  <!-- WORKFORCE PROFILE || get female employment rate data -->
+  <DataAccess access="public" connection="dvt_conn" id="getFemaleEmploymentData" type="sql">
+    <Cache duration="3600" enabled="true" />
+    <Columns />
+    <Parameters>
+    </Parameters>
+    <Query>
+      SELECT n.country_code as countryKey, n.name as country_name, (v.value*100) as female_rate
+      FROM nuts n, profile p, value v, dataset d
+      WHERE n.id = p.nuts_id 
+      AND v.profile_id = p.id 
+      AND d.id = 6 AND d.id = v.dataset_id
+      AND v.indicator_id = 39
+      AND p.gender_id = 3
+      ORDER BY country_name ASC
     </Query>
   </DataAccess>
 

@@ -15,17 +15,17 @@
           <li id="filter1">
             <label for="indicatorSelect" data-ng-bind="i18nLiterals.L20623"></label>
             <select id="indicatorSelect" class="filter--dropdown--list" data-ng-model="selectedIndicator" data-ng-change="selectChange()">
-              <option value="41" data-ng-bind="i18nLiterals.L298"></option>
-              <option value="L20621" data-ng-bind="i18nLiterals.L20621"></option>
+              <option value="37" data-ng-bind="i18nLiterals.L294"></option>
+              <option value="38" data-ng-bind="i18nLiterals.L20621"></option>
             </select>
           </li>
-          <li id="filter2" data-ng-class="{'disabled':selectedIndicator == 41 }" >
+          <li id="filter2" data-ng-class="{'disabled':selectedIndicator == 37 }" >
             <label for="employeeGroupSelect" data-ng-bind="i18nLiterals.L20622"></label>
-            <select id="employeeGroupSelect" class="filter--dropdown--list" data-ng-disabled="selectedIndicator == 41">  
-              <option data-ng-bind="i18nLiterals.L299" value="42"></option>
-              <option data-ng-repeat='gender in genders' value="gender.gender_id" data-ng-bind="i18nLiterals['L'+gender.gender_name]"></option>
+            <select id="employeeGroupSelect" class="filter--dropdown--list" data-ng-disabled="selectedIndicator == 37" data-ng-model="selectedSubIndicator" data-ng-change="selectChange()">  
+              <option data-ng-bind="i18nLiterals.L295" value="38"></option>
+              <option data-ng-repeat='gender in genders' value="{{gender.gender_id}}" data-ng-bind="i18nLiterals['L'+gender.gender_name]"></option>
             </select>
-            <label data-ng-if="selectedIndicator == 41" class="alert-disabled">(*) Not applied to Median Age</label>
+            <label data-ng-if="selectedIndicator == 37" class="alert-disabled">(*) Not applied to Median Age</label>
           </li>
       </ul>
   </div>
@@ -55,7 +55,8 @@
         group-list="groupList"
         color-index="{{ :: colorIndex }}"
         background-shape-color="{{ :: backgroundShapeColor }}"
-        group-color="groupColor">
+        group-color="groupColor"
+        data="data">
       </dvt-map>
     <!-- END CONTENT -->
         </div>     

@@ -430,16 +430,81 @@ define(function () {
 
             /**
              * @ngdoc method
-             * @name dvt.configModule.DataService#getMedianAgeCountryData
+             * @name dvt.configModule.DataService#getCurrentIndicatorData
              * @methodOf dvt.configModule.DataService
              * @description
              * Get genders for select option list
              */
-            getMedianAgeCountryData: function(pIndicator){
-                var url = configService.getBarometerDataPath() + "&dataAccessId=getMedianAgeCountryData"+"&parampIndicator="+pIndicator;
-                $log.debug('getMedianAgeCountryData url:' + url);
+            getCurrentIndicatorData: function(pIndicator){
+                var url = configService.getBarometerDataPath() + "&dataAccessId=getCurrentIndicatorData"+"&parampIndicator="+pIndicator;
+                $log.debug('getCurrentIndicatorData url:' + url);
                 return promise(url);
-            }, 
+            },
+
+            /**
+             * @ngdoc method
+             * @name dvt.configModule.DataService#getMedianAgeData
+             * @methodOf dvt.configModule.DataService
+             * @description
+             * Get genders for select option list
+             */
+            getMedianAgeData: function(){
+                var url = configService.getBarometerDataPath() + "&dataAccessId=getMedianAgeData";
+                $log.debug('getMedianAgeData url:' + url);
+                return promise(url);
+            },
+
+            /**
+             * @ngdoc method
+             * @name dvt.configModule.DataService#getAgeingWorkersData
+             * @methodOf dvt.configModule.DataService
+             * @description
+             * Get genders for select option list
+             */
+            getAgeingWorkersData: function(){
+                var url = configService.getBarometerDataPath() + "&dataAccessId=getAgeingWorkersData";
+                $log.debug('getAgeingWorkersData url:' + url);
+                return promise(url);
+            },
+
+            /**
+             * @ngdoc method
+             * @name dvt.configModule.DataService#getTotalEmploymentData
+             * @methodOf dvt.configModule.DataService
+             * @description
+             * Get genders for select option list
+             */
+            getTotalEmploymentData: function(){
+                var url = configService.getBarometerDataPath() + "&dataAccessId=getTotalEmploymentData";
+                $log.debug('getTotalEmploymentData url:' + url);
+                return promise(url);
+            },
+
+            /**
+             * @ngdoc method
+             * @name dvt.configModule.DataService#getMaleEmploymentData
+             * @methodOf dvt.configModule.DataService
+             * @description
+             * Get genders for select option list
+             */
+            getMaleEmploymentData: function(){
+                var url = configService.getBarometerDataPath() + "&dataAccessId=getMaleEmploymentData";
+                $log.debug('getMaleEmploymentData url:' + url);
+                return promise(url);
+            },
+
+            /**
+             * @ngdoc method
+             * @name dvt.configModule.DataService#getFemaleEmploymentData
+             * @methodOf dvt.configModule.DataService
+             * @description
+             * Get genders for select option list
+             */
+            getFemaleEmploymentData: function(){
+                var url = configService.getBarometerDataPath() + "&dataAccessId=getFemaleEmploymentData";
+                $log.debug('getFemaleEmploymentData url:' + url);
+                return promise(url);
+            },
             
             /************************ END WORKFORCE PROFILES ***************************/
 
@@ -835,6 +900,7 @@ define(function () {
             createGroupCountryList: function ($scope, result) {
                 $scope.groupList = [];
                 var rows = result.resultset;
+                //$log.warn(rows);
                 var row = {};
                 for (index in rows){
                     row = rows[index];
@@ -843,7 +909,7 @@ define(function () {
                     $scope.groupList[row[0]].country = row[1];
                     $scope.groupList[row[0]].group = 1;
                 }
-                $log.warn($scope.groupList);
+                //$log.warn($scope.groupList);
                 return ($scope);
             },
 
