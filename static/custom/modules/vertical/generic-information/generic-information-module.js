@@ -75,12 +75,12 @@ define(function (require) {
           url: "/generic-information/workforce-profile/:pIndicator/:pSubIndicator",
           params: {
             pIndicator: {
-                  value: "37",
-                  squash: "37"
+                  value: "median-age",
+                  squash: "median-age"
             },
             pSubIndicator: {
-              value: "38",
-              squash: "38"
+              value: 'ageing-workers',
+              squash: 'ageing-workers'
             }
           },
           views: {

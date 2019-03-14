@@ -255,6 +255,22 @@ define(function (require) {
                 return colors.chartSecondaryColor;
              },
 
+             getRangeColors: function(value, minValue, maxValue, range) {
+                /* value < minValue + range ||  value > minValue + range && value < maxValue - range*2 || 
+                value > minValue + range*2 && value < maxValue - range || value > maxValue - range
+                */
+                if(value <= minValue+range){
+                    return colors.rangeColors.range1;
+                }else if((value >= minValue+range) && (value < maxValue-range*2)){
+                    return colors.rangeColors.range2;
+                }else if((value >= minValue+range*2) && (value < maxValue-range)){
+                    return colors.rangeColors.range3;
+                }else if(value >= maxValue-range){
+                    return colors.rangeColors.range4;
+                }
+                
+             }
+
         }
     };
 

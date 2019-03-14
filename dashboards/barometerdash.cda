@@ -559,7 +559,7 @@
     <Parameters>
     </Parameters>
     <Query>
-      SELECT n.country_code as countryKey, n.name as country_name, v.value as median_age
+      SELECT n.country_code as countryKey, n.name as country_name, v.value as value
       FROM nuts n, profile p, value v, dataset d
       WHERE n.id = p.nuts_id 
       AND v.profile_id = p.id 
@@ -576,7 +576,7 @@
     <Parameters>
     </Parameters>
     <Query>
-      SELECT n.country_code as countryKey, n.name as country_name, v.value as ageing_workers
+      SELECT n.country_code as countryKey, n.name as country_name, v.value as value
       FROM nuts n, profile p, value v, dataset d
       WHERE n.id = p.nuts_id 
       AND v.profile_id = p.id 
@@ -593,7 +593,7 @@
     <Parameters>
     </Parameters>
     <Query>
-      SELECT n.country_code as countryKey, n.name as country_name, (v.value*100) as total_rate
+      SELECT n.country_code as countryKey, n.name as country_name, (v.value*100) as value
       FROM nuts n, profile p, value v, dataset d
       WHERE n.id = p.nuts_id 
       AND v.profile_id = p.id 
@@ -611,7 +611,7 @@
     <Parameters>
     </Parameters>
     <Query>
-      SELECT n.country_code as countryKey, n.name as country_name, (v.value*100) as male_rate
+      SELECT n.country_code as countryKey, n.name as country_name, (v.value*100) as value
       FROM nuts n, profile p, value v, dataset d
       WHERE n.id = p.nuts_id 
       AND v.profile_id = p.id 
@@ -629,7 +629,7 @@
     <Parameters>
     </Parameters>
     <Query>
-      SELECT n.country_code as countryKey, n.name as country_name, (v.value*100) as female_rate
+      SELECT n.country_code as countryKey, n.name as country_name, (v.value*100) as value
       FROM nuts n, profile p, value v, dataset d
       WHERE n.id = p.nuts_id 
       AND v.profile_id = p.id 

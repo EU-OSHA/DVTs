@@ -35,7 +35,6 @@ define(function (require) {
             },
             getNotEUCountries: function () {
                 return ["TR", "UA", "BY", "AL", "MK", "BA", "RS", "MD"];
-                //return ["RU", "BY", "UA", "MD", "TR"];
             },
             nonEUCountry: function (country) {
                 if(country == 'IS' || country == 'NO' || country == 'CH'){ //Island, Norway and Switzerland

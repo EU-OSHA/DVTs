@@ -23,8 +23,7 @@ define(function (require) {
 
     $scope.selectedIndicator = $stateParams.pIndicator;
     $scope.selectedSubIndicator = $stateParams.pSubIndicator;
-    //$log.warn($stateParams.pIndicator);
-    //$log.warn($stateParams.pSubIndicator);
+
     $scope.genders = [];
 
     /*Building dashboard*/
@@ -77,7 +76,7 @@ define(function (require) {
           if(!$scope.data.medianAge[row[0]])
             $scope.data.medianAge[row[0]]={};
           $scope.data.medianAge[row[0]].country_name = row[1];
-          $scope.data.medianAge[row[0]].median_age = row[2];
+          $scope.data.medianAge[row[0]].value = row[2];
         });
       }).catch(function (err) {
           throw err;
@@ -90,7 +89,7 @@ define(function (require) {
           if(!$scope.data.ageingWorkers[row[0]])
             $scope.data.ageingWorkers[row[0]]={};
           $scope.data.ageingWorkers[row[0]].country_name = row[1];
-          $scope.data.ageingWorkers[row[0]].ageing_workers = row[2];
+          $scope.data.ageingWorkers[row[0]].value = row[2];
         });
       }).catch(function (err) {
           throw err;
@@ -103,7 +102,7 @@ define(function (require) {
           if(!$scope.data.totalEmployment[row[0]])
             $scope.data.totalEmployment[row[0]]={};
           $scope.data.totalEmployment[row[0]].country_name = row[1];
-          $scope.data.totalEmployment[row[0]].total_rate = row[2];
+          $scope.data.totalEmployment[row[0]].value = row[2];
         });
       }).catch(function (err) {
           throw err;
@@ -116,7 +115,7 @@ define(function (require) {
           if(!$scope.data.maleEmployment[row[0]])
             $scope.data.maleEmployment[row[0]]={};
           $scope.data.maleEmployment[row[0]].country_name = row[1];
-          $scope.data.maleEmployment[row[0]].male_rate = row[2];
+          $scope.data.maleEmployment[row[0]].value = row[2];
         });
       }).catch(function (err) {
           throw err;
@@ -129,7 +128,7 @@ define(function (require) {
           if(!$scope.data.femaleEmployment[row[0]])
             $scope.data.femaleEmployment[row[0]]={};
           $scope.data.femaleEmployment[row[0]].country_name = row[1];
-          $scope.data.femaleEmployment[row[0]].female_rate = row[2];
+          $scope.data.femaleEmployment[row[0]].value = row[2];
         });
       }).catch(function (err) {
           throw err;

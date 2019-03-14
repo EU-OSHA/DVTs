@@ -36,5 +36,12 @@
       "Circulatory": "#F6A400",
       "Total": "#58585A",
       "Others": "#C9E3E3"
+    },
+
+    "rangeColors":{
+        "range1": "#c1dbdc",
+        "range2": "#a2cacb",
+        "range3": "#60aeb0",
+        "range4": "#449FA2"
     }
 }

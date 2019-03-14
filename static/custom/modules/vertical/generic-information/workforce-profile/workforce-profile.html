@@ -15,17 +15,17 @@
           <li id="filter1">
             <label for="indicatorSelect" data-ng-bind="i18nLiterals.L20623"></label>
             <select id="indicatorSelect" class="filter--dropdown--list" data-ng-model="selectedIndicator" data-ng-change="selectChange()">
-              <option value="37" data-ng-bind="i18nLiterals.L294"></option>
-              <option value="38" data-ng-bind="i18nLiterals.L20621"></option>
+              <option value="median-age" data-ng-bind="i18nLiterals.L294"></option>
+              <option value="employment-rate" data-ng-bind="i18nLiterals.L20621"></option>
             </select>
           </li>
-          <li id="filter2" data-ng-class="{'disabled':selectedIndicator == 37 }" >
+          <li id="filter2" data-ng-class="{'disabled':selectedIndicator == 'median-age' }" >
             <label for="employeeGroupSelect" data-ng-bind="i18nLiterals.L20622"></label>
-            <select id="employeeGroupSelect" class="filter--dropdown--list" data-ng-disabled="selectedIndicator == 37" data-ng-model="selectedSubIndicator" data-ng-change="selectChange()">  
-              <option data-ng-bind="i18nLiterals.L295" value="38"></option>
-              <option data-ng-repeat='gender in genders' value="{{gender.gender_id}}" data-ng-bind="i18nLiterals['L'+gender.gender_name]"></option>
+            <select id="employeeGroupSelect" class="filter--dropdown--list" data-ng-disabled="selectedIndicator == 'median-age'" data-ng-model="selectedSubIndicator" data-ng-change="selectChange()">  
+              <option data-ng-bind="i18nLiterals.L295" value="ageing-workers"></option>
+              <option data-ng-repeat='gender in genders' value="{{i18nLiterals['L'+gender.gender_name]}}" data-ng-bind="i18nLiterals['L'+gender.gender_name]"></option>
             </select>
-            <label data-ng-if="selectedIndicator == 37" class="alert-disabled">(*) Not applied to Median Age</label>
+            <label data-ng-if="selectedIndicator == 'median-age'" class="alert-disabled">(*) Not applied to Median Age</label>
           </li>
       </ul>
   </div>

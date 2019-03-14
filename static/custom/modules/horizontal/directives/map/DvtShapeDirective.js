@@ -99,23 +99,32 @@ define(function (require) {
                 scope.id = "dvt_map" + nextId();
 
                 var indicator = $stateParams.pIndicator;
-                var subIndicator = $stateParams.pSubIndicator
+                var subIndicator = $stateParams.pSubIndicator;
 
                 scope.countryDataToShow = [];
 
-                if(indicator == 37) {
+                if(indicator == 'median-age') {
                     scope.countryDataToShow = scope.data.medianAge;
-                } else if(indicator == 38 && subIndicator == 38){
+                    $log.warn(indicator);
+                } else if(indicator == 'employment-rate' && subIndicator == 'ageing-workers'){
+                    $log.warn(indicator);
+                    $log.warn(subIndicator);
                     scope.countryDataToShow = scope.data.ageingWorkers;
-                } else if(indicator == 38 && subIndicator == 1){
+                } else if(indicator == 'employment-rate' && subIndicator == 'Total'){
+                    $log.warn(indicator);
+                    $log.warn(subIndicator);
                     scope.countryDataToShow = scope.data.totalEmployment;
-                } else if(indicator == 38 && subIndicator == 2){
+                } else if(indicator == 'employment-rate' && subIndicator == 'Male'){
+                    $log.warn(indicator);
+                    $log.warn(subIndicator);
                     scope.countryDataToShow = scope.data.maleEmployment;
-                } else if(indicator == 38 && subIndicator == 3){
+                } else if(indicator == 'employment-rate' && subIndicator == 'Female'){
+                    $log.warn(indicator);
+                    $log.warn(subIndicator);
                     scope.countryDataToShow = scope.data.femaleEmployment;
                 }
 
-                scope.indicatorSearch = dataService.getCurrentIndicatorData($stateParams.pIndicator);
+                /*scope.indicatorSearch = dataService.getCurrentIndicatorData($stateParams.pIndicator);
                 scope.indicatorSearch
                     .then(function(data){
                         var row = {};
@@ -126,7 +135,7 @@ define(function (require) {
                             scope.countryDataToShow[row[0]].country_name = row[1];
                             scope.countryDataToShow[row[0]].value = row[2];
                         });
-                    });
+                    });*/
 
                 //promise with shapes and country names
                 if(!!scope.promise) {
@@ -191,6 +200,8 @@ define(function (require) {
 
                                     var paths = [];
                                     var noDataCountries = [];
+
+                                    var minMaxValues = getMinMaxValue(scope.countryDataToShow);
                                     
                                     for (var index in map.shapes) {
 
@@ -201,7 +212,7 @@ define(function (require) {
                                         var group = scope.group;
                                         path.label = cName;
                                         path.id = index;
-                                        var isInGroup = false;
+                                         var isInGroup = false;
 
                                         var countryInfo = scope.countryDataToShow[index];
 
@@ -210,11 +221,11 @@ define(function (require) {
 
                                         if(countryInfo != undefined){
                                             isInGroup = true; 
-                                            path.medianAge = scope.data.medianAge[index].median_age;
-                                            path.ageingWorkers = scope.data.ageingWorkers[index].ageing_workers;
-                                            path.eRateTotal = scope.data.totalEmployment[index].total_rate;
-                                            path.eRateMale = scope.data.maleEmployment[index].male_rate;
-                                            path.eRateFemale = scope.data.femaleEmployment[index].female_rate.toFixed(1);
+                                            path.medianAge = scope.data.medianAge[index].value;
+                                            path.ageingWorkers = scope.data.ageingWorkers[index].value;
+                                            path.eRateTotal = scope.data.totalEmployment[index].value;
+                                            path.eRateMale = scope.data.maleEmployment[index].value;
+                                            path.eRateFemale = scope.data.femaleEmployment[index].value.toFixed(1);
 
                                             var labeltext = labelPath(path, index);
                                         }else{
@@ -231,7 +242,7 @@ define(function (require) {
                                             }else{
                                                path.attr({
                                                     stroke: strokeShapeColor,
-                                                    fill: '#449FA2',
+                                                    fill: /*'#449FA2'*/dvtUtils.getRangeColors( countryInfo.value, minMaxValues[0], minMaxValues[1], minMaxValues[2]),
                                                     "stroke-opacity": 1.0
                                                 }); 
                                             }
@@ -287,6 +298,28 @@ define(function (require) {
                                             })
                                         }
                                     }
+
+                                    function getMinMaxValue(data){
+                                        var minValue = 100;
+                                        var maxValue = 0;
+
+                                        for (var index in data) {
+                                            //$log.warn(data[index]);
+                                            if(data[index].value < minValue){
+                                                minValue = data[index].value;
+                                            }
+
+                                            if(data[index].value > maxValue){
+                                                maxValue = data[index].value;
+                                            }
+                                        }
+
+                                        minValue = Math.round(minValue);
+                                        maxValue = Math.round(maxValue);
+
+                                        var range = (maxValue - minValue) / 4;
+                                        return [minValue, maxValue, range];
+                                    };
 
                                     // country labels
                                     function labelPath(pathObj, text, textattr) {
