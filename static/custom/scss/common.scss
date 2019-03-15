@@ -549,7 +549,7 @@
           &:after {
             opacity: 0.4;
             color: $gray !important;
-            top: 36%;
+            top:45px;
           }
         }
         &:after {
@@ -559,7 +559,7 @@
           font-size: 2rem;
           color: #00A0A4;
           right: 4rem;
-          top: 42%;
+          top: 45px;
           height: auto;
           padding: 1rem;
           position: absolute;
@@ -888,12 +888,17 @@
     .survey--map--block{
       background: $gray-lighter;
       .map--block{        
-        .dvt--map--block, #dvt_map1{
+        .dvt--map--block, div[id^='dvt_map']{
           width: 70%;
           text-align: center;
           margin: auto;
           svg{
-            overflow: visible !important;
+            //overflow: visible !important;
+            z-index: 100000 !important;
+            text{
+              font: 0.9rem 'OpenSans-bold' !important;
+              opacity: 1;
+            }
           }
         }       
       }
@@ -1476,3 +1481,31 @@
     padding: 1em;
   }
 /**** END NOSCRIPT PAGE ***/
+
+
+.dvt-map-tooltip{
+  background: $white;
+  color: $gray;
+  padding: 2rem;
+  border: 1px solid $gray;
+  border-radius: 6px;
+  position: absolute;
+  .country-name{
+    text-transform: uppercase;
+    font-family: 'OpenSans-bold';
+    font-size: 1.8rem;
+  }
+  ul{
+    list-style-type: none;
+    padding:0;
+    li{
+      text-align: left;
+      font-size: 1.8rem;
+      label{
+        font-family: 'OpenSans-bold';
+        margin-right: 0.5rem;
+        font-size: 1.4rem;
+      }
+    } 
+  }
+}

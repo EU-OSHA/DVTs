@@ -353,16 +353,49 @@ define(function (require) {
                                             //$log.debug("Tooltip group is: ");
                                             //var tooltipGroup = scope.getTooltipGroup(this.id);
                                             //$log.debug(tooltipGroup);
+                                            
 
+                                            var elementSVG = angular.element('.map--block');
+                                            angular.element(elementSVG).append('<div class="dvt-map-tooltip"></div>');
+                                            angular.element('.dvt-map-tooltip').append('<p class="country-name">'
+                                                +'<ul>'
+                                                +'<li class="data1"></li>'
+                                                +'<li class="data2"></li>'
+                                                +'<li class="data3"></li>'
+                                                +'<li class="data4"></li>'
+                                                +'<li class="data5"></li>'
+                                                +'</ul>'
+                                                +'</p>');
+                                            angular.element('.dvt-map-tooltip .country-name').text( this.label );
+                                            angular.element('.dvt-map-tooltip .data1').html( '<label>' + i18nLiterals['L20615'] +'</label>'+this.medianAge+' years' );
+                                            angular.element('.dvt-map-tooltip .data2').html( '<label>' + i18nLiterals['L20616'] +'</label>'+this.ageingWorkers+' %' );
+                                            angular.element('.dvt-map-tooltip .data3').html( '<label>' + i18nLiterals['L20617'] +'</label>'+this.eRateTotal+' %' );
+                                            angular.element('.dvt-map-tooltip .data4').html( '<label>' + i18nLiterals['L20618'] +'</label>'+this.eRateMale+' %' );
+                                            angular.element('.dvt-map-tooltip .data5').html( '<label>' + i18nLiterals['L20619'] +'</label>'+this.eRateFemale+' %' );
+
+                                            var positionSVG = elementSVG.position().top + elementSVG.height()/2;
+
+                                            angular.element( document ).on( "mousemove", function( event ) {
+                                                if( event.pageY < positionSVG ){
+                                                    angular.element('.dvt-map-tooltip').css({'left':event.pageX - 120 ,'top':event.pageY + 25});
+                                                }else{
+                                                    angular.element('.dvt-map-tooltip').css({'left':event.pageX - 120 ,'top':event.pageY - angular.element('.dvt-map-tooltip').height() - 50});
+                                                }
+                                                
+                                            });
+
+
+/*
                                             var bbox = this.getBBox();
 
                                             var tooltipConf = mapProvider.getTooltipConfiguration();
-                                            /*this._label = this.paper.rect(bbox.x + bbox.width / 2, bbox.y + bbox.height / 2
-                                                , tooltipConf.width, tooltipConf.height);*/
-                                            this._label = this.paper.rect(bbox.x + bbox.width, bbox.y + bbox.height / 2
-                                            , tooltipConf.width, tooltipConf.height);
-                                            /*this._label = this.paper.rect(e.clientX - 798/2, e.clientY - 798/2
-                                            , tooltipConf.width, tooltipConf.height);*/
+                                             
+                                            this._label = this.paper.rect(
+                                                bbox.x + bbox.width, 
+                                                bbox.y + bbox.height/2,
+                                                tooltipConf.width,
+                                                tooltipConf.height);
+
                                             this._label
                                                 .animate({
                                                     fill: tooltipConf.backColor,
@@ -371,19 +404,19 @@ define(function (require) {
                                                 }, 0);
 
                                             var lbox = this._label.getBBox();
-
-                                            this._label.country = this._label.paper.text(lbox.x + lbox.width / 2,
+*/
+                                           /* this._label.country = this._label.paper.text(lbox.x + lbox.width / 2,
                                                 lbox.y + lbox.height / 5,
-                                                /*'GROUP ' + tooltipGroup.group*/ this.label)
+                                                this.label)
                                                 .animate({
                                                     'font-size': tooltipConf.fontSize,
                                                     stroke: tooltipConf.fontColor,
-                                                    'font-weight': "bold",
+                                                    'font-weight': "normal",
                                                     fill: tooltipConf.fontColor,
                                                     font: "OpenSans",
                                                 }, 0);
 
-                                            this._label.medianAge = this._label.paper.text(lbox.x + lbox.width / 2,
+                                             this._label.medianAge = this._label.paper.text(lbox.x + lbox.width / 2,
                                                 lbox.y + lbox.height / 2.5, i18nLiterals['L20615']+' '+this.medianAge+' years')
                                                 .animate({
                                                     'font-size': 10,
@@ -428,14 +461,17 @@ define(function (require) {
                                                     fill: tooltipConf.fontColor,
                                                     font: "OpenSans",
                                                 }, 0);
-                                            /*this._label.country = this._label.paper.text(lbox.x + lbox.width / 2,
+
+
+                                           this._label.country = this._label.paper.text(lbox.x + lbox.width / 2,
                                                 lbox.y + lbox.height / 1.25,
                                                 this.label)
                                                 .animate({
                                                     'font-size': tooltipConf.fontSize,
                                                     stroke: 'none',
                                                     font: "OpenSans",
-                                                }, 0);*/
+                                                }, 0);
+                                            */
                                         }
                                     },
 
@@ -445,7 +481,7 @@ define(function (require) {
                                             this.animate({
                                                 opacity:1
                                             },100);
-
+/*
                                            //this._label.group.remove();
                                            this._label.country.remove();
                                            this._label.medianAge.remove();
@@ -454,6 +490,8 @@ define(function (require) {
                                            this._label.eRateMale.remove();
                                            this._label.eRateFemale.remove();
                                            this._label.remove();
+*/
+                                           $('.dvt-map-tooltip').remove();
                                         }
                                     };
 

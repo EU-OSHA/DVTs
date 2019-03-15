@@ -27,9 +27,8 @@ define(function (require) {
                     fontColor: dvtUtils.getTooltipFontColor(),
                     backColor: dvtUtils.getEUTooltipColor(),
                     strokeColor: dvtUtils.getEUTooltipStrokeColor(),
-                    backOpacity: 0.80,
-                    fontSize: 12,
-                    fontWeight: "bold"
+                    backOpacity: 0.90,
+                    fontSize: 12
                 };
                 return conf;
             },
@@ -44,10 +43,10 @@ define(function (require) {
             },
             getLabelDefinition: function () {
                 return {
-                    'font-size': 8,
+                    'font-size': 10,
                     stroke: 'none',
-                    'font-family': 'Arial,Helvetica,sans-serif',
-                    'font-weight': 1000
+                    'font-family': 'OpenSans',
+                    'font-weight': 400
                 };
             },
             getCommonClickAction: function () {

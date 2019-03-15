@@ -72,10 +72,13 @@ define(function (require) {
                       }
                       prevScrollpos = currentScrollPos;
 
-                      if( prevScrollpos <= angular.element('.advice--icon--block').offset().top + angular.element('.advice--icon--block')[0].clientHeight){
-                        //angular.element(".compare--block.regulation-page").removeClass('affix');
-                        angular.element(".compare--block.regulation-page").removeClass('show-header');
+                      if( angular.element('.advice--icon--block') ){
+                          if( prevScrollpos <= angular.element('.advice--icon--block').offset().top + angular.element('.advice--icon--block')[0].clientHeight){
+                            //angular.element(".compare--block.regulation-page").removeClass('affix');
+                            angular.element(".compare--block.regulation-page").removeClass('show-header');
+                          }
                       }
+
                     } 
 
                     //hide print icon in mobile
