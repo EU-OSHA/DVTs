@@ -31,6 +31,7 @@ define(function (require) {
     // Country parameters
     $scope.pCountry1 = $stateParams.pCountry1;
     $scope.pCountry2 = $stateParams.pCountry2;
+    $scope.pIndicator = $stateParams.pIndicator;
 
     // Show/hide the Countries Filter List
 
@@ -75,8 +76,10 @@ define(function (require) {
           var param = (!!$stateParams.filter) ? $stateParams.filter : undefined;
           $scope.indicators.push({
             id: elem[0],
+            anchor: i18nLiterals['L'+elem[1]].toLowerCase().replace(/ /g, '-'),
             text: elem[1]
           });
+          $log.warn($scope.indicators);
         });
       }).catch(function (err) {
           throw err;
@@ -92,7 +95,8 @@ define(function (require) {
           //$state.transitionTo('economic-sector-profile', {pCountry1: $scope.pCountry1, pCountry2: $scope.pCountry2,}, {notify: false});
           $state.go($state.current.name, {
             pCountry1: $scope.pCountry1,
-            pCountry2: $scope.pCountry2
+            pCountry2: $scope.pCountry2,
+            pIndicator: $scope.pIndicator
           });
         }
       };
@@ -105,6 +109,15 @@ define(function (require) {
           angular.element('.submenu--items--wrapper').toggleClass('open-list');
       }
 
+      $scope.changeIndicator = function(indicator) {
+        if ($state.current.name !== undefined) {
+          $state.go($state.current.name, {
+            pCountry1: $scope.pCountry1,
+            pCountry2: $scope.pCountry2,
+            pIndicator: indicator
+          });
+        }
+      }
 
   }
 

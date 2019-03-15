@@ -19,15 +19,19 @@ define(function (require) {
         $uiViewScrollProvider.useAnchorScroll();
 
         $stateProvider.state('regulation', {
-          url: "/osh-steering/regulation/:pCountry1/:pCountry2",
+          url: "/osh-steering/regulation/:pIndicator/:pCountry1/:pCountry2",
           params: {
+            pIndicator: {
+              value: 'secondary-legislation',
+              squash: 'secondary-legislation'
+            },
             pCountry1: {
-                  value: "AT",
-                  squash: "AT"
+              value: "AT",
+              squash: "AT"
             },
             pCountry2: {
-                  value: "BE",
-                  squash: "BE"
+              value: "BE",
+              squash: "BE"
             }
           },
           views: {

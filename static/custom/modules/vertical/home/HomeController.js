@@ -19,6 +19,7 @@ define(function (require) {
         $scope.regulationsCountries = [];
         $scope.capacitiesCountries = [];
 
+        $scope.regulationCountrySelected = "0";
 
         // Literals / i18n
         var i18n = configService.getLiterals();
@@ -64,7 +65,15 @@ define(function (require) {
 
         /******************************END DATA LOAD***********************************/
 
-        
+        $scope.goTo = function(){
+            if ($state.current.name !== undefined) {
+              $state.go("regulation", {
+                pCountry1: $scope.regulationCountrySelected,
+                pCountry2: 0,
+                pIndicator: 45
+              });
+            }
+        }
 
         $scope.status = 'ready';
     }

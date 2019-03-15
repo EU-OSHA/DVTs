@@ -46,13 +46,16 @@
 	                    <form>
 	                        <label data-ng-bind-html="i18n.L22034"></label>
 	                        <div class="select-default">
-	                            <select class="">
-	                                <option data-ng-bind="i18n.L22035"></option>
-	                                <option data-ng-repeat='country in regulationsCountries' data-ng-bind="i18n['L'+country.country]"></option>
+	                            <select class="" ng-model="regulationCountrySelected">
+	                                <option data-ng-bind="i18n.L22035" value="0"></option>
+	                                <option data-ng-repeat='country in regulationsCountries' data-ng-bind="i18n['L'+country.country]" ng-value="country.country_code"></option>
 	                            </select>
 	                        </div>
 	                    </form>
-	                    <p class="btn--block-full left-text"><a ui-sref="regulation" class="btn-default btn-main-color btn-full" data-ng-bind="i18n.L22036"></a></p>
+	                    <p class="btn--block-full left-text">
+	                    	<a ng-if="regulationCountrySelected == '0'" ui-sref="regulation" class="btn-default btn-main-color btn-full" data-ng-bind="i18n.L22036"></a>
+	                    	<a ng-if="regulationCountrySelected != '0'" ng-click="goTo()" class="btn-default btn-main-color btn-full" data-ng-bind="i18n.L22036"></a>
+	                    </p>
 	                </div>
 	            </div>
 	            <div class="card--block--rounded">
