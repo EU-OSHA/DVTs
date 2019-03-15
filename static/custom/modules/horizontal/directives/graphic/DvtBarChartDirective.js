@@ -270,7 +270,7 @@ define(function (require) {
                 baseAxisLabelVisible: '=',
                 labelVisible: '=',
                 labelTextAlign: '=',
-                valuesVisible: '=',
+                //valuesVisible: '=',
                 colors: '=',
                 calculations: '=',
                 plots: '=',
@@ -332,8 +332,8 @@ define(function (require) {
                         orientation: attributes.orientation || "vertical",
                         crosstabMode: false,
                         stacked: attributes.stacked == 1 || false,
-                        axisLabel_font: attributes.axisLabelFont || 'normal 12px "Open Sans"',
-                        axisTitleLabel_font: attributes.axisTitleLabelFont || 'normal 12px "Open Sans" gray',
+                        axisLabel_font: attributes.axisLabelFont || 'normal 12px "OpenSans"',
+                        axisTitleLabel_font: attributes.axisTitleLabelFont || 'normal 12px "OpenSans" gray',
                         axisTitleLabel_textStyle: 'gray',
                         axisFixedMax: attributes.axisFixedMax || 100,
                         axisTicks: attributes.axisTicks || false,
@@ -355,7 +355,7 @@ define(function (require) {
                         tooltipClassName: 'light',
                         tooltipOpacity: 0.80,
                         /*Axis & Frames visivility*/
-                        orthoAxisVisible: true,
+                        orthoAxisVisible: attributes.orthoAxisVisible === 'false' ? false : true,
                         ortho2AxisVisible: true,
                         baseAxisVisible: true,
                         plotFrameVisible: false,
@@ -373,7 +373,7 @@ define(function (require) {
                         axisGrid_lineWidth: 2,
                         axisBandSizeRatio: 0.6,
                         //show values
-                        valuesVisible: false,
+                        valuesVisible: attributes.valuesVisible === 'true'?true:false,
                         valuesOverflow: attributes.valuesOverflow || "",
                         valuesMask: attributes.valuesMask || '{series}',
                         valuesFont: attributes.valuesFont || 'emphasis 10px "OpenSans"',
@@ -382,9 +382,9 @@ define(function (require) {
                         valuesNormalized: attributes.valuesNormalized == 1 || false,
                         valuesFormat: scope.valuesFormat,
                         label_top: scope.labelTop,
-                        legend: attributes.legend === 'true' || false,
+                        legend: attributes.legend === 'true'?true: false,
                         legendClickMode: attributes.legendClickMode || 'toggleVisible',
-                        legendFont: attributes.legendFont || 'normal 14px "Open Sans"',
+                        legendFont: attributes.legendFont || 'normal 14px "OpenSans"',
                         legendPosition: attributes.legendPos || 'bottom',
                         legendLabel_visible: true,
                         legendDot_strokeStyle: attributes.legendDotStrokeStyle,
@@ -394,8 +394,8 @@ define(function (require) {
                         color2AxisLegendShape: attributes.color2AxisLegendShape || "square",
                         baseAxisLabel_text: !scope.isMaximized?scope.baseAxisLabelText:scope.baseAxisLabelLongText,
                         baseAxisLabel_visible: scope.baseAxisLabelVisible,
-                        baseAxisLabel_textBaseline: attributes.baseAxisLabelTextBaseline || 'top',
-                        //baseAxisLabel_font: attributes.baseAxisLabelFont || 'normal 12px "Open Sans"',
+                        baseAxisLabel_textBaseline: attributes.baseAxisLabelTextBaseline || 'center',
+                        //baseAxisLabel_font: attributes.baseAxisLabelFont || 'normal 12px "OpenSans"',
                         axisLabel_font: attributes.baseAxisLabelFont || 'normal 12px "OpenSans"',
                         baseAxisLabel_textStyle: attributes.baseAxisLabelTextStyle || 'gray' ,
                         baseAxisOverlappedLabelsMode: 'leave',
@@ -411,9 +411,11 @@ define(function (require) {
                         tooltipFormat: scope.tooltipFormat,
                         baseAxisTooltipEnabled : false,
                         orthoAxisTitle: attributes.orthoAxisTitle || '',
-                        multipleLabelColors: attributes.multipleLabelColors || false,
-                        showEuroMask: attributes.showEuroMask === 'true' || false,
-                        leafContentOverflow: attributes.leafContentOverflow || 'auto'
+                        multipleLabelColors: attributes.multipleLabelColors === 'true' || false,
+                        showEuroMask: attributes.showEuroMask === 'true' ? true : false,
+                        leafContentOverflow: attributes.leafContentOverflow || 'auto',
+                        base_fillStyle: attributes.base_fillStyle || "#f0f0f0"
+                        //pYLabels: attributes.pYLabels || 1
                     }
 
                 };
@@ -628,8 +630,9 @@ define(function (require) {
 
                 // axis bar
                 if (!!attributes.orthoAxisVisible) {
-                    definition.chartDefinition.orthoAxisVisible = attributes.orthoAxisVisible != 0
-
+                    definition.chartDefinition.orthoAxisVisible = false;
+                }else{
+                    definition.chartDefinition.orthoAxisVisible = true;
                 }
 
                 // axis bar title
@@ -699,8 +702,6 @@ define(function (require) {
                     var pCountry1 = definition.parameters[1][1];
                     var pCountry2 = definition.parameters[2][1];
 
-                    //$log.warn('pCountry1: '+pCountry1+' pCountry2: '+pCountry2);
-
                     definition.chartDefinition.baseAxisLabel_textStyle= function (){
                         if(this.scene.vars.tick.label == 'EU28'){
                             return dvtUtils.getEUColor();
@@ -709,6 +710,7 @@ define(function (require) {
                         }else if(this.scene.vars.tick.label == pCountry2){
                             return dvtUtils.getColorCountry(2);
                         }
+                        return 'gray';
                     }
                 }
 
@@ -788,8 +790,9 @@ define(function (require) {
                     definition ['promise'] = scope.promise;
                     definition ['country1'] = scope.country1;
                     definition ['country2'] = scope.country2;
-                    definition ['valuesVisible'] = scope.valuesVisible;
+                    definition ['valuesVisible'] = attributes.valuesVisible;
                     definition ['maxLegendPos'] = attributes.maxLegendPos;
+                    definition ['legend'] = attributes.legend;
                     definition ['maxLabelTop'] = scope.maxLabelTop;
                     definition ['maxAxisPercent'] = attributes.axisPercent;
                     definition ['maxAxisPercent2'] = attributes.axisPercent2;
@@ -801,6 +804,10 @@ define(function (require) {
                     definition ['valuesMask'] = attributes.valuesMask;
                     definition ['labelTextAlign'] = scope.labelTextAlign;
                     definition ['labelTextMargin'] = attributes.labelTextMargin;
+                    definition ['showEuroMask'] = attributes.showEuroMask;
+                    definition ['hoverable'] = attributes.hoverable;
+                    definition ['orthoAxisVisible'] = attributes.orthoAxisVisible;
+
 
                     if(!!attributes.maxFunctionalLegend){
                         definition['maxFunctionalLegend'] = attributes.maxFunctionalLegend;

@@ -117,6 +117,7 @@
               dimensions="stories[2].dimensions"
               label-text-align="stories[2].labelTextAlign"
               multiple-label-colors="true"
+              legend="false"
             ></dvt-bar-chart>
           </div>
         </div>
@@ -135,13 +136,15 @@
               long-title="{{i18nLiterals.L291}}"
               base-axis-label-visible="true"
               base-axis-label-font="14px 'OpenSans-bold'"
-              base-axis-band-size-ratio= "0.50"
+              base-axis-band-size-ratio= "0.45"
               values-visible="true"
               values-font="14px 'OpenSans-bold'"
               values-mask="{value}%"
               plots="stories[3].plots"
               multiple-label-colors="true"
               dimensions="stories[3].dimensions"
+              base-axis-label-text-baseline="top"
+              legend="false"
             ></dvt-bar-chart>
           </div>
         </div>
@@ -163,13 +166,14 @@
               values-visible="true"
               values-font="14px 'OpenSans-bold'"
               values-mask="{value}%"
-              axis-percent="1"
-              p-y-labels="0"
+              ortho-axis-visible="false"
               ortho-axis-grid="false"
               hoverable="false"
               multiple-label-colors="true"
               leaf-content-overflow='visible'
               dimensions="stories[4].dimensions"
+              base-axis-label-text-baseline="bottom"
+              legend="false"
             ></dvt-bar-chart>
           </div>
         </div>
@@ -191,8 +195,10 @@
               values-visible="true"
               values-font="14px 'OpenSans-bold'"
               values-mask="{value}€"
-              axis-title-label-font="14px 'OpenSans-bold'"
               show-euro-mask="true"
+              multiple-label-colors="false"
+              base-axis-label-text-baseline="top"
+              legend="false"
             ></dvt-bar-chart>
           </div>
         </div>
