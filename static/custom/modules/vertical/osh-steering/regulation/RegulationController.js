@@ -158,11 +158,12 @@ define(function (require) {
 
       // Open indicators list like a select element
       $scope.openIndicatorsList = function() {
-          console.log(this);
           angular.element('.submenu--items--wrapper').toggleClass('open-list');
+          angular.element('.submenu-indicator').toggleClass('open-list');
       }
 
-      $scope.changeIndicator = function(indicator) {
+      $scope.changeIndicator = function(e,indicator) {
+        $scope.openIndicatorsList();
         if ($state.current.name !== undefined) {
           $state.go($state.current.name, {
             pCountry1: $scope.pCountry1,
@@ -170,6 +171,7 @@ define(function (require) {
             pIndicator: indicator
           });
         }
+
       }
 
   }

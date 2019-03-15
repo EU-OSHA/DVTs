@@ -469,6 +469,7 @@
           text-transform: uppercase;
           font-weight: normal;
           letter-spacing: 2px;
+          width: 40%;
           &:after{
             content: "\f105";
             font-family: FontAwesome;
@@ -493,6 +494,7 @@
           -moz-appearance: none;
           appearance: none;
           cursor: pointer;
+          width:59%;
           &:focus {
             box-shadow: none;
             outline: none;
@@ -853,6 +855,7 @@
           margin: 3rem 0 1rem;
           background: url(../img/back-button.png);
           position: relative;
+          z-index: -1;
           a{
             text-decoration:none;
             color: $aquamarine;
@@ -1484,16 +1487,37 @@
 
 
 .dvt-map-tooltip{
-  background: $white;
+  background:rgba(255,255,255,0.9);
   color: $gray;
   padding: 2rem;
-  border: 1px solid $gray;
+  border: 2px solid $aquamarine;
   border-radius: 6px;
   position: absolute;
+  &.botton:after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width:1.2rem;
+    border-style: solid;
+    border-color: transparent transparent $aquamarine transparent;
+  }
+  &.top:after {
+    content: "";
+    position: absolute;
+    bottom: -11%;
+    left: 50%;
+    margin-left: -5px;
+    border-width:1.2rem;
+    border-style: solid;
+    border-color: $aquamarine transparent transparent transparent;
+  }
   .country-name{
     text-transform: uppercase;
-    font-family: 'OpenSans-bold';
-    font-size: 1.8rem;
+    font-family:Oswald,sans-serif;
+    font-size: 2.2rem;
+    text-align: left;
   }
   ul{
     list-style-type: none;

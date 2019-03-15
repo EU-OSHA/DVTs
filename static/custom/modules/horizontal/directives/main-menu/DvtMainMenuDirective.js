@@ -72,7 +72,7 @@ define(function (require) {
                       }
                       prevScrollpos = currentScrollPos;
 
-                      if( angular.element('.advice--icon--block') ){
+                      if( angular.element('.advice--block-not-home') ){
                           if( prevScrollpos <= angular.element('.advice--icon--block').offset().top + angular.element('.advice--icon--block')[0].clientHeight){
                             //angular.element(".compare--block.regulation-page").removeClass('affix');
                             angular.element(".compare--block.regulation-page").removeClass('show-header');

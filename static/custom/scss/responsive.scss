@@ -645,7 +645,7 @@ and (max-width :767px)  {
     .column--grid--block{
       flex-direction: column;
       .column--item{
-        padding: 0 5rem;
+        padding: 0;
         h2{
           font-size: 2.4rem;
         }
@@ -677,7 +677,7 @@ and (max-width :767px)  {
     -webkit-transition: all 0.8s;
     transition: all 0.8s;
     &.affix, &.affix-top{
-    	top: -18rem;
+    	top: -25rem;
     	background: $white;
     	width: 100%;
     }
@@ -701,7 +701,6 @@ and (max-width :767px)  {
     width: 100%;
     z-index: 1000;
   	.header--top{
-
 			.eu-osha-logo {
 
 			}

@@ -16,7 +16,7 @@
       <ul class="submenu--items--wrapper">
         <!-- INDICATORS -->
         <li data-ng-repeat="indicator in indicators" data-ng-class="{'active' : indicator.anchor == pIndicator }" class="submenu--item">
-          <a href="" ng-click="changeIndicator(indicator.anchor)" data-ng-bind="i18nLiterals['L'+indicator.text]" data-ng-class="{'active' : indicator.anchor == pIndicator }" ></a>
+          <a href="" data-ng-click="changeIndicator($event,indicator.anchor);" data-ng-bind="i18nLiterals['L'+indicator.text]" data-ng-class="{'active' : indicator.anchor == pIndicator }" ></a>
         </li>
       </ul>
     </div>

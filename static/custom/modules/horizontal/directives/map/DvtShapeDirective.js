@@ -373,13 +373,19 @@ define(function (require) {
                                             angular.element('.dvt-map-tooltip .data4').html( '<label>' + i18nLiterals['L20618'] +'</label>'+this.eRateMale+' %' );
                                             angular.element('.dvt-map-tooltip .data5').html( '<label>' + i18nLiterals['L20619'] +'</label>'+this.eRateFemale+' %' );
 
+                                            var widthTooltip = angular.element('.dvt-map-tooltip').width();
+                                            var heightTooltip = angular.element('.dvt-map-tooltip').height();
                                             var positionSVG = elementSVG.position().top + elementSVG.height()/2;
 
                                             angular.element( document ).on( "mousemove", function( event ) {
                                                 if( event.pageY < positionSVG ){
-                                                    angular.element('.dvt-map-tooltip').css({'left':event.pageX - 120 ,'top':event.pageY + 25});
+                                                    angular.element('.dvt-map-tooltip').removeClass('top');
+                                                    angular.element('.dvt-map-tooltip').addClass('botton');
+                                                    angular.element('.dvt-map-tooltip').css({'left':event.pageX - widthTooltip/2 - 25 ,'top':event.pageY + 30});
                                                 }else{
-                                                    angular.element('.dvt-map-tooltip').css({'left':event.pageX - 120 ,'top':event.pageY - angular.element('.dvt-map-tooltip').height() - 50});
+                                                    angular.element('.dvt-map-tooltip').removeClass('botton');
+                                                    angular.element('.dvt-map-tooltip').addClass('top');
+                                                    angular.element('.dvt-map-tooltip').css({'left':event.pageX - widthTooltip/2 - 25 ,'top':event.pageY - heightTooltip - 70});
                                                 }
                                                 
                                             });

@@ -33,33 +33,48 @@
   <div class="line background-main-light"></div>
 
 <section class="container-full nopadding">
-    <section class="survey--map--block">
+    <section class="survey--map--block hide-mobile">
         <div class="map--block center-text container">
-      <!-- CONTENT -->
-        <!--<dvt-map ng-cloak
-          group-key="dashboard.parameters.approach"
-          promise="dashboard.promises.promiseShape"
-          country="EU" country-key="EU" group-color="dashboard.parameters.pGroupColor"
-          zoom-w="600" zoom-h="1000" x="280" y="50"
-          height="250" width="600"
-          css-class="col-xs-12 col-sm-12 col-md-12 col-lg-12" is-colored="1" hover="true"
-          group-list="groupList"
-          load-countries="true"
-          clickable="1"
-          click-action="map.clickAction"
-        ></dvt-map>-->
-      <dvt-map ng-cloak
-        country-key="EU" promise="promises.promiseShape"
-        country="EU" use-viewbox="true" x="0" y="0"
-        css-class="dvt--map--block" is-colored="1" hover="true"
-        group-list="groupList"
-        color-index="{{ :: colorIndex }}"
-        background-shape-color="{{ :: backgroundShapeColor }}"
-        group-color="groupColor"
-        data="data">
-      </dvt-map>
-    <!-- END CONTENT -->
+          <!-- CONTENT -->
+            <!--<dvt-map ng-cloak
+              group-key="dashboard.parameters.approach"
+              promise="dashboard.promises.promiseShape"
+              country="EU" country-key="EU" group-color="dashboard.parameters.pGroupColor"
+              zoom-w="600" zoom-h="1000" x="280" y="50"
+              height="250" width="600"
+              css-class="col-xs-12 col-sm-12 col-md-12 col-lg-12" is-colored="1" hover="true"
+              group-list="groupList"
+              load-countries="true"
+              clickable="1"
+              click-action="map.clickAction"
+            ></dvt-map>-->
+          <dvt-map ng-cloak
+            country-key="EU" promise="promises.promiseShape"
+            country="EU" use-viewbox="true" x="0" y="0"
+            css-class="dvt--map--block" is-colored="1" hover="true"
+            group-list="groupList"
+            color-index="{{ :: colorIndex }}"
+            background-shape-color="{{ :: backgroundShapeColor }}"
+            group-color="groupColor"
+            data="data">
+          </dvt-map>
+        <!-- END CONTENT -->
         </div>     
+    </section>
+
+    <section class="survey--map--block-mobile">
+      <div class="matrix--elements--wrapper">
+        <div class="matrix--element">
+          <div class="matrix--header--elements">Belgium</div>
+          <div class="matrix--content--elements"></div>
+            <ul>
+              <li><label>Median age</label><span class="data">42,3 years</span></li>
+              <li><label>Employment rate (55 - 64)</label><span class="data">50,5%</span></li>
+              <li><label>Employment rate (male)</label><span class="data">71,5%</span></li>
+              <li><label>Employment rate (female)</label><span class="data">59,6%</span></li>
+            </ul>
+        </div>
+      </div>      
     </section>
 </section>
 
