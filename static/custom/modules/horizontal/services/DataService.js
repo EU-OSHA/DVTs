@@ -512,14 +512,27 @@ define(function () {
 
             /**
              * @ngdoc method
-             * @name dvt.configModule.DataService#getGenders
+             * @name dvt.configModule.DataService#getRegulationIndicators
              * @methodOf dvt.configModule.DataService
              * @description
-             * Get genders for select option list
+             * Get indicators for regulation select option list
              */
             getRegulationIndicators: function(){
                 var url = configService.getBarometerDataPath() + "&dataAccessId=getRegulationIndicators";
                 $log.debug('getRegulationIndicators url:' + url);
+                return promise(url);
+            },
+
+            /**
+             * @ngdoc method
+             * @name dvt.configModule.DataService#getCountryRegulationData
+             * @methodOf dvt.configModule.DataService
+             * @description
+             * Get regulations data for a country
+             */
+            getCountryRegulationData: function(pCountry){
+                var url = configService.getBarometerDataPath() + "&dataAccessId=getCountryRegulationData" + "&parampCountry="+pCountry;
+                $log.debug('getCountryRegulationData url:' + url);
                 return promise(url);
             },
             

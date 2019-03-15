@@ -28,6 +28,9 @@ define(function (require) {
 
     $scope.indicators = [];
 
+    $scope.country1Data = {};
+    $scope.country2Data = {}
+
     // Country parameters
     $scope.pCountry1 = $stateParams.pCountry1;
     $scope.pCountry2 = $stateParams.pCountry2;
@@ -79,8 +82,58 @@ define(function (require) {
             anchor: i18nLiterals['L'+elem[1]].toLowerCase().replace(/ /g, '-'),
             text: elem[1]
           });
-          $log.warn($scope.indicators);
         });
+        //$log.warn($scope.indicators);
+      }).catch(function (err) {
+          throw err;
+      });
+
+      dataService.getCountryRegulationData($scope.pCountry1).then(function (data) {
+        data.data.resultset.map(function (elem) {
+          $scope.country1Data = {
+            country_code: elem[0],
+            country_name: elem[1],
+            text1: elem[2],
+            text2: elem[3],
+            text3: elem[4],
+            text4: elem[5],
+            text5: elem[6],
+            text6: elem[7],
+            text7: elem[8],
+            text8: elem[9],
+            text9: elem[10],
+            text10: elem[11],
+            text11: elem[12],
+            text12: elem[13],
+            text13: elem[14]
+          };
+        });
+        $log.warn($scope.country1Data);
+      }).catch(function (err) {
+          throw err;
+      });
+
+      dataService.getCountryRegulationData($scope.pCountry2).then(function (data) {
+        data.data.resultset.map(function (elem) {
+          $scope.country2Data = {
+            country_code: elem[0],
+            country_name: elem[1],
+            text1: elem[2],
+            text2: elem[3],
+            text3: elem[4],
+            text4: elem[5],
+            text5: elem[6],
+            text6: elem[7],
+            text7: elem[8],
+            text8: elem[9],
+            text9: elem[10],
+            text10: elem[11],
+            text11: elem[12],
+            text12: elem[13],
+            text13: elem[14]
+          };
+        });
+        $log.warn($scope.country2Data);
       }).catch(function (err) {
           throw err;
       });
