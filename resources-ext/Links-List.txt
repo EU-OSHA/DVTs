@@ -237,7 +237,6 @@
 2245-http://www.terviseamet.ee/en/information/about-hb.html
 2245-https://oshwiki.eu/wiki/OSH_system_at_national_level_ÔÇô_Estonia
 2248-http://www.ti.ee/index.php?page=3& 
-
 2248-https://oshwiki.eu/wiki/OSH_system_at_national_level_ÔÇô_Estonia
 2251-http://www.haigekassa.ee/en
 2251-https://oshwiki.eu/wiki/OSH_system_at_national_level_ÔÇô_Estonia
@@ -287,13 +286,11 @@
 2320-https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Finland
 2323-https://www.sfs.fi/en
 2323-https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Finland
-2326-http://travail-emploi.gouv.fr/ministere/
-http://travail-emploi.gouv.fr/ministere/organisation/article/dgt-direction-generale-du-travail
+2326-http://travail-emploi.gouv.fr/ministere/http://travail-emploi.gouv.fr/ministere/organisation/article/dgt-direction-generale-du-travail
 2326-https://oshwiki.eu/wiki/OSH_system_at_national_level_-_France
 2329-http://solidarites-sante.gouv.fr/ministere/organisation/directions/article/dss-direction-de-la-securite-sociale
 2329-https://oshwiki.eu/wiki/OSH_system_at_national_level_-_France
-2332-http://direccte.gouv.fr/Organisation-d-une-Direccte.html
-http://travail-emploi.gouv.fr/emploi/accompagnement-des-tpe-pme/tpe-pme/gerer-mes-ressources-humaines/article/le-role-de-l-inspection-du-travail
+2332-http://direccte.gouv.fr/Organisation-d-une-Direccte.htmlhttp://travail-emploi.gouv.fr/emploi/accompagnement-des-tpe-pme/tpe-pme/gerer-mes-ressources-humaines/article/le-role-de-l-inspection-du-travail
 2332-https://oshwiki.eu/wiki/OSH_system_at_national_level_-_France
 2335-https://www.ameli.fr/l-assurance-maladie/connaitre-l-assurance-maladie/missions-et-organisation/index.php
 2335-https://oshwiki.eu/wiki/OSH_system_at_national_level_-_France
@@ -301,7 +298,6 @@ http://travail-emploi.gouv.fr/emploi/accompagnement-des-tpe-pme/tpe-pme/gerer-me
 2338-http://www.msa.fr/lfy
 2338-https://oshwiki.eu/wiki/OSH_system_at_national_level_-_France
 2341-https://www.secu-independants.fr/nous-connaitre.html
-
 2341-https://oshwiki.eu/wiki/OSH_system_at_national_level_-_France
 2344-https://oshwiki.eu/wiki/OSH_system_at_national_level_-_France
 2347-https://www.eurogip.fr
@@ -371,7 +367,6 @@ http://travail-emploi.gouv.fr/emploi/accompagnement-des-tpe-pme/tpe-pme/gerer-me
 2446-http://www.uni.com/
 2446-https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Italy
 2449-http://www.lm.gov.lv/ 
-
 2449-https://oshwiki.eu/wiki/OSH_systems_at_national_level_-_Latvia
 2452-http://www.vdi.gov.lv/
 2452-https://oshwiki.eu/wiki/OSH_systems_at_national_level_-_Latvia
@@ -381,12 +376,10 @@ http://travail-emploi.gouv.fr/emploi/accompagnement-des-tpe-pme/tpe-pme/gerer-me
 2461-http://www.lvs.lv/
 2461-https://oshwiki.eu/wiki/OSH_systems_at_national_level_-_Latvia
 2464-http://www.socmin.lt/
-
 2464-https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Lithuania 
 2467-http://www.sam.lt/
 2467-https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Lithuania 
 2470-http://www.vdi.lt/
-
 2470-https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Lithuania 
 2473-http://www.sodra.lt/index.php?cid=2585
 2473-https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Lithuania 
