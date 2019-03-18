@@ -448,8 +448,8 @@ define(function () {
              * @description
              * Get genders for select option list
              */
-            getMedianAgeData: function(){
-                var url = configService.getBarometerDataPath() + "&dataAccessId=getMedianAgeData";
+            getMedianAgeData: function(pDataset){
+                var url = configService.getBarometerDataPath() + "&dataAccessId=getMedianAgeData"+"&parampDataset="+pDataset;
                 $log.debug('getMedianAgeData url:' + url);
                 return promise(url);
             },
@@ -461,8 +461,8 @@ define(function () {
              * @description
              * Get genders for select option list
              */
-            getAgeingWorkersData: function(){
-                var url = configService.getBarometerDataPath() + "&dataAccessId=getAgeingWorkersData";
+            getAgeingWorkersData: function(pDataset){
+                var url = configService.getBarometerDataPath() + "&dataAccessId=getAgeingWorkersData"+"&parampDataset="+pDataset;
                 $log.debug('getAgeingWorkersData url:' + url);
                 return promise(url);
             },
@@ -474,8 +474,8 @@ define(function () {
              * @description
              * Get genders for select option list
              */
-            getTotalEmploymentData: function(){
-                var url = configService.getBarometerDataPath() + "&dataAccessId=getTotalEmploymentData";
+            getTotalEmploymentData: function(pDataset){
+                var url = configService.getBarometerDataPath() + "&dataAccessId=getTotalEmploymentData"+"&parampDataset="+pDataset;
                 $log.debug('getTotalEmploymentData url:' + url);
                 return promise(url);
             },
@@ -487,8 +487,8 @@ define(function () {
              * @description
              * Get genders for select option list
              */
-            getMaleEmploymentData: function(){
-                var url = configService.getBarometerDataPath() + "&dataAccessId=getMaleEmploymentData";
+            getMaleEmploymentData: function(pDataset){
+                var url = configService.getBarometerDataPath() + "&dataAccessId=getMaleEmploymentData"+"&parampDataset="+pDataset;
                 $log.debug('getMaleEmploymentData url:' + url);
                 return promise(url);
             },
@@ -500,8 +500,8 @@ define(function () {
              * @description
              * Get genders for select option list
              */
-            getFemaleEmploymentData: function(){
-                var url = configService.getBarometerDataPath() + "&dataAccessId=getFemaleEmploymentData";
+            getFemaleEmploymentData: function(pDataset){
+                var url = configService.getBarometerDataPath() + "&dataAccessId=getFemaleEmploymentData"+"&parampDataset="+pDataset;
                 $log.debug('getFemaleEmploymentData url:' + url);
                 return promise(url);
             },

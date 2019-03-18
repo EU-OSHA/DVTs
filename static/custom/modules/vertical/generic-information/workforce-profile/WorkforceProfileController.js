@@ -17,6 +17,11 @@ define(function (require) {
     // CDA
     $scope.cda =  configService.getBarometerCda();
 
+    // Datasets
+    $scope.datasetList = configService.getDatasets();
+    $scope.datasetEurostat = $scope.datasetList.EUROSTAT;
+    $scope.datasetEurostatBetweenDates = $scope.datasetList.EUROSTATBetweenDates;
+
     // Literals
     var i18nLiterals = configService.getLiterals();
     $scope.i18nLiterals = i18nLiterals;
@@ -69,7 +74,7 @@ define(function (require) {
           throw err;
       });
 
-      dataService.getMedianAgeData().then(function (data) {
+      dataService.getMedianAgeData($scope.datasetEurostat).then(function (data) {
         var row = {};
         data.data.resultset.map(function (elem) {
           row = elem;
@@ -82,7 +87,7 @@ define(function (require) {
           throw err;
       });
 
-      dataService.getAgeingWorkersData().then(function (data) {
+      dataService.getAgeingWorkersData($scope.datasetEurostat).then(function (data) {
         var row = {};
         data.data.resultset.map(function (elem) {
           row = elem;
@@ -95,7 +100,7 @@ define(function (require) {
           throw err;
       });
 
-      dataService.getTotalEmploymentData().then(function (data) {
+      dataService.getTotalEmploymentData($scope.datasetEurostat).then(function (data) {
         var row = {};
         data.data.resultset.map(function (elem) {
           row = elem;
@@ -108,7 +113,7 @@ define(function (require) {
           throw err;
       });
 
-      dataService.getMaleEmploymentData().then(function (data) {
+      dataService.getMaleEmploymentData($scope.datasetEurostat).then(function (data) {
         var row = {};
         data.data.resultset.map(function (elem) {
           row = elem;
@@ -121,7 +126,7 @@ define(function (require) {
           throw err;
       });
 
-      dataService.getFemaleEmploymentData().then(function (data) {
+      dataService.getFemaleEmploymentData($scope.datasetEurostat).then(function (data) {
         var row = {};
         data.data.resultset.map(function (elem) {
           row = elem;

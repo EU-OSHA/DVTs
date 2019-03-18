@@ -557,13 +557,14 @@
     <Cache duration="3600" enabled="true" />
     <Columns />
     <Parameters>
+      <Parameter default="6" name="pDataset" type="Numeric" />
     </Parameters>
     <Query>
       SELECT n.country_code as countryKey, n.name as country_name, v.value as value
       FROM nuts n, profile p, value v, dataset d
       WHERE n.id = p.nuts_id 
       AND v.profile_id = p.id 
-      AND d.id = 6 AND d.id = v.dataset_id
+      AND d.id = ${pDataset} AND d.id = v.dataset_id
       AND v.indicator_id = 37
       ORDER BY country_name ASC
     </Query>
@@ -574,13 +575,14 @@
     <Cache duration="3600" enabled="true" />
     <Columns />
     <Parameters>
+      <Parameter default="6" name="pDataset" type="Numeric" />
     </Parameters>
     <Query>
       SELECT n.country_code as countryKey, n.name as country_name, v.value as value
       FROM nuts n, profile p, value v, dataset d
       WHERE n.id = p.nuts_id 
       AND v.profile_id = p.id 
-      AND d.id = 6 AND d.id = v.dataset_id
+      AND d.id = ${pDataset} AND d.id = v.dataset_id
       AND v.indicator_id = 38
       ORDER BY country_name ASC
     </Query>
@@ -591,13 +593,14 @@
     <Cache duration="3600" enabled="true" />
     <Columns />
     <Parameters>
+      <Parameter default="6" name="pDataset" type="Numeric" />
     </Parameters>
     <Query>
       SELECT n.country_code as countryKey, n.name as country_name, (v.value*100) as value
       FROM nuts n, profile p, value v, dataset d
       WHERE n.id = p.nuts_id 
       AND v.profile_id = p.id 
-      AND d.id = 6 AND d.id = v.dataset_id
+      AND d.id = ${pDataset} AND d.id = v.dataset_id
       AND v.indicator_id = 39
       AND p.gender_id = 1
       ORDER BY country_name ASC
@@ -609,13 +612,14 @@
     <Cache duration="3600" enabled="true" />
     <Columns />
     <Parameters>
+      <Parameter default="6" name="pDataset" type="Numeric" />
     </Parameters>
     <Query>
       SELECT n.country_code as countryKey, n.name as country_name, (v.value*100) as value
       FROM nuts n, profile p, value v, dataset d
       WHERE n.id = p.nuts_id 
       AND v.profile_id = p.id 
-      AND d.id = 6 AND d.id = v.dataset_id
+      AND d.id = ${pDataset} AND d.id = v.dataset_id
       AND v.indicator_id = 39
       AND p.gender_id = 2
       ORDER BY country_name ASC
@@ -627,13 +631,14 @@
     <Cache duration="3600" enabled="true" />
     <Columns />
     <Parameters>
+      <Parameter default="6" name="pDataset" type="Numeric" />
     </Parameters>
     <Query>
       SELECT n.country_code as countryKey, n.name as country_name, (v.value*100) as value
       FROM nuts n, profile p, value v, dataset d
       WHERE n.id = p.nuts_id 
       AND v.profile_id = p.id 
-      AND d.id = 6 AND d.id = v.dataset_id
+      AND d.id = ${pDataset} AND d.id = v.dataset_id
       AND v.indicator_id = 39
       AND p.gender_id = 3
       ORDER BY country_name ASC

@@ -326,7 +326,35 @@ define(function (require) {
                                         if (textattr == undefined)
                                             textattr = mapProvider.getLabelDefinition;
                                         var bbox = pathObj.getBBox();
-                                        var textObj = pathObj.paper.text(bbox.x + bbox.width / 2, bbox.y + bbox.height / 2, text).attr(textattr);
+
+                                        if(pathObj.id == 'DK') {
+                                            var textObj = pathObj.paper.text(bbox.x + bbox.width / 1.25, bbox.y + bbox.height /1.2, text).attr(textattr);
+                                        }else if(pathObj.id == 'NO'){
+                                            var textObj = pathObj.paper.text(bbox.x + bbox.width / 4, bbox.y + bbox.height /1.25, text).attr(textattr);
+                                        }else if(pathObj.id == 'SE'){
+                                            var textObj = pathObj.paper.text(bbox.x + bbox.width / 3.75, bbox.y + bbox.height /2, text).attr(textattr);
+                                        }else if(pathObj.id == 'FI'){
+                                            var textObj = pathObj.paper.text(bbox.x + bbox.width / 1.75, bbox.y + bbox.height /1.3, text).attr(textattr);
+                                        }else if(pathObj.id == 'BE'){
+                                            var textObj = pathObj.paper.text(bbox.x + bbox.width / 1.75, bbox.y + bbox.height /3, text).attr(textattr);
+                                        }else if(pathObj.id == 'ES'){
+                                            var textObj = pathObj.paper.text(bbox.x + bbox.width / 2.75, bbox.y + bbox.height /2, text).attr(textattr);
+                                        }else if(pathObj.id == 'HR'){
+                                            var textObj = pathObj.paper.text(bbox.x + bbox.width / 2, bbox.y + bbox.height /4, text).attr(textattr);
+                                        }else if(pathObj.id == 'UK'){
+                                            var textObj = pathObj.paper.text(bbox.x + bbox.width / 1.5, bbox.y + bbox.height /1.3, text).attr(textattr);
+                                        }else if(pathObj.id == 'IT'){
+                                            var textObj = pathObj.paper.text(bbox.x + bbox.width / 1.7, bbox.y + bbox.height /2, text).attr(textattr);
+                                        }else if(pathObj.id == 'EL'){
+                                            var textObj = pathObj.paper.text(bbox.x + bbox.width / 3.8, bbox.y + bbox.height /2.75, text).attr(textattr);
+                                        }else if(pathObj.id == 'PT'){
+                                            var textObj = pathObj.paper.text(bbox.x + bbox.width / 2.6, bbox.y + bbox.height /2, text).attr(textattr);
+                                        }else if(pathObj.id == 'AT'){
+                                            var textObj = pathObj.paper.text(bbox.x + bbox.width / 1.5, bbox.y + bbox.height /2, text).attr(textattr);
+                                        }else{
+                                            var textObj = pathObj.paper.text(bbox.x + bbox.width / 2, bbox.y + bbox.height / 2, text).attr(textattr);
+                                        }
+
                                         textObj.id = pathObj.id;
                                         textObj.label = pathObj.label;
                                         textObj.medianAge = path.medianAge;
@@ -497,7 +525,8 @@ define(function (require) {
                                            this._label.eRateFemale.remove();
                                            this._label.remove();
 */
-                                           $('.dvt-map-tooltip').remove();
+                                           //$('.dvt-map-tooltip').remove();
+                                           angular.element('.dvt-map-tooltip').remove();
                                         }
                                     };
 
