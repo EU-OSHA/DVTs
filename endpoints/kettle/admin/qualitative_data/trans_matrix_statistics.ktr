@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>matrix strategy</name>
+    <name>matrix statistics</name>
     <description/>
     <extended_description/>
     <trans_version/>
@@ -108,10 +108,10 @@
     </attributes>
   </connection>
   <order>
-  <hop> <from>matrix_strategy_in</from><to>Modified Java Script Value</to><enabled>Y</enabled> </hop>
-  <hop> <from>Modified Java Script Value</from><to>Modified Java Script Value 2</to><enabled>Y</enabled> </hop>
-  <hop> <from>Modified Java Script Value 2</from><to>Execute SQL script</to><enabled>Y</enabled> </hop>
-  <hop> <from>Modified Java Script Value 2</from><to>Text file output</to><enabled>Y</enabled> </hop>
+  <hop> <from>matrix_statistics_in</from><to>Replace in string</to><enabled>Y</enabled> </hop>
+  <hop> <from>Replace in string</from><to>Modified Java Script Value</to><enabled>Y</enabled> </hop>
+  <hop> <from>Modified Java Script Value</from><to>Execute SQL script</to><enabled>Y</enabled> </hop>
+  <hop> <from>Modified Java Script Value</from><to>Text file output</to><enabled>Y</enabled> </hop>
   </order>
   <step>
     <name>Execute SQL script</name>
@@ -129,7 +129,7 @@
     <single_statement>N</single_statement>
     <replace_variables>Y</replace_variables>
     <quoteString>N</quoteString>
-    <sql>SET &#x40;nutsId &#x3d; &#x28;SELECT id FROM nuts WHERE country_code&#x3d;&#x22;&#x3f;&#x22;&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;&#xd;&#xa;INSERT INTO matrix_page&#x28;page, nuts_id, check_1, check_2, check_3, check_4, text_1_literal_id, text_2_literal_id, text_3_literal_id&#x29;&#xd;&#xa;VALUES &#x28;&#xd;&#xa;	&#x22;MATRIX_STRATEGY&#x22;, &#x40;nutsId, &#x3f;, &#x3f;, &#x3f;, false, &#x3f;, &#x3f;, null&#xd;&#xa;&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;</sql>
+    <sql>SET &#x40;maxId &#x3d; IFNULL&#x28;&#x28;SELECT MAX&#x28;l.id&#x29; AS maxID FROM literal l WHERE l.id &#x3e; 20000 AND l.id &#x3c; 30000&#x29;,1&#x29;&#x3b;&#xd;&#xa;SET &#x40;nutsId &#x3d; &#x28;SELECT id FROM nuts WHERE country_code&#x3d;&#x22;&#x3f;&#x22;&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;INSERT INTO literal &#x28;id, chart_id, section_id, type&#x29;&#xd;&#xa;VALUES &#x28;&#xd;&#xa;	&#x40;maxId&#x2b;1, NULL, NULL, &#x22;MATRIX_STATISTICS_TEXT&#x22;&#xd;&#xa;&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;INSERT INTO translation&#x28;literal_id, language, is_default, text&#x29;&#xd;&#xa;VALUES &#x28;&#xd;&#xa;	&#x40;maxId&#x2b;1, &#x22;EN&#x22;, 1, &#x22;&#x3f;&#x22;&#xd;&#xa;&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;INSERT INTO literal &#x28;id, chart_id, section_id, type&#x29;&#xd;&#xa;VALUES &#x28;&#xd;&#xa;	&#x40;maxId&#x2b;2, NULL, NULL, &#x22;MATRIX_STATISTICS_TEXT&#x22;&#xd;&#xa;&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;INSERT INTO translation&#x28;literal_id, language, is_default, text&#x29;&#xd;&#xa;VALUES &#x28;&#xd;&#xa;	&#x40;maxId&#x2b;2, &#x22;EN&#x22;, 1, &#x22;&#x3f;&#x22;&#xd;&#xa;&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;INSERT INTO matrix_page&#x28;page, nuts_id, check_1, check_2, check_3, check_4, text_1_literal_id, text_2_literal_id, text_3_literal_id&#x29;&#xd;&#xa;VALUES &#x28;&#xd;&#xa;	&#x22;MATRIX_STATISTICS&#x22;, &#x40;nutsId, &#x3f;, &#x3f;, &#x3f;, false, &#x40;maxId&#x2b;1, &#x40;maxId&#x2b;2, null&#xd;&#xa;&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;</sql>
     <set_params>N</set_params>
     <insert_field/>
     <update_field/>
@@ -137,15 +137,15 @@
     <read_field/>
     <arguments>
        <argument><name>COUNTRY</name></argument>
-       <argument><name>improvingImplementation</name></argument>
-       <argument><name>improvingPrevention</name></argument>
-       <argument><name>TACKLING</name></argument>
-       <argument><name>object</name></argument>
-       <argument><name>det</name></argument>
+       <argument><name>nameStatEscaped</name></argument>
+       <argument><name>detailsStatEscaped</name></argument>
+       <argument><name>OSH_STATISTICS</name></argument>
+       <argument><name>SURVEYS</name></argument>
+       <argument><name>RESEARCH_INSTITUTES</name></argument>
     </arguments>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>672</xloc>
+      <xloc>720</xloc>
       <yloc>256</yloc>
       <draw>Y</draw>
       </GUI>
@@ -153,42 +153,6 @@
 
   <step>
     <name>Modified Java Script Value</name>
-    <type>ScriptValueMod</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <compatible>N</compatible>
-    <optimizationLevel>9</optimizationLevel>
-    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
-        <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>var object &#x3d; &#x22;null&#x22;&#x3b;&#xd;&#xa;if &#x28;OBJECTIVES &#x21;&#x3d; undefined&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	object &#x3d; OBJECTIVES.replace&#x28;&#x22;L&#x22;, &#x22;&#x22;&#x29;&#x3b;&#xd;&#xa;	if &#x28;&#x21;isNaN&#x28;object&#x29;&#x29;&#xd;&#xa;	&#x7b;&#xd;&#xa;		object &#x3d; 20000 &#x2b; parseInt&#x28;object&#x29;&#x3b;&#xd;&#xa;	&#x7d;&#xd;&#xa;&#x7d;&#xd;&#xa;var det &#x3d; &#x22;null&#x22;&#x3b;&#xd;&#xa;if &#x28;DETAIL &#x21;&#x3d; undefined&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	det &#x3d; DETAIL.replace&#x28;&#x22;L&#x22;, &#x22;&#x22;&#x29;&#x3b;&#xd;&#xa;	if &#x28;&#x21;isNaN&#x28;det&#x29;&#x29;&#xd;&#xa;	&#x7b;&#xd;&#xa;		det &#x3d; 20000 &#x2b; parseInt&#x28;det&#x29;&#x3b;&#xd;&#xa;	&#x7d;&#xd;&#xa;&#x7d;</jsScript_script>
-      </jsScript>    </jsScripts>    <fields>      <field>        <name>object</name>
-        <rename>object</rename>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <replace>N</replace>
-      </field>      <field>        <name>det</name>
-        <rename>det</rename>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <replace>N</replace>
-      </field>    </fields>     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>352</xloc>
-      <yloc>256</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Modified Java Script Value 2</name>
     <type>ScriptValueMod</type>
     <description/>
     <distribute>N</distribute>
@@ -202,7 +166,7 @@
     <optimizationLevel>9</optimizationLevel>
     <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
         <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>var query &#x3d; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;&#xd;&#xa;query &#x3d; query &#x2b; &#x27;SET &#x40;nutsId &#x3d; &#x28;SELECT id FROM nuts WHERE country_code&#x3d;&#x22;&#x27;&#x2b;COUNTRY&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;query &#x3d; query &#x2b; &#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;query &#x3d; query &#x2b; &#x27;INSERT INTO matrix_page&#x28;page, nuts_id, check_1, check_2, check_3, check_4, text_1_literal_id, text_2_literal_id, text_3_literal_id&#x29; &#x27;&#xd;&#xa;				&#x2b;&#x27;VALUES &#x28;&#x22;MATRIX_STRATEGY&#x22;, &#x40;nutsId, &#x27;&#x2b;improvingImplementation&#x2b;&#x27;, &#x27;&#x2b;improvingPrevention&#x2b;&#x27;, &#x27;&#x2b;TACKLING&#x2b;&#x27;, false, &#x27;&#x2b;object&#x2b;&#x27;, &#x27;&#x2b;det&#x2b;&#x27;, null&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;query &#x3d; query &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;&#xd;&#xa;</jsScript_script>
+        <jsScript_script>var query &#x3d; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;&#xd;&#xa;query &#x3d; query &#x2b; &#x27;SET &#x40;maxId &#x3d; IFNULL&#x28;&#x28;SELECT MAX&#x28;l.id&#x29; AS maxID FROM literal l WHERE l.id &#x3e; 20000 AND l.id &#x3c; 30000&#x29;,1&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;query &#x3d; query &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;query &#x3d; query &#x2b; &#x27;SET &#x40;nutsId &#x3d; &#x28;SELECT id FROM nuts WHERE country_code&#x3d;&#x22;&#x27;&#x2b;COUNTRY&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;query &#x3d; query &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;query &#x3d; query &#x2b; &#x27;INSERT INTO literal &#x28;id, chart_id, section_id, type&#x29; &#x27;&#xd;&#xa;				&#x2b;&#x27; VALUES &#x28;&#x40;maxId&#x2b;1, NULL, NULL, &#x22;MATRIX_STATISTICS_TEXT&#x22;&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;query &#x3d; query &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;query &#x3d; query &#x2b; &#x27;INSERT INTO translation&#x28;literal_id, language, is_default, text&#x29; &#x27;&#xd;&#xa;				&#x2b;&#x27; VALUES &#x28;&#x40;maxId&#x2b;1, &#x22;EN&#x22;, 1, &#x22;&#x27;&#x2b;nameStatEscaped&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;query &#x3d; query &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;query &#x3d; query &#x2b; &#x27;INSERT INTO literal &#x28;id, chart_id, section_id, type&#x29; &#x27;&#xd;&#xa;				&#x2b;&#x27; VALUES &#x28;&#x40;maxId&#x2b;2, NULL, NULL, &#x22;MATRIX_STATISTICS_TEXT&#x22;&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;query &#x3d; query &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;query &#x3d; query &#x2b; &#x27;INSERT INTO translation&#x28;literal_id, language, is_default, text&#x29; &#x27;&#xd;&#xa;				&#x2b;&#x27; VALUES &#x28;&#x40;maxId&#x2b;2, &#x22;EN&#x22;, 1, &#x22;&#x27;&#x2b;detailsStatEscaped&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;query &#x3d; query &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;query &#x3d; query &#x2b; &#x27;INSERT INTO matrix_page&#x28;page, nuts_id, check_1, check_2, check_3, check_4, text_1_literal_id, text_2_literal_id, text_3_literal_id&#x29; &#x27;&#xd;&#xa;				&#x2b; &#x27;VALUES &#x28;&#x22;MATRIX_STATISTICS&#x22;, &#x40;nutsId, &#x27;&#x2b;OSH_STATISTICS&#x2b;&#x27;, &#x27;&#x2b;SURVEYS&#x2b;&#x27;, &#x27;&#x2b;RESEARCH_INSTITUTES&#x2b;&#x27;, false, &#x40;maxId&#x2b;1, &#x40;maxId&#x2b;2, null&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;query &#x3d; query &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;</jsScript_script>
       </jsScript>    </jsScripts>    <fields>      <field>        <name>query</name>
         <rename>query</rename>
         <type>String</type>
@@ -211,7 +175,50 @@
         <replace>N</replace>
       </field>    </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>512</xloc>
+      <xloc>544</xloc>
+      <yloc>256</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Replace in string</name>
+    <type>ReplaceString</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>
+      <field>
+        <in_stream_name>NameSTAT</in_stream_name>
+        <out_stream_name>nameStatEscaped</out_stream_name>
+        <use_regex>no</use_regex>
+        <replace_string>&#x22;</replace_string>
+        <replace_by_string>&#x5c;&#x5c;&#x22;</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>DetailsSTAT</in_stream_name>
+        <out_stream_name>detailsStatEscaped</out_stream_name>
+        <use_regex>no</use_regex>
+        <replace_string>&#x22;</replace_string>
+        <replace_by_string>&#x5c;&#x5c;&#x22;</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>352</xloc>
       <yloc>256</yloc>
       <draw>Y</draw>
       </GUI>
@@ -242,7 +249,7 @@
     <fileNameField/>
     <create_parent_folder>N</create_parent_folder>
     <file>
-      <name>C&#x3a;&#x5c;biserver-ce&#x5c;pentaho-solutions&#x5c;system&#x5c;osha-dvt-barometer&#x5c;endpoints&#x5c;kettle&#x5c;admin&#x5c;output&#x5c;qualitative_changes</name>
+      <name>&#x24;&#x7b;Internal.Transformation.Filename.Directory&#x7d;&#x5c;output&#x5c;qualitative_changes</name>
       <is_command>N</is_command>
       <servlet_output>N</servlet_output>
       <do_not_open_new_file_init>N</do_not_open_new_file_init>
@@ -275,14 +282,14 @@
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>672</xloc>
-      <yloc>384</yloc>
+      <xloc>720</xloc>
+      <yloc>368</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>matrix_strategy_in</name>
+    <name>matrix_statistics_in</name>
     <type>AccessInput</type>
     <description/>
     <distribute>Y</distribute>
@@ -302,7 +309,7 @@
     <filefield>N</filefield>
     <rownum_field/>
     <resetrownumber>N</resetrownumber>
-    <table_name>MATRIX-STRATEGY</table_name>
+    <table_name>MATRIX-STATISTICS</table_name>
     <file>
       <name>&#x24;&#x7b;access_file&#x7d;</name>
       <filemask/>
@@ -325,8 +332,8 @@
         <repeat>N</repeat>
       </field>
       <field>
-        <name>improvingImplementation</name>
-        <attribut>IMPROVING THE IMPLEMENTATION RECORD</attribut>
+        <name>OSH_STATISTICS</name>
+        <attribut>OSH_STATISTICS</attribut>
         <type>Integer</type>
         <format/>
         <length>-1</length>
@@ -338,8 +345,8 @@
         <repeat>N</repeat>
       </field>
       <field>
-        <name>improvingPrevention</name>
-        <attribut>IMPROVING THE PREVENTION</attribut>
+        <name>SURVEYS</name>
+        <attribut>SURVEYS</attribut>
         <type>Integer</type>
         <format/>
         <length>-1</length>
@@ -351,8 +358,8 @@
         <repeat>N</repeat>
       </field>
       <field>
-        <name>TACKLING</name>
-        <attribut>TACKLING</attribut>
+        <name>RESEARCH_INSTITUTES</name>
+        <attribut>RESEARCH_INSTITUTES</attribut>
         <type>Integer</type>
         <format/>
         <length>-1</length>
@@ -364,8 +371,8 @@
         <repeat>N</repeat>
       </field>
       <field>
-        <name>OBJECTIVES</name>
-        <attribut>OBJECTIVES</attribut>
+        <name>NameSTAT</name>
+        <attribut>NameSTAT</attribut>
         <type>String</type>
         <format/>
         <length>-1</length>
@@ -377,8 +384,8 @@
         <repeat>N</repeat>
       </field>
       <field>
-        <name>DETAIL</name>
-        <attribut>DETAIL</attribut>
+        <name>DetailsSTAT</name>
+        <attribut>DetailsSTAT</attribut>
         <type>String</type>
         <format/>
         <length>-1</length>

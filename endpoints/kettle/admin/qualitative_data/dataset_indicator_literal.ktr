@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>dataset_indicator_literal_with_enddate</name>
+    <name>dataset_indicator_literal</name>
     <description/>
     <extended_description/>
     <trans_version/>
@@ -108,14 +108,14 @@
     </attributes>
   </connection>
   <order>
-  <hop> <from>Modified Java Script Value 2</from><to>insert dataset with endDate</to><enabled>Y</enabled> </hop>
-  <hop> <from>endDate defined</from><to>Filter rows 2</to><enabled>Y</enabled> </hop>
-  <hop> <from>Modified Java Script Value 2</from><to>Text file output</to><enabled>Y</enabled> </hop>
-  <hop> <from>Filter rows 2</from><to>Modified Java Script Value 2</to><enabled>Y</enabled> </hop>
-  <hop> <from>Get Variables</from><to>endDate defined</to><enabled>Y</enabled> </hop>
+  <hop> <from>endDate not defined</from><to>Filter rows</to><enabled>Y</enabled> </hop>
+  <hop> <from>Modified Java Script Value</from><to>Text file output</to><enabled>Y</enabled> </hop>
+  <hop> <from>Filter rows</from><to>Modified Java Script Value</to><enabled>Y</enabled> </hop>
+  <hop> <from>Modified Java Script Value</from><to>Insert dataset without endDate</to><enabled>Y</enabled> </hop>
+  <hop> <from>Get Variables</from><to>endDate not defined</to><enabled>Y</enabled> </hop>
   </order>
   <step>
-    <name>Filter rows 2</name>
+    <name>Filter rows</name>
     <type>FilterRows</type>
     <description/>
     <distribute>Y</distribute>
@@ -125,7 +125,7 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-<send_true_to>Modified Java Script Value 2</send_true_to>
+<send_true_to>Modified Java Script Value</send_true_to>
 <send_false_to/>
     <compare>
 <condition>
@@ -138,7 +138,7 @@
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>528</xloc>
-      <yloc>272</yloc>
+      <yloc>176</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -195,13 +195,45 @@
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>224</xloc>
-      <yloc>272</yloc>
+      <yloc>176</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>Modified Java Script Value 2</name>
+    <name>Insert dataset without endDate</name>
+    <type>ExecSQL</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>osha_dvt</connection>
+    <execute_each_row>Y</execute_each_row>
+    <single_statement>N</single_statement>
+    <replace_variables>Y</replace_variables>
+    <quoteString>N</quoteString>
+    <sql>INSERT INTO dataset &#x28;name, source, date_from, date_to&#x29;&#xd;&#xa;VALUES &#x28;&#x22;BAROMETER_DATA&#x22;, &#x22;&#x24;&#x7b;varSource&#x7d;&#x22;, &#x22;&#x24;&#x7b;varStartDate&#x7d;&#x22;, null&#x29;&#x3b;</sql>
+    <set_params>N</set_params>
+    <insert_field/>
+    <update_field/>
+    <delete_field/>
+    <read_field/>
+    <arguments>
+    </arguments>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>1008</xloc>
+      <yloc>176</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Modified Java Script Value</name>
     <type>ScriptValueMod</type>
     <description/>
     <distribute>N</distribute>
@@ -215,7 +247,7 @@
     <optimizationLevel>9</optimizationLevel>
     <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
         <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>var query &#x3d; &#x22;&#x5c;n&#x22; &#x2b; &#x27;INSERT INTO dataset &#x28;name, source, date_from, date_to&#x29; &#x27;&#xd;&#xa;			&#x2b; &#x27;VALUES &#x28;&#x22;BAROMETER_DATA&#x22;, &#x22;&#x27;&#x2b;getVariable&#x28;&#x22;varSource&#x22;,&#x22;&#x22;&#x29;&#x2b;&#x27;&#x22;, &#x22;&#x27;&#x2b;getVariable&#x28;&#x22;varStartDate&#x22;,&#x22;&#x22;&#x29;&#x2b;&#x27;&#x22;, &#x22;&#x27;&#x2b;getVariable&#x28;&#x22;varEndDate&#x22;,&#x22;&#x22;&#x29;&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;query &#x3d; query &#x2b; &#x22;&#x5c;n&#x22;&#x3b;</jsScript_script>
+        <jsScript_script>var query &#x3d; &#x22;&#x5c;n&#x22; &#x2b; &#x27;INSERT INTO dataset &#x28;name, source, date_from, date_to&#x29; &#x27;&#xd;&#xa;			&#x2b; &#x27;VALUES &#x28;&#x22;BAROMETER_DATA&#x22;, &#x22;&#x27;&#x2b;getVariable&#x28;&#x22;varSource&#x22;,&#x22;&#x22;&#x29;&#x2b;&#x27;&#x22;, &#x22;&#x27;&#x2b;getVariable&#x28;&#x22;varStartDate&#x22;,&#x22;&#x22;&#x29;&#x2b;&#x27;&#x22;, null&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;query &#x3d; query &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;&#xd;&#xa;</jsScript_script>
       </jsScript>    </jsScripts>    <fields>      <field>        <name>query</name>
         <rename>query</rename>
         <type>String</type>
@@ -225,7 +257,7 @@
       </field>    </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>688</xloc>
-      <yloc>272</yloc>
+      <yloc>176</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -255,7 +287,7 @@
     <fileNameField/>
     <create_parent_folder>N</create_parent_folder>
     <file>
-      <name>C&#x3a;&#x5c;biserver-ce&#x5c;pentaho-solutions&#x5c;system&#x5c;osha-dvt-barometer&#x5c;endpoints&#x5c;kettle&#x5c;admin&#x5c;output&#x5c;qualitative_changes</name>
+      <name>&#x24;&#x7b;Internal.Transformation.Filename.Directory&#x7d;&#x5c;output&#x5c;qualitative_changes</name>
       <is_command>N</is_command>
       <servlet_output>N</servlet_output>
       <do_not_open_new_file_init>N</do_not_open_new_file_init>
@@ -289,13 +321,13 @@
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>1008</xloc>
-      <yloc>192</yloc>
+      <yloc>272</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>endDate defined</name>
+    <name>endDate not defined</name>
     <type>TableInput</type>
     <description/>
     <distribute>Y</distribute>
@@ -306,7 +338,7 @@
            <schema_name/>
            </partitioning>
     <connection>osha_dvt</connection>
-    <sql>SELECT COUNT&#x28;&#x2a;&#x29; AS datasetCount &#xd;&#xa;FROM dataset&#xd;&#xa;WHERE source &#x3d; &#x22;&#x24;&#x7b;varSource&#x7d;&#x22;&#xd;&#xa;AND date_from&#x3d;&#x22;&#x24;&#x7b;varStartDate&#x7d;&#x22;&#xd;&#xa;AND date_to&#x3d;&#x22;&#x24;&#x7b;varEndDate&#x7d;&#x22;&#x3b;</sql>
+    <sql>SELECT COUNT&#x28;&#x2a;&#x29; AS datasetCount &#xd;&#xa;FROM dataset&#xd;&#xa;WHERE source &#x3d; &#x22;&#x24;&#x7b;varSource&#x7d;&#x22;&#xd;&#xa;AND date_from&#x3d;&#x22;&#x24;&#x7b;varStartDate&#x7d;&#x22;&#x3b;</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -315,39 +347,7 @@
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>400</xloc>
-      <yloc>272</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>insert dataset with endDate</name>
-    <type>ExecSQL</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <connection>osha_dvt</connection>
-    <execute_each_row>Y</execute_each_row>
-    <single_statement>N</single_statement>
-    <replace_variables>Y</replace_variables>
-    <quoteString>N</quoteString>
-    <sql>INSERT INTO dataset &#x28;name, source, date_from, date_to&#x29;&#xd;&#xa;VALUES &#x28;&#x22;BAROMETER_DATA&#x22;, &#x22;&#x24;&#x7b;varSource&#x7d;&#x22;, &#x22;&#x24;&#x7b;varStartDate&#x7d;&#x22;, &#x22;&#x24;&#x7b;varEndDate&#x7d;&#x22;&#x29;&#x3b;</sql>
-    <set_params>N</set_params>
-    <insert_field/>
-    <update_field/>
-    <delete_field/>
-    <read_field/>
-    <arguments>
-    </arguments>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>1008</xloc>
-      <yloc>272</yloc>
+      <yloc>176</yloc>
       <draw>Y</draw>
       </GUI>
     </step>

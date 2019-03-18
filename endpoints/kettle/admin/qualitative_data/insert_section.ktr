@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>trans_literal_translation</name>
+    <name>insert section</name>
     <description/>
     <extended_description/>
     <trans_version/>
@@ -11,7 +11,7 @@
     <parameters>
         <parameter>
             <name>access_file</name>
-            <default_value>&#x24;&#x7b;Internal.Transformation.Filename.Directory&#x7d;&#x2f;resources&#x2f;origin&#x2f;EU-OSHA_Barometer_Dataset.accdb</default_value>
+            <default_value>&#x24;&#x7b;Internal.Transformation.Filename.Directory&#x7d;&#x2f;resources&#x2f;origin&#x2f;EU-OSHA_DVILO_Dataset.accdb</default_value>
             <description/>
         </parameter>
     </parameters>
@@ -108,66 +108,14 @@
     </attributes>
   </connection>
   <order>
-  <hop> <from>Modified Java Script Value</from><to>Is Specific&#x3f;</to><enabled>Y</enabled> </hop>
-  <hop> <from>literals_in</from><to>Replace in string</to><enabled>Y</enabled> </hop>
-  <hop> <from>Replace in string</from><to>Modified Java Script Value</to><enabled>Y</enabled> </hop>
-  <hop> <from>Is Specific&#x3f;</from><to>Insert Common Literal</to><enabled>Y</enabled> </hop>
-  <hop> <from>Is Specific&#x3f;</from><to>Modified Java Script Value 2</to><enabled>Y</enabled> </hop>
-  <hop> <from>Modified Java Script Value 2</from><to>Insert Specific Literal</to><enabled>Y</enabled> </hop>
-  <hop> <from>Modified Java Script Value 2</from><to>Text file output</to><enabled>Y</enabled> </hop>
+  <hop> <from>Table input</from><to>Filter rows</to><enabled>Y</enabled> </hop>
+  <hop> <from>Get Variables</from><to>Table input</to><enabled>Y</enabled> </hop>
+  <hop> <from>Filter rows</from><to>Modified Java Script Value</to><enabled>Y</enabled> </hop>
+  <hop> <from>Modified Java Script Value</from><to>Execute SQL script in trans</to><enabled>Y</enabled> </hop>
+  <hop> <from>Modified Java Script Value</from><to>Text file output</to><enabled>Y</enabled> </hop>
   </order>
   <step>
-    <name>Insert Common Literal</name>
-    <type>TransExecutor</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <specification_method>filename</specification_method>
-    <trans_object_id/>
-    <trans_name/>
-    <filename>&#x24;&#x7b;Internal.Transformation.Filename.Directory&#x7d;&#x2f;insert_common_literal.ktr</filename>
-    <directory_path/>
-    <group_size>1</group_size>
-    <group_field/>
-    <group_time/>
-          <parameters>       <variablemapping><variable>varLiteralEscaped</variable><field>literal_escaped</field><input/></variablemapping>
-       <variablemapping><variable>varLiteralType</variable><field>LITERAL_TYPE</field><input/></variablemapping>
-    <inherit_all_vars>Y</inherit_all_vars>
-    </parameters>
-    <execution_result_target_step/>
-    <execution_time_field>ExecutionTime</execution_time_field>
-    <execution_result_field>ExecutionResult</execution_result_field>
-    <execution_errors_field>ExecutionNrErrors</execution_errors_field>
-    <execution_lines_read_field>ExecutionLinesRead</execution_lines_read_field>
-    <execution_lines_written_field>ExecutionLinesWritten</execution_lines_written_field>
-    <execution_lines_input_field>ExecutionLinesInput</execution_lines_input_field>
-    <execution_lines_output_field>ExecutionLinesOutput</execution_lines_output_field>
-    <execution_lines_rejected_field>ExecutionLinesRejected</execution_lines_rejected_field>
-    <execution_lines_updated_field>ExecutionLinesUpdated</execution_lines_updated_field>
-    <execution_lines_deleted_field>ExecutionLinesDeleted</execution_lines_deleted_field>
-    <execution_files_retrieved_field>ExecutionFilesRetrieved</execution_files_retrieved_field>
-    <execution_exit_status_field>ExecutionExitStatus</execution_exit_status_field>
-    <execution_log_text_field>ExecutionLogText</execution_log_text_field>
-    <execution_log_channelid_field>ExecutionLogChannelId</execution_log_channelid_field>
-    <result_rows_target_step/>
-    <result_files_target_step/>
-    <result_files_file_name_field>FileName</result_files_file_name_field>
-    <executors_output_step/>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>896</xloc>
-      <yloc>288</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Insert Specific Literal</name>
+    <name>Execute SQL script in trans</name>
     <type>ExecSQL</type>
     <description/>
     <distribute>Y</distribute>
@@ -182,30 +130,24 @@
     <single_statement>N</single_statement>
     <replace_variables>Y</replace_variables>
     <quoteString>N</quoteString>
-    <sql>SET &#x40;toolId &#x3d; &#x28;SELECT id FROM tool WHERE name&#x3d;&#x22;osha_dvt_barometer&#x22;&#x29;&#x3b;&#xd;&#xa;SET &#x40;sectionId &#x3d; &#x28;SELECT id FROM section WHERE name&#x3d;&#x22;&#x3f;&#x22; AND tool_id&#x3d;&#x40;toolId&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;INSERT INTO literal &#x28;id, chart_id, section_id, type&#x29;&#xd;&#xa;VALUES &#x28;&#xd;&#xa; 	20000&#x2b;&#x3f;, &#x3f;, &#x40;sectionId, &#x22;&#x3f;&#x22;&#xd;&#xa;&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;INSERT INTO translation &#x28;literal_id, language, is_default, text&#x29;&#xd;&#xa;VALUES &#x28;&#xd;&#xa; 	20000&#x2b;&#x3f;, &#x22;EN&#x22;, 1, &#x22;&#x3f;&#x22;&#xd;&#xa;&#x29;&#x3b;</sql>
+    <sql>SET &#x40;toolID &#x3d; &#x28;SELECT id FROM tool WHERE name &#x3d; &#x22;osha_dvt_barometer&#x22;&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;INSERT INTO section &#x28;name, tool_id&#x29;&#xd;&#xa;VALUES &#x28;&#x22;&#x24;&#x7b;varSection&#x7d;&#x22;, &#x40;toolID&#x29;&#x3b;</sql>
     <set_params>N</set_params>
     <insert_field/>
     <update_field/>
     <delete_field/>
     <read_field/>
     <arguments>
-       <argument><name>SECTION</name></argument>
-       <argument><name>LITERAL_ID</name></argument>
-       <argument><name>chartID</name></argument>
-       <argument><name>LITERAL_TYPE</name></argument>
-       <argument><name>LITERAL_ID</name></argument>
-       <argument><name>literal_escaped</name></argument>
     </arguments>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>1120</xloc>
-      <yloc>144</yloc>
+      <xloc>896</xloc>
+      <yloc>256</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>Is Specific&#x3f;</name>
+    <name>Filter rows</name>
     <type>FilterRows</type>
     <description/>
     <distribute>Y</distribute>
@@ -215,27 +157,27 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-<send_true_to>Modified Java Script Value 2</send_true_to>
-<send_false_to>Insert Common Literal</send_false_to>
+<send_true_to>Modified Java Script Value</send_true_to>
+<send_false_to/>
     <compare>
 <condition>
  <negated>N</negated>
- <leftvalue>IS_COMMON</leftvalue>
+ <leftvalue>sectionCount</leftvalue>
  <function>&#x3d;</function>
  <rightvalue/>
- <value><name>constant</name><type>Boolean</type><text>N</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value> </condition>
+ <value><name>constant</name><type>Integer</type><text>0</text><length>-1</length><precision>0</precision><isnull>N</isnull><mask>&#x23;</mask></value> </condition>
     </compare>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>720</xloc>
-      <yloc>192</yloc>
+      <xloc>592</xloc>
+      <yloc>256</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>Modified Java Script Value</name>
-    <type>ScriptValueMod</type>
+    <name>Get Variables</name>
+    <type>GetVariable</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -244,27 +186,30 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <compatible>N</compatible>
-    <optimizationLevel>9</optimizationLevel>
-    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
-        <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>var chartID &#x3d; &#x22;null&#x22;&#x3b;&#xd;&#xa;&#xd;&#xa;if &#x28;CHART_ID &#x21;&#x3d; undefined&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	chartID &#x3d; 20000&#x2b;CHART_ID&#xd;&#xa;&#x7d;&#xd;&#xa;&#xd;&#xa;</jsScript_script>
-      </jsScript>    </jsScripts>    <fields>      <field>        <name>chartID</name>
-        <rename>chartID</rename>
+    <fields>
+      <field>
+        <name>varSection</name>
+        <variable>&#x24;&#x7b;varSection&#x7d;</variable>
         <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
         <length>-1</length>
         <precision>-1</precision>
-        <replace>N</replace>
-      </field>    </fields>     <cluster_schema/>
+        <trim_type>none</trim_type>
+      </field>
+    </fields>
+     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>576</xloc>
-      <yloc>192</yloc>
+      <xloc>272</xloc>
+      <yloc>256</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>Modified Java Script Value 2</name>
+    <name>Modified Java Script Value</name>
     <type>ScriptValueMod</type>
     <description/>
     <distribute>N</distribute>
@@ -278,7 +223,7 @@
     <optimizationLevel>9</optimizationLevel>
     <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
         <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>var query &#x3d; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;&#xd;&#xa;query &#x3d; query &#x2b; &#x27;SET &#x40;toolId &#x3d; &#x28;SELECT id FROM tool WHERE name&#x3d;&#x22;osha_dvt_barometer&#x22;&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;&#xd;&#xa;query &#x3d; query &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;&#xd;&#xa;query &#x3d; query &#x2b; &#x27;SET &#x40;sectionId &#x3d; &#x28;SELECT id FROM section WHERE name&#x3d;&#x22;&#x27;&#x2b;SECTION&#x2b;&#x27;&#x22; AND tool_id&#x3d;&#x40;toolId&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;&#xd;&#xa;query &#x3d; query &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;&#xd;&#xa;query &#x3d; query &#x2b; &#x27;INSERT INTO literal &#x28;id, chart_id, section_id, type&#x29; &#x27;&#xd;&#xa;				&#x2b;&#x27; VALUES &#x28;20000&#x2b;&#x27;&#x2b;LITERAL_ID&#x2b;&#x27;, &#x27;&#x2b;chartID&#x2b;&#x27;, &#x40;sectionId, &#x22;&#x27;&#x2b;LITERAL_TYPE&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;&#xd;&#xa;query &#x3d; query &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;&#xd;&#xa;query &#x3d; query &#x2b; &#x27;INSERT INTO translation &#x28;literal_id, language, is_default, text&#x29; &#x27;&#xd;&#xa;				&#x2b; &#x27; VALUES &#x28;20000&#x2b;&#x27;&#x2b;LITERAL_ID&#x2b;&#x27;, &#x22;EN&#x22;, 1, &#x22;&#x27;&#x2b;literal_escaped&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;&#xd;&#xa;query &#x3d; query &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;&#xd;&#xa;</jsScript_script>
+        <jsScript_script>var query &#x3d; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;&#xd;&#xa;query &#x3d; query &#x2b; &#x27;SET &#x40;toolID &#x3d; &#x28;SELECT id FROM tool WHERE name &#x3d; &#x22;osha_dvt_barometer&#x22;&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;&#xd;&#xa;query &#x3d; query &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;&#xd;&#xa;query &#x3d; query &#x2b; &#x27;INSERT INTO section &#x28;name, tool_id&#x29; VALUES &#x28;&#x22;&#x27;&#x2b;getVariable&#x28;&#x22;varSection&#x22;,&#x22;&#x22;&#x29;&#x2b;&#x27;&#x22;, &#x40;toolID&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;&#xd;&#xa;query &#x3d; query &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;</jsScript_script>
       </jsScript>    </jsScripts>    <fields>      <field>        <name>query</name>
         <rename>query</rename>
         <type>String</type>
@@ -287,40 +232,34 @@
         <replace>N</replace>
       </field>    </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>896</xloc>
-      <yloc>192</yloc>
+      <xloc>736</xloc>
+      <yloc>256</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>Replace in string</name>
-    <type>ReplaceString</type>
+    <name>Table input</name>
+    <type>TableInput</type>
     <description/>
-    <distribute>N</distribute>
+    <distribute>Y</distribute>
     <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <fields>
-      <field>
-        <in_stream_name>LITERAL</in_stream_name>
-        <out_stream_name>literal_escaped</out_stream_name>
-        <use_regex>no</use_regex>
-        <replace_string>&#x22;</replace_string>
-        <replace_by_string>&#x5c;&#x5c;&#x22;</replace_by_string>
-        <set_empty_string>N</set_empty_string>
-        <replace_field_by_string/>
-        <whole_word>no</whole_word>
-        <case_sensitive>no</case_sensitive>
-      </field>
-    </fields>
+    <connection>osha_dvt</connection>
+    <sql>SELECT COUNT&#x28;&#x2a;&#x29; AS sectionCount &#xd;&#xa;FROM section s&#xd;&#xa;INNER JOIN tool t&#xd;&#xa;ON s.tool_id&#x3d;t.id&#xd;&#xa;WHERE s.name &#x3d; &#x22;&#x24;&#x7b;varSection&#x7d;&#x22;&#xd;&#xa;AND t.name&#x3d;&#x22;osha_dvt_barometer&#x22;&#x3b;</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>Y</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>416</xloc>
-      <yloc>192</yloc>
+      <xloc>432</xloc>
+      <yloc>256</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -350,7 +289,7 @@
     <fileNameField/>
     <create_parent_folder>N</create_parent_folder>
     <file>
-      <name>C&#x3a;&#x5c;biserver-ce&#x5c;pentaho-solutions&#x5c;system&#x5c;osha-dvt-barometer&#x5c;endpoints&#x5c;kettle&#x5c;admin&#x5c;output&#x5c;qualitative_changes</name>
+      <name>&#x24;&#x7b;Internal.Transformation.Filename.Directory&#x7d;&#x5c;output&#x5c;qualitative_changes</name>
       <is_command>N</is_command>
       <servlet_output>N</servlet_output>
       <do_not_open_new_file_init>N</do_not_open_new_file_init>
@@ -383,134 +322,8 @@
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>1120</xloc>
-      <yloc>240</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>literals_in</name>
-    <type>AccessInput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <include>N</include>
-    <include_field/>
-    <tablename>N</tablename>
-    <filename_Field/>
-    <tablename_field/>
-    <rownum>N</rownum>
-    <isaddresult>Y</isaddresult>
-    <filefield>N</filefield>
-    <rownum_field/>
-    <resetrownumber>N</resetrownumber>
-    <table_name>LITERAL</table_name>
-    <file>
-      <name>&#x24;&#x7b;access_file&#x7d;</name>
-      <filemask/>
-      <exclude_filemask/>
-      <file_required>N</file_required>
-      <include_subfolders>N</include_subfolders>
-    </file>
-    <fields>
-      <field>
-        <name>LITERAL_ID</name>
-        <attribut>LITERAL_ID</attribut>
-        <type>Integer</type>
-        <format/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <currency/>
-        <decimal/>
-        <group/>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-      </field>
-      <field>
-        <name>LITERAL</name>
-        <attribut>LITERAL</attribut>
-        <type>String</type>
-        <format/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <currency/>
-        <decimal/>
-        <group/>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-      </field>
-      <field>
-        <name>SECTION</name>
-        <attribut>SECTION</attribut>
-        <type>String</type>
-        <format/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <currency/>
-        <decimal/>
-        <group/>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-      </field>
-      <field>
-        <name>CHART_ID</name>
-        <attribut>CHART_ID</attribut>
-        <type>Integer</type>
-        <format/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <currency/>
-        <decimal/>
-        <group/>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-      </field>
-      <field>
-        <name>LITERAL_TYPE</name>
-        <attribut>LITERAL_TYPE</attribut>
-        <type>String</type>
-        <format/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <currency/>
-        <decimal/>
-        <group/>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-      </field>
-      <field>
-        <name>IS_COMMON</name>
-        <attribut>IS_COMMON</attribut>
-        <type>Boolean</type>
-        <format/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <currency/>
-        <decimal/>
-        <group/>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-      </field>
-    </fields>
-    <limit>0</limit>
-    <shortFileFieldName/>
-    <pathFieldName/>
-    <hiddenFieldName/>
-    <lastModificationTimeFieldName/>
-    <uriNameFieldName/>
-    <rootUriNameFieldName/>
-    <extensionFieldName/>
-    <sizeFieldName/>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>288</xloc>
-      <yloc>192</yloc>
+      <xloc>896</xloc>
+      <yloc>352</yloc>
       <draw>Y</draw>
       </GUI>
     </step>

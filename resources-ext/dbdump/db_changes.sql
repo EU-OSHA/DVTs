@@ -1,3 +1,27 @@
+-- Change the collation of the MySQL database
+ALTER DATABASE osha_dvt CHARACTER SET utf8 COLLATE utf8_general_ci;
+
+-- Change the collation of the MySQL tables
+ALTER TABLE `chart` COLLATE='utf8_general_ci';
+ALTER TABLE `country_group` COLLATE='utf8_general_ci';
+ALTER TABLE `dataset` COLLATE='utf8_general_ci';
+ALTER TABLE `glossary` COLLATE='utf8_general_ci';
+ALTER TABLE `indicator` COLLATE='utf8_general_ci';
+ALTER TABLE `indicators_by_chart` COLLATE='utf8_general_ci';
+ALTER TABLE `indicators_in_dataset` COLLATE='utf8_general_ci';
+ALTER TABLE `literal` COLLATE='utf8_general_ci';
+ALTER TABLE `nuts` COLLATE='utf8_general_ci';
+ALTER TABLE `nuts_by_country_group` COLLATE='utf8_general_ci';
+ALTER TABLE `profile` COLLATE='utf8_general_ci';
+ALTER TABLE `section` COLLATE='utf8_general_ci';
+ALTER TABLE `split_currency` COLLATE='utf8_general_ci';
+ALTER TABLE `split_illness` COLLATE='utf8_general_ci';
+ALTER TABLE `split_subindicator` COLLATE='utf8_general_ci';
+ALTER TABLE `term_synonym` COLLATE='utf8_general_ci';
+ALTER TABLE `tool` COLLATE='utf8_general_ci';
+ALTER TABLE `translation` COLLATE='utf8_general_ci';
+ALTER TABLE `value` COLLATE='utf8_general_ci';
+
 -- Update value for the country code of Greece and United Kingdom
 UPDATE nuts SET country_code="EL" WHERE name="Greece";
 UPDATE nuts SET country_code="UK" WHERE name="United Kingdom";

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>matrix authority</name>
+    <name>strategy enfor capacity</name>
     <description/>
     <extended_description/>
     <trans_version/>
@@ -108,10 +108,10 @@
     </attributes>
   </connection>
   <order>
-  <hop> <from>matrix_authority_in</from><to>Replace in string</to><enabled>Y</enabled> </hop>
-  <hop> <from>Modified Java Script Value</from><to>Text file output</to><enabled>Y</enabled> </hop>
+  <hop> <from>strategy_enfor_capacity_in</from><to>Replace in string</to><enabled>Y</enabled> </hop>
   <hop> <from>Replace in string</from><to>Modified Java Script Value</to><enabled>Y</enabled> </hop>
   <hop> <from>Modified Java Script Value</from><to>Execute SQL script</to><enabled>Y</enabled> </hop>
+  <hop> <from>Modified Java Script Value</from><to>Text file output</to><enabled>Y</enabled> </hop>
   </order>
   <step>
     <name>Execute SQL script</name>
@@ -129,7 +129,7 @@
     <single_statement>N</single_statement>
     <replace_variables>Y</replace_variables>
     <quoteString>N</quoteString>
-    <sql>SET &#x40;maxId &#x3d; IFNULL&#x28;&#x28;SELECT MAX&#x28;l.id&#x29; AS maxID FROM literal l WHERE l.id &#x3e; 20000 AND l.id &#x3c; 30000&#x29;,1&#x29;&#x3b;&#xd;&#xa;SET &#x40;nutsId &#x3d; &#x28;SELECT id FROM nuts WHERE country_code&#x3d;&#x22;&#x3f;&#x22;&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;INSERT INTO literal &#x28;id, chart_id, section_id, type&#x29;&#xd;&#xa;VALUES &#x28;&#xd;&#xa;	&#x40;maxId&#x2b;1, NULL, NULL, &#x22;MATRIX_AUTHORITY_TEXT&#x22;&#xd;&#xa;&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;INSERT INTO translation&#x28;literal_id, language, is_default, text&#x29;&#xd;&#xa;VALUES &#x28;&#xd;&#xa;	&#x40;maxId&#x2b;1, &#x22;EN&#x22;, 1, &#x22;&#x3f;&#x22;&#xd;&#xa;&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;INSERT INTO literal &#x28;id, chart_id, section_id, type&#x29;&#xd;&#xa;VALUES &#x28;&#xd;&#xa;	&#x40;maxId&#x2b;2, NULL, NULL, &#x22;MATRIX_AUTHORITY_TEXT&#x22;&#xd;&#xa;&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;INSERT INTO translation&#x28;literal_id, language, is_default, text&#x29;&#xd;&#xa;VALUES &#x28;&#xd;&#xa;	&#x40;maxId&#x2b;2, &#x22;EN&#x22;, 1, &#x22;&#x3f;&#x22;&#xd;&#xa;&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;INSERT INTO literal &#x28;id, chart_id, section_id, type&#x29;&#xd;&#xa;VALUES &#x28;&#xd;&#xa;	&#x40;maxId&#x2b;3, NULL, NULL, &#x22;MATRIX_AUTHORITY_TEXT&#x22;&#xd;&#xa;&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;INSERT INTO translation&#x28;literal_id, language, is_default, text&#x29;&#xd;&#xa;VALUES &#x28;&#xd;&#xa;	&#x40;maxId&#x2b;3, &#x22;EN&#x22;, 1, &#x22;&#x3f;&#x22;&#xd;&#xa;&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;INSERT INTO matrix_page&#x28;page, nuts_id, check_1, check_2, check_3, check_4, text_1_literal_id, text_2_literal_id, text_3_literal_id&#x29;&#xd;&#xa;VALUES &#x28;&#xd;&#xa;	&#x22;MATRIX_AUTHORITY&#x22;, &#x40;nutsId, &#x3f;, &#x3f;, &#x3f;, &#x3f;, &#x40;maxId&#x2b;1, &#x40;maxId&#x2b;2, &#x40;maxId&#x2b;3&#xd;&#xa;&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;</sql>
+    <sql>SET &#x40;maxId &#x3d; IFNULL&#x28;&#x28;SELECT MAX&#x28;l.id&#x29; AS maxID FROM literal l WHERE l.id &#x3e; 20000 AND l.id &#x3c; 30000&#x29;,1&#x29;&#x3b;&#xd;&#xa;SET &#x40;nutsId &#x3d; &#x28;SELECT id FROM nuts WHERE country_code&#x3d;&#x22;&#x3f;&#x22;&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;INSERT INTO literal &#x28;id, chart_id, section_id, type&#x29;&#xd;&#xa;VALUES &#x28;&#xd;&#xa;	&#x40;maxId&#x2b;1, NULL, NULL, &#x22;STRATEGY_ENFOR_CAPACITY_TEXT&#x22;&#xd;&#xa;&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;INSERT INTO translation&#x28;literal_id, language, is_default, text&#x29;&#xd;&#xa;VALUES &#x28;&#xd;&#xa;	&#x40;maxId&#x2b;1, &#x22;EN&#x22;, 1, &#x22;&#x3f;&#x22;&#xd;&#xa;&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;INSERT INTO literal &#x28;id, chart_id, section_id, type&#x29;&#xd;&#xa;VALUES &#x28;&#xd;&#xa;	&#x40;maxId&#x2b;2, NULL, NULL, &#x22;STRATEGY_ENFOR_CAPACITY_TEXT&#x22;&#xd;&#xa;&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;INSERT INTO translation&#x28;literal_id, language, is_default, text&#x29;&#xd;&#xa;VALUES &#x28;&#xd;&#xa;	&#x40;maxId&#x2b;2, &#x22;EN&#x22;, 1, &#x22;&#x3f;&#x22;&#xd;&#xa;&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;INSERT INTO literal &#x28;id, chart_id, section_id, type&#x29;&#xd;&#xa;VALUES &#x28;&#xd;&#xa;	&#x40;maxId&#x2b;3, NULL, NULL, &#x22;STRATEGY_ENFOR_CAPACITY_TEXT&#x22;&#xd;&#xa;&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;INSERT INTO translation&#x28;literal_id, language, is_default, text&#x29;&#xd;&#xa;VALUES &#x28;&#xd;&#xa;	&#x40;maxId&#x2b;3, &#x22;EN&#x22;, 1, &#x22;&#x3f;&#x22;&#xd;&#xa;&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;INSERT INTO literal &#x28;id, chart_id, section_id, type&#x29;&#xd;&#xa;VALUES &#x28;&#xd;&#xa;	&#x40;maxId&#x2b;4, NULL, NULL, &#x22;STRATEGY_ENFOR_CAPACITY_TEXT&#x22;&#xd;&#xa;&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;INSERT INTO translation&#x28;literal_id, language, is_default, text&#x29;&#xd;&#xa;VALUES &#x28;&#xd;&#xa;	&#x40;maxId&#x2b;4, &#x22;EN&#x22;, 1, &#x22;&#x3f;&#x22;&#xd;&#xa;&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;&#xd;&#xa;INSERT INTO strategies_page&#x28;page, nuts_id, text_1_literal_id, text_2_literal_id, text_3_literal_id, text_4_literal_id, text_5_literal_id, text_6_literal_id, text_7_literal_id, text_8_literal_id&#x29;&#xd;&#xa;VALUES &#x28;&#xd;&#xa;	&#x22;STRATEGY_ENFOR_CAPACITY&#x22;, &#x40;nutsId, &#x40;maxId&#x2b;1, &#x40;maxId&#x2b;2, &#x40;maxId&#x2b;3, &#x40;maxId&#x2b;4, null, null, null, null&#xd;&#xa;&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;</sql>
     <set_params>N</set_params>
     <insert_field/>
     <update_field/>
@@ -137,17 +137,14 @@
     <read_field/>
     <arguments>
        <argument><name>COUNTRY</name></argument>
-       <argument><name>nameAuthorityEscaped</name></argument>
-       <argument><name>linkAuthorityEscaped</name></argument>
-       <argument><name>detailAuthorityEscaped</name></argument>
-       <argument><name>OSH_AUTHORITY</name></argument>
-       <argument><name>COMPENSATION</name></argument>
-       <argument><name>PREVENTION</name></argument>
-       <argument><name>STANDARDISATION</name></argument>
+       <argument><name>authorityEscaped</name></argument>
+       <argument><name>labourInspectionEscaped</name></argument>
+       <argument><name>inspectorPowerEscaped</name></argument>
+       <argument><name>strategyEscaped</name></argument>
     </arguments>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>656</xloc>
+      <xloc>720</xloc>
       <yloc>256</yloc>
       <draw>Y</draw>
       </GUI>
@@ -168,7 +165,7 @@
     <optimizationLevel>9</optimizationLevel>
     <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
         <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>var query &#x3d; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;&#xd;&#xa;query &#x3d; query &#x2b; &#x27;SET &#x40;maxId &#x3d; IFNULL&#x28;&#x28;SELECT MAX&#x28;l.id&#x29; AS maxID FROM literal l WHERE l.id &#x3e; 20000 AND l.id &#x3c; 30000&#x29;,1&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;&#xd;&#xa;query &#x3d; query &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;&#xd;&#xa;query &#x3d; query &#x2b; &#x27;SET &#x40;nutsId &#x3d; &#x28;SELECT id FROM nuts WHERE country_code&#x3d;&#x22;&#x27;&#x2b;COUNTRY&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;&#xd;&#xa;query &#x3d; query &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;&#xd;&#xa;query &#x3d; query &#x2b; &#x27;INSERT INTO literal &#x28;id, chart_id, section_id, type&#x29; &#x27;&#xd;&#xa;				&#x2b;&#x27; VALUES &#x28;&#x40;maxId&#x2b;1, NULL, NULL, &#x22;MATRIX_AUTHORITY_TEXT&#x22;&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;&#xd;&#xa;query &#x3d; query &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;&#xd;&#xa;query &#x3d; query &#x2b; &#x27;INSERT INTO translation&#x28;literal_id, language, is_default, text&#x29; &#x27;&#xd;&#xa;				&#x2b; &#x27; VALUES &#x28;&#x40;maxId&#x2b;1, &#x22;EN&#x22;, 1, &#x22;&#x27;&#x2b;nameAuthorityEscaped&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;&#xd;&#xa;query &#x3d; query &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;&#xd;&#xa;query &#x3d; query &#x2b; &#x27;INSERT INTO literal &#x28;id, chart_id, section_id, type&#x29; &#x27;&#xd;&#xa;				&#x2b;&#x27; VALUES &#x28;&#x40;maxId&#x2b;2, NULL, NULL, &#x22;MATRIX_AUTHORITY_TEXT&#x22;&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;&#xd;&#xa;query &#x3d; query &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;&#xd;&#xa;query &#x3d; query &#x2b; &#x27;INSERT INTO translation&#x28;literal_id, language, is_default, text&#x29; &#x27;&#xd;&#xa;				&#x2b; &#x27; VALUES &#x28;&#x40;maxId&#x2b;2, &#x22;EN&#x22;, 1, &#x22;&#x27;&#x2b;linkAuthorityEscaped&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;&#xd;&#xa;query &#x3d; query &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;&#xd;&#xa;query &#x3d; query &#x2b; &#x27;INSERT INTO literal &#x28;id, chart_id, section_id, type&#x29; &#x27;&#xd;&#xa;				&#x2b;&#x27; VALUES &#x28;&#x40;maxId&#x2b;3, NULL, NULL, &#x22;MATRIX_AUTHORITY_TEXT&#x22;&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;&#xd;&#xa;query &#x3d; query &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;&#xd;&#xa;query &#x3d; query &#x2b; &#x27;INSERT INTO translation&#x28;literal_id, language, is_default, text&#x29; &#x27;&#xd;&#xa;				&#x2b; &#x27; VALUES &#x28;&#x40;maxId&#x2b;3, &#x22;EN&#x22;, 1, &#x22;&#x27;&#x2b;detailAuthorityEscaped&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;&#xd;&#xa;query &#x3d; query &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;query &#x3d; query &#x2b; &#x27;INSERT INTO matrix_page&#x28;page, nuts_id, check_1, check_2, check_3, check_4, text_1_literal_id, text_2_literal_id, text_3_literal_id&#x29; &#x27;&#xd;&#xa;				&#x2b; &#x27; VALUES &#x28;&#x22;MATRIX_AUTHORITY&#x22;, &#x40;nutsId, &#x27;&#x2b;OSH_AUTHORITY&#x2b;&#x27;, &#x27;&#x2b;COMPENSATION&#x2b;&#x27;, &#x27;&#x2b;PREVENTION&#x2b;&#x27;, &#x27;&#x2b;STANDARDISATION&#x2b;&#x27;, &#x40;maxId&#x2b;1, &#x40;maxId&#x2b;2, &#x40;maxId&#x2b;3&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;&#xd;&#xa;query &#x3d; query &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;&#xd;&#xa;&#xd;&#xa;&#xd;&#xa;</jsScript_script>
+        <jsScript_script>var query &#x3d; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;query &#x3d; query &#x2b; &#x27;SET &#x40;maxId &#x3d; IFNULL&#x28;&#x28;SELECT MAX&#x28;l.id&#x29; AS maxID FROM literal l WHERE l.id &#x3e; 20000 AND l.id &#x3c; 30000&#x29;,1&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;query &#x3d; query &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;query &#x3d; query &#x2b; &#x27;SET &#x40;nutsId &#x3d; &#x28;SELECT id FROM nuts WHERE country_code&#x3d;&#x22;&#x27;&#x2b;COUNTRY&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;query &#x3d; query &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;query &#x3d; query &#x2b; &#x27;INSERT INTO literal &#x28;id, chart_id, section_id, type&#x29; &#x27;&#xd;&#xa;				&#x2b; &#x27; VALUES &#x28;&#x40;maxId&#x2b;1, NULL, NULL, &#x22;STRATEGY_ENFOR_CAPACITY_TEXT&#x22;&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;query &#x3d; query &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;query &#x3d; query &#x2b; &#x27;INSERT INTO translation&#x28;literal_id, language, is_default, text&#x29; &#x27;&#xd;&#xa;				&#x2b;&#x27; VALUES &#x28;&#x40;maxId&#x2b;1, &#x22;EN&#x22;, 1, &#x22;&#x27;&#x2b;authorityEscaped&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;query &#x3d; query &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;query &#x3d; query &#x2b; &#x27;INSERT INTO literal &#x28;id, chart_id, section_id, type&#x29; &#x27;&#xd;&#xa;				&#x2b; &#x27; VALUES &#x28;&#x40;maxId&#x2b;2, NULL, NULL, &#x22;STRATEGY_ENFOR_CAPACITY_TEXT&#x22;&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;query &#x3d; query &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;query &#x3d; query &#x2b; &#x27;INSERT INTO translation&#x28;literal_id, language, is_default, text&#x29; &#x27;&#xd;&#xa;				&#x2b;&#x27; VALUES &#x28;&#x40;maxId&#x2b;2, &#x22;EN&#x22;, 1, &#x22;&#x27;&#x2b;labourInspectionEscaped&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;query &#x3d; query &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;query &#x3d; query &#x2b; &#x27;INSERT INTO literal &#x28;id, chart_id, section_id, type&#x29; &#x27;&#xd;&#xa;				&#x2b; &#x27; VALUES &#x28;&#x40;maxId&#x2b;3, NULL, NULL, &#x22;STRATEGY_ENFOR_CAPACITY_TEXT&#x22;&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;query &#x3d; query &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;query &#x3d; query &#x2b; &#x27;INSERT INTO translation&#x28;literal_id, language, is_default, text&#x29; &#x27;&#xd;&#xa;				&#x2b;&#x27; VALUES &#x28;&#x40;maxId&#x2b;3, &#x22;EN&#x22;, 1, &#x22;&#x27;&#x2b;inspectorPowerEscaped&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;query &#x3d; query &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;query &#x3d; query &#x2b; &#x27;INSERT INTO literal &#x28;id, chart_id, section_id, type&#x29; &#x27;&#xd;&#xa;				&#x2b; &#x27; VALUES &#x28;&#x40;maxId&#x2b;4, NULL, NULL, &#x22;STRATEGY_ENFOR_CAPACITY_TEXT&#x22;&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;query &#x3d; query &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;query &#x3d; query &#x2b; &#x27;INSERT INTO translation&#x28;literal_id, language, is_default, text&#x29; &#x27;&#xd;&#xa;				&#x2b;&#x27; VALUES &#x28;&#x40;maxId&#x2b;4, &#x22;EN&#x22;, 1, &#x22;&#x27;&#x2b;strategyEscaped&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;query &#x3d; query &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;query &#x3d; query &#x2b; &#x27;INSERT INTO strategies_page&#x28;page, nuts_id, text_1_literal_id, text_2_literal_id, text_3_literal_id, text_4_literal_id, text_5_literal_id, text_6_literal_id, text_7_literal_id, text_8_literal_id&#x29; &#x27;&#xd;&#xa;				&#x2b;&#x27; VALUES &#x28;&#x22;STRATEGY_ENFOR_CAPACITY&#x22;, &#x40;nutsId, &#x40;maxId&#x2b;1, &#x40;maxId&#x2b;2, &#x40;maxId&#x2b;3, &#x40;maxId&#x2b;4, null, null, null, null&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;query &#x3d; query &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;&#xd;&#xa;</jsScript_script>
       </jsScript>    </jsScripts>    <fields>      <field>        <name>query</name>
         <rename>query</rename>
         <type>String</type>
@@ -177,7 +174,7 @@
         <replace>N</replace>
       </field>    </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>496</xloc>
+      <xloc>528</xloc>
       <yloc>256</yloc>
       <draw>Y</draw>
       </GUI>
@@ -196,8 +193,8 @@
            </partitioning>
     <fields>
       <field>
-        <in_stream_name>NameAuthority</in_stream_name>
-        <out_stream_name>nameAuthorityEscaped</out_stream_name>
+        <in_stream_name>Authority</in_stream_name>
+        <out_stream_name>authorityEscaped</out_stream_name>
         <use_regex>no</use_regex>
         <replace_string>&#x22;</replace_string>
         <replace_by_string>&#x5c;&#x5c;&#x22;</replace_by_string>
@@ -207,8 +204,8 @@
         <case_sensitive>no</case_sensitive>
       </field>
       <field>
-        <in_stream_name>LinkAuthority</in_stream_name>
-        <out_stream_name>linkAuthorityEscaped</out_stream_name>
+        <in_stream_name>LabourInspection</in_stream_name>
+        <out_stream_name>labourInspectionEscaped</out_stream_name>
         <use_regex>no</use_regex>
         <replace_string>&#x22;</replace_string>
         <replace_by_string>&#x5c;&#x5c;&#x22;</replace_by_string>
@@ -218,8 +215,19 @@
         <case_sensitive>no</case_sensitive>
       </field>
       <field>
-        <in_stream_name>DetailAuthority</in_stream_name>
-        <out_stream_name>detailAuthorityEscaped</out_stream_name>
+        <in_stream_name>InspectorPower</in_stream_name>
+        <out_stream_name>inspectorPowerEscaped</out_stream_name>
+        <use_regex>no</use_regex>
+        <replace_string>&#x22;</replace_string>
+        <replace_by_string>&#x5c;&#x5c;&#x22;</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>Strategy</in_stream_name>
+        <out_stream_name>strategyEscaped</out_stream_name>
         <use_regex>no</use_regex>
         <replace_string>&#x22;</replace_string>
         <replace_by_string>&#x5c;&#x5c;&#x22;</replace_by_string>
@@ -262,7 +270,7 @@
     <fileNameField/>
     <create_parent_folder>N</create_parent_folder>
     <file>
-      <name>C&#x3a;&#x5c;biserver-ce&#x5c;pentaho-solutions&#x5c;system&#x5c;osha-dvt-barometer&#x5c;endpoints&#x5c;kettle&#x5c;admin&#x5c;output&#x5c;qualitative_changes</name>
+      <name>&#x24;&#x7b;Internal.Transformation.Filename.Directory&#x7d;&#x5c;output&#x5c;qualitative_changes</name>
       <is_command>N</is_command>
       <servlet_output>N</servlet_output>
       <do_not_open_new_file_init>N</do_not_open_new_file_init>
@@ -295,14 +303,14 @@
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>656</xloc>
-      <yloc>368</yloc>
+      <xloc>720</xloc>
+      <yloc>400</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>matrix_authority_in</name>
+    <name>strategy_enfor_capacity_in</name>
     <type>AccessInput</type>
     <description/>
     <distribute>Y</distribute>
@@ -322,7 +330,7 @@
     <filefield>N</filefield>
     <rownum_field/>
     <resetrownumber>N</resetrownumber>
-    <table_name>MATRIX-AUTHORITY</table_name>
+    <table_name>EnforCAPACITY</table_name>
     <file>
       <name>&#x24;&#x7b;access_file&#x7d;</name>
       <filemask/>
@@ -345,60 +353,8 @@
         <repeat>N</repeat>
       </field>
       <field>
-        <name>OSH_AUTHORITY</name>
-        <attribut>OSH_AUTHORITY</attribut>
-        <type>Integer</type>
-        <format/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <currency/>
-        <decimal/>
-        <group/>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-      </field>
-      <field>
-        <name>COMPENSATION</name>
-        <attribut>COMPENSATION</attribut>
-        <type>Integer</type>
-        <format/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <currency/>
-        <decimal/>
-        <group/>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-      </field>
-      <field>
-        <name>PREVENTION</name>
-        <attribut>PREVENTION</attribut>
-        <type>Integer</type>
-        <format/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <currency/>
-        <decimal/>
-        <group/>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-      </field>
-      <field>
-        <name>STANDARDISATION</name>
-        <attribut>STANDARDISATION</attribut>
-        <type>Integer</type>
-        <format/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <currency/>
-        <decimal/>
-        <group/>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-      </field>
-      <field>
-        <name>NameAuthority</name>
-        <attribut>NameAuthority</attribut>
+        <name>Authority</name>
+        <attribut>Authority</attribut>
         <type>String</type>
         <format/>
         <length>-1</length>
@@ -410,8 +366,8 @@
         <repeat>N</repeat>
       </field>
       <field>
-        <name>LinkAuthority</name>
-        <attribut>LinkAuthority</attribut>
+        <name>LabourInspection</name>
+        <attribut>LabourInspection</attribut>
         <type>String</type>
         <format/>
         <length>-1</length>
@@ -423,8 +379,21 @@
         <repeat>N</repeat>
       </field>
       <field>
-        <name>DetailAuthority</name>
-        <attribut>DetailAuthority</attribut>
+        <name>InspectorPower</name>
+        <attribut>InspectorPower</attribut>
+        <type>String</type>
+        <format/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <currency/>
+        <decimal/>
+        <group/>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>Strategy</name>
+        <attribut>Strategy</attribut>
         <type>String</type>
         <format/>
         <length>-1</length>

@@ -233,17 +233,16 @@
 2239-https://www.ds.dk/en
 2239-https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Denmark 
 2242-http://www.sm.ee/et
-2242-https://oshwiki.eu/wiki/OSH_system_at_national_level_–_Estonia
+2242-https://oshwiki.eu/wiki/OSH_system_at_national_level_ÔÇô_Estonia
 2245-http://www.terviseamet.ee/en/information/about-hb.html
-2245-https://oshwiki.eu/wiki/OSH_system_at_national_level_–_Estonia
-2248-http://www.ti.ee/index.php?page=3& 
-
-2248-https://oshwiki.eu/wiki/OSH_system_at_national_level_–_Estonia
+2245-https://oshwiki.eu/wiki/OSH_system_at_national_level_ÔÇô_Estonia
+2248-http://www.ti.ee/index.php?page=3& 
+2248-https://oshwiki.eu/wiki/OSH_system_at_national_level_ÔÇô_Estonia
 2251-http://www.haigekassa.ee/en
-2251-https://oshwiki.eu/wiki/OSH_system_at_national_level_–_Estonia
-2254-https://oshwiki.eu/wiki/OSH_system_at_national_level_–_Estonia
+2251-https://oshwiki.eu/wiki/OSH_system_at_national_level_ÔÇô_Estonia
+2254-https://oshwiki.eu/wiki/OSH_system_at_national_level_ÔÇô_Estonia
 2257-http://www.evs.ee/Esileht/tabid/111/language/en-US/Default.aspx
-2257-https://oshwiki.eu/wiki/OSH_system_at_national_level_–_Estonia
+2257-https://oshwiki.eu/wiki/OSH_system_at_national_level_ÔÇô_Estonia
 2260-http://ec.europa.eu/social/main.jsp?langId=en&catId=656
 2260-https://www.eurofound.europa.eu/country/eu-level
 2263-http://www.europarl.europa.eu
@@ -287,13 +286,11 @@
 2320-https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Finland
 2323-https://www.sfs.fi/en
 2323-https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Finland
-2326-http://travail-emploi.gouv.fr/ministere/
-http://travail-emploi.gouv.fr/ministere/organisation/article/dgt-direction-generale-du-travail
+2326-http://travail-emploi.gouv.fr/ministere/http://travail-emploi.gouv.fr/ministere/organisation/article/dgt-direction-generale-du-travail
 2326-https://oshwiki.eu/wiki/OSH_system_at_national_level_-_France
 2329-http://solidarites-sante.gouv.fr/ministere/organisation/directions/article/dss-direction-de-la-securite-sociale
 2329-https://oshwiki.eu/wiki/OSH_system_at_national_level_-_France
-2332-http://direccte.gouv.fr/Organisation-d-une-Direccte.html
-http://travail-emploi.gouv.fr/emploi/accompagnement-des-tpe-pme/tpe-pme/gerer-mes-ressources-humaines/article/le-role-de-l-inspection-du-travail
+2332-http://direccte.gouv.fr/Organisation-d-une-Direccte.htmlhttp://travail-emploi.gouv.fr/emploi/accompagnement-des-tpe-pme/tpe-pme/gerer-mes-ressources-humaines/article/le-role-de-l-inspection-du-travail
 2332-https://oshwiki.eu/wiki/OSH_system_at_national_level_-_France
 2335-https://www.ameli.fr/l-assurance-maladie/connaitre-l-assurance-maladie/missions-et-organisation/index.php
 2335-https://oshwiki.eu/wiki/OSH_system_at_national_level_-_France
@@ -301,7 +298,6 @@ http://travail-emploi.gouv.fr/emploi/accompagnement-des-tpe-pme/tpe-pme/gerer-me
 2338-http://www.msa.fr/lfy
 2338-https://oshwiki.eu/wiki/OSH_system_at_national_level_-_France
 2341-https://www.secu-independants.fr/nous-connaitre.html
-
 2341-https://oshwiki.eu/wiki/OSH_system_at_national_level_-_France
 2344-https://oshwiki.eu/wiki/OSH_system_at_national_level_-_France
 2347-https://www.eurogip.fr
@@ -346,7 +342,7 @@ http://travail-emploi.gouv.fr/emploi/accompagnement-des-tpe-pme/tpe-pme/gerer-me
 2404-https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Hungary
 2407-https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Hungary
 2410-https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Hungary
-2413-Hungarian Standards Institution (Magyar Szabványügyi Testület – MSZT)
+2413-Hungarian Standards Institution (Magyar Szabv├íny├╝gyi Test├╝let ÔÇô MSZT)
 2413-https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Hungary
 2416-http://www.hsa.ie
 2416-https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Ireland
@@ -370,8 +366,7 @@ http://travail-emploi.gouv.fr/emploi/accompagnement-des-tpe-pme/tpe-pme/gerer-me
 2443-https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Italy
 2446-http://www.uni.com/
 2446-https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Italy
-2449-http://www.lm.gov.lv/ 
-
+2449-http://www.lm.gov.lv/ 
 2449-https://oshwiki.eu/wiki/OSH_systems_at_national_level_-_Latvia
 2452-http://www.vdi.gov.lv/
 2452-https://oshwiki.eu/wiki/OSH_systems_at_national_level_-_Latvia
@@ -380,13 +375,11 @@ http://travail-emploi.gouv.fr/emploi/accompagnement-des-tpe-pme/tpe-pme/gerer-me
 2458-https://oshwiki.eu/wiki/OSH_systems_at_national_level_-_Latvia
 2461-http://www.lvs.lv/
 2461-https://oshwiki.eu/wiki/OSH_systems_at_national_level_-_Latvia
-2464-http://www.socmin.lt/
-
+2464-http://www.socmin.lt/
 2464-https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Lithuania 
 2467-http://www.sam.lt/
 2467-https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Lithuania 
-2470-http://www.vdi.lt/
-
+2470-http://www.vdi.lt/
 2470-https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Lithuania 
 2473-http://www.sodra.lt/index.php?cid=2585
 2473-https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Lithuania 
@@ -670,87 +663,32 @@ http://travail-emploi.gouv.fr/emploi/accompagnement-des-tpe-pme/tpe-pme/gerer-me
 2944-http://www.beroepsziekten.nl
 2946-http://stat.gov.pl/download/gfx/portalinformacyjny/pl/defaultaktualnosci/5476/4/8/1/wypadki_przy_pracy_w_2014.pdf
 2948-http://www.krus.gov.pl/fileadmin/moje_dokumenty/obrazki/broszury_prewencja/2015/Wypadki_przy_pracy_2015_vp4.pdf
-2950-
-2950-trong style=
-2952-
 2952-http://stat.gov.pl/download/gfx/portalinformacyjny/pl/defaultaktualnosci/5476/2/2/7/pw_wypadki_przy_pracy_i_problemy_zdrow_zwiazane_z_praca.pdf
-2952-trong style=
-2954-
 2954-http://www.gep.msess.gov.pt/estatistica/estatisticanp/sst/at.php
-2954-trong style=
-2956-
 2956-http://www.acss.min-saude.pt/DepartamentoseUnidades/DepartamentoGest%C3%A3oePlaneamentoRH/EstudosePlaneamentoemRecursosHumanos/EstudoseRelat%C3%B3rios/AcidentesdeTrabalho/tabid/332/language/pt-PT/Default.aspx
-2956-trong style=
-2958-
 2958-http://www.gep.msess.gov.pt/estatistica/condicoes/sst2013pub.pdf
-2958-trong style=
-2960-
-2960-trong style=
-2962-
 2962-https://www.ine.pt/xportal/xmain?xpid=INE&amp;xpgid=ine_publicacoes&amp;PUBLICACOESpub_boui=210767753&amp;PUBLICACOESmodo=2
-2962-trong style=
-2964-
 2964-http://www.inspectiamuncii.ro
-2964-trong style=
-2966-
 2966-http://www.insp.gov.ro/cnmrmc/rapoarte
-2966-trong style=
-2968-
 2968-http://www.safework.gov.sk/?t=46&amp;s=119&amp;ins=nip
-2970-
 2970-http://www.socpoist.sk/urazove-poistenie-dug/48009s
-2970-trong style=
-2972-
 2972-http://www.nczisk.sk/en/Pages/default.aspx
-2972-trong style=
-2974-
 2974-http://www.socpoist.sk/urazove-poistenie-dug/48009s
-2974-trong style=
-2976-
 2976-http://www.%20zzzs.si
-2976-trong style=
-2978-
 2978-http://www.%20nijz.si
-2978-trong style=
-2980-
 2980-http://www.%20id.gov.si
-2980-trong style=
-2982-
 2982-http://www.%20zpiz.si
-2982-trong style=
-2984-
 2984-http://www%20stat.si
-2984-trong style=
-2986-
 2986-http://www.irsd.si
-2986-trong style=
-2988-
 2988-http://www.empleo.gob.es/estadisticas/eat/welcome.htm
-2988-trong style=
-2990-
 2990-http://encuestasnacionales.oect.es/%20
-2990-trong style=
-2992-
 2992-http://www.ine.es/jaxi/menu.do?type=pcaxis&amp;path=/t15/p419&amp;file=inebase&amp;L=0
-2992-trong style=
-2994-
 2994-http://www.ine.es/jaxi/menu.do?type=pcaxis&amp;path=/t15/p420/p01&amp;file=inebase&amp;L=0%20
-2994-trong style=
-2996-
 2996-http://www.seg-social.es/Internet_1/Estadistica/Est/Observatorio_de_las_Enfermedades_Profesionales/cepross2k11/index.htm%20%20
-2996-trong style=
-2998-
 2998-http://www.seg-social.es/Internet_1/Estadistica/Est/Observatorio_de_las_Enfermedades_Profesionales/index.htm
-2998-trong style=
-3000-
 3000-https://www.av.se/globalassets/filer/statistik/arbetsmiljostatistik-arbetsskador-2014-rapport-2015-01.pdf%20
-3000-trong style=
-3002-
 3002-https://www.afaforsakring.se/forebyggande/analys-och-statistik/arbetsskaderapporten/
-3002-trong style=
-3004-
 3004-https://www.av.se/globalassets/filer/statistik/arbetsmiljostatistik-arbetsorsakade-besvar-rapport-2014.pdf
-3004-trong style=
 3006-https://ooe.arbeiterkammer.at/beratung/arbeitundgesundheit/arbeitsklima/Warum_Arbeitsklima_Index_.html%20
 3008-https://ooe.arbeiterkammer.at/beratung/arbeitundgesundheit/arbeitsklima/Arbeitsgesundheitsmonitor.html%20
 3018-http://pub.stat.ee/px-web.2001/I_Databas/Social_life/19Worklife_quality/08Occupational_health/08Occupational_health.asp%20
@@ -791,11 +729,11 @@ http://travail-emploi.gouv.fr/emploi/accompagnement-des-tpe-pme/tpe-pme/gerer-me
 3126-http://engelsk.arbejdstilsynet.dk/en/research/arbejdsmiljoforskningsfonden%20
 3126-https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Denmark%20
 3128-http://www.tai.ee/en/%20
-3128-https://oshwiki.eu/wiki/OSH_system_at_national_level_–_Estonia%20
+3128-https://oshwiki.eu/wiki/OSH_system_at_national_level_ÔÇô_Estonia%20
 3130-http://www.ut.ee/en%20
-3130-https://oshwiki.eu/wiki/OSH_system_at_national_level_–_Estonia
+3130-https://oshwiki.eu/wiki/OSH_system_at_national_level_ÔÇô_Estonia
 3132-http://www.ttu.ee/
-3132-https://oshwiki.eu/wiki/OSH_system_at_national_level_–_Estonia
+3132-https://oshwiki.eu/wiki/OSH_system_at_national_level_ÔÇô_Estonia
 3134-https://www.ttl.fi/en/
 3134-https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Finland
 3136-http://www.vttresearch.com
