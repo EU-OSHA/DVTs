@@ -888,8 +888,14 @@
         }
       }
     }
+    .workforce--page{
+      #filter3{
+        display: none;
+      }
+    }
     .survey--map--block{
       background: $gray-lighter;
+      display: block;
       .map--block{        
         .dvt--map--block, div[id^='dvt_map']{
           width: 70%;
@@ -905,6 +911,9 @@
           }
         }       
       }
+    }
+    .survey--map--block-mobile{
+      display: none;
     }
   /** END CARDS TYPE **/
 
@@ -1493,6 +1502,7 @@
   border: 2px solid $aquamarine;
   border-radius: 6px;
   position: absolute;
+  z-index: 1000000000;
   &.botton:after {
     content: "";
     position: absolute;
