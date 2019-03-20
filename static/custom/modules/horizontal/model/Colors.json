@@ -39,9 +39,9 @@
     },
 
     "rangeColors":{
-        "range1": "#c1dbdc",
-        "range2": "#a2cacb",
-        "range3": "#60aeb0",
-        "range4": "#449FA2"
+        "range1": "#DBECED",
+        "range2": "#A8D0D1",
+        "range3": "#78B6B9",
+        "range4": "#529FA2"
     }
 }

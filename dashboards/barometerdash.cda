@@ -528,26 +528,49 @@
   <DataAccess access="public" connection="dvt_conn" id="getGenders" type="sql">
     <Cache duration="3600" enabled="true" />
     <Columns />
-    <Query>SELECT sg.id as gender_id, sg.literal_id as gender_name
+    <Parameters>
+    </Parameters>
+    <Query>
+      SELECT sg.id as gender_id, sg.literal_id as gender_name
       FROM split_gender sg
       ORDER BY FIELD(gender_id, 2, 3, 1)
     </Query>
   </DataAccess>
 
-    <!-- WORKFORCE PROFILE || get country data for indicator median age -->
-  <DataAccess access="public" connection="dvt_conn" id="getCurrentIndicatorData" type="sql">
+  <!-- WORKFORCE PROFILE || get countries available for select option in tablets and mobiles -->
+  <DataAccess access="public" connection="dvt_conn" id="getAvailableCountries" type="sql">
     <Cache duration="3600" enabled="true" />
     <Columns />
     <Parameters>
-      <Parameter default="37" name="pIndicator" type="Numeric" />
+      <Parameter default="6" name="pDataset" type="Numeric" />
     </Parameters>
     <Query>
-      SELECT n.country_code as countryKey, n.name as country_name, v.value as value
+      SELECT distinct(n.country_code) as countryKey, n.literal_id as country_name
       FROM nuts n, profile p, value v, dataset d
       WHERE n.id = p.nuts_id 
       AND v.profile_id = p.id 
-      AND d.id = 6 AND d.id = v.dataset_id
-      AND v.indicator_id = ${pIndicator}
+      AND d.id = ${pDataset} AND d.id = v.dataset_id
+      AND v.indicator_id IN (37, 38, 39)
+      ORDER BY country_name ASC
+    </Query>
+  </DataAccess>
+
+  <!-- WORKFORCE PROFILE || get countries available for select option in tablets and mobiles -->
+  <DataAccess access="public" connection="dvt_conn" id="getFilteringCountries" type="sql">
+    <Cache duration="3600" enabled="true" />
+    <Columns />
+    <Parameters>
+      <Parameter default="6" name="pDataset" type="Numeric" />
+      <Parameter default=".*" name="countries" type="String"/>
+    </Parameters>
+    <Query>
+      SELECT distinct(n.country_code) as countryKey, n.name as country_name
+      FROM nuts n, profile p, value v, dataset d
+      WHERE n.id = p.nuts_id 
+      AND v.profile_id = p.id 
+      AND d.id = ${pDataset} AND d.id = v.dataset_id
+      AND n.country_code REGEXP ${countries}
+      AND v.indicator_id IN (37, 38, 39)
       ORDER BY country_name ASC
     </Query>
   </DataAccess>
@@ -560,7 +583,7 @@
       <Parameter default="6" name="pDataset" type="Numeric" />
     </Parameters>
     <Query>
-      SELECT n.country_code as countryKey, n.name as country_name, v.value as value
+      SELECT n.country_code as countryKey, n.literal_id as country_name, v.value as value
       FROM nuts n, profile p, value v, dataset d
       WHERE n.id = p.nuts_id 
       AND v.profile_id = p.id 
@@ -578,7 +601,7 @@
       <Parameter default="6" name="pDataset" type="Numeric" />
     </Parameters>
     <Query>
-      SELECT n.country_code as countryKey, n.name as country_name, v.value as value
+      SELECT n.country_code as countryKey, n.literal_id as country_name, v.value as value
       FROM nuts n, profile p, value v, dataset d
       WHERE n.id = p.nuts_id 
       AND v.profile_id = p.id 
@@ -596,7 +619,7 @@
       <Parameter default="6" name="pDataset" type="Numeric" />
     </Parameters>
     <Query>
-      SELECT n.country_code as countryKey, n.name as country_name, (v.value*100) as value
+      SELECT n.country_code as countryKey, n.literal_id as country_name, (v.value*100) as value
       FROM nuts n, profile p, value v, dataset d
       WHERE n.id = p.nuts_id 
       AND v.profile_id = p.id 
@@ -615,7 +638,7 @@
       <Parameter default="6" name="pDataset" type="Numeric" />
     </Parameters>
     <Query>
-      SELECT n.country_code as countryKey, n.name as country_name, (v.value*100) as value
+      SELECT n.country_code as countryKey, n.literal_id as country_name, (v.value*100) as value
       FROM nuts n, profile p, value v, dataset d
       WHERE n.id = p.nuts_id 
       AND v.profile_id = p.id 
@@ -634,7 +657,7 @@
       <Parameter default="6" name="pDataset" type="Numeric" />
     </Parameters>
     <Query>
-      SELECT n.country_code as countryKey, n.name as country_name, (v.value*100) as value
+      SELECT n.country_code as countryKey, n.literal_id as country_name, (v.value*100) as value
       FROM nuts n, profile p, value v, dataset d
       WHERE n.id = p.nuts_id 
       AND v.profile_id = p.id 

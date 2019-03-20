@@ -196,115 +196,11 @@ define(function (require) {
 
                                     var clicked = scope.clickAction || undefined;
 
-                                    this.setStart();
-
-                                    var paths = [];
-                                    var noDataCountries = [];
-
-                                    var minMaxValues = getMinMaxValue(scope.countryDataToShow);
-                                    
-                                    for (var index in map.shapes) {
-
-                                        var shape = map.shapes[index];
-                                        var cName = map.names[index];
-                                        var path = this.path(shape);
-
-                                        var group = scope.group;
-                                        path.label = cName;
-                                        path.id = index;
-                                         var isInGroup = false;
-
-                                        var countryInfo = scope.countryDataToShow[index];
-
-                                        //if (!!scope.groupId)
-                                        //    isInGroup = scope.getTooltipGroup(index).group == scope.groupId[0];
-
-                                        if(countryInfo != undefined){
-                                            isInGroup = true; 
-                                            path.medianAge = scope.data.medianAge[index].value;
-                                            path.ageingWorkers = scope.data.ageingWorkers[index].value;
-                                            path.eRateTotal = scope.data.totalEmployment[index].value;
-                                            path.eRateMale = scope.data.maleEmployment[index].value;
-                                            path.eRateFemale = scope.data.femaleEmployment[index].value.toFixed(1);
-
-                                            var labeltext = labelPath(path, index);
-                                        }else{
-                                            noDataCountries.push(index);
-                                        }
-
-                                        if (isInGroup && isColoredMap) {
-                                            if(mapProvider.nonEUCountry(index)){
-                                                path.attr({
-                                                    stroke: strokeShapeColor,
-                                                    fill: 'url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/diagonal-stripes.png)',
-                                                    "stroke-opacity": 1.0
-                                                }); 
-                                            }else{
-                                               path.attr({
-                                                    stroke: strokeShapeColor,
-                                                    fill: /*'#449FA2'*/dvtUtils.getRangeColors( countryInfo.value, minMaxValues[0], minMaxValues[1], minMaxValues[2]),
-                                                    "stroke-opacity": 1.0
-                                                }); 
-                                            }
-                                            
-                                            path.group = 1;
-                                            if (cName === sCountry) {
-                                                path.attr({
-                                                    stroke: strokeShapeColor,
-                                                    fill: selectedCountryColor,
-                                                    "stroke-opacity": 1.0,
-                                                    //title:cName
-                                                });
-                                                path.group = 1;
-                                            }
-                                        }
-                                        else {
-                                            //if (noEU.indexOf(path.id) < 0 || !!attributes.csp) {
-                                            if (noDataCountries.indexOf(path.id) < 0 || !!attributes.csp) {
-                                                path.attr({
-                                                    stroke: strokeShapeColor,
-                                                    fill: backgroundShapeColor,
-                                                    "stroke-opacity": 1.0,
-                                                    //title:cName
-                                                });
-                                            }
-                                            else {
-                                                path.attr({
-                                                    stroke: backgroundShapeColor,
-                                                    //fill: 'url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/diagonal-stripes.svg)',
-                                                    fill: "#F0F0F0",
-                                                    "stroke-opacity": 1.0,
-                                                    //title:cName
-                                                });
-                                            }
-                                            ;
-                                            path.group = 0;
-                                        }
-                                        if (scope.legend && true) {
-                                            labelPath(path, cName).attr({
-                                                fill: groupColor
-                                            });
-                                        }
-
-                                        paths.push(path);
-
-
-                                        /*shape click event control*/
-                                        //if (attributes.clickable &&attributes.clickable == "1" && noEU.indexOf(path.id) < 0) {
-                                        if (attributes.clickable &&attributes.clickable == "1" && noDataCountries.indexOf(path.id) < 0) {
-                                            path.click(clicked);
-                                            path.attr({
-                                                cursor: "pointer"
-                                            })
-                                        }
-                                    }
-
                                     function getMinMaxValue(data){
                                         var minValue = 100;
                                         var maxValue = 0;
 
                                         for (var index in data) {
-                                            //$log.warn(data[index]);
                                             if(data[index].value < minValue){
                                                 minValue = data[index].value;
                                             }
@@ -378,11 +274,6 @@ define(function (require) {
                                                 opacity:.5
                                             },100);
 
-                                            //$log.debug("Tooltip group is: ");
-                                            //var tooltipGroup = scope.getTooltipGroup(this.id);
-                                            //$log.debug(tooltipGroup);
-                                            
-
                                             var elementSVG = angular.element('.map--block');
                                             angular.element(elementSVG).append('<div class="dvt-map-tooltip"></div>');
                                             angular.element('.dvt-map-tooltip').append('<p class="country-name">'
@@ -417,8 +308,6 @@ define(function (require) {
                                                 }
                                                 
                                             });
-
-
 /*
                                             var bbox = this.getBBox();
 
@@ -438,8 +327,8 @@ define(function (require) {
                                                 }, 0);
 
                                             var lbox = this._label.getBBox();
-*/
-                                           /* this._label.country = this._label.paper.text(lbox.x + lbox.width / 2,
+
+                                            this._label.country = this._label.paper.text(lbox.x + lbox.width / 2,
                                                 lbox.y + lbox.height / 5,
                                                 this.label)
                                                 .animate({
@@ -524,11 +413,114 @@ define(function (require) {
                                            this._label.eRateMale.remove();
                                            this._label.eRateFemale.remove();
                                            this._label.remove();
+                                           $('.dvt-map-tooltip').remove();
 */
-                                           //$('.dvt-map-tooltip').remove();
                                            angular.element('.dvt-map-tooltip').remove();
                                         }
                                     };
+
+                                    this.setStart();
+
+                                    var paths = [];
+                                    var noDataCountries = [];
+
+                                    var minMaxValues = getMinMaxValue(scope.countryDataToShow);
+                                    
+                                    for (var index in map.shapes) {
+
+                                        var shape = map.shapes[index];
+                                        var cName = map.names[index];
+                                        var path = this.path(shape);
+
+                                        var group = scope.group;
+                                        path.label = cName;
+                                        path.id = index;
+                                         var isInGroup = false;
+
+                                        var countryInfo = scope.countryDataToShow[index];
+
+                                        //if (!!scope.groupId)
+                                        //    isInGroup = scope.getTooltipGroup(index).group == scope.groupId[0];
+
+                                        if(countryInfo != undefined){
+                                            isInGroup = true; 
+                                            path.medianAge = scope.data.medianAge[index].value;
+                                            path.ageingWorkers = scope.data.ageingWorkers[index].value;
+                                            path.eRateTotal = scope.data.totalEmployment[index].value;
+                                            path.eRateMale = scope.data.maleEmployment[index].value;
+                                            path.eRateFemale = scope.data.femaleEmployment[index].value;
+
+                                            var labeltext = labelPath(path, index);
+                                        }else{
+                                            noDataCountries.push(index);
+                                        }
+
+                                        if (isInGroup && isColoredMap) {
+                                            if(mapProvider.nonEUCountry(index)){
+                                                path.attr({
+                                                    stroke: strokeShapeColor,
+                                                    fill: 'url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/diagonal-stripes.png)',
+                                                    "stroke-opacity": 1.0
+                                                }); 
+                                            }else{
+                                               path.attr({
+                                                    stroke: strokeShapeColor,
+                                                    fill: /*'#449FA2'*/dvtUtils.getRangeColors( countryInfo.value, minMaxValues[0], minMaxValues[1], minMaxValues[2]),
+                                                    "stroke-opacity": 1.0
+                                                });
+                                            }
+                                            
+                                            path.group = 1;
+                                            if (cName === sCountry) {
+                                                path.attr({
+                                                    stroke: strokeShapeColor,
+                                                    fill: selectedCountryColor,
+                                                    "stroke-opacity": 1.0,
+                                                    //title:cName
+                                                });
+                                                path.group = 1;
+                                            }
+                                        }
+                                        else {
+                                            //if (noEU.indexOf(path.id) < 0 || !!attributes.csp) {
+                                            if (noDataCountries.indexOf(path.id) < 0 || !!attributes.csp) {
+                                                path.attr({
+                                                    stroke: strokeShapeColor,
+                                                    fill: backgroundShapeColor,
+                                                    "stroke-opacity": 1.0,
+                                                    //title:cName
+                                                });
+                                            }
+                                            else {
+                                                path.attr({
+                                                    stroke: backgroundShapeColor,
+                                                    //fill: 'url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/diagonal-stripes.svg)',
+                                                    fill: "#F0F0F0",
+                                                    "stroke-opacity": 1.0,
+                                                    //title:cName
+                                                });
+                                            }
+                                            ;
+                                            path.group = 0;
+                                        }
+                                        if (scope.legend && true) {
+                                            labelPath(path, cName).attr({
+                                                fill: groupColor
+                                            });
+                                        }
+
+                                        paths.push(path);
+
+
+                                        /*shape click event control*/
+                                        //if (attributes.clickable &&attributes.clickable == "1" && noEU.indexOf(path.id) < 0) {
+                                        if (attributes.clickable &&attributes.clickable == "1" && noDataCountries.indexOf(path.id) < 0) {
+                                            path.click(clicked);
+                                            path.attr({
+                                                cursor: "pointer"
+                                            })
+                                        }
+                                    }
 
                                     var countryMap = this.setFinish();
 

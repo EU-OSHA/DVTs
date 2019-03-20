@@ -25,7 +25,25 @@
               <option data-ng-bind="i18nLiterals.L295" value="ageing-workers"></option>
               <option data-ng-repeat='gender in genders' value="{{i18nLiterals['L'+gender.gender_name]}}" data-ng-bind="i18nLiterals['L'+gender.gender_name]"></option>
             </select>
-            <label data-ng-if="selectedIndicator == 'median-age'" class="alert-disabled">(*) Not applied to Median Age</label>
+            <label data-ng-if="selectedIndicator == 'median-age'" class="alert-disabled" data-ng-bind="i18nLiterals.L20694"></label>
+          </li>
+          <!-- COUNTRY FILTER JUST IN < 1024 PX -->
+          <li id="filter3">
+            <label for="countrySelect">Country: </label>
+            <div id="filter3"class="filter--dropdown--wrapper">
+              <label class="main-color  dropdwon-open" data-ng-click="openSelect($event)"></label>
+              <div class="filter--dropdown--list">
+                <p class="option-title" data-ng-click="openSelect($event)">Country</p>
+                <ul class="filter--dropdown--options">
+                  <li data-ng-repeat='country in countries'>
+                    <input id='country-filter-{{::country.country_code}}' ng-checked="!!country.param && country.param ==country.country_code"
+                      data-ng-click="toggleCountryClick($event, $index)" type="checkbox" value="{{::country.country_code}}"/>
+                    <label for="country-filter-{{::country.country_code}}" data-ng-bind="i18nLiterals['L'+country.country_name]"></label>
+                  </li>
+                </ul>
+                <p class="btn--block-filter" data-ng-click="openSelect($event)"><a class="btn-main-color btn-full" ng-click="confirmSelection($event)">Confirm</a></p>
+              </div>
+            </div>  
           </li>
       </ul>
   </div>
@@ -63,15 +81,17 @@
     </section>
 
     <section class="survey--map--block-mobile">
+      <div class="selected--tags-wrapper"></div>
       <div class="matrix--elements--wrapper">
-        <div class="matrix--element">
-          <div class="matrix--header--elements">Belgium</div>
+        <div class="matrix--element" data-ng-repeat="country in matrix">
+          <div class="matrix--header--elements" data-ng-bind="i18nLiterals['L'+data.medianAge[country.country_code].country_name]"></div>
           <div class="matrix--content--elements"></div>
             <ul>
-              <li><label>Median age</label><span class="data">42,3 years</span></li>
-              <li><label>Employment rate (55 - 64)</label><span class="data">50,5%</span></li>
-              <li><label>Employment rate (male)</label><span class="data">71,5%</span></li>
-              <li><label>Employment rate (female)</label><span class="data">59,6%</span></li>
+              <li><label data-ng-bind="i18nLiterals['L20615']"></label><span class="data" data-ng-bind="data.medianAge[country.country_code].value"></span><span class="data">years</span></li>
+              <li><label data-ng-bind="i18nLiterals['L20616']"></label><span class="data" data-ng-bind="data.ageingWorkers[country.country_code].value"> %</span><span class="data">&percnt;</span></li>
+              <li><label data-ng-bind="i18nLiterals['L20617']"></label><span class="data" data-ng-bind="data.totalEmployment[country.country_code].value"></span><span class="data">&percnt;</span></li>
+              <li><label data-ng-bind="i18nLiterals['L20618']"></label><span class="data" data-ng-bind="data.maleEmployment[country.country_code].value"></span><span class="data">&percnt;</span></li>
+              <li><label data-ng-bind="i18nLiterals['L20619']"></label><span class="data" data-ng-bind="data.femaleEmployment[country.country_code].value"></span><span class="data">&percnt;</span></li>
             </ul>
         </div>
       </div>      

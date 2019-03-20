@@ -430,14 +430,28 @@ define(function () {
 
             /**
              * @ngdoc method
-             * @name dvt.configModule.DataService#getCurrentIndicatorData
+             * @name dvt.configModule.DataService#getAvailableCountries
              * @methodOf dvt.configModule.DataService
              * @description
              * Get genders for select option list
              */
-            getCurrentIndicatorData: function(pIndicator){
-                var url = configService.getBarometerDataPath() + "&dataAccessId=getCurrentIndicatorData"+"&parampIndicator="+pIndicator;
-                $log.debug('getCurrentIndicatorData url:' + url);
+            getAvailableCountries: function(pDataset){
+                var url = configService.getBarometerDataPath() + "&dataAccessId=getAvailableCountries"+"&parampDataset="+pDataset;
+                $log.debug('getAvailableCountries url:' + url);
+                return promise(url);
+            },
+
+            /**
+             * @ngdoc method
+             * @name dvt.configModule.DataService#getFilteringCountries
+             * @methodOf dvt.configModule.DataService
+             * @description
+             * Get genders for select option list
+             */
+            getFilteringCountries: function(pDataset, countries){
+                var block1 = countries.length <= 0 ? ".*" : countries.join("|");
+                var url = configService.getBarometerDataPath() + "&dataAccessId=getFilteringCountries"+"&parampDataset="+pDataset+"&paramcountries="+block1;
+                $log.debug('getFilteringCountries url:' + url);
                 return promise(url);
             },
 
