@@ -286,7 +286,7 @@ define(function (require) {
                                                 +'</ul>'
                                                 +'</p>');
                                             angular.element('.dvt-map-tooltip .country-name').text( this.label );
-                                            angular.element('.dvt-map-tooltip .data1').html( '<label>' + i18nLiterals['L20615'] +'</label>'+this.medianAge+' years' );
+                                            angular.element('.dvt-map-tooltip .data1').html( '<label>' + i18nLiterals['L20615'] +'</label>'+this.medianAge+' '+i18nLiterals['L20620'] );
                                             angular.element('.dvt-map-tooltip .data2').html( '<label>' + i18nLiterals['L20616'] +'</label>'+this.ageingWorkers+' %' );
                                             angular.element('.dvt-map-tooltip .data3').html( '<label>' + i18nLiterals['L20617'] +'</label>'+this.eRateTotal+' %' );
                                             angular.element('.dvt-map-tooltip .data4').html( '<label>' + i18nLiterals['L20618'] +'</label>'+this.eRateMale+' %' );
