@@ -183,8 +183,6 @@ define(function (require) {
                                 Raphael.fn.map = function () {
                                     $log.debug("Start Raphael");
 
-                                    //$log.warn(definition.data);
-
                                     var noEU = mapProvider.getNotEUCountries();
 
                                     // colors
@@ -308,7 +306,7 @@ define(function (require) {
                                                 }
                                                 
                                             });
-/*
+                                            /*
                                             var bbox = this.getBBox();
 
                                             var tooltipConf = mapProvider.getTooltipConfiguration();
@@ -404,7 +402,7 @@ define(function (require) {
                                             this.animate({
                                                 opacity:1
                                             },100);
-/*
+                                        /*
                                            //this._label.group.remove();
                                            this._label.country.remove();
                                            this._label.medianAge.remove();
@@ -414,7 +412,7 @@ define(function (require) {
                                            this._label.eRateFemale.remove();
                                            this._label.remove();
                                            $('.dvt-map-tooltip').remove();
-*/
+                                        */
                                            angular.element('.dvt-map-tooltip').remove();
                                         }
                                     };
@@ -459,7 +457,10 @@ define(function (require) {
                                             if(mapProvider.nonEUCountry(index)){
                                                 path.attr({
                                                     stroke: strokeShapeColor,
+                                                    //fill: 'url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/diagonal-stripes.svg)',
                                                     fill: 'url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/diagonal-stripes.png)',
+                                                    'fill-opacity': dvtUtils.getOpacityCountries(countryInfo.value, minMaxValues[0], minMaxValues[1], minMaxValues[2], index),
+                                                    //fill: dvtUtils.getRangeColors( countryInfo.value, minMaxValues[0], minMaxValues[1], minMaxValues[2], index),
                                                     "stroke-opacity": 1.0
                                                 }); 
                                             }else{
@@ -545,10 +546,7 @@ define(function (require) {
                                             });
                                         }
                                     }
-
-
                                 };
-
 
                                 /* Create map shape */
                                 var paper = Raphael(scope.id, attributes.width || 800, attributes.height || 800);
@@ -566,8 +564,13 @@ define(function (require) {
 
                                 paper.canvas.setAttribute('preserveAspectRatio', 'xMaxYMin'); // always scale to fill container, preserving aspect ratio.
 
-                                // render map
-                                paper.map();
+                                //try{
+                                    // render map
+                                    paper.map();
+                                /*}catch(error){
+                                    $log.warn('error al renderizar el mapa');
+                                    $log.error(error);
+                                }*/
                             }
                         };
 

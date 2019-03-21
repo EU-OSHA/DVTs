@@ -371,9 +371,6 @@
   <DataAccess access="public" connection="dvt_conn" id="getAvailableEconomicSectorCountries" type="sql">
     <Cache duration="3600" enabled="true" />
     <Columns />
-    <Parameters>
-      <Parameter default="AT" name="pCountry" type="String" />
-    </Parameters>
     <Query>
       SELECT DISTINCT(n.literal_id) as country_name, n.country_code as country_code
       FROM nuts n
@@ -381,8 +378,7 @@
       ON n.id = p.nuts_id
       INNER JOIN value v
       ON v.profile_id = p.id
-      WHERE v.indicator_id IN (31, 36, 37, 38, 39, 40) 
-      AND n.country_code not in (${pCountry})
+      WHERE v.indicator_id IN (31, 36, 37, 38, 39, 40)
       ORDER BY country_name ASC;
     </Query>
   </DataAccess>
@@ -668,6 +664,27 @@
     </Query>
   </DataAccess>
 
+  <!-- WORKFORCE PROFILE || get min and max value of selected indicators -->
+  <DataAccess access="public" connection="dvt_conn" id="getMinMaxValues" type="sql">
+    <Cache duration="3600" enabled="true" />
+    <Columns />
+    <Parameters>
+      <Parameter default="6" name="pDataset" type="Numeric" />
+      <Parameter default="37" name="pIndicator" type="Numeric" />
+      <Parameter default="0" name="pSubIndicator" type="Numeric" />
+    </Parameters>
+    <Query>
+      SELECT IF(${pSubIndicator} != 0, MIN(v.value*100), MIN(v.value)) as min_value, 
+      IF(${pSubIndicator} != 0, MAX(v.value*100), MAX(v.value)) as max_value
+      FROM nuts n, profile p, value v, dataset d
+      WHERE n.id = p.nuts_id 
+      AND v.profile_id = p.id 
+      AND d.id = ${pDataset} AND d.id = v.dataset_id
+      AND v.indicator_id = ${pIndicator}
+      AND (p.gender_id IS NULL OR p.gender_id = ${pSubIndicator})
+    </Query>
+  </DataAccess>
+
   <!-- STEERING OF OSH || get indicators for select -->
   <DataAccess access="public" connection="dvt_conn" id="getRegulationIndicators" type="sql">
     <Cache duration="3600" enabled="true" />
@@ -678,7 +695,7 @@
     <Query>
       SELECT id, literal_id 
       FROM indicator 
-      WHERE id IN (44, 45, 46, 47, 48, 49)
+      WHERE id IN (40, 41, 42, 43, 44, 45)
     </Query>
   </DataAccess>
 
@@ -699,5 +716,5 @@
       AND n.country_code = ${pCountry}
     </Query>
   </DataAccess>
-  
+
 </CDADescriptor>

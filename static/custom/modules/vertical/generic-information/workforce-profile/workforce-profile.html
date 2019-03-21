@@ -62,8 +62,19 @@
             group-color="groupColor"
             data="data">
           </dvt-map>
-        <!-- END CONTENT -->
         </div>     
+    </section>
+
+    <section class="survey--map--block">
+      <div class="map--block center-text container">
+        <span>Less than <span data-ng-bind="minMaxValues.minValue + minMaxValues.range"></span>% | </span>
+        <span>
+          <span data-ng-bind="minMaxValues.minValue + minMaxValues.range"></span>% - <span data-ng-bind="minMaxValues.minValue + minMaxValues.range*2"></span>% | 
+        </span>
+        <span>
+          <span data-ng-bind="minMaxValues.maxValue - minMaxValues.range*2"></span>% - <span data-ng-bind="minMaxValues.maxValue - minMaxValues.range"></span>% | </span>
+        <span>More than <span data-ng-bind="minMaxValues.maxValue - minMaxValues.range"></span>%</span>
+      </div>     
     </section>
 
     <section class="survey--map--block-mobile">
@@ -105,6 +116,7 @@
         </div>
       </div>      
     </section>
+    <!-- END CONTENT -->
 </section>
 
 </dvt-dashboard>

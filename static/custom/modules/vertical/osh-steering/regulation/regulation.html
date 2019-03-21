@@ -44,46 +44,185 @@
     <div class="line background-main-light"></div>
   </div>
 
-  <section class="container section--page full-tablet" ng-controller="RegulationController">
-    <div class="column--grid--block" id="tab1">
-      <!-- Secondary Legislation -->
-        <div class="column--item first">
-          <div class="">
-              <img  class="flags--wrapper" ng-src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/flag/at.png">
-          </div>
-          <h2 >Background</h2>
-          <div class="columm--item--content">
-            <p>Main reasons for the strategy:</p>
-            <ul>
-              <li>The right to work is a human right. This right means that every worker is entitled to a healthy and safe working environment. The promotion of wellbeing at work in all its aspects is primordial for protecting workers, for preserving their health and for ensuring they are motivated when doing their job.</li>
-              <li>The promotion of the wellbeing of workers offers added value to every individual company. Unhealthy and unsafe working conditions reduce productivity, which ultimately results in dismissals, closures and bankruptcies. Poor working conditions are also a form of unfair competition between businesses. And so, a lack of wellbeing at work is also a social-economic injustice.</li>
-              <li>Insufficient attention to wellbeing at work inevitably causes an increase in occupational health problems, which in turn has an impact on the expenditure of social security and social protection systems and so on the community as a whole. On the other hand, the promotion of wellbeing at work contributes to improving public health and the availability of workers in companies. As a result, the productivity and the competitiveness of companies is improved. This also has favourable consequences for the prosperity of our society as a whole</li>
-              <li>A global approach to workers’ wellbeing does not end at the entrance to the plant: a healthy employee works better but vice versa healthy and safe working conditions will also improve overall health. As a result, several levels of authority are involved in the implementation of this global plan: the federal Minister for Employment, as well as the federal Minister of Social Affairs and Public Health, the Communities and the Regions. Consultation on various levels will thus be necessary, depending on the proposed actions.</li>
-            </ul>
-          </div>
-          <p class="see-more"><a href="">See more<i class="fa fa-angle-down" aria-hidden="true"></i></a></p>        
+  <section class="container section--page full-tablet">
+    <!-- Secondary Legislation -->
+    <div class="column--grid--block" id="tab1" data-ng-if="pIndicator == 'secondary-legislation'">
+      <div class="column--item first">
+        <div class="">
+          <img  class="flags--wrapper" ng-src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/flag/{{::country1Data.country_code.toLowerCase()}}.png">
         </div>
+        <h2 data-ng-bind="i18nLiterals.L297"></h2>
+        <div class="columm--item--content">
+          <div data-ng-bind-html="i18nLiterals['L'+country1Data.text1]"></div>
+          <div data-ng-bind-html="i18nLiterals['L'+country1Data.text2]"></div>
+          <div data-ng-bind-html="i18nLiterals['L'+country1Data.text3]"></div>
+          <div data-ng-bind-html="i18nLiterals['L'+country1Data.text4]"></div>
+          <div data-ng-bind-html="i18nLiterals['L'+country1Data.text5]"></div>
+          <div data-ng-bind-html="i18nLiterals['L'+country1Data.text6]"></div>
+          <div data-ng-bind-html="i18nLiterals['L'+country1Data.text7]"></div>
+          <!--<ul>
+            <li>The right to work is a human right. This right means that every worker is entitled to a healthy and safe working environment. The promotion of wellbeing at work in all its aspects is primordial for protecting workers, for preserving their health and for ensuring they are motivated when doing their job.</li>
+            <li>The promotion of the wellbeing of workers offers added value to every individual company. Unhealthy and unsafe working conditions reduce productivity, which ultimately results in dismissals, closures and bankruptcies. Poor working conditions are also a form of unfair competition between businesses. And so, a lack of wellbeing at work is also a social-economic injustice.</li>
+            <li>Insufficient attention to wellbeing at work inevitably causes an increase in occupational health problems, which in turn has an impact on the expenditure of social security and social protection systems and so on the community as a whole. On the other hand, the promotion of wellbeing at work contributes to improving public health and the availability of workers in companies. As a result, the productivity and the competitiveness of companies is improved. This also has favourable consequences for the prosperity of our society as a whole</li>
+            <li>A global approach to workers’ wellbeing does not end at the entrance to the plant: a healthy employee works better but vice versa healthy and safe working conditions will also improve overall health. As a result, several levels of authority are involved in the implementation of this global plan: the federal Minister for Employment, as well as the federal Minister of Social Affairs and Public Health, the Communities and the Regions. Consultation on various levels will thus be necessary, depending on the proposed actions.</li>
+          </ul>-->
+        </div>
+        <p class="see-more"><a href="">See more<i class="fa fa-angle-down" aria-hidden="true"></i></a></p>        
+      </div>
 
-        <div class="column--item second" data-ng-if="pCountry2!=0">
+        <div class="column--item second" data-ng-if="pCountry2 != 0">
           <div class="">
-              <img  class="flags--wrapper" ng-src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/flag/be.png">
+            <img  class="flags--wrapper" ng-src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/flag/{{::country2Data.country_code.toLowerCase()}}.png">
           </div>
-          <h2>Background</h2>
+          <h2 data-ng-bind="i18nLiterals.L297"></h2>
           <div class="columm--item--content">
-            <p>Vision:</p>
+            <div data-ng-bind-html="i18nLiterals['L'+country2Data.text1]"></div>
+            <div data-ng-bind-html="i18nLiterals['L'+country2Data.text2]"></div>
+            <div data-ng-bind-html="i18nLiterals['L'+country2Data.text3]"></div>
+            <div data-ng-bind-html="i18nLiterals['L'+country2Data.text4]"></div>
+            <div data-ng-bind-html="i18nLiterals['L'+country2Data.text5]"></div>
+            <div data-ng-bind-html="i18nLiterals['L'+country2Data.text6]"></div>
+            <div data-ng-bind-html="i18nLiterals['L'+country2Data.text7]"></div>
+            <!--<p>Vision:</p>
             <ul>
               <li>The right to work is a human right. This right means that every worker is entitled to a healthy and safe working environment. The promotion of wellbeing at work in all its aspects is primordial for protecting workers, for preserving their health and for ensuring they are motivated when doing their job.</li>
               <li>The promotion of the wellbeing of workers offers added value to every individual company. Unhealthy and unsafe working conditions reduce productivity, which ultimately results in dismissals, closures and bankruptcies. Poor working conditions are also a form of unfair competition between businesses. And so, a lack of wellbeing at work is also a social-economic injustice.</li>
               <li>Insufficient attention to wellbeing at work inevitably causes an increase in occupational health problems, which in turn has an impact on the expenditure of social security and social protection systems and so on the community as a whole. On the other hand, the promotion of wellbeing at work contributes to improving public health and the availability of workers in companies. As a result, the productivity and the competitiveness of companies is improved. This also has favourable consequences for the prosperity of our society as a whole</li>
               <li>A global approach to workers’ wellbeing does not end at the entrance to the plant: a healthy employee works better but vice versa healthy and safe working conditions will also improve overall health. As a result, several levels of authority are involved in the implementation of this global plan: the federal Minister for Employment, as well as the federal Minister of Social Affairs and Public Health, the Communities and the Regions. Consultation on various levels will thus be necessary, depending on the proposed actions.</li>
-            </ul>
+            </ul>-->
           </div>
           <p class="see-more"><a href="">See more<i class="fa fa-angle-down" aria-hidden="true"></i></a></p>  
         </div>
     </div>
+
+    <!-- Derogations -->
+    <div class="column--grid--block" id="tab2" data-ng-if="pIndicator == 'derogations'">
+      <div class="column--item first">
+        <div class="">
+          <img  class="flags--wrapper" ng-src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/flag/{{::country1Data.country_code.toLowerCase()}}.png">
+        </div>
+        <h2 data-ng-bind="i18nLiterals.L298"></h2>
+        <div class="columm--item--content">
+          <div data-ng-bind-html="i18nLiterals['L'+country1Data.text8]"></div>
+          <div data-ng-bind-html="i18nLiterals['L'+country1Data.text9]"></div>
+        </div>
+        <p class="see-more"><a href="">See more<i class="fa fa-angle-down" aria-hidden="true"></i></a></p>        
+      </div>
+
+      <div class="column--item second" data-ng-if="pCountry2 != 0">
+        <div class="">
+          <img  class="flags--wrapper" ng-src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/flag/{{::country2Data.country_code.toLowerCase()}}.png">
+        </div>
+        <h2 data-ng-bind="i18nLiterals.L298"></h2>
+        <div class="columm--item--content">
+          <div data-ng-bind-html="i18nLiterals['L'+country2Data.text8]"></div>
+          <div data-ng-bind-html="i18nLiterals['L'+country2Data.text9]"></div>
+        </div>
+        <p class="see-more"><a href="">See more<i class="fa fa-angle-down" aria-hidden="true"></i></a></p>  
+      </div>
+    </div>
+
+    <!-- Transitional period -->
+    <div class="column--grid--block" id="tab3" data-ng-if="pIndicator == 'transitional-period'">
+      <div class="column--item first">
+        <div class="">
+          <img  class="flags--wrapper" ng-src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/flag/{{::country1Data.country_code.toLowerCase()}}.png">
+        </div>
+        <h2 data-ng-bind="i18nLiterals.L299"></h2>
+        <div class="columm--item--content">
+          <div data-ng-bind-html="i18nLiterals['L'+country1Data.text10]"></div>
+        </div>
+        <p class="see-more"><a href="">See more<i class="fa fa-angle-down" aria-hidden="true"></i></a></p>        
+      </div>
+
+      <div class="column--item second" data-ng-if="pCountry2 != 0">
+        <div class="">
+          <img  class="flags--wrapper" ng-src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/flag/{{::country2Data.country_code.toLowerCase()}}.png">
+        </div>
+        <h2 data-ng-bind="i18nLiterals.L299"></h2>
+        <div class="columm--item--content">
+          <div data-ng-bind-html="i18nLiterals['L'+country2Data.text10]"></div>
+        </div>
+        <p class="see-more"><a href="">See more<i class="fa fa-angle-down" aria-hidden="true"></i></a></p>  
+      </div>
+    </div>
+
+    <!-- RA Compliance -->
+    <div class="column--grid--block" id="tab4" data-ng-if="pIndicator == 'ra-compliance'">
+      <div class="column--item first">
+        <div class="">
+          <img  class="flags--wrapper" ng-src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/flag/{{::country1Data.country_code.toLowerCase()}}.png">
+        </div>
+        <h2 data-ng-bind="i18nLiterals.L300"></h2>
+        <div class="columm--item--content">
+          <div data-ng-bind-html="i18nLiterals['L'+country1Data.text11]"></div>
+        </div>
+        <p class="see-more"><a href="" data-ng-bind="i18nLiterals.L20641"><i class="fa fa-angle-down" aria-hidden="true"></i></a></p>        
+      </div>
+
+      <div class="column--item second" data-ng-if="pCountry2 != 0">
+        <div class="">
+          <img  class="flags--wrapper" ng-src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/flag/{{::country2Data.country_code.toLowerCase()}}.png">
+        </div>
+        <h2 data-ng-bind="i18nLiterals.L300"></h2>
+        <div class="columm--item--content">
+          <div data-ng-bind-html="i18nLiterals['L'+country2Data.text11]"></div>
+        </div>
+        <p class="see-more"><a href="">See more<i class="fa fa-angle-down" aria-hidden="true"></i></a></p>  
+      </div>
+    </div>
+
+    <!-- Exemptions -->
+    <div class="column--grid--block" id="tab5" data-ng-if="pIndicator == 'exemptions'">
+      <div class="column--item first">
+        <div class="">
+          <img  class="flags--wrapper" ng-src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/flag/{{::country1Data.country_code.toLowerCase()}}.png">
+        </div>
+        <h2 data-ng-bind="i18nLiterals.L301"></h2>
+        <div class="columm--item--content">
+          <div data-ng-bind-html="i18nLiterals['L'+country1Data.text12]"></div>
+        </div>
+        <p class="see-more"><a href="">See more<i class="fa fa-angle-down" aria-hidden="true"></i></a></p>        
+      </div>
+
+      <div class="column--item second" data-ng-if="pCountry2 != 0">
+        <div class="">
+          <img  class="flags--wrapper" ng-src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/flag/{{::country2Data.country_code.toLowerCase()}}.png">
+        </div>
+        <h2 data-ng-bind="i18nLiterals.L301"></h2>
+        <div class="columm--item--content">
+          <div data-ng-bind-html="i18nLiterals['L'+country2Data.text12]"></div>
+        </div>
+        <p class="see-more"><a href="">See more<i class="fa fa-angle-down" aria-hidden="true"></i></a></p>  
+      </div>
+    </div>
+
+    <!-- SMES Difficulties -->
+    <div class="column--grid--block" id="tab6" data-ng-if="pIndicator == 'smes-difficulties'">
+      <div class="column--item first">
+        <div class="">
+          <img  class="flags--wrapper" ng-src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/flag/{{::country1Data.country_code.toLowerCase()}}.png">
+        </div>
+        <h2 data-ng-bind="i18nLiterals.L302"></h2>
+        <div class="columm--item--content">
+          <div data-ng-bind-html="i18nLiterals['L'+country1Data.text13]"></div>
+        </div>
+        <p class="see-more"><a href="">See more<i class="fa fa-angle-down" aria-hidden="true"></i></a></p>        
+      </div>
+
+      <div class="column--item second" data-ng-if="pCountry2 != 0">
+        <div class="">
+          <img  class="flags--wrapper" ng-src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/flag/{{::country2Data.country_code.toLowerCase()}}.png">
+        </div>
+        <h2 data-ng-bind="i18nLiterals.L302"></h2>
+        <div class="columm--item--content">
+          <div data-ng-bind-html="i18nLiterals['L'+country2Data.text13]"></div>
+        </div>
+        <p class="see-more"><a href="">See more<i class="fa fa-angle-down" aria-hidden="true"></i></a></p>  
+      </div>
+    </div>
      
-     <div class="column--grid--block" id="tab2" data-ng-class="{'active': pAnchor == 'secondary-legislation'}">
-        <!-- Derogations  -->
+    <!--<div class="column--grid--block" id="tab2" data-ng-class="{'active': pAnchor == 'secondary-legislation'}">
           <div class="column--item first">
             <div class="">
                 <img  class="flags--wrapper" ng-src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/flag/at.png">
@@ -117,7 +256,7 @@
             </div>
             <p class="see-more"><a href="">See more<i class="fa fa-angle-down" aria-hidden="true"></i></a></p>  
           </div>
-      </div>
+    </div>-->
 
   </section>
 </dvt-dashboard>

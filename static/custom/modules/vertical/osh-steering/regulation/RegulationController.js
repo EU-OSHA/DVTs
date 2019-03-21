@@ -50,25 +50,22 @@ define(function (require) {
     /******************************************************************************|
     |                                DATA LOAD                                     |
     |******************************************************************************/
-      dataService.getAvailableEconomicSectorCountries($scope.pCountry2).then(function (data) {
+      dataService.getRegulationsCountries($scope.pCountry2).then(function (data) {
         data.data.resultset.map(function (elem) {
           var param = (!!$stateParams.filter) ? $stateParams.filter : undefined;
-          $scope.countriesDataFor.push({
-            country: elem[0],
-            country_code: elem[1]
-          });
-        });
-      }).catch(function (err) {
-          throw err;
-      });
+          if(elem[1] != $scope.pCountry2){
+              $scope.countriesDataFor.push({
+              country: elem[0],
+              country_code: elem[1]
+            });
+          }
 
-      dataService.getAvailableEconomicSectorCountries($scope.pCountry1).then(function (data) {
-        data.data.resultset.map(function (elem) {
-          var param = (!!$stateParams.filter) ? $stateParams.filter : undefined;
-          $scope.countriesCompareWith.push({
-            country: elem[0],
-            country_code: elem[1]
-          });
+          if(elem[1] != $scope.pCountry1){
+            $scope.countriesCompareWith.push({
+              country: elem[0],
+              country_code: elem[1]
+            });
+          }
         });
       }).catch(function (err) {
           throw err;
@@ -108,7 +105,6 @@ define(function (require) {
             text13: elem[14]
           };
         });
-        $log.warn($scope.country1Data);
       }).catch(function (err) {
           throw err;
       });
@@ -133,7 +129,6 @@ define(function (require) {
             text13: elem[14]
           };
         });
-        $log.warn($scope.country2Data);
       }).catch(function (err) {
           throw err;
       });

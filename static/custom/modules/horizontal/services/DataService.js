@@ -327,8 +327,8 @@ define(function () {
              * @description
              * Gets all countries available in Economic and sector profiles view
              */
-            getAvailableEconomicSectorCountries: function (pCountry) {
-                var url = configService.getBarometerDataPath() + "&dataAccessId=getAvailableEconomicSectorCountries"+"&parampCountry="+pCountry;
+            getAvailableEconomicSectorCountries: function () {
+                var url = configService.getBarometerDataPath() + "&dataAccessId=getAvailableEconomicSectorCountries";
                 $log.debug('getAvailableEconomicSectorCountries url:' + url);
                 return promise(url);
             },
@@ -517,6 +517,20 @@ define(function () {
             getFemaleEmploymentData: function(pDataset){
                 var url = configService.getBarometerDataPath() + "&dataAccessId=getFemaleEmploymentData"+"&parampDataset="+pDataset;
                 $log.debug('getFemaleEmploymentData url:' + url);
+                return promise(url);
+            },
+
+            /**
+             * @ngdoc method
+             * @name dvt.configModule.DataService#getMinMaxValues
+             * @methodOf dvt.configModule.DataService
+             * @description
+             * Get genders for select option list
+             */
+            getMinMaxValues: function(pDataset, pIndicator, pSubIndicator){
+                var url = configService.getBarometerDataPath() + "&dataAccessId=getMinMaxValues"+"&parampDataset="+pDataset+"&parampIndicator="
+                +pIndicator+"&parampSubIndicator="+pSubIndicator;
+                $log.debug('getMinMaxValues url:' + url);
                 return promise(url);
             },
             

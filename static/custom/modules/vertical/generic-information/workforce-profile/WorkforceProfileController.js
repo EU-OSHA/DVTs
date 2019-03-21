@@ -30,6 +30,11 @@ define(function (require) {
     $scope.selectedSubIndicator = $stateParams.pSubIndicator;
 
     $scope.genders = [];
+    $scope.minMaxValues = {
+      minValue: 0,
+      maxValue: 0,
+      range: 0
+    };
 
     //Countries
     $scope.countries = [];
@@ -63,6 +68,23 @@ define(function (require) {
       .then(function (result) {
         $scope = dataService.createGroupCountryList($scope, result.data);
     });
+
+    if($scope.selectedIndicator == 'median-age') {
+      $scope.pIndicator = 37;
+      $scope.pSubIndicator = 0;
+    } else if($scope.selectedIndicator == 'employment-rate' && $scope.selectedSubIndicator == 'ageing-workers'){
+      $scope.pIndicator = 38;
+      $scope.pSubIndicator = 0;
+    } else if($scope.selectedIndicator == 'employment-rate' && $scope.selectedSubIndicator == 'Total'){
+      $scope.pIndicator = 39;
+      $scope.pSubIndicator = 1;
+    } else if($scope.selectedIndicator == 'employment-rate' && $scope.selectedSubIndicator == 'Male'){
+      $scope.pIndicator = 39;
+      $scope.pSubIndicator = 2;
+    } else if($scope.selectedIndicator == 'employment-rate' && $scope.selectedSubIndicator == 'Female'){
+      $scope.pIndicator = 39;
+      $scope.pSubIndicator = 3;
+    }
 
     $scope.openSelect = function($event){
 
@@ -182,6 +204,16 @@ define(function (require) {
             $scope.data.femaleEmployment[row[0]]={};
           $scope.data.femaleEmployment[row[0]].country_name = row[1];
           $scope.data.femaleEmployment[row[0]].value = row[2].toFixed(1);
+        });
+      }).catch(function (err) {
+          throw err;
+      });
+
+      dataService.getMinMaxValues($scope.datasetEurostat, $scope.pIndicator, $scope.pSubIndicator).then(function (data) {
+        data.data.resultset.map(function (elem) {
+          $scope.minMaxValues.minValue = Math.round(elem[0]);
+          $scope.minMaxValues.maxValue = Math.round(elem[1]);
+          $scope.minMaxValues.range = ($scope.minMaxValues.maxValue - $scope.minMaxValues.minValue) / 4;
         });
       }).catch(function (err) {
           throw err;
