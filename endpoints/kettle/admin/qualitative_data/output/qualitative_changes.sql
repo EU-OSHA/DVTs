@@ -1,718 +1,38 @@
--- Insert the new tool
-INSERT INTO tool (name) VALUES ('osha_dvt_barometer');
+-- The tool is already created
 
-INSERT INTO dataset (name, source, date_from, date_to) VALUES ("BAROMETER_DATA", "EUROSTAT", "2010-01-01", "2016-12-31");
-
-INSERT INTO dataset (name, source, date_from, date_to) VALUES ("BAROMETER_DATA", "KOOP and Eurogip files", "2018-01-01", null);
-
-INSERT INTO dataset (name, source, date_from, date_to) VALUES ("BAROMETER_DATA", "EUROSTAT
-DG Employment Research team – EU-OSHA", "2010-01-01", "2016-12-31");
-
-INSERT INTO dataset (name, source, date_from, date_to) VALUES ("BAROMETER_DATA", "EUROSTAT", "2017-01-01", null);
-
-INSERT INTO dataset (name, source, date_from, date_to) VALUES ("BAROMETER_DATA", "DG EMPL", "2015-01-01", null);
-
-INSERT INTO dataset (name, source, date_from, date_to) VALUES ("BAROMETER_DATA", "OSHWiki
-National Strategies reports", "2018-01-01", null);
-
-INSERT INTO dataset (name, source, date_from, date_to) VALUES ("BAROMETER_DATA", "EUROSTAT
-DG Employment Research team – EU-OSHA", "2016-01-01", null);
-
-INSERT INTO dataset (name, source, date_from, date_to) VALUES ("BAROMETER_DATA", "Eurofound EWCS Data", "2015-01-01", null);
-
-INSERT INTO dataset (name, source, date_from, date_to) VALUES ("BAROMETER_DATA", "EUROSTAT", "2013-01-01", null);
-
-INSERT INTO dataset (name, source, date_from, date_to) VALUES ("BAROMETER_DATA", "SLIC Reports (DG EMPL)", "2018-01-01", null);
-
-INSERT INTO dataset (name, source, date_from, date_to) VALUES ("BAROMETER_DATA", "DG EMPL", "2018-01-01", null);
-
-INSERT INTO dataset (name, source, date_from, date_to) VALUES ("BAROMETER_DATA", "EUROSTAT", "2016-01-01", null);
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);
-INSERT INTO literal (id, chart_id, section_id, type) VALUES (@maxId, NULL, NULL, "INDICATOR_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@maxId, "EN", 1, "OSH authorities and inspection services");
-INSERT INTO indicator (name, literal_id) VALUES ("OSH authorities and inspection services", @maxId);
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);
-INSERT INTO literal (id, chart_id, section_id, type) VALUES (@maxId, NULL, NULL, "INDICATOR_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@maxId, "EN", 1, "Compensation and insurance bodies");
-INSERT INTO indicator (name, literal_id) VALUES ("Compensation and insurance bodies", @maxId);
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);
-INSERT INTO literal (id, chart_id, section_id, type) VALUES (@maxId, NULL, NULL, "INDICATOR_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@maxId, "EN", 1, "Prevention institute");
-INSERT INTO indicator (name, literal_id) VALUES ("Prevention institute", @maxId);
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);
-INSERT INTO literal (id, chart_id, section_id, type) VALUES (@maxId, NULL, NULL, "INDICATOR_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@maxId, "EN", 1, "Standardisation bodies");
-INSERT INTO indicator (name, literal_id) VALUES ("Standardisation bodies", @maxId);
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);
-INSERT INTO literal (id, chart_id, section_id, type) VALUES (@maxId, NULL, NULL, "INDICATOR_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@maxId, "EN", 1, "Company size");
-INSERT INTO indicator (name, literal_id) VALUES ("Company size", @maxId);
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);
-INSERT INTO literal (id, chart_id, section_id, type) VALUES (@maxId, NULL, NULL, "INDICATOR_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@maxId, "EN", 1, "Employment per sector");
-INSERT INTO indicator (name, literal_id) VALUES ("Employment per sector", @maxId);
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);
-INSERT INTO literal (id, chart_id, section_id, type) VALUES (@maxId, NULL, NULL, "INDICATOR_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@maxId, "EN", 1, "Employment rate");
-INSERT INTO indicator (name, literal_id) VALUES ("Employment rate", @maxId);
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);
-INSERT INTO literal (id, chart_id, section_id, type) VALUES (@maxId, NULL, NULL, "INDICATOR_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@maxId, "EN", 1, "Unemployment rate");
-INSERT INTO indicator (name, literal_id) VALUES ("Unemployment rate", @maxId);
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);
-INSERT INTO literal (id, chart_id, section_id, type) VALUES (@maxId, NULL, NULL, "INDICATOR_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@maxId, "EN", 1, "GPD per capita in relation to EU28 average");
-INSERT INTO indicator (name, literal_id) VALUES ("GPD per capita in relation to EU28 average", @maxId);
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);
-INSERT INTO literal (id, chart_id, section_id, type) VALUES (@maxId, NULL, NULL, "INDICATOR_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@maxId, "EN", 1, "Income per capita");
-INSERT INTO indicator (name, literal_id) VALUES ("Income per capita", @maxId);
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);
-INSERT INTO literal (id, chart_id, section_id, type) VALUES (@maxId, NULL, NULL, "INDICATOR_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@maxId, "EN", 1, "Median age");
-INSERT INTO indicator (name, literal_id) VALUES ("Median age of population", @maxId);
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);
-INSERT INTO literal (id, chart_id, section_id, type) VALUES (@maxId, NULL, NULL, "INDICATOR_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@maxId, "EN", 1, "Ageing workers");
-INSERT INTO indicator (name, literal_id) VALUES ("Ageing workers (55 to 64) employment rate", @maxId);
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);
-INSERT INTO literal (id, chart_id, section_id, type) VALUES (@maxId, NULL, NULL, "INDICATOR_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@maxId, "EN", 1, "Total, male and female employment rate");
-INSERT INTO indicator (name, literal_id) VALUES ("Total, male and female employment rate", @maxId);
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);
-INSERT INTO literal (id, chart_id, section_id, type) VALUES (@maxId, NULL, NULL, "INDICATOR_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@maxId, "EN", 1, "Secondary legislation");
-INSERT INTO indicator (name, literal_id) VALUES ("Secondary legislation", @maxId);
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);
-INSERT INTO literal (id, chart_id, section_id, type) VALUES (@maxId, NULL, NULL, "INDICATOR_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@maxId, "EN", 1, "Derogations");
-INSERT INTO indicator (name, literal_id) VALUES ("Derogations", @maxId);
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);
-INSERT INTO literal (id, chart_id, section_id, type) VALUES (@maxId, NULL, NULL, "INDICATOR_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@maxId, "EN", 1, "Transitional period");
-INSERT INTO indicator (name, literal_id) VALUES ("Transitional period", @maxId);
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);
-INSERT INTO literal (id, chart_id, section_id, type) VALUES (@maxId, NULL, NULL, "INDICATOR_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@maxId, "EN", 1, "RA compliance");
-INSERT INTO indicator (name, literal_id) VALUES ("RA compliance", @maxId);
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);
-INSERT INTO literal (id, chart_id, section_id, type) VALUES (@maxId, NULL, NULL, "INDICATOR_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@maxId, "EN", 1, "Exemptions");
-INSERT INTO indicator (name, literal_id) VALUES ("Exemptions", @maxId);
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);
-INSERT INTO literal (id, chart_id, section_id, type) VALUES (@maxId, NULL, NULL, "INDICATOR_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@maxId, "EN", 1, "SMEs difficulties");
-INSERT INTO indicator (name, literal_id) VALUES ("SMEs difficulties", @maxId);
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);
-INSERT INTO literal (id, chart_id, section_id, type) VALUES (@maxId, NULL, NULL, "INDICATOR_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@maxId, "EN", 1, "Basic information");
-INSERT INTO indicator (name, literal_id) VALUES ("Basic information", @maxId);
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);
-INSERT INTO literal (id, chart_id, section_id, type) VALUES (@maxId, NULL, NULL, "INDICATOR_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@maxId, "EN", 1, "Background");
-INSERT INTO indicator (name, literal_id) VALUES ("Background", @maxId);
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);
-INSERT INTO literal (id, chart_id, section_id, type) VALUES (@maxId, NULL, NULL, "INDICATOR_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@maxId, "EN", 1, "Characteristics and objectives");
-INSERT INTO indicator (name, literal_id) VALUES ("Characteristics and objectives", @maxId);
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);
-INSERT INTO literal (id, chart_id, section_id, type) VALUES (@maxId, NULL, NULL, "INDICATOR_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@maxId, "EN", 1, "Details and activity");
-INSERT INTO indicator (name, literal_id) VALUES ("Details and activity", @maxId);
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);
-INSERT INTO literal (id, chart_id, section_id, type) VALUES (@maxId, NULL, NULL, "INDICATOR_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@maxId, "EN", 1, "Actors and stakeholders");
-INSERT INTO indicator (name, literal_id) VALUES ("Actors and stakeholders", @maxId);
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);
-INSERT INTO literal (id, chart_id, section_id, type) VALUES (@maxId, NULL, NULL, "INDICATOR_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@maxId, "EN", 1, "Evaluation");
-INSERT INTO indicator (name, literal_id) VALUES ("Evaluation", @maxId);
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);
-INSERT INTO literal (id, chart_id, section_id, type) VALUES (@maxId, NULL, NULL, "INDICATOR_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@maxId, "EN", 1, "Response to EU Challenges");
-INSERT INTO indicator (name, literal_id) VALUES ("Response to EU Challenges", @maxId);
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);
-INSERT INTO literal (id, chart_id, section_id, type) VALUES (@maxId, NULL, NULL, "INDICATOR_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@maxId, "EN", 1, "Non-fatal work accidents");
-INSERT INTO indicator (name, literal_id) VALUES ("Non-fatal work accidents", @maxId);
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);
-INSERT INTO literal (id, chart_id, section_id, type) VALUES (@maxId, NULL, NULL, "INDICATOR_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@maxId, "EN", 1, "Fatal work accidents");
-INSERT INTO indicator (name, literal_id) VALUES ("Fatal work accidents", @maxId);
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);
-INSERT INTO literal (id, chart_id, section_id, type) VALUES (@maxId, NULL, NULL, "INDICATOR_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@maxId, "EN", 1, "Non-fatal accidents per 100,000 workers estimated");
-INSERT INTO indicator (name, literal_id) VALUES ("Estimation of non-fatal accidents based on fatal accidents (estimated)", @maxId);
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);
-INSERT INTO literal (id, chart_id, section_id, type) VALUES (@maxId, NULL, NULL, "INDICATOR_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@maxId, "EN", 1, "Level of reporting of non-fatal accidents");
-INSERT INTO indicator (name, literal_id) VALUES ("Level of reporting of non-fatal accidents", @maxId);
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);
-INSERT INTO literal (id, chart_id, section_id, type) VALUES (@maxId, NULL, NULL, "INDICATOR_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@maxId, "EN", 1, "Satisfaction with working conditions");
-INSERT INTO indicator (name, literal_id) VALUES ("Satisfaction with working conditions", @maxId);
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);
-INSERT INTO literal (id, chart_id, section_id, type) VALUES (@maxId, NULL, NULL, "INDICATOR_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@maxId, "EN", 1, "Health negative affection");
-INSERT INTO indicator (name, literal_id) VALUES ("Health negative affection", @maxId);
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);
-INSERT INTO literal (id, chart_id, section_id, type) VALUES (@maxId, NULL, NULL, "INDICATOR_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@maxId, "EN", 1, "Health problem in the last 12 months");
-INSERT INTO indicator (name, literal_id) VALUES ("Health problem in the last 12 months", @maxId);
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);
-INSERT INTO literal (id, chart_id, section_id, type) VALUES (@maxId, NULL, NULL, "INDICATOR_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@maxId, "EN", 1, "More than 15 days of absence");
-INSERT INTO indicator (name, literal_id) VALUES ("More than 15 days of absence", @maxId);
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);
-INSERT INTO literal (id, chart_id, section_id, type) VALUES (@maxId, NULL, NULL, "INDICATOR_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@maxId, "EN", 1, "Sick at work");
-INSERT INTO indicator (name, literal_id) VALUES ("Sick at work", @maxId);
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);
-INSERT INTO literal (id, chart_id, section_id, type) VALUES (@maxId, NULL, NULL, "INDICATOR_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@maxId, "EN", 1, "Be able to do current job until 60 years old");
-INSERT INTO indicator (name, literal_id) VALUES ("Be able to do current job until 60 years old", @maxId);
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);
-INSERT INTO literal (id, chart_id, section_id, type) VALUES (@maxId, NULL, NULL, "INDICATOR_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@maxId, "EN", 1, "Use of personal protective equipment");
-INSERT INTO indicator (name, literal_id) VALUES ("Use of personal protective equipment", @maxId);
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);
-INSERT INTO literal (id, chart_id, section_id, type) VALUES (@maxId, NULL, NULL, "INDICATOR_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@maxId, "EN", 1, "Information about risks");
-INSERT INTO indicator (name, literal_id) VALUES ("Information about risks", @maxId);
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);
-INSERT INTO literal (id, chart_id, section_id, type) VALUES (@maxId, NULL, NULL, "INDICATOR_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@maxId, "EN", 1, "Job satisfaction");
-INSERT INTO indicator (name, literal_id) VALUES ("Job satisfaction", @maxId);
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);
-INSERT INTO literal (id, chart_id, section_id, type) VALUES (@maxId, NULL, NULL, "INDICATOR_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@maxId, "EN", 1, "Health at risk");
-INSERT INTO indicator (name, literal_id) VALUES ("Health at risk", @maxId);
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);
-INSERT INTO literal (id, chart_id, section_id, type) VALUES (@maxId, NULL, NULL, "INDICATOR_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@maxId, "EN", 1, "Are you exposed to vibrations from tools or machinery?");
-INSERT INTO indicator (name, literal_id) VALUES ("Exposure to vibrations", @maxId);
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);
-INSERT INTO literal (id, chart_id, section_id, type) VALUES (@maxId, NULL, NULL, "INDICATOR_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@maxId, "EN", 1, "Are you exposed to loud noise?");
-INSERT INTO indicator (name, literal_id) VALUES ("Exposure to loud noise", @maxId);
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);
-INSERT INTO literal (id, chart_id, section_id, type) VALUES (@maxId, NULL, NULL, "INDICATOR_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@maxId, "EN", 1, "Are you exposed to high temperatures?");
-INSERT INTO indicator (name, literal_id) VALUES ("Exposure to temperatures", @maxId);
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);
-INSERT INTO literal (id, chart_id, section_id, type) VALUES (@maxId, NULL, NULL, "INDICATOR_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@maxId, "EN", 1, "Are you exposed to low temperatures?");
-INSERT INTO indicator (name, literal_id) VALUES ("Exposure to low temperatures", @maxId);
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);
-INSERT INTO literal (id, chart_id, section_id, type) VALUES (@maxId, NULL, NULL, "INDICATOR_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@maxId, "EN", 1, "Smoke, powder or dust");
-INSERT INTO indicator (name, literal_id) VALUES ("Exposure to breathing in smoke, fumes, powder or dust", @maxId);
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);
-INSERT INTO literal (id, chart_id, section_id, type) VALUES (@maxId, NULL, NULL, "INDICATOR_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@maxId, "EN", 1, "Vapours");
-INSERT INTO indicator (name, literal_id) VALUES ("Exposure to breathing in vapours", @maxId);
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);
-INSERT INTO literal (id, chart_id, section_id, type) VALUES (@maxId, NULL, NULL, "INDICATOR_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@maxId, "EN", 1, "Chemical products");
-INSERT INTO indicator (name, literal_id) VALUES ("Exposure to chemical products or substances", @maxId);
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);
-INSERT INTO literal (id, chart_id, section_id, type) VALUES (@maxId, NULL, NULL, "INDICATOR_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@maxId, "EN", 1, "Infectious materials");
-INSERT INTO indicator (name, literal_id) VALUES ("Exposure to infections materials", @maxId);
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);
-INSERT INTO literal (id, chart_id, section_id, type) VALUES (@maxId, NULL, NULL, "INDICATOR_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@maxId, "EN", 1, "Does your organisation have a regular meeting in which employees can express their views about what is happening in the organisation?");
-INSERT INTO indicator (name, literal_id) VALUES ("Does your organisation have a regular meeting in which employees can express their views about what is happening in the organisation?", @maxId);
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);
-INSERT INTO literal (id, chart_id, section_id, type) VALUES (@maxId, NULL, NULL, "INDICATOR_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@maxId, "EN", 1, "Authority");
-INSERT INTO indicator (name, literal_id) VALUES ("Authority", @maxId);
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);
-INSERT INTO literal (id, chart_id, section_id, type) VALUES (@maxId, NULL, NULL, "INDICATOR_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@maxId, "EN", 1, "Scope of the Labor Inspection");
-INSERT INTO indicator (name, literal_id) VALUES ("Scope of the Labor Inspection", @maxId);
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);
-INSERT INTO literal (id, chart_id, section_id, type) VALUES (@maxId, NULL, NULL, "INDICATOR_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@maxId, "EN", 1, "Inspector powers");
-INSERT INTO indicator (name, literal_id) VALUES ("Inspector powers", @maxId);
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);
-INSERT INTO literal (id, chart_id, section_id, type) VALUES (@maxId, NULL, NULL, "INDICATOR_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@maxId, "EN", 1, "Strategy/Plan");
-INSERT INTO indicator (name, literal_id) VALUES ("Strategy/Plan", @maxId);
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);
-INSERT INTO literal (id, chart_id, section_id, type) VALUES (@maxId, NULL, NULL, "INDICATOR_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@maxId, "EN", 1, "OSH statistics");
-INSERT INTO indicator (name, literal_id) VALUES ("OSH statistics", @maxId);
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);
-INSERT INTO literal (id, chart_id, section_id, type) VALUES (@maxId, NULL, NULL, "INDICATOR_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@maxId, "EN", 1, "Surveys on Working conditions");
-INSERT INTO indicator (name, literal_id) VALUES ("Surveys on Working conditions", @maxId);
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);
-INSERT INTO literal (id, chart_id, section_id, type) VALUES (@maxId, NULL, NULL, "INDICATOR_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@maxId, "EN", 1, "Research institutes");
-INSERT INTO indicator (name, literal_id) VALUES ("Research institutes", @maxId);
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);
-INSERT INTO literal (id, chart_id, section_id, type) VALUES (@maxId, NULL, NULL, "INDICATOR_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@maxId, "EN", 1, "Time pressure");
-INSERT INTO indicator (name, literal_id) VALUES ("Time pressure - Eurofound EWCS Data", @maxId);
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);
-INSERT INTO literal (id, chart_id, section_id, type) VALUES (@maxId, NULL, NULL, "INDICATOR_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@maxId, "EN", 1, "Poor communication");
-INSERT INTO indicator (name, literal_id) VALUES ("Poor communication - Eurofound EWCS Data", @maxId);
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);
-INSERT INTO literal (id, chart_id, section_id, type) VALUES (@maxId, NULL, NULL, "INDICATOR_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@maxId, "EN", 1, "Influence");
-INSERT INTO indicator (name, literal_id) VALUES ("Influence - Eurofound EWCS Data", @maxId);
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);
-INSERT INTO literal (id, chart_id, section_id, type) VALUES (@maxId, NULL, NULL, "INDICATOR_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@maxId, "EN", 1, "Job insecurity");
-INSERT INTO indicator (name, literal_id) VALUES ("Job insecurity - Eurofound EWCS Data", @maxId);
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);
-INSERT INTO literal (id, chart_id, section_id, type) VALUES (@maxId, NULL, NULL, "INDICATOR_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@maxId, "EN", 1, "Difficult clients");
-INSERT INTO indicator (name, literal_id) VALUES ("Difficult clients - Eurofound EWCS Data", @maxId);
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);
-INSERT INTO literal (id, chart_id, section_id, type) VALUES (@maxId, NULL, NULL, "INDICATOR_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@maxId, "EN", 1, "Working hours");
-INSERT INTO indicator (name, literal_id) VALUES ("Working hours - Eurofound EWCS Data", @maxId);
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);
-INSERT INTO literal (id, chart_id, section_id, type) VALUES (@maxId, NULL, NULL, "INDICATOR_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@maxId, "EN", 1, "Discrimination");
-INSERT INTO indicator (name, literal_id) VALUES ("Discrimination - Eurofound EWCS Data", @maxId);
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);
-INSERT INTO literal (id, chart_id, section_id, type) VALUES (@maxId, NULL, NULL, "INDICATOR_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@maxId, "EN", 1, "Does your work involve tiring or painful positions?");
-INSERT INTO indicator (name, literal_id) VALUES ("Tiring or painful positions - Eurofound EWCS Data", @maxId);
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);
-INSERT INTO literal (id, chart_id, section_id, type) VALUES (@maxId, NULL, NULL, "INDICATOR_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@maxId, "EN", 1, "Does your work involve sitting?");
-INSERT INTO indicator (name, literal_id) VALUES ("Does your work involve sitting? - Eurofound EWCS Data", @maxId);
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);
-INSERT INTO literal (id, chart_id, section_id, type) VALUES (@maxId, NULL, NULL, "INDICATOR_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@maxId, "EN", 1, "Does your work involve carrying or moving heavy loads?");
-INSERT INTO indicator (name, literal_id) VALUES ("Carrying or moving heavy loads - Eurofound EWCS Data", @maxId);
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);
-INSERT INTO literal (id, chart_id, section_id, type) VALUES (@maxId, NULL, NULL, "INDICATOR_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@maxId, "EN", 1, "Does your work involve repetitve hand or arm movements?");
-INSERT INTO indicator (name, literal_id) VALUES ("Repetitive hand or arm movements - Eurofound EWCS Data", @maxId);
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);
-INSERT INTO literal (id, chart_id, section_id, type) VALUES (@maxId, NULL, NULL, "INDICATOR_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@maxId, "EN", 1, "Does your work involve lifting or moving people?");
-INSERT INTO indicator (name, literal_id) VALUES ("Lifting or moving people - Eurofound EWCS Data", @maxId);
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);
-INSERT INTO literal (id, chart_id, section_id, type) VALUES (@maxId, NULL, NULL, "INDICATOR_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@maxId, "EN", 1, "Does your organisation have a trade union, works council or a similar committee representing employees?");
-INSERT INTO indicator (name, literal_id) VALUES ("Does your organisation have a trade union, works council or a similar committee representing employees? - Eurofound EWCS Data", @maxId);
-
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);
 INSERT INTO literal (id, chart_id, section_id, type) VALUES (@maxId, NULL, NULL, "INDICATOR_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@maxId, "EN", 1, "Does your organisation have a health and safety delegate or committee?");
-INSERT INTO indicator (name, literal_id) VALUES ("Does your organisation have a health and safety delegate or committee? - Eurofound EWCS Data", @maxId);
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@maxId, "EN", 1, "Resources and timeframe");
+INSERT INTO indicator (name, literal_id) VALUES ("Resources and timeframe", @maxId);
 
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);
 INSERT INTO literal (id, chart_id, section_id, type) VALUES (@maxId, NULL, NULL, "INDICATOR_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@maxId, "EN", 1, "Non-fatal accidents per 100,000 workers reported");
-INSERT INTO indicator (name, literal_id) VALUES ("Estimation of non-fatal accidents based on fatal accidents (reported)", @maxId);
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@maxId, "EN", 1, "Relationship to EU Strategic Framework");
+INSERT INTO indicator (name, literal_id) VALUES ("Relationship to EU Strategic Framework", @maxId);
 
 SET @datasetId = (SELECT id FROM dataset  WHERE source="EUROSTAT" AND date_from="2010-01-01" AND date_to="2016-12-31");
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Income per capita");
-INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
-
-SET @datasetId = (SELECT id FROM dataset  WHERE source="KOOP and Eurogip files" AND date_from="2018-01-01");
-SET @indicatorId = (SELECT id FROM indicator WHERE name="OSH authorities and inspection services");
-INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
-
-SET @datasetId = (SELECT id FROM dataset  WHERE source="EUROSTAT
-DG Employment Research team – EU-OSHA" AND date_from="2010-01-01" AND date_to="2016-12-31");
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Non-fatal work accidents");
 INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
 
-SET @datasetId = (SELECT id FROM dataset  WHERE source="KOOP and Eurogip files" AND date_from="2018-01-01");
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Compensation and insurance bodies");
-INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
-
-SET @datasetId = (SELECT id FROM dataset  WHERE source="KOOP and Eurogip files" AND date_from="2018-01-01");
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Prevention institute");
-INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
-
-SET @datasetId = (SELECT id FROM dataset  WHERE source="KOOP and Eurogip files" AND date_from="2018-01-01");
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Standardisation bodies");
-INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
-
-SET @datasetId = (SELECT id FROM dataset  WHERE source="EUROSTAT" AND date_from="2017-01-01");
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Company size");
-INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
-
-SET @datasetId = (SELECT id FROM dataset  WHERE source="EUROSTAT" AND date_from="2017-01-01");
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Employment per sector");
-INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
-
-SET @datasetId = (SELECT id FROM dataset  WHERE source="EUROSTAT" AND date_from="2017-01-01");
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Employment rate");
-INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
-
-SET @datasetId = (SELECT id FROM dataset  WHERE source="EUROSTAT" AND date_from="2017-01-01");
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Unemployment rate");
-INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
-
-SET @datasetId = (SELECT id FROM dataset  WHERE source="EUROSTAT" AND date_from="2017-01-01");
-SET @indicatorId = (SELECT id FROM indicator WHERE name="GPD per capita in relation to EU28 average");
-INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
-
-SET @datasetId = (SELECT id FROM dataset  WHERE source="EUROSTAT" AND date_from="2017-01-01");
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Median age of population");
-INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
-
-SET @datasetId = (SELECT id FROM dataset  WHERE source="EUROSTAT" AND date_from="2017-01-01");
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Ageing workers (55 to 64) employment rate");
-INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
-
-SET @datasetId = (SELECT id FROM dataset  WHERE source="EUROSTAT" AND date_from="2017-01-01");
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Total, male and female employment rate");
-INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
-
-SET @datasetId = (SELECT id FROM dataset  WHERE source="DG EMPL" AND date_from="2015-01-01");
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Secondary legislation");
-INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
-
-SET @datasetId = (SELECT id FROM dataset  WHERE source="DG EMPL" AND date_from="2015-01-01");
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Derogations");
-INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
-
-SET @datasetId = (SELECT id FROM dataset  WHERE source="DG EMPL" AND date_from="2015-01-01");
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Transitional period");
-INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
-
-SET @datasetId = (SELECT id FROM dataset  WHERE source="DG EMPL" AND date_from="2015-01-01");
-SET @indicatorId = (SELECT id FROM indicator WHERE name="RA compliance");
-INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
-
-SET @datasetId = (SELECT id FROM dataset  WHERE source="DG EMPL" AND date_from="2015-01-01");
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Exemptions");
-INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
-
-SET @datasetId = (SELECT id FROM dataset  WHERE source="DG EMPL" AND date_from="2015-01-01");
-SET @indicatorId = (SELECT id FROM indicator WHERE name="SMEs difficulties");
-INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
-
-SET @datasetId = (SELECT id FROM dataset  WHERE source="OSHWiki
-National Strategies reports" AND date_from="2018-01-01");
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Basic information");
-INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
-
-SET @datasetId = (SELECT id FROM dataset  WHERE source="OSHWiki
-National Strategies reports" AND date_from="2018-01-01");
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Background");
-INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
-
-SET @datasetId = (SELECT id FROM dataset  WHERE source="OSHWiki
-National Strategies reports" AND date_from="2018-01-01");
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Characteristics and objectives");
-INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
-
-SET @datasetId = (SELECT id FROM dataset  WHERE source="OSHWiki
-National Strategies reports" AND date_from="2018-01-01");
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Details and activity");
-INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
-
-SET @datasetId = (SELECT id FROM dataset  WHERE source="OSHWiki
-National Strategies reports" AND date_from="2018-01-01");
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Actors and stakeholders");
-INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
-
-SET @datasetId = (SELECT id FROM dataset  WHERE source="OSHWiki
-National Strategies reports" AND date_from="2018-01-01");
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Evaluation");
-INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
-
-SET @datasetId = (SELECT id FROM dataset  WHERE source="OSHWiki
-National Strategies reports" AND date_from="2018-01-01");
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Response to EU Challenges");
-INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
-
-SET @datasetId = (SELECT id FROM dataset  WHERE source="EUROSTAT
-DG Employment Research team – EU-OSHA" AND date_from="2016-01-01");
+SET @datasetId = (SELECT id FROM dataset  WHERE source="EUROSTAT" AND date_from="2016-01-01");
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Fatal work accidents");
 INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
 
-SET @datasetId = (SELECT id FROM dataset  WHERE source="EUROSTAT
-DG Employment Research team – EU-OSHA" AND date_from="2016-01-01");
+SET @datasetId = (SELECT id FROM dataset  WHERE source="EUROSTAT" AND date_from="2016-01-01");
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Estimation of non-fatal accidents based on fatal accidents (estimated)");
 INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
 
-SET @datasetId = (SELECT id FROM dataset  WHERE source="EUROSTAT
-DG Employment Research team – EU-OSHA" AND date_from="2016-01-01");
+SET @datasetId = (SELECT id FROM dataset  WHERE source="EUROSTAT" AND date_from="2016-01-01");
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Level of reporting of non-fatal accidents");
 INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
 
-SET @datasetId = (SELECT id FROM dataset  WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Satisfaction with working conditions");
+SET @datasetId = (SELECT id FROM dataset  WHERE source="OSHWiki / National Strategies reports" AND date_from="2018-01-01");
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Resources and timeframe");
 INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
 
-SET @datasetId = (SELECT id FROM dataset  WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Health negative affection");
+SET @datasetId = (SELECT id FROM dataset  WHERE source="OSHWiki / National Strategies reports" AND date_from="2018-01-01");
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Relationship to EU Strategic Framework");
 INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
-
-SET @datasetId = (SELECT id FROM dataset  WHERE source="EUROSTAT" AND date_from="2013-01-01");
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Health problem in the last 12 months");
-INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
-
-SET @datasetId = (SELECT id FROM dataset  WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
-SET @indicatorId = (SELECT id FROM indicator WHERE name="More than 15 days of absence");
-INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
-
-SET @datasetId = (SELECT id FROM dataset  WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Sick at work");
-INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
-
-SET @datasetId = (SELECT id FROM dataset  WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Be able to do current job until 60 years old");
-INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
-
-SET @datasetId = (SELECT id FROM dataset  WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Use of personal protective equipment");
-INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
-
-SET @datasetId = (SELECT id FROM dataset  WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Information about risks");
-INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
-
-SET @datasetId = (SELECT id FROM dataset  WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Job satisfaction");
-INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
-
-SET @datasetId = (SELECT id FROM dataset  WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Health at risk");
-INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
-
-SET @datasetId = (SELECT id FROM dataset  WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Exposure to vibrations");
-INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
-
-SET @datasetId = (SELECT id FROM dataset  WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Exposure to loud noise");
-INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
-
-SET @datasetId = (SELECT id FROM dataset  WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Exposure to temperatures");
-INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
-
-SET @datasetId = (SELECT id FROM dataset  WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Exposure to low temperatures");
-INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
-
-SET @datasetId = (SELECT id FROM dataset  WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Exposure to breathing in smoke, fumes, powder or dust");
-INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
-
-SET @datasetId = (SELECT id FROM dataset  WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Exposure to breathing in vapours");
-INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
-
-SET @datasetId = (SELECT id FROM dataset  WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Exposure to chemical products or substances");
-INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
-
-SET @datasetId = (SELECT id FROM dataset  WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Exposure to infections materials");
-INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
-
-SET @datasetId = (SELECT id FROM dataset  WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Does your organisation have a regular meeting in which employees can express their views about what is happening in the organisation?");
-INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
-
-SET @datasetId = (SELECT id FROM dataset  WHERE source="SLIC Reports (DG EMPL)" AND date_from="2018-01-01");
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Authority");
-INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
-
-SET @datasetId = (SELECT id FROM dataset  WHERE source="SLIC Reports (DG EMPL)" AND date_from="2018-01-01");
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Scope of the Labor Inspection");
-INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
-
-SET @datasetId = (SELECT id FROM dataset  WHERE source="SLIC Reports (DG EMPL)" AND date_from="2018-01-01");
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Inspector powers");
-INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
-
-SET @datasetId = (SELECT id FROM dataset  WHERE source="SLIC Reports (DG EMPL)" AND date_from="2018-01-01");
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Strategy/Plan");
-INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
-
-SET @datasetId = (SELECT id FROM dataset  WHERE source="DG EMPL" AND date_from="2018-01-01");
-SET @indicatorId = (SELECT id FROM indicator WHERE name="OSH statistics");
-INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
-
-SET @datasetId = (SELECT id FROM dataset  WHERE source="DG EMPL" AND date_from="2018-01-01");
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Surveys on Working conditions");
-INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
-
-SET @datasetId = (SELECT id FROM dataset  WHERE source="DG EMPL" AND date_from="2018-01-01");
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Research institutes");
-INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
-
-SET @datasetId = (SELECT id FROM dataset  WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Time pressure - Eurofound EWCS Data");
-INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
-
-SET @datasetId = (SELECT id FROM dataset  WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Poor communication - Eurofound EWCS Data");
-INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
-
-SET @datasetId = (SELECT id FROM dataset  WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Influence - Eurofound EWCS Data");
-INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
-
-SET @datasetId = (SELECT id FROM dataset  WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Job insecurity - Eurofound EWCS Data");
-INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
-
-SET @datasetId = (SELECT id FROM dataset  WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Difficult clients - Eurofound EWCS Data");
-INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
-
-SET @datasetId = (SELECT id FROM dataset  WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Working hours - Eurofound EWCS Data");
-INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
-
-SET @datasetId = (SELECT id FROM dataset  WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Discrimination - Eurofound EWCS Data");
-INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
-
-SET @datasetId = (SELECT id FROM dataset  WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Tiring or painful positions - Eurofound EWCS Data");
-INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
-
-SET @datasetId = (SELECT id FROM dataset  WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Does your work involve sitting? - Eurofound EWCS Data");
-INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
-
-SET @datasetId = (SELECT id FROM dataset  WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Carrying or moving heavy loads - Eurofound EWCS Data");
-INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
-
-SET @datasetId = (SELECT id FROM dataset  WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Repetitive hand or arm movements - Eurofound EWCS Data");
-INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
-
-SET @datasetId = (SELECT id FROM dataset  WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Lifting or moving people - Eurofound EWCS Data");
-INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
-
-SET @datasetId = (SELECT id FROM dataset  WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Does your organisation have a trade union, works council or a similar committee representing employees? - Eurofound EWCS Data");
-INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
-
-SET @datasetId = (SELECT id FROM dataset  WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Does your organisation have a health and safety delegate or committee? - Eurofound EWCS Data");
-INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
-
-SET @datasetId = (SELECT id FROM dataset  WHERE source="EUROSTAT" AND date_from="2016-01-01");
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Estimation of non-fatal accidents based on fatal accidents (reported)");
-INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
-
-SET @toolID = (SELECT id FROM tool WHERE name = "osha_dvt_barometer");
-INSERT INTO section (name, tool_id) VALUES ("HOMEPAGE", @toolID);
-
-SET @toolID = (SELECT id FROM tool WHERE name = "osha_dvt_barometer");
-INSERT INTO section (name, tool_id) VALUES ("ECONOMIC_SECTOR_PROFILE", @toolID);
-
-SET @toolID = (SELECT id FROM tool WHERE name = "osha_dvt_barometer");
-INSERT INTO section (name, tool_id) VALUES ("WORKFORCE_PROFILE", @toolID);
-
-SET @toolID = (SELECT id FROM tool WHERE name = "osha_dvt_barometer");
-INSERT INTO section (name, tool_id) VALUES ("SOCIAL_DIALOGUE", @toolID);
-
-SET @toolID = (SELECT id FROM tool WHERE name = "osha_dvt_barometer");
-INSERT INTO section (name, tool_id) VALUES ("WORK_ACCIDENTS", @toolID);
-
-SET @toolID = (SELECT id FROM tool WHERE name = "osha_dvt_barometer");
-INSERT INTO section (name, tool_id) VALUES ("HEALTH_PERCEPTION", @toolID);
-
-SET @toolID = (SELECT id FROM tool WHERE name = "osha_dvt_barometer");
-INSERT INTO section (name, tool_id) VALUES ("OSH_CULTURE_HEALTH_AWARENESS", @toolID);
-
-SET @toolID = (SELECT id FROM tool WHERE name = "osha_dvt_barometer");
-INSERT INTO section (name, tool_id) VALUES ("OVERALL_OPINION", @toolID);
-
-SET @toolID = (SELECT id FROM tool WHERE name = "osha_dvt_barometer");
-INSERT INTO section (name, tool_id) VALUES ("MENTAL_RISKS", @toolID);
-
-SET @toolID = (SELECT id FROM tool WHERE name = "osha_dvt_barometer");
-INSERT INTO section (name, tool_id) VALUES ("PHYSICAL_RISKS", @toolID);
-
-SET @toolID = (SELECT id FROM tool WHERE name = "osha_dvt_barometer");
-INSERT INTO section (name, tool_id) VALUES ("PREVENTION_IN_COMPANIES", @toolID);
-
-SET @toolID = (SELECT id FROM tool WHERE name = "osha_dvt_barometer");
-INSERT INTO section (name, tool_id) VALUES ("WORKER_INVOLVEMENT", @toolID);
 
 INSERT INTO CHART (id, section_id)  VALUES(20010,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="ECONOMIC_SECTOR_PROFILE" AND t.name="osha_dvt_barometer"	) );
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Employment per sector");
@@ -751,20 +71,17 @@ INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20
 
 INSERT INTO CHART (id, section_id)  VALUES(20023,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="WORK_ACCIDENTS" AND t.name="osha_dvt_barometer"	) );
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Fatal work accidents");
-SET @datasetId = (SELECT id FROM dataset WHERE source="EUROSTAT
-DG Employment Research team – EU-OSHA" AND date_from="2016-01-01");
+SET @datasetId = (SELECT id FROM dataset WHERE source="EUROSTAT" AND date_from="2016-01-01");
 INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20023, @indicatorId, @datasetId);
 
 INSERT INTO CHART (id, section_id)  VALUES(20024,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="WORK_ACCIDENTS" AND t.name="osha_dvt_barometer"	) );
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Estimation of non-fatal accidents based on fatal accidents (estimated)");
-SET @datasetId = (SELECT id FROM dataset WHERE source="EUROSTAT
-DG Employment Research team – EU-OSHA" AND date_from="2016-01-01");
+SET @datasetId = (SELECT id FROM dataset WHERE source="EUROSTAT" AND date_from="2016-01-01");
 INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20024, @indicatorId, @datasetId);
 
 INSERT INTO CHART (id, section_id)  VALUES(20025,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="WORK_ACCIDENTS" AND t.name="osha_dvt_barometer"	) );
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Level of reporting of non-fatal accidents");
-SET @datasetId = (SELECT id FROM dataset WHERE source="EUROSTAT
-DG Employment Research team – EU-OSHA" AND date_from="2016-01-01");
+SET @datasetId = (SELECT id FROM dataset WHERE source="EUROSTAT" AND date_from="2016-01-01");
 INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20025, @indicatorId, @datasetId);
 
 INSERT INTO CHART (id, section_id)  VALUES(20026,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="HEALTH_PERCEPTION" AND t.name="osha_dvt_barometer"	) );
@@ -934,59 +251,13 @@ INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20
 
 INSERT INTO CHART (id, section_id)  VALUES(20022,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="WORK_ACCIDENTS" AND t.name="osha_dvt_barometer"	) );
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Non-fatal work accidents");
-SET @datasetId = (SELECT id FROM dataset WHERE source="EUROSTAT
-DG Employment Research team – EU-OSHA" AND date_from="2010-01-01" AND date_to="2016-12-31");
+SET @datasetId = (SELECT id FROM dataset WHERE source="EUROSTAT" AND date_from="2010-01-01" AND date_to="2016-12-31");
 INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20022, @indicatorId, @datasetId);
 
 INSERT INTO CHART (id, section_id)  VALUES(20086,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="WORKER_INVOLVEMENT" AND t.name="osha_dvt_barometer"	) );
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Does your organisation have a health and safety delegate or committee? - Eurofound EWCS Data");
 SET @datasetId = (SELECT id FROM dataset WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
 INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20086, @indicatorId, @datasetId);
-
-SET @toolID = (SELECT id FROM tool WHERE name = "osha_dvt_barometer");
-INSERT INTO section (name, tool_id) VALUES ("STRATEGIES", @toolID);
-
-SET @toolID = (SELECT id FROM tool WHERE name = "osha_dvt_barometer");
-INSERT INTO section (name, tool_id) VALUES ("DOWNLOAD", @toolID);
-
-SET @toolID = (SELECT id FROM tool WHERE name = "osha_dvt_barometer");
-INSERT INTO section (name, tool_id) VALUES ("REGULATION", @toolID);
-
-SET @toolID = (SELECT id FROM tool WHERE name = "osha_dvt_barometer");
-INSERT INTO section (name, tool_id) VALUES ("AUTHORITY", @toolID);
-
-SET @toolID = (SELECT id FROM tool WHERE name = "osha_dvt_barometer");
-INSERT INTO section (name, tool_id) VALUES ("WORKACC", @toolID);
-
-SET @toolID = (SELECT id FROM tool WHERE name = "osha_dvt_barometer");
-INSERT INTO section (name, tool_id) VALUES ("OSH_CULTURE", @toolID);
-
-SET @toolID = (SELECT id FROM tool WHERE name = "osha_dvt_barometer");
-INSERT INTO section (name, tool_id) VALUES ("WORKING_CONDITIONS", @toolID);
-
-SET @toolID = (SELECT id FROM tool WHERE name = "osha_dvt_barometer");
-INSERT INTO section (name, tool_id) VALUES ("OVERALL_OP", @toolID);
-
-SET @toolID = (SELECT id FROM tool WHERE name = "osha_dvt_barometer");
-INSERT INTO section (name, tool_id) VALUES ("PREVENTION", @toolID);
-
-SET @toolID = (SELECT id FROM tool WHERE name = "osha_dvt_barometer");
-INSERT INTO section (name, tool_id) VALUES ("CROSS_SECTION", @toolID);
-
-SET @toolID = (SELECT id FROM tool WHERE name = "osha_dvt_barometer");
-INSERT INTO section (name, tool_id) VALUES ("OSH_AUTHORITIES", @toolID);
-
-SET @toolID = (SELECT id FROM tool WHERE name = "osha_dvt_barometer");
-INSERT INTO section (name, tool_id) VALUES ("NATIONAL_STRATEGIES_HOMEPAGE", @toolID);
-
-SET @toolID = (SELECT id FROM tool WHERE name = "osha_dvt_barometer");
-INSERT INTO section (name, tool_id) VALUES ("RESPONSE_STRATEGY", @toolID);
-
-SET @toolID = (SELECT id FROM tool WHERE name = "osha_dvt_barometer");
-INSERT INTO section (name, tool_id) VALUES ("STRUCTURE_STRATEGY", @toolID);
-
-SET @toolID = (SELECT id FROM tool WHERE name = "osha_dvt_barometer");
-INSERT INTO section (name, tool_id) VALUES ("ENFORCEMENT_CAPACITY", @toolID);
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
@@ -3830,7 +3101,7 @@ INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="OSH_CULTURE" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+666, null, @sectionId, "ESENER_LITERAL");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+666, "EN", 1, "Procedure against bulling");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+666, "EN", 1, "Procedure against bullying");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="OSH_CULTURE" AND tool_id=@toolId);
@@ -3966,6 +3237,11 @@ SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="ENFORCEMENT_CAPACITY" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+693, null, @sectionId, "ESENER_LITERAL");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+693, "EN", 1, "Have you been visited by the labour inspectorate in the last 3 years?");
+
+SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
+SET @sectionId = (SELECT id FROM section WHERE name="WORKFORCE_PROFILE" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+694, null, @sectionId, "FILTER_LITERAL");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+694, "EN", 1, "Not applied to Median Age");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
@@ -4207,393 +3483,25 @@ SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@tool
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2099, null, @sectionId, "POP_UP");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2099, "EN", 1, "POP UP MESSAGE TO BE DEFINED");
 
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId, null, null, "MENU");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (@maxId, "EN", 1, "Home");
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId, null, null, "FOOTER");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (@maxId, "EN", 1, "Site map");
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId, null, null, "FOOTER");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (@maxId, "EN", 1, "Contact us");
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId, null, null, "FOOTER");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (@maxId, "EN", 1, "Accessibility");
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId, null, null, "FOOTER");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (@maxId, "EN", 1, "Privacy notice");
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId, null, null, "FOOTER");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (@maxId, "EN", 1, "Legal notice");
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId, null, null, "FOOTER");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (@maxId, "EN", 1, "Copyright");
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId, null, null, "FOOTER");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (@maxId, "EN", 1, "an agency of the European Union");
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId, null, null, "HEADER");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (@maxId, "EN", 1, "European Agency for Safety and Health at Work webpage");
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId, null, null, "HEADER");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (@maxId, "EN", 1, "Print page");
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId, null, null, "HEADER");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (@maxId, "EN", 1, "Smaller text");
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId, null, null, "HEADER");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (@maxId, "EN", 1, "Optimised defaults");
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId, null, null, "HEADER");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (@maxId, "EN", 1, "Bigger text");
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId, null, null, "HEADER");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (@maxId, "EN", 1, "Google translate");
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId, null, null, "SOCIAL_MEDIA");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (@maxId, "EN", 1, "Share this on:");
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId, null, null, "SOCIAL_MEDIA");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (@maxId, "EN", 1, "Twitter");
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId, null, null, "SOCIAL_MEDIA");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (@maxId, "EN", 1, "Facebook");
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId, null, null, "SOCIAL_MEDIA");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (@maxId, "EN", 1, "LinkedIn");
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId, null, null, "SOCIAL_FOOTER");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (@maxId, "EN", 1, "Follow EU-OSHA in LinkedIn");
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId, null, null, "SOCIAL_FOOTER");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (@maxId, "EN", 1, "EU-OSHA in Twitter");
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId, null, null, "SOCIAL_FOOTER");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (@maxId, "EN", 1, "EU-OSHA Facebook page");
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId, null, null, "SOCIAL_FOOTER");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (@maxId, "EN", 1, "EU-OSHA channel in Youtube");
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId, null, null, "SOCIAL_FOOTER");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (@maxId, "EN", 1, "EU-OSHA Flickr");
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId, null, null, "HEADER");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (@maxId, "EN", 1, "Search");
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId, null, null, "DISCLAIMER");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (@maxId, "EN", 1, "The EU-OSHA website uses cookies to gather information necessary for browsing the website, in accordance with the EU-OSHA privacy notice.");
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId, null, null, "BUTTON");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (@maxId, "EN", 1, "OK, I agree");
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId, null, null, "BUTTON");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (@maxId, "EN", 1, "Decline");
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId, null, null, "BUTTON");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (@maxId, "EN", 1, "No, give me more info");
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId, null, null, "DISCLAIMER");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (@maxId, "EN", 1, "Due to the nature of this visualisation we cannot ensure a satisfactory user experience for small screens.");
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId, null, null, "BUTTON");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (@maxId, "EN", 1, "Close");
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId, null, null, "MOUSEOVER");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (@maxId, "EN", 1, "Access to Home page");
-
-SET @maxLiteralId = (SELECT MAX(id)+1 FROM literal WHERE id<10000);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxLiteralId, NULL, NULL, "SPLIT_ACTIVITY_SECTOR_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUE (@maxLiteralId, "EN", 1, "Agriculture, forestry and fishing");
-INSERT INTO split_activity_sector (literal_id) VALUES(@maxLiteralId);
-
-SET @maxLiteralId = (SELECT MAX(id)+1 FROM literal WHERE id<10000);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxLiteralId, NULL, NULL, "SPLIT_ACTIVITY_SECTOR_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUE (@maxLiteralId, "EN", 1, "Manufacturing");
-INSERT INTO split_activity_sector (literal_id) VALUES(@maxLiteralId);
-
-SET @maxLiteralId = (SELECT MAX(id)+1 FROM literal WHERE id<10000);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxLiteralId, NULL, NULL, "SPLIT_ACTIVITY_SECTOR_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUE (@maxLiteralId, "EN", 1, "Construction, waste management, water and electricity supply");
-INSERT INTO split_activity_sector (literal_id) VALUES(@maxLiteralId);
-
-SET @maxLiteralId = (SELECT MAX(id)+1 FROM literal WHERE id<10000);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxLiteralId, NULL, NULL, "SPLIT_ACTIVITY_SECTOR_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUE (@maxLiteralId, "EN", 1, "Trade, transport, food/accommodation and recreation activities");
-INSERT INTO split_activity_sector (literal_id) VALUES(@maxLiteralId);
-
-SET @maxLiteralId = (SELECT MAX(id)+1 FROM literal WHERE id<10000);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxLiteralId, NULL, NULL, "SPLIT_ACTIVITY_SECTOR_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUE (@maxLiteralId, "EN", 1, "IT, Finance, real state and other technical scientific or personal service activities");
-INSERT INTO split_activity_sector (literal_id) VALUES(@maxLiteralId);
-
-SET @maxLiteralId = (SELECT MAX(id)+1 FROM literal WHERE id<10000);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxLiteralId, NULL, NULL, "SPLIT_ACTIVITY_SECTOR_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUE (@maxLiteralId, "EN", 1, "Public administration");
-INSERT INTO split_activity_sector (literal_id) VALUES(@maxLiteralId);
-
-SET @maxLiteralId = (SELECT MAX(id)+1 FROM literal WHERE id<10000);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxLiteralId, NULL, NULL, "SPLIT_ACTIVITY_SECTOR_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUE (@maxLiteralId, "EN", 1, "Education, human health and social work activities");
-INSERT INTO split_activity_sector (literal_id) VALUES(@maxLiteralId);
-
-SET @maxLiteralId = (SELECT MAX(id)+1 FROM literal WHERE id<10000);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxLiteralId, NULL, NULL, "SPLIT_ACTIVITY_SECTOR_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUE (@maxLiteralId, "EN", 1, "Total");
-INSERT INTO split_activity_sector (literal_id) VALUES(@maxLiteralId);
-
-SET @maxLiteralId = (SELECT MAX(id)+1 FROM literal WHERE id<10000);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxLiteralId, NULL, NULL, "SPLIT_ACTIVITY_SECTOR_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUE (@maxLiteralId, "EN", 1, "Agriculture and industry");
-INSERT INTO split_activity_sector (literal_id) VALUES(@maxLiteralId);
-
-SET @maxLiteralId = (SELECT MAX(id)+1 FROM literal WHERE id<10000);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxLiteralId, NULL, NULL, "SPLIT_ACTIVITY_SECTOR_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUE (@maxLiteralId, "EN", 1, "Commerce and hospitality");
-INSERT INTO split_activity_sector (literal_id) VALUES(@maxLiteralId);
-
-SET @maxLiteralId = (SELECT MAX(id)+1 FROM literal WHERE id<10000);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxLiteralId, NULL, NULL, "SPLIT_ACTIVITY_SECTOR_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUE (@maxLiteralId, "EN", 1, "Construction and transport");
-INSERT INTO split_activity_sector (literal_id) VALUES(@maxLiteralId);
-
-SET @maxLiteralId = (SELECT MAX(id)+1 FROM literal WHERE id<10000);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxLiteralId, NULL, NULL, "SPLIT_ACTIVITY_SECTOR_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUE (@maxLiteralId, "EN", 1, "Financial and other services");
-INSERT INTO split_activity_sector (literal_id) VALUES(@maxLiteralId);
-
-SET @maxLiteralId = (SELECT MAX(id)+1 FROM literal WHERE id<10000);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxLiteralId, NULL, NULL, "SPLIT_ACTIVITY_SECTOR_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUE (@maxLiteralId, "EN", 1, "Public administration education and health");
-INSERT INTO split_activity_sector (literal_id) VALUES(@maxLiteralId);
-
-SET @maxLiteralId = (SELECT MAX(id)+1 FROM literal WHERE id<10000);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxLiteralId, NULL, NULL, "SPLIT_AGE_GROUP_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUE (@maxLiteralId, "EN", 1, "Under 35");
-INSERT INTO split_age_group (literal_id) VALUES(@maxLiteralId);
-
-SET @maxLiteralId = (SELECT MAX(id)+1 FROM literal WHERE id<10000);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxLiteralId, NULL, NULL, "SPLIT_AGE_GROUP_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUE (@maxLiteralId, "EN", 1, "35-49");
-INSERT INTO split_age_group (literal_id) VALUES(@maxLiteralId);
-
-SET @maxLiteralId = (SELECT MAX(id)+1 FROM literal WHERE id<10000);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxLiteralId, NULL, NULL, "SPLIT_AGE_GROUP_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUE (@maxLiteralId, "EN", 1, "50 and over");
-INSERT INTO split_age_group (literal_id) VALUES(@maxLiteralId);
-
-SET @maxLiteralId = (SELECT MAX(id)+1 FROM literal WHERE id<10000);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxLiteralId, NULL, NULL, "SPLIT_AGE_GROUP_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUE (@maxLiteralId, "EN", 1, "Total");
-INSERT INTO split_age_group (literal_id) VALUES(@maxLiteralId);
-
-SET @maxLiteralId = (SELECT MAX(id)+1 FROM literal WHERE id<10000);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxLiteralId, NULL, NULL, "SPLIT_ANSWER_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUE (@maxLiteralId, "EN", 1, "Yes");
-INSERT INTO split_answer (literal_id) VALUES(@maxLiteralId);
-
-SET @maxLiteralId = (SELECT MAX(id)+1 FROM literal WHERE id<10000);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxLiteralId, NULL, NULL, "SPLIT_ANSWER_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUE (@maxLiteralId, "EN", 1, "No");
-INSERT INTO split_answer (literal_id) VALUES(@maxLiteralId);
-
-SET @maxLiteralId = (SELECT MAX(id)+1 FROM literal WHERE id<10000);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxLiteralId, NULL, NULL, "SPLIT_ANSWER_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUE (@maxLiteralId, "EN", 1, "Regularly");
-INSERT INTO split_answer (literal_id) VALUES(@maxLiteralId);
-
-SET @maxLiteralId = (SELECT MAX(id)+1 FROM literal WHERE id<10000);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxLiteralId, NULL, NULL, "SPLIT_ANSWER_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUE (@maxLiteralId, "EN", 1, "Only when particular issues arise");
-INSERT INTO split_answer (literal_id) VALUES(@maxLiteralId);
-
-SET @maxLiteralId = (SELECT MAX(id)+1 FROM literal WHERE id<10000);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxLiteralId, NULL, NULL, "SPLIT_ANSWER_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUE (@maxLiteralId, "EN", 1, "Not at all");
-INSERT INTO split_answer (literal_id) VALUES(@maxLiteralId);
-
-SET @maxLiteralId = (SELECT MAX(id)+1 FROM literal WHERE id<10000);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxLiteralId, NULL, NULL, "SPLIT_ANSWER_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUE (@maxLiteralId, "EN", 1, "No, not required");
-INSERT INTO split_answer (literal_id) VALUES(@maxLiteralId);
-
-SET @maxLiteralId = (SELECT MAX(id)+1 FROM literal WHERE id<10000);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxLiteralId, NULL, NULL, "SPLIT_ANSWER_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUE (@maxLiteralId, "EN", 1, "Yes, but I don't always use it");
-INSERT INTO split_answer (literal_id) VALUES(@maxLiteralId);
-
-SET @maxLiteralId = (SELECT MAX(id)+1 FROM literal WHERE id<10000);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxLiteralId, NULL, NULL, "SPLIT_ANSWER_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUE (@maxLiteralId, "EN", 1, "(very) Well informed");
-INSERT INTO split_answer (literal_id) VALUES(@maxLiteralId);
-
-SET @maxLiteralId = (SELECT MAX(id)+1 FROM literal WHERE id<10000);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxLiteralId, NULL, NULL, "SPLIT_ANSWER_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUE (@maxLiteralId, "EN", 1, "Not very or not at all well informed");
-INSERT INTO split_answer (literal_id) VALUES(@maxLiteralId);
-
-SET @maxLiteralId = (SELECT MAX(id)+1 FROM literal WHERE id<10000);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxLiteralId, NULL, NULL, "SPLIT_ANSWER_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUE (@maxLiteralId, "EN", 1, "Not at all satisfied");
-INSERT INTO split_answer (literal_id) VALUES(@maxLiteralId);
-
-SET @maxLiteralId = (SELECT MAX(id)+1 FROM literal WHERE id<10000);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxLiteralId, NULL, NULL, "SPLIT_ANSWER_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUE (@maxLiteralId, "EN", 1, "Not very satisfied");
-INSERT INTO split_answer (literal_id) VALUES(@maxLiteralId);
-
-SET @maxLiteralId = (SELECT MAX(id)+1 FROM literal WHERE id<10000);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxLiteralId, NULL, NULL, "SPLIT_ANSWER_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUE (@maxLiteralId, "EN", 1, "Satisfied");
-INSERT INTO split_answer (literal_id) VALUES(@maxLiteralId);
-
-SET @maxLiteralId = (SELECT MAX(id)+1 FROM literal WHERE id<10000);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxLiteralId, NULL, NULL, "SPLIT_ANSWER_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUE (@maxLiteralId, "EN", 1, "Very satisfied");
-INSERT INTO split_answer (literal_id) VALUES(@maxLiteralId);
-
-SET @maxLiteralId = (SELECT MAX(id)+1 FROM literal WHERE id<10000);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxLiteralId, NULL, NULL, "SPLIT_ANSWER_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUE (@maxLiteralId, "EN", 1, "(Almost) all of the time");
-INSERT INTO split_answer (literal_id) VALUES(@maxLiteralId);
-
-SET @maxLiteralId = (SELECT MAX(id)+1 FROM literal WHERE id<10000);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxLiteralId, NULL, NULL, "SPLIT_ANSWER_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUE (@maxLiteralId, "EN", 1, "(Almost) never");
-INSERT INTO split_answer (literal_id) VALUES(@maxLiteralId);
-
-SET @maxLiteralId = (SELECT MAX(id)+1 FROM literal WHERE id<10000);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxLiteralId, NULL, NULL, "SPLIT_ANSWER_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUE (@maxLiteralId, "EN", 1, "Between 1/4 and 3/4 of the time");
-INSERT INTO split_answer (literal_id) VALUES(@maxLiteralId);
-
-SET @maxLiteralId = (SELECT MAX(id)+1 FROM literal WHERE id<10000);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxLiteralId, NULL, NULL, "SPLIT_ANSWER_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUE (@maxLiteralId, "EN", 1, "Mean");
-INSERT INTO split_answer (literal_id) VALUES(@maxLiteralId);
-
-SET @maxLiteralId = (SELECT MAX(id)+1 FROM literal WHERE id<10000);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxLiteralId, NULL, NULL, "SPLIT_ANSWER_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUE (@maxLiteralId, "EN", 1, "Always or most of the time");
-INSERT INTO split_answer (literal_id) VALUES(@maxLiteralId);
-
-SET @maxLiteralId = (SELECT MAX(id)+1 FROM literal WHERE id<10000);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxLiteralId, NULL, NULL, "SPLIT_ANSWER_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUE (@maxLiteralId, "EN", 1, "Rarely or never");
-INSERT INTO split_answer (literal_id) VALUES(@maxLiteralId);
-
-SET @maxLiteralId = (SELECT MAX(id)+1 FROM literal WHERE id<10000);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxLiteralId, NULL, NULL, "SPLIT_ANSWER_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUE (@maxLiteralId, "EN", 1, "Sometimes");
-INSERT INTO split_answer (literal_id) VALUES(@maxLiteralId);
-
-SET @maxLiteralId = (SELECT MAX(id)+1 FROM literal WHERE id<10000);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxLiteralId, NULL, NULL, "SPLIT_ANSWER_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUE (@maxLiteralId, "EN", 1, "Agree");
-INSERT INTO split_answer (literal_id) VALUES(@maxLiteralId);
-
-SET @maxLiteralId = (SELECT MAX(id)+1 FROM literal WHERE id<10000);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxLiteralId, NULL, NULL, "SPLIT_ANSWER_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUE (@maxLiteralId, "EN", 1, "Disagree");
-INSERT INTO split_answer (literal_id) VALUES(@maxLiteralId);
-
-SET @maxLiteralId = (SELECT MAX(id)+1 FROM literal WHERE id<10000);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxLiteralId, NULL, NULL, "SPLIT_ANSWER_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUE (@maxLiteralId, "EN", 1, "Neither agree nor disagree");
-INSERT INTO split_answer (literal_id) VALUES(@maxLiteralId);
-
-SET @maxLiteralId = (SELECT MAX(id)+1 FROM literal WHERE id<10000);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxLiteralId, NULL, NULL, "SPLIT_ANSWER_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUE (@maxLiteralId, "EN", 1, "Never");
-INSERT INTO split_answer (literal_id) VALUES(@maxLiteralId);
-
-SET @maxLiteralId = (SELECT MAX(id)+1 FROM literal WHERE id<10000);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxLiteralId, NULL, NULL, "SPLIT_ANSWER_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUE (@maxLiteralId, "EN", 1, "Once or more");
-INSERT INTO split_answer (literal_id) VALUES(@maxLiteralId);
-
-SET @maxLiteralId = (SELECT MAX(id)+1 FROM literal WHERE id<10000);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxLiteralId, NULL, NULL, "SPLIT_ANSWER_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUE (@maxLiteralId, "EN", 1, "At least 1/4 of the time");
-INSERT INTO split_answer (literal_id) VALUES(@maxLiteralId);
-
-SET @maxLiteralId = (SELECT MAX(id)+1 FROM literal WHERE id<10000);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxLiteralId, NULL, NULL, "SPLIT_ANSWER_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUE (@maxLiteralId, "EN", 1, "Less than 1/4 of the time");
-INSERT INTO split_answer (literal_id) VALUES(@maxLiteralId);
-
-SET @maxLiteralId = (SELECT MAX(id)+1 FROM literal WHERE id<10000);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxLiteralId, NULL, NULL, "SPLIT_ANSWER_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUE (@maxLiteralId, "EN", 1, "Conducted mainly by internal staff");
-INSERT INTO split_answer (literal_id) VALUES(@maxLiteralId);
-
-SET @maxLiteralId = (SELECT MAX(id)+1 FROM literal WHERE id<10000);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxLiteralId, NULL, NULL, "SPLIT_ANSWER_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUE (@maxLiteralId, "EN", 1, "Contracted mainly to external providers");
-INSERT INTO split_answer (literal_id) VALUES(@maxLiteralId);
-
-SET @maxLiteralId = (SELECT MAX(id)+1 FROM literal WHERE id<10000);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxLiteralId, NULL, NULL, "SPLIT_ANSWER_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUE (@maxLiteralId, "EN", 1, "Both about equally");
-INSERT INTO split_answer (literal_id) VALUES(@maxLiteralId);
-
-SET @maxLiteralId = (SELECT MAX(id)+1 FROM literal WHERE id<10000);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxLiteralId, NULL, NULL, "SPLIT_ANSWER_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUE (@maxLiteralId, "EN", 1, "Yes but only some of them");
-INSERT INTO split_answer (literal_id) VALUES(@maxLiteralId);
-
-SET @maxLiteralId = (SELECT MAX(id)+1 FROM literal WHERE id<10000);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxLiteralId, NULL, NULL, "SPLIT_ANSWER_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUE (@maxLiteralId, "EN", 1, "Yes, and I always use it");
-INSERT INTO split_answer (literal_id) VALUES(@maxLiteralId);
-
-SET @maxLiteralId = (SELECT MAX(id)+1 FROM literal WHERE id<10000);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxLiteralId, NULL, NULL, "SPLIT_ANSWER_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUE (@maxLiteralId, "EN", 1, "");
-INSERT INTO split_answer (literal_id) VALUES(@maxLiteralId);
-
 SET @maxLiteralId = (SELECT MAX(id)+1 FROM literal WHERE id<10000);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxLiteralId, NULL, NULL, "SPLIT_COMPANY_SIZE_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUE (@maxLiteralId, "EN", 1, "From 0 to 9 persons employed");
+INSERT INTO translation (literal_id, language, is_default, text) VALUE (@maxLiteralId, "EN", 1, "5 to 9 employees");
 INSERT INTO split_company_size (literal_id) VALUES(@maxLiteralId);
 
 SET @maxLiteralId = (SELECT MAX(id)+1 FROM literal WHERE id<10000);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxLiteralId, NULL, NULL, "SPLIT_COMPANY_SIZE_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUE (@maxLiteralId, "EN", 1, "From 10 to 19 persons employed");
+INSERT INTO translation (literal_id, language, is_default, text) VALUE (@maxLiteralId, "EN", 1, "10 to 49 employees");
 INSERT INTO split_company_size (literal_id) VALUES(@maxLiteralId);
 
 SET @maxLiteralId = (SELECT MAX(id)+1 FROM literal WHERE id<10000);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxLiteralId, NULL, NULL, "SPLIT_COMPANY_SIZE_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUE (@maxLiteralId, "EN", 1, "From 20 to 49 persons employed");
+INSERT INTO translation (literal_id, language, is_default, text) VALUE (@maxLiteralId, "EN", 1, "50 to 250 employees");
 INSERT INTO split_company_size (literal_id) VALUES(@maxLiteralId);
 
 SET @maxLiteralId = (SELECT MAX(id)+1 FROM literal WHERE id<10000);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxLiteralId, NULL, NULL, "SPLIT_COMPANY_SIZE_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUE (@maxLiteralId, "EN", 1, "From 50 to 249 persons employed");
+INSERT INTO translation (literal_id, language, is_default, text) VALUE (@maxLiteralId, "EN", 1, "250 or more employees");
 INSERT INTO split_company_size (literal_id) VALUES(@maxLiteralId);
-
-SET @maxLiteralId = (SELECT MAX(id)+1 FROM literal WHERE id<10000);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxLiteralId, NULL, NULL, "SPLIT_COMPANY_SIZE_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUE (@maxLiteralId, "EN", 1, "250 persons employed or more");
-INSERT INTO split_company_size (literal_id) VALUES(@maxLiteralId);
-
-SET @maxLiteralId = (SELECT MAX(id)+1 FROM literal WHERE id<10000);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxLiteralId, NULL, NULL, "SPLIT_COMPANY_SIZE_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUE (@maxLiteralId, "EN", 1, "Total");
-INSERT INTO split_company_size (literal_id) VALUES(@maxLiteralId);
-
-SET @maxLiteralId = (SELECT MAX(id)+1 FROM literal WHERE id<10000);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxLiteralId, NULL, NULL, "SPLIT_GENDER_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUE (@maxLiteralId, "EN", 1, "Total");
-INSERT INTO split_gender (literal_id) VALUES(@maxLiteralId);
-
-SET @maxLiteralId = (SELECT MAX(id)+1 FROM literal WHERE id<10000);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxLiteralId, NULL, NULL, "SPLIT_GENDER_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUE (@maxLiteralId, "EN", 1, "Male");
-INSERT INTO split_gender (literal_id) VALUES(@maxLiteralId);
-
-SET @maxLiteralId = (SELECT MAX(id)+1 FROM literal WHERE id<10000);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxLiteralId, NULL, NULL, "SPLIT_GENDER_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUE (@maxLiteralId, "EN", 1, "Female");
-INSERT INTO split_gender (literal_id) VALUES(@maxLiteralId);
 
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="AT");
@@ -9103,11 +8011,11 @@ SET @nutsId = (SELECT id FROM nuts WHERE country_code="AT");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, NULL, "STRATEGY_ENFOR_CAPACITY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "<p>Sozialministerium</p><p>Zentral-Arbeitsinspektorat</p><p>See more in <a href=\"&lt;a%20data-ui-sref=&quot;OSH-authorities&quot;&gt;Labour-Inspection&lt;/a&gt;\">OSH Authorities</a> in the Labour Inspection section or in the <a href=\"http://www.arbeitsinspektion.gv.at/inspektorat/\">website</a></p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, NULL, "STRATEGY_ENFOR_CAPACITY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p>Being responsible for more than 80 % of the employees the Labour inspectorate is the biggest inspection body for occupational safety and health in Austria. It is a federal agency with the head-quarter being part of the Federal Ministry of Labour, Social Affairs and Consumer Protection (other inspection bodies are part of the provincial governments or regional authorities). It is the fundamental aim of the Austrian labour inspectorate to reach uniform enforcement all over the country.</p><p>Goals and targets for the Austrian labour inspectorate are defined within the organisation.</p><p>The minister is informed on national action plans. The number of labour inspectors is determined by a governmental establishment plan.</p><p>Austrian Labour inspectorate is responsible for:</p><ul><li>occupational safety and health</li><li>working time and rest periods</li><li>driving time, rest periods and breaks</li><li>maternity protection</li><li>young workers and children</li></ul><p>Labour inspectors inspect all sectors and companies with the exception of:</p><ul><li>companies that are the responsibility of the inspectorate for agriculture and forestry</li><li>educational institutions</li><li>legally recognised churches and religious communities</li></ul><p>private households</p><ul><li>civil servants of federal states and municipalities</li></ul><p>The nine regional labour inspectorates for agriculture and forestry do not belong to the Austrian labour inspectorate but are independent bodies. Cooperation happens via the national occupational safety and health strategy. The safety and health of civil servants of federal states and municipalities is monitored by special units within these bodies.</p><p>The Austrian labour inspectorate does not impose penalties itself. Labour inspectors have to file a charge at the responsible administrative penalty authority which carries out the proceedings.</p><p>Labour inspectors have a special legal standing in industrial licensing procedures where they can stipulate terms under which a site has to be run.</p><p>The Austrian labour inspectorate works together with social insurance organisations, mostly the Austrian Workers´ Compensation Board who has safety experts that consult companies and make measurements (chemical substances, noise, dust, etc.).</p><p>Labour inspectorate, social partners, social insurance and various stakes holders form an advisory body that discusses fundamental questions of occupational safety and health at work. To prepare the discussions special technical committees can be established, e.g. for dangerous chemical substances.</p>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p>Being responsible for more than 80 % of the employees the Labour inspectorate is the biggest inspection body for occupational safety and health in Austria. It is a federal agency with the head-quarter being part of the Federal Ministry of Labour, Social Affairs and Consumer Protection (other inspection bodies are part of the provincial governments or regional authorities). It is the fundamental aim of the Austrian labour inspectorate to reach uniform enforcement all over the country.</p><p>Goals and targets for the Austrian labour inspectorate are defined within the organisation.</p><p>The minister is informed on national action plans. The number of labour inspectors is determined by a governmental establishment plan.</p><p>Austrian Labour inspectorate is responsible for:</p><ul><li>Occupational safety and health</li><li>Working time and rest periods</li><li>Driving time, rest periods and breaks</li><li>Maternity protection</li><li>Young workers and children</li></ul><p>Labour inspectors inspect all sectors and companies with the exception of:</p><ul><li>Companies that are the responsibility of the inspectorate for agriculture and forestry</li><li>Educational institutions</li><li>Legally recognised churches and religious communities</li><li>Pprivate households</li><li>Civil servants of federal states and municipalities</li></ul><p>The nine regional labour inspectorates for agriculture and forestry do not belong to the Austrian labour inspectorate but are independent bodies. Cooperation happens via the national occupational safety and health strategy. The safety and health of civil servants of federal states and municipalities is monitored by special units within these bodies.</p><p>The Austrian labour inspectorate does not impose penalties itself. Labour inspectors have to file a charge at the responsible administrative penalty authority which carries out the proceedings.</p><p>Labour inspectors have a special legal standing in industrial licensing procedures where they can stipulate terms under which a site has to be run.</p><p>The Austrian labour inspectorate works together with social insurance organisations, mostly the Austrian Workers´ Compensation Board who has safety experts that consult companies and make measurements (chemical substances, noise, dust, etc.).</p><p>Labour inspectorate, social partners, social insurance and various stakes holders form an advisory body that discusses fundamental questions of occupational safety and health at work. To prepare the discussions special technical committees can be established, e.g. for dangerous chemical substances.</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, NULL, "STRATEGY_ENFOR_CAPACITY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p>Labour inspectors are entitled and/or obliged to:</p><ul><li>assist and offer consultation in all matters of occupational safety and health,</li><li>enter and inspect plants, work places, and construction sites at any time with or without prior notice, this also encompasses living quarters if provided by the employer</li><li>interview persons at work and also ask for written information,</li><li>nspect documents referring to safety at work or employment,</li><li>take pictures and take measurements,</li><li>take samples and arrange for analyses,</li><li>obtain information on material and machines from producers and distributors,</li><li>request the administrative penal authority to enforce measures for the protection of employees,</li><li>by all means attend to complaints without disclosing the source.</li></ul><p>If labour inspectors are hindered to enter the premises of a company they can get support from the police. This only applies if the case of imminent danger to the life or health of workers and the employer is informed about his duty to let the labour inspector in.</p><p>“Entering the premises at any time” is a general clause that allows labour inspectors to have a look at the work place even if at this time no workers are working. In principal labour inspectors are supposed to inspect during the normal working hours of the company.</p><p>Exceptions could be made for example if it is suspected that work is done at unusual hours.</p>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p>Labour inspectors are entitled and/or obliged to:</p><ul><li>Assist and offer consultation in all matters of occupational safety and health,</li><li>Enter and inspect plants, work places, and construction sites at any time with or without prior notice, this also encompasses living quarters if provided by the employer</li><li>Interview persons at work and also ask for written information,</li><li>Inspect documents referring to safety at work or employment,</li><li>Take pictures and take measurements,</li><li>Take samples and arrange for analyses,</li><li>Obtain information on material and machines from producers and distributors,</li><li>Request the administrative penal authority to enforce measures for the protection of employees,</li><li>By all means attend to complaints without disclosing the source.</li></ul><p>If labour inspectors are hindered to enter the premises of a company they can get support from the police. This only applies if the case of imminent danger to the life or health of workers and the employer is informed about his duty to let the labour inspector in.</p><p>“Entering the premises at any time” is a general clause that allows labour inspectors to have a look at the work place even if at this time no workers are working. In principal labour inspectors are supposed to inspect during the normal working hours of the company.</p><p>Exceptions could be made for example if it is suspected that work is done at unusual hours.</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, NULL, "STRATEGY_ENFOR_CAPACITY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Annual work plans (which by definition lay down the campaigns to be carried out in addition to regular inspection activity) are developed based on a system where:</p><ul><li>new topics are tabled by the central labour inspectorate, regional inspectorates or via the national strategy for occupational safety and health</li><li>these topics are discussed with the central labour inspectorate and the regional inspectorates; decision on the priority topics</li><li>the topics are embedded in the national strategy.</li></ul><p>The annual work plan was changed considerably in 2013 and adapted to the new system of outcome-oriented management. With this system there is a maximum number of five campaigns per year, of which no more than three should be in the implementation phase &nbsp;in the regional inspectorates. Politically-desired special activities have to be carried out in addition to the annual work plan. Of these five campaigns, around two should be carried out with an emphasis on impact; i.e. their effect in terms of occupational safety and health has to be able to be discernible.</p><p>The extension to five years was necessary to facilitate sufficient planning and trial runs as well as follow-up checks, a detailed review, and documentation. In this way, a campaign can be reflected in several annual work plans. Final reports must be presented after the conclusion of each campaign.</p><p>Regular inspection activity is determined by the annual framework agreement with the regional inspectorates</p>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Annual work plans (which by definition lay down the campaigns to be carried out in addition to regular inspection activity) are developed based on a system where:</p><ul><li>New topics are tabled by the central labour inspectorate, regional inspectorates or via the national strategy for occupational safety and health</li><li>These topics are discussed with the central labour inspectorate and the regional inspectorates; decision on the priority topics</li><li>The topics are embedded in the national strategy.</li></ul><p>The annual work plan was changed considerably in 2013 and adapted to the new system of outcome-oriented management. With this system there is a maximum number of five campaigns per year, of which no more than three should be in the implementation phase &nbsp;in the regional inspectorates. Politically-desired special activities have to be carried out in addition to the annual work plan. Of these five campaigns, around two should be carried out with an emphasis on impact; i.e. their effect in terms of occupational safety and health has to be able to be discernible.</p><p>The extension to five years was necessary to facilitate sufficient planning and trial runs as well as follow-up checks, a detailed review, and documentation. In this way, a campaign can be reflected in several annual work plans. Final reports must be presented after the conclusion of each campaign.</p><p>Regular inspection activity is determined by the annual framework agreement with the regional inspectorates.</p>");
 INSERT INTO strategies_page(page, nuts_id, text_1_literal_id, text_2_literal_id, text_3_literal_id, text_4_literal_id, text_5_literal_id, text_6_literal_id, text_7_literal_id, text_8_literal_id)  VALUES ("STRATEGY_ENFOR_CAPACITY", @nutsId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, null, null, null, null);
 
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -9117,9 +8025,9 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, NULL, "STRATEGY_ENFOR_CAPACITY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p>The General Labour Inspectorate Executive Agency (GLI EA) exercises overall control over the observance of the labour law in all sectors and activities, and specialized control on the compliance with the Healthy and Safe Working Conditions Act, the Employment Promotion Act, the legislation, related to the performance of civil service and the rights and obligations of the parties to a civil-service relationship, as well as of any other legal acts, where such control is provided for by law. The control also covers the peacetime activities within the system of the Ministry of Defence and the Ministry of Interior, and the Bulgarian enterprises abroad, unless otherwise specified in the laws of the respective country, or in an international treaty, the Republic of Bulgaria is a party to.</p><p>Within its competences, the Labour Inspectorate provides information and technical advice to employers and employees on the most efficient methods for compliance with the labour law, the legislation regulating occupational safety and health, and other legal acts, whose supervision is assigned to the Agency by law. The GLI EA also informs the competent authorities about established gaps and deficiencies in the labour legislation in force. The Agency conducts its activities in collaboration with the trade unions and employers’ associations, as well as with other nongovernmental organisations.</p><p>The Annual Action Plans of the GLI EA are agreed upon with the Minister of Labour and Social Policy, together with the Agency’s resource provision.</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, NULL, "STRATEGY_ENFOR_CAPACITY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p>Within the limits of their competence, GLI EA’s control bodies have the following powers:</p><ul><li>to visit at any time the ministries, the other departments, the enterprises and the places where work is performed, the premises used by factory and office workers, as well as to require from the persons found within the territory thereof to identify themselves by means of an identity document;</li><li>to require from the employer, respectively from the appointing authority, to provide explanations, information and to produce all documents, papers and certified copies thereof as may be necessary in connection with the exercise of control;</li><li>to obtain information directly from factory and office workers on all matters related to the exercise of control, as well as to require from workers to declare in writing facts and circumstances related to the performance of the work, respectively of the duties related to the civil service, including data on the labour remuneration;</li><li>to take specimens, samples and other such materials for laboratory tests and analyses, to use technical devices and equipment and to take measurements of factors of the working environment in connection with the exercise of control over the work performed;</li><li>to establish the causes and circumstances where under occupational accidents occurred.</li></ul>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p>Within the limits of their competence, GLI EA’s control bodies have the following powers:</p><ul><li>To visit at any time the ministries, the other departments, the enterprises and the places where work is performed, the premises used by factory and office workers, as well as to require from the persons found within the territory thereof to identify themselves by means of an identity document;</li><li>To require from the employer, respectively from the appointing authority, to provide explanations, information and to produce all documents, papers and certified copies thereof as may be necessary in connection with the exercise of control;</li><li>To obtain information directly from factory and office workers on all matters related to the exercise of control, as well as to require from workers to declare in writing facts and circumstances related to the performance of the work, respectively of the duties related to the civil service, including data on the labour remuneration;</li><li>To take specimens, samples and other such materials for laboratory tests and analyses, to use technical devices and equipment and to take measurements of factors of the working environment in connection with the exercise of control over the work performed;</li><li>To establish the causes and circumstances where under occupational accidents occurred.</li></ul>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, NULL, "STRATEGY_ENFOR_CAPACITY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>In 2013 was approved a Strategic Work Plan of the GLI EA 2013 – 2017, setting targets for:</p><ul><li>better and more effective realization of the Agency’s statutory powers;</li><li>reconcilability between the public attitudes and expectations and the results from the Agency’s control activity;</li><li>enlargement of the scope of the inspected enterprises;</li><li>priority inspection in the sectors with high levels of employment of vulnerable groups: persons with disabilities, older workers, working women, workers with fixed-duration employment contracts and migrant workers;</li><li>improved coordination and joint activities with other state control bodies, institutions and organizations;</li><li>boosting the initiative of the social partners for their involvement with ideas and projects to effectuate decent work and compliance with the social and labour rights of the workers;</li><li>constant feedback and measuring customer and stakeholder satisfaction with a view to raising the institutional image of the Agency;</li><li>professional and competent management of resources and processes, considering Agency’s staff the most important resource, continuously supporting their competence, motivation and satisfaction.</li></ul><p>The long-term plan underlies the annual development of the programs for the inspection activity (Annual Action Plans of the GLI EA). A strategic goal in the Plan is ‘To improve the quality of performance of the GLI EA’. To achieve the strategic goal, the following operational objectives are implemented:</p><ul><li>Operational objective 1: Effective control on the observance of the legislation in the field of labour, employment and civil service.</li><li>Operational objective 2: To enhance the Agency’s administrative capacity and the labour inspectors’ professional capacity.</li><li>Operational objective 3: To raise and strengthen the institutional profile of the Labour Inspectorate.</li><li>Operational objective 4: To develop the international activities, in line with the country’s commitments as a full member of the EU, to achieve coordination, cooperation and effective control on the migration processes.</li></ul>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>In 2013 was approved a Strategic Work Plan of the GLI EA 2013 – 2017, setting targets for:</p><ul><li>Better and more effective realization of the Agency’s statutory powers;</li><li>Reconcilability between the public attitudes and expectations and the results from the Agency’s control activity;</li><li>Enlargement of the scope of the inspected enterprises;</li><li>Priority inspection in the sectors with high levels of employment of vulnerable groups: persons with disabilities, older workers, working women, workers with fixed-duration employment contracts and migrant workers;</li><li>Improved coordination and joint activities with other state control bodies, institutions and organizations;</li><li>Boosting the initiative of the social partners for their involvement with ideas and projects to effectuate decent work and compliance with the social and labour rights of the workers;</li><li>Constant feedback and measuring customer and stakeholder satisfaction with a view to raising the institutional image of the Agency;</li><li>Professional and competent management of resources and processes, considering Agency’s staff the most important resource, continuously supporting their competence, motivation and satisfaction.</li></ul><p>The long-term plan underlies the annual development of the programs for the inspection activity (Annual Action Plans of the GLI EA). A strategic goal in the Plan is ‘To improve the quality of performance of the GLI EA’. To achieve the strategic goal, the following operational objectives are implemented:</p><ul><li>Operational objective 1: Effective control on the observance of the legislation in the field of labour, employment and civil service.</li><li>Operational objective 2: To enhance the Agency’s administrative capacity and the labour inspectors’ professional capacity.</li><li>Operational objective 3: To raise and strengthen the institutional profile of the Labour Inspectorate.</li><li>Operational objective 4: To develop the international activities, in line with the country’s commitments as a full member of the EU, to achieve coordination, cooperation and effective control on the migration processes.</li></ul>");
 INSERT INTO strategies_page(page, nuts_id, text_1_literal_id, text_2_literal_id, text_3_literal_id, text_4_literal_id, text_5_literal_id, text_6_literal_id, text_7_literal_id, text_8_literal_id)  VALUES ("STRATEGY_ENFOR_CAPACITY", @nutsId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, null, null, null, null);
 
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -9228,78 +8136,6 @@ INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, NU
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "No information");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, NULL, "STRATEGY_ENFOR_CAPACITY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>The Strategic Plan of ACT for 2017-2020 has three main goals:</p><ul><li>To promote the reduction of occupational accidents and diseases</li><li>To promote the reduction of undeclared work and related phenomena</li></ul><p>To promote the development and organizational well-being in ACT.</p><p>In order to follow these main goals, two methodologies are adopted: inspection activity and national tripartite campaigns, carried out with social and institutional partners. These campaigns comprises, mainly:</p><ul><li>Training (with social partners);</li><li>Information (with social partners);</li><li>Inspection (by ACT and other inspection bodies, when appropriate, such as social security, taxes, foreign services, national maritime authority and police).</li></ul><p>In line with the principles to be followed in drawing up plan and report activities of Portuguese services and public administration bodies, ACT also had an Activity Plan for 2016 which is part of the strategic goals, programs and guidelines identified in the ACT Strategy 2017-2020, reflecting ACT’s vision to face the challenges in a frame of financial constraints resulting from the current economic and social context, without losing sight of the need for continuing the efforts to modernize and simply the procedures, reducing bureaucracy and rationalizing the resource use.</p>");
-INSERT INTO strategies_page(page, nuts_id, text_1_literal_id, text_2_literal_id, text_3_literal_id, text_4_literal_id, text_5_literal_id, text_6_literal_id, text_7_literal_id, text_8_literal_id)  VALUES ("STRATEGY_ENFOR_CAPACITY", @nutsId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, null, null, null, null);
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="RO");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, NULL, "STRATEGY_ENFOR_CAPACITY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "<p>&nbsp;</p><p>See more in <a href=\"&lt;a%20data-ui-sref=&quot;OSH-authorities&quot;&gt;Labour-Inspection&lt;/a&gt;\">OSH Authorities</a> in the Labour Inspection section&nbsp;</p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, NULL, "STRATEGY_ENFOR_CAPACITY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "No information");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, NULL, "STRATEGY_ENFOR_CAPACITY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "No information");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, NULL, "STRATEGY_ENFOR_CAPACITY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "No information");
-INSERT INTO strategies_page(page, nuts_id, text_1_literal_id, text_2_literal_id, text_3_literal_id, text_4_literal_id, text_5_literal_id, text_6_literal_id, text_7_literal_id, text_8_literal_id)  VALUES ("STRATEGY_ENFOR_CAPACITY", @nutsId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, null, null, null, null);
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="SK");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, NULL, "STRATEGY_ENFOR_CAPACITY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "<p>&nbsp;</p><p>See more in <a href=\"&lt;a%20data-ui-sref=&quot;OSH-authorities&quot;&gt;Labour-Inspection&lt;/a&gt;\">OSH Authorities</a> in the Labour Inspection section&nbsp;</p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, NULL, "STRATEGY_ENFOR_CAPACITY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "No information");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, NULL, "STRATEGY_ENFOR_CAPACITY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "No information");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, NULL, "STRATEGY_ENFOR_CAPACITY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "No information");
-INSERT INTO strategies_page(page, nuts_id, text_1_literal_id, text_2_literal_id, text_3_literal_id, text_4_literal_id, text_5_literal_id, text_6_literal_id, text_7_literal_id, text_8_literal_id)  VALUES ("STRATEGY_ENFOR_CAPACITY", @nutsId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, null, null, null, null);
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="SI");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, NULL, "STRATEGY_ENFOR_CAPACITY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "<p>&nbsp;</p><p>See more in <a href=\"&lt;a%20data-ui-sref=&quot;OSH-authorities&quot;&gt;Labour-Inspection&lt;/a&gt;\">OSH Authorities</a> in the Labour Inspection section&nbsp;</p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, NULL, "STRATEGY_ENFOR_CAPACITY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "No information");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, NULL, "STRATEGY_ENFOR_CAPACITY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "No information");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, NULL, "STRATEGY_ENFOR_CAPACITY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "No information");
-INSERT INTO strategies_page(page, nuts_id, text_1_literal_id, text_2_literal_id, text_3_literal_id, text_4_literal_id, text_5_literal_id, text_6_literal_id, text_7_literal_id, text_8_literal_id)  VALUES ("STRATEGY_ENFOR_CAPACITY", @nutsId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, null, null, null, null);
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="SE");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, NULL, "STRATEGY_ENFOR_CAPACITY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "<p>&nbsp;</p><p>See more in <a href=\"&lt;a%20data-ui-sref=&quot;OSH-authorities&quot;&gt;Labour-Inspection&lt;/a&gt;\">OSH Authorities</a> in the Labour Inspection section&nbsp;</p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, NULL, "STRATEGY_ENFOR_CAPACITY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "No information");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, NULL, "STRATEGY_ENFOR_CAPACITY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "No information");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, NULL, "STRATEGY_ENFOR_CAPACITY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "No information");
-INSERT INTO strategies_page(page, nuts_id, text_1_literal_id, text_2_literal_id, text_3_literal_id, text_4_literal_id, text_5_literal_id, text_6_literal_id, text_7_literal_id, text_8_literal_id)  VALUES ("STRATEGY_ENFOR_CAPACITY", @nutsId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, null, null, null, null);
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="ES");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, NULL, "STRATEGY_ENFOR_CAPACITY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "<p>&nbsp;</p><p>See more in <a href=\"&lt;a%20data-ui-sref=&quot;OSH-authorities&quot;&gt;Labour-Inspection&lt;/a&gt;\">OSH Authorities</a> in the Labour Inspection section&nbsp;</p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, NULL, "STRATEGY_ENFOR_CAPACITY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "No information");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, NULL, "STRATEGY_ENFOR_CAPACITY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "No information");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, NULL, "STRATEGY_ENFOR_CAPACITY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "No information");
-INSERT INTO strategies_page(page, nuts_id, text_1_literal_id, text_2_literal_id, text_3_literal_id, text_4_literal_id, text_5_literal_id, text_6_literal_id, text_7_literal_id, text_8_literal_id)  VALUES ("STRATEGY_ENFOR_CAPACITY", @nutsId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, null, null, null, null);
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="NL");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, NULL, "STRATEGY_ENFOR_CAPACITY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "<p>&nbsp;</p><p>See more in <a href=\"&lt;a%20data-ui-sref=&quot;OSH-authorities&quot;&gt;Labour-Inspection&lt;/a&gt;\">OSH Authorities</a> in the Labour Inspection section&nbsp;</p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, NULL, "STRATEGY_ENFOR_CAPACITY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "No information");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, NULL, "STRATEGY_ENFOR_CAPACITY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "No information");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, NULL, "STRATEGY_ENFOR_CAPACITY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "No information");
 INSERT INTO strategies_page(page, nuts_id, text_1_literal_id, text_2_literal_id, text_3_literal_id, text_4_literal_id, text_5_literal_id, text_6_literal_id, text_7_literal_id, text_8_literal_id)  VALUES ("STRATEGY_ENFOR_CAPACITY", @nutsId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, null, null, null, null);
 
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="AT");

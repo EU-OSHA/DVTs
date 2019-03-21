@@ -233,16 +233,16 @@
 2239-https://www.ds.dk/en
 2239-https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Denmark 
 2242-http://www.sm.ee/et
-2242-https://oshwiki.eu/wiki/OSH_system_at_national_level_ÔÇô_Estonia
+2242-https://oshwiki.eu/wiki/OSH_system_at_national_level_–_Estonia
 2245-http://www.terviseamet.ee/en/information/about-hb.html
-2245-https://oshwiki.eu/wiki/OSH_system_at_national_level_ÔÇô_Estonia
+2245-https://oshwiki.eu/wiki/OSH_system_at_national_level_–_Estonia
 2248-http://www.ti.ee/index.php?page=3& 
-2248-https://oshwiki.eu/wiki/OSH_system_at_national_level_ÔÇô_Estonia
+2248-https://oshwiki.eu/wiki/OSH_system_at_national_level_–_Estonia
 2251-http://www.haigekassa.ee/en
-2251-https://oshwiki.eu/wiki/OSH_system_at_national_level_ÔÇô_Estonia
-2254-https://oshwiki.eu/wiki/OSH_system_at_national_level_ÔÇô_Estonia
+2251-https://oshwiki.eu/wiki/OSH_system_at_national_level_–_Estonia
+2254-https://oshwiki.eu/wiki/OSH_system_at_national_level_–_Estonia
 2257-http://www.evs.ee/Esileht/tabid/111/language/en-US/Default.aspx
-2257-https://oshwiki.eu/wiki/OSH_system_at_national_level_ÔÇô_Estonia
+2257-https://oshwiki.eu/wiki/OSH_system_at_national_level_–_Estonia
 2260-http://ec.europa.eu/social/main.jsp?langId=en&catId=656
 2260-https://www.eurofound.europa.eu/country/eu-level
 2263-http://www.europarl.europa.eu
@@ -342,7 +342,7 @@
 2404-https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Hungary
 2407-https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Hungary
 2410-https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Hungary
-2413-Hungarian Standards Institution (Magyar Szabv├íny├╝gyi Test├╝let ÔÇô MSZT)
+2413-Hungarian Standards Institution (Magyar Szabványügyi Testület – MSZT)
 2413-https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Hungary
 2416-http://www.hsa.ie
 2416-https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Ireland
@@ -729,11 +729,11 @@
 3126-http://engelsk.arbejdstilsynet.dk/en/research/arbejdsmiljoforskningsfonden%20
 3126-https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Denmark%20
 3128-http://www.tai.ee/en/%20
-3128-https://oshwiki.eu/wiki/OSH_system_at_national_level_ÔÇô_Estonia%20
+3128-https://oshwiki.eu/wiki/OSH_system_at_national_level_–_Estonia%20
 3130-http://www.ut.ee/en%20
-3130-https://oshwiki.eu/wiki/OSH_system_at_national_level_ÔÇô_Estonia
+3130-https://oshwiki.eu/wiki/OSH_system_at_national_level_–_Estonia
 3132-http://www.ttu.ee/
-3132-https://oshwiki.eu/wiki/OSH_system_at_national_level_ÔÇô_Estonia
+3132-https://oshwiki.eu/wiki/OSH_system_at_national_level_–_Estonia
 3134-https://www.ttl.fi/en/
 3134-https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Finland
 3136-http://www.vttresearch.com
@@ -867,10 +867,4 @@
 3283-&lt;a%20data-ui-sref=&quot;OSH-authorities&quot;&gt;Labour-Inspection&lt;/a&gt;
 3283-http://www.pip.gov.pl
 3287-&lt;a%20data-ui-sref=&quot;OSH-authorities&quot;&gt;Labour-Inspection&lt;/a&gt;
-3291-&lt;a%20data-ui-sref=&quot;OSH-authorities&quot;&gt;Labour-Inspection&lt;/a&gt;
-3295-&lt;a%20data-ui-sref=&quot;OSH-authorities&quot;&gt;Labour-Inspection&lt;/a&gt;
-3299-&lt;a%20data-ui-sref=&quot;OSH-authorities&quot;&gt;Labour-Inspection&lt;/a&gt;
-3303-&lt;a%20data-ui-sref=&quot;OSH-authorities&quot;&gt;Labour-Inspection&lt;/a&gt;
-3307-&lt;a%20data-ui-sref=&quot;OSH-authorities&quot;&gt;Labour-Inspection&lt;/a&gt;
-3311-&lt;a%20data-ui-sref=&quot;OSH-authorities&quot;&gt;Labour-Inspection&lt;/a&gt;
 
