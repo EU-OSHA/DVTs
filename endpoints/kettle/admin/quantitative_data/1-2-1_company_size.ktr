@@ -122,9 +122,10 @@
   <hop> <from>Get Profile Count</from><to>Check if value null</to><enabled>Y</enabled> </hop>
   <hop> <from>Modified Java Script Value 2</from><to>Write SQL Sentences 2</to><enabled>Y</enabled> </hop>
   <hop> <from>Check if value null</from><to>Profile Exists&#x3f;</to><enabled>Y</enabled> </hop>
-  <hop> <from>Write SQL Sentences</from><to>Get Value Count</to><enabled>Y</enabled> </hop>
   <hop> <from>Profile Exists&#x3f;</from><to>Modified Java Script Value 4</to><enabled>Y</enabled> </hop>
-  <hop> <from>Modified Java Script Value 4</from><to>Get Value Count</to><enabled>Y</enabled> </hop>
+  <hop> <from>Write SQL Sentences</from><to>Blocking Step</to><enabled>Y</enabled> </hop>
+  <hop> <from>Modified Java Script Value 4</from><to>Blocking Step</to><enabled>Y</enabled> </hop>
+  <hop> <from>Blocking Step</from><to>Get Value Count</to><enabled>Y</enabled> </hop>
   </order>
   <step>
     <name>Add Profile</name>
@@ -156,6 +157,30 @@
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>528</xloc>
       <yloc>144</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Blocking Step</name>
+    <type>BlockingStep</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <pass_all_rows>Y</pass_all_rows>
+      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
+      <prefix>block</prefix>
+      <cache_size>5000</cache_size>
+      <compress>Y</compress>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>816</xloc>
+      <yloc>32</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -378,7 +403,7 @@
     </arguments>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>896</xloc>
+      <xloc>912</xloc>
       <yloc>32</yloc>
       <draw>Y</draw>
       </GUI>
@@ -434,7 +459,7 @@
     <optimizationLevel>9</optimizationLevel>
     <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
         <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>queries &#x3d; &#x27;SET &#x40;companyId &#x3d; &#x28;SELECT cs.id&#x27;&#xd;&#xa;				&#x2b; &#x27;FROM split_company_size cs INNER JOIN translation t ON cs.literal_id&#x3d;t.literal_id &#x27;&#xd;&#xa;				&#x2b; &#x27;WHERE t.text&#x3d;&#x22;&#x27; &#x2b; companySize &#x2b; &#x27;&#x22;&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;queries &#x3d; queries &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;queries &#x3d; queries &#x2b; &#x27;SET &#x40;nutsId &#x3d; &#x28;SELECT id FROM nuts WHERE country_code&#x3d;&#x22;&#x27; &#x2b; Country &#x2b; &#x27;&#x22;&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;queries &#x3d; queries &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;&#xd;&#xa;&#xd;&#xa;queries &#x3d; queries &#x2b; &#x22;INSERT INTO profile &#x28;nuts_id, company_size_id&#x29; VALUE &#x28;&#x40;nutsId, &#x40;companyId&#x29;&#x3b;&#x22;&#x3b;&#xd;&#xa;queries &#x3d; queries &#x2b; &#x22;&#x5c;n&#x22;&#x3b;</jsScript_script>
+        <jsScript_script>queries &#x3d; &#x27;SET &#x40;companyId &#x3d; &#x28;SELECT cs.id &#x27;&#xd;&#xa;				&#x2b; &#x27;FROM split_company_size cs INNER JOIN translation t ON cs.literal_id&#x3d;t.literal_id &#x27;&#xd;&#xa;				&#x2b; &#x27;WHERE t.text&#x3d;&#x22;&#x27; &#x2b; companySize &#x2b; &#x27;&#x22;&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;queries &#x3d; queries &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;queries &#x3d; queries &#x2b; &#x27;SET &#x40;nutsId &#x3d; &#x28;SELECT id FROM nuts WHERE country_code&#x3d;&#x22;&#x27; &#x2b; Country &#x2b; &#x27;&#x22;&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;queries &#x3d; queries &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;&#xd;&#xa;&#xd;&#xa;queries &#x3d; queries &#x2b; &#x22;INSERT INTO profile &#x28;nuts_id, company_size_id&#x29; VALUE &#x28;&#x40;nutsId, &#x40;companyId&#x29;&#x3b;&#x22;&#x3b;&#xd;&#xa;queries &#x3d; queries &#x2b; &#x22;&#x5c;n&#x22;&#x3b;</jsScript_script>
       </jsScript>    </jsScripts>    <fields>      <field>        <name>queries</name>
         <rename>queries</rename>
         <type>String</type>
@@ -464,7 +489,7 @@
     <optimizationLevel>9</optimizationLevel>
     <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
         <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>var queries2 &#x3d; &#x27;SET &#x40;profileID &#x3d; &#x28;SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id&#x3d;n.id &#x27;&#xd;&#xa;				&#x2b; &#x27;INNER JOIN split_company_size cs ON p.company_size_id&#x3d;cs.id &#x27;&#xd;&#xa;				&#x2b; &#x27;INNER JOIN translation t ON cs.literal_id&#x3d;t.literal_id &#x27;&#xd;&#xa;				&#x2b; &#x27;WHERE t.text&#x3d;&#x22;&#x27; &#x2b; companySize &#x2b; &#x27;&#x22; AND n.country_code&#x3d;&#x22;&#x27; &#x2b; Country &#x2b; &#x27;&#x22; &#x27;&#xd;&#xa;				&#x2b; &#x27;AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL &#x27;&#xd;&#xa;				&#x2b; &#x27;AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL &#x27;&#xd;&#xa;				&#x2b; &#x27;AND subindicator_id IS NULL&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;queries2 &#x3d; &#x27;SET &#x40;indicatorID &#x3d; &#x28;SELECT id FROM indicator WHERE name&#x3d;&#x22;Company size&#x22;&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x27;SET &#x40;datasetID &#x3d; &#x28;SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id&#x3d;&#x40;indicatorID&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x27;INSERT INTO value &#x28;dataset_id, indicator_id, profile_id, value&#x29;&#x27;&#xd;&#xa;			&#x2b; &#x27;VALUES &#x28;&#x40;datasetID, &#x40;indicatorID, &#x40;profileID, &#x27; &#x2b; newValue &#x2b; &#x27;&#x29;&#x3b;&#x27;&#xd;&#xa;&#xd;&#xa;</jsScript_script>
+        <jsScript_script>var queries2 &#x3d; &#x27;SET &#x40;profileID &#x3d; &#x28;SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id&#x3d;n.id &#x27;&#xd;&#xa;				&#x2b; &#x27;INNER JOIN split_company_size cs ON p.company_size_id&#x3d;cs.id &#x27;&#xd;&#xa;				&#x2b; &#x27;INNER JOIN translation t ON cs.literal_id&#x3d;t.literal_id &#x27;&#xd;&#xa;				&#x2b; &#x27;WHERE t.text&#x3d;&#x22;&#x27; &#x2b; companySize &#x2b; &#x27;&#x22; AND n.country_code&#x3d;&#x22;&#x27; &#x2b; Country &#x2b; &#x27;&#x22; &#x27;&#xd;&#xa;				&#x2b; &#x27;AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL &#x27;&#xd;&#xa;				&#x2b; &#x27;AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL &#x27;&#xd;&#xa;				&#x2b; &#x27;AND subindicator_id IS NULL&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x27;SET &#x40;indicatorID &#x3d; &#x28;SELECT id FROM indicator WHERE name&#x3d;&#x22;Company size&#x22;&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x27;SET &#x40;datasetID &#x3d; &#x28;SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id&#x3d;&#x40;indicatorID&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x27;INSERT INTO value &#x28;dataset_id, indicator_id, profile_id, value&#x29;&#x27;&#xd;&#xa;			&#x2b; &#x27;VALUES &#x28;&#x40;datasetID, &#x40;indicatorID, &#x40;profileID, &#x27; &#x2b; newValue &#x2b; &#x27;&#x29;&#x3b;&#x27;&#xd;&#xa;&#xd;&#xa;</jsScript_script>
       </jsScript>    </jsScripts>    <fields>      <field>        <name>queries2</name>
         <rename>queries2</rename>
         <type>String</type>
