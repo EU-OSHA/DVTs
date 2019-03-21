@@ -699,4 +699,5 @@
       AND n.country_code = ${pCountry}
     </Query>
   </DataAccess>
+  
 </CDADescriptor>
