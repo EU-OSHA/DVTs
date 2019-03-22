@@ -46,58 +46,7 @@ define(function (require) {
               //description: i18n.L397
           }
         });
-
-        $stateProvider.state('economic-sector-profile', {
-          url: "/generic-information/economic-sector-profile/:pCountry1/:pCountry2",
-          params: {
-            pCountry1: {
-                  value: "AT",
-                  squash: "AT"
-            },
-            pCountry2: {
-                  value: "BE",
-                  squash: "BE"
-            }
-          },
-          views: {
-              "content-main": {
-                  templateUrl: configService.getVerticalTplPath("generic-information/economic-sector-profile", "economic-sector-profile"),
-                  controller: 'EconomicSectorProfileController',
-                  resolve: configService.dynamicallyRegisterController($controllerProvider, 'vertical/economic-sector-profile/EconomicSectorProfileController', 'economic-sector-profile', 'EconomicSectorProfileController')
-              }
-          },
-          metaTags: {
-              title: i18n.L22001 +" | "+ i18n.L22003
-          }
-        });
-
-        $stateProvider.state('workforce-profile', {
-          url: "/generic-information/workforce-profile/:pIndicator/:pSubIndicator",
-          params: {
-            pIndicator: {
-                  value: "median-age",
-                  squash: "median-age"
-            },
-            pSubIndicator: {
-              value: 'ageing-workers',
-              squash: 'ageing-workers'
-            }
-          },
-          views: {
-              "content-main": {
-                  templateUrl: configService.getVerticalTplPath("generic-information/workforce-profile", "workforce-profile"),
-                  controller: 'WorkforceProfileController',
-                  resolve: configService.dynamicallyRegisterController($controllerProvider, 'vertical/workforce-profile/WorkforceProfileController', 'workforce-profile', 'WorkforceProfileController')
-              }
-          },
-          metaTags: {
-              title: i18n.L22001 +" | "+ i18n.L22004
-          }
-        });
     });
-
-    module.factory('EconomicSectorProfileService', require('vertical/economic-sector-profile/services/EconomicSectorProfileService'));
-    module.factory('WorkforceProfileService', require('vertical/workforce-profile/services/WorkforceProfileService'));
 
     return module;
 });

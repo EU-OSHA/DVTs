@@ -17,34 +17,6 @@ define(function (require) {
         var i18n = configService.getLiterals();
 
         $uiViewScrollProvider.useAnchorScroll();
-
-        $stateProvider.state('regulation', {
-          url: "/osh-steering/regulation/:pIndicator/:pCountry1/:pCountry2",
-          params: {
-            pIndicator: {
-              value: 'secondary-legislation',
-              squash: 'secondary-legislation'
-            },
-            pCountry1: {
-              value: "AT",
-              squash: "AT"
-            },
-            pCountry2: {
-              value: "BE",
-              squash: "BE"
-            }
-          },
-          views: {
-              "content-main": {
-                  templateUrl: configService.getVerticalTplPath("osh-steering/regulation", "regulation"),
-                  controller: 'RegulationController',
-                  resolve: configService.dynamicallyRegisterController($controllerProvider, 'vertical/regulation/RegulationController', 'regulation', 'RegulationController')
-              }
-          },
-          metaTags: {
-              title: i18n.L22001 +" | "+ i18n.L22003
-          }
-        });
     });
 
     return module;
