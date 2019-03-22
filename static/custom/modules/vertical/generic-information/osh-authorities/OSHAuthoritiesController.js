@@ -384,25 +384,25 @@ define(function (require) {
           $scope.searchParams.institutions.filter1=1;
           par="institution";
 
-          var html = '<span class="selected-tag" id="institutionFilter1" data-ng-click="deleteTag($event)">Authorities</span>';
+          var html = '<span class="selected-tag" id="institutionFilter1" data-ng-click="deleteTag($event)" data-ng-bind="i18nLiterals.L20614"></span>';
           tags.append( $compile(html)($scope) );
         }
         if(check2) {
           $scope.searchParams.institutions.filter2=1;
           par="institution";
-          var html = '<span class="selected-tag" id="institutionFilter2" data-ng-click="deleteTag($event)">Insurance</span>';
+          var html = '<span class="selected-tag" id="institutionFilter2" data-ng-click="deleteTag($event)" data-ng-bind="i18nLiterals.L20611"></span>';
           tags.append( $compile(html)($scope) );
         }
         if(check3) {
           $scope.searchParams.institutions.filter3=1;
           par="institution";
-          var html = '<span class="selected-tag" id="institutionFilter3" data-ng-click="deleteTag($event)">Prevention</span>';
+          var html = '<span class="selected-tag" id="institutionFilter3" data-ng-click="deleteTag($event)" data-ng-bind="i18nLiterals.L20612"></span>';
           tags.append( $compile(html)($scope) );
         }
         if(check4) {
           $scope.searchParams.institutions.filter4=1;
           par="institution";
-          var html = '<span class="selected-tag" id="institutionFilter4" data-ng-click="deleteTag($event)">Standardisation</span>';
+          var html = '<span class="selected-tag" id="institutionFilter4" data-ng-click="deleteTag($event)" data-ng-bind="i18nLiterals.L20613"></span>';
           tags.append( $compile(html)($scope) );
         }
 
