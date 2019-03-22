@@ -328,6 +328,15 @@
     #filter3{
       display: block;
       width: 100%;
+      min-height: 5rem;
+      &.affix{
+				position: fixed;
+				left: 0;
+				width: 100% !important;
+				padding: 1rem 5%;
+				background: #FFF;
+				top: 9rem;
+      }
     }
 		.survey--map--block{
 			display: none;
@@ -810,6 +819,29 @@ and (max-width :767px)  {
     }
 	/**	END ELEMENTS  **/
 
+  .workforce--page{
+    #filter3{
+    	&.affix-top{
+				padding: 1rem 4rem 1rem 0;
+				position: relative;
+    	}
+      &.affix{
+				position: fixed;
+				left: 0;
+				width: 100% !important;
+				padding: 1rem 5%;
+				background: #FFF;
+				min-height: 10rem;
+				top: 0rem;
+      }
+      &.hide-header {
+      	top: -9rem;
+      }
+      &.show-header {
+      	top: 9rem;
+      }
+    }
+  }
 	.survey--map--block-mobile{
 		.matrix--elements--wrapper{
 		  .matrix--elements--data{

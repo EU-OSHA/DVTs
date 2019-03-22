@@ -36,7 +36,7 @@
     */
   } 
   .section--page{
-    padding: 4rem 0;
+    padding: 4rem 0 2rem;
   }
   h1, h2, h3, h4 {
     font-family:$font-header;
@@ -411,7 +411,7 @@
   }
   .advice--icon--block{
     position: relative;
-    padding: 2rem 0;
+    padding: 1rem 0;
     .title--section{
       font-family: 'Oswald';
       font-size: 3rem;
@@ -424,7 +424,7 @@
     width: 100%;
   }
   .icon--advice{
-    height: 20rem;    
+    min-height: 16rem;    
   }
   .breadcrumbs--block{
     .breadcrumbs--list{
@@ -1009,7 +1009,7 @@
               text-align: center;
               width: auto;
               border-radius: 8px;
-              border: 1px solid #B1B3B4;
+              border: 1px solid $gray-light;
               display: block;
               font-size: 2rem;
               font-family: 'Oswald';
@@ -1021,8 +1021,11 @@
               span{
                 border:0px;
                 opacity:0.6;
-                color: $gray-light; 
-                font-size: 3.5rem;          
+                color: $aquamarine; 
+                font-size: 3.5rem;
+                &:hover{
+                  color:$aquamarine-dark;
+                }          
               }
             }
           }        
