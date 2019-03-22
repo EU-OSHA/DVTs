@@ -29,15 +29,16 @@ define(function (require) {
     $scope.indicators = [];
 
     $scope.country1Data = {};
-    $scope.country2Data = {}
+    $scope.country2Data = {};
 
     // Country parameters
     $scope.pCountry1 = $stateParams.pCountry1;
     $scope.pCountry2 = $stateParams.pCountry2;
     $scope.pIndicator = $stateParams.pIndicator;
 
-    // Show/hide the Countries Filter List
+    $scope.maxCharacters = 200;
 
+    // Show/hide the Countries Filter List
     angular.element('div.countries-filters').css( "display",'none' );
     angular.element('#filter2 h2').addClass('showChallenges');
     $scope.toggleFilters = function() {
@@ -45,7 +46,32 @@ define(function (require) {
             angular.element('#filter2 h2').toggleClass('showChallenges');
             angular.element('div.countries-filters').slideToggle( "slow" );
         }
-    }
+    };
+
+    // Read more
+    $scope.trimtext = function(pVal, pNumCharacters){
+      var shortText = pVal;
+      if (shortText.length > pNumCharacters) {
+        shortText = $.trim(pVal).substring(0, pNumCharacters).split(" ").slice(0, -1).join(" ") + $scope.longText(pVal, pNumCharacters) + "<span class='see-more'>...</span>";
+      }
+      return shortText;
+    };
+
+    $scope.longText = function(pVal, pNumCharacters) {
+      var longText = "<samp style='display:none'> " + pVal.split(" ").slice($.trim(pVal).substring(0, pNumCharacters).split(" ").slice(0, -1).length).join(" ") + '</samp>';
+      return longText;
+    };
+
+    $scope.toggleText = function($event) {
+      $log.warn("entra en toggleText");
+      angular.element(' samp', angular.element($event.target).parent().parent()).slideToggle('medium', function() {
+        if ($(this).is(':visible')) {
+          $(this).css('display','inline');
+        }
+      });
+      angular.element(' span.see-more', angular.element($event.target).parent().parent()).slideToggle();
+      angular.element('p a', angular.element($event.target).parent()).toggle();
+    };
 
     /******************************************************************************|
     |                                DATA LOAD                                     |
