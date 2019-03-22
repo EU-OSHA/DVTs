@@ -34,7 +34,12 @@
       top: 199px;
     }
     */
-  } 
+  }
+  *:focus{
+    outline:none !important;
+    background: transparent !important;
+  }
+
   .section--page{
     padding: 4rem 0 2rem;
   }
