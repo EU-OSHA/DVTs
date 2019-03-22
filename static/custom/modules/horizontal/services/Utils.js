@@ -255,6 +255,46 @@ define(function (require) {
                 return colors.chartSecondaryColor;
              },
 
+            getRangeColors: function(value, minValue, maxValue, range, country) {
+                /* value < minValue + range ||  value > minValue + range && value < maxValue - range*2 || 
+                value > minValue + range*2 && value < maxValue - range || value > maxValue - range
+                */
+
+                if(country == 'IS' || country == 'NO' || country == 'CH'){ //Island, Norway and Switzerland
+                    if(value <= minValue+range){
+                        return 'url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/diagonal-stripes-1.png)';
+                    }else if((value > minValue+range) && (value <= maxValue-range*2)){
+                        return 'url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/diagonal-stripes-2.png)';
+                    }else if((value > minValue+range*2) && (value < maxValue-range)){
+                        return 'url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/diagonal-stripes-3.png)';
+                    }else if(value >= maxValue-range){
+                        return 'url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/diagonal-stripes.png)';
+                    }
+                }else{
+                    if(value <= minValue+range){
+                        return colors.rangeColors.range1;
+                    }else if((value > minValue+range) && (value <= maxValue-range*2)){
+                        return colors.rangeColors.range2;
+                    }else if((value > minValue+range*2) && (value < maxValue-range)){
+                        return colors.rangeColors.range3;
+                    }else if(value >= maxValue-range){
+                        return colors.rangeColors.range4;
+                    }
+                }
+            },
+
+            getOpacityCountries: function(value, minValue, maxValue, range, country) {
+                if(value <= minValue+range){
+                    return 0.25;
+                }else if((value > minValue+range) && (value <= maxValue-range*2)){
+                    return 0.50;
+                }else if((value > minValue+range*2) && (value < maxValue-range)){
+                    return 0.75;
+                }else if(value >= maxValue-range){
+                    return 1;
+                }
+            }
+
         }
     };
 

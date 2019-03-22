@@ -2,11 +2,11 @@
 
   <section data-ng-if="state.current.name != 'home'" id="not-home-cover" class="advice--icon--block advice--block-not-home background-main-light container-fluid section--page">
       <div class="container horizontal-nopadding">
-        <div class="left-text col-xs-8 col-md-8 nopadding">
-          <h2 class="main-color left-text" data-ng-bind="i18nLiterals.L22002"></h2>
+        <div class="left-text col-md-8 col-sm-8 col-xs-12  nopadding">
+          <h1 class="main-color left-text" data-ng-bind="i18nLiterals.L22002"></h1>
           <p data-ng-bind="i18nLiterals.L22025"></p>
         </div>
-        <div class="icon--advice forum-icon col-xs-4 col-md-4"></div>
+        <div class="icon--advice forum-icon hide-mobile col-sm-4 col-md-4"></div>
       </div>
   </section>
 
@@ -73,14 +73,14 @@
         <div data-ng-repeat="matrix in amatrix | limitTo:pageSize:elementsStart" class="matrix--element">
           <div class="matrix--header--elements">
             <img  class="flags--wrapper" ng-src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/flag/{{::matrix.country_code.toLowerCase()}}.png">
-            <h3 class="country ng-binding title-section main-color" data-ng-bind="i18nLiterals['L'+matrix.country_name]"></h3>
+            <h2 class="country ng-binding title-section main-color" data-ng-bind="i18nLiterals['L'+matrix.country_name]"></h2>
           </div>
 
           <div class="matrix--content--elements">
-            <h4 class="" ng-if="::matrix.osh_authority==1" data-ng-bind="i18nLiterals.L20614"></h4>
-            <h4 class="" ng-if="::matrix.compensation==1" data-ng-bind="i18nLiterals.L20611"></h4>
-            <h4 class="" ng-if="::matrix.prevention==1" data-ng-bind="i18nLiterals.L20612"></h4>
-            <h4 class="" ng-if="::matrix.standardisation==1" data-ng-bind="i18nLiterals.L20613"></h4>
+            <h3 class="" ng-if="::matrix.osh_authority==1" data-ng-bind="i18nLiterals.L20614"></h3>
+            <h3 class="" ng-if="::matrix.compensation==1" data-ng-bind="i18nLiterals.L20611"></h3>
+            <h3 class="" ng-if="::matrix.prevention==1" data-ng-bind="i18nLiterals.L20612"></h3>
+            <h3 class="" ng-if="::matrix.standardisation==1" data-ng-bind="i18nLiterals.L20613"></h3>
 
             <div data-ng-bind-html="i18nLiterals['L'+matrix.name_authority]"></div>
             <div data-ng-bind-html="i18nLiterals['L'+matrix.link_authority]"></div>

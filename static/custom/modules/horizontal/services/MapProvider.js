@@ -22,26 +22,31 @@ define(function (require) {
             getTooltipConfiguration: function () {
                 var bColor = dvtUtils.getEUTooltipColor();
                 var conf = {
-                    height: 40,
-                    width: 130,
+                    height: 120,
+                    width: 180,
                     fontColor: dvtUtils.getTooltipFontColor(),
                     backColor: dvtUtils.getEUTooltipColor(),
                     strokeColor: dvtUtils.getEUTooltipStrokeColor(),
-                    backOpacity: 0.80,
-                    fontSize: 14,
-                    fontWeight: "bold"
+                    backOpacity: 0.90,
+                    fontSize: 12
                 };
                 return conf;
             },
             getNotEUCountries: function () {
                 return ["TR", "UA", "BY", "AL", "MK", "BA", "RS", "MD"];
             },
+            nonEUCountry: function (country) {
+                if(country == 'IS' || country == 'NO' || country == 'CH'){ //Island, Norway and Switzerland
+                    return true;
+                }
+                return false;
+            },
             getLabelDefinition: function () {
                 return {
-                    'font-size': 8,
+                    'font-size': 10,
                     stroke: 'none',
-                    'font-family': 'Arial,Helvetica,sans-serif',
-                    'font-weight': 1000
+                    'font-family': 'OpenSans',
+                    'font-weight': 400
                 };
             },
             getCommonClickAction: function () {

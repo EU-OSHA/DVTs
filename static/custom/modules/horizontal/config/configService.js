@@ -22,7 +22,7 @@ define(function (require) {
     var horizontalPathDiretive = horizontalPath + "directives/";
 
     var i18n = require('json!horizontal/model/literals');
-    var commonLiterals = require('json!horizontal/model/commonliterals');
+    var datasets = require('json!horizontal/model/datasets');
 
     /*gtranslator info*/
     setTimeout (function() {
@@ -344,15 +344,19 @@ define(function (require) {
             return i18n;
         },
 
+        // ----------------------------------
+        //  Datasets
+        // ----------------------------------
+
         /**
          * @ngdoc method
-         * @name dvt.configModule.configService#getCommonLiterals
+         * @name dvt.configModule.configService#getDatasets
          * @methodOf dvt.configModule.configService
          * @description
-         * Get the Common Literals list
+         * Get the Datasets list
          */
-        getCommonLiterals: function() { 
-            return commonLiterals;
+        getDatasets: function () {
+            return datasets;
         },
 
         // ----------------------------------

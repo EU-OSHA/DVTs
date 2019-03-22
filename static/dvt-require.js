@@ -105,7 +105,9 @@
     /* MODEL */
     /* LITERALS */
     requirePaths['horizontal/model/literals'] = horizontalModules + '/model/Literals' + suffix + '.json';
-    requirePaths['horizontal/model/commonliterals'] = horizontalModules + '/model/CommonLiterals' + suffix + '.json';
+
+    /* DATASETS */ 
+    requirePaths['horizontal/model/datasets'] = horizontalModules + '/model/Datasets' + suffix + '.json';
 
     /* COLORS */
     requirePaths['horizontal/model/colors'] = horizontalModules + '/model/Colors' + suffix + '.json';
@@ -156,6 +158,18 @@
 
     /* ECONOMIC AND SECTOR PROFILE */
     requirePaths['vertical/economic-sector-profile/EconomicSectorProfileController'] = verticalModules + '/generic-information/economic-sector-profile/EconomicSectorProfileController' + suffix;
+    requirePaths['vertical/economic-sector-profile/services/EconomicSectorProfileService'] = verticalModules + '/generic-information/economic-sector-profile/services/EconomicSectorProfileService' + suffix;
+
+    /* WORKFORCE PROFILE */
+    requirePaths['vertical/workforce-profile/WorkforceProfileController'] = verticalModules + '/generic-information/workforce-profile/WorkforceProfileController' + suffix;
+    requirePaths['vertical/workforce-profile/services/WorkforceProfileService'] = verticalModules + '/generic-information/workforce-profile/services/WorkforceProfileService' + suffix;
+
+    /*STEERING OF OSH*/
+    requirePaths['vertical/osh-steering/osh-steering-module'] = verticalModules + '/osh-steering/osh-steering-module' + suffix;
+
+    /*REGULATION*/
+    requirePaths['vertical/regulation/RegulationController'] = verticalModules + '/osh-steering/regulation/RegulationController' + suffix;
+
 
     /* GEOGRAPHIES COMPARISON */
     // requirePaths['vertical/geographies-comparison/GeographiesComparisonController'] = verticalModules + '/geographies-comparison/GeographiesComparisonController' + suffix;

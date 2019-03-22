@@ -1,20 +1,19 @@
-<div class="col-xs-12 modal-wrapper">
+<div class="modal-wrapper">
     <dvt-dashboard promises="promises" parameters="dashboard.parameters">
         <div class="modal-body">
             <span class="btn pull-right" role="button" aria-hidden="true" ng-click="ok()"><i class="fa fa-2x fa-times" aria-hidden="true"></i></span>
             <!--style ESTRICTAMENTE temporal-->
             <dvt-bar-chart
-                    data-ng-cloack
+                    data-ng-cloack 
                     is-maximized="true"
                     id="chart-{{ parameters.id }}"
                     is-zoom = "{{parameters.chartDefinition.isZoom}}"
                     title="{{ parameters.title }}"
                     long-title="{{ parameters.longTitle }}"
-                    show-legend= "true"
-                    legend="true"
+                    legend="{{parameters.legend}}"
                     legend-click-mode="{{parameters.chartDefinition.legendClickMode}}"
                     legend-dot-fill-style="{{ parameters.chartDefinition.legendDot_fillStyle }}"
-                    css-class="col-xs-12 col-sm-12 col-md-12 col-lg-12 {{parameters.cssClass}}"
+                    css-class="{{parameters.cssClass}}"
                     width="860" height="500"
                     query="{{ parameters.chartDefinition.dataAccessId }}" cda="{{ parameters.chartDefinition.path }}"
                     orientation="{{ parameters.chartDefinition.orientation }}" type="{{ parameters.maxType }}"
@@ -35,12 +34,9 @@
                     ortho2-axis-title="{{ parameters.chartDefinition.ortho2AxisTitle }}"
                     stacked="{{ stacked }}"
                     main-bar-size="15"
-                    values-visible="parameters.chartDefinition.valuesVisible"
-                    values-font='lighter 20px "Open Sans"'
+                    values-visible="{{parameters.chartDefinition.valuesVisible}}"
+                    values-font="{{parameters.chartDefinition.valuesFont}}"
                     label-top="parameters.chartDefinition.label_top"
-                    base-axis-label-text="parameters.chartDefinition.baseAxisLabel_text"
-                    base-axis-label-visible="parameters.chartDefinition.baseAxisLabel_visible"
-                    base-axis-label-font="{{parameters.chartDefinition.baseAxisLabel_font}}"
                     legend-font="{{parameters.chartDefinition.legend_font}}"
                     bar-fill-style="parameters.chartDefinition.bar_fillStyle"
                     base-axis-label-text-align="{{ parameters.chartDefinition.baseAxisLabel_textAlign }}"
@@ -49,8 +45,27 @@
                     legend-dot-stroke-style="{{ parameters.chartDefinition.legendDot_strokeStyle }}"
                     max-functional-legend="{{ parameters.maxFunctionalLegend }}"
                     post-execution="parameters.postExecution"
+                    chart-title="{{ parameters.chartTitle }}"
+                    values-mask="{{parameters.chartDefinition.valuesMask}}"
+                    base-axis-label-text="parameters.chartDefinition.baseAxisLabel_text"
+                    base-axis-label-visible="parameters.chartDefinition.baseAxisLabel_visible"
+                    base-axis-label-font="{{parameters.chartDefinition.baseAxisLabel_font}}"
+                    base-axis-label-text-style="{{parameters.chartDefinition.baseAxisLabel_textStyle}}"
+                    base-axis-label-text-baseline="{{parameters.chartDefinition.baseAxisLabel_textBaseline}}"
+                    label-text-margin="{{parameters.labelTextMargin}}"
+                    label-text-align="parameters.labelTextAlign"
+                    values-overflow="{{parameters.chartDefinition.valuesOverflow}}"
+                    base-axis-band-size-ratio= "{{parameters.chartDefinition.baseAxisBandSizeRatio}}"
+                    multiple-label-colors="{{parameters.chartDefinition.multipleLabelColors}}"
+                    legend-align="center"
+                    show-euro-mask="{{parameters.showEuroMask}}"
+                    ortho-axis-grid="{{parameters.chartDefinition.orthoAxisGrid}}"
+                    hoverable="{{parameters.hoverable}}"
+                    ortho-axis-visible="{{parameters.orthoAxisVisible}}"
+                    base-axis-position="{{parameters.chartDefinition.baseAxisPosition}}"
+                    leaf-content-overflow='{{parameters.chartDefinition.leafContentOverflow}}'
+                    base-fill-style="black"
             ></dvt-bar-chart>
         </div>
     </dvt-dashboard>
-
 </div>

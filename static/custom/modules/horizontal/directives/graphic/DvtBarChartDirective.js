@@ -175,15 +175,29 @@ define(function (require) {
         return sequence++;
     }
 
-    function DvtBarChartDirective(dataService, plotsProvider, exportService, $log, maximize, $cookies) {
+    function DvtBarChartDirective(dataService, plotsProvider, exportService, $log, maximize, $cookies, dvtUtils) {
 
         var _template= ''
         + '<div class="card--block--chart--wrapper">'
 
-            + '<ul class="chart--submenu">'
-                + '<li data-ng-repeat="item in items">'
-                +     '<a data-ng-click="open(item.action)" data-ng-class="item.class" role="button"><label class="sr-only" data-ng-bind="item.text"></label></a>'
+            + '<ul class="chart--submenu" ng-if="!isMaximized">'
+                + '<li>'
+                    + '<a data-ng-click="open(items[0].action)" class="{{items[0].class}}" title="{{items[0].text}}" role="button"><label class="sr-only" data-ng-bind="items[0].text"></label></a>'
                 + '</li>'
+                +  '<li class="dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><a href=""><label class="sr-only">Download</label></a></li>'                  
+                    + '<ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">'
+                        /*+ '<li>'
+                            + '<a data-ng-click="open(items[1].action)" class="{{items[1].class}}" title="{{items[1].text}}" role="button"><label class="sr-only" data-ng-bind="items[1].text"></label></a>'
+                        + '</li>'
+                        + '<li>'
+                            + '<a data-ng-click="open(items[2].action)" class="{{items[2].class}}" title="{{items[2].text}}" role="button"><label class="sr-only" data-ng-bind="items[2].text"></label></a>'
+                        + '</li>'*/
+                        + '<li><a data-ng-click="open(items[1].action)" role="button" data-ng-bind="items[1].text"></a></li>'
+                        + '<li><a data-ng-click="open(items[2].action)" role="button" data-ng-bind="items[2].text"></a></li>'
+                    + '</ul>'
+              /*  + '<li data-ng-repeat="item in items">'
+                +     '<a data-ng-click="open(item.action)" class="{{item.class}}" title="{{item.text}}" role="button"><label class="sr-only" data-ng-bind="item.text"></label></a>'
+                + '</li>'*/
             + '</ul>'
 /*
             + '<ul class="chart--submenu">'
@@ -194,9 +208,9 @@ define(function (require) {
                     + '</ul>'
             +  '</ul>'
 */
-            + '<h3 ng-if="(!!title && !isMaximized && !titleH3) || (isMaximized && !longTitle)" data-ng-bind-html="title" class="title--card ng-binding" >Company size</h3>'
-            + '<h3 ng-if="!!isMaximized && !!longTitle" data-ng-bind-html="longTitle" class="title--card ng-binding" >Company size</h3>'
-            + '<h3 data-ng-if="(!!title && !isMaximized && titleH3)" class="title--card ng-binding" data-ng-bind-html="title"></h3>'
+            + '<h2 ng-if="(!!chartTitle && !isMaximized && !titleH3) || (isMaximized && !longTitle)" data-ng-bind-html="chartTitle" class="title--card ng-binding">Company size</h2>'
+            + '<h2 ng-if="!!isMaximized && !!longTitle" data-ng-bind-html="longTitle" class="title--card ng-binding" >Company size</h2>'
+            + '<h2 data-ng-if="(!!chartTitle && !isMaximized && titleH3)" class="title--card ng-binding" data-ng-bind-html="chartTitle"></h2>'
 
             + '<div data-ng-if="haveEnlarge" class="pull-right contextual-menu enlarge-button cursor-pointer">'
                 + '<button data-ng-click="open(items[0].action)" title="Compare with other groups">Compare groups</button>'
@@ -208,7 +222,7 @@ define(function (require) {
                 _template 
                     += '<div class="dropdown" ng-if="!isEnlarge==true">'
                         + '<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">'
-                        + '<i class="three-points-vertical" title="Export"></i>'
+                        + '<i class="three-points-vertical" alt="Export" title="Export"></i>'
                         + '</button>'
                         + '<ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">'
                         + '<li data-ng-repeat="item in items"><a data-ng-click="open(item.action)" role="button" data-ng-bind="item.text"></a></li>'
@@ -229,14 +243,14 @@ define(function (require) {
             + '<div class="chart--wrapper">'
                 + '<div data-ng-attr-id="{{ id }}"></div>'
             + '</div>'
-/*
-            + '<div class="legend-info" ng-if="isMaximized && legendClickMode">Click on each value on the legend to hide/show in on the chart</div>'
 
-            + '<div class="logoGraphics-wrapper"><img alt="European Agency for Safety and Health at Work" src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/osha-logo.svg" class="logoGraphics"></div>'
+        //    + '<div class="legend-info" ng-if="isMaximized && legendClickMode">Click on each value on the legend to hide/show in on the chart</div>'
 
-            + '<div ng-if="!!functionalLegend" class="functionalLegend" data-ng-bind-html="functionalLegend"></div>'
-*/
-        + '</div>';
+           // + '<div class="logoGraphics-wrapper"><img alt="European Agency for Safety and Health at Work" src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/osha-logo.svg" class="logoGraphics"></div>'
+
+            //+ '<div ng-if="!!functionalLegend" class="functionalLegend" data-ng-bind-html="functionalLegend"></div>'
+
+        //+ '</div>';
 
 
 
@@ -256,7 +270,7 @@ define(function (require) {
                 baseAxisLabelVisible: '=',
                 labelVisible: '=',
                 labelTextAlign: '=',
-                valuesVisible: '=',
+                //valuesVisible: '=',
                 colors: '=',
                 calculations: '=',
                 plots: '=',
@@ -273,12 +287,13 @@ define(function (require) {
             template:_template,
 
             link: function (scope, element, attributes, controllers) {
+                //$log.warn(attributes.params[1]);
+                //$log.warn(controllers[0].dashboard);
 
                 // FIX. enlarged views share same id, a prefix has been added that must be undone
                 if (attributes.id.split("_").length > 1){
                     attributes.id = attributes.id.split("_")[1];
                 }
-
 
                 scope.id = 'dvt_bar_chart_' + nextId();
                 var dashboard = controllers[0];
@@ -292,6 +307,7 @@ define(function (require) {
                 scope.isMaximized = !!attributes.isMaximized;
                 scope.isZoom = !!attributes.isZoom;
                 scope.titleH3 = !!attributes.titleH3;
+                scope.chartTitle = attributes.chartTitle;
                 //scope.title = attributes.title;
                 scope.longTitle = attributes.longTitle;
                 scope.isEnlarge=attributes.isEnlarged;
@@ -316,9 +332,12 @@ define(function (require) {
                         orientation: attributes.orientation || "vertical",
                         crosstabMode: false,
                         stacked: attributes.stacked == 1 || false,
-                        axisLabel_font: attributes.axisLabelFont || 'normal 12px "Open Sans"',
-                        axisTitleLabel_font: attributes.axisTitleLabelFont || 'normal 12px "Open Sans" gray',
+                        axisLabel_font: attributes.axisLabelFont || 'normal 12px "OpenSans"',
+                        axisTitleLabel_font: attributes.axisTitleLabelFont || 'normal 12px "OpenSans" gray',
                         axisTitleLabel_textStyle: 'gray',
+                        axisFixedMax: attributes.axisFixedMax || 100,
+                        axisTicks: attributes.axisTicks || false,
+                        axisRule_strokeStyle: attributes.axisRule_strokeStyle || '',
                         clickable: true,
                         clickAction: function (dataset) {
                         },
@@ -331,12 +350,12 @@ define(function (require) {
                         // Chart/Interaction
                         animate: attributes.animate || false,
                         selectable: attributes.selectable || false,
-                        hoverable: attributes.hoverable || true,
+                        hoverable: attributes.hoverable == 'false' ? false: true,
                         // tooltip
                         tooltipClassName: 'light',
                         tooltipOpacity: 0.80,
                         /*Axis & Frames visivility*/
-                        orthoAxisVisible: true,
+                        orthoAxisVisible: attributes.orthoAxisVisible === 'false' ? false : true,
                         ortho2AxisVisible: true,
                         baseAxisVisible: true,
                         plotFrameVisible: false,
@@ -346,47 +365,66 @@ define(function (require) {
                         //plot background styles
                         plotBg_fillStyle: plotsProvider.getPlotBgColor(),
                         //plot grid styles
+                        baseAxisBandSizeRatio: attributes.baseAxisBandSizeRatio || 0.9,
                         baseAxisGrid: attributes.baseAxisGrid || false,
                         baseAxisPosition: attributes.baseAxisPosition || "bottom",
-                        orthoAxisGrid: attributes.orthoAxisGrid || true, // Color axes
+                        orthoAxisGrid: attributes.orthoAxisGrid === "false" ? false : true, // Color axes
                         axisGrid_strokeStyle: 'white',
                         axisGrid_lineWidth: 2,
                         axisBandSizeRatio: 0.6,
                         //show values
-                        valuesVisible: false,
+                        valuesVisible: attributes.valuesVisible === 'true'?true:false,
+                        valuesOverflow: attributes.valuesOverflow || "",
                         valuesMask: attributes.valuesMask || '{series}',
-                        valuesFont: attributes.valuesFont || 'emphasis 10px "Open Sans"',
-                        valuesAnchor: attributes.valuesAnchor || 'center',
+                        valuesFont: attributes.valuesFont || 'emphasis 10px "OpenSans"',
+                        valuesAnchor: attributes.valuesAnchor || undefined,
                         valuesOptimizeLegibility: true,
                         valuesNormalized: attributes.valuesNormalized == 1 || false,
                         valuesFormat: scope.valuesFormat,
                         label_top: scope.labelTop,
-                        legend: attributes.legend === 'true' || false,
+                        legend: attributes.legend === 'true'?true: false,
                         legendClickMode: attributes.legendClickMode || 'toggleVisible',
-                        legendFont: attributes.legendFont || 'normal 14px "Open Sans"',
+                        legendFont: attributes.legendFont || 'normal 14px "OpenSans"',
                         legendPosition: attributes.legendPos || 'bottom',
                         legendLabel_visible: true,
                         legendDot_strokeStyle: attributes.legendDotStrokeStyle,
                         legendShape: 'square',
+                        legendAlign: attributes.legendAlign || 'center',
+                        legendOverflow: attributes.legendOverflow || 'clip',
                         color2AxisLegendShape: attributes.color2AxisLegendShape || "square",
                         baseAxisLabel_text: !scope.isMaximized?scope.baseAxisLabelText:scope.baseAxisLabelLongText,
                         baseAxisLabel_visible: scope.baseAxisLabelVisible,
-                        baseAxisLabel_textBaseline: attributes.baseAxisLabelTextBaseline || 'top',
-                        baseAxisLabel_font: attributes.baseAxisLabelFont || 'normal 12px "Open Sans"',
+                        baseAxisLabel_textBaseline: attributes.baseAxisLabelTextBaseline || 'center',
+                        //baseAxisLabel_font: attributes.baseAxisLabelFont || 'normal 12px "OpenSans"',
+                        axisLabel_font: attributes.baseAxisLabelFont || 'normal 12px "OpenSans"',
                         baseAxisLabel_textStyle: attributes.baseAxisLabelTextStyle || 'gray' ,
                         baseAxisOverlappedLabelsMode: 'leave',
                         multiChartRole: attributes.multiChart,
                         label_visible: scope.labelVisible,
                         label_textAlign: scope.labelTextAlign || 'center',
+                        labelTextMargin: attributes.labelTextMargin || 0,
                         /*Adjust tooltip position*/
                         tooltipGravity: 'sw',
                         //tooltipFollowMouse: true,
                         //tooltipOffset: 76
                         //new tooltip
                         tooltipFormat: scope.tooltipFormat,
-                        baseAxisTooltipEnabled : false
+                        baseAxisTooltipEnabled : false,
+                        orthoAxisTitle: attributes.orthoAxisTitle || '',
+                        multipleLabelColors: attributes.multipleLabelColors === 'true' || false,
+                        showEuroMask: attributes.showEuroMask === 'true' ? true : false,
+                        leafContentOverflow: attributes.leafContentOverflow || 'auto',
+                        base_fillStyle: attributes.base_fillStyle || "#f0f0f0"
+                        //pYLabels: attributes.pYLabels || 1
                     }
+
                 };
+
+                if(!!attributes.showEuroMask){
+                    definition.chartDefinition.yAxisLabel_text= function(){
+                        return this.scene.vars.tick.label+' €';
+                    }
+                }
 
                 //TODO refactor OR condition in to definition where it been possible
 
@@ -411,8 +449,9 @@ define(function (require) {
                     definition.chartDefinition.plots = scope.plots;
                 }
 
-                if (!!scope.params)
+                if (!!scope.params){
                     definition.parameters = scope.params;
+                }
 
                 if (!!scope.listenTo)
                     for (var listen in scope.listenTo) {
@@ -533,6 +572,14 @@ define(function (require) {
                     definition.chartDefinition.valuesVisible = !!attributes.valuesVisible;
                 }
 
+                if (!!attributes.valuesOverflow) {
+                   definition.chartDefinition.valuesOverflow = attributes.valuesOverflow;
+                }
+
+                if (!!attributes.valuesMask) {
+                   definition.chartDefinition.valuesMask = attributes.valuesMask;
+                }      
+
                 definition.chartDefinition.format = {
                     number: "0.00"
                 };
@@ -583,8 +630,9 @@ define(function (require) {
 
                 // axis bar
                 if (!!attributes.orthoAxisVisible) {
-                    definition.chartDefinition.orthoAxisVisible = attributes.orthoAxisVisible != 0
-
+                    definition.chartDefinition.orthoAxisVisible = false;
+                }else{
+                    definition.chartDefinition.orthoAxisVisible = true;
                 }
 
                 // axis bar title
@@ -643,9 +691,27 @@ define(function (require) {
                 if (!!scope.labelVisible) {
                     definition.chartDefinition.label_visible = scope.labelVisible;
                 }
+
                 //label top margin
                 if (!!scope.labelTop) {
                     definition.chartDefinition.label_top = scope.labelTop;
+                }
+
+                //Labels
+                if(!!attributes.multipleLabelColors){
+                    var pCountry1 = definition.parameters[1][1];
+                    var pCountry2 = definition.parameters[2][1];
+
+                    definition.chartDefinition.baseAxisLabel_textStyle= function (){
+                        if(this.scene.vars.tick.label == 'EU28'){
+                            return dvtUtils.getEUColor();
+                        }else if(this.scene.vars.tick.label == pCountry1){
+                            return dvtUtils.getColorCountry(1);
+                        }else if(this.scene.vars.tick.label == pCountry2){
+                            return dvtUtils.getColorCountry(2);
+                        }
+                        return 'gray';
+                    }
                 }
 
                 // define main chart type
@@ -670,7 +736,6 @@ define(function (require) {
 
                 dashboard.register(chart);
 
-
                 if (!scope.contextuals || scope.contextuals.length > 0) {
                     if (!scope.contextuals) {
                         scope.contextuals = [];
@@ -687,12 +752,21 @@ define(function (require) {
                             [['Download raw data', 'exportData', 'download-button']].forEach(function (item) {
                                 scope.contextuals.push(item);
                             });
+                            [['Download image', 'exportImage', 'download-button']].forEach(function (item) {
+                                scope.contextuals.push(item);
+                            });
                         } else if (!configService.isMobile())  {
                             [['Download raw data', 'exportData', 'download-button']].forEach(function (item) {
                                 scope.contextuals.push(item);
                             });
+                            [['Download image', 'exportImage', 'download-button']].forEach(function (item) {
+                                scope.contextuals.push(item);
+                            });
                         } else {
-                            [['Download raw data', 'exportData', 'download-button']].forEach(function (item) {
+                            [['Download image', 'exportData', 'download-button']].forEach(function (item) {
+                                scope.contextuals.push(item);
+                            });
+                            [['Download image', 'exportImage', 'download-button']].forEach(function (item) {
                                 scope.contextuals.push(item);
                             });
                         }
@@ -716,14 +790,23 @@ define(function (require) {
                     definition ['promise'] = scope.promise;
                     definition ['country1'] = scope.country1;
                     definition ['country2'] = scope.country2;
-                    definition ['valuesVisible'] = scope.valuesVisible;
+                    definition ['valuesVisible'] = attributes.valuesVisible;
                     definition ['maxLegendPos'] = attributes.maxLegendPos;
+                    definition ['legend'] = attributes.legend;
                     definition ['maxLabelTop'] = scope.maxLabelTop;
                     definition ['maxAxisPercent'] = attributes.axisPercent;
                     definition ['maxAxisPercent2'] = attributes.axisPercent2;
                     definition ['longTitle'] = attributes.longTitle;
                     definition ['baseAxisLabelLongText'] = scope.baseAxisLabelLongText;
                     definition ['orthoAxisTitle'] = attributes.orthoAxisTitle;
+                    definition ['chartTitle'] = attributes.chartTitle;
+                    definition ['valuesOverflow'] = attributes.valuesOverflow;
+                    definition ['valuesMask'] = attributes.valuesMask;
+                    definition ['labelTextAlign'] = scope.labelTextAlign;
+                    definition ['labelTextMargin'] = attributes.labelTextMargin;
+                    definition ['showEuroMask'] = attributes.showEuroMask;
+                    definition ['hoverable'] = attributes.hoverable;
+                    definition ['orthoAxisVisible'] = attributes.orthoAxisVisible;
 
 
                     if(!!attributes.maxFunctionalLegend){
@@ -747,12 +830,10 @@ define(function (require) {
 
                 /* pass definition to modal */
                 var dvtModal = maximize.setModal(definition);
-                //$log.warn(dvtModal);
 
 
                 /* modal open action function */
                 scope.open = function (action) {
-                    $log.warn(action);
                     switch (action) {
                         case "enlarge":
                             var scrollTop=$(window).scrollTop();
@@ -799,7 +880,7 @@ define(function (require) {
         }
     }
 
-    DvtBarChartDirective.$inject = ['dataService', 'plotsProvider', 'exportService', '$log', 'maximize', '$cookies'];
+    DvtBarChartDirective.$inject = ['dataService', 'plotsProvider', 'exportService', '$log', 'maximize', '$cookies', 'dvtUtils'];
 
     return DvtBarChartDirective;
 });

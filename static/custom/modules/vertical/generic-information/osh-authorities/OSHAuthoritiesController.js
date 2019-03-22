@@ -16,10 +16,8 @@ define(function (require) {
 
     var i18n = require('json!vertical/osh-authorities/i18n');
     var i18nLiterals = configService.getLiterals();
-    var commonLiterals = configService.getCommonLiterals();
     $scope.i18n = i18n;
     $scope.i18nLiterals = i18nLiterals;
-    $scope.commonLiterals = commonLiterals;
 
     var i18nSearch = require('json!horizontal/search/i18n');
     $scope.i18nSearch = i18nSearch;

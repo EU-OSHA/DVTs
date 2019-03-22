@@ -391,27 +391,20 @@
       <Parameter default="1" name="pIndicator" type="Numeric" />
       <Parameter default="AT" name="pCountry1" type="String" />
       <Parameter default="BE" name="pCountry2" type="String" />
+      <Parameter default="6" name="pDataset" type="Numeric" />
     </Parameters>
     <Query>
-      SELECT t.text as Size, n.name as Country, v.value as Value
-      FROM nuts n, profile p, indicator i, value v, split_illness si, translation t
+      SELECT t.text as Size, n.country_code as Country, (v.value*100) as Value
+      FROM nuts n, profile p, indicator i, value v, split_company_size scs, dataset d, translation t
       WHERE n.id = p.nuts_id
-      AND p.illness_id = si.id
+      AND p.company_size_id = scs.id
       AND i.id = v.indicator_id
       AND v.profile_id = p.id
-      AND t.literal_id = si.literal_id
-      AND n.country_code IN ('BG', 'BE', 'HR') AND i.id = 23 AND si.id IN (2,3,4,5,6)
-    </Query>
-    <!--<Query>
-      SELECT n.country_code as country_code, i.literal_id as indicator, v.value, scs.literal_id
-      FROM nuts n, profile p, indicator i, value v, split_company_size scs, dataset d
-      WHERE n.id = p.nuts_id 
-      AND p.company_size_id = scs.id 
-      AND i.id = v.indicator_id 
-      AND v.profile_id = p.id 
-      AND d.id = 4 AND d.id = v.dataset_id 
+      AND d.id = ${pDataset} AND d.id = v.dataset_id
+      AND t.literal_id = scs.literal_id
       AND n.country_code IN (${pCountry1}, ${pCountry2}, 'EU28') AND i.id = ${pIndicator}
-    </Query>-->
+      ORDER BY FIELD(n.country_code, ${pCountry1}, ${pCountry2}, 'EU28') DESC
+    </Query>
   </DataAccess>
 
     <!-- Get Employment per sector indicators and values -->
@@ -422,53 +415,20 @@
       <Parameter default="1" name="pIndicator" type="Numeric" />
       <Parameter default="AT" name="pCountry1" type="String" />
       <Parameter default="BE" name="pCountry2" type="String" />
+      <Parameter default="6" name="pDataset" type="Numeric" />
     </Parameters>
     <Query>
-      (SELECT t.text as Size, n.name as Country, v.value as Value
-        FROM nuts n, profile p, indicator i, value v, split_illness si, translation t
-        WHERE n.id = p.nuts_id
-        AND p.illness_id = si.id
-        AND i.id = v.indicator_id
-        AND v.profile_id = p.id
-        AND t.literal_id = si.literal_id
-        AND n.country_code IN ('BG', 'BE', 'HR') AND i.id = 23 AND si.id = 2)
-      UNION(
-        SELECT t.text as Size, n.name as Country, v.value as Value
-        FROM nuts n, profile p, indicator i, value v, split_illness si, translation t
-        WHERE n.id = p.nuts_id
-        AND p.illness_id = si.id
-        AND i.id = v.indicator_id
-        AND v.profile_id = p.id
-        AND t.literal_id = si.literal_id
-        AND n.country_code IN ('BG', 'BE', 'HR') AND i.id = 23 AND si.id = 3
-      )UNION(
-        SELECT t.text as Size, n.name as Country, v.value as Value
-        FROM nuts n, profile p, indicator i, value v, split_illness si, translation t
-        WHERE n.id = p.nuts_id
-        AND p.illness_id = si.id
-        AND i.id = v.indicator_id
-        AND v.profile_id = p.id
-        AND t.literal_id = si.literal_id
-        AND n.country_code IN ('BG', 'BE', 'HR') AND i.id = 23 AND si.id = 4
-      )UNION(
-        SELECT t.text as Size, n.name as Country, v.value as Value
-        FROM nuts n, profile p, indicator i, value v, split_illness si, translation t
-        WHERE n.id = p.nuts_id
-        AND p.illness_id = si.id
-        AND i.id = v.indicator_id
-        AND v.profile_id = p.id
-        AND t.literal_id = si.literal_id
-        AND n.country_code IN ('BG', 'BE', 'HR') AND i.id = 23 AND si.id = 5
-      )UNION(
-        SELECT t.text as Size, n.name as Country, v.value as Value
-        FROM nuts n, profile p, indicator i, value v, split_illness si, translation t
-        WHERE n.id = p.nuts_id
-        AND p.illness_id = si.id
-        AND i.id = v.indicator_id
-        AND v.profile_id = p.id
-        AND t.literal_id = si.literal_id
-        AND n.country_code IN ('BG', 'BE', 'HR') AND i.id = 23 AND si.id = 6
-      )
+      SELECT t.text as Sector, n.country_code as Country, (v.value*100) as Value
+      FROM nuts n, profile p, indicator i, value v, split_activity_sector sas, dataset d, translation t
+      WHERE n.id = p.nuts_id 
+      AND p.activity_sector_id = sas.id 
+      AND i.id = v.indicator_id 
+      AND v.profile_id = p.id
+      AND d.id = ${pDataset} AND d.id = v.dataset_id 
+      AND t.literal_id = sas.literal_id
+      AND sas.id IN (1, 2, 3, 4, 5, 6, 7)
+      AND n.country_code IN (${pCountry1}, ${pCountry2}, 'EU28') AND i.id = ${pIndicator}
+      ORDER BY FIELD(n.country_code, ${pCountry1}, ${pCountry2}, 'EU28') DESC
     </Query>
   </DataAccess>
 
@@ -480,16 +440,17 @@
       <Parameter default="1" name="pIndicator" type="Numeric" />
       <Parameter default="AT" name="pCountry1" type="String" />
       <Parameter default="BE" name="pCountry2" type="String" />
+      <Parameter default="6" name="pDataset" type="Numeric" />
     </Parameters>
     <Query>
-      SELECT t.text as Size, n.name as Country, v.value as Value
-      FROM nuts n, profile p, indicator i, value v, split_illness si, translation t
+      SELECT n.country_code as Country, (v.value*100) as Value
+      FROM nuts n, profile p, indicator i, value v, dataset d
       WHERE n.id = p.nuts_id
-      AND p.illness_id = si.id
       AND i.id = v.indicator_id
       AND v.profile_id = p.id
-      AND t.literal_id = si.literal_id
-      AND n.country_code IN ('BG', 'BE', 'HR') AND i.id = 23 AND si.id = 2
+      AND d.id = ${pDataset} AND d.id = v.dataset_id
+      AND n.country_code IN (${pCountry1}, ${pCountry2}, 'EU28') AND i.id = ${pIndicator}
+      ORDER BY FIELD(n.country_code, ${pCountry1}, ${pCountry2}, 'EU28') DESC
     </Query>
   </DataAccess>
 
@@ -501,16 +462,17 @@
       <Parameter default="1" name="pIndicator" type="Numeric" />
       <Parameter default="AT" name="pCountry1" type="String" />
       <Parameter default="BE" name="pCountry2" type="String" />
+      <Parameter default="6" name="pDataset" type="Numeric" />
     </Parameters>
     <Query>
-      SELECT t.text as Size, n.name as Country, v.value as Value
-      FROM nuts n, profile p, indicator i, value v, split_illness si, translation t
+      SELECT n.country_code as Country, (v.value*100) as Value
+      FROM nuts n, profile p, indicator i, value v, dataset d
       WHERE n.id = p.nuts_id
-      AND p.illness_id = si.id
       AND i.id = v.indicator_id
       AND v.profile_id = p.id
-      AND t.literal_id = si.literal_id
-      AND n.country_code IN ('BG', 'BE', 'HR') AND i.id = 23 AND si.id = 2
+      AND d.id = ${pDataset} AND d.id = v.dataset_id
+      AND n.country_code IN (${pCountry1}, ${pCountry2}, 'EU28') AND i.id = ${pIndicator}
+      ORDER BY FIELD(n.country_code, ${pCountry1}, ${pCountry2}, 'EU28') ASC
     </Query>
   </DataAccess>
 
@@ -522,16 +484,17 @@
       <Parameter default="1" name="pIndicator" type="Numeric" />
       <Parameter default="AT" name="pCountry1" type="String" />
       <Parameter default="BE" name="pCountry2" type="String" />
+      <Parameter default="6" name="pDataset" type="Numeric" />
     </Parameters>
     <Query>
-      SELECT t.text as Size, n.name as Country, v.value as Value
-      FROM nuts n, profile p, indicator i, value v, split_illness si, translation t
+      SELECT n.country_code as Country, (v.value*100) as Value
+      FROM nuts n, profile p, indicator i, value v, dataset d
       WHERE n.id = p.nuts_id
-      AND p.illness_id = si.id
       AND i.id = v.indicator_id
       AND v.profile_id = p.id
-      AND t.literal_id = si.literal_id
-      AND n.country_code IN ('BG', 'BE', 'HR') AND i.id = 23 AND si.id = 2
+      AND d.id = ${pDataset} AND d.id = v.dataset_id
+      AND n.country_code IN (${pCountry1}, ${pCountry2}, 'EU28') AND i.id = ${pIndicator}
+      ORDER BY FIELD(n.country_code, ${pCountry1}, ${pCountry2}, 'EU28') ASC
     </Query>
   </DataAccess>
 
@@ -543,17 +506,215 @@
       <Parameter default="1" name="pIndicator" type="Numeric" />
       <Parameter default="AT" name="pCountry1" type="String" />
       <Parameter default="BE" name="pCountry2" type="String" />
+      <Parameter default="6" name="pDataset" type="Numeric" />
     </Parameters>
     <Query>
-      SELECT n.name as Country, v.value as Value, p.year as Year
-      FROM nuts n, profile p, indicator i, value v, split_illness si, translation t
+      SELECT n.country_code as Country, p.year as Year, v.value as Income
+      FROM nuts n, profile p, indicator i, value v, dataset d
       WHERE n.id = p.nuts_id
-      AND p.illness_id = si.id
       AND i.id = v.indicator_id
       AND v.profile_id = p.id
-      AND t.literal_id = si.literal_id
-      AND n.country_code IN ('BG', 'BE', 'HR') AND i.id = 23 AND si.id = 2
-      ORDER BY year ASC
+      AND d.id = ${pDataset} AND d.id = v.dataset_id
+      AND n.country_code IN (${pCountry1}, ${pCountry2}, 'EU28') AND i.id = ${pIndicator}
+      ORDER BY FIELD(n.country_code, ${pCountry1}, ${pCountry2}, 'EU28') ASC
     </Query>
   </DataAccess>
+
+  <!-- WORKFORCE PROFILE || get genders for select option of employee groups -->
+  <DataAccess access="public" connection="dvt_conn" id="getGenders" type="sql">
+    <Cache duration="3600" enabled="true" />
+    <Columns />
+    <Parameters>
+    </Parameters>
+    <Query>
+      SELECT sg.id as gender_id, sg.literal_id as gender_name
+      FROM split_gender sg
+      ORDER BY FIELD(gender_id, 2, 3, 1)
+    </Query>
+  </DataAccess>
+
+  <!-- WORKFORCE PROFILE || get countries available for select option in tablets and mobiles -->
+  <DataAccess access="public" connection="dvt_conn" id="getAvailableCountries" type="sql">
+    <Cache duration="3600" enabled="true" />
+    <Columns />
+    <Parameters>
+      <Parameter default="6" name="pDataset" type="Numeric" />
+    </Parameters>
+    <Query>
+      SELECT distinct(n.country_code) as countryKey, n.literal_id as country_name
+      FROM nuts n, profile p, value v, dataset d
+      WHERE n.id = p.nuts_id 
+      AND v.profile_id = p.id 
+      AND d.id = ${pDataset} AND d.id = v.dataset_id
+      AND v.indicator_id IN (37, 38, 39)
+      ORDER BY country_name ASC
+    </Query>
+  </DataAccess>
+
+  <!-- WORKFORCE PROFILE || get countries available for select option in tablets and mobiles -->
+  <DataAccess access="public" connection="dvt_conn" id="getFilteringCountries" type="sql">
+    <Cache duration="3600" enabled="true" />
+    <Columns />
+    <Parameters>
+      <Parameter default="6" name="pDataset" type="Numeric" />
+      <Parameter default=".*" name="countries" type="String"/>
+    </Parameters>
+    <Query>
+      SELECT distinct(n.country_code) as countryKey, n.name as country_name
+      FROM nuts n, profile p, value v, dataset d
+      WHERE n.id = p.nuts_id 
+      AND v.profile_id = p.id 
+      AND d.id = ${pDataset} AND d.id = v.dataset_id
+      AND n.country_code REGEXP ${countries}
+      AND v.indicator_id IN (37, 38, 39)
+      ORDER BY country_name ASC
+    </Query>
+  </DataAccess>
+
+  <!-- WORKFORCE PROFILE || get median age data -->
+  <DataAccess access="public" connection="dvt_conn" id="getMedianAgeData" type="sql">
+    <Cache duration="3600" enabled="true" />
+    <Columns />
+    <Parameters>
+      <Parameter default="6" name="pDataset" type="Numeric" />
+    </Parameters>
+    <Query>
+      SELECT n.country_code as countryKey, n.literal_id as country_name, v.value as value
+      FROM nuts n, profile p, value v, dataset d
+      WHERE n.id = p.nuts_id 
+      AND v.profile_id = p.id 
+      AND d.id = ${pDataset} AND d.id = v.dataset_id
+      AND v.indicator_id = 37
+      ORDER BY country_name ASC
+    </Query>
+  </DataAccess>
+
+  <!-- WORKFORCE PROFILE || get ageing workers data -->
+  <DataAccess access="public" connection="dvt_conn" id="getAgeingWorkersData" type="sql">
+    <Cache duration="3600" enabled="true" />
+    <Columns />
+    <Parameters>
+      <Parameter default="6" name="pDataset" type="Numeric" />
+    </Parameters>
+    <Query>
+      SELECT n.country_code as countryKey, n.literal_id as country_name, v.value as value
+      FROM nuts n, profile p, value v, dataset d
+      WHERE n.id = p.nuts_id 
+      AND v.profile_id = p.id 
+      AND d.id = ${pDataset} AND d.id = v.dataset_id
+      AND v.indicator_id = 38
+      ORDER BY country_name ASC
+    </Query>
+  </DataAccess>
+
+  <!-- WORKFORCE PROFILE || get total employment rate data -->
+  <DataAccess access="public" connection="dvt_conn" id="getTotalEmploymentData" type="sql">
+    <Cache duration="3600" enabled="true" />
+    <Columns />
+    <Parameters>
+      <Parameter default="6" name="pDataset" type="Numeric" />
+    </Parameters>
+    <Query>
+      SELECT n.country_code as countryKey, n.literal_id as country_name, (v.value*100) as value
+      FROM nuts n, profile p, value v, dataset d
+      WHERE n.id = p.nuts_id 
+      AND v.profile_id = p.id 
+      AND d.id = ${pDataset} AND d.id = v.dataset_id
+      AND v.indicator_id = 39
+      AND p.gender_id = 1
+      ORDER BY country_name ASC
+    </Query>
+  </DataAccess>
+
+  <!-- WORKFORCE PROFILE || get male employment rate data -->
+  <DataAccess access="public" connection="dvt_conn" id="getMaleEmploymentData" type="sql">
+    <Cache duration="3600" enabled="true" />
+    <Columns />
+    <Parameters>
+      <Parameter default="6" name="pDataset" type="Numeric" />
+    </Parameters>
+    <Query>
+      SELECT n.country_code as countryKey, n.literal_id as country_name, (v.value*100) as value
+      FROM nuts n, profile p, value v, dataset d
+      WHERE n.id = p.nuts_id 
+      AND v.profile_id = p.id 
+      AND d.id = ${pDataset} AND d.id = v.dataset_id
+      AND v.indicator_id = 39
+      AND p.gender_id = 2
+      ORDER BY country_name ASC
+    </Query>
+  </DataAccess>
+
+  <!-- WORKFORCE PROFILE || get female employment rate data -->
+  <DataAccess access="public" connection="dvt_conn" id="getFemaleEmploymentData" type="sql">
+    <Cache duration="3600" enabled="true" />
+    <Columns />
+    <Parameters>
+      <Parameter default="6" name="pDataset" type="Numeric" />
+    </Parameters>
+    <Query>
+      SELECT n.country_code as countryKey, n.literal_id as country_name, (v.value*100) as value
+      FROM nuts n, profile p, value v, dataset d
+      WHERE n.id = p.nuts_id 
+      AND v.profile_id = p.id 
+      AND d.id = ${pDataset} AND d.id = v.dataset_id
+      AND v.indicator_id = 39
+      AND p.gender_id = 3
+      ORDER BY country_name ASC
+    </Query>
+  </DataAccess>
+
+  <!-- WORKFORCE PROFILE || get min and max value of selected indicators -->
+  <DataAccess access="public" connection="dvt_conn" id="getMinMaxValues" type="sql">
+    <Cache duration="3600" enabled="true" />
+    <Columns />
+    <Parameters>
+      <Parameter default="6" name="pDataset" type="Numeric" />
+      <Parameter default="37" name="pIndicator" type="Numeric" />
+      <Parameter default="0" name="pSubIndicator" type="Numeric" />
+    </Parameters>
+    <Query>
+      SELECT IF(${pSubIndicator} != 0, MIN(v.value*100), MIN(v.value)) as min_value, 
+      IF(${pSubIndicator} != 0, MAX(v.value*100), MAX(v.value)) as max_value
+      FROM nuts n, profile p, value v, dataset d
+      WHERE n.id = p.nuts_id 
+      AND v.profile_id = p.id 
+      AND d.id = ${pDataset} AND d.id = v.dataset_id
+      AND v.indicator_id = ${pIndicator}
+      AND (p.gender_id IS NULL OR p.gender_id = ${pSubIndicator})
+    </Query>
+  </DataAccess>
+
+  <!-- STEERING OF OSH || get indicators for select -->
+  <DataAccess access="public" connection="dvt_conn" id="getRegulationIndicators" type="sql">
+    <Cache duration="3600" enabled="true" />
+    <Columns />
+    <Parameters>
+      <Parameter default="41" name="pIndicator" type="Numeric" />
+    </Parameters>
+    <Query>
+      SELECT id, literal_id 
+      FROM indicator 
+      WHERE id IN (40, 41, 42, 43, 44, 45)
+    </Query>
+  </DataAccess>
+
+  <!-- STEERING OF OSH || get indicators for select -->
+  <DataAccess access="public" connection="dvt_conn" id="getCountryRegulationData" type="sql">
+    <Cache duration="3600" enabled="true" />
+    <Columns />
+    <Parameters>
+      <Parameter default="AT" name="pCountry" type="String" />
+    </Parameters>
+    <Query>
+      SELECT n.country_code as country_code, n.literal_id as country_name, text_1_literal_id as text1, text_2_literal_id as text2, text_3_literal_id as text3, text_4_literal_id as text4, 
+      text_5_literal_id as text5, text_6_literal_id as text6, text_7_literal_id as text7, text_8_literal_id as text8, text_9_literal_id as text9, text_10_literal_id as text10, 
+      text_11_literal_id as text11, text_12_literal_id as text12, text_13_literal_id as text13
+      FROM strategies_page sp, nuts n
+      where page='STRATEGY_REGULATION'
+      AND n.id = sp.nuts_id
+      AND n.country_code = ${pCountry}
+    </Query>
+  </DataAccess>
+
 </CDADescriptor>

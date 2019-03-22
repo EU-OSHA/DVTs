@@ -12,10 +12,15 @@ define(function (require) {
   'use strict';
 
 
-  function controller($scope, $stateParams, $state, configService, $log, $document,dataService, $window, $sce, $compile, $timeout, dvtUtils) {
+  function controller($scope, $stateParams, $state, configService, $log, $document,dataService, $window, $sce, $compile, $timeout, dvtUtils, EconomicSectorProfileService) {
 
     // CDA
     $scope.cda =  configService.getBarometerCda();
+
+    // Datasets
+    $scope.datasetList = configService.getDatasets();
+    $scope.datasetEurostat = $scope.datasetList.EUROSTAT;
+    $scope.datasetEurostatBetweenDates = $scope.datasetList.EUROSTATBetweenDates;
 
     // Literals
     var i18nLiterals = configService.getLiterals();
@@ -25,53 +30,119 @@ define(function (require) {
     $scope.pCountry1 = $stateParams.pCountry1;
     $scope.pCountry2 = $stateParams.pCountry2;
 
-    $scope.color1 = $scope.pCountry1 != 'EU' ? dvtUtils.getColorCountry(1) : dvtUtils.getColorCountry();
-    $scope.color2 = $scope.pCountry2 != 'EU' ? dvtUtils.getColorCountry(2) : dvtUtils.getColorCountry();
-    $scope.color3 = dvtUtils.getColorCountry();
+    $scope.dashboard = {};
+    $scope.dashboard = {
+        parameters: {
+            "pCountry1": $scope.pCountry1,
+            "pCountry2": $scope.pCountry2
+        }
+    };
 
     $scope.stories = [
       //0 - Company size
       {
-          color1: dvtUtils.getColorCountry(1),
-          color2: dvtUtils.getChartLightGrayColor(),
-          color3: dvtUtils.getColorCountry(2),
-          color4: dvtUtils.getEUColor(),
-          color5: dvtUtils.getAccidentsColors(4)
+        color1: dvtUtils.getColorCountry(1),
+        color2: dvtUtils.getChartLightGrayColor(),
+        color3: dvtUtils.getColorCountry(2),
+        color4: dvtUtils.getEUColor(),
+        color5: dvtUtils.getAccidentsColors(4),
+        plots: EconomicSectorProfileService.getCompanySizeMainPlots($scope.pCountry1, $scope.pCountry2),
+        dimensions: {
+          value: {
+            format: {
+              number: "0.#",
+              percent: "#%"
+            }
+          }
+        },
+        labelTextAlign: 'left'
       },
       // 1 - Employment per sector
       {
-          color1: dvtUtils.getColorCountry(1),
-          color2: dvtUtils.getColorCountry(22),
-          color3: dvtUtils.getColorCountry(2),
-          color4: dvtUtils.getEUColor(),
-          color5: dvtUtils.getAccidentsColors(4),
-          color6: dvtUtils.getColorCountry(12),
-          color7: dvtUtils.getEUColor(2)
+        color1: dvtUtils.getColorCountry(1),
+        color2: dvtUtils.getColorCountry(22),
+        color3: dvtUtils.getColorCountry(2),
+        color4: dvtUtils.getEUColor(),
+        color5: dvtUtils.getAccidentsColors(4),
+        color6: dvtUtils.getColorCountry(12),
+        color7: dvtUtils.getEUColor(2)
       },
-      // 2 - Employment rate || 3 - Unemployment rate || 4 - GDP PER CAPITA IN RELATION TO EU28 AVERAGE || 5 - INCOME PER CAPITA
+      // 2 - Employment rate
       {
-          color1: dvtUtils.getColorCountry(1),
-          color2: dvtUtils.getColorCountry(2),
-          color3: dvtUtils.getEUColor()
-          //plots: GlobalRegionsService.getSplitMainPlots($scope.splits[1], dvtUtils.getColorCountry(-1), dvtUtils.getIllnessColors(2))
+        color1: dvtUtils.getColorCountry(1),
+        color2: dvtUtils.getColorCountry(2),
+        color3: dvtUtils.getEUColor(),
+        plots: EconomicSectorProfileService.getEmploymentRateMainPlots($scope.pCountry1, $scope.pCountry2),
+        labelTextAlign: 'left',
+        dimensions: {
+          value: {
+            format: {
+              number: "0.#",
+              percent: "#€"
+            }
+          }
+        },
+      },
+      // 3 - Unemployment rate 
+      {
+        color1: dvtUtils.getColorCountry(1),
+        color2: dvtUtils.getColorCountry(2),
+        color3: dvtUtils.getEUColor(),
+        plots: EconomicSectorProfileService.getUnemploymentRateMainPlots($scope.pCountry1, $scope.pCountry2),
+        dimensions: {
+          value: {
+            format: {
+              number: "0.#",
+              percent: "#€"
+            }
+          }
+        }
+      },
+      // 4 - GDP PER CAPITA IN RELATION TO EU28 AVERAGE
+      {
+        color1: dvtUtils.getColorCountry(1),
+        color2: dvtUtils.getColorCountry(2),
+        color3: dvtUtils.getEUColor(),
+        plots: EconomicSectorProfileService.getGPDMainPlots($scope.pCountry1, $scope.pCountry2),
+        dimensions: {
+          value: {
+            format: {
+              number: "0",
+              percent: "#€"
+            }
+          }
+        },
+      },
+      // 5 - INCOME PER CAPITA
+      {
+        color1: dvtUtils.getColorCountry(1),
+        color2: dvtUtils.getColorCountry(2),
+        color3: dvtUtils.getEUColor(),
+        plots: EconomicSectorProfileService.getIncomeMainPlots($scope.pCountry1, $scope.pCountry2),
+        dimensions: {
+          value: {
+            format: {
+              number: "#,0",
+              percent: "#€"
+            }
+          }
+        }
       }
     ];
-
+        
     $scope.step = {
         chart1: 20,
         chart2: 20,
         chart3: 10,
         chart4: 2.50,
-        chart6: 100,
-        chart7: 5000
+        chart5: 100,
+        chart6: 5000
     }
 
-    $scope.countries = [];
-    $scope.amatrix = [];
-
+    $scope.countriesDataFor = [];
+    $scope.countriesCompareWith = [];
 
     // Show/hide the Countries Filter List
-
     angular.element('div.countries-filters').css( "display",'none' );
     angular.element('#filter2 h2').addClass('showChallenges');
     $scope.toggleFilters = function() {
@@ -84,32 +155,27 @@ define(function (require) {
     /******************************************************************************|
     |                                DATA LOAD                                     |
     |******************************************************************************/      
-      dataService.getMatrixAuthsCountries().then(function (data) {
 
+      dataService.getAvailableEconomicSectorCountries().then(function (data) {
         data.data.resultset.map(function (elem) {
           var param = (!!$stateParams.filter) ? $stateParams.filter : undefined;
-          $scope.countries.push({
+          if(elem[1] != $scope.pCountry2){
+            $scope.countriesDataFor.push({
               country: elem[0],
               country_code: elem[1]
-          });
+            });
+          }
+
+          if(elem[1] != $scope.pCountry1){
+            $scope.countriesCompareWith.push({
+              country: elem[0],
+              country_code: elem[1]
+            });
+          }
         });
-        $log.warn($scope.countries);
       }).catch(function (err) {
           throw err;
       });
-
-      /*dataService.getAvailableEconomicSectorCountries().then(function (data) {
-        data.data.resultset.map(function (elem) {
-          var param = (!!$stateParams.filter) ? $stateParams.filter : undefined;
-          $scope.countries.push({
-            country: elem[0],
-            country_code: elem[1]
-          });
-        });
-        $log.warn($scope.countries);
-      }).catch(function (err) {
-          throw err;
-      });*/
 
     /******************************END DATA LOAD***********************************/
 
@@ -129,7 +195,7 @@ define(function (require) {
     /******************************END FILTERS************************************/
   }
 
-  controller.$inject = ['$scope', '$stateParams', '$state', 'configService', '$log', '$document','dataService', '$window', '$sce', '$compile', '$timeout', 'dvtUtils'];
+  controller.$inject = ['$scope', '$stateParams', '$state', 'configService', '$log', '$document','dataService', '$window', '$sce', '$compile', '$timeout', 'dvtUtils', 'EconomicSectorProfileService'];
   return controller;
 
 

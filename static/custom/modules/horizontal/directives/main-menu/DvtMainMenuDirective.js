@@ -49,22 +49,36 @@ define(function (require) {
                     // Load google translate element
                     new google.translate.TranslateElement({pageLanguage: 'en', autoDisplay: false, layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
 
-
                     /** HEADER SHOW HIDE **/
                     var prevScrollpos = $window.pageYOffset;
 
                     $window.onscroll = function() {
                       
                       var currentScrollPos = $window.pageYOffset;
-                      
+                     
+
                       if (prevScrollpos > currentScrollPos) {
                         angular.element(".bar-header").addClass('show-header');
+                        angular.element(".affix").addClass('show-header');
+
+                        angular.element(".affix").removeClass('hide-header');
                         angular.element(".bar-header").removeClass('hide-header');
                       } else {
                         angular.element(".bar-header").addClass('hide-header');
+                        angular.element(".affix").addClass('hide-header');
+
+                        angular.element(".affix").removeClass('show-header');
                         angular.element(".bar-header").removeClass('show-header');
                       }
                       prevScrollpos = currentScrollPos;
+
+                      if( angular.element('.advice--block-not-home') ){
+                          if( prevScrollpos <= angular.element('.advice--icon--block').offset().top + angular.element('.advice--icon--block')[0].clientHeight){
+                            //angular.element(".compare--block.regulation-page").removeClass('affix');
+                            angular.element(".compare--block.regulation-page").removeClass('show-header');
+                          }
+                      }
+
                     } 
 
                     //hide print icon in mobile

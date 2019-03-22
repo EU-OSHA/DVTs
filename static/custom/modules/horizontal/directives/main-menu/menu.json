@@ -38,9 +38,9 @@
         "tabindex":"3",
         "levels":[
             {
-                "id":"regulations",
+                "id":"regulation",
                 "name":"L22006",
-                "sref":"regulations",
+                "sref":"regulation",
                 "accesskey":"C"
             },
             {

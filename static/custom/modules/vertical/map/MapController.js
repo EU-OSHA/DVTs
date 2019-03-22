@@ -25,11 +25,11 @@ define(function (require) {
         $scope.promises = {
             europePromise: mapProvider.getEuropeShape(),
             countryGroups: dataService.getGroupCountryList(),
-            ccGrouping1: dataService.getCountryCardGrouping("AT"),
-            ccGrouping2: dataService.getCountryCardGrouping("BE")
+            //ccGrouping1: dataService.getCountryCardGrouping("AT"),
+            //ccGrouping2: dataService.getCountryCardGrouping("BE")
         };
 
-        $scope.mapPromise = mapProvider.getEuropeShape();
+        //$scope.mapPromise = mapProvider.getEuropeShape();
 
 
        $scope.status = 'ready';
