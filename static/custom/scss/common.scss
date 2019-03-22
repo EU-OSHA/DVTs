@@ -350,6 +350,14 @@
         padding: 0;
         font-size: 1.4rem;
         color: $aquamarine;
+        a{
+          border-bottom: 1px dotted $orange;
+          color: $aquamarine;
+          font-family: "OpenSans-bold";
+          &:hover{
+            color: $orange;
+          }
+        }
         i{
           color: $orange;
           font-size: 1.8rem;
