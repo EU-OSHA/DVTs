@@ -69,7 +69,10 @@
       <!-- CONTENT -->
       <div class="selected--tags-wrapper"> <!--<span class="selected-tag" ng-click="deleteTag($event)">Auth</span><span class="selected-tag">AU</span>--> </div>
       <div class="matrix--elements--wrapper">
-        <!-- MATRIX ELEMENTS --> 
+        <!-- MATRIX ELEMENTS -->
+        <div ng-if="amatrix.length <= 0">
+            <span>No information available</span>
+        </div>
         <div data-ng-repeat="matrix in amatrix | limitTo:pageSize:elementsStart" class="matrix--element">
           <div class="matrix--header--elements">
             <img  class="flags--wrapper" ng-src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/flag/{{::matrix.country_code.toLowerCase()}}.png">
