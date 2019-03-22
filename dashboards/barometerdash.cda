@@ -514,7 +514,7 @@
       WHERE n.id = p.nuts_id
       AND i.id = v.indicator_id
       AND v.profile_id = p.id
-      AND d.id = 4 AND d.id = v.dataset_id
+      AND d.id = ${pDataset} AND d.id = v.dataset_id
       AND n.country_code IN (${pCountry1}, ${pCountry2}, 'EU28') AND i.id = ${pIndicator}
       ORDER BY FIELD(n.country_code, ${pCountry1}, ${pCountry2}, 'EU28') ASC
     </Query>

@@ -377,7 +377,7 @@ define(function () {
              * @name dvt.configModule.DataService#getUnemploymentRateData
              * @methodOf dvt.configModule.DataService
              * @description
-             * Get Company size data
+             * Get uneployment rate data
              */
             getUnemploymentRateData: function (pIndicator, pCountry1, pCountry2) {
                 var url = configService.getBarometerDataPath() + "&dataAccessId=getUnemploymentRateData" + "&pIndicator=" + pIndicator + "&parampCountry1=" + pCountry1 + "&parampCountry2=" + pCountry2;
@@ -390,7 +390,7 @@ define(function () {
              * @name dvt.configModule.DataService#getGDPData
              * @methodOf dvt.configModule.DataService
              * @description
-             * Get Company size data
+             * Get GDP data
              */
             getGDPData: function (pIndicator, pCountry1, pCountry2) {
                 var url = configService.getBarometerDataPath() + "&dataAccessId=getGDPData" + "&pIndicator=" + pIndicator + "&parampCountry1=" + pCountry1 + "&parampCountry2=" + pCountry2;
