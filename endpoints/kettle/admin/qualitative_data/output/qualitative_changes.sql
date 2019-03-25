@@ -1,260 +1,226 @@
 -- The tool is already created
 
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);
-INSERT INTO literal (id, chart_id, section_id, type) VALUES (@maxId, NULL, NULL, "INDICATOR_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@maxId, "EN", 1, "Resources and timeframe");
-INSERT INTO indicator (name, literal_id) VALUES ("Resources and timeframe", @maxId);
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);
-INSERT INTO literal (id, chart_id, section_id, type) VALUES (@maxId, NULL, NULL, "INDICATOR_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@maxId, "EN", 1, "Relationship to EU Strategic Framework");
-INSERT INTO indicator (name, literal_id) VALUES ("Relationship to EU Strategic Framework", @maxId);
-
-SET @datasetId = (SELECT id FROM dataset  WHERE source="EUROSTAT" AND date_from="2010-01-01" AND date_to="2016-12-31");
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Non-fatal work accidents");
-INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
-
-SET @datasetId = (SELECT id FROM dataset  WHERE source="EUROSTAT" AND date_from="2016-01-01");
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Fatal work accidents");
-INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
-
-SET @datasetId = (SELECT id FROM dataset  WHERE source="EUROSTAT" AND date_from="2016-01-01");
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Estimation of non-fatal accidents based on fatal accidents (estimated)");
-INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
-
-SET @datasetId = (SELECT id FROM dataset  WHERE source="EUROSTAT" AND date_from="2016-01-01");
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Level of reporting of non-fatal accidents");
-INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
-
-SET @datasetId = (SELECT id FROM dataset  WHERE source="OSHWiki / National Strategies reports" AND date_from="2018-01-01");
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Resources and timeframe");
-INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
-
-SET @datasetId = (SELECT id FROM dataset  WHERE source="OSHWiki / National Strategies reports" AND date_from="2018-01-01");
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Relationship to EU Strategic Framework");
-INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
-
-INSERT INTO CHART (id, section_id)  VALUES(20010,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="ECONOMIC_SECTOR_PROFILE" AND t.name="osha_dvt_barometer"	) );
+INSERT INTO chart (id, section_id)  VALUES(20010,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="ECONOMIC_SECTOR_PROFILE" AND t.name="osha_dvt_barometer"	) );
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Employment per sector");
 SET @datasetId = (SELECT id FROM dataset WHERE source="EUROSTAT" AND date_from="2017-01-01");
 INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20010, @indicatorId, @datasetId);
 
-INSERT INTO CHART (id, section_id)  VALUES(20011,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="ECONOMIC_SECTOR_PROFILE" AND t.name="osha_dvt_barometer"	) );
+INSERT INTO chart (id, section_id)  VALUES(20011,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="ECONOMIC_SECTOR_PROFILE" AND t.name="osha_dvt_barometer"	) );
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Employment rate");
 SET @datasetId = (SELECT id FROM dataset WHERE source="EUROSTAT" AND date_from="2017-01-01");
 INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20011, @indicatorId, @datasetId);
 
-INSERT INTO CHART (id, section_id)  VALUES(20012,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="ECONOMIC_SECTOR_PROFILE" AND t.name="osha_dvt_barometer"	) );
+INSERT INTO chart (id, section_id)  VALUES(20012,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="ECONOMIC_SECTOR_PROFILE" AND t.name="osha_dvt_barometer"	) );
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Unemployment rate");
 SET @datasetId = (SELECT id FROM dataset WHERE source="EUROSTAT" AND date_from="2017-01-01");
 INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20012, @indicatorId, @datasetId);
 
-INSERT INTO CHART (id, section_id)  VALUES(20013,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="ECONOMIC_SECTOR_PROFILE" AND t.name="osha_dvt_barometer"	) );
+INSERT INTO chart (id, section_id)  VALUES(20013,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="ECONOMIC_SECTOR_PROFILE" AND t.name="osha_dvt_barometer"	) );
 SET @indicatorId = (SELECT id FROM indicator WHERE name="GPD per capita in relation to EU28 average");
 SET @datasetId = (SELECT id FROM dataset WHERE source="EUROSTAT" AND date_from="2017-01-01");
 INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20013, @indicatorId, @datasetId);
 
-INSERT INTO CHART (id, section_id)  VALUES(20015,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="WORKFORCE_PROFILE" AND t.name="osha_dvt_barometer"	) );
+INSERT INTO chart (id, section_id)  VALUES(20015,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="WORKFORCE_PROFILE" AND t.name="osha_dvt_barometer"	) );
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Median age of population");
 SET @datasetId = (SELECT id FROM dataset WHERE source="EUROSTAT" AND date_from="2017-01-01");
 INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20015, @indicatorId, @datasetId);
 
-INSERT INTO CHART (id, section_id)  VALUES(20016,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="WORKFORCE_PROFILE" AND t.name="osha_dvt_barometer"	) );
+INSERT INTO chart (id, section_id)  VALUES(20016,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="WORKFORCE_PROFILE" AND t.name="osha_dvt_barometer"	) );
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Ageing workers (55 to 64) employment rate");
 SET @datasetId = (SELECT id FROM dataset WHERE source="EUROSTAT" AND date_from="2017-01-01");
 INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20016, @indicatorId, @datasetId);
 
-INSERT INTO CHART (id, section_id)  VALUES(20017,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="WORKFORCE_PROFILE" AND t.name="osha_dvt_barometer"	) );
+INSERT INTO chart (id, section_id)  VALUES(20017,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="WORKFORCE_PROFILE" AND t.name="osha_dvt_barometer"	) );
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Total, male and female employment rate");
 SET @datasetId = (SELECT id FROM dataset WHERE source="EUROSTAT" AND date_from="2017-01-01");
 INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20017, @indicatorId, @datasetId);
 
-INSERT INTO CHART (id, section_id)  VALUES(20023,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="WORK_ACCIDENTS" AND t.name="osha_dvt_barometer"	) );
+INSERT INTO chart (id, section_id)  VALUES(20023,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="WORK_ACCIDENTS" AND t.name="osha_dvt_barometer"	) );
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Fatal work accidents");
 SET @datasetId = (SELECT id FROM dataset WHERE source="EUROSTAT" AND date_from="2016-01-01");
 INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20023, @indicatorId, @datasetId);
 
-INSERT INTO CHART (id, section_id)  VALUES(20024,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="WORK_ACCIDENTS" AND t.name="osha_dvt_barometer"	) );
+INSERT INTO chart (id, section_id)  VALUES(20024,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="WORK_ACCIDENTS" AND t.name="osha_dvt_barometer"	) );
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Estimation of non-fatal accidents based on fatal accidents (estimated)");
 SET @datasetId = (SELECT id FROM dataset WHERE source="EUROSTAT" AND date_from="2016-01-01");
 INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20024, @indicatorId, @datasetId);
 
-INSERT INTO CHART (id, section_id)  VALUES(20025,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="WORK_ACCIDENTS" AND t.name="osha_dvt_barometer"	) );
+INSERT INTO chart (id, section_id)  VALUES(20025,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="WORK_ACCIDENTS" AND t.name="osha_dvt_barometer"	) );
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Level of reporting of non-fatal accidents");
 SET @datasetId = (SELECT id FROM dataset WHERE source="EUROSTAT" AND date_from="2016-01-01");
 INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20025, @indicatorId, @datasetId);
 
-INSERT INTO CHART (id, section_id)  VALUES(20026,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="HEALTH_PERCEPTION" AND t.name="osha_dvt_barometer"	) );
+INSERT INTO chart (id, section_id)  VALUES(20026,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="HEALTH_PERCEPTION" AND t.name="osha_dvt_barometer"	) );
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Satisfaction with working conditions");
 SET @datasetId = (SELECT id FROM dataset WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
 INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20026, @indicatorId, @datasetId);
 
-INSERT INTO CHART (id, section_id)  VALUES(20027,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="HEALTH_PERCEPTION" AND t.name="osha_dvt_barometer"	) );
+INSERT INTO chart (id, section_id)  VALUES(20027,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="HEALTH_PERCEPTION" AND t.name="osha_dvt_barometer"	) );
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Health negative affection");
 SET @datasetId = (SELECT id FROM dataset WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
 INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20027, @indicatorId, @datasetId);
 
-INSERT INTO CHART (id, section_id)  VALUES(20028,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="HEALTH_PERCEPTION" AND t.name="osha_dvt_barometer"	) );
+INSERT INTO chart (id, section_id)  VALUES(20028,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="HEALTH_PERCEPTION" AND t.name="osha_dvt_barometer"	) );
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Health problem in the last 12 months");
 SET @datasetId = (SELECT id FROM dataset WHERE source="EUROSTAT" AND date_from="2013-01-01");
 INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20028, @indicatorId, @datasetId);
 
-INSERT INTO CHART (id, section_id)  VALUES(20029,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="HEALTH_PERCEPTION" AND t.name="osha_dvt_barometer"	) );
+INSERT INTO chart (id, section_id)  VALUES(20029,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="HEALTH_PERCEPTION" AND t.name="osha_dvt_barometer"	) );
 SET @indicatorId = (SELECT id FROM indicator WHERE name="More than 15 days of absence");
 SET @datasetId = (SELECT id FROM dataset WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
 INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20029, @indicatorId, @datasetId);
 
-INSERT INTO CHART (id, section_id)  VALUES(20030,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="HEALTH_PERCEPTION" AND t.name="osha_dvt_barometer"	) );
+INSERT INTO chart (id, section_id)  VALUES(20030,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="HEALTH_PERCEPTION" AND t.name="osha_dvt_barometer"	) );
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Sick at work");
 SET @datasetId = (SELECT id FROM dataset WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
 INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20030, @indicatorId, @datasetId);
 
-INSERT INTO CHART (id, section_id)  VALUES(20031,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="HEALTH_PERCEPTION" AND t.name="osha_dvt_barometer"	) );
+INSERT INTO chart (id, section_id)  VALUES(20031,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="HEALTH_PERCEPTION" AND t.name="osha_dvt_barometer"	) );
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Be able to do current job until 60 years old");
 SET @datasetId = (SELECT id FROM dataset WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
 INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20031, @indicatorId, @datasetId);
 
-INSERT INTO CHART (id, section_id)  VALUES(20038,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="OSH_CULTURE_HEALTH_AWARENESS" AND t.name="osha_dvt_barometer"	) );
+INSERT INTO chart (id, section_id)  VALUES(20038,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="OSH_CULTURE_HEALTH_AWARENESS" AND t.name="osha_dvt_barometer"	) );
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Use of personal protective equipment");
 SET @datasetId = (SELECT id FROM dataset WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
 INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20038, @indicatorId, @datasetId);
 
-INSERT INTO CHART (id, section_id)  VALUES(20039,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="OSH_CULTURE_HEALTH_AWARENESS" AND t.name="osha_dvt_barometer"	) );
+INSERT INTO chart (id, section_id)  VALUES(20039,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="OSH_CULTURE_HEALTH_AWARENESS" AND t.name="osha_dvt_barometer"	) );
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Information about risks");
 SET @datasetId = (SELECT id FROM dataset WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
 INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20039, @indicatorId, @datasetId);
 
-INSERT INTO CHART (id, section_id)  VALUES(20040,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="OVERALL_OPINION" AND t.name="osha_dvt_barometer"	) );
+INSERT INTO chart (id, section_id)  VALUES(20040,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="OVERALL_OPINION" AND t.name="osha_dvt_barometer"	) );
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Job satisfaction");
 SET @datasetId = (SELECT id FROM dataset WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
 INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20040, @indicatorId, @datasetId);
 
-INSERT INTO CHART (id, section_id)  VALUES(20041,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="OVERALL_OPINION" AND t.name="osha_dvt_barometer"	) );
+INSERT INTO chart (id, section_id)  VALUES(20041,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="OVERALL_OPINION" AND t.name="osha_dvt_barometer"	) );
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Health at risk");
 SET @datasetId = (SELECT id FROM dataset WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
 INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20041, @indicatorId, @datasetId);
 
-INSERT INTO CHART (id, section_id)  VALUES(20049,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer"	) );
+INSERT INTO chart (id, section_id)  VALUES(20049,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer"	) );
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Exposure to vibrations");
 SET @datasetId = (SELECT id FROM dataset WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
 INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20049, @indicatorId, @datasetId);
 
-INSERT INTO CHART (id, section_id)  VALUES(20050,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer"	) );
+INSERT INTO chart (id, section_id)  VALUES(20050,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer"	) );
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Exposure to loud noise");
 SET @datasetId = (SELECT id FROM dataset WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
 INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20050, @indicatorId, @datasetId);
 
-INSERT INTO CHART (id, section_id)  VALUES(20051,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer"	) );
+INSERT INTO chart (id, section_id)  VALUES(20051,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer"	) );
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Exposure to temperatures");
 SET @datasetId = (SELECT id FROM dataset WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
 INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20051, @indicatorId, @datasetId);
 
-INSERT INTO CHART (id, section_id)  VALUES(20052,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer"	) );
+INSERT INTO chart (id, section_id)  VALUES(20052,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer"	) );
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Exposure to low temperatures");
 SET @datasetId = (SELECT id FROM dataset WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
 INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20052, @indicatorId, @datasetId);
 
-INSERT INTO CHART (id, section_id)  VALUES(20053,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer"	) );
+INSERT INTO chart (id, section_id)  VALUES(20053,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer"	) );
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Exposure to breathing in smoke, fumes, powder or dust");
 SET @datasetId = (SELECT id FROM dataset WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
 INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20053, @indicatorId, @datasetId);
 
-INSERT INTO CHART (id, section_id)  VALUES(20054,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer"	) );
+INSERT INTO chart (id, section_id)  VALUES(20054,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer"	) );
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Exposure to breathing in vapours");
 SET @datasetId = (SELECT id FROM dataset WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
 INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20054, @indicatorId, @datasetId);
 
-INSERT INTO CHART (id, section_id)  VALUES(20055,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer"	) );
+INSERT INTO chart (id, section_id)  VALUES(20055,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer"	) );
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Exposure to chemical products or substances");
 SET @datasetId = (SELECT id FROM dataset WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
 INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20055, @indicatorId, @datasetId);
 
-INSERT INTO CHART (id, section_id)  VALUES(20056,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer"	) );
+INSERT INTO chart (id, section_id)  VALUES(20056,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer"	) );
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Exposure to infections materials");
 SET @datasetId = (SELECT id FROM dataset WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
 INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20056, @indicatorId, @datasetId);
 
-INSERT INTO CHART (id, section_id)  VALUES(20069,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="WORKER_INVOLVEMENT" AND t.name="osha_dvt_barometer"	) );
+INSERT INTO chart (id, section_id)  VALUES(20069,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="WORKER_INVOLVEMENT" AND t.name="osha_dvt_barometer"	) );
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Does your organisation have a regular meeting in which employees can express their views about what is happening in the organisation?");
 SET @datasetId = (SELECT id FROM dataset WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
 INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20069, @indicatorId, @datasetId);
 
-INSERT INTO CHART (id, section_id)  VALUES(20073,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="MENTAL_RISKS" AND t.name="osha_dvt_barometer"	) );
+INSERT INTO chart (id, section_id)  VALUES(20073,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="MENTAL_RISKS" AND t.name="osha_dvt_barometer"	) );
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Time pressure - Eurofound EWCS Data");
 SET @datasetId = (SELECT id FROM dataset WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
 INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20073, @indicatorId, @datasetId);
 
-INSERT INTO CHART (id, section_id)  VALUES(20074,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="MENTAL_RISKS" AND t.name="osha_dvt_barometer"	) );
+INSERT INTO chart (id, section_id)  VALUES(20074,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="MENTAL_RISKS" AND t.name="osha_dvt_barometer"	) );
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Poor communication - Eurofound EWCS Data");
 SET @datasetId = (SELECT id FROM dataset WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
 INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20074, @indicatorId, @datasetId);
 
-INSERT INTO CHART (id, section_id)  VALUES(20075,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="MENTAL_RISKS" AND t.name="osha_dvt_barometer"	) );
+INSERT INTO chart (id, section_id)  VALUES(20075,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="MENTAL_RISKS" AND t.name="osha_dvt_barometer"	) );
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Influence - Eurofound EWCS Data");
 SET @datasetId = (SELECT id FROM dataset WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
 INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20075, @indicatorId, @datasetId);
 
-INSERT INTO CHART (id, section_id)  VALUES(20076,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="MENTAL_RISKS" AND t.name="osha_dvt_barometer"	) );
+INSERT INTO chart (id, section_id)  VALUES(20076,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="MENTAL_RISKS" AND t.name="osha_dvt_barometer"	) );
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Job insecurity - Eurofound EWCS Data");
 SET @datasetId = (SELECT id FROM dataset WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
 INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20076, @indicatorId, @datasetId);
 
-INSERT INTO CHART (id, section_id)  VALUES(20077,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="MENTAL_RISKS" AND t.name="osha_dvt_barometer"	) );
+INSERT INTO chart (id, section_id)  VALUES(20077,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="MENTAL_RISKS" AND t.name="osha_dvt_barometer"	) );
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Difficult clients - Eurofound EWCS Data");
 SET @datasetId = (SELECT id FROM dataset WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
 INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20077, @indicatorId, @datasetId);
 
-INSERT INTO CHART (id, section_id)  VALUES(20078,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="MENTAL_RISKS" AND t.name="osha_dvt_barometer"	) );
+INSERT INTO chart (id, section_id)  VALUES(20078,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="MENTAL_RISKS" AND t.name="osha_dvt_barometer"	) );
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Working hours - Eurofound EWCS Data");
 SET @datasetId = (SELECT id FROM dataset WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
 INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20078, @indicatorId, @datasetId);
 
-INSERT INTO CHART (id, section_id)  VALUES(20079,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="MENTAL_RISKS" AND t.name="osha_dvt_barometer"	) );
+INSERT INTO chart (id, section_id)  VALUES(20079,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="MENTAL_RISKS" AND t.name="osha_dvt_barometer"	) );
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Discrimination - Eurofound EWCS Data");
 SET @datasetId = (SELECT id FROM dataset WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
 INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20079, @indicatorId, @datasetId);
 
-INSERT INTO CHART (id, section_id)  VALUES(20080,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer"	) );
+INSERT INTO chart (id, section_id)  VALUES(20080,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer"	) );
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Tiring or painful positions - Eurofound EWCS Data");
 SET @datasetId = (SELECT id FROM dataset WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
 INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20080, @indicatorId, @datasetId);
 
-INSERT INTO CHART (id, section_id)  VALUES(20081,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer"	) );
+INSERT INTO chart (id, section_id)  VALUES(20081,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer"	) );
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Does your work involve sitting? - Eurofound EWCS Data");
 SET @datasetId = (SELECT id FROM dataset WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
 INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20081, @indicatorId, @datasetId);
 
-INSERT INTO CHART (id, section_id)  VALUES(20082,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer"	) );
+INSERT INTO chart (id, section_id)  VALUES(20082,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer"	) );
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Carrying or moving heavy loads - Eurofound EWCS Data");
 SET @datasetId = (SELECT id FROM dataset WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
 INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20082, @indicatorId, @datasetId);
 
-INSERT INTO CHART (id, section_id)  VALUES(20083,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer"	) );
+INSERT INTO chart (id, section_id)  VALUES(20083,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer"	) );
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Repetitive hand or arm movements - Eurofound EWCS Data");
 SET @datasetId = (SELECT id FROM dataset WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
 INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20083, @indicatorId, @datasetId);
 
-INSERT INTO CHART (id, section_id)  VALUES(20084,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer"	) );
+INSERT INTO chart (id, section_id)  VALUES(20084,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer"	) );
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Lifting or moving people - Eurofound EWCS Data");
 SET @datasetId = (SELECT id FROM dataset WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
 INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20084, @indicatorId, @datasetId);
 
-INSERT INTO CHART (id, section_id)  VALUES(20085,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="WORKER_INVOLVEMENT" AND t.name="osha_dvt_barometer"	) );
+INSERT INTO chart (id, section_id)  VALUES(20085,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="WORKER_INVOLVEMENT" AND t.name="osha_dvt_barometer"	) );
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Does your organisation have a trade union, works council or a similar committee representing employees? - Eurofound EWCS Data");
 SET @datasetId = (SELECT id FROM dataset WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
 INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20085, @indicatorId, @datasetId);
 
-INSERT INTO CHART (id, section_id)  VALUES(20014,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="ECONOMIC_SECTOR_PROFILE" AND t.name="osha_dvt_barometer"	) );
+INSERT INTO chart (id, section_id)  VALUES(20014,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="ECONOMIC_SECTOR_PROFILE" AND t.name="osha_dvt_barometer"	) );
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Income per capita");
 SET @datasetId = (SELECT id FROM dataset WHERE source="EUROSTAT" AND date_from="2010-01-01" AND date_to="2016-12-31");
 INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20014, @indicatorId, @datasetId);
 
-INSERT INTO CHART (id, section_id)  VALUES(20022,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="WORK_ACCIDENTS" AND t.name="osha_dvt_barometer"	) );
+INSERT INTO chart (id, section_id)  VALUES(20022,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="WORK_ACCIDENTS" AND t.name="osha_dvt_barometer"	) );
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Non-fatal work accidents");
 SET @datasetId = (SELECT id FROM dataset WHERE source="EUROSTAT" AND date_from="2010-01-01" AND date_to="2016-12-31");
 INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20022, @indicatorId, @datasetId);
 
-INSERT INTO CHART (id, section_id)  VALUES(20086,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="WORKER_INVOLVEMENT" AND t.name="osha_dvt_barometer"	) );
+INSERT INTO chart (id, section_id)  VALUES(20086,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="WORKER_INVOLVEMENT" AND t.name="osha_dvt_barometer"	) );
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Does your organisation have a health and safety delegate or committee? - Eurofound EWCS Data");
 SET @datasetId = (SELECT id FROM dataset WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
 INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20086, @indicatorId, @datasetId);
@@ -3244,6 +3210,61 @@ INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+694, null, @
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+694, "EN", 1, "Not applied to Median Age");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
+SET @sectionId = (SELECT id FROM section WHERE name="CROSS_SECTION" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+695, null, @sectionId, "BOX_MESSAGE");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+695, "EN", 1, "Data is from KOOP and Eurogip files.");
+
+SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
+SET @sectionId = (SELECT id FROM section WHERE name="CROSS_SECTION" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+696, null, @sectionId, "BOX_MESSAGE");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+696, "EN", 1, "Data is from EUROSTAT.");
+
+SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
+SET @sectionId = (SELECT id FROM section WHERE name="CROSS_SECTION" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+697, null, @sectionId, "BOX_MESSAGE");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+697, "EN", 1, "Data is from DG EMPLOYMENT reports.");
+
+SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
+SET @sectionId = (SELECT id FROM section WHERE name="CROSS_SECTION" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+698, null, @sectionId, "BOX_MESSAGE");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+698, "EN", 1, "Data is from National Strategies reports.");
+
+SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
+SET @sectionId = (SELECT id FROM section WHERE name="CROSS_SECTION" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+699, null, @sectionId, "BOX_MESSAGE");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+699, "EN", 1, "Data is from ESENER 2014 Survey and DG EMPLOYMENT reports.");
+
+SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
+SET @sectionId = (SELECT id FROM section WHERE name="CROSS_SECTION" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+700, null, @sectionId, "BOX_MESSAGE");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+700, "EN", 1, "Data is from ESENER 2014 Survey and EUROFOUND European Working Conditions Survey 2015.");
+
+SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
+SET @sectionId = (SELECT id FROM section WHERE name="CROSS_SECTION" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+701, null, @sectionId, "BOX_MESSAGE");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+701, "EN", 1, "Data is from EUROFOUND European Working Conditions Survey 2015.");
+
+SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
+SET @sectionId = (SELECT id FROM section WHERE name="CROSS_SECTION" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+702, null, @sectionId, "BOX_MESSAGE");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+702, "EN", 1, "Data is from ESENER 2014 Survey.");
+
+SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
+SET @sectionId = (SELECT id FROM section WHERE name="CROSS_SECTION" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+703, null, @sectionId, "BOX_MESSAGE");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+703, "EN", 1, "Data is from DG EMPLOYMENT reports and KOOP and Eurogip files.");
+
+SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
+SET @sectionId = (SELECT id FROM section WHERE name="CROSS_SECTION" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+704, null, @sectionId, "BOX_MESSAGE");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+704, "EN", 1, "For further information refer to");
+
+SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
+SET @sectionId = (SELECT id FROM section WHERE name="CROSS_SECTION" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+705, null, @sectionId, "BOX_MESSAGE");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+705, "EN", 1, "Methodology");
+
+SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2001, null, @sectionId, "MENU");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2001, "EN", 1, "Generic information");
@@ -3483,25 +3504,10 @@ SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@tool
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2099, null, @sectionId, "POP_UP");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2099, "EN", 1, "POP UP MESSAGE TO BE DEFINED");
 
-SET @maxLiteralId = (SELECT MAX(id)+1 FROM literal WHERE id<10000);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxLiteralId, NULL, NULL, "SPLIT_COMPANY_SIZE_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUE (@maxLiteralId, "EN", 1, "5 to 9 employees");
-INSERT INTO split_company_size (literal_id) VALUES(@maxLiteralId);
-
-SET @maxLiteralId = (SELECT MAX(id)+1 FROM literal WHERE id<10000);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxLiteralId, NULL, NULL, "SPLIT_COMPANY_SIZE_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUE (@maxLiteralId, "EN", 1, "10 to 49 employees");
-INSERT INTO split_company_size (literal_id) VALUES(@maxLiteralId);
-
-SET @maxLiteralId = (SELECT MAX(id)+1 FROM literal WHERE id<10000);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxLiteralId, NULL, NULL, "SPLIT_COMPANY_SIZE_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUE (@maxLiteralId, "EN", 1, "50 to 250 employees");
-INSERT INTO split_company_size (literal_id) VALUES(@maxLiteralId);
-
-SET @maxLiteralId = (SELECT MAX(id)+1 FROM literal WHERE id<10000);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxLiteralId, NULL, NULL, "SPLIT_COMPANY_SIZE_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUE (@maxLiteralId, "EN", 1, "250 or more employees");
-INSERT INTO split_company_size (literal_id) VALUES(@maxLiteralId);
+SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
+SET @sectionId = (SELECT id FROM section WHERE name="CROSS_SECTION" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+706, null, @sectionId, "BOX_MESSAGE");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+706, "EN", 1, "No information available");
 
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="AT");
@@ -5777,7 +5783,7 @@ INSERT INTO matrix_page(page, nuts_id, check_1, check_2, check_3, check_4, text_
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="AT");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, NULL, "MATRIX_STATISTICS_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "Allgemeine Unfallversicherungsanstalt (AUVA)");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "Auszug aus der Statistik 2014");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, NULL, "MATRIX_STATISTICS_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p><strong>Data holder:</strong></p><p><a href=\"auva.at\" target=\"_blank\">Allgemeine Unfallversicherungsanstalt (AUVA)</a></p><p><strong>Functionalities:</strong></p><ul><li>Monitoring work accidents</li><li>Monitoring occupational diseases</li></ul>");
 INSERT INTO matrix_page(page, nuts_id, check_1, check_2, check_3, check_4, text_1_literal_id, text_2_literal_id, text_3_literal_id) VALUES ("MATRIX_STATISTICS", @nutsId, 1, 0, 0, false, @maxId+1, @maxId+2, null);
@@ -5830,7 +5836,7 @@ SET @nutsId = (SELECT id FROM nuts WHERE country_code="BE");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, NULL, "MATRIX_STATISTICS_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "Ziekteverzuim in de periode van primaire arbeidsongeschiktheid - Analyse en verklarende factoren");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, NULL, "MATRIX_STATISTICS_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p><strong>Data holder:</strong></p><p><a href=\"http://www.riziv.fgov.be/nl/publicaties/Paginas/ziekteverzuim-primaire-arbeidsongeschiktheid.aspx#.Vsc9tbn2ZHg\" target=\"_blank\">RIZIV</a></p><p><strong>Functionalities:</strong></p><ul><li><span style=\"text-indent: -18pt; font-size: 7.5pt; font-family: 'Lucida Sans Unicode', sans-serif;\">Monitoring work related illness - (</span><span style=\"font-family: 'Lucida Sans Unicode', sans-serif;\"><span style=\"font-size: 10px;\">2004-2013)</span></span></li></ul><p>&nbsp;</p>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p><strong>Data holder:</strong></p><p><a href=\"http://www.riziv.fgov.be/nl/publicaties/Paginas/ziekteverzuim-primaire-arbeidsongeschiktheid.aspx#.Vsc9tbn2ZHg\" target=\"_blank\">RIZIV</a></p><p><strong>Functionalities:</strong></p><ul><li><span style=\"text-indent: -18pt; font-size: 7.5pt; font-family: 'Lucida Sans Unicode', sans-serif;\">Monitoring work related illness - (</span><span style=\"font-family: 'Lucida Sans Unicode', sans-serif;\"><span style=\"font-size: 10px;\">2009-2012)</span></span></li></ul><p>&nbsp;</p>");
 INSERT INTO matrix_page(page, nuts_id, check_1, check_2, check_3, check_4, text_1_literal_id, text_2_literal_id, text_3_literal_id) VALUES ("MATRIX_STATISTICS", @nutsId, 1, 0, 0, false, @maxId+1, @maxId+2, null);
 
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -5888,7 +5894,7 @@ SET @nutsId = (SELECT id FROM nuts WHERE country_code="HR");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, NULL, "MATRIX_STATISTICS_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "Croatian Pension Insurance Institute( HZMO)");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, NULL, "MATRIX_STATISTICS_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p><strong>Data holder:</strong></p><p><a href=\"http://www.hzmo.hr\" target=\"_blank\">hzmo</a></p><p><strong>Functionalities:</strong></p><ul><li>Monitoring of work accidents&nbsp;-&nbsp;quaterly</li></ul>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p><strong>Data holder:</strong></p><p><a href=\"http://www.hzmo.hr\" target=\"_blank\">hzmo</a></p><p><strong>Functionalities:</strong></p><ul><li>Monitoring of work accidents&nbsp;-&nbsp;quarterly</li></ul>");
 INSERT INTO matrix_page(page, nuts_id, check_1, check_2, check_3, check_4, text_1_literal_id, text_2_literal_id, text_3_literal_id) VALUES ("MATRIX_STATISTICS", @nutsId, 1, 0, 0, false, @maxId+1, @maxId+2, null);
 
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -5905,7 +5911,7 @@ INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, NU
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "Ministry of Labour and Pension System - Labour
 Inspectorate");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, NULL, "MATRIX_STATISTICS_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p><strong>Data holder:</strong></p><p><a href=\"http://www.mrms.hr\" target=\"_blank\">mrms</a></p><p><strong>Functionalities:</strong></p><ul><li>Monitoring of work accidents&nbsp;- annually</li></ul>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p><strong>Data holder:</strong></p><p><a href=\"http://www.20hzzo.hr\" target=\"_blank\">not published</a></p><p><strong>Functionalities:</strong></p><ul><li>Monitoring of work accidents&nbsp;-&nbsp;year range</li></ul>");
 INSERT INTO matrix_page(page, nuts_id, check_1, check_2, check_3, check_4, text_1_literal_id, text_2_literal_id, text_3_literal_id) VALUES ("MATRIX_STATISTICS", @nutsId, 1, 0, 0, false, @maxId+1, @maxId+2, null);
 
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -5978,7 +5984,7 @@ SET @nutsId = (SELECT id FROM nuts WHERE country_code="DK");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, NULL, "MATRIX_STATISTICS_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "Notified accidents at work (Anmeldte arbejdsulykker 2014)");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, NULL, "MATRIX_STATISTICS_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p><strong>Data holder:</strong></p><p><a href=\"http://arbejdstilsynet.dk/da/statistik/arbejdsskader/arbejdsskader-arsopgorelser\" target=\"_blank\">Labour Inspection (Arbejdstilsynet)</a></p><p><strong>Functionalities:</strong></p><ul><li>Monitoring of work accidents - Five years periods from 1997 on (Annual reports)</li></ul>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p><strong>Data holder:</strong></p><p><a href=\"http://arbejdstilsynet.dk/da/statistik/arbejdsskader/arbejdsskader-arsopgorelser\" target=\"_blank\">Labour Inspection (Arbejdstilsynet)</a></p><p><strong>Functionalities:</strong></p><ul><li>Monitoring of work accidents - Five years periods from 1997 on (annual reports)</li></ul>");
 INSERT INTO matrix_page(page, nuts_id, check_1, check_2, check_3, check_4, text_1_literal_id, text_2_literal_id, text_3_literal_id) VALUES ("MATRIX_STATISTICS", @nutsId, 1, 0, 0, false, @maxId+1, @maxId+2, null);
 
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -6059,7 +6065,7 @@ SET @nutsId = (SELECT id FROM nuts WHERE country_code="FI");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, NULL, "MATRIX_STATISTICS_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "Register of work-related diseases");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, NULL, "MATRIX_STATISTICS_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p><strong>Data holder:</strong></p><p><a href=\"http://www.ttl.fi/fi/tyoterveyshuolto/ammattitaudit/ammattitautitilastot_ja_julkaisut/sivut/default.aspx\" target=\"_blank\">Finnish Institute of Occupational Health</a></p><p><strong>Functionalities:</strong></p><ul><li>Monitoring of occupational diseases - annually</li></ul>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p><strong>Data holder:</strong></p><p><a href=\"http://www.ttl.fi/fi/rekisterit/tyoperaisten_sairauksien_rekisteri/Sivut/default.aspx\" target=\"_blank\">Finnish Institute of Occupational Health</a></p><p><strong>Functionalities:</strong></p><ul><li>Monitoring of work- related illness&nbsp;</li></ul>");
 INSERT INTO matrix_page(page, nuts_id, check_1, check_2, check_3, check_4, text_1_literal_id, text_2_literal_id, text_3_literal_id) VALUES ("MATRIX_STATISTICS", @nutsId, 1, 0, 0, false, @maxId+1, @maxId+2, null);
 
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -6187,7 +6193,7 @@ SET @nutsId = (SELECT id FROM nuts WHERE country_code="UK");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, NULL, "MATRIX_STATISTICS_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "Reporting of Injuries, Diseases and Dangerous Occurrences Regulations (RIDDOR)");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, NULL, "MATRIX_STATISTICS_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p><strong>Data holder:</strong></p><p><a href=\"http://www.hse.gov.uk/Statistics/tables/index.htm#riddor%20\" target=\"_blank\">Health and Safety Executive (HSE)</a></p><p><strong>Functionalities:</strong></p><ul><li>Monitoring of work accidents - (Annual. Since 1974. Definitional changes in 2012/13 giving a disconintuity in the time series)</li><li>Monitoring of occupational diseases</li><li>Monitoring of work-related illness - (Annual. Since 1974. Definitional changes in 2012/13 giving a disconintuity in the time series)</li></ul>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p><strong>Data holder:</strong></p><p><a href=\"http://www.hse.gov.uk/Statistics/tables/index.htm#riddor%20\" target=\"_blank\">Health and Safety Executive (HSE)</a></p><p><strong>Functionalities:</strong></p><ul><li>Monitoring of work accidents - annual (Since 1974. Definitional changes in 2012/2013 giving a disconintuity in the time series)</li><li>Monitoring of occupational diseases</li><li>Monitoring of work-related illness - annual (Since 1974. Definitional changes in 2012/2013 giving a disconintuity in the time series)</li></ul>");
 INSERT INTO matrix_page(page, nuts_id, check_1, check_2, check_3, check_4, text_1_literal_id, text_2_literal_id, text_3_literal_id) VALUES ("MATRIX_STATISTICS", @nutsId, 1, 0, 0, false, @maxId+1, @maxId+2, null);
 
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -6259,7 +6265,7 @@ SET @nutsId = (SELECT id FROM nuts WHERE country_code="EL");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, NULL, "MATRIX_STATISTICS_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "OGA");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, NULL, "MATRIX_STATISTICS_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p><strong>Data holder:</strong></p><p><a href=\"http://www.oga.gr/\" target=\"_blank\">OGA</a></p><p><strong>Functionalities:</strong></p><ul><li>Monitoring of work accidents - (Annually)</li></ul>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p><strong>Data holder:</strong></p><p><a href=\"http://www.oga.gr/\" target=\"_blank\">OGA</a></p><p><strong>Functionalities:</strong></p><ul><li>Monitoring of work accidents - annually</li></ul>");
 INSERT INTO matrix_page(page, nuts_id, check_1, check_2, check_3, check_4, text_1_literal_id, text_2_literal_id, text_3_literal_id) VALUES ("MATRIX_STATISTICS", @nutsId, 1, 0, 0, false, @maxId+1, @maxId+2, null);
 
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -6291,7 +6297,7 @@ SET @nutsId = (SELECT id FROM nuts WHERE country_code="HU");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, NULL, "MATRIX_STATISTICS_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "Foglalkozási betegségek nyilvántartása (Register of occupational diseases)");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, NULL, "MATRIX_STATISTICS_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p><strong>Data holder:</strong></p><p>Országos Tisztifőorvosi Hivatal - Munkahigiénés és Foglalkozás-egészségügyi Főosztály (Occupational Health Department in the Office of the Chief Medical Officer)</p><p><strong>Functionalities:</strong></p><ul><li>Monitoring of occupational diseases&nbsp;- (&nbsp;2000-2014 / annually)</li></ul>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p><strong>Data holder:</strong></p><p>Országos Tisztifőorvosi Hivatal - Munkahigiénés és Foglalkozás-egészségügyi Főosztály (Occupational Health Department in the Office of the Chief Medical Officer)</p><p><strong>Functionalities:</strong></p><ul><li>Monitoring of occupational diseases&nbsp;- annually (2000-2014)</li></ul>");
 INSERT INTO matrix_page(page, nuts_id, check_1, check_2, check_3, check_4, text_1_literal_id, text_2_literal_id, text_3_literal_id) VALUES ("MATRIX_STATISTICS", @nutsId, 1, 0, 0, false, @maxId+1, @maxId+2, null);
 
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -6323,7 +6329,7 @@ SET @nutsId = (SELECT id FROM nuts WHERE country_code="IE");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, NULL, "MATRIX_STATISTICS_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "Statistical information on social welfare");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, NULL, "MATRIX_STATISTICS_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p><strong>Data holder:</strong></p><p><a href=\"http://www.welfare.ie/en/downloads/Statistical-Information-on-Social-Welfare-Services-2014.pdf\" target=\"_blank\">Department of Social Protection</a></p><p><strong>Functionalities:</strong></p><ul><li>Monitoring of work accidents&nbsp;- (start date not clear (need to look at annual reports separately), annually)</li></ul>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p><strong>Data holder:</strong></p><p><a href=\"http://www.welfare.ie/en/downloads/Statistical-Information-on-Social-Welfare-Services-2014.pdf\" target=\"_blank\">Department of Social Protection</a></p><p><strong>Functionalities:</strong></p><ul><li>Monitoring of work accidents&nbsp;- annually (start date not clear (need to look at annual reports separately))</li></ul>");
 INSERT INTO matrix_page(page, nuts_id, check_1, check_2, check_3, check_4, text_1_literal_id, text_2_literal_id, text_3_literal_id) VALUES ("MATRIX_STATISTICS", @nutsId, 1, 0, 0, false, @maxId+1, @maxId+2, null);
 
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -6347,7 +6353,7 @@ SET @nutsId = (SELECT id FROM nuts WHERE country_code="IT");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, NULL, "MATRIX_STATISTICS_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "National tables");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, NULL, "MATRIX_STATISTICS_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p><strong>Data holder:</strong></p><p><a href=\"http://dati.inail.it/opendata_files/downloads/daticoncadenzasemestraleinfortuni/Tabelle_nazionali_cadenza_semestrale.pdf\" target=\"_blank\">Inail</a></p><p><strong>Functionalities:</strong></p><ul><li>Monitoring of work accidents - (Annually, 2010-2014)</li></ul>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p><strong>Data holder:</strong></p><p><a href=\"http://dati.inail.it/opendata_files/downloads/daticoncadenzasemestraleinfortuni/Tabelle_nazionali_cadenza_semestrale.pdf\" target=\"_blank\">Inail</a></p><p><strong>Functionalities:</strong></p><ul><li>Monitoring of work accidents - annually (2010-2014)</li></ul>");
 INSERT INTO matrix_page(page, nuts_id, check_1, check_2, check_3, check_4, text_1_literal_id, text_2_literal_id, text_3_literal_id) VALUES ("MATRIX_STATISTICS", @nutsId, 1, 0, 0, false, @maxId+1, @maxId+2, null);
 
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -6380,13 +6386,13 @@ SET @nutsId = (SELECT id FROM nuts WHERE country_code="LV");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, NULL, "MATRIX_STATISTICS_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "Annual report of State Labour inspectorate, starting on 2002 and Yearly statistical reports from 2005");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, NULL, "MATRIX_STATISTICS_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p><strong>Data holder:</strong></p><p><a href=\"http://www.vdi.gov.lv/lv/par-mums/statistika/\" target=\"_blank\">State Labour inspectorate</a></p><p><strong>Functionalities:</strong></p><ul><li>Monitoring of work accidents&nbsp;- biannually (from 1996, biannual from 2006)</li><li>Monitoring of occupational diseases - annually</li></ul>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p><strong>Data holder:</strong></p><p><a href=\"http://www.vdi.gov.lv/lv/par-mums/statistika/\" target=\"_blank\">State Labour inspectorate</a></p><p><strong>Functionalities:</strong></p><ul><li>Monitoring of work accidents&nbsp;- biannually (from 1996, biannual from 2006)</li><li>Monitoring of occupational diseases - annually (Report of State Labour inspectorate)</li></ul>");
 INSERT INTO matrix_page(page, nuts_id, check_1, check_2, check_3, check_4, text_1_literal_id, text_2_literal_id, text_3_literal_id) VALUES ("MATRIX_STATISTICS", @nutsId, 1, 0, 0, false, @maxId+1, @maxId+2, null);
 
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="LV");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, NULL, "MATRIX_STATISTICS_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "Centre of Occupational and Radiological medicine.");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "Centre of Occupational and Radiological medicine");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, NULL, "MATRIX_STATISTICS_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p><strong>Data holder:</strong></p><p>Centre of Occupational and Radiological medicine</p><p><strong>Functionalities:</strong></p><ul><li>Monitoring of occupational diseases - annually (from 1993. For years 1993-1995 limited information is available)</li></ul>");
 INSERT INTO matrix_page(page, nuts_id, check_1, check_2, check_3, check_4, text_1_literal_id, text_2_literal_id, text_3_literal_id) VALUES ("MATRIX_STATISTICS", @nutsId, 1, 0, 0, false, @maxId+1, @maxId+2, null);
@@ -6546,7 +6552,7 @@ INSERT INTO matrix_page(page, nuts_id, check_1, check_2, check_3, check_4, text_
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="PT");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, NULL, "MATRIX_STATISTICS_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, " Ministério da Saúde; Administração Central do Sistema de Saúde, I.P. (ACSS, I.P.) ");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "Ministério da Saúde; Administração Central do Sistema de Saúde, I.P. (ACSS, I.P.) ");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, NULL, "MATRIX_STATISTICS_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p><strong>Data holder<a>:</a></strong></p><p><a href=\"http://www.acss.min-saude.pt/DepartamentoseUnidades/DepartamentoGest%C3%A3oePlaneamentoRH/EstudosePlaneamentoemRecursosHumanos/EstudoseRelat%C3%B3rios/AcidentesdeTrabalho/tabid/332/language/pt-PT/Default.aspx\" target=\"_blank\">&nbsp;Ministério da Saúde; Administração Central do Sistema de Saúde, I.P. (ACSS, I.P.)&nbsp;</a></p><p><a><strong style=\"color: #000000;\">Functionalities:</strong></a></p><ul><li>Monitoring of work accidents - (Data available for 2007, 2011-2013; 2012-2014)</li></ul>");
 INSERT INTO matrix_page(page, nuts_id, check_1, check_2, check_3, check_4, text_1_literal_id, text_2_literal_id, text_3_literal_id) VALUES ("MATRIX_STATISTICS", @nutsId, 1, 0, 0, false, @maxId+1, @maxId+2, null);
@@ -6645,9 +6651,7 @@ INSERT INTO matrix_page(page, nuts_id, check_1, check_2, check_3, check_4, text_
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="SI");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, NULL, "MATRIX_STATISTICS_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "Ministry of Labour,Family, Socvial Affairrse and Equal
-Opportunities
-Slovenian Labour Inspectorate");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "<p>Ministry of Labour,Family, Socvial Affairrse and Equal opportunities<br />Slovenian Labour Inspectorate</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, NULL, "MATRIX_STATISTICS_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p><strong>Data holder<a>:</a></strong></p><p><a href=\"http://www.%20id.gov.si\" target=\"_blank\">irsd</a></p><p><a><strong style=\"color: #000000;\">Functionalities:</strong></a></p><ul><li>Monitoring of work accidents&nbsp;- annually</li></ul>");
 INSERT INTO matrix_page(page, nuts_id, check_1, check_2, check_3, check_4, text_1_literal_id, text_2_literal_id, text_3_literal_id) VALUES ("MATRIX_STATISTICS", @nutsId, 1, 0, 0, false, @maxId+1, @maxId+2, null);
@@ -7717,6 +7721,14 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, NULL, "MATRIX_STATISTICS_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p><a href=\"http://www.hsl.gov.uk/\" target=\"_blank\">Link&nbsp;</a>to the institute<br /><strong>Short abstract<br /></strong></p><p>HSL, the national institute for occupational safety and health research, was originally set up to minimise risks to people's health and safety at work as HSE's laboratory. Today, while continuing to support HSE, HSL now works with a wide range of other public and private-sector organisations, often conducting detailed, bespoke research and development work on their behalf. HSL’s primary roles are to provide investigative work and services arising from HSE’s day-to-day operation, which often require a rapid multidisciplinary response. HSE maintains a dedicated horizon-scanning team based at HSL to keep the health and safety consequences arising from new trends in science and technology under review. HSL is also a WHO Collaborating Centre in Occupational Health.</p><p>See more in&nbsp;<a href=\"https://oshwiki.eu/wiki/OSH_system_at_national_level_-_United_Kingdom\" target=\"_blank\">OSHWiki</a></p><p><strong>&nbsp;</strong></p><p><strong>&nbsp;</strong></p><p>&nbsp;</p><p><strong>&nbsp;</strong></p><p>&nbsp;</p>");
 INSERT INTO matrix_page(page, nuts_id, check_1, check_2, check_3, check_4, text_1_literal_id, text_2_literal_id, text_3_literal_id) VALUES ("MATRIX_STATISTICS", @nutsId, 0, 0, 1, false, @maxId+1, @maxId+2, null);
+
+SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="EE");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, NULL, "MATRIX_STATISTICS_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "Occupational diseases and work-related diseases in 2014, estonia");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, NULL, "MATRIX_STATISTICS_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p><strong>Data holder:</strong></p><p><a href=\"http://www.terviseamet.ee/fileadmin/dok/Tervishoid/tootervis/KH_ja_TPH_statistika_2014.pdf\" target=\"_blank\">Health Board of Estonia</a></p><p><strong>Functionalities:</strong></p><ul><li>Monitoring of work-related illness&nbsp;- annually</li></ul>");
+INSERT INTO matrix_page(page, nuts_id, check_1, check_2, check_3, check_4, text_1_literal_id, text_2_literal_id, text_3_literal_id) VALUES ("MATRIX_STATISTICS", @nutsId, 1, 0, 0, false, @maxId+1, @maxId+2, null);
 
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="AT");
 INSERT INTO matrix_page(page, nuts_id, check_1, check_2, check_3, check_4, text_1_literal_id, text_2_literal_id, text_3_literal_id) VALUES ("MATRIX_STRATEGY", @nutsId, 1, 0, 0, false, 20254, 20255, null);
