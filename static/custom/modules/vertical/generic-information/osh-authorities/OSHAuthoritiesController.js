@@ -76,10 +76,34 @@ define(function (require) {
     // Read more
     $scope.trimtext = function(pVal, pNumCharacters){
       var shortText = pVal;
-      if (shortText.length > pNumCharacters) {
-        shortText = $.trim(pVal).substring(0, pNumCharacters).split(" ").slice(0, -1).join(" ") + $scope.longText(pVal, pNumCharacters) + "<span class='see-more'>...</span>";
+      var finalHtml = '';
+      if(shortText.match('<p>')){
+        var minimized_elements = $compile(pVal)($scope);
+        for(var i = 0; i < minimized_elements.length; i++){
+          var elem = minimized_elements[i];
+          if(i == 0){
+            $(elem).addClass("first");
+            var t = $(elem).text();
+            $(elem).html($.trim(t).substring(0, pNumCharacters).split(" ").slice(0, -1).join(" ") + $scope.longText(t, pNumCharacters) + "<span class='see-more'>...</span>");
+            var newHtml = $(elem)[0].outerHTML;
+            finalHtml += newHtml;
+          }else{
+            $(elem).css('display','none');
+            $(elem).addClass("text-part");
+            var newHtml = $(elem)[0].outerHTML;
+            finalHtml += newHtml;
+          }
+        }
+        return $sce.trustAsHtml(finalHtml);
+        /*if (shortText.length > pNumCharacters) {
+          shortText = $.trim(pVal).substring(0, pNumCharacters).split(" ").slice(0, -1).join(" ") + $scope.longText(pVal, pNumCharacters) + "<span class='see-more'>...</span>";
+        }*/
+      }else{
+        if (shortText.length > pNumCharacters) {
+          shortText = $.trim(pVal).substring(0, pNumCharacters).split(" ").slice(0, -1).join(" ") + $scope.longText(pVal, pNumCharacters) + "<span class='see-more'>...</span>";
+        }
+        return $sce.trustAsHtml(shortText);
       }
-      return $sce.trustAsHtml(shortText);
     }
 
     $scope.longText = function(pVal, pNumCharacters) {
@@ -89,12 +113,16 @@ define(function (require) {
 
     $scope.toggleText = function($event) {
 
-      angular.element(' samp', angular.element($event.target).parent().parent()).slideToggle('medium', function() {
-        if ($(this).is(':visible')) {
-          $(this).css('display','inline');
-        }
-      });
-      angular.element(' span.see-more', angular.element($event.target).parent().parent()).slideToggle();
+      //$log.warn(angular.element($event.target).parent().parent());
+      if ($(this).is(':visible')) {
+
+      angular.element(' samp', angular.element($event.target).parent().parent()).toggleClass('visible-inline');
+      angular.element(' p.text-part', angular.element($event.target).parent().parent()).toggleClass('visible');
+
+      }
+      //Para ocultar los puntos suspensivos del recorte
+      angular.element(' span.see-more', angular.element($event.target).parent().parent()).toggle();
+      //Para cambiar del boton see more al boton see less
       angular.element(' a', angular.element($event.target).parent()).toggle();
     }
 

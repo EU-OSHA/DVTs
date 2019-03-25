@@ -120,6 +120,12 @@
     padding-top: 0;
     padding-bottom: 0;
   }
+  .visible-inline{
+    display: inline !important;
+  }
+  .visible{
+    display: block !important;
+  }
   /** ALIGN CLASS  **/
     .center--block{
       margin: auto;

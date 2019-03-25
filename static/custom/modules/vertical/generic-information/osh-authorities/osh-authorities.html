@@ -71,7 +71,7 @@
       <div class="matrix--elements--wrapper">
         <!-- MATRIX ELEMENTS -->
         <div ng-if="amatrix.length <= 0">
-            <span>No information available</span>
+            <span data-ng-bind="i18nLiterals.L20706"></span>
         </div>
         <div data-ng-repeat="matrix in amatrix | limitTo:pageSize:elementsStart" class="matrix--element">
           <div class="matrix--header--elements">
