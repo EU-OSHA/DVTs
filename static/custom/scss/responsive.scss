@@ -622,12 +622,14 @@ and (max-width : 1024px)  {
 				min-height: auto;
 				padding-bottom: 3rem;
 				.carousel--text--block{
-					flex-direction: column;
-					.number-text{
-						.number-symbol{
+					a{
+						flex-direction: column;
+						.number-text{
+							.number-symbol{
+							}
 						}
-					}
-					.text-area{
+						.text-area{
+						}						
 					}
 				}
 			}
