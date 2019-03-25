@@ -209,6 +209,10 @@
     .btn--card{
       font-weight: bold;
       position: relative;
+      cursor: pointer;
+      &:hover{
+        color:$orange;
+      }
       &:after{
         content: "\f105";
         font-family: FontAwesome;
@@ -749,6 +753,10 @@
         .btn--card{
           font-weight: bold;
           position: relative;
+          cursor: pointer;
+          &:hover{
+            color:$orange;
+          }
           &:after{
             content: "\f105";
             font-family: FontAwesome;
@@ -781,6 +789,10 @@
         .btn--card{
           font-weight: bold;
           position: relative;
+          cursor: pointer;
+          &:hover{
+            color:$orange;
+          }
           &:after{
             content: "\f105";
             font-family: FontAwesome;

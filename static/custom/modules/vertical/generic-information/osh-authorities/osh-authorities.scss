@@ -157,6 +157,9 @@
       .btn--card {
         margin-top: 1.4rem;
         display: inline-block;
+        &:hover{
+          color:$orange;
+        }
       }
     }
   }
@@ -169,6 +172,9 @@
   .see-more{
     position: relative;
     cursor: pointer;
+    &:hover{
+      color:$orange;
+    }
     &:after{
       content: "\f107";
       display: inline-block;
@@ -186,6 +192,9 @@
   .see-less{
     position: relative;
     cursor: pointer;
+    &:hover{
+      color:$orange;
+    }
     &:after{
       content: "\f106";
       display: inline-block;
@@ -233,3 +242,17 @@
   }
 }
 
+.osh-authority{
+  .modal-dialog{
+    width: 70%;
+    height: 90%;
+    .modal-content{
+      width: 100%;
+      height: 100%;
+      .modal-title{
+        font-family: "Oswald", sans-serif;
+        font-size: 2.6rem;
+      }
+    }
+  }
+}
