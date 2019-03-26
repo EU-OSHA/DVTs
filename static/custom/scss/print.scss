@@ -20,9 +20,20 @@
 	a[href]:after {
 	  content: "";
 	}
-	.matrix--content--elements  samp{
-		display: inline !important;
+	.matrix--content--elements{
+		 samp{
+			display: inline !important;
+		}
+		.text-part{
+			display: block !important;
+			page-break-before: auto;
+		}	
 	}
+	.pagination--wrapper{
+		page-break-before: auto;
+	}
+
+
 	@page {
    size: auto;
   	margin: 10mm 25mm 25mm 25mm; 
