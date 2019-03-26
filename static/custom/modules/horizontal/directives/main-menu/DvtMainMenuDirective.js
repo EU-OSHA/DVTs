@@ -43,8 +43,8 @@ define(function (require) {
             transclude: true,
             replace: true,
             scope: {},
-            controller: ['$rootScope', '$scope', '$state', '$window' , 'configService', '$http', '$log','dataService',
-                function ($rootScope, $scope, $state, $window, configService, $http, $log, dataService) {
+            controller: ['$rootScope', '$scope', '$state', '$window' , 'configService', '$http', '$log','dataService', '$compile', '$sce',
+                function ($rootScope, $scope, $state, $window, configService, $http, $log, dataService, $compile, $sce) {
 
 
                     // Load google translate element
@@ -163,7 +163,14 @@ define(function (require) {
                                 var pathURL = path.split("/");
                                 $scope.isHome = false;
                                 var setBreadCrumbs=function() {
-                                    $scope.breadCrumb = breadCrumbStructure[$state.current.name];
+                                    var _link = $compile(breadCrumbStructure[$state.current.name])($scope);
+                                    var breadcrumb = "";
+                                    for (var i = 0; i < _link.size(); i++)
+                                    {
+                                        breadcrumb = breadcrumb + _link[i].outerHTML;
+                                    }
+                                    $scope.breadCrumb = $sce.trustAsHtml(breadcrumb);
+
                                     $scope.title = titleStructure[$state.current.name];
                                     $scope.isHome = false;
                                     $scope.anchorPath = $location.path().split("/")[1];
