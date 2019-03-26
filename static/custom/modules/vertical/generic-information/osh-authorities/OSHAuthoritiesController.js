@@ -62,13 +62,14 @@ define(function (require) {
         var currentSelect = $event.target.offsetParent.offsetParent;
        
       }      
-      
+
       if( currentSelect.className.indexOf('viewOptions') > 0 ){
         //currentSelect.className = 'filter--dropdown--wrapper';
-        angular.element('.filter--dropdown--wrapper').removeClass('viewOptions');        
+        //angular.element('.filter--dropdown--wrapper').removeClass('viewOptions');        
       } else {
-        angular.element('.filter--dropdown--wrapper').removeClass('viewOptions');
-        currentSelect.className += ' viewOptions';
+        //angular.element('.filter--dropdown--wrapper').removeClass('viewOptions');
+        //currentSelect.className += ' viewOptions';
+          currentSelect.focus();
       }
     }
 

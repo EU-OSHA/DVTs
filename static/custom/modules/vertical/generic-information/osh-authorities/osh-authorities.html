@@ -16,31 +16,31 @@
     <form class="row block--filter--wrapper">
       <!-- SEARCH FILTER -->
       <div class="filter-text">      
-        <input ng-keypress="clickEnter($event)" id="search-input" type="text" placeholder="{{i18nLiterals.L378}}" data-ng-model="searchText"/>
+        <input ng-keypress="clickEnter($event)" id="search-input" type="text" placeholder="{{i18nLiterals.L378}}" data-ng-model="searchText" tabindex="7" />
         <button data-ng-click="clickEnter($event)"  id="policy-search" type="button">
           <i class="fa fa-search" aria-hidden="true"></i>
         </button>
       </div>
       <!-- INSTITUTION TYPE FILTER -->
-      <div id="filter1" class="filter--dropdown--wrapper">
-        <label class="main-color dropdwon-open" data-ng-click="openSelect($event)" ></label>
+      <div id="filter1" class="filter--dropdown--wrapper" tabindex="8">
+        <label class="main-color dropdwon-open"></label>
         <div class="filter--dropdown--list">
-          <p class="option-title" data-ng-click="openSelect($event)">Institution type</p>
+          <p class="option-title">Institution type</p>
           <ul class="filter--dropdown--options">
             <li>
-              <input id='institution-filter-1' type="checkbox" ng-click="toggleInstitutionClick()"/>
+              <input id='institution-filter-1' type="checkbox" ng-click="toggleInstitutionClick();openSelect($event)"/>
               <label for='institution-filter-1' data-ng-bind="i18nLiterals.L20614"></label>
             </li>
             <li>
-              <input id='institution-filter-2' type="checkbox" ng-click="toggleInstitutionClick()"/>
+              <input id='institution-filter-2' type="checkbox" ng-click="toggleInstitutionClick();openSelect($event)"/>
               <label for='institution-filter-2' data-ng-bind="i18nLiterals.L20611"></label>
             </li>
             <li>
-              <input id='institution-filter-3' type="checkbox" ng-click="toggleInstitutionClick()"/>
+              <input id='institution-filter-3' type="checkbox" ng-click="toggleInstitutionClick();openSelect($event)"/>
               <label for='institution-filter-3' data-ng-bind="i18nLiterals.L20612"></label>
             </li>
             <li>
-              <input id='institution-filter-4' type="checkbox" ng-click="toggleInstitutionClick()"/>
+              <input id='institution-filter-4' type="checkbox" ng-click="toggleInstitutionClick();openSelect($event)"/>
               <label for='institution-filter-4' data-ng-bind="i18nLiterals.L20613"></label>
             </li>
           </ul>
@@ -48,14 +48,14 @@
         </div>
       </div>
       <!-- COUNTRY FILTER -->
-      <div id="filter2"class="filter--dropdown--wrapper">
-        <label class="main-color  dropdwon-open" data-ng-click="openSelect($event)"></label>
+      <div id="filter2"class="filter--dropdown--wrapper"  tabindex="9">
+        <label class="main-color  dropdwon-open"></label>
         <div class="filter--dropdown--list">
-          <p class="option-title" data-ng-click="openSelect($event)">Country</p>
+          <p class="option-title">Country</p>
           <ul class="filter--dropdown--options">
             <li data-ng-repeat='country in countries'>
               <input id='country-filter-{{::country.country_code}}' ng-checked="!!country.param && country.param ==country.country_code"
-                data-ng-click="toggleCountryClick($event, $index)" type="checkbox" value="{{::country.country_code}}"/>
+                data-ng-click="toggleCountryClick($event, $index);openSelect($event)" type="checkbox" value="{{::country.country_code}}"/>
               <label for="country-filter-{{::country.country_code}}" data-ng-bind="i18nLiterals['L'+country.country]"></label>
             </li>
           </ul>

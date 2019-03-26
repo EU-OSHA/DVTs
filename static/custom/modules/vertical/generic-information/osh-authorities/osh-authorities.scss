@@ -12,6 +12,17 @@
     position: relative;
     flex-basis:30%;
     //align-self: flex-end;
+    &:focus, &:active{
+      .filter--dropdown--list{
+        display: block;
+        height: auto;
+        .option-title{
+          &:after{
+            content: "\f106";
+          }
+        }
+      }
+    }
     > label{
       min-height: 50px;
       &:empty{
@@ -84,7 +95,7 @@
           }
         }
       }
-    }
+    }      
   }
 
   .filter-text{
