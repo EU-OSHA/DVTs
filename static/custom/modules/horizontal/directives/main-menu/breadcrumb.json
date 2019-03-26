@@ -21,10 +21,11 @@
     "404": "<span class='current-page'>Page not found</span>",
 
     "_SECTION-GENERIC-INFORMATION": null,
-    "osh-authorities": "<a ui-sref='home'>Home</a> <i class='fa fa-angle-right' aria-hidden='true'></i> Generic Information <i class='fa fa-angle-right' aria-hidden='true'></i> <span class='current-page'>OSH Authorities</span>",
-    "economic-sector-profile": "<a ui-sref='home'>Home</a> <i class='fa fa-angle-right' aria-hidden='true'></i> Generic Information <i class='fa fa-angle-right' aria-hidden='true'></i> <span class='current-page'>Economic and sector profile</span>",
+    "osh-authorities": "<a ui-sref='home'>Home</a><i class='fa fa-angle-right' aria-hidden='true'></i> Generic Information <i class='fa fa-angle-right' aria-hidden='true'></i><span class='current-page'>OSH Authorities</span>",
+    "economic-sector-profile": "<a ui-sref='home'>Home</a><i class='fa fa-angle-right' aria-hidden='true'></i> Generic Information <i class='fa fa-angle-right' aria-hidden='true'></i><span class='current-page'>Economic and sector profile</span>",
+    "workforce-profile": "<a ui-sref='home'>Home</a><i class='fa fa-angle-right' aria-hidden='true'></i> Generic Information <i class='fa fa-angle-right' aria-hidden='true'></i><span class='current-page'>Workforce profile</span>",
 
     "_SECTION-OSH-STEERING": null,
-    "regulation": "<a ui-sref='home'>Home</a> <i class='fa fa-angle-right' aria-hidden='true'></i> Steering of OSH <i class='fa fa-angle-right' aria-hidden='true'></i> <span class='current-page'>Regulations</span>",
-    "national-strategies": "<a ui-sref='home'>Home</a> <i class='fa fa-angle-right' aria-hidden='true'></i> Steering of OSH <i class='fa fa-angle-right' aria-hidden='true'></i> <span class='current-page'>National Strategies</span>"
+    "regulation": "<a ui-sref='home'>Home</a><i class='fa fa-angle-right' aria-hidden='true'></i> Steering of OSH <i class='fa fa-angle-right' aria-hidden='true'></i><span class='current-page'>Regulations</span>",
+    "national-strategies": "<a ui-sref='home'>Home</a> <i class='fa fa-angle-right' aria-hidden='true'></i> Steering of OSH <i class='fa fa-angle-right' aria-hidden='true'></i><span class='current-page'>National Strategies</span>"
 }
