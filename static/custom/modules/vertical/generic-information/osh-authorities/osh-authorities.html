@@ -28,19 +28,19 @@
           <p class="option-title">Institution type</p>
           <ul class="filter--dropdown--options">
             <li>
-              <input id='institution-filter-1' type="checkbox" ng-click="toggleInstitutionClick();openSelect($event)"/>
+              <input id='institution-filter-1' type="checkbox" ng-click="toggleInstitutionClick();openSelect($event)" tabindex="-1"/>
               <label for='institution-filter-1' data-ng-bind="i18nLiterals.L20614"></label>
             </li>
             <li>
-              <input id='institution-filter-2' type="checkbox" ng-click="toggleInstitutionClick();openSelect($event)"/>
+              <input id='institution-filter-2' type="checkbox" ng-click="toggleInstitutionClick();openSelect($event)" tabindex="-1"/>
               <label for='institution-filter-2' data-ng-bind="i18nLiterals.L20611"></label>
             </li>
             <li>
-              <input id='institution-filter-3' type="checkbox" ng-click="toggleInstitutionClick();openSelect($event)"/>
+              <input id='institution-filter-3' type="checkbox" ng-click="toggleInstitutionClick();openSelect($event)" tabindex="-1"/>
               <label for='institution-filter-3' data-ng-bind="i18nLiterals.L20612"></label>
             </li>
             <li>
-              <input id='institution-filter-4' type="checkbox" ng-click="toggleInstitutionClick();openSelect($event)"/>
+              <input id='institution-filter-4' type="checkbox" ng-click="toggleInstitutionClick();openSelect($event)" tabindex="-1"/>
               <label for='institution-filter-4' data-ng-bind="i18nLiterals.L20613"></label>
             </li>
           </ul>
@@ -55,7 +55,7 @@
           <ul class="filter--dropdown--options">
             <li data-ng-repeat='country in countries'>
               <input id='country-filter-{{::country.country_code}}' ng-checked="!!country.param && country.param ==country.country_code"
-                data-ng-click="toggleCountryClick($event, $index);openSelect($event)" type="checkbox" value="{{::country.country_code}}"/>
+                data-ng-click="toggleCountryClick($event, $index);openSelect($event)" type="checkbox" value="{{::country.country_code}}" tabindex="-1" />
               <label for="country-filter-{{::country.country_code}}" data-ng-bind="i18nLiterals['L'+country.country]"></label>
             </li>
           </ul>
