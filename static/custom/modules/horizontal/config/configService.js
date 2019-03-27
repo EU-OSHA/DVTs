@@ -115,17 +115,6 @@ define(function (require) {
         isPacked: function () {
             return environment.packed;
         },
-        /**
-       * @ngdoc method
-       * @name dvt.configModule.configService#getPilotDataPath
-       * @param {string} carl is awesome
-       * @methodOf dvt.configModule.configService
-       * @description
-       * My Description rules
-       */
-    /*  getPilotDataPath:function() {
-          return dataPath + configuration.paths.data.cda.datapilot;
-      },*/
 
         /**
          * @ngdoc method
@@ -300,10 +289,10 @@ define(function (require) {
 
         /**
          * @ngdoc method
-         * @name dvt.configModule.configService#getDvtDataPath
+         * @name dvt.configModule.configService#getBarometerDataPath
          * @methodOf dvt.configModule.configService
          * @description
-         * Get the full path for the cda
+         * Get the full path for the Barometer cda
          */
         getBarometerDataPath:function() {
             return dataPath + configuration.paths.data.cda.barometer;
@@ -311,13 +300,101 @@ define(function (require) {
 
         /**
          * @ngdoc method
-         * @name dvt.configModule.configService#getDvtDataPath
+         * @name dvt.configModule.configService#getBarometerCda
          * @methodOf dvt.configModule.configService
          * @description
-         * Get the relative path for the cda
+         * Get the relative path for the Barometer cda
          */
         getBarometerCda:function() {
             return  configuration.paths.data['cda-path'] + configuration.paths.data.cda.barometer;
+        },
+
+        /**
+         * @ngdoc method
+         * @name dvt.configModule.configService#getGenericInformationDataPath
+         * @methodOf dvt.configModule.configService
+         * @description
+         * Get the full path for the Generic Information section cda
+         */
+        getGenericInformationDataPath:function() {
+            return dataPath + configuration.paths.data.cda.genericInformation;
+        },
+
+        /**
+         * @ngdoc method
+         * @name dvt.configModule.configService#getGenericInformationCda
+         * @methodOf dvt.configModule.configService
+         * @description
+         * Get the relative path for the Generic Information section cda
+         */
+        getGenericInformationCda:function() {
+            return  configuration.paths.data['cda-path'] + configuration.paths.data.cda.genericInformation;
+        },
+
+        /**
+         * @ngdoc method
+         * @name dvt.configModule.configService#getOshInfraestructureDataPath
+         * @methodOf dvt.configModule.configService
+         * @description
+         * Get the full path for the OSH Infraestructure section cda
+         */
+        getOshInfraestructureDataPath:function() {
+            return dataPath + configuration.paths.data.cda.oshInfraestructure;
+        },
+
+        /**
+         * @ngdoc method
+         * @name dvt.configModule.configService#getOshInfraestructureCda
+         * @methodOf dvt.configModule.configService
+         * @description
+         * Get the relative path for the OSH Infraestructure section cda
+         */
+        getOshInfraestructureCda:function() {
+            return  configuration.paths.data['cda-path'] + configuration.paths.data.cda.oshInfraestructure;
+        },
+
+        /**
+         * @ngdoc method
+         * @name dvt.configModule.configService#getOshOutcomesWorkingConditionsDataPath
+         * @methodOf dvt.configModule.configService
+         * @description
+         * Get the full path for the OSH Outcomes and working conditions section cda
+         */
+        getOshOutcomesWorkingConditionsDataPath:function() {
+            return dataPath + configuration.paths.data.cda.oshOutcomesWorkingConditions;
+        },
+
+        /**
+         * @ngdoc method
+         * @name dvt.configModule.configService#getOshOutcomesWorkingConditionsCda
+         * @methodOf dvt.configModule.configService
+         * @description
+         * Get the relative path for the OSH Outcomes and working conditions section cda
+         */
+        getOshOutcomesWorkingConditionsCda:function() {
+            return  configuration.paths.data['cda-path'] + configuration.paths.data.cda.oshOutcomesWorkingConditions;
+        },
+
+        /**
+         * @ngdoc method
+         * @name dvt.configModule.configService#getSteeringOshDataPath
+         * @methodOf dvt.configModule.configService
+         * @description
+         * Get the full path for the Steering of OSH section cda
+         */
+        getSteeringOshDataPath:function() {
+            return dataPath + configuration.paths.data.cda.steeringOsh;
+        },
+
+        /**
+         * @ngdoc method
+         * @name dvt.configModule.configService#getSteeringOshCda
+         * @methodOf dvt.configModule.configService
+         * @description
+         * Get the relative path for the Steering of OSH section cda
+         */
+        getSteeringOshCda:function() {
+            return  configuration.paths.data['cda-path'] + configuration.paths.data.cda.steeringOsh;
         },
 
         // ----------------------------------

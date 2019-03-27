@@ -175,13 +175,6 @@
     requirePaths['vertical/country-profile/CountryProfileController'] = verticalModules + '/osh-steering/country-profile/CountryProfileController' + suffix;
     requirePaths['vertical/EU-challenges-response/EUChallengesResponseController'] = verticalModules + '/osh-steering/EU-challenges-response/EUChallengesResponseController' + suffix;
 
-
-    /* GEOGRAPHIES COMPARISON */
-    // requirePaths['vertical/geographies-comparison/GeographiesComparisonController'] = verticalModules + '/geographies-comparison/GeographiesComparisonController' + suffix;
-    // requirePaths['vertical/geographies-comparison/services/GeographiesComparisonService'] = verticalModules + '/geographies-comparison/services/GeographiesComparisonService' + suffix;
-    // requirePaths['vertical/geographies-comparison/geographies-comparison-module'] = verticalModules + '/geographies-comparison/geographies-comparison-module' + suffix;
-    // requirePaths['vertical/geographies-comparison/i18n'] = verticalModules + '/geographies-comparison/geographies-comparison-i18n' + suffix + '.json';
-
     /* ABOUT THE VISUALISATION TOOL */
     requirePaths['vertical/about-tool/AboutToolController'] = verticalModules + '/about-tool/AboutToolController' + suffix;
     requirePaths['vertical/about-tool/about-tool-module'] = verticalModules + '/about-tool/about-tool-module' + suffix;

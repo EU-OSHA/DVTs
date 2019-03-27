@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CDADescriptor>
+   <DataSources>
+      <Connection id="dvt_conn" type="sql.jndi">
+         <Jndi>jdbcEuOshaBarometer</Jndi>
+      </Connection>
+   </DataSources>
+
+   
+</CDADescriptor>
