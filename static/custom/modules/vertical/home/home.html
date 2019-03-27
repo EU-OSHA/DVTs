@@ -66,13 +66,17 @@
 	                    <form>
 	                        <label data-ng-bind-html="i18n.L22034"></label>
 	                        <div class="select-default">                            
-	                            <select class="">
-	                                <option data-ng-bind="i18n.L22035"></option>
-	                                <option data-ng-repeat='country in strategiesCountries' data-ng-bind="i18n['L'+country.country]"></option>
+	                            <select class="" ng-model="strategyCountrySelected">
+	                                <option data-ng-bind="i18n.L22035" value="0"></option>
+	                                <option data-ng-repeat='country in strategiesCountries' data-ng-bind="i18n['L'+country.country]" ng-value="country.country_code"></option>
 	                            </select>
 	                        </div>
 	                    </form>
-	                    <p class="btn--block-full left-text"><a href="#" class="btn-default btn-main-color btn-full" data-ng-bind="i18n.L22039"></a></p>
+	                    <p class="btn--block-full left-text">
+	                    	<a ng-if="strategyCountrySelected != '0'" ui-sref="country-profile({pIndicator: 'basic-information', pCountry1: strategyCountrySelected, pCountry2: 0})" class="btn-default btn-main-color btn-full" data-ng-bind="i18n.L22039"></a>
+
+	                    	<a ng-if="strategyCountrySelected == '0'" ui-sref="national-strategies" class="btn-default btn-main-color btn-full" data-ng-bind="i18n.L22039"></a>
+	                    </p>
 	                </div>
 	            </div>
 	            <div class="card--block--rounded ">

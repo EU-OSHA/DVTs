@@ -42,7 +42,71 @@ define(function (require) {
               }
           },
           metaTags: {
-              title: i18n.L22001 +" | "+ i18n.L22003
+              title: i18n.L22005 +" | "+ i18n.L22006
+          }
+        });
+
+        $stateProvider.state('national-strategies', {
+          url: "/osh-steering/national-strategies",
+          params: {
+          },
+          views: {
+              "content-main": {
+                  templateUrl: configService.getVerticalTplPath("osh-steering/national-strategies", "national-strategies"),
+                  controller: 'NationalStrategiesController',
+                  resolve: configService.dynamicallyRegisterController($controllerProvider, 'vertical/national-strategies/NationalStrategiesController', 'national-strategies', 'NationalStrategiesController')
+              }
+          },
+          metaTags: {
+              title: i18n.L22005 +" | "+ i18n.L22007
+          }
+        });
+
+        $stateProvider.state('country-profile', {
+          url: "/osh-steering/national-strategies/country-profile/:pIndicator/:pCountry1/:pCountry2",
+          params: {
+            pIndicator: {
+              value: 'basic-information',
+              squash: 'basic-information'
+            },
+            pCountry1: {
+              value: "AT",
+              squash: "AT"
+            },
+            pCountry2: {
+              value: "0",
+              squash: "0"
+            }
+          },
+          views: {
+              "content-main": {
+                  templateUrl: configService.getVerticalTplPath("osh-steering/country-profile", "country-profile"),
+                  controller: 'CountryProfileController',
+                  resolve: configService.dynamicallyRegisterController($controllerProvider, 'vertical/country-profile/CountryProfileController', 'country-profile', 'CountryProfileController')
+              }
+          },
+          metaTags: {
+              title: i18n.L22005 +" | "+ i18n.L22007
+          }
+        });
+
+        $stateProvider.state('EU-challenges-response', {
+          url: "/osh-steering/national-strategies/EU-challenges-response/:pCountry1",
+          params: {
+            pCountry1: {
+              value: "AT",
+              squash: "AT"
+            }
+          },
+          views: {
+              "content-main": {
+                  templateUrl: configService.getVerticalTplPath("osh-steering/EU-challenges-response", "EU-challenges-response"),
+                  controller: 'EUChallengesResponseController',
+                  resolve: configService.dynamicallyRegisterController($controllerProvider, 'vertical/EU-challenges-response/EUChallengesResponseController', 'EU-challenges-response', 'EUChallengesResponseController')
+              }
+          },
+          metaTags: {
+              title: i18n.L22005 +" | "+ i18n.L22007
           }
         });
     });

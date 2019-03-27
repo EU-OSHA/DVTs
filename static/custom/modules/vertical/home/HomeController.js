@@ -20,6 +20,9 @@ define(function (require) {
         $scope.capacitiesCountries = [];
 
         $scope.regulationCountrySelected = "0";
+        $scope.strategyCountrySelected = "0";
+
+        $log.warn($scope.strategyCountrySelected );
 
         // Literals / i18n
         var i18n = configService.getLiterals();
@@ -64,7 +67,6 @@ define(function (require) {
             });
 
         /******************************END DATA LOAD***********************************/
-
         $scope.goTo = function(){
             if ($state.current.name !== undefined) {
               $state.go("regulation", {

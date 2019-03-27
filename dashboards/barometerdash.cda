@@ -188,108 +188,109 @@
       </Query>
   </DataAccess>
 
-    <!-- MATRIX OSH AUTHORITIES SEARCHER -->
-    <DataAccess access="public" connection="dvt_conn" id="getSearchTerm" type="sql">
-      <Cache duration="3600" enabled="true" />
-      <Columns/>
-      <Parameters>
-        <Parameter default=".*" name="term" type="String" />
-        <Parameter default="null" name="institution1" type="Numeric"/>
-        <Parameter default="null" name="institution2" type="Numeric"/>
-        <Parameter default="null" name="institution3" type="Numeric"/>
-        <Parameter default="null" name="institution4" type="Numeric"/>
-        <Parameter default=".*" name="countries" type="String"/>
-      </Parameters>
-        <Query>
-        SELECT DISTINCT(mp.id) AS id, n.literal_id AS country_name, n.country_code as country_code, mp.check_1 AS osh_authority, mp.check_2 AS compensation, 
-        mp.check_3 AS prevention, mp.check_4 AS standardisation, mp.text_1_literal_id AS name_authority, mp.text_2_literal_id AS link_authority, mp.text_3_literal_id AS detail_authority
-        FROM matrix_page mp
-        INNER JOIN nuts n
-        ON n.id = mp.nuts_id
-        INNER JOIN literal l
-        ON l.id = mp.text_1_literal_id
-        INNER JOIN literal l2
-        ON l2.id = mp.text_2_literal_id
-        INNER JOIN literal l3
-        ON l3.id = mp.text_3_literal_id
-        INNER JOIN translation t
-        ON l.id = t.literal_id
-        INNER JOIN translation t2
-        ON l2.id = t2.literal_id
-        INNER JOIN translation t3
-        ON l3.id = t3.literal_id
-        WHERE mp.page = 'MATRIX_AUTHORITY' 
-        AND n.country_code REGEXP ${countries}
-        AND (mp.check_1=${institution1}
-        OR mp.check_2=${institution2}
-        OR mp.check_3=${institution3}
-        OR mp.check_4=${institution4})
-        AND (n.name REGEXP ${term} OR t.text REGEXP ${term} OR t2.text REGEXP ${term} OR t3.text REGEXP ${term});
-      </Query>
-    </DataAccess>
-
-    <!-- ALL MATRIX DATA OF OSH AUTHORITIES VIEW -->
-    <DataAccess access="public" connection="dvt_conn" id="getAllMatrixAuthorities" type="sql">
-      <Cache duration="3600" enabled="true" />
-      <Columns />
-      <Parameters>
-      <Parameter default="" name="pFilter" type="String" />
-      </Parameters>
+  <!-- OSH AUTHORITIES || MATRIX OSH AUTHORITIES SEARCHER -->
+  <DataAccess access="public" connection="dvt_conn" id="getSearchTerm" type="sql">
+    <Cache duration="3600" enabled="true" />
+    <Columns/>
+    <Parameters>
+      <Parameter default=".*" name="term" type="String" />
+      <Parameter default="null" name="institution1" type="Numeric"/>
+      <Parameter default="null" name="institution2" type="Numeric"/>
+      <Parameter default="null" name="institution3" type="Numeric"/>
+      <Parameter default="null" name="institution4" type="Numeric"/>
+      <Parameter default=".*" name="countries" type="String"/>
+    </Parameters>
       <Query>
-        SELECT DISTINCT(mp.id) AS id, n.literal_id AS country_name, n.country_code as country_code, mp.check_1 AS osh_authority, mp.check_2 AS compensation, 
-        mp.check_3 AS prevention, mp.check_4 AS standardisation, mp.text_1_literal_id AS name_authority, mp.text_2_literal_id AS link_authority, mp.text_3_literal_id AS detail_authority
-        FROM matrix_page mp
-        INNER JOIN nuts n
-        ON n.id = mp.nuts_id
-        WHERE mp.page = 'MATRIX_AUTHORITY'
-        ORDER BY country_name ASC, standardisation ASC, prevention ASC, compensation ASC, osh_authority ASC
-      </Query>
-    </DataAccess>
+      SELECT DISTINCT(mp.id) AS id, n.literal_id AS country_name, n.country_code as country_code, mp.check_1 AS osh_authority, mp.check_2 AS compensation, 
+      mp.check_3 AS prevention, mp.check_4 AS standardisation, mp.text_1_literal_id AS name_authority, mp.text_2_literal_id AS link_authority, mp.text_3_literal_id AS detail_authority
+      FROM matrix_page mp
+      INNER JOIN nuts n
+      ON n.id = mp.nuts_id
+      INNER JOIN literal l
+      ON l.id = mp.text_1_literal_id
+      INNER JOIN literal l2
+      ON l2.id = mp.text_2_literal_id
+      INNER JOIN literal l3
+      ON l3.id = mp.text_3_literal_id
+      INNER JOIN translation t
+      ON l.id = t.literal_id
+      INNER JOIN translation t2
+      ON l2.id = t2.literal_id
+      INNER JOIN translation t3
+      ON l3.id = t3.literal_id
+      WHERE mp.page = 'MATRIX_AUTHORITY' 
+      AND n.country_code REGEXP ${countries}
+      AND (mp.check_1=${institution1}
+      OR mp.check_2=${institution2}
+      OR mp.check_3=${institution3}
+      OR mp.check_4=${institution4})
+      AND (n.name REGEXP ${term} OR t.text REGEXP ${term} OR t2.text REGEXP ${term} OR t3.text REGEXP ${term});
+    </Query>
+  </DataAccess>
 
-    <!-- ALL COUNTRIES TO SELECT FROM IN OSH AUTHORITIES VIEW -->
-    <DataAccess access="public" connection="dvt_conn" id="getMatrixAuthsCountries" type="sql">
-      <Cache duration="3600" enabled="true" />
-      <Columns />
-      <Query>
-      SELECT DISTINCT (n.literal_id) AS country, n.country_code AS country_code
+  <!-- OSH AUTHORITIES || ALL MATRIX DATA OF OSH AUTHORITIES VIEW -->
+  <DataAccess access="public" connection="dvt_conn" id="getAllMatrixAuthorities" type="sql">
+    <Cache duration="3600" enabled="true" />
+    <Columns />
+    <Parameters>
+    <Parameter default="" name="pFilter" type="String" />
+    </Parameters>
+    <Query>
+      SELECT DISTINCT(mp.id) AS id, n.literal_id AS country_name, n.country_code as country_code, mp.check_1 AS osh_authority, mp.check_2 AS compensation, 
+      mp.check_3 AS prevention, mp.check_4 AS standardisation, mp.text_1_literal_id AS name_authority, mp.text_2_literal_id AS link_authority, mp.text_3_literal_id AS detail_authority
       FROM matrix_page mp
       INNER JOIN nuts n
       ON n.id = mp.nuts_id
       WHERE mp.page = 'MATRIX_AUTHORITY'
-      ORDER BY country ASC
-      </Query>
-    </DataAccess>
+      ORDER BY country_name ASC, standardisation ASC, prevention ASC, compensation ASC, osh_authority ASC
+    </Query>
+  </DataAccess>
 
-    <DataAccess access="public" connection="dvt_conn" id="getSearchList" type="sql">
-      <Cache duration="3600" enabled="true"/>
-      <Columns/>
-      <Parameters>            
-          <Parameter default=".*" name="countries" type="String"/>
-      </Parameters>
-      <Query>
-            SELECT n.literal_id as country_name,
-            mp.check_1 AS osh_authority,
-            mp.check_2 AS compensation, 
-            mp.check_3 AS prevention,
-            mp.check_4 AS standardisation,
-            mp.text_1_literal_id as name_authority,
-            mp.text_2_literal_id as link_authority,
-            mp.text_3_literal_id as detail_authority,
-            n.country_code as country_code
-            FROM matrix_page mp
-            INNER JOIN nuts n
-            ON n.id = mp.nuts_id
+  <!-- OSH AUTHORITIES || ALL COUNTRIES TO SELECT FROM IN OSH AUTHORITIES VIEW -->
+  <DataAccess access="public" connection="dvt_conn" id="getMatrixAuthsCountries" type="sql">
+    <Cache duration="3600" enabled="true" />
+    <Columns />
+    <Query>
+    SELECT DISTINCT (n.literal_id) AS country, n.country_code AS country_code
+    FROM matrix_page mp
+    INNER JOIN nuts n
+    ON n.id = mp.nuts_id
+    WHERE mp.page = 'MATRIX_AUTHORITY'
+    ORDER BY country ASC
+    </Query>
+  </DataAccess>
 
-            /*JOIN condition*/
-             WHERE n.country_code REGEXP ${countries}
-             AND mp.page = 'MATRIX_AUTHORITY'
+  <!-- OSH AUTHORITIES || -->
+  <DataAccess access="public" connection="dvt_conn" id="getSearchList" type="sql">
+    <Cache duration="3600" enabled="true"/>
+    <Columns/>
+    <Parameters>            
+        <Parameter default=".*" name="countries" type="String"/>
+    </Parameters>
+    <Query>
+      SELECT n.literal_id as country_name,
+      mp.check_1 AS osh_authority,
+      mp.check_2 AS compensation, 
+      mp.check_3 AS prevention,
+      mp.check_4 AS standardisation,
+      mp.text_1_literal_id as name_authority,
+      mp.text_2_literal_id as link_authority,
+      mp.text_3_literal_id as detail_authority,
+      n.country_code as country_code
+      FROM matrix_page mp
+      INNER JOIN nuts n
+      ON n.id = mp.nuts_id
 
-            order by country_name ASC, standardisation ASC, prevention ASC, compensation ASC, osh_authority ASC
-      </Query>
-    </DataAccess>
+      /*JOIN condition*/
+       WHERE n.country_code REGEXP ${countries}
+       AND mp.page = 'MATRIX_AUTHORITY'
 
-    <!-- GET MATRIX OSH AUTHORITIES DATA APPLYING PAGE FILTERS -->
-    <DataAccess access="public" connection="dvt_conn" id="getSearchListInstitutions" type="sql">
+      order by country_name ASC, standardisation ASC, prevention ASC, compensation ASC, osh_authority ASC
+    </Query>
+  </DataAccess>
+
+  <!-- OSH AUTHORITIES || GET MATRIX OSH AUTHORITIES DATA APPLYING PAGE FILTERS -->
+  <DataAccess access="public" connection="dvt_conn" id="getSearchListInstitutions" type="sql">
       <Cache duration="3600" enabled="true"/>
       <Columns/>
       <Parameters>
@@ -325,7 +326,7 @@
       </Query>
   </DataAccess>
 
-  <!-- ALL AVAILABLE COUNTRIES FOR NATIONAL STRATEGIES -->
+  <!-- HOME || ALL AVAILABLE COUNTRIES FOR NATIONAL STRATEGIES -->
   <DataAccess access="public" connection="dvt_conn" id="getStrategiesCountries" type="sql">
     <Cache duration="3600" enabled="true" />
     <Columns />
@@ -339,7 +340,7 @@
     </Query>
   </DataAccess>
 
-  <!-- ALL AVAILABLE COUNTRIES FOR REGULATIONS -->
+  <!-- HOME || ALL AVAILABLE COUNTRIES FOR REGULATIONS -->
   <DataAccess access="public" connection="dvt_conn" id="getRegulationsCountries" type="sql">
     <Cache duration="3600" enabled="true" />
     <Columns />
@@ -353,7 +354,7 @@
     </Query>
   </DataAccess>
 
-  <!-- ALL AVAILABLE COUNTRIES FOR ENFORCE CAPACITIES -->
+  <!-- HOME || ALL AVAILABLE COUNTRIES FOR ENFORCE CAPACITIES -->
   <DataAccess access="public" connection="dvt_conn" id="getCapacitiesCountries" type="sql">
     <Cache duration="3600" enabled="true" />
     <Columns />
@@ -367,7 +368,7 @@
     </Query>
   </DataAccess>
 
-  <!-- ALL AVAILABLE COUNTRIES FOR ECONOMIC AND SECTOR PROFILES INDICATORS -->
+  <!-- HOME || ALL AVAILABLE COUNTRIES FOR ECONOMIC AND SECTOR PROFILES INDICATORS -->
   <DataAccess access="public" connection="dvt_conn" id="getAvailableEconomicSectorCountries" type="sql">
     <Cache duration="3600" enabled="true" />
     <Columns />
@@ -383,7 +384,7 @@
     </Query>
   </DataAccess>
 
-  <!-- Get Company size indicators and values -->
+  <!-- HOME || ECONOMIC AND SECTOR PROFILE || Get Company size indicators and values -->
   <DataAccess access="public" connection="dvt_conn" id="getCompanySizeData" type="sql">
     <Cache duration="3600" enabled="true"/>
     <Columns/>
@@ -407,7 +408,7 @@
     </Query>
   </DataAccess>
 
-    <!-- Get Employment per sector indicators and values -->
+  <!-- ECONOMIC AND SECTOR PROFILE || Get Employment per sector indicators and values -->
   <DataAccess access="public" connection="dvt_conn" id="getEmploymentPerSectorData" type="sql">
     <Cache duration="3600" enabled="true"/>
     <Columns/>
@@ -432,7 +433,7 @@
     </Query>
   </DataAccess>
 
-  <!-- Get Employment rate indicators and values -->
+  <!-- ECONOMIC AND SECTOR PROFILE || Get Employment rate indicators and values -->
   <DataAccess access="public" connection="dvt_conn" id="getEmploymentRateData" type="sql">
     <Cache duration="3600" enabled="true"/>
     <Columns/>
@@ -454,7 +455,7 @@
     </Query>
   </DataAccess>
 
-  <!-- Get unemployment rate indicators and values -->
+  <!-- ECONOMIC AND SECTOR PROFILE || Get unemployment rate indicators and values -->
   <DataAccess access="public" connection="dvt_conn" id="getUnemploymentRateData" type="sql">
     <Cache duration="3600" enabled="true"/>
     <Columns/>
@@ -476,7 +477,7 @@
     </Query>
   </DataAccess>
 
-    <!-- Get GDP per capita indicators and values -->
+    <!-- ECONOMIC AND SECTOR PROFILE || Get GDP per capita indicators and values -->
   <DataAccess access="public" connection="dvt_conn" id="getGDPData" type="sql">
     <Cache duration="3600" enabled="true"/>
     <Columns/>
@@ -498,7 +499,7 @@
     </Query>
   </DataAccess>
 
-  <!-- Get income per capita indicators and values -->
+  <!-- ECONOMIC AND SECTOR PROFILE || Get income per capita indicators and values -->
   <DataAccess access="public" connection="dvt_conn" id="getIncomePerCapitaData" type="sql">
     <Cache duration="3600" enabled="true"/>
     <Columns/>
@@ -516,7 +517,7 @@
       AND v.profile_id = p.id
       AND d.id = ${pDataset} AND d.id = v.dataset_id
       AND n.country_code IN (${pCountry1}, ${pCountry2}, 'EU28') AND i.id = ${pIndicator}
-      ORDER BY FIELD(n.country_code, ${pCountry1}, ${pCountry2}, 'EU28') ASC
+      ORDER BY FIELD(n.country_code, ${pCountry1}, ${pCountry2}, 'EU28') ASC, p.year ASC
     </Query>
   </DataAccess>
 
@@ -685,7 +686,28 @@
     </Query>
   </DataAccess>
 
-  <!-- STEERING OF OSH || get indicators for select -->
+    <!-- WORKFORCE PROFILE || get min and max value of selected indicators -->
+  <DataAccess access="public" connection="dvt_conn" id="getPlotMinMaxValues" type="sql">
+    <Cache duration="3600" enabled="true" />
+    <Columns />
+    <Parameters>
+      <Parameter default="6" name="pDataset" type="Numeric" />
+      <Parameter default="37" name="pIndicator" type="Numeric" />
+      <Parameter default="0" name="pSubIndicator" type="Numeric" />
+    </Parameters>
+    <Query>
+      SELECT n.country_code as Country, v.value as Value
+      FROM nuts n, profile p, value v, dataset d
+      WHERE n.id = p.nuts_id 
+      AND v.profile_id = p.id 
+      AND d.id = ${pDataset} AND d.id = v.dataset_id
+      AND v.indicator_id = ${pIndicator}
+      AND (p.gender_id IS NULL OR p.gender_id = ${pSubIndicator})
+      ORDER BY v.value ASC
+    </Query>
+  </DataAccess>
+
+  <!-- STEERING OF OSH || get regulations indicators for select -->
   <DataAccess access="public" connection="dvt_conn" id="getRegulationIndicators" type="sql">
     <Cache duration="3600" enabled="true" />
     <Columns />
@@ -699,7 +721,7 @@
     </Query>
   </DataAccess>
 
-  <!-- STEERING OF OSH || get indicators for select -->
+  <!-- STEERING OF OSH || get regulations indicators data for select -->
   <DataAccess access="public" connection="dvt_conn" id="getCountryRegulationData" type="sql">
     <Cache duration="3600" enabled="true" />
     <Columns />
@@ -712,6 +734,54 @@
       text_11_literal_id as text11, text_12_literal_id as text12, text_13_literal_id as text13
       FROM strategies_page sp, nuts n
       where page='STRATEGY_REGULATION'
+      AND n.id = sp.nuts_id
+      AND n.country_code = ${pCountry}
+    </Query>
+  </DataAccess>
+
+  <!-- STEERING OF OSH || get national strategies countries applying filters -->
+  <DataAccess access="public" connection="dvt_conn" id="getStrategiesCountryFilter" type="sql">
+    <Cache duration="3600" enabled="true"/>
+    <Columns/>
+    <Parameters>
+      <Parameter default=".*" name="countries" type="String"/>
+    </Parameters>
+    <Query>
+      SELECT DISTINCT (n.literal_id) AS country, n.country_code AS country_code
+      FROM strategies_page sp
+      INNER JOIN nuts n
+      ON n.id = sp.nuts_id
+      WHERE sp.page = 'STRATEGY'
+      AND n.name REGEXP ${countries}
+      ORDER BY country ASC
+    </Query>
+  </DataAccess>
+
+  <!-- STEERING OF OSH || get strategies indicators for select -->
+  <DataAccess access="public" connection="dvt_conn" id="getStrategiesIndicators" type="sql">
+    <Cache duration="3600" enabled="true" />
+    <Columns />
+    <Parameters>
+      <Parameter default="41" name="pIndicator" type="Numeric" />
+    </Parameters>
+    <Query>
+      SELECT id, literal_id 
+      FROM indicator 
+      WHERE id IN (46, 47, 48, 49, 50, 51)
+    </Query>
+  </DataAccess>
+
+  <!-- STEERING OF OSH || get structure of strategy indicators data for select -->
+  <DataAccess access="public" connection="dvt_conn" id="getStructureStrategiesData" type="sql">
+    <Cache duration="3600" enabled="true" />
+    <Columns />
+    <Parameters>
+      <Parameter default="AT" name="pCountry" type="String" />
+    </Parameters>
+    <Query>
+      SELECT n.country_code as country_code, n.literal_id as country_name, text_1_literal_id as text1, text_2_literal_id as text2, text_3_literal_id as text3, text_4_literal_id as text4, text_5_literal_id as text5, text_7_literal_id as text7
+      FROM strategies_page sp, nuts n
+      where page='STRATEGY'
       AND n.id = sp.nuts_id
       AND n.country_code = ${pCountry}
     </Query>

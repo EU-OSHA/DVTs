@@ -566,6 +566,51 @@ define(function () {
             
             /************************ END REGULATIONS ***************************/
 
+
+            /************************ NATIONAL STRATEGIES ***************************/
+
+            /**
+             * @ngdoc method
+             * @name dvt.configModule.DataService#getStrategiesCountryFilter
+             * @methodOf dvt.configModule.DataService
+             * @description
+             * Get regulations data for a country
+             */
+            getStrategiesCountryFilter: function(countries){
+                var block1 = countries.length <= 0 ? ".*" : '^'+countries.join("|^");
+                var url = configService.getBarometerDataPath() + "&dataAccessId=getStrategiesCountryFilter" + "&paramcountries="+block1;
+                $log.debug('getStrategiesCountryFilter url:' + url);
+                return promise(url);
+            },
+
+            /**
+             * @ngdoc method
+             * @name dvt.configModule.DataService#getStrategiesIndicators
+             * @methodOf dvt.configModule.DataService
+             * @description
+             * Get indicators for regulation select option list
+             */
+            getStrategiesIndicators: function(){
+                var url = configService.getBarometerDataPath() + "&dataAccessId=getStrategiesIndicators";
+                $log.debug('getStrategiesIndicators url:' + url);
+                return promise(url);
+            },
+
+            /**
+             * @ngdoc method
+             * @name dvt.configModule.DataService#getStructureStrategiesData
+             * @methodOf dvt.configModule.DataService
+             * @description
+             * Get structure of national strategy data for a country
+             */
+            getStructureStrategiesData: function(pCountry){
+                var url = configService.getBarometerDataPath() + "&dataAccessId=getStructureStrategiesData" + "&parampCountry="+pCountry;
+                $log.debug('getStructureStrategiesData url:' + url);
+                return promise(url);
+            },
+
+            /************************ END NATIONAL STRATEGIES ***************************/
+
             /**
              * @ngdoc method
              * @name dvt.configModule.DataService#getCountryStrategies

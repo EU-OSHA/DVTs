@@ -1,0 +1,45 @@
+<dvt-dashboard promises="promises" parameters="dashboard.parameters">
+
+  <section data-ng-if="state.current.name != 'home'" id="not-home-cover" class="advice--icon--block advice--block-not-home background-main-light container-fluid section--page">
+      <div class="container horizontal-nopadding">
+        <div class="left-text col-md-8 col-sm-8 col-xs-12  nopadding">
+          <h1 class="main-color left-text" data-ng-bind="i18nLiterals.L22007"></h1>
+          <p data-ng-bind="i18nLiterals.L22038"></p>
+        </div>
+        <div class="icon--advice regulation-icon hide-mobile col-sm-4 col-md-4"></div>
+      </div>
+  </section>
+
+  <div class="compare--block regulation-page" bs-affix="" data-offset-top="420">
+    <div class="submenu--block container">
+      <span data-ng-bind="i18nLiterals.L20627"></span>
+      <ul class="submenu--items--wrapper">
+        <!-- INDICATORS -->
+        <li data-ng-repeat="letter in alphabet"class="submenu--item">
+          <a href="" data-ng-click="addLetter(letter)" data-ng-bind="letter"></a>
+        </li>
+        <li><button data-ng-click="resetFilter()" data-ng-bind="i18nLiterals.L20628"></button></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="content-countries-profiles col-xs-12 col-sm-12 col-md-12 col-lg-12 pagination-results">
+    <div data-ng-repeat="country in countries" ng-class="'col-xs-12  col-sm-6 col-md-4 col-lg-3 ar-item'">
+      <div class="col-xs-12 resources-item">
+        <div class="views-field-title-field additional-title">
+          <h2 class="infographics-teaser-title" data-ng-bind="i18nLiterals['L'+country.country]"></h2>
+        </div>
+        <p class="col-xs-12 nopadding additional-img">
+          <img  class="flags--wrapper" ng-src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/flag/{{::country.country_code.toLowerCase()}}.png">
+        </p>
+        <p>
+          <a ui-sref="country-profile({pIndicator: 'basic-information', pCountry1:country.country_code, pCountry2: 0})" class="btn-default btn-main-color" title="i18nLiterals.L20626" data-ng-bind="i18nLiterals.L20626"></a>
+        </p>
+        <p>
+          <a ui-sref="EU-challenges-response({pCountry1:country.country_code})" class="btn-default btn-full" title="i18nLiterals.L20625" data-ng-bind="i18nLiterals.L20625"></a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+</dvt-dashboard>

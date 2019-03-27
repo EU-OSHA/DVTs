@@ -27,5 +27,7 @@
 
     "_SECTION-OSH-STEERING": null,
     "regulation": "<a ui-sref='home'>Home</a><i class='fa fa-angle-right' aria-hidden='true'></i> Steering of OSH <i class='fa fa-angle-right' aria-hidden='true'></i><span class='current-page'>Regulations</span>",
-    "national-strategies": "<a ui-sref='home'>Home</a> <i class='fa fa-angle-right' aria-hidden='true'></i> Steering of OSH <i class='fa fa-angle-right' aria-hidden='true'></i><span class='current-page'>National Strategies</span>"
+    "national-strategies": "<a ui-sref='home'>Home</a><i class='fa fa-angle-right' aria-hidden='true'></i> Steering of OSH <i class='fa fa-angle-right' aria-hidden='true'></i><span class='current-page'>National Strategies</span>",
+    "country-profile": "<a ui-sref='home'>Home</a><i class='fa fa-angle-right' aria-hidden='true'></i> Steering of OSH <i class='fa fa-angle-right' aria-hidden='true'></i><a ui-sref='national-strategies'>National Strategies</a><i class='fa fa-angle-right' aria-hidden='true'></i><span class='current-page'>Structure of each National Strategy</span>",
+    "EU-challenges-response": "<a ui-sref='home'>Home</a><i class='fa fa-angle-right' aria-hidden='true'></i> Steering of OSH <i class='fa fa-angle-right' aria-hidden='true'></i><a ui-sref='national-strategies'>National Strategies</a><i class='fa fa-angle-right' aria-hidden='true'></i><span class='current-page'>Response of National Strategies to EU Challenges</span>"
 }

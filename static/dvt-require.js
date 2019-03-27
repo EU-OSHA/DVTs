@@ -170,6 +170,11 @@
     /*REGULATION*/
     requirePaths['vertical/regulation/RegulationController'] = verticalModules + '/osh-steering/regulation/RegulationController' + suffix;
 
+    /*NATIONAL STRATEGIES*/
+    requirePaths['vertical/national-strategies/NationalStrategiesController'] = verticalModules + '/osh-steering/national-strategies/NationalStrategiesController' + suffix;
+    requirePaths['vertical/country-profile/CountryProfileController'] = verticalModules + '/osh-steering/country-profile/CountryProfileController' + suffix;
+    requirePaths['vertical/EU-challenges-response/EUChallengesResponseController'] = verticalModules + '/osh-steering/EU-challenges-response/EUChallengesResponseController' + suffix;
+
 
     /* GEOGRAPHIES COMPARISON */
     // requirePaths['vertical/geographies-comparison/GeographiesComparisonController'] = verticalModules + '/geographies-comparison/GeographiesComparisonController' + suffix;

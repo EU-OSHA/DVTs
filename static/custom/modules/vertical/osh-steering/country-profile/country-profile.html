@@ -1,0 +1,239 @@
+<dvt-dashboard promises="promises" parameters="dashboard.parameters">
+
+  <section data-ng-if="state.current.name != 'home'" id="not-home-cover" class="advice--icon--block advice--block-not-home background-main-light container-fluid section--page">
+      <div class="container horizontal-nopadding">
+        <div class="left-text col-md-8 col-sm-8 col-xs-12  nopadding">
+          <h1 class="main-color left-text" data-ng-bind="i18nLiterals.L22006"></h1>
+          <p data-ng-bind="i18nLiterals.L22033"></p>
+        </div>
+        <div class="icon--advice regulation-icon hide-mobile col-sm-4 col-md-4"></div>
+      </div>
+  </section>
+
+  <div class="compare--block regulation-page" bs-affix="" data-offset-top="420">
+    <div class="submenu--block container">
+      <label class="submenu-indicator" data-ng-click ="openIndicatorsList()">Select the indicator</label>
+      <ul class="submenu--items--wrapper">
+        <!-- INDICATORS -->
+        <li data-ng-repeat="indicator in indicators" data-ng-class="{'active' : indicator.anchor == pIndicator }" class="submenu--item">
+          <a href="" data-ng-click="changeIndicator($event,indicator.anchor);" data-ng-bind="i18nLiterals['L'+indicator.text]" data-ng-class="{'active' : indicator.anchor == pIndicator }" ></a>
+        </li>
+      </ul>
+    </div>
+    <div class="line background-main-light"></div>
+    <!-- FILTERS -->
+    <form class="compare--block--form container">
+      <ul class="compare--list">
+        <!-- 1ST COUNTRY FILTER -->        
+        <li>
+          <label data-ng-bind="i18nLiterals.L20609" for="datafor"></label>
+          <select id="datafor" class="" ng-model="pCountry1" ng-selected="pCountry1" ng-change="countryChange()">
+            <option data-ng-repeat='country in countriesDataFor' data-ng-bind="i18nLiterals['L'+country.country]" value="{{::country.country_code}}"></option>
+          </select>
+        </li>
+        <!-- 2ND COUNTRY FILTER -->
+        <li>
+          <label data-ng-bind="i18nLiterals.L20610" for="comparewith"></label>
+          <select id="comparewith" class="" ng-model="pCountry2" ng-selected="pCountry2" ng-change="countryChange()">
+            <option data-ng-bind="i18nLiterals.L20652" value="0" ></option>
+            <option data-ng-repeat='country in countriesCompareWith' data-ng-bind="i18nLiterals['L'+country.country]" value="{{::country.country_code}}" ></option>
+          </select>
+        </li>        
+      </ul>
+    </form>
+    <div class="line background-main-light"></div>
+  </div>
+
+  <section class="container section--page full-tablet">
+    <!-- Secondary Legislation -->
+    <div class="column--grid--block" id="tab1" data-ng-if="pIndicator == 'secondary-legislation'">
+      <div class="column--item first">
+        <div class="">
+          <img  class="flags--wrapper" ng-src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/flag/{{::country1Data.country_code.toLowerCase()}}.png">
+        </div>
+        <h2 data-ng-bind="i18nLiterals.L297"></h2>
+        <div class="columm--item--content">
+          <div data-ng-bind-html="i18nLiterals['L'+country1Data.text1]"></div>
+          <div data-ng-bind-html="i18nLiterals['L'+country1Data.text2] + i18nLiterals['L'+country1Data.text3] + i18nLiterals['L'+country1Data.text4] + i18nLiterals['L'+country1Data.text5] + i18nLiterals['L'+country1Data.text6] + i18nLiterals['L'+country1Data.text7]"></div>
+        </div>
+        <!--<div data-ng-if="i18nLiterals['L'+country1Data.text9].length > 200">
+          <p class="see-more"><a ng-click='toggleText($event)'>See more<i class="fa fa-angle-down" aria-hidden="true"></i></a></p>    
+          <p class="see-more"><a ng-click='toggleText($event)' style="display:none">See less<i class="fa fa-angle-up" aria-hidden="true"></i></a></p>
+        </div>-->
+      </div>
+
+        <div class="column--item second" data-ng-if="pCountry2 != 0">
+          <div class="">
+            <img  class="flags--wrapper" ng-src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/flag/{{::country2Data.country_code.toLowerCase()}}.png">
+          </div>
+          <h2 data-ng-bind="i18nLiterals.L297"></h2>
+          <div class="columm--item--content">
+            <div data-ng-bind-html="i18nLiterals['L'+country2Data.text1]"></div>
+            <div data-ng-bind-html="i18nLiterals['L'+country2Data.text2] + i18nLiterals['L'+country2Data.text3] + i18nLiterals['L'+country2Data.text4] + i18nLiterals['L'+country2Data.text5] + i18nLiterals['L'+country2Data.text6] + i18nLiterals['L'+country2Data.text7]"></div>
+          </div>
+          <!--<div data-ng-if="i18nLiterals['L'+country1Data.text9].length > 200">
+            <p class="see-more"><a ng-click='toggleText($event)'>See more<i class="fa fa-angle-down" aria-hidden="true"></i></a></p>    
+            <p class="see-more"><a ng-click='toggleText($event)' style="display:none">See less<i class="fa fa-angle-up" aria-hidden="true"></i></a></p>
+          </div>-->
+        </div>
+    </div>
+
+    <!-- Derogations -->
+    <div class="column--grid--block" id="tab2" data-ng-if="pIndicator == 'derogations'">
+      <div class="column--item first">
+        <div class="">
+          <img  class="flags--wrapper" ng-src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/flag/{{::country1Data.country_code.toLowerCase()}}.png">
+        </div>
+        <h2 data-ng-bind="i18nLiterals.L298"></h2>
+        <div class="columm--item--content">
+          <div data-ng-bind-html="i18nLiterals['L'+country1Data.text8]"></div>
+          <div data-ng-bind-html="trimText(i18nLiterals['L'+country1Data.text9], 200)"></div>
+          <p class="see-more" data-ng-if="i18nLiterals['L'+country1Data.text9].length > 100">
+            <a ng-click='toggleText($event)' class="see-more">See more<i class="fa fa-angle-down" aria-hidden="true"></i></a> 
+            <a ng-click='toggleText($event)' class="see-less" style="display:none">See less<i class="fa fa-angle-up" aria-hidden="true"></i></a>
+          </p>
+        </div>
+      </div>
+
+      <div class="column--item second" data-ng-if="pCountry2 != 0">
+        <div class="">
+          <img  class="flags--wrapper" ng-src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/flag/{{::country2Data.country_code.toLowerCase()}}.png">
+        </div>
+        <h2 data-ng-bind="i18nLiterals.L298"></h2>
+        <div class="columm--item--content">
+          <div data-ng-bind-html="i18nLiterals['L'+country2Data.text8]"></div>
+          <div data-ng-bind-html="trimText(i18nLiterals['L'+country2Data.text9], 200)"></div>
+          <p class="see-more" data-ng-if="i18nLiterals['L'+country2Data.text9].length > maxCharacters">
+            <a ng-click='toggleText($event)' class="see-more">See more<i class="fa fa-angle-down" aria-hidden="true"></i></a> 
+            <a ng-click='toggleText($event)' class="see-less" style="display:none">See less<i class="fa fa-angle-up" aria-hidden="true"></i></a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Transitional period -->
+    <div class="column--grid--block" id="tab3" data-ng-if="pIndicator == 'transitional-period'">
+      <div class="column--item first">
+        <div class="">
+          <img  class="flags--wrapper" ng-src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/flag/{{::country1Data.country_code.toLowerCase()}}.png">
+        </div>
+        <h2 data-ng-bind="i18nLiterals.L299"></h2>
+        <div class="columm--item--content">
+          <div data-ng-bind-html="trimText(i18nLiterals['L'+country1Data.text10], 200)"></div>
+          <p class="see-more" data-ng-if="i18nLiterals['L'+country1Data.text10].length > maxCharacters">
+            <a ng-click='toggleText($event)' class="see-more">See more<i class="fa fa-angle-down" aria-hidden="true"></i></a> 
+            <a ng-click='toggleText($event)' class="see-less" style="display:none">See less<i class="fa fa-angle-up" aria-hidden="true"></i></a>
+          </p>
+        </div>
+      </div>
+
+      <div class="column--item second" data-ng-if="pCountry2 != 0">
+        <div class="">
+          <img  class="flags--wrapper" ng-src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/flag/{{::country2Data.country_code.toLowerCase()}}.png">
+        </div>
+        <h2 data-ng-bind="i18nLiterals.L299"></h2>
+        <div class="columm--item--content">
+          <div data-ng-bind-html="trimText(i18nLiterals['L'+country2Data.text10], 200)"></div>
+          <p class="see-more" data-ng-if="i18nLiterals['L'+country2Data.text10].length > maxCharacters">
+            <a ng-click='toggleText($event)' class="see-more">See more<i class="fa fa-angle-down" aria-hidden="true"></i></a> 
+            <a ng-click='toggleText($event)' class="see-less" style="display:none">See less<i class="fa fa-angle-up" aria-hidden="true"></i></a>
+          </p>
+        </div>
+        
+      </div>
+    </div>
+
+    <!-- RA Compliance -->
+    <div class="column--grid--block" id="tab4" data-ng-if="pIndicator == 'ra-compliance'">
+      <div class="column--item first">
+        <div class="">
+          <img  class="flags--wrapper" ng-src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/flag/{{::country1Data.country_code.toLowerCase()}}.png">
+        </div>
+        <h2 data-ng-bind="i18nLiterals.L300"></h2>
+        <div class="columm--item--content">
+          <div data-ng-bind-html="i18nLiterals['L'+country1Data.text11]"></div>
+          <p class="see-more" data-ng-if="i18nLiterals['L'+country1Data.text11].length > maxCharacters">
+            <a ng-click='toggleText($event)' class="see-more">See more<i class="fa fa-angle-down" aria-hidden="true"></i></a> 
+            <a ng-click='toggleText($event)' class="see-less" style="display:none">See less<i class="fa fa-angle-up" aria-hidden="true"></i></a>
+          </p>
+        </div>
+      </div>
+
+      <div class="column--item second" data-ng-if="pCountry2 != 0">
+        <div class="">
+          <img  class="flags--wrapper" ng-src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/flag/{{::country2Data.country_code.toLowerCase()}}.png">
+        </div>
+        <h2 data-ng-bind="i18nLiterals.L300"></h2>
+        <div class="columm--item--content">
+          <div data-ng-bind-html="i18nLiterals['L'+country2Data.text11]"></div>
+          <p class="see-more" data-ng-if="i18nLiterals['L'+country2Data.text11].length > maxCharacters">
+            <a ng-click='toggleText($event)' class="see-more">See more<i class="fa fa-angle-down" aria-hidden="true"></i></a> 
+            <a ng-click='toggleText($event)' class="see-less" style="display:none">See less<i class="fa fa-angle-up" aria-hidden="true"></i></a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Exemptions -->
+    <div class="column--grid--block" id="tab5" data-ng-if="pIndicator == 'exemptions'">
+      <div class="column--item first">
+        <div class="">
+          <img  class="flags--wrapper" ng-src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/flag/{{::country1Data.country_code.toLowerCase()}}.png">
+        </div>
+        <h2 data-ng-bind="i18nLiterals.L301"></h2>
+        <div class="columm--item--content">
+          <div data-ng-bind-html="trimText(i18nLiterals['L'+country1Data.text12], 200)"></div>
+          <p class="see-more" data-ng-if="i18nLiterals['L'+country1Data.text12].length > maxCharacters">
+            <a ng-click='toggleText($event)' class="see-more">See more<i class="fa fa-angle-down" aria-hidden="true"></i></a> 
+            <a ng-click='toggleText($event)' class="see-less" style="display:none">See less<i class="fa fa-angle-up" aria-hidden="true"></i></a>
+          </p>
+        </div>       
+      </div>
+
+      <div class="column--item second" data-ng-if="pCountry2 != 0">
+        <div class="">
+          <img  class="flags--wrapper" ng-src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/flag/{{::country2Data.country_code.toLowerCase()}}.png">
+        </div>
+        <h2 data-ng-bind="i18nLiterals.L301"></h2>
+        <div class="columm--item--content">
+          <div data-ng-bind-html="trimText(i18nLiterals['L'+country2Data.text12],200)"></div>
+          <p class="see-more" data-ng-if="i18nLiterals['L'+country2Data.text12].length > maxCharacters">
+            <a ng-click='toggleText($event)' class="see-more">See more<i class="fa fa-angle-down" aria-hidden="true"></i></a> 
+            <a ng-click='toggleText($event)' class="see-less" style="display:none">See less<i class="fa fa-angle-up" aria-hidden="true"></i></a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SMES Difficulties -->
+    <div class="column--grid--block" id="tab6" data-ng-if="pIndicator == 'smes-difficulties'">
+      <div class="column--item first">
+        <div class="">
+          <img  class="flags--wrapper" ng-src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/flag/{{::country1Data.country_code.toLowerCase()}}.png">
+        </div>
+        <h2 data-ng-bind="i18nLiterals.L302"></h2>
+        <div class="columm--item--content">
+          <div data-ng-bind-html="trimText(i18nLiterals['L'+country1Data.text13], 200)"></div>
+          <p class="see-more" data-ng-if="i18nLiterals['L'+country1Data.text13].length > maxCharacters">
+            <a ng-click='toggleText($event)' class="see-more">See more<i class="fa fa-angle-down" aria-hidden="true"></i></a> 
+            <a ng-click='toggleText($event)' class="see-less" style="display:none">See less<i class="fa fa-angle-up" aria-hidden="true"></i></a>
+          </p>
+        </div>
+      </div>
+
+      <div class="column--item second" data-ng-if="pCountry2 != 0">
+        <div class="">
+          <img  class="flags--wrapper" ng-src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/flag/{{::country2Data.country_code.toLowerCase()}}.png">
+        </div>
+        <h2 data-ng-bind="i18nLiterals.L302"></h2>
+        <div class="columm--item--content">
+          <div data-ng-bind-html="trimText(i18nLiterals['L'+country2Data.text13],200)"></div>
+          <p class="see-more" data-ng-if="i18nLiterals['L'+country2Data.text13].length > maxCharacters">
+            <a ng-click='toggleText($event)' class="see-more">See more<i class="fa fa-angle-down" aria-hidden="true"></i></a> 
+            <a ng-click='toggleText($event)' class="see-less" style="display:none">See less<i class="fa fa-angle-up" aria-hidden="true"></i></a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</dvt-dashboard>
