@@ -181,13 +181,6 @@
     // requirePaths['vertical/geographies-comparison/services/GeographiesComparisonService'] = verticalModules + '/geographies-comparison/services/GeographiesComparisonService' + suffix;
     // requirePaths['vertical/geographies-comparison/geographies-comparison-module'] = verticalModules + '/geographies-comparison/geographies-comparison-module' + suffix;
     // requirePaths['vertical/geographies-comparison/i18n'] = verticalModules + '/geographies-comparison/geographies-comparison-i18n' + suffix + '.json';
-    /* MAP */
-    requirePaths['vertical/map/map-module'] = verticalModules + '/map/map-module' + suffix;
-    requirePaths['vertical/map/MapController'] = verticalModules + '/map/MapController' + suffix;
-
-    /* HEAT */
-    requirePaths['vertical/heat/heat-module'] = verticalModules + '/heat/heat-module' + suffix;
-    requirePaths['vertical/heat/HeatController'] = verticalModules + '/heat/HeatController' + suffix;
 
     /* ABOUT THE VISUALISATION TOOL */
     requirePaths['vertical/about-tool/AboutToolController'] = verticalModules + '/about-tool/AboutToolController' + suffix;

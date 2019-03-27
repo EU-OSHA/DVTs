@@ -72,7 +72,6 @@
             "cda-path": "osha-dvt-barometer/dashboards/",
             "cda": {
                 "barometer": "barometerdash.cda",
-                "infosystem": "infosystemdash.cda",
                 "countryCard": "countrycardata.cda"
             }
         }
