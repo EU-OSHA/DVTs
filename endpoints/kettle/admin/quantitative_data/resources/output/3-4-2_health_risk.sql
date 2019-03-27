@@ -664,66 +664,6 @@ SET @nutsId = (SELECT id FROM nuts WHERE country_code="DE");
 SET @activitySectorId = (SELECT s.id FROM split_activity_sector s INNER JOIN translation t ON s.literal_id=t.literal_id WHERE t.text="Agriculture and industry");INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @activitySectorId);
 
 
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="DE");
-SET @activitySectorId = (SELECT s.id FROM split_activity_sector s INNER JOIN translation t ON s.literal_id=t.literal_id WHERE t.text="Commerce and hospitality");INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @activitySectorId);
-
-
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="DE");
-SET @activitySectorId = (SELECT s.id FROM split_activity_sector s INNER JOIN translation t ON s.literal_id=t.literal_id WHERE t.text="Construction and transport");INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @activitySectorId);
-
-
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="DE");
-SET @activitySectorId = (SELECT s.id FROM split_activity_sector s INNER JOIN translation t ON s.literal_id=t.literal_id WHERE t.text="Financial and other services");INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @activitySectorId);
-
-
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="DE");
-SET @activitySectorId = (SELECT s.id FROM split_activity_sector s INNER JOIN translation t ON s.literal_id=t.literal_id WHERE t.text="Public administration education and health");INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @activitySectorId);
-
-
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="DK");
-SET @activitySectorId = (SELECT s.id FROM split_activity_sector s INNER JOIN translation t ON s.literal_id=t.literal_id WHERE t.text="Total");INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @activitySectorId);
-
-
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="DK");
-SET @activitySectorId = (SELECT s.id FROM split_activity_sector s INNER JOIN translation t ON s.literal_id=t.literal_id WHERE t.text="Agriculture and industry");INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @activitySectorId);
-
-
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="DK");
-SET @activitySectorId = (SELECT s.id FROM split_activity_sector s INNER JOIN translation t ON s.literal_id=t.literal_id WHERE t.text="Commerce and hospitality");INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @activitySectorId);
-
-
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="DK");
-SET @activitySectorId = (SELECT s.id FROM split_activity_sector s INNER JOIN translation t ON s.literal_id=t.literal_id WHERE t.text="Construction and transport");INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @activitySectorId);
-
-
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="DK");
-SET @activitySectorId = (SELECT s.id FROM split_activity_sector s INNER JOIN translation t ON s.literal_id=t.literal_id WHERE t.text="Financial and other services");INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @activitySectorId);
-
-
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="DK");
-SET @activitySectorId = (SELECT s.id FROM split_activity_sector s INNER JOIN translation t ON s.literal_id=t.literal_id WHERE t.text="Public administration education and health");INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @activitySectorId);
-
-
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="EE");
-SET @activitySectorId = (SELECT s.id FROM split_activity_sector s INNER JOIN translation t ON s.literal_id=t.literal_id WHERE t.text="Total");INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @activitySectorId);
-
-
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="EE");
-SET @activitySectorId = (SELECT s.id FROM split_activity_sector s INNER JOIN translation t ON s.literal_id=t.literal_id WHERE t.text="Agriculture and industry");INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @activitySectorId);
-
-
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="EE");
-SET @activitySectorId = (SELECT s.id FROM split_activity_sector s INNER JOIN translation t ON s.literal_id=t.literal_id WHERE t.text="Commerce and hospitality");INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @activitySectorId);
-
-
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="EE");
-SET @activitySectorId = (SELECT s.id FROM split_activity_sector s INNER JOIN translation t ON s.literal_id=t.literal_id WHERE t.text="Construction and transport");INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @activitySectorId);
-
-
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="EE");
-SET @activitySectorId = (SELECT s.id FROM split_activity_sector s INNER JOIN translation t ON s.literal_id=t.literal_id WHERE t.text="Financial and other services");INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @activitySectorId);
-
-
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="CZ");
 SET @ageGroupId = (SELECT ag.id FROM split_age_group ag INNER JOIN translation t ON ag.literal_id=t.literal_id WHERE t.text="50 and over");INSERT INTO profile (nuts_id, age_group_id) VALUE (@nutsId, @ageGroupId);
 
@@ -796,6 +736,138 @@ SET @nutsId = (SELECT id FROM nuts WHERE country_code="EL");
 SET @ageGroupId = (SELECT ag.id FROM split_age_group ag INNER JOIN translation t ON ag.literal_id=t.literal_id WHERE t.text="Under 35");INSERT INTO profile (nuts_id, age_group_id) VALUE (@nutsId, @ageGroupId);
 
 
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="DE");
+SET @activitySectorId = (SELECT s.id FROM split_activity_sector s INNER JOIN translation t ON s.literal_id=t.literal_id WHERE t.text="Commerce and hospitality");INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @activitySectorId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="DE");
+SET @activitySectorId = (SELECT s.id FROM split_activity_sector s INNER JOIN translation t ON s.literal_id=t.literal_id WHERE t.text="Construction and transport");INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @activitySectorId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="DE");
+SET @activitySectorId = (SELECT s.id FROM split_activity_sector s INNER JOIN translation t ON s.literal_id=t.literal_id WHERE t.text="Financial and other services");INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @activitySectorId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="DE");
+SET @activitySectorId = (SELECT s.id FROM split_activity_sector s INNER JOIN translation t ON s.literal_id=t.literal_id WHERE t.text="Public administration education and health");INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @activitySectorId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="DK");
+SET @activitySectorId = (SELECT s.id FROM split_activity_sector s INNER JOIN translation t ON s.literal_id=t.literal_id WHERE t.text="Total");INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @activitySectorId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="DK");
+SET @activitySectorId = (SELECT s.id FROM split_activity_sector s INNER JOIN translation t ON s.literal_id=t.literal_id WHERE t.text="Agriculture and industry");INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @activitySectorId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="DK");
+SET @activitySectorId = (SELECT s.id FROM split_activity_sector s INNER JOIN translation t ON s.literal_id=t.literal_id WHERE t.text="Commerce and hospitality");INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @activitySectorId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="DK");
+SET @activitySectorId = (SELECT s.id FROM split_activity_sector s INNER JOIN translation t ON s.literal_id=t.literal_id WHERE t.text="Construction and transport");INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @activitySectorId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="DK");
+SET @activitySectorId = (SELECT s.id FROM split_activity_sector s INNER JOIN translation t ON s.literal_id=t.literal_id WHERE t.text="Financial and other services");INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @activitySectorId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="DK");
+SET @activitySectorId = (SELECT s.id FROM split_activity_sector s INNER JOIN translation t ON s.literal_id=t.literal_id WHERE t.text="Public administration education and health");INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @activitySectorId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="EE");
+SET @activitySectorId = (SELECT s.id FROM split_activity_sector s INNER JOIN translation t ON s.literal_id=t.literal_id WHERE t.text="Total");INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @activitySectorId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="EE");
+SET @activitySectorId = (SELECT s.id FROM split_activity_sector s INNER JOIN translation t ON s.literal_id=t.literal_id WHERE t.text="Agriculture and industry");INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @activitySectorId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="EE");
+SET @activitySectorId = (SELECT s.id FROM split_activity_sector s INNER JOIN translation t ON s.literal_id=t.literal_id WHERE t.text="Commerce and hospitality");INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @activitySectorId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="EE");
+SET @activitySectorId = (SELECT s.id FROM split_activity_sector s INNER JOIN translation t ON s.literal_id=t.literal_id WHERE t.text="Construction and transport");INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @activitySectorId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="EE");
+SET @activitySectorId = (SELECT s.id FROM split_activity_sector s INNER JOIN translation t ON s.literal_id=t.literal_id WHERE t.text="Financial and other services");INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @activitySectorId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="ES");
+SET @ageGroupId = (SELECT ag.id FROM split_age_group ag INNER JOIN translation t ON ag.literal_id=t.literal_id WHERE t.text="Total");INSERT INTO profile (nuts_id, age_group_id) VALUE (@nutsId, @ageGroupId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="ES");
+SET @ageGroupId = (SELECT ag.id FROM split_age_group ag INNER JOIN translation t ON ag.literal_id=t.literal_id WHERE t.text="35-49");INSERT INTO profile (nuts_id, age_group_id) VALUE (@nutsId, @ageGroupId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="ES");
+SET @ageGroupId = (SELECT ag.id FROM split_age_group ag INNER JOIN translation t ON ag.literal_id=t.literal_id WHERE t.text="50 and over");INSERT INTO profile (nuts_id, age_group_id) VALUE (@nutsId, @ageGroupId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="ES");
+SET @ageGroupId = (SELECT ag.id FROM split_age_group ag INNER JOIN translation t ON ag.literal_id=t.literal_id WHERE t.text="Under 35");INSERT INTO profile (nuts_id, age_group_id) VALUE (@nutsId, @ageGroupId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="FI");
+SET @ageGroupId = (SELECT ag.id FROM split_age_group ag INNER JOIN translation t ON ag.literal_id=t.literal_id WHERE t.text="Total");INSERT INTO profile (nuts_id, age_group_id) VALUE (@nutsId, @ageGroupId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="FI");
+SET @ageGroupId = (SELECT ag.id FROM split_age_group ag INNER JOIN translation t ON ag.literal_id=t.literal_id WHERE t.text="35-49");INSERT INTO profile (nuts_id, age_group_id) VALUE (@nutsId, @ageGroupId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="FI");
+SET @ageGroupId = (SELECT ag.id FROM split_age_group ag INNER JOIN translation t ON ag.literal_id=t.literal_id WHERE t.text="50 and over");INSERT INTO profile (nuts_id, age_group_id) VALUE (@nutsId, @ageGroupId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="FI");
+SET @ageGroupId = (SELECT ag.id FROM split_age_group ag INNER JOIN translation t ON ag.literal_id=t.literal_id WHERE t.text="Under 35");INSERT INTO profile (nuts_id, age_group_id) VALUE (@nutsId, @ageGroupId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="FR");
+SET @ageGroupId = (SELECT ag.id FROM split_age_group ag INNER JOIN translation t ON ag.literal_id=t.literal_id WHERE t.text="Total");INSERT INTO profile (nuts_id, age_group_id) VALUE (@nutsId, @ageGroupId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="FR");
+SET @ageGroupId = (SELECT ag.id FROM split_age_group ag INNER JOIN translation t ON ag.literal_id=t.literal_id WHERE t.text="35-49");INSERT INTO profile (nuts_id, age_group_id) VALUE (@nutsId, @ageGroupId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="FR");
+SET @ageGroupId = (SELECT ag.id FROM split_age_group ag INNER JOIN translation t ON ag.literal_id=t.literal_id WHERE t.text="50 and over");INSERT INTO profile (nuts_id, age_group_id) VALUE (@nutsId, @ageGroupId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="FR");
+SET @ageGroupId = (SELECT ag.id FROM split_age_group ag INNER JOIN translation t ON ag.literal_id=t.literal_id WHERE t.text="Under 35");INSERT INTO profile (nuts_id, age_group_id) VALUE (@nutsId, @ageGroupId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="HR");
+SET @ageGroupId = (SELECT ag.id FROM split_age_group ag INNER JOIN translation t ON ag.literal_id=t.literal_id WHERE t.text="Total");INSERT INTO profile (nuts_id, age_group_id) VALUE (@nutsId, @ageGroupId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="HR");
+SET @ageGroupId = (SELECT ag.id FROM split_age_group ag INNER JOIN translation t ON ag.literal_id=t.literal_id WHERE t.text="35-49");INSERT INTO profile (nuts_id, age_group_id) VALUE (@nutsId, @ageGroupId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="HR");
+SET @ageGroupId = (SELECT ag.id FROM split_age_group ag INNER JOIN translation t ON ag.literal_id=t.literal_id WHERE t.text="50 and over");INSERT INTO profile (nuts_id, age_group_id) VALUE (@nutsId, @ageGroupId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="HR");
+SET @ageGroupId = (SELECT ag.id FROM split_age_group ag INNER JOIN translation t ON ag.literal_id=t.literal_id WHERE t.text="Under 35");INSERT INTO profile (nuts_id, age_group_id) VALUE (@nutsId, @ageGroupId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="HU");
+SET @ageGroupId = (SELECT ag.id FROM split_age_group ag INNER JOIN translation t ON ag.literal_id=t.literal_id WHERE t.text="Total");INSERT INTO profile (nuts_id, age_group_id) VALUE (@nutsId, @ageGroupId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="HU");
+SET @ageGroupId = (SELECT ag.id FROM split_age_group ag INNER JOIN translation t ON ag.literal_id=t.literal_id WHERE t.text="35-49");INSERT INTO profile (nuts_id, age_group_id) VALUE (@nutsId, @ageGroupId);
+
+
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="EE");
 SET @activitySectorId = (SELECT s.id FROM split_activity_sector s INNER JOIN translation t ON s.literal_id=t.literal_id WHERE t.text="Public administration education and health");INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @activitySectorId);
 
@@ -860,142 +932,6 @@ SET @nutsId = (SELECT id FROM nuts WHERE country_code="FI");
 SET @activitySectorId = (SELECT s.id FROM split_activity_sector s INNER JOIN translation t ON s.literal_id=t.literal_id WHERE t.text="Commerce and hospitality");INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @activitySectorId);
 
 
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="ES");
-SET @ageGroupId = (SELECT ag.id FROM split_age_group ag INNER JOIN translation t ON ag.literal_id=t.literal_id WHERE t.text="Total");INSERT INTO profile (nuts_id, age_group_id) VALUE (@nutsId, @ageGroupId);
-
-
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="ES");
-SET @ageGroupId = (SELECT ag.id FROM split_age_group ag INNER JOIN translation t ON ag.literal_id=t.literal_id WHERE t.text="35-49");INSERT INTO profile (nuts_id, age_group_id) VALUE (@nutsId, @ageGroupId);
-
-
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="ES");
-SET @ageGroupId = (SELECT ag.id FROM split_age_group ag INNER JOIN translation t ON ag.literal_id=t.literal_id WHERE t.text="50 and over");INSERT INTO profile (nuts_id, age_group_id) VALUE (@nutsId, @ageGroupId);
-
-
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="ES");
-SET @ageGroupId = (SELECT ag.id FROM split_age_group ag INNER JOIN translation t ON ag.literal_id=t.literal_id WHERE t.text="Under 35");INSERT INTO profile (nuts_id, age_group_id) VALUE (@nutsId, @ageGroupId);
-
-
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="FI");
-SET @ageGroupId = (SELECT ag.id FROM split_age_group ag INNER JOIN translation t ON ag.literal_id=t.literal_id WHERE t.text="Total");INSERT INTO profile (nuts_id, age_group_id) VALUE (@nutsId, @ageGroupId);
-
-
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="FI");
-SET @ageGroupId = (SELECT ag.id FROM split_age_group ag INNER JOIN translation t ON ag.literal_id=t.literal_id WHERE t.text="35-49");INSERT INTO profile (nuts_id, age_group_id) VALUE (@nutsId, @ageGroupId);
-
-
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="FI");
-SET @ageGroupId = (SELECT ag.id FROM split_age_group ag INNER JOIN translation t ON ag.literal_id=t.literal_id WHERE t.text="50 and over");INSERT INTO profile (nuts_id, age_group_id) VALUE (@nutsId, @ageGroupId);
-
-
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="FI");
-SET @ageGroupId = (SELECT ag.id FROM split_age_group ag INNER JOIN translation t ON ag.literal_id=t.literal_id WHERE t.text="Under 35");INSERT INTO profile (nuts_id, age_group_id) VALUE (@nutsId, @ageGroupId);
-
-
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="FR");
-SET @ageGroupId = (SELECT ag.id FROM split_age_group ag INNER JOIN translation t ON ag.literal_id=t.literal_id WHERE t.text="Total");INSERT INTO profile (nuts_id, age_group_id) VALUE (@nutsId, @ageGroupId);
-
-
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="FR");
-SET @ageGroupId = (SELECT ag.id FROM split_age_group ag INNER JOIN translation t ON ag.literal_id=t.literal_id WHERE t.text="35-49");INSERT INTO profile (nuts_id, age_group_id) VALUE (@nutsId, @ageGroupId);
-
-
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="FR");
-SET @ageGroupId = (SELECT ag.id FROM split_age_group ag INNER JOIN translation t ON ag.literal_id=t.literal_id WHERE t.text="50 and over");INSERT INTO profile (nuts_id, age_group_id) VALUE (@nutsId, @ageGroupId);
-
-
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="FR");
-SET @ageGroupId = (SELECT ag.id FROM split_age_group ag INNER JOIN translation t ON ag.literal_id=t.literal_id WHERE t.text="Under 35");INSERT INTO profile (nuts_id, age_group_id) VALUE (@nutsId, @ageGroupId);
-
-
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="HR");
-SET @ageGroupId = (SELECT ag.id FROM split_age_group ag INNER JOIN translation t ON ag.literal_id=t.literal_id WHERE t.text="Total");INSERT INTO profile (nuts_id, age_group_id) VALUE (@nutsId, @ageGroupId);
-
-
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="HR");
-SET @ageGroupId = (SELECT ag.id FROM split_age_group ag INNER JOIN translation t ON ag.literal_id=t.literal_id WHERE t.text="35-49");INSERT INTO profile (nuts_id, age_group_id) VALUE (@nutsId, @ageGroupId);
-
-
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="HR");
-SET @ageGroupId = (SELECT ag.id FROM split_age_group ag INNER JOIN translation t ON ag.literal_id=t.literal_id WHERE t.text="50 and over");INSERT INTO profile (nuts_id, age_group_id) VALUE (@nutsId, @ageGroupId);
-
-
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="HR");
-SET @ageGroupId = (SELECT ag.id FROM split_age_group ag INNER JOIN translation t ON ag.literal_id=t.literal_id WHERE t.text="Under 35");INSERT INTO profile (nuts_id, age_group_id) VALUE (@nutsId, @ageGroupId);
-
-
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="HU");
-SET @ageGroupId = (SELECT ag.id FROM split_age_group ag INNER JOIN translation t ON ag.literal_id=t.literal_id WHERE t.text="Total");INSERT INTO profile (nuts_id, age_group_id) VALUE (@nutsId, @ageGroupId);
-
-
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="HU");
-SET @ageGroupId = (SELECT ag.id FROM split_age_group ag INNER JOIN translation t ON ag.literal_id=t.literal_id WHERE t.text="35-49");INSERT INTO profile (nuts_id, age_group_id) VALUE (@nutsId, @ageGroupId);
-
-
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="FI");
-SET @activitySectorId = (SELECT s.id FROM split_activity_sector s INNER JOIN translation t ON s.literal_id=t.literal_id WHERE t.text="Construction and transport");INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @activitySectorId);
-
-
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="FI");
-SET @activitySectorId = (SELECT s.id FROM split_activity_sector s INNER JOIN translation t ON s.literal_id=t.literal_id WHERE t.text="Financial and other services");INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @activitySectorId);
-
-
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="FI");
-SET @activitySectorId = (SELECT s.id FROM split_activity_sector s INNER JOIN translation t ON s.literal_id=t.literal_id WHERE t.text="Public administration education and health");INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @activitySectorId);
-
-
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="FR");
-SET @activitySectorId = (SELECT s.id FROM split_activity_sector s INNER JOIN translation t ON s.literal_id=t.literal_id WHERE t.text="Total");INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @activitySectorId);
-
-
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="FR");
-SET @activitySectorId = (SELECT s.id FROM split_activity_sector s INNER JOIN translation t ON s.literal_id=t.literal_id WHERE t.text="Agriculture and industry");INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @activitySectorId);
-
-
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="FR");
-SET @activitySectorId = (SELECT s.id FROM split_activity_sector s INNER JOIN translation t ON s.literal_id=t.literal_id WHERE t.text="Commerce and hospitality");INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @activitySectorId);
-
-
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="FR");
-SET @activitySectorId = (SELECT s.id FROM split_activity_sector s INNER JOIN translation t ON s.literal_id=t.literal_id WHERE t.text="Construction and transport");INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @activitySectorId);
-
-
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="FR");
-SET @activitySectorId = (SELECT s.id FROM split_activity_sector s INNER JOIN translation t ON s.literal_id=t.literal_id WHERE t.text="Financial and other services");INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @activitySectorId);
-
-
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="FR");
-SET @activitySectorId = (SELECT s.id FROM split_activity_sector s INNER JOIN translation t ON s.literal_id=t.literal_id WHERE t.text="Public administration education and health");INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @activitySectorId);
-
-
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="HR");
-SET @activitySectorId = (SELECT s.id FROM split_activity_sector s INNER JOIN translation t ON s.literal_id=t.literal_id WHERE t.text="Total");INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @activitySectorId);
-
-
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="HR");
-SET @activitySectorId = (SELECT s.id FROM split_activity_sector s INNER JOIN translation t ON s.literal_id=t.literal_id WHERE t.text="Agriculture and industry");INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @activitySectorId);
-
-
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="HR");
-SET @activitySectorId = (SELECT s.id FROM split_activity_sector s INNER JOIN translation t ON s.literal_id=t.literal_id WHERE t.text="Commerce and hospitality");INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @activitySectorId);
-
-
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="HR");
-SET @activitySectorId = (SELECT s.id FROM split_activity_sector s INNER JOIN translation t ON s.literal_id=t.literal_id WHERE t.text="Construction and transport");INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @activitySectorId);
-
-
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="HR");
-SET @activitySectorId = (SELECT s.id FROM split_activity_sector s INNER JOIN translation t ON s.literal_id=t.literal_id WHERE t.text="Financial and other services");INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @activitySectorId);
-
-
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="HR");
-SET @activitySectorId = (SELECT s.id FROM split_activity_sector s INNER JOIN translation t ON s.literal_id=t.literal_id WHERE t.text="Public administration education and health");INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @activitySectorId);
-
-
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="HU");
-SET @activitySectorId = (SELECT s.id FROM split_activity_sector s INNER JOIN translation t ON s.literal_id=t.literal_id WHERE t.text="Total");INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @activitySectorId);
-
-
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="HU");
 SET @ageGroupId = (SELECT ag.id FROM split_age_group ag INNER JOIN translation t ON ag.literal_id=t.literal_id WHERE t.text="50 and over");INSERT INTO profile (nuts_id, age_group_id) VALUE (@nutsId, @ageGroupId);
 
@@ -1068,68 +1004,68 @@ SET @nutsId = (SELECT id FROM nuts WHERE country_code="LU");
 SET @ageGroupId = (SELECT ag.id FROM split_age_group ag INNER JOIN translation t ON ag.literal_id=t.literal_id WHERE t.text="Under 35");INSERT INTO profile (nuts_id, age_group_id) VALUE (@nutsId, @ageGroupId);
 
 
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="HU");
-SET @activitySectorId = (SELECT s.id FROM split_activity_sector s INNER JOIN translation t ON s.literal_id=t.literal_id WHERE t.text="Agriculture and industry");INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @activitySectorId);
-
-
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="HU");
-SET @activitySectorId = (SELECT s.id FROM split_activity_sector s INNER JOIN translation t ON s.literal_id=t.literal_id WHERE t.text="Commerce and hospitality");INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @activitySectorId);
-
-
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="HU");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="FI");
 SET @activitySectorId = (SELECT s.id FROM split_activity_sector s INNER JOIN translation t ON s.literal_id=t.literal_id WHERE t.text="Construction and transport");INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @activitySectorId);
 
 
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="HU");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="FI");
 SET @activitySectorId = (SELECT s.id FROM split_activity_sector s INNER JOIN translation t ON s.literal_id=t.literal_id WHERE t.text="Financial and other services");INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @activitySectorId);
 
 
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="HU");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="FI");
 SET @activitySectorId = (SELECT s.id FROM split_activity_sector s INNER JOIN translation t ON s.literal_id=t.literal_id WHERE t.text="Public administration education and health");INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @activitySectorId);
 
 
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="IE");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="FR");
 SET @activitySectorId = (SELECT s.id FROM split_activity_sector s INNER JOIN translation t ON s.literal_id=t.literal_id WHERE t.text="Total");INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @activitySectorId);
 
 
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="IE");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="FR");
 SET @activitySectorId = (SELECT s.id FROM split_activity_sector s INNER JOIN translation t ON s.literal_id=t.literal_id WHERE t.text="Agriculture and industry");INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @activitySectorId);
 
 
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="IE");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="FR");
 SET @activitySectorId = (SELECT s.id FROM split_activity_sector s INNER JOIN translation t ON s.literal_id=t.literal_id WHERE t.text="Commerce and hospitality");INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @activitySectorId);
 
 
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="IE");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="FR");
 SET @activitySectorId = (SELECT s.id FROM split_activity_sector s INNER JOIN translation t ON s.literal_id=t.literal_id WHERE t.text="Construction and transport");INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @activitySectorId);
 
 
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="IE");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="FR");
 SET @activitySectorId = (SELECT s.id FROM split_activity_sector s INNER JOIN translation t ON s.literal_id=t.literal_id WHERE t.text="Financial and other services");INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @activitySectorId);
 
 
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="IE");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="FR");
 SET @activitySectorId = (SELECT s.id FROM split_activity_sector s INNER JOIN translation t ON s.literal_id=t.literal_id WHERE t.text="Public administration education and health");INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @activitySectorId);
 
 
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="IT");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="HR");
 SET @activitySectorId = (SELECT s.id FROM split_activity_sector s INNER JOIN translation t ON s.literal_id=t.literal_id WHERE t.text="Total");INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @activitySectorId);
 
 
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="IT");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="HR");
 SET @activitySectorId = (SELECT s.id FROM split_activity_sector s INNER JOIN translation t ON s.literal_id=t.literal_id WHERE t.text="Agriculture and industry");INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @activitySectorId);
 
 
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="IT");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="HR");
 SET @activitySectorId = (SELECT s.id FROM split_activity_sector s INNER JOIN translation t ON s.literal_id=t.literal_id WHERE t.text="Commerce and hospitality");INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @activitySectorId);
 
 
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="IT");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="HR");
 SET @activitySectorId = (SELECT s.id FROM split_activity_sector s INNER JOIN translation t ON s.literal_id=t.literal_id WHERE t.text="Construction and transport");INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @activitySectorId);
 
 
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="IT");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="HR");
 SET @activitySectorId = (SELECT s.id FROM split_activity_sector s INNER JOIN translation t ON s.literal_id=t.literal_id WHERE t.text="Financial and other services");INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @activitySectorId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="HR");
+SET @activitySectorId = (SELECT s.id FROM split_activity_sector s INNER JOIN translation t ON s.literal_id=t.literal_id WHERE t.text="Public administration education and health");INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @activitySectorId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="HU");
+SET @activitySectorId = (SELECT s.id FROM split_activity_sector s INNER JOIN translation t ON s.literal_id=t.literal_id WHERE t.text="Total");INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @activitySectorId);
 
 
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="LV");
@@ -1204,68 +1140,68 @@ SET @nutsId = (SELECT id FROM nuts WHERE country_code="PT");
 SET @ageGroupId = (SELECT ag.id FROM split_age_group ag INNER JOIN translation t ON ag.literal_id=t.literal_id WHERE t.text="35-49");INSERT INTO profile (nuts_id, age_group_id) VALUE (@nutsId, @ageGroupId);
 
 
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="HU");
+SET @activitySectorId = (SELECT s.id FROM split_activity_sector s INNER JOIN translation t ON s.literal_id=t.literal_id WHERE t.text="Agriculture and industry");INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @activitySectorId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="HU");
+SET @activitySectorId = (SELECT s.id FROM split_activity_sector s INNER JOIN translation t ON s.literal_id=t.literal_id WHERE t.text="Commerce and hospitality");INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @activitySectorId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="HU");
+SET @activitySectorId = (SELECT s.id FROM split_activity_sector s INNER JOIN translation t ON s.literal_id=t.literal_id WHERE t.text="Construction and transport");INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @activitySectorId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="HU");
+SET @activitySectorId = (SELECT s.id FROM split_activity_sector s INNER JOIN translation t ON s.literal_id=t.literal_id WHERE t.text="Financial and other services");INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @activitySectorId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="HU");
+SET @activitySectorId = (SELECT s.id FROM split_activity_sector s INNER JOIN translation t ON s.literal_id=t.literal_id WHERE t.text="Public administration education and health");INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @activitySectorId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="IE");
+SET @activitySectorId = (SELECT s.id FROM split_activity_sector s INNER JOIN translation t ON s.literal_id=t.literal_id WHERE t.text="Total");INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @activitySectorId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="IE");
+SET @activitySectorId = (SELECT s.id FROM split_activity_sector s INNER JOIN translation t ON s.literal_id=t.literal_id WHERE t.text="Agriculture and industry");INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @activitySectorId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="IE");
+SET @activitySectorId = (SELECT s.id FROM split_activity_sector s INNER JOIN translation t ON s.literal_id=t.literal_id WHERE t.text="Commerce and hospitality");INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @activitySectorId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="IE");
+SET @activitySectorId = (SELECT s.id FROM split_activity_sector s INNER JOIN translation t ON s.literal_id=t.literal_id WHERE t.text="Construction and transport");INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @activitySectorId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="IE");
+SET @activitySectorId = (SELECT s.id FROM split_activity_sector s INNER JOIN translation t ON s.literal_id=t.literal_id WHERE t.text="Financial and other services");INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @activitySectorId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="IE");
+SET @activitySectorId = (SELECT s.id FROM split_activity_sector s INNER JOIN translation t ON s.literal_id=t.literal_id WHERE t.text="Public administration education and health");INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @activitySectorId);
+
+
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="IT");
-SET @activitySectorId = (SELECT s.id FROM split_activity_sector s INNER JOIN translation t ON s.literal_id=t.literal_id WHERE t.text="Public administration education and health");INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @activitySectorId);
-
-
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="LT");
 SET @activitySectorId = (SELECT s.id FROM split_activity_sector s INNER JOIN translation t ON s.literal_id=t.literal_id WHERE t.text="Total");INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @activitySectorId);
 
 
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="LT");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="IT");
 SET @activitySectorId = (SELECT s.id FROM split_activity_sector s INNER JOIN translation t ON s.literal_id=t.literal_id WHERE t.text="Agriculture and industry");INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @activitySectorId);
 
 
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="LT");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="IT");
 SET @activitySectorId = (SELECT s.id FROM split_activity_sector s INNER JOIN translation t ON s.literal_id=t.literal_id WHERE t.text="Commerce and hospitality");INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @activitySectorId);
 
 
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="LT");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="IT");
 SET @activitySectorId = (SELECT s.id FROM split_activity_sector s INNER JOIN translation t ON s.literal_id=t.literal_id WHERE t.text="Construction and transport");INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @activitySectorId);
 
 
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="LT");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="IT");
 SET @activitySectorId = (SELECT s.id FROM split_activity_sector s INNER JOIN translation t ON s.literal_id=t.literal_id WHERE t.text="Financial and other services");INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @activitySectorId);
-
-
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="LT");
-SET @activitySectorId = (SELECT s.id FROM split_activity_sector s INNER JOIN translation t ON s.literal_id=t.literal_id WHERE t.text="Public administration education and health");INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @activitySectorId);
-
-
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="LU");
-SET @activitySectorId = (SELECT s.id FROM split_activity_sector s INNER JOIN translation t ON s.literal_id=t.literal_id WHERE t.text="Total");INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @activitySectorId);
-
-
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="LU");
-SET @activitySectorId = (SELECT s.id FROM split_activity_sector s INNER JOIN translation t ON s.literal_id=t.literal_id WHERE t.text="Agriculture and industry");INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @activitySectorId);
-
-
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="LU");
-SET @activitySectorId = (SELECT s.id FROM split_activity_sector s INNER JOIN translation t ON s.literal_id=t.literal_id WHERE t.text="Commerce and hospitality");INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @activitySectorId);
-
-
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="LU");
-SET @activitySectorId = (SELECT s.id FROM split_activity_sector s INNER JOIN translation t ON s.literal_id=t.literal_id WHERE t.text="Construction and transport");INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @activitySectorId);
-
-
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="LU");
-SET @activitySectorId = (SELECT s.id FROM split_activity_sector s INNER JOIN translation t ON s.literal_id=t.literal_id WHERE t.text="Financial and other services");INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @activitySectorId);
-
-
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="LU");
-SET @activitySectorId = (SELECT s.id FROM split_activity_sector s INNER JOIN translation t ON s.literal_id=t.literal_id WHERE t.text="Public administration education and health");INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @activitySectorId);
-
-
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="LV");
-SET @activitySectorId = (SELECT s.id FROM split_activity_sector s INNER JOIN translation t ON s.literal_id=t.literal_id WHERE t.text="Total");INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @activitySectorId);
-
-
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="LV");
-SET @activitySectorId = (SELECT s.id FROM split_activity_sector s INNER JOIN translation t ON s.literal_id=t.literal_id WHERE t.text="Agriculture and industry");INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @activitySectorId);
-
-
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="LV");
-SET @activitySectorId = (SELECT s.id FROM split_activity_sector s INNER JOIN translation t ON s.literal_id=t.literal_id WHERE t.text="Commerce and hospitality");INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @activitySectorId);
 
 
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="PT");
@@ -2023,6 +1959,70 @@ SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Health at risk");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.15000000000000002);
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="IT");
+SET @activitySectorId = (SELECT s.id FROM split_activity_sector s INNER JOIN translation t ON s.literal_id=t.literal_id WHERE t.text="Public administration education and health");INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @activitySectorId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="LT");
+SET @activitySectorId = (SELECT s.id FROM split_activity_sector s INNER JOIN translation t ON s.literal_id=t.literal_id WHERE t.text="Total");INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @activitySectorId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="LT");
+SET @activitySectorId = (SELECT s.id FROM split_activity_sector s INNER JOIN translation t ON s.literal_id=t.literal_id WHERE t.text="Agriculture and industry");INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @activitySectorId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="LT");
+SET @activitySectorId = (SELECT s.id FROM split_activity_sector s INNER JOIN translation t ON s.literal_id=t.literal_id WHERE t.text="Commerce and hospitality");INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @activitySectorId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="LT");
+SET @activitySectorId = (SELECT s.id FROM split_activity_sector s INNER JOIN translation t ON s.literal_id=t.literal_id WHERE t.text="Construction and transport");INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @activitySectorId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="LT");
+SET @activitySectorId = (SELECT s.id FROM split_activity_sector s INNER JOIN translation t ON s.literal_id=t.literal_id WHERE t.text="Financial and other services");INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @activitySectorId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="LT");
+SET @activitySectorId = (SELECT s.id FROM split_activity_sector s INNER JOIN translation t ON s.literal_id=t.literal_id WHERE t.text="Public administration education and health");INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @activitySectorId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="LU");
+SET @activitySectorId = (SELECT s.id FROM split_activity_sector s INNER JOIN translation t ON s.literal_id=t.literal_id WHERE t.text="Total");INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @activitySectorId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="LU");
+SET @activitySectorId = (SELECT s.id FROM split_activity_sector s INNER JOIN translation t ON s.literal_id=t.literal_id WHERE t.text="Agriculture and industry");INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @activitySectorId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="LU");
+SET @activitySectorId = (SELECT s.id FROM split_activity_sector s INNER JOIN translation t ON s.literal_id=t.literal_id WHERE t.text="Commerce and hospitality");INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @activitySectorId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="LU");
+SET @activitySectorId = (SELECT s.id FROM split_activity_sector s INNER JOIN translation t ON s.literal_id=t.literal_id WHERE t.text="Construction and transport");INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @activitySectorId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="LU");
+SET @activitySectorId = (SELECT s.id FROM split_activity_sector s INNER JOIN translation t ON s.literal_id=t.literal_id WHERE t.text="Financial and other services");INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @activitySectorId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="LU");
+SET @activitySectorId = (SELECT s.id FROM split_activity_sector s INNER JOIN translation t ON s.literal_id=t.literal_id WHERE t.text="Public administration education and health");INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @activitySectorId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="LV");
+SET @activitySectorId = (SELECT s.id FROM split_activity_sector s INNER JOIN translation t ON s.literal_id=t.literal_id WHERE t.text="Total");INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @activitySectorId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="LV");
+SET @activitySectorId = (SELECT s.id FROM split_activity_sector s INNER JOIN translation t ON s.literal_id=t.literal_id WHERE t.text="Agriculture and industry");INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @activitySectorId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="LV");
+SET @activitySectorId = (SELECT s.id FROM split_activity_sector s INNER JOIN translation t ON s.literal_id=t.literal_id WHERE t.text="Commerce and hospitality");INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @activitySectorId);
+
 
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="LV");
 SET @activitySectorId = (SELECT s.id FROM split_activity_sector s INNER JOIN translation t ON s.literal_id=t.literal_id WHERE t.text="Construction and transport");INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @activitySectorId);
