@@ -55,12 +55,6 @@
         <div class="columm--item--content">
           <div data-ng-bind-html="i18nLiterals['L'+country1Data.text1]"></div>
           <div data-ng-bind-html="i18nLiterals['L'+country1Data.text2] + i18nLiterals['L'+country1Data.text3] + i18nLiterals['L'+country1Data.text4] + i18nLiterals['L'+country1Data.text5] + i18nLiterals['L'+country1Data.text6] + i18nLiterals['L'+country1Data.text7]"></div>
-          <!--<ul>
-            <li>The right to work is a human right. This right means that every worker is entitled to a healthy and safe working environment. The promotion of wellbeing at work in all its aspects is primordial for protecting workers, for preserving their health and for ensuring they are motivated when doing their job.</li>
-            <li>The promotion of the wellbeing of workers offers added value to every individual company. Unhealthy and unsafe working conditions reduce productivity, which ultimately results in dismissals, closures and bankruptcies. Poor working conditions are also a form of unfair competition between businesses. And so, a lack of wellbeing at work is also a social-economic injustice.</li>
-            <li>Insufficient attention to wellbeing at work inevitably causes an increase in occupational health problems, which in turn has an impact on the expenditure of social security and social protection systems and so on the community as a whole. On the other hand, the promotion of wellbeing at work contributes to improving public health and the availability of workers in companies. As a result, the productivity and the competitiveness of companies is improved. This also has favourable consequences for the prosperity of our society as a whole</li>
-            <li>A global approach to workers’ wellbeing does not end at the entrance to the plant: a healthy employee works better but vice versa healthy and safe working conditions will also improve overall health. As a result, several levels of authority are involved in the implementation of this global plan: the federal Minister for Employment, as well as the federal Minister of Social Affairs and Public Health, the Communities and the Regions. Consultation on various levels will thus be necessary, depending on the proposed actions.</li>
-          </ul>-->
         </div>
         <!--<div data-ng-if="i18nLiterals['L'+country1Data.text9].length > 200">
           <p class="see-more"><a ng-click='toggleText($event)'>See more<i class="fa fa-angle-down" aria-hidden="true"></i></a></p>    
@@ -76,14 +70,6 @@
           <div class="columm--item--content">
             <div data-ng-bind-html="i18nLiterals['L'+country2Data.text1]"></div>
             <div data-ng-bind-html="i18nLiterals['L'+country2Data.text2] + i18nLiterals['L'+country2Data.text3] + i18nLiterals['L'+country2Data.text4] + i18nLiterals['L'+country2Data.text5] + i18nLiterals['L'+country2Data.text6] + i18nLiterals['L'+country2Data.text7]"></div>
-
-            <!--<p>Vision:</p>
-            <ul>
-              <li>The right to work is a human right. This right means that every worker is entitled to a healthy and safe working environment. The promotion of wellbeing at work in all its aspects is primordial for protecting workers, for preserving their health and for ensuring they are motivated when doing their job.</li>
-              <li>The promotion of the wellbeing of workers offers added value to every individual company. Unhealthy and unsafe working conditions reduce productivity, which ultimately results in dismissals, closures and bankruptcies. Poor working conditions are also a form of unfair competition between businesses. And so, a lack of wellbeing at work is also a social-economic injustice.</li>
-              <li>Insufficient attention to wellbeing at work inevitably causes an increase in occupational health problems, which in turn has an impact on the expenditure of social security and social protection systems and so on the community as a whole. On the other hand, the promotion of wellbeing at work contributes to improving public health and the availability of workers in companies. As a result, the productivity and the competitiveness of companies is improved. This also has favourable consequences for the prosperity of our society as a whole</li>
-              <li>A global approach to workers’ wellbeing does not end at the entrance to the plant: a healthy employee works better but vice versa healthy and safe working conditions will also improve overall health. As a result, several levels of authority are involved in the implementation of this global plan: the federal Minister for Employment, as well as the federal Minister of Social Affairs and Public Health, the Communities and the Regions. Consultation on various levels will thus be necessary, depending on the proposed actions.</li>
-            </ul>-->
           </div>
           <!--<div data-ng-if="i18nLiterals['L'+country1Data.text9].length > 200">
             <p class="see-more"><a ng-click='toggleText($event)'>See more<i class="fa fa-angle-down" aria-hidden="true"></i></a></p>    
@@ -101,11 +87,11 @@
         <h2 data-ng-bind="i18nLiterals.L298"></h2>
         <div class="columm--item--content">
           <div data-ng-bind-html="i18nLiterals['L'+country1Data.text8]"></div>
-          <div data-ng-bind-html="i18nLiterals['L'+country1Data.text9]"></div>
-        </div>
-        <div data-ng-if="i18nLiterals['L'+country1Data.text9].length > maxCharacters">
-          <p class="see-more"><a ng-click='toggleText($event)'>See more<i class="fa fa-angle-down" aria-hidden="true"></i></a></p>    
-          <p class="see-less"><a ng-click='toggleText($event)' style="display:none">See less<i class="fa fa-angle-up" aria-hidden="true"></i></a></p>
+          <div data-ng-bind-html="trimText(i18nLiterals['L'+country1Data.text9], 200)"></div>
+          <p class="see-more" data-ng-if="i18nLiterals['L'+country1Data.text9].length > 100">
+            <a ng-click='toggleText($event)' class="see-more">See more<i class="fa fa-angle-down" aria-hidden="true"></i></a> 
+            <a ng-click='toggleText($event)' class="see-less" style="display:none">See less<i class="fa fa-angle-up" aria-hidden="true"></i></a>
+          </p>
         </div>
       </div>
 
@@ -116,11 +102,11 @@
         <h2 data-ng-bind="i18nLiterals.L298"></h2>
         <div class="columm--item--content">
           <div data-ng-bind-html="i18nLiterals['L'+country2Data.text8]"></div>
-          <div data-ng-bind-html="i18nLiterals['L'+country2Data.text9]"></div>
-        </div>
-        <div data-ng-if="i18nLiterals['L'+country2Data.text9].length > maxCharacters">
-          <p class="see-more"><a ng-click='toggleText($event)'>See more<i class="fa fa-angle-down" aria-hidden="true"></i></a></p>    
-          <p class="see-less"><a ng-click='toggleText($event)' style="display:none">See less<i class="fa fa-angle-up" aria-hidden="true"></i></a></p>
+          <div data-ng-bind-html="trimText(i18nLiterals['L'+country2Data.text9], 200)"></div>
+          <p class="see-more" data-ng-if="i18nLiterals['L'+country2Data.text9].length > maxCharacters">
+            <a ng-click='toggleText($event)' class="see-more">See more<i class="fa fa-angle-down" aria-hidden="true"></i></a> 
+            <a ng-click='toggleText($event)' class="see-less" style="display:none">See less<i class="fa fa-angle-up" aria-hidden="true"></i></a>
+          </p>
         </div>
       </div>
     </div>
@@ -133,11 +119,11 @@
         </div>
         <h2 data-ng-bind="i18nLiterals.L299"></h2>
         <div class="columm--item--content">
-          <div data-ng-bind-html="i18nLiterals['L'+country1Data.text10]"></div>
-        </div>
-        <div data-ng-if="i18nLiterals['L'+country1Data.text10].length > maxCharacters">
-          <p class="see-more"><a ng-click='toggleText($event)'>See more<i class="fa fa-angle-down" aria-hidden="true"></i></a></p>    
-          <p class="see-more"><a ng-click='toggleText($event)' style="display:none">See less<i class="fa fa-angle-up" aria-hidden="true"></i></a></p>
+          <div data-ng-bind-html="trimText(i18nLiterals['L'+country1Data.text10], 200)"></div>
+          <p class="see-more" data-ng-if="i18nLiterals['L'+country1Data.text10].length > maxCharacters">
+            <a ng-click='toggleText($event)' class="see-more">See more<i class="fa fa-angle-down" aria-hidden="true"></i></a> 
+            <a ng-click='toggleText($event)' class="see-less" style="display:none">See less<i class="fa fa-angle-up" aria-hidden="true"></i></a>
+          </p>
         </div>
       </div>
 
@@ -147,12 +133,13 @@
         </div>
         <h2 data-ng-bind="i18nLiterals.L299"></h2>
         <div class="columm--item--content">
-          <div data-ng-bind-html="i18nLiterals['L'+country2Data.text10]"></div>
+          <div data-ng-bind-html="trimText(i18nLiterals['L'+country2Data.text10], 200)"></div>
+          <p class="see-more" data-ng-if="i18nLiterals['L'+country2Data.text10].length > maxCharacters">
+            <a ng-click='toggleText($event)' class="see-more">See more<i class="fa fa-angle-down" aria-hidden="true"></i></a> 
+            <a ng-click='toggleText($event)' class="see-less" style="display:none">See less<i class="fa fa-angle-up" aria-hidden="true"></i></a>
+          </p>
         </div>
-        <div data-ng-if="i18nLiterals['L'+country2Data.text10].length > maxCharacters">
-          <p class="see-more"><a ng-click='toggleText($event)'>See more<i class="fa fa-angle-down" aria-hidden="true"></i></a></p>    
-          <p class="see-more"><a ng-click='toggleText($event)' style="display:none">See less<i class="fa fa-angle-up" aria-hidden="true"></i></a></p>
-        </div>
+        
       </div>
     </div>
 
@@ -165,10 +152,10 @@
         <h2 data-ng-bind="i18nLiterals.L300"></h2>
         <div class="columm--item--content">
           <div data-ng-bind-html="i18nLiterals['L'+country1Data.text11]"></div>
-        </div>
-        <div data-ng-if="i18nLiterals['L'+country1Data.text11].length > maxCharacters">
-          <p class="see-more"><a ng-click='toggleText($event)'>See more<i class="fa fa-angle-down" aria-hidden="true"></i></a></p>    
-          <p class="see-more"><a ng-click='toggleText($event)' style="display:none">See less<i class="fa fa-angle-up" aria-hidden="true"></i></a></p>
+          <p class="see-more" data-ng-if="i18nLiterals['L'+country1Data.text11].length > maxCharacters">
+            <a ng-click='toggleText($event)' class="see-more">See more<i class="fa fa-angle-down" aria-hidden="true"></i></a> 
+            <a ng-click='toggleText($event)' class="see-less" style="display:none">See less<i class="fa fa-angle-up" aria-hidden="true"></i></a>
+          </p>
         </div>
       </div>
 
@@ -179,10 +166,10 @@
         <h2 data-ng-bind="i18nLiterals.L300"></h2>
         <div class="columm--item--content">
           <div data-ng-bind-html="i18nLiterals['L'+country2Data.text11]"></div>
-        </div>
-        <div data-ng-if="i18nLiterals['L'+country2Data.text11].length > maxCharacters">
-          <p class="see-more"><a ng-click='toggleText($event)'>See more<i class="fa fa-angle-down" aria-hidden="true"></i></a></p>    
-          <p class="see-more"><a ng-click='toggleText($event)' style="display:none">See less<i class="fa fa-angle-up" aria-hidden="true"></i></a></p>
+          <p class="see-more" data-ng-if="i18nLiterals['L'+country2Data.text11].length > maxCharacters">
+            <a ng-click='toggleText($event)' class="see-more">See more<i class="fa fa-angle-down" aria-hidden="true"></i></a> 
+            <a ng-click='toggleText($event)' class="see-less" style="display:none">See less<i class="fa fa-angle-up" aria-hidden="true"></i></a>
+          </p>
         </div>
       </div>
     </div>
@@ -195,12 +182,12 @@
         </div>
         <h2 data-ng-bind="i18nLiterals.L301"></h2>
         <div class="columm--item--content">
-          <div data-ng-bind-html="i18nLiterals['L'+country1Data.text12]"></div>
-        </div>
-        <div data-ng-if="i18nLiterals['L'+country1Data.text12].length > maxCharacters">
-          <p class="see-more"><a ng-click='toggleText($event)'>See more<i class="fa fa-angle-down" aria-hidden="true"></i></a></p>    
-          <p class="see-more"><a ng-click='toggleText($event)' style="display:none">See less<i class="fa fa-angle-up" aria-hidden="true"></i></a></p>
-        </div>        
+          <div data-ng-bind-html="trimText(i18nLiterals['L'+country1Data.text12], 200)"></div>
+          <p class="see-more" data-ng-if="i18nLiterals['L'+country1Data.text12].length > maxCharacters">
+            <a ng-click='toggleText($event)' class="see-more">See more<i class="fa fa-angle-down" aria-hidden="true"></i></a> 
+            <a ng-click='toggleText($event)' class="see-less" style="display:none">See less<i class="fa fa-angle-up" aria-hidden="true"></i></a>
+          </p>
+        </div>       
       </div>
 
       <div class="column--item second" data-ng-if="pCountry2 != 0">
@@ -209,11 +196,11 @@
         </div>
         <h2 data-ng-bind="i18nLiterals.L301"></h2>
         <div class="columm--item--content">
-          <div data-ng-bind-html="i18nLiterals['L'+country2Data.text12]"></div>
-        </div>
-        <div data-ng-if="i18nLiterals['L'+country2Data.text12].length > maxCharacters">
-          <p class="see-more"><a ng-click='toggleText($event)'>See more<i class="fa fa-angle-down" aria-hidden="true"></i></a></p>    
-          <p class="see-more"><a ng-click='toggleText($event)' style="display:none">See less<i class="fa fa-angle-up" aria-hidden="true"></i></a></p>
+          <div data-ng-bind-html="trimText(i18nLiterals['L'+country2Data.text12],200)"></div>
+          <p class="see-more" data-ng-if="i18nLiterals['L'+country2Data.text12].length > maxCharacters">
+            <a ng-click='toggleText($event)' class="see-more">See more<i class="fa fa-angle-down" aria-hidden="true"></i></a> 
+            <a ng-click='toggleText($event)' class="see-less" style="display:none">See less<i class="fa fa-angle-up" aria-hidden="true"></i></a>
+          </p>
         </div>
       </div>
     </div>
@@ -226,11 +213,11 @@
         </div>
         <h2 data-ng-bind="i18nLiterals.L302"></h2>
         <div class="columm--item--content">
-          <div data-ng-bind-html="i18nLiterals['L'+country1Data.text13]"></div>
-        </div>
-        <div data-ng-if="i18nLiterals['L'+country1Data.text13].length > maxCharacters">
-          <p class="see-more"><a ng-click='toggleText($event)'>See more<i class="fa fa-angle-down" aria-hidden="true"></i></a></p>    
-          <p class="see-more"><a ng-click='toggleText($event)' style="display:none">See less<i class="fa fa-angle-up" aria-hidden="true"></i></a></p>
+          <div data-ng-bind-html="trimText(i18nLiterals['L'+country1Data.text13], 200)"></div>
+          <p class="see-more" data-ng-if="i18nLiterals['L'+country1Data.text13].length > maxCharacters">
+            <a ng-click='toggleText($event)' class="see-more">See more<i class="fa fa-angle-down" aria-hidden="true"></i></a> 
+            <a ng-click='toggleText($event)' class="see-less" style="display:none">See less<i class="fa fa-angle-up" aria-hidden="true"></i></a>
+          </p>
         </div>
       </div>
 
@@ -240,11 +227,11 @@
         </div>
         <h2 data-ng-bind="i18nLiterals.L302"></h2>
         <div class="columm--item--content">
-          <div data-ng-bind-html="i18nLiterals['L'+country2Data.text13]"></div>
-        </div>
-        <div data-ng-if="i18nLiterals['L'+country2Data.text13].length > maxCharacters">
-          <p class="see-more"><a ng-click='toggleText($event)'>See more<i class="fa fa-angle-down" aria-hidden="true"></i></a></p>    
-          <p class="see-more"><a ng-click='toggleText($event)' style="display:none">See less<i class="fa fa-angle-up" aria-hidden="true"></i></a></p>
+          <div data-ng-bind-html="trimText(i18nLiterals['L'+country2Data.text13],200)"></div>
+          <p class="see-more" data-ng-if="i18nLiterals['L'+country2Data.text13].length > maxCharacters">
+            <a ng-click='toggleText($event)' class="see-more">See more<i class="fa fa-angle-down" aria-hidden="true"></i></a> 
+            <a ng-click='toggleText($event)' class="see-less" style="display:none">See less<i class="fa fa-angle-up" aria-hidden="true"></i></a>
+          </p>
         </div>
       </div>
     </div>

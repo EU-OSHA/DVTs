@@ -54,11 +54,22 @@ define (function (require) {
                             }
                             return dvtUtils.getChartLightGrayColor();
                         },
+                        bar_fillStyle: function(scene){
+                            var countryKey = scene.firstAtoms.category;
+                            if (countryKey == 'EU28') {
+                                return dvtUtils.getEUColor();
+                            } else if(countryKey == pCountry1){
+                                return dvtUtils.getColorCountry(1);
+                            } else if(countryKey == pCountry2) {
+                                return dvtUtils.getColorCountry(2);
+                            }
+                            return dvtUtils.getChartLightGrayColor();
+                        },
                         label_textMargin: 5,
                         valuesAnchor: 'right',
                         valuesOptimizeLegibility: true,
                         visualRoles:{
-                            category:'category'
+                            category:'category',
                         }
                     }
                 ];
@@ -153,14 +164,28 @@ define (function (require) {
 				              	var panelWidth = this.root.width();
 				              	var barWidth = panelWidth/3.5;
 				              	var countryKey = scene.firstAtoms.category;
-
+                                $log.warn(scene);
 				              	if(panelWidth != 300){ //Default panel value
 									if(countryKey == pCountry1){
-	                  					return (barWidth - this.width())/2 +5; //5 is the panel margin
+                                        if(scene.nextSibling.firstAtoms.category != pCountry2){
+                                            return panelWidth/2 - (barWidth + this.width()/2) + 5; //5 is the panel margin
+                                        }else{
+                                            return (barWidth - this.width())/2 +5; //5 is the panel margin
+                                        }
 					              	}else if(countryKey == pCountry2){
-					              		return panelWidth/3 + (barWidth - this.width())/2;
+                                        var sibling = scene.previousSibling;
+                                        if(sibling == null){
+                                            return panelWidth/2 - (barWidth + this.width()/2) + 5;
+                                        }else{
+                                            return panelWidth/3 + (barWidth - this.width())/2;
+                                        }
 					              	}else if(countryKey == 'EU28'){
-					              		return panelWidth/1.5 + (barWidth - this.width())/2 - 5;
+                                        var firstSibling = scene.previousSibling.previousSibling;
+                                        if(scene.previousSibling.firstAtoms.category != pCountry2 || firstSibling == null){
+                                            return panelWidth/2 + (this.width())/1.5;
+                                        }else{
+                                            return panelWidth/1.5 + (barWidth - this.width())/2 - 5;
+                                        }
 					              	}
 				              	}
 				              })
@@ -189,6 +214,17 @@ define (function (require) {
                             	return dvtUtils.getColorCountry(1);
                             } else if(countryKey == pCountry2) {
                             	return dvtUtils.getColorCountry(2);
+                            }
+                            return dvtUtils.getChartLightGrayColor();
+                        },
+                        line_fillStyle: function(scene){
+                            var countryKey = scene.firstAtoms.category;
+                            if (countryKey == 'EU28') {
+                                return dvtUtils.getEUColor();
+                            } else if(countryKey == pCountry1){
+                                return dvtUtils.getColorCountry(1);
+                            } else if(countryKey == pCountry2) {
+                                return dvtUtils.getColorCountry(2);
                             }
                             return dvtUtils.getChartLightGrayColor();
                         },

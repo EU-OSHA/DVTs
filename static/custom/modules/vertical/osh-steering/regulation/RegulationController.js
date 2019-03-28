@@ -49,7 +49,7 @@ define(function (require) {
     };
 
     // Read more
-    $scope.trimtext = function(pVal, pNumCharacters){
+    /*$scope.trimtext = function(pVal, pNumCharacters){
       var shortText = pVal;
       if (shortText.length > pNumCharacters) {
         shortText = $.trim(pVal).substring(0, pNumCharacters).split(" ").slice(0, -1).join(" ") + $scope.longText(pVal, pNumCharacters) + "<span class='see-more'>...</span>";
@@ -71,7 +71,74 @@ define(function (require) {
       });
       angular.element(' span.see-more', angular.element($event.target).parent().parent()).slideToggle();
       angular.element('p a', angular.element($event.target).parent()).toggle();
-    };
+    };*/
+
+    // Read more
+    $scope.trimText = function(pVal, pNumCharacters){
+      var shortText = pVal;
+      var finalHtml = '';
+      if(pVal != null){
+        if(shortText.match('<p>')){
+          var minimized_elements = $compile(pVal)($scope);
+          for(var i = 0; i < minimized_elements.length; i++){
+            var elem = minimized_elements[i];
+            if(i == 0){
+              $(elem).addClass("first");
+              var t = $(elem).text();
+              if(t.length>pNumCharacters){
+                $(elem).html($.trim(t).substring(0, pNumCharacters).split(" ").slice(0, -1).join(" ") + $scope.longText(t, pNumCharacters) + "<span class='dots'>...</span>");
+              }else{
+                $(elem).html(t);
+              }
+              
+              var newHtml = $(elem)[0].outerHTML;
+              finalHtml += newHtml;
+            }else{
+              $(elem).css('display','none');
+              $(elem).addClass("text-part");
+              var newHtml = $(elem)[0].outerHTML;
+              finalHtml += newHtml;
+            }
+          }
+          return $sce.trustAsHtml(finalHtml);
+        }else{
+          if (shortText.length > pNumCharacters) {
+            shortText = $.trim(pVal).substring(0, pNumCharacters).split(" ").slice(0, -1).join(" ") + $scope.longText(pVal, pNumCharacters) + "<span class='dots'>...</span>";
+          }
+          return $sce.trustAsHtml(shortText);
+        }
+      }
+      
+    }
+
+    $scope.longText = function(pVal, pNumCharacters) {
+      var longText = "<samp style='display:none'> " + pVal.split(" ").slice($.trim(pVal).substring(0, pNumCharacters).split(" ").slice(0, -1).length).join(" ") + '</samp>';
+      return longText;
+    }
+
+    $scope.toggleText = function($event) {
+      if ($(this).is(':visible')) {
+
+      angular.element(' samp', angular.element($event.target).parent().parent()).toggleClass('visible-inline');
+      angular.element(' .text-part', angular.element($event.target).parent().parent()).toggleClass('visible');
+
+      }
+      //Para ocultar los puntos suspensivos del recorte
+      angular.element(' span.dots', angular.element($event.target).parent().parent()).toggle();
+      //Para cambiar del boton see more al boton see less
+      angular.element(' a', angular.element($event.target).parent()).toggle();
+    }
+
+    // Show/hide the Countries Filter List
+
+    angular.element('div.countries-filters').css( "display",'none' );
+    angular.element('#filter2 h2').addClass('showChallenges');
+    $scope.toggleFilters = function() {
+      if ($window.outerWidth < 768) {
+            angular.element('#filter2 h2').toggleClass('showChallenges');
+            angular.element('div.countries-filters').slideToggle( "slow" );
+        }
+    }
 
     /******************************************************************************|
     |                                DATA LOAD                                     |
