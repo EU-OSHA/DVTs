@@ -48,6 +48,10 @@ define(function (require) {
         }
     };
 
+
+     console.log( 'column--item -->' + angular.element('.column--item').length );
+       //console.log( angular.element('.column--item') );
+
     // Read more
     /*$scope.trimtext = function(pVal, pNumCharacters){
       var shortText = pVal;
@@ -261,6 +265,7 @@ define(function (require) {
         }
 
       }
+
 
   }
 

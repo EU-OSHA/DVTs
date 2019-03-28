@@ -101,6 +101,7 @@ define(function (require) {
       } else {
         angular.element('.filter--dropdown--wrapper').removeClass('viewOptions');
         currentSelect.className += ' viewOptions';
+        //currentSelect.focus();
       }
     }
 

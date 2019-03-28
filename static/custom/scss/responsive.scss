@@ -665,6 +665,19 @@ and (orientation : landscape) {
 and (min-width : 768px) 
 and (max-width : 1024px) 
 and (orientation : portrait) { 
+	
+	.compare--block{
+		.compare--list{
+			li{
+				label{
+					width: 100%;
+				}
+				select{
+					width: 100%;
+				}
+			}
+		}
+	}
 
 }
 
@@ -803,6 +816,7 @@ and (max-width :767px)  {
       flex-direction: column;
       .column--item{
         padding: 0;
+        width: 100%;
         h2{
           font-size: 2.4rem;
         }
@@ -950,15 +964,17 @@ and (max-width :767px)  {
 			flex-direction: column;
 			display: inline-flex;
 			align-items: flex-end;
-			margin: auto;
-			width: auto;
+			margin: 0;
+			width:100%;
       li{
-      	width:auto;
-        label{          
+      	width:100%;
+        label{ 
+        	width:auto;        
           &:after{
           }
         }
         select{
+        	width:auto;
           font-size: 2rem;
           option{
             font-size: 1.4rem; 
@@ -1160,18 +1176,19 @@ and (max-width :420px){
 			flex-direction: column;
 			display: inline-flex;
 			align-items: flex-end;
-			margin: 0 20%;
-			width: 60%;
       li{
-      	width:100%;
+      	text-align: center;
+      	width: 100%;
         label{
+        	width: 100%;
           &:after{
           	padding: 1rem;
           }
         }
         select{
           font-size: 1.8rem;
-          display: block; 
+          display: inline-block;
+          width: auto; 
           background: #FFF; 
           option{
             font-size: 1.2rem; 

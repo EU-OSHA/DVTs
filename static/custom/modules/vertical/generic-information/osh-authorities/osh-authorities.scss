@@ -74,6 +74,17 @@
         }
       }    
     }
+    &:focus{
+      .filter--dropdown--list{
+        display: block;
+        height: auto;
+        .option-title{
+          &:after{
+            content: "\f106";
+          }
+        }
+      }  
+    }
     &.viewOptions{
       .filter--dropdown--list{
         display: block;

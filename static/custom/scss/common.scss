@@ -496,13 +496,13 @@
           font-family: 'OpenSans-bold';
           text-transform: uppercase;
           font-size: 2.6rem;
-          border: 0;
+          border: 1px solid #FFF;
           padding: 0.2rem 0.5rem;
           -webkit-appearance: none;
           -moz-appearance: none;
           appearance: none;
           cursor: pointer;
-          width:59%;
+          width:58%;
           &:focus {
             box-shadow: none;
             outline: none;
@@ -512,7 +512,7 @@
             font-size: 1.2rem; 
             color: $gray-base;
             &:checked{
-            
+            //font-size: 1.2rem; 
             }
           }
         }
@@ -849,6 +849,7 @@
       flex-direction: row;
       .column--item{
         padding: 0 5rem;
+        width: 50%;
         h2{
           font-size: 2.4rem;
         }
