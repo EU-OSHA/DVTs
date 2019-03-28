@@ -183,6 +183,11 @@
   .see-more{
     position: relative;
     cursor: pointer;
+    text-transform: lowercase;
+    display: block;
+    &:first-letter{
+      text-transform: uppercase;
+    }
     &:hover{
       color:$orange;
     }
@@ -196,13 +201,18 @@
       -webkit-font-smoothing: antialiased;
       position: relative;
       right: -4px;
-      top: 4px;
+      top: 1px;
       color: $aquamarine;
     }
   }
   .see-less{
     position: relative;
     cursor: pointer;
+    text-transform: lowercase;
+    display: block;
+    &:first-letter{
+      text-transform: uppercase;
+    }
     &:hover{
       color:$orange;
     }
@@ -216,7 +226,7 @@
       -webkit-font-smoothing: antialiased;
       position: relative;
       right: -4px;
-      top: 4px;
+      top: 1px;
       color: $aquamarine;
     }
   }
