@@ -51,31 +51,57 @@
   <div class="line background-main-light"></div>
 
 <section class="container-full nopadding">
-    <section class="survey--map--block">
-        <div class="map--block center-text container">
-          <!-- CONTENT -->
-          <dvt-map ng-cloak
-            country-key="EU" promise="promises.promiseShape"
-            country="EU" use-viewbox="true" x="0" y="0"
-            css-class="dvt--map--block" is-colored="1" hover="true"
-            group-list="groupList"
-            group-color="groupColor"
-            data="data">
-          </dvt-map>
-        </div>     
-    </section>
+  <section class="survey--map--block">
+    <div class="map--block center-text container">
+      <!-- CONTENT -->
+      <dvt-map ng-cloak
+        country-key="EU" promise="promises.promiseShape"
+        country="EU" use-viewbox="true" x="0" y="0"
+        css-class="dvt--map--block" is-colored="1" hover="true"
+        group-list="groupList"
+        group-color="groupColor"
+        data="data">
+      </dvt-map>
+    </div>
+    <div class="map--gauss--block container">
+      <dvt-bar-chart
+        data-ng-cloak
+        query="getGaussChartValues" cda="{{::cda }}"
+        width="200" height="200" type="lines"
+        orientation="vertical" axis-fixed-min="0"
+        listen-to="[minMaxValues.minValue, minMaxValues.maxValue, minMaxValues.range]"
+        axis-fixed-max="20" step="{{step.chart1}}"
+        params="[['pDataset', datasetEurostat], ['pIndicator',pIndicator], ['pSubIndicator',pSubIndicator], ['pMinValue', minMaxValues.minValue],
+        ['pMaxValue', minMaxValues.maxValue], ['pRange', minMaxValues.range]]"
+        color-role="category" colors="[stories[0].color1]" id="5"
+        base-axis-label-font="14px 'OpenSans-bold'"
+        plots="stories[0].plots"
+        values-visible="false"
+        values-font="14px 'OpenSans-bold'"
+        values-mask="{value}"
+        hoverable="false"
+        ortho-axis-grid="false"
+        ortho-axis-visible="false"
+        dimensions="stories[0].dimensions"
+        multiple-label-colors="true"
+        base-axis-label-text-baseline="top"
+        axis-color="true"
+        panel-color="white"
+        legend="false"
+        is-maximized="true"
+      ></dvt-bar-chart>
+    </div>  
+  </section>
 
-    <section class="survey--map--block">
-      <div class="map--block center-text container">
-        <span>Less than <span data-ng-bind="minMaxValues.minValue + minMaxValues.range"></span>% | </span>
+    <div class="map--block center-text container">
+        <span><span data-ng-bind="minMaxValues.minValue + minMaxValues.range"></span>% | </span>
         <span>
           <span data-ng-bind="minMaxValues.minValue + minMaxValues.range"></span>% - <span data-ng-bind="minMaxValues.minValue + minMaxValues.range*2"></span>% | 
         </span>
         <span>
           <span data-ng-bind="minMaxValues.maxValue - minMaxValues.range*2"></span>% - <span data-ng-bind="minMaxValues.maxValue - minMaxValues.range"></span>% | </span>
         <span>More than <span data-ng-bind="minMaxValues.maxValue - minMaxValues.range"></span>%</span>
-      </div>     
-    </section>
+      </div>
 
     <section class="survey--map--block-mobile">
       <div class="selected--tags-wrapper"></div>

@@ -380,6 +380,7 @@
       INNER JOIN value v
       ON v.profile_id = p.id
       WHERE v.indicator_id IN (31, 36, 37, 38, 39, 40)
+      AND n.country_code NOT IN ('EU28')
       ORDER BY country_name ASC;
     </Query>
   </DataAccess>
@@ -686,7 +687,7 @@
     </Query>
   </DataAccess>
 
-    <!-- WORKFORCE PROFILE || get min and max value of selected indicators -->
+  <!-- WORKFORCE PROFILE || get min and max value of selected indicators -->
   <DataAccess access="public" connection="dvt_conn" id="getPlotMinMaxValues" type="sql">
     <Cache duration="3600" enabled="true" />
     <Columns />
@@ -704,6 +705,82 @@
       AND v.indicator_id = ${pIndicator}
       AND (p.gender_id IS NULL OR p.gender_id = ${pSubIndicator})
       ORDER BY v.value ASC
+    </Query>
+  </DataAccess>
+
+  <!-- WORKFORCE PROFILE || get min and max value of selected indicators -->
+  <DataAccess access="public" connection="dvt_conn" id="getGaussChartValues" type="sql">
+    <Cache duration="3600" enabled="true" />
+    <Columns />
+    <Parameters>
+      <Parameter default="6" name="pDataset" type="Numeric" />
+      <Parameter default="37" name="pIndicator" type="Numeric" />
+      <Parameter default="0" name="pSubIndicator" type="Numeric" />
+      <Parameter default="36.3" name="pMinValue" type="Numeric" />
+      <Parameter default="45.9" name="pMaxValue" type="Numeric" />
+      <Parameter default="2.4" name="pRange" type="Numeric" />
+    </Parameters>
+    <Query>
+      (SELECT ${pMinValue} as Distribution, COUNT(v.value) as Total
+      FROM nuts n, profile p, value v, dataset d
+      WHERE n.id = p.nuts_id 
+      AND v.profile_id = p.id 
+      AND d.id = 6 AND d.id = v.dataset_id
+      AND v.indicator_id = 37
+      AND (p.gender_id IS NULL OR p.gender_id = 0)
+      AND v.value = ${pMinValue}
+      ORDER BY v.value ASC
+      )UNION(
+      SELECT (${pMinValue}+${pRange}), COUNT(v.value)
+      FROM nuts n, profile p, value v, dataset d
+      WHERE n.id = p.nuts_id 
+      AND v.profile_id = p.id 
+      AND d.id = 6 AND d.id = v.dataset_id
+      AND v.indicator_id = 37
+      AND (p.gender_id IS NULL OR p.gender_id = 0)
+      AND (v.value BETWEEN ${pMinValue} AND (${pMinValue} + ${pRange}))
+      ORDER BY v.value ASC
+      )UNION(
+      SELECT (${pMinValue}+${pRange}*2), COUNT(v.value) 
+      FROM nuts n, profile p, value v, dataset d
+      WHERE n.id = p.nuts_id 
+      AND v.profile_id = p.id 
+      AND d.id = 6 AND d.id = v.dataset_id
+      AND v.indicator_id = 37
+      AND (p.gender_id IS NULL OR p.gender_id = 0)
+      AND (v.value BETWEEN (${pMinValue} + ${pRange}) AND (${pMinValue}+${pRange}*2))
+      ORDER BY v.value ASC
+      )UNION(
+      SELECT (${pMaxValue} - ${pRange}), COUNT(v.value) 
+      FROM nuts n, profile p, value v, dataset d
+      WHERE n.id = p.nuts_id 
+      AND v.profile_id = p.id 
+      AND d.id = 6 AND d.id = v.dataset_id
+      AND v.indicator_id = 37
+      AND (p.gender_id IS NULL OR p.gender_id = 0)
+      AND (v.value BETWEEN (${pMinValue} + ${pRange}*2) AND (${pMaxValue} - ${pRange}))
+      ORDER BY v.value ASC
+      )UNION(
+      SELECT ${pMaxValue}, COUNT(v.value)
+      FROM nuts n, profile p, value v, dataset d
+      WHERE n.id = p.nuts_id 
+      AND v.profile_id = p.id 
+      AND d.id = 6 AND d.id = v.dataset_id
+      AND v.indicator_id = 37
+      AND (p.gender_id IS NULL OR p.gender_id = 0)
+      AND (v.value BETWEEN (${pMaxValue} - ${pRange}) AND ${pMaxValue})
+      ORDER BY v.value ASC
+      )UNION(
+      SELECT ${pMaxValue}, COUNT(v.value)
+      FROM nuts n, profile p, value v, dataset d
+      WHERE n.id = p.nuts_id 
+      AND v.profile_id = p.id 
+      AND d.id = 6 AND d.id = v.dataset_id
+      AND v.indicator_id = 37
+      AND (p.gender_id IS NULL OR p.gender_id = 0)
+      AND v.value = ${pMaxValue}
+      ORDER BY v.value ASC
+      )
     </Query>
   </DataAccess>
 

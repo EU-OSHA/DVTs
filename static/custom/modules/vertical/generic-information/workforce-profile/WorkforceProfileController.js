@@ -12,7 +12,7 @@ define(function (require) {
   'use strict';
 
 
-  function controller($scope, $stateParams, $state, configService, $log, $document,dataService, $window, $sce, $compile, $timeout, dvtUtils, mapProvider) {
+  function controller($scope, $stateParams, $state, configService, $log, $document,dataService, $window, $sce, $compile, $timeout, dvtUtils, mapProvider, WorkforceProfileService) {
 
     // CDA
     $scope.cda =  configService.getBarometerCda();
@@ -31,9 +31,9 @@ define(function (require) {
 
     $scope.genders = [];
     $scope.minMaxValues = {
-      minValue: 0,
-      maxValue: 0,
-      range: 0
+      minValue: 36.3,
+      maxValue: 45.9,
+      range: 2.4
     };
 
     //Countries
@@ -55,6 +55,25 @@ define(function (require) {
         promiseShape: mapProvider.getEuropeShape(),
         countryGroups: dataService.getGroupCountryList()
     };
+
+    $scope.base_fillStyle = 'white';
+    $scope.stories = [
+      {
+        color1: dvtUtils.getColorCountry(2),
+        plots: WorkforceProfileService.getMinMaxValues(),
+        dimensions: {
+          value: {
+            format: {
+              number: "#"
+            }
+          }
+        }
+      }
+    ];
+        
+    $scope.step = {
+      chart1: 5
+    }
 
     $scope.data = {
       medianAge: [], // 37
@@ -326,7 +345,7 @@ define(function (require) {
     $scope.status = 'ready';
   }
 
-  controller.$inject = ['$scope', '$stateParams', '$state', 'configService', '$log', '$document','dataService', '$window', '$sce', '$compile', '$timeout', 'dvtUtils', 'mapProvider'];
+  controller.$inject = ['$scope', '$stateParams', '$state', 'configService', '$log', '$document','dataService', '$window', '$sce', '$compile', '$timeout', 'dvtUtils', 'mapProvider', 'WorkforceProfileService'];
   return controller;
 
 

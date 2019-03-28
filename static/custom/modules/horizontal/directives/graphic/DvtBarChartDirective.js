@@ -281,15 +281,13 @@ define(function (require) {
                 color2AxisColors: '=',
                 contextuals: '=?',
                 maxLabelTop:'=',
-                enlargeAction: '='
+                enlargeAction: '=',
+                axisColor: '='
             },
             // TODO extract template
             template:_template,
 
             link: function (scope, element, attributes, controllers) {
-                //$log.warn(attributes.params[1]);
-                //$log.warn(controllers[0].dashboard);
-
                 // FIX. enlarged views share same id, a prefix has been added that must be undone
                 if (attributes.id.split("_").length > 1){
                     attributes.id = attributes.id.split("_")[1];
@@ -314,6 +312,7 @@ define(function (require) {
                 if(attributes.legendClickMode=="toggleVisible"){
                     scope.legendClickMode=true;
                 }
+
 
                 var definition = {
                     type: "cccBarChart",
@@ -371,7 +370,8 @@ define(function (require) {
                         orthoAxisGrid: attributes.orthoAxisGrid === "false" ? false : true, // Color axes
                         axisGrid_strokeStyle: 'white',
                         axisGrid_lineWidth: 2,
-                        axisBandSizeRatio: 0.6,
+                        axisBandSizeRatio: 1,
+                        baseAxisSize: 25,
                         //show values
                         valuesVisible: attributes.valuesVisible === 'true'?true:false,
                         valuesOverflow: attributes.valuesOverflow || "",
@@ -414,16 +414,29 @@ define(function (require) {
                         multipleLabelColors: attributes.multipleLabelColors === 'true' || false,
                         showEuroMask: attributes.showEuroMask === 'true' ? true : false,
                         leafContentOverflow: attributes.leafContentOverflow || 'auto',
-                        base_fillStyle: attributes.base_fillStyle || "#f0f0f0"
-                        //pYLabels: attributes.pYLabels || 1
+                        base_fillStyle: "#f0f0f0",
+                        xAxis_fillStyle: '#f0f0f0',
+                        panel_fillStyle: attributes.panelColor || ''
                     }
 
                 };
+
+                if(scope.axisColor){
+                    definition.chartDefinition.xAxis_fillStyle = "linear-gradient(to right, #daebec 0%,#519ea1 100%)";
+                }
+
+                if(scope.backgroundColor){
+
+                }
 
                 if(!!attributes.showEuroMask){
                     definition.chartDefinition.yAxisLabel_text= function(){
                         return this.scene.vars.tick.label+' €';
                     }
+                }
+
+                if(definition.type == 'lines'){
+                    definition.xAxis_fillStyle= 'linear-gradient(to right, #daebec 0%,#519ea1 100%)';
                 }
 
                 //TODO refactor OR condition in to definition where it been possible
@@ -701,17 +714,23 @@ define(function (require) {
                 if(!!attributes.multipleLabelColors){
                     var pCountry1 = definition.parameters[1][1];
                     var pCountry2 = definition.parameters[2][1];
-
-                    definition.chartDefinition.baseAxisLabel_textStyle= function (){
-                        if(this.scene.vars.tick.label == 'EU28'){
-                            return dvtUtils.getEUColor();
-                        }else if(this.scene.vars.tick.label == pCountry1){
-                            return dvtUtils.getColorCountry(1);
-                        }else if(this.scene.vars.tick.label == pCountry2){
-                            return dvtUtils.getColorCountry(2);
+                    
+                    if(definition.chartDefinition.dataAccessId == 'getGaussChartValues'){
+                        definition.chartDefinition.baseAxisLabel_textStyle= 'black';
+                    }else{
+                        definition.chartDefinition.baseAxisLabel_textStyle= function (){
+                            if(this.scene.vars.tick.label == 'EU28'){
+                                return dvtUtils.getEUColor();
+                            }else if(this.scene.vars.tick.label == pCountry1){
+                                return dvtUtils.getColorCountry(1);
+                            }else if(this.scene.vars.tick.label == pCountry2){
+                                return dvtUtils.getColorCountry(2);
+                            }
+                            return 'gray';
                         }
-                        return 'gray';
                     }
+
+                    
                 }
 
                 // define main chart type
