@@ -114,18 +114,18 @@
       box-shadow: none;
       display:block;
       &::-webkit-input-placeholder {
-        display: none;
+        //display: none;
       }
       &:-moz-placeholder {
         /* Firefox 18- */
-        display: none;
+        //display: none;
       }
       &::-moz-placeholder {
         /* Firefox 19+ */
-        display: none;
+        //display: none;
       }
       &:-ms-input-placeholder {
-        display: none;
+        //display: none;
       }
     }
     button{
