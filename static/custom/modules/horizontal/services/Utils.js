@@ -260,37 +260,50 @@ define(function (require) {
                 value > minValue + range*2 && value < maxValue - range || value > maxValue - range
                 */
 
-                if(country == 'IS' || country == 'NO' || country == 'CH'){ //Island, Norway and Switzerland
-                    if(value <= minValue+range){
-                        return 'url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/diagonal-stripes-1.png)';
-                    }else if((value > minValue+range) && (value <= maxValue-range*2)){
-                        return 'url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/diagonal-stripes-2.png)';
-                    }else if((value > minValue+range*2) && (value < maxValue-range)){
-                        return 'url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/diagonal-stripes-3.png)';
-                    }else if(value >= maxValue-range){
-                        return 'url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/diagonal-stripes.png)';
-                    }
-                }else{
-                    if(value <= minValue+range){
-                        return colors.rangeColors.range1;
-                    }else if((value > minValue+range) && (value <= maxValue-range*2)){
-                        return colors.rangeColors.range2;
-                    }else if((value > minValue+range*2) && (value < maxValue-range)){
-                        return colors.rangeColors.range3;
-                    }else if(value >= maxValue-range){
-                        return colors.rangeColors.range4;
-                    }
+                //With 7 ranges
+                /*if(value == minValue){ //1
+                    return colors.rangeColors.range1;
+                }else if((value > minValue) && (value <= minValue+range)){ //2
+                    return colors.rangeColors.range2;
+                }else if((value > minValue+range) && (value <= minValue+range*2)){ //3
+                    return colors.rangeColors.range3;
+                }else if((value > minValue+range*2) && (value <= maxValue-range*2)){ //4
+                    return colors.rangeColors.range4;
+                }else if((value > maxValue-range*2) && (value <= maxValue-range)){ //5
+                    return colors.rangeColors.range5;
+                }else if((value > maxValue-range) && (value <= maxValue)){ //6
+                    return colors.rangeColors.range6;
+                }else if(value == maxValue){ //7
+                    return colors.rangeColors.range7;
+                }*/
+
+                if(value == minValue){
+                    return colors.rangeColors.range1;
+                }else if((value > minValue) && (value <= minValue+range)) {
+                    return colors.rangeColors.range2;
+                }else if((value > minValue+range) && (value <= maxValue-range*2)){
+                    return colors.rangeColors.range3;
+                }else if((value > minValue+range*2) && (value <= maxValue-range)){
+                    return colors.rangeColors.range4;
+                }else if((value > maxValue-range) && (value < maxValue)){
+                    return colors.rangeColors.range5;
+                }else if(value == maxValue){
+                    return colors.rangeColors.range6;
                 }
             },
 
             getOpacityCountries: function(value, minValue, maxValue, range, country) {
-                if(value <= minValue+range){
-                    return 0.25;
+                if(value == minValue){
+                    return 0.16666666;
+                }else if((value > minValue) && (value <= minValue+range)){
+                    return 0.33333;
                 }else if((value > minValue+range) && (value <= maxValue-range*2)){
                     return 0.50;
-                }else if((value > minValue+range*2) && (value < maxValue-range)){
-                    return 0.75;
-                }else if(value >= maxValue-range){
+                }else if((value > minValue+range*2) && (value <= maxValue-range)){
+                    return 0.66;
+                }else if((value > maxValue-range) && (value < maxValue)){
+                    return 0.83333;
+                }else if(value == maxValue){
                     return 1;
                 }
             }

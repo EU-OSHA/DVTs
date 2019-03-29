@@ -63,16 +63,16 @@
         data="data">
       </dvt-map>
     </div>
-    <div class="map--gauss--block container">
+    <div class="map--gauss--block container" data-ng-repeat="value in minMaxValues">
       <dvt-bar-chart
         data-ng-cloak
         query="getGaussChartValues" cda="{{::cda }}"
         width="200" height="200" type="lines"
         orientation="vertical" axis-fixed-min="0"
-        listen-to="[minMaxValues.minValue, minMaxValues.maxValue, minMaxValues.range]"
+        listen-to="[value.min_value, value.max_value, value.range_value]"
         axis-fixed-max="20" step="{{step.chart1}}"
-        params="[['pDataset', datasetEurostat], ['pIndicator',pIndicator], ['pSubIndicator',pSubIndicator], ['pMinValue', minMaxValues.minValue],
-        ['pMaxValue', minMaxValues.maxValue], ['pRange', minMaxValues.range]]"
+        params="[['pDataset', datasetEurostat], ['pIndicator',pIndicator], ['pSubIndicator',pSubIndicator], 
+        ['pMinValue', value.min_value], ['pMaxValue', value.max_value], ['pRange', value.range_value]]"
         color-role="category" colors="[stories[0].color1]" id="5"
         base-axis-label-font="14px 'OpenSans-bold'"
         plots="stories[0].plots"
@@ -81,7 +81,6 @@
         values-mask="{value}"
         hoverable="false"
         ortho-axis-grid="false"
-        ortho-axis-visible="false"
         dimensions="stories[0].dimensions"
         multiple-label-colors="true"
         base-axis-label-text-baseline="top"
@@ -89,19 +88,12 @@
         panel-color="white"
         legend="false"
         is-maximized="true"
+        tooltip-enabled="false"
+        clickable="false"
+        base-axis-offset= "0"
       ></dvt-bar-chart>
     </div>  
   </section>
-
-    <div class="map--block center-text container">
-        <span><span data-ng-bind="minMaxValues.minValue + minMaxValues.range"></span>% | </span>
-        <span>
-          <span data-ng-bind="minMaxValues.minValue + minMaxValues.range"></span>% - <span data-ng-bind="minMaxValues.minValue + minMaxValues.range*2"></span>% | 
-        </span>
-        <span>
-          <span data-ng-bind="minMaxValues.maxValue - minMaxValues.range*2"></span>% - <span data-ng-bind="minMaxValues.maxValue - minMaxValues.range"></span>% | </span>
-        <span>More than <span data-ng-bind="minMaxValues.maxValue - minMaxValues.range"></span>%</span>
-      </div>
 
     <section class="survey--map--block-mobile">
       <div class="selected--tags-wrapper"></div>

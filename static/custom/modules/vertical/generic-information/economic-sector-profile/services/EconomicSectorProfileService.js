@@ -164,7 +164,6 @@ define (function (require) {
 				              	var panelWidth = this.root.width();
 				              	var barWidth = panelWidth/3.5;
 				              	var countryKey = scene.firstAtoms.category;
-                                $log.warn(scene);
 				              	if(panelWidth != 300){ //Default panel value
 									if(countryKey == pCountry1){
                                         if(scene.nextSibling.firstAtoms.category != pCountry2){

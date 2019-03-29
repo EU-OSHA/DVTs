@@ -337,7 +337,8 @@ define(function (require) {
                         axisFixedMax: attributes.axisFixedMax || 100,
                         axisTicks: attributes.axisTicks || false,
                         axisRule_strokeStyle: attributes.axisRule_strokeStyle || '',
-                        clickable: true,
+                        baseAxisOffset : attributes.baseAxisOffset || '',
+                        clickable: attributes.clickable === 'false' ? false : true,
                         clickAction: function (dataset) {
                         },
                         colorRole: "category",
@@ -351,6 +352,7 @@ define(function (require) {
                         selectable: attributes.selectable || false,
                         hoverable: attributes.hoverable == 'false' ? false: true,
                         // tooltip
+                        tooltipEnabled: attributes.tooltipEnabled === 'false' ? false : true,
                         tooltipClassName: 'light',
                         tooltipOpacity: 0.80,
                         /*Axis & Frames visivility*/
@@ -395,8 +397,6 @@ define(function (require) {
                         baseAxisLabel_text: !scope.isMaximized?scope.baseAxisLabelText:scope.baseAxisLabelLongText,
                         baseAxisLabel_visible: scope.baseAxisLabelVisible,
                         baseAxisLabel_textBaseline: attributes.baseAxisLabelTextBaseline || 'center',
-                        //baseAxisLabel_font: attributes.baseAxisLabelFont || 'normal 12px "OpenSans"',
-                        axisLabel_font: attributes.baseAxisLabelFont || 'normal 12px "OpenSans"',
                         baseAxisLabel_textStyle: attributes.baseAxisLabelTextStyle || 'gray' ,
                         baseAxisOverlappedLabelsMode: 'leave',
                         multiChartRole: attributes.multiChart,
