@@ -1174,6 +1174,7 @@
         border-bottom: 1px solid $aquamarine;
       }
     }
+    /**
     div.list--tag--block{
       > ul { 
         list-style: none;
@@ -1196,6 +1197,7 @@
         }
       }   
     }
+    **/
     div {
      
     }
@@ -1435,7 +1437,7 @@
     .buttons {
 
     }
-    button {
+    button{
       color:$white;
       background: url('/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/buttomArrow.png') no-repeat 95% 53% $aquamarine;
       font-family: "Oswald", sans-serif;
@@ -1443,6 +1445,12 @@
       border:0;
       float:right;
       margin:0 .5em;
+      &:hover{
+        background:$aquamarine-dark!important;
+      }
+      &:active, &:focus{
+        background: url('/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/buttomArrow.png') no-repeat 95% 53% $aquamarine !important;
+      }
     }
   }
   /*Width disclaimer*/
@@ -1472,6 +1480,12 @@
       float: none;
       margin: 20px 35%;
       width: 30%;
+      &:hover{
+        background:$aquamarine-dark!important;
+      }
+      &:active, &:focus{
+        background: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/buttomArrow.png) no-repeat 90% 56% $aquamarine !important;
+      }
     }
   }
 /**** END MODAL WINDOW ****/
