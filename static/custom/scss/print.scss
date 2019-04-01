@@ -1,391 +1,126 @@
+	@mixin scale-svg($w, $h) {
+	  -ms-transform: scale($w, $h);
+	  -webkit-transform: scale($w, $h);
+	  -moz-transform: scale($w, $h);
+	  transform: scale($w, $h);
+	}
 
-@mixin scale-svg($w, $h) {
-  -ms-transform: scale($w, $h);
-  -webkit-transform: scale($w, $h);
-  -moz-transform: scale($w, $h);
-  transform: scale($w, $h);
-}
 
 @media print {
+	.menu-tools-top, 
+	.bar-main-menu, 
+	.icon--card, 
+	.btn--block, .btn--card, .btn-default, 
+	.block--filter--wrapper, 
+	.see-more, .see-less, 
+	.social--network--nav, .footer-social-network, 
+	.footer-nav-accessibility{
+	  display: none !important;
+	}
+	a[href]:after {
+	  content: "";
+	}
+	.matrix--content--elements{
+		 samp{
+			display: inline !important;
+		}
+		.text-part{
+			display: block !important;
+			page-break-before: auto;
+		}	
+	}
+	.pagination--wrapper{
+		page-break-before: auto;
+	}
 
-  body {
 
-    padding-top: 0;
-  /*  margin: 1em .5cm !important;*/
-    width: 100% !important;
-    /*page-break-after: always;*/
-  }
-  @-moz-document url-prefix() {
-    html {
-      font-size:8px !important;
-    }
-    .body {
-      font-size: 8px !important;
-    }
-  }
-  .mainBody {
-    overflow: visible;
-    width: 100%;
-  }
-  .col-xs-12 {
-    width: 100% !important;
-  }
-  .eu-osha-logo {
-    margin-left: 0px;
-  }
-  /******* DISPLAY NONE FOR PRINT ********/
+	@page {
+   size: auto;
+  	margin: 10mm 25mm 25mm 25mm; 
+	}
+	h2{
+		font-size: 2.8rem !important;
+		margin: 0 0 1.5rem 0;
+	}
+	h3{
+		font-size: 2.2rem !important;
+		margin: 1.2rem 0 1.2rem 0;
+		color: $gray !important;
+	}
+	.container{
+		padding: 0;
+	}
 
-  #widthConsent,
-  #cookiesConsent,
-  .mainMenu,
-  #google_translate_element_wrapper,
-  #google_translate_element,
-  .socialWidget,
-  .path,
-  #footer-second-line,
-  .panel-footer div#block-menu-block-5,
-  .main-indicator > .links,
-  .bulletsItems,
-  .contextual-menu,
-  .policies a[role=button],
-  .back,
-  .footer-social-network,
-  .menu-tools-top,
-  .footer-nav-accessibility,
-  .country-details-content a.download-pdf,
-  .arrow-pane,
-  .gtranslator-msg,
-  .social-network{
-    display: none !important;
-  }
-  /******* END DISPLAY NONE FOR PRINT ********/
-
-  a:after {
-    content: " " !important;
-    font-family: "Arial";
-    color: #AAA;
-    display: block;
-    font-size: 1rem;
-    font-style: normal;
-    text-decoration: none !important;
-    word-break: break-all;
-  }
-  .ilo-header {
-    #home-cover{
-      height: auto !important;
-    }
-    #containerMenu {
-      -webkit-box-shadow: 0px 2px 2px 0px #cccccc;
-      -moz-box-shadow: 0px 2px 2px 0px #cccccc;
-      box-shadow: 0px 2px 2px 0px #cccccc;
-      z-index: 100;
-      background: $colorWhite;
-      float: none;
-      width: 100%;
-      position: relative;
-      top: 0;
-    }
-    .page-header-wrapper{
-      margin-top: 1cm;
-      .page-header {
+  /** WIDTH CARDS  **/
+    .w2, .w3, .w4, .w4{
+      .card--block, .card--block--rounded, .card--block--chart{
+        width:100%;
+        text-align: left;
+        padding: 0rem;
         margin: 0;
+        //page-break-inside : avoid;
+      }
+      .card--block--rounded{
+        width:100%;
+        text-align: left;
+        padding: 0rem;
+        margin: 0;
+        //page-break-inside : avoid;
+      }
+      .card--block--chart{
+        width:100%;
+        text-align: left;
+        padding: 0rem;
+        margin: 0;
+        //page-break-inside : avoid;
       }
     }
-  }
-  .section-carrousel {
-    padding: 0px 0 15px;
-    height: auto;
-    min-height: auto;
-    #carouselHome {
-      .carousel-inner {
-        position: relative;
-        overflow: hidden;
-        width: 100%;
-        text-align: center;
-        > .item {
-          > img{
-            display: none;
-          }
-          .carousel-caption{
-            position: relative;
-            left: 0;
-            right: 0;
-            padding: 0;
-            font-size: 2rem !important;
-            font-style: italic;
-            font-weight: 300;
-            width: 80%;
-            margin: auto;
-          }
-        }
-      }
-    } 
-  }
-  .carousel-indicators{
-    li{
-      display: none;
-      width: 100%;
-      &.active{
-        display: block !important;
-      }
-    }
-  }
-  .carousel-control{
-    display: none;
-  }
-  div[id^=dvt_bar_chart]{
-    //zoom: 0.928;
-    transform: scale(0.96) translateX(-25px);
-    -webkit-transform: scale(0.928) translateX(-25px);
-    -moz-transform: scale(0.728) translateX(-150px);
-  }
-  .chart-compared-item   div[id^=dvt_bar_chart]{
-    //zoom: 0.928;
-    transform: scale(0.96) translateX(-25px);
-    -webkit-transform: scale(0.928) translateX(-25px);
-    -moz-transform: scale(0.928) translateX(-25px);
-  }
-  .chart-legend {
-    padding: 20px 20px !important;
-  }
-  .compare-buttons {
-    display: none;
-  }
-  .copyright{
-    text-align: center !important;
-  }
-  /*NATINAL STRATEGIES*/
-  .additional-resources {
-      padding: 0;
-      .pagination-results {
-          padding: 0 !important;
+  /** END WIDTH CARDS  **/
 
-      }
-    .ar-item {
-      width: 50% !important;
-      padding: 0;
-      page-break-inside: avoid;
-      margin-bottom: 0;
+	.bar-header{
+		display: block;
+		position: relative !important;
+		.header--top{
+			display: block;
+		}
+	} 
+	.home-cover{
+		border-top: 0px;
+		height: auto;
+	}
+	.advice--block{
+		top: 0;
+		&.advice--block-not-home{
+  		padding: 2rem 1.5rem;
+		}
+		.title--section{
+			font-size: 2.4rem;
+			font-family: 'Oswald-light';
+			margin: 2rem 0;
+			padding: 2rem 8rem;
+		  border-top: 1px solid $gray-light;
+		  border-bottom: 1px solid $gray-light;
+			&:before{
+				content:'"';
+			}
+			&:after{
+				content:'"';
+			}
+		}		
+	}
 
-        }
-    .pagination{
-      display:none;
-      height: 0 !important;
-    }
+	.title-section{
+		margin: 1.5rem 0;
+	}
+	.section--page {
+		padding: 0;
+	}
+	.selected--tags-wrapper{
+		.selected-tag{
+			border: 1px solid #666;
+		}
+	} 
 
-    .ar-item {
-      width: 33% !important;
-      padding: 0;
-      margin-top: 1em;
-    }
-  }
-  .affix {
-    position: relative;
-  }
-  /*HOME*/
-  .article-background,.home-spotlight article{
-    min-height: auto !important;
-    min-height: inherit !important;
-  }
-  .article-more-info{
-    display: none;
-  }
-  .carousel-indicators{
-    display: none;
-  }
-
-  /*Compare Member States*/
-
-  .countries-comparison{
-
-      .story-combo-compared form{
-        width: 50% !important;
-
-        .second-comparator{
-          float: left !important;
-        }
-      }
-      .chart-compared-item{
-        padding: 0 !important;
-      }
-
-      .compared-icon{
-        width: 0 !important;
-      }
-    .second-comparator,.first-comparator{
-        width:100% !important;
-        margin:0 !important;
-      }
-
-
-  }
-
-/** eu countries comparasion **/
-  .osha-global-estimates-wrapper{
-    .indicators-wrapper{
-      border:0px;
-      .carousel-indicators{
-        display: block;
-        li{
-          &.active{
-            text-align: center;
-          }
-          .fa {
-            margin: 0 15px;
-            font-size: 2.2rem;
-            min-height: 5rem;
-            float: none;
-          }
-        }
-      }
-    }
-
-  }
-
-
-  #country-card-structure{
-    .policies{
-      float: none !important;
-      .policy-items{
-        .policy-maps{
-          width: 25% !important;
-          float: left;
-        }
-        .policy-country{
-          width: 75% !important;
-          float: left;
-        }
-        .policy-content {
-          samp {
-            display: inline !important;
-          }
-          span.see-more{
-            display: none !important;
-          }
-        }
-        .more-wrapper{
-          display: none !important;
-        }
-      }
-    }
-  }
-
-  /* matrix countries */
-  .countries-filters{
-    display: block !important;
-    -webkit-column-count: 1; /* Chrome, Safari, Opera */
-    -moz-column-count: 1; /* Firefox */
-    column-count: 1;
-    .filters{
-      width: 25%;
-      display: inline-block;
-    }
-  }
-  .country-profiles{
-    .content-countries-profiles {
-      margin-top: 4rem;
-      clear: both;
-      display: block !important;
-      flex-wrap: inherit;
-      .ar-item{
-        width:25% !important;
-        border: 0 !important;
-        outline: 0 !important;
-        display: inline-block !important;
-        page-break-inside: avoid !important;
-        .mg-sm-6x {
-          font-size: 6em;
-        }
-        .resources-item .links a .fa{
-          display: none !important;
-        }
-      }
-    }
-  }
-
-  .select2-container{
-    .select2-choice{
-      border: none !important;
-      font-size:18px;
-      top: -5px;
-      position: relative;
-      .select2-arrow{
-        border: none !important;
-      }
-    }
-  }
-  .story-combo-compared .first-comparator .select2-container,
-  .story-combo-compared .first-comparator .select2-choice,
-  .select2-container .select2-choice > .select2-chosen{
-    color: #f6a400 !important;
-  }
-  .country-details-tabs{
-    li{
-      display: none;
-      &.active{
-        display: block !important;
-        width: 100% !important;
-        height: auto !important;
-        a{
-          font-size: 34px !important;
-          padding: 10px !important;
-          height: auto !important;
-        }
-      }
-    }
-  }
-  .country-details-content{
-    padding:0;
-    .tab-pane .country1{
-      margin-bottom: 10rem;
-      display: block;
-      width: 100%;
-      float: left;
-      .mg{
-        font-size: 7em !important;
-      }
-    }
-    .tab-pane .country2{
-      margin-bottom:0rem;
-      display: block;
-      width: 100%;
-      float: left;
-      .mg{
-        font-size: 7em !important;
-      }
-    }
-    .country-description{
-      width:75% !important;
-      padding:0;
-      float: left;
-    }
-    .description-country1 {
-      padding: 0;
-      width:75%;
-      float: left;
-      top: 0;
-    }
-    .description-country2 {
-      padding: 0;
-      width:75%;
-      float: left;
-      top: 0;
-    }
-    .country-shape{
-      width: 25% !important;
-      float: left;
-    }
-  }
-
-
-  .about-estimates{
-    margin:0;
-    br {
-      //font-size: 2rem;
-    }
-  }
-
-  .footer-elements{
-    display: none !important;
-  }
 }
+
+

@@ -71,7 +71,9 @@
             "pentaho-path": "/plugin/cda/api/doQuery?&path=osha-dvt-barometer/dashboards/",
             "cda-path": "osha-dvt-barometer/dashboards/",
             "cda": {
-                "barometer": "barometerdash.cda"                
+                "barometer": "barometerdash.cda",
+                "infosystem": "infosystemdash.cda",
+                "countryCard": "countrycardata.cda"
             }
         }
     }

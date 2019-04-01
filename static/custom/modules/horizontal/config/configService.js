@@ -22,6 +22,7 @@ define(function (require) {
     var horizontalPathDiretive = horizontalPath + "directives/";
 
     var i18n = require('json!horizontal/model/literals');
+    var datasets = require('json!horizontal/model/datasets');
 
     /*gtranslator info*/
     setTimeout (function() {
@@ -78,6 +79,18 @@ define(function (require) {
     }
 
     return {
+
+        /**
+         * @ngdoc method
+         * @name dvt.configModule.configService#getCountriesDataPath
+         * @param {string} carl is awesome
+         * @methodOf dvt.configModule.configService
+         * @description
+         * My Description rules
+         */
+        getCountriesDataPath:function() {
+            return dataPath + configuration.paths.data.cda.countryCard;
+        },
 
         /**
          * @ngdoc method
@@ -296,6 +309,10 @@ define(function (require) {
             return dataPath + configuration.paths.data.cda.barometer;
         },
 
+        getInfosystemDataPath:function() {
+            return dataPath + configuration.paths.data.cda.infosystem;
+        },
+
         /**
          * @ngdoc method
          * @name dvt.configModule.configService#getDvtDataPath
@@ -305,6 +322,10 @@ define(function (require) {
          */
         getBarometerCda:function() {
             return  configuration.paths.data['cda-path'] + configuration.paths.data.cda.barometer;
+        },
+
+        getInfosystemCda:function() {
+            return configuration.paths.data['cda-path'] + configuration.paths.data.cda.infosystem;
         },
 
         // ----------------------------------
@@ -321,6 +342,21 @@ define(function (require) {
          */
         getLiterals: function () {
             return i18n;
+        },
+
+        // ----------------------------------
+        //  Datasets
+        // ----------------------------------
+
+        /**
+         * @ngdoc method
+         * @name dvt.configModule.configService#getDatasets
+         * @methodOf dvt.configModule.configService
+         * @description
+         * Get the Datasets list
+         */
+        getDatasets: function () {
+            return datasets;
         },
 
         // ----------------------------------

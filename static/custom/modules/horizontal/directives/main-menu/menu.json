@@ -7,8 +7,125 @@
         "tabindex":"1"
     },
     {
-        "id": "about",
-        "name":"L64",
+        "id": "generic-information",
+        "name":"L22001",
+        "target":"_self",
+        "tabindex":"2",
+        "levels":[
+            {
+                "id":"osh-authorities",
+                "name":"L22002",
+                "sref":"osh-authorities",
+                "accesskey":"C"
+            },{
+                "id":"economic-sector-profile",
+                "name":"L22003",
+                "sref":"economic-sector-profile",
+                "accesskey":"C"
+            },{
+                "id":"workforce-profile",
+                "name":"L22004",
+                "sref":"workforce-profile",
+                "accesskey":"C"
+            }
+        ]
+
+    },
+    {
+        "id": "osh-steering",
+        "name":"L22005",
+        "target":"osh-steering",
+        "tabindex":"3",
+        "levels":[
+            {
+                "id":"regulation",
+                "name":"L22006",
+                "sref":"regulation",
+                "accesskey":"C"
+            },
+            {
+                "id":"national-strategies",
+                "name":"L22007",
+                "sref":"national-strategies",
+                "accesskey":"X"
+            },
+            {
+                "id":"social-dialogue",
+                "name":"L22008",
+                "sref":"social-dialogue",
+                "accesskey":"X"
+            }
+        ]
+    },
+    {
+        "id": "osh-outcome",
+        "name":"L22009",
+        "sref": "osh-outcome",
+        "accesskey": "T",
+        "tabindex":"4",
+        "levels":[
+            {
+                "id":"work-accidents",
+                "name":"L22010",
+                "sref":"work-accidents",
+                "accesskey":"C"
+            },
+            {
+                "id":"health-perception",
+                "name":"L22011",
+                "sref":"health-perception",
+                "accesskey":"X"
+            },
+            {
+                "id":"osh-culture",
+                "name":"L22012",
+                "sref":"osh-culture",
+                "accesskey":"X"
+            },
+            {
+                "id":"working-conditions",
+                "name":"L22013",
+                "sref":"working-conditions",
+                "accesskey":"X"
+            },
+            {
+                "id":"prevention-companies",
+                "name":"L22014",
+                "sref":"prevention-companies",
+                "accesskey":"X"
+            },
+            {
+                "id":"worker-involvement",
+                "name":"L22015",
+                "sref":"worker-involvement",
+                "accesskey":"X"
+            }
+        ]
+
+    },
+    {
+        "id": "osh-infrastructure",
+        "name":"L22016",
+        "target":"osh-infrastructure",
+        "tabindex":"3",
+        "levels":[
+            {
+                "id":"enforcement-capacity",
+                "name":"L22017",
+                "sref":"enforcement-capacity",
+                "accesskey":"C"
+            },
+            {
+                "id":"osh-static",
+                "name":"L22018",
+                "sref":"osh-static-survey-research",
+                "accesskey":"X"
+            }
+        ]
+    },
+    {
+        "id": "about-tool",
+        "name":"L22019",
         "sref": "about-tool",
         "accesskey": "T",
         "tabindex":"4"

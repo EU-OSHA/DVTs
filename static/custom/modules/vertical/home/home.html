@@ -1,56 +1,229 @@
 <!-- home.html -->
 <dvt-dashboard promises="promises" parameters="dashboard.parameters">
-	<div class="page-content">
-		<section class="container-fluid section-carrousel">
-			<div id="carouselHome" class="carousel slide container" data-ride="carousel">
-				<!-- Wrapper for slides -->
-				<div class="carousel-inner">
-					<div class="item" ng-class="{'active': $index == 0 }" data-ng-repeat="slide in slides">
-						<img data-ng-src="{{slide.image}}" alt="{{slide.alt}}">
-						<div class="carousel-caption">
-							<p data-ng-bind-html="slide.text"></p>
-						</div>
-					</div>
-				</div>
 
-				<!-- Left and right controls -->
-				<a class="left carousel-control" href="#carouselHome" data-slide="prev" data-ng-non-bindable>
-					<i class="fa fa-chevron-left prev " aria-hidden="true"></i>
-					<span class="sr-only">Previous</span>
-				</a>
-				<a class="right carousel-control" href="#carouselHome" data-slide="next" data-ng-non-bindable>
-					<i class="fa fa-chevron-right next" aria-hidden="true"></i>
-					<span class="sr-only">Next</span>
-				</a>
-				<!-- Indicators -->
-				<ol class="carousel-indicators">
-					<li data-target="#carouselHome" data-slide-to="0" class="active"></li>
-					<li data-target="#carouselHome" data-slide-to="1"></li>
-					<li data-target="#carouselHome" data-slide-to="2"></li>
-					<li data-target="#carouselHome" data-slide-to="3"></li>
-					<li data-target="#carouselHome" data-slide-to="4"></li>
-				</ol>
-			</div>
-		</section>
-		<section class="container home-spotlight row">
-			<article  data-ng-click="goto('accidents-trends')" role="button" class="col-xs-12 col-md-12 col-lg-4">
-				<a ui-sref='accidents-trends'>
-					<div class="article-background col-xs-12 col-md-12 col-lg-10 col-lg-offset-1">
-						<h2 data-ng-bind-html="i18n.L10"></h2>
-						<p data-ng-bind-html="i18n.L13" data-ng-click="$event.stopPropagation()"></p>
-						<p class="article-more-info"><img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/home/homeArrow.png" title="More info"></p>
-					</div>
-				</a>
-			</article>
-			<article  data-ng-click="goto('country-profiles')" role="button" class="col-xs-12 col-md-12 col-lg-4">
-				<a ui-sref='country-profiles'>
-					<div class="article-background col-xs-12 col-md-12 col-lg-10 col-lg-offset-1">
-						<h2 data-ng-bind-html="i18n.L11"></h2>
-						<p data-ng-bind-html="i18n.L14" data-ng-click="$event.stopPropagation()"></p>
-						<p class="article-more-info"><img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/home/homeArrow.png" title="More info"></p>
-					</div>
-				</a>
-			</article>
-		</section>
-	</div>
+	<section class="advice--block advice-home background-main-light container-fluid section--page">
+	    <div class="container">
+	        <p class="title--section main-color" data-ng-bind="i18n.L22021"></p>
+	        <p class="btn--block center-text"><a data-ui-sref="about-tool" class="btn-default btn-main-color" data-ng-bind="i18n.L22022"></a></p>
+	    </p>
+	</section>
+
+
+	<section class="container section--page">
+	    <h2 class="title-section second-color" data-ng-bind="i18n.L22001"></h2>
+	    <section class="card--grid xxs-w1 w3 center-text">
+	        <div class="card--block">
+	            <div class="icon--card forum-icon"></div>
+	            <h3 class="title--card main-color" data-ng-bind="i18n.L22002"></h3>
+	            <p data-ng-bind="i18n.L22025"></p>
+	            <p class="btn--card--block"><a ui-sref="osh-authorities" class="btn--card main-color" data-ng-bind-html="i18n.L22026"></a></p>
+	        </div>
+	        <div class="card--block">
+	            <div class="icon--card economic-chart-icon"></div>
+	            <h3 class="title--card main-color" data-ng-bind="i18n.L22003"></h3>
+	            <p data-ng-bind="i18n.L22028"></p>
+	            <p class="btn--card--block"><a ui-sref="economic-sector-profile" class="btn--card main-color" data-ng-bind-html="i18n.L22026"></a></p>
+	        </div>
+	        <div class="card--block ">
+	            <div class="icon--card people-group-icon"></div>
+	            <h3 class="title--card main-color" data-ng-bind="i18n.L22004"></h3>
+	            <p data-ng-bind="i18n.L22030"></p>
+	            <p class="btn--card--block"><a ui-sref="workforce-profile" class="btn--card main-color" data-ng-bind-html="i18n.L22026"></a></p>
+	        </div>
+	    </section>
+	</section>
+
+
+	<section class="container-fluid background-gray section--page">
+	    <div class="container">
+	        <h2 class="title-section main-color" data-ng-bind="i18n.L22005"></h2>
+	        <section class="card--grid xxs-w1 w3 center-text">
+	            <div class="card--block--rounded">
+	                <div class="icon--card regulation-icon"></div>
+	                <h3 class="title--card second-color" data-ng-bind="i18n.L22006"></h3>
+	                <p data-ng-bind="i18n.L22033"></p>
+	                <div class="btn-group-card">
+	                    <form>
+	                        <label data-ng-bind-html="i18n.L22034"></label>
+	                        <div class="select-default">
+	                            <select class="" ng-model="regulationCountrySelected">
+	                                <option data-ng-bind="i18n.L22035" value="0"></option>
+	                                <option data-ng-repeat='country in regulationsCountries' data-ng-bind="i18n['L'+country.country]" ng-value="country.country_code"></option>
+	                            </select>
+	                        </div>
+	                    </form>
+	                    <p class="btn--block-full left-text">
+	                    	<a ng-if="regulationCountrySelected == '0'" ui-sref="regulation" class="btn-default btn-main-color btn-full" data-ng-bind="i18n.L22036"></a>
+	                    	<a ng-if="regulationCountrySelected != '0'" ng-click="goTo()" class="btn-default btn-main-color btn-full" data-ng-bind="i18n.L22036"></a>
+	                    </p>
+	                </div>
+	            </div>
+	            <div class="card--block--rounded">
+	                <div class="icon--card national-icon"></div>
+	                <h3 class="title--card second-color" data-ng-bind="i18n.L22007"></h3>
+	                <p data-ng-bind="i18n.L22038"></p>
+	                <div class="btn-group-card">
+	                    <form>
+	                        <label data-ng-bind-html="i18n.L22034"></label>
+	                        <div class="select-default">                            
+	                            <select class="">
+	                                <option data-ng-bind="i18n.L22035"></option>
+	                                <option data-ng-repeat='country in strategiesCountries' data-ng-bind="i18n['L'+country.country]"></option>
+	                            </select>
+	                        </div>
+	                    </form>
+	                    <p class="btn--block-full left-text"><a href="#" class="btn-default btn-main-color btn-full" data-ng-bind="i18n.L22039"></a></p>
+	                </div>
+	            </div>
+	            <div class="card--block--rounded ">
+	                <div class="icon--card dialogue-icon"></div>
+	                <h3 class="title--card second-color" data-ng-bind="i18n.L22008"></h3>
+	                <p data-ng-bind="i18n.L22041"></p>
+	                <div class="carousel--card">
+	                    <h4><span class="flag"></span><span data-ng-bind-html="i18n.L22042"></span></h4>
+	                    
+	                    <div id="carouselHome" class="carousel--card--block carousel slide" ng-non-bindable data-ride="carousel">
+	                        <ol class="carousel-indicators">
+	                          <li data-target="#carouselHome" data-slide-to="0" class="active" ng-non-bindable ></li>
+	                          <li data-target="#carouselHome" data-slide-to="1" ng-non-bindable ></li>
+	                          <li data-target="#carouselHome" data-slide-to="2" ng-non-bindable ></li>
+	                          <li data-target="#carouselHome" data-slide-to="3" ng-non-bindable ></li>
+	                        </ol>
+
+	                        <ul class="carousel-inner">
+	                          <li class="item active">
+	                            <p class="carousel--text--block">
+	                                <a href="javascript:">
+	                                <span class="number-text second-color">26,1<span class="number-symbol">%</span></span>
+	                                <span class="text-area left-text main-color">Joint consultative, employee forum or similar</span>
+	                                </a>
+	                            </p>
+	                          </li>
+	                          <li class="item">
+	                            <p class="carousel--text--block">
+	                                <a href="javascript:">
+	                                <span class="number-text second-color">NN.X<span class="number-symbol">%</span></span>
+	                                <span class="text-area left-text main-color">Joint consultative, employee forum or similar</span>
+	                                </a>
+	                            </p>
+	                          </li>
+	                          <li class="item">
+	                            <p class="carousel--text--block">
+	                                <a href="javascript:">
+	                                <span class="number-text second-color">YY.X<span class="number-symbol">%</span></span>
+	                                <span class="text-area left-text main-color">Joint consultative, employee forum or similar</span>
+	                                </a>
+	                            </p>
+	                          </li>
+	                          <li class="item">
+	                            <p class="carousel--text--block">
+	                                <a href="javascript:">
+	                                <span class="number-text second-color">ZZ.X<span class="number-symbol">%</span></span>
+	                                <span class="text-area left-text main-color">Joint consultative, employee forum or similar</span>
+	                                </a>
+	                            </p>
+	                          </li>
+	                        </ul>
+
+	                        <a class="left carousel-control main-color" href="#carouselHome" ng-non-bindable data-slide="prev">
+	                          <i class="fa fa-angle-left" aria-hidden="true"></i>
+	                          <span class="sr-only">Previous</span>
+	                        </a>
+	                        <a class="right carousel-control main-color" href="#carouselHome" ng-non-bindable data-slide="next">
+	                          <i class="fa fa-angle-right" aria-hidden="true"></i>
+	                          <span class="sr-only">Next</span>
+	                        </a>
+	                    </div>
+											
+	                    <p class="btn--block-full left-text"><a href="#" class="btn-default btn-main-color btn-full" data-ng-bind="i18n.L22047"></a></p>
+	                    <!--
+	                    <script type="text/javascript">
+	                        $('#carouselHome').carousel().swipeCarousel({
+	                          // low, medium or high
+	                          sensitivity: 'high'
+	                        });
+	                    </script>
+	                  -->
+	                </div>
+	            </div>
+	        </section>
+	    </div>
+	</section>
+
+
+	<section class="container section--page">
+	    <h2 class="title-section second-color" data-ng-bind="i18n.L22009"></h2>
+	    <section class="card--grid xxs-w1 w3 center-text">
+	        <div class="card--block">
+	            <div class="icon--card work-accidents-icon"></div>
+	            <h3 class="title--card main-color" data-ng-bind="i18n.L22010"></h3>
+	            <p data-ng-bind="i18n.L22050"></p>
+	            <p class="btn--card--block"><a href="#" class="btn--card main-color" data-ng-bind-html="i18n.L22026"></a></p>
+	        </div>
+	        <div class="card--block">
+	            <div class="icon--card health-icon"></div>
+	            <h3 class="title--card main-color" data-ng-bind="i18n.L22011"></h3>
+	            <p data-ng-bind="i18n.L22052"></p>
+	            <p class="btn--card--block"><a href="#" class="btn--card main-color" data-ng-bind-html="i18n.L22026"></a></p>
+	        </div>
+	        <div class="card--block ">
+	            <div class="icon--card culture-icon"></div>
+	            <h3 class="title--card main-color" data-ng-bind="i18n.L22012"></h3>
+	            <p data-ng-bind="i18n.L22054"></p>
+	            <p class="btn--card--block"><a href="#" class="btn--card main-color" data-ng-bind-html="i18n.L22026"></a></p>
+	        </div>
+	        <div class="card--block">
+	            <div class="icon--card working-conditons-icon"></div>
+	            <h3 class="title--card main-color" data-ng-bind="i18n.L22013"></h3>
+	            <p data-ng-bind="i18n.L22056"></p>
+	            <p class="btn--card--block"><a href="#" class="btn--card main-color" data-ng-bind-html="i18n.L22026"></a></p>
+	        </div>
+	        <div class="card--block ">
+	            <div class="icon--card prevention-icon"></div>
+	            <h3 class="title--card main-color" data-ng-bind="i18n.L22014"></h3>
+	            <p data-ng-bind="i18n.L22058"></p>
+	            <p class="btn--card--block"><a href="#" class="btn--card main-color" data-ng-bind-html="i18n.L22026"></a></p>
+	        </div>
+	        <div class="card--block">
+	            <div class="icon--card workers-icon"></div>
+	            <h3 class="title--card main-color" data-ng-bind="i18n.L22015"></h3>
+	            <p data-ng-bind="i18n.L22060"></p>
+	            <p class="btn--card--block"><a href="#" class="btn--card main-color" data-ng-bind-html="i18n.L22026">
+	            </a></p>
+	        </div>
+	    </section>
+	</section>
+
+
+	<section class="container-fluid background-gray section--page">
+	    <div class="container">
+	        <h2 class="title-section main-color" data-ng-bind="i18n.L22016"></h2>
+	        <section class="card--grid xxs-w1 w2 center-text">
+	            <div class="card--block--rounded">
+	                <div class="icon--card enforcement-icon"></div>
+	                <h3 class="title--card second-color" data-ng-bind="i18n.L22017"></h3>
+	                <p data-ng-bind="i18n.L22063"></p>
+	                <p class="left-text"><a href="#" class="btn--card main-color" data-ng-bind-html="i18n.L22026"></a></p>
+	            </div>
+	            <div class="card--block--rounded">
+	                <div class="icon--card statistics-icon"></div>
+	                <h3 class="title--card second-color" data-ng-bind="i18n.L22018"></h3>
+	                <p data-ng-bind="i18n.L22065"></p>
+	                <p class="left-text"><a href="#" class="btn--card main-color" data-ng-bind-html="i18n.L22066"></a></p>
+	                <div class="btn-group-card left-text">
+	                    <form>
+	                        <label data-ng-bind-html="i18n.L22034"></label>
+	                        <div class="select-default">                            
+	                            <select class="">
+	                                <option data-ng-bind="i18n.L22035"></option>
+	                                <option data-ng-repeat='country in capacitiesCountries' data-ng-bind="i18n['L'+country.country]"></option>
+	                            </select>
+	                        </div>
+	                    </form>
+	                    <p class="btn--block-full left-text"><a href="#" class="btn-default btn-main-color btn-full" data-ng-bind="i18n.L22067"></a></p>
+	                </div>
+	            </div>
+	        </section>
+	    </div>
+	</section>
 </dvt-dashboard>

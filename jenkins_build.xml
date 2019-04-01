@@ -59,7 +59,7 @@
     -->
 
     <property name="solution_name"      value="osha-dvt-barometer"/>
-    <property name="db_name"            value="osha_dvt_barometer"/>
+    <property name="db_name"            value="osha_dvt"/>
 
     <tstamp>
         <format property="ts" pattern="yyyyMMdd-HHmmss"/>

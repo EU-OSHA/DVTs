@@ -2,13 +2,13 @@
   "home": null,
 
   "_SECCTION-ABOUT-TOOL": null,
-  "about-tool": "L64",
+  "about-tool": "L22022",
 
   "_SECCTION-FOOTER-PAGES": null,
-  "site-map": "L15",
-  "accessibility": "L17",
-  "privacy-policy":"L18",
-  "legal-notice":"L19",
+  "site-map": "L294",
+  "accessibility": "L296",
+  "privacy-policy":"L297",
+  "legal-notice":"L298",
 
   "search": "L395",
 
@@ -16,5 +16,8 @@
   "default-title":"L62",
   "pages-title":"L62",
 
-  "404": "L63"
+  "404": "L63",
+
+  "_SECCTION-GENERIC-INFORMATION": null,
+  "osh-authorities": "L396"
 }

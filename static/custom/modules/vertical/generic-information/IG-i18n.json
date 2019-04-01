@@ -1,0 +1,185 @@
+{
+  "pagination": {
+    "items":[
+
+        {
+          "id": 1,
+          "title": "Austria",
+          "image": "/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-infosystem/static/custom/img/additional-resources/img/Austria_thumb.png",
+          "alt": "Austria",
+          "openLink": "/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-infosystem/static/custom/img/additional-resources/img/Austria.jpg",
+          "downloadLink": "/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-infosystem/static/custom/img/additional-resources/pdf/National-Strategies-Mapping_2017_Austria.pdf"
+        },
+        {
+          "id": 2,
+          "title": "Belgium",
+          "image": "/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-infosystem/static/custom/img/additional-resources/img/Belgium_thumb.png",
+          "alt": "Belgium",
+          "openLink": "/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-infosystem/static/custom/img/additional-resources/img/Belgium.jpg",
+          "downloadLink": "/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-infosystem/static/custom/img/additional-resources/pdf/National-Strategies-Mapping_2017_Belgium.pdf"
+        },
+        {
+          "id": 3,
+          "title": "Cyprus",
+          "image": "/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-infosystem/static/custom/img/additional-resources/img/Cyprus_thumb.png",
+          "alt": "Cyprus",
+          "openLink": "/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-infosystem/static/custom/img/additional-resources/img/Cyprus.jpg",
+          "downloadLink": "/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-infosystem/static/custom/img/additional-resources/pdf/National-Strategies-Mapping_2017_Cyprus.pdf"
+        },
+        {
+          "id": 4,
+          "title": "Czech Republic",
+          "image": "/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-infosystem/static/custom/img/additional-resources/img/CzechRepublic_thumb.png",
+          "alt": "Czech Republic",
+          "openLink": "/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-infosystem/static/custom/img/additional-resources/img/CzechRepublic.jpg",
+          "downloadLink": "/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-infosystem/static/custom/img/additional-resources/pdf/National-Strategies-Mapping_2017_Czech-Rep.pdf"
+        },
+        {
+          "id": 5,
+          "title": "Denmark",
+          "image": "/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-infosystem/static/custom/img/additional-resources/img/Denmark_thumb.png",
+          "alt": "Denmark",
+          "openLink": "/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-infosystem/static/custom/img/additional-resources/img/Denmark.jpg",
+          "downloadLink": "/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-infosystem/static/custom/img/additional-resources/pdf/National-Strategies-Mapping_2017_Denmark.pdf"
+        },
+        {
+          "id": 6,
+          "title": "Estonia",
+          "image": "/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-infosystem/static/custom/img/additional-resources/img/Estonia_thumb.png",
+          "alt": "Estonia",
+          "openLink": "/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-infosystem/static/custom/img/additional-resources/img/Estonia.jpg",
+          "downloadLink": "/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-infosystem/static/custom/img/additional-resources/pdf/National-Strategies-Mapping_2017_Estonia.pdf"
+        },
+        {
+          "id": 7,
+          "title": "Finland",
+          "image": "/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-infosystem/static/custom/img/additional-resources/img/Finland_thumb.png",
+          "alt": "Finland",
+          "openLink": "/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-infosystem/static/custom/img/additional-resources/img/Finland.jpg",
+          "downloadLink": "/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-infosystem/static/custom/img/additional-resources/pdf/National-Strategies-Mapping_2017_Finland.pdf"
+        },
+        {
+          "id": 8,
+          "title": "France",
+          "image": "/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-infosystem/static/custom/img/additional-resources/img/France_thumb.png",
+          "alt": "France",
+          "openLink": "/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-infosystem/static/custom/img/additional-resources/img/France.jpg",
+          "downloadLink": "/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-infosystem/static/custom/img/additional-resources/pdf/National-Strategies-Mapping_2017_France.pdf"
+        },
+        {
+          "id": 9,
+          "title": "Germany",
+          "image": "/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-infosystem/static/custom/img/additional-resources/img/Germany_thumb.png",
+          "alt": "Germany",
+          "openLink": "/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-infosystem/static/custom/img/additional-resources/img/Germany.jpg",
+          "downloadLink": "/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-infosystem/static/custom/img/additional-resources/pdf/National-Strategies-Mapping_2017_Germany.pdf"
+        },
+        {
+          "id": 10,
+          "title": "Hungary",
+          "image": "/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-infosystem/static/custom/img/additional-resources/img/Hungary_thumb.png",
+          "alt": "Hungary",
+          "openLink": "/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-infosystem/static/custom/img/additional-resources/img/Hungary.jpg",
+          "downloadLink": "/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-infosystem/static/custom/img/additional-resources/pdf/National-Strategies-Mapping_2017_Hungary.pdf"
+        },
+        {
+          "id": 11,
+          "title": "Ireland",
+          "image": "/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-infosystem/static/custom/img/additional-resources/img/Ireland_thumb.png",
+          "alt": "Ireland",
+          "openLink": "/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-infosystem/static/custom/img/additional-resources/img/Ireland.jpg",
+          "downloadLink": "/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-infosystem/static/custom/img/additional-resources/pdf/National-Strategies-Mapping_2017_Ireland.pdf"
+        },
+        {
+          "id": 12,
+          "title": "Italy",
+          "image": "/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-infosystem/static/custom/img/additional-resources/img/Italy_thumb.png",
+          "alt": "Italy",
+          "openLink": "/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-infosystem/static/custom/img/additional-resources/img/Italy.jpg",
+          "downloadLink": "/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-infosystem/static/custom/img/additional-resources/pdf/National-Strategies-Mapping_2017_Italy.pdf"
+        },
+        {
+          "id": 13,
+          "title": "Latvia",
+          "image": "/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-infosystem/static/custom/img/additional-resources/img/Latvia_thumb.png",
+          "alt": "Latvia",
+          "openLink": "/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-infosystem/static/custom/img/additional-resources/img/Latvia.jpg",
+          "downloadLink": "/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-infosystem/static/custom/img/additional-resources/pdf/National-Strategies-Mapping_2017_Latvia.pdf"
+        },
+        {
+          "id": 14,
+          "title": "Lithuania",
+          "image": "/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-infosystem/static/custom/img/additional-resources/img/Lithuania_thumb.png",
+          "alt": "Lithuania",
+          "openLink": "/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-infosystem/static/custom/img/additional-resources/img/Lithuania.jpg",
+          "downloadLink": "/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-infosystem/static/custom/img/additional-resources/pdf/National-Strategies-Mapping_2017_Lithuania.pdf"
+        },
+        {
+          "id": 15,
+          "title": "Malta",
+          "image": "/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-infosystem/static/custom/img/additional-resources/img/Malta_thumb.png",
+          "alt": "Malta",
+          "openLink": "/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-infosystem/static/custom/img/additional-resources/img/Malta.jpg",
+          "downloadLink": "/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-infosystem/static/custom/img/additional-resources/pdf/National-Strategies-Mapping_2017_Malta.pdf"
+        },
+        {
+          "id": 16,
+          "title": "The Netherlands",
+          "image": "/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-infosystem/static/custom/img/additional-resources/img/Netherlands_thumb.png",
+          "alt": "The Netherlands",
+          "openLink": "/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-infosystem/static/custom/img/additional-resources/img/Netherlands.jpg",
+          "downloadLink": "/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-infosystem/static/custom/img/additional-resources/pdf/National-Strategies-Mapping_2017_Netherlands.pdf"
+        },
+        {
+          "id": 17,
+          "title": "Poland",
+          "image": "/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-infosystem/static/custom/img/additional-resources/img/Poland_thumb.png",
+          "alt": "Poland",
+          "openLink": "/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-infosystem/static/custom/img/additional-resources/img/Poland.jpg",
+          "downloadLink": "/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-infosystem/static/custom/img/additional-resources/pdf/National-Strategies-Mapping_2017_Poland.pdf"
+        },
+        {
+          "id": 18,
+          "title": "Portugal",
+          "image": "/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-infosystem/static/custom/img/additional-resources/img/Portugal_thumb.png",
+          "alt": "Portugal",
+          "openLink": "/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-infosystem/static/custom/img/additional-resources/img/Portugal.jpg",
+          "downloadLink": "/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-infosystem/static/custom/img/additional-resources/pdf/National-Strategies-Mapping_2017_Portugal.pdf"
+        },
+        {
+          "id": 19,
+          "title": "Slovakia",
+          "image": "/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-infosystem/static/custom/img/additional-resources/img/Slovakia_thumb.png",
+          "alt": "Slovakia",
+          "openLink": "/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-infosystem/static/custom/img/additional-resources/img/Slovakia.jpg",
+          "downloadLink": "/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-infosystem/static/custom/img/additional-resources/pdf/National-Strategies-Mapping_2017_Slovakia.pdf"
+        },
+        {
+          "id": 20,
+          "title": "Spain",
+          "image": "/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-infosystem/static/custom/img/additional-resources/img/Spain_thumb.png",
+          "alt": "Spain",
+          "openLink": "/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-infosystem/static/custom/img/additional-resources/img/Spain.jpg",
+          "downloadLink": "/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-infosystem/static/custom/img/additional-resources/pdf/National-Strategies-Mapping_2017_Spain.pdf"
+        },
+        {
+          "id": 21,
+          "title": "Sweden",
+          "image": "/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-infosystem/static/custom/img/additional-resources/img/Sweden_thumb.png",
+          "alt": "Sweden",
+          "openLink": "/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-infosystem/static/custom/img/additional-resources/img/Sweden.jpg",
+          "downloadLink": "/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-infosystem/static/custom/img/additional-resources/pdf/National-Strategies-Mapping_2017_Sweden.pdf"
+        },
+        {
+          "id": 22,
+          "title": "United Kingdom",
+          "image": "/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-infosystem/static/custom/img/additional-resources/img/UnitedKingdom_thumb.png",
+          "alt": "United Kingdom",
+          "openLink": "/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-infosystem/static/custom/img/additional-resources/img/UnitedKingdom.jpg",
+          "downloadLink": "/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-infosystem/static/custom/img/additional-resources/pdf/National-Strategies-Mapping_2017_UK.pdf"
+        }
+    ],
+    "open":"Open",
+    "download": "Download"
+  }
+}

@@ -28,8 +28,7 @@ define(function (require) {
 
   
     var module = angular.module('directives', [configModule.name, 'duScroll', 'angulartics', 'angulartics.piwik', 'mgcrea.bootstrap.affix', '720kb.tooltips','ngCookies','angularConsent']);
-  
-    //TODO refactor las directivas del framework renombrarlas a dvtNombre
+
     module.directive('dvtDashboard', require('dvt/directives/dashboard'));
     module.directive('dvtSelect', require('dvt/directives/select'));
     module.directive('dvtRadio', require('dvt/directives/radio'));
@@ -46,9 +45,6 @@ define(function (require) {
       return function(input, start) {
 
         start = +start; //parse to int
-
-        //console.log("start: " + start);
-        //console.log("input in pretty-print mode: \n" + JSON.stringify(input, undefined, 2));
 
         if (start != undefined && input != undefined) {
           input = input.slice(start);

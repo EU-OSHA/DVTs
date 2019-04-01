@@ -1,0 +1,147 @@
+<dvt-dashboard promises="promises" parameters="dashboard.parameters" class="osh-authority">
+
+  <section data-ng-if="state.current.name != 'home'" id="not-home-cover" class="advice--icon--block advice--block-not-home background-main-light container-fluid section--page">
+      <div class="container horizontal-nopadding">
+        <div class="left-text col-md-8 col-sm-8 col-xs-12 ">
+          <h1 class="main-color left-text" data-ng-bind="i18nLiterals.L22002"></h1>
+          <p data-ng-bind="i18nLiterals.L22025"></p>
+        </div>
+        <div class="icon--advice forum-icon hide-mobile col-sm-4 col-md-4"></div>
+      </div>
+  </section>
+
+  <section class="container">
+    <!-- FILTERS -->
+    <!-- SEARCH FILTER -->
+    <form class="row block--filter--wrapper">
+      <!-- SEARCH FILTER -->
+      <div class="filter-text">      
+        <input ng-keypress="clickEnter($event)" id="search-input" type="text" placeholder="{{i18nLiterals.L378}}" data-ng-model="searchText" tabindex="7" />
+        <button data-ng-click="clickEnter($event)"  id="policy-search" type="button">
+          <i class="fa fa-search" aria-hidden="true"></i>
+        </button>
+      </div>
+      <!-- INSTITUTION TYPE FILTER -->
+      <div id="filter1" class="filter--dropdown--wrapper" tabindex="8">
+        <label class="main-color dropdwon-open"></label>
+        <div class="filter--dropdown--list">
+          <p class="option-title">Institution type</p>
+          <ul class="filter--dropdown--options">
+            <li>
+              <input id='institution-filter-1' type="checkbox" ng-click="toggleInstitutionClick();openSelect($event)" tabindex="-1"/>
+              <label for='institution-filter-1' data-ng-bind="i18nLiterals.L20614"></label>
+            </li>
+            <li>
+              <input id='institution-filter-2' type="checkbox" ng-click="toggleInstitutionClick();openSelect($event)" tabindex="-1"/>
+              <label for='institution-filter-2' data-ng-bind="i18nLiterals.L20611"></label>
+            </li>
+            <li>
+              <input id='institution-filter-3' type="checkbox" ng-click="toggleInstitutionClick();openSelect($event)" tabindex="-1"/>
+              <label for='institution-filter-3' data-ng-bind="i18nLiterals.L20612"></label>
+            </li>
+            <li>
+              <input id='institution-filter-4' type="checkbox" ng-click="toggleInstitutionClick();openSelect($event)" tabindex="-1"/>
+              <label for='institution-filter-4' data-ng-bind="i18nLiterals.L20613"></label>
+            </li>
+          </ul>
+          <p class="btn--block-filter" data-ng-click="openSelect($event)"><a class="btn-main-color btn-full" ng-click="confirmSelection($event)">Confirm</a></p>
+        </div>
+      </div>
+      <!-- COUNTRY FILTER -->
+      <div id="filter2"class="filter--dropdown--wrapper"  tabindex="9">
+        <label class="main-color  dropdwon-open"></label>
+        <div class="filter--dropdown--list">
+          <p class="option-title">Country</p>
+          <ul class="filter--dropdown--options">
+            <li data-ng-repeat='country in countries'>
+              <input id='country-filter-{{::country.country_code}}' ng-checked="!!country.param && country.param ==country.country_code"
+                data-ng-click="toggleCountryClick($event, $index);openSelect($event)" type="checkbox" value="{{::country.country_code}}" tabindex="-1" />
+              <label for="country-filter-{{::country.country_code}}" data-ng-bind="i18nLiterals['L'+country.country]"></label>
+            </li>
+          </ul>
+          <p class="btn--block-filter" data-ng-click="openSelect($event)"><a class="btn-main-color btn-full" ng-click="confirmSelection($event)">Confirm</a></p>
+        </div>
+      </div>  
+    </form>
+
+
+    <div class="container">
+      <!-- CONTENT -->
+      <div class="selected--tags-wrapper"> <!--<span class="selected-tag" ng-click="deleteTag($event)">Auth</span><span class="selected-tag">AU</span>--> </div>
+      <div class="matrix--elements--wrapper">
+        <!-- MATRIX ELEMENTS -->
+        <div ng-if="amatrix.length <= 0">
+            <span data-ng-bind="i18nLiterals.L20706"></span>
+        </div>
+        <div data-ng-repeat="matrix in amatrix | limitTo:pageSize:elementsStart" class="matrix--element">
+          <div class="matrix--header--elements">
+            <img  class="flags--wrapper" ng-src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/flag/{{::matrix.country_code.toLowerCase()}}.png">
+            <h2 class="country ng-binding title-section main-color" data-ng-bind="i18nLiterals['L'+matrix.country_name]"></h2>
+          </div>
+
+          <div class="matrix--content--elements">
+            <h3 class="" ng-if="::matrix.osh_authority==1" data-ng-bind="i18nLiterals.L20614"></h3>
+            <h3 class="" ng-if="::matrix.compensation==1" data-ng-bind="i18nLiterals.L20611"></h3>
+            <h3 class="" ng-if="::matrix.prevention==1" data-ng-bind="i18nLiterals.L20612"></h3>
+            <h3 class="" ng-if="::matrix.standardisation==1" data-ng-bind="i18nLiterals.L20613"></h3>
+
+            <div data-ng-bind-html="i18nLiterals['L'+matrix.name_authority]"></div>
+            <div data-ng-bind-html="i18nLiterals['L'+matrix.link_authority]"></div>
+            <div data-ng-bind-html="trimtext(i18nLiterals['L'+matrix.detail_authority], 300)"></div>
+            <p data-ng-if="i18nLiterals['L'+matrix.detail_authority].length > 300" class="see--more--wrapper"> 
+              <a ng-click='toggleText($event)' data-ng-bind="i18nLiterals.L20641" class="see-more main-color"></a>
+              <a ng-click='toggleText($event)' data-ng-bind="i18nLiterals.L20642" class="see-less main-color" style="display:none"></a>
+            </p>
+
+            <div class="">
+              <a href="" data-toggle="modal" data-target="#modalChart" data-ng-click="openModal(matrix)" class="btn--card main-color" title="Country infrastructure">Country infrastructure</a>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+
+      <!-- PAGINATION -->
+      <div class="pagination--wrapper" data-ng-if="!!amatrix.length" >
+        <div class="pagination--elements">
+          <ul class="main-color">
+            <li role=button class="arrow firstpage" data-ng-click="firstPage()" ng-class="(currentPage+1==numberOfPages() && currentPage+1==1 || currentPage+1==1)?'invisible':''">
+              <span aria-hidden="currentPage == 0"><i class="fa fa-angle-double-left" aria-hidden="true"></i></span>
+            </li>
+            <li role=button class="arrow previouspage" data-ng-click="previousPage()" ng-class="(currentPage+1==numberOfPages() && currentPage+1==1 || currentPage+1==1)?'invisible':''">
+              <span aria-hidden="currentPage == 0"><i class="fa fa-angle-left" aria-hidden="true"></i></span>
+            </li>
+            <li>
+              <span>{{currentPage+1}}/{{numberOfPages()}}</span>
+            </li>
+            <li role=button class="arrow nextpage" data-ng-click="nextPage()" ng-class="(currentPage+1==numberOfPages() && currentPage+1==numberOfPages())?'invisible':''">
+              <span aria-hidden="currentPage >= results.length/pageSize - 1"><i class="fa fa-angle-right" aria-hidden="true"></i></span>
+            </li>
+            <li role=button class="arrow lastpage" data-ng-click="lastPage()" ng-class="(currentPage+1==numberOfPages() && currentPage+1==numberOfPages())?'invisible':''">
+              <span><i class="fa fa-angle-double-right" aria-hidden="true"></i></span>
+            </li>
+          </ul>
+          <!-- PAGINATION TEXT -->
+          <div class="pag-numbers" data-ng-if="!!amatrix.length">
+            <span data-ng-bind="paginationText"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="modalChart" tabindex="-1" role="dialog" aria-labelledby="modalChart" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <p class="modal-title text-center"></p>
+          </div>
+          <div class="modal-body text-center">
+              <img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/img-not-available.png" alt="Image not available">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</dvt-dashboard>

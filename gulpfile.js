@@ -86,6 +86,7 @@ gulp.task('ci-environment', function () {
         .pipe(replace(/\"do_track\":(.*?),/g, '"do_track": ' + do_track + ','))
         .pipe(replace(/\"packed\":(.*?)\n/g, '"packed": ' + packed + '\n'))
         .pipe(gulp.dest(function(file) {
+            console.log(file.base);
             return file.base;
         }));
 
@@ -111,7 +112,6 @@ gulp.task('setup-environment', function () {
      */
 
     raw = raw.replace(/\"([^(\")"]+)\":/g,"$1:").replace(/\n/g, "").replace(/\s/g, "");
-    console.log(raw);
     gulp.src(['./resources/styles/cpk.html'])
         .pipe(replace(/window.environment = \{(.*?)\};/g, 'window.environment = ' + raw + ';'))
         .pipe(replace(/id=\"pathPiwik\" src=\"(.*?)\"/g, 'id="pathPiwik" src="' + piwik + '"'))

@@ -17,11 +17,11 @@
 define(function (require) {
     'use strict';
 
-
+    var pv = require('cdf/lib/CCC/protovis');
     return {
         generateController: function (module, ctrlName) {
             return angular.module(module)
-                .controller(ctrlName, function ($scope, $modalInstance, $log, $state, $stateParams, parameters, dvtUtils) {
+                .controller(ctrlName, function ($scope, $modalInstance, $log, $state, $stateParams, parameters, dvtUtils, configService) {
                     /* GET FUNCTIONAL LEGEND */
 
                     /*ESTABLISH NEEDED DASH PARAMS FOR RENDER COMPONENTS */
@@ -68,10 +68,10 @@ define(function (require) {
                         }
 
                         /* ESTABLISH MAX COMMON PARAMETERS  */
-                        $scope.parameters.chartDefinition.baseAxisLabel_font = 'normal 18px "Open Sans"';
+                        $scope.parameters.chartDefinition.baseAxisLabel_font = '18px "OpenSans-bold"';
                         $scope.parameters.chartDefinition.baseAxisLabel_textAlign = 'center';
-                        $scope.parameters.chartDefinition.axisLabel_font = 'normal 18px "Open Sans"';
-                        $scope.parameters.chartDefinition.legend_font = 'normal 18px "Open Sans"',
+                        $scope.parameters.chartDefinition.axisLabel_font = '18px "OpenSans-bold"';
+                        $scope.parameters.chartDefinition.legend_font = 'normal 18px "OpenSans"',
                         $scope.parameters.chartDefinition.clickable = false;
                         $scope.parameters.chartDefinition.hoverable = false;
 
@@ -84,6 +84,59 @@ define(function (require) {
                         /* Pyramid not show technical legend */
                         $scope.parameters.chartDefinition.legend = !$scope.parameters.pyramid ? true : false;
 
+                        if ($state.current.name == "economic-sector-profile") {
+                            if($scope.parameters.name == 'dvt_bar_chart_5'){
+                                $scope.parameters.chartDefinition.plots[0].bar_call = function(){
+                                    this.add(pv.Image)
+                                    .url(function(scene) {
+                                        var countryKey = scene.firstAtoms.category;
+                                        if(countryKey == $stateParams.pCountry1){
+                                            return configService.getImagesPath()+'man_orange.svg'
+                                        }else if(countryKey == $stateParams.pCountry2){
+                                            return configService.getImagesPath()+'man.svg'
+                                        }else if(countryKey == 'EU28'){
+                                            return configService.getImagesPath()+'man_blue.svg'
+                                        }
+                                    })
+                                    .bottom(20)
+                                    .height(function(scene){
+                                        /*SVG default width:68*150:height proportion W = H*0.45333333333 */
+                                        var axisFixedMax = this.root.sign.chart.options.axisFixedMax;
+                                        var panelHeight = this.root.height();
+                                        var valueKey = scene.firstAtoms.value;
+                                        var resul = valueKey * (panelHeight - this.bottom()) / axisFixedMax;
+                                        if(resul >= panelHeight){
+                                            this.root.sign.chart.options.axisFixedMax = 350;
+                                        }
+                                        return resul;
+                                    })
+                                    .width(function(scene){
+                                        /*SVG default width:68*150:height proportion W = H*0.45333333333 */
+                                        var valueKey = scene.firstAtoms.value;
+                                        var resul = this.height() * 0.45333;
+                                        return resul;
+                                    })
+                                    .left(function(scene){
+                                        //Panel width, Bar width and image width
+                                        var panelWidth = this.root.width();
+                                        var barWidth = panelWidth/3.25;
+                                        var countryKey = scene.firstAtoms.category;
+
+                                        if(panelWidth != 300){ //Default panel value
+                                            if(countryKey == $stateParams.pCountry1){
+                                                return (barWidth - this.width())/2 +5; //5 is the panel margin
+                                            }else if(countryKey == $stateParams.pCountry2){
+                                                return panelWidth/3 + (barWidth - this.width())/2;
+                                            }else if(countryKey == 'EU28'){
+                                                return panelWidth/1.5 + (barWidth - this.width())/2 - 5;
+                                            }
+                                        }
+                                    })
+                                    .events("all")
+                                    .cursor("hand");
+                                }
+                            }
+                        }
 
                         $log.debug("Chart type: " + $scope.parameters.chartType);
 
@@ -128,6 +181,27 @@ define(function (require) {
                             // crear uno, o añadir al existente
                         }*/
                     }
+
+                    //Labels
+                    /*if(!!$scope.parameters.chartDefinition.multipleLabelColors){
+                        var pCountry1 = parameters.parameters[1][1];
+                        var pCountry2 = parameters.parameters[2][1];
+
+                        $log.warn($scope.parameters.chartDefinition.baseAxisLabel_textStyle);
+
+
+
+                        $scope.parameters.chartDefinition.baseAxisLabel_textStyle= function (){
+                            $log.warn(this);
+                            if(this.scene.vars.tick.label == 'EU28'){
+                                return dvtUtils.getEUColor();
+                            }else if(this.scene.vars.tick.label == pCountry1){
+                                return dvtUtils.getColorCountry(1);
+                            }else if(this.scene.vars.tick.label == pCountry2){
+                                return dvtUtils.getColorCountry(2);
+                            }
+                        }
+                    }*/
 
                     $scope.parameters.postExecution =  function(){
                         if(navigator.userAgent.match('Android') && window.screen.width<window.screen.height) {

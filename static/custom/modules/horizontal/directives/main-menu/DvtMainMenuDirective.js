@@ -8,6 +8,7 @@
  * A description of the directive
  *
  */
+ var resolution = screen.width;
     function zoomSmall(){
         $('html').css('font-size','8px');
         $('body').removeClass('plus').addClass('minor');
@@ -42,30 +43,67 @@ define(function (require) {
             transclude: true,
             replace: true,
             scope: {},
-            controller: ['$rootScope', '$scope', '$state', 'configService', '$http', '$log','dataService',
-                function ($rootScope, $scope, $state, configService, $http, $log, dataService) {
+            controller: ['$rootScope', '$scope', '$state', '$window' , 'configService', '$http', '$log','dataService', '$compile', '$sce',
+                function ($rootScope, $scope, $state, $window, configService, $http, $log, dataService, $compile, $sce) {
 
 
+                    // Load google translate element
+                    new google.translate.TranslateElement({pageLanguage: 'en', autoDisplay: false, layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+
+                    /** HEADER SHOW HIDE **/
+                    var prevScrollpos = $window.pageYOffset;
+
+                    $(window).on("resize",function(e){
+                      resolution = screen.width;
+                    });
+  
+                    if( resolution < 768 ){
+                        $window.onscroll = function() {
+                            var currentScrollPos = $window.pageYOffset;
+                            // currentScrollPos should be greater than 90 to solved a iphone 6 issue
+                            if( currentScrollPos > 90 ){
+                                if (prevScrollpos > currentScrollPos) {
+                                    angular.element(".bar-header").addClass('show-header');
+                                    angular.element(".affix").addClass('show-header');
+                                    angular.element(".affix").removeClass('hide-header');
+                                    angular.element(".bar-header").removeClass('hide-header');
+                                } else {
+                                    angular.element(".bar-header").addClass('hide-header');
+                                    angular.element(".affix").addClass('hide-header');
+                                    angular.element(".affix").removeClass('show-header');
+                                    angular.element(".bar-header").removeClass('show-header');
+                                }
+
+                                prevScrollpos = currentScrollPos;
+
+                                if( angular.element('.advice--block-not-home').length > 0 ){
+                                    if( prevScrollpos <= angular.element('.advice--icon--block').offset().top + angular.element('.advice--icon--block')[0].clientHeight){
+                                        angular.element(".compare--block.regulation-page").removeClass('show-header');
+                                    }
+                                }
+                            }
+
+                        } 
+                    }
+                    
                     //hide print icon in mobile
                     if(configService.isMobile()) {
                         angular.element(".a2a_button_print").remove();
                     }
 
+                    // when click banner link to Home
+                    $scope.goto = function (pState) {
+                       $state.go(pState, {});
+                    };
+
                     // Literals / i18n
                     var i18n_literals = configService.getLiterals();
                     $scope.i18n_literals = i18n_literals;
 
-                    var path = configService.getHorizontalDirectiveDataPath("main-menu", "i18n_menu");
-                    $http.get(path).success(function(i18n_menu) {
-                        $scope.i18n_menu = i18n_menu;
-                    }).error(function(data,error){
-                        //TODO process error
-                    });
-
                     var breadCrumbStructure = require('json!dvt/directives/breadcrumb-items');
                     var titleStructure = require('json!dvt/directives/title-items');
 
-                    path = configService.getHorizontalDirectiveDataPath("main-menu", "menu");
+                    var path = configService.getHorizontalDirectiveDataPath("main-menu", "menu");
                     $http.get(path, { data: "", headers: {"Content-Type": "application/json"}}).success(function (menuStructure) {
                         $scope.structure = menuStructure;
                     });
@@ -112,11 +150,11 @@ define(function (require) {
                             var path = $location.path();
                             $log.debug(path);
                             $log.warn($state.current.name);
+
                             var cadena = "";
-
-
+                            
                             $scope.breadCrumb = breadCrumbStructure[$state.current.name];
-                            $scope.titleHeader = $scope.i18n_menu.Header;
+                            $scope.titleHeader = $scope.i18n_literals.L22020;
 
                             if ($state.current.name == 'home') {
                                 $scope.isHome = true;                                
@@ -125,7 +163,14 @@ define(function (require) {
                                 var pathURL = path.split("/");
                                 $scope.isHome = false;
                                 var setBreadCrumbs=function() {
-                                    $scope.breadCrumb = breadCrumbStructure[$state.current.name];
+                                    var _link = $compile(breadCrumbStructure[$state.current.name])($scope);
+                                    var breadcrumb = "";
+                                    for (var i = 0; i < _link.size(); i++)
+                                    {
+                                        breadcrumb = breadcrumb + _link[i].outerHTML;
+                                    }
+                                    $scope.breadCrumb = $sce.trustAsHtml(breadcrumb);
+
                                     $scope.title = titleStructure[$state.current.name];
                                     $scope.isHome = false;
                                     $scope.anchorPath = $location.path().split("/")[1];
@@ -134,16 +179,16 @@ define(function (require) {
                                 setBreadCrumbs();
                             }
 
-                            if(collapse.hasClass( "indvt" ) == true) {
-                                collapse.removeClass("indvt");
-                                collapse.removeClass("in");
-                            }
-
-                            //lo pongo en el title
                             //angular.element("title").html($scope.titleHeader);
 
                         }, $scope);
 
+                    //Hides menu whenever the user changes the current view
+                    $rootScope.$on('$locationChangeSuccess', function () {
+                        collapse.removeClass("exposed");
+                        navMainMenu.removeClass('exposed');
+                        buttonToggle.removeClass('exposed');
+                    });
 
                     $rootScope.$on('$stateNotFound', function(event, unfoundState, fromState, fromParams) {
 
@@ -162,71 +207,39 @@ define(function (require) {
                         console.warn("unfoundState.to: " + unfoundState.to);
                         console.warn("unfoundState.options: " + unfoundState.options );
                     });
+                    
+
+                    var buttonToggle = angular.element( "button.navbar-toggle" );
+                    var navMainMenu = angular.element( "nav.bar-main-menu" );
+                    var collapse = angular.element(".collapse.navbar-collapse");
+                    var glassIcon = angular.element(".icon-glass-tablet");
+                    var formSearch = angular.element(".search--form");
 
 
-                    // la clase intdvt es nuestra y sustituye a la de bootstrap.
-                    // la clase in de bootstrap siempre la quitamos, no nos interesa
-
-                    var toggle = angular.element( "button.navbar-toggle" );
-                    var collapse = angular.element("#osha-menu-collapse");
-
-                    collapse.click(function() {
-                        if (toggle.hasClass('closeIcon')) {
-                            toggle.removeClass('closeIcon');
-                            toggle.addClass('openIcon');
-                        }
-                    });
-
-                    toggle.click(function() {
-                        if(collapse.hasClass( "indvt" ) == true){
-                            collapse.removeClass("indvt");
-                            //$log.debug('cerrado');
-                            collapse.removeClass("in");
-                            toggle.addClass('openIcon');
-                            toggle.removeClass('closeIcon');
-                        }else{
-                            collapse.addClass("indvt");
-                            collapseSocial.removeClass("indvt");
-                            //$log.debug('abierto');
-                            collapse.removeClass("in");
-                            toggle.addClass('closeIcon');
-                            toggle.removeClass('openIcon');
-                        }
-                    });
-
-                    // Trigger drop-up menu when you click on the burger buttton
-                    angular.element( "#osha-menu-collapse .dropdown-menu a" ).click(function() {
-                        collapse.removeClass("indvt");
+                    if(collapse.hasClass( "exposed" ) == true) {
+                        collapse.removeClass("exposed");
                         collapse.removeClass("in");
+                    }   
+
+                    buttonToggle.click(function() {
+                        formSearch.removeClass('exposed');
+                        collapse.removeClass('in');
+                        glassIcon.removeClass('exposed');
+
+                        collapse.toggleClass('exposed');
+                        navMainMenu.toggleClass('exposed');
+                        buttonToggle.toggleClass('exposed');                                               
                     });
 
 
-                    // Social network responsive menu
-                    var toggleSocial = angular.element( ".submenu-icon > a" );
-                    var collapseSocial = angular.element("#osha-menu-social");
+                    glassIcon.click(function() {
+                        collapse.removeClass('in'); 
+                        collapse.removeClass('exposed'); 
+                        navMainMenu.removeClass('exposed');
+                        buttonToggle.removeClass('exposed');
 
-                    toggleSocial.click(function() {
-                        if(collapseSocial.hasClass( "indvt" ) == true){
-                            collapseSocial.removeClass("indvt");
-                            //$log.debug('cerrado');
-                            collapseSocial.removeClass("in");
-                        }else{
-                            collapseSocial.addClass("indvt");
-                            collapse.removeClass("indvt");
-                            //$log.debug('abierto');
-                            collapseSocial.removeClass("in");
-                        }
-                    });
-
-                    // Hide Social Menu if it is displayed
-                    angular.element('div.submenu-icon').click(function(e) {
-                        e.stopPropagation();
-                    });
-
-                    angular.element(document).click(function() {
-                        if ($('ul#osha-menu-social').hasClass('indvt')) {
-                            $('ul#osha-menu-social').removeClass('indvt');
-                        }
+                        glassIcon.toggleClass('exposed');
+                        formSearch.toggleClass('exposed');
                     });
 
             }],

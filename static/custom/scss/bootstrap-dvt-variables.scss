@@ -5,21 +5,66 @@
 */
 
 $bootstrap-sass-asset-helper: false !default;
+
+
+
+
+/******
+/*
+/*  FONTS
+/*
+/******
+
+/* OSWALD */
+@import '../fonts/Oswald/Oswald-Bold/font-face.scss';
+@import '../fonts/Oswald/Oswald-Light/font-face.scss';
+@import '../fonts/Oswald/Oswald-Regular/font-face.scss';
+
+/* OPEN SANS */
+@import '../fonts/OpenSans/OpenSans-Bold/font-face.scss';
+@import '../fonts/OpenSans/OpenSans-Light/font-face.scss';
+@import '../fonts/OpenSans/OpenSans-Regular/font-face.scss';
+
+
 //
 // Variables
 // --------------------------------------------------
 
 
-//== Colors
-//
-//## Gray and brand colors for use across Bootstrap.
 
-$gray-base:              #000 !default;
-$gray-darker:            lighten($gray-base, 13.5%) !default; // #222
-$gray-dark:              lighten($gray-base, 20%) !default;   // #333
-$gray:                   lighten($gray-base, 33.5%) !default; // #555
-$gray-light:             lighten($gray-base, 46.7%) !default; // #777
-$gray-lighter:           lighten($gray-base, 93.5%) !default; // #eee
+/** COLORS **/
+$gray-base:#58585A;
+$black:#000;
+$white:#FFF;
+$gray-darker:            lighten($black, 13.5%); // #222
+$gray-dark:              lighten($black, 20%);   // #333
+$gray:                   #57575A;
+$gray-light:             #B1B3B4;
+$gray-lighter:           #EEEEEE;
+
+$brand-primary:         darken(#428bca, 6.5%); // #337ab7
+$brand-success:         #5cb85c !default;
+$brand-info:            #5bc0de !default;
+$brand-warning:         #f0ad4e !default;
+$brand-danger:          #d9534f !default;
+
+$gray-icon:#A2ACB4;
+$gray-footer:#B0B2B3;
+$orange:#F6A400;
+$orange-light:#FBDB99;
+$aquamarine:#529FA2;
+$aquamarine-light:#C7E2E3;
+$aquamarine-dark:#00696C;
+$eu:#003399;
+
+
+$mainCountry:#F6A400;
+$mapGroup:#CEDFE1;
+$mapOthers:#B1B3B4;
+
+$link-menu:$gray-base;
+$backgroundCookies:#C7E2E3;
+/** END COLORS **/
 
 
 $brand-primary:         darken(#428bca, 6.5%) !default; // #337ab7
@@ -28,6 +73,12 @@ $brand-info:            #5bc0de !default;
 $brand-warning:         #f0ad4e !default;
 $brand-danger:          #d9534f !default;
 
+$font-header:'Oswald',sans-serif;
+$font-body: 'OpenSans';
+$font-body-bold: 'OpenSans-bold';
+
+$font-size-body: 1.6rem;
+$container-tablet:100%;
 
 //== Scaffolding
 //

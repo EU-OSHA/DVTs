@@ -106,6 +106,9 @@
     /* LITERALS */
     requirePaths['horizontal/model/literals'] = horizontalModules + '/model/Literals' + suffix + '.json';
 
+    /* DATASETS */ 
+    requirePaths['horizontal/model/datasets'] = horizontalModules + '/model/Datasets' + suffix + '.json';
+
     /* COLORS */
     requirePaths['horizontal/model/colors'] = horizontalModules + '/model/Colors' + suffix + '.json';
 
@@ -146,11 +149,29 @@
     requirePaths['vertical/home/HomeController'] = verticalModules + '/home/HomeController' + suffix;
     requirePaths['vertical/home/i18n'] = verticalModules + '/home/HP-i18n' + suffix + '.json';
 
+    /* GENERIC INFORMATION */
+    requirePaths['vertical/generic-information/generic-information-module'] = verticalModules + '/generic-information/generic-information-module' + suffix;
+
+    /* OSH AUTHORITIES */
+    requirePaths['vertical/osh-authorities/OSHAuthoritiesController'] = verticalModules + '/generic-information/osh-authorities/OSHAuthoritiesController' + suffix;
+    requirePaths['vertical/osh-authorities/i18n'] = verticalModules + '/generic-information/osh-authorities/osh-authorities-i18n' + suffix +'.json';
+
+    /*STEERING OF OSH*/
+    requirePaths['vertical/osh-steering/osh-steering-module'] = verticalModules + '/osh-steering/osh-steering-module' + suffix;
+
+
     /* GEOGRAPHIES COMPARISON */
     // requirePaths['vertical/geographies-comparison/GeographiesComparisonController'] = verticalModules + '/geographies-comparison/GeographiesComparisonController' + suffix;
     // requirePaths['vertical/geographies-comparison/services/GeographiesComparisonService'] = verticalModules + '/geographies-comparison/services/GeographiesComparisonService' + suffix;
     // requirePaths['vertical/geographies-comparison/geographies-comparison-module'] = verticalModules + '/geographies-comparison/geographies-comparison-module' + suffix;
     // requirePaths['vertical/geographies-comparison/i18n'] = verticalModules + '/geographies-comparison/geographies-comparison-i18n' + suffix + '.json';
+    /* MAP */
+    requirePaths['vertical/map/map-module'] = verticalModules + '/map/map-module' + suffix;
+    requirePaths['vertical/map/MapController'] = verticalModules + '/map/MapController' + suffix;
+
+    /* HEAT */
+    requirePaths['vertical/heat/heat-module'] = verticalModules + '/heat/heat-module' + suffix;
+    requirePaths['vertical/heat/HeatController'] = verticalModules + '/heat/HeatController' + suffix;
 
     /* ABOUT THE VISUALISATION TOOL */
     requirePaths['vertical/about-tool/AboutToolController'] = verticalModules + '/about-tool/AboutToolController' + suffix;
