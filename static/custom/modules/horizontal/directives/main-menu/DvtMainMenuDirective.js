@@ -170,10 +170,6 @@ define(function (require) {
                                         breadcrumb = breadcrumb + _link[i].outerHTML;
                                     }
                                     $scope.breadCrumb = $sce.trustAsHtml(breadcrumb);
-<<<<<<< HEAD
-=======
-
->>>>>>> release-sprint_1
                                     $scope.title = titleStructure[$state.current.name];
                                     $scope.isHome = false;
                                     $scope.anchorPath = $location.path().split("/")[1];
