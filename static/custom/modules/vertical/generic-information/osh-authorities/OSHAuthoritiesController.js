@@ -118,7 +118,7 @@ define(function (require) {
       if ($(this).is(':visible')) {
 
       angular.element(' samp', angular.element($event.target).parent().parent()).toggleClass('visible-inline');
-      angular.element(' p.text-part', angular.element($event.target).parent().parent()).toggleClass('visible');
+      angular.element(' .text-part', angular.element($event.target).parent().parent()).toggleClass('visible');
 
       }
       //Para ocultar los puntos suspensivos del recorte
