@@ -41,6 +41,9 @@
     } 
     .copyright a {
       color: #57575a;
+      &:hover{
+        color: $white !important;
+      }
     }
     .footer-nav-accessibility {
       margin:5px 0 0;
@@ -55,6 +58,7 @@
           display: inline-block;
           &:hover{
             text-decoration:none;
+            color: black !important;
           }
         }
         &:after{

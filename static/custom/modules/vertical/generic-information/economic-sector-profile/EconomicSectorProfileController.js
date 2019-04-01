@@ -134,9 +134,9 @@ define(function (require) {
         chart1: 20,
         chart2: 20,
         chart3: 10,
-        chart4: 2.50,
+        chart4: 5,
         chart5: 100,
-        chart6: 5000
+        chart6: 10000
     }
 
     $scope.countriesDataFor = [];

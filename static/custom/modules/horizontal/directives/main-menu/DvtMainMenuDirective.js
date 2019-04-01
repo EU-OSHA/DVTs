@@ -8,6 +8,7 @@
  * A description of the directive
  *
  */
+ var resolution = screen.width;
     function zoomSmall(){
         $('html').css('font-size','8px');
         $('body').removeClass('plus').addClass('minor');
@@ -52,35 +53,39 @@ define(function (require) {
                     /** HEADER SHOW HIDE **/
                     var prevScrollpos = $window.pageYOffset;
 
-                    $window.onscroll = function() {
-                      
-                      var currentScrollPos = $window.pageYOffset;
-                     
+                    $(window).on("resize",function(e){
+                      resolution = screen.width;
+                    });
+  
+                    if( resolution < 768 ){
+                        $window.onscroll = function() {
+                            var currentScrollPos = $window.pageYOffset;
+                            // currentScrollPos should be greater than 90 to solved a iphone 6 issue
+                            if( currentScrollPos > 90 ){
+                                if (prevScrollpos > currentScrollPos) {
+                                    angular.element(".bar-header").addClass('show-header');
+                                    angular.element(".affix").addClass('show-header');
+                                    angular.element(".affix").removeClass('hide-header');
+                                    angular.element(".bar-header").removeClass('hide-header');
+                                } else {
+                                    angular.element(".bar-header").addClass('hide-header');
+                                    angular.element(".affix").addClass('hide-header');
+                                    angular.element(".affix").removeClass('show-header');
+                                    angular.element(".bar-header").removeClass('show-header');
+                                }
 
-                      if (prevScrollpos > currentScrollPos) {
-                        angular.element(".bar-header").addClass('show-header');
-                        angular.element(".affix").addClass('show-header');
+                                prevScrollpos = currentScrollPos;
 
-                        angular.element(".affix").removeClass('hide-header');
-                        angular.element(".bar-header").removeClass('hide-header');
-                      } else {
-                        angular.element(".bar-header").addClass('hide-header');
-                        angular.element(".affix").addClass('hide-header');
+                                if( angular.element('.advice--block-not-home').length > 0 ){
+                                    if( prevScrollpos <= angular.element('.advice--icon--block').offset().top + angular.element('.advice--icon--block')[0].clientHeight){
+                                        angular.element(".compare--block.regulation-page").removeClass('show-header');
+                                    }
+                                }
+                            }
 
-                        angular.element(".affix").removeClass('show-header');
-                        angular.element(".bar-header").removeClass('show-header');
-                      }
-                      prevScrollpos = currentScrollPos;
-
-                      if( angular.element('.advice--block-not-home') ){
-                          if( prevScrollpos <= angular.element('.advice--icon--block').offset().top + angular.element('.advice--icon--block')[0].clientHeight){
-                            //angular.element(".compare--block.regulation-page").removeClass('affix');
-                            angular.element(".compare--block.regulation-page").removeClass('show-header');
-                          }
-                      }
-
-                    } 
-
+                        } 
+                    }
+                    
                     //hide print icon in mobile
                     if(configService.isMobile()) {
                         angular.element(".a2a_button_print").remove();

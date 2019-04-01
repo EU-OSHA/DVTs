@@ -12,7 +12,7 @@ define(function (require) {
   'use strict';
 
 
-  function controller($scope, $stateParams, $state, configService, $log, $document,dataService, $window, $sce, $compile, $timeout, dvtUtils, mapProvider) {
+  function controller($scope, $stateParams, $state, configService, $log, $document,dataService, $window, $sce, $compile, $timeout, dvtUtils, mapProvider, WorkforceProfileService) {
 
     // CDA
     $scope.cda =  configService.getBarometerCda();
@@ -30,11 +30,11 @@ define(function (require) {
     $scope.selectedSubIndicator = $stateParams.pSubIndicator;
 
     $scope.genders = [];
-    $scope.minMaxValues = {
+    /*$scope.minMaxValues = {
       minValue: 0,
-      maxValue: 0,
-      range: 0
-    };
+      maxValue: 45.9,
+      range: 2.4
+    };*/
 
     //Countries
     $scope.countries = [];
@@ -55,6 +55,24 @@ define(function (require) {
         promiseShape: mapProvider.getEuropeShape(),
         countryGroups: dataService.getGroupCountryList()
     };
+
+    $scope.stories = [
+      {
+        color1: dvtUtils.getColorCountry(2),
+        plots: WorkforceProfileService.getMinMaxValues(),
+        dimensions: {
+          value: {
+            format: {
+              number: "#"
+            }
+          }
+        }
+      }
+    ];
+        
+    $scope.step = {
+      chart1: 5
+    }
 
     $scope.data = {
       medianAge: [], // 37
@@ -85,6 +103,8 @@ define(function (require) {
       $scope.pIndicator = 39;
       $scope.pSubIndicator = 3;
     }
+
+    $scope.minMaxValues = [];
 
     $scope.openSelect = function($event){
 
@@ -212,9 +232,11 @@ define(function (require) {
 
       dataService.getMinMaxValues($scope.datasetEurostat, $scope.pIndicator, $scope.pSubIndicator).then(function (data) {
         data.data.resultset.map(function (elem) {
-          $scope.minMaxValues.minValue = Math.round(elem[0]);
-          $scope.minMaxValues.maxValue = Math.round(elem[1]);
-          $scope.minMaxValues.range = ($scope.minMaxValues.maxValue - $scope.minMaxValues.minValue) / 4;
+          $scope.minMaxValues.push({
+            min_value: elem[0],
+            max_value: elem[1],
+            range_value: elem[2]
+          });
         });
       }).catch(function (err) {
           throw err;
@@ -325,9 +347,10 @@ define(function (require) {
     }
 
     $scope.status = 'ready';
+
   }
 
-  controller.$inject = ['$scope', '$stateParams', '$state', 'configService', '$log', '$document','dataService', '$window', '$sce', '$compile', '$timeout', 'dvtUtils', 'mapProvider'];
+  controller.$inject = ['$scope', '$stateParams', '$state', 'configService', '$log', '$document','dataService', '$window', '$sce', '$compile', '$timeout', 'dvtUtils', 'mapProvider', 'WorkforceProfileService'];
   return controller;
 
 

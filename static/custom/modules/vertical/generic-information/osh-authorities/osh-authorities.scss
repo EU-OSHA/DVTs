@@ -12,6 +12,17 @@
     position: relative;
     flex-basis:30%;
     //align-self: flex-end;
+    &:focus, &:active{
+      .filter--dropdown--list{
+        display: block;
+        height: auto;
+        .option-title{
+          &:after{
+            content: "\f106";
+          }
+        }
+      }
+    }
     > label{
       min-height: 50px;
       &:empty{
@@ -95,7 +106,7 @@
           }
         }
       }
-    }
+    }      
   }
 
   .filter-text{
@@ -114,18 +125,18 @@
       box-shadow: none;
       display:block;
       &::-webkit-input-placeholder {
-        display: none;
+        //display: none;
       }
       &:-moz-placeholder {
         /* Firefox 18- */
-        display: none;
+        //display: none;
       }
       &::-moz-placeholder {
         /* Firefox 19+ */
-        display: none;
+        //display: none;
       }
       &:-ms-input-placeholder {
-        display: none;
+        //display: none;
       }
     }
     button{
@@ -168,6 +179,9 @@
       .btn--card {
         margin-top: 1.4rem;
         display: inline-block;
+        &:hover{
+          color:$orange;
+        }
       }
     }
   }
@@ -180,6 +194,14 @@
   .see-more{
     position: relative;
     cursor: pointer;
+    text-transform: lowercase;
+    display: block;
+    &:first-letter{
+      text-transform: uppercase;
+    }
+    &:hover{
+      color:$orange;
+    }
     &:after{
       content: "\f107";
       display: inline-block;
@@ -190,13 +212,21 @@
       -webkit-font-smoothing: antialiased;
       position: relative;
       right: -4px;
-      top: 4px;
+      top: 1px;
       color: $aquamarine;
     }
   }
   .see-less{
     position: relative;
     cursor: pointer;
+    text-transform: lowercase;
+    display: block;
+    &:first-letter{
+      text-transform: uppercase;
+    }
+    &:hover{
+      color:$orange;
+    }
     &:after{
       content: "\f106";
       display: inline-block;
@@ -207,7 +237,7 @@
       -webkit-font-smoothing: antialiased;
       position: relative;
       right: -4px;
-      top: 4px;
+      top: 1px;
       color: $aquamarine;
     }
   }
@@ -244,3 +274,17 @@
   }
 }
 
+.osh-authority{
+  .modal-dialog{
+    width: 70%;
+    height: 90%;
+    .modal-content{
+      width: 100%;
+      height: 100%;
+      .modal-title{
+        font-family: "Oswald", sans-serif;
+        font-size: 2.6rem;
+      }
+    }
+  }
+}

@@ -60,8 +60,6 @@ define(function (require) {
                 };*/
 
                 $scope.promises = {};
-
-                //$log.warn($scope);
                 
                 if (!!$scope.countryKey) {
                     $scope.promises.countryKey = dataService.getGroupId($scope.countryKey);
@@ -208,8 +206,8 @@ define(function (require) {
                                             }
                                         }
 
-                                        minValue = Math.round(minValue);
-                                        maxValue = Math.round(maxValue);
+                                        minValue = minValue;
+                                        maxValue = maxValue;
 
                                         var range = (maxValue - minValue) / 4;
                                         return [minValue, maxValue, range];
@@ -466,7 +464,7 @@ define(function (require) {
                                             }else{
                                                path.attr({
                                                     stroke: strokeShapeColor,
-                                                    fill: /*'#449FA2'*/dvtUtils.getRangeColors( countryInfo.value, minMaxValues[0], minMaxValues[1], minMaxValues[2]),
+                                                    fill: /*'#449FA2'*/dvtUtils.getRangeColors( countryInfo.value, minMaxValues[0], minMaxValues[1], minMaxValues[2], index),
                                                     "stroke-opacity": 1.0
                                                 });
                                             }

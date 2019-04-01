@@ -1,8 +1,8 @@
-<dvt-dashboard promises="promises" parameters="dashboard.parameters">
+<dvt-dashboard promises="promises" parameters="dashboard.parameters" class="osh-authority">
 
   <section data-ng-if="state.current.name != 'home'" id="not-home-cover" class="advice--icon--block advice--block-not-home background-main-light container-fluid section--page">
       <div class="container horizontal-nopadding">
-        <div class="left-text col-md-8 col-sm-8 col-xs-12  nopadding">
+        <div class="left-text col-md-8 col-sm-8 col-xs-12 ">
           <h1 class="main-color left-text" data-ng-bind="i18nLiterals.L22002"></h1>
           <p data-ng-bind="i18nLiterals.L22025"></p>
         </div>
@@ -15,32 +15,32 @@
     <!-- SEARCH FILTER -->
     <form class="row block--filter--wrapper">
       <!-- SEARCH FILTER -->
-      <div class="filter-text">      
-        <input ng-keypress="clickEnter($event)" id="search-input" type="text" placeholder="{{i18nLiterals.L378}}" data-ng-model="searchText"/>
+      <div class="filter-text">
+        <input ng-keypress="clickEnter($event)" id="search-input" type="text" placeholder="{{i18nLiterals.L378}}" data-ng-model="searchText" tabindex="7" />
         <button data-ng-click="clickEnter($event)"  id="policy-search" type="button">
           <i class="fa fa-search" aria-hidden="true"></i>
         </button>
       </div>
       <!-- INSTITUTION TYPE FILTER -->
-      <div id="filter1" class="filter--dropdown--wrapper">
-        <label class="main-color dropdwon-open" data-ng-click="openSelect($event)" ></label>
+      <div id="filter1" class="filter--dropdown--wrapper" tabindex="8">
+        <label class="main-color dropdwon-open"></label>
         <div class="filter--dropdown--list">
-          <p class="option-title" data-ng-click="openSelect($event)">Institution type</p>
+          <p class="option-title">Institution type</p>
           <ul class="filter--dropdown--options">
             <li>
-              <input id='institution-filter-1' type="checkbox" ng-click="toggleInstitutionClick()"/>
+              <input id='institution-filter-1' type="checkbox" ng-click="toggleInstitutionClick();openSelect($event)" tabindex="-1"/>
               <label for='institution-filter-1' data-ng-bind="i18nLiterals.L20614"></label>
             </li>
             <li>
-              <input id='institution-filter-2' type="checkbox" ng-click="toggleInstitutionClick()"/>
+              <input id='institution-filter-2' type="checkbox" ng-click="toggleInstitutionClick();openSelect($event)" tabindex="-1"/>
               <label for='institution-filter-2' data-ng-bind="i18nLiterals.L20611"></label>
             </li>
             <li>
-              <input id='institution-filter-3' type="checkbox" ng-click="toggleInstitutionClick()"/>
+              <input id='institution-filter-3' type="checkbox" ng-click="toggleInstitutionClick();openSelect($event)" tabindex="-1"/>
               <label for='institution-filter-3' data-ng-bind="i18nLiterals.L20612"></label>
             </li>
             <li>
-              <input id='institution-filter-4' type="checkbox" ng-click="toggleInstitutionClick()"/>
+              <input id='institution-filter-4' type="checkbox" ng-click="toggleInstitutionClick();openSelect($event)" tabindex="-1"/>
               <label for='institution-filter-4' data-ng-bind="i18nLiterals.L20613"></label>
             </li>
           </ul>
@@ -48,14 +48,14 @@
         </div>
       </div>
       <!-- COUNTRY FILTER -->
-      <div id="filter2"class="filter--dropdown--wrapper">
-        <label class="main-color  dropdwon-open" data-ng-click="openSelect($event)"></label>
+      <div id="filter2"class="filter--dropdown--wrapper"  tabindex="9">
+        <label class="main-color  dropdwon-open"></label>
         <div class="filter--dropdown--list">
-          <p class="option-title" data-ng-click="openSelect($event)">Country</p>
+          <p class="option-title">Country</p>
           <ul class="filter--dropdown--options">
             <li data-ng-repeat='country in countries'>
               <input id='country-filter-{{::country.country_code}}' ng-checked="!!country.param && country.param ==country.country_code"
-                data-ng-click="toggleCountryClick($event, $index)" type="checkbox" value="{{::country.country_code}}"/>
+                data-ng-click="toggleCountryClick($event, $index);openSelect($event)" type="checkbox" value="{{::country.country_code}}" tabindex="-1" />
               <label for="country-filter-{{::country.country_code}}" data-ng-bind="i18nLiterals['L'+country.country]"></label>
             </li>
           </ul>
@@ -69,7 +69,10 @@
       <!-- CONTENT -->
       <div class="selected--tags-wrapper"> <!--<span class="selected-tag" ng-click="deleteTag($event)">Auth</span><span class="selected-tag">AU</span>--> </div>
       <div class="matrix--elements--wrapper">
-        <!-- MATRIX ELEMENTS --> 
+        <!-- MATRIX ELEMENTS -->
+        <div ng-if="amatrix.length <= 0">
+            <span data-ng-bind="i18nLiterals.L20706"></span>
+        </div>
         <div data-ng-repeat="matrix in amatrix | limitTo:pageSize:elementsStart" class="matrix--element">
           <div class="matrix--header--elements">
             <img  class="flags--wrapper" ng-src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/flag/{{::matrix.country_code.toLowerCase()}}.png">
@@ -135,7 +138,7 @@
             <p class="modal-title text-center"></p>
           </div>
           <div class="modal-body text-center">
-              <img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/survey-map.png" alt="" width="500px">
+              <img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/img-not-available.png" alt="Image not available">
           </div>
         </div>
       </div>

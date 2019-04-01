@@ -156,14 +156,6 @@
     requirePaths['vertical/osh-authorities/OSHAuthoritiesController'] = verticalModules + '/generic-information/osh-authorities/OSHAuthoritiesController' + suffix;
     requirePaths['vertical/osh-authorities/i18n'] = verticalModules + '/generic-information/osh-authorities/osh-authorities-i18n' + suffix +'.json';
 
-    /* ECONOMIC AND SECTOR PROFILE */
-    requirePaths['vertical/economic-sector-profile/EconomicSectorProfileController'] = verticalModules + '/generic-information/economic-sector-profile/EconomicSectorProfileController' + suffix;
-    requirePaths['vertical/economic-sector-profile/services/EconomicSectorProfileService'] = verticalModules + '/generic-information/economic-sector-profile/services/EconomicSectorProfileService' + suffix;
-
-    /* WORKFORCE PROFILE */
-    requirePaths['vertical/workforce-profile/WorkforceProfileController'] = verticalModules + '/generic-information/workforce-profile/WorkforceProfileController' + suffix;
-    requirePaths['vertical/workforce-profile/services/WorkforceProfileService'] = verticalModules + '/generic-information/workforce-profile/services/WorkforceProfileService' + suffix;
-
     /*STEERING OF OSH*/
     requirePaths['vertical/osh-steering/osh-steering-module'] = verticalModules + '/osh-steering/osh-steering-module' + suffix;
 
