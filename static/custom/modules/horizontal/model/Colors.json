@@ -47,10 +47,8 @@
 
     "rangeColors":{
         "range1": "#DAEBEC",
-        "range2": "#C2DEDF",
-        "range3": "#A2CCCD",
-        "range4": "#8FC1C3",
-        "range5": "#65A9AC",
-        "range6": "#529FA2"
+        "range2": "#B4D6D7",
+        "range3": "#78B4B6",
+        "range4": "#519ea1"
     }
 }

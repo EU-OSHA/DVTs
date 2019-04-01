@@ -97,6 +97,5 @@ define(function (require) {
     });
     module.factory('EconomicSectorProfileService', require('vertical/economic-sector-profile/services/EconomicSectorProfileService'));
     module.factory('WorkforceProfileService', require('vertical/workforce-profile/services/WorkforceProfileService'));
-
     return module;
 });

@@ -167,6 +167,7 @@ define(function (require) {
     var BarChartComponent = require('cdf/components/CccBarChartComponent');
     var PieChartComponent = require('cdf/components/CccPieChartComponent');
     var configService = require('horizontal/config/configService');
+    var pv = require('cdf/lib/CCC/protovis');
     var i18n = configService.getLiterals();
 
     var sequence = 1;
@@ -338,7 +339,7 @@ define(function (require) {
                         axisFixedMin: attributes.axisFixedMin || 0,
                         axisTicks: attributes.axisTicks || false,
                         axisRule_strokeStyle: attributes.axisRule_strokeStyle || '',
-                        baseAxisOffset : attributes.baseAxisOffset || '',
+                        baseAxisOffset : attributes.baseAxisOffset || 0,
                         clickable: attributes.clickable === 'false' ? false : true,
                         clickAction: function (dataset) {
                         },
@@ -422,11 +423,22 @@ define(function (require) {
                 };
 
                 if(scope.axisColor){
-                    definition.chartDefinition.xAxis_fillStyle = function(){
-                        $log.warn(this);
-                        return "linear-gradient(to right, #daebec 0%,#519ea1 100%)";
+                    definition.chartDefinition.xAxis_fillStyle = 'white';
+                    definition.chartDefinition.xAxis_call = function(){
+                        //return "linear-gradient(to right, #daebec 0%,#519ea1 100%)";
+                        this.add(pv.Image)
+                                .url('/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/color-range.png')
+                                .left(function(scene){
+                                    var panelWidth = this.root.width();
+                                    if(panelWidth != 200){
+                                        return panelWidth/12;
+                                    }
+                                })
+                                .right(function(scene){
+                                    var panelWidth = this.root.width();
+                                    return panelWidth/12;
+                                });
                     };
-
                 }
 
                 if(!!attributes.showEuroMask){
