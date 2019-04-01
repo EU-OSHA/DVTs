@@ -335,6 +335,7 @@ define(function (require) {
                         axisTitleLabel_font: attributes.axisTitleLabelFont || 'normal 12px "OpenSans" gray',
                         axisTitleLabel_textStyle: 'gray',
                         axisFixedMax: attributes.axisFixedMax || 100,
+                        axisFixedMin: attributes.axisFixedMin || 0,
                         axisTicks: attributes.axisTicks || false,
                         axisRule_strokeStyle: attributes.axisRule_strokeStyle || '',
                         baseAxisOffset : attributes.baseAxisOffset || '',
@@ -373,7 +374,6 @@ define(function (require) {
                         axisGrid_strokeStyle: 'white',
                         axisGrid_lineWidth: 2,
                         axisBandSizeRatio: 1,
-                        baseAxisSize: 25,
                         //show values
                         valuesVisible: attributes.valuesVisible === 'true'?true:false,
                         valuesOverflow: attributes.valuesOverflow || "",
@@ -422,10 +422,10 @@ define(function (require) {
                 };
 
                 if(scope.axisColor){
-                    definition.chartDefinition.xAxis_fillStyle = "linear-gradient(to right, #daebec 0%,#519ea1 100%)";
-                }
-
-                if(scope.backgroundColor){
+                    definition.chartDefinition.xAxis_fillStyle = function(){
+                        $log.warn(this);
+                        return "linear-gradient(to right, #daebec 0%,#519ea1 100%)";
+                    };
 
                 }
 
@@ -433,10 +433,6 @@ define(function (require) {
                     definition.chartDefinition.yAxisLabel_text= function(){
                         return this.scene.vars.tick.label+' €';
                     }
-                }
-
-                if(definition.type == 'lines'){
-                    definition.xAxis_fillStyle= 'linear-gradient(to right, #daebec 0%,#519ea1 100%)';
                 }
 
                 //TODO refactor OR condition in to definition where it been possible
@@ -513,9 +509,14 @@ define(function (require) {
                     definition.chartDefinition.paddings = '7 5 0 10';
                 }
 
+                if(!!attributes.baseAxisSize){
+                    definition.chartDefinition.baseAxisSize = attributes.bandAxisSize;
+                }else{
+                    definition.chartDefinition.baseAxisSize = 40;
+                }
+
                 if (!!scope.postFetch)
                     definition.postFetch = scope.postFetch;
-
 
                 var postExec_ = scope.postExecution;
                 definition.postExecution = function(){
