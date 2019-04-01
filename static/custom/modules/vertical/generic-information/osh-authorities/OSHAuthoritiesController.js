@@ -62,13 +62,14 @@ define(function (require) {
         var currentSelect = $event.target.offsetParent.offsetParent;
        
       }      
-      
+
       if( currentSelect.className.indexOf('viewOptions') > 0 ){
         //currentSelect.className = 'filter--dropdown--wrapper';
-        angular.element('.filter--dropdown--wrapper').removeClass('viewOptions');        
+        //angular.element('.filter--dropdown--wrapper').removeClass('viewOptions');        
       } else {
-        angular.element('.filter--dropdown--wrapper').removeClass('viewOptions');
-        currentSelect.className += ' viewOptions';
+        //angular.element('.filter--dropdown--wrapper').removeClass('viewOptions');
+        //currentSelect.className += ' viewOptions';
+          currentSelect.focus();
       }
     }
 
@@ -76,10 +77,34 @@ define(function (require) {
     // Read more
     $scope.trimtext = function(pVal, pNumCharacters){
       var shortText = pVal;
-      if (shortText.length > pNumCharacters) {
-        shortText = $.trim(pVal).substring(0, pNumCharacters).split(" ").slice(0, -1).join(" ") + $scope.longText(pVal, pNumCharacters) + "<span class='see-more'>...</span>";
+      var finalHtml = '';
+      if(shortText.match('<p>')){
+        var minimized_elements = $compile(pVal)($scope);
+        for(var i = 0; i < minimized_elements.length; i++){
+          var elem = minimized_elements[i];
+          if(i == 0){
+            $(elem).addClass("first");
+            var t = $(elem).text();
+            $(elem).html($.trim(t).substring(0, pNumCharacters).split(" ").slice(0, -1).join(" ") + $scope.longText(t, pNumCharacters) + "<span class='see-more'>...</span>");
+            var newHtml = $(elem)[0].outerHTML;
+            finalHtml += newHtml;
+          }else{
+            $(elem).css('display','none');
+            $(elem).addClass("text-part");
+            var newHtml = $(elem)[0].outerHTML;
+            finalHtml += newHtml;
+          }
+        }
+        return $sce.trustAsHtml(finalHtml);
+        /*if (shortText.length > pNumCharacters) {
+          shortText = $.trim(pVal).substring(0, pNumCharacters).split(" ").slice(0, -1).join(" ") + $scope.longText(pVal, pNumCharacters) + "<span class='see-more'>...</span>";
+        }*/
+      }else{
+        if (shortText.length > pNumCharacters) {
+          shortText = $.trim(pVal).substring(0, pNumCharacters).split(" ").slice(0, -1).join(" ") + $scope.longText(pVal, pNumCharacters) + "<span class='see-more'>...</span>";
+        }
+        return $sce.trustAsHtml(shortText);
       }
-      return $sce.trustAsHtml(shortText);
     }
 
     $scope.longText = function(pVal, pNumCharacters) {
@@ -89,12 +114,16 @@ define(function (require) {
 
     $scope.toggleText = function($event) {
 
-      angular.element(' samp', angular.element($event.target).parent().parent()).slideToggle('medium', function() {
-        if ($(this).is(':visible')) {
-          $(this).css('display','inline');
-        }
-      });
-      angular.element(' span.see-more', angular.element($event.target).parent().parent()).slideToggle();
+      //$log.warn(angular.element($event.target).parent().parent());
+      if ($(this).is(':visible')) {
+
+      angular.element(' samp', angular.element($event.target).parent().parent()).toggleClass('visible-inline');
+      angular.element(' p.text-part', angular.element($event.target).parent().parent()).toggleClass('visible');
+
+      }
+      //Para ocultar los puntos suspensivos del recorte
+      angular.element(' span.see-more', angular.element($event.target).parent().parent()).toggle();
+      //Para cambiar del boton see more al boton see less
       angular.element(' a', angular.element($event.target).parent()).toggle();
     }
 
@@ -384,25 +413,25 @@ define(function (require) {
           $scope.searchParams.institutions.filter1=1;
           par="institution";
 
-          var html = '<span class="selected-tag" id="institutionFilter1" data-ng-click="deleteTag($event)">Authorities</span>';
+          var html = '<span class="selected-tag" id="institutionFilter1" data-ng-click="deleteTag($event)" data-ng-bind="i18nLiterals.L20614"></span>';
           tags.append( $compile(html)($scope) );
         }
         if(check2) {
           $scope.searchParams.institutions.filter2=1;
           par="institution";
-          var html = '<span class="selected-tag" id="institutionFilter2" data-ng-click="deleteTag($event)">Insurance</span>';
+          var html = '<span class="selected-tag" id="institutionFilter2" data-ng-click="deleteTag($event)" data-ng-bind="i18nLiterals.L20611"></span>';
           tags.append( $compile(html)($scope) );
         }
         if(check3) {
           $scope.searchParams.institutions.filter3=1;
           par="institution";
-          var html = '<span class="selected-tag" id="institutionFilter3" data-ng-click="deleteTag($event)">Prevention</span>';
+          var html = '<span class="selected-tag" id="institutionFilter3" data-ng-click="deleteTag($event)" data-ng-bind="i18nLiterals.L20612"></span>';
           tags.append( $compile(html)($scope) );
         }
         if(check4) {
           $scope.searchParams.institutions.filter4=1;
           par="institution";
-          var html = '<span class="selected-tag" id="institutionFilter4" data-ng-click="deleteTag($event)">Standardisation</span>';
+          var html = '<span class="selected-tag" id="institutionFilter4" data-ng-click="deleteTag($event)" data-ng-bind="i18nLiterals.L20613"></span>';
           tags.append( $compile(html)($scope) );
         }
 
@@ -461,59 +490,58 @@ define(function (require) {
        * Apply the filters and load the filtered content
        */
       function search($event,filter) {
+        //$log.warn($scope.amatrix);
 
-        if ((filter=="country")&&($scope.searchParams.institutions.filter1!=1)&&($scope.searchParams.institutions.filter2!=1)&&($scope.searchParams.institutions.filter3!=1)&&($scope.searchParams.institutions.filter4!=1)){
-          dataService.getSearchList($scope.searchParams.countries)
+        dataService.getSearchTerm($scope.searchText, $scope.searchParams.institutions, $scope.searchParams.countries)
+          .then(function (data) {
+            $scope.amatrix = dataService.dataMapper(data);
+
+            $log.warn($scope.amatrix);
+
+            $scope.firstPage();
+
+            $state.transitionTo('osh-authorities', {}, {notify: false});
+
+            //updateText();
+
+          }).catch(function (err) {
+            throw err;
+        });
+
+        /*if ((filter=="country")&&($scope.searchParams.institutions.filter1!=1)&&($scope.searchParams.institutions.filter2!=1)&&($scope.searchParams.institutions.filter3!=1)&&($scope.searchParams.institutions.filter4!=1)){
+          dataService.getSearchList($scope.searchParams.countries, $scope.searchText)
             .then(function (data) {
               $scope.amatrix = dataService.dataMapper(data);
-
-              //$log.warn($scope.amatrix);
-
               $scope.firstPage();
-
-              /*$state.transitionTo('matrix', {}, {notify: false});*/
               $state.transitionTo('osh-authorities', {}, {notify: false});
-              //updateText();
 
             }).catch(function (err) {
               throw err;
           });
         } else if(filter=="search" && $scope.searchText != '') {
-          $log.warn($scope.searchText);
           dataService.getSearchTerm($scope.searchText, $scope.searchParams.institutions, $scope.searchParams.countries)
             .then(function (data) {
               $scope.amatrix = dataService.dataMapper(data);
 
-              //$log.warn($scope.amatrix);
-
               $scope.firstPage();
 
               $state.transitionTo('osh-authorities', {}, {notify: false});
-
-              //updateText();
-
             }).catch(function (err) {
               throw err;
           });
         } else if(filter=="institution"){
-          dataService.getSearchListInstitutions($scope.searchParams.institutions, $scope.searchParams.countries)
+          dataService.getSearchListInstitutions($scope.searchParams.institutions, $scope.searchParams.countries, $scope.searchText)
             .then(function (data) {
 
               $scope.amatrix = dataService.dataMapper(data);
 
-              //$log.warn($scope.amatrix);
-
               $scope.firstPage();
-
-              /*$state.transitionTo('matrix', {}, {notify: false});*/
               $state.transitionTo('osh-authorities', {}, {notify: false});
-
-              //updateText();
 
             }).catch(function (err) {
               throw err;
           });
-        }
+        }*/
         $scope.currentPage = 0;
       }
 

@@ -12,15 +12,28 @@
 	.icon--card, 
 	.btn--block, .btn--card, .btn-default, 
 	.block--filter--wrapper, 
-	.see-more, .see-less{
+	.see-more, .see-less, 
+	.social--network--nav, .footer-social-network, 
+	.footer-nav-accessibility{
 	  display: none !important;
 	}
 	a[href]:after {
 	  content: "";
 	}
-	.matrix--content--elements  samp{
-		display: block !important;
+	.matrix--content--elements{
+		 samp{
+			display: inline !important;
+		}
+		.text-part{
+			display: block !important;
+			page-break-before: auto;
+		}	
 	}
+	.pagination--wrapper{
+		page-break-before: auto;
+	}
+
+
 	@page {
    size: auto;
   	margin: 10mm 25mm 25mm 25mm; 
@@ -31,7 +44,7 @@
 	}
 	h3{
 		font-size: 2.2rem !important;
-		margin: 0 0 1.2rem 0;
+		margin: 1.2rem 0 1.2rem 0;
 		color: $gray !important;
 	}
 	.container{
@@ -102,6 +115,11 @@
 	.section--page {
 		padding: 0;
 	}
+	.selected--tags-wrapper{
+		.selected-tag{
+			border: 1px solid #666;
+		}
+	} 
 
 }
 

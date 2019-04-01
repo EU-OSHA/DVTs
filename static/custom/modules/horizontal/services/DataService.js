@@ -287,22 +287,28 @@ define(function () {
                 if (institutions.filter1==1){
                   block1 = 1;
                 }else {
-                  block1 = 0;
+                  block1 = 2;
                 }
                 if (institutions.filter2==1){
                   block2 = 1;
                 }else {
-                  block2 = 0;
+                  block2 = 2;
                 }
                 if (institutions.filter3==1){
                   block3 = 1;
                 }else {
-                  block3 = 0;
+                  block3 = 2;
                 }
                 if (institutions.filter4==1){
                   block4 = 1;
                 }else {
-                  block4 = 0;
+                  block4 = 2;
+                }
+                if(institutions.filter1==0 && institutions.filter2==0 && institutions.filter3==0 && institutions.filter4==0){
+                    block1 = 1;
+                    block2 = 1;
+                    block3 = 1;
+                    block4 = 1;
                 }
 
 

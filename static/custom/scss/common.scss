@@ -34,7 +34,15 @@
       top: 199px;
     }
     */
-  } 
+  }
+  *:focus{
+    outline:none !important;
+    background: transparent !important;
+  }
+  select:focus{
+    border: 1px dotted $aquamarine !important;
+  }
+
   .section--page{
     padding: 4rem 0 2rem;
   }
@@ -56,7 +64,7 @@
     -moz-transition: all 0.8s ease-out;
     -o-transition: all 0.8s ease-out;
     transition: all 0.8s ease-out;
-    &:hover{
+    &:hover, &:focus{
       text-decoration: none;
       -webkit-transition: all 0.8s ease-out;
       -moz-transition: all 0.8s ease-out;
@@ -114,6 +122,12 @@
   .horizontal-nopadding{
     padding-top: 0;
     padding-bottom: 0;
+  }
+  .visible-inline{
+    display: inline !important;
+  }
+  .visible{
+    display: block !important;
   }
   /** ALIGN CLASS  **/
     .center--block{
@@ -182,19 +196,19 @@
       background-image: none;
       border: 0px solid $aquamarine;
       border-radius: 4px;
-      &:hover{
-        background:$aquamarine-dark;
-        color: $aquamarine-light;
-        text-decoration: none;
+      &:hover, &:focus{
+        background:$aquamarine-dark!important;
+        color: $aquamarine-light!important;
+        text-decoration: none!important;
       }
     }
     .btn-main-color{
       background:$aquamarine;
       color: $white;
-      &:hover{
-        background:$aquamarine-dark;
-        color: $aquamarine-light;
-        text-decoration: none;
+      &:hover, &:focus{
+        background:$aquamarine-dark!important;
+        color: $aquamarine-light!important;
+        text-decoration: none!important;
       }
     }
     .btn-full{
@@ -204,6 +218,10 @@
     .btn--card{
       font-weight: bold;
       position: relative;
+      cursor: pointer;
+      &:hover, &:focus{
+        color:$orange!important;
+      }
       &:after{
         content: "\f105";
         font-family: FontAwesome;
@@ -354,8 +372,8 @@
           border-bottom: 1px dotted $orange;
           color: $aquamarine;
           font-family: "OpenSans-bold";
-          &:hover{
-            color: $orange;
+          &:hover, &:focus{
+            color: $orange!important;
           }
         }
         i{
@@ -364,7 +382,10 @@
           padding: 0 5px;
         }
         span {
-          font-weight: bold;
+          font-weight: normal;
+          &.current-page{
+            font-weight: bold;
+          }
         }
       }    
     }
@@ -392,8 +413,8 @@
           padding:0 0.8rem;
           a{
             cursor: pointer;
-            &:hover{
-              color:$orange;
+            &:hover, &:focus{
+              color:$orange!important;
             }
           }
         }
@@ -741,6 +762,10 @@
         .btn--card{
           font-weight: bold;
           position: relative;
+          cursor: pointer;
+          &:hover, &:focus{
+            color:$orange !important;
+          }
           &:after{
             content: "\f105";
             font-family: FontAwesome;
@@ -773,6 +798,10 @@
         .btn--card{
           font-weight: bold;
           position: relative;
+          cursor: pointer;
+          &:hover, &:focus{
+            color:$orange!important;
+          }
           &:after{
             content: "\f105";
             font-family: FontAwesome;
@@ -874,9 +903,9 @@
             font-size: 1.2rem;
             padding: 0.5rem 2rem; 
             background: $white;
-            &:hover{
-              background: $orange;
-              color: $white;
+            &:hover, &:focus{
+              background: $orange!important;
+              color: $white!important;
               i{
                 background: $aquamarine;
               }  
@@ -1031,8 +1060,8 @@
                 opacity:0.6;
                 color: $aquamarine; 
                 font-size: 3.5rem;
-                &:hover{
-                  color:$aquamarine-dark;
+                &:hover, &:focus{
+                  color:$aquamarine-dark!important;
                 }          
               }
             }
@@ -1090,9 +1119,9 @@
           }
           > a{
             border-bottom: 1px dotted  $gray-base;
-            &:hover{
-              background:#f9f9f9;
-              text-decoration: none;
+            &:hover, &:focus{
+              background:#f9f9f9!important;
+              text-decoration: none!important;
             }
             &:before{
               content: "\f105";
@@ -1310,9 +1339,9 @@
               font-size: 1.4rem;
               display: block;
               overflow-y:hidden; 
-              &:hover{
-                color:$white;
-                background: $aquamarine;
+              &:hover, &:focus{
+                color:$white!important;
+                background: $aquamarine!important;
                 .fa-arrow-down{
                   top:0rem;
                   -webkit-transition: all 0.8s; 
