@@ -16,8 +16,10 @@
       text-align: center;
     }
     .buttons {
-			text-align: center;
 			padding: 3rem 0 1rem;
+      display: flex;
+      justify-content: center;
+      flex-direction: row-reverse;
     }
     button {
       float:none;
@@ -1143,10 +1145,11 @@ and (max-width :620px) {
     .text {
     }
     .buttons {
+  		flex-direction: column-reverse;
     }
     button {
       width: 100%;
-      margin: 1.4rem 0;
+      margin: 1rem 0;
     }
   }
 	.survey--map--block-mobile{
