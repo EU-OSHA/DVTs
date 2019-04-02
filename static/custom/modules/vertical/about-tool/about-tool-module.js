@@ -31,7 +31,7 @@ define(function (require) {
                 }
             },
             metaTags: {
-                title: i18n.L22019 +  " | " + i18n.L22001,
+                title: i18n.L22019 +  " - " + i18n.L22020 + " - " + i18n.L363,
                 description: i18n.L22019,
             }
         });

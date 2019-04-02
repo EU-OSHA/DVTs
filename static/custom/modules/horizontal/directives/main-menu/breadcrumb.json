@@ -10,7 +10,7 @@
     "home": "<span class='current-page'>Home</span>",
 
     "_SECCTION-ABOUT-TOOL": null,
-    "about-tool": "<span>About the OSH barometer</span>",
+    "about-tool": "<a ui-sref='home'>Home</a><i class='fa fa-angle-right' aria-hidden='true'></i></i><span class='current-page'>About the system</span>",
 
     "_SECCTION-FOOTER-PAGES": null,
     "site-map": "<span class='current-page'>Site map</span>",

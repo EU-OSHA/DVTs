@@ -20,10 +20,11 @@ define(function (require) {
         $scope.title ="About the Visualisation Tool";
 
         // CDA
-        $scope.cda =  configService.getInfosystemCda();
+        $scope.cda =  configService.getBarometerCda();
 
-        // Literals / i18n
-        $scope.i18n = configService.getLiterals();
+        // Literals
+        var i18nLiterals = configService.getLiterals();
+        $scope.i18nLiterals = i18nLiterals;
 
         $scope.status = 'ready';
     }
