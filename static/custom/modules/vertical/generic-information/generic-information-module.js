@@ -42,7 +42,7 @@ define(function (require) {
               }
           },
           metaTags: {
-              title: i18n.L22001 +" | "+ i18n.L22002 ,
+              title: i18n.L22002 +  " - " + i18n.L22020 + " - " + i18n.L363 ,
               //description: i18n.L397
           }
         });
@@ -67,7 +67,7 @@ define(function (require) {
               }
           },
           metaTags: {
-              title: i18n.L22001 +" | "+ i18n.L22003
+              title: i18n.L22003 +  " - " + i18n.L22020 + " - " + i18n.L363
           }
         });
 
@@ -91,7 +91,7 @@ define(function (require) {
               }
           },
           metaTags: {
-              title: i18n.L22001 +" | "+ i18n.L22004
+              title: i18n.L22004 +  " - " + i18n.L22020 + " - " + i18n.L363
           }
         });
     });
