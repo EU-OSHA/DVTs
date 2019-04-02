@@ -113,7 +113,7 @@
   <hop> <from>Create Queries for File 2</from><to>Text file output</to><enabled>Y</enabled> </hop>
   <hop> <from>Tool Exists&#x3f;</from><to>Create Queries for File</to><enabled>Y</enabled> </hop>
   <hop> <from>Create Queries for File</from><to>Text file output</to><enabled>Y</enabled> </hop>
-  <hop> <from>Create Queries for File</from><to>Execute SQL script</to><enabled>Y</enabled> </hop>
+  <hop> <from>Create Queries for File</from><to>Execute SQL script</to><enabled>N</enabled> </hop>
   </order>
   <step>
     <name>Create Queries for File</name>
