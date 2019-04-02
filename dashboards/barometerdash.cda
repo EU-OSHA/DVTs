@@ -224,7 +224,8 @@
       OR mp.check_2=${institution2}
       OR mp.check_3=${institution3}
       OR mp.check_4=${institution4})
-      AND (n.name REGEXP ${term} OR t.text REGEXP ${term} OR t2.text REGEXP ${term} OR t3.text REGEXP ${term});
+      AND (n.name REGEXP ${term} OR t.text REGEXP ${term} OR t2.text REGEXP ${term} OR t3.text REGEXP ${term})
+      ORDER BY FIELD(n.country_code, 'EU28') DESC, country_name ASC, osh_authority DESC, compensation DESC, prevention DESC, standardisation DESC;
     </Query>
   </DataAccess>
 
@@ -242,7 +243,7 @@
       INNER JOIN nuts n
       ON n.id = mp.nuts_id
       WHERE mp.page = 'MATRIX_AUTHORITY'
-      ORDER BY FIELD(n.country_code, 'EU28') DESC, country_name ASC, standardisation ASC, prevention ASC, compensation ASC, osh_authority ASC
+      ORDER BY FIELD(n.country_code, 'EU28') DESC, country_name ASC, osh_authority DESC, compensation DESC, prevention DESC, standardisation DESC;
     </Query>
   </DataAccess>
 
