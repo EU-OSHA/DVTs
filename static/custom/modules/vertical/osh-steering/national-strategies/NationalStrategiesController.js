@@ -12,7 +12,7 @@ define(function (require) {
   'use strict';
 
 
-  function controller($scope, $stateParams, $state, configService, $log, $document,dataService, $window, $sce, $compile, $timeout) {
+  function controller($scope, $stateParams, $state, configService, $log, $document,dataService, $window, $sce, $compile, $timeout, $anchorScroll, $location) {
 
 
     // CDA
@@ -27,6 +27,7 @@ define(function (require) {
     $scope.countryFilter = [];
 
     $scope.alphabet = [];
+    $anchorScroll.yOffset = 220;
 
     // Show/hide the Countries Filter List
     angular.element('div.countries-filters').css( "display",'none' );
@@ -68,23 +69,18 @@ define(function (require) {
     /******************************************************************************|
     |                                 FILTERS                                      |
     |******************************************************************************/
-      $scope.resetFilter = function(){
-        $scope.countryFilter = [];
-        searchCountries($scope.countryFilter);
+      $scope.goToAnchor = function(letter){
+        var newHash = 'anchor' + letter;
+        if ($location.hash() !== newHash) {
+          $location.hash('anchor-' + letter);
+        } else {
+          $anchorScroll();
+        }
       }
 
-      $scope.addLetter = function(letter) {
-        $scope.countryFilter.push(letter);
-        searchCountries($scope.countryFilter);
-      }
-
-      function searchCountries(filters) {
-        dataService.getStrategiesCountryFilter($scope.countryFilter)
-          .then(function (data) {
-            $scope.countries = dataService.dataMapper(data);
-          }).catch(function (err) {
-            throw err;
-        });
+      $scope.countryByLetter = function(letter){
+        var array = $scope.countries.filter((country) => $scope.i18nLiterals['L'+country.country].charAt(0) == letter);
+        return array;
       }
 
     /******************************END FILTERS************************************/
@@ -97,7 +93,7 @@ define(function (require) {
 
   }
 
-  controller.$inject = ['$scope', '$stateParams', '$state', 'configService', '$log', '$document','dataService', '$window', '$sce', '$compile', '$timeout'];
+  controller.$inject = ['$scope', '$stateParams', '$state', 'configService', '$log', '$document','dataService', '$window', '$sce', '$compile', '$timeout', '$anchorScroll', '$location'];
   return controller;
 
 

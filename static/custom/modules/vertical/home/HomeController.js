@@ -72,7 +72,7 @@ define(function (require) {
               $state.go("regulation", {
                 pCountry1: $scope.regulationCountrySelected,
                 pCountry2: 0,
-                pIndicator: 45
+                pIndicator: 'secondary-legislation'
               });
             }
         }
