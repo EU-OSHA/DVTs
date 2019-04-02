@@ -111,7 +111,7 @@
   <hop> <from>Table input</from><to>Filter rows</to><enabled>Y</enabled> </hop>
   <hop> <from>Get Variables</from><to>Table input</to><enabled>Y</enabled> </hop>
   <hop> <from>Filter rows</from><to>Modified Java Script Value</to><enabled>Y</enabled> </hop>
-  <hop> <from>Modified Java Script Value</from><to>Execute SQL script in trans</to><enabled>Y</enabled> </hop>
+  <hop> <from>Modified Java Script Value</from><to>Execute SQL script in trans</to><enabled>N</enabled> </hop>
   <hop> <from>Modified Java Script Value</from><to>Text file output</to><enabled>Y</enabled> </hop>
   </order>
   <step>

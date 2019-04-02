@@ -93,8 +93,16 @@
     <data_tablespace/>
     <index_tablespace/>
     <attributes>
+      <attribute><code>EXTRA_OPTION_MYSQL.characterEncoding</code><attribute>utf8</attribute></attribute>
+      <attribute><code>EXTRA_OPTION_MYSQL.characterSetClient</code><attribute>utf8</attribute></attribute>
+      <attribute><code>EXTRA_OPTION_MYSQL.characterSetConnection</code><attribute>utf8</attribute></attribute>
+      <attribute><code>EXTRA_OPTION_MYSQL.characterSetDatabase</code><attribute>utf8</attribute></attribute>
+      <attribute><code>EXTRA_OPTION_MYSQL.characterSetResults</code><attribute>utf8</attribute></attribute>
+      <attribute><code>EXTRA_OPTION_MYSQL.characterSetServer</code><attribute>utf8</attribute></attribute>
+      <attribute><code>EXTRA_OPTION_MYSQL.charset</code><attribute>utf8</attribute></attribute>
       <attribute><code>EXTRA_OPTION_MYSQL.defaultFetchSize</code><attribute>500</attribute></attribute>
       <attribute><code>EXTRA_OPTION_MYSQL.useCursorFetch</code><attribute>true</attribute></attribute>
+      <attribute><code>EXTRA_OPTION_MYSQL.useUnicode</code><attribute>true</attribute></attribute>
       <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
       <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
       <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
@@ -111,7 +119,7 @@
   <hop> <from>matrix_authority_in</from><to>Replace in string</to><enabled>Y</enabled> </hop>
   <hop> <from>Modified Java Script Value</from><to>Text file output</to><enabled>Y</enabled> </hop>
   <hop> <from>Replace in string</from><to>Modified Java Script Value</to><enabled>Y</enabled> </hop>
-  <hop> <from>Modified Java Script Value</from><to>Execute SQL script</to><enabled>Y</enabled> </hop>
+  <hop> <from>Modified Java Script Value</from><to>Execute SQL script</to><enabled>N</enabled> </hop>
   </order>
   <step>
     <name>Execute SQL script</name>
