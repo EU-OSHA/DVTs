@@ -257,7 +257,7 @@
     INNER JOIN nuts n
     ON n.id = mp.nuts_id
     WHERE mp.page = 'MATRIX_AUTHORITY'
-    ORDER BY country ASC
+    ORDER BY FIELD(country_code, 'EU28') DESC, country ASC;
     </Query>
   </DataAccess>
 
