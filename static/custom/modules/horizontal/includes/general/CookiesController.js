@@ -13,7 +13,7 @@ define(function (require) {
     return {
         generateController: function (module, ctrlName) {
             return angular.module(module)
-                .controller(ctrlName, function ($scope, $log, $window, $cookies, configService) {
+                .controller(ctrlName, function ($scope, $log, $window, $cookies, configService, $rootScope) {
 
                     // Literals
                     $scope.i18n_cookies = require('json!dvt/cookies-disclaimer/i18n');
@@ -23,6 +23,9 @@ define(function (require) {
                     var cookieLife= new Date();
                     cookieLife.setDate(cookieLife.getDate() + 360);
                     var cookieName = "disclaimerCookie";
+
+                    $scope.popUpButtonPressed = false;
+
                     if($window.screen.width<1024 && !$cookies.get("disclaimer")){
                         $cookies.put(cookieName,true,{expires:cookieLife});
                         //$scope.showwidthdisclaimer= true;
@@ -51,6 +54,7 @@ define(function (require) {
 
                     $scope.closePopUp = function () {
                         $scope.showPopUpMessage = false;
+                        $scope.popUpButtonPressed = true;
                         if($cookies.get('disclaimerCookie') != "false")
                             $scope.showwidthdisclaimer=true;
                         else
@@ -58,7 +62,6 @@ define(function (require) {
                     }
 
                     $scope.widthAgree= function () {
-
                         $log.info("widthConsent");
                         $scope.showwidthdisclaimer=false;
                         $cookies.put(cookieName,false,{expires:cookieLife});
@@ -74,6 +77,15 @@ define(function (require) {
                     if($cookies.get('angular-consent.global')){
                         $scope.showPopUpMessage = true;
                     }
+
+                    //Hides menu whenever the user changes the current view
+                    $rootScope.$on('$locationChangeSuccess', function () {
+                        if(!$cookies.get('angular-consent.global') && !$scope.popUpButtonPressed){
+                            $scope.showPopUpMessage = true;
+                        }else{
+                            $scope.showPopUpMessage = false;
+                        }
+                    });
 
                 });
 
