@@ -143,7 +143,7 @@ define(function (require) {
     /******************************************************************************|
     |                                DATA LOAD                                     |
     |******************************************************************************/
-      dataService.getRegulationsCountries($scope.pCountry2).then(function (data) {
+      dataService.getStrategiesCountryFilter('').then(function (data) {
         data.data.resultset.map(function (elem) {
           var param = (!!$stateParams.filter) ? $stateParams.filter : undefined;
           if(elem[1] != $scope.pCountry2){
@@ -164,7 +164,7 @@ define(function (require) {
           throw err;
       });
 
-      dataService.getRegulationIndicators().then(function (data) {
+      dataService.getStrategiesIndicators().then(function (data) {
         data.data.resultset.map(function (elem) {
           var param = (!!$stateParams.filter) ? $stateParams.filter : undefined;
           $scope.indicators.push({
@@ -178,7 +178,7 @@ define(function (require) {
           throw err;
       });
 
-      dataService.getCountryRegulationData($scope.pCountry1).then(function (data) {
+      dataService.getStructureStrategiesData($scope.pCountry1).then(function (data) {
         data.data.resultset.map(function (elem) {
           $scope.country1Data = {
             country_code: elem[0],
@@ -188,21 +188,15 @@ define(function (require) {
             text3: elem[4],
             text4: elem[5],
             text5: elem[6],
-            text6: elem[7],
-            text7: elem[8],
-            text8: elem[9],
-            text9: elem[10],
-            text10: elem[11],
-            text11: elem[12],
-            text12: elem[13],
-            text13: elem[14]
+            text7: elem[7]
           };
         });
+        //$log.warn($scope.country1Data);
       }).catch(function (err) {
           throw err;
       });
 
-      dataService.getCountryRegulationData($scope.pCountry2).then(function (data) {
+      dataService.getStructureStrategiesData($scope.pCountry2).then(function (data) {
         data.data.resultset.map(function (elem) {
           $scope.country2Data = {
             country_code: elem[0],
@@ -212,14 +206,7 @@ define(function (require) {
             text3: elem[4],
             text4: elem[5],
             text5: elem[6],
-            text6: elem[7],
-            text7: elem[8],
-            text8: elem[9],
-            text9: elem[10],
-            text10: elem[11],
-            text11: elem[12],
-            text12: elem[13],
-            text13: elem[14]
+            text7: elem[7]
           };
         });
       }).catch(function (err) {
