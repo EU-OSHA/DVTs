@@ -224,7 +224,11 @@
       OR mp.check_2=${institution2}
       OR mp.check_3=${institution3}
       OR mp.check_4=${institution4})
-      AND (n.name REGEXP ${term} OR t.text REGEXP ${term} OR t2.text REGEXP ${term} OR t3.text REGEXP ${term})
+      AND (n.name REGEXP ${term} OR t.text REGEXP ${term} OR t2.text REGEXP ${term} OR t3.text REGEXP ${term} 
+        OR ((mp.check_1= IF('osh authority' REGEXP ${term}, 1, 0) AND mp.check_2= 0 AND mp.check_3= 0 AND mp.check_4= 0)
+        OR (mp.check_2= IF('Compensation and insurance body' REGEXP ${term}, 1, 0) AND mp.check_1= 0 AND mp.check_3= 0 AND mp.check_4= 0)
+        OR (mp.check_3= IF('Prevention institute' REGEXP ${term}, 1, 0) AND mp.check_1= 0 AND mp.check_2= 0 AND mp.check_4= 0)
+        OR (mp.check_4= IF('Standardisation body' REGEXP ${term}, 1, 0) AND mp.check_1= 0 AND mp.check_2= 0 AND mp.check_3= 0)))
       ORDER BY FIELD(n.country_code, 'EU28') DESC, country_name ASC, osh_authority DESC, compensation DESC, prevention DESC, standardisation DESC;
     </Query>
   </DataAccess>
