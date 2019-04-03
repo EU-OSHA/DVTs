@@ -298,7 +298,7 @@ define(function (require) {
     |                                DATA LOAD                                     |
     |******************************************************************************/
       dataService.getEUChallengesData().then(function (data) {
-        $log.debug('getAllMatrixAuthorities');
+        $log.debug('getEUChallengesData');
         //$log.warn(data);
 
         data.data.resultset.map(function (elem) {
@@ -455,7 +455,7 @@ define(function (require) {
           par="challenge";
 
           if(angular.element('span#challengeFilter1').length<=0){
-            var html = '<span class="selected-tag" id="challengeFilter1" data-ng-click="deleteTag($event)" data-ng-bind="i18nLiterals.L20614"></span>';
+            var html = '<span class="selected-tag" id="challengeFilter1" data-ng-click="deleteTag($event)" data-ng-bind="i18nLiterals.L20631"></span>';
             tags.append( $compile(html)($scope) );
           }
         }else{
@@ -466,7 +466,7 @@ define(function (require) {
           $scope.searchParams.challenges.filter2=1;
           par="challenge";
           if(angular.element('span#challengeFilter2').length<=0){
-            var html = '<span class="selected-tag" id="challengeFilter2" data-ng-click="deleteTag($event)" data-ng-bind="i18nLiterals.L20611"></span>';
+            var html = '<span class="selected-tag" id="challengeFilter2" data-ng-click="deleteTag($event)" data-ng-bind="i18nLiterals.L20632"></span>';
             tags.append( $compile(html)($scope) );
           }
         }else{
@@ -477,7 +477,7 @@ define(function (require) {
           $scope.searchParams.challenges.filter3=1;
           par="challenge";
           if(angular.element('span#challengeFilter3').length<=0){
-            var html = '<span class="selected-tag" id="challengeFilter3" data-ng-click="deleteTag($event)" data-ng-bind="i18nLiterals.L20612"></span>';
+            var html = '<span class="selected-tag" id="challengeFilter3" data-ng-click="deleteTag($event)" data-ng-bind="i18nLiterals.L20653"></span>';
             tags.append( $compile(html)($scope) );
           }
         }else{
@@ -531,15 +531,15 @@ define(function (require) {
       function search($event,filter) {
         //$log.warn($scope.amatrix);
 
-        dataService.getSearchTerm($scope.searchText, $scope.searchParams.challenges, $scope.searchParams.countries)
+        dataService.getEUChallengesWithFilters($scope.searchText, $scope.searchParams.challenges, $scope.searchParams.countries)
           .then(function (data) {
             $scope.amatrix = dataService.dataMapper(data);
 
-            //$log.warn($scope.amatrix);
+            $log.warn($scope.amatrix);
 
             $scope.firstPage();
 
-            $state.transitionTo('osh-authorities', {}, {notify: false});
+            $state.transitionTo('EU-challenges-response', {pCountry:0}, {notify: false});
 
             //updateText();
 

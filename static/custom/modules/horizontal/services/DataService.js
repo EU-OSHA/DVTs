@@ -418,7 +418,7 @@ define(function () {
 
             /*********************** END ECONOMIC AND SECTOR PROFILES ***************************/
 
-            /****************************** WORKFORCE PROFILES ******************************/
+            /***************************** WORKFORCE PROFILES ******************************/
 
                 /**
                  * @ngdoc method
@@ -539,37 +539,37 @@ define(function () {
                     return promise(url);
                 },
             
-            /**************************** END WORKFORCE PROFILES ******************************/
+            /*************************** END WORKFORCE PROFILES ******************************/
 
-            /******************************* REGULATIONS **********************************/
+            /******************************** REGULATIONS **********************************/
 
-            /**
-             * @ngdoc method
-             * @name dvt.configModule.DataService#getRegulationIndicators
-             * @methodOf dvt.configModule.DataService
-             * @description
-             * Get indicators for regulation select option list
-             */
-            getRegulationIndicators: function(){
-                var url = configService.getBarometerDataPath() + "&dataAccessId=getRegulationIndicators";
-                $log.debug('getRegulationIndicators url:' + url);
-                return promise(url);
-            },
+                /**
+                 * @ngdoc method
+                 * @name dvt.configModule.DataService#getRegulationIndicators
+                 * @methodOf dvt.configModule.DataService
+                 * @description
+                 * Get indicators for regulation select option list
+                 */
+                getRegulationIndicators: function(){
+                    var url = configService.getSteeringOshDataPath() + "&dataAccessId=getRegulationIndicators";
+                    $log.debug('getRegulationIndicators url:' + url);
+                    return promise(url);
+                },
 
-            /**
-             * @ngdoc method
-             * @name dvt.configModule.DataService#getCountryRegulationData
-             * @methodOf dvt.configModule.DataService
-             * @description
-             * Get regulations data for a country
-             */
-            getCountryRegulationData: function(pCountry){
-                var url = configService.getBarometerDataPath() + "&dataAccessId=getCountryRegulationData" + "&parampCountry="+pCountry;
-                $log.debug('getCountryRegulationData url:' + url);
-                return promise(url);
-            },
+                /**
+                 * @ngdoc method
+                 * @name dvt.configModule.DataService#getCountryRegulationData
+                 * @methodOf dvt.configModule.DataService
+                 * @description
+                 * Get regulations data for a country
+                 */
+                getCountryRegulationData: function(pCountry){
+                    var url = configService.getSteeringOshDataPath() + "&dataAccessId=getCountryRegulationData" + "&parampCountry="+pCountry;
+                    $log.debug('getCountryRegulationData url:' + url);
+                    return promise(url);
+                },
             
-            /************************ END REGULATIONS ***************************/
+            /****************************** END REGULATIONS ********************************/
 
 
             /************************ NATIONAL STRATEGIES ***************************/
@@ -583,7 +583,7 @@ define(function () {
              */
             getStrategiesCountryFilter: function(countries){
                 var block1 = countries.length <= 0 ? ".*" : '^'+countries.join("|^");
-                var url = configService.getBarometerDataPath() + "&dataAccessId=getStrategiesCountryFilter" + "&paramcountries="+block1;
+                var url = configService.getSteeringOshDataPath() + "&dataAccessId=getStrategiesCountryFilter" + "&paramcountries="+block1;
                 $log.debug('getStrategiesCountryFilter url:' + url);
                 return promise(url);
             },
@@ -596,7 +596,7 @@ define(function () {
              * Get indicators for regulation select option list
              */
             getStrategiesIndicators: function(){
-                var url = configService.getBarometerDataPath() + "&dataAccessId=getStrategiesIndicators";
+                var url = configService.getSteeringOshDataPath() + "&dataAccessId=getStrategiesIndicators";
                 $log.debug('getStrategiesIndicators url:' + url);
                 return promise(url);
             },
@@ -609,7 +609,7 @@ define(function () {
              * Get structure of national strategy data for a country
              */
             getStructureStrategiesData: function(pCountry){
-                var url = configService.getBarometerDataPath() + "&dataAccessId=getStructureStrategiesData" + "&parampCountry="+pCountry;
+                var url = configService.getSteeringOshDataPath() + "&dataAccessId=getStructureStrategiesData" + "&parampCountry="+pCountry;
                 $log.debug('getStructureStrategiesData url:' + url);
                 return promise(url);
             },
@@ -622,7 +622,7 @@ define(function () {
              * Get indicators for regulation select option list
              */
             getEUChallengesCountries: function(){
-                var url = configService.getBarometerDataPath() + "&dataAccessId=getEUChallengesCountries";
+                var url = configService.getSteeringOshDataPath() + "&dataAccessId=getEUChallengesCountries";
                 $log.debug('getEUChallengesCountries url:' + url);
                 return promise(url);
             },
@@ -635,8 +635,48 @@ define(function () {
              * Get indicators for regulation select option list
              */
             getEUChallengesData: function(){
-                var url = configService.getBarometerDataPath() + "&dataAccessId=getEUChallengesData";
+                var url = configService.getSteeringOshDataPath() + "&dataAccessId=getEUChallengesData";
                 $log.debug('getEUChallengesData url:' + url);
+                return promise(url);
+            },
+
+            /**
+             * @ngdoc method
+             * @name dvt.configModule.DataService#getEUChallengesWithFilters
+             * @methodOf dvt.configModule.DataService
+             * @description
+             * Get indicators for regulation select option list
+             */
+            getEUChallengesWithFilters: function(term, challenges, countries){
+                var term2 = !term ? ".*" : ".*" + term;
+
+                if (challenges.filter1==1){
+                  block1 = 1;
+                }else {
+                  block1 = 2;
+                }
+                if (challenges.filter2==1){
+                  block2 = 1;
+                }else {
+                  block2 = 2;
+                }
+                if (challenges.filter3==1){
+                  block3 = 1;
+                }else {
+                  block3 = 2;
+                }
+                if(challenges.filter1==0 && challenges.filter2==0 && challenges.filter3==0){
+                    block1 = 1;
+                    block2 = 1;
+                    block3 = 1;
+                }
+
+                var block4 = countries.length <= 0 ? ".*" : countries.join("|");
+
+                var url = configService.getSteeringOshDataPath() + "&dataAccessId=getEUChallengesWithFilters" + "&paramterm=" + term2+ "&paramchallenge1=" + block1 +"&paramchallenge2=" + block2 +"&paramchallenge3=" + block3 +"&paramcountries=" + block4;
+
+                $log.debug('getEUChallengesWithFilters url: ' + url);
+                
                 return promise(url);
             },
 

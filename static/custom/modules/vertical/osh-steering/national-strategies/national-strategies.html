@@ -26,15 +26,13 @@
 
   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
     <!--<div data-ng-repeat="letter in alphabet" ng-class="'col-xs-12  col-sm-6 col-md-4 col-lg-3 ar-item'">-->
-    <div data-ng-repeat="letter in alphabet" id="section{{letter}}">
-      <label data-ng-bind="letter"></label>
-      <div class="" data-ng-repeat="country in countryByLetter(letter)">
-        <div class="views-field-title-field additional-title">
-          <h2 class="infographics-teaser-title" data-ng-bind="i18nLiterals['L'+country.country]"></h2>
-        </div>
-        <p class="col-lg nopadding additional-img">
-          <img  class="flags--wrapper" ng-src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/flag/{{::country.country_code.toLowerCase()}}.png">
+    <div data-ng-repeat="letter in alphabet" id="section{{letter}}" class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="border-style: dotted; border-color: yellowgreen; border-width: 1px; border-bottom: none">
+      <div class="text-left"><h3 data-ng-bind="letter"></h3></div>
+      <div class="col-md-3 col-lg-3" data-ng-repeat="country in countryByLetter(letter)">
+        <p class="col-lg nopadding additional-img text-center">
+          <img class="flags--wrapper" ng-src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/flag/{{::country.country_code.toLowerCase()}}.png">
         </p>
+        <h4 class="text-center" data-ng-bind="i18nLiterals['L'+country.country]"></h4>
         <p class="btn--block-full left-text">
           <a ui-sref="country-profile({pIndicator: 'basic-information', pCountry1:country.country_code, pCountry2: 0})" class="btn-default btn-main-color btn-full" title="{{i18nLiterals.L20626}}" data-ng-bind="i18nLiterals.L20626"></a>
         </p>

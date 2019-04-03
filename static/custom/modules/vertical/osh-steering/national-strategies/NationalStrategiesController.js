@@ -17,6 +17,7 @@ define(function (require) {
 
     // CDA
     $scope.cda =  configService.getBarometerCda();
+    $scope.cdaSteering =  configService.getSteeringOshDataPath();
 
     var i18n = require('json!vertical/osh-authorities/i18n');
     var i18nLiterals = configService.getLiterals();
