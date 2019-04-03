@@ -16,6 +16,7 @@ define(function (require) {
 
     // CDA
     $scope.cda =  configService.getBarometerCda();
+    $scope.cdaGenericInformation = configService.getGenericInformationCda();
 
     // Datasets
     $scope.datasetList = configService.getDatasets();

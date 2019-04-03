@@ -1,10 +1,579 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CDADescriptor>
-   <DataSources>
+	<DataSources>
       <Connection id="dvt_conn" type="sql.jndi">
          <Jndi>jdbcEuOshaBarometer</Jndi>
       </Connection>
-   </DataSources>
+	</DataSources>
+
+	<!-- HOME || ALL AVAILABLE COUNTRIES FOR NATIONAL STRATEGIES -->
+	<DataAccess access="public" connection="dvt_conn" id="getStrategiesCountries" type="sql">
+	    <Cache duration="3600" enabled="true" />
+	    <Columns />
+	    <Query>
+	      SELECT DISTINCT (n.literal_id) AS country, n.country_code AS country_code
+	      FROM strategies_page sp
+	      INNER JOIN nuts n
+	      ON n.id = sp.nuts_id
+	      WHERE sp.page = 'STRATEGY'
+	      ORDER BY country ASC
+	    </Query>
+	</DataAccess>
+
+	<!-- HOME || ALL AVAILABLE COUNTRIES FOR REGULATIONS -->
+	<DataAccess access="public" connection="dvt_conn" id="getRegulationsCountries" type="sql">
+	    <Cache duration="3600" enabled="true" />
+	    <Columns />
+	    <Query>
+	      SELECT DISTINCT (n.literal_id) AS country, n.country_code AS country_code
+	      FROM strategies_page sp
+	      INNER JOIN nuts n
+	      ON n.id = sp.nuts_id
+	      WHERE sp.page = 'STRATEGY_REGULATION'
+	      ORDER BY country ASC
+	    </Query>
+	</DataAccess>
+
+	<!-- HOME || ALL AVAILABLE COUNTRIES FOR ENFORCE CAPACITIES -->
+	<DataAccess access="public" connection="dvt_conn" id="getCapacitiesCountries" type="sql">
+	    <Cache duration="3600" enabled="true" />
+	    <Columns />
+	    <Query>
+	      SELECT DISTINCT (n.literal_id) AS country, n.country_code AS country_code
+	      FROM strategies_page sp
+	      INNER JOIN nuts n
+	      ON n.id = sp.nuts_id
+	      WHERE sp.page = 'STRATEGY_ENFOR_CAPACITY'
+	      ORDER BY country ASC
+	    </Query>
+	</DataAccess>
+
+	<!-- HOME || ALL AVAILABLE COUNTRIES FOR ECONOMIC AND SECTOR PROFILES INDICATORS -->
+	<DataAccess access="public" connection="dvt_conn" id="getAvailableEconomicSectorCountries" type="sql">
+	    <Cache duration="3600" enabled="true" />
+	    <Columns />
+	    <Query>
+	      SELECT DISTINCT(n.literal_id) as country_name, n.country_code as country_code
+	      FROM nuts n
+	      INNER JOIN profile p
+	      ON n.id = p.nuts_id
+	      INNER JOIN value v
+	      ON v.profile_id = p.id
+	      WHERE v.indicator_id IN (31, 36, 37, 38, 39, 40)
+	      AND n.country_code NOT IN ('EU28')
+	      ORDER BY country_name ASC;
+	    </Query>
+	</DataAccess>
+
+	<!-- OSH AUTHORITIES || MATRIX OSH AUTHORITIES SEARCHER -->
+	<DataAccess access="public" connection="dvt_conn" id="getSearchTerm" type="sql">
+		<Cache duration="3600" enabled="true" />
+		<Columns/>
+	    <Parameters>
+	      <Parameter default=".*" name="term" type="String" />
+	      <Parameter default="null" name="institution1" type="Numeric"/>
+	      <Parameter default="null" name="institution2" type="Numeric"/>
+	      <Parameter default="null" name="institution3" type="Numeric"/>
+	      <Parameter default="null" name="institution4" type="Numeric"/>
+	      <Parameter default=".*" name="countries" type="String"/>
+	    </Parameters>
+	    <Query>
+	      SELECT DISTINCT(mp.id) AS id, n.literal_id AS country_name, n.country_code as country_code, mp.check_1 AS osh_authority, mp.check_2 AS compensation, 
+	      mp.check_3 AS prevention, mp.check_4 AS standardisation, mp.text_1_literal_id AS name_authority, mp.text_2_literal_id AS link_authority, mp.text_3_literal_id AS detail_authority
+	      FROM matrix_page mp
+	      INNER JOIN nuts n
+	      ON n.id = mp.nuts_id
+	      INNER JOIN literal l
+	      ON l.id = mp.text_1_literal_id
+	      INNER JOIN literal l2
+	      ON l2.id = mp.text_2_literal_id
+	      INNER JOIN literal l3
+	      ON l3.id = mp.text_3_literal_id
+	      INNER JOIN translation t
+	      ON l.id = t.literal_id
+	      INNER JOIN translation t2
+	      ON l2.id = t2.literal_id
+	      INNER JOIN translation t3
+	      ON l3.id = t3.literal_id
+	      WHERE mp.page = 'MATRIX_AUTHORITY' 
+	      AND n.country_code REGEXP ${countries}
+	      AND (mp.check_1=${institution1}
+	      OR mp.check_2=${institution2}
+	      OR mp.check_3=${institution3}
+	      OR mp.check_4=${institution4})
+	      AND (n.name REGEXP ${term} OR t.text REGEXP ${term} OR t2.text REGEXP ${term} OR t3.text REGEXP ${term} 
+	        OR ((mp.check_1= IF('osh authority' REGEXP ${term}, 1, 0) AND mp.check_2= 0 AND mp.check_3= 0 AND mp.check_4= 0)
+	        OR (mp.check_2= IF('Compensation and insurance body' REGEXP ${term}, 1, 0) AND mp.check_1= 0 AND mp.check_3= 0 AND mp.check_4= 0)
+	        OR (mp.check_3= IF('Prevention institute' REGEXP ${term}, 1, 0) AND mp.check_1= 0 AND mp.check_2= 0 AND mp.check_4= 0)
+	        OR (mp.check_4= IF('Standardisation body' REGEXP ${term}, 1, 0) AND mp.check_1= 0 AND mp.check_2= 0 AND mp.check_3= 0)))
+	      ORDER BY FIELD(n.country_code, 'EU28') DESC, country_name ASC, osh_authority DESC, compensation DESC, prevention DESC, standardisation DESC;
+	    </Query>
+	</DataAccess>
+
+	<!-- OSH AUTHORITIES || ALL MATRIX DATA OF OSH AUTHORITIES VIEW -->
+	<DataAccess access="public" connection="dvt_conn" id="getAllMatrixAuthorities" type="sql">
+	    <Cache duration="3600" enabled="true" />
+	    <Columns />
+	    <Parameters>
+	    	<Parameter default="" name="pFilter" type="String" />
+	    </Parameters>
+	    <Query>
+	      SELECT DISTINCT(mp.id) AS id, n.literal_id AS country_name, n.country_code as country_code, mp.check_1 AS osh_authority, mp.check_2 AS compensation, 
+	      mp.check_3 AS prevention, mp.check_4 AS standardisation, mp.text_1_literal_id AS name_authority, mp.text_2_literal_id AS link_authority, mp.text_3_literal_id AS detail_authority
+	      FROM matrix_page mp
+	      INNER JOIN nuts n
+	      ON n.id = mp.nuts_id
+	      WHERE mp.page = 'MATRIX_AUTHORITY'
+	      ORDER BY FIELD(n.country_code, 'EU28') DESC, country_name ASC, osh_authority DESC, compensation DESC, prevention DESC, standardisation DESC;
+	    </Query>
+	</DataAccess>
+
+	<!-- OSH AUTHORITIES || ALL COUNTRIES TO SELECT FROM IN OSH AUTHORITIES VIEW -->
+	<DataAccess access="public" connection="dvt_conn" id="getMatrixAuthsCountries" type="sql">
+	    <Cache duration="3600" enabled="true" />
+	    <Columns />
+	    <Query>
+	    SELECT DISTINCT (n.literal_id) AS country, n.country_code AS country_code
+	    FROM matrix_page mp
+	    INNER JOIN nuts n
+	    ON n.id = mp.nuts_id
+	    WHERE mp.page = 'MATRIX_AUTHORITY'
+	    ORDER BY FIELD(country_code, 'EU28') DESC, country ASC;
+	    </Query>
+	</DataAccess>
+
+  	<!-- OSH AUTHORITIES || Apply all filters for osh authorities data -->
+	<DataAccess access="public" connection="dvt_conn" id="getSearchList" type="sql">
+	    <Cache duration="3600" enabled="true"/>
+	    <Columns/>
+	    <Parameters>            
+	        <Parameter default=".*" name="countries" type="String"/>
+	    </Parameters>
+	    <Query>
+	      SELECT n.literal_id as country_name,
+	      mp.check_1 AS osh_authority,
+	      mp.check_2 AS compensation, 
+	      mp.check_3 AS prevention,
+	      mp.check_4 AS standardisation,
+	      mp.text_1_literal_id as name_authority,
+	      mp.text_2_literal_id as link_authority,
+	      mp.text_3_literal_id as detail_authority,
+	      n.country_code as country_code
+	      FROM matrix_page mp
+	      INNER JOIN nuts n
+	      ON n.id = mp.nuts_id
+
+	      /*JOIN condition*/
+	       WHERE n.country_code REGEXP ${countries}
+	       AND mp.page = 'MATRIX_AUTHORITY'
+
+	      order by country_name ASC, standardisation ASC, prevention ASC, compensation ASC, osh_authority ASC
+	    </Query>
+	</DataAccess>
+
+  	<!-- OSH AUTHORITIES || GET MATRIX OSH AUTHORITIES DATA APPLYING PAGE FILTERS -->
+	<DataAccess access="public" connection="dvt_conn" id="getSearchListInstitutions" type="sql">
+    	<Cache duration="3600" enabled="true"/>
+    	<Columns/>
+    	<Parameters>
+	        <Parameter default="null" name="institution1" type="Numeric"/>
+	        <Parameter default="null" name="institution2" type="Numeric"/>
+	        <Parameter default="null" name="institution3" type="Numeric"/>
+	        <Parameter default="null" name="institution4" type="Numeric"/>
+	        <Parameter default=".*" name="countries" type="String"/>
+    	</Parameters>
+    	<Query>
+	        SELECT n.literal_id as country_name,
+	        mp.check_1 AS osh_authority,
+	        mp.check_2 AS compensation, 
+	        mp.check_3 AS prevention,
+	        mp.check_4 AS standardisation,
+	        mp.text_1_literal_id as name_authority,
+	        mp.text_2_literal_id as link_authority,
+	        mp.text_3_literal_id as detail_authority,
+	        n.country_code as country_code
+	        FROM matrix_page mp
+	        INNER JOIN nuts n
+	        ON n.id = mp.nuts_id
+	        
+	        /*JOIN condition*/
+	        WHERE mp.page = 'MATRIX_AUTHORITY'
+	        AND n.country_code REGEXP ${countries}
+	        AND (mp.check_1=${institution1}
+	        OR mp.check_2=${institution2}
+	        OR mp.check_3=${institution3}
+	        OR mp.check_4=${institution4})
+	        ORDER BY country_name ASC, standardisation ASC, prevention ASC, compensation ASC, osh_authority ASC
+      	</Query>
+	</DataAccess>
+
+	<!-- ECONOMIC AND SECTOR PROFILE || Get Company size indicators and values -->
+	<DataAccess access="public" connection="dvt_conn" id="getCompanySizeData" type="sql">
+	    <Cache duration="3600" enabled="true"/>
+	    <Columns/>
+	    <Parameters>
+	      <Parameter default="1" name="pIndicator" type="Numeric" />
+	      <Parameter default="AT" name="pCountry1" type="String" />
+	      <Parameter default="BE" name="pCountry2" type="String" />
+	      <Parameter default="6" name="pDataset" type="Numeric" />
+	    </Parameters>
+	    <Query>
+	      SELECT t.text as Size, n.country_code as Country, (v.value*100) as Value
+	      FROM nuts n, profile p, indicator i, value v, split_company_size scs, dataset d, translation t
+	      WHERE n.id = p.nuts_id
+	      AND p.company_size_id = scs.id
+	      AND i.id = v.indicator_id
+	      AND v.profile_id = p.id
+	      AND d.id = ${pDataset} AND d.id = v.dataset_id
+	      AND t.literal_id = scs.literal_id
+	      AND n.country_code IN (${pCountry1}, ${pCountry2}, 'EU28') AND i.id = ${pIndicator}
+	      ORDER BY FIELD(n.country_code, ${pCountry1}, ${pCountry2}, 'EU28') DESC
+	    </Query>
+	</DataAccess>
+
+	<!-- ECONOMIC AND SECTOR PROFILE || Get Employment per sector indicators and values -->
+	<DataAccess access="public" connection="dvt_conn" id="getEmploymentPerSectorData" type="sql">
+	    <Cache duration="3600" enabled="true"/>
+	    <Columns/>
+	    <Parameters>
+	      <Parameter default="1" name="pIndicator" type="Numeric" />
+	      <Parameter default="AT" name="pCountry1" type="String" />
+	      <Parameter default="BE" name="pCountry2" type="String" />
+	      <Parameter default="6" name="pDataset" type="Numeric" />
+	    </Parameters>
+	    <Query>
+	      SELECT t.text as Sector, n.country_code as Country, (v.value*100) as Value
+	      FROM nuts n, profile p, indicator i, value v, split_activity_sector sas, dataset d, translation t
+	      WHERE n.id = p.nuts_id 
+	      AND p.activity_sector_id = sas.id 
+	      AND i.id = v.indicator_id 
+	      AND v.profile_id = p.id
+	      AND d.id = ${pDataset} AND d.id = v.dataset_id 
+	      AND t.literal_id = sas.literal_id
+	      AND sas.id IN (1, 2, 3, 4, 5, 6, 7)
+	      AND n.country_code IN (${pCountry1}, ${pCountry2}, 'EU28') AND i.id = ${pIndicator}
+	      ORDER BY FIELD(n.country_code, ${pCountry1}, ${pCountry2}, 'EU28') DESC
+	    </Query>
+	</DataAccess>
+
+	<!-- ECONOMIC AND SECTOR PROFILE || Get Employment rate indicators and values -->
+	<DataAccess access="public" connection="dvt_conn" id="getEmploymentRateData" type="sql">
+	    <Cache duration="3600" enabled="true"/>
+	    <Columns/>
+	    <Parameters>
+	      <Parameter default="1" name="pIndicator" type="Numeric" />
+	      <Parameter default="AT" name="pCountry1" type="String" />
+	      <Parameter default="BE" name="pCountry2" type="String" />
+	      <Parameter default="6" name="pDataset" type="Numeric" />
+	    </Parameters>
+	    <Query>
+	      SELECT n.country_code as Country, (v.value*100) as Value
+	      FROM nuts n, profile p, indicator i, value v, dataset d
+	      WHERE n.id = p.nuts_id
+	      AND i.id = v.indicator_id
+	      AND v.profile_id = p.id
+	      AND d.id = ${pDataset} AND d.id = v.dataset_id
+	      AND n.country_code IN (${pCountry1}, ${pCountry2}, 'EU28') AND i.id = ${pIndicator}
+	      ORDER BY FIELD(n.country_code, ${pCountry1}, ${pCountry2}, 'EU28') DESC
+	    </Query>
+	</DataAccess>
+
+	<!-- ECONOMIC AND SECTOR PROFILE || Get unemployment rate indicators and values -->
+	<DataAccess access="public" connection="dvt_conn" id="getUnemploymentRateData" type="sql">
+	    <Cache duration="3600" enabled="true"/>
+	    <Columns/>
+	    <Parameters>
+	      <Parameter default="1" name="pIndicator" type="Numeric" />
+	      <Parameter default="AT" name="pCountry1" type="String" />
+	      <Parameter default="BE" name="pCountry2" type="String" />
+	      <Parameter default="6" name="pDataset" type="Numeric" />
+	    </Parameters>
+	    <Query>
+	      SELECT n.country_code as Country, (v.value*100) as Value
+	      FROM nuts n, profile p, indicator i, value v, dataset d
+	      WHERE n.id = p.nuts_id
+	      AND i.id = v.indicator_id
+	      AND v.profile_id = p.id
+	      AND d.id = ${pDataset} AND d.id = v.dataset_id
+	      AND n.country_code IN (${pCountry1}, ${pCountry2}, 'EU28') AND i.id = ${pIndicator}
+	      ORDER BY FIELD(n.country_code, ${pCountry1}, ${pCountry2}, 'EU28') ASC
+	    </Query>
+	</DataAccess>
+
+    <!-- ECONOMIC AND SECTOR PROFILE || Get GDP per capita indicators and values -->
+	<DataAccess access="public" connection="dvt_conn" id="getGDPData" type="sql">
+	    <Cache duration="3600" enabled="true"/>
+	    <Columns/>
+	    <Parameters>
+	      <Parameter default="1" name="pIndicator" type="Numeric" />
+	      <Parameter default="AT" name="pCountry1" type="String" />
+	      <Parameter default="BE" name="pCountry2" type="String" />
+	      <Parameter default="6" name="pDataset" type="Numeric" />
+	    </Parameters>
+	    <Query>
+	      SELECT n.country_code as Country, (v.value*100) as Value
+	      FROM nuts n, profile p, indicator i, value v, dataset d
+	      WHERE n.id = p.nuts_id
+	      AND i.id = v.indicator_id
+	      AND v.profile_id = p.id
+	      AND d.id = ${pDataset} AND d.id = v.dataset_id
+	      AND n.country_code IN (${pCountry1}, ${pCountry2}, 'EU28') AND i.id = ${pIndicator}
+	      ORDER BY FIELD(n.country_code, ${pCountry1}, ${pCountry2}, 'EU28') ASC
+	    </Query>
+	</DataAccess>
+
+	<!-- ECONOMIC AND SECTOR PROFILE || Get income per capita indicators and values -->
+	<DataAccess access="public" connection="dvt_conn" id="getIncomePerCapitaData" type="sql">
+	    <Cache duration="3600" enabled="true"/>
+	    <Columns/>
+	    <Parameters>
+	      <Parameter default="1" name="pIndicator" type="Numeric" />
+	      <Parameter default="AT" name="pCountry1" type="String" />
+	      <Parameter default="BE" name="pCountry2" type="String" />
+	      <Parameter default="6" name="pDataset" type="Numeric" />
+	    </Parameters>
+	    <Query>
+	      SELECT n.country_code as Country, p.year as Year, v.value as Income
+	      FROM nuts n, profile p, indicator i, value v, dataset d
+	      WHERE n.id = p.nuts_id
+	      AND i.id = v.indicator_id
+	      AND v.profile_id = p.id
+	      AND d.id = ${pDataset} AND d.id = v.dataset_id
+	      AND n.country_code IN (${pCountry1}, ${pCountry2}, 'EU28') AND i.id = ${pIndicator}
+	      ORDER BY FIELD(n.country_code, ${pCountry1}, ${pCountry2}, 'EU28') ASC, p.year ASC
+	    </Query>
+	</DataAccess>
+
+	<!-- WORKFORCE PROFILE || get genders for select option of employee groups -->
+	<DataAccess access="public" connection="dvt_conn" id="getGenders" type="sql">
+	    <Cache duration="3600" enabled="true" />
+	    <Columns />
+	    <Parameters>
+	    </Parameters>
+	    <Query>
+	      SELECT sg.id as gender_id, sg.literal_id as gender_name
+	      FROM split_gender sg
+	      ORDER BY FIELD(gender_id, 2, 3, 1)
+	    </Query>
+	</DataAccess>
+
+	<!-- WORKFORCE PROFILE || get countries available for select option in tablets and mobiles -->
+	<DataAccess access="public" connection="dvt_conn" id="getAvailableCountries" type="sql">
+	    <Cache duration="3600" enabled="true" />
+	    <Columns />
+	    <Parameters>
+	      <Parameter default="6" name="pDataset" type="Numeric" />
+	    </Parameters>
+	    <Query>
+	      SELECT distinct(n.country_code) as countryKey, n.literal_id as country_name
+	      FROM nuts n, profile p, value v, dataset d
+	      WHERE n.id = p.nuts_id 
+	      AND v.profile_id = p.id 
+	      AND d.id = ${pDataset} AND d.id = v.dataset_id
+	      AND v.indicator_id IN (37, 38, 39)
+	      ORDER BY country_name ASC
+	    </Query>
+	</DataAccess>
+
+	<!-- WORKFORCE PROFILE || get countries available for select option in tablets and mobiles -->
+	<DataAccess access="public" connection="dvt_conn" id="getFilteringCountries" type="sql">
+	    <Cache duration="3600" enabled="true" />
+	    <Columns />
+	    <Parameters>
+	      <Parameter default="6" name="pDataset" type="Numeric" />
+	      <Parameter default=".*" name="countries" type="String"/>
+	    </Parameters>
+	    <Query>
+	      SELECT distinct(n.country_code) as countryKey, n.name as country_name
+	      FROM nuts n, profile p, value v, dataset d
+	      WHERE n.id = p.nuts_id 
+	      AND v.profile_id = p.id 
+	      AND d.id = ${pDataset} AND d.id = v.dataset_id
+	      AND n.country_code REGEXP ${countries}
+	      AND v.indicator_id IN (37, 38, 39)
+	      ORDER BY country_name ASC
+	    </Query>
+	</DataAccess>
+
+	<!-- WORKFORCE PROFILE || get median age data -->
+	<DataAccess access="public" connection="dvt_conn" id="getMedianAgeData" type="sql">
+	    <Cache duration="3600" enabled="true" />
+	    <Columns />
+	    <Parameters>
+	      <Parameter default="6" name="pDataset" type="Numeric" />
+	    </Parameters>
+	    <Query>
+	      SELECT n.country_code as countryKey, n.literal_id as country_name, v.value as value
+	      FROM nuts n, profile p, value v, dataset d
+	      WHERE n.id = p.nuts_id 
+	      AND v.profile_id = p.id 
+	      AND d.id = ${pDataset} AND d.id = v.dataset_id
+	      AND v.indicator_id = 37
+	      ORDER BY country_name ASC
+	    </Query>
+	</DataAccess>
+
+	<!-- WORKFORCE PROFILE || get ageing workers data -->
+	<DataAccess access="public" connection="dvt_conn" id="getAgeingWorkersData" type="sql">
+	    <Cache duration="3600" enabled="true" />
+	    <Columns />
+	    <Parameters>
+	      <Parameter default="6" name="pDataset" type="Numeric" />
+	    </Parameters>
+	    <Query>
+	      SELECT n.country_code as countryKey, n.literal_id as country_name, v.value as value
+	      FROM nuts n, profile p, value v, dataset d
+	      WHERE n.id = p.nuts_id 
+	      AND v.profile_id = p.id 
+	      AND d.id = ${pDataset} AND d.id = v.dataset_id
+	      AND v.indicator_id = 38
+	      ORDER BY country_name ASC
+	    </Query>
+	</DataAccess>
+
+	<!-- WORKFORCE PROFILE || get total employment rate data -->
+	<DataAccess access="public" connection="dvt_conn" id="getTotalEmploymentData" type="sql">
+	    <Cache duration="3600" enabled="true" />
+	    <Columns />
+	    <Parameters>
+	      <Parameter default="6" name="pDataset" type="Numeric" />
+	    </Parameters>
+	    <Query>
+	      SELECT n.country_code as countryKey, n.literal_id as country_name, (v.value*100) as value
+	      FROM nuts n, profile p, value v, dataset d
+	      WHERE n.id = p.nuts_id 
+	      AND v.profile_id = p.id 
+	      AND d.id = ${pDataset} AND d.id = v.dataset_id
+	      AND v.indicator_id = 39
+	      AND p.gender_id = 1
+	      ORDER BY country_name ASC
+	    </Query>
+	</DataAccess>
+
+	<!-- WORKFORCE PROFILE || get male employment rate data -->
+	<DataAccess access="public" connection="dvt_conn" id="getMaleEmploymentData" type="sql">
+	    <Cache duration="3600" enabled="true" />
+	    <Columns />
+	    <Parameters>
+	      <Parameter default="6" name="pDataset" type="Numeric" />
+	    </Parameters>
+	    <Query>
+	      SELECT n.country_code as countryKey, n.literal_id as country_name, (v.value*100) as value
+	      FROM nuts n, profile p, value v, dataset d
+	      WHERE n.id = p.nuts_id 
+	      AND v.profile_id = p.id 
+	      AND d.id = ${pDataset} AND d.id = v.dataset_id
+	      AND v.indicator_id = 39
+	      AND p.gender_id = 2
+	      ORDER BY country_name ASC
+	    </Query>
+	</DataAccess>
+
+	<!-- WORKFORCE PROFILE || get female employment rate data -->
+	<DataAccess access="public" connection="dvt_conn" id="getFemaleEmploymentData" type="sql">
+	    <Cache duration="3600" enabled="true" />
+	    <Columns />
+	    <Parameters>
+	      <Parameter default="6" name="pDataset" type="Numeric" />
+	    </Parameters>
+	    <Query>
+	      SELECT n.country_code as countryKey, n.literal_id as country_name, (v.value*100) as value
+	      FROM nuts n, profile p, value v, dataset d
+	      WHERE n.id = p.nuts_id 
+	      AND v.profile_id = p.id 
+	      AND d.id = ${pDataset} AND d.id = v.dataset_id
+	      AND v.indicator_id = 39
+	      AND p.gender_id = 3
+	      ORDER BY country_name ASC
+	    </Query>
+	</DataAccess>
+
+	<!-- WORKFORCE PROFILE || get min and max value of selected indicators -->
+	<DataAccess access="public" connection="dvt_conn" id="getMinMaxValues" type="sql">
+	    <Cache duration="3600" enabled="true" />
+	    <Columns />
+	    <Parameters>
+	      <Parameter default="6" name="pDataset" type="Numeric" />
+	      <Parameter default="37" name="pIndicator" type="Numeric" />
+	      <Parameter default="0" name="pSubIndicator" type="Numeric" />
+	    </Parameters>
+	    <Query>
+	      SELECT IF(${pSubIndicator} != 0, MIN(v.value*100), MIN(v.value)) as min_value, 
+	      IF(${pSubIndicator} != 0, MAX(v.value*100), MAX(v.value)) as max_value,
+	      ((IF(${pSubIndicator} != 0, MAX(v.value*100), MAX(v.value)) - IF(${pSubIndicator} != 0, MIN(v.value*100), MIN(v.value))) /4) as range_value
+	      FROM nuts n, profile p, value v, dataset d
+	      WHERE n.id = p.nuts_id 
+	      AND v.profile_id = p.id 
+	      AND d.id = ${pDataset} AND d.id = v.dataset_id
+	      AND v.indicator_id = ${pIndicator}
+	      AND (p.gender_id IS NULL OR p.gender_id = ${pSubIndicator})
+	    </Query>
+	</DataAccess>
 
    
+	<!-- WORKFORCE PROFILE || get min and max value of selected indicators -->
+	<DataAccess access="public" connection="dvt_conn" id="getGaussChartValues" type="sql">
+	    <Cache duration="3600" enabled="true" />
+	    <Columns />
+	    <Parameters>
+	      <Parameter default="6" name="pDataset" type="Numeric" />
+	      <Parameter default="37" name="pIndicator" type="Numeric" />
+	      <Parameter default="0" name="pSubIndicator" type="Numeric" />
+	      <Parameter default="0" name="pMinValue" type="Numeric" />
+	      <Parameter default="0" name="pMaxValue" type="Numeric" />
+	      <Parameter default="0" name="pRange" type="Numeric" />
+	    </Parameters>
+	    <Query>
+	      (SELECT ${pMinValue} as Distribution, IF(${pSubIndicator} != 0, COUNT(v.value*100), COUNT(v.value)) as Total
+	      FROM nuts n, profile p, value v, dataset d
+	      WHERE n.id = p.nuts_id 
+	      AND v.profile_id = p.id 
+	      AND d.id = ${pDataset} AND d.id = v.dataset_id
+	      AND v.indicator_id = ${pIndicator}
+	      AND (p.gender_id IS NULL OR p.gender_id = ${pSubIndicator})
+	      AND IF(${pSubIndicator} != 0, v.value*100, v.value) = ${pMinValue}
+	      ORDER BY v.value ASC
+	      )UNION(
+	      SELECT (${pMinValue}+${pRange}), IF(${pSubIndicator} != 0, COUNT(v.value*100), COUNT(v.value)) 
+	      FROM nuts n, profile p, value v, dataset d
+	      WHERE n.id = p.nuts_id 
+	      AND v.profile_id = p.id 
+	      AND d.id = ${pDataset} AND d.id = v.dataset_id
+	      AND v.indicator_id = ${pIndicator}
+	      AND (p.gender_id IS NULL OR p.gender_id = ${pSubIndicator})
+	      AND (IF(${pSubIndicator} != 0, v.value*100, v.value) BETWEEN (${pMinValue} + 0.01) AND (${pMinValue} + ${pRange}))
+	      ORDER BY v.value ASC
+	      )UNION(
+	      SELECT (${pMinValue}+${pRange}*2), IF(${pSubIndicator} != 0, COUNT(v.value*100), COUNT(v.value)) 
+	      FROM nuts n, profile p, value v, dataset d
+	      WHERE n.id = p.nuts_id 
+	      AND v.profile_id = p.id 
+	      AND d.id = ${pDataset} AND d.id = v.dataset_id
+	      AND v.indicator_id = ${pIndicator}
+	      AND (p.gender_id IS NULL OR p.gender_id = ${pSubIndicator})
+	      AND (IF(${pSubIndicator} != 0, v.value*100, v.value) BETWEEN ((${pMinValue} + ${pRange}) + 0.01) AND (${pMinValue}+${pRange}*2))
+	      ORDER BY v.value ASC
+	      )UNION(
+	      SELECT (${pMaxValue} - ${pRange}), IF(${pSubIndicator} != 0, COUNT(v.value*100), COUNT(v.value)) 
+	      FROM nuts n, profile p, value v, dataset d
+	      WHERE n.id = p.nuts_id 
+	      AND v.profile_id = p.id 
+	      AND d.id = ${pDataset} AND d.id = v.dataset_id
+	      AND v.indicator_id = ${pIndicator}
+	      AND (p.gender_id IS NULL OR p.gender_id = ${pSubIndicator})
+	      AND (IF(${pSubIndicator} != 0, v.value*100, v.value) BETWEEN ((${pMinValue} + ${pRange}*2) + 0.01) AND (${pMaxValue} - ${pRange}))
+	      ORDER BY v.value ASC
+	      )UNION(
+	      SELECT  ${pMaxValue}, IF(${pSubIndicator} != 0, COUNT(v.value*100), COUNT(v.value)) 
+	      FROM nuts n, profile p, value v, dataset d
+	      WHERE n.id = p.nuts_id 
+	      AND v.profile_id = p.id 
+	      AND d.id = ${pDataset} AND d.id = v.dataset_id
+	      AND v.indicator_id = ${pIndicator}
+	      AND (p.gender_id IS NULL OR p.gender_id = ${pSubIndicator})
+	      AND (IF(${pSubIndicator} != 0, v.value*100, v.value) BETWEEN ((${pMaxValue} - ${pRange}) + 0.01) AND ${pMaxValue})
+	      ORDER BY v.value ASC
+	      )
+	    </Query>
+	</DataAccess>
 </CDADescriptor>

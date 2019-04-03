@@ -68,7 +68,7 @@
     <div class="map--gauss--block container" data-ng-repeat="value in minMaxValues">
       <dvt-bar-chart
         data-ng-cloak
-        query="getGaussChartValues" cda="{{::cda }}"
+        query="getGaussChartValues" cda="{{::cdaGenericInformation }}"
         width="200" height="200" type="lines"
         orientation="vertical" axis-fixed-min="0"
         listen-to="[value.min_value, value.max_value, value.range_value]"

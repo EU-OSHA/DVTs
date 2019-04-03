@@ -164,385 +164,384 @@ define(function () {
                 return promise(url);
             },
 
-            /* HOME */
+            /************************************* HOME ***********************************/
 
-            getStrategiesCountries: function(){
-                var url = configService.getBarometerDataPath() + "&dataAccessId=getStrategiesCountries";
-                $log.debug('getStrategiesCountries url:' + url);
+                getStrategiesCountries: function(){
+                    var url = configService.getGenericInformationDataPath() + "&dataAccessId=getStrategiesCountries";
+                    $log.debug('getStrategiesCountries url:' + url);
 
-                return promise(url);
-            },
+                    return promise(url);
+                },
 
-            getRegulationsCountries: function(){
-                var url = configService.getBarometerDataPath() + "&dataAccessId=getRegulationsCountries";
-                $log.debug('getRegulationsCountries url:' + url);
+                getRegulationsCountries: function(){
+                    var url = configService.getGenericInformationDataPath() + "&dataAccessId=getRegulationsCountries";
+                    $log.debug('getRegulationsCountries url:' + url);
 
-                return promise(url);
-            },
+                    return promise(url);
+                },
 
-            getCapacitiesCountries: function(){
-                var url = configService.getBarometerDataPath() + "&dataAccessId=getCapacitiesCountries";
-                $log.debug('getCapacitiesCountries url:' + url);
+                getCapacitiesCountries: function(){
+                    var url = configService.getGenericInformationDataPath() + "&dataAccessId=getCapacitiesCountries";
+                    $log.debug('getCapacitiesCountries url:' + url);
 
-                return promise(url);
-            },
+                    return promise(url);
+                },
 
-            /* END HOME */
+            /*********************************** END HOME ***********************************/
 
-            /* OSH AUTHORITIES */
+            /******************************* OSH AUTHORITIES ********************************/
 
-            /**
-             * @ngdoc method
-             * @name dvt.configModule.DataService#getAllMatrixAuthorities
-             * @methodOf dvt.configModule.DataService
-             * @description
-             * Gets all data for OSH Authorities view
-             */
-            getAllMatrixAuthorities: function () {
-                var url = configService.getBarometerDataPath() + "&dataAccessId=getAllMatrixAuthorities";
-                $log.debug('getAllMatrixAuthorities url:' + url);
+                /**
+                 * @ngdoc method
+                 * @name dvt.configModule.DataService#getAllMatrixAuthorities
+                 * @methodOf dvt.configModule.DataService
+                 * @description
+                 * Gets all data for OSH Authorities view
+                 */
+                getAllMatrixAuthorities: function () {
+                    var url = configService.getGenericInformationDataPath() + "&dataAccessId=getAllMatrixAuthorities";
+                    $log.debug('getAllMatrixAuthorities url:' + url);
 
-                return promise(url);
-            },
+                    return promise(url);
+                },
 
-            /**
-             * @ngdoc method
-             * @name dvt.configModule.DataService#getMatrixAuthsCountries
-             * @methodOf dvt.configModule.DataService
-             * @description
-             * Gets all countries available in OSH Authorities view
-             */
-            getMatrixAuthsCountries: function () {
-                var url = configService.getBarometerDataPath() + "&dataAccessId=getMatrixAuthsCountries";
-                $log.debug('getMatrixAuthsCountries url:' + url);
-                return promise(url);
-            },
+                /**
+                 * @ngdoc method
+                 * @name dvt.configModule.DataService#getMatrixAuthsCountries
+                 * @methodOf dvt.configModule.DataService
+                 * @description
+                 * Gets all countries available in OSH Authorities view
+                 */
+                getMatrixAuthsCountries: function () {
+                    var url = configService.getGenericInformationDataPath() + "&dataAccessId=getMatrixAuthsCountries";
+                    $log.debug('getMatrixAuthsCountries url:' + url);
+                    return promise(url);
+                },
 
-            /**
-             * @ngdoc method
-             * @name dvt.configModule.DataService#getSearchList
-             * @param {string} policy text to match with policy name o policy description
-             * @param {string} classifications classifications filters
-             * @param {string} countries countries filters
-             * @methodOf dvt.configModule.DataService
-             * @description
-             * Policies list data accesss services
-             *
-             */
-            getSearchList: function (countries) {
-                var block1 = countries.length <= 0 ? ".*" : countries.join("|");;
+                /**
+                 * @ngdoc method
+                 * @name dvt.configModule.DataService#getSearchList
+                 * @param {string} policy text to match with policy name o policy description
+                 * @param {string} classifications classifications filters
+                 * @param {string} countries countries filters
+                 * @methodOf dvt.configModule.DataService
+                 * @description
+                 * Policies list data accesss services
+                 *
+                 */
+                getSearchList: function (countries) {
+                    var block1 = countries.length <= 0 ? ".*" : countries.join("|");;
 
-                var url = configService.getBarometerDataPath() + "&dataAccessId=getSearchList" + "&paramcountries=" + block1;
+                    var url = configService.getGenericInformationDataPath() + "&dataAccessId=getSearchList" + "&paramcountries=" + block1;
 
-                $log.debug('getSearchList url: ' + url);
-                return promise(url);
-            },
+                    $log.debug('getSearchList url: ' + url);
+                    return promise(url);
+                },
 
-            /**
-             * @ngdoc method
-             * @name dvt.configModule.DataService#getSearchListInstitutions
-             * @param {string} institutions institutions filters
-             * @param {string} countries countries filters
-             * @methodOf dvt.configModule.DataService
-             * @description
-             * Gets Matrix OSH Authorities data applying countries and institution filters
-             *
-             */
-            getSearchListInstitutions: function ( institutions, countries) {
-                var block1,block2,block3,block4,block5;
+                /**
+                 * @ngdoc method
+                 * @name dvt.configModule.DataService#getSearchListInstitutions
+                 * @param {string} institutions institutions filters
+                 * @param {string} countries countries filters
+                 * @methodOf dvt.configModule.DataService
+                 * @description
+                 * Gets Matrix OSH Authorities data applying countries and institution filters
+                 *
+                 */
+                getSearchListInstitutions: function ( institutions, countries) {
+                    var block1,block2,block3,block4,block5;
 
-                if (institutions.filter1==1){
-                  block1 = 1;
-                }else {
-                  block1 = 2;
-                }
-                if (institutions.filter2==1){
-                  block2 = 1;
-                }else {
-                  block2 = 2;
-                }
-                if (institutions.filter3==1){
-                  block3 = 1;
-                }else {
-                  block3 = 2;
-                }
-                if (institutions.filter4==1){
-                  block4 = 1;
-                }else {
-                  block4 = 2;
-                }
-
-
-                var block5 = countries.length <= 0 ? ".*" : countries.join("|");
-
-                var url = configService.getBarometerDataPath() + "&dataAccessId=getSearchListInstitutions" + "&paraminstitution1=" + block1 +"&paraminstitution2=" + block2 +"&paraminstitution3=" + block3 +"&paraminstitution4=" + block4 + "&paramcountries=" + block5;
-
-                $log.debug('getSearchListInstitutions url: ' + url);
-                return promise(url);
-            },
-
-            getSearchTerm: function (term, institutions, countries) {
-                var term2 = !term ? ".*" : ".*" + term;
-
-                if (institutions.filter1==1){
-                  block1 = 1;
-                }else {
-                  block1 = 2;
-                }
-                if (institutions.filter2==1){
-                  block2 = 1;
-                }else {
-                  block2 = 2;
-                }
-                if (institutions.filter3==1){
-                  block3 = 1;
-                }else {
-                  block3 = 2;
-                }
-                if (institutions.filter4==1){
-                  block4 = 1;
-                }else {
-                  block4 = 2;
-                }
-                if(institutions.filter1==0 && institutions.filter2==0 && institutions.filter3==0 && institutions.filter4==0){
-                    block1 = 1;
-                    block2 = 1;
-                    block3 = 1;
-                    block4 = 1;
-                }
+                    if (institutions.filter1==1){
+                      block1 = 1;
+                    }else {
+                      block1 = 2;
+                    }
+                    if (institutions.filter2==1){
+                      block2 = 1;
+                    }else {
+                      block2 = 2;
+                    }
+                    if (institutions.filter3==1){
+                      block3 = 1;
+                    }else {
+                      block3 = 2;
+                    }
+                    if (institutions.filter4==1){
+                      block4 = 1;
+                    }else {
+                      block4 = 2;
+                    }
 
 
-                var block5 = countries.length <= 0 ? ".*" : countries.join("|");
+                    var block5 = countries.length <= 0 ? ".*" : countries.join("|");
 
-                var url = configService.getBarometerDataPath() + "&dataAccessId=getSearchTerm" + "&paramterm=" + term2+ "&paraminstitution1=" + block1 +"&paraminstitution2=" + block2 +"&paraminstitution3=" + block3 +"&paraminstitution4=" + block4 + "&paramcountries=" + block5;
+                    var url = configService.getGenericInformationDataPath() + "&dataAccessId=getSearchListInstitutions" + "&paraminstitution1=" + block1 +"&paraminstitution2=" + block2 +"&paraminstitution3=" + block3 +"&paraminstitution4=" + block4 + "&paramcountries=" + block5;
 
-                $log.debug('getSearchTerm url: ' + url);
-                
-                return promise(url);
-            },
+                    $log.debug('getSearchListInstitutions url: ' + url);
+                    return promise(url);
+                },
 
-            /* END OSH AUTHORITIES*/
+                getSearchTerm: function (term, institutions, countries) {
+                    var term2 = !term ? ".*" : ".*" + term;
+
+                    if (institutions.filter1==1){
+                      block1 = 1;
+                    }else {
+                      block1 = 2;
+                    }
+                    if (institutions.filter2==1){
+                      block2 = 1;
+                    }else {
+                      block2 = 2;
+                    }
+                    if (institutions.filter3==1){
+                      block3 = 1;
+                    }else {
+                      block3 = 2;
+                    }
+                    if (institutions.filter4==1){
+                      block4 = 1;
+                    }else {
+                      block4 = 2;
+                    }
+                    if(institutions.filter1==0 && institutions.filter2==0 && institutions.filter3==0 && institutions.filter4==0){
+                        block1 = 1;
+                        block2 = 1;
+                        block3 = 1;
+                        block4 = 1;
+                    }
 
 
-            /********************** ECONOMIC AND SECTOR PROFILES ******************************/
+                    var block5 = countries.length <= 0 ? ".*" : countries.join("|");
 
-            /**
-             * @ngdoc method
-             * @name dvt.configModule.DataService#getAvailableEconomicSectorCountries
-             * @methodOf dvt.configModule.DataService
-             * @description
-             * Gets all countries available in Economic and sector profiles view
-             */
-            getAvailableEconomicSectorCountries: function () {
-                var url = configService.getBarometerDataPath() + "&dataAccessId=getAvailableEconomicSectorCountries";
-                $log.debug('getAvailableEconomicSectorCountries url:' + url);
-                return promise(url);
-            },
+                    var url = configService.getGenericInformationDataPath() + "&dataAccessId=getSearchTerm" + "&paramterm=" + term2+ "&paraminstitution1=" + block1 +"&paraminstitution2=" + block2 +"&paraminstitution3=" + block3 +"&paraminstitution4=" + block4 + "&paramcountries=" + block5;
 
-            /**
-             * @ngdoc method
-             * @name dvt.configModule.DataService#getCompanySizeData
-             * @methodOf dvt.configModule.DataService
-             * @description
-             * Get Company size data
-             */
-            getCompanySizeData: function (pIndicator, pCountry1, pCountry2) {
-                var url = configService.getBarometerDataPath() + "&dataAccessId=getCompanySizeData" + "&pIndicator=" + pIndicator + "&parampCountry1=" + pCountry1 + "&parampCountry2=" + pCountry2;
-                $log.debug('getCompanySizeData url:' + url);
-                return promise(url);
-            },
+                    $log.debug('getSearchTerm url: ' + url);
+                    
+                    return promise(url);
+                },
 
-            /**
-             * @ngdoc method
-             * @name dvt.configModule.DataService#getEmploymentPerSectorData
-             * @methodOf dvt.configModule.DataService
-             * @description
-             * Get Company size data
-             */
-            getEmploymentPerSectorData: function (pIndicator, pCountry1, pCountry2) {
-                var url = configService.getBarometerDataPath() + "&dataAccessId=getEmploymentPerSectorData" + "&pIndicator=" + pIndicator + "&parampCountry1=" + pCountry1 + "&parampCountry2=" + pCountry2;
-                $log.debug('getEmploymentPerSectorData url:' + url);
-                return promise(url);
-            },
+            /****************************** END OSH AUTHORITIES *********************************/
 
-            /**
-             * @ngdoc method
-             * @name dvt.configModule.DataService#getEmploymentRateData
-             * @methodOf dvt.configModule.DataService
-             * @description
-             * Get Company size data
-             */
-            getEmploymentRateData: function (pIndicator, pCountry1, pCountry2) {
-                var url = configService.getBarometerDataPath() + "&dataAccessId=getEmploymentRateData" + "&pIndicator=" + pIndicator + "&parampCountry1=" + pCountry1 + "&parampCountry2=" + pCountry2;
-                $log.debug('getEmploymentRateData url:' + url);
-                return promise(url);
-            },
+            /************************* ECONOMIC AND SECTOR PROFILES ******************************/
 
-            /**
-             * @ngdoc method
-             * @name dvt.configModule.DataService#getUnemploymentRateData
-             * @methodOf dvt.configModule.DataService
-             * @description
-             * Get uneployment rate data
-             */
-            getUnemploymentRateData: function (pIndicator, pCountry1, pCountry2) {
-                var url = configService.getBarometerDataPath() + "&dataAccessId=getUnemploymentRateData" + "&pIndicator=" + pIndicator + "&parampCountry1=" + pCountry1 + "&parampCountry2=" + pCountry2;
-                $log.debug('getUnemploymentRateData url:' + url);
-                return promise(url);
-            },
+                /**
+                 * @ngdoc method
+                 * @name dvt.configModule.DataService#getAvailableEconomicSectorCountries
+                 * @methodOf dvt.configModule.DataService
+                 * @description
+                 * Gets all countries available in Economic and sector profiles view
+                 */
+                getAvailableEconomicSectorCountries: function () {
+                    var url = configService.getGenericInformationDataPath() + "&dataAccessId=getAvailableEconomicSectorCountries";
+                    $log.debug('getAvailableEconomicSectorCountries url:' + url);
+                    return promise(url);
+                },
 
-            /**
-             * @ngdoc method
-             * @name dvt.configModule.DataService#getGDPData
-             * @methodOf dvt.configModule.DataService
-             * @description
-             * Get GDP data
-             */
-            getGDPData: function (pIndicator, pCountry1, pCountry2) {
-                var url = configService.getBarometerDataPath() + "&dataAccessId=getGDPData" + "&pIndicator=" + pIndicator + "&parampCountry1=" + pCountry1 + "&parampCountry2=" + pCountry2;
-                $log.debug('getGDPData url:' + url);
-                return promise(url);
-            },
+                /**
+                 * @ngdoc method
+                 * @name dvt.configModule.DataService#getCompanySizeData
+                 * @methodOf dvt.configModule.DataService
+                 * @description
+                 * Get Company size data
+                 */
+                getCompanySizeData: function (pIndicator, pCountry1, pCountry2) {
+                    var url = configService.getGenericInformationDataPath() + "&dataAccessId=getCompanySizeData" + "&pIndicator=" + pIndicator + "&parampCountry1=" + pCountry1 + "&parampCountry2=" + pCountry2;
+                    $log.debug('getCompanySizeData url:' + url);
+                    return promise(url);
+                },
 
-            /**
-             * @ngdoc method
-             * @name dvt.configModule.DataService#getIncomePerCapitaData
-             * @methodOf dvt.configModule.DataService
-             * @description
-             * Get Company size data
-             */
-            getIncomePerCapitaData: function (pIndicator, pCountry1, pCountry2) {
-                var url = configService.getBarometerDataPath() + "&dataAccessId=getIncomePerCapitaData" + "&pIndicator=" + pIndicator + "&parampCountry1=" + pCountry1 + "&parampCountry2=" + pCountry2;
-                $log.debug('getIncomePerCapitaData url:' + url);
-                return promise(url);
-            },
+                /**
+                 * @ngdoc method
+                 * @name dvt.configModule.DataService#getEmploymentPerSectorData
+                 * @methodOf dvt.configModule.DataService
+                 * @description
+                 * Get Company size data
+                 */
+                getEmploymentPerSectorData: function (pIndicator, pCountry1, pCountry2) {
+                    var url = configService.getGenericInformationDataPath() + "&dataAccessId=getEmploymentPerSectorData" + "&pIndicator=" + pIndicator + "&parampCountry1=" + pCountry1 + "&parampCountry2=" + pCountry2;
+                    $log.debug('getEmploymentPerSectorData url:' + url);
+                    return promise(url);
+                },
 
-            /************************ END ECONOMIC AND SECTOR PROFILES ***************************/
+                /**
+                 * @ngdoc method
+                 * @name dvt.configModule.DataService#getEmploymentRateData
+                 * @methodOf dvt.configModule.DataService
+                 * @description
+                 * Get Company size data
+                 */
+                getEmploymentRateData: function (pIndicator, pCountry1, pCountry2) {
+                    var url = configService.getGenericInformationDataPath() + "&dataAccessId=getEmploymentRateData" + "&pIndicator=" + pIndicator + "&parampCountry1=" + pCountry1 + "&parampCountry2=" + pCountry2;
+                    $log.debug('getEmploymentRateData url:' + url);
+                    return promise(url);
+                },
 
-            /************************ WORKFORCE PROFILES ***************************/
+                /**
+                 * @ngdoc method
+                 * @name dvt.configModule.DataService#getUnemploymentRateData
+                 * @methodOf dvt.configModule.DataService
+                 * @description
+                 * Get uneployment rate data
+                 */
+                getUnemploymentRateData: function (pIndicator, pCountry1, pCountry2) {
+                    var url = configService.getGenericInformationDataPath() + "&dataAccessId=getUnemploymentRateData" + "&pIndicator=" + pIndicator + "&parampCountry1=" + pCountry1 + "&parampCountry2=" + pCountry2;
+                    $log.debug('getUnemploymentRateData url:' + url);
+                    return promise(url);
+                },
 
-            /**
-             * @ngdoc method
-             * @name dvt.configModule.DataService#getGenders
-             * @methodOf dvt.configModule.DataService
-             * @description
-             * Get genders for select option list
-             */
-            getGenders: function(){
-                var url = configService.getBarometerDataPath() + "&dataAccessId=getGenders";
-                $log.debug('getGenders url:' + url);
-                return promise(url);
-            }, 
+                /**
+                 * @ngdoc method
+                 * @name dvt.configModule.DataService#getGDPData
+                 * @methodOf dvt.configModule.DataService
+                 * @description
+                 * Get GDP data
+                 */
+                getGDPData: function (pIndicator, pCountry1, pCountry2) {
+                    var url = configService.getGenericInformationDataPath() + "&dataAccessId=getGDPData" + "&pIndicator=" + pIndicator + "&parampCountry1=" + pCountry1 + "&parampCountry2=" + pCountry2;
+                    $log.debug('getGDPData url:' + url);
+                    return promise(url);
+                },
 
-            /**
-             * @ngdoc method
-             * @name dvt.configModule.DataService#getAvailableCountries
-             * @methodOf dvt.configModule.DataService
-             * @description
-             * Get genders for select option list
-             */
-            getAvailableCountries: function(pDataset){
-                var url = configService.getBarometerDataPath() + "&dataAccessId=getAvailableCountries"+"&parampDataset="+pDataset;
-                $log.debug('getAvailableCountries url:' + url);
-                return promise(url);
-            },
+                /**
+                 * @ngdoc method
+                 * @name dvt.configModule.DataService#getIncomePerCapitaData
+                 * @methodOf dvt.configModule.DataService
+                 * @description
+                 * Get Company size data
+                 */
+                getIncomePerCapitaData: function (pIndicator, pCountry1, pCountry2) {
+                    var url = configService.getGenericInformationDataPath() + "&dataAccessId=getIncomePerCapitaData" + "&pIndicator=" + pIndicator + "&parampCountry1=" + pCountry1 + "&parampCountry2=" + pCountry2;
+                    $log.debug('getIncomePerCapitaData url:' + url);
+                    return promise(url);
+                },
 
-            /**
-             * @ngdoc method
-             * @name dvt.configModule.DataService#getFilteringCountries
-             * @methodOf dvt.configModule.DataService
-             * @description
-             * Get genders for select option list
-             */
-            getFilteringCountries: function(pDataset, countries){
-                var block1 = countries.length <= 0 ? ".*" : countries.join("|");
-                var url = configService.getBarometerDataPath() + "&dataAccessId=getFilteringCountries"+"&parampDataset="+pDataset+"&paramcountries="+block1;
-                $log.debug('getFilteringCountries url:' + url);
-                return promise(url);
-            },
+            /*********************** END ECONOMIC AND SECTOR PROFILES ***************************/
 
-            /**
-             * @ngdoc method
-             * @name dvt.configModule.DataService#getMedianAgeData
-             * @methodOf dvt.configModule.DataService
-             * @description
-             * Get genders for select option list
-             */
-            getMedianAgeData: function(pDataset){
-                var url = configService.getBarometerDataPath() + "&dataAccessId=getMedianAgeData"+"&parampDataset="+pDataset;
-                $log.debug('getMedianAgeData url:' + url);
-                return promise(url);
-            },
+            /****************************** WORKFORCE PROFILES ******************************/
 
-            /**
-             * @ngdoc method
-             * @name dvt.configModule.DataService#getAgeingWorkersData
-             * @methodOf dvt.configModule.DataService
-             * @description
-             * Get genders for select option list
-             */
-            getAgeingWorkersData: function(pDataset){
-                var url = configService.getBarometerDataPath() + "&dataAccessId=getAgeingWorkersData"+"&parampDataset="+pDataset;
-                $log.debug('getAgeingWorkersData url:' + url);
-                return promise(url);
-            },
+                /**
+                 * @ngdoc method
+                 * @name dvt.configModule.DataService#getGenders
+                 * @methodOf dvt.configModule.DataService
+                 * @description
+                 * Get genders for select option list
+                 */
+                getGenders: function(){
+                    var url = configService.getGenericInformationDataPath() + "&dataAccessId=getGenders";
+                    $log.debug('getGenders url:' + url);
+                    return promise(url);
+                }, 
 
-            /**
-             * @ngdoc method
-             * @name dvt.configModule.DataService#getTotalEmploymentData
-             * @methodOf dvt.configModule.DataService
-             * @description
-             * Get genders for select option list
-             */
-            getTotalEmploymentData: function(pDataset){
-                var url = configService.getBarometerDataPath() + "&dataAccessId=getTotalEmploymentData"+"&parampDataset="+pDataset;
-                $log.debug('getTotalEmploymentData url:' + url);
-                return promise(url);
-            },
+                /**
+                 * @ngdoc method
+                 * @name dvt.configModule.DataService#getAvailableCountries
+                 * @methodOf dvt.configModule.DataService
+                 * @description
+                 * Get genders for select option list
+                 */
+                getAvailableCountries: function(pDataset){
+                    var url = configService.getGenericInformationDataPath() + "&dataAccessId=getAvailableCountries"+"&parampDataset="+pDataset;
+                    $log.debug('getAvailableCountries url:' + url);
+                    return promise(url);
+                },
 
-            /**
-             * @ngdoc method
-             * @name dvt.configModule.DataService#getMaleEmploymentData
-             * @methodOf dvt.configModule.DataService
-             * @description
-             * Get genders for select option list
-             */
-            getMaleEmploymentData: function(pDataset){
-                var url = configService.getBarometerDataPath() + "&dataAccessId=getMaleEmploymentData"+"&parampDataset="+pDataset;
-                $log.debug('getMaleEmploymentData url:' + url);
-                return promise(url);
-            },
+                /**
+                 * @ngdoc method
+                 * @name dvt.configModule.DataService#getFilteringCountries
+                 * @methodOf dvt.configModule.DataService
+                 * @description
+                 * Get genders for select option list
+                 */
+                getFilteringCountries: function(pDataset, countries){
+                    var block1 = countries.length <= 0 ? ".*" : countries.join("|");
+                    var url = configService.getGenericInformationDataPath() + "&dataAccessId=getFilteringCountries"+"&parampDataset="+pDataset+"&paramcountries="+block1;
+                    $log.debug('getFilteringCountries url:' + url);
+                    return promise(url);
+                },
 
-            /**
-             * @ngdoc method
-             * @name dvt.configModule.DataService#getFemaleEmploymentData
-             * @methodOf dvt.configModule.DataService
-             * @description
-             * Get genders for select option list
-             */
-            getFemaleEmploymentData: function(pDataset){
-                var url = configService.getBarometerDataPath() + "&dataAccessId=getFemaleEmploymentData"+"&parampDataset="+pDataset;
-                $log.debug('getFemaleEmploymentData url:' + url);
-                return promise(url);
-            },
+                /**
+                 * @ngdoc method
+                 * @name dvt.configModule.DataService#getMedianAgeData
+                 * @methodOf dvt.configModule.DataService
+                 * @description
+                 * Get genders for select option list
+                 */
+                getMedianAgeData: function(pDataset){
+                    var url = configService.getGenericInformationDataPath() + "&dataAccessId=getMedianAgeData"+"&parampDataset="+pDataset;
+                    $log.debug('getMedianAgeData url:' + url);
+                    return promise(url);
+                },
 
-            /**
-             * @ngdoc method
-             * @name dvt.configModule.DataService#getMinMaxValues
-             * @methodOf dvt.configModule.DataService
-             * @description
-             * Get genders for select option list
-             */
-            getMinMaxValues: function(pDataset, pIndicator, pSubIndicator){
-                var url = configService.getBarometerDataPath() + "&dataAccessId=getMinMaxValues"+"&parampDataset="+pDataset+"&parampIndicator="
-                +pIndicator+"&parampSubIndicator="+pSubIndicator;
-                $log.debug('getMinMaxValues url:' + url);
-                return promise(url);
-            },
+                /**
+                 * @ngdoc method
+                 * @name dvt.configModule.DataService#getAgeingWorkersData
+                 * @methodOf dvt.configModule.DataService
+                 * @description
+                 * Get genders for select option list
+                 */
+                getAgeingWorkersData: function(pDataset){
+                    var url = configService.getGenericInformationDataPath() + "&dataAccessId=getAgeingWorkersData"+"&parampDataset="+pDataset;
+                    $log.debug('getAgeingWorkersData url:' + url);
+                    return promise(url);
+                },
+
+                /**
+                 * @ngdoc method
+                 * @name dvt.configModule.DataService#getTotalEmploymentData
+                 * @methodOf dvt.configModule.DataService
+                 * @description
+                 * Get genders for select option list
+                 */
+                getTotalEmploymentData: function(pDataset){
+                    var url = configService.getGenericInformationDataPath() + "&dataAccessId=getTotalEmploymentData"+"&parampDataset="+pDataset;
+                    $log.debug('getTotalEmploymentData url:' + url);
+                    return promise(url);
+                },
+
+                /**
+                 * @ngdoc method
+                 * @name dvt.configModule.DataService#getMaleEmploymentData
+                 * @methodOf dvt.configModule.DataService
+                 * @description
+                 * Get genders for select option list
+                 */
+                getMaleEmploymentData: function(pDataset){
+                    var url = configService.getGenericInformationDataPath() + "&dataAccessId=getMaleEmploymentData"+"&parampDataset="+pDataset;
+                    $log.debug('getMaleEmploymentData url:' + url);
+                    return promise(url);
+                },
+
+                /**
+                 * @ngdoc method
+                 * @name dvt.configModule.DataService#getFemaleEmploymentData
+                 * @methodOf dvt.configModule.DataService
+                 * @description
+                 * Get genders for select option list
+                 */
+                getFemaleEmploymentData: function(pDataset){
+                    var url = configService.getGenericInformationDataPath() + "&dataAccessId=getFemaleEmploymentData"+"&parampDataset="+pDataset;
+                    $log.debug('getFemaleEmploymentData url:' + url);
+                    return promise(url);
+                },
+
+                /**
+                 * @ngdoc method
+                 * @name dvt.configModule.DataService#getMinMaxValues
+                 * @methodOf dvt.configModule.DataService
+                 * @description
+                 * Get genders for select option list
+                 */
+                getMinMaxValues: function(pDataset, pIndicator, pSubIndicator){
+                    var url = configService.getGenericInformationDataPath() + "&dataAccessId=getMinMaxValues"+"&parampDataset="+pDataset+"&parampIndicator="
+                    +pIndicator+"&parampSubIndicator="+pSubIndicator;
+                    $log.debug('getMinMaxValues url:' + url);
+                    return promise(url);
+                },
             
-            /************************ END WORKFORCE PROFILES ***************************/
+            /**************************** END WORKFORCE PROFILES ******************************/
 
-            /************************ REGULATIONS ***************************/
+            /******************************* REGULATIONS **********************************/
 
             /**
              * @ngdoc method

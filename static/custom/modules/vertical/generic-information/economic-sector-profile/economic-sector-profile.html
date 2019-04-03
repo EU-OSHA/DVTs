@@ -44,7 +44,7 @@
           <div class="chart--block">
             <dvt-bar-chart
               data-ng-cloak
-              query="getCompanySizeData" cda="{{::cda }}"
+              query="getCompanySizeData" cda="{{::cdaGenericInformation }}"
               width="330" height="400"
               orientation="horizontal" axis-percent="1"
               axis-fixed-max="100" step="{{step.chart1}}"
@@ -75,7 +75,7 @@
           <div class="chart--block">
             <dvt-bar-chart
               data-ng-cloak
-              query="getEmploymentPerSectorData" cda="{{::cda }}"
+              query="getEmploymentPerSectorData" cda="{{::cdaGenericInformation }}"
               width="300" height="400"
               orientation="horizontal" axis-percent="1"
               axis-fixed-max="100" step="{{step.chart2}}"
@@ -99,7 +99,7 @@
           <div class="chart--block">
             <dvt-bar-chart
               data-ng-cloak
-              query="getEmploymentRateData" cda="{{::cda }}"
+              query="getEmploymentRateData" cda="{{::cdaGenericInformation }}"
               width="330" height="360" axis-percent="1"
               orientation="horizontal" axis-fixed-min="50"
               axis-fixed-max="100" step="{{step.chart3}}" 
@@ -127,7 +127,7 @@
           <div class="chart--block">
             <dvt-bar-chart
               data-ng-cloak
-              query="getUnemploymentRateData" cda="{{::cda }}"
+              query="getUnemploymentRateData" cda="{{::cdaGenericInformation }}"
               width="330" height="360"
               orientation="vertical" axis-percent="1"
               axis-fixed-max="10" step="{{step.chart4}}"
@@ -154,7 +154,7 @@
           <div class="chart--block">
             <dvt-bar-chart
               data-ng-cloak
-              query="getGDPData" cda="{{::cda }}"
+              query="getGDPData" cda="{{::cdaGenericInformation }}"
               height="360"
               orientation="vertical"
               axis-fixed-max="260" step="{{step.chart5}}"
@@ -183,7 +183,7 @@
           <div class="chart--block">
             <dvt-bar-chart
               data-ng-cloak
-              query="getIncomePerCapitaData" cda="{{::cda }}"
+              query="getIncomePerCapitaData" cda="{{::cdaGenericInformation }}"
               width="330" height="370" type="lines"
               orientation="vertical" axis-fixed-min="10000"
               axis-fixed-max="30000" step="{{step.chart6}}"
