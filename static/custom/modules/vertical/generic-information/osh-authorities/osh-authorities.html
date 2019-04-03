@@ -46,7 +46,7 @@
               <label for='institution-filter-4' data-ng-bind="i18nLiterals.L20613"></label>
             </li>
           </ul>
-          <p class="btn--block-filter" data-ng-click="openSelect($event)"><a class="btn-main-color btn-full" ng-click="confirmSelection($event)">Confirm</a></p>
+          <p class="btn--block-filter" data-ng-click="openSelect($event)"><a class="btn-main-color btn-full" ng-click="confirmInstitutionSelection($event)">Confirm</a></p>
         </div>
       </div>
       <!-- COUNTRY FILTER -->
@@ -61,7 +61,7 @@
               <label for="country-filter-{{::country.country_code}}" data-ng-bind="i18nLiterals['L'+country.country]"></label>
             </li>
           </ul>
-          <p class="btn--block-filter" data-ng-click="openSelect($event)"><a class="btn-main-color btn-full" ng-click="confirmSelection($event)">Confirm</a></p>
+          <p class="btn--block-filter" data-ng-click="openSelect($event)"><a class="btn-main-color btn-full" ng-click="confirmCountrySelection($event)">Confirm</a></p>
         </div>
       </div>  
     </form>
