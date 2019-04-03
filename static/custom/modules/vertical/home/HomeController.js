@@ -37,7 +37,7 @@ define(function (require) {
 
               data.data.resultset.map(function (elem) {
                 var param = (!!$stateParams.filter) ? $stateParams.filter : undefined;
-                $scope.regulationsCountries.push({
+                $scope.strategiesCountries.push({
                     country: elem[0],
                     country_code: elem[1]
                 });
@@ -48,7 +48,7 @@ define(function (require) {
 
               data.data.resultset.map(function (elem) {
                 var param = (!!$stateParams.filter) ? $stateParams.filter : undefined;
-                $scope.strategiesCountries.push({
+                $scope.regulationsCountries.push({
                     country: elem[0],
                     country_code: elem[1]
                 });
