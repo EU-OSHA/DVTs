@@ -615,6 +615,32 @@ define(function () {
                 return promise(url);
             },
 
+            /**
+             * @ngdoc method
+             * @name dvt.configModule.DataService#getEUChallengesCountries
+             * @methodOf dvt.configModule.DataService
+             * @description
+             * Get indicators for regulation select option list
+             */
+            getEUChallengesCountries: function(){
+                var url = configService.getBarometerDataPath() + "&dataAccessId=getEUChallengesCountries";
+                $log.debug('getEUChallengesCountries url:' + url);
+                return promise(url);
+            },
+
+            /**
+             * @ngdoc method
+             * @name dvt.configModule.DataService#getEUChallengesData
+             * @methodOf dvt.configModule.DataService
+             * @description
+             * Get indicators for regulation select option list
+             */
+            getEUChallengesData: function(){
+                var url = configService.getBarometerDataPath() + "&dataAccessId=getEUChallengesData";
+                $log.debug('getEUChallengesData url:' + url);
+                return promise(url);
+            },
+
             /************************ END NATIONAL STRATEGIES ***************************/
 
             /**

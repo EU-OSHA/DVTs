@@ -839,4 +839,35 @@
     </Query>
   </DataAccess>
 
+  <!-- STEERING OF OSH || get eu challenges countries with available data -->
+  <DataAccess access="public" connection="dvt_conn" id="getEUChallengesCountries" type="sql">
+    <Cache duration="3600" enabled="true" />
+    <Columns />
+    <Parameters>
+    </Parameters>
+    <Query>
+      SELECT DISTINCT(n.country_code) as country_code, n.literal_id as country_name
+      FROM matrix_page mp, nuts n
+      WHERE page = 'MATRIX_STRATEGY'
+      AND n.id = mp.nuts_id
+      ORDER BY FIELD(country_code, 'EU28') DESC, country_name ASC;
+    </Query>
+  </DataAccess>
+
+  <!-- STEERING OF OSH || get eu challenges data -->
+  <DataAccess access="public" connection="dvt_conn" id="getEUChallengesData" type="sql">
+    <Cache duration="3600" enabled="true" />
+    <Columns />
+    <Parameters>
+    </Parameters>
+    <Query>
+      SELECT n.country_code as country_code, n.literal_id as country_name, mp.check_1 as implementation_record, mp.check_2 as prevention_work, 
+      mp.check_3 as ageing_workforce, mp.text_1_literal_id as objectives, mp.text_2_literal_id as groups_and_activities
+      FROM matrix_page mp, nuts n
+      WHERE page = 'MATRIX_STRATEGY'
+      AND n.id = mp.nuts_id
+      ORDER BY FIELD(country_code, 'EU28') DESC, country_name ASC, implementation_record DESC, prevention_work DESC, ageing_workforce DESC;
+    </Query>
+  </DataAccess>
+
 </CDADescriptor>

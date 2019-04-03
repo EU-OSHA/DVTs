@@ -83,27 +83,30 @@ define(function (require) {
       var finalHtml = '';
       if(pVal != null){
         if(shortText.match('<p>')){
-          var minimized_elements = $compile(pVal)($scope);
-          for(var i = 0; i < minimized_elements.length; i++){
-            var elem = minimized_elements[i];
-            if(i == 0){
-              $(elem).addClass("first");
-              var t = $(elem).text();
-              if(t.length>pNumCharacters){
-                $(elem).html($.trim(t).substring(0, pNumCharacters).split(" ").slice(0, -1).join(" ") + $scope.longText(t, pNumCharacters) + "<span class='dots'>...</span>");
+          if(shortText.length>pNumCharacters){
+            var minimized_elements = $compile(pVal)($scope);
+            for(var i = 0; i < minimized_elements.length; i++){
+              var elem = minimized_elements[i];
+              if(i == 0){
+                $(elem).addClass("first");
+                var t = $(elem).text();
+                if(t.length>pNumCharacters){
+                  $(elem).html($.trim(t).substring(0, pNumCharacters).split(" ").slice(0, -1).join(" ") + $scope.longText(t, pNumCharacters) + "<span class='dots'>...</span>");
+                }
+                
+                var newHtml = $(elem)[0].outerHTML;
+                finalHtml += newHtml;
               }else{
-                $(elem).html(t);
+                $(elem).css('display','none');
+                $(elem).addClass("text-part");
+                var newHtml = $(elem)[0].outerHTML;
+                finalHtml += newHtml;
               }
-              
-              var newHtml = $(elem)[0].outerHTML;
-              finalHtml += newHtml;
-            }else{
-              $(elem).css('display','none');
-              $(elem).addClass("text-part");
-              var newHtml = $(elem)[0].outerHTML;
-              finalHtml += newHtml;
             }
+          }else{
+            finalHtml = shortText;
           }
+          
           return $sce.trustAsHtml(finalHtml);
         }else{
           if (shortText.length > pNumCharacters) {
@@ -112,7 +115,6 @@ define(function (require) {
           return $sce.trustAsHtml(shortText);
         }
       }
-      
     }
 
     $scope.longText = function(pVal, pNumCharacters) {

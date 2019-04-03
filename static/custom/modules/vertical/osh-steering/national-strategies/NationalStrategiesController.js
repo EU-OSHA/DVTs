@@ -27,7 +27,7 @@ define(function (require) {
     $scope.countryFilter = [];
 
     $scope.alphabet = [];
-    $anchorScroll.yOffset = 220;
+    $anchorScroll.yOffset = 350;
 
     // Show/hide the Countries Filter List
     angular.element('div.countries-filters').css( "display",'none' );
@@ -72,7 +72,7 @@ define(function (require) {
       $scope.goToAnchor = function(letter){
         var newHash = 'anchor' + letter;
         if ($location.hash() !== newHash) {
-          $location.hash('anchor-' + letter);
+          $location.hash('section' + letter);
         } else {
           $anchorScroll();
         }

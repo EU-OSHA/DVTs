@@ -91,9 +91,9 @@ define(function (require) {
         });
 
         $stateProvider.state('EU-challenges-response', {
-          url: "/osh-steering/national-strategies/EU-challenges-response/:pCountry1",
+          url: "/osh-steering/national-strategies/EU-challenges-response/:pCountry",
           params: {
-            pCountry1: {
+            pCountry: {
               value: "AT",
               squash: "AT"
             }
