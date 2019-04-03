@@ -13,10 +13,10 @@
     "about-tool": "<a ui-sref='home'>Home</a><i class='fa fa-angle-right' aria-hidden='true'></i></i><span class='current-page'>About the system</span>",
 
     "_SECCTION-FOOTER-PAGES": null,
-    "site-map": "<span class='current-page'>Site map</span>",
-    "accessibility": "<span class='current-page'>Accessibility info</span>",
-    "privacy-policy":"<span class='current-page'>Privacy notice</span>",
-    "legal-notice":"<span class='current-page'>Legal notice</span>",
+    "site-map": "<a ui-sref='home'>Home</a><i class='fa fa-angle-right' aria-hidden='true'></i></i><span class='current-page'>Site map</span>",
+    "accessibility": "<a ui-sref='home'>Home</a><i class='fa fa-angle-right' aria-hidden='true'></i></i><span class='current-page'>Accessibility info</span>",
+    "privacy-policy":"<a ui-sref='home'>Home</a><i class='fa fa-angle-right' aria-hidden='true'></i></i><span class='current-page'>Privacy notice</span>",
+    "legal-notice":"<a ui-sref='home'>Home</a><i class='fa fa-angle-right' aria-hidden='true'></i></i><span class='current-page'>Legal notice</span>",
 
     "404": "<span class='current-page'>Page not found</span>",
 
