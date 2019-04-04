@@ -518,9 +518,6 @@
 2677-https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Slovenia
 2680-http://www.mddsz.gov.si/en/areas_of_work/labour_relations_and_labour_rights/
 2680-https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Slovenia
-2680-https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Slovenia
-2680-https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Slovenia
-2680-https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Slovenia
 2683-http://www.mddsz.gov.si/en/
 2683-https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Slovenia
 2686-http://www.aenor.es/aenor/inicio/home/home.asp
