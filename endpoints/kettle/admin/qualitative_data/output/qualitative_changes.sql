@@ -3514,6 +3514,16 @@ SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@tool
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2099, null, @sectionId, "POP_UP");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2099, "EN", 1, "POP UP MESSAGE TO BE DEFINED");
 
+SET @maxLiteralId = (SELECT MAX(id)+1 FROM literal WHERE id<10000);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxLiteralId, NULL, NULL, "SPLIT_ANSWER_NAME");
+INSERT INTO translation (literal_id, language, is_default, text) VALUE (@maxLiteralId, "EN", 1, "Often");
+INSERT INTO split_answer (literal_id) VALUES(@maxLiteralId);
+
+SET @maxLiteralId = (SELECT MAX(id)+1 FROM literal WHERE id<10000);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxLiteralId, NULL, NULL, "SPLIT_ANSWER_NAME");
+INSERT INTO translation (literal_id, language, is_default, text) VALUE (@maxLiteralId, "EN", 1, "In some departments");
+INSERT INTO split_answer (literal_id) VALUES(@maxLiteralId);
+
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="AT");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
