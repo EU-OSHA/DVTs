@@ -51,7 +51,7 @@ define(function (require) {
     /******************************************************************************|
     |                                DATA LOAD                                     |
     |******************************************************************************/
-      dataService.getStrategiesCountryFilter($scope.countryFilter).then(function (data) {
+      dataService.getStrategiesCountries().then(function (data) {
         var letter = '';
         var index = '';
         data.data.resultset.map(function (elem) {

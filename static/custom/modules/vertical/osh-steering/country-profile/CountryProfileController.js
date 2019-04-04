@@ -143,7 +143,7 @@ define(function (require) {
     /******************************************************************************|
     |                                DATA LOAD                                     |
     |******************************************************************************/
-      dataService.getStrategiesCountryFilter('').then(function (data) {
+      dataService.getStrategiesCountries().then(function (data) {
         data.data.resultset.map(function (elem) {
           var param = (!!$stateParams.filter) ? $stateParams.filter : undefined;
           if(elem[1] != $scope.pCountry2){

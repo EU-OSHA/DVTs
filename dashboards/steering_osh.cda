@@ -38,24 +38,6 @@
 	    </Query>
 	</DataAccess>
 
-	<!-- STEERING OF OSH || get national strategies countries applying filters -->
-	<DataAccess access="public" connection="dvt_conn" id="getStrategiesCountryFilter" type="sql">
-	    <Cache duration="3600" enabled="true"/>
-	    <Columns/>
-	    <Parameters>
-	      <Parameter default=".*" name="countries" type="String"/>
-	    </Parameters>
-	    <Query>
-	      SELECT DISTINCT (n.literal_id) AS country, n.country_code AS country_code
-	      FROM strategies_page sp
-	      INNER JOIN nuts n
-	      ON n.id = sp.nuts_id
-	      WHERE sp.page = 'STRATEGY'
-	      AND n.name REGEXP ${countries}
-	      ORDER BY country ASC
-	    </Query>
-  </DataAccess>
-
 	<!-- STEERING OF OSH || get strategies indicators for select -->
 	<DataAccess access="public" connection="dvt_conn" id="getStrategiesIndicators" type="sql">
 	    <Cache duration="3600" enabled="true" />
@@ -107,12 +89,14 @@
 	    <Cache duration="3600" enabled="true" />
 	    <Columns />
 	    <Parameters>
+	    	<Parameter default=".*" name="countries" type="String"/>
 	    </Parameters>
 	    <Query>
 	      SELECT n.country_code as country_code, n.literal_id as country_name, mp.check_1 as implementation_record, mp.check_2 as prevention_work, mp.check_3 as ageing_workforce, mp.text_1_literal_id as objectives, mp.text_2_literal_id as groups_and_activities
 	      FROM matrix_page mp, nuts n
 	      WHERE page = 'MATRIX_STRATEGY'
 	      AND n.id = mp.nuts_id
+	      AND n.country_code REGEXP ${countries}
 	      ORDER BY country_name ASC, implementation_record DESC, prevention_work DESC, ageing_workforce DESC;
 	    </Query>
 	</DataAccess>

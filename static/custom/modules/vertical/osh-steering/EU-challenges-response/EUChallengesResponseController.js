@@ -47,6 +47,8 @@ define(function (require) {
     $scope.elementsStart=0;
     $scope.elementsEnd=$scope.pageSize;
 
+    var initialFilter = $scope.pCountry != 0 ? [$scope.pCountry] : [];
+
     // Pagination Text
     $scope.paginationText = 'Displaying ' + ($scope.elementsStart+1)+'-'+$scope.elementsEnd + ' of ' + $scope.amatrix.length;
 
@@ -297,7 +299,7 @@ define(function (require) {
     /******************************************************************************|
     |                                DATA LOAD                                     |
     |******************************************************************************/
-      dataService.getEUChallengesData().then(function (data) {
+      dataService.getEUChallengesData(initialFilter).then(function (data) {
         $log.debug('getEUChallengesData');
         //$log.warn(data);
 
@@ -342,7 +344,7 @@ define(function (require) {
           });
         });
 
-        $log.warn($scope.countries);
+        //$log.warn($scope.countries);
       }).catch(function (err) {
           throw err;
       });
@@ -535,7 +537,7 @@ define(function (require) {
           .then(function (data) {
             $scope.amatrix = dataService.dataMapper(data);
 
-            $log.warn($scope.amatrix);
+            //$log.warn($scope.amatrix);
 
             $scope.firstPage();
 

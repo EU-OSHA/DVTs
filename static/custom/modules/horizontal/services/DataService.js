@@ -230,7 +230,7 @@ define(function () {
                  *
                  */
                 getSearchList: function (countries) {
-                    var block1 = countries.length <= 0 ? ".*" : countries.join("|");;
+                    var block1 = countries.length <= 0 ? ".*" : countries.join("|");
 
                     var url = configService.getGenericInformationDataPath() + "&dataAccessId=getSearchList" + "&paramcountries=" + block1;
 
@@ -576,20 +576,6 @@ define(function () {
 
             /**
              * @ngdoc method
-             * @name dvt.configModule.DataService#getStrategiesCountryFilter
-             * @methodOf dvt.configModule.DataService
-             * @description
-             * Get regulations data for a country
-             */
-            getStrategiesCountryFilter: function(countries){
-                var block1 = countries.length <= 0 ? ".*" : '^'+countries.join("|^");
-                var url = configService.getSteeringOshDataPath() + "&dataAccessId=getStrategiesCountryFilter" + "&paramcountries="+block1;
-                $log.debug('getStrategiesCountryFilter url:' + url);
-                return promise(url);
-            },
-
-            /**
-             * @ngdoc method
              * @name dvt.configModule.DataService#getStrategiesIndicators
              * @methodOf dvt.configModule.DataService
              * @description
@@ -634,8 +620,9 @@ define(function () {
              * @description
              * Get indicators for regulation select option list
              */
-            getEUChallengesData: function(){
-                var url = configService.getSteeringOshDataPath() + "&dataAccessId=getEUChallengesData";
+            getEUChallengesData: function(countries){
+                var block1 = countries.length <= 0 ? ".*" : countries.join("|");
+                var url = configService.getSteeringOshDataPath() + "&dataAccessId=getEUChallengesData" + "&paramcountries=" + block1;
                 $log.debug('getEUChallengesData url:' + url);
                 return promise(url);
             },
