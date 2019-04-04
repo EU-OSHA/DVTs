@@ -30,6 +30,14 @@ define(function (require) {
     $scope.alphabet = [];
     $anchorScroll.yOffset = 350;
 
+    if($location.hash() != null){
+      
+      $timeout(function(){
+        $anchorScroll();
+      }, 500);
+
+    }
+
     // Show/hide the Countries Filter List
     angular.element('div.countries-filters').css( "display",'none' );
     angular.element('#filter2 h2').addClass('showChallenges');
@@ -71,7 +79,7 @@ define(function (require) {
     |                                 FILTERS                                      |
     |******************************************************************************/
       $scope.goToAnchor = function(letter){
-        var newHash = 'anchor' + letter;
+        var newHash = 'section' + letter;
         if ($location.hash() !== newHash) {
           $location.hash('section' + letter);
         } else {

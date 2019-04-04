@@ -188,7 +188,9 @@ define(function (require) {
             text3: elem[4],
             text4: elem[5],
             text5: elem[6],
-            text7: elem[7]
+            text6: elem[7],
+            text7: elem[8],
+            text8: elem[9]
           };
         });
         //$log.warn($scope.country1Data);

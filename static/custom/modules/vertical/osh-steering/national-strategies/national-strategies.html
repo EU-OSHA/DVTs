@@ -18,14 +18,13 @@
       <ul class="submenu--items--wrapper">
         <!-- INDICATORS -->
         <li data-ng-repeat="letter in alphabet"class="submenu--item">
-          <a data-ng-click="goToAnchor(letter)" data-ng-bind="letter"></a>
+          <a href data-ng-click="goToAnchor(letter)" data-ng-bind="letter"></a>
         </li>
       </ul>
     </div>
   </div>
 
   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-    <!--<div data-ng-repeat="letter in alphabet" ng-class="'col-xs-12  col-sm-6 col-md-4 col-lg-3 ar-item'">-->
     <div data-ng-repeat="letter in alphabet" id="section{{letter}}" class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="border-style: dotted; border-color: yellowgreen; border-width: 1px; border-bottom: none">
       <div class="text-left"><h3 data-ng-bind="letter"></h3></div>
       <div class="col-md-3 col-lg-3" data-ng-repeat="country in countryByLetter(letter)">
@@ -37,7 +36,7 @@
           <a ui-sref="country-profile({pIndicator: 'basic-information', pCountry1:country.country_code, pCountry2: 0})" class="btn-default btn-main-color btn-full" title="{{i18nLiterals.L20626}}" data-ng-bind="i18nLiterals.L20626"></a>
         </p>
         <p class="btn--block-full left-text">
-          <a ui-sref="EU-challenges-response({pCountry1:country.country_code})" class="btn-default btn-full" title="{{i18nLiterals.L20625}}" data-ng-bind="i18nLiterals.L20625"></a>
+          <a ui-sref="EU-challenges-response({pCountry:country.country_code})" class="btn-default btn-full" title="{{i18nLiterals.L20625}}" data-ng-bind="i18nLiterals.L20625"></a>
         </p>
       </div>
     </div>
