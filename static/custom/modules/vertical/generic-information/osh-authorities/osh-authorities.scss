@@ -195,6 +195,7 @@
     position: relative;
     cursor: pointer;
     text-transform: lowercase;
+    display: block;
     &:first-letter{
       text-transform: uppercase;
     }
@@ -219,6 +220,7 @@
     position: relative;
     cursor: pointer;
     text-transform: lowercase;
+    display: block;
     &:first-letter{
       text-transform: uppercase;
     }
