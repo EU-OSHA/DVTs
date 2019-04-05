@@ -175,6 +175,9 @@
     requirePaths['vertical/country-profile/CountryProfileController'] = verticalModules + '/osh-steering/country-profile/CountryProfileController' + suffix;
     requirePaths['vertical/EU-challenges-response/EUChallengesResponseController'] = verticalModules + '/osh-steering/EU-challenges-response/EUChallengesResponseController' + suffix;
 
+    /*SOCIAL DIALOGUE*/
+    requirePaths['vertical/social-dialogue/SocialDialogueController'] = verticalModules + '/osh-steering/social-dialogue/SocialDialogueController' + suffix;
+
     /* ABOUT THE VISUALISATION TOOL */
     requirePaths['vertical/about-tool/AboutToolController'] = verticalModules + '/about-tool/AboutToolController' + suffix;
     requirePaths['vertical/about-tool/about-tool-module'] = verticalModules + '/about-tool/about-tool-module' + suffix;

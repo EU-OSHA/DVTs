@@ -137,5 +137,102 @@
 			ORDER BY country_name ASC, implementation_record DESC, prevention_work DESC, ageing_workforce DESC;
 	    </Query>
 	</DataAccess>
+
+	<!-- STEERING OF OSH || get social dialogue countries with available data -->
+	<DataAccess access="public" connection="dvt_conn" id="getSocialDialogueCountries" type="sql">
+	    <Cache duration="3600" enabled="true" />
+	    <Columns />
+	    <Parameters>
+	    </Parameters>
+	    <Query>
+	      	SELECT DISTINCT(n.literal_id) as country_name, n.country_code 
+			FROM nuts n
+			INNER JOIN profile p
+			ON n.id = p.nuts_id
+			INNER JOIN value v
+			ON v.profile_id = p.id
+			WHERE v.indicator_id IN (100,101,102,103)
+			AND n.country_code NOT IN ('EU28')
+			ORDER BY country_name ASC;
+	    </Query>
+	</DataAccess>
+
+	<!-- STEERING OF OSH || get social dialogue countries with available data -->
+	<DataAccess access="public" connection="dvt_conn" id="getSocialDialogueData" type="sql">
+	    <Cache duration="3600" enabled="true" />
+	    <Columns />
+	    <Parameters>
+	    	<Parameter default="15" name="dataset" type="Numeric"/>
+	    </Parameters>
+	    <Query>
+			SELECT DISTINCT(n.literal_id) as country_name, n.country_code as country_code, (ROUND(v.value*100, 1)) as joint_consultative, ( ROUND(v2.value*100,1)) as trade_union, 
+			(ROUND(v3.value*100, 1)) as health_representative, (ROUND(v4.value*100,1)) as health_committee
+			FROM nuts n, profile p, profile p2, profile p3, profile p4,indicator i, value v, value v2, value v3, value v4, dataset d
+			WHERE
+			/* JOIN CONSULTATIVE */
+			n.id = p.nuts_id
+			AND v.indicator_id = 100
+			AND v.profile_id = p.id
+			AND d.id = v.dataset_id
+			/* TRADE UNION */
+			AND n.id = p2.nuts_id
+			AND v2.indicator_id = 101
+			AND v2.profile_id = p2.id
+			AND d.id = v2.dataset_id
+			/* HEALTH REPRESENTATIVE */
+			AND n.id = p3.nuts_id
+			AND v3.indicator_id = 102
+			AND v3.profile_id = p3.id
+			AND d.id = v3.dataset_id
+			/* HEALTH COMMITTEE */
+			AND n.id = p4.nuts_id
+			AND v4.indicator_id = 103
+			AND v4.profile_id = p4.id
+			AND d.id = v4.dataset_id
+			/* COMMON */
+			AND d.id = ${dataset}
+			ORDER BY country_name ASC;
+	    </Query>
+	</DataAccess>
+
+		<!-- STEERING OF OSH || get social dialogue countries with available data -->
+	<DataAccess access="public" connection="dvt_conn" id="applySocialDialogueFilters" type="sql">
+	    <Cache duration="3600" enabled="true" />
+	    <Columns />
+	    <Parameters>
+	    	<Parameter default="15" name="dataset" type="Numeric"/>
+	    	<Parameter default=".*" name="countries" type="String"/>
+	    </Parameters>
+	    <Query>
+			SELECT DISTINCT(n.literal_id) as country_name, n.country_code as country_code, (ROUND(v.value*100, 1)) as joint_consultative, (ROUND(v2.value*100, 1)) as trade_union, 
+			(ROUND(v3.value*100, 1)) as health_representative, (ROUND(v4.value*100, 1)) as health_committee
+			FROM nuts n, profile p, profile p2, profile p3, profile p4,indicator i, value v, value v2, value v3, value v4, dataset d
+			WHERE
+			/* JOIN CONSULTATIVE */
+			n.id = p.nuts_id
+			AND v.indicator_id = 100
+			AND v.profile_id = p.id
+			AND d.id = v.dataset_id
+			/* TRADE UNION */
+			AND n.id = p2.nuts_id
+			AND v2.indicator_id = 101
+			AND v2.profile_id = p2.id
+			AND d.id = v2.dataset_id
+			/* HEALTH REPRESENTATIVE */
+			AND n.id = p3.nuts_id
+			AND v3.indicator_id = 102
+			AND v3.profile_id = p3.id
+			AND d.id = v3.dataset_id
+			/* HEALTH COMMITTEE */
+			AND n.id = p4.nuts_id
+			AND v4.indicator_id = 103
+			AND v4.profile_id = p4.id
+			AND d.id = v4.dataset_id
+			/* COMMON */
+			AND d.id = ${dataset}
+			AND n.country_code REGEXP ${countries}
+			ORDER BY country_name ASC;
+	    </Query>
+	</DataAccess>
    
 </CDADescriptor>

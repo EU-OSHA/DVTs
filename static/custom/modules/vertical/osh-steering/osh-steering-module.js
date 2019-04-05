@@ -109,6 +109,22 @@ define(function (require) {
               title: i18n.L22007 +  " - " + i18n.L22020 + " - " + i18n.L363
           }
         });
+
+        $stateProvider.state('social-dialogue', {
+          url: "/osh-steering/social-dialogue",
+          params: {
+          },
+          views: {
+              "content-main": {
+                  templateUrl: configService.getVerticalTplPath("osh-steering/social-dialogue", "social-dialogue"),
+                  controller: 'SocialDialogueController',
+                  resolve: configService.dynamicallyRegisterController($controllerProvider, 'vertical/social-dialogue/SocialDialogueController', 'social-dialogue', 'SocialDialogueController')
+              }
+          },
+          metaTags: {
+              title: i18n.L22008 +  " - " + i18n.L22020 + " - " + i18n.L363
+          }
+        });
     });
 
     return module;
