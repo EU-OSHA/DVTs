@@ -119,14 +119,13 @@
   <hop> <from>Modified Java Script Value 4</from><to>Blocking Step</to><enabled>Y</enabled> </hop>
   <hop> <from>Write SQL Sentences</from><to>Blocking Step</to><enabled>Y</enabled> </hop>
   <hop> <from>Participation In</from><to>Normalize Rows</to><enabled>Y</enabled> </hop>
-  <hop> <from>Modified Java Script Value 2</from><to>Write SQL Sentences 2</to><enabled>Y</enabled> </hop>
-  <hop> <from>Modified Java Script Value 2</from><to>Write SQL Sentences 2</to><enabled>Y</enabled> </hop>
   <hop> <from>Filter rows</from><to>Modified Java Script Value 4</to><enabled>Y</enabled> </hop>
   <hop> <from>Add Profile</from><to>Modified Java Script Value</to><enabled>Y</enabled> </hop>
   <hop> <from>Filter rows</from><to>Add Profile</to><enabled>Y</enabled> </hop>
   <hop> <from>Get Profile Count</from><to>Filter rows</to><enabled>Y</enabled> </hop>
   <hop> <from>Normalize Rows</from><to>Check if value null</to><enabled>Y</enabled> </hop>
   <hop> <from>Check if value null</from><to>Get Profile Count</to><enabled>Y</enabled> </hop>
+  <hop> <from>Modified Java Script Value 2</from><to>Write SQL Sentences 2</to><enabled>Y</enabled> </hop>
   </order>
   <step>
     <name>Add Profile</name>
@@ -144,14 +143,14 @@
     <single_statement>N</single_statement>
     <replace_variables>Y</replace_variables>
     <quoteString>N</quoteString>
-    <sql>SET &#x40;nutsId &#x3d; &#x28;SELECT id FROM nuts WHERE name&#x3d;&#x22;&#x3f;&#x22;&#x29;&#x3b;&#xd;&#xa;SET &#x40;companySizeId &#x3d; &#x28;SELECT cs.id FROM split_company_size cs INNER JOIN translation t ON cs.literal_id&#x3d;t.literal_id AND t.text&#x3d;&#x22;&#x3f;&#x22;&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;INSERT INTO profile &#x28;nuts_id, company_size_id&#x29;&#xd;&#xa;VALUE &#x28;&#x40;nutsId, &#x40;companySizeId&#x29;&#x3b;</sql>
+    <sql>SET &#x40;nutsId &#x3d; &#x28;SELECT id FROM nuts WHERE country_code&#x3d;&#x22;&#x3f;&#x22;&#x29;&#x3b;&#xd;&#xa;SET &#x40;companySizeId &#x3d; &#x28;SELECT cs.id FROM split_company_size cs INNER JOIN translation t ON cs.literal_id&#x3d;t.literal_id WHERE t.text&#x3d;&#x22;&#x3f;&#x22;&#x29;&#x3b;&#xd;&#xa;SET &#x40;answerId &#x3d; &#x28;SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id&#x3d;t.literal_id WHERE t.text&#x3d;&#x22;Yes&#x22;&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;INSERT INTO profile &#x28;nuts_id, company_size_id, answer_id&#x29;&#xd;&#xa;VALUE &#x28;&#x40;nutsId, &#x40;companySizeId, &#x40;answerId&#x29;&#x3b;</sql>
     <set_params>N</set_params>
     <insert_field/>
     <update_field/>
     <delete_field/>
     <read_field/>
     <arguments>
-       <argument><name>countryName</name></argument>
+       <argument><name>Country</name></argument>
        <argument><name>companySize</name></argument>
     </arguments>
      <cluster_schema/>
@@ -201,15 +200,9 @@
     <optimizationLevel>9</optimizationLevel>
     <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
         <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>var newValue &#x3d; Value&#x3b;&#xd;&#xa;if &#x28;Value &#x3d;&#x3d; undefined &#x7c;&#x7c; Value &#x3d;&#x3d; null&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	newValue&#x3d;&#x22;null&#x22;&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;var countryName &#x3d; Country&#x3b;&#xd;&#xa;if &#x28;Country &#x3d;&#x3d; &#x22;EU28&#x22;&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	countryName &#x3d; &#x22;European Union&#x22;&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;else if &#x28;Country &#x3d;&#x3d; &#x22;Czechia&#x22;&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	countryName &#x3d; &#x22;Czech Republic&#x22;&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;</jsScript_script>
+        <jsScript_script>var newValue &#x3d; Value&#x3b;&#xd;&#xa;if &#x28;Value &#x3d;&#x3d; undefined &#x7c;&#x7c; Value &#x3d;&#x3d; null&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	newValue&#x3d;&#x22;null&#x22;&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;</jsScript_script>
       </jsScript>    </jsScripts>    <fields>      <field>        <name>newValue</name>
         <rename>newValue</rename>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <replace>N</replace>
-      </field>      <field>        <name>countryName</name>
-        <rename>countryName</rename>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
@@ -267,14 +260,14 @@
     <single_statement>N</single_statement>
     <replace_variables>Y</replace_variables>
     <quoteString>N</quoteString>
-    <sql>SELECT &#x2a;&#xd;&#xa;FROM profile p&#xd;&#xa;INNER JOIN nuts n&#xd;&#xa;ON p.nuts_id&#x3d;n.id&#xd;&#xa;INNER JOIN split_company_size cs&#xd;&#xa;ON p.company_size_id&#x3d;cs.id&#xd;&#xa;INNER JOIN translation t&#xd;&#xa;ON cs.literal_id&#x3d;t.literal_id&#xd;&#xa;WHERE n.name&#x3d;&#x22;&#x3f;&#x22;&#xd;&#xa;AND t.text&#x3d;&#x22;&#x3f;&#x22;&#xd;&#xa;AND activity_sector_id IS NULL &#xd;&#xa;AND age_group_id IS NULL &#xd;&#xa;AND answer_id IS NULL &#xd;&#xa;AND currency_id IS NULL &#xd;&#xa;AND gender_id IS NULL &#xd;&#xa;AND illness_id IS NULL &#xd;&#xa;AND subindicator_id IS NULL&#xd;&#xa;AND year IS NULL&#x3b;</sql>
+    <sql>SELECT &#x2a;&#xd;&#xa;FROM profile p&#xd;&#xa;INNER JOIN nuts n&#xd;&#xa;ON p.nuts_id&#x3d;n.id&#xd;&#xa;INNER JOIN split_company_size cs&#xd;&#xa;ON p.company_size_id&#x3d;cs.id&#xd;&#xa;INNER JOIN translation t&#xd;&#xa;ON cs.literal_id&#x3d;t.literal_id&#xd;&#xa;INNER JOIN split_answer a ON p.answer_id&#x3d;a.id&#xd;&#xa;INNER JOIN translation t1 ON a.literal_id&#x3d;t1.literal_id&#xd;&#xa;WHERE n.country_code&#x3d;&#x22;&#x3f;&#x22;&#xd;&#xa;AND t.text&#x3d;&#x22;&#x3f;&#x22;&#xd;&#xa;AND t1.text&#x3d;&#x22;Yes&#x22;&#xd;&#xa;AND activity_sector_id IS NULL &#xd;&#xa;AND age_group_id IS NULL &#xd;&#xa;AND currency_id IS NULL &#xd;&#xa;AND gender_id IS NULL &#xd;&#xa;AND illness_id IS NULL &#xd;&#xa;AND subindicator_id IS NULL&#xd;&#xa;AND year IS NULL&#x3b;</sql>
     <set_params>N</set_params>
     <insert_field/>
     <update_field/>
     <delete_field/>
     <read_field>profileCount</read_field>
     <arguments>
-       <argument><name>countryName</name></argument>
+       <argument><name>Country</name></argument>
        <argument><name>companySize</name></argument>
     </arguments>
      <cluster_schema/>
@@ -301,14 +294,14 @@
     <single_statement>N</single_statement>
     <replace_variables>Y</replace_variables>
     <quoteString>N</quoteString>
-    <sql>SET &#x40;profileID &#x3d; &#x28;SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id&#x3d;n.id INNER JOIN split_company_size cs ON p.company_size_id&#x3d;cs.id INNER JOIN translation t ON cs.literal_id&#x3d;t.literal_id WHERE n.name&#x3d;&#x22;&#x3f;&#x22; AND t.text&#x3d;&#x22;&#x3f;&#x22; AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL&#x29;&#x3b;&#xd;&#xa;SET &#x40;indicatorID &#x3d; &#x28;SELECT id FROM indicator WHERE name&#x3d;&#x22;Employees participation in prevention&#x22;&#x29;&#x3b;&#xd;&#xa;SET &#x40;datasetID &#x3d; &#x28;SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id&#x3d;&#x40;indicatorID&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;SELECT &#x2a; &#xd;&#xa;FROM value&#xd;&#xa;WHERE profile_id&#x3d;&#x40;profileID&#xd;&#xa;AND indicator_id&#x3d;&#x40;indicatorID&#xd;&#xa;AND dataset_id&#x3d;&#x40;datasetID&#x3b;</sql>
+    <sql>SET &#x40;profileID &#x3d; &#x28;SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id&#x3d;n.id INNER JOIN split_company_size cs ON p.company_size_id&#x3d;cs.id INNER JOIN translation t ON cs.literal_id&#x3d;t.literal_id INNER JOIN split_answer a ON p.answer_id&#x3d;a.id INNER JOIN translation t1 ON a.literal_id&#x3d;t1.literal_id WHERE n.country_code&#x3d;&#x22;&#x3f;&#x22; AND t.text&#x3d;&#x22;&#x3f;&#x22; AND t1.text&#x3d;&#x22;Yes&#x22; AND activity_sector_id IS NULL AND age_group_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL&#x29;&#x3b;&#xd;&#xa;SET &#x40;indicatorID &#x3d; &#x28;SELECT id FROM indicator WHERE name&#x3d;&#x22;Q305&#x22;&#x29;&#x3b;&#xd;&#xa;SET &#x40;datasetID &#x3d; &#x28;SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id&#x3d;&#x40;indicatorID&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;SELECT &#x2a; &#xd;&#xa;FROM value&#xd;&#xa;WHERE profile_id&#x3d;&#x40;profileID&#xd;&#xa;AND indicator_id&#x3d;&#x40;indicatorID&#xd;&#xa;AND dataset_id&#x3d;&#x40;datasetID&#x3b;</sql>
     <set_params>N</set_params>
     <insert_field/>
     <update_field/>
     <delete_field/>
     <read_field>valueCount</read_field>
     <arguments>
-       <argument><name>countryName</name></argument>
+       <argument><name>Country</name></argument>
        <argument><name>companySize</name></argument>
     </arguments>
      <cluster_schema/>
@@ -335,14 +328,14 @@
     <single_statement>N</single_statement>
     <replace_variables>Y</replace_variables>
     <quoteString>N</quoteString>
-    <sql>SET &#x40;profileID &#x3d; &#x28;SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id&#x3d;n.id INNER JOIN split_company_size cs ON p.company_size_id&#x3d;cs.id INNER JOIN translation t ON cs.literal_id&#x3d;t.literal_id WHERE n.name&#x3d;&#x22;&#x3f;&#x22; AND t.text&#x3d;&#x22;&#x3f;&#x22; AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL&#x29;&#x3b;&#xd;&#xa;SET &#x40;indicatorID &#x3d; &#x28;SELECT id FROM indicator WHERE name&#x3d;&#x22;Employees participation in prevention&#x22;&#x29;&#x3b;&#xd;&#xa;SET &#x40;datasetID &#x3d; &#x28;SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id&#x3d;&#x40;indicatorID&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;INSERT INTO value &#x28;dataset_id, indicator_id, profile_id, value&#x29;&#xd;&#xa;VALUES &#x28;&#x40;datasetID, &#x40;indicatorID, &#x40;profileID, &#x3f;&#x29;&#x3b;</sql>
+    <sql>SET &#x40;profileID &#x3d; &#x28;SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id&#x3d;n.id INNER JOIN split_company_size cs ON p.company_size_id&#x3d;cs.id INNER JOIN translation t ON cs.literal_id&#x3d;t.literal_id INNER JOIN split_answer a ON p.answer_id&#x3d;a.id INNER JOIN translation t1 ON a.literal_id&#x3d;t1.literal_id WHERE n.country_code&#x3d;&#x22;&#x3f;&#x22; AND t.text&#x3d;&#x22;&#x3f;&#x22; AND t1.text&#x3d;&#x22;Yes&#x22; AND activity_sector_id IS NULL AND age_group_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL&#x29;&#x3b;&#xd;&#xa;SET &#x40;indicatorID &#x3d; &#x28;SELECT id FROM indicator WHERE name&#x3d;&#x22;Q305&#x22;&#x29;&#x3b;&#xd;&#xa;SET &#x40;datasetID &#x3d; &#x28;SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id&#x3d;&#x40;indicatorID&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;INSERT INTO value &#x28;dataset_id, indicator_id, profile_id, value&#x29;&#xd;&#xa;VALUES &#x28;&#x40;datasetID, &#x40;indicatorID, &#x40;profileID, &#x3f;&#x29;&#x3b;</sql>
     <set_params>N</set_params>
     <insert_field/>
     <update_field/>
     <delete_field/>
     <read_field/>
     <arguments>
-       <argument><name>countryName</name></argument>
+       <argument><name>Country</name></argument>
        <argument><name>companySize</name></argument>
        <argument><name>newValue</name></argument>
     </arguments>
@@ -369,7 +362,7 @@
     <optimizationLevel>9</optimizationLevel>
     <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
         <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>var queries &#x3d; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;queries &#x3d; queries &#x2b; &#x27;SET &#x40;nutsId &#x3d; &#x28;SELECT id FROM nuts WHERE name&#x3d;&#x22;&#x27; &#x2b; countryName &#x2b; &#x27;&#x22;&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;queries &#x3d; queries &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;queries &#x3d; queries &#x2b; &#x27;SET &#x40;companySizeId &#x3d; &#x28;SELECT cs.id FROM split_company_size cs INNER JOIN translation t ON cs.literal_id&#x3d;t.literal_id AND t.text&#x3d;&#x22;&#x27;&#x2b;companySize&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;queries &#x3d; queries &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;&#xd;&#xa;&#xd;&#xa;queries &#x3d; queries &#x2b; &#x22;INSERT INTO profile &#x28;nuts_id, company_size_id&#x29; VALUE &#x28;&#x40;nutsId, &#x40;companySizeId&#x29;&#x3b;&#x22;&#x3b;&#xd;&#xa;queries &#x3d; queries &#x2b; &#x22;&#x5c;n&#x22;&#x3b;</jsScript_script>
+        <jsScript_script>var queries &#x3d; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;queries &#x3d; queries &#x2b; &#x27;SET &#x40;nutsId &#x3d; &#x28;SELECT id FROM nuts WHERE country_code&#x3d;&#x22;&#x27; &#x2b; Country &#x2b; &#x27;&#x22;&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;queries &#x3d; queries &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;queries &#x3d; queries &#x2b; &#x27;SET &#x40;companySizeId &#x3d; &#x28;SELECT cs.id FROM split_company_size cs INNER JOIN translation t ON cs.literal_id&#x3d;t.literal_id WHERE t.text&#x3d;&#x22;&#x27;&#x2b;companySize&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;queries &#x3d; queries &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;queries &#x3d; queries &#x2b; &#x27;SET &#x40;answerId &#x3d; &#x28;SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id&#x3d;t.literal_id WHERE t.text&#x3d;&#x22;Yes&#x22;&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;queries &#x3d; queries &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;&#xd;&#xa;&#xd;&#xa;queries &#x3d; queries &#x2b; &#x22;INSERT INTO profile &#x28;nuts_id, company_size_id&#x29; VALUE &#x28;&#x40;nutsId, &#x40;companySizeId&#x29;&#x3b;&#x22;&#x3b;&#xd;&#xa;queries &#x3d; queries &#x2b; &#x22;&#x5c;n&#x22;&#x3b;</jsScript_script>
       </jsScript>    </jsScripts>    <fields>      <field>        <name>queries</name>
         <rename>queries</rename>
         <type>String</type>
@@ -399,7 +392,7 @@
     <optimizationLevel>9</optimizationLevel>
     <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
         <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>var queries2 &#x3d; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x27;SET &#x40;profileID &#x3d; &#x28;SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id&#x3d;n.id &#x27;&#xd;&#xa;				&#x2b; &#x27;INNER JOIN split_company_size cs ON p.company_size_id&#x3d;cs.id &#x27;&#xd;&#xa;				&#x2b; &#x27;INNER JOIN translation t ON cs.literal_id&#x3d;t.literal_id &#x27;&#xd;&#xa;				&#x2b; &#x27;WHERE n.name&#x3d;&#x22;&#x27; &#x2b; countryName &#x2b; &#x27;&#x22; AND t.text&#x3d;&#x22;&#x27;&#x2b;companySize&#x2b;&#x27;&#x22; &#x27;&#xd;&#xa;				&#x2b; &#x27;AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL&#x27;&#xd;&#xa;				&#x2b; &#x27;AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL &#x27;&#xd;&#xa;				&#x2b; &#x27;AND subindicator_id IS NULL AND year IS NULL&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x27;SET &#x40;indicatorID &#x3d; &#x28;SELECT id FROM indicator WHERE name&#x3d;&#x22;Employees participation in prevention&#x22;&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x27;SET &#x40;datasetID &#x3d; &#x28;SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id&#x3d;&#x40;indicatorID&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x27;INSERT INTO value &#x28;dataset_id, indicator_id, profile_id, value&#x29;&#x27;&#xd;&#xa;			&#x2b; &#x27;VALUES &#x28;&#x40;datasetID, &#x40;indicatorID, &#x40;profileID, &#x27; &#x2b; newValue &#x2b; &#x27;&#x29;&#x3b;&#x27;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;&#xd;&#xa;</jsScript_script>
+        <jsScript_script>var queries2 &#x3d; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x27;SET &#x40;profileID &#x3d; &#x28;SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id&#x3d;n.id &#x27;&#xd;&#xa;				&#x2b; &#x27;INNER JOIN split_company_size cs ON p.company_size_id&#x3d;cs.id &#x27;&#xd;&#xa;				&#x2b; &#x27;INNER JOIN translation t ON cs.literal_id&#x3d;t.literal_id &#x27;&#xd;&#xa;				&#x2b; &#x27;INNER JOIN split_answer a ON p.answer_id&#x3d;a.id &#x27;&#xd;&#xa;				&#x2b; &#x27;INNER JOIN translation t1 ON a.literal_id&#x3d;t1.literal_id &#x27;&#xd;&#xa;				&#x2b; &#x27;WHERE n.country_code&#x3d;&#x22;&#x27; &#x2b; Country &#x2b; &#x27;&#x22; AND t.text&#x3d;&#x22;&#x27;&#x2b;companySize&#x2b;&#x27;&#x22; AND t1.text&#x3d;&#x22;Yes&#x22; &#x27;&#xd;&#xa;				&#x2b; &#x27;AND activity_sector_id IS NULL AND age_group_id IS NULL &#x27;&#xd;&#xa;				&#x2b; &#x27;AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL &#x27;&#xd;&#xa;				&#x2b; &#x27;AND subindicator_id IS NULL AND year IS NULL&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x27;SET &#x40;indicatorID &#x3d; &#x28;SELECT id FROM indicator WHERE name&#x3d;&#x22;Q305&#x22;&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x27;SET &#x40;datasetID &#x3d; &#x28;SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id&#x3d;&#x40;indicatorID&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x27;INSERT INTO value &#x28;dataset_id, indicator_id, profile_id, value&#x29;&#x27;&#xd;&#xa;			&#x2b; &#x27;VALUES &#x28;&#x40;datasetID, &#x40;indicatorID, &#x40;profileID, &#x27; &#x2b; newValue &#x2b; &#x27;&#x29;&#x3b;&#x27;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;&#xd;&#xa;</jsScript_script>
       </jsScript>    </jsScripts>    <fields>      <field>        <name>queries2</name>
         <rename>queries2</rename>
         <type>String</type>
@@ -429,7 +422,7 @@
     <optimizationLevel>9</optimizationLevel>
     <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
         <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>var queries2 &#x3d; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x27;SET &#x40;profileID &#x3d; &#x28;SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id&#x3d;n.id &#x27;&#xd;&#xa;				&#x2b; &#x27;INNER JOIN split_company_size cs ON p.answer_id&#x3d;cs.id &#x27;&#xd;&#xa;				&#x2b; &#x27;INNER JOIN translation t ON cs.literal_id&#x3d;t.literal_id &#x27;&#xd;&#xa;				&#x2b; &#x27;WHERE n.name&#x3d;&#x22;&#x27; &#x2b; countryName &#x2b; &#x27;&#x22; AND t.text&#x3d;&#x22;&#x27;&#x2b;companySize&#x2b;&#x27;&#x22; &#x27;&#xd;&#xa;				&#x2b; &#x27;AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL &#x27;&#xd;&#xa;				&#x2b; &#x27;AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL &#x27;&#xd;&#xa;				&#x2b; &#x27;AND subindicator_id IS NULL AND year IS NULL&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x27;SET &#x40;indicatorID &#x3d; &#x28;SELECT id FROM indicator WHERE name&#x3d;&#x22;Employees participation in prevention&#x22;&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x27;SET &#x40;datasetID &#x3d; &#x28;SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id&#x3d;&#x40;indicatorID&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x27;UPDATE value SET value &#x3d; &#x27; &#x2b; newValue &#x2b; &#x27; WHERE profile_id&#x3d;&#x40;profileID&#x27;&#xd;&#xa;			&#x2b; &#x27;AND indicator_id&#x3d;&#x40;indicatorID AND dataset_id&#x3d;&#x3b;&#x27;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;&#xd;&#xa;</jsScript_script>
+        <jsScript_script>var queries2 &#x3d; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x27;SET &#x40;profileID &#x3d; &#x28;SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id&#x3d;n.id &#x27;&#xd;&#xa;				&#x2b; &#x27;INNER JOIN split_company_size cs ON p.company_size_id&#x3d;cs.id &#x27;&#xd;&#xa;				&#x2b; &#x27;INNER JOIN translation t ON cs.literal_id&#x3d;t.literal_id &#x27;&#xd;&#xa;				&#x2b; &#x27;INNER JOIN split_answer a ON p.answer_id&#x3d;a.id &#x27;&#xd;&#xa;				&#x2b; &#x27;INNER JOIN translation t1 ON a.literal_id&#x3d;t1.literal_id &#x27;&#xd;&#xa;				&#x2b; &#x27;WHERE n.country_code&#x3d;&#x22;&#x27; &#x2b; Country &#x2b; &#x27;&#x22; AND t.text&#x3d;&#x22;&#x27;&#x2b;companySize&#x2b;&#x27;&#x22; AND t1.text&#x3d;&#x22;Yes&#x22; &#x27;&#xd;&#xa;				&#x2b; &#x27;AND activity_sector_id IS NULL AND age_group_id IS NULL &#x27;&#xd;&#xa;				&#x2b; &#x27;AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL &#x27;&#xd;&#xa;				&#x2b; &#x27;AND subindicator_id IS NULL AND year IS NULL&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x27;SET &#x40;indicatorID &#x3d; &#x28;SELECT id FROM indicator WHERE name&#x3d;&#x22;Q305&#x22;&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x27;SET &#x40;datasetID &#x3d; &#x28;SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id&#x3d;&#x40;indicatorID&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x27;UPDATE value SET value &#x3d; &#x27; &#x2b; newValue &#x2b; &#x27; WHERE profile_id&#x3d;&#x40;profileID&#x27;&#xd;&#xa;			&#x2b; &#x27;AND indicator_id&#x3d;&#x40;indicatorID AND dataset_id&#x3d;&#x3b;&#x27;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;&#xd;&#xa;</jsScript_script>
       </jsScript>    </jsScripts>    <fields>      <field>        <name>queries2</name>
         <rename>queries2</rename>
         <type>String</type>
@@ -665,14 +658,14 @@
     <single_statement>N</single_statement>
     <replace_variables>Y</replace_variables>
     <quoteString>N</quoteString>
-    <sql>SET &#x40;profileID &#x3d; &#x28;SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id&#x3d;n.id INNER JOIN split_company_size cs ON p.company_size_id&#x3d;cs.id INNER JOIN translation t ON cs.literal_id&#x3d;t.literal_id WHERE n.name&#x3d;&#x22;&#x3f;&#x22; AND t.text&#x3d;&#x22;&#x3f;&#x22; AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL&#x29;&#x3b;&#xd;&#xa;SET &#x40;indicatorID &#x3d; &#x28;SELECT id FROM indicator WHERE name&#x3d;&#x22;Employees participation in prevention&#x22;&#x29;&#x3b;&#xd;&#xa;SET &#x40;datasetID &#x3d; &#x28;SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id&#x3d;&#x40;indicatorID&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;UPDATE value&#xd;&#xa;SET value &#x3d; &#x3f;&#xd;&#xa;WHERE profile_id&#x3d;&#x40;profileID&#xd;&#xa;AND indicator_id&#x3d;&#x40;indicatorID&#xd;&#xa;AND dataset_id&#x3d;&#x40;datasetID&#x3b;</sql>
+    <sql>SET &#x40;profileID &#x3d; &#x28;SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id&#x3d;n.id INNER JOIN split_company_size cs ON p.company_size_id&#x3d;cs.id INNER JOIN translation t ON cs.literal_id&#x3d;t.literal_id INNER JOIN split_answer a ON p.answer_id&#x3d;a.id INNER JOIN translation t1 ON a.literal_id&#x3d;t1.literal_id WHERE n.country_code&#x3d;&#x22;&#x3f;&#x22; AND t.text&#x3d;&#x22;&#x3f;&#x22; AND t1.text&#x3d;&#x22;Yes&#x22; AND activity_sector_id IS NULL AND age_group_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL&#x29;&#x3b;&#xd;&#xa;SET &#x40;indicatorID &#x3d; &#x28;SELECT id FROM indicator WHERE name&#x3d;&#x22;Q305&#x22;&#x29;&#x3b;&#xd;&#xa;SET &#x40;datasetID &#x3d; &#x28;SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id&#x3d;&#x40;indicatorID&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;UPDATE value&#xd;&#xa;SET value &#x3d; &#x3f;&#xd;&#xa;WHERE profile_id&#x3d;&#x40;profileID&#xd;&#xa;AND indicator_id&#x3d;&#x40;indicatorID&#xd;&#xa;AND dataset_id&#x3d;&#x40;datasetID&#x3b;</sql>
     <set_params>N</set_params>
     <insert_field/>
     <update_field/>
     <delete_field/>
     <read_field/>
     <arguments>
-       <argument><name>countryName</name></argument>
+       <argument><name>Country</name></argument>
        <argument><name>companySize</name></argument>
        <argument><name>newValue</name></argument>
     </arguments>

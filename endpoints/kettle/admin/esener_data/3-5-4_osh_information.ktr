@@ -121,12 +121,11 @@
   <hop> <from>Normalize Rows</from><to>Get Profile Count</to><enabled>Y</enabled> </hop>
   <hop> <from>Get Profile Count</from><to>Check if value null</to><enabled>Y</enabled> </hop>
   <hop> <from>OSH Information In</from><to>Normalize Rows</to><enabled>Y</enabled> </hop>
-  <hop> <from>Modified Java Script Value 2</from><to>Write SQL Sentences 2</to><enabled>Y</enabled> </hop>
-  <hop> <from>Modified Java Script Value 2</from><to>Write SQL Sentences 2</to><enabled>Y</enabled> </hop>
   <hop> <from>Check if value null</from><to>Filter rows</to><enabled>Y</enabled> </hop>
   <hop> <from>Filter rows</from><to>Modified Java Script Value 4</to><enabled>Y</enabled> </hop>
   <hop> <from>Add Profile</from><to>Modified Java Script Value</to><enabled>Y</enabled> </hop>
   <hop> <from>Filter rows</from><to>Add Profile</to><enabled>Y</enabled> </hop>
+  <hop> <from>Modified Java Script Value 2</from><to>Write SQL Sentences 2</to><enabled>Y</enabled> </hop>
   </order>
   <step>
     <name>Add Profile</name>
@@ -295,7 +294,7 @@
     <single_statement>N</single_statement>
     <replace_variables>Y</replace_variables>
     <quoteString>N</quoteString>
-    <sql>SET &#x40;profileID &#x3d; &#x28;SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id&#x3d;n.id INNER JOIN split_answer a ON p.answer_id&#x3d;a.id INNER JOIN translation t ON a.literal_id&#x3d;t.literal_id WHERE n.country_code&#x3d;&#x22;&#x3f;&#x22; AND t.text&#x3d;&#x22;&#x3f;&#x22; AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL&#x29;&#x3b;&#xd;&#xa;SET &#x40;indicatorID &#x3d; &#x28;SELECT id FROM indicator WHERE name&#x3d;&#x22;OSH Information and training of workers&#x22;&#x29;&#x3b;&#xd;&#xa;SET &#x40;datasetID &#x3d; &#x28;SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id&#x3d;&#x40;indicatorID&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;SELECT &#x2a; &#xd;&#xa;FROM value&#xd;&#xa;WHERE profile_id&#x3d;&#x40;profileID&#xd;&#xa;AND indicator_id&#x3d;&#x40;indicatorID&#xd;&#xa;AND dataset_id&#x3d;&#x40;datasetID&#x3b;</sql>
+    <sql>SET &#x40;profileID &#x3d; &#x28;SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id&#x3d;n.id INNER JOIN split_answer a ON p.answer_id&#x3d;a.id INNER JOIN translation t ON a.literal_id&#x3d;t.literal_id WHERE n.country_code&#x3d;&#x22;&#x3f;&#x22; AND t.text&#x3d;&#x22;&#x3f;&#x22; AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL&#x29;&#x3b;&#xd;&#xa;SET &#x40;indicatorID &#x3d; &#x28;SELECT id FROM indicator WHERE name&#x3d;&#x22;Q354&#x22;&#x29;&#x3b;&#xd;&#xa;SET &#x40;datasetID &#x3d; &#x28;SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id&#x3d;&#x40;indicatorID&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;SELECT &#x2a; &#xd;&#xa;FROM value&#xd;&#xa;WHERE profile_id&#x3d;&#x40;profileID&#xd;&#xa;AND indicator_id&#x3d;&#x40;indicatorID&#xd;&#xa;AND dataset_id&#x3d;&#x40;datasetID&#x3b;</sql>
     <set_params>N</set_params>
     <insert_field/>
     <update_field/>
@@ -329,7 +328,7 @@
     <single_statement>N</single_statement>
     <replace_variables>Y</replace_variables>
     <quoteString>N</quoteString>
-    <sql>SET &#x40;profileID &#x3d; &#x28;SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id&#x3d;n.id INNER JOIN split_answer a ON p.answer_id&#x3d;a.id INNER JOIN translation t ON a.literal_id&#x3d;t.literal_id WHERE n.country_code&#x3d;&#x22;&#x3f;&#x22; AND t.text&#x3d;&#x22;&#x3f;&#x22; AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL&#x29;&#x3b;&#xd;&#xa;SET &#x40;indicatorID &#x3d; &#x28;SELECT id FROM indicator WHERE name&#x3d;&#x22;OSH Information and training of workers&#x22;&#x29;&#x3b;&#xd;&#xa;SET &#x40;datasetID &#x3d; &#x28;SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id&#x3d;&#x40;indicatorID&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;INSERT INTO value &#x28;dataset_id, indicator_id, profile_id, value&#x29;&#xd;&#xa;VALUES &#x28;&#x40;datasetID, &#x40;indicatorID, &#x40;profileID, &#x3f;&#x29;&#x3b;</sql>
+    <sql>SET &#x40;profileID &#x3d; &#x28;SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id&#x3d;n.id INNER JOIN split_answer a ON p.answer_id&#x3d;a.id INNER JOIN translation t ON a.literal_id&#x3d;t.literal_id WHERE n.country_code&#x3d;&#x22;&#x3f;&#x22; AND t.text&#x3d;&#x22;&#x3f;&#x22; AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL&#x29;&#x3b;&#xd;&#xa;SET &#x40;indicatorID &#x3d; &#x28;SELECT id FROM indicator WHERE name&#x3d;&#x22;Q354&#x22;&#x29;&#x3b;&#xd;&#xa;SET &#x40;datasetID &#x3d; &#x28;SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id&#x3d;&#x40;indicatorID&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;INSERT INTO value &#x28;dataset_id, indicator_id, profile_id, value&#x29;&#xd;&#xa;VALUES &#x28;&#x40;datasetID, &#x40;indicatorID, &#x40;profileID, &#x3f;&#x29;&#x3b;</sql>
     <set_params>N</set_params>
     <insert_field/>
     <update_field/>
@@ -344,6 +343,155 @@
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>976</xloc>
       <yloc>256</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Modified Java Script Value</name>
+    <type>ScriptValueMod</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <compatible>N</compatible>
+    <optimizationLevel>9</optimizationLevel>
+    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
+        <jsScript_name>Script 1</jsScript_name>
+        <jsScript_script>var queries &#x3d; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;queries &#x3d; queries &#x2b; &#x27;SET &#x40;nutsId &#x3d; &#x28;SELECT id FROM nuts WHERE country_code&#x3d;&#x22;&#x27; &#x2b; Country &#x2b; &#x27;&#x22;&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;queries &#x3d; queries &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;queries &#x3d; queries &#x2b; &#x27;SET &#x40;answerId &#x3d; &#x28;SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id&#x3d;t.literal_id WHERE t.text&#x3d;&#x22;&#x27;&#x2b;answer&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;queries &#x3d; queries &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;&#xd;&#xa;&#xd;&#xa;queries &#x3d; queries &#x2b; &#x22;INSERT INTO profile &#x28;nuts_id, answer_id&#x29; VALUE &#x28;&#x40;nutsId, &#x40;answerId&#x29;&#x3b;&#x22;&#x3b;&#xd;&#xa;queries &#x3d; queries &#x2b; &#x22;&#x5c;n&#x22;&#x3b;</jsScript_script>
+      </jsScript>    </jsScripts>    <fields>      <field>        <name>queries</name>
+        <rename>queries</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>736</xloc>
+      <yloc>144</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Modified Java Script Value 2</name>
+    <type>ScriptValueMod</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <compatible>N</compatible>
+    <optimizationLevel>9</optimizationLevel>
+    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
+        <jsScript_name>Script 1</jsScript_name>
+        <jsScript_script>var queries2 &#x3d; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x27;SET &#x40;profileID &#x3d; &#x28;SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id&#x3d;n.id &#x27;&#xd;&#xa;				&#x2b; &#x27;INNER JOIN split_answer a ON p.answer_id&#x3d;a.id &#x27;&#xd;&#xa;				&#x2b; &#x27;INNER JOIN translation t ON a.literal_id&#x3d;t.literal_id &#x27;&#xd;&#xa;				&#x2b; &#x27;WHERE n.country_code&#x3d;&#x22;&#x27; &#x2b; Country &#x2b; &#x27;&#x22; AND t.text&#x3d;&#x22;&#x27;&#x2b;answer&#x2b;&#x27;&#x22; &#x27;&#xd;&#xa;				&#x2b; &#x27;AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL &#x27;&#xd;&#xa;				&#x2b; &#x27;AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL &#x27;&#xd;&#xa;				&#x2b; &#x27;AND subindicator_id IS NULL AND year IS NULL&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x27;SET &#x40;indicatorID &#x3d; &#x28;SELECT id FROM indicator WHERE name&#x3d;&#x22;Q354&#x22;&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x27;SET &#x40;datasetID &#x3d; &#x28;SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id&#x3d;&#x40;indicatorID&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x27;INSERT INTO value &#x28;dataset_id, indicator_id, profile_id, value&#x29;&#x27;&#xd;&#xa;			&#x2b; &#x27;VALUES &#x28;&#x40;datasetID, &#x40;indicatorID, &#x40;profileID, &#x27; &#x2b; newValue &#x2b; &#x27;&#x29;&#x3b;&#x27;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;&#xd;&#xa;</jsScript_script>
+      </jsScript>    </jsScripts>    <fields>      <field>        <name>queries2</name>
+        <rename>queries2</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>1088</xloc>
+      <yloc>144</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Modified Java Script Value 3</name>
+    <type>ScriptValueMod</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <compatible>N</compatible>
+    <optimizationLevel>9</optimizationLevel>
+    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
+        <jsScript_name>Script 1</jsScript_name>
+        <jsScript_script>var queries2 &#x3d; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x27;SET &#x40;profileID &#x3d; &#x28;SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id&#x3d;n.id &#x27;&#xd;&#xa;				&#x2b; &#x27;INNER JOIN split_answer a ON p.answer_id&#x3d;a.id &#x27;&#xd;&#xa;				&#x2b; &#x27;INNER JOIN translation t ON a.literal_id&#x3d;t.literal_id &#x27;&#xd;&#xa;				&#x2b; &#x27;WHERE n.country_code&#x3d;&#x22;&#x27; &#x2b; Country &#x2b; &#x27;&#x22; AND t.text&#x3d;&#x22;&#x27;&#x2b;answer&#x2b;&#x27;&#x22; &#x27;&#xd;&#xa;				&#x2b; &#x27;AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL &#x27;&#xd;&#xa;				&#x2b; &#x27;AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL &#x27;&#xd;&#xa;				&#x2b; &#x27;AND subindicator_id IS NULL AND year IS NULL&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x27;SET &#x40;indicatorID &#x3d; &#x28;SELECT id FROM indicator WHERE name&#x3d;&#x22;Q354&#x22;&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x27;SET &#x40;datasetID &#x3d; &#x28;SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id&#x3d;&#x40;indicatorID&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x27;UPDATE value SET value &#x3d; &#x27; &#x2b; newValue &#x2b; &#x27; WHERE profile_id&#x3d;&#x40;profileID&#x27;&#xd;&#xa;			&#x2b; &#x27;AND indicator_id&#x3d;&#x40;indicatorID AND dataset_id&#x3d;&#x3b;&#x27;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;&#xd;&#xa;</jsScript_script>
+      </jsScript>    </jsScripts>    <fields>      <field>        <name>queries2</name>
+        <rename>queries2</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>1280</xloc>
+      <yloc>32</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Modified Java Script Value 4</name>
+    <type>ScriptValueMod</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <compatible>N</compatible>
+    <optimizationLevel>9</optimizationLevel>
+    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
+        <jsScript_name>Script 1</jsScript_name>
+        <jsScript_script>var queries &#x3d; &#x22;&#x22;&#x3b;&#xd;&#xa;&#xd;&#xa;</jsScript_script>
+      </jsScript>    </jsScripts>    <fields>      <field>        <name>queries</name>
+        <rename>queries</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>736</xloc>
+      <yloc>32</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Normalize Rows</name>
+    <type>Normaliser</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+   <typefield>answer</typefield>
+    <fields>      <field>        <name>Yes</name>
+        <value>Yes</value>
+        <norm>Value</norm>
+        </field>      <field>        <name>No</name>
+        <value>No</value>
+        <norm>Value</norm>
+        </field>      <field>        <name>Yes but only some of them</name>
+        <value>Yes but only some of them</value>
+        <norm>Value</norm>
+        </field>      </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>224</xloc>
+      <yloc>32</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -465,155 +613,6 @@
     </step>
 
   <step>
-    <name>Modified Java Script Value</name>
-    <type>ScriptValueMod</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <compatible>N</compatible>
-    <optimizationLevel>9</optimizationLevel>
-    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
-        <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>var queries &#x3d; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;queries &#x3d; queries &#x2b; &#x27;SET &#x40;nutsId &#x3d; &#x28;SELECT id FROM nuts WHERE country_code&#x3d;&#x22;&#x27; &#x2b; Country &#x2b; &#x27;&#x22;&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;queries &#x3d; queries &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;queries &#x3d; queries &#x2b; &#x27;SET &#x40;answerId &#x3d; &#x28;SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id&#x3d;t.literal_id WHERE t.text&#x3d;&#x22;&#x27;&#x2b;answer&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;queries &#x3d; queries &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;&#xd;&#xa;&#xd;&#xa;queries &#x3d; queries &#x2b; &#x22;INSERT INTO profile &#x28;nuts_id, answer_id&#x29; VALUE &#x28;&#x40;nutsId, &#x40;answerId&#x29;&#x3b;&#x22;&#x3b;&#xd;&#xa;queries &#x3d; queries &#x2b; &#x22;&#x5c;n&#x22;&#x3b;</jsScript_script>
-      </jsScript>    </jsScripts>    <fields>      <field>        <name>queries</name>
-        <rename>queries</rename>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <replace>N</replace>
-      </field>    </fields>     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>736</xloc>
-      <yloc>144</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Modified Java Script Value 2</name>
-    <type>ScriptValueMod</type>
-    <description/>
-    <distribute>N</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <compatible>N</compatible>
-    <optimizationLevel>9</optimizationLevel>
-    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
-        <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>var queries2 &#x3d; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x27;SET &#x40;profileID &#x3d; &#x28;SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id&#x3d;n.id &#x27;&#xd;&#xa;				&#x2b; &#x27;INNER JOIN split_answer a ON p.answer_id&#x3d;a.id &#x27;&#xd;&#xa;				&#x2b; &#x27;INNER JOIN translation t ON a.literal_id&#x3d;t.literal_id &#x27;&#xd;&#xa;				&#x2b; &#x27;WHERE n.country_code&#x3d;&#x22;&#x27; &#x2b; Country &#x2b; &#x27;&#x22; AND t.text&#x3d;&#x22;&#x27;&#x2b;answer&#x2b;&#x27;&#x22; &#x27;&#xd;&#xa;				&#x2b; &#x27;AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL&#x27;&#xd;&#xa;				&#x2b; &#x27;AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL &#x27;&#xd;&#xa;				&#x2b; &#x27;AND subindicator_id IS NULL AND year IS NULL&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x27;SET &#x40;indicatorID &#x3d; &#x28;SELECT id FROM indicator WHERE name&#x3d;&#x22;OSH Information and training of workers&#x22;&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x27;SET &#x40;datasetID &#x3d; &#x28;SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id&#x3d;&#x40;indicatorID&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x27;INSERT INTO value &#x28;dataset_id, indicator_id, profile_id, value&#x29;&#x27;&#xd;&#xa;			&#x2b; &#x27;VALUES &#x28;&#x40;datasetID, &#x40;indicatorID, &#x40;profileID, &#x27; &#x2b; newValue &#x2b; &#x27;&#x29;&#x3b;&#x27;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;&#xd;&#xa;</jsScript_script>
-      </jsScript>    </jsScripts>    <fields>      <field>        <name>queries2</name>
-        <rename>queries2</rename>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <replace>N</replace>
-      </field>    </fields>     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>1088</xloc>
-      <yloc>144</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Modified Java Script Value 3</name>
-    <type>ScriptValueMod</type>
-    <description/>
-    <distribute>N</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <compatible>N</compatible>
-    <optimizationLevel>9</optimizationLevel>
-    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
-        <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>var queries2 &#x3d; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x27;SET &#x40;profileID &#x3d; &#x28;SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id&#x3d;n.id &#x27;&#xd;&#xa;				&#x2b; &#x27;INNER JOIN split_answer a ON p.answer_id&#x3d;a.id &#x27;&#xd;&#xa;				&#x2b; &#x27;INNER JOIN translation t ON a.literal_id&#x3d;t.literal_id &#x27;&#xd;&#xa;				&#x2b; &#x27;WHERE n.country_code&#x3d;&#x22;&#x27; &#x2b; Country &#x2b; &#x27;&#x22; AND t.text&#x3d;&#x22;&#x27;&#x2b;answer&#x2b;&#x27;&#x22; &#x27;&#xd;&#xa;				&#x2b; &#x27;AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL &#x27;&#xd;&#xa;				&#x2b; &#x27;AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL &#x27;&#xd;&#xa;				&#x2b; &#x27;AND subindicator_id IS NULL AND year IS NULL&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x27;SET &#x40;indicatorID &#x3d; &#x28;SELECT id FROM indicator WHERE name&#x3d;&#x22;OSH Information and training of workers&#x22;&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x27;SET &#x40;datasetID &#x3d; &#x28;SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id&#x3d;&#x40;indicatorID&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x27;UPDATE value SET value &#x3d; &#x27; &#x2b; newValue &#x2b; &#x27; WHERE profile_id&#x3d;&#x40;profileID&#x27;&#xd;&#xa;			&#x2b; &#x27;AND indicator_id&#x3d;&#x40;indicatorID AND dataset_id&#x3d;&#x3b;&#x27;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;&#xd;&#xa;</jsScript_script>
-      </jsScript>    </jsScripts>    <fields>      <field>        <name>queries2</name>
-        <rename>queries2</rename>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <replace>N</replace>
-      </field>    </fields>     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>1280</xloc>
-      <yloc>32</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Modified Java Script Value 4</name>
-    <type>ScriptValueMod</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <compatible>N</compatible>
-    <optimizationLevel>9</optimizationLevel>
-    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
-        <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>var queries &#x3d; &#x22;&#x22;&#x3b;&#xd;&#xa;&#xd;&#xa;</jsScript_script>
-      </jsScript>    </jsScripts>    <fields>      <field>        <name>queries</name>
-        <rename>queries</rename>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <replace>N</replace>
-      </field>    </fields>     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>736</xloc>
-      <yloc>32</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Normalize Rows</name>
-    <type>Normaliser</type>
-    <description/>
-    <distribute>N</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-   <typefield>answer</typefield>
-    <fields>      <field>        <name>Yes</name>
-        <value>Yes</value>
-        <norm>Value</norm>
-        </field>      <field>        <name>No</name>
-        <value>No</value>
-        <norm>Value</norm>
-        </field>      <field>        <name>Yes but only some of them</name>
-        <value>Yes but only some of them</value>
-        <norm>Value</norm>
-        </field>      </fields>     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>224</xloc>
-      <yloc>32</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
     <name>Update Value  </name>
     <type>ExecSQL</type>
     <description/>
@@ -629,7 +628,7 @@
     <single_statement>N</single_statement>
     <replace_variables>Y</replace_variables>
     <quoteString>N</quoteString>
-    <sql>SET &#x40;profileID &#x3d; &#x28;SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id&#x3d;n.id INNER JOIN split_answer a ON p.answer_id&#x3d;a.id INNER JOIN translation t ON a.literal_id&#x3d;t.literal_id WHERE n.country_code&#x3d;&#x22;&#x3f;&#x22; AND t.text&#x3d;&#x22;&#x3f;&#x22; AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL&#x29;&#x3b;&#xd;&#xa;SET &#x40;indicatorID &#x3d; &#x28;SELECT id FROM indicator WHERE name&#x3d;&#x22;OSH Information and training of workers&#x22;&#x29;&#x3b;&#xd;&#xa;SET &#x40;datasetID &#x3d; &#x28;SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id&#x3d;&#x40;indicatorID&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;UPDATE value&#xd;&#xa;SET value &#x3d; &#x3f;&#xd;&#xa;WHERE profile_id&#x3d;&#x40;profileID&#xd;&#xa;AND indicator_id&#x3d;&#x40;indicatorID&#xd;&#xa;AND dataset_id&#x3d;&#x40;datasetID&#x3b;</sql>
+    <sql>SET &#x40;profileID &#x3d; &#x28;SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id&#x3d;n.id INNER JOIN split_answer a ON p.answer_id&#x3d;a.id INNER JOIN translation t ON a.literal_id&#x3d;t.literal_id WHERE n.country_code&#x3d;&#x22;&#x3f;&#x22; AND t.text&#x3d;&#x22;&#x3f;&#x22; AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL&#x29;&#x3b;&#xd;&#xa;SET &#x40;indicatorID &#x3d; &#x28;SELECT id FROM indicator WHERE name&#x3d;&#x22;Q354&#x22;&#x29;&#x3b;&#xd;&#xa;SET &#x40;datasetID &#x3d; &#x28;SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id&#x3d;&#x40;indicatorID&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;UPDATE value&#xd;&#xa;SET value &#x3d; &#x3f;&#xd;&#xa;WHERE profile_id&#x3d;&#x40;profileID&#xd;&#xa;AND indicator_id&#x3d;&#x40;indicatorID&#xd;&#xa;AND dataset_id&#x3d;&#x40;datasetID&#x3b;</sql>
     <set_params>N</set_params>
     <insert_field/>
     <update_field/>
