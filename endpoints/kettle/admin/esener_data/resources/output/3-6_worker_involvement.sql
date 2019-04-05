@@ -1,641 +1,965 @@
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Austria" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Employees have a role in the design of measures to prevent psychosocial risks");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.784 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Austria" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Does your organisation have a trade union, works council or a similar committee representing employees? - ESENER");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = null WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Austria" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Health and safety issues discussed in staff or team meetings");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.5700000000000001 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Austria" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Does your organisation have a health and safety delegate or committee? - ESENER");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.6729999999999999 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Austria" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="How often controversies related to health and safety arise?");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.20299999999999999 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Belgium" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Employees have a role in the design of measures to prevent psychosocial risks");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.64 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Belgium" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Does your organisation have a trade union, works council or a similar committee representing employees? - ESENER");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.27399999999999997 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Belgium" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Health and safety issues discussed in staff or team meetings");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.5810000000000001 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Belgium" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Does your organisation have a health and safety delegate or committee? - ESENER");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.309 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Belgium" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="How often controversies related to health and safety arise?");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.351 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Bulgaria" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Employees have a role in the design of measures to prevent psychosocial risks");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.527 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Bulgaria" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Does your organisation have a trade union, works council or a similar committee representing employees? - ESENER");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.114 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Bulgaria" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Health and safety issues discussed in staff or team meetings");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.768 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Bulgaria" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Does your organisation have a health and safety delegate or committee? - ESENER");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.7509999999999999 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Bulgaria" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="How often controversies related to health and safety arise?");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.313 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Cyprus" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Employees have a role in the design of measures to prevent psychosocial risks");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.61 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Cyprus" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Does your organisation have a trade union, works council or a similar committee representing employees? - ESENER");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.251 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Cyprus" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Health and safety issues discussed in staff or team meetings");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.654 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Cyprus" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Does your organisation have a health and safety delegate or committee? - ESENER");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.47600000000000003 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Cyprus" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="How often controversies related to health and safety arise?");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.274 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Czech Republic" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Employees have a role in the design of measures to prevent psychosocial risks");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.591 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Czech Republic" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Does your organisation have a trade union, works council or a similar committee representing employees? - ESENER");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.11 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Czech Republic" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Health and safety issues discussed in staff or team meetings");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.687 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Czech Republic" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Does your organisation have a health and safety delegate or committee? - ESENER");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.5770000000000001 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Czech Republic" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="How often controversies related to health and safety arise?");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.135 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Germany" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Employees have a role in the design of measures to prevent psychosocial risks");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.6920000000000001 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Germany" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Does your organisation have a trade union, works council or a similar committee representing employees? - ESENER");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = null WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Germany" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Health and safety issues discussed in staff or team meetings");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.664 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Germany" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Does your organisation have a health and safety delegate or committee? - ESENER");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.7190000000000001 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Germany" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="How often controversies related to health and safety arise?");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.30100000000000005 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Denmark" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Employees have a role in the design of measures to prevent psychosocial risks");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.794 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Denmark" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Does your organisation have a trade union, works council or a similar committee representing employees? - ESENER");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.435 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Denmark" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Health and safety issues discussed in staff or team meetings");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.6930000000000001 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Denmark" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Does your organisation have a health and safety delegate or committee? - ESENER");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.69 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Denmark" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="How often controversies related to health and safety arise?");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.19999999999999998 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Estonia" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Employees have a role in the design of measures to prevent psychosocial risks");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.5529999999999999 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Estonia" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Does your organisation have a trade union, works council or a similar committee representing employees? - ESENER");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.069 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Estonia" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Health and safety issues discussed in staff or team meetings");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.508 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Estonia" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Does your organisation have a health and safety delegate or committee? - ESENER");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.622 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Estonia" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="How often controversies related to health and safety arise?");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.291 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Greece" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Employees have a role in the design of measures to prevent psychosocial risks");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.684 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Greece" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Does your organisation have a trade union, works council or a similar committee representing employees? - ESENER");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.079 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Greece" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Health and safety issues discussed in staff or team meetings");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.5880000000000001 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Greece" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Does your organisation have a health and safety delegate or committee? - ESENER");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.174 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Greece" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="How often controversies related to health and safety arise?");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.33699999999999997 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Spain" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Employees have a role in the design of measures to prevent psychosocial risks");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.638 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Spain" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Does your organisation have a trade union, works council or a similar committee representing employees? - ESENER");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.258 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Spain" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Health and safety issues discussed in staff or team meetings");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.495 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Spain" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Does your organisation have a health and safety delegate or committee? - ESENER");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.508 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Spain" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="How often controversies related to health and safety arise?");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.3 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Finland" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Employees have a role in the design of measures to prevent psychosocial risks");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.72 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Finland" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Does your organisation have a trade union, works council or a similar committee representing employees? - ESENER");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.36700000000000005 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Finland" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Health and safety issues discussed in staff or team meetings");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.555 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Finland" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Does your organisation have a health and safety delegate or committee? - ESENER");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.595 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Finland" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="How often controversies related to health and safety arise?");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.407 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="France" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Employees have a role in the design of measures to prevent psychosocial risks");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.609 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="France" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Does your organisation have a trade union, works council or a similar committee representing employees? - ESENER");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.222 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="France" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Health and safety issues discussed in staff or team meetings");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.575 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="France" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Does your organisation have a health and safety delegate or committee? - ESENER");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.251 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="France" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="How often controversies related to health and safety arise?");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.318 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Croatia" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Employees have a role in the design of measures to prevent psychosocial risks");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.5770000000000001 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Croatia" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Does your organisation have a trade union, works council or a similar committee representing employees? - ESENER");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.162 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Croatia" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Health and safety issues discussed in staff or team meetings");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.653 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Croatia" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Does your organisation have a health and safety delegate or committee? - ESENER");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.551 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Croatia" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="How often controversies related to health and safety arise?");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.15400000000000003 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Hungary" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Employees have a role in the design of measures to prevent psychosocial risks");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.5429999999999999 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Hungary" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Does your organisation have a trade union, works council or a similar committee representing employees? - ESENER");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.083 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Hungary" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Health and safety issues discussed in staff or team meetings");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.788 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Hungary" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Does your organisation have a health and safety delegate or committee? - ESENER");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.44799999999999995 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Hungary" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="How often controversies related to health and safety arise?");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.386 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Ireland" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Employees have a role in the design of measures to prevent psychosocial risks");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.636 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Ireland" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Does your organisation have a trade union, works council or a similar committee representing employees? - ESENER");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.191 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Ireland" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Health and safety issues discussed in staff or team meetings");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.682 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Ireland" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Does your organisation have a health and safety delegate or committee? - ESENER");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.667 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Ireland" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="How often controversies related to health and safety arise?");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.264 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Italy" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Employees have a role in the design of measures to prevent psychosocial risks");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.647 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Italy" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Does your organisation have a trade union, works council or a similar committee representing employees? - ESENER");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.19 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Italy" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Health and safety issues discussed in staff or team meetings");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.708 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Italy" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Does your organisation have a health and safety delegate or committee? - ESENER");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.875 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Italy" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="How often controversies related to health and safety arise?");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.254 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Lithuania" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Employees have a role in the design of measures to prevent psychosocial risks");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.46299999999999997 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Lithuania" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Does your organisation have a trade union, works council or a similar committee representing employees? - ESENER");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.09699999999999999 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Lithuania" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Health and safety issues discussed in staff or team meetings");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.655 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Lithuania" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Does your organisation have a health and safety delegate or committee? - ESENER");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.7809999999999999 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Lithuania" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="How often controversies related to health and safety arise?");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.14400000000000002 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Luxembourg" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Employees have a role in the design of measures to prevent psychosocial risks");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.642 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Luxembourg" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Does your organisation have a trade union, works council or a similar committee representing employees? - ESENER");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = null WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Luxembourg" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Health and safety issues discussed in staff or team meetings");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.507 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Luxembourg" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Does your organisation have a health and safety delegate or committee? - ESENER");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.6729999999999999 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Luxembourg" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="How often controversies related to health and safety arise?");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.22300000000000003 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Latvia" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Employees have a role in the design of measures to prevent psychosocial risks");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.564 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Latvia" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Does your organisation have a trade union, works council or a similar committee representing employees? - ESENER");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.11599999999999999 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Latvia" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Health and safety issues discussed in staff or team meetings");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.6699999999999999 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Latvia" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Does your organisation have a health and safety delegate or committee? - ESENER");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.27399999999999997 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Latvia" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="How often controversies related to health and safety arise?");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.29200000000000004 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Malta" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Employees have a role in the design of measures to prevent psychosocial risks");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.594 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Malta" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Does your organisation have a trade union, works council or a similar committee representing employees? - ESENER");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.139 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Malta" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Health and safety issues discussed in staff or team meetings");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.5790000000000001 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Malta" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Does your organisation have a health and safety delegate or committee? - ESENER");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.511 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Malta" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="How often controversies related to health and safety arise?");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.41600000000000004 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Netherlands" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Employees have a role in the design of measures to prevent psychosocial risks");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.642 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Netherlands" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Does your organisation have a trade union, works council or a similar committee representing employees? - ESENER");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.086 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Netherlands" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Health and safety issues discussed in staff or team meetings");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.623 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Netherlands" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Does your organisation have a health and safety delegate or committee? - ESENER");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.39799999999999996 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Netherlands" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="How often controversies related to health and safety arise?");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.45999999999999996 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Poland" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Employees have a role in the design of measures to prevent psychosocial risks");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.479 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Poland" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Does your organisation have a trade union, works council or a similar committee representing employees? - ESENER");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.10300000000000001 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Poland" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Health and safety issues discussed in staff or team meetings");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.574 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Poland" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Does your organisation have a health and safety delegate or committee? - ESENER");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.255 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Poland" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="How often controversies related to health and safety arise?");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.302 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Portugal" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Employees have a role in the design of measures to prevent psychosocial risks");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.557 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Portugal" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Does your organisation have a trade union, works council or a similar committee representing employees? - ESENER");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.086 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Portugal" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Health and safety issues discussed in staff or team meetings");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.575 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Portugal" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Does your organisation have a health and safety delegate or committee? - ESENER");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.243 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Portugal" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="How often controversies related to health and safety arise?");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.41000000000000003 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Romania" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Employees have a role in the design of measures to prevent psychosocial risks");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.6859999999999999 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Romania" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Does your organisation have a trade union, works council or a similar committee representing employees? - ESENER");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.126 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Romania" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Health and safety issues discussed in staff or team meetings");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.853 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Romania" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Does your organisation have a health and safety delegate or committee? - ESENER");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.7829999999999999 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Romania" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="How often controversies related to health and safety arise?");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.387 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Sweden" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Employees have a role in the design of measures to prevent psychosocial risks");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.757 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Sweden" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Does your organisation have a trade union, works council or a similar committee representing employees? - ESENER");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.54 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Sweden" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Health and safety issues discussed in staff or team meetings");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.7260000000000001 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Sweden" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Does your organisation have a health and safety delegate or committee? - ESENER");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.711 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Sweden" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="How often controversies related to health and safety arise?");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.28600000000000003 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Slovenia" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Employees have a role in the design of measures to prevent psychosocial risks");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.561 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Slovenia" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Does your organisation have a trade union, works council or a similar committee representing employees? - ESENER");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.20199999999999999 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Slovenia" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Health and safety issues discussed in staff or team meetings");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.5680000000000001 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Slovenia" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Does your organisation have a health and safety delegate or committee? - ESENER");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.335 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Slovenia" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="How often controversies related to health and safety arise?");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.273 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Slovakia" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Employees have a role in the design of measures to prevent psychosocial risks");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.444 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Slovakia" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Does your organisation have a trade union, works council or a similar committee representing employees? - ESENER");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.162 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Slovakia" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Health and safety issues discussed in staff or team meetings");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.701 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Slovakia" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Does your organisation have a health and safety delegate or committee? - ESENER");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.636 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Slovakia" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="How often controversies related to health and safety arise?");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.19000000000000003 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="United Kingdom" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Employees have a role in the design of measures to prevent psychosocial risks");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.635 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="United Kingdom" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Does your organisation have a trade union, works council or a similar committee representing employees? - ESENER");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.162 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="United Kingdom" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Health and safety issues discussed in staff or team meetings");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.789 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="United Kingdom" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Does your organisation have a health and safety delegate or committee? - ESENER");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.6970000000000001 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="United Kingdom" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="How often controversies related to health and safety arise?");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.317 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="European Union" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Employees have a role in the design of measures to prevent psychosocial risks");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.6459999999999999 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="European Union" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Does your organisation have a trade union, works council or a similar committee representing employees? - ESENER");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.191 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="European Union" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Health and safety issues discussed in staff or team meetings");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.658 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="European Union" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Does your organisation have a health and safety delegate or committee? - ESENER");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.583 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="European Union" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="How often controversies related to health and safety arise?");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.297 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Iceland" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Employees have a role in the design of measures to prevent psychosocial risks");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.72 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Iceland" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Does your organisation have a trade union, works council or a similar committee representing employees? - ESENER");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.5479999999999999 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Iceland" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Health and safety issues discussed in staff or team meetings");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.448 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Iceland" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Does your organisation have a health and safety delegate or committee? - ESENER");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.49700000000000005 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Iceland" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="How often controversies related to health and safety arise?");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.14 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Switzerland" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Employees have a role in the design of measures to prevent psychosocial risks");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.603 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Switzerland" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Does your organisation have a trade union, works council or a similar committee representing employees? - ESENER");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.081 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Switzerland" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Health and safety issues discussed in staff or team meetings");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.567 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Switzerland" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Does your organisation have a health and safety delegate or committee? - ESENER");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.35 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Switzerland" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="How often controversies related to health and safety arise?");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.20700000000000002 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Norway" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Employees have a role in the design of measures to prevent psychosocial risks");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.8140000000000001 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Norway" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Does your organisation have a trade union, works council or a similar committee representing employees? - ESENER");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.708 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Norway" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Health and safety issues discussed in staff or team meetings");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.696 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Norway" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Does your organisation have a health and safety delegate or committee? - ESENER");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.825 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.name="Norway" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULLAND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="How often controversies related to health and safety arise?");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.29900000000000004 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=;
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="AT");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Often");
+INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="BE");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Often");
+INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="BG");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Often");
+INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="CY");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Often");
+INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="CZ");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Often");
+INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="DE");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Often");
+INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="DK");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Often");
+INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="EE");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Often");
+INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="EL");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Often");
+INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="ES");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Often");
+INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="FI");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Often");
+INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="FR");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Often");
+INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="HR");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Often");
+INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="HU");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Often");
+INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="IE");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Often");
+INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="IT");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Often");
+INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="LT");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Often");
+INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="LU");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Often");
+INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="LV");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Often");
+INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="MT");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Often");
+INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="NL");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Often");
+INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="PL");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Often");
+INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="PT");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Often");
+INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="RO");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Often");
+INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="SE");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Often");
+INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="SI");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Often");
+INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="SK");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Often");
+INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="UK");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Often");
+INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="EU28");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Often");
+INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="IS");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Often");
+INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="IS");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Sometimes");
+INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="CH");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Often");
+INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="NO");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Often");
+INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="AT" AND t.text="Often" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q351");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.784);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="BE" AND t.text="Often" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q351");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.64);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="AT" AND t.text="Sometimes" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q351");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, null);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="BE" AND t.text="Sometimes" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q351");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.27399999999999997);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="BG" AND t.text="Sometimes" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q351");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.114);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="CY" AND t.text="Sometimes" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q351");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.251);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="CZ" AND t.text="Sometimes" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q351");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.11);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="DE" AND t.text="Sometimes" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q351");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, null);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="DK" AND t.text="Sometimes" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q351");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.435);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="EE" AND t.text="Sometimes" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q351");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.069);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="EL" AND t.text="Sometimes" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q351");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.079);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="ES" AND t.text="Sometimes" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q351");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.258);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="FI" AND t.text="Sometimes" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q351");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.36700000000000005);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="FR" AND t.text="Sometimes" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q351");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.222);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="HR" AND t.text="Sometimes" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q351");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.162);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="HU" AND t.text="Sometimes" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q351");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.083);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="IE" AND t.text="Sometimes" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q351");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.191);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="IT" AND t.text="Sometimes" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q351");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.19);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="LT" AND t.text="Sometimes" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q351");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.09699999999999999);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="LU" AND t.text="Sometimes" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q351");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, null);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="LV" AND t.text="Sometimes" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q351");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.11599999999999999);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="MT" AND t.text="Sometimes" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q351");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.139);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="NL" AND t.text="Sometimes" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q351");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.086);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="PL" AND t.text="Sometimes" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q351");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.10300000000000001);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="PT" AND t.text="Sometimes" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q351");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.086);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="RO" AND t.text="Sometimes" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q351");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.126);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="SE" AND t.text="Sometimes" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q351");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.54);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="SI" AND t.text="Sometimes" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q351");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.20199999999999999);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="SK" AND t.text="Sometimes" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q351");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.162);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="UK" AND t.text="Sometimes" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q351");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.162);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="EU28" AND t.text="Sometimes" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q351");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.191);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="CH" AND t.text="Sometimes" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q351");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.081);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="NO" AND t.text="Sometimes" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q351");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.708);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="BG" AND t.text="Often" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q351");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.527);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="CY" AND t.text="Often" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q351");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.61);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="CZ" AND t.text="Often" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q351");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.591);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="DE" AND t.text="Often" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q351");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.6920000000000001);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="DK" AND t.text="Often" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q351");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.794);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="EE" AND t.text="Often" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q351");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.5529999999999999);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="EL" AND t.text="Often" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q351");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.684);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="ES" AND t.text="Often" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q351");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.638);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="FI" AND t.text="Often" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q351");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.72);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="FR" AND t.text="Often" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q351");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.609);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="HR" AND t.text="Often" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q351");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.5770000000000001);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="HU" AND t.text="Often" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q351");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.5429999999999999);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="IE" AND t.text="Often" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q351");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.636);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="IT" AND t.text="Often" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q351");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.647);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="LT" AND t.text="Often" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q351");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.46299999999999997);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="LU" AND t.text="Often" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q351");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.642);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="LV" AND t.text="Often" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q351");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.564);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="MT" AND t.text="Often" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q351");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.594);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="NL" AND t.text="Often" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q351");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.642);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="PL" AND t.text="Often" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q351");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.479);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="PT" AND t.text="Often" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q351");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.557);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="RO" AND t.text="Often" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q351");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.6859999999999999);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="SE" AND t.text="Often" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q351");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.757);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="SI" AND t.text="Often" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q351");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.561);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="SK" AND t.text="Often" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q351");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.444);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="UK" AND t.text="Often" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q351");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.635);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="EU28" AND t.text="Often" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q351");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.6459999999999999);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="IS" AND t.text="Often" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q351");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.72);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="IS" AND t.text="Sometimes" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q351");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.5479999999999999);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="CH" AND t.text="Often" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q351");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.603);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="NO" AND t.text="Often" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q351");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.8140000000000001);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="AT");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="In some departments");
+INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="BE");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="In some departments");
+INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="BG");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="In some departments");
+INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="CY");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="In some departments");
+INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="CZ");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="In some departments");
+INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="DE");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="In some departments");
+INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="DK");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="In some departments");
+INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="EE");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="In some departments");
+INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="EL");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="In some departments");
+INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="ES");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="In some departments");
+INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="FI");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="In some departments");
+INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="FR");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="In some departments");
+INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="HR");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="In some departments");
+INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="HU");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="In some departments");
+INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="IE");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="In some departments");
+INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="IT");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="In some departments");
+INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="LT");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="In some departments");
+INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="LU");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="In some departments");
+INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="LV");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="In some departments");
+INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="MT");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="In some departments");
+INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="NL");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="In some departments");
+INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="PL");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="In some departments");
+INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="PT");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="In some departments");
+INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="RO");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="In some departments");
+INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="SE");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="In some departments");
+INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="SI");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="In some departments");
+INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="SK");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="In some departments");
+INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="UK");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="In some departments");
+INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="EU28");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="In some departments");
+INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="IS");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="In some departments");
+INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="CH");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="In some departments");
+INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
+
+
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="NO");
+SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="In some departments");
+INSERT INTO profile (nuts_id, answer_id) VALUE (@nutsId, @answerId);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="AT" AND t.text="Yes" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q358");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.784);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="BE" AND t.text="Yes" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q358");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.64);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="BG" AND t.text="Yes" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q358");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.527);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="CY" AND t.text="Yes" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q358");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.61);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="AT" AND t.text="In some departments" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q358");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, null);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="BE" AND t.text="In some departments" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q358");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.27399999999999997);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="BG" AND t.text="In some departments" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q358");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.114);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="CY" AND t.text="In some departments" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q358");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.251);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="CZ" AND t.text="In some departments" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q358");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.11);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="DE" AND t.text="In some departments" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q358");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, null);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="DK" AND t.text="In some departments" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q358");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.435);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="EE" AND t.text="In some departments" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q358");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.069);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="EL" AND t.text="In some departments" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q358");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.079);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="CZ" AND t.text="Yes" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q358");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.591);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="DE" AND t.text="Yes" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q358");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.6920000000000001);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="DK" AND t.text="Yes" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q358");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.794);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="EE" AND t.text="Yes" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q358");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.5529999999999999);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="EL" AND t.text="Yes" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q358");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.684);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="ES" AND t.text="Yes" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q358");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.638);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="FI" AND t.text="Yes" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q358");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.72);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="FR" AND t.text="Yes" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q358");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.609);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="HR" AND t.text="Yes" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q358");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.5770000000000001);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="HU" AND t.text="Yes" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q358");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.5429999999999999);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="IE" AND t.text="Yes" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q358");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.636);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="IT" AND t.text="Yes" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q358");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.647);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="LT" AND t.text="Yes" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q358");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.46299999999999997);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="LU" AND t.text="Yes" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q358");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.642);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="LV" AND t.text="Yes" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q358");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.564);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="ES" AND t.text="In some departments" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q358");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.258);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="FI" AND t.text="In some departments" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q358");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.36700000000000005);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="FR" AND t.text="In some departments" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q358");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.222);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="HR" AND t.text="In some departments" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q358");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.162);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="HU" AND t.text="In some departments" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q358");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.083);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="IE" AND t.text="In some departments" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q358");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.191);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="IT" AND t.text="In some departments" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q358");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.19);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="LT" AND t.text="In some departments" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q358");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.09699999999999999);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="LU" AND t.text="In some departments" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q358");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, null);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="LV" AND t.text="In some departments" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q358");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.11599999999999999);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="MT" AND t.text="In some departments" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q358");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.139);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="NL" AND t.text="In some departments" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q358");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.086);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="PL" AND t.text="In some departments" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q358");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.10300000000000001);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="PT" AND t.text="In some departments" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q358");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.086);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="RO" AND t.text="In some departments" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q358");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.126);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="SE" AND t.text="In some departments" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q358");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.54);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="SI" AND t.text="In some departments" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q358");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.20199999999999999);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="SK" AND t.text="In some departments" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q358");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.162);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="UK" AND t.text="In some departments" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q358");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.162);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="EU28" AND t.text="In some departments" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q358");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.191);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="IS" AND t.text="In some departments" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q358");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.5479999999999999);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="CH" AND t.text="In some departments" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q358");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.081);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="NO" AND t.text="In some departments" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q358");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.708);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="MT" AND t.text="Yes" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q358");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.594);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="NL" AND t.text="Yes" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q358");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.642);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="PL" AND t.text="Yes" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q358");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.479);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="PT" AND t.text="Yes" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q358");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.557);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="RO" AND t.text="Yes" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q358");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.6859999999999999);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="SE" AND t.text="Yes" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q358");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.757);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="SI" AND t.text="Yes" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q358");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.561);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="SK" AND t.text="Yes" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q358");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.444);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="UK" AND t.text="Yes" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q358");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.635);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="EU28" AND t.text="Yes" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q358");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.6459999999999999);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="IS" AND t.text="Yes" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q358");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.72);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="CH" AND t.text="Yes" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q358");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.603);
+
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t ON a.literal_id=t.literal_id WHERE n.country_code="NO" AND t.text="Yes" AND activity_sector_id IS NULL AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Q358");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.8140000000000001);
