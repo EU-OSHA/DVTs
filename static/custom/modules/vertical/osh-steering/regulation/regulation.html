@@ -91,8 +91,8 @@
           <div data-ng-bind-html="i18nLiterals['L'+country1Data.text8]"></div>
           <div data-ng-bind-html="trimText(i18nLiterals['L'+country1Data.text9], 200)"></div>
           <p class="see-more" data-ng-if="i18nLiterals['L'+country1Data.text9].length > 200">
-            <a ng-click='toggleText($event)' class="see-more">{{i18nLiterals.L20641}}<i class="fa fa-angle-down" aria-hidden="true"></i></a> 
-            <a ng-click='toggleText($event)' class="see-less" style="display:none">{{i18nLiterals.L20642}}<i class="fa fa-angle-up" aria-hidden="true"></i></a>
+            <a href ng-click='toggleText($event)' class="see-more">{{i18nLiterals.L20641}}<i class="fa fa-angle-down" aria-hidden="true"></i></a> 
+            <a href ng-click='toggleText($event)' class="see-less" style="display:none">{{i18nLiterals.L20642}}<i class="fa fa-angle-up" aria-hidden="true"></i></a>
           </p>
         </div>
       </div>
@@ -106,8 +106,8 @@
           <div data-ng-bind-html="i18nLiterals['L'+country2Data.text8]"></div>
           <div data-ng-bind-html="trimText(i18nLiterals['L'+country2Data.text9], 200)"></div>
           <p class="see-more" data-ng-if="i18nLiterals['L'+country2Data.text9].length > maxCharacters">
-            <a ng-click='toggleText($event)' class="see-more">{{i18nLiterals.L20641}}<i class="fa fa-angle-down" aria-hidden="true"></i></a> 
-            <a ng-click='toggleText($event)' class="see-less" style="display:none">{{i18nLiterals.L20642}}<i class="fa fa-angle-up" aria-hidden="true"></i></a>
+            <a href ng-click='toggleText($event)' class="see-more">{{i18nLiterals.L20641}}<i class="fa fa-angle-down" aria-hidden="true"></i></a> 
+            <a href ng-click='toggleText($event)' class="see-less" style="display:none">{{i18nLiterals.L20642}}<i class="fa fa-angle-up" aria-hidden="true"></i></a>
           </p>
         </div>
       </div>
@@ -123,22 +123,22 @@
         <div class="columm--item--content">
           <div data-ng-bind-html="trimText(i18nLiterals['L'+country1Data.text10], 200)"></div>
           <p class="see-more" data-ng-if="i18nLiterals['L'+country1Data.text10].length > maxCharacters">
-            <a ng-click='toggleText($event)' class="see-more">{{i18nLiterals.L20641}}<i class="fa fa-angle-down" aria-hidden="true"></i></a> 
-            <a ng-click='toggleText($event)' class="see-less" style="display:none">{{i18nLiterals.L20642}}<i class="fa fa-angle-up" aria-hidden="true"></i></a>
+            <a href ng-click='toggleText($event)' class="see-more">{{i18nLiterals.L20641}}<i class="fa fa-angle-down" aria-hidden="true"></i></a> 
+            <a href ng-click='toggleText($event)' class="see-less" style="display:none">{{i18nLiterals.L20642}}<i class="fa fa-angle-up" aria-hidden="true"></i></a>
           </p>
         </div>
       </div>
 
       <div class="column--item second" data-ng-if="pCountry2 != 0">
         <div class="">
-          <img  class="flags--wrapper" ng-src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/flag/{{::country2Data.country_code.toLowerCase()}}.png">
+          <img class="flags--wrapper" ng-src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/flag/{{::country2Data.country_code.toLowerCase()}}.png">
         </div>
         <h2 data-ng-bind="i18nLiterals.L299"></h2>
         <div class="columm--item--content">
           <div data-ng-bind-html="trimText(i18nLiterals['L'+country2Data.text10], 200)"></div>
           <p class="see-more" data-ng-if="i18nLiterals['L'+country2Data.text10].length > maxCharacters">
-            <a ng-click='toggleText($event)' class="see-more">{{i18nLiterals.L20641}}<i class="fa fa-angle-down" aria-hidden="true"></i></a> 
-            <a ng-click='toggleText($event)' class="see-less" style="display:none">{{i18nLiterals.L20642}}<i class="fa fa-angle-up" aria-hidden="true"></i></a>
+            <a href ng-click='toggleText($event)' class="see-more">{{i18nLiterals.L20641}}<i class="fa fa-angle-down" aria-hidden="true"></i></a> 
+            <a href ng-click='toggleText($event)' class="see-less" style="display:none">{{i18nLiterals.L20642}}<i class="fa fa-angle-up" aria-hidden="true"></i></a>
           </p>
         </div>
         
@@ -155,8 +155,8 @@
         <div class="columm--item--content">
           <div data-ng-bind-html="i18nLiterals['L'+country1Data.text11]"></div>
           <p class="see-more" data-ng-if="i18nLiterals['L'+country1Data.text11].length > maxCharacters">
-            <a ng-click='toggleText($event)' class="see-more">{{i18nLiterals.L20641}}<i class="fa fa-angle-down" aria-hidden="true"></i></a> 
-            <a ng-click='toggleText($event)' class="see-less" style="display:none">{{i18nLiterals.L20642}}<i class="fa fa-angle-up" aria-hidden="true"></i></a>
+            <a href ng-click='toggleText($event)' class="see-more">{{i18nLiterals.L20641}}<i class="fa fa-angle-down" aria-hidden="true"></i></a> 
+            <a href ng-click='toggleText($event)' class="see-less" style="display:none">{{i18nLiterals.L20642}}<i class="fa fa-angle-up" aria-hidden="true"></i></a>
           </p>
         </div>
       </div>
@@ -169,8 +169,8 @@
         <div class="columm--item--content">
           <div data-ng-bind-html="i18nLiterals['L'+country2Data.text11]"></div>
           <p class="see-more" data-ng-if="i18nLiterals['L'+country2Data.text11].length > maxCharacters">
-            <a ng-click='toggleText($event)' class="see-more">{{i18nLiterals.L20641}}<i class="fa fa-angle-down" aria-hidden="true"></i></a> 
-            <a ng-click='toggleText($event)' class="see-less" style="display:none">{{i18nLiterals.L20642}}<i class="fa fa-angle-up" aria-hidden="true"></i></a>
+            <a href ng-click='toggleText($event)' class="see-more">{{i18nLiterals.L20641}}<i class="fa fa-angle-down" aria-hidden="true"></i></a> 
+            <a href ng-click='toggleText($event)' class="see-less" style="display:none">{{i18nLiterals.L20642}}<i class="fa fa-angle-up" aria-hidden="true"></i></a>
           </p>
         </div>
       </div>
@@ -186,8 +186,8 @@
         <div class="columm--item--content">
           <div data-ng-bind-html="trimText(i18nLiterals['L'+country1Data.text12], 200)"></div>
           <p class="see-more" data-ng-if="i18nLiterals['L'+country1Data.text12].length > maxCharacters">
-            <a ng-click='toggleText($event)' class="see-more">{{i18nLiterals.L20641}}<i class="fa fa-angle-down" aria-hidden="true"></i></a> 
-            <a ng-click='toggleText($event)' class="see-less" style="display:none">{{i18nLiterals.L20642}}<i class="fa fa-angle-up" aria-hidden="true"></i></a>
+            <a href ng-click='toggleText($event)' class="see-more">{{i18nLiterals.L20641}}<i class="fa fa-angle-down" aria-hidden="true"></i></a> 
+            <a href ng-click='toggleText($event)' class="see-less" style="display:none">{{i18nLiterals.L20642}}<i class="fa fa-angle-up" aria-hidden="true"></i></a>
           </p>
         </div>       
       </div>
@@ -200,8 +200,8 @@
         <div class="columm--item--content">
           <div data-ng-bind-html="trimText(i18nLiterals['L'+country2Data.text12],200)"></div>
           <p class="see-more" data-ng-if="i18nLiterals['L'+country2Data.text12].length > maxCharacters">
-            <a ng-click='toggleText($event)' class="see-more">{{i18nLiterals.L20641}}<i class="fa fa-angle-down" aria-hidden="true"></i></a> 
-            <a ng-click='toggleText($event)' class="see-less" style="display:none">{{i18nLiterals.L20642}}<i class="fa fa-angle-up" aria-hidden="true"></i></a>
+            <a href ng-click='toggleText($event)' class="see-more">{{i18nLiterals.L20641}}<i class="fa fa-angle-down" aria-hidden="true"></i></a> 
+            <a href ng-click='toggleText($event)' class="see-less" style="display:none">{{i18nLiterals.L20642}}<i class="fa fa-angle-up" aria-hidden="true"></i></a>
           </p>
         </div>
       </div>
@@ -217,8 +217,8 @@
         <div class="columm--item--content">
           <div data-ng-bind-html="trimText(i18nLiterals['L'+country1Data.text13], 200)"></div>
           <p class="see-more" data-ng-if="i18nLiterals['L'+country1Data.text13].length > maxCharacters">
-            <a ng-click='toggleText($event)' class="see-more">{{i18nLiterals.L20641}}<i class="fa fa-angle-down" aria-hidden="true"></i></a> 
-            <a ng-click='toggleText($event)' class="see-less" style="display:none">{{i18nLiterals.L20642}}<i class="fa fa-angle-up" aria-hidden="true"></i></a>
+            <a href ng-click='toggleText($event)' class="see-more">{{i18nLiterals.L20641}}<i class="fa fa-angle-down" aria-hidden="true"></i></a> 
+            <a href ng-click='toggleText($event)' class="see-less" style="display:none">{{i18nLiterals.L20642}}<i class="fa fa-angle-up" aria-hidden="true"></i></a>
           </p>
         </div>
       </div>
@@ -231,8 +231,8 @@
         <div class="columm--item--content">
           <div data-ng-bind-html="trimText(i18nLiterals['L'+country2Data.text13],200)"></div>
           <p class="see-more" data-ng-if="i18nLiterals['L'+country2Data.text13].length > maxCharacters">
-            <a ng-click='toggleText($event)' class="see-more">{{i18nLiterals.L20641}}<i class="fa fa-angle-down" aria-hidden="true"></i></a> 
-            <a ng-click='toggleText($event)' class="see-less" style="display:none">{{i18nLiterals.L20642}}<i class="fa fa-angle-up" aria-hidden="true"></i></a>
+            <a href ng-click='toggleText($event)' class="see-more">{{i18nLiterals.L20641}}<i class="fa fa-angle-down" aria-hidden="true"></i></a> 
+            <a href ng-click='toggleText($event)' class="see-less" style="display:none">{{i18nLiterals.L20642}}<i class="fa fa-angle-up" aria-hidden="true"></i></a>
           </p>
         </div>
       </div>

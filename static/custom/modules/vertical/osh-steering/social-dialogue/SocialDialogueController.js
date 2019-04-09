@@ -35,7 +35,7 @@ define(function (require) {
 
     //Variables pagination
     $scope.currentPage = 0;
-    $scope.pageSize = 5;
+    $scope.pageSize = 15;
     $scope.elementsStart=0;
     $scope.elementsEnd=$scope.pageSize;
 
@@ -227,9 +227,7 @@ define(function (require) {
     |                                DATA LOAD                                     |
     |******************************************************************************/
       dataService.getSocialDialogueData($scope.datasetESENER).then(function (data) {
-        $log.debug('getAllMatrixAuthorities');
-        //$log.warn(data);
-
+        $log.debug('getSocialDialogueData');
         data.data.resultset.map(function (elem) {
           var param = (!!$stateParams.filter) ? $stateParams.filter : undefined;
           if(elem[1] == 'EU28'){
@@ -252,7 +250,20 @@ define(function (require) {
             });
           }
         });
-        //$log.warn($scope.amatrix);
+
+        updateText();
+
+        $scope.readMore = function (pMatrix) {
+          if (angular.element('div.'+pMatrix).length) {
+            if (angular.element('div.'+pMatrix).height() > angular.element('div.'+pMatrix).parent().height()) {
+              return true;
+            } else {
+              return false;
+            }
+          }
+        }
+
+        $log.warn($scope.amatrix);
       }).catch(function (err) {
           throw err;
       });
