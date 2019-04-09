@@ -371,7 +371,7 @@
 	      AND v.profile_id = p.id 
 	      AND d.id = ${pDataset} AND d.id = v.dataset_id
 	      AND v.indicator_id IN (37, 38, 39)
-	      ORDER BY country_name ASC
+	      ORDER BY FIELD(n.country_code, 'EU28') DESC, country_name ASC
 	    </Query>
 	</DataAccess>
 
