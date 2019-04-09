@@ -38,9 +38,9 @@
                 <p class="option-title" data-ng-click="openSelect($event)">Country</p>
                 <ul class="filter--dropdown--options">
                   <li data-ng-repeat='country in countries'>
-                    <input id='country-filter-{{::country.country_code}}' ng-checked="!!country.param && country.param ==country.country_code"
-                      data-ng-click="toggleCountryClick($event, $index)" type="checkbox" value="{{::country.country_code}}"/>
-                    <label for="country-filter-{{::country.country_code}}" data-ng-bind="i18nLiterals['L'+country.country_name]"></label>
+                    <input id='country-filter-{{::country.country_name}}' ng-checked="!!country.param && country.param ==country.country_code"
+                      data-ng-click="toggleCountryClick($event, $index)" type="checkbox" value="{{::country.country_name}}"/>
+                    <label for="country-filter-{{::country.country_name}}" data-ng-bind="i18nLiterals['L'+country.country_name]"></label>
                   </li>
                 </ul>
                 <p class="btn--block-filter" data-ng-click="openSelect($event)"><a class="btn-main-color btn-full" ng-click="confirmSelection($event)">Confirm</a></p>

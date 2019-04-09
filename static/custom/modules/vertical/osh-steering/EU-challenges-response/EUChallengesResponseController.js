@@ -145,11 +145,7 @@ define(function (require) {
         }
     }
 
-    if($scope.pCountry!='0'){
-      var tags = angular.element('div.selected--tags-wrapper');
-      var html = '<span class="selected-tag" id="country'+$scope.pCountry+'" data-ng-click="deleteTag($event)">'+$scope.pCountry+'</span>';
-      tags.append( $compile(html)($scope));
-    }
+
 
     /******************************************************************************|
     |                               PAGINATION                                     |
@@ -342,6 +338,12 @@ define(function (require) {
               country: elem[1],
               country_code: elem[0]
           });
+          if(elem[0] == $scope.pCountry){
+            var tags = angular.element('div.selected--tags-wrapper');
+            var html = '<span class="selected-tag" id="country'+elem[1]+'" data-ng-click="deleteTag($event)">'+$scope.i18nLiterals['L'+elem[1]]+'</span>';
+            tags.append( $compile(html)($scope));
+            $scope.selectedCountries.push(elem[1].toString());
+          }
         });
 
         //$log.warn($scope.countries);
@@ -417,7 +419,7 @@ define(function (require) {
         
         for(var i = 0; i < $scope.selectedCountries.length;i++){
           if(angular.element('span#country'+$scope.selectedCountries[i]).length<=0){
-            var html = '<span class="selected-tag" id="country'+$scope.selectedCountries[i] +'" data-ng-click="deleteTag($event)">'+$scope.selectedCountries[i]+'</span>';
+            var html = '<span class="selected-tag" id="country'+$scope.selectedCountries[i] +'" data-ng-click="deleteTag($event)">'+$scope.i18nLiterals['L'+$scope.selectedCountries[i]]+'</span>';
             tags.append( $compile(html)($scope) );
           }          
         }
@@ -499,10 +501,11 @@ define(function (require) {
        */
       $scope.deleteTag = function($event){
         var element = angular.element($event.currentTarget);
+        var countryId = element[0].id.slice(7,10);
         var quitChecked;
         if($event.target.id.indexOf('country') != -1){
-          $scope.searchParams.countries.splice($scope.searchParams.countries.indexOf(element.html()), 1);
-          quitChecked = angular.element('.filter--dropdown--options #country-filter-'+element.html());
+          $scope.searchParams.countries.splice($scope.searchParams.countries.indexOf(countryId), 1);
+          quitChecked = angular.element('.filter--dropdown--options #country-filter-'+countryId);
         }else if($event.target.id == 'challengeFilter1'){
           quitChecked = angular.element('.filter--dropdown--options #challenge-filter-1');
           $scope.searchParams.challenges.filter1=0;
@@ -531,7 +534,7 @@ define(function (require) {
        * Apply the filters and load the filtered content
        */
       function search($event,filter) {
-        //$log.warn($scope.amatrix);
+        $log.warn($scope.searchParams.countries);
 
         dataService.getEUChallengesWithFilters($scope.searchText, $scope.searchParams.challenges, $scope.searchParams.countries)
           .then(function (data) {

@@ -468,7 +468,7 @@ define(function (require) {
         
         for(var i = 0; i < $scope.selectedCountries.length;i++){
           if(angular.element('span#country'+$scope.selectedCountries[i]).length<=0){
-            var html = '<span class="selected-tag" id="country'+$scope.selectedCountries[i] +'" data-ng-click="deleteTag($event)">'+$scope.selectedCountries[i]+'</span>';
+            var html = '<span class="selected-tag" id="country'+$scope.selectedCountries[i] +'" data-ng-click="deleteTag($event)">'+ $scope.i18nLiterals['L'+$scope.selectedCountries[i]] +'</span>';
             tags.append( $compile(html)($scope) );
           }          
         }
@@ -562,10 +562,14 @@ define(function (require) {
        */
       $scope.deleteTag = function($event){
         var element = angular.element($event.currentTarget);
+        var countryId = element[0].id.slice(7,10);
+        
         var quitChecked;
         if($event.target.id.indexOf('country') != -1){
-          $scope.searchParams.countries.splice($scope.searchParams.countries.indexOf(element.html()), 1);
-          quitChecked = angular.element('.filter--dropdown--options #country-filter-'+element.html());
+
+          $scope.searchParams.countries.splice($scope.searchParams.countries.indexOf(countryId), 1);
+          quitChecked = angular.element('.filter--dropdown--options #country-filter-'+countryId);
+          $log.warn(element[0].id.slice(7,10));
         }else if($event.target.id == 'institutionFilter1'){
           quitChecked = angular.element('.filter--dropdown--options #institution-filter-1');
           $scope.searchParams.institutions.filter1=0;

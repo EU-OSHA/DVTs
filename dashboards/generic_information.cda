@@ -96,7 +96,7 @@
 	      INNER JOIN translation t3
 	      ON l3.id = t3.literal_id
 	      WHERE mp.page = 'MATRIX_AUTHORITY' 
-	      AND n.country_code REGEXP ${countries}
+	      AND n.literal_id REGEXP ${countries}
 	      AND (mp.check_1=${institution1}
 	      OR mp.check_2=${institution2}
 	      OR mp.check_3=${institution3}
@@ -389,7 +389,7 @@
 	      WHERE n.id = p.nuts_id 
 	      AND v.profile_id = p.id 
 	      AND d.id = ${pDataset} AND d.id = v.dataset_id
-	      AND n.country_code REGEXP ${countries}
+	      AND n.literal_id REGEXP ${countries}
 	      AND v.indicator_id IN (37, 38, 39)
 	      ORDER BY country_name ASC
 	    </Query>

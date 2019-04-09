@@ -126,7 +126,7 @@
 			INNER JOIN translation t2
 			ON l2.id = t2.literal_id
 			WHERE mp.page = 'MATRIX_STRATEGY' 
-			AND n.country_code REGEXP ${countries}
+			AND n.literal_id REGEXP ${countries}
 			AND (mp.check_1=${challenge1}
 			OR mp.check_2=${challenge2}
 			OR mp.check_3=${challenge3})
@@ -230,7 +230,7 @@
 			AND d.id = v4.dataset_id
 			/* COMMON */
 			AND d.id = ${dataset}
-			AND n.country_code REGEXP ${countries}
+			AND n.literal_id REGEXP ${countries}
 			ORDER BY country_name ASC;
 	    </Query>
 	</DataAccess>

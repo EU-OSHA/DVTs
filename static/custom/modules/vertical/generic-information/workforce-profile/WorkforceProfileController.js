@@ -283,7 +283,7 @@ define(function (require) {
         $scope.countryFilter.sort();
         
         for(var i = 0; i < $scope.countryFilter.length;i++){
-          var html = '<span class="selected-tag" id="country'+$scope.countryFilter[i] +'" data-ng-click="deleteTag($event)">'+$scope.countryFilter[i]+'</span>';
+          var html = '<span class="selected-tag" id="country'+$scope.countryFilter[i] +'" data-ng-click="deleteTag($event)">'+$scope.i18nLiterals['L'+$scope.countryFilter[i]]+'</span>';
           tags.append( $compile(html)($scope) );
         }
 
@@ -300,10 +300,11 @@ define(function (require) {
        */
       $scope.deleteTag = function($event){
         var element = angular.element($event.currentTarget);
+        var countryId = element[0].id.slice(7,10);
         var quitChecked;
         if($event.target.id.indexOf('country') != -1){
-          $scope.countryFilter.splice($scope.countryFilter.indexOf(element.html()), 1);
-          quitChecked = angular.element('.filter--dropdown--options #country-filter-'+element.html());
+          $scope.countryFilter.splice($scope.countryFilter.indexOf(countryId), 1);
+          quitChecked = angular.element('.filter--dropdown--options #country-filter-'+countryId);
         }
         
         element.remove();
