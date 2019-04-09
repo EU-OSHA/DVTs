@@ -80,20 +80,6 @@
                               background: transparent;
                               box-shadow: none;
                               display:block;
-                                &::-webkit-input-placeholder {
-                                  display: none;
-                                }
-                                &:-moz-placeholder {
-                                  /* Firefox 18- */
-                                  display: none;
-                                }
-                                &::-moz-placeholder {
-                                  /* Firefox 19+ */
-                                  display: none;
-                                }
-                                &:-ms-input-placeholder {
-                                  display: none;
-                                }
                             }
                             .form-group:hover,
                             .form-group.hover {
@@ -141,11 +127,6 @@
                     .fa-caret-down:before{
                         color:$aquamarine;
                     }
-                    &:hover{
-                        .dropdown-menu{
-                            display:block;
-                        }
-                    }
                     > a{
                         font-family: Oswald,sans-serif;
                         color:$link-menu;
@@ -168,6 +149,9 @@
                             -o-transition: all 0.8s ease-out;
                             transition: all 0.8s ease-out;
                         }
+                        &:focus, &:visited{
+                          background: transparent;
+                        }
                         .main-menu-selected{
                           color: $aquamarine;
                         }
@@ -180,12 +164,24 @@
                         }                   
                     }
                     &:hover{
-                        box-shadow: 0 6px 0 0px $orange;
-                        -webkit-transition: all 0.4s ease-out;
-                        -moz-transition: all 0.4s ease-out;
-                        -o-transition: all 0.4s ease-out;
-                        transition: all 0.4s ease-out;
-
+                      box-shadow: 0 6px 0 0px $orange;
+                      -webkit-transition: all 0.4s ease-out;
+                      -moz-transition: all 0.4s ease-out;
+                      -o-transition: all 0.4s ease-out;
+                      transition: all 0.4s ease-out;
+                      .dropdown-menu{
+                          display:block;
+                      }
+                    }
+                    &:not( :hover ){
+                      .dropdown-menu{
+                          display:none !important;
+                      }
+                    }
+                    &.open{
+                      .dropdown-menu{
+                          display:block;
+                      }
                     }
                     &:nth-child(1){
                         a{

@@ -83,3 +83,5 @@ define(function (require) {
     controller.$inject = ['configService', 'dvtUtils', '$scope', '$stateParams', '$state','$document', '$log', 'dataService'];
     return controller;
 });
+
+

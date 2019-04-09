@@ -53,27 +53,40 @@ define(function (require) {
     }
 
 
-    $scope.selectOpened = "";
-
+    // Open/Hide checkbox dropdown list
     $scope.openSelect = function($event){
-
-      if( $event.target.nodeName == "LABEL" ){
-        var currentSelect = $event.target.offsetParent;
+      var currentSelect = $event.target; 
+      var nodename = currentSelect.nodeName;
+      if( nodename == 'LABEL' || nodename == 'INPUT' ){
+        currentSelect = $event.target.offsetParent.offsetParent; 
+        angular.element(currentSelect).addClass('viewOptions');
+        
       } else {
-        var currentSelect = $event.target.offsetParent.offsetParent;
-       
-      }      
-
-      if( currentSelect.className.indexOf('viewOptions') > 0 ){
-        //currentSelect.className = 'filter--dropdown--wrapper';
-        //angular.element('.filter--dropdown--wrapper').removeClass('viewOptions');        
-      } else {
-        //angular.element('.filter--dropdown--wrapper').removeClass('viewOptions');
-        //currentSelect.className += ' viewOptions';
-          currentSelect.focus();
+        currentSelect = $event.target.offsetParent.offsetParent;
+        $scope.checkSelect(currentSelect); 
       }
-    }
+    };
 
+    $scope.checkSelect = function(elem){
+      if( elem.className.indexOf('viewOptions') > 0 ){
+        angular.element(elem).removeClass('viewOptions'); 
+      } else {
+        angular.element('.filter--dropdown--wrapper').removeClass('viewOptions');         
+        angular.element(elem).addClass('viewOptions');
+      }
+    };
+
+    angular.element('body').mouseup(function(e){
+      var container = angular.element('.filter--dropdown--wrapper');
+      if (!container.is(e.target) && container.has(e.target).length === 0){
+        angular.element('.filter--dropdown--wrapper').removeClass('viewOptions'); 
+      }
+    });
+
+    $scope.closeSelect = function($event){      
+      angular.element('.filter--dropdown--wrapper').removeClass('viewOptions');     
+    };
+    // End Open/Hide checkbox dropdown list
 
     // Read more
     $scope.trimtext = function(pVal, pNumCharacters){

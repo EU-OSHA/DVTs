@@ -37,7 +37,6 @@
   }
   *:focus{
     outline:none !important;
-    background: transparent !important;
   }
   select:focus{
     border: 1px dotted $aquamarine !important;
@@ -247,10 +246,15 @@
         border:1px solid $aquamarine;
         color:$aquamarine;
         position: relative;
-
+        
         -webkit-appearance: none;
         -moz-appearance: none;
         appearance: none;   
+        &::-ms-expand{
+          display: none;
+          text-indent: 1px;
+          text-overflow: '';
+        }
       }
       &:after {
         content:"\f107";
@@ -524,6 +528,9 @@
           appearance: none;
           cursor: pointer;
           width:58%;
+          &::-ms-expand{
+            display: none;
+          }
           &:focus {
             box-shadow: none;
             outline: none;
@@ -608,6 +615,9 @@
           -webkit-appearance: none;
           -moz-appearance: none;
           appearance: none;
+          &::-ms-expand{
+            display: none;
+          }
           &[disabled="disabled"]{
             opacity: 0.4;
             cursor: not-allowed;
@@ -784,7 +794,7 @@
         border-radius: 46px 0;
         padding:3rem 2rem;
         margin:0 1%;
-        background: $white;
+        background: $white !important;
         position: relative;
         display: flex;
         flex-direction: column;
@@ -1508,10 +1518,23 @@
       margin: 15vh 15vw; 
       padding: 15vh 10vw;
       position: relative;
+      overflow-y: auto;
       .close-popup{
-        bottom: 5vh;
-        position: absolute;
-        right: 5vw;
+        margin: 2rem 0;
+        text-align: right;
+        a{
+          display: inline-block;
+        }
+      }
+      &::-webkit-scrollbar {
+          width: 8px;
+      }       
+      &::-webkit-scrollbar-track {
+          border-radius: 4px;
+      }       
+      &::-webkit-scrollbar-thumb {
+          border-radius: 4px;
+          background: #CCC;
       }
     }
   }
