@@ -165,8 +165,8 @@
 	    	<Parameter default="15" name="dataset" type="Numeric"/>
 	    </Parameters>
 	    <Query>
-			SELECT DISTINCT(n.literal_id) as country_name, n.country_code as country_code, (ROUND(v.value*100, 1)) as joint_consultative, ( ROUND(v2.value*100,1)) as trade_union, 
-			(ROUND(v3.value*100, 1)) as health_representative, (ROUND(v4.value*100,1)) as health_committee
+			SELECT DISTINCT(n.literal_id) as country_name, n.country_code as country_code, (ROUND(v.value*100)) as joint_consultative, ( ROUND(v2.value*100)) as trade_union, 
+			(ROUND(v3.value*100)) as health_representative, (ROUND(v4.value*100)) as health_committee
 			FROM nuts n, profile p, profile p2, profile p3, profile p4,indicator i, value v, value v2, value v3, value v4, dataset d
 			WHERE
 			/* JOIN CONSULTATIVE */
@@ -204,8 +204,8 @@
 	    	<Parameter default=".*" name="countries" type="String"/>
 	    </Parameters>
 	    <Query>
-			SELECT DISTINCT(n.literal_id) as country_name, n.country_code as country_code, (ROUND(v.value*100, 1)) as joint_consultative, (ROUND(v2.value*100, 1)) as trade_union, 
-			(ROUND(v3.value*100, 1)) as health_representative, (ROUND(v4.value*100, 1)) as health_committee
+			SELECT DISTINCT(n.literal_id) as country_name, n.country_code as country_code, (ROUND(v.value*100)) as joint_consultative, (ROUND(v2.value*100)) as trade_union, 
+			(ROUND(v3.value*100)) as health_representative, (ROUND(v4.value*100)) as health_committee
 			FROM nuts n, profile p, profile p2, profile p3, profile p4,indicator i, value v, value v2, value v3, value v4, dataset d
 			WHERE
 			/* JOIN CONSULTATIVE */
