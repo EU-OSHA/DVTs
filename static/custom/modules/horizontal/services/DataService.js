@@ -58,112 +58,6 @@ define(function () {
                 return promise(url);
             },
 
-            /**
-             * @ngdoc method
-             * @name dvt.configModule.DataService#getAllCountries
-             * @methodOf dvt.configModule.DataService
-             * @description
-             * My Description rules
-             */
-            getAllCountries: function () {
-                var url = configService.getBarometerDataPath() + "&dataAccessId=getAllCountries";
-                $log.debug('getCountryList url:' + url);
-                return promise(url);
-            },
-
-            /**
-             * @ngdoc method
-             * @name dvt.configModule.DataService#getStrategiesCountryList
-             * @methodOf dvt.configModule.DataService
-             * @description
-             * My Description rules
-             */
-            getStrategiesCountryList: function () {
-                var url = configService.getBarometerDataPath() + "&dataAccessId=getStrategiesCountryList";
-                $log.debug('getStrategiesCountryList url:' + url);
-                return promise(url);
-            },
-
-            /**
-             * @ngdoc method
-             * @name dvt.configModule.DataService#getStrategiesCountryCode
-             * @methodOf dvt.configModule.DataService
-             * @description
-             * Retrieve from the Database the Country Codes of the countries with Strategies Data
-             */
-            getStrategiesCountryCode: function () {
-                var url = configService.getBarometerDataPath() + "&dataAccessId=getStrategiesCountryCode";
-                $log.debug('getStrategiesCountryCode url:' + url);
-                return promise(url);
-            },
-
-            /**
-             * @ngdoc method
-             * @name dvt.configModule.DataService#getMatrixCountries
-             * @methodOf dvt.configModule.DataService
-             * @description
-             * My Description rules
-             */
-            getMatrixCountries: function () {
-                //var url = configService.getBarometerDataPath() + "&dataAccessId=getMatrixCountries";
-                var url = configService.getInfosystemDataPath() + "&dataAccessId=getMatrixCountries";
-                $log.debug('getMatrixCountries url:' + url);
-                return promise(url);
-            },
-
-            /**
-             * @ngdoc method
-             * @name dvt.configModule.DataService#getSearchListChallenges
-             * @param {string} policy text to match with policy name o policy description
-             * @param {string} classifications classifications filters
-             * @param {string} countries countries filters
-             * @methodOf dvt.configModule.DataService
-             * @description
-             * Policies list data accesss services
-             *
-             */
-            getSearchListChallenges: function ( challenges, countries) {
-                var block1,block2,block3,block4;
-
-                if (challenges.filter1==1){
-                  block1 = 1;
-                }else {
-                  block1 = 2;
-                }
-                if (challenges.filter2==1){
-                  block2 = 1;
-                }else {
-                  block2 = 2;
-                }
-                if (challenges.filter3==1){
-                  block3 = 1;
-                }else {
-                  block3 = 2;
-                }
-
-
-                var block4 = countries.length <= 0 ? ".*" : countries.join("|");
-
-                var url = configService.getBarometerDataPath() + "&dataAccessId=getSearchListChallenges" + "&paramchallenge1=" + block1 +"&paramchallenge2=" + block2 +"&paramchallenge3=" + block3 + "&paramcountries=" + block4;
-
-                $log.debug('getSearchListChallenges url: ' + url);
-                return promise(url);
-            },
-            /**
-             * @ngdoc method
-             * @name dvt.configModule.DataService#getAllMatrix
-             * @methodOf dvt.configModule.DataService
-             * @description
-             * My Description rules
-             */
-            getAllMatrix: function () {
-                //var url = configService.getBarometerDataPath() + "&dataAccessId=getAllMatrix";
-                var url = configService.getInfosystemDataPath() + "&dataAccessId=getAllMatrix";
-                $log.debug('getAllMatrix url:' + url);
-
-                return promise(url);
-            },
-
             /************************************* HOME ***********************************/
 
                 getStrategiesCountries: function(){
@@ -183,6 +77,13 @@ define(function () {
                 getCapacitiesCountries: function(){
                     var url = configService.getGenericInformationDataPath() + "&dataAccessId=getCapacitiesCountries";
                     $log.debug('getCapacitiesCountries url:' + url);
+
+                    return promise(url);
+                },
+
+                getSocialDialogueEU28Data: function(pDataset){
+                    var url = configService.getGenericInformationDataPath() + "&dataAccessId=getSocialDialogueEU28Data" + "&parampDataset="+pDataset;
+                    $log.debug('getSocialDialogueEU28Data url:' + url);
 
                     return promise(url);
                 },
@@ -571,7 +472,7 @@ define(function () {
             
             /****************************** END REGULATIONS ********************************/
 
-            /************************ NATIONAL STRATEGIES ***************************/
+            /***************************** NATIONAL STRATEGIES *********************************/
 
                 /**
                  * @ngdoc method
@@ -666,9 +567,9 @@ define(function () {
                     return promise(url);
                 },
 
-            /************************ END NATIONAL STRATEGIES ***************************/
+            /*************************** END NATIONAL STRATEGIES ******************************/
 
-            /***************************** SOCIAL DIALOGUE *******************************/
+            /******************************** SOCIAL DIALOGUE **********************************/
 
                 /**
                  * @ngdoc method
@@ -710,7 +611,7 @@ define(function () {
                     return promise(url);
                 },
 
-            /*************************** END SOCIAL DIALOGUE *****************************/
+            /****************************** END SOCIAL DIALOGUE ********************************/
 
             /**
              * @ngdoc method

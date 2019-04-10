@@ -65,6 +65,44 @@
 	    </Query>
 	</DataAccess>
 
+		<!-- HOME || get social dialogue EU28 data -->
+	<DataAccess access="public" connection="dvt_conn" id="getSocialDialogueEU28Data" type="sql">
+	    <Cache duration="3600" enabled="true" />
+	    <Columns />
+	    <Parameters>
+	    	<Parameter default="15" name="dataset" type="Numeric"/>
+	    </Parameters>
+	    <Query>
+			SELECT (ROUND(v.value*100)) as joint_consultative, ( ROUND(v2.value*100)) as trade_union, 
+			(ROUND(v3.value*100)) as health_representative, (ROUND(v4.value*100)) as health_committee
+			FROM nuts n, profile p, profile p2, profile p3, profile p4,indicator i, value v, value v2, value v3, value v4, dataset d
+			WHERE
+			/* JOIN CONSULTATIVE */
+			n.id = p.nuts_id
+			AND v.indicator_id = 100
+			AND v.profile_id = p.id
+			AND d.id = v.dataset_id
+			/* TRADE UNION */
+			AND n.id = p2.nuts_id
+			AND v2.indicator_id = 101
+			AND v2.profile_id = p2.id
+			AND d.id = v2.dataset_id
+			/* HEALTH REPRESENTATIVE */
+			AND n.id = p3.nuts_id
+			AND v3.indicator_id = 102
+			AND v3.profile_id = p3.id
+			AND d.id = v3.dataset_id
+			/* HEALTH COMMITTEE */
+			AND n.id = p4.nuts_id
+			AND v4.indicator_id = 103
+			AND v4.profile_id = p4.id
+			AND d.id = v4.dataset_id
+			/* COMMON */
+			AND d.id = ${dataset}
+			AND n.country_code = 'EU28';
+	    </Query>
+	</DataAccess>
+
 	<!-- OSH AUTHORITIES || MATRIX OSH AUTHORITIES SEARCHER -->
 	<DataAccess access="public" connection="dvt_conn" id="getSearchTerm" type="sql">
 		<Cache duration="3600" enabled="true" />
@@ -371,7 +409,7 @@
 	      AND v.profile_id = p.id 
 	      AND d.id = ${pDataset} AND d.id = v.dataset_id
 	      AND v.indicator_id IN (37, 38, 39)
-	      ORDER BY FIELD(n.country_code, 'EU28') DESC, country_name ASC
+	      ORDER BY FIELD(n.country_code, 'EU28') DESC, country_name ASC;
 	    </Query>
 	</DataAccess>
 

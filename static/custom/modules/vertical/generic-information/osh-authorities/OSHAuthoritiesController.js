@@ -372,15 +372,30 @@ define(function (require) {
         var tags = angular.element('div.selected--tags-wrapper');
         
         if (element.prop('checked')) {
-          $scope.selectedCountries.push(element.attr('value'));
-          //$scope.searchParams.countries.push(element.attr('value'));
+          //$scope.selectedCountries.push(element.attr('value'));
+          $scope.searchParams.countries.push(element.attr('value'));
+          //$log.warn(element.attr('value'));
         } else {
-          if($scope.deleteCountryTags.indexOf(element.attr('value')) == -1){
-            $scope.deleteCountryTags.push(element.attr('value'));
-          }
-          $scope.selectedCountries.splice($scope.selectedCountries.indexOf(element.attr('value')), 1);
-          //$scope.searchParams.countries.splice($scope.searchParams.countries.indexOf(element.attr('value')), 1);
+          //if($scope.deleteCountryTags.indexOf(element.attr('value')) == -1){
+          //  $scope.deleteCountryTags.push(element.attr('value'));
+          //}
+          //$scope.selectedCountries.splice($scope.selectedCountries.indexOf(element.attr('value')), 1);
+          $scope.searchParams.countries.splice($scope.searchParams.countries.indexOf(element.attr('value')), 1);
+          angular.element('span#country'+element.attr('value')).remove();
         }
+
+        $scope.selectedCountries.sort();
+
+        var tags = angular.element('div.selected--tags-wrapper');
+        
+        for(var i = 0; i < $scope.searchParams.countries.length;i++){
+          if(angular.element('span#country'+$scope.searchParams.countries[i]).length<=0){
+            var html = '<span class="selected-tag" id="country'+$scope.searchParams.countries[i] +'" data-ng-click="deleteTag($event)">'+ $scope.i18nLiterals['L'+$scope.searchParams.countries[i]] +'</span>';
+            tags.append( $compile(html)($scope) );
+          }          
+        }
+
+        search($event,'countries');
       };
 
       /**
@@ -390,14 +405,14 @@ define(function (require) {
        * @description
        * Function launched when clicking an Institution Filter
        */
-      $scope.toggleInstitutionClick = function () {
+      $scope.toggleInstitutionClick = function ($event) {
 
-        var check1 = $('#institutions-filter-1:checked').length > 0;
-        var check2 = $('#institutions-filter-2:checked').length > 0;
-        var check3 = $('#institutions-filter-3:checked').length > 0;
-        var check4 = $('#institutions-filter-4:checked').length > 0;
+        var check1 = $('#institution-filter-1:checked').length > 0;
+        var check2 = $('#institution-filter-2:checked').length > 0;
+        var check3 = $('#institution-filter-3:checked').length > 0;
+        var check4 = $('#institution-filter-4:checked').length > 0;
 
-        if(!check1) {
+        /*if(!check1) {
           $scope.searchParams.institutions.filter1=0;
         }
         if(!check2) {
@@ -408,7 +423,56 @@ define(function (require) {
         }
         if(!check4) {
           $scope.searchParams.institutions.filter4=0;
+        }*/
+
+        var tags = angular.element('div.selected--tags-wrapper');
+
+        if(check1) {
+          $scope.searchParams.institutions.filter1=1;
+          if(angular.element('span#institutionFilter1').length<=0){
+            var html = '<span class="selected-tag" id="institutionFilter1" data-ng-click="deleteTag($event)" data-ng-bind="i18nLiterals.L20614"></span>';
+            tags.append( $compile(html)($scope) );
+          }
+          
+        }else{
+          $scope.searchParams.institutions.filter1=0;
+          angular.element('span#institutionFilter1').remove();
         }
+
+        if(check2) {
+          $scope.searchParams.institutions.filter2=1;
+          if(angular.element('span#institutionFilter2').length<=0){
+            var html = '<span class="selected-tag" id="institutionFilter2" data-ng-click="deleteTag($event)" data-ng-bind="i18nLiterals.L20611"></span>';
+            tags.append( $compile(html)($scope) );
+          }
+        }else{
+          angular.element('span#institutionFilter2').remove();
+          $scope.searchParams.institutions.filter2=0;
+        }
+
+        if(check3) {
+          $scope.searchParams.institutions.filter3=1;
+          if(angular.element('span#institutionFilter3').length<=0){
+            var html = '<span class="selected-tag" id="institutionFilter3" data-ng-click="deleteTag($event)" data-ng-bind="i18nLiterals.L20612"></span>';
+            tags.append( $compile(html)($scope) );
+          }
+        }else{
+          angular.element('span#institutionFilter3').remove();
+          $scope.searchParams.institutions.filter3=0;
+        }
+
+        if(check4) {
+          $scope.searchParams.institutions.filter4=1;
+          if(angular.element('span#institutionFilter4').length<=0){
+            var html = '<span class="selected-tag" id="institutionFilter4" data-ng-click="deleteTag($event)" data-ng-bind="i18nLiterals.L20613"></span>';
+            tags.append( $compile(html)($scope) );
+          }
+        }else{
+          angular.element('span#institutionFilter4').remove();
+          $scope.searchParams.institutions.filter4=0;
+        }
+
+        search($event,'institution'); 
       };
 
       /**

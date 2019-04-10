@@ -13,6 +13,16 @@ define(function (require) {
 
     function controller(configService, dvtUtils, $scope, $stateParams, $state, $document, $log, dataService) {
 
+        // Literals / i18n
+        var i18n = configService.getLiterals();
+        $scope.i18n = i18n;
+        var i18n_home = require('json!vertical/home/i18n');
+        $scope.i18n_home = i18n_home;
+
+        // Datasets
+        $scope.datasetList = configService.getDatasets();
+        $scope.datasetESENER = $scope.datasetList.ESENER;
+
         //Country arrays
         $scope.countries = [];
         $scope.strategiesCountries = [];
@@ -22,13 +32,7 @@ define(function (require) {
         $scope.regulationCountrySelected = "0";
         $scope.strategyCountrySelected = "0";
 
-        $log.warn($scope.strategyCountrySelected );
-
-        // Literals / i18n
-        var i18n = configService.getLiterals();
-        $scope.i18n = i18n;
-        var i18n_home = require('json!vertical/home/i18n');
-        $scope.i18n_home = i18n_home;
+        $scope.EUData = {};
 
         /******************************************************************************|
         |                                DATA LOAD                                     |
@@ -64,6 +68,21 @@ define(function (require) {
                     country_code: elem[1]
                 });
               });
+            });
+
+            dataService.getSocialDialogueEU28Data($scope.datasetESENER).then(function (data) {
+
+              data.data.resultset.map(function (elem) {
+                var param = (!!$stateParams.filter) ? $stateParams.filter : undefined;
+                $scope.EUData = {
+                  joint_consultative: elem[0],
+                  trade_union: elem[1],
+                  health_representative: elem[2],
+                  health_committee: elem[3]
+                }
+              });
+            }).catch(function (err) {
+              throw err;
             });
 
         /******************************END DATA LOAD***********************************/

@@ -73,9 +73,9 @@
 	                        </div>
 	                    </form>
 	                    <p class="btn--block-full left-text">
-	                    	<a ng-if="strategyCountrySelected != '0'" ui-sref="country-profile({pIndicator: 'basic-information', pCountry1: strategyCountrySelected, pCountry2: 0})" class="btn-default btn-main-color btn-full" data-ng-bind="i18n.L22039"></a>
+	                    	<a ng-if="strategyCountrySelected != '0'" ui-sref="country-profile({pIndicator: 'basic-information', pCountry1: strategyCountrySelected, pCountry2: 0})" class="btn-default btn-main-color btn-full" data-ng-bind="i18n.L20626"></a>
 
-	                    	<a ng-if="strategyCountrySelected == '0'" ui-sref="national-strategies" class="btn-default btn-main-color btn-full" data-ng-bind="i18n.L22039"></a>
+	                    	<a ng-if="strategyCountrySelected == '0'" ui-sref="national-strategies" class="btn-default btn-main-color btn-full" data-ng-bind="i18n.L20626"></a>
 	                    </p>
 	                </div>
 	            </div>
@@ -86,43 +86,47 @@
 	                <div class="carousel--card">
 	                    <h4><span class="flag"></span><span data-ng-bind-html="i18n.L22042"></span></h4>
 	                    
-	                    <div id="carouselHome" uib-carousel interval="-1" no-wrap="noWrapSlides" class="carousel--card--block carousel slide" ng-non-bindable data-ride="carousel">
+	                    <div id="carouselHome" uib-carousel interval="-1" no-wrap="noWrapSlides" class="carousel--card--block carousel slide" data-ride="carousel">
 	                        <ol class="carousel-indicators">
-	                          <li data-target="#carouselHome" data-slide-to="0" class="active" ng-non-bindable ></li>
-	                          <li data-target="#carouselHome" data-slide-to="1" ng-non-bindable ></li>
-	                          <li data-target="#carouselHome" data-slide-to="2" ng-non-bindable ></li>
-	                          <li data-target="#carouselHome" data-slide-to="3" ng-non-bindable ></li>
+	                          <li data-target="#carouselHome" data-slide-to="0" class="active"></li>
+	                          <li data-target="#carouselHome" data-slide-to="1"></li>
+	                          <li data-target="#carouselHome" data-slide-to="2"></li>
+	                          <li data-target="#carouselHome" data-slide-to="3"></li>
 	                        </ol>
 	                        <ul class="carousel-inner">
 	                          <li uib-slide class="item active">
 	                            <p class="carousel--text--block">
 	                                <a href="javascript:">
-	                                <span class="number-text second-color">26,1<span class="number-symbol">%</span></span>
-	                                <span class="text-area left-text main-color">Joint consultative, employee forum or similar</span>
+	                                <span class="number-text second-color" data-ng-bind="(EUData.joint_consultative) + ('%')"></span>
+	                                <!--<span class="number-symbol">%</span>-->
+	                                <span class="text-area left-text main-color" data-ng-bind="i18n.L20659"></span>
 	                                </a>
 	                            </p>
 	                          </li>
 	                          <li uib-slide class="item">
 	                            <p class="carousel--text--block">
 	                                <a href="javascript:">
-	                                <span class="number-text second-color">NN.X<span class="number-symbol">%</span></span>
-	                                <span class="text-area left-text main-color">Joint consultative, employee forum or similar</span>
+	                                <span class="number-text second-color" data-ng-bind="(EUData.trade_union) + ('%')"></span>
+	                                <!--<span class="number-symbol">%</span>-->
+	                                <span class="text-area left-text main-color" data-ng-bind="i18n.L20660"></span>
 	                                </a>
 	                            </p>
 	                          </li>
 	                          <li uib-slide class="item">
 	                            <p class="carousel--text--block">
 	                                <a href="javascript:">
-	                                <span class="number-text second-color">YY.X<span class="number-symbol">%</span></span>
-	                                <span class="text-area left-text main-color">Joint consultative, employee forum or similar</span>
+	                                <span class="number-text second-color" data-ng-bind="(EUData.health_representative) + ('%')"></span>
+	                                <!--<span class="number-symbol">%</span>-->
+	                                <span class="text-area left-text main-color" data-ng-bind="i18n.L20661"></span>
 	                                </a>
 	                            </p>
 	                          </li>
 	                          <li uib-slide class="item">
 	                            <p class="carousel--text--block">
 	                                <a href="javascript:">
-	                                <span class="number-text second-color">ZZ.X<span class="number-symbol">%</span></span>
-	                                <span class="text-area left-text main-color">Joint consultative, employee forum or similar</span>
+	                                <span class="number-text second-color" data-ng-bind="(EUData.health_committee) + ('%')"></span>
+	                                <!--<span class="number-symbol">%</span>-->
+	                                <span class="text-area left-text main-color" data-ng-bind="i18n.L20662"></span>
 	                                </a>
 	                            </p>
 	                          </li>
