@@ -81,6 +81,13 @@ define(function () {
                     return promise(url);
                 },
 
+                getStatisticsCountries: function(){
+                    var url = configService.getGenericInformationDataPath() + "&dataAccessId=getStatisticsCountries";
+                    $log.debug('getStatisticsCountries url:' + url);
+
+                    return promise(url);
+                },
+
                 getSocialDialogueEU28Data: function(pDataset){
                     var url = configService.getGenericInformationDataPath() + "&dataAccessId=getSocialDialogueEU28Data" + "&parampDataset="+pDataset;
                     $log.debug('getSocialDialogueEU28Data url:' + url);

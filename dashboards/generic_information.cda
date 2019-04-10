@@ -48,6 +48,20 @@
 	    </Query>
 	</DataAccess>
 
+		<!-- HOME || ALL AVAILABLE COUNTRIES FOR OSH STATISTICS -->
+	<DataAccess access="public" connection="dvt_conn" id="getStatisticsCountries" type="sql">
+	    <Cache duration="3600" enabled="true" />
+	    <Columns />
+	    <Query>
+	      SELECT DISTINCT (n.literal_id) AS country, n.country_code AS country_code
+	      FROM matrix_page mp
+	      INNER JOIN nuts n
+	      ON n.id = mp.nuts_id
+	      WHERE mp.page = 'MATRIX_STATISTICS'
+	      ORDER BY country ASC
+	    </Query>
+	</DataAccess>
+
 	<!-- HOME || ALL AVAILABLE COUNTRIES FOR ECONOMIC AND SECTOR PROFILES INDICATORS -->
 	<DataAccess access="public" connection="dvt_conn" id="getAvailableEconomicSectorCountries" type="sql">
 	    <Cache duration="3600" enabled="true" />

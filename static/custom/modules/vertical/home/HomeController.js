@@ -28,6 +28,7 @@ define(function (require) {
         $scope.strategiesCountries = [];
         $scope.regulationsCountries = [];
         $scope.capacitiesCountries = [];
+        $scope.statisticsCountries = [];
 
         $scope.regulationCountrySelected = "0";
         $scope.strategyCountrySelected = "0";
@@ -64,6 +65,17 @@ define(function (require) {
               data.data.resultset.map(function (elem) {
                 var param = (!!$stateParams.filter) ? $stateParams.filter : undefined;
                 $scope.capacitiesCountries.push({
+                    country: elem[0],
+                    country_code: elem[1]
+                });
+              });
+            });
+
+            dataService.getStatisticsCountries().then(function (data) {
+
+              data.data.resultset.map(function (elem) {
+                var param = (!!$stateParams.filter) ? $stateParams.filter : undefined;
+                $scope.statisticsCountries.push({
                     country: elem[0],
                     country_code: elem[1]
                 });
