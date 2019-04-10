@@ -14,39 +14,38 @@
 
   <div class="filter--indicator--block  container">
       <ul class="indicators--group xs-row">
-          <li id="filter1">
-            <label for="indicatorSelect" data-ng-bind="i18nLiterals.L20623"></label>
-            <select id="indicatorSelect" class="filter--dropdown--list" data-ng-model="selectedIndicator" data-ng-change="selectChange()">
-              <option value="median-age" data-ng-bind="i18nLiterals.L294"></option>
-              <option value="employment-rate" data-ng-bind="i18nLiterals.L20621"></option>
-            </select>
-          </li>
-          <li id="filter2" data-ng-class="{'disabled':selectedIndicator == 'median-age' }" >
-            <label for="employeeGroupSelect" data-ng-bind="i18nLiterals.L20622"></label>
-            <select id="employeeGroupSelect" class="filter--dropdown--list" data-ng-disabled="selectedIndicator == 'median-age'" data-ng-model="selectedSubIndicator" data-ng-change="selectChange()">  
-              <option data-ng-bind="i18nLiterals.L295" value="ageing-workers"></option>
-              <option data-ng-repeat='gender in genders' value="{{i18nLiterals['L'+gender.gender_name]}}" data-ng-bind="i18nLiterals['L'+gender.gender_name]"></option>
-            </select>
-            <label data-ng-if="selectedIndicator == 'median-age'" class="alert-disabled" data-ng-bind="i18nLiterals.L20694"></label>
-          </li>
-          <!-- COUNTRY FILTER JUST IN < 1024 PX -->
-          <li id="filter3" class="" >
-            <label for="countrySelect">Country: </label>
-            <div id="filter3"class="filter--dropdown--wrapper">
-              <label class="main-color  dropdwon-open" data-ng-click="openSelect($event)"></label>
-              <div class="filter--dropdown--list">
-                <p class="option-title" data-ng-click="openSelect($event)">Country</p>
-                <ul class="filter--dropdown--options">
-                  <li data-ng-repeat='country in countries'>
-                    <input id='country-filter-{{::country.country_name}}' ng-checked="!!country.param && country.param ==country.country_code"
-                      data-ng-click="toggleCountryClick($event, $index)" type="checkbox" value="{{::country.country_name}}"/>
-                    <label for="country-filter-{{::country.country_name}}" data-ng-bind="i18nLiterals['L'+country.country_name]"></label>
-                  </li>
-                </ul>
-                <p class="btn--block-filter" data-ng-click="openSelect($event)"><a class="btn-main-color btn-full" ng-click="confirmSelection($event)">Confirm</a></p>
-              </div>
-            </div>  
-          </li>
+        <li id="filter1">
+          <label for="indicatorSelect" data-ng-bind="i18nLiterals.L20623"></label>
+          <select id="indicatorSelect" class="filter--dropdown--list" data-ng-model="selectedIndicator" data-ng-change="selectChange()">
+            <option value="median-age" data-ng-bind="i18nLiterals.L294"></option>
+            <option value="employment-rate" data-ng-bind="i18nLiterals.L20621"></option>
+          </select>
+        </li>
+        <li id="filter2" data-ng-class="{'disabled':selectedIndicator == 'median-age' }" >
+          <label for="employeeGroupSelect" data-ng-bind="i18nLiterals.L20622"></label>
+          <select id="employeeGroupSelect" class="filter--dropdown--list" data-ng-disabled="selectedIndicator == 'median-age'" data-ng-model="selectedSubIndicator" data-ng-change="selectChange()">  
+            <option data-ng-bind="i18nLiterals.L295" value="ageing-workers"></option>
+            <option data-ng-repeat='gender in genders' value="{{i18nLiterals['L'+gender.gender_name]}}" data-ng-bind="i18nLiterals['L'+gender.gender_name]"></option>
+          </select>
+          <label data-ng-if="selectedIndicator == 'median-age'" class="alert-disabled" data-ng-bind="i18nLiterals.L20694"></label>
+        </li>
+        <!-- COUNTRY FILTER JUST IN < 1024 PX -->
+        <li id="" class="" >
+          <label for="countrySelect">Country: </label>
+          <div id="filter3"class="filter--dropdown--wrapper">
+            <!--<label class="main-color  dropdwon-open" data-ng-click="openSelect($event)"></label>-->
+            <div class="filter--dropdown--list">
+              <p class="option-title" data-ng-bind="i18nLiterals.L20630" data-ng-click="openSelect($event)">Country</p>
+              <ul class="filter--dropdown--options">
+                <li data-ng-repeat='country in countries'>
+                  <input id='country-filter-{{::country.country_name}}' ng-checked="!!country.param && country.param ==country.country_code"
+                    data-ng-click="toggleCountryClick($event, $index)" type="checkbox" value="{{::country.country_name}}"/>
+                  <label for="country-filter-{{::country.country_name}}" data-ng-bind="i18nLiterals['L'+country.country_name]"></label>
+                </li>
+              </ul>
+            </div>
+          </div>  
+        </li>
       </ul>
   </div>
 
