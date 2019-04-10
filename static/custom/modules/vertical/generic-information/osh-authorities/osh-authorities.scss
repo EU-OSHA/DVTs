@@ -64,8 +64,10 @@
             background: #CCC;
         }
         li{
+          display: flex;
           label{
             font-weight: normal;
+            padding-left: 0.5rem;
           }
           input{
           }
