@@ -198,7 +198,8 @@
     position: relative;
     cursor: pointer;
     text-transform: lowercase;
-    display: block;
+    display: inline-block;
+    padding: 0.5rem;
     &:first-letter{
       text-transform: uppercase;
     }
