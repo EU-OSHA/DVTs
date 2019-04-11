@@ -92,6 +92,12 @@ define (function (require) {
                         },
                         bar_fillStyle: function(scene){
                         	var countryKey = scene.firstAtoms.category;
+                            var countryValue = scene.firstAtoms.value;
+
+                            if(countryValue.value > parseInt(this.sign.chart.options.orthoAxisFixedMax)){
+                                this.sign.chart.options.orthoAxisFixedMax = countryValue.value;
+                            }
+
                             if (countryKey == 'EU28') {
                                 return dvtUtils.getEUColor();
                             } else if(countryKey == pCountry1){
@@ -218,6 +224,16 @@ define (function (require) {
                         },
                         line_fillStyle: function(scene){
                             var countryKey = scene.firstAtoms.category;
+                            var countryValue = scene.firstAtoms.value;
+
+                            if(countryValue.value > parseInt(this.sign.chart.options.orthoAxisFixedMax)){
+                                this.sign.chart.options.orthoAxisFixedMax = countryValue.value;
+                            }
+
+                            if(countryValue.value < parseInt(this.chart.options.orthoAxisFixedMin)){
+                                this.chart.options.orthoAxisFixedMin = countryValue.value - 1000;
+                            }
+
                             if (countryKey == 'EU28') {
                                 return dvtUtils.getEUColor();
                             } else if(countryKey == pCountry1){
@@ -225,6 +241,7 @@ define (function (require) {
                             } else if(countryKey == pCountry2) {
                                 return dvtUtils.getColorCountry(2);
                             }
+
                             return dvtUtils.getChartLightGrayColor();
                         },
                         line_lineWidth: 1.5,

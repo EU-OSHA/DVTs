@@ -37,7 +37,6 @@
   }
   *:focus{
     outline:none !important;
-    background: transparent !important;
   }
   select:focus{
     border: 1px dotted $aquamarine !important;
@@ -247,10 +246,15 @@
         border:1px solid $aquamarine;
         color:$aquamarine;
         position: relative;
-
+        
         -webkit-appearance: none;
         -moz-appearance: none;
         appearance: none;   
+        &::-ms-expand{
+          display: none;
+          text-indent: 1px;
+          text-overflow: '';
+        }
       }
       &:after {
         content:"\f107";
@@ -517,13 +521,16 @@
           font-family: 'OpenSans-bold';
           text-transform: uppercase;
           font-size: 2.6rem;
-          border: 0;
+          border: 1px solid #FFF;
           padding: 0.2rem 0.5rem;
           -webkit-appearance: none;
           -moz-appearance: none;
           appearance: none;
           cursor: pointer;
-          width:59%;
+          width:58%;
+          &::-ms-expand{
+            display: none;
+          }
           &:focus {
             box-shadow: none;
             outline: none;
@@ -533,7 +540,7 @@
             font-size: 1.2rem; 
             color: $gray-base;
             &:checked{
-            
+            //font-size: 1.2rem; 
             }
           }
         }
@@ -555,9 +562,10 @@
       display: flex;
       justify-content: space-between;
       list-style: none;
+      margin-top: 1rem;
       li{
         width: 50%;
-        padding: 1rem 4rem 1rem 0;
+        padding: 0rem 4rem 0rem 0;
         position: relative;
         label{          
           font-family: 'OpenSans-Light';
@@ -590,7 +598,7 @@
           font-size: 2rem;
           color: #00A0A4;
           right: 4rem;
-          top: 45px;
+          top: 3.5rem;
           height: auto;
           padding: 1rem;
           position: absolute;
@@ -608,6 +616,9 @@
           -webkit-appearance: none;
           -moz-appearance: none;
           appearance: none;
+          &::-ms-expand{
+            display: none;
+          }
           &[disabled="disabled"]{
             opacity: 0.4;
             cursor: not-allowed;
@@ -784,7 +795,7 @@
         border-radius: 46px 0;
         padding:3rem 2rem;
         margin:0 1%;
-        background: $white;
+        background: $white !important;
         position: relative;
         display: flex;
         flex-direction: column;
@@ -878,6 +889,7 @@
       flex-direction: row;
       .column--item{
         padding: 0 5rem;
+        width: 50%;
         h2{
           font-size: 2.4rem;
         }
@@ -1173,6 +1185,7 @@
         border-bottom: 1px solid $aquamarine;
       }
     }
+    /**
     div.list--tag--block{
       > ul { 
         list-style: none;
@@ -1195,6 +1208,7 @@
         }
       }   
     }
+    **/
     div {
      
     }
@@ -1371,18 +1385,35 @@
           }
           .title--card{
             font-size: 2.8rem;
-            margin-top: 0;
+            margin: 0rem 0 0 10%;
+            padding-top: 2rem;
             text-align: left;
           } 
           .chart--wrapper{
             width: 80%;
             height: auto;
-            margin: 10vh auto;
+            margin: 3vh auto 0;
             svg{
+              border-radius: 1rem;
               text{
                 font-size: 14px !important;
               }
             }
+          }
+          .legend-info{
+            font-size: 1.4rem;
+            text-align: center;
+            font-style: italic;
+            padding:1rem 0.5rem;
+            width: 80%;
+            margin-left: 10%;
+          }
+          .logoGraphics-wrapper{
+            float: right;
+            padding-right: 10%;
+            img{
+              width: 13rem;
+            }            
           }      
         }
       }
@@ -1434,7 +1465,7 @@
     .buttons {
 
     }
-    button {
+    button{
       color:$white;
       background: url('/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/buttomArrow.png') no-repeat 95% 53% $aquamarine;
       font-family: "Oswald", sans-serif;
@@ -1442,6 +1473,12 @@
       border:0;
       float:right;
       margin:0 .5em;
+      &:hover{
+        background:$aquamarine-dark!important;
+      }
+      &:active, &:focus{
+        background: url('/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/buttomArrow.png') no-repeat 95% 53% $aquamarine !important;
+      }
     }
   }
   /*Width disclaimer*/
@@ -1471,6 +1508,12 @@
       float: none;
       margin: 20px 35%;
       width: 30%;
+      &:hover{
+        background:$aquamarine-dark!important;
+      }
+      &:active, &:focus{
+        background: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/buttomArrow.png) no-repeat 90% 56% $aquamarine !important;
+      }
     }
   }
 /**** END MODAL WINDOW ****/
@@ -1493,10 +1536,23 @@
       margin: 15vh 15vw; 
       padding: 15vh 10vw;
       position: relative;
+      overflow-y: auto;
       .close-popup{
-        bottom: 5vh;
-        position: absolute;
-        right: 5vw;
+        margin: 2rem 0;
+        text-align: right;
+        a{
+          display: inline-block;
+        }
+      }
+      &::-webkit-scrollbar {
+          width: 8px;
+      }       
+      &::-webkit-scrollbar-track {
+          border-radius: 4px;
+      }       
+      &::-webkit-scrollbar-thumb {
+          border-radius: 4px;
+          background: #CCC;
       }
     }
   }

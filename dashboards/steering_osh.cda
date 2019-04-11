@@ -6,5 +6,233 @@
       </Connection>
    </DataSources>
 
+	<!-- STEERING OF OSH || get regulations indicators for select -->
+	<DataAccess access="public" connection="dvt_conn" id="getRegulationIndicators" type="sql">
+	    <Cache duration="3600" enabled="true" />
+	    <Columns />
+	    <Parameters>
+	      <Parameter default="41" name="pIndicator" type="Numeric" />
+	    </Parameters>
+	    <Query>
+	      SELECT id, literal_id 
+	      FROM indicator 
+	      WHERE id IN (40, 41, 42, 43, 44, 45)
+	    </Query>
+	</DataAccess>
+
+	<!-- STEERING OF OSH || get regulations indicators data for select -->
+	<DataAccess access="public" connection="dvt_conn" id="getCountryRegulationData" type="sql">
+	    <Cache duration="3600" enabled="true" />
+	    <Columns />
+	    <Parameters>
+	      <Parameter default="AT" name="pCountry" type="String" />
+	    </Parameters>
+	    <Query>
+	      SELECT n.country_code as country_code, n.literal_id as country_name, text_1_literal_id as text1, text_2_literal_id as text2, text_3_literal_id as text3, text_4_literal_id as text4, 
+	      text_5_literal_id as text5, text_6_literal_id as text6, text_7_literal_id as text7, text_8_literal_id as text8, text_9_literal_id as text9, text_10_literal_id as text10, 
+	      text_11_literal_id as text11, text_12_literal_id as text12, text_13_literal_id as text13
+	      FROM strategies_page sp, nuts n
+	      where page='STRATEGY_REGULATION'
+	      AND n.id = sp.nuts_id
+	      AND n.country_code = ${pCountry}
+	    </Query>
+	</DataAccess>
+
+	<!-- STEERING OF OSH || get strategies indicators for select -->
+	<DataAccess access="public" connection="dvt_conn" id="getStrategiesIndicators" type="sql">
+	    <Cache duration="3600" enabled="true" />
+	    <Columns />
+	    <Parameters>
+	      <Parameter default="46" name="pIndicator" type="Numeric" />
+	    </Parameters>
+	    <Query>
+	      SELECT id, literal_id 
+	      FROM indicator 
+	      WHERE id IN (46, 47, 48, 49, 98, 50, 51, 99)
+	      ORDER BY FIELD (id ,46, 47, 48, 49, 98, 50, 51, 99)
+	    </Query>
+	</DataAccess>
+
+	<!-- STEERING OF OSH || get structure of strategy indicators data for select -->
+	<DataAccess access="public" connection="dvt_conn" id="getStructureStrategiesData" type="sql">
+	    <Cache duration="3600" enabled="true" />
+	    <Columns />
+	    <Parameters>
+	      <Parameter default="AT" name="pCountry" type="String" />
+	    </Parameters>
+	    <Query>
+	      SELECT n.country_code as country_code, n.literal_id as country_name, text_1_literal_id as text1, text_2_literal_id as text2, text_3_literal_id as text3, text_4_literal_id as text4, text_5_literal_id as text5, text_6_literal_id as text6, text_7_literal_id as text7, text_8_literal_id as text8
+	      FROM strategies_page sp, nuts n
+	      where page='STRATEGY'
+	      AND n.id = sp.nuts_id
+	      AND n.country_code = ${pCountry}
+	    </Query>
+	</DataAccess>
+
+	<!-- STEERING OF OSH || get eu challenges countries with available data -->
+	<DataAccess access="public" connection="dvt_conn" id="getEUChallengesCountries" type="sql">
+	    <Cache duration="3600" enabled="true" />
+	    <Columns />
+	    <Parameters>
+	    </Parameters>
+	    <Query>
+	      SELECT DISTINCT(n.country_code) as country_code, n.literal_id as country_name
+	      FROM matrix_page mp, nuts n
+	      WHERE page = 'MATRIX_STRATEGY'
+	      AND n.id = mp.nuts_id
+	      ORDER BY country_name ASC;
+	    </Query>
+	</DataAccess>
+
+	<!-- STEERING OF OSH || get eu challenges data -->
+	<DataAccess access="public" connection="dvt_conn" id="getEUChallengesData" type="sql">
+	    <Cache duration="3600" enabled="true" />
+	    <Columns />
+	    <Parameters>
+	    	<Parameter default=".*" name="countries" type="String"/>
+	    </Parameters>
+	    <Query>
+	      SELECT n.country_code as country_code, n.literal_id as country_name, mp.check_1 as implementation_record, mp.check_2 as prevention_work, mp.check_3 as ageing_workforce, mp.text_1_literal_id as objectives, mp.text_2_literal_id as groups_and_activities
+	      FROM matrix_page mp, nuts n
+	      WHERE page = 'MATRIX_STRATEGY'
+	      AND n.id = mp.nuts_id
+	      AND n.country_code REGEXP ${countries}
+	      ORDER BY country_name ASC, implementation_record DESC, prevention_work DESC, ageing_workforce DESC;
+	    </Query>
+	</DataAccess>
+
+	<!-- STEERING OF OSH || Applies selected filters to visualize EU challenges data -->
+	<DataAccess access="public" connection="dvt_conn" id="getEUChallengesWithFilters" type="sql">
+	    <Cache duration="3600" enabled="true" />
+	    <Columns />
+	    <Parameters>
+	    	<Parameter default=".*" name="term" type="String" />
+	    	<Parameter default="null" name="challenge1" type="Numeric"/>
+	    	<Parameter default="null" name="challenge2" type="Numeric"/>
+	    	<Parameter default="null" name="challenge3" type="Numeric"/>
+	    	<Parameter default=".*" name="countries" type="String"/>
+	    </Parameters>
+	    <Query>
+	        SELECT DISTINCT(n.country_code) AS country_code, n.literal_id AS country_name, mp.check_1 AS implementation_record, mp.check_2 AS prevention_work, mp.check_3 AS ageing_workforce, mp.text_1_literal_id AS objectives, mp.text_2_literal_id AS groups_and_activities
+			FROM matrix_page mp
+			INNER JOIN nuts n
+			ON n.id = mp.nuts_id
+			INNER JOIN literal l
+			ON l.id = mp.text_1_literal_id
+			INNER JOIN literal l2
+			ON l2.id = mp.text_2_literal_id
+			INNER JOIN translation t
+			ON l.id = t.literal_id
+			INNER JOIN translation t2
+			ON l2.id = t2.literal_id
+			WHERE mp.page = 'MATRIX_STRATEGY' 
+			AND n.literal_id REGEXP ${countries}
+			AND (mp.check_1=${challenge1}
+			OR mp.check_2=${challenge2}
+			OR mp.check_3=${challenge3})
+			AND (n.name REGEXP ${term} OR t.text REGEXP ${term} OR t2.text REGEXP ${term}
+			OR ((mp.check_1= IF('Implementation record' REGEXP ${term}, 1, 0) AND mp.check_2= 0 AND mp.check_3= 0)
+			OR (mp.check_2= IF('Prevention of work-related diseases' REGEXP ${term}, 1, 0) AND mp.check_1= 0 AND mp.check_3= 0)
+			OR (mp.check_3= IF('Ageing workforce' REGEXP ${term}, 1, 0) AND mp.check_1= 0 AND mp.check_2= 0)))
+			ORDER BY country_name ASC, implementation_record DESC, prevention_work DESC, ageing_workforce DESC;
+	    </Query>
+	</DataAccess>
+
+	<!-- STEERING OF OSH || get social dialogue countries with available data -->
+	<DataAccess access="public" connection="dvt_conn" id="getSocialDialogueCountries" type="sql">
+	    <Cache duration="3600" enabled="true" />
+	    <Columns />
+	    <Parameters>
+	    </Parameters>
+	    <Query>
+	      	SELECT DISTINCT(n.literal_id) as country_name, n.country_code 
+			FROM nuts n
+			INNER JOIN profile p
+			ON n.id = p.nuts_id
+			INNER JOIN value v
+			ON v.profile_id = p.id
+			WHERE v.indicator_id IN (100,101,102,103)
+			AND n.country_code NOT IN ('EU28')
+			ORDER BY country_name ASC;
+	    </Query>
+	</DataAccess>
+
+	<!-- STEERING OF OSH || get social dialogue countries with available data -->
+	<DataAccess access="public" connection="dvt_conn" id="getSocialDialogueData" type="sql">
+	    <Cache duration="3600" enabled="true" />
+	    <Columns />
+	    <Parameters>
+	    	<Parameter default="15" name="dataset" type="Numeric"/>
+	    </Parameters>
+	    <Query>
+			SELECT DISTINCT(n.literal_id) as country_name, n.country_code as country_code, (ROUND(v.value*100)) as joint_consultative, ( ROUND(v2.value*100)) as trade_union, 
+			(ROUND(v3.value*100)) as health_representative, (ROUND(v4.value*100)) as health_committee
+			FROM nuts n, profile p, profile p2, profile p3, profile p4,indicator i, value v, value v2, value v3, value v4, dataset d
+			WHERE
+			/* JOIN CONSULTATIVE */
+			n.id = p.nuts_id
+			AND v.indicator_id = 100
+			AND v.profile_id = p.id
+			AND d.id = v.dataset_id
+			/* TRADE UNION */
+			AND n.id = p2.nuts_id
+			AND v2.indicator_id = 101
+			AND v2.profile_id = p2.id
+			AND d.id = v2.dataset_id
+			/* HEALTH REPRESENTATIVE */
+			AND n.id = p3.nuts_id
+			AND v3.indicator_id = 102
+			AND v3.profile_id = p3.id
+			AND d.id = v3.dataset_id
+			/* HEALTH COMMITTEE */
+			AND n.id = p4.nuts_id
+			AND v4.indicator_id = 103
+			AND v4.profile_id = p4.id
+			AND d.id = v4.dataset_id
+			/* COMMON */
+			AND d.id = ${dataset}
+			ORDER BY country_name ASC;
+	    </Query>
+	</DataAccess>
+
+		<!-- STEERING OF OSH || get social dialogue countries with available data -->
+	<DataAccess access="public" connection="dvt_conn" id="applySocialDialogueFilters" type="sql">
+	    <Cache duration="3600" enabled="true" />
+	    <Columns />
+	    <Parameters>
+	    	<Parameter default="15" name="dataset" type="Numeric"/>
+	    	<Parameter default=".*" name="countries" type="String"/>
+	    </Parameters>
+	    <Query>
+			SELECT DISTINCT(n.literal_id) as country_name, n.country_code as country_code, (ROUND(v.value*100)) as joint_consultative, (ROUND(v2.value*100)) as trade_union, 
+			(ROUND(v3.value*100)) as health_representative, (ROUND(v4.value*100)) as health_committee
+			FROM nuts n, profile p, profile p2, profile p3, profile p4,indicator i, value v, value v2, value v3, value v4, dataset d
+			WHERE
+			/* JOIN CONSULTATIVE */
+			n.id = p.nuts_id
+			AND v.indicator_id = 100
+			AND v.profile_id = p.id
+			AND d.id = v.dataset_id
+			/* TRADE UNION */
+			AND n.id = p2.nuts_id
+			AND v2.indicator_id = 101
+			AND v2.profile_id = p2.id
+			AND d.id = v2.dataset_id
+			/* HEALTH REPRESENTATIVE */
+			AND n.id = p3.nuts_id
+			AND v3.indicator_id = 102
+			AND v3.profile_id = p3.id
+			AND d.id = v3.dataset_id
+			/* HEALTH COMMITTEE */
+			AND n.id = p4.nuts_id
+			AND v4.indicator_id = 103
+			AND v4.profile_id = p4.id
+			AND d.id = v4.dataset_id
+			/* COMMON */
+			AND d.id = ${dataset}
+			AND n.literal_id REGEXP ${countries}
+			ORDER BY country_name ASC;
+	    </Query>
+	</DataAccess>
    
 </CDADescriptor>

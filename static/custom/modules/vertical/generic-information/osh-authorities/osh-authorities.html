@@ -5,6 +5,12 @@
         <div class="left-text col-md-8 col-sm-8 col-xs-12 ">
           <h1 class="main-color left-text" data-ng-bind="i18nLiterals.L22002"></h1>
           <p data-ng-bind="i18nLiterals.L22025"></p>
+          <p>
+            <span data-ng-bind="i18nLiterals.L20695"></span>
+            <span data-ng-bind="i18nLiterals.L20704"></span>
+          </p>
+          <p><a data-ng-bind="i18nLiterals.L20705" ui-sref="about-tool"></a></p>
+          
         </div>
         <div class="icon--advice forum-icon hide-mobile col-sm-4 col-md-4"></div>
       </div>
@@ -16,50 +22,50 @@
     <form class="row block--filter--wrapper">
       <!-- SEARCH FILTER -->
       <div class="filter-text">
-        <input ng-keypress="clickEnter($event)" id="search-input" type="text" placeholder="{{i18nLiterals.L378}}" data-ng-model="searchText" tabindex="7" />
-        <button data-ng-click="clickEnter($event)"  id="policy-search" type="button">
+        <input data-ng-keypress="clickEnter($event)" ng-focus="closeSelect($event)" id="search-input" type="text" ng-attr-placeholder="{{i18nLiterals.L378}}" data-ng-model="searchText" tabindex="7" />
+        <button data-ng-click="clickEnter($event)"  id="policy-search" ng-attr-type="button">
           <i class="fa fa-search" aria-hidden="true"></i>
         </button>
       </div>
       <!-- INSTITUTION TYPE FILTER -->
-      <div id="filter1" class="filter--dropdown--wrapper" tabindex="8">
-        <label class="main-color dropdwon-open"></label>
+      <div id="filter1" class="filter--dropdown--wrapper" tabindex="8" >
+        <!--<label class="main-color dropdwon-open"></label>-->
         <div class="filter--dropdown--list">
-          <p class="option-title">Institution type</p>
+          <p class="option-title" ng-click="openSelect($event)">Institution type</p>
           <ul class="filter--dropdown--options">
             <li>
-              <input id='institution-filter-1' type="checkbox" ng-click="toggleInstitutionClick();openSelect($event)" tabindex="-1"/>
+              <input id='institution-filter-1' type="checkbox" ng-click="toggleInstitutionClick($event);openSelect($event)" tabindex="-1"/>
               <label for='institution-filter-1' data-ng-bind="i18nLiterals.L20614"></label>
             </li>
             <li>
-              <input id='institution-filter-2' type="checkbox" ng-click="toggleInstitutionClick();openSelect($event)" tabindex="-1"/>
+              <input id='institution-filter-2' type="checkbox" ng-click="toggleInstitutionClick($event);openSelect($event)" tabindex="-1"/>
               <label for='institution-filter-2' data-ng-bind="i18nLiterals.L20611"></label>
             </li>
             <li>
-              <input id='institution-filter-3' type="checkbox" ng-click="toggleInstitutionClick();openSelect($event)" tabindex="-1"/>
-              <label for='institution-filter-3' data-ng-bind="i18nLiterals.L20612"></label>
+              <input id='institution-filter-3' type="checkbox" ng-click="toggleInstitutionClick($event);openSelect($event)" tabindex="-1"/>
+              <label for='institution-filter-3' data-ng-bind="i18nLiterals.L20612" ></label>
             </li>
             <li>
-              <input id='institution-filter-4' type="checkbox" ng-click="toggleInstitutionClick();openSelect($event)" tabindex="-1"/>
+              <input id='institution-filter-4' type="checkbox" ng-click="toggleInstitutionClick($event);openSelect($event)" tabindex="-1"/>
               <label for='institution-filter-4' data-ng-bind="i18nLiterals.L20613"></label>
             </li>
           </ul>
-          <p class="btn--block-filter" data-ng-click="openSelect($event)"><a class="btn-main-color btn-full" ng-click="confirmSelection($event)">Confirm</a></p>
+          <!--<p class="btn--block-filter"><a class="btn-main-color btn-full" ng-click="confirmInstitutionSelection($event);closeSelect($event)" data-ng-bind="i18nLiterals.L20636"></a></p>-->
         </div>
       </div>
       <!-- COUNTRY FILTER -->
-      <div id="filter2"class="filter--dropdown--wrapper"  tabindex="9">
-        <label class="main-color  dropdwon-open"></label>
+      <div id="filter2"class="filter--dropdown--wrapper" tabindex="9">
+        <!--<label class="main-color  dropdwon-open"></label>-->
         <div class="filter--dropdown--list">
-          <p class="option-title">Country</p>
+          <p class="option-title" data-ng-bind="i18nLiterals.L20630" ng-click="openSelect($event)"></p>
           <ul class="filter--dropdown--options">
             <li data-ng-repeat='country in countries'>
-              <input id='country-filter-{{::country.country_code}}' ng-checked="!!country.param && country.param ==country.country_code"
-                data-ng-click="toggleCountryClick($event, $index);openSelect($event)" type="checkbox" value="{{::country.country_code}}" tabindex="-1" />
-              <label for="country-filter-{{::country.country_code}}" data-ng-bind="i18nLiterals['L'+country.country]"></label>
+              <input id='country-filter-{{::country.country}}' ng-checked="!!country.param && country.param ==country.country_code"
+                data-ng-click="toggleCountryClick($event, $index)" type="checkbox" ng-attr-value="{{::country.country}}" tabindex="-1" />
+              <label for="country-filter-{{::country.country}}" data-ng-bind="i18nLiterals['L'+country.country]"></label>
             </li>
           </ul>
-          <p class="btn--block-filter" data-ng-click="openSelect($event)"><a class="btn-main-color btn-full" ng-click="confirmSelection($event)">Confirm</a></p>
+          <!--<p class="btn--block-filter"><a class="btn-main-color btn-full" ng-click="confirmCountrySelection($event);closeSelect($event)" data-ng-bind="i18nLiterals.L20636"></a></p>-->
         </div>
       </div>  
     </form>
@@ -94,7 +100,8 @@
             </p>
 
             <div class="">
-              <a href="" data-toggle="modal" data-target="#modalChart" data-ng-click="openModal(matrix)" class="btn--card main-color" title="Country infrastructure">Country infrastructure</a>
+              <p ><a href="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/modules/vertical/generic-information/osh-authorities/pdf/{{matrix.country_code}}.docx" class="btn--card main-color" data-ng-bind-html="i18nLiterals.L20563" target="_blank"></a></p>
+              <!--<a href="" data-toggle="modal" data-target="#modalChart" data-ng-click="openModal(matrix)" class="btn--card main-color" title="Country infrastructure" data-ng-bind-html="i18nLiterals.L20563"></a>-->
             </div>
             
           </div>

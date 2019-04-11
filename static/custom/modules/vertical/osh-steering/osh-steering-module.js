@@ -42,7 +42,7 @@ define(function (require) {
               }
           },
           metaTags: {
-              title: i18n.L22005 +" | "+ i18n.L22006
+              title: i18n.L22006 +  " - " + i18n.L22020 + " - " + i18n.L363
           }
         });
 
@@ -58,7 +58,7 @@ define(function (require) {
               }
           },
           metaTags: {
-              title: i18n.L22005 +" | "+ i18n.L22007
+              title: i18n.L22007 +  " - " + i18n.L22020 + " - " + i18n.L363
           }
         });
 
@@ -86,14 +86,14 @@ define(function (require) {
               }
           },
           metaTags: {
-              title: i18n.L22005 +" | "+ i18n.L22007
+              title: i18n.L22007 +  " - " + i18n.L22020 + " - " + i18n.L363
           }
         });
 
         $stateProvider.state('EU-challenges-response', {
-          url: "/osh-steering/national-strategies/EU-challenges-response/:pCountry1",
+          url: "/osh-steering/national-strategies/EU-challenges-response/:pCountry",
           params: {
-            pCountry1: {
+            pCountry: {
               value: "AT",
               squash: "AT"
             }
@@ -106,7 +106,23 @@ define(function (require) {
               }
           },
           metaTags: {
-              title: i18n.L22005 +" | "+ i18n.L22007
+              title: i18n.L22007 +  " - " + i18n.L22020 + " - " + i18n.L363
+          }
+        });
+
+        $stateProvider.state('social-dialogue', {
+          url: "/osh-steering/social-dialogue",
+          params: {
+          },
+          views: {
+              "content-main": {
+                  templateUrl: configService.getVerticalTplPath("osh-steering/social-dialogue", "social-dialogue"),
+                  controller: 'SocialDialogueController',
+                  resolve: configService.dynamicallyRegisterController($controllerProvider, 'vertical/social-dialogue/SocialDialogueController', 'social-dialogue', 'SocialDialogueController')
+              }
+          },
+          metaTags: {
+              title: i18n.L22008 +  " - " + i18n.L22020 + " - " + i18n.L363
           }
         });
     });

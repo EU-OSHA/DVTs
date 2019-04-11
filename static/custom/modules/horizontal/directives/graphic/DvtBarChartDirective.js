@@ -167,6 +167,7 @@ define(function (require) {
     var BarChartComponent = require('cdf/components/CccBarChartComponent');
     var PieChartComponent = require('cdf/components/CccPieChartComponent');
     var configService = require('horizontal/config/configService');
+    var pv = require('cdf/lib/CCC/protovis');
     var i18n = configService.getLiterals();
 
     var sequence = 1;
@@ -243,16 +244,13 @@ define(function (require) {
             + '<div class="chart--wrapper">'
                 + '<div data-ng-attr-id="{{ id }}"></div>'
             + '</div>'
-
-        //    + '<div class="legend-info" ng-if="isMaximized && legendClickMode">Click on each value on the legend to hide/show in on the chart</div>'
-
-           // + '<div class="logoGraphics-wrapper"><img alt="European Agency for Safety and Health at Work" src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/osha-logo.svg" class="logoGraphics"></div>'
-
+            + '<div class="legend-text-block">'
+                + '<div ng-if="isMaximized && query != gauss" class="logoGraphics-wrapper"><img alt="European Agency for Safety and Health at Work" src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/osha-logo.svg" class="logoGraphics"></div>'
+                + '<div class="legend-info" ng-if="isMaximized && legendClickMode && legend">Click on each value on the legend to hide/show in on the chart</div>'
+            + '</div>'
             //+ '<div ng-if="!!functionalLegend" class="functionalLegend" data-ng-bind-html="functionalLegend"></div>'
 
         //+ '</div>';
-
-
 
         return {
             restrict: 'E',
@@ -313,6 +311,15 @@ define(function (require) {
                     scope.legendClickMode=true;
                 }
 
+                if(attributes.legend === 'true'){
+                    scope.legend = true;
+                }else{
+                    scope.legend = false;
+                }
+
+                scope.query = attributes.query;
+                scope.gauss = 'getGaussChartValues';
+
 
                 var definition = {
                     type: "cccBarChart",
@@ -335,9 +342,10 @@ define(function (require) {
                         axisTitleLabel_font: attributes.axisTitleLabelFont || 'normal 12px "OpenSans" gray',
                         axisTitleLabel_textStyle: 'gray',
                         axisFixedMax: attributes.axisFixedMax || 100,
+                        axisFixedMin: attributes.axisFixedMin || 0,
                         axisTicks: attributes.axisTicks || false,
                         axisRule_strokeStyle: attributes.axisRule_strokeStyle || '',
-                        baseAxisOffset : attributes.baseAxisOffset || '',
+                        baseAxisOffset : attributes.baseAxisOffset || 0,
                         clickable: attributes.clickable === 'false' ? false : true,
                         clickAction: function (dataset) {
                         },
@@ -373,7 +381,6 @@ define(function (require) {
                         axisGrid_strokeStyle: 'white',
                         axisGrid_lineWidth: 2,
                         axisBandSizeRatio: 1,
-                        baseAxisSize: 25,
                         //show values
                         valuesVisible: attributes.valuesVisible === 'true'?true:false,
                         valuesOverflow: attributes.valuesOverflow || "",
@@ -422,21 +429,28 @@ define(function (require) {
                 };
 
                 if(scope.axisColor){
-                    definition.chartDefinition.xAxis_fillStyle = "linear-gradient(to right, #daebec 0%,#519ea1 100%)";
-                }
-
-                if(scope.backgroundColor){
-
+                    definition.chartDefinition.xAxis_fillStyle = 'white';
+                    definition.chartDefinition.xAxis_call = function(){
+                        //return "linear-gradient(to right, #daebec 0%,#519ea1 100%)";
+                        this.add(pv.Image)
+                                .url('/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/color-range.png')
+                                .left(function(scene){
+                                    var panelWidth = this.root.width();
+                                    if(panelWidth != 200){
+                                        return panelWidth/12;
+                                    }
+                                })
+                                .right(function(scene){
+                                    var panelWidth = this.root.width();
+                                    return panelWidth/12;
+                                });
+                    };
                 }
 
                 if(!!attributes.showEuroMask){
                     definition.chartDefinition.yAxisLabel_text= function(){
                         return this.scene.vars.tick.label+' €';
                     }
-                }
-
-                if(definition.type == 'lines'){
-                    definition.xAxis_fillStyle= 'linear-gradient(to right, #daebec 0%,#519ea1 100%)';
                 }
 
                 //TODO refactor OR condition in to definition where it been possible
@@ -513,9 +527,14 @@ define(function (require) {
                     definition.chartDefinition.paddings = '7 5 0 10';
                 }
 
+                if(!!attributes.baseAxisSize){
+                    definition.chartDefinition.baseAxisSize = attributes.bandAxisSize;
+                }else{
+                    definition.chartDefinition.baseAxisSize = 40;
+                }
+
                 if (!!scope.postFetch)
                     definition.postFetch = scope.postFetch;
-
 
                 var postExec_ = scope.postExecution;
                 definition.postExecution = function(){

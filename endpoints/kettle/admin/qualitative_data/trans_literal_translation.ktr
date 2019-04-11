@@ -113,7 +113,7 @@
   <hop> <from>Replace in string</from><to>Modified Java Script Value</to><enabled>Y</enabled> </hop>
   <hop> <from>Is Specific&#x3f;</from><to>Insert Common Literal</to><enabled>Y</enabled> </hop>
   <hop> <from>Is Specific&#x3f;</from><to>Modified Java Script Value 2</to><enabled>Y</enabled> </hop>
-  <hop> <from>Modified Java Script Value 2</from><to>Insert Specific Literal</to><enabled>Y</enabled> </hop>
+  <hop> <from>Modified Java Script Value 2</from><to>Insert Specific Literal</to><enabled>N</enabled> </hop>
   <hop> <from>Modified Java Script Value 2</from><to>Text file output</to><enabled>Y</enabled> </hop>
   </order>
   <step>

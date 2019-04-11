@@ -57,7 +57,7 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="main-menu">
                 <ul class="nav navbar-nav">
-                    <li class="dropdown" ng-repeat="level0 in structure">
+                    <li class="dropdown" ng-repeat="level0 in structure" >
                         <a ng-if='level0.levels && level0.target' class="dropdown-toggle" data-toggle="dropdown" role="button"
                            aria-haspopup="true" target="_self" aria-expanded="false" tabindex="{{level0.tabindex}}">
                             <span ng-class="isCurrentSection('{{ level0.id }}')" data-ng-bind-html="i18n_literals[level0.name]"></span>

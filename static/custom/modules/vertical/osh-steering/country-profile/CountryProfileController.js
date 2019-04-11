@@ -77,29 +77,52 @@ define(function (require) {
     $scope.trimText = function(pVal, pNumCharacters){
       var shortText = pVal;
       var finalHtml = '';
+      var totalLetters = 0;
+      var textReduced = false;
+      
       if(pVal != null){
         if(shortText.match('<p>')){
-          var minimized_elements = $compile(pVal)($scope);
-          for(var i = 0; i < minimized_elements.length; i++){
-            var elem = minimized_elements[i];
-            if(i == 0){
-              $(elem).addClass("first");
+          if(shortText.length>pNumCharacters){
+            var minimized_elements = $compile(pVal)($scope);
+            for(var i = 0; i < minimized_elements.length; i++){
+              var elem = minimized_elements[i];
+
               var t = $(elem).text();
-              if(t.length>pNumCharacters){
-                $(elem).html($.trim(t).substring(0, pNumCharacters).split(" ").slice(0, -1).join(" ") + $scope.longText(t, pNumCharacters) + "<span class='dots'>...</span>");
+              totalLetters += t.length;
+              if(i == 0){
+                $(elem).addClass("visible-text");
+                if(totalLetters > pNumCharacters){
+                  $(elem).html($.trim(t).substring(0, pNumCharacters).split(" ").slice(0, -1).join(" ") + $scope.longText(t, pNumCharacters) + "<span class='dots'>...</span>");
+                  textReduced = true;
+                }
+                
+                //if(t.length>pNumCharacters){
+                  //$(elem).html($.trim(t).substring(0, pNumCharacters).split(" ").slice(0, -1).join(" ") + $scope.longText(t, pNumCharacters) + "<span class='dots'>...</span>");
+                //}
+                
+                var newHtml = $(elem)[0].outerHTML;
+                finalHtml += newHtml;
               }else{
-                $(elem).html(t);
+                if(textReduced){
+                  $(elem).addClass("text-part");
+                  $(elem).css('display','none');
+                }else{
+                  if(totalLetters > pNumCharacters){
+                    $(elem).html($.trim(t).substring(0, pNumCharacters).split(" ").slice(0, -1).join(" ") + $scope.longText(t, pNumCharacters) + "<span class='dots'>...</span>");
+                    textReduced = true;
+                  }else{
+                    $(elem).addClass("visible-text");
+                  }
+                }
+
+                var newHtml = $(elem)[0].outerHTML;
+                finalHtml += newHtml;
               }
-              
-              var newHtml = $(elem)[0].outerHTML;
-              finalHtml += newHtml;
-            }else{
-              $(elem).css('display','none');
-              $(elem).addClass("text-part");
-              var newHtml = $(elem)[0].outerHTML;
-              finalHtml += newHtml;
             }
+          }else{
+            finalHtml = shortText;
           }
+          
           return $sce.trustAsHtml(finalHtml);
         }else{
           if (shortText.length > pNumCharacters) {
@@ -108,7 +131,6 @@ define(function (require) {
           return $sce.trustAsHtml(shortText);
         }
       }
-      
     }
 
     $scope.longText = function(pVal, pNumCharacters) {
@@ -143,7 +165,7 @@ define(function (require) {
     /******************************************************************************|
     |                                DATA LOAD                                     |
     |******************************************************************************/
-      dataService.getRegulationsCountries($scope.pCountry2).then(function (data) {
+      dataService.getStrategiesCountries().then(function (data) {
         data.data.resultset.map(function (elem) {
           var param = (!!$stateParams.filter) ? $stateParams.filter : undefined;
           if(elem[1] != $scope.pCountry2){
@@ -164,7 +186,7 @@ define(function (require) {
           throw err;
       });
 
-      dataService.getRegulationIndicators().then(function (data) {
+      dataService.getStrategiesIndicators().then(function (data) {
         data.data.resultset.map(function (elem) {
           var param = (!!$stateParams.filter) ? $stateParams.filter : undefined;
           $scope.indicators.push({
@@ -178,7 +200,7 @@ define(function (require) {
           throw err;
       });
 
-      dataService.getCountryRegulationData($scope.pCountry1).then(function (data) {
+      dataService.getStructureStrategiesData($scope.pCountry1).then(function (data) {
         data.data.resultset.map(function (elem) {
           $scope.country1Data = {
             country_code: elem[0],
@@ -190,19 +212,15 @@ define(function (require) {
             text5: elem[6],
             text6: elem[7],
             text7: elem[8],
-            text8: elem[9],
-            text9: elem[10],
-            text10: elem[11],
-            text11: elem[12],
-            text12: elem[13],
-            text13: elem[14]
+            text8: elem[9]
           };
         });
+        //$log.warn($scope.country1Data);
       }).catch(function (err) {
           throw err;
       });
 
-      dataService.getCountryRegulationData($scope.pCountry2).then(function (data) {
+      dataService.getStructureStrategiesData($scope.pCountry2).then(function (data) {
         data.data.resultset.map(function (elem) {
           $scope.country2Data = {
             country_code: elem[0],
@@ -212,14 +230,7 @@ define(function (require) {
             text3: elem[4],
             text4: elem[5],
             text5: elem[6],
-            text6: elem[7],
-            text7: elem[8],
-            text8: elem[9],
-            text9: elem[10],
-            text10: elem[11],
-            text11: elem[12],
-            text12: elem[13],
-            text13: elem[14]
+            text7: elem[7]
           };
         });
       }).catch(function (err) {

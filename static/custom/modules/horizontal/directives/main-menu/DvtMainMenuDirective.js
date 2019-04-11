@@ -50,6 +50,7 @@ define(function (require) {
                     // Load google translate element
                     new google.translate.TranslateElement({pageLanguage: 'en', autoDisplay: false, layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
 
+                    
                     /** HEADER SHOW HIDE **/
                     var prevScrollpos = $window.pageYOffset;
 
@@ -90,6 +91,8 @@ define(function (require) {
                     if(configService.isMobile()) {
                         angular.element(".a2a_button_print").remove();
                     }
+
+
 
                     // when click banner link to Home
                     $scope.goto = function (pState) {

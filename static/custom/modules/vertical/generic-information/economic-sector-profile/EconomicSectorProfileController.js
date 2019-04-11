@@ -16,6 +16,7 @@ define(function (require) {
 
     // CDA
     $scope.cda =  configService.getBarometerCda();
+    $scope.cdaGenericInformation = configService.getGenericInformationCda();
 
     // Datasets
     $scope.datasetList = configService.getDatasets();
@@ -136,7 +137,7 @@ define(function (require) {
         chart3: 10,
         chart4: 5,
         chart5: 100,
-        chart6: 10000
+        chart6: 5000
     }
 
     $scope.countriesDataFor = [];

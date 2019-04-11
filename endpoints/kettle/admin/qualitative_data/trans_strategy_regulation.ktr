@@ -110,7 +110,7 @@
   <order>
   <hop> <from>strategy_regulation_in</from><to>Modified Java Script Value</to><enabled>Y</enabled> </hop>
   <hop> <from>Modified Java Script Value</from><to>Modified Java Script Value 2</to><enabled>Y</enabled> </hop>
-  <hop> <from>Modified Java Script Value 2</from><to>Execute SQL script</to><enabled>Y</enabled> </hop>
+  <hop> <from>Modified Java Script Value 2</from><to>Execute SQL script</to><enabled>N</enabled> </hop>
   <hop> <from>Modified Java Script Value 2</from><to>Text file output</to><enabled>Y</enabled> </hop>
   </order>
   <step>

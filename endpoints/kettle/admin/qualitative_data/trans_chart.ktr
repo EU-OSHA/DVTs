@@ -115,10 +115,10 @@
   <hop> <from>Modified Java Script Value</from><to>endDate defined&#x3f;</to><enabled>Y</enabled> </hop>
   <hop> <from>endDate defined&#x3f;</from><to>Modified Java Script Value 2</to><enabled>Y</enabled> </hop>
   <hop> <from>endDate defined&#x3f;</from><to>Modified Java Script Value 3</to><enabled>Y</enabled> </hop>
-  <hop> <from>Modified Java Script Value 3</from><to>insert chart and relationship with indicator &#x28;no endDate&#x29;</to><enabled>Y</enabled> </hop>
+  <hop> <from>Modified Java Script Value 3</from><to>insert chart and relationship with indicator &#x28;no endDate&#x29;</to><enabled>N</enabled> </hop>
   <hop> <from>Modified Java Script Value 3</from><to>Text file output</to><enabled>Y</enabled> </hop>
   <hop> <from>Modified Java Script Value 2</from><to>Text file output</to><enabled>Y</enabled> </hop>
-  <hop> <from>Modified Java Script Value 2</from><to>insert chart and relationship with indicator &#x28;with endDate&#x29;</to><enabled>Y</enabled> </hop>
+  <hop> <from>Modified Java Script Value 2</from><to>insert chart and relationship with indicator &#x28;with endDate&#x29;</to><enabled>N</enabled> </hop>
   </order>
   <step>
     <name>Filter rows</name>

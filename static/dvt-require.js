@@ -156,6 +156,14 @@
     requirePaths['vertical/osh-authorities/OSHAuthoritiesController'] = verticalModules + '/generic-information/osh-authorities/OSHAuthoritiesController' + suffix;
     requirePaths['vertical/osh-authorities/i18n'] = verticalModules + '/generic-information/osh-authorities/osh-authorities-i18n' + suffix +'.json';
 
+    /* ECONOMIC AND SECTOR PROFILE */
+    requirePaths['vertical/economic-sector-profile/EconomicSectorProfileController'] = verticalModules + '/generic-information/economic-sector-profile/EconomicSectorProfileController' + suffix;
+    requirePaths['vertical/economic-sector-profile/services/EconomicSectorProfileService'] = verticalModules + '/generic-information/economic-sector-profile/services/EconomicSectorProfileService' + suffix;
+
+    /* WORKFORCE PROFILE */
+    requirePaths['vertical/workforce-profile/WorkforceProfileController'] = verticalModules + '/generic-information/workforce-profile/WorkforceProfileController' + suffix;
+    requirePaths['vertical/workforce-profile/services/WorkforceProfileService'] = verticalModules + '/generic-information/workforce-profile/services/WorkforceProfileService' + suffix;
+
     /*STEERING OF OSH*/
     requirePaths['vertical/osh-steering/osh-steering-module'] = verticalModules + '/osh-steering/osh-steering-module' + suffix;
 
@@ -166,6 +174,9 @@
     requirePaths['vertical/national-strategies/NationalStrategiesController'] = verticalModules + '/osh-steering/national-strategies/NationalStrategiesController' + suffix;
     requirePaths['vertical/country-profile/CountryProfileController'] = verticalModules + '/osh-steering/country-profile/CountryProfileController' + suffix;
     requirePaths['vertical/EU-challenges-response/EUChallengesResponseController'] = verticalModules + '/osh-steering/EU-challenges-response/EUChallengesResponseController' + suffix;
+
+    /*SOCIAL DIALOGUE*/
+    requirePaths['vertical/social-dialogue/SocialDialogueController'] = verticalModules + '/osh-steering/social-dialogue/SocialDialogueController' + suffix;
 
     /* ABOUT THE VISUALISATION TOOL */
     requirePaths['vertical/about-tool/AboutToolController'] = verticalModules + '/about-tool/AboutToolController' + suffix;

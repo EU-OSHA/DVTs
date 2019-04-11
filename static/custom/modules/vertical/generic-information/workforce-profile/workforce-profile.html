@@ -5,6 +5,8 @@
       <div class="left-text col-md-8 col-sm-8 col-xs-12  nopadding">
           <h1 class="main-color left-text" data-ng-bind="i18nLiterals.L22004"></h1>
           <p data-ng-bind="i18nLiterals.L22030"></p>
+          <p data-ng-bind="i18nLiterals.L20696"></p>
+          <span data-ng-bind="i18nLiterals.L20704"></span> <span><a data-ng-bind="i18nLiterals.L20705" ui-sref="about-tool"></a></span>
       </div>
       <div class="icon--advice people-group-icon hide-mobile col-sm-4 col-md-4"></div>
     </div>
@@ -12,39 +14,39 @@
 
   <div class="filter--indicator--block  container">
       <ul class="indicators--group xs-row">
-          <li id="filter1">
-            <label for="indicatorSelect" data-ng-bind="i18nLiterals.L20623"></label>
-            <select id="indicatorSelect" class="filter--dropdown--list" data-ng-model="selectedIndicator" data-ng-change="selectChange()">
-              <option value="median-age" data-ng-bind="i18nLiterals.L294"></option>
-              <option value="employment-rate" data-ng-bind="i18nLiterals.L20621"></option>
-            </select>
-          </li>
-          <li id="filter2" data-ng-class="{'disabled':selectedIndicator == 'median-age' }" >
-            <label for="employeeGroupSelect" data-ng-bind="i18nLiterals.L20622"></label>
-            <select id="employeeGroupSelect" class="filter--dropdown--list" data-ng-disabled="selectedIndicator == 'median-age'" data-ng-model="selectedSubIndicator" data-ng-change="selectChange()">  
-              <option data-ng-bind="i18nLiterals.L295" value="ageing-workers"></option>
-              <option data-ng-repeat='gender in genders' value="{{i18nLiterals['L'+gender.gender_name]}}" data-ng-bind="i18nLiterals['L'+gender.gender_name]"></option>
-            </select>
-            <label data-ng-if="selectedIndicator == 'median-age'" class="alert-disabled" data-ng-bind="i18nLiterals.L20694"></label>
-          </li>
-          <!-- COUNTRY FILTER JUST IN < 1024 PX -->
-          <li id="filter3" class="" bs-affix="" data-offset-top="420">
+        <li id="filter1">
+          <label for="indicatorSelect" data-ng-bind="i18nLiterals.L20623"></label>
+          <select id="indicatorSelect" class="filter--dropdown--list" data-ng-model="selectedIndicator" data-ng-change="selectChange()">
+            <option value="median-age" data-ng-bind="i18nLiterals.L294"></option>
+            <option value="employment-rate" data-ng-bind="i18nLiterals.L20621"></option>
+          </select>
+        </li>
+        <li id="filter2" data-ng-class="{'disabled':selectedIndicator == 'median-age' }" >
+          <label for="employeeGroupSelect" data-ng-bind="i18nLiterals.L20622"></label>
+          <select id="employeeGroupSelect" class="filter--dropdown--list" data-ng-disabled="selectedIndicator == 'median-age'" data-ng-model="selectedSubIndicator" data-ng-change="selectChange()">  
+            <option data-ng-bind="i18nLiterals.L295" value="ageing-workers"></option>
+            <option data-ng-repeat='gender in genders' value="{{i18nLiterals['L'+gender.gender_name]}}" data-ng-bind="i18nLiterals['L'+gender.gender_name]"></option>
+          </select>
+          <label data-ng-if="selectedIndicator == 'median-age'" class="alert-disabled" data-ng-bind="i18nLiterals.L20694"></label>
+        </li>
+        <!-- COUNTRY FILTER JUST IN < 1024 PX -->
+        <li  id="filter3" class="filter--dropdown--wrapper" >
+          
+
             <label for="countrySelect">Country: </label>
-            <div id="filter3"class="filter--dropdown--wrapper">
-              <label class="main-color  dropdwon-open" data-ng-click="openSelect($event)"></label>
-              <div class="filter--dropdown--list">
-                <p class="option-title" data-ng-click="openSelect($event)">Country</p>
-                <ul class="filter--dropdown--options">
-                  <li data-ng-repeat='country in countries'>
-                    <input id='country-filter-{{::country.country_code}}' ng-checked="!!country.param && country.param ==country.country_code"
-                      data-ng-click="toggleCountryClick($event, $index)" type="checkbox" value="{{::country.country_code}}"/>
-                    <label for="country-filter-{{::country.country_code}}" data-ng-bind="i18nLiterals['L'+country.country_name]"></label>
-                  </li>
-                </ul>
-                <p class="btn--block-filter" data-ng-click="openSelect($event)"><a class="btn-main-color btn-full" ng-click="confirmSelection($event)">Confirm</a></p>
-              </div>
-            </div>  
-          </li>
+            <!--<label class="main-color  dropdwon-open" data-ng-click="openSelect($event)"></label>-->
+            <div class="filter--dropdown--list">
+              <p class="option-title" data-ng-bind="i18nLiterals.L20630" data-ng-click="openSelect($event)">Country</p>
+              <ul class="filter--dropdown--options">
+                <li data-ng-repeat='country in countries'>
+                  <input id='country-filter-{{::country.country_name}}' ng-checked="!!country.param && country.param ==country.country_code"
+                    data-ng-click="toggleCountryClick($event, $index)" type="checkbox" value="{{::country.country_name}}"/>
+                  <label for="country-filter-{{::country.country_name}}" data-ng-bind="i18nLiterals['L'+country.country_name]"></label>
+                </li>
+              </ul>
+            </div>
+ 
+        </li>
       </ul>
   </div>
 
@@ -66,7 +68,7 @@
     <div class="map--gauss--block container" data-ng-repeat="value in minMaxValues">
       <dvt-bar-chart
         data-ng-cloak
-        query="getGaussChartValues" cda="{{::cda }}"
+        query="getGaussChartValues" cda="{{::cdaGenericInformation }}"
         width="200" height="200" type="lines"
         orientation="vertical" axis-fixed-min="0"
         listen-to="[value.min_value, value.max_value, value.range_value]"
@@ -81,6 +83,7 @@
         values-mask="{value}"
         hoverable="false"
         ortho-axis-grid="false"
+        ortho-axis-visible="false"
         dimensions="stories[0].dimensions"
         multiple-label-colors="true"
         base-axis-label-text-baseline="top"
@@ -89,12 +92,40 @@
         legend="false"
         is-maximized="true"
         tooltip-enabled="false"
-        clickable="false"
-        base-axis-offset= "0"
+        clickable="false" 
+        base-axis-size="25"
       ></dvt-bar-chart>
-    </div>  
+    </div>
+    <div>
+      <ul class="matrix--elements--data">
+        <li>                
+          <span class="data" data-ng-bind="data.medianAge['EU28'].value"></span>
+          <span class="data-text" data-ng-bind="i18nLiterals['L20620']"></span>
+          <label data-ng-bind="i18nLiterals['L20615']"></label>
+        </li>
+        <li>
+          <span class="data" data-ng-bind="data.ageingWorkers['EU28'].value"> %</span>
+          <span class="data-text">&percnt;</span>
+          <label data-ng-bind="i18nLiterals['L20616']"></label>
+        </li>
+        <li>
+          <span class="data" data-ng-bind="data.totalEmployment['EU28'].value"></span>
+          <span class="data-text">&percnt;</span>
+          <label data-ng-bind="i18nLiterals['L20617']"></label>
+        </li>
+        <li>                
+          <span class="data" data-ng-bind="data.maleEmployment['EU28'].value"></span>
+          <span class="data-text">&percnt;</span>
+          <label data-ng-bind="i18nLiterals['L20618']"></label>
+        </li>
+        <li>                
+          <span class="data" data-ng-bind="data.femaleEmployment['EU28'].value"></span>
+          <span class="data-text">&percnt;</span>
+          <label data-ng-bind="i18nLiterals['L20619']"></label>
+        </li>
+      </ul>
+    </div>
   </section>
-
     <section class="survey--map--block-mobile">
       <div class="selected--tags-wrapper"></div>
       <div class="matrix--elements--wrapper">
