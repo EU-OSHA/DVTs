@@ -28,7 +28,7 @@ define(function (require) {
     $scope.countryFilter = [];
 
     $scope.alphabet = [];
-    $anchorScroll.yOffset = 350;
+    $anchorScroll.yOffset = 250;
 
     if($location.hash() != null){
       
