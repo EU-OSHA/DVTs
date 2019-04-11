@@ -18,8 +18,8 @@
     <form class="row block--filter--wrapper">
       <!-- SEARCH FILTER -->
       <div class="filter-text">
-        <input ng-keypress="clickEnter($event)" ng-focus="closeSelect($event)" id="search-input" type="text" placeholder="{{i18nLiterals.L378}}" data-ng-model="searchText" tabindex="7" />
-        <button data-ng-click="clickEnter($event)"  id="policy-search" type="button">
+        <input data-ng-keypress="clickEnter($event)" ng-focus="closeSelect($event)" id="search-input" type="text" ng-attr-placeholder="{{i18nLiterals.L378}}" data-ng-model="searchText" tabindex="7" />
+        <button data-ng-click="clickEnter($event)"  id="policy-search" ng-attr-type="button">
           <i class="fa fa-search" aria-hidden="true"></i>
         </button>
       </div>
@@ -57,7 +57,7 @@
           <ul class="filter--dropdown--options">
             <li data-ng-repeat='country in countries'>
               <input id='country-filter-{{::country.country}}' ng-checked="!!country.param && country.param ==country.country_code"
-                data-ng-click="toggleCountryClick($event, $index)" type="checkbox" value="{{::country.country}}" tabindex="-1" />
+                data-ng-click="toggleCountryClick($event, $index)" type="checkbox" ng-attr-value="{{::country.country}}" tabindex="-1" />
               <label for="country-filter-{{::country.country}}" data-ng-bind="i18nLiterals['L'+country.country]"></label>
             </li>
           </ul>
