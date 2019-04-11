@@ -158,7 +158,7 @@
 	        OR (mp.check_2= IF('Compensation and insurance body' REGEXP ${term}, 1, 0) AND mp.check_1= 0 AND mp.check_3= 0 AND mp.check_4= 0)
 	        OR (mp.check_3= IF('Prevention institute' REGEXP ${term}, 1, 0) AND mp.check_1= 0 AND mp.check_2= 0 AND mp.check_4= 0)
 	        OR (mp.check_4= IF('Standardisation body' REGEXP ${term}, 1, 0) AND mp.check_1= 0 AND mp.check_2= 0 AND mp.check_3= 0)))
-	      ORDER BY FIELD(n.country_code, 'EU28') DESC, country_name ASC, mp.id ASC, osh_authority DESC, compensation DESC, prevention DESC, standardisation DESC;
+	      ORDER BY FIELD(n.country_code, 'EU28') DESC, country_name ASC, osh_authority DESC, compensation DESC, prevention DESC, standardisation DESC;
 	    </Query>
 	</DataAccess>
 
@@ -176,7 +176,7 @@
 	      INNER JOIN nuts n
 	      ON n.id = mp.nuts_id
 	      WHERE mp.page = 'MATRIX_AUTHORITY'
-	      ORDER BY FIELD(n.country_code, 'EU28') DESC, country_name ASC, mp.id ASC, osh_authority DESC, compensation DESC, prevention DESC, standardisation DESC;
+	      ORDER BY FIELD(n.country_code, 'EU28') DESC, country_name ASC, osh_authority DESC, compensation DESC, prevention DESC, standardisation DESC;
 	    </Query>
 	</DataAccess>
 
