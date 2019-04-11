@@ -12,34 +12,35 @@
       </div>
   </section>
 
-  <div class="compare--block regulation-page" bs-affix="" data-offset-top="420">
-    <div class="submenu--block container">
-      <span data-ng-bind="i18nLiterals.L20627"></span>
-      <ul class="submenu--items--wrapper">
-        <!-- INDICATORS -->
-        <li data-ng-repeat="letter in alphabet"class="submenu--item">
+  <section class="filter--letter--section container">
+      <p data-ng-bind="i18nLiterals.L20627"></p>
+      <ul class="filter--letter--list">
+        <!-- FILTER BY LETTER -->
+        <li data-ng-repeat="letter in alphabet"class="filter-letter-item">
           <a href data-ng-click="goToAnchor(letter)" data-ng-bind="letter"></a>
         </li>
       </ul>
-    </div>
-  </div>
-
-  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-    <div data-ng-repeat="letter in alphabet" id="section{{letter}}" class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="border-style: dotted; border-color: yellowgreen; border-width: 1px; border-bottom: none">
-      <div class="text-left"><h3 data-ng-bind="letter"></h3></div>
-      <div class="col-md-3 col-lg-3" data-ng-repeat="country in countryByLetter(letter)">
-        <p class="col-lg nopadding additional-img text-center">
-          <img class="flags--wrapper" ng-src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/flag/{{::country.country_code.toLowerCase()}}.png">
-        </p>
-        <h4 class="text-center" data-ng-bind="i18nLiterals['L'+country.country]"></h4>
-        <p class="btn--block-full left-text">
-          <a ui-sref="country-profile({pIndicator: 'basic-information', pCountry1:country.country_code, pCountry2: 0})" class="btn-default btn-main-color btn-full" title="{{i18nLiterals.L20626}}" data-ng-bind="i18nLiterals.L20626"></a>
-        </p>
-        <p class="btn--block-full left-text">
-          <a ui-sref="EU-challenges-response({pCountry:country.country_code})" class="btn-default btn-full" title="{{i18nLiterals.L20625}}" data-ng-bind="i18nLiterals.L20625"></a>
-        </p>
+  </section>
+  <div class="line background-main-light"></div>
+  <section class="alphabetic--card--section">
+    <div class="alphabetic--card--block container">
+      <div data-ng-repeat="letter in alphabet" id="section{{letter}}" class="alphabetic--card--items">
+        <div class="text-left"><h2 data-ng-bind="letter"></h2></div>
+        <div class="alphabetic-card-item" data-ng-repeat="country in countryByLetter(letter)">
+          <p class="nopadding additional-img text-center">
+            <img class="flags--wrapper" ng-src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/flag/{{::country.country_code.toLowerCase()}}.png">
+          </p>
+          <h3 class="text-center" data-ng-bind="i18nLiterals['L'+country.country]"></h3>          
+          <p class="btn--block-full left-text">
+            <a ui-sref="country-profile({pIndicator: 'basic-information', pCountry1:country.country_code, pCountry2: 0})" class="btn-default btn-main-color btn-full" title="{{i18nLiterals.L20626}}" data-ng-bind="i18nLiterals.L20626"></a>
+          </p>
+          <p class="btn--block-full left-text">
+            <a ui-sref="EU-challenges-response({pCountry:country.country_code})" class="btn-default btn-main-color btn-full" title="{{i18nLiterals.L20625}}" data-ng-bind="i18nLiterals.L20625"></a>
+          </p>
+     
+        </div>
       </div>
     </div>
-  </div>
+  </section>
 
 </dvt-dashboard>

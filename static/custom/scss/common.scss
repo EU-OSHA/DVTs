@@ -562,9 +562,10 @@
       display: flex;
       justify-content: space-between;
       list-style: none;
+      margin-top: 1rem;
       li{
         width: 50%;
-        padding: 1rem 4rem 1rem 0;
+        padding: 0rem 4rem 0rem 0;
         position: relative;
         label{          
           font-family: 'OpenSans-Light';
@@ -597,7 +598,7 @@
           font-size: 2rem;
           color: #00A0A4;
           right: 4rem;
-          top: 45px;
+          top: 3.5rem;
           height: auto;
           padding: 1rem;
           position: absolute;
