@@ -1083,11 +1083,19 @@ and (max-width :767px)  {
               }
             }
           }
-          .title--card{
-            font-size: 2.8rem;
-            margin-top: 0;
-            text-align: left;
-          } 
+		      .legend-text-block{
+						display: flex;
+						flex-direction: column-reverse;
+		        .legend-info{
+		        }
+		        .logoGraphics-wrapper{
+		          float: none;
+		          padding-right: 0%;
+		          text-align: center;
+		          img{
+		          }            
+		        }
+		      }
           .chart--wrapper{
 						width: 100%;
 						height: auto;
@@ -1103,8 +1111,6 @@ and (max-width :767px)  {
     .dvt-chart {
       h3{
 
-      }
-      .legend-info{
       }
     }
   }
