@@ -164,20 +164,6 @@
     requirePaths['vertical/workforce-profile/WorkforceProfileController'] = verticalModules + '/generic-information/workforce-profile/WorkforceProfileController' + suffix;
     requirePaths['vertical/workforce-profile/services/WorkforceProfileService'] = verticalModules + '/generic-information/workforce-profile/services/WorkforceProfileService' + suffix;
 
-    /*STEERING OF OSH*/
-    requirePaths['vertical/osh-steering/osh-steering-module'] = verticalModules + '/osh-steering/osh-steering-module' + suffix;
-
-    /*REGULATION*/
-    requirePaths['vertical/regulation/RegulationController'] = verticalModules + '/osh-steering/regulation/RegulationController' + suffix;
-
-    /*NATIONAL STRATEGIES*/
-    requirePaths['vertical/national-strategies/NationalStrategiesController'] = verticalModules + '/osh-steering/national-strategies/NationalStrategiesController' + suffix;
-    requirePaths['vertical/country-profile/CountryProfileController'] = verticalModules + '/osh-steering/country-profile/CountryProfileController' + suffix;
-    requirePaths['vertical/EU-challenges-response/EUChallengesResponseController'] = verticalModules + '/osh-steering/EU-challenges-response/EUChallengesResponseController' + suffix;
-
-    /*SOCIAL DIALOGUE*/
-    requirePaths['vertical/social-dialogue/SocialDialogueController'] = verticalModules + '/osh-steering/social-dialogue/SocialDialogueController' + suffix;
-
     /* ABOUT THE VISUALISATION TOOL */
     requirePaths['vertical/about-tool/AboutToolController'] = verticalModules + '/about-tool/AboutToolController' + suffix;
     requirePaths['vertical/about-tool/about-tool-module'] = verticalModules + '/about-tool/about-tool-module' + suffix;
