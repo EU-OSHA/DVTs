@@ -429,7 +429,7 @@ define(function (require) {
                 };
 
                 if(scope.axisColor){
-                    definition.chartDefinition.xAxis_fillStyle = 'white';
+                    definition.chartDefinition.xAxis_fillStyle = 'transparent';
                     definition.chartDefinition.xAxis_call = function(){
                         //return "linear-gradient(to right, #daebec 0%,#519ea1 100%)";
                         this.add(pv.Image)
