@@ -62,9 +62,10 @@ define(function (require) {
           });
 
           letter = $scope.i18nLiterals['L'+elem[0]].charAt(0);
-          index = $scope.alphabet.find(x=> x === letter);
+          //index = $scope.alphabet.find(x => (x === letter));
+          index = $scope.alphabet.indexOf(letter);
           
-          if(!index){
+          if(index == -1){
             $scope.alphabet.push(letter);
           }
 
@@ -88,7 +89,10 @@ define(function (require) {
       }
 
       $scope.countryByLetter = function(letter){
-        var array = $scope.countries.filter((country) => $scope.i18nLiterals['L'+country.country].charAt(0) == letter);
+        //var array = $scope.countries.filter((country) => $scope.i18nLiterals['L'+country.country].charAt(0) == letter);
+        var array = $scope.countries.filter(function(country){
+          return $scope.i18nLiterals['L'+country.country].charAt(0) == letter;
+        });
         return array;
       }
 
