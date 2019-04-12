@@ -33,7 +33,8 @@ define(function (require) {
     if($location.hash() != null){
       
       $timeout(function(){
-        $anchorScroll();
+        //$anchorScroll();
+        angular.element('html, body').animate({'scrollTop': angular.element('#'+$location.hash())[0].offsetTop - 250}, 'slow', 'swing');
       }, 500);
 
     }
@@ -82,10 +83,12 @@ define(function (require) {
       $scope.goToAnchor = function(letter){
         var newHash = 'section' + letter;
         if ($location.hash() !== newHash) {
+          angular.element('html, body').animate({'scrollTop': angular.element('#'+newHash)[0].offsetTop - 250}, 'slow', 'swing');
           $location.hash('section' + letter);
-        } else {
+        } /*else {
           $anchorScroll();
-        }
+          $log.warn($anchorScroll());
+        }*/
       }
 
       $scope.countryByLetter = function(letter){
