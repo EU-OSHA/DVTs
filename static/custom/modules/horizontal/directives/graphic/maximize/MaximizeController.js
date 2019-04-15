@@ -155,6 +155,14 @@ define(function (require) {
                                       .cursor("hand");
                                 }
                             }
+
+                            if($scope.parameters.name == 'dvt_bar_chart_1'){
+                                $scope.parameters.chartDefinition.legendItemSize = 350;
+                            }
+
+                            if($scope.parameters.name == 'dvt_bar_chart_2'){
+                                $scope.parameters.chartDefinition.legendItemSize = 500;
+                            }
                         }
 
                         $log.debug("Chart type: " + $scope.parameters.chartType);

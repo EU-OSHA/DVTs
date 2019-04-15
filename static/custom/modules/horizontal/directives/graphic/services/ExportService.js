@@ -20,13 +20,14 @@ define(function(require){
 
     var exportImage = function (scope) {
 
-            var node = $('#' + scope.id).parents('.dvt-chart')[0];
+            var node = $('#' + scope.id).parents('.card--block--chart--wrapper')[0];
 
 
             //---------------------------------
             // 1 dom-to-image
             //convierto el svg a imagen...
             var svg = document.querySelector('.modal svg');
+
             var xml = Utf8Encode(new XMLSerializer().serializeToString(svg)); //Created with Raphaël... creo que es por esto
 
             //console.log(xml);
