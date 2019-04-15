@@ -30,6 +30,8 @@ define(function (require) {
                             "approach": $stateParams.pGroup,
                             "pCountry1": $stateParams.pCountry1,
                             "pCountry2": $stateParams.pCountry2,
+                            "pDataset": parameters.parameters[3][1],
+                            "pIndicator": parameters.parameters[0][1],
                             "pColor1": dvtUtils.getColorCountry(1),
                             "pColor2": dvtUtils.getColorCountry(2),
                             "pColorEU": dvtUtils.getEUColor(1),
@@ -88,7 +90,7 @@ define(function (require) {
                             if($scope.parameters.name == 'dvt_bar_chart_5'){
                                 $scope.parameters.chartDefinition.plots[0].bar_call = function(){
                                     this.add(pv.Image)
-                                    .url(function(scene) {
+                                      .url(function(scene) {
                                         var countryKey = scene.firstAtoms.category;
                                         if(countryKey == $stateParams.pCountry1){
                                             return configService.getImagesPath()+'man_orange.svg'
@@ -97,9 +99,9 @@ define(function (require) {
                                         }else if(countryKey == 'EU28'){
                                             return configService.getImagesPath()+'man_blue.svg'
                                         }
-                                    })
-                                    .bottom(20)
-                                    .height(function(scene){
+                                        })
+                                      .bottom(20)
+                                      .height(function(scene){
                                         /*SVG default width:68*150:height proportion W = H*0.45333333333 */
                                         var axisFixedMax = this.root.sign.chart.options.axisFixedMax;
                                         var panelHeight = this.root.height();
@@ -109,31 +111,48 @@ define(function (require) {
                                             this.root.sign.chart.options.axisFixedMax = 350;
                                         }
                                         return resul;
-                                    })
-                                    .width(function(scene){
+                                      })
+                                      .width(function(scene){
                                         /*SVG default width:68*150:height proportion W = H*0.45333333333 */
                                         var valueKey = scene.firstAtoms.value;
                                         var resul = this.height() * 0.45333;
                                         return resul;
-                                    })
-                                    .left(function(scene){
+                                      })
+                                      .left(function(scene){
                                         //Panel width, Bar width and image width
                                         var panelWidth = this.root.width();
-                                        var barWidth = panelWidth/3.25;
+                                        var barWidth = panelWidth/4;
                                         var countryKey = scene.firstAtoms.category;
-
                                         if(panelWidth != 300){ //Default panel value
                                             if(countryKey == $stateParams.pCountry1){
-                                                return (barWidth - this.width())/2 +5; //5 is the panel margin
+                                                if(scene.nextSibling.firstAtoms.category != $stateParams.pCountry2){
+                                                    //return panelWidth/2 - (barWidth + this.width()/2) + 10; //5 is the panel margin
+                                                    return panelWidth/2 - this.width()/2 - barWidth - 5;
+                                                }else{
+                                                    //return (barWidth - this.width())/2 + 5; //5 is the panel margin
+                                                    return panelWidth/6 - this.width()/2;
+                                                }
                                             }else if(countryKey == $stateParams.pCountry2){
-                                                return panelWidth/3 + (barWidth - this.width())/2;
+                                                var sibling = scene.previousSibling;
+                                                if(sibling == null){
+                                                    return panelWidth/2 - (barWidth + this.width()/2) - 5;
+                                                }else{
+                                                    //return panelWidth/3 + (barWidth - this.width())/2;
+                                                    return panelWidth/2  - this.width()/2 - 10;
+                                                }
                                             }else if(countryKey == 'EU28'){
-                                                return panelWidth/1.5 + (barWidth - this.width())/2 - 5;
+                                                var firstSibling = scene.previousSibling.previousSibling;
+                                                if(scene.previousSibling.firstAtoms.category != $stateParams.pCountry2 || firstSibling == null){
+                                                    return panelWidth - (barWidth + this.width()/2) - 10;
+                                                }else{
+                                                    //return panelWidth/1.5 + (barWidth - this.width())/2 - 5;
+                                                    return panelWidth/1.25 - this.width()/2.5;
+                                                }
                                             }
                                         }
-                                    })
-                                    .events("all")
-                                    .cursor("hand");
+                                      })
+                                      .events("all")
+                                      .cursor("hand");
                                 }
                             }
                         }
