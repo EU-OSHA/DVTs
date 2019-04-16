@@ -58,7 +58,7 @@
       <div id="filter1"class="filter--dropdown--wrapper">
         <!--<label class="main-color  dropdwon-open" data-ng-bind="i18nLiterals.L20630"></label>-->
         <div class="filter--dropdown--list">
-          <p class="option-title" data-ng-bind="i18nLiterals.L20635" ng-click="openSelect($event)">Country</p>
+          <p class="option-title" data-ng-bind="i18nLiterals.L20630" ng-click="openSelect($event)"></p>
           <ul class="filter--dropdown--options">
             <li data-ng-repeat='country in countries'>
               <input id='country-filter-{{::country.country}}' ng-checked="!!country.param && country.param ==country.country_code"
@@ -85,7 +85,7 @@
               <div class="country-wrapper">
                 <h2 class="country ng-binding title-section main-color" data-ng-bind="i18nLiterals['L'+matrix.country_name]"></h2>
                 <p class="download-report" ng-if="matrix.country_code != 'IS' && matrix.country_code != 'NO' && matrix.country_code != 'CH'">
-                  <a href="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/modules/vertical/osh-steering/social-dialogue/pdf/{{matrix.country_code}}.pdf" class="download-pdf" data-ng-bind-html="i18nLiterals.L20637" target="_blank">
+                  <a href="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/modules/vertical/osh-steering/social-dialogue/pdf/{{i18nLiterals['L'+matrix.country_name]}}.pdf" class="download-pdf" data-ng-bind-html="i18nLiterals.L20637" target="_blank">
                   </a>
                 </p>
                 <p ng-if="matrix.country_code == 'IS' || matrix.country_code == 'NO' || matrix.country_code == 'CH'"></p>

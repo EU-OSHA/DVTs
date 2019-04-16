@@ -28,10 +28,9 @@ define(function (require) {
     $scope.countryFilter = [];
 
     $scope.alphabet = [];
-    $anchorScroll.yOffset = 250;
 
-    if($location.hash() != null){
-      
+    if($location.hash() != null && $location.hash() != ''){
+      $log.warn($location.hash());
       $timeout(function(){
         //$anchorScroll();
         angular.element('html, body').animate({'scrollTop': angular.element('#'+$location.hash())[0].offsetTop - 250}, 'slow', 'swing');
