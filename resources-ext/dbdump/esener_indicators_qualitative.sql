@@ -60,11 +60,11 @@ SET @maxId = (SELECT MAX(id)+1 FROM literal WHERE id < 10000);
 INSERT INTO literal (id, chart_id, section_id, type) VALUES (@maxId, NULL, NULL, "INDICATOR_NAME");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@maxId, "EN", 1, "Lifting or moving people or heavy loads");
 INSERT INTO indicator (name, literal_id) VALUES ("Q200_2", @maxId);
--- Q200_3
+-- Q200_4
 SET @maxId = (SELECT MAX(id)+1 FROM literal WHERE id < 10000);
 INSERT INTO literal (id, chart_id, section_id, type) VALUES (@maxId, NULL, NULL, "INDICATOR_NAME");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@maxId, "EN", 1, "Repetitive hand or arm movements");
-INSERT INTO indicator (name, literal_id) VALUES ("Q200_3", @maxId);
+INSERT INTO indicator (name, literal_id) VALUES ("Q200_4", @maxId);
 -- Q201_1
 SET @maxId = (SELECT MAX(id)+1 FROM literal WHERE id < 10000);
 INSERT INTO literal (id, chart_id, section_id, type) VALUES (@maxId, NULL, NULL, "INDICATOR_NAME");
@@ -207,7 +207,7 @@ VALUES (20061,(SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WH
 INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)
 VALUES (20061, @indicatorId, @datasetId);
 
-SET @indicatorId = (SELECT id FROM indicator where name="Q200_3");
+SET @indicatorId = (SELECT id FROM indicator where name="Q200_4");
 INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
 INSERT INTO CHART (id, section_id) 
 VALUES (20060,(SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer"));
