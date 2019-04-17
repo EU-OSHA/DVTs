@@ -24,6 +24,12 @@ define(function (require) {
                 .controller(ctrlName, function ($scope, $modalInstance, $log, $state, $stateParams, parameters, dvtUtils, configService) {
                     /* GET FUNCTIONAL LEGEND */
 
+                    var resolution = screen.width;
+
+                    $(window).on("resize",function(e){
+                      resolution = screen.width;
+                    });
+
                     /*ESTABLISH NEEDED DASH PARAMS FOR RENDER COMPONENTS */
                     $scope.dashboard = {
                         parameters: {
@@ -162,6 +168,10 @@ define(function (require) {
 
                             if($scope.parameters.name == 'dvt_bar_chart_2'){
                                 $scope.parameters.chartDefinition.legendItemSize = 500;
+                                if( resolution < 560 ){
+                                    $log.warn('entra');
+                                    $scope.parameters.chartDefinition.legendItemSize = 350;
+                                }
                             }
                         }
 
