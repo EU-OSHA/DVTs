@@ -182,7 +182,7 @@ define(function(require){
 
             // Insert empty line and line with how to visualize it in Excel
             data += "\n\n";
-            data += i18n.L387;
+            data += i18n.L20387;
 
             var downloadCSV = function() {
                 var BOM = "\uFEFF";
