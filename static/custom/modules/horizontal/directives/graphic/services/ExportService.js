@@ -20,7 +20,7 @@ define(function(require){
 
     var exportImage = function (scope) {
 
-            var node = $('#' + scope.id).parents('.card--block--chart--wrapper')[0];
+            var node = $('#' + scope.id).parents('.chart--wrapper')[0];
 
 
             //---------------------------------
