@@ -236,7 +236,7 @@ define(function (require) {
                 if(!navigator.userAgent.match('iPad')) {
                     _template 
                         += '<div class="dropdown" ng-if="!isEnlarge==true">'
-                            + '<a data-ng-click="open(\'exportImageLink\')" role="button"><i class="fa fa-picture-o" aria-hidden="true"></i> Export as Image</a>'
+                            + '<a data-ng-click="open(\'exportImageLink\')" role="button"><i class="fa fa-arrow-down" aria-hidden="true"></i><i class="fa fa-picture-o" aria-hidden="true"></i> Export as Image</a>'
                         + '</div>';
                 }
             _template +='</div>'
