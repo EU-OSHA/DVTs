@@ -147,7 +147,7 @@ define(function (require) {
                         opacity:.5
                     },100);
 
-                    var elementSVG = angular.element('.map--block');
+                    var elementSVG = angular.element('body');
                     angular.element(elementSVG).append('<div class="dvt-map-tooltip"></div>');
                     angular.element('.dvt-map-tooltip').append('<p class="country-name">'
                         +'<ul>'
