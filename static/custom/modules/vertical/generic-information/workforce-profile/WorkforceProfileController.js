@@ -116,27 +116,31 @@ define(function (require) {
 
     $scope.minMaxValues = [];
 
+    // Open/Hide checkbox dropdown list
     $scope.openSelect = function($event){
 
-      if( $event.target.nodeName == "LABEL" ){
-        var currentSelect = $event.target.offsetParent;
+      var currentSelect = $event.target; 
+      var nodename = currentSelect.nodeName;
+      if( nodename == 'LABEL' || nodename == 'INPUT' ){
+        currentSelect = $event.target.offsetParent.offsetParent; 
+        angular.element(currentSelect).addClass('viewOptions');
+        
       } else {
-        var currentSelect = $event.target.offsetParent.offsetParent;
-       
-      }      
-      
-      if( currentSelect.className.indexOf('viewOptions') > 0 ){
-        //currentSelect.className = 'filter--dropdown--wrapper';
-        angular.element('.filter--dropdown--wrapper').removeClass('viewOptions');        
-      } else {
-        angular.element('.filter--dropdown--wrapper').removeClass('viewOptions');
-        currentSelect.className += ' viewOptions';
-        //currentSelect.focus();
+        currentSelect = $event.target.offsetParent.offsetParent;
+        $scope.checkSelect(currentSelect); 
       }
     }
 
-    // Show/hide the Countries Filter List
+    $scope.checkSelect = function(elem){
+      if( elem.className.indexOf('viewOptions') > 0 ){
+        angular.element(elem).removeClass('viewOptions'); 
+      } else {
+        angular.element('.filter--dropdown--wrapper').removeClass('viewOptions');         
+        angular.element(elem).addClass('viewOptions');
+      }
+    };
 
+    // Show/hide the Countries Filter List
     angular.element('div.countries-filters').css( "display",'none' );
     angular.element('#filter3 h2').addClass('showChallenges');
     $scope.toggleFilters = function() {
@@ -289,6 +293,116 @@ define(function (require) {
         });
       }
     }
+
+      /**
+       * @ngdoc method
+       * @name ng.controller:WorkforceProfileController#toggleCountryClick
+       * @param {$event} $event from the browser
+       * @param {$index} $index track by ng-repeat
+       * @methodOf barometer.workforce-profile.controller:WorkforceProfileController
+       * @description
+       * Function launched after clicking on Country Filter
+       */
+      $scope.toggleCountryClick = function ($event, $index) {
+        /*var element = angular.element($event.currentTarget);
+        var tags = angular.element('div.selected--tags-wrapper');
+        if (element.prop('checked')) {
+          $scope.countryFilter.push(element.attr('value'));
+        } else {
+          $scope.countryFilter.splice($scope.countryFilter.indexOf(element.attr('value')), 1);
+        }*/
+
+        var element = angular.element($event.currentTarget);
+        var tags = angular.element('div.selected--tags-wrapper');
+        
+        if (element.prop('checked')) {
+          $scope.countryFilter.push(element.attr('value'));
+        } else {
+          $scope.countryFilter.splice($scope.countryFilter.indexOf(element.attr('value')), 1);
+          angular.element('span#country'+element.attr('value')).remove();
+        }
+        
+        var tags = angular.element('div.selected--tags-wrapper');
+        
+        for(var i = 0; i < $scope.countryFilter.length;i++){
+          if(angular.element('span#country'+$scope.countryFilter[i]).length<=0){
+            var html = '<span class="selected-tag" id="country'+$scope.countryFilter[i] +'" data-ng-click="deleteTag($event)">'+ $scope.i18nLiterals['L'+$scope.countryFilter[i]] +'</span>';
+            tags.append( $compile(html)($scope) );
+          }          
+        }
+
+        search($event,'countries');
+      };
+
+      /**
+       * @ngdoc method
+       * @name ng.controller:WorkforceProfileController#confirmSelection
+       * @param {$event} $event from the browser
+       * @methodOf barometer.workforce-profile.controller:WorkforceProfileController
+       * @description
+       * Function launched when clicking confirm button of Countries Select
+       */
+      $scope.confirmSelection = function($event) {
+        var tags = angular.element('div.selected--tags-wrapper');
+
+        tags.empty();
+
+        $scope.countryFilter.sort();
+        
+        for(var i = 0; i < $scope.countryFilter.length;i++){
+          var html = '<span class="selected-tag" id="country'+$scope.countryFilter[i] +'" data-ng-click="deleteTag($event)">'+$scope.i18nLiterals['L'+$scope.countryFilter[i]]+'</span>';
+          tags.append( $compile(html)($scope) );
+        }
+
+        search($event);
+      }
+
+      /**
+       * @ngdoc method
+       * @name ng.controller:WorkforceProfileController#deleteTag
+       * @param {$event} $event from the browser
+       * @methodOf barometer.workforce-profile.controller:WorkforceProfileController
+       * @description
+       * Deletes the clicked tag and applies the new filters
+       */
+      $scope.deleteTag = function($event){
+        var element = angular.element($event.currentTarget);
+        var countryId = element[0].id.slice(7,10);
+        var quitChecked;
+        if($event.target.id.indexOf('country') != -1){
+          $scope.countryFilter.splice($scope.countryFilter.indexOf(countryId), 1);
+          quitChecked = angular.element('.filter--dropdown--options #country-filter-'+countryId);
+        }
+        
+        element.remove();
+        quitChecked.prop('checked', false);
+
+        search($event);
+        
+      }
+
+      /**
+       * @ngdoc method
+       * @name ng.controller:WorkforceProfileController#search
+       * @param {$event} $event from the browser
+       * @param {filter} type of filter applied
+       * @methodOf barometer.workforce-profile.controller:WorkforceProfileController
+       * @description
+       * Apply the country filter
+       */
+      function search($event) {
+        $scope.matrix = [];
+        dataService.getFilteringCountries($scope.datasetEurostat, $scope.countryFilter)
+          .then(function (data) {
+            data.data.resultset.map(function (elem) {
+              $scope.matrix.push({
+                country_code: elem[0]
+              });
+            });
+          }).catch(function (err) {
+            throw err;
+        });
+      }
 
     angular.element('body').mouseup(function(e){
       var container = angular.element('.filter--dropdown--wrapper');
