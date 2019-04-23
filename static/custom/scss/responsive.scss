@@ -331,6 +331,7 @@
       display: block;
       width: 100%;
       min-height: 5rem;
+      flex-basis: 100%;
       &.affix{
 				position: fixed;
 				left: 0;

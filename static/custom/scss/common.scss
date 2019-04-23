@@ -4,6 +4,9 @@
   html{
     font-size: 10px;
   }
+  samp{
+    font-family: $font-body !important;    
+  }
   body{
     font-family: $font-body;
     font-size:$font-size-body;
@@ -657,7 +660,8 @@
       flex-direction: row;
       flex-wrap: nowrap;
       li{
-        width: auto;
+        width: 20%;
+        text-align: center;
         a{          
           font-family: "Oswald", sans-serif;
           font-size: 1.8rem;
@@ -956,6 +960,7 @@
             text{
               font: 0.9rem 'OpenSans-bold' !important;
               opacity: 1;
+              cursor:default;
             }
           }
         }       

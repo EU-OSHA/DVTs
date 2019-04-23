@@ -1,4 +1,4 @@
-<dvt-dashboard promises="promises" parameters="dashboard.parameters">
+<dvt-dashboard promises="promises" parameters="dashboard.parameters" class="country--profile--page">
 
   <section data-ng-if="state.current.name != 'home'" id="not-home-cover" class="advice--icon--block advice--block-not-home background-main-light container-fluid section--page">
       <div class="container horizontal-nopadding">
@@ -12,17 +12,19 @@
       </div>
   </section>
 
-  <div class="btn--block-full left-text">
-    <a ui-sref="EU-challenges-response({pCountry:'0'})" class="btn-default btn-full" title="{{i18nLiterals.L20625}}" data-ng-bind="i18nLiterals.L20625"></a>
+  <div class="container">
+    <p class="btn--block-full left-text">
+      <a ui-sref="EU-challenges-response({pCountry:'0'})" class="btn-default btn-main-color" title="{{i18nLiterals.L20625}}" data-ng-bind="i18nLiterals.L20625"></a>
+    </p>
   </div>
 
-  <div class="compare--block regulation-page" bs-affix="" data-offset-top="420">
+  <div class="compare--block regulation-page" >
     <div class="submenu--block container">
-      <label class="submenu-indicator" data-ng-click ="openIndicatorsList()">Select the indicator</label>
+      <label class="submenu-indicator" >Select the indicator</label>
       <ul class="submenu--items--wrapper">
         <!-- INDICATORS -->
-        <li data-ng-repeat="indicator in indicators" data-ng-class="{'active' : indicator.anchor == pIndicator }" class="submenu--item">
-          <a href="" data-ng-click="changeIndicator($event,indicator.anchor);" data-ng-bind="i18nLiterals['L'+indicator.text]" data-ng-class="{'active' : indicator.anchor == pIndicator }" ></a>
+        <li data-ng-repeat="indicator in indicators" data-ng-click ="openIndicatorsList($event)" data-ng-class="{'active' : indicator.anchor == pIndicator }" class="submenu--item">
+          <a href="" data-ng-click="changeIndicator($event,indicator.anchor)" data-ng-bind="i18nLiterals['L'+indicator.text]" data-ng-class="{'active' : indicator.anchor == pIndicator }" ></a>
         </li>
       </ul>
     </div>

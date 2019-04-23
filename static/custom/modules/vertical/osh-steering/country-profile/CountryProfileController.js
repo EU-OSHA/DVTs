@@ -8,6 +8,9 @@
  * @description
  * ############################################
  */
+
+var resolution = screen.width;
+
 define(function (require) {
   'use strict';
 
@@ -38,15 +41,6 @@ define(function (require) {
 
     $scope.maxCharacters = 200;
 
-    // Show/hide the Countries Filter List
-    angular.element('div.countries-filters').css( "display",'none' );
-    angular.element('#filter2 h2').addClass('showChallenges');
-    $scope.toggleFilters = function() {
-      if ($window.outerWidth < 768) {
-            angular.element('#filter2 h2').toggleClass('showChallenges');
-            angular.element('div.countries-filters').slideToggle( "slow" );
-        }
-    };
 
     // Read more
     /*$scope.trimtext = function(pVal, pNumCharacters){
@@ -151,16 +145,6 @@ define(function (require) {
       angular.element(' a', angular.element($event.target).parent()).toggle();
     }
 
-    // Show/hide the Countries Filter List
-
-    angular.element('div.countries-filters').css( "display",'none' );
-    angular.element('#filter2 h2').addClass('showChallenges');
-    $scope.toggleFilters = function() {
-      if ($window.outerWidth < 768) {
-            angular.element('#filter2 h2').toggleClass('showChallenges');
-            angular.element('div.countries-filters').slideToggle( "slow" );
-        }
-    }
 
     /******************************************************************************|
     |                                DATA LOAD                                     |
@@ -256,13 +240,33 @@ define(function (require) {
     /******************************END FILTERS************************************/
 
       // Open indicators list like a select element
-      $scope.openIndicatorsList = function() {
-          angular.element('.submenu--items--wrapper').toggleClass('open-list');
-          angular.element('.submenu-indicator').toggleClass('open-list');
+
+      $(window).on("resize",function(e){
+        resolution = screen.width;
+      });
+
+      $scope.openIndicatorsList = function(e) {       
+
+        var parentTag = e.target.offsetParent.nextSibling.parentNode.className;
+
+        if( resolution < 990 ){
+          if( parentTag.indexOf('open-list') < 0 ){
+            angular.element('.submenu--items--wrapper').addClass('open-list');
+          } else {
+            angular.element('.submenu--items--wrapper').removeClass('open-list');
+          }
+        }
       }
 
+      angular.element('body').mouseup(function(e){
+        var container = angular.element('.submenu--items--wrapper');
+        if (!container.is(e.target) && container.has(e.target).length === 0){
+          angular.element('.submenu--items--wrapper').removeClass('open-list'); 
+        }
+      });
+
       $scope.changeIndicator = function(e,indicator) {
-        $scope.openIndicatorsList();
+        //$scope.openIndicatorsList();
         if ($state.current.name !== undefined) {
           $state.go($state.current.name, {
             pCountry1: $scope.pCountry1,
