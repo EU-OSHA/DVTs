@@ -281,22 +281,34 @@ define (function (require) {
                             //$log.warn(resultset);
 
                             // country 1 value 1 - country 2 value 1
-                            var difference1 =  ((country1Value1 - country2Value1 < 1000 && country1Value1 - country2Value1 > 0) || (country1Value1 - country2Value1 > -1000 && country1Value1 - country2Value1 < 0)) ? true : false;
+                            var difference1 =  ((country1Value1 - country2Value1 < 900 && country1Value1 - country2Value1 > 0) || (country1Value1 - country2Value1 > -900 && country1Value1 - country2Value1 < 0)) ? true : false;
                             // country 1 value 2 - country 2 value 2
-                            var difference2 =  ((country1Value2 - country2Value2 < 1000 && country1Value2 - country2Value2 > 0) || (country1Value2 - country2Value2 > -1000 && country1Value2 - country2Value2 < 0)) ? true : false;
+                            var difference2 =  ((country1Value2 - country2Value2 < 900 && country1Value2 - country2Value2 > 0) || (country1Value2 - country2Value2 > -900 && country1Value2 - country2Value2 < 0)) ? true : false;
                             // country 1 value 1 - eu value 1
-                            //var difference3 =  ((country1Value1 - euValue1 < 1000) || (country1Value1 - euValue1 > -1000 && country1Value1 - euValue1 < 0)) ? true : false;
+                            var difference3 =  ((country1Value1 - euValue1 < 1000 && country1Value1 - euValue1 > 0) || (country1Value1 - euValue1 > -1000 && country1Value1 - euValue1 < 0)) ? true : false;
                             // country 1 value 2 - eu value 2
-                            //var difference4 =  ((country1Value2 - euValue2 < 1000) || (country1Value2 - euValue2 > -1000 && country1Value2 - euValue2 < 0)) ? true : false;
+                            var difference4 =  ((country1Value2 - euValue2 < 1000 && country1Value2 - euValue2 > 0) || (country1Value2 - euValue2 > -1000 && country1Value2 - euValue2 < 0)) ? true : false;
                             // country 2 value 1 - eu value 1
-                            //var difference5 =  ((country2Value1 - euValue1 < 1000) || (country2Value1 - euValue1 > -1000 && country2Value1 - euValue1 < 0)) ? true : false;
+                            var difference5 =  ((country2Value1 - euValue1 < 1000 && country2Value1 - euValue1 > 0) || (country2Value1 - euValue1 > -1000 && country2Value1 - euValue1 < 0)) ? true : false;
                             // country 2 value 2 - eu value 2
-                            //var difference6 =  ((country2Value2 - euValue2 < 1000) || (country2Value2 - euValue2 > -1000 && country2Value2 - euValue2 < 0)) ? true : false;
+                            var difference6 =  ((country2Value2 - euValue2 < 1000 && country2Value2 - euValue2 > 0) || (country2Value2 - euValue2 > -1000 && country2Value2 - euValue2 < 0)) ? true : false;
 
                             /*$log.warn('Country: '+ countryKey);
                             $log.warn('Value: '+ countryValue);*/
 
                             if (countryKey == 'EU28') {
+                                if(difference5 && countryYear == '2010'){
+                                    return 'bottom';
+                                }else if(difference6 && countryYear == '2016'){
+                                    return 'bottom';
+                                }
+
+                                if(difference3 && countryYear == '2010'){
+                                    return 'bottom';
+                                }else if(difference4 && countryYear == '2016'){
+                                    return 'bottom';
+                                }
+
                                 return 'top';
                             } else if(countryKey == pCountry1){
                                 if(difference1 && countryYear == '2010'){
@@ -306,6 +318,12 @@ define (function (require) {
                                 }
                                 return 'bottom';
                             } else if(countryKey == pCountry2) {
+                                if(difference5 && countryYear == '2010'){
+                                    return 'top';
+                                }else if(difference6 && countryYear == '2016'){
+                                    return 'top';
+                                }
+
                                 return 'bottom';
                             }
 
