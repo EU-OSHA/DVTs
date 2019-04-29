@@ -6,6 +6,7 @@ define(function (require) {
         homeModule = require('vertical/home/home-module'),
         genericInformationModule = require('vertical/generic-information/generic-information-module'),
         steeringOfOsh = require('vertical/osh-steering/osh-steering-module'),
+        steeringOfOshModule = require('vertical/osh-steering/osh-steering-module'),
         aboutToolModule = require('vertical/about-tool/about-tool-module'),
         directivesModule = require('horizontal/directives/directives-module'),
         chartingModule =  require('horizontal/directives/charting-module'),

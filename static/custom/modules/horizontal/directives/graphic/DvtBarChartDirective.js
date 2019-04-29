@@ -734,8 +734,8 @@ define(function (require) {
 
                 //Labels
                 if(!!attributes.multipleLabelColors){
-                    var pCountry1 = definition.parameters[1][1];
-                    var pCountry2 = definition.parameters[2][1];
+                    var pCountry1 = definition.parameters[1] ? definition.parameters[1][1] : null;
+                    var pCountry2 = definition.parameters[2] ? definition.parameters[2][1] : null;
                     
                     if(definition.chartDefinition.dataAccessId == 'getGaussChartValues'){
                         definition.chartDefinition.baseAxisLabel_textStyle= 'black';
@@ -787,15 +787,15 @@ define(function (require) {
                     // if(!!attributes.isMaximized && attributes.isMaximized == 'true') {
                         var ua = window.navigator.userAgent;
                         var msie = ua.indexOf("MSIE ");
-
-                        if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)) {
+                        
+                        if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv:11\./) || !!navigator.userAgent.match(/Edge/)) {
                             // You use IE. That´s no good.
                             [['Download raw data', 'exportData', 'download-button']].forEach(function (item) {
                                 scope.contextuals.push(item);
                             });
-                            [['Download image', 'exportImage', 'download-button']].forEach(function (item) {
+                            /*[['Download image', 'exportImage', 'download-button']].forEach(function (item) {
                                 scope.contextuals.push(item);
-                            });
+                            });*/
                         } else if (!configService.isMobile())  {
                             [['Download raw data', 'exportData', 'download-button']].forEach(function (item) {
                                 scope.contextuals.push(item);
@@ -829,8 +829,8 @@ define(function (require) {
                     definition ['chartType'] = attributes.type;
                     definition ['angle'] = attributes.angle;
                     definition ['promise'] = scope.promise;
-                    definition ['country1'] = scope.country1;
-                    definition ['country2'] = scope.country2;
+                    //definition ['country1'] = scope.country1;
+                    //definition ['country2'] = scope.country2;
                     definition ['valuesVisible'] = attributes.valuesVisible;
                     definition ['maxLegendPos'] = attributes.maxLegendPos;
                     definition ['legend'] = attributes.legend;

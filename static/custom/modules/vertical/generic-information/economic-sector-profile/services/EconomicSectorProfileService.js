@@ -140,7 +140,8 @@ define (function (require) {
 				              .url(function(scene) {
 				              	var countryKey = scene.firstAtoms.category;
 				              	if(countryKey == pCountry1){
-                  					return configService.getImagesPath()+'man_orange.svg'
+                  					//return 'http://localhost:8080/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/man_orange.svg';
+                                    return configService.getImagesPath()+'man_orange.svg';
 				              	}else if(countryKey == pCountry2){
 				              		return configService.getImagesPath()+'man.svg'
 				              	}else if(countryKey == 'EU28'){
