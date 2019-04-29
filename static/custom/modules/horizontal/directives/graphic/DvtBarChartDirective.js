@@ -236,17 +236,18 @@ define(function (require) {
                 if(!navigator.userAgent.match('iPad')) {
                     _template 
                         += '<div class="dropdown" ng-if="!isEnlarge==true">'
-                            + '<a data-ng-click="open(\'exportImageLink\')" role="button"><i class="fa fa-picture-o" aria-hidden="true"></i> Export as Image</a>'
+                            + '<a data-ng-click="open(\'exportImageLink\')" role="button"><i class="fa fa-arrow-down" aria-hidden="true"></i><i class="fa fa-picture-o" aria-hidden="true"></i> Export as Image</a>'
                         + '</div>';
                 }
             _template +='</div>'
 
             + '<div class="chart--wrapper">'
                 + '<div data-ng-attr-id="{{ id }}"></div>'
-            + '</div>'
-            + '<div class="legend-text-block">'
-                + '<div ng-if="isMaximized && query != gauss" class="logoGraphics-wrapper"><img alt="European Agency for Safety and Health at Work" src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/osha-logo.svg" class="logoGraphics"></div>'
-                + '<div class="legend-info" ng-if="isMaximized && legendClickMode && legend">Click on each value on the legend to hide/show in on the chart</div>'
+
+                + '<div class="legend-text-block">'
+                    + '<div ng-if="isMaximized && query != gauss" class="logoGraphics-wrapper"><img alt="European Agency for Safety and Health at Work" src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/osha-logo.svg" class="logoGraphics"></div>'
+                    + '<div class="legend-info" ng-if="isMaximized && legendClickMode && legend">Click on each value on the legend to hide/show in on the chart</div>'
+                + '</div>'
             + '</div>'
             //+ '<div ng-if="!!functionalLegend" class="functionalLegend" data-ng-bind-html="functionalLegend"></div>'
 
@@ -400,14 +401,16 @@ define(function (require) {
                         legendShape: 'square',
                         legendAlign: attributes.legendAlign || 'center',
                         legendOverflow: attributes.legendOverflow || 'clip',
+                        legendItemSize: attributes.legendItemSize || 250,
                         color2AxisLegendShape: attributes.color2AxisLegendShape || "square",
                         baseAxisLabel_text: !scope.isMaximized?scope.baseAxisLabelText:scope.baseAxisLabelLongText,
                         baseAxisLabel_visible: scope.baseAxisLabelVisible,
-                        baseAxisLabel_textBaseline: attributes.baseAxisLabelTextBaseline || 'center',
+                        baseAxisLabel_textBaseline: attributes.baseAxisLabelTextBaseline || 'middle',
+                        xAxisLabel_textAlign: 'left',
                         baseAxisLabel_textStyle: attributes.baseAxisLabelTextStyle || 'gray' ,
                         baseAxisOverlappedLabelsMode: 'leave',
                         multiChartRole: attributes.multiChart,
-                        label_visible: scope.labelVisible,
+                        //label_visible: scope.labelVisible,
                         label_textAlign: scope.labelTextAlign || 'center',
                         labelTextMargin: attributes.labelTextMargin || 0,
                         /*Adjust tooltip position*/
@@ -429,7 +432,7 @@ define(function (require) {
                 };
 
                 if(scope.axisColor){
-                    definition.chartDefinition.xAxis_fillStyle = 'white';
+                    definition.chartDefinition.xAxis_fillStyle = 'transparent';
                     definition.chartDefinition.xAxis_call = function(){
                         //return "linear-gradient(to right, #daebec 0%,#519ea1 100%)";
                         this.add(pv.Image)
@@ -731,8 +734,8 @@ define(function (require) {
 
                 //Labels
                 if(!!attributes.multipleLabelColors){
-                    var pCountry1 = definition.parameters[1][1];
-                    var pCountry2 = definition.parameters[2][1];
+                    var pCountry1 = definition.parameters[1] ? definition.parameters[1][1] : null;
+                    var pCountry2 = definition.parameters[2] ? definition.parameters[2][1] : null;
                     
                     if(definition.chartDefinition.dataAccessId == 'getGaussChartValues'){
                         definition.chartDefinition.baseAxisLabel_textStyle= 'black';
@@ -784,15 +787,15 @@ define(function (require) {
                     // if(!!attributes.isMaximized && attributes.isMaximized == 'true') {
                         var ua = window.navigator.userAgent;
                         var msie = ua.indexOf("MSIE ");
-
-                        if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)) {
+                        
+                        if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv:11\./) || !!navigator.userAgent.match(/Edge/)) {
                             // You use IE. That´s no good.
                             [['Download raw data', 'exportData', 'download-button']].forEach(function (item) {
                                 scope.contextuals.push(item);
                             });
-                            [['Download image', 'exportImage', 'download-button']].forEach(function (item) {
+                            /*[['Download image', 'exportImage', 'download-button']].forEach(function (item) {
                                 scope.contextuals.push(item);
-                            });
+                            });*/
                         } else if (!configService.isMobile())  {
                             [['Download raw data', 'exportData', 'download-button']].forEach(function (item) {
                                 scope.contextuals.push(item);
@@ -826,8 +829,8 @@ define(function (require) {
                     definition ['chartType'] = attributes.type;
                     definition ['angle'] = attributes.angle;
                     definition ['promise'] = scope.promise;
-                    definition ['country1'] = scope.country1;
-                    definition ['country2'] = scope.country2;
+                    //definition ['country1'] = scope.country1;
+                    //definition ['country2'] = scope.country2;
                     definition ['valuesVisible'] = attributes.valuesVisible;
                     definition ['maxLegendPos'] = attributes.maxLegendPos;
                     definition ['legend'] = attributes.legend;

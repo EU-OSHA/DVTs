@@ -64,6 +64,7 @@
               dimensions="stories[0].dimensions"
               legend="true"
               legend-align="center"
+              legend-item-size="250"
               plots="stories[0].plots"
               multiple-label-colors="true"
               leaf-content-overflow='visible'
@@ -88,8 +89,8 @@
               axis-label-font="14px 'OpenSans-bold'"
               base-axis-label-text-baseline="center"
               legend="true"
-              legend-align="left"
-              legend-overflow="clip"
+              legend-align="center"
+              legend-item-size="300"
               multiple-label-colors="true"
             ></dvt-bar-chart>
           </div>
@@ -185,7 +186,7 @@
               query="getIncomePerCapitaData" cda="{{::cdaGenericInformation }}"
               width="330" height="370" type="lines"
               orientation="vertical" axis-fixed-min="10000"
-              axis-fixed-max="30000" step="{{step.chart6}}"
+              axis-fixed-max="20000" step="{{step.chart6}}"
               params="[['pIndicator','36'],['pCountry1', pCountry1],['pCountry2', pCountry2],['pDataset', datasetEurostatBetweenDates]]"
               color-role="series" colors="[stories[5].color1, stories[5].color2, stories[5].color3]"
               chart-title="{{i18nLiterals.L293}}" id="6"
@@ -195,11 +196,12 @@
               values-visible="true"
               values-font="14px 'OpenSans-bold'"
               values-mask="{value}€"
-              values-anchor="bottom"
               show-euro-mask="true"
               multiple-label-colors="false"
               base-axis-label-text-baseline="top"
+              leaf-content-overflow='visible'
               legend="true"
+              legend-item-size="70"
             ></dvt-bar-chart>
           </div>
         </div>

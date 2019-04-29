@@ -55,17 +55,50 @@
 <section class="container-full nopadding">
   <section class="survey--map--block">
     <div class="map--block center-text container">
+      <div class="map--eu--legend">
+        <div class="matrix--header--elements">
+          <img  class="flags--wrapper" src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/flag/eu28.png">
+          <h2 class="country ng-binding title-section main-color">EU28</h2>
+        </div>
+        <ul class="matrix--elements--data">
+          <li>
+            <label data-ng-bind="i18nLiterals['L20615']"></label>                
+            <span class="data" data-ng-bind="data.medianAge['EU28'].value"></span>
+            <span class="data-text" data-ng-bind="i18nLiterals['L20620']"></span>          
+          </li>
+          <li>
+            <label data-ng-bind="i18nLiterals['L20616']"></label>
+            <span class="data" data-ng-bind="data.ageingWorkers['EU28'].value"> %</span>
+            <span class="data-text">&percnt;</span>
+          </li>
+          <li>
+            <label data-ng-bind="i18nLiterals['L20617']"></label>
+            <span class="data" data-ng-bind="data.totalEmployment['EU28'].value"></span>
+            <span class="data-text">&percnt;</span>
+          </li>
+          <li>  
+            <label data-ng-bind="i18nLiterals['L20618']"></label>
+            <span class="data" data-ng-bind="data.maleEmployment['EU28'].value"></span>
+            <span class="data-text">&percnt;</span>
+          </li>
+          <li>  
+            <label data-ng-bind="i18nLiterals['L20619']"></label>
+            <span class="data" data-ng-bind="data.femaleEmployment['EU28'].value"></span>
+            <span class="data-text">&percnt;</span>
+          </li>
+        </ul>
+      </div>    
       <!-- CONTENT -->
       <dvt-map ng-cloak
-        country-key="EU" promise="promises.promiseShape"
+        country-key="EU" promise="dataPromises"
         country="EU" use-viewbox="true" x="0" y="0"
         css-class="dvt--map--block" is-colored="1" hover="true"
         group-list="groupList"
         group-color="groupColor"
         data="data">
-      </dvt-map>
-    </div>
-    <div class="map--gauss--block container" data-ng-repeat="value in minMaxValues">
+      </dvt-map> 
+    </div>    
+    <div class="map--gauss--block container " data-ng-repeat="value in minMaxValues" >
       <dvt-bar-chart
         data-ng-cloak
         query="getGaussChartValues" cda="{{::cdaGenericInformation }}"
@@ -88,43 +121,16 @@
         multiple-label-colors="true"
         base-axis-label-text-baseline="top"
         axis-color="true"
-        panel-color="white"
+        panel-color="transparent"
         legend="false"
         is-maximized="true"
         tooltip-enabled="false"
         clickable="false" 
         base-axis-size="25"
-      ></dvt-bar-chart>
+      ></dvt-bar-chart> 
     </div>
-    <div>
-      <ul class="matrix--elements--data">
-        <li>                
-          <span class="data" data-ng-bind="data.medianAge['EU28'].value"></span>
-          <span class="data-text" data-ng-bind="i18nLiterals['L20620']"></span>
-          <label data-ng-bind="i18nLiterals['L20615']"></label>
-        </li>
-        <li>
-          <span class="data" data-ng-bind="data.ageingWorkers['EU28'].value"> %</span>
-          <span class="data-text">&percnt;</span>
-          <label data-ng-bind="i18nLiterals['L20616']"></label>
-        </li>
-        <li>
-          <span class="data" data-ng-bind="data.totalEmployment['EU28'].value"></span>
-          <span class="data-text">&percnt;</span>
-          <label data-ng-bind="i18nLiterals['L20617']"></label>
-        </li>
-        <li>                
-          <span class="data" data-ng-bind="data.maleEmployment['EU28'].value"></span>
-          <span class="data-text">&percnt;</span>
-          <label data-ng-bind="i18nLiterals['L20618']"></label>
-        </li>
-        <li>                
-          <span class="data" data-ng-bind="data.femaleEmployment['EU28'].value"></span>
-          <span class="data-text">&percnt;</span>
-          <label data-ng-bind="i18nLiterals['L20619']"></label>
-        </li>
-      </ul>
-    </div>
+
+
   </section>
     <section class="survey--map--block-mobile">
       <div class="selected--tags-wrapper"></div>

@@ -12,7 +12,7 @@ define(function (require) {
   'use strict';
 
 
-  function controller($scope, $stateParams, $state, configService, $log, $document,dataService, $window, $sce, $compile, $timeout, dvtUtils, mapProvider, WorkforceProfileService) {
+  function controller($scope, $stateParams, $state, configService, $log, $document,dataService, $window, $sce, $compile, $timeout, dvtUtils, mapProvider, WorkforceProfileService, $rootScope) {
 
     // CDA
     $scope.cda =  configService.getBarometerCda();
@@ -53,9 +53,17 @@ define(function (require) {
     };
 
     $scope.promises = {
-        promiseShape: mapProvider.getEuropeShape(),
-        countryGroups: dataService.getGroupCountryList()
+        promiseShape: mapProvider.getEuropeShape()
     };
+
+    $scope.dataPromises = [
+      mapProvider.getEuropeShape(),
+      dataService.getMedianAgeData($scope.datasetEurostat),
+      dataService.getAgeingWorkersData($scope.datasetEurostat),
+      dataService.getTotalEmploymentData($scope.datasetEurostat),
+      dataService.getMaleEmploymentData($scope.datasetEurostat),
+      dataService.getFemaleEmploymentData($scope.datasetEurostat)
+    ];
 
     $scope.stories = [
       {
@@ -75,6 +83,12 @@ define(function (require) {
       chart1: 5
     }
 
+    if ($rootScope.data != undefined)
+    {
+      $rootScope.data.indicator = $scope.selectedIndicator;
+      $rootScope.data.subIndicator = $scope.selectedSubIndicator;
+    }
+
     $scope.data = {
       medianAge: [], // 37
       ageingWorkers: [], // 38
@@ -82,11 +96,6 @@ define(function (require) {
       maleEmployment: [], // 39, 2 male
       femaleEmployment: [] // 39, 3 female
     };
-    
-    $scope.promises.countryGroups
-      .then(function (result) {
-        $scope = dataService.createGroupCountryList($scope, result.data);
-    });
 
     if($scope.selectedIndicator == 'median-age') {
       $scope.pIndicator = 37;
@@ -109,6 +118,7 @@ define(function (require) {
 
     // Open/Hide checkbox dropdown list
     $scope.openSelect = function($event){
+
       var currentSelect = $event.target; 
       var nodename = currentSelect.nodeName;
       if( nodename == 'LABEL' || nodename == 'INPUT' ){
@@ -119,7 +129,7 @@ define(function (require) {
         currentSelect = $event.target.offsetParent.offsetParent;
         $scope.checkSelect(currentSelect); 
       }
-    };
+    }
 
     $scope.checkSelect = function(elem){
       if( elem.className.indexOf('viewOptions') > 0 ){
@@ -130,21 +140,7 @@ define(function (require) {
       }
     };
 
-    angular.element('body').mouseup(function(e){
-      var container = angular.element('.filter--dropdown--wrapper');
-      if (!container.is(e.target) && container.has(e.target).length === 0){
-        angular.element('.filter--dropdown--wrapper').removeClass('viewOptions'); 
-      }
-    });
-
-    $scope.closeSelect = function($event){      
-      angular.element('.filter--dropdown--wrapper').removeClass('viewOptions');     
-    };
-    // End Open/Hide checkbox dropdown list
-
-
     // Show/hide the Countries Filter List
-
     angular.element('div.countries-filters').css( "display",'none' );
     angular.element('#filter3 h2').addClass('showChallenges');
     $scope.toggleFilters = function() {
@@ -154,117 +150,150 @@ define(function (require) {
         }
     }
 
+    $scope.getMinMaxValues = function()
+    {
+      var data;
+
+      if($scope.selectedIndicator == 'median-age') {
+        data = $scope.data.medianAge;
+      } else if($scope.selectedIndicator == 'employment-rate' && $scope.selectedSubIndicator == 'ageing-workers'){
+        data = $scope.data.ageingWorkers;
+      } else if($scope.selectedIndicator == 'employment-rate' && $scope.selectedSubIndicator == 'Total'){
+        data = $scope.data.totalEmployment;
+      } else if($scope.selectedIndicator == 'employment-rate' && $scope.selectedSubIndicator == 'Male'){
+        data = $scope.data.maleEmployment;
+      } else if($scope.selectedIndicator == 'employment-rate' && $scope.selectedSubIndicator == 'Female'){
+        data = $scope.data.femaleEmployment;
+      }
+
+      var minValue = 100;
+      var maxValue = 0;
+
+      if (data != undefined)
+      {
+        for (var index in data) 
+        {
+          if(data[index].value < minValue)
+          {
+              minValue = data[index].value;
+          }
+
+          if(data[index].value > maxValue)
+          {
+              maxValue = data[index].value;
+          }
+        }
+
+        minValue = minValue;
+        maxValue = maxValue;
+
+        var range = (maxValue - minValue) / 4;
+        $scope.minMaxValues.push({min_value: minValue,max_value: maxValue,range_value: range}); 
+      }
+      else
+      {
+        console.log("The indicator selected is not known");
+      }     
+    }
+
     /******************************************************************************|
     |                                DATA LOAD                                     |
-    |******************************************************************************/      
+    |******************************************************************************/
 
-      dataService.getGenders().then(function (data) {
-        data.data.resultset.map(function (elem) {
-          $scope.genders.push({
-            gender_id: elem[0],
-            gender_name: elem[1]
-          });
-        });
-      }).catch(function (err) {
-          throw err;
-      });
-
-      dataService.getAvailableCountries($scope.datasetEurostat).then(function (data) {
-        data.data.resultset.map(function (elem) {
-          $scope.countries.push({
-            country_code: elem[0],
-            country_name: elem[1]
-          });
-          $scope.matrix.push({
-            country_code: elem[0]
-          });
-        });
-      }).catch(function (err) {
-          throw err;
-      });
-
-      dataService.getMedianAgeData($scope.datasetEurostat).then(function (data) {
+    if ($rootScope.data == undefined)
+    {
+      Promise.all([$scope.dataPromises[1],$scope.dataPromises[2],$scope.dataPromises[3],$scope.dataPromises[4],$scope.dataPromises[5]]).then(function(res)
+      {
         var row = {};
-        data.data.resultset.map(function (elem) {
-          row = elem;
-          if(!$scope.data.medianAge[row[0]])
-            $scope.data.medianAge[row[0]]={};
-          $scope.data.medianAge[row[0]].country_name = row[1];
-          $scope.data.medianAge[row[0]].value = row[2];
+        res[0].data.resultset.map(function (elem) {
+            row = elem;
+            if(!$scope.data.medianAge[row[0]])
+                $scope.data.medianAge[row[0]]={};
+            $scope.data.medianAge[row[0]].country_name = row[1];
+            $scope.data.medianAge[row[0]].value = row[2];
         });
-      }).catch(function (err) {
-          throw err;
-      });
-
-      dataService.getAgeingWorkersData($scope.datasetEurostat).then(function (data) {
         var row = {};
-        data.data.resultset.map(function (elem) {
-          row = elem;
-          if(!$scope.data.ageingWorkers[row[0]])
-            $scope.data.ageingWorkers[row[0]]={};
-          $scope.data.ageingWorkers[row[0]].country_name = row[1];
-          $scope.data.ageingWorkers[row[0]].value = row[2];
+        res[1].data.resultset.map(function (elem) {
+            row = elem;
+            if(!$scope.data.ageingWorkers[row[0]])
+                $scope.data.ageingWorkers[row[0]]={};
+            $scope.data.ageingWorkers[row[0]].country_name = row[1];
+            $scope.data.ageingWorkers[row[0]].value = row[2];
         });
-      }).catch(function (err) {
-          throw err;
-      });
-
-      dataService.getTotalEmploymentData($scope.datasetEurostat).then(function (data) {
         var row = {};
-        data.data.resultset.map(function (elem) {
-          row = elem;
-          if(!$scope.data.totalEmployment[row[0]])
-            $scope.data.totalEmployment[row[0]]={};
-          $scope.data.totalEmployment[row[0]].country_name = row[1];
-          $scope.data.totalEmployment[row[0]].value = row[2];
+        res[2].data.resultset.map(function (elem) {
+            row = elem;
+            if(!$scope.data.totalEmployment[row[0]])
+                $scope.data.totalEmployment[row[0]]={};
+            $scope.data.totalEmployment[row[0]].country_name = row[1];
+            $scope.data.totalEmployment[row[0]].value = row[2];
         });
-      }).catch(function (err) {
-          throw err;
-      });
-
-      dataService.getMaleEmploymentData($scope.datasetEurostat).then(function (data) {
         var row = {};
-        data.data.resultset.map(function (elem) {
-          row = elem;
-          if(!$scope.data.maleEmployment[row[0]])
-            $scope.data.maleEmployment[row[0]]={};
-          $scope.data.maleEmployment[row[0]].country_name = row[1];
-          $scope.data.maleEmployment[row[0]].value = row[2];
+        res[3].data.resultset.map(function (elem) {
+            row = elem;
+            if(!$scope.data.maleEmployment[row[0]])
+                $scope.data.maleEmployment[row[0]]={};
+            $scope.data.maleEmployment[row[0]].country_name = row[1];
+            $scope.data.maleEmployment[row[0]].value = row[2];
         });
-      }).catch(function (err) {
-          throw err;
-      });
-
-      dataService.getFemaleEmploymentData($scope.datasetEurostat).then(function (data) {
         var row = {};
-        data.data.resultset.map(function (elem) {
-          row = elem;
-          if(!$scope.data.femaleEmployment[row[0]])
-            $scope.data.femaleEmployment[row[0]]={};
-          $scope.data.femaleEmployment[row[0]].country_name = row[1];
-          $scope.data.femaleEmployment[row[0]].value = row[2].toFixed(1);
+        res[4].data.resultset.map(function (elem) {
+            row = elem;
+            if(!$scope.data.femaleEmployment[row[0]])
+                $scope.data.femaleEmployment[row[0]]={};
+            $scope.data.femaleEmployment[row[0]].country_name = row[1];
+            $scope.data.femaleEmployment[row[0]].value = row[2];
         });
-      }).catch(function (err) {
-          throw err;
-      });
 
-      dataService.getMinMaxValues($scope.datasetEurostat, $scope.pIndicator, $scope.pSubIndicator).then(function (data) {
-        data.data.resultset.map(function (elem) {
-          $scope.minMaxValues.push({
-            min_value: elem[0],
-            max_value: elem[1],
-            range_value: elem[2]
-          });
-        });
-      }).catch(function (err) {
-          throw err;
+        $scope.data.indicator = $scope.selectedIndicator;
+        $scope.data.subIndicator = $scope.selectedSubIndicator;
+
+        $scope.getMinMaxValues();
       });
+    }
+    else
+    {
+      $scope.data = $rootScope.data;
+
+      $scope.getMinMaxValues();
+    }  
+
+    dataService.getGenders().then(function (data) {
+      data.data.resultset.map(function (elem) {
+        $scope.genders.push({
+          gender_id: elem[0],
+          gender_name: elem[1]
+        });
+      });
+    }).catch(function (err) {
+        throw err;
+    });
+
+    dataService.getAvailableCountries($scope.datasetEurostat).then(function (data) {
+      data.data.resultset.map(function (elem) {
+        $scope.countries.push({
+          country_code: elem[0],
+          country_name: elem[1]
+        });
+        $scope.matrix.push({
+          country_code: elem[0]
+        });
+      });
+    }).catch(function (err) {
+        throw err;
+    });
 
     /******************************END DATA LOAD***********************************/
 
-    /******************************************************************************|
-    |                                 FILTERS                                      |
-    |******************************************************************************/
+    $scope.selectChange = function(){
+      if ($state.current.name !== undefined) {
+        $state.go($state.current.name, {
+          pIndicator: $scope.selectedIndicator,
+          pSubIndicator: $scope.selectedSubIndicator
+        });
+      }
+    }
+
       /**
        * @ngdoc method
        * @name ng.controller:WorkforceProfileController#toggleCountryClick
@@ -375,22 +404,18 @@ define(function (require) {
         });
       }
 
-    /******************************END FILTERS************************************/
-
-    $scope.selectChange = function(){
-      if ($state.current.name !== undefined) {
-        $state.go($state.current.name, {
-          pIndicator: $scope.selectedIndicator,
-          pSubIndicator: $scope.selectedSubIndicator
-        });
+    angular.element('body').mouseup(function(e){
+      var container = angular.element('.filter--dropdown--wrapper');
+      if (!container.is(e.target) && container.has(e.target).length === 0){
+        angular.element('.filter--dropdown--wrapper').removeClass('viewOptions'); 
       }
-    }
+    });
 
     $scope.status = 'ready';
 
   }
 
-  controller.$inject = ['$scope', '$stateParams', '$state', 'configService', '$log', '$document','dataService', '$window', '$sce', '$compile', '$timeout', 'dvtUtils', 'mapProvider', 'WorkforceProfileService'];
+  controller.$inject = ['$scope', '$stateParams', '$state', 'configService', '$log', '$document','dataService', '$window', '$sce', '$compile', '$timeout', 'dvtUtils', 'mapProvider', 'WorkforceProfileService', '$rootScope'];
   return controller;
 
 

@@ -455,7 +455,7 @@
 	      <Parameter default="6" name="pDataset" type="Numeric" />
 	    </Parameters>
 	    <Query>
-	      SELECT n.country_code as countryKey, n.literal_id as country_name, v.value as value
+	      SELECT n.country_code as countryKey, n.literal_id as country_name, ROUND(value, 1) as value
 	      FROM nuts n, profile p, value v, dataset d
 	      WHERE n.id = p.nuts_id 
 	      AND v.profile_id = p.id 
@@ -473,7 +473,7 @@
 	      <Parameter default="6" name="pDataset" type="Numeric" />
 	    </Parameters>
 	    <Query>
-	      SELECT n.country_code as countryKey, n.literal_id as country_name, v.value as value
+	      SELECT n.country_code as countryKey, n.literal_id as country_name, ROUND(value, 1) as value
 	      FROM nuts n, profile p, value v, dataset d
 	      WHERE n.id = p.nuts_id 
 	      AND v.profile_id = p.id 
@@ -491,7 +491,7 @@
 	      <Parameter default="6" name="pDataset" type="Numeric" />
 	    </Parameters>
 	    <Query>
-	      SELECT n.country_code as countryKey, n.literal_id as country_name, (v.value*100) as value
+	      SELECT n.country_code as countryKey, n.literal_id as country_name, (ROUND(value*100, 1)) as value
 	      FROM nuts n, profile p, value v, dataset d
 	      WHERE n.id = p.nuts_id 
 	      AND v.profile_id = p.id 
@@ -510,7 +510,7 @@
 	      <Parameter default="6" name="pDataset" type="Numeric" />
 	    </Parameters>
 	    <Query>
-	      SELECT n.country_code as countryKey, n.literal_id as country_name, (v.value*100) as value
+	      SELECT n.country_code as countryKey, n.literal_id as country_name, (ROUND(value*100, 1)) as value
 	      FROM nuts n, profile p, value v, dataset d
 	      WHERE n.id = p.nuts_id 
 	      AND v.profile_id = p.id 
@@ -529,7 +529,7 @@
 	      <Parameter default="6" name="pDataset" type="Numeric" />
 	    </Parameters>
 	    <Query>
-	      SELECT n.country_code as countryKey, n.literal_id as country_name, (v.value*100) as value
+	      SELECT n.country_code as countryKey, n.literal_id as country_name, (ROUND(value*100, 1)) as value
 	      FROM nuts n, profile p, value v, dataset d
 	      WHERE n.id = p.nuts_id 
 	      AND v.profile_id = p.id 

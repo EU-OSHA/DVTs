@@ -331,6 +331,7 @@
       display: block;
       width: 100%;
       min-height: 5rem;
+      flex-basis: 100%;
       &.affix{
 				position: fixed;
 				left: 0;
@@ -352,12 +353,12 @@
 					flex-wrap: wrap;
 					list-style-type: none;
 					padding: 0;
-					margin: 5rem 0 2rem;
+					margin: 2rem 0 2rem;
 			  	li{
 			  		width: 20%;
 			  		padding: 0 1rem;
 			  		label{							
-							font-size: 2.2rem;
+							font-size: 1.6rem;
 							color: $gray;
 							display: block;
 							padding: 0;

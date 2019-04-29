@@ -4,11 +4,18 @@
   html{
     font-size: 10px;
   }
+  samp{
+    font-family: $font-body !important;    
+  }
   body{
     font-family: $font-body;
     font-size:$font-size-body;
     color: $gray-base;
     padding-top: 130px;
+    overflow: auto;
+    &.ovh{
+      overflow: hidden;
+    }
   }
   body.hasCookies{
     //padding-top: 9rem;
@@ -503,6 +510,7 @@
           font-weight: normal;
           letter-spacing: 2px;
           width: 40%;
+          text-align: right;
           &:after{
             content: "\f105";
             font-family: FontAwesome;
@@ -657,7 +665,8 @@
       flex-direction: row;
       flex-wrap: nowrap;
       li{
-        width: auto;
+        width: 20%;
+        text-align: center;
         a{          
           font-family: "Oswald", sans-serif;
           font-size: 1.8rem;
@@ -904,7 +913,7 @@
           margin: 3rem 0 1rem;
           background: url(../img/back-button.png);
           position: relative;
-          z-index: -1;
+          //z-index: -1;
           a{
             text-decoration:none;
             color: $aquamarine;
@@ -956,6 +965,7 @@
             text{
               font: 0.9rem 'OpenSans-bold' !important;
               opacity: 1;
+              cursor:default;
             }
           }
         }       
@@ -1305,6 +1315,18 @@
     margin: auto;
     height: 90%;
     border-radius: 6px;
+    overflow: auto;
+    &::-webkit-scrollbar {
+      width: 6px;
+      background-color: #F5F5F5;
+    }
+    &::-webkit-scrollbar-track {
+      -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+      background-color: #F5F5F5;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: #666;
+    }
     .modal-wrapper {
       height: auto;
       overflow: auto;
@@ -1345,6 +1367,7 @@
             }
           }
           .export-button-modal{
+            margin: 1rem 10% 1rem 1rem;
             a{
               padding: 0.8rem 1rem;
               border-radius: 0.3rem;
@@ -1399,6 +1422,9 @@
                 font-size: 14px !important;
               }
             }
+            .legend-text-block{
+              overflow: auto;
+            }
           }
           .legend-info{
             font-size: 1.4rem;
@@ -1407,6 +1433,7 @@
             padding:1rem 0.5rem;
             width: 80%;
             margin-left: 10%;
+            display: block !important;
           }
           .logoGraphics-wrapper{
             float: right;

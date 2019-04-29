@@ -5,12 +5,11 @@
         <div class="left-text col-md-8 col-sm-8 col-xs-12 ">
           <h1 class="main-color left-text" data-ng-bind="i18nLiterals.L22002"></h1>
           <p data-ng-bind="i18nLiterals.L22025"></p>
+          <p data-ng-bind="i18nLiterals.L20695"></p>
           <p>
-            <span data-ng-bind="i18nLiterals.L20695"></span>
             <span data-ng-bind="i18nLiterals.L20704"></span>
+            <span ><a data-ng-bind="i18nLiterals.L20705" ui-sref="about-tool"></a></span>
           </p>
-          <p><a data-ng-bind="i18nLiterals.L20705" ui-sref="about-tool"></a></p>
-          
         </div>
         <div class="icon--advice forum-icon hide-mobile col-sm-4 col-md-4"></div>
       </div>
@@ -100,7 +99,7 @@
             </p>
 
             <div class="">
-              <p ><a href="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/modules/vertical/generic-information/osh-authorities/pdf/{{matrix.country_code}}.docx" class="btn--card main-color" data-ng-bind-html="i18nLiterals.L20563" target="_blank"></a></p>
+              <p ><a href="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/modules/vertical/generic-information/osh-authorities/pdf/OSH authorities - {{i18nLiterals['L'+matrix.country_name]}}.pdf" class="btn--card main-color" title="Country infrastructure" data-ng-bind-html="i18nLiterals.L20563" target="_blank"></a></p>
               <!--<a href="" data-toggle="modal" data-target="#modalChart" data-ng-click="openModal(matrix)" class="btn--card main-color" title="Country infrastructure" data-ng-bind-html="i18nLiterals.L20563"></a>-->
             </div>
             
