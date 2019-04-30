@@ -43,7 +43,7 @@ define(function(require){
             angular.element(".modal svg").attr("style","display:none");
 
             $(".dropdown").hide();
-            angular.element(".legend-info").attr("style","display:none");
+            angular.element("div.legend-info").attr("style","display:none!important");
 
             var Promise = require('es6-promise').Promise;
 
