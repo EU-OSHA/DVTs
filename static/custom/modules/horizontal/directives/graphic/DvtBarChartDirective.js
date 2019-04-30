@@ -531,7 +531,8 @@ define(function (require) {
                 }
 
                 if(!!attributes.baseAxisSize){
-                    definition.chartDefinition.baseAxisSize = attributes.bandAxisSize;
+                    //definition.chartDefinition.baseAxisSize = attributes.bandAxisSize;
+                    definition.chartDefinition.baseAxisSize = attributes.baseAxisSize;
                 }else{
                     definition.chartDefinition.baseAxisSize = 40;
                 }

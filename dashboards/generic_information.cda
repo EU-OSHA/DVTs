@@ -84,7 +84,7 @@
 	    <Cache duration="3600" enabled="true" />
 	    <Columns />
 	    <Parameters>
-	    	<Parameter default="15" name="dataset" type="Numeric"/>
+	    	<Parameter default="15" name="pDataset" type="String"/>
 	    </Parameters>
 	    <Query>
 			SELECT (ROUND(v.value*100)) as joint_consultative, ( ROUND(v2.value*100)) as trade_union, 
@@ -112,7 +112,7 @@
 			AND v4.profile_id = p4.id
 			AND d.id = v4.dataset_id
 			/* COMMON */
-			AND d.id = ${dataset}
+			AND d.id = ${pDataset}
 			AND n.country_code = 'EU28';
 	    </Query>
 	</DataAccess>
