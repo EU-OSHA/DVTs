@@ -789,7 +789,8 @@ define(function (require) {
                         var ua = window.navigator.userAgent;
                         var msie = ua.indexOf("MSIE ");
                         
-                        if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv:11\./) || !!navigator.userAgent.match(/Edge/)) {
+                        if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv:11\./) || !!navigator.userAgent.match(/Edge/)
+                            || definition.chartDefinition.dataAccessId == 'getGDPData') {
                             // You use IE. That´s no good.
                             [['Download raw data', 'exportData', 'download-button']].forEach(function (item) {
                                 scope.contextuals.push(item);

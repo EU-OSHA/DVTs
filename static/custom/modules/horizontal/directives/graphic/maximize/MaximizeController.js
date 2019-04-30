@@ -33,7 +33,7 @@ define(function (require) {
                     /*ESTABLISH NEEDED DASH PARAMS FOR RENDER COMPONENTS */
                     $scope.dashboard = {
                         parameters: {
-                            "approach": $stateParams.pGroup,
+                            /*"approach": $stateParams.pGroup,
                             "pCountry1": $stateParams.pCountry1,
                             "pCountry2": $stateParams.pCountry2,
                             "pDataset": parameters.parameters[3][1],
@@ -48,7 +48,7 @@ define(function (require) {
                             "color1": dvtUtils.getGroupColor("1"),
                             "color2": dvtUtils.getGroupColor("2"),
                             "color3": dvtUtils.getGroupColor("3"),
-                            "color4": dvtUtils.getGroupColor("4")
+                            "color4": dvtUtils.getGroupColor("4")*/
                         }
                     };
 
@@ -64,16 +64,16 @@ define(function (require) {
                     $scope.parameters.parameters.push(['pMaximized', '1']);
 
                     if (!!$scope.parameters.chartDefinition) {
-                        if ($state.current.name == "approaches-indicators") {
+                        /*if ($state.current.name == "approaches-indicators") {
                             $scope.parameters.postFetch = function () {
-                                //dvtUtils.fixGroupColor($stateParams.pGroup.replace("group", ""), $scope);
+                                dvtUtils.fixGroupColor($stateParams.pGroup.replace("group", ""), $scope);
                                 var component = this,
                                     dashboard = component.dashboard,
                                     europe = dashboard.getParameterValue("pEurope");
                                 component.chartDefinition.colors = [dvtUtils.getGroupColor($stateParams.pGroup.replace("group", ""))];
                                 component.chartDefinition.colorMap[europe] = dashboard.getParameterValue("pEUColor");
                             };
-                        }
+                        }*/
 
                         /* ESTABLISH MAX COMMON PARAMETERS  */
                         $scope.parameters.chartDefinition.baseAxisLabel_font = '18px "OpenSans-bold"';
@@ -220,25 +220,6 @@ define(function (require) {
                     }
 
                     //Labels
-                    /*if(!!$scope.parameters.chartDefinition.multipleLabelColors){
-                        var pCountry1 = parameters.parameters[1][1];
-                        var pCountry2 = parameters.parameters[2][1];
-
-                        $log.warn($scope.parameters.chartDefinition.baseAxisLabel_textStyle);
-
-
-
-                        $scope.parameters.chartDefinition.baseAxisLabel_textStyle= function (){
-                            $log.warn(this);
-                            if(this.scene.vars.tick.label == 'EU28'){
-                                return dvtUtils.getEUColor();
-                            }else if(this.scene.vars.tick.label == pCountry1){
-                                return dvtUtils.getColorCountry(1);
-                            }else if(this.scene.vars.tick.label == pCountry2){
-                                return dvtUtils.getColorCountry(2);
-                            }
-                        }
-                    }*/
 
                     $scope.parameters.postExecution =  function(){
                         if(navigator.userAgent.match('Android') && window.screen.width<window.screen.height) {
