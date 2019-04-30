@@ -246,7 +246,7 @@ define(function (require) {
 
                 + '<div class="legend-text-block">'
                     + '<div ng-if="isMaximized && query != gauss" class="logoGraphics-wrapper"><img alt="European Agency for Safety and Health at Work" src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/EU-OSHA-trans-en.png" class="logoGraphics"></div>'
-                    + '<div class="legend-info" ng-show="isMaximized && legendClickMode && legend">Click on each value on the legend to hide/show in on the chart</div>'
+                    + '<div class="legend-info" ng-if="isMaximized && legendClickMode && legend">Click on each value on the legend to hide/show in on the chart</div>'
                 + '</div>'
             + '</div>'
             //+ '<div ng-if="!!functionalLegend" class="functionalLegend" data-ng-bind-html="functionalLegend"></div>'

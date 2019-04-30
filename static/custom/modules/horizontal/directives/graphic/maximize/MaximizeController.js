@@ -167,9 +167,9 @@ define(function (require) {
                             }
 
                             if($scope.parameters.name == 'dvt_bar_chart_2'){
+                                $scope.parameters.chartDefinition.valuesNormalized=1;
                                 $scope.parameters.chartDefinition.legendItemSize = 500;
                                 if( resolution < 560 ){
-                                    $log.warn('entra');
                                     $scope.parameters.chartDefinition.legendItemSize = 350;
                                 }
                             }
