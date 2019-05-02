@@ -19,7 +19,7 @@
         </div>
         <div class="eu-data">
           <h2 class="country ng-binding title-section main-color" data-ng-bind="i18nLiterals['L'+EUData.country_name]"></h2>
-          <p class="download-report" ><a href="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/modules/vertical/osh-steering/social-dialogue/pdf/{{EUData.country_code}}.pdf" class="download-pdf" data-ng-bind-html="i18nLiterals.L20637" target="_blank"></a></p>
+          <p class="download-report" ><a href="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/modules/vertical/osh-steering/social-dialogue/pdf/Social_Dialogue_{{EUData.country_code}}.pdf" class="download-pdf" data-ng-bind-html="i18nLiterals.L20637" target="_blank"></a></p>
         </div>
       </div>
       <div class="highlited-data-item">
@@ -84,7 +84,7 @@
               <div class="country-wrapper">
                 <h2 class="country ng-binding title-section main-color" data-ng-bind="i18nLiterals['L'+matrix.country_name]"></h2>
                 <p class="download-report" ng-if="matrix.country_code != 'IS' && matrix.country_code != 'NO' && matrix.country_code != 'CH'">
-                  <a href="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/modules/vertical/osh-steering/social-dialogue/pdf/{{i18nLiterals['L'+matrix.country_name]}}.pdf" class="download-pdf" data-ng-bind-html="i18nLiterals.L20637" target="_blank">
+                  <a href="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/modules/vertical/osh-steering/social-dialogue/pdf/Social_Dialogue_{{i18nLiterals['L'+matrix.country_name]}}.pdf" class="download-pdf" data-ng-bind-html="i18nLiterals.L20637" target="_blank">
                   </a>
                 </p>
                 <p ng-if="matrix.country_code == 'IS' || matrix.country_code == 'NO' || matrix.country_code == 'CH'"></p>
