@@ -75,9 +75,10 @@ define(function (require) {
       var textReduced = false;
       
       if(pVal != null){
-        if(shortText.match('<p>')){
+        if(shortText.match('<p>') || shortText.match('<ol>') || shortText.match('<strong>')){
           if(shortText.length>pNumCharacters){
             var minimized_elements = $compile(pVal)($scope);
+            //$log.warn(minimized_elements);
             for(var i = 0; i < minimized_elements.length; i++){
               var elem = minimized_elements[i];
 
@@ -214,9 +215,12 @@ define(function (require) {
             text3: elem[4],
             text4: elem[5],
             text5: elem[6],
-            text7: elem[7]
+            text6: elem[7],
+            text7: elem[8],
+            text8: elem[9]
           };
         });
+        $log.warn($scope.country2Data);
       }).catch(function (err) {
           throw err;
       });
