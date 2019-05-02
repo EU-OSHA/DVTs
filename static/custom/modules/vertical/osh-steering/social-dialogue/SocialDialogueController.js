@@ -279,7 +279,7 @@ define(function (require) {
           }
         }
 
-        $log.warn($scope.amatrix);
+        //$log.warn($scope.amatrix);
       }).catch(function (err) {
           throw err;
       });
@@ -330,12 +330,16 @@ define(function (require) {
 
         var element = angular.element($event.currentTarget);
         var tags = angular.element('div.selected--tags-wrapper');
+        var valueToJson = JSON.parse(element.attr('value'));
         
         if (element.prop('checked')) {
-          $scope.searchParams.countries.push(element.attr('value'));
+          //$scope.searchParams.countries.push(element.attr('value'));
+          $scope.searchParams.countries.push(valueToJson.country);
         } else {
-          $scope.searchParams.countries.splice($scope.searchParams.countries.indexOf(element.attr('value')), 1);
-          angular.element('span#country'+element.attr('value')).remove();
+          //$scope.searchParams.countries.splice($scope.searchParams.countries.indexOf(element.attr('value')), 1);
+          //angular.element('span#country'+element.attr('value')).remove();
+          $scope.searchParams.countries.splice($scope.searchParams.countries.indexOf(valueToJson.country), 1);
+          angular.element('span#country'+valueToJson.country).remove();
         }
 
         $scope.selectedCountries.sort();
@@ -344,7 +348,7 @@ define(function (require) {
         
         for(var i = 0; i < $scope.searchParams.countries.length;i++){
           if(angular.element('span#country'+$scope.searchParams.countries[i]).length<=0){
-            var html = '<span class="selected-tag" id="country'+$scope.searchParams.countries[i] +'" data-ng-click="deleteTag($event)">'+ $scope.i18nLiterals['L'+$scope.searchParams.countries[i]] +'</span>';
+            var html = '<span class="selected-tag" id="country'+$scope.searchParams.countries[i] +'" data-ng-click="deleteTag($event)">'+ $scope.i18nLiterals['L'+$scope.searchParams.countries[i]] + ' ('+ valueToJson.country_code +')'+'</span>';
             tags.append( $compile(html)($scope) );
           }          
         }

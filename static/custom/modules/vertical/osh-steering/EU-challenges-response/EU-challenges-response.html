@@ -38,7 +38,7 @@
             </li>
             <li>
               <input id='challenge-filter-3' type="checkbox" ng-click="toggleChallengeClick($event);openSelect($event)" tabindex="-1"/>
-              <label for='challenge-filter-3' data-ng-bind="i18nLiterals.L20653"></label>
+              <label for='challenge-filter-3' data-ng-bind="i18nLiterals.L20633"></label>
             </li>
           </ul>
           <!--<p class="btn--block-filter" data-ng-click="openSelect($event)"><a class="btn-main-color btn-full" ng-click="confirmChallengeSelection($event)" data-ng-bind="i18nLiterals.L20636"></a></p>-->
@@ -51,9 +51,8 @@
           <p class="option-title" data-ng-bind="i18nLiterals.L20630" ng-click="openSelect($event)"></p>
           <ul class="filter--dropdown--options">
             <li data-ng-repeat='country in countries'>
-              <input id='country-filter-{{::country.country}}' ng-checked="(!!country.param && country.param ==country.country_code) || pCountry == country.country_code"
-                data-ng-click="toggleCountryClick($event, $index);openSelect($event)" type="checkbox" value="{{::country.country}}" tabindex="-1"/>
-              <label for="country-filter-{{::country.country}}" data-ng-bind="i18nLiterals['L'+country.country]"></label>
+              <input id='country-filter-{{::country.country}}' ng-checked="(!!country.param && country.param ==country.country_code) || pCountry == country.country_code" data-ng-click="toggleCountryClick($event, $index);openSelect($event)" type="checkbox" value="{{::country}}" tabindex="-1"/>
+              <label for="country-filter-{{::country.country}}" data-ng-bind="(i18nLiterals['L'+country.country])+(' (')+(country.country_code)+(')')"></label>
             </li>
           </ul>
           <!--<p class="btn--block-filter" data-ng-click="openSelect($event)"><a class="btn-main-color btn-full" ng-click="confirmCountrySelection($event)" data-ng-bind="i18nLiterals.L20636"></a></p>-->
