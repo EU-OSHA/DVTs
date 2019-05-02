@@ -178,6 +178,14 @@
     /*SOCIAL DIALOGUE*/
     requirePaths['vertical/social-dialogue/SocialDialogueController'] = verticalModules + '/osh-steering/social-dialogue/SocialDialogueController' + suffix;
 
+    /* OSH OUTCOMES AND WORKING CONDITIONS */
+    requirePaths['vertical/osh-outcomes-working-conditions/osh-outcomes-working-conditions-module'] = verticalModules + '/osh-outcomes-working-conditions/osh-outcomes-working-conditions-module' + suffix;
+
+    /* WORK ACCIDENTS */
+    requirePaths['vertical/work-accidents/WorkAccidentsController'] = verticalModules + '/osh-outcomes-working-conditions/work-accidents/WorkAccidentsController' + suffix;
+    requirePaths['vertical/work-accidents/services/WorkAccidentsService'] = verticalModules + '/osh-outcomes-working-conditions/work-accidents/services/WorkAccidentsService' + suffix;
+    requirePaths['vertical/work-accidents/range'] = verticalModules + '/osh-outcomes-working-conditions/work-accidents/services/DvtRangeDirective' + suffix;
+
     /* ABOUT THE VISUALISATION TOOL */
     requirePaths['vertical/about-tool/AboutToolController'] = verticalModules + '/about-tool/AboutToolController' + suffix;
     requirePaths['vertical/about-tool/about-tool-module'] = verticalModules + '/about-tool/about-tool-module' + suffix;

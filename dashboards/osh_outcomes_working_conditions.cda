@@ -6,5 +6,69 @@
       </Connection>
    </DataSources>
 
+	<!-- OSH OUTCOMES || ALL AVAILABLE COUNTRIES FOR INDICATORS IN WORK ACCIDENTS -->
+	<DataAccess access="public" connection="dvt_conn" id="getWorkAccidentsCountries" type="sql">
+	    <Cache duration="3600" enabled="true" />
+	    <Columns />
+	    <Query>
+	      	SELECT DISTINCT(n.literal_id), n.country_code
+	      	FROM nuts n, profile p, value v
+			where n.id = p.nuts_id
+			AND v.profile_id = p.id
+			AND v.indicator_id IN (53, 54, 55, 56)
+			AND n.country_code NOT IN ('EU28')
+			ORDER BY n.literal_id ASC;
+	    </Query>
+	</DataAccess>
+
+	<!-- OSH OUTCOMES || ALL AVAILABLE COUNTRIES FOR INDICATORS IN WORK ACCIDENTS -->
+	<DataAccess access="public" connection="dvt_conn" id="getWorkAccidentsIndicators" type="sql">
+	    <Cache duration="3600" enabled="true" />
+	    <Columns />
+	    <Query>
+			SELECT id, literal_id 
+			FROM indicator
+			WHERE id IN (53, 54, 55, 56)
+	    </Query>
+	</DataAccess>
+
+	<!-- OSH OUTCOMES || DATA FOR NON FATAL ACCIDENTS INDICATOR -->
+	<DataAccess access="public" connection="dvt_conn" id="getNonFatalAccidentsData" type="sql">
+	    <Cache duration="3600" enabled="true" />
+	    <Columns />
+	    <Parameters>
+	    	<Parameter default="3" name="pDataset" type="Numeric"/>
+	    	<Parameter default="AT" name="pCountry" type="String" />
+	    </Parameters>
+	    <Query>
+	      	SELECT DISTINCT(n.country_code) as Country, p.year as Year, ROUND(v.value*100, 1) as Value
+	      	FROM nuts n, profile p, value v 
+			WHERE n.id = p.nuts_id
+			AND v.profile_id = p.id
+			AND v.indicator_id = 53
+			AND v.dataset_id = ${pDataset}
+			AND n.country_code IN (${pCountry}, 'EU28')
+			ORDER BY FIELD(n.country_code, ${pCountry}, 'EU28'), p.year ASC
+	    </Query>
+	</DataAccess>
+
+	<!-- OSH OUTCOMES || DATA FOR FATAL WORK ACCIDENTS INDICATOR -->
+	<DataAccess access="public" connection="dvt_conn" id="getFatalAccidentsData" type="sql">
+	    <Cache duration="3600" enabled="true" />
+	    <Columns />
+	    <Parameters>
+	    	<Parameter default="14" name="pDataset" type="Numeric"/>
+	    </Parameters>
+	    <Query>
+	      	SELECT t.text as Indicator, IF(n.name = 'European Union', n.country_code, n.name) as Country, v.value as Value
+	      	FROM nuts n, profile p, value v, translation t
+			WHERE n.id = p.nuts_id
+			AND v.profile_id = p.id
+			AND v.indicator_id = 54
+			AND v.dataset_id = ${pDataset}
+			AND t.literal_id = 311
+			ORDER BY Value ASC
+	    </Query>
+	</DataAccess>
    
 </CDADescriptor>

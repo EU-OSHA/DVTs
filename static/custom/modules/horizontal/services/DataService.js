@@ -89,8 +89,9 @@ define(function () {
                 },
 
                 getSocialDialogueEU28Data: function(pDataset){
+                    $log.warn(pDataset);
                     var url = configService.getGenericInformationDataPath() + "&dataAccessId=getSocialDialogueEU28Data" + "&parampDataset="+pDataset;
-                    $log.debug('getSocialDialogueEU28Data url:' + url);
+                    $log.warn('getSocialDialogueEU28Data url:' + url);
 
                     return promise(url);
                 },
@@ -619,6 +620,50 @@ define(function () {
                 },
 
             /****************************** END SOCIAL DIALOGUE ********************************/
+
+            /*********************************** WORK ACCIDENTS ************************************/
+
+                /**
+                 * @ngdoc method
+                 * @name dvt.configModule.DataService#getWorkAccidentsIndicators
+                 * @methodOf dvt.configModule.DataService
+                 * @description
+                 * Get work accident indicators
+                 */
+                getWorkAccidentsIndicators: function () {
+                    var url = configService.getOshOutcomesWorkingConditionsDataPath() + "&dataAccessId=getWorkAccidentsIndicators";
+                    $log.debug('getWorkAccidentsIndicators url:' + url);
+                    return promise(url);
+                },
+
+                /**
+                 * @ngdoc method
+                 * @name dvt.configModule.DataService#getWorkAccidentsCountries
+                 * @methodOf dvt.configModule.DataService
+                 * @description
+                 * Get work accident countries
+                 */
+                getWorkAccidentsCountries: function () {
+                    var url = configService.getOshOutcomesWorkingConditionsDataPath() + "&dataAccessId=getWorkAccidentsCountries";
+                    $log.debug('getWorkAccidentsCountries url:' + url);
+                    return promise(url);
+                },
+
+
+                /**
+                 * @ngdoc method
+                 * @name dvt.configModule.DataService#getNonFatalAccidentsData
+                 * @methodOf dvt.configModule.DataService
+                 * @description
+                 * Get non fatal accidents data
+                 */
+                getNonFatalAccidentsData: function (pDataset, pCountry1, pCountry2) {
+                    var url = configService.getOshOutcomesWorkingConditionsDataPath() + "&dataAccessId=getNonFatalAccidentsData" + "&parampDataset=" + pDataset + "&parampCountry=" + pCountry1;
+                    $log.debug('getNonFatalAccidentsData url:' + url);
+                    return promise(url);
+                },
+
+            /********************************* END WORK ACCIDENTS **********************************/
 
             /**
              * @ngdoc method
