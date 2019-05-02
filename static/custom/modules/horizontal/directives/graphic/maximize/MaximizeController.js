@@ -136,7 +136,7 @@ define(function (require) {
                                                     return panelWidth/2 - this.width()/2 - barWidth - 5;
                                                 }else{
                                                     //return (barWidth - this.width())/2 + 5; //5 is the panel margin
-                                                    return panelWidth/6 - this.width()/2;
+                                                    return panelWidth/2 - this.width()/2 - panelWidth/3;
                                                 }
                                             }else if(countryKey == $stateParams.pCountry2){
                                                 var sibling = scene.previousSibling;
@@ -152,7 +152,7 @@ define(function (require) {
                                                     return panelWidth - (barWidth + this.width()/2) - 10;
                                                 }else{
                                                     //return panelWidth/1.5 + (barWidth - this.width())/2 - 5;
-                                                    return panelWidth/1.25 - this.width()/2.5;
+                                                    return panelWidth - this.width()/2 - panelWidth/5.5;
                                                 }
                                             }
                                         }

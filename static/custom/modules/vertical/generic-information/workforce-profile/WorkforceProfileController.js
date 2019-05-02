@@ -314,19 +314,25 @@ define(function (require) {
 
         var element = angular.element($event.currentTarget);
         var tags = angular.element('div.selected--tags-wrapper');
+        var valueToJson = JSON.parse(element.attr('value'));
         
         if (element.prop('checked')) {
-          $scope.countryFilter.push(element.attr('value'));
+          $scope.countryFilter.push(valueToJson.country_name);
         } else {
-          $scope.countryFilter.splice($scope.countryFilter.indexOf(element.attr('value')), 1);
-          angular.element('span#country'+element.attr('value')).remove();
+          $scope.countryFilter.splice($scope.countryFilter.indexOf(valueToJson.country_name), 1);
+          angular.element('span#country'+valueToJson.country_name).remove();
         }
         
         var tags = angular.element('div.selected--tags-wrapper');
         
         for(var i = 0; i < $scope.countryFilter.length;i++){
           if(angular.element('span#country'+$scope.countryFilter[i]).length<=0){
-            var html = '<span class="selected-tag" id="country'+$scope.countryFilter[i] +'" data-ng-click="deleteTag($event)">'+ $scope.i18nLiterals['L'+$scope.countryFilter[i]] +'</span>';
+            if(valueToJson.country_code == 'EU28'){
+              var html = '<span class="selected-tag" id="country'+$scope.countryFilter[i] +'" data-ng-click="deleteTag($event)">'+ $scope.i18nLiterals['L'+$scope.countryFilter[i]] +'</span>';
+            }else{
+              var html = '<span class="selected-tag" id="country'+$scope.countryFilter[i] +'" data-ng-click="deleteTag($event)">'+ $scope.i18nLiterals['L'+$scope.countryFilter[i]] + ' ('+valueToJson.country_code+')' +'</span>';
+            }
+            
             tags.append( $compile(html)($scope) );
           }          
         }
