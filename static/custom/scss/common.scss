@@ -510,6 +510,8 @@
       justify-content: space-between;
       list-style: none;
       flex-direction: row;
+      margin: 1rem 0;
+      padding: 0;
       li{
         width: 50%;
         label{          
@@ -544,6 +546,7 @@
           appearance: none;
           cursor: pointer;
           width:58%;
+          background: $white;
           &::-ms-expand{
             display: none;
           }

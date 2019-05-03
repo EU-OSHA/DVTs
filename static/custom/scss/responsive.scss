@@ -674,12 +674,18 @@ and (orientation : portrait) {
 	
 	.compare--block{
 		.compare--list{
+		  width: 80%;
+		  margin: 1rem auto;
 			li{
 				label{
 					width: 100%;
+					text-align: left;
 				}
 				select{
+					text-align: left;
 					width: 100%;
+					position: relative;
+					left: -0.5rem;
 				}
 			}
 		}
@@ -975,7 +981,7 @@ and (max-width :767px)  {
       li{
       	width:100%;
         label{ 
-        	width:auto;        
+        	width:40%;        
           &:after{
           }
         }
@@ -1178,32 +1184,32 @@ and (max-width :620px) {
 	}
 }
 
-@media only screen 
-and (max-width :420px){
 
-	form.compare--block--form {
-	  text-align: left;
-	}	
+@media only screen 
+and (max-width :520px) {
+
   .compare--block{
     .compare--list{
-			padding: 0;
-			flex-direction: column;
-			display: inline-flex;
-			align-items: flex-end;
       li{
       	text-align: center;
       	width: 100%;
+      	margin: 1rem auto;
         label{
-        	width: 100%;
+        	width:100%;
+        	text-align: center;
           &:after{
           	padding: 1rem;
+          	content: '';
           }
         }
         select{
-          font-size: 1.8rem;
-          display: inline-block;
-          width: auto; 
-          background: #FFF; 
+				  font-size: 1.8rem;
+				  display: inline-block;
+				  width: 100%;
+				  border: 1px solid;
+				  background: #FFF;
+				  padding: 1rem;
+				  margin: 0rem;
           option{
             font-size: 1.2rem; 
             &:checked{            
@@ -1213,6 +1219,17 @@ and (max-width :420px){
       }
     }
   }	
+
+}
+
+
+@media only screen 
+and (max-width :420px){
+
+	form.compare--block--form {
+	  text-align: left;
+	}	
+
 }
 
 
