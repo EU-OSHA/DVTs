@@ -193,8 +193,9 @@ define(function (require) {
                         + '<li>'
                             + '<a data-ng-click="open(items[2].action)" class="{{items[2].class}}" title="{{items[2].text}}" role="button"><label class="sr-only" data-ng-bind="items[2].text"></label></a>'
                         + '</li>'*/
-                        + '<li><a data-ng-click="open(items[1].action)" role="button" data-ng-bind="items[1].text"></a></li>'
                         + '<li><a data-ng-click="open(items[2].action)" role="button" data-ng-bind="items[2].text"></a></li>'
+                        + '<li><a data-ng-click="open(items[1].action)" role="button" data-ng-bind="items[1].text"></a></li>'
+                        
                     + '</ul>'
               /*  + '<li data-ng-repeat="item in items">'
                 +     '<a data-ng-click="open(item.action)" class="{{item.class}}" title="{{item.text}}" role="button"><label class="sr-only" data-ng-bind="item.text"></label></a>'
