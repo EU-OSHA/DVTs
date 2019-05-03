@@ -117,12 +117,13 @@
         }
         .bar-main-menu{
             display: flex;
-            justify-content: center;
+            justify-content: flex-end;
             flex-direction: row;
             margin: 0 auto;
             z-index: -1;
             min-height: auto !important;
             .navbar-nav{
+              padding-right: 1.5rem;
                 > li.dropdown{
                     .fa-caret-down:before{
                         color:$aquamarine;
