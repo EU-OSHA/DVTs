@@ -183,6 +183,11 @@
                           display:block;
                       }
                     }
+                    &:not( .open ){
+                      .dropdown-menu{
+                          display:none !important;
+                      }
+                    }
                     &:nth-child(1){
                         a{
                         //padding-top: 1rem;                  

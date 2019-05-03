@@ -56,6 +56,8 @@ define(function (require) {
 
                     $(window).on("resize",function(e){
                       resolution = screen.width;
+                      angular.element('li.dropdown').removeClass('open');
+                      angular.element('li.dropdown').off('hover');
                     });
   
                     if( resolution < 768 ){
