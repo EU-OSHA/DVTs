@@ -48,7 +48,7 @@
 	                        <div class="select-default">
 	                            <select class="" ng-model="regulationCountrySelected">
 	                                <option data-ng-bind="i18n.L22035" value="0"></option>
-	                                <option data-ng-repeat='country in regulationsCountries' data-ng-bind="i18n['L'+country.country]" ng-value="country.country_code"></option>
+	                                <option data-ng-repeat='country in regulationsCountries' data-ng-bind="(i18n['L'+country.country])+(' (')+(country.country_code)+(')')" ng-value="country.country_code"></option>
 	                            </select>
 	                        </div>
 	                    </form>
@@ -68,7 +68,7 @@
 	                        <div class="select-default">                            
 	                            <select class="" ng-model="strategyCountrySelected">
 	                                <option data-ng-bind="i18n.L22035" value="0"></option>
-	                                <option data-ng-repeat='country in strategiesCountries' data-ng-bind="i18n['L'+country.country]" ng-value="country.country_code"></option>
+	                                <option data-ng-repeat='country in strategiesCountries' data-ng-bind="(i18n['L'+country.country])+(' (')+(country.country_code)+(')')" ng-value="country.country_code"></option>
 	                            </select>
 	                        </div>
 	                    </form>
@@ -207,7 +207,7 @@
 	                        <div class="select-default">                            
 	                            <select class="">
 	                                <option data-ng-bind="i18n.L22035"></option>
-	                                <option data-ng-repeat='country in capacitiesCountries' data-ng-bind="i18n['L'+country.country]"></option>
+	                                <option data-ng-repeat='country in capacitiesCountries' data-ng-bind="(i18n['L'+country.country])+(' (')+(country.country_code)+(')')"></option>
 	                            </select>
 	                        </div>
 	                    </form>
@@ -225,7 +225,7 @@
 	                        <div class="select-default">                            
 	                            <select class="">
 	                                <option data-ng-bind="i18n.L22035"></option>
-	                                <option data-ng-repeat='country in statisticsCountries' data-ng-bind="i18n['L'+country.country]"></option>
+	                                <option data-ng-repeat='country in statisticsCountries' data-ng-bind="(i18n['L'+country.country])+(' (')+(country.country_code)+(')')"></option>
 	                            </select>
 	                        </div>
 	                    </form>
