@@ -20,7 +20,7 @@ define(function(require){
 
     var exportImage = function (scope) {
 
-            var node = $('#' + scope.id).parents('.chart--wrapper')[0];
+            var node = $('#' + scope.id).parents('.modal-body')[0];
 
 
             //---------------------------------
@@ -43,6 +43,7 @@ define(function(require){
             angular.element(".modal svg").attr("style","display:none");
 
             $(".dropdown").hide();
+            angular.element("span.btn.pull-right").hide();
             angular.element(".legend-info").attr("style","display:none");
 
             var Promise = require('es6-promise').Promise;
@@ -61,6 +62,7 @@ define(function(require){
                      saveAs(blob,filename);
 
                      $(".dropdown").show();
+                     angular.element("span.btn.pull-right").show();
                      $("#svg2image").remove();
                      angular.element(".modal svg").removeAttr("style");
                  });

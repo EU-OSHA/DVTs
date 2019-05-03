@@ -72,6 +72,79 @@ define (function (require) {
                         }
                     }
                 ];
+            },
+            getEstimationNonFatalAccidentsPlots: function(){
+                var dashboard = this.dashboard;
+    
+                return [
+                    {
+                        name: "main",
+                        dataPart: "0",
+                        line_lineWidth: 1,
+                        bar_fillStyle: function(scene){
+                            var countryKey = scene.firstAtoms.category;
+                            //$log.warn(scene.firstAtoms);
+                            if (countryKey == 'EU28') {
+                                return dvtUtils.getEUColor();
+                            }
+                            return dvtUtils.getColorCountry(2);
+                        },
+                        visualRoles: {
+                            series: 'series',
+                            category: 'category'
+                        }
+                    },
+                    // Second Plot Dots
+                    {
+                        type: "point",
+                        linesVisible: false,
+                        dotsVisible: true,
+                        dataPart: "1",
+                        dotSizeMax: 15,
+                        dot_fillStyle: function (scene) {
+                            var countryKey = scene.firstAtoms.category;
+                            return dvtUtils.getAccidentsColors(4);
+                        },
+                        dot_strokeStyle: function (scene) {
+                            var countryKey = scene.firstAtoms.category;
+                            return dvtUtils.getAccidentsColors(4);
+                        },
+                        dot_aspectRatio: 1,
+                        colorAxis: 2,
+                        visualRoles: {
+                            series: 'series',
+                            category: 'category'
+                        }
+                    },
+                    // Third Plot 'lines'
+                    {
+                        type: "bar",
+                        dataPart: "1",
+                        barSizeMax: 0,
+                        bar_fillStyle: function (scene) {
+                            var countryKey = scene.firstAtoms.category;
+                            return dvtUtils.getAccidentsColors(4);
+                        },
+                        bar_strokeDasharray: 'LongDash',
+                        colorAxis: 2,
+                        bar_lineWidth: 0.5,
+                        visualRoles: {
+                            series: 'series',
+                            category: 'category'
+                        }
+                    }
+                ];
+            },
+            getBarDotCalculations: function () {
+                return [
+                    {
+                        names: "dataPart",
+                        calculation: function(datum, out) {
+                            var series = datum.atoms.series.value;
+                            out.dataPart = (series == "Non-fatal accidents per 100,000 workers reported" ? "1" : "0");
+                        }
+                    }
+                ]
             }
         };
     };

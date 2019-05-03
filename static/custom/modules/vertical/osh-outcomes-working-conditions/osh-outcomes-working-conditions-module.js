@@ -19,11 +19,19 @@ define(function (require) {
         $uiViewScrollProvider.useAnchorScroll();
 
         $stateProvider.state('work-accidents', {
-          url: "/osh-outcomes-working-conditions/work-accidents/:pIndicator",
+          url: "/osh-outcomes-working-conditions/work-accidents/:pIndicator/:pCountry1/:pCountry2",
           params: {
             pIndicator: {
               value: 'non-fatal-work-accidents',
               squash: 'non-fatal-work-accidents'
+            },
+            pCountry1: {
+              value: null,
+              squash: true
+            },
+            pCountry2: {
+              value: null,
+              squash: true
             }
           },
           views: {
@@ -38,9 +46,7 @@ define(function (require) {
           }
         });
     });
-
-    //module.directive('zylkRange', require('vertical/home/range'));
-    module.directive('dvtRange', require('vertical/work-accidents/range'));
+    
     module.factory('WorkAccidentsService', require('vertical/work-accidents/services/WorkAccidentsService'));
     return module;
 });

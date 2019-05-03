@@ -184,7 +184,6 @@
     /* WORK ACCIDENTS */
     requirePaths['vertical/work-accidents/WorkAccidentsController'] = verticalModules + '/osh-outcomes-working-conditions/work-accidents/WorkAccidentsController' + suffix;
     requirePaths['vertical/work-accidents/services/WorkAccidentsService'] = verticalModules + '/osh-outcomes-working-conditions/work-accidents/services/WorkAccidentsService' + suffix;
-    requirePaths['vertical/work-accidents/range'] = verticalModules + '/osh-outcomes-working-conditions/work-accidents/services/DvtRangeDirective' + suffix;
 
     /* ABOUT THE VISUALISATION TOOL */
     requirePaths['vertical/about-tool/AboutToolController'] = verticalModules + '/about-tool/AboutToolController' + suffix;

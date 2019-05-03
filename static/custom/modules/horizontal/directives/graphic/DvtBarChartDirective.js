@@ -245,7 +245,7 @@ define(function (require) {
                 + '<div data-ng-attr-id="{{ id }}"></div>'
 
                 + '<div class="legend-text-block">'
-                    + '<div ng-if="isMaximized && query != gauss" class="logoGraphics-wrapper"><img alt="European Agency for Safety and Health at Work" src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/osha-logo.svg" class="logoGraphics"></div>'
+                    + '<div ng-if="isMaximized && query != gauss" class="logoGraphics-wrapper"><img alt="European Agency for Safety and Health at Work" src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/EU-OSHA-en.png" class="logoGraphics"></div>'
                     + '<div class="legend-info" ng-if="isMaximized && legendClickMode && legend">Click on each value on the legend to hide/show in on the chart</div>'
                 + '</div>'
             + '</div>'
@@ -739,6 +739,8 @@ define(function (require) {
                     
                     if(definition.chartDefinition.dataAccessId == 'getGaussChartValues'){
                         definition.chartDefinition.baseAxisLabel_textStyle= 'black';
+                    }else if(attributes.multipleLabelColors == 'false'){
+                        definition.chartDefinition.baseAxisLabel_textStyle='gray';
                     }else{
                         definition.chartDefinition.baseAxisLabel_textStyle= function (){
                             if(this.scene.vars.tick.label == 'EU28'){
@@ -751,8 +753,8 @@ define(function (require) {
                             return 'gray';
                         }
                     }
-
-                    
+                }else{
+                    definition.chartDefinition.baseAxisLabel_textStyle = 'gray';
                 }
 
                 // define main chart type
@@ -848,6 +850,7 @@ define(function (require) {
                     definition ['showEuroMask'] = attributes.showEuroMask;
                     definition ['hoverable'] = attributes.hoverable;
                     definition ['orthoAxisVisible'] = attributes.orthoAxisVisible;
+                    definition ['baseAxisSize'] = attributes.baseAxisSize;
 
 
                     if(!!attributes.maxFunctionalLegend){

@@ -7,7 +7,7 @@
    </DataSources>
 
 	<!-- OSH OUTCOMES || ALL AVAILABLE COUNTRIES FOR INDICATORS IN WORK ACCIDENTS -->
-	<DataAccess access="public" connection="dvt_conn" id="getWorkAccidentsCountries" type="sql">
+	<DataAccess access="public" connection="dvt_conn" id="getNonFatalAccidentsCountries" type="sql">
 	    <Cache duration="3600" enabled="true" />
 	    <Columns />
 	    <Query>
@@ -15,7 +15,7 @@
 	      	FROM nuts n, profile p, value v
 			where n.id = p.nuts_id
 			AND v.profile_id = p.id
-			AND v.indicator_id IN (53, 54, 55, 56)
+			AND v.indicator_id = 53
 			AND n.country_code NOT IN ('EU28')
 			ORDER BY n.literal_id ASC;
 	    </Query>
@@ -67,6 +67,54 @@
 			AND v.indicator_id = 54
 			AND v.dataset_id = ${pDataset}
 			AND t.literal_id = 311
+			ORDER BY Value ASC
+	    </Query>
+	</DataAccess>
+
+	<!-- OSH OUTCOMES || DATA FOR FATAL WORK ACCIDENTS INDICATOR -->
+	<DataAccess access="public" connection="dvt_conn" id="getNonFatalAccidentsPerWorkersData" type="sql">
+	    <Cache duration="3600" enabled="true" />
+	    <Columns />
+	    <Parameters>
+	    	<Parameter default="14" name="pDataset" type="Numeric"/>
+	    </Parameters>
+	    <Query>
+	      	(
+			SELECT t.text as Indicator, IF(n.name = 'European Union', n.country_code, CONCAT(n.name, " (", n.country_code, ")")) as Country, v.value as Value
+			FROM nuts n, profile p, value v, translation t
+			WHERE n.id = p.nuts_id
+			AND v.profile_id = p.id
+			AND v.indicator_id = 55
+			AND t.literal_id = 312
+			AND v.dataset_id = ${pDataset}
+			)UNION(
+			SELECT t.text as Indicator, IF(n.name = 'European Union', n.country_code, CONCAT(n.name, " (", n.country_code, ")")) as Country, v.value as Value
+			FROM nuts n, profile p, value v, translation t
+			WHERE n.id = p.nuts_id
+			AND v.profile_id = p.id
+			AND v.indicator_id = 97
+			AND t.literal_id = 354
+			AND v.dataset_id = ${pDataset}
+			)
+			ORDER BY Indicator ASC, Value ASC
+	    </Query>
+	</DataAccess>
+
+	<!-- OSH OUTCOMES || DATA FOR FATAL WORK ACCIDENTS INDICATOR -->
+	<DataAccess access="public" connection="dvt_conn" id="getLevelOfReportingData" type="sql">
+	    <Cache duration="3600" enabled="true" />
+	    <Columns />
+	    <Parameters>
+	    	<Parameter default="14" name="pDataset" type="Numeric"/>
+	    </Parameters>
+	    <Query>
+	      	SELECT t.text as Indicator, IF(n.name = 'European Union', n.country_code, CONCAT(n.name, " (", n.country_code, ")")) as Country, ROUND(v.value*100, 1) as Value
+	      	FROM nuts n, profile p, value v, translation t
+			WHERE n.id = p.nuts_id
+			AND v.profile_id = p.id
+			AND v.indicator_id = 56
+			AND v.dataset_id = ${pDataset}
+			AND t.literal_id = 313
 			ORDER BY Value ASC
 	    </Query>
 	</DataAccess>

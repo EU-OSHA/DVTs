@@ -200,7 +200,7 @@
           <div>
             <a href="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/modules/vertical/osh-steering/country-profile/pdf/National-Strategies-Mapping_2017_{{i18nLiterals['L'+country2Data.country_name]}}.pdf" class="download-pdf" data-ng-bind-html="i18nLiterals.L20640" target="_blank"></a>
           </div>
-          <div data-ng-bind-html="trimText(i18nLiterals['L'+country2Data.text4], 200)"></div>
+          <div data-ng-bind-html="i18nLiterals['L'+country2Data.text4]"></div>
           <p class="see-more" data-ng-if="i18nLiterals['L'+country2Data.text4].length > maxCharacters">
             <a href ng-click='toggleText($event)' class="see-more">{{i18nLiterals.L20641}}<i class="fa fa-angle-down" aria-hidden="true"></i></a> 
             <a href ng-click='toggleText($event)' class="see-less" style="display:none">{{i18nLiterals.L20642}}<i class="fa fa-angle-up" aria-hidden="true"></i></a>
@@ -209,13 +209,13 @@
       </div>
     </div>
 
-    <!-- Actors and stakeholders -->
-    <div class="column--grid--block" id="tab5" data-ng-if="pIndicator == 'actors-and-stakeholders'">
+    <!-- Resources and Timeframe -->
+    <div class="column--grid--block" id="tab5" data-ng-if="pIndicator == 'resources-and-timeframe'">
       <div class="column--item first">
         <div class="">
           <img  class="flags--wrapper" ng-src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/flag/{{::country1Data.country_code.toLowerCase()}}.png">
         </div>
-        <h2 data-ng-bind="i18nLiterals.L307"></h2>
+        <h2 data-ng-bind="i18nLiterals.L20251"></h2>
         <div class="columm--item--content">
           <div class="download-report" data-ng-bind="i18nLiterals.L20639"></div>
           <div>
@@ -233,7 +233,7 @@
         <div class="">
           <img  class="flags--wrapper" ng-src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/flag/{{::country2Data.country_code.toLowerCase()}}.png">
         </div>
-        <h2 data-ng-bind="i18nLiterals.L307"></h2>
+        <h2 data-ng-bind="i18nLiterals.L20251"></h2>
         <div class="columm--item--content">
           <div class="download-report" data-ng-bind="i18nLiterals.L20639"></div>
           <div>
@@ -248,13 +248,13 @@
       </div>
     </div>
 
-    <!-- Resources and Timeframe -->
-    <div class="column--grid--block" id="tab6" data-ng-if="pIndicator == 'resources-and-timeframe'">
+    <!-- Actors and stakeholders -->
+    <div class="column--grid--block" id="tab6" data-ng-if="pIndicator == 'actors-and-stakeholders'">
       <div class="column--item first">
         <div class="">
           <img  class="flags--wrapper" ng-src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/flag/{{::country1Data.country_code.toLowerCase()}}.png">
         </div>
-        <h2 data-ng-bind="i18nLiterals.L20251"></h2>
+        <h2 data-ng-bind="i18nLiterals.L307"></h2>
         <div class="columm--item--content">
           <div class="download-report" data-ng-bind="i18nLiterals.L20639"></div>
           <div>
@@ -272,7 +272,7 @@
         <div class="">
           <img  class="flags--wrapper" ng-src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/flag/{{::country2Data.country_code.toLowerCase()}}.png">
         </div>
-        <h2 data-ng-bind="i18nLiterals.L20251"></h2>
+        <h2 data-ng-bind="i18nLiterals.L307"></h2>
         <div class="columm--item--content">
           <div class="download-report" data-ng-bind="i18nLiterals.L20639"></div>
           <div>

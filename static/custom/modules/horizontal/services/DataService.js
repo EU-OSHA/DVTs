@@ -639,13 +639,13 @@ define(function () {
                 /**
                  * @ngdoc method
                  * @name dvt.configModule.DataService#getWorkAccidentsCountries
-                 * @methodOf dvt.configModule.DataService
+                 * @methodOf dvt.configModule.getNonFatalAccidentsCountries
                  * @description
                  * Get work accident countries
                  */
-                getWorkAccidentsCountries: function () {
-                    var url = configService.getOshOutcomesWorkingConditionsDataPath() + "&dataAccessId=getWorkAccidentsCountries";
-                    $log.debug('getWorkAccidentsCountries url:' + url);
+                getNonFatalAccidentsCountries: function () {
+                    var url = configService.getOshOutcomesWorkingConditionsDataPath() + "&dataAccessId=getNonFatalAccidentsCountries";
+                    $log.debug('getNonFatalAccidentsCountries url:' + url);
                     return promise(url);
                 },
 

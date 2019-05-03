@@ -16,7 +16,7 @@
       <label class="submenu-indicator" data-ng-click ="openIndicatorsList()">Select the indicator</label>
       <ul class="submenu--items--wrapper">
         <!-- INDICATORS -->
-        <li data-ng-repeat="indicator in indicators" data-ng-class="{'active' : indicator.anchor == pIndicator }" class="submenu--item">
+        <li data-ng-if="indicator.anchor != 'level-of-reporting-of-non-fatal-accidents' && indicator.anchor != 'estimation-of-non-fatal-accidents'" data-ng-repeat="indicator in indicators" data-ng-class="{'active' : indicator.anchor == pIndicator }" class="submenu--item">
           <a href="" data-ng-click="changeIndicator($event,indicator.anchor);" data-ng-bind="i18nLiterals['L'+indicator.text]" data-ng-class="{'active' : indicator.anchor == pIndicator }" ></a>
         </li>
       </ul>
@@ -53,11 +53,10 @@
       <div class="card--grid xxs-w1 xs-w2 w2 center-text">
         <div class="card--block--chart">
           <div class="chart--block">
-            <dvt-range ng-model="dashboard.parameters.pCountry1" values="{{::dashboard.parameters.pCountry1}}" default="AT"></dvt-range>
             <dvt-bar-chart
-              data-ng-cloak
+              data-ng-cloak ng-model="pCountry1"
               query="getNonFatalAccidentsData" cda="{{::cdaOSHOutcomes }}"
-              listen-to="['pCountry1']" axis-percent="1"
+              listen-to="[pCountry1, pCountry2]" axis-percent="1"
               width="300" height="300" type="lines"
               orientation="vertical" axis-fixed-min="0"
               axis-fixed-max="120" step="{{step.chart1}}"
@@ -82,7 +81,7 @@
             <dvt-bar-chart
               data-ng-cloak
               query="getNonFatalAccidentsData" cda="{{::cdaOSHOutcomes }}"
-              listen-to="['pCountry2']" axis-percent="1"
+              listen-to="[pCountry1, pCountry2]" axis-percent="1"
               width="330" height="300" type="lines"
               orientation="vertical" axis-fixed-min="0"
               axis-fixed-max="120" step="{{step.chart2}}"
@@ -94,6 +93,7 @@
               values-visible="false"
               values-font="14px 'OpenSans-bold'"
               base-axis-label-text-baseline="top"
+              multiple-label-colors="false"
               leaf-content-overflow='visible'
               dimensions="stories[1].dimensions"
               legend="true"
@@ -115,7 +115,7 @@
             <dvt-bar-chart
               data-ng-cloak
               query="getFatalAccidentsData" cda="{{::cdaOSHOutcomes }}"
-              width="330" height="370"
+              width="330" height="470"
               orientation="vertical" axis-fixed-min="0"
               axis-fixed-max="6" step="{{step.chart3}}"
               params="[['pDataset', datasetEurostat2016]]"
@@ -143,34 +143,40 @@
     </div>
 
     <!-- Estimation of non-fatal accidents -->
-    <div class="column--grid--block" id="tab3" data-ng-if="pIndicator == 'non-fatal-accidents-per-100-000-workers-estimated'">
-      <div class="column--item first">
-        <div class="">
-          <img  class="flags--wrapper" ng-src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/flag/{{::country1Data.country_code.toLowerCase()}}.png">
+    <div class="" id="tab3" data-ng-show="pIndicator == 'estimation-of-non-fatal-accidents'">
+      <div class="card--grid xxs-w1 xs-w1 w1 center-text">
+        <div class="card--block--chart">
+          <div class="chart--block">
+            <dvt-bar-chart
+              data-ng-cloak
+              query="getNonFatalAccidentsPerWorkersData" cda="{{::cdaOSHOutcomes }}"
+              width="330" height="470"
+              orientation="vertical" axis-fixed-min="0"
+              axis-fixed-max="6000" step="{{step.chart4}}"
+              params="[['pDataset', datasetEurostat2016]]"
+              color-role="series" colors="[stories[3].color1, stories[3].color2]"
+              chart-title="{{i18nLiterals.L20707}}" id="4"
+              axis-label-font="14px 'OpenSans-bold'"
+              plots="stories[3].plots"
+              calculations = "stories[3].calculations"
+              color2-axis-legend-shape = "circle"
+              values-visible="false"
+              values-font="14px 'OpenSans-bold'"
+              base-axis-label-text-baseline=""
+              leaf-content-overflow='visible'
+              dimensions="stories[3].dimensions"
+              multiple-label-colors="false"
+              legend="true"
+              angle="1"
+              base-axis-size="100"
+              legend-item-size="450"
+            ></dvt-bar-chart>
+          </div>
         </div>
-        <h2 data-ng-bind="i18nLiterals.L299"></h2>
-        <div class="columm--item--content">
-          <div data-ng-bind-html="trimText(i18nLiterals['L'+country1Data.text10], 200)"></div>
-          <p class="see-more" data-ng-if="i18nLiterals['L'+country1Data.text10].length > maxCharacters">
-            <a href ng-click='toggleText($event)' class="see-more">{{i18nLiterals.L20641}}<i class="fa fa-angle-down" aria-hidden="true"></i></a> 
-            <a href ng-click='toggleText($event)' class="see-less" style="display:none">{{i18nLiterals.L20642}}<i class="fa fa-angle-up" aria-hidden="true"></i></a>
-          </p>
+        <div class="chart-legend">
+          <span data-ng-bind="i18nLiterals.L20567"></span>
+          <span data-ng-bind="i18nLiterals.L20704"></span> <span><a data-ng-bind="i18nLiterals.L20705" ui-sref="about-tool"></a></span>
         </div>
-      </div>
-
-      <div class="column--item second" data-ng-if="pCountry2 != 0">
-        <div class="">
-          <img class="flags--wrapper" ng-src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/flag/{{::country2Data.country_code.toLowerCase()}}.png">
-        </div>
-        <h2 data-ng-bind="i18nLiterals.L299"></h2>
-        <div class="columm--item--content">
-          <div data-ng-bind-html="trimText(i18nLiterals['L'+country2Data.text10], 200)"></div>
-          <p class="see-more" data-ng-if="i18nLiterals['L'+country2Data.text10].length > maxCharacters">
-            <a href ng-click='toggleText($event)' class="see-more">{{i18nLiterals.L20641}}<i class="fa fa-angle-down" aria-hidden="true"></i></a> 
-            <a href ng-click='toggleText($event)' class="see-less" style="display:none">{{i18nLiterals.L20642}}<i class="fa fa-angle-up" aria-hidden="true"></i></a>
-          </p>
-        </div>
-        
       </div>
     </div>
 
@@ -181,25 +187,30 @@
           <div class="chart--block">
             <dvt-bar-chart
               data-ng-cloak
-              query="getNonFatalAccidentsData" cda="{{::cdaOSHOutcomes }}"
-              listen-to="['pCountry1', 'pCountry2']"
-              width="330" height="370" type="bars"
+              query="getLevelOfReportingData" cda="{{::cdaOSHOutcomes }}"
+              width="330" height="380" type="bars" axis-percent="1"
               orientation="vertical" axis-fixed-min="0"
-              axis-fixed-max="120" step="{{step.chart1}}"
-              params="[['pDataset', datasetEurostatBetweenDates],['pCountry1', pCountry1],['pCountry2', pCountry2]]"
-              color-role="series" colors="[stories[0].color1, stories[0].color2, stories[0].color3]"
+              axis-fixed-max="100" step="{{step.chart5}}"
+              params="[['pDataset', datasetEurostat2016]]"
+              color-role="series" colors="[stories[2].color1, stories[2].color2]"
               chart-title="{{i18nLiterals.L313}}" id="5"
               axis-label-font="14px 'OpenSans-bold'"
-              plots="stories[0].plots"
+              plots="stories[2].plots"
+              dimensions="stories[2].dimensions"
               values-visible="false"
               values-font="14px 'OpenSans-bold'"
               multiple-label-colors="false"
               base-axis-label-text-baseline="top"
               leaf-content-overflow='visible'
-              legend="true"
-              legend-item-size="70"
+              legend="false"
+              angle="1"
+              base-axis-size="120"
             ></dvt-bar-chart>
           </div>
+        </div>
+        <div class="chart-legend">
+          <span data-ng-bind="i18nLiterals.L20568"></span>
+          <span data-ng-bind="i18nLiterals.L20704"></span> <span><a data-ng-bind="i18nLiterals.L20705" ui-sref="about-tool"></a></span>
         </div>
       </div>
     </div>
