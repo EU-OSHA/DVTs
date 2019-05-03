@@ -52,6 +52,7 @@ define(function (require) {
 
                     
                     /** HEADER SHOW HIDE **/
+
                     var prevScrollpos = $window.pageYOffset;
 
                     $(window).on("resize",function(e){

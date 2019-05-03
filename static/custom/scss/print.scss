@@ -14,7 +14,8 @@
 	.block--filter--wrapper, 
 	.see-more, .see-less, 
 	.social--network--nav, .footer-social-network, 
-	.footer-nav-accessibility{
+	.footer-nav-accessibility, 
+	.chart--submenu{
 	  display: none !important;
 	}
 	a[href]:after {
@@ -119,8 +120,28 @@
 		.selected-tag{
 			border: 1px solid #666;
 		}
-	} 
-
+	}
+	.economic--sector--profile{
+		.card--grid{
+			.card--block--chart {
+		  	width: 45% !important;
+		  	margin: 2rem 2%;
+		  	page-break-inside: avoid;
+		  	page-break-after: avoid;
+		  	display: block !important;
+				.title--card {
+					min-height: 6rem;
+				}
+				.chart--wrapper{
+				  padding: 0 !important;
+				  vertical-align: top;
+				  svg{
+				  	width: 100% !important;
+				  }
+				}
+			}
+		}
+	}
 }
 
 

@@ -13,6 +13,7 @@
     color: $gray-base;
     padding-top: 130px;
     overflow: auto;
+
     &.ovh{
       overflow: hidden;
     }
@@ -253,7 +254,7 @@
         border:1px solid $aquamarine;
         color:$aquamarine;
         position: relative;
-        
+        background: $white;
         -webkit-appearance: none;
         -moz-appearance: none;
         appearance: none;   
@@ -301,6 +302,14 @@
   /** END COLORS CLASS  **/
 
   /** WIDTH CARDS  **/
+    .w1{
+      .card--block{
+        width:100%;
+      }
+      .card--block--chart{
+        width:100%;
+      }
+    }
     .w2{
       .card--block{
         width:50%;
@@ -502,6 +511,8 @@
       justify-content: space-between;
       list-style: none;
       flex-direction: row;
+      margin: 1rem 0;
+      padding: 0;
       li{
         width: 50%;
         label{          
@@ -536,6 +547,7 @@
           appearance: none;
           cursor: pointer;
           width:58%;
+          background: $white;
           &::-ms-expand{
             display: none;
           }
@@ -620,7 +632,7 @@
           border:1px solid $aquamarine;
           color:$aquamarine;
           position: relative;
-
+          background: $white;
           -webkit-appearance: none;
           -moz-appearance: none;
           appearance: none;
@@ -1417,6 +1429,7 @@
             height: auto;
             margin: 3vh auto 0;
             svg{
+              border-radius: 1rem;
               text{
                 font-size: 14px !important;
               }
