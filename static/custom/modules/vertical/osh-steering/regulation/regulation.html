@@ -48,7 +48,7 @@
   <section class="container section--page full-tablet">
     <!-- Secondary Legislation -->
     <div class="column--grid--block" id="tab1" data-ng-if="pIndicator == 'secondary-legislation'">
-      <div class="column--item first">
+      <div class="column--item first" ng-class="{true: 'full', false: 'no-full'}[pCountry2 == 0]">
         <div class="">
           <img  class="flags--wrapper" ng-src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/flag/{{::country1Data.country_code.toLowerCase()}}.png">
         </div>
@@ -81,7 +81,7 @@
 
     <!-- Derogations -->
     <div class="column--grid--block" id="tab2" data-ng-if="pIndicator == 'derogations'">
-      <div class="column--item first">
+      <div class="column--item first" ng-class="{true: 'full', false: 'no-full'}[pCountry2 == 0]">
         <div class="">
           <img  class="flags--wrapper" ng-src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/flag/{{::country1Data.country_code.toLowerCase()}}.png">
         </div>
@@ -114,7 +114,7 @@
 
     <!-- Transitional period -->
     <div class="column--grid--block" id="tab3" data-ng-if="pIndicator == 'transitional-period'">
-      <div class="column--item first">
+      <div class="column--item first" ng-class="{true: 'full', false: 'no-full'}[pCountry2 == 0]">
         <div class="">
           <img  class="flags--wrapper" ng-src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/flag/{{::country1Data.country_code.toLowerCase()}}.png">
         </div>
@@ -146,7 +146,7 @@
 
     <!-- RA Compliance -->
     <div class="column--grid--block" id="tab4" data-ng-if="pIndicator == 'ra-compliance'">
-      <div class="column--item first">
+      <div class="column--item first" ng-class="{true: 'full', false: 'no-full'}[pCountry2 == 0]">
         <div class="">
           <img  class="flags--wrapper" ng-src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/flag/{{::country1Data.country_code.toLowerCase()}}.png">
         </div>
@@ -177,7 +177,7 @@
 
     <!-- Exemptions -->
     <div class="column--grid--block" id="tab5" data-ng-if="pIndicator == 'exemptions'">
-      <div class="column--item first">
+      <div class="column--item first" ng-class="{true: 'full', false: 'no-full'}[pCountry2 == 0]">
         <div class="">
           <img  class="flags--wrapper" ng-src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/flag/{{::country1Data.country_code.toLowerCase()}}.png">
         </div>
@@ -208,7 +208,7 @@
 
     <!-- SMES Difficulties -->
     <div class="column--grid--block" id="tab6" data-ng-if="pIndicator == 'smes-difficulties'">
-      <div class="column--item first">
+      <div class="column--item first" ng-class="{true: 'full', false: 'no-full'}[pCountry2 == 0]">
         <div class="">
           <img  class="flags--wrapper" ng-src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/flag/{{::country1Data.country_code.toLowerCase()}}.png">
         </div>

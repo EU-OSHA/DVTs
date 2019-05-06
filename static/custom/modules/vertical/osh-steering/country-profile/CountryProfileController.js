@@ -270,6 +270,8 @@ define(function (require) {
 
       }
 
+     
+
   }
 
   controller.$inject = ['$scope', '$stateParams', '$state', 'configService', '$log', '$document','dataService', '$window', '$sce', '$compile', '$timeout'];

@@ -84,6 +84,7 @@
 .highlited--data--section{
   background: $gray-lighter;
   padding: 3rem 0;
+  border-bottom: 4px solid $eu;
   .highlited--data--block{
     display: flex;
     .highlited-data-item{
@@ -151,7 +152,7 @@
 }
 
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 767px) {
 
   .block--filter--wrapper {
     margin: 3rem 0 !important;
@@ -164,23 +165,30 @@
   }
 
   .highlited--data--section{
+    z-index: 100;
     .highlited--data--block{
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
       .highlited-data-item{
+        width: 85%;
         &:first-child{
-          width: 100%;
+          width:15%;
           .flags--wrapper{
-
+            margin-right: 0;
+            img{
+              width: 6rem;
+            }
           }
           .eu-data{
-
             h2{
-
+              font-size: 3rem;
             }
             .download-report{
               a{
-                font-size: 1.4rem;
+                font-size: 1.2rem;
+                &:before{
+                  display:block;
+                }
               }          
             }
           }
@@ -189,7 +197,8 @@
           padding: 0;
           flex-wrap: wrap;
           li{
-            width: 45%;
+            width:25%;
+            padding: 0 2rem;
             span{
               &.country-data{
 
@@ -207,5 +216,117 @@
     }
   }
 
+}
+
+
+
+
+@media only screen and (max-width: 550px) {
+
+  .highlited--data--section{
+    z-index: 100;
+    .highlited--data--block{
+      display: flex;
+      flex-direction: column;
+      .highlited-data-item{
+        width: 100%;
+        &:first-child{
+          width:100%;
+          .flags--wrapper{
+            margin-right: 0;
+            img{
+              width: 6rem;
+              margin-right: 2rem;
+            }
+          }
+          .eu-data{
+            width: auto;
+            h2{
+              font-size: 3rem;
+              float: left;
+              margin-right: 2rem;
+            }
+            .download-report{
+              float: left;
+              a{
+                font-size: 1.2rem;
+                &:before{
+                  display:block;
+                }
+              }          
+            }
+          }
+        }
+        .highlited-data-list{
+          padding: 0;
+          flex-wrap: nowrap;
+          li{
+            width:25%;
+            padding: 0 1rem 0 0;
+            span{
+              &.country-data{
+
+              }
+              &.data-text{
+
+              }
+            }
+            label{
+
+            }
+          }
+        }
+      }
+    }
+  }
+
+}
+
+
+@media only screen and (max-width: 365px) {
+
+  .highlited--data--section{
+    z-index: 100;
+    .highlited--data--block{
+      display: flex;
+      flex-direction: column;
+      .highlited-data-item{
+        &:first-child{
+          .flags--wrapper{
+            img{
+            }
+          }
+          .eu-data{
+            h2{
+            }
+            .download-report{
+              a{
+                &:before{
+                  display:block;
+                }
+              }          
+            }
+          }
+        }
+        .highlited-data-list{
+          flex-wrap: wrap;
+          li{
+            width: 100%;
+            span{
+              &.country-data{
+
+              }
+              &.data-text{
+
+              }
+            }
+            label{
+
+            }
+          }
+        }
+      }
+    }
+  }
 
 }

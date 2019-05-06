@@ -54,7 +54,7 @@
   <section class="container section--page full-tablet">
     <!-- Basic Information -->
     <div class="column--grid--block" id="tab1" data-ng-if="pIndicator == 'basic-information'">
-      <div class="column--item first">
+      <div class="column--item first"  ng-class="{true: 'full', false: 'no-full'}[pCountry2 == 0]" >
         <div class="">
           <img  class="flags--wrapper" ng-src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/flag/{{::country1Data.country_code.toLowerCase()}}.png">
         </div>
@@ -93,7 +93,7 @@
 
     <!-- Background -->
     <div class="column--grid--block" id="tab2" data-ng-if="pIndicator == 'background'">
-      <div class="column--item first">
+      <div class="column--item first"  ng-class="{true: 'full', false: 'no-full'}[pCountry2 == 0]">
         <div class="">
           <img  class="flags--wrapper" ng-src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/flag/{{::country1Data.country_code.toLowerCase()}}.png">
         </div>
@@ -132,7 +132,7 @@
 
     <!-- Characteristics and objectives -->
     <div class="column--grid--block" id="tab3" data-ng-if="pIndicator == 'characteristics-and-objectives'">
-      <div class="column--item first">
+      <div class="column--item first" ng-class="{true: 'full', false: 'no-full'}[pCountry2 == 0]">
         <div class="">
           <img  class="flags--wrapper" ng-src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/flag/{{::country1Data.country_code.toLowerCase()}}.png">
         </div>
@@ -172,7 +172,7 @@
 
     <!-- Details and activity -->
     <div class="column--grid--block" id="tab4" data-ng-if="pIndicator == 'details-and-activity'">
-      <div class="column--item first">
+      <div class="column--item first" ng-class="{true: 'full', false: 'no-full'}[pCountry2 == 0]">
         <div class="">
           <img  class="flags--wrapper" ng-src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/flag/{{::country1Data.country_code.toLowerCase()}}.png">
         </div>
@@ -211,7 +211,7 @@
 
     <!-- Resources and Timeframe -->
     <div class="column--grid--block" id="tab5" data-ng-if="pIndicator == 'resources-and-timeframe'">
-      <div class="column--item first">
+      <div class="column--item first" ng-class="{true: 'full', false: 'no-full'}[pCountry2 == 0]">
         <div class="">
           <img  class="flags--wrapper" ng-src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/flag/{{::country1Data.country_code.toLowerCase()}}.png">
         </div>
@@ -250,7 +250,7 @@
 
     <!-- Actors and stakeholders -->
     <div class="column--grid--block" id="tab6" data-ng-if="pIndicator == 'actors-and-stakeholders'">
-      <div class="column--item first">
+      <div class="column--item first" ng-class="{true: 'full', false: 'no-full'}[pCountry2 == 0]">
         <div class="">
           <img  class="flags--wrapper" ng-src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/flag/{{::country1Data.country_code.toLowerCase()}}.png">
         </div>
@@ -289,7 +289,7 @@
 
     <!-- Evaluation -->
     <div class="column--grid--block" id="tab7" data-ng-if="pIndicator == 'evaluation'">
-      <div class="column--item first">
+      <div class="column--item first" ng-class="{true: 'full', false: 'no-full'}[pCountry2 == 0]">
         <div class="">
           <img  class="flags--wrapper" ng-src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/flag/{{::country1Data.country_code.toLowerCase()}}.png">
         </div>
@@ -328,7 +328,7 @@
 
     <!-- Relationship to EU Strategic Framework -->
     <div class="column--grid--block" id="tab8" data-ng-if="pIndicator == 'relationship-to-eu-strategic-framework'">
-      <div class="column--item first">
+      <div class="column--item first" ng-class="{true: 'full', false: 'no-full'}[pCountry2 == 0]">
         <div class="">
           <img  class="flags--wrapper" ng-src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/flag/{{::country1Data.country_code.toLowerCase()}}.png">
         </div>

@@ -163,6 +163,7 @@
 				margin: 0;
 				page-break-after: auto !important;
 				page-break-inside:avoid !important;
+				display: block;
 				.chart--block{
 					display: flex;
 					padding:0 !important;
@@ -181,6 +182,8 @@
 			}
 		}
 	  .highlited--data--section{
+	  	padding: 1rem 0;
+	  	margin-bottom: 2rem;
 	    .highlited--data--block{
 	    	 display: block;
 	      .highlited-data-item{

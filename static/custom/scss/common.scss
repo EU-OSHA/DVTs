@@ -919,6 +919,10 @@
         }
         &.first{
           border-right: 2px solid $aquamarine-light;
+          &.full{
+            border-right: 0;
+            width: 100%;
+          }
           .columm--item--content{
             
           }
