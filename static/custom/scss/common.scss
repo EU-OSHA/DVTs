@@ -457,9 +457,13 @@
       text-align: center;
     }
   }
+
   .advice--icon--block{
     position: relative;
     padding: 1rem 0;
+    .text-advice{
+      padding-bottom: 1rem;
+    }
     .title--section{
       font-family: 'Oswald';
       font-size: 3rem;

@@ -150,6 +150,62 @@
 			}
 		}
 	}
+
+
+
+
+	.social-dialogue{
+    .download-report{
+    	display: none;   
+    }
+		.card--grid {
+			.card--block--chart{
+				margin: 0;
+				page-break-after: auto !important;
+				page-break-inside:avoid !important;
+				.chart--block{
+					display: flex;
+					padding:0 !important;
+					header{
+					  display: block !important;
+					  width: 20% !important;
+					}
+					.highlited-data-list{
+						width: 80% !important;
+						li{
+							width: 20% !important;
+							text-align: left !important;
+						}
+					}
+				}
+			}
+		}
+	  .highlited--data--section{
+	    .highlited--data--block{
+	    	 display: block;
+	      .highlited-data-item{
+	      	width: 80% !important; 
+	      	float: left;
+	        &:first-child{
+	          width: 20% !important;
+	          .flags--wrapper{
+	          	float: none !important;
+	          }
+	        }
+	        .highlited-data-list{
+	        	padding:0 !important;
+	        	margin: 0; 
+	        	width: 80% !important;
+	        	justify-content: space-between !important; 
+	          li{
+	            width:20%;
+	            text-align: left !important;
+	          }
+	        }
+	      }
+	    }
+	  }
+	}
 }
 
 

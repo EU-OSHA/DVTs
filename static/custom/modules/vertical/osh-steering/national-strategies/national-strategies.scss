@@ -85,10 +85,74 @@ and (min-width :768px) and (max-width :1024px) and (orientation : portrait){
 
 }
 
+@media only screen 
+and (max-width :767px) {
+
+
+	.filter--letter--section{
+		.filter--letter--list{
+		  display: flex;
+		  justify-content: flex-start;
+		  list-style-type: none;
+		  padding: 0;
+		  flex-wrap: wrap;
+			.filter-letter-item{
+			  width: 50px;
+			  border: 1px solid $aquamarine;
+			  text-align: center;
+			  margin: 1rem;
+			  border-radius: 6px;
+				a{
+					display: block;
+				}
+			}
+		}
+	}
+
+/*
+	.filter--letter--section{
+		position: relative;
+		.filter--letter--list{
+			flex-direction: column;
+			height: 4rem;
+			overflow: hidden;
+			border: 1px solid;
+		  position: absolute;
+		  width: 95%;
+		  background: #FFF;
+		  z-index: 10;
+		  &.open-list{
+				height:auto;
+		  }
+			.filter-letter-item{
+				padding: 0 1rem;
+				position: relative;
+				&:first-child:after {
+				  content: "\f107";
+				  display: inline-block;
+				  font-size: 2.5rem !important;
+				  font-family: 'FontAwesome';
+				  font-size: inherit;
+				  text-rendering: auto;
+				  -webkit-font-smoothing: antialiased;
+				  position: absolute;
+				  right: 0.7rem;
+				  top: 0.2rem;
+				  color: #529FA2;
+				}
+				a{
+
+				}
+			}
+		}
+	}
+*/
+}
 
 @media only screen 
 and  (min-width :450px) and (max-width :767px){
 	.alphabetic--card--section{
+	  margin-top: 4rem;
 		.alphabetic--card--block{
 		  .alphabetic--card--items{
 				.text-left{
@@ -97,7 +161,7 @@ and  (min-width :450px) and (max-width :767px){
 					}
 				}
 		  	.alphabetic-card-item{
-					width: 46%;
+					width: 45%;
 		  	}
 		  }
 		}

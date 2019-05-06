@@ -272,9 +272,10 @@ define(function (require) {
 
     $scope.openIndicatorsList = function(e) {       
 
-      var parentTag = e.target.offsetParent.nextSibling.parentNode.className;
+      
 
       if( resolution < 990 ){
+        var parentTag = e.target.offsetParent.nextSibling.parentNode.className;
         if( parentTag.indexOf('open-list') < 0 ){
           angular.element('.submenu--items--wrapper').addClass('open-list');
         } else {

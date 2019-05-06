@@ -100,12 +100,21 @@ define(function (require) {
 
     /******************************END FILTERS************************************/
 
-      // Open indicators list like a select element
-      $scope.openIndicatorsList = function() {
-          angular.element('.submenu--items--wrapper').toggleClass('open-list');
-          angular.element('.submenu-indicator').toggleClass('open-list');
+    // Open indicators list like a select element
+    /*
+    $scope.openIndicatorsList = function($event) {
+      var currentSelect = $event.target; 
+      var nodename = currentSelect.nodeName;
+      if( nodename == 'A' ){
+        currentSelect = $event.target.offsetParent.offsetParent; 
+        angular.element(currentSelect).toggleClass('open-list');
+        
+      } else {
+        currentSelect = $event.target.offsetParent;
+        angular.element(currentSelect).toggleClass('open-list');
       }
-
+    }
+    */
   }
 
   controller.$inject = ['$scope', '$stateParams', '$state', 'configService', '$log', '$document','dataService', '$window', '$sce', '$compile', '$timeout', '$anchorScroll', '$location'];
