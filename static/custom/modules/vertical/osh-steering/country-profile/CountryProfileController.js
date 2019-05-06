@@ -75,50 +75,39 @@ define(function (require) {
       var textReduced = false;
       
       if(pVal != null){
-        if(shortText.match('<p>') || shortText.match('<ol>') || shortText.match('<strong>')){
-          if(shortText.length>pNumCharacters){
-            var minimized_elements = $compile(pVal)($scope);
-            //$log.warn(minimized_elements);
-            for(var i = 0; i < minimized_elements.length; i++){
-              var elem = minimized_elements[i];
+        /*var index = shortText.indexOf('<');
+        if(index != 0 || index != -1){
+          shortText = '<p>'+ shortText +'</p>';
+          $log.warn(shortText);
+        }*/
+        if((shortText.match('<p>')) && shortText.length>pNumCharacters){
+          var minimized_elements = $compile(pVal)($scope);
+          for(var i = 0; i < minimized_elements.length; i++){
+            var elem = minimized_elements[i];
+            if(i == 0){
+              $(elem).addClass("first");
 
               var t = $(elem).text();
-              totalLetters += t.length;
-              if(i == 0){
-                $(elem).addClass("visible-text");
-                if(totalLetters > pNumCharacters){
-                  $(elem).html($.trim(t).substring(0, pNumCharacters).split(" ").slice(0, -1).join(" ") + $scope.longText(t, pNumCharacters) + "<span class='dots'>...</span>");
-                  textReduced = true;
-                }
-                
-                //if(t.length>pNumCharacters){
-                  //$(elem).html($.trim(t).substring(0, pNumCharacters).split(" ").slice(0, -1).join(" ") + $scope.longText(t, pNumCharacters) + "<span class='dots'>...</span>");
-                //}
-                
-                var newHtml = $(elem)[0].outerHTML;
-                finalHtml += newHtml;
+              //$log.warn(shortText);
+              if(t.length < pNumCharacters){
+                $(elem).html($(elem).html()+ "<span class='dots'> ...</span>")
               }else{
-                if(textReduced){
-                  $(elem).addClass("text-part");
-                  $(elem).css('display','none');
-                }else{
-                  if(totalLetters > pNumCharacters){
-                    $(elem).html($.trim(t).substring(0, pNumCharacters).split(" ").slice(0, -1).join(" ") + $scope.longText(t, pNumCharacters) + "<span class='dots'>...</span>");
-                    textReduced = true;
-                  }else{
-                    $(elem).addClass("visible-text");
-                  }
-                }
-
-                var newHtml = $(elem)[0].outerHTML;
-                finalHtml += newHtml;
+                $(elem).html($.trim(t).substring(0, pNumCharacters).split(" ").slice(0, -1).join(" ") + $scope.longText(t, pNumCharacters) + "<span class='dots'>...</span>");
               }
+              
+              var newHtml = $(elem)[0].outerHTML;
+              finalHtml += newHtml;
+            }else{
+              $(elem).css('display','none');
+              $(elem).addClass("text-part");
+              var newHtml = $(elem)[0].outerHTML;
+              finalHtml += newHtml;
             }
-          }else{
-            finalHtml = shortText;
           }
-          
           return $sce.trustAsHtml(finalHtml);
+          /*if (shortText.length > pNumCharacters) {
+            shortText = $.trim(pVal).substring(0, pNumCharacters).split(" ").slice(0, -1).join(" ") + $scope.longText(pVal, pNumCharacters) + "<span class='see-more'>...</span>";
+          }*/
         }else{
           if (shortText.length > pNumCharacters) {
             shortText = $.trim(pVal).substring(0, pNumCharacters).split(" ").slice(0, -1).join(" ") + $scope.longText(pVal, pNumCharacters) + "<span class='dots'>...</span>";
@@ -220,7 +209,7 @@ define(function (require) {
             text8: elem[9]
           };
         });
-        $log.warn($scope.country2Data);
+        //$log.warn($scope.country2Data);
       }).catch(function (err) {
           throw err;
       });

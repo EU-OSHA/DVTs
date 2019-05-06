@@ -113,7 +113,7 @@
 	    	<Parameter default=".*" name="countries" type="String"/>
 	    </Parameters>
 	    <Query>
-	        SELECT DISTINCT(n.country_code) AS country_code, n.literal_id AS country_name, mp.check_1 AS implementation_record, mp.check_2 AS prevention_work, mp.check_3 AS ageing_workforce, mp.text_1_literal_id AS objectives, mp.text_2_literal_id AS groups_and_activities
+	        SELECT DISTINCT(n.country_code) AS country_code, n.literal_id AS country_name, mp.check_1 AS implementation_record, mp.check_2 AS prevention_work, mp.check_3 AS tackling_demographic, mp.text_1_literal_id AS objectives, mp.text_2_literal_id AS groups_and_activities
 			FROM matrix_page mp
 			INNER JOIN nuts n
 			ON n.id = mp.nuts_id
@@ -133,7 +133,7 @@
 			AND (n.name REGEXP ${term} OR t.text REGEXP ${term} OR t2.text REGEXP ${term}
 			OR ((mp.check_1= IF('Implementation record' REGEXP ${term}, 1, 0) AND mp.check_2= 0 AND mp.check_3= 0)
 			OR (mp.check_2= IF('Prevention of work-related diseases' REGEXP ${term}, 1, 0) AND mp.check_1= 0 AND mp.check_3= 0)
-			OR (mp.check_3= IF('Ageing workforce' REGEXP ${term}, 1, 0) AND mp.check_1= 0 AND mp.check_2= 0)))
+			OR (mp.check_3= IF('Tackling demographic change' REGEXP ${term}, 1, 0) AND mp.check_1= 0 AND mp.check_2= 0)))
 			ORDER BY country_name ASC, implementation_record DESC, prevention_work DESC, ageing_workforce DESC;
 	    </Query>
 	</DataAccess>

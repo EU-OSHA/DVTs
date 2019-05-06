@@ -322,7 +322,7 @@ define(function (require) {
               country_code: elem[0],
               implementation_record: elem[2],
               prevention_work: elem[3],
-              ageing_workforce: elem[4],
+              tackling_demographic: elem[4],
               objectives: elem[5],
               groups_and_activities: elem[6],
               param: param
