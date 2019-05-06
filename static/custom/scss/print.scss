@@ -142,6 +142,30 @@
 			}
 		}
 	}
-}
 
+	.workforce--page{
+		.filter--indicator--block{
+			display: none;
+			.indicators--group{
+
+			}
+		}
+		.survey--map--block-mobile{
+			.matrix--elements--wrapper{
+			  margin: 1rem 0;
+			 	.matrix--element{
+  				padding: 1rem;
+  				margin: 0;
+					border-bottom: 1px dotted #666;
+					border-radius: 0;
+				  .matrix--elements--data{
+						padding: 0;
+						margin: 1rem 0;
+				  }
+			  }
+			}
+		} 
+	}
+
+}
 
