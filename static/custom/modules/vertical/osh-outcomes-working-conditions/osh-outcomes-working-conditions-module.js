@@ -45,6 +45,21 @@ define(function (require) {
               title: i18n.L22010 +  " - " + i18n.L22020 + " - " + i18n.L363
           }
         });
+
+        $stateProvider.state('health-perception-of-workers', {
+          url: "/osh-outcomes-working-conditions/health-perception-of-workers",
+          params: {},
+          views: {
+              "content-main": {
+                  templateUrl: configService.getVerticalTplPath("osh-outcomes-working-conditions/health-perception-of-workers", "health-perception-of-workers"),
+                  controller: 'HealthPerceptionOfWorkersController',
+                  resolve: configService.dynamicallyRegisterController($controllerProvider, 'vertical/health-perception-of-workers/HealthPerceptionOfWorkersController', 'health-perception-of-workers', 'HealthPerceptionOfWorkersController')
+              }
+          },
+          metaTags: {
+              title: i18n.L22011 +  " - " + i18n.L22020 + " - " + i18n.L363
+          }
+        });
     });
     
     module.factory('WorkAccidentsService', require('vertical/work-accidents/services/WorkAccidentsService'));

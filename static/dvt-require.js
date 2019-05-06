@@ -185,6 +185,9 @@
     requirePaths['vertical/work-accidents/WorkAccidentsController'] = verticalModules + '/osh-outcomes-working-conditions/work-accidents/WorkAccidentsController' + suffix;
     requirePaths['vertical/work-accidents/services/WorkAccidentsService'] = verticalModules + '/osh-outcomes-working-conditions/work-accidents/services/WorkAccidentsService' + suffix;
 
+    /* HEALTH PERCEPTION OF WORKERS */
+    requirePaths['vertical/health-perception-of-workers/HealthPerceptionOfWorkersController'] = verticalModules + '/osh-outcomes-working-conditions/health-perception-of-workers/HealthPerceptionOfWorkersController' + suffix;
+
     /* ABOUT THE VISUALISATION TOOL */
     requirePaths['vertical/about-tool/AboutToolController'] = verticalModules + '/about-tool/AboutToolController' + suffix;
     requirePaths['vertical/about-tool/about-tool-module'] = verticalModules + '/about-tool/about-tool-module' + suffix;

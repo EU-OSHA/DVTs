@@ -584,7 +584,7 @@ define(function () {
                  * @name dvt.configModule.DataService#getSocialDialogueCountries
                  * @methodOf dvt.configModule.DataService
                  * @description
-                 * Get indicators for regulation select option list
+                 * Get social dialogue available countries
                  */
                 getSocialDialogueCountries: function(){
                     var url = configService.getSteeringOshDataPath() + "&dataAccessId=getSocialDialogueCountries";
@@ -597,7 +597,7 @@ define(function () {
                  * @name dvt.configModule.DataService#getSocialDialogueData
                  * @methodOf dvt.configModule.DataService
                  * @description
-                 * Get indicators for regulation select option list
+                 * Get social dialogue data
                  */
                 getSocialDialogueData: function(dataset){
                     var url = configService.getSteeringOshDataPath() + "&dataAccessId=getSocialDialogueData"+ "&paramdataset=" + dataset;
@@ -610,7 +610,7 @@ define(function () {
                  * @name dvt.configModule.DataService#applySocialDialogueFilters
                  * @methodOf dvt.configModule.DataService
                  * @description
-                 * Get indicators for regulation select option list
+                 * Apply filters in social dialogue
                  */
                 applySocialDialogueFilters: function(dataset, countries){
                     var block1 = countries.length <= 0 ? ".*" : countries.join("|");
@@ -641,7 +641,7 @@ define(function () {
                  * @name dvt.configModule.DataService#getWorkAccidentsCountries
                  * @methodOf dvt.configModule.getNonFatalAccidentsCountries
                  * @description
-                 * Get work accident countries
+                 * Get Non Fatal Accidents countries
                  */
                 getNonFatalAccidentsCountries: function () {
                     var url = configService.getOshOutcomesWorkingConditionsDataPath() + "&dataAccessId=getNonFatalAccidentsCountries";
@@ -664,6 +664,36 @@ define(function () {
                 },
 
             /********************************* END WORK ACCIDENTS **********************************/
+
+            /******************************* HEALTH PERCEPTION OF WORKERS **********************************/
+
+                /**
+                 * @ngdoc method
+                 * @name dvt.configModule.DataService#getHealthPerceptionData
+                 * @methodOf dvt.configModule.DataService
+                 * @description
+                 * Get Health Perception data
+                 */
+                getHealthPerceptionData: function(pDataset1, pDataset2){
+                    var url = configService.getOshOutcomesWorkingConditionsDataPath() + "&dataAccessId=getHealthPerceptionData"+ "&parampDataset1=" + pDataset1+ "&parampDataset2=" + pDataset2;
+                    $log.debug('getHealthPerceptionData url:' + url);
+                    return promise(url);
+                },
+
+                /**
+                 * @ngdoc method
+                 * @name dvt.configModule.DataService#getHealthPerceptionCountries
+                 * @methodOf dvt.configModule.getHealthPerceptionCountries
+                 * @description
+                 * Get Health Perception countries
+                 */
+                getHealthPerceptionCountries: function () {
+                    var url = configService.getOshOutcomesWorkingConditionsDataPath() + "&dataAccessId=getHealthPerceptionCountries";
+                    $log.debug('getHealthPerceptionCountries url:' + url);
+                    return promise(url);
+                },
+
+            /***************************** END HEALTH PERCEPTION OF WORKERS *********************************/
 
             /**
              * @ngdoc method

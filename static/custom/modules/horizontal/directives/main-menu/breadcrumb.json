@@ -33,5 +33,6 @@
     "social-dialogue": "<a ui-sref='home'>Home</a><i class='fa fa-angle-right' aria-hidden='true'></i> Steering of OSH <i class='fa fa-angle-right' aria-hidden='true'></i><span class=''>Social dialogue</span>",
 
     "_SECTION-OSH_OUTCOMES_WORKING_CONDITIONS":null,
-    "work-accidents":"<a ui-sref='home'>Home</a><i class='fa fa-angle-right' aria-hidden='true'></i> OSH outcomes and working conditions <i class='fa fa-angle-right' aria-hidden='true'></i><span class=''>Work Accidents</span>"
+    "work-accidents":"<a ui-sref='home'>Home</a><i class='fa fa-angle-right' aria-hidden='true'></i> OSH outcomes and working conditions <i class='fa fa-angle-right' aria-hidden='true'></i><span class=''>Work Accidents</span>",
+    "health-perception-of-workers":"<a ui-sref='home'>Home</a><i class='fa fa-angle-right' aria-hidden='true'></i> OSH outcomes and working conditions <i class='fa fa-angle-right' aria-hidden='true'></i><span class=''>Health perception of the workers</span>"
 }
