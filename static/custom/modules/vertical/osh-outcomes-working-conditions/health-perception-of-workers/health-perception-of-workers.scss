@@ -76,7 +76,7 @@
       display: flex;
       .highlited-data-item{
         &:first-child{
-          width:30%;
+          width:20%;
           .flags--wrapper{
             float:left;
             margin-right: 2rem;
@@ -100,6 +100,7 @@
           justify-content: space-between;
           li{
             width: 20%;
+            padding: 0 1rem 0 0;
             span{
               font-family: 'Oswald';
               font-size: 3.6rem;
@@ -117,7 +118,7 @@
               font-size: 1.4rem;
               font-family: 'Oswald';
               font-weight: normal;
-
+              display: block;
             }
           }
         }
