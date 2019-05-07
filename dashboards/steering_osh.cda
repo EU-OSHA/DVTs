@@ -92,12 +92,12 @@
 	    	<Parameter default=".*" name="countries" type="String"/>
 	    </Parameters>
 	    <Query>
-	      SELECT n.country_code as country_code, n.literal_id as country_name, mp.check_1 as implementation_record, mp.check_2 as prevention_work, mp.check_3 as ageing_workforce, mp.text_1_literal_id as objectives, mp.text_2_literal_id as groups_and_activities
+	      SELECT n.country_code as country_code, n.literal_id as country_name, mp.check_1 as implementation_record, mp.check_2 as prevention_work, mp.check_3 as tackling_demographic, mp.text_1_literal_id as objectives, mp.text_2_literal_id as groups_and_activities
 	      FROM matrix_page mp, nuts n
 	      WHERE page = 'MATRIX_STRATEGY'
 	      AND n.id = mp.nuts_id
 	      AND n.country_code REGEXP ${countries}
-	      ORDER BY country_name ASC, implementation_record DESC, prevention_work DESC, ageing_workforce DESC;
+	      ORDER BY country_name ASC, implementation_record DESC, prevention_work DESC, tackling_demographic DESC;
 	    </Query>
 	</DataAccess>
 
@@ -134,7 +134,7 @@
 			OR ((mp.check_1= IF('Implementation record' REGEXP ${term}, 1, 0) AND mp.check_2= 0 AND mp.check_3= 0)
 			OR (mp.check_2= IF('Prevention of work-related diseases' REGEXP ${term}, 1, 0) AND mp.check_1= 0 AND mp.check_3= 0)
 			OR (mp.check_3= IF('Tackling demographic change' REGEXP ${term}, 1, 0) AND mp.check_1= 0 AND mp.check_2= 0)))
-			ORDER BY country_name ASC, implementation_record DESC, prevention_work DESC, ageing_workforce DESC;
+			ORDER BY country_name ASC, implementation_record DESC, prevention_work DESC, tackling_demographic DESC;
 	    </Query>
 	</DataAccess>
 
