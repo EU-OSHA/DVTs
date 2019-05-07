@@ -31,8 +31,7 @@ define(function (require) {
       challenges:{
         filter1:0,
         filter2:0,
-        filter3:0,
-        filter4:0
+        filter3:0
       },
       countries: []
     };
@@ -358,7 +357,7 @@ define(function (require) {
             var tags = angular.element('div.selected--tags-wrapper');
             var html = '<span class="selected-tag" id="country'+elem[1]+'" data-ng-click="deleteTag($event)">'+$scope.i18nLiterals['L'+elem[1]] +' ('+elem[0]+')'+'</span>';
             tags.append( $compile(html)($scope));
-            $scope.selectedCountries.push(elem[1].toString());
+            $scope.searchParams.countries.push(elem[1].toString());
           }
         });
 
@@ -498,7 +497,6 @@ define(function (require) {
 
         var tags = angular.element('div.selected--tags-wrapper');
         //tags.empty();
-        
         for(var i = 0; i < $scope.selectedCountries.length;i++){
           if(angular.element('span#country'+$scope.selectedCountries[i]).length<=0){
             var html = '<span class="selected-tag" id="country'+$scope.selectedCountries[i] +'" data-ng-click="deleteTag($event)">'+$scope.i18nLiterals['L'+$scope.selectedCountries[i]]+'</span>';
@@ -583,9 +581,11 @@ define(function (require) {
        */
       $scope.deleteTag = function($event){
         var element = angular.element($event.currentTarget);
-        var countryId = element[0].id.slice(7,10);
+        var countryId = parseInt(element[0].id.slice(7,10));
+
         var quitChecked;
         if($event.target.id.indexOf('country') != -1){
+          //$log.warn($scope.searchParams.countries.indexOf(countryId));
           $scope.searchParams.countries.splice($scope.searchParams.countries.indexOf(countryId), 1);
           quitChecked = angular.element('.filter--dropdown--options #country-filter-'+countryId);
         }else if($event.target.id == 'challengeFilter1'){
@@ -598,7 +598,7 @@ define(function (require) {
           quitChecked = angular.element('.filter--dropdown--options #challenge-filter-3');
           $scope.searchParams.challenges.filter3=0;
         }
-        
+
         element.remove();
         quitChecked.prop('checked', false);
 
