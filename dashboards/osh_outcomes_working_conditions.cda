@@ -247,7 +247,7 @@
 			AND v6.profile_id = p6.id
 			AND d.id = v6.dataset_id
 			/* COMMON */
-			AND d.id = ${pDataset1}
+			AND d.id = 10
 			AND n.literal_id REGEXP ${countries}
 			ORDER BY country_name ASC;
 	    </Query>

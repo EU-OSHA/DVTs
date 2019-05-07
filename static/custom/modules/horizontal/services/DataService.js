@@ -693,6 +693,20 @@ define(function () {
                     return promise(url);
                 },
 
+                /**
+                 * @ngdoc method
+                 * @name dvt.configModule.DataService#applyHealthPerceptionFilters
+                 * @methodOf dvt.configModule.DataService
+                 * @description
+                 * Apply filters in health perception
+                 */
+                applyHealthPerceptionFilters: function(pDataset1, pDataset2, countries){
+                    var block1 = countries.length <= 0 ? ".*" : countries.join("|");
+                    var url = configService.getOshOutcomesWorkingConditionsDataPath() + "&dataAccessId=applyHealthPerceptionFilters" + "&parampDataset1=" + pDataset1 + "&parampDataset2=" + pDataset2 + "&paramcountries=" + block1;
+                    $log.debug('applyHealthPerceptionFilters url:' + url);
+                    return promise(url);
+                },
+
             /***************************** END HEALTH PERCEPTION OF WORKERS *********************************/
 
             /**

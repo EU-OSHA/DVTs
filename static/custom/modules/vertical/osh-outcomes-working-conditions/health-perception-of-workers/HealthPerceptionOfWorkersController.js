@@ -431,7 +431,7 @@ define(function (require) {
       function search($event,filter) {
         //$log.warn($scope.amatrix);
 
-        dataService.applySocialDialogueFilters($scope.datasetESENER, $scope.searchParams.countries)
+        dataService.applyHealthPerceptionFilters(10, 11, $scope.searchParams.countries)
           .then(function (data) {
             $scope.amatrix = dataService.dataMapper(data);
 
@@ -439,7 +439,7 @@ define(function (require) {
 
             $scope.firstPage();
 
-            $state.transitionTo('social-dialogue', {}, {notify: false});
+            $state.transitionTo('health-perception-of-workers', {}, {notify: false});
 
             //updateText();
 
