@@ -692,6 +692,12 @@
           &.active, &:hover, &:focus, &:visited {
             border-bottom: 4px solid $orange;
             text-decoration: none;
+            //color: $aquamarine;
+          }
+        }
+        &.active{
+          a, a.active, a:hover, a:focus, a:visited {
+            color: $aquamarine;
           }
         }
       }
@@ -897,6 +903,7 @@
           font-size: 2.8rem;
           margin-top: 0;
           text-align: left;
+          min-height: 7rem;
         }
         .chart--block{
           //margin-top:auto; 
