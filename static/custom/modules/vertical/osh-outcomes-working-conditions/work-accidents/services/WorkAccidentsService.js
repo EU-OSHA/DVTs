@@ -51,6 +51,7 @@ define (function (require) {
                         name: "main",
                         dataPart: "0",
                         line_lineWidth: 1.5,
+                        barSizeMax: 20,
                         bar_fillStyle: function(scene){
                             var countryKey = scene.firstAtoms.category;
                             //$log.warn(countryKey);
@@ -81,6 +82,7 @@ define (function (require) {
                         name: "main",
                         dataPart: "0",
                         line_lineWidth: 1,
+                        barSizeMax: 20,
                         bar_fillStyle: function(scene){
                             var countryKey = scene.firstAtoms.category;
                             //$log.warn(scene.firstAtoms);

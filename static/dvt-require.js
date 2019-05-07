@@ -188,6 +188,10 @@
     /* HEALTH PERCEPTION OF WORKERS */
     requirePaths['vertical/health-perception-of-workers/HealthPerceptionOfWorkersController'] = verticalModules + '/osh-outcomes-working-conditions/health-perception-of-workers/HealthPerceptionOfWorkersController' + suffix;
 
+    /* OSH CULTURE AND HEALTH AWARENESS */
+    requirePaths['vertical/osh-culture/OshCultureController'] = verticalModules + '/osh-outcomes-working-conditions/osh-culture/OshCultureController' + suffix;
+    requirePaths['vertical/osh-culture/services/OshCultureService'] = verticalModules + '/osh-outcomes-working-conditions/osh-culture/services/OshCultureService' + suffix;
+
     /* ABOUT THE VISUALISATION TOOL */
     requirePaths['vertical/about-tool/AboutToolController'] = verticalModules + '/about-tool/AboutToolController' + suffix;
     requirePaths['vertical/about-tool/about-tool-module'] = verticalModules + '/about-tool/about-tool-module' + suffix;
