@@ -321,7 +321,7 @@
         <length>-1</length>
         <precision>-1</precision>
         <currency/>
-        <decimal/>
+        <decimal>.</decimal>
         <group/>
         <trim_type>none</trim_type>
         <repeat>N</repeat>
@@ -334,7 +334,7 @@
         <length>-1</length>
         <precision>-1</precision>
         <currency/>
-        <decimal/>
+        <decimal>.</decimal>
         <group/>
         <trim_type>none</trim_type>
         <repeat>N</repeat>
@@ -347,20 +347,20 @@
         <length>-1</length>
         <precision>-1</precision>
         <currency/>
-        <decimal/>
+        <decimal>.</decimal>
         <group/>
         <trim_type>none</trim_type>
         <repeat>N</repeat>
       </field>
       <field>
-        <name>2016</name>
-        <attribut>2016</attribut>
+        <name>2017</name>
+        <attribut>2017</attribut>
         <type>Number</type>
         <format/>
         <length>-1</length>
         <precision>-1</precision>
         <currency/>
-        <decimal/>
+        <decimal>.</decimal>
         <group/>
         <trim_type>none</trim_type>
         <repeat>N</repeat>
@@ -553,8 +553,8 @@
     <fields>      <field>        <name>2010</name>
         <value>2010</value>
         <norm>Value</norm>
-        </field>      <field>        <name>2016</name>
-        <value>2016</value>
+        </field>      <field>        <name>2017</name>
+        <value>2017</value>
         <norm>Value</norm>
         </field>      </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
