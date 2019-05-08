@@ -164,14 +164,21 @@ define(function (require) {
 
                             if($scope.parameters.name == 'dvt_bar_chart_1'){
                                 $scope.parameters.chartDefinition.legendItemSize = 350;
+                                
+                                /*if( resolution > 1256 &&  resolution <= 1684){
+                                    $log.warn('resolution > 1360');
+                                    $scope.parameters.chartDefinition.legendItemSize = 350;
+                                }
+                                if( resolution > 1684 ){
+                                    $log.warn('resolution > 1684');
+                                    $scope.parameters.chartDefinition.legendItemSize = 450;
+                                }*/
                             }
 
                             if($scope.parameters.name == 'dvt_bar_chart_2'){
                                 $scope.parameters.chartDefinition.valuesNormalized=1;
-                                $scope.parameters.chartDefinition.legendItemSize = 500;
-                                if( resolution < 560 ){
-                                    $scope.parameters.chartDefinition.legendItemSize = 350;
-                                }
+                                $scope.parameters.chartDefinition.legendItemSize = 340;
+                                                         
                             }
                         }
 
