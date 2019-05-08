@@ -103,6 +103,18 @@ INSERT INTO `chart` (`id`, `section_id`, `name`) VALUES
 INSERT INTO `chart` (`id`, `section_id`, `name`) VALUES
 	(20031, 21, NULL);
 INSERT INTO `chart` (`id`, `section_id`, `name`) VALUES
+	(20032, 22, NULL);
+INSERT INTO `chart` (`id`, `section_id`, `name`) VALUES
+	(20033, 22, NULL);
+INSERT INTO `chart` (`id`, `section_id`, `name`) VALUES
+	(20034, 22, NULL);
+INSERT INTO `chart` (`id`, `section_id`, `name`) VALUES
+	(20035, 22, NULL);
+INSERT INTO `chart` (`id`, `section_id`, `name`) VALUES
+	(20036, 22, NULL);
+INSERT INTO `chart` (`id`, `section_id`, `name`) VALUES
+	(20037, 22, NULL);
+INSERT INTO `chart` (`id`, `section_id`, `name`) VALUES
 	(20038, 22, NULL);
 INSERT INTO `chart` (`id`, `section_id`, `name`) VALUES
 	(20039, 22, NULL);
@@ -110,6 +122,20 @@ INSERT INTO `chart` (`id`, `section_id`, `name`) VALUES
 	(20040, 23, NULL);
 INSERT INTO `chart` (`id`, `section_id`, `name`) VALUES
 	(20041, 23, NULL);
+INSERT INTO `chart` (`id`, `section_id`, `name`) VALUES
+	(20042, 24, NULL);
+INSERT INTO `chart` (`id`, `section_id`, `name`) VALUES
+	(20043, 24, NULL);
+INSERT INTO `chart` (`id`, `section_id`, `name`) VALUES
+	(20044, 24, NULL);
+INSERT INTO `chart` (`id`, `section_id`, `name`) VALUES
+	(20045, 24, NULL);
+INSERT INTO `chart` (`id`, `section_id`, `name`) VALUES
+	(20046, 24, NULL);
+INSERT INTO `chart` (`id`, `section_id`, `name`) VALUES
+	(20047, 24, NULL);
+INSERT INTO `chart` (`id`, `section_id`, `name`) VALUES
+	(20048, 24, NULL);
 INSERT INTO `chart` (`id`, `section_id`, `name`) VALUES
 	(20049, 25, NULL);
 INSERT INTO `chart` (`id`, `section_id`, `name`) VALUES
@@ -127,7 +153,31 @@ INSERT INTO `chart` (`id`, `section_id`, `name`) VALUES
 INSERT INTO `chart` (`id`, `section_id`, `name`) VALUES
 	(20056, 25, NULL);
 INSERT INTO `chart` (`id`, `section_id`, `name`) VALUES
+	(20057, 25, NULL);
+INSERT INTO `chart` (`id`, `section_id`, `name`) VALUES
+	(20060, 25, NULL);
+INSERT INTO `chart` (`id`, `section_id`, `name`) VALUES
+	(20061, 25, NULL);
+INSERT INTO `chart` (`id`, `section_id`, `name`) VALUES
+	(20062, 26, NULL);
+INSERT INTO `chart` (`id`, `section_id`, `name`) VALUES
+	(20063, 26, NULL);
+INSERT INTO `chart` (`id`, `section_id`, `name`) VALUES
+	(20065, 26, NULL);
+INSERT INTO `chart` (`id`, `section_id`, `name`) VALUES
+	(20066, 26, NULL);
+INSERT INTO `chart` (`id`, `section_id`, `name`) VALUES
+	(20067, 27, NULL);
+INSERT INTO `chart` (`id`, `section_id`, `name`) VALUES
+	(20068, 27, NULL);
+INSERT INTO `chart` (`id`, `section_id`, `name`) VALUES
 	(20069, 27, NULL);
+INSERT INTO `chart` (`id`, `section_id`, `name`) VALUES
+	(20070, 27, NULL);
+INSERT INTO `chart` (`id`, `section_id`, `name`) VALUES
+	(20071, 27, NULL);
+INSERT INTO `chart` (`id`, `section_id`, `name`) VALUES
+	(20072, 27, NULL);
 INSERT INTO `chart` (`id`, `section_id`, `name`) VALUES
 	(20073, 24, NULL);
 INSERT INTO `chart` (`id`, `section_id`, `name`) VALUES
@@ -233,6 +283,8 @@ INSERT INTO `dataset` (`id`, `name`, `source`, `date_from`, `date_to`) VALUES
 	(13, 'BAROMETER_DATA', 'DG EMPL', '2018-01-01', NULL);
 INSERT INTO `dataset` (`id`, `name`, `source`, `date_from`, `date_to`) VALUES
 	(14, 'BAROMETER_DATA', 'EUROSTAT', '2016-01-01', NULL);
+INSERT INTO `dataset` (`id`, `name`, `source`, `date_from`, `date_to`) VALUES
+	(15, 'ESENER_DATA', 'ESENER', '2014-01-01', NULL);
 /*!40000 ALTER TABLE `dataset` ENABLE KEYS */;
 
 -- Volcando estructura para tabla osha_dvt_tests.glossary
@@ -493,6 +545,60 @@ INSERT INTO `indicator` (`id`, `name`, `literal_id`) VALUES
 	(98, 'Resources and timeframe', 445);
 INSERT INTO `indicator` (`id`, `name`, `literal_id`) VALUES
 	(99, 'Relationship to EU Strategic Framework', 446);
+INSERT INTO `indicator` (`id`, `name`, `literal_id`) VALUES
+	(100, 'Q166_1', 453);
+INSERT INTO `indicator` (`id`, `name`, `literal_id`) VALUES
+	(101, 'Q166_2', 454);
+INSERT INTO `indicator` (`id`, `name`, `literal_id`) VALUES
+	(102, 'Q166_3', 455);
+INSERT INTO `indicator` (`id`, `name`, `literal_id`) VALUES
+	(103, 'Q166_4', 456);
+INSERT INTO `indicator` (`id`, `name`, `literal_id`) VALUES
+	(104, 'Q160', 457);
+INSERT INTO `indicator` (`id`, `name`, `literal_id`) VALUES
+	(105, 'Q350', 458);
+INSERT INTO `indicator` (`id`, `name`, `literal_id`) VALUES
+	(106, 'Q300', 459);
+INSERT INTO `indicator` (`id`, `name`, `literal_id`) VALUES
+	(107, 'Q301', 460);
+INSERT INTO `indicator` (`id`, `name`, `literal_id`) VALUES
+	(108, 'Q302', 461);
+INSERT INTO `indicator` (`id`, `name`, `literal_id`) VALUES
+	(109, 'Q303_1', 462);
+INSERT INTO `indicator` (`id`, `name`, `literal_id`) VALUES
+	(110, 'Q200_1', 463);
+INSERT INTO `indicator` (`id`, `name`, `literal_id`) VALUES
+	(111, 'Q200_2', 464);
+INSERT INTO `indicator` (`id`, `name`, `literal_id`) VALUES
+	(112, 'Q200_4', 465);
+INSERT INTO `indicator` (`id`, `name`, `literal_id`) VALUES
+	(113, 'Q201_1', 466);
+INSERT INTO `indicator` (`id`, `name`, `literal_id`) VALUES
+	(114, 'Q201_2', 467);
+INSERT INTO `indicator` (`id`, `name`, `literal_id`) VALUES
+	(115, 'Q201_3', 468);
+INSERT INTO `indicator` (`id`, `name`, `literal_id`) VALUES
+	(116, 'Q201_4', 469);
+INSERT INTO `indicator` (`id`, `name`, `literal_id`) VALUES
+	(117, 'Q201_5', 470);
+INSERT INTO `indicator` (`id`, `name`, `literal_id`) VALUES
+	(118, 'Q201_6', 471);
+INSERT INTO `indicator` (`id`, `name`, `literal_id`) VALUES
+	(119, 'Q201_7', 472);
+INSERT INTO `indicator` (`id`, `name`, `literal_id`) VALUES
+	(120, 'Q250', 473);
+INSERT INTO `indicator` (`id`, `name`, `literal_id`) VALUES
+	(121, 'Q251', 474);
+INSERT INTO `indicator` (`id`, `name`, `literal_id`) VALUES
+	(122, 'Q354', 475);
+INSERT INTO `indicator` (`id`, `name`, `literal_id`) VALUES
+	(123, 'Q305', 476);
+INSERT INTO `indicator` (`id`, `name`, `literal_id`) VALUES
+	(124, 'Q358', 477);
+INSERT INTO `indicator` (`id`, `name`, `literal_id`) VALUES
+	(125, 'Q351', 478);
+INSERT INTO `indicator` (`id`, `name`, `literal_id`) VALUES
+	(126, 'Q165', 479);
 /*!40000 ALTER TABLE `indicator` ENABLE KEYS */;
 
 -- Volcando estructura para tabla osha_dvt_tests.indicators_by_chart
@@ -643,6 +749,56 @@ INSERT INTO `indicators_by_chart` (`chart_id`, `indicator_id`, `dataset_id`) VAL
 	(20085, 95, 10);
 INSERT INTO `indicators_by_chart` (`chart_id`, `indicator_id`, `dataset_id`) VALUES
 	(20086, 96, 10);
+INSERT INTO `indicators_by_chart` (`chart_id`, `indicator_id`, `dataset_id`) VALUES
+	(20067, 101, 15);
+INSERT INTO `indicators_by_chart` (`chart_id`, `indicator_id`, `dataset_id`) VALUES
+	(20068, 102, 15);
+INSERT INTO `indicators_by_chart` (`chart_id`, `indicator_id`, `dataset_id`) VALUES
+	(20032, 104, 15);
+INSERT INTO `indicators_by_chart` (`chart_id`, `indicator_id`, `dataset_id`) VALUES
+	(20033, 105, 15);
+INSERT INTO `indicators_by_chart` (`chart_id`, `indicator_id`, `dataset_id`) VALUES
+	(20034, 106, 15);
+INSERT INTO `indicators_by_chart` (`chart_id`, `indicator_id`, `dataset_id`) VALUES
+	(20035, 107, 15);
+INSERT INTO `indicators_by_chart` (`chart_id`, `indicator_id`, `dataset_id`) VALUES
+	(20036, 108, 15);
+INSERT INTO `indicators_by_chart` (`chart_id`, `indicator_id`, `dataset_id`) VALUES
+	(20037, 109, 15);
+INSERT INTO `indicators_by_chart` (`chart_id`, `indicator_id`, `dataset_id`) VALUES
+	(20057, 110, 15);
+INSERT INTO `indicators_by_chart` (`chart_id`, `indicator_id`, `dataset_id`) VALUES
+	(20061, 111, 15);
+INSERT INTO `indicators_by_chart` (`chart_id`, `indicator_id`, `dataset_id`) VALUES
+	(20060, 112, 15);
+INSERT INTO `indicators_by_chart` (`chart_id`, `indicator_id`, `dataset_id`) VALUES
+	(20042, 113, 15);
+INSERT INTO `indicators_by_chart` (`chart_id`, `indicator_id`, `dataset_id`) VALUES
+	(20043, 114, 15);
+INSERT INTO `indicators_by_chart` (`chart_id`, `indicator_id`, `dataset_id`) VALUES
+	(20044, 115, 15);
+INSERT INTO `indicators_by_chart` (`chart_id`, `indicator_id`, `dataset_id`) VALUES
+	(20045, 116, 15);
+INSERT INTO `indicators_by_chart` (`chart_id`, `indicator_id`, `dataset_id`) VALUES
+	(20046, 117, 15);
+INSERT INTO `indicators_by_chart` (`chart_id`, `indicator_id`, `dataset_id`) VALUES
+	(20047, 118, 15);
+INSERT INTO `indicators_by_chart` (`chart_id`, `indicator_id`, `dataset_id`) VALUES
+	(20048, 119, 15);
+INSERT INTO `indicators_by_chart` (`chart_id`, `indicator_id`, `dataset_id`) VALUES
+	(20062, 120, 15);
+INSERT INTO `indicators_by_chart` (`chart_id`, `indicator_id`, `dataset_id`) VALUES
+	(20063, 121, 15);
+INSERT INTO `indicators_by_chart` (`chart_id`, `indicator_id`, `dataset_id`) VALUES
+	(20065, 122, 15);
+INSERT INTO `indicators_by_chart` (`chart_id`, `indicator_id`, `dataset_id`) VALUES
+	(20066, 123, 15);
+INSERT INTO `indicators_by_chart` (`chart_id`, `indicator_id`, `dataset_id`) VALUES
+	(20071, 123, 15);
+INSERT INTO `indicators_by_chart` (`chart_id`, `indicator_id`, `dataset_id`) VALUES
+	(20070, 124, 15);
+INSERT INTO `indicators_by_chart` (`chart_id`, `indicator_id`, `dataset_id`) VALUES
+	(20072, 125, 15);
 /*!40000 ALTER TABLE `indicators_by_chart` ENABLE KEYS */;
 
 -- Volcando estructura para tabla osha_dvt_tests.indicators_in_dataset
@@ -856,6 +1012,60 @@ INSERT INTO `indicators_in_dataset` (`indicator_id`, `dataset_id`) VALUES
 	(56, 14);
 INSERT INTO `indicators_in_dataset` (`indicator_id`, `dataset_id`) VALUES
 	(97, 14);
+INSERT INTO `indicators_in_dataset` (`indicator_id`, `dataset_id`) VALUES
+	(100, 15);
+INSERT INTO `indicators_in_dataset` (`indicator_id`, `dataset_id`) VALUES
+	(101, 15);
+INSERT INTO `indicators_in_dataset` (`indicator_id`, `dataset_id`) VALUES
+	(102, 15);
+INSERT INTO `indicators_in_dataset` (`indicator_id`, `dataset_id`) VALUES
+	(103, 15);
+INSERT INTO `indicators_in_dataset` (`indicator_id`, `dataset_id`) VALUES
+	(104, 15);
+INSERT INTO `indicators_in_dataset` (`indicator_id`, `dataset_id`) VALUES
+	(105, 15);
+INSERT INTO `indicators_in_dataset` (`indicator_id`, `dataset_id`) VALUES
+	(106, 15);
+INSERT INTO `indicators_in_dataset` (`indicator_id`, `dataset_id`) VALUES
+	(107, 15);
+INSERT INTO `indicators_in_dataset` (`indicator_id`, `dataset_id`) VALUES
+	(108, 15);
+INSERT INTO `indicators_in_dataset` (`indicator_id`, `dataset_id`) VALUES
+	(109, 15);
+INSERT INTO `indicators_in_dataset` (`indicator_id`, `dataset_id`) VALUES
+	(110, 15);
+INSERT INTO `indicators_in_dataset` (`indicator_id`, `dataset_id`) VALUES
+	(111, 15);
+INSERT INTO `indicators_in_dataset` (`indicator_id`, `dataset_id`) VALUES
+	(112, 15);
+INSERT INTO `indicators_in_dataset` (`indicator_id`, `dataset_id`) VALUES
+	(113, 15);
+INSERT INTO `indicators_in_dataset` (`indicator_id`, `dataset_id`) VALUES
+	(114, 15);
+INSERT INTO `indicators_in_dataset` (`indicator_id`, `dataset_id`) VALUES
+	(115, 15);
+INSERT INTO `indicators_in_dataset` (`indicator_id`, `dataset_id`) VALUES
+	(116, 15);
+INSERT INTO `indicators_in_dataset` (`indicator_id`, `dataset_id`) VALUES
+	(117, 15);
+INSERT INTO `indicators_in_dataset` (`indicator_id`, `dataset_id`) VALUES
+	(118, 15);
+INSERT INTO `indicators_in_dataset` (`indicator_id`, `dataset_id`) VALUES
+	(119, 15);
+INSERT INTO `indicators_in_dataset` (`indicator_id`, `dataset_id`) VALUES
+	(120, 15);
+INSERT INTO `indicators_in_dataset` (`indicator_id`, `dataset_id`) VALUES
+	(121, 15);
+INSERT INTO `indicators_in_dataset` (`indicator_id`, `dataset_id`) VALUES
+	(122, 15);
+INSERT INTO `indicators_in_dataset` (`indicator_id`, `dataset_id`) VALUES
+	(123, 15);
+INSERT INTO `indicators_in_dataset` (`indicator_id`, `dataset_id`) VALUES
+	(124, 15);
+INSERT INTO `indicators_in_dataset` (`indicator_id`, `dataset_id`) VALUES
+	(125, 15);
+INSERT INTO `indicators_in_dataset` (`indicator_id`, `dataset_id`) VALUES
+	(126, 15);
 /*!40000 ALTER TABLE `indicators_in_dataset` ENABLE KEYS */;
 
 -- Volcando estructura para tabla osha_dvt_tests.literal
@@ -1778,6 +1988,60 @@ INSERT INTO `literal` (`id`, `chart_id`, `section_id`, `type`) VALUES
 	(451, NULL, NULL, 'SPLIT_ANSWER_NAME');
 INSERT INTO `literal` (`id`, `chart_id`, `section_id`, `type`) VALUES
 	(452, NULL, NULL, 'SPLIT_ANSWER_NAME');
+INSERT INTO `literal` (`id`, `chart_id`, `section_id`, `type`) VALUES
+	(453, NULL, NULL, 'INDICATOR_NAME');
+INSERT INTO `literal` (`id`, `chart_id`, `section_id`, `type`) VALUES
+	(454, NULL, NULL, 'INDICATOR_NAME');
+INSERT INTO `literal` (`id`, `chart_id`, `section_id`, `type`) VALUES
+	(455, NULL, NULL, 'INDICATOR_NAME');
+INSERT INTO `literal` (`id`, `chart_id`, `section_id`, `type`) VALUES
+	(456, NULL, NULL, 'INDICATOR_NAME');
+INSERT INTO `literal` (`id`, `chart_id`, `section_id`, `type`) VALUES
+	(457, NULL, NULL, 'INDICATOR_NAME');
+INSERT INTO `literal` (`id`, `chart_id`, `section_id`, `type`) VALUES
+	(458, NULL, NULL, 'INDICATOR_NAME');
+INSERT INTO `literal` (`id`, `chart_id`, `section_id`, `type`) VALUES
+	(459, NULL, NULL, 'INDICATOR_NAME');
+INSERT INTO `literal` (`id`, `chart_id`, `section_id`, `type`) VALUES
+	(460, NULL, NULL, 'INDICATOR_NAME');
+INSERT INTO `literal` (`id`, `chart_id`, `section_id`, `type`) VALUES
+	(461, NULL, NULL, 'INDICATOR_NAME');
+INSERT INTO `literal` (`id`, `chart_id`, `section_id`, `type`) VALUES
+	(462, NULL, NULL, 'INDICATOR_NAME');
+INSERT INTO `literal` (`id`, `chart_id`, `section_id`, `type`) VALUES
+	(463, NULL, NULL, 'INDICATOR_NAME');
+INSERT INTO `literal` (`id`, `chart_id`, `section_id`, `type`) VALUES
+	(464, NULL, NULL, 'INDICATOR_NAME');
+INSERT INTO `literal` (`id`, `chart_id`, `section_id`, `type`) VALUES
+	(465, NULL, NULL, 'INDICATOR_NAME');
+INSERT INTO `literal` (`id`, `chart_id`, `section_id`, `type`) VALUES
+	(466, NULL, NULL, 'INDICATOR_NAME');
+INSERT INTO `literal` (`id`, `chart_id`, `section_id`, `type`) VALUES
+	(467, NULL, NULL, 'INDICATOR_NAME');
+INSERT INTO `literal` (`id`, `chart_id`, `section_id`, `type`) VALUES
+	(468, NULL, NULL, 'INDICATOR_NAME');
+INSERT INTO `literal` (`id`, `chart_id`, `section_id`, `type`) VALUES
+	(469, NULL, NULL, 'INDICATOR_NAME');
+INSERT INTO `literal` (`id`, `chart_id`, `section_id`, `type`) VALUES
+	(470, NULL, NULL, 'INDICATOR_NAME');
+INSERT INTO `literal` (`id`, `chart_id`, `section_id`, `type`) VALUES
+	(471, NULL, NULL, 'INDICATOR_NAME');
+INSERT INTO `literal` (`id`, `chart_id`, `section_id`, `type`) VALUES
+	(472, NULL, NULL, 'INDICATOR_NAME');
+INSERT INTO `literal` (`id`, `chart_id`, `section_id`, `type`) VALUES
+	(473, NULL, NULL, 'INDICATOR_NAME');
+INSERT INTO `literal` (`id`, `chart_id`, `section_id`, `type`) VALUES
+	(474, NULL, NULL, 'INDICATOR_NAME');
+INSERT INTO `literal` (`id`, `chart_id`, `section_id`, `type`) VALUES
+	(475, NULL, NULL, 'INDICATOR_NAME');
+INSERT INTO `literal` (`id`, `chart_id`, `section_id`, `type`) VALUES
+	(476, NULL, NULL, 'INDICATOR_NAME');
+INSERT INTO `literal` (`id`, `chart_id`, `section_id`, `type`) VALUES
+	(477, NULL, NULL, 'INDICATOR_NAME');
+INSERT INTO `literal` (`id`, `chart_id`, `section_id`, `type`) VALUES
+	(478, NULL, NULL, 'INDICATOR_NAME');
+INSERT INTO `literal` (`id`, `chart_id`, `section_id`, `type`) VALUES
+	(479, NULL, NULL, 'INDICATOR_NAME');
 INSERT INTO `literal` (`id`, `chart_id`, `section_id`, `type`) VALUES
 	(10001, NULL, 5, 'MENU_ITEM');
 INSERT INTO `literal` (`id`, `chart_id`, `section_id`, `type`) VALUES
@@ -8144,7 +8408,7 @@ CREATE TABLE IF NOT EXISTS `profile` (
   CONSTRAINT `profile_subindicator_id` FOREIGN KEY (`subindicator_id`) REFERENCES `split_subindicator` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=2276 DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla osha_dvt_tests.profile: ~507 rows (aproximadamente)
+-- Volcando datos para la tabla osha_dvt_tests.profile: ~2.275 rows (aproximadamente)
 /*!40000 ALTER TABLE `profile` DISABLE KEYS */;
 INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
 	(1, 30, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
@@ -12696,6 +12960,1420 @@ INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`
 	(2274, 156, NULL, NULL, NULL, 2, NULL, NULL, NULL, NULL, NULL, NULL);
 INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
 	(2275, 156, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2276, 91, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2277, 91, NULL, NULL, NULL, 2, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2278, 13, NULL, NULL, NULL, 3, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2279, 13, NULL, NULL, NULL, 4, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2280, 13, NULL, NULL, NULL, 5, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2281, 20, NULL, NULL, NULL, 3, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2282, 20, NULL, NULL, NULL, 4, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2283, 20, NULL, NULL, NULL, 5, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2284, 30, NULL, NULL, NULL, 3, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2285, 30, NULL, NULL, NULL, 4, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2286, 30, NULL, NULL, NULL, 5, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2287, 51, NULL, NULL, NULL, 3, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2288, 51, NULL, NULL, NULL, 4, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2289, 51, NULL, NULL, NULL, 5, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2290, 52, NULL, NULL, NULL, 3, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2291, 52, NULL, NULL, NULL, 4, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2292, 52, NULL, NULL, NULL, 5, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2293, 74, NULL, NULL, NULL, 3, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2294, 74, NULL, NULL, NULL, 4, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2295, 74, NULL, NULL, NULL, 5, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2296, 53, NULL, NULL, NULL, 3, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2297, 53, NULL, NULL, NULL, 4, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2298, 53, NULL, NULL, NULL, 5, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2299, 62, NULL, NULL, NULL, 3, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2300, 62, NULL, NULL, NULL, 4, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2301, 62, NULL, NULL, NULL, 5, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2302, 77, NULL, NULL, NULL, 3, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2303, 77, NULL, NULL, NULL, 4, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2304, 77, NULL, NULL, NULL, 5, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2305, 192, NULL, NULL, NULL, 3, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2306, 192, NULL, NULL, NULL, 4, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2307, 192, NULL, NULL, NULL, 5, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2308, 67, NULL, NULL, NULL, 3, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2309, 67, NULL, NULL, NULL, 4, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2310, 67, NULL, NULL, NULL, 5, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2311, 68, NULL, NULL, NULL, 3, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2312, 68, NULL, NULL, NULL, 4, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2313, 68, NULL, NULL, NULL, 5, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2314, 49, NULL, NULL, NULL, 3, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2315, 49, NULL, NULL, NULL, 4, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2316, 49, NULL, NULL, NULL, 5, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2317, 90, NULL, NULL, NULL, 3, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2318, 90, NULL, NULL, NULL, 4, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2319, 90, NULL, NULL, NULL, 5, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2320, 96, NULL, NULL, NULL, 3, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2321, 96, NULL, NULL, NULL, 4, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2322, 96, NULL, NULL, NULL, 5, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2323, 99, NULL, NULL, NULL, 3, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2324, 99, NULL, NULL, NULL, 4, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2325, 99, NULL, NULL, NULL, 5, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2326, 118, NULL, NULL, NULL, 3, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2327, 118, NULL, NULL, NULL, 4, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2328, 118, NULL, NULL, NULL, 5, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2329, 119, NULL, NULL, NULL, 3, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2330, 119, NULL, NULL, NULL, 4, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2331, 119, NULL, NULL, NULL, 5, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2332, 112, NULL, NULL, NULL, 3, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2333, 112, NULL, NULL, NULL, 4, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2334, 112, NULL, NULL, NULL, 5, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2335, 127, NULL, NULL, NULL, 3, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2336, 127, NULL, NULL, NULL, 4, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2337, 127, NULL, NULL, NULL, 5, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2338, 146, NULL, NULL, NULL, 3, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2339, 146, NULL, NULL, NULL, 4, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2340, 146, NULL, NULL, NULL, 5, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2341, 165, NULL, NULL, NULL, 3, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2342, 165, NULL, NULL, NULL, 4, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2343, 165, NULL, NULL, NULL, 5, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2344, 166, NULL, NULL, NULL, 3, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2345, 166, NULL, NULL, NULL, 4, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2346, 166, NULL, NULL, NULL, 5, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2347, 170, NULL, NULL, NULL, 3, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2348, 170, NULL, NULL, NULL, 4, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2349, 170, NULL, NULL, NULL, 5, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2350, 197, NULL, NULL, NULL, 3, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2351, 197, NULL, NULL, NULL, 4, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2352, 197, NULL, NULL, NULL, 5, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2353, 188, NULL, NULL, NULL, 3, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2354, 188, NULL, NULL, NULL, 4, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2355, 188, NULL, NULL, NULL, 5, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2356, 187, NULL, NULL, NULL, 3, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2357, 187, NULL, NULL, NULL, 4, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2358, 187, NULL, NULL, NULL, 5, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2359, 217, NULL, NULL, NULL, 3, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2360, 217, NULL, NULL, NULL, 4, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2361, 217, NULL, NULL, NULL, 5, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2362, 230, NULL, NULL, NULL, 3, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2363, 230, NULL, NULL, NULL, 4, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2364, 230, NULL, NULL, NULL, 5, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2365, 91, NULL, NULL, NULL, 3, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2366, 91, NULL, NULL, NULL, 4, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2367, 91, NULL, NULL, NULL, 5, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2368, 198, NULL, NULL, NULL, 3, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2369, 198, NULL, NULL, NULL, 4, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2370, 198, NULL, NULL, NULL, 5, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2371, 156, NULL, NULL, NULL, 3, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2372, 156, NULL, NULL, NULL, 4, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2373, 156, NULL, NULL, NULL, 5, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2374, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2375, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2376, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2377, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2378, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2379, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2380, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2381, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2382, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2383, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2384, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2385, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2386, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2387, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2388, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2389, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2390, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2391, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2392, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2393, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2394, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2395, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2396, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2397, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2398, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2399, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2400, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2401, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2402, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2403, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2404, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2405, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2406, 13, NULL, NULL, NULL, 1, 7, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2407, 13, NULL, NULL, NULL, 1, 8, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2408, 13, NULL, NULL, NULL, 1, 9, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2409, 13, NULL, NULL, NULL, 1, 10, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2410, 13, NULL, NULL, NULL, 1, 6, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2411, 20, NULL, NULL, NULL, 1, 7, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2412, 20, NULL, NULL, NULL, 1, 8, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2413, 20, NULL, NULL, NULL, 1, 9, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2414, 20, NULL, NULL, NULL, 1, 10, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2415, 20, NULL, NULL, NULL, 1, 6, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2416, 30, NULL, NULL, NULL, 1, 7, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2417, 30, NULL, NULL, NULL, 1, 8, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2418, 30, NULL, NULL, NULL, 1, 9, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2419, 30, NULL, NULL, NULL, 1, 10, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2420, 30, NULL, NULL, NULL, 1, 6, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2421, 51, NULL, NULL, NULL, 1, 7, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2422, 51, NULL, NULL, NULL, 1, 8, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2423, 51, NULL, NULL, NULL, 1, 9, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2424, 51, NULL, NULL, NULL, 1, 10, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2425, 51, NULL, NULL, NULL, 1, 6, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2426, 52, NULL, NULL, NULL, 1, 7, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2427, 52, NULL, NULL, NULL, 1, 8, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2428, 52, NULL, NULL, NULL, 1, 9, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2429, 52, NULL, NULL, NULL, 1, 10, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2430, 52, NULL, NULL, NULL, 1, 6, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2431, 74, NULL, NULL, NULL, 1, 7, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2432, 74, NULL, NULL, NULL, 1, 8, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2433, 74, NULL, NULL, NULL, 1, 9, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2434, 74, NULL, NULL, NULL, 1, 10, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2435, 74, NULL, NULL, NULL, 1, 6, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2436, 53, NULL, NULL, NULL, 1, 7, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2437, 53, NULL, NULL, NULL, 1, 8, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2438, 53, NULL, NULL, NULL, 1, 9, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2439, 53, NULL, NULL, NULL, 1, 10, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2440, 53, NULL, NULL, NULL, 1, 6, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2441, 62, NULL, NULL, NULL, 1, 7, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2442, 62, NULL, NULL, NULL, 1, 8, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2443, 62, NULL, NULL, NULL, 1, 9, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2444, 62, NULL, NULL, NULL, 1, 10, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2445, 62, NULL, NULL, NULL, 1, 6, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2446, 77, NULL, NULL, NULL, 1, 7, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2447, 77, NULL, NULL, NULL, 1, 8, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2448, 77, NULL, NULL, NULL, 1, 9, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2449, 77, NULL, NULL, NULL, 1, 10, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2450, 77, NULL, NULL, NULL, 1, 6, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2451, 192, NULL, NULL, NULL, 1, 7, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2452, 192, NULL, NULL, NULL, 1, 8, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2453, 192, NULL, NULL, NULL, 1, 9, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2454, 192, NULL, NULL, NULL, 1, 10, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2455, 192, NULL, NULL, NULL, 1, 6, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2456, 67, NULL, NULL, NULL, 1, 7, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2457, 67, NULL, NULL, NULL, 1, 8, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2458, 67, NULL, NULL, NULL, 1, 9, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2459, 67, NULL, NULL, NULL, 1, 10, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2460, 67, NULL, NULL, NULL, 1, 6, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2461, 68, NULL, NULL, NULL, 1, 7, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2462, 68, NULL, NULL, NULL, 1, 8, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2463, 68, NULL, NULL, NULL, 1, 9, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2464, 68, NULL, NULL, NULL, 1, 10, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2465, 68, NULL, NULL, NULL, 1, 6, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2466, 49, NULL, NULL, NULL, 1, 7, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2467, 49, NULL, NULL, NULL, 1, 8, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2468, 49, NULL, NULL, NULL, 1, 9, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2469, 49, NULL, NULL, NULL, 1, 10, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2470, 49, NULL, NULL, NULL, 1, 6, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2471, 90, NULL, NULL, NULL, 1, 7, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2472, 90, NULL, NULL, NULL, 1, 8, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2473, 90, NULL, NULL, NULL, 1, 9, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2474, 90, NULL, NULL, NULL, 1, 10, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2475, 90, NULL, NULL, NULL, 1, 6, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2476, 96, NULL, NULL, NULL, 1, 7, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2477, 96, NULL, NULL, NULL, 1, 8, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2478, 96, NULL, NULL, NULL, 1, 9, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2479, 96, NULL, NULL, NULL, 1, 10, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2480, 96, NULL, NULL, NULL, 1, 6, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2481, 99, NULL, NULL, NULL, 1, 7, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2482, 99, NULL, NULL, NULL, 1, 8, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2483, 99, NULL, NULL, NULL, 1, 9, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2484, 99, NULL, NULL, NULL, 1, 10, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2485, 99, NULL, NULL, NULL, 1, 6, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2486, 118, NULL, NULL, NULL, 1, 7, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2487, 118, NULL, NULL, NULL, 1, 8, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2488, 118, NULL, NULL, NULL, 1, 9, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2489, 118, NULL, NULL, NULL, 1, 10, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2490, 118, NULL, NULL, NULL, 1, 6, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2491, 119, NULL, NULL, NULL, 1, 7, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2492, 119, NULL, NULL, NULL, 1, 8, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2493, 119, NULL, NULL, NULL, 1, 9, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2494, 119, NULL, NULL, NULL, 1, 10, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2495, 119, NULL, NULL, NULL, 1, 6, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2496, 112, NULL, NULL, NULL, 1, 7, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2497, 112, NULL, NULL, NULL, 1, 8, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2498, 112, NULL, NULL, NULL, 1, 9, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2499, 112, NULL, NULL, NULL, 1, 10, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2500, 112, NULL, NULL, NULL, 1, 6, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2501, 127, NULL, NULL, NULL, 1, 7, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2502, 127, NULL, NULL, NULL, 1, 8, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2503, 127, NULL, NULL, NULL, 1, 9, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2504, 127, NULL, NULL, NULL, 1, 10, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2505, 127, NULL, NULL, NULL, 1, 6, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2506, 146, NULL, NULL, NULL, 1, 7, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2507, 146, NULL, NULL, NULL, 1, 8, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2508, 146, NULL, NULL, NULL, 1, 9, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2509, 146, NULL, NULL, NULL, 1, 10, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2510, 146, NULL, NULL, NULL, 1, 6, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2511, 165, NULL, NULL, NULL, 1, 7, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2512, 165, NULL, NULL, NULL, 1, 8, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2513, 165, NULL, NULL, NULL, 1, 9, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2514, 165, NULL, NULL, NULL, 1, 10, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2515, 165, NULL, NULL, NULL, 1, 6, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2516, 166, NULL, NULL, NULL, 1, 7, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2517, 166, NULL, NULL, NULL, 1, 8, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2518, 166, NULL, NULL, NULL, 1, 9, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2519, 166, NULL, NULL, NULL, 1, 10, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2520, 166, NULL, NULL, NULL, 1, 6, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2521, 170, NULL, NULL, NULL, 1, 7, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2522, 170, NULL, NULL, NULL, 1, 8, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2523, 170, NULL, NULL, NULL, 1, 9, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2524, 170, NULL, NULL, NULL, 1, 10, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2525, 170, NULL, NULL, NULL, 1, 6, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2526, 197, NULL, NULL, NULL, 1, 7, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2527, 197, NULL, NULL, NULL, 1, 8, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2528, 197, NULL, NULL, NULL, 1, 9, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2529, 197, NULL, NULL, NULL, 1, 10, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2530, 197, NULL, NULL, NULL, 1, 6, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2531, 188, NULL, NULL, NULL, 1, 7, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2532, 188, NULL, NULL, NULL, 1, 8, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2533, 188, NULL, NULL, NULL, 1, 9, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2534, 188, NULL, NULL, NULL, 1, 10, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2535, 188, NULL, NULL, NULL, 1, 6, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2536, 187, NULL, NULL, NULL, 1, 7, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2537, 187, NULL, NULL, NULL, 1, 8, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2538, 187, NULL, NULL, NULL, 1, 9, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2539, 187, NULL, NULL, NULL, 1, 10, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2540, 187, NULL, NULL, NULL, 1, 6, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2541, 217, NULL, NULL, NULL, 1, 7, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2542, 217, NULL, NULL, NULL, 1, 8, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2543, 217, NULL, NULL, NULL, 1, 9, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2544, 217, NULL, NULL, NULL, 1, 10, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2545, 217, NULL, NULL, NULL, 1, 6, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2546, 230, NULL, NULL, NULL, 1, 7, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2547, 230, NULL, NULL, NULL, 1, 8, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2548, 230, NULL, NULL, NULL, 1, 9, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2549, 230, NULL, NULL, NULL, 1, 10, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2550, 230, NULL, NULL, NULL, 1, 6, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2551, 91, NULL, NULL, NULL, 1, 7, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2552, 91, NULL, NULL, NULL, 1, 8, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2553, 91, NULL, NULL, NULL, 1, 9, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2554, 91, NULL, NULL, NULL, 1, 10, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2555, 91, NULL, NULL, NULL, 1, 6, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2556, 198, NULL, NULL, NULL, 1, 7, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2557, 198, NULL, NULL, NULL, 1, 8, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2558, 198, NULL, NULL, NULL, 1, 9, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2559, 198, NULL, NULL, NULL, 1, 10, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2560, 198, NULL, NULL, NULL, 1, 6, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2561, 156, NULL, NULL, NULL, 1, 7, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2562, 156, NULL, NULL, NULL, 1, 8, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2563, 156, NULL, NULL, NULL, 1, 9, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2564, 156, NULL, NULL, NULL, 1, 10, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2565, 156, NULL, NULL, NULL, 1, 6, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2566, 13, NULL, 2, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2567, 13, NULL, 4, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2568, 13, NULL, 5, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2569, 13, NULL, 7, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2570, 13, NULL, 3, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2571, 13, NULL, 6, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2572, 13, NULL, 8, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2573, 20, NULL, 2, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2574, 20, NULL, 4, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2575, 20, NULL, 5, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2576, 20, NULL, 7, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2577, 20, NULL, 3, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2578, 20, NULL, 6, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2579, 20, NULL, 8, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2580, 30, NULL, 2, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2581, 30, NULL, 4, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2582, 30, NULL, 5, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2583, 30, NULL, 7, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2584, 30, NULL, 3, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2585, 30, NULL, 6, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2586, 30, NULL, 8, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2587, 51, NULL, 2, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2588, 51, NULL, 4, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2589, 51, NULL, 5, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2590, 51, NULL, 7, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2591, 51, NULL, 3, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2592, 51, NULL, 6, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2593, 51, NULL, 8, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2594, 52, NULL, 2, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2595, 52, NULL, 4, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2596, 52, NULL, 5, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2597, 52, NULL, 7, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2598, 52, NULL, 3, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2599, 52, NULL, 6, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2600, 52, NULL, 8, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2601, 74, NULL, 2, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2602, 74, NULL, 4, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2603, 74, NULL, 5, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2604, 74, NULL, 7, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2605, 74, NULL, 3, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2606, 74, NULL, 6, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2607, 74, NULL, 8, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2608, 53, NULL, 2, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2609, 53, NULL, 4, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2610, 53, NULL, 5, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2611, 53, NULL, 7, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2612, 53, NULL, 3, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2613, 53, NULL, 6, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2614, 53, NULL, 8, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2615, 62, NULL, 2, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2616, 62, NULL, 4, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2617, 62, NULL, 5, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2618, 62, NULL, 7, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2619, 62, NULL, 3, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2620, 62, NULL, 6, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2621, 62, NULL, 8, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2622, 77, NULL, 2, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2623, 77, NULL, 4, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2624, 77, NULL, 5, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2625, 77, NULL, 7, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2626, 77, NULL, 3, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2627, 77, NULL, 6, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2628, 77, NULL, 8, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2629, 192, NULL, 2, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2630, 192, NULL, 4, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2631, 192, NULL, 5, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2632, 192, NULL, 7, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2633, 192, NULL, 3, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2634, 192, NULL, 6, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2635, 192, NULL, 8, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2636, 67, NULL, 2, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2637, 67, NULL, 4, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2638, 67, NULL, 5, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2639, 67, NULL, 7, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2640, 67, NULL, 3, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2641, 67, NULL, 6, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2642, 67, NULL, 8, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2643, 68, NULL, 2, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2644, 68, NULL, 4, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2645, 68, NULL, 5, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2646, 68, NULL, 7, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2647, 68, NULL, 3, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2648, 68, NULL, 6, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2649, 68, NULL, 8, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2650, 49, NULL, 2, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2651, 49, NULL, 4, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2652, 49, NULL, 5, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2653, 49, NULL, 7, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2654, 49, NULL, 3, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2655, 49, NULL, 6, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2656, 49, NULL, 8, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2657, 90, NULL, 2, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2658, 90, NULL, 4, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2659, 90, NULL, 5, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2660, 90, NULL, 7, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2661, 90, NULL, 3, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2662, 90, NULL, 6, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2663, 90, NULL, 8, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2664, 96, NULL, 2, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2665, 96, NULL, 4, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2666, 96, NULL, 5, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2667, 96, NULL, 7, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2668, 96, NULL, 3, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2669, 96, NULL, 6, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2670, 96, NULL, 8, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2671, 99, NULL, 2, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2672, 99, NULL, 4, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2673, 99, NULL, 5, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2674, 99, NULL, 7, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2675, 99, NULL, 3, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2676, 99, NULL, 6, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2677, 99, NULL, 8, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2678, 118, NULL, 2, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2679, 118, NULL, 4, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2680, 118, NULL, 5, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2681, 118, NULL, 7, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2682, 118, NULL, 3, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2683, 118, NULL, 6, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2684, 118, NULL, 8, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2685, 119, NULL, 2, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2686, 119, NULL, 4, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2687, 119, NULL, 5, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2688, 119, NULL, 7, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2689, 119, NULL, 3, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2690, 119, NULL, 6, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2691, 119, NULL, 8, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2692, 112, NULL, 2, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2693, 112, NULL, 4, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2694, 112, NULL, 5, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2695, 112, NULL, 7, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2696, 112, NULL, 3, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2697, 112, NULL, 6, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2698, 112, NULL, 8, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2699, 127, NULL, 2, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2700, 127, NULL, 4, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2701, 127, NULL, 5, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2702, 127, NULL, 7, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2703, 127, NULL, 3, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2704, 127, NULL, 6, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2705, 127, NULL, 8, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2706, 146, NULL, 2, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2707, 146, NULL, 4, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2708, 146, NULL, 5, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2709, 146, NULL, 7, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2710, 146, NULL, 3, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2711, 146, NULL, 6, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2712, 146, NULL, 8, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2713, 165, NULL, 2, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2714, 165, NULL, 4, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2715, 165, NULL, 5, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2716, 165, NULL, 7, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2717, 165, NULL, 3, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2718, 165, NULL, 6, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2719, 165, NULL, 8, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2720, 166, NULL, 2, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2721, 166, NULL, 4, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2722, 166, NULL, 5, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2723, 166, NULL, 7, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2724, 166, NULL, 3, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2725, 166, NULL, 6, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2726, 166, NULL, 8, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2727, 170, NULL, 2, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2728, 170, NULL, 4, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2729, 170, NULL, 5, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2730, 170, NULL, 7, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2731, 170, NULL, 3, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2732, 170, NULL, 6, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2733, 170, NULL, 8, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2734, 197, NULL, 2, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2735, 197, NULL, 4, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2736, 197, NULL, 5, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2737, 197, NULL, 7, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2738, 197, NULL, 3, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2739, 197, NULL, 6, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2740, 197, NULL, 8, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2741, 188, NULL, 2, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2742, 188, NULL, 4, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2743, 188, NULL, 5, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2744, 188, NULL, 7, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2745, 188, NULL, 3, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2746, 188, NULL, 6, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2747, 188, NULL, 8, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2748, 187, NULL, 2, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2749, 187, NULL, 4, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2750, 187, NULL, 5, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2751, 187, NULL, 7, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2752, 187, NULL, 3, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2753, 187, NULL, 6, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2754, 187, NULL, 8, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2755, 217, NULL, 2, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2756, 217, NULL, 4, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2757, 217, NULL, 5, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2758, 217, NULL, 7, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2759, 217, NULL, 3, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2760, 217, NULL, 6, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2761, 217, NULL, 8, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2762, 230, NULL, 2, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2763, 230, NULL, 4, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2764, 230, NULL, 5, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2765, 230, NULL, 7, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2766, 230, NULL, 3, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2767, 230, NULL, 6, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2768, 230, NULL, 8, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2769, 91, NULL, 2, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2770, 91, NULL, 4, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2771, 91, NULL, 5, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2772, 91, NULL, 7, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2773, 91, NULL, 3, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2774, 91, NULL, 6, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2775, 91, NULL, 8, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2776, 198, NULL, 2, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2777, 198, NULL, 4, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2778, 198, NULL, 5, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2779, 198, NULL, 7, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2780, 198, NULL, 3, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2781, 198, NULL, 6, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2782, 198, NULL, 8, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2783, 156, NULL, 2, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2784, 156, NULL, 4, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2785, 156, NULL, 5, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2786, 156, NULL, 7, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2787, 156, NULL, 3, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2788, 156, NULL, 6, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2789, 156, NULL, 8, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2790, 13, NULL, NULL, NULL, 28, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2791, 13, NULL, NULL, NULL, 29, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2792, 13, NULL, NULL, NULL, 30, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2793, 20, NULL, NULL, NULL, 28, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2794, 20, NULL, NULL, NULL, 29, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2795, 20, NULL, NULL, NULL, 30, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2796, 30, NULL, NULL, NULL, 28, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2797, 30, NULL, NULL, NULL, 29, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2798, 30, NULL, NULL, NULL, 30, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2799, 51, NULL, NULL, NULL, 28, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2800, 51, NULL, NULL, NULL, 29, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2801, 51, NULL, NULL, NULL, 30, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2802, 52, NULL, NULL, NULL, 28, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2803, 52, NULL, NULL, NULL, 29, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2804, 52, NULL, NULL, NULL, 30, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2805, 74, NULL, NULL, NULL, 28, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2806, 74, NULL, NULL, NULL, 29, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2807, 74, NULL, NULL, NULL, 30, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2808, 53, NULL, NULL, NULL, 28, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2809, 53, NULL, NULL, NULL, 29, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2810, 53, NULL, NULL, NULL, 30, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2811, 62, NULL, NULL, NULL, 28, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2812, 62, NULL, NULL, NULL, 29, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2813, 62, NULL, NULL, NULL, 30, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2814, 77, NULL, NULL, NULL, 28, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2815, 77, NULL, NULL, NULL, 29, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2816, 77, NULL, NULL, NULL, 30, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2817, 192, NULL, NULL, NULL, 28, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2818, 192, NULL, NULL, NULL, 29, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2819, 192, NULL, NULL, NULL, 30, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2820, 67, NULL, NULL, NULL, 28, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2821, 67, NULL, NULL, NULL, 29, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2822, 67, NULL, NULL, NULL, 30, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2823, 68, NULL, NULL, NULL, 28, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2824, 68, NULL, NULL, NULL, 29, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2825, 68, NULL, NULL, NULL, 30, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2826, 49, NULL, NULL, NULL, 28, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2827, 49, NULL, NULL, NULL, 29, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2828, 49, NULL, NULL, NULL, 30, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2829, 90, NULL, NULL, NULL, 28, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2830, 90, NULL, NULL, NULL, 29, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2831, 90, NULL, NULL, NULL, 30, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2832, 96, NULL, NULL, NULL, 28, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2833, 96, NULL, NULL, NULL, 29, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2834, 96, NULL, NULL, NULL, 30, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2835, 99, NULL, NULL, NULL, 28, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2836, 99, NULL, NULL, NULL, 29, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2837, 99, NULL, NULL, NULL, 30, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2838, 118, NULL, NULL, NULL, 28, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2839, 118, NULL, NULL, NULL, 29, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2840, 118, NULL, NULL, NULL, 30, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2841, 119, NULL, NULL, NULL, 28, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2842, 119, NULL, NULL, NULL, 29, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2843, 119, NULL, NULL, NULL, 30, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2844, 112, NULL, NULL, NULL, 28, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2845, 112, NULL, NULL, NULL, 29, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2846, 112, NULL, NULL, NULL, 30, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2847, 127, NULL, NULL, NULL, 28, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2848, 127, NULL, NULL, NULL, 29, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2849, 127, NULL, NULL, NULL, 30, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2850, 146, NULL, NULL, NULL, 28, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2851, 146, NULL, NULL, NULL, 29, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2852, 146, NULL, NULL, NULL, 30, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2853, 165, NULL, NULL, NULL, 28, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2854, 165, NULL, NULL, NULL, 29, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2855, 165, NULL, NULL, NULL, 30, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2856, 166, NULL, NULL, NULL, 28, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2857, 166, NULL, NULL, NULL, 29, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2858, 166, NULL, NULL, NULL, 30, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2859, 170, NULL, NULL, NULL, 28, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2860, 170, NULL, NULL, NULL, 29, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2861, 170, NULL, NULL, NULL, 30, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2862, 197, NULL, NULL, NULL, 28, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2863, 197, NULL, NULL, NULL, 29, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2864, 197, NULL, NULL, NULL, 30, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2865, 188, NULL, NULL, NULL, 28, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2866, 188, NULL, NULL, NULL, 29, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2867, 188, NULL, NULL, NULL, 30, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2868, 187, NULL, NULL, NULL, 28, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2869, 187, NULL, NULL, NULL, 29, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2870, 187, NULL, NULL, NULL, 30, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2871, 217, NULL, NULL, NULL, 28, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2872, 217, NULL, NULL, NULL, 29, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2873, 217, NULL, NULL, NULL, 30, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2874, 230, NULL, NULL, NULL, 28, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2875, 230, NULL, NULL, NULL, 29, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2876, 230, NULL, NULL, NULL, 30, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2877, 91, NULL, NULL, NULL, 28, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2878, 91, NULL, NULL, NULL, 29, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2879, 91, NULL, NULL, NULL, 30, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2880, 198, NULL, NULL, NULL, 28, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2881, 198, NULL, NULL, NULL, 29, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2882, 198, NULL, NULL, NULL, 30, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2883, 156, NULL, NULL, NULL, 28, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2884, 156, NULL, NULL, NULL, 29, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2885, 156, NULL, NULL, NULL, 30, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2886, 13, NULL, NULL, NULL, 31, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2887, 20, NULL, NULL, NULL, 31, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2888, 30, NULL, NULL, NULL, 31, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2889, 51, NULL, NULL, NULL, 31, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2890, 52, NULL, NULL, NULL, 31, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2891, 74, NULL, NULL, NULL, 31, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2892, 53, NULL, NULL, NULL, 31, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2893, 62, NULL, NULL, NULL, 31, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2894, 77, NULL, NULL, NULL, 31, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2895, 192, NULL, NULL, NULL, 31, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2896, 67, NULL, NULL, NULL, 31, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2897, 68, NULL, NULL, NULL, 31, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2898, 49, NULL, NULL, NULL, 31, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2899, 90, NULL, NULL, NULL, 31, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2900, 96, NULL, NULL, NULL, 31, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2901, 99, NULL, NULL, NULL, 31, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2902, 118, NULL, NULL, NULL, 31, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2903, 119, NULL, NULL, NULL, 31, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2904, 112, NULL, NULL, NULL, 31, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2905, 127, NULL, NULL, NULL, 31, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2906, 146, NULL, NULL, NULL, 31, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2907, 165, NULL, NULL, NULL, 31, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2908, 166, NULL, NULL, NULL, 31, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2909, 170, NULL, NULL, NULL, 31, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2910, 197, NULL, NULL, NULL, 31, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2911, 188, NULL, NULL, NULL, 31, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2912, 187, NULL, NULL, NULL, 31, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2913, 217, NULL, NULL, NULL, 31, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2914, 230, NULL, NULL, NULL, 31, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2915, 91, NULL, NULL, NULL, 31, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2916, 198, NULL, NULL, NULL, 31, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2917, 156, NULL, NULL, NULL, 31, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2918, 13, NULL, NULL, NULL, 34, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2919, 20, NULL, NULL, NULL, 34, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2920, 30, NULL, NULL, NULL, 34, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2921, 51, NULL, NULL, NULL, 34, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2922, 52, NULL, NULL, NULL, 34, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2923, 74, NULL, NULL, NULL, 34, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2924, 53, NULL, NULL, NULL, 34, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2925, 62, NULL, NULL, NULL, 34, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2926, 77, NULL, NULL, NULL, 34, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2927, 192, NULL, NULL, NULL, 34, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2928, 67, NULL, NULL, NULL, 34, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2929, 68, NULL, NULL, NULL, 34, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2930, 49, NULL, NULL, NULL, 34, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2931, 90, NULL, NULL, NULL, 34, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2932, 96, NULL, NULL, NULL, 34, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2933, 99, NULL, NULL, NULL, 34, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2934, 118, NULL, NULL, NULL, 34, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2935, 119, NULL, NULL, NULL, 34, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2936, 112, NULL, NULL, NULL, 34, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2937, 127, NULL, NULL, NULL, 34, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2938, 146, NULL, NULL, NULL, 34, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2939, 165, NULL, NULL, NULL, 34, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2940, 166, NULL, NULL, NULL, 34, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2941, 170, NULL, NULL, NULL, 34, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2942, 197, NULL, NULL, NULL, 34, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2943, 188, NULL, NULL, NULL, 34, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2944, 187, NULL, NULL, NULL, 34, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2945, 217, NULL, NULL, NULL, 34, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2946, 230, NULL, NULL, NULL, 34, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2947, 91, NULL, NULL, NULL, 34, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2948, 91, NULL, NULL, NULL, 20, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2949, 198, NULL, NULL, NULL, 34, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2950, 156, NULL, NULL, NULL, 34, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2951, 13, NULL, NULL, NULL, 35, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2952, 20, NULL, NULL, NULL, 35, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2953, 30, NULL, NULL, NULL, 35, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2954, 51, NULL, NULL, NULL, 35, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2955, 52, NULL, NULL, NULL, 35, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2956, 74, NULL, NULL, NULL, 35, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2957, 53, NULL, NULL, NULL, 35, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2958, 62, NULL, NULL, NULL, 35, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2959, 77, NULL, NULL, NULL, 35, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2960, 192, NULL, NULL, NULL, 35, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2961, 67, NULL, NULL, NULL, 35, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2962, 68, NULL, NULL, NULL, 35, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2963, 49, NULL, NULL, NULL, 35, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2964, 90, NULL, NULL, NULL, 35, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2965, 96, NULL, NULL, NULL, 35, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2966, 99, NULL, NULL, NULL, 35, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2967, 118, NULL, NULL, NULL, 35, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2968, 119, NULL, NULL, NULL, 35, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2969, 112, NULL, NULL, NULL, 35, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2970, 127, NULL, NULL, NULL, 35, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2971, 146, NULL, NULL, NULL, 35, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2972, 165, NULL, NULL, NULL, 35, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2973, 166, NULL, NULL, NULL, 35, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2974, 170, NULL, NULL, NULL, 35, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2975, 197, NULL, NULL, NULL, 35, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2976, 188, NULL, NULL, NULL, 35, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2977, 187, NULL, NULL, NULL, 35, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2978, 217, NULL, NULL, NULL, 35, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2979, 230, NULL, NULL, NULL, 35, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2980, 91, NULL, NULL, NULL, 35, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2981, 198, NULL, NULL, NULL, 35, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `profile` (`id`, `nuts_id`, `country_group_id`, `activity_sector_id`, `age_group_id`, `answer_id`, `company_size_id`, `currency_id`, `gender_id`, `illness_id`, `subindicator_id`, `year`) VALUES
+	(2982, 156, NULL, NULL, NULL, 35, NULL, NULL, NULL, NULL, NULL, NULL);
 /*!40000 ALTER TABLE `profile` ENABLE KEYS */;
 
 -- Volcando estructura para tabla osha_dvt_tests.section
@@ -13379,7 +15057,7 @@ CREATE TABLE IF NOT EXISTS `tool` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla osha_dvt_tests.tool: ~1 rows (aproximadamente)
+-- Volcando datos para la tabla osha_dvt_tests.tool: ~2 rows (aproximadamente)
 /*!40000 ALTER TABLE `tool` DISABLE KEYS */;
 INSERT INTO `tool` (`id`, `name`) VALUES
 	(1, 'osha_dvt_ilo');
@@ -13400,7 +15078,7 @@ CREATE TABLE IF NOT EXISTS `translation` (
   CONSTRAINT `translation_literal_id` FOREIGN KEY (`literal_id`) REFERENCES `literal` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=15507 DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla osha_dvt_tests.translation: ~2.374 rows (aproximadamente)
+-- Volcando datos para la tabla osha_dvt_tests.translation: ~2.590 rows (aproximadamente)
 /*!40000 ALTER TABLE `translation` DISABLE KEYS */;
 INSERT INTO `translation` (`id`, `literal_id`, `language`, `is_default`, `text`) VALUES
 	(1, 1, 'EN', 1, 'Total cost of the work-related injuries and illnesses (billions of USD/€) Global');
@@ -18582,6 +20260,60 @@ INSERT INTO `translation` (`id`, `literal_id`, `language`, `is_default`, `text`)
 	(15505, 23294, 'EN', 1, 'No information');
 INSERT INTO `translation` (`id`, `literal_id`, `language`, `is_default`, `text`) VALUES
 	(15506, 23295, 'EN', 1, '<p>The Strategic Plan of ACT for 2017-2020 has three main goals:</p><ul><li>To promote the reduction of occupational accidents and diseases</li><li>To promote the reduction of undeclared work and related phenomena</li></ul><p>To promote the development and organizational well-being in ACT.</p><p>In order to follow these main goals, two methodologies are adopted: inspection activity and national tripartite campaigns, carried out with social and institutional partners. These campaigns comprises, mainly:</p><ul><li>Training (with social partners);</li><li>Information (with social partners);</li><li>Inspection (by ACT and other inspection bodies, when appropriate, such as social security, taxes, foreign services, national maritime authority and police).</li></ul><p>In line with the principles to be followed in drawing up plan and report activities of Portuguese services and public administration bodies, ACT also had an Activity Plan for 2016 which is part of the strategic goals, programs and guidelines identified in the ACT Strategy 2017-2020, reflecting ACT’s vision to face the challenges in a frame of financial constraints resulting from the current economic and social context, without losing sight of the need for continuing the efforts to modernize and simply the procedures, reducing bureaucracy and rationalizing the resource use.</p>');
+INSERT INTO `translation` (`id`, `literal_id`, `language`, `is_default`, `text`) VALUES
+	(15507, 453, 'EN', 1, 'A joint consultative committee, employee forum or equivalent body');
+INSERT INTO `translation` (`id`, `literal_id`, `language`, `is_default`, `text`) VALUES
+	(15508, 454, 'EN', 1, 'A recognised trade union representation');
+INSERT INTO `translation` (`id`, `literal_id`, `language`, `is_default`, `text`) VALUES
+	(15509, 455, 'EN', 1, 'A health and safety representative or representative of employee safety');
+INSERT INTO `translation` (`id`, `literal_id`, `language`, `is_default`, `text`) VALUES
+	(15510, 456, 'EN', 1, 'A health and safety representative or representative of employee safety');
+INSERT INTO `translation` (`id`, `literal_id`, `language`, `is_default`, `text`) VALUES
+	(15511, 457, 'EN', 1, 'Are sickness absences routinely analysed with a view to improving the working conditions?');
+INSERT INTO `translation` (`id`, `literal_id`, `language`, `is_default`, `text`) VALUES
+	(15512, 458, 'EN', 1, 'How often is health and safety discussed between employee representatives and the management?');
+INSERT INTO `translation` (`id`, `literal_id`, `language`, `is_default`, `text`) VALUES
+	(15513, 459, 'EN', 1, 'Does your establishment have an action plan to prevent work-related stress?');
+INSERT INTO `translation` (`id`, `literal_id`, `language`, `is_default`, `text`) VALUES
+	(15514, 460, 'EN', 1, 'Is there a procedure in place to deal with possible cases of bullying or harassment?');
+INSERT INTO `translation` (`id`, `literal_id`, `language`, `is_default`, `text`) VALUES
+	(15515, 461, 'EN', 1, 'And is there a procedure to deal with possible cases of threats, abuse or assaults by clients, patients, pupils or members of the public?');
+INSERT INTO `translation` (`id`, `literal_id`, `language`, `is_default`, `text`) VALUES
+	(15516, 462, 'EN', 1, 'Reorganisation of work in order to reduce job demands and work pressure');
+INSERT INTO `translation` (`id`, `literal_id`, `language`, `is_default`, `text`) VALUES
+	(15517, 463, 'EN', 1, 'Tiring or painful positions, including sitting for long periods');
+INSERT INTO `translation` (`id`, `literal_id`, `language`, `is_default`, `text`) VALUES
+	(15518, 464, 'EN', 1, 'Lifting or moving people or heavy loads');
+INSERT INTO `translation` (`id`, `literal_id`, `language`, `is_default`, `text`) VALUES
+	(15519, 465, 'EN', 1, 'Repetitive hand or arm movements');
+INSERT INTO `translation` (`id`, `literal_id`, `language`, `is_default`, `text`) VALUES
+	(15520, 466, 'EN', 1, 'Time pressure');
+INSERT INTO `translation` (`id`, `literal_id`, `language`, `is_default`, `text`) VALUES
+	(15521, 467, 'EN', 1, 'Poor communication or cooperation within the organisation');
+INSERT INTO `translation` (`id`, `literal_id`, `language`, `is_default`, `text`) VALUES
+	(15522, 468, 'EN', 1, 'Employees’ lack of influence over their work pace or work processes');
+INSERT INTO `translation` (`id`, `literal_id`, `language`, `is_default`, `text`) VALUES
+	(15523, 469, 'EN', 1, 'Job insecurity');
+INSERT INTO `translation` (`id`, `literal_id`, `language`, `is_default`, `text`) VALUES
+	(15524, 470, 'EN', 1, 'Having to deal with difficult customers, patients, pupils etc.');
+INSERT INTO `translation` (`id`, `literal_id`, `language`, `is_default`, `text`) VALUES
+	(15525, 471, 'EN', 1, 'Long or irregular working hours');
+INSERT INTO `translation` (`id`, `literal_id`, `language`, `is_default`, `text`) VALUES
+	(15526, 472, 'EN', 1, 'Discrimination, for example due to gender, age or ethnicity');
+INSERT INTO `translation` (`id`, `literal_id`, `language`, `is_default`, `text`) VALUES
+	(15527, 473, 'EN', 1, 'Does your establishment regularly carry out workplace risk assessments?');
+INSERT INTO `translation` (`id`, `literal_id`, `language`, `is_default`, `text`) VALUES
+	(15528, 474, 'EN', 1, 'Are workplace risk assessments mainly conducted by internal staff or are they contracted to external service providers?');
+INSERT INTO `translation` (`id`, `literal_id`, `language`, `is_default`, `text`) VALUES
+	(15529, 475, 'EN', 1, 'Are the health and safety representatives or representatives of employee safety provided with any training during work time to help them perform their health and safety duties?');
+INSERT INTO `translation` (`id`, `literal_id`, `language`, `is_default`, `text`) VALUES
+	(15530, 476, 'EN', 1, 'Did the employees have a role in the design and set-up of measures to address psychosocial risks?');
+INSERT INTO `translation` (`id`, `literal_id`, `language`, `is_default`, `text`) VALUES
+	(15531, 477, 'EN', 1, 'Are health and safety issues regularly discussed in staff or team meetings?');
+INSERT INTO `translation` (`id`, `literal_id`, `language`, `is_default`, `text`) VALUES
+	(15532, 478, 'EN', 1, 'And how often do controversies related to health and safety arise? Is this often, sometimes or practically never the case?');
+INSERT INTO `translation` (`id`, `literal_id`, `language`, `is_default`, `text`) VALUES
+	(15533, 479, 'EN', 1, 'Has your establishment been visited by the Health and Safety Executive or the local authority in the last 3 years in order to check health and safety conditions?');
 /*!40000 ALTER TABLE `translation` ENABLE KEYS */;
 
 -- Volcando estructura para tabla osha_dvt_tests.value
@@ -18599,7 +20331,7 @@ CREATE TABLE IF NOT EXISTS `value` (
   CONSTRAINT `value_profile_id` FOREIGN KEY (`profile_id`) REFERENCES `profile` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla osha_dvt_tests.value: ~771 rows (aproximadamente)
+-- Volcando datos para la tabla osha_dvt_tests.value: ~3.811 rows (aproximadamente)
 /*!40000 ALTER TABLE `value` DISABLE KEYS */;
 INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
 	(1, 1, 361, 1335.862917473);
@@ -26223,6 +27955,4550 @@ INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
 	(14, 97, 877, 1557.6914567631197);
 INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
 	(14, 97, 878, 2003.5484607481262);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 100, 2215, 0.222);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 100, 2217, 0.25);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 100, 2219, NULL);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 100, 2221, NULL);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 100, 2223, 0.052000000000000005);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 100, 2225, 0.218);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 100, 2227, 0.386);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 100, 2229, NULL);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 100, 2231, 0.096);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 100, 2233, 0.344);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 100, 2235, 0.292);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 100, 2237, 0.39);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 100, 2239, 0.114);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 100, 2241, 0.09300000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 100, 2243, 0.35);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 100, 2245, 0.265);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 100, 2247, 0.204);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 100, 2249, 0.409);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 100, 2251, 0.14800000000000002);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 100, 2253, 0.079);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 100, 2255, 0.207);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 100, 2257, 0.079);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 100, 2259, 0.048);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 100, 2261, 0.37200000000000005);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 100, 2263, NULL);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 100, 2265, 0.141);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 100, 2267, 0.39799999999999996);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 100, 2269, 0.33299999999999996);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 100, 2271, 0.261);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 100, 2273, 0.222);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 100, 2275, 0.105);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 100, 2276, 0.040999999999999995);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 101, 2215, NULL);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 101, 2217, 0.27399999999999997);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 101, 2219, 0.114);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 101, 2221, 0.251);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 101, 2223, 0.11);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 101, 2225, NULL);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 101, 2227, 0.435);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 101, 2229, 0.069);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 101, 2231, 0.079);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 101, 2233, 0.258);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 101, 2235, 0.36700000000000005);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 101, 2237, 0.222);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 101, 2239, 0.162);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 101, 2241, 0.083);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 101, 2243, 0.191);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 101, 2245, 0.19);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 101, 2247, 0.09699999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 101, 2249, NULL);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 101, 2251, 0.11599999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 101, 2253, 0.139);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 101, 2255, 0.086);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 101, 2257, 0.10300000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 101, 2259, 0.086);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 101, 2261, 0.126);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 101, 2263, 0.54);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 101, 2265, 0.20199999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 101, 2267, 0.162);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 101, 2269, 0.162);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 101, 2271, 0.191);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 101, 2273, 0.081);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 101, 2275, 0.708);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 101, 2276, 0.5479999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 102, 2215, 0.6729999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 102, 2217, 0.309);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 102, 2219, 0.7509999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 102, 2221, 0.47600000000000003);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 102, 2223, 0.5770000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 102, 2225, 0.7190000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 102, 2227, 0.69);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 102, 2229, 0.622);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 102, 2231, 0.174);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 102, 2233, 0.508);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 102, 2235, 0.595);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 102, 2237, 0.251);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 102, 2239, 0.551);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 102, 2241, 0.44799999999999995);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 102, 2243, 0.667);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 102, 2245, 0.875);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 102, 2247, 0.7809999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 102, 2249, 0.6729999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 102, 2251, 0.27399999999999997);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 102, 2253, 0.511);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 102, 2255, 0.39799999999999996);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 102, 2257, 0.255);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 102, 2259, 0.243);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 102, 2261, 0.7829999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 102, 2263, 0.711);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 102, 2265, 0.335);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 102, 2267, 0.636);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 102, 2269, 0.6970000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 102, 2271, 0.583);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 102, 2273, 0.35);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 102, 2275, 0.825);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 102, 2276, 0.49700000000000005);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 103, 2215, 0.071);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 103, 2217, 0.33899999999999997);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 103, 2219, 0.44799999999999995);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 103, 2221, 0.34700000000000003);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 103, 2223, 0.079);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 103, 2225, 0.245);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 103, 2227, 0.499);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 103, 2229, 0.18600000000000003);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 103, 2231, 0.1);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 103, 2233, 0.196);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 103, 2235, 0.33799999999999997);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 103, 2237, 0.254);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 103, 2239, 0.151);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 103, 2241, 0.026000000000000002);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 103, 2243, 0.301);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 103, 2245, 0.1);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 103, 2247, 0.128);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 103, 2249, 0.076);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 103, 2251, 0.021);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 103, 2253, 0.135);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 103, 2255, 0.11800000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 103, 2257, 0.16899999999999998);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 103, 2259, 0.109);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 103, 2261, 0.303);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 103, 2263, 0.315);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 103, 2265, NULL);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 103, 2267, 0.237);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 103, 2269, 0.267);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 103, 2271, 0.213);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 103, 2273, 0.122);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 103, 2275, 0.313);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 103, 2276, 0.201);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 104, 2214, 0.647);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 104, 2215, 0.353);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 104, 2216, 0.5529999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 104, 2217, 0.447);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 104, 2218, 0.44299999999999995);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 104, 2219, 0.557);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 104, 2220, 0.552);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 104, 2221, 0.44799999999999995);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 104, 2222, 0.7050000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 104, 2223, 0.295);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 104, 2224, 0.534);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 104, 2225, 0.466);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 104, 2226, 0.376);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 104, 2227, 0.624);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 104, 2228, 0.814);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 104, 2229, 0.18600000000000003);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 104, 2230, 0.617);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 104, 2231, 0.38299999999999995);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 104, 2232, 0.41000000000000003);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 104, 2233, 0.59);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 104, 2234, 0.401);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 104, 2235, 0.599);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 104, 2236, 0.585);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 104, 2237, 0.415);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 104, 2238, 0.698);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 104, 2239, 0.302);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 104, 2240, 0.766);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 104, 2241, 0.23399999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 104, 2242, 0.5429999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 104, 2243, 0.457);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 104, 2244, 0.481);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 104, 2245, 0.519);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 104, 2246, 0.605);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 104, 2247, 0.395);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 104, 2248, 0.645);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 104, 2249, 0.355);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 104, 2250, 0.679);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 104, 2251, 0.321);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 104, 2252, 0.477);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 104, 2253, 0.523);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 104, 2254, 0.273);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 104, 2255, 0.727);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 104, 2256, 0.6639999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 104, 2257, 0.336);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 104, 2258, 0.43899999999999995);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 104, 2259, 0.561);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 104, 2260, 0.392);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 104, 2261, 0.608);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 104, 2262, 0.31299999999999994);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 104, 2263, 0.687);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 104, 2264, 0.621);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 104, 2265, 0.379);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 104, 2266, 0.794);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 104, 2267, 0.20600000000000002);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 104, 2268, 0.263);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 104, 2269, 0.737);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 104, 2270, 0.486);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 104, 2271, 0.514);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 104, 2272, 0.6020000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 104, 2273, 0.39799999999999996);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 104, 2274, 0.235);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 104, 2275, 0.765);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 104, 2276, 0.289);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 104, 2277, 0.7110000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 105, 2278, 0.45899999999999996);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 105, 2279, 0.496);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 105, 2280, 0.045);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 105, 2281, 0.591);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 105, 2282, 0.365);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 105, 2283, 0.044000000000000004);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 105, 2284, 0.5489999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 105, 2285, 0.425);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 105, 2286, 0.026000000000000002);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 105, 2287, 0.55);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 105, 2288, 0.39299999999999996);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 105, 2289, 0.057);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 105, 2290, 0.627);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 105, 2291, 0.348);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 105, 2292, 0.025);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 105, 2293, 0.5870000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 105, 2294, 0.35);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 105, 2295, 0.063);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 105, 2296, 0.6829999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 105, 2297, 0.29);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 105, 2298, 0.027000000000000003);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 105, 2299, 0.32299999999999995);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 105, 2300, 0.655);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 105, 2301, 0.022000000000000002);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 105, 2302, 0.46799999999999997);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 105, 2303, 0.49);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 105, 2304, 0.042);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 105, 2305, 0.483);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 105, 2306, 0.47200000000000003);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 105, 2307, 0.045);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 105, 2308, 0.47100000000000003);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 105, 2309, 0.521);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 105, 2310, 0.008);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 105, 2311, 0.59);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 105, 2312, 0.354);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 105, 2313, 0.055999999999999994);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 105, 2314, 0.34700000000000003);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 105, 2315, 0.486);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 105, 2316, 0.16699999999999998);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 105, 2317, 0.446);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 105, 2318, 0.517);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 105, 2319, 0.037000000000000005);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 105, 2320, 0.627);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 105, 2321, 0.33799999999999997);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 105, 2322, 0.035);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 105, 2323, 0.617);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 105, 2324, 0.34700000000000003);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 105, 2325, 0.035);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 105, 2326, 0.47);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 105, 2327, 0.493);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 105, 2328, 0.037000000000000005);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 105, 2329, 0.42700000000000005);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 105, 2330, 0.52);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 105, 2331, 0.052000000000000005);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 105, 2332, 0.512);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 105, 2333, 0.462);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 105, 2334, 0.027000000000000003);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 105, 2335, 0.451);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 105, 2336, 0.517);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 105, 2337, 0.032);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 105, 2338, 0.611);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 105, 2339, 0.377);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 105, 2340, 0.013000000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 105, 2341, 0.38299999999999995);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 105, 2342, 0.5920000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 105, 2343, 0.025);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 105, 2344, 0.535);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 105, 2345, 0.41100000000000003);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 105, 2346, 0.054000000000000006);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 105, 2347, 0.652);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 105, 2348, 0.322);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 105, 2349, 0.027000000000000003);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 105, 2350, 0.695);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 105, 2351, 0.27699999999999997);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 105, 2352, 0.027999999999999997);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 105, 2353, 0.379);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 105, 2354, 0.583);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 105, 2355, 0.038);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 105, 2356, 0.478);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 105, 2357, 0.494);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 105, 2358, 0.027000000000000003);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 105, 2359, 0.708);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 105, 2360, 0.278);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 105, 2361, 0.013999999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 105, 2362, 0.593);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 105, 2363, 0.368);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 105, 2364, 0.038);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 105, 2365, 0.355);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 105, 2366, 0.57);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 105, 2367, 0.076);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 105, 2368, 0.465);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 105, 2369, 0.496);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 105, 2370, 0.039);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 105, 2371, 0.631);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 105, 2372, 0.34600000000000003);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 105, 2373, 0.024);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 106, 2214, 0.774);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 106, 2215, 0.226);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 106, 2216, 0.634);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 106, 2217, 0.366);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 106, 2218, 0.6579999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 106, 2219, 0.342);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 106, 2220, 0.777);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 106, 2221, 0.223);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 106, 2222, 0.916);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 106, 2223, 0.084);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 106, 2224, 0.7969999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 106, 2225, 0.203);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 106, 2226, 0.481);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 106, 2227, 0.519);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 106, 2228, 0.913);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 106, 2229, 0.087);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 106, 2230, 0.861);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 106, 2231, 0.139);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 106, 2232, 0.669);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 106, 2233, 0.331);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 106, 2234, 0.63);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 106, 2235, 0.37);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 106, 2236, 0.6990000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 106, 2237, 0.301);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 106, 2238, 0.909);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 106, 2239, 0.091);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 106, 2240, 0.8089999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 106, 2241, 0.191);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 106, 2242, 0.5640000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 106, 2243, 0.436);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 106, 2244, 0.5);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 106, 2245, 0.5);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 106, 2246, 0.76);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 106, 2247, 0.24);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 106, 2248, 0.854);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 106, 2249, 0.146);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 106, 2250, 0.795);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 106, 2251, 0.205);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 106, 2252, 0.618);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 106, 2253, 0.382);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 106, 2254, 0.734);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 106, 2255, 0.266);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 106, 2256, 0.851);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 106, 2257, 0.149);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 106, 2258, 0.7969999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 106, 2259, 0.203);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 106, 2260, 0.473);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 106, 2261, 0.527);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 106, 2262, 0.472);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 106, 2263, 0.528);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 106, 2264, 0.681);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 106, 2265, 0.319);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 106, 2266, 0.838);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 106, 2267, 0.162);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 106, 2268, 0.402);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 106, 2269, 0.598);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 106, 2270, 0.662);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 106, 2271, 0.33799999999999997);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 106, 2272, 0.783);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 106, 2273, 0.217);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 106, 2274, 0.591);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 106, 2275, 0.409);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 106, 2276, 0.262);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 106, 2277, 0.738);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 107, 2214, 0.6759999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 107, 2215, 0.324);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 107, 2216, 0.17700000000000005);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 107, 2217, 0.823);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 107, 2218, 0.832);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 107, 2219, 0.168);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 107, 2220, 0.7030000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 107, 2221, 0.297);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 107, 2222, 0.736);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 107, 2223, 0.264);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 107, 2224, 0.651);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 107, 2225, 0.349);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 107, 2226, 0.45100000000000007);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 107, 2227, 0.5489999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 107, 2228, 0.854);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 107, 2229, 0.146);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 107, 2230, 0.696);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 107, 2231, 0.304);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 107, 2232, 0.5820000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 107, 2233, 0.418);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 107, 2234, 0.246);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 107, 2235, 0.754);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 107, 2236, 0.636);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 107, 2237, 0.364);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 107, 2238, 0.514);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 107, 2239, 0.486);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 107, 2240, 0.907);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 107, 2241, 0.09300000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 107, 2242, 0.07299999999999995);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 107, 2243, 0.927);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 107, 2244, 0.6819999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 107, 2245, 0.318);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 107, 2246, 0.7310000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 107, 2247, 0.26899999999999996);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 107, 2248, 0.626);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 107, 2249, 0.374);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 107, 2250, 0.824);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 107, 2251, 0.17600000000000002);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 107, 2252, 0.373);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 107, 2253, 0.627);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 107, 2254, 0.2909999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 107, 2255, 0.7090000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 107, 2256, 0.65);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 107, 2257, 0.35);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 107, 2258, 0.813);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 107, 2259, 0.187);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 107, 2260, 0.759);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 107, 2261, 0.24100000000000002);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 107, 2262, 0.19599999999999995);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 107, 2263, 0.804);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 107, 2264, 0.346);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 107, 2265, 0.654);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 107, 2266, 0.793);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 107, 2267, 0.207);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 107, 2268, 0.052000000000000046);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 107, 2269, 0.948);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 107, 2270, 0.526);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 107, 2271, 0.474);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 107, 2272, 0.5549999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 107, 2273, 0.445);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 107, 2274, 0.3340000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 107, 2275, 0.6659999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 107, 2276, 0.691);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 107, 2277, 0.30900000000000005);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 108, 2214, 0.5720000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 108, 2215, 0.428);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 108, 2216, 0.34099999999999997);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 108, 2217, 0.659);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 108, 2218, 0.709);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 108, 2219, 0.29100000000000004);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 108, 2220, 0.486);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 108, 2221, 0.514);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 108, 2222, 0.5720000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 108, 2223, 0.428);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 108, 2224, 0.5389999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 108, 2225, 0.461);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 108, 2226, 0.345);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 108, 2227, 0.655);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 108, 2228, 0.634);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 108, 2229, 0.366);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 108, 2230, 0.522);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 108, 2231, 0.478);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 108, 2232, 0.546);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 108, 2233, 0.45399999999999996);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 108, 2234, 0.2509999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 108, 2235, 0.7490000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 108, 2236, 0.469);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 108, 2237, 0.531);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 108, 2238, 0.498);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 108, 2239, 0.502);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 108, 2240, 0.786);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 108, 2241, 0.214);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 108, 2242, 0.18799999999999994);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 108, 2243, 0.812);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 108, 2244, 0.6839999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 108, 2245, 0.316);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 108, 2246, 0.597);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 108, 2247, 0.40299999999999997);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 108, 2248, 0.653);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 108, 2249, 0.34700000000000003);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 108, 2250, 0.584);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 108, 2251, 0.41600000000000004);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 108, 2252, 0.405);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 108, 2253, 0.595);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 108, 2254, 0.28400000000000003);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 108, 2255, 0.716);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 108, 2256, 0.663);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 108, 2257, 0.337);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 108, 2258, 0.635);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 108, 2259, 0.365);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 108, 2260, 0.626);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 108, 2261, 0.374);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 108, 2262, 0.19799999999999995);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 108, 2263, 0.802);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 108, 2264, 0.31700000000000006);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 108, 2265, 0.6829999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 108, 2266, 0.584);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 108, 2267, 0.41600000000000004);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 108, 2268, 0.08099999999999996);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 108, 2269, 0.919);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 108, 2270, 0.44499999999999995);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 108, 2271, 0.555);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 108, 2272, 0.491);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 108, 2273, 0.509);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 108, 2274, 0.31400000000000006);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 108, 2275, 0.6859999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 108, 2276, 0.53);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 108, 2277, 0.47);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 109, 2214, 0.584);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 109, 2215, 0.41600000000000004);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 109, 2216, 0.594);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 109, 2217, 0.406);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 109, 2218, 0.6439999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 109, 2219, 0.35600000000000004);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 109, 2220, 0.5720000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 109, 2221, 0.428);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 109, 2222, 0.8180000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 109, 2223, 0.182);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 109, 2224, 0.587);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 109, 2225, 0.413);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 109, 2226, 0.46399999999999997);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 109, 2227, 0.536);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 109, 2228, 0.557);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 109, 2229, 0.44299999999999995);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 109, 2230, 0.5800000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 109, 2231, 0.42);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 109, 2232, 0.593);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 109, 2233, 0.40700000000000003);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 109, 2234, 0.492);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 109, 2235, 0.508);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 109, 2236, 0.642);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 109, 2237, 0.358);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 109, 2238, 0.642);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 109, 2239, 0.358);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 109, 2240, 0.677);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 109, 2241, 0.32299999999999995);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 109, 2242, 0.511);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 109, 2243, 0.489);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 109, 2244, 0.591);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 109, 2245, 0.409);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 109, 2246, 0.727);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 109, 2247, 0.273);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 109, 2248, 0.563);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 109, 2249, 0.43700000000000006);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 109, 2250, 0.623);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 109, 2251, 0.377);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 109, 2252, 0.45499999999999996);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 109, 2253, 0.545);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 109, 2254, 0.719);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 109, 2255, 0.281);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 109, 2256, 0.767);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 109, 2257, 0.233);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 109, 2258, 0.6060000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 109, 2259, 0.39399999999999996);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 109, 2260, 0.603);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 109, 2261, 0.397);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 109, 2262, 0.567);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 109, 2263, 0.433);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 109, 2264, 0.851);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 109, 2265, 0.149);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 109, 2266, 0.75);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 109, 2267, 0.25);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 109, 2268, 0.579);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 109, 2269, 0.42100000000000004);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 109, 2270, 0.615);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 109, 2271, 0.385);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 109, 2272, 0.6699999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 109, 2273, 0.33);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 109, 2274, 0.6060000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 109, 2275, 0.39399999999999996);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 109, 2276, 0.45299999999999996);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 109, 2277, 0.547);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 110, 2215, 0.526);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 110, 2217, 0.598);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 110, 2219, 0.479);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 110, 2221, 0.446);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 110, 2223, 0.39899999999999997);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 110, 2225, 0.552);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 110, 2227, 0.49);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 110, 2229, 0.64);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 110, 2231, 0.42);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 110, 2233, 0.792);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 110, 2235, 0.64);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 110, 2237, 0.703);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 110, 2239, 0.574);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 110, 2241, 0.5);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 110, 2243, 0.423);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 110, 2245, 0.496);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 110, 2247, 0.435);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 110, 2249, 0.6);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 110, 2251, 0.597);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 110, 2253, 0.48);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 110, 2255, 0.531);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 110, 2257, 0.547);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 110, 2259, 0.657);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 110, 2261, 0.537);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 110, 2263, 0.575);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 110, 2265, 0.588);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 110, 2267, 0.312);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 110, 2269, 0.44799999999999995);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 110, 2271, 0.5579999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 110, 2273, 0.452);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 110, 2275, 0.5429999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 110, 2276, 0.479);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 111, 2215, 0.396);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 111, 2217, 0.45);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 111, 2219, 0.262);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 111, 2221, 0.369);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 111, 2223, 0.392);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 111, 2225, 0.47);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 111, 2227, 0.49);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 111, 2229, 0.597);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 111, 2231, 0.315);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 111, 2233, 0.545);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 111, 2235, 0.542);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 111, 2237, 0.5579999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 111, 2239, 0.419);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 111, 2241, 0.382);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 111, 2243, 0.503);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 111, 2245, 0.415);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 111, 2247, 0.364);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 111, 2249, 0.46299999999999997);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 111, 2251, 0.446);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 111, 2253, 0.486);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 111, 2255, 0.41200000000000003);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 111, 2257, 0.312);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 111, 2259, 0.485);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 111, 2261, 0.318);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 111, 2263, 0.514);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 111, 2265, 0.494);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 111, 2267, 0.335);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 111, 2269, 0.594);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 111, 2271, 0.474);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 111, 2273, 0.414);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 111, 2275, 0.528);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 111, 2276, 0.4);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 112, 2215, 0.435);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 112, 2217, 0.484);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 112, 2219, 0.478);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 112, 2221, 0.5670000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 112, 2223, 0.39799999999999996);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 112, 2225, 0.586);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 112, 2227, 0.5429999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 112, 2229, 0.541);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 112, 2231, 0.48200000000000004);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 112, 2233, 0.601);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 112, 2235, 0.6759999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 112, 2237, 0.599);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 112, 2239, 0.5720000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 112, 2241, 0.424);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 112, 2243, 0.451);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 112, 2245, 0.379);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 112, 2247, 0.5529999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 112, 2249, 0.528);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 112, 2251, 0.495);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 112, 2253, 0.434);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 112, 2255, 0.563);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 112, 2257, 0.467);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 112, 2259, 0.541);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 112, 2261, 0.43200000000000005);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 112, 2263, 0.495);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 112, 2265, 0.632);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 112, 2267, 0.40299999999999997);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 112, 2269, 0.502);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 112, 2271, 0.519);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 112, 2273, 0.375);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 112, 2275, 0.638);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 112, 2276, 0.54);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 113, 2214, 0.452);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 113, 2215, 0.5479999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 113, 2216, 0.46);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 113, 2217, 0.54);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 113, 2218, 0.706);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 113, 2219, 0.294);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 113, 2220, 0.564);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 113, 2221, 0.436);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 113, 2222, 0.716);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 113, 2223, 0.284);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 113, 2224, 0.442);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 113, 2225, 0.5579999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 113, 2226, 0.275);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 113, 2227, 0.725);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 113, 2228, 0.508);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 113, 2229, 0.49200000000000005);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 113, 2230, 0.534);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 113, 2231, 0.466);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 113, 2232, 0.688);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 113, 2233, 0.312);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 113, 2234, 0.258);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 113, 2235, 0.742);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 113, 2236, 0.59);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 113, 2237, 0.41);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 113, 2238, 0.59);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 113, 2239, 0.41);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 113, 2240, 0.711);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 113, 2241, 0.289);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 113, 2242, 0.57);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 113, 2243, 0.43);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 113, 2244, 0.799);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 113, 2245, 0.201);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 113, 2246, 0.841);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 113, 2247, 0.159);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 113, 2248, 0.526);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 113, 2249, 0.474);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 113, 2250, 0.622);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 113, 2251, 0.37799999999999995);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 113, 2252, 0.508);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 113, 2253, 0.49200000000000005);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 113, 2254, 0.38);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 113, 2255, 0.62);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 113, 2256, 0.612);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 113, 2257, 0.38799999999999996);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 113, 2258, 0.599);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 113, 2259, 0.401);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 113, 2260, 0.725);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 113, 2261, 0.275);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 113, 2262, 0.264);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 113, 2263, 0.736);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 113, 2264, 0.608);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 113, 2265, 0.392);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 113, 2266, 0.661);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 113, 2267, 0.33899999999999997);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 113, 2268, 0.586);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 113, 2269, 0.414);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 113, 2270, 0.575);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 113, 2271, 0.425);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 113, 2272, 0.513);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 113, 2273, 0.48700000000000004);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 113, 2274, 0.289);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 113, 2275, 0.711);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 113, 2276, 0.711);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 113, 2277, 0.289);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 114, 2214, 0.847);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 114, 2215, 0.153);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 114, 2216, 0.743);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 114, 2217, 0.257);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 114, 2218, 0.954);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 114, 2219, 0.046);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 114, 2220, 0.918);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 114, 2221, 0.08199999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 114, 2222, 0.927);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 114, 2223, 0.073);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 114, 2224, 0.827);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 114, 2225, 0.17300000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 114, 2226, 0.7150000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 114, 2227, 0.285);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 114, 2228, 0.847);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 114, 2229, 0.153);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 114, 2230, 0.891);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 114, 2231, 0.109);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 114, 2232, 0.806);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 114, 2233, 0.19399999999999998);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 114, 2234, 0.73);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 114, 2235, 0.27);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 114, 2236, 0.7969999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 114, 2237, 0.203);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 114, 2238, 0.875);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 114, 2239, 0.125);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 114, 2240, 0.911);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 114, 2241, 0.08900000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 114, 2242, 0.834);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 114, 2243, 0.166);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 114, 2244, 0.911);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 114, 2245, 0.08900000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 114, 2246, 0.964);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 114, 2247, 0.036000000000000004);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 114, 2248, 0.804);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 114, 2249, 0.196);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 114, 2250, 0.916);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 114, 2251, 0.084);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 114, 2252, 0.869);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 114, 2253, 0.131);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 114, 2254, 0.778);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 114, 2255, 0.222);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 114, 2256, 0.911);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 114, 2257, 0.08900000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 114, 2258, 0.853);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 114, 2259, 0.147);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 114, 2260, 0.922);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 114, 2261, 0.078);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 114, 2262, 0.639);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 114, 2263, 0.361);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 114, 2264, 0.903);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 114, 2265, 0.09699999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 114, 2266, 0.915);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 114, 2267, 0.085);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 114, 2268, 0.79);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 114, 2269, 0.21);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 114, 2270, 0.833);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 114, 2271, 0.16699999999999998);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 114, 2272, 0.841);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 114, 2273, 0.159);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 114, 2274, 0.78);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 114, 2275, 0.22);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 114, 2276, 0.08199999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 114, 2277, 0.918);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 115, 2214, 0.859);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 115, 2215, 0.141);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 115, 2216, 0.868);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 115, 2217, 0.132);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 115, 2218, 0.857);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 115, 2219, 0.14300000000000002);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 115, 2220, 0.947);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 115, 2221, 0.053);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 115, 2222, 0.903);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 115, 2223, 0.09699999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 115, 2224, 0.834);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 115, 2225, 0.166);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 115, 2226, 0.7989999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 115, 2227, 0.201);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 115, 2228, 0.833);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 115, 2229, 0.16699999999999998);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 115, 2230, 0.955);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 115, 2231, 0.045);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 115, 2232, 0.864);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 115, 2233, 0.136);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 115, 2234, 0.824);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 115, 2235, 0.17600000000000002);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 115, 2236, 0.869);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 115, 2237, 0.131);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 115, 2238, 0.841);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 115, 2239, 0.159);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 115, 2240, 0.862);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 115, 2241, 0.138);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 115, 2242, 0.85);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 115, 2243, 0.15);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 115, 2244, 0.942);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 115, 2245, 0.057999999999999996);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 115, 2246, 0.873);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 115, 2247, 0.127);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 115, 2248, 0.864);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 115, 2249, 0.136);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 115, 2250, 0.774);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 115, 2251, 0.226);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 115, 2252, 0.89);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 115, 2253, 0.11);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 115, 2254, 0.8160000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 115, 2255, 0.184);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 115, 2256, 0.892);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 115, 2257, 0.10800000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 115, 2258, 0.901);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 115, 2259, 0.099);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 115, 2260, 0.895);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 115, 2261, 0.105);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 115, 2262, 0.745);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 115, 2263, 0.255);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 115, 2264, 0.827);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 115, 2265, 0.17300000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 115, 2266, 0.9259999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 115, 2267, 0.07400000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 115, 2268, 0.858);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 115, 2269, 0.142);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 115, 2270, 0.866);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 115, 2271, 0.134);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 115, 2272, 0.863);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 115, 2273, 0.13699999999999998);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 115, 2274, 0.862);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 115, 2275, 0.138);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 115, 2276, 0.155);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 115, 2277, 0.845);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 116, 2214, 0.916);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 116, 2215, 0.084);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 116, 2216, 0.881);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 116, 2217, 0.11900000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 116, 2218, 0.8280000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 116, 2219, 0.172);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 116, 2220, 0.795);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 116, 2221, 0.205);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 116, 2222, 0.7110000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 116, 2223, 0.289);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 116, 2224, 0.907);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 116, 2225, 0.09300000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 116, 2226, 0.744);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 116, 2227, 0.256);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 116, 2228, 0.719);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 116, 2229, 0.281);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 116, 2230, 0.802);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 116, 2231, 0.198);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 116, 2232, 0.848);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 116, 2233, 0.152);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 116, 2234, 0.672);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 116, 2235, 0.32799999999999996);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 116, 2236, 0.891);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 116, 2237, 0.109);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 116, 2238, 0.683);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 116, 2239, 0.317);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 116, 2240, 0.873);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 116, 2241, 0.127);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 116, 2242, 0.837);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 116, 2243, 0.163);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 116, 2244, 0.7969999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 116, 2245, 0.203);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 116, 2246, 0.896);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 116, 2247, 0.10400000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 116, 2248, 0.891);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 116, 2249, 0.109);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 116, 2250, 0.7210000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 116, 2251, 0.27899999999999997);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 116, 2252, 0.943);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 116, 2253, 0.057);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 116, 2254, 0.758);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 116, 2255, 0.242);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 116, 2256, 0.835);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 116, 2257, 0.165);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 116, 2258, 0.7010000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 116, 2259, 0.299);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 116, 2260, 0.848);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 116, 2261, 0.152);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 116, 2262, 0.8089999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 116, 2263, 0.191);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 116, 2264, 0.838);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 116, 2265, 0.162);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 116, 2266, 0.827);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 116, 2267, 0.17300000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 116, 2268, 0.843);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 116, 2269, 0.157);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 116, 2270, 0.844);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 116, 2271, 0.156);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 116, 2272, 0.893);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 116, 2273, 0.107);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 116, 2274, 0.883);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 116, 2275, 0.11699999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 116, 2276, 0.138);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 116, 2277, 0.862);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 117, 2214, 0.41000000000000003);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 117, 2215, 0.59);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 117, 2216, 0.345);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 117, 2217, 0.655);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 117, 2218, 0.486);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 117, 2219, 0.514);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 117, 2220, 0.31400000000000006);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 117, 2221, 0.6859999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 117, 2222, 0.509);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 117, 2223, 0.491);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 117, 2224, 0.371);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 117, 2225, 0.629);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 117, 2226, 0.32599999999999996);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 117, 2227, 0.674);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 117, 2228, 0.30099999999999993);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 117, 2229, 0.6990000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 117, 2230, 0.44399999999999995);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 117, 2231, 0.556);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 117, 2232, 0.502);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 117, 2233, 0.498);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 117, 2234, 0.49);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 117, 2235, 0.51);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 117, 2236, 0.30200000000000005);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 117, 2237, 0.698);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 117, 2238, 0.484);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 117, 2239, 0.516);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 117, 2240, 0.557);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 117, 2241, 0.44299999999999995);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 117, 2242, 0.31499999999999995);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 117, 2243, 0.685);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 117, 2244, 0.633);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 117, 2245, 0.36700000000000005);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 117, 2246, 0.614);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 117, 2247, 0.386);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 117, 2248, 0.374);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 117, 2249, 0.626);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 117, 2250, 0.41100000000000003);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 117, 2251, 0.589);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 117, 2252, 0.21999999999999997);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 117, 2253, 0.78);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 117, 2254, 0.42399999999999993);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 117, 2255, 0.5760000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 117, 2256, 0.497);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 117, 2257, 0.503);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 117, 2258, 0.3370000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 117, 2259, 0.6629999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 117, 2260, 0.43999999999999995);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 117, 2261, 0.56);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 117, 2262, 0.43299999999999994);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 117, 2263, 0.5670000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 117, 2264, 0.36);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 117, 2265, 0.64);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 117, 2266, 0.6);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 117, 2267, 0.4);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 117, 2268, 0.348);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 117, 2269, 0.652);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 117, 2270, 0.42600000000000005);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 117, 2271, 0.574);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 117, 2272, 0.486);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 117, 2273, 0.514);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 117, 2274, 0.361);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 117, 2275, 0.639);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 117, 2276, 0.5660000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 117, 2277, 0.43399999999999994);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 118, 2214, 0.811);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 118, 2215, 0.18899999999999997);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 118, 2216, 0.779);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 118, 2217, 0.221);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 118, 2218, 0.908);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 118, 2219, 0.092);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 118, 2220, 0.719);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 118, 2221, 0.281);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 118, 2222, 0.8049999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 118, 2223, 0.195);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 118, 2224, 0.742);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 118, 2225, 0.258);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 118, 2226, 0.6);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 118, 2227, 0.4);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 118, 2228, 0.774);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 118, 2229, 0.226);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 118, 2230, 0.788);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 118, 2231, 0.212);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 118, 2232, 0.823);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 118, 2233, 0.177);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 118, 2234, 0.709);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 118, 2235, 0.29100000000000004);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 118, 2236, 0.75);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 118, 2237, 0.25);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 118, 2238, 0.853);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 118, 2239, 0.147);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 118, 2240, 0.864);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 118, 2241, 0.136);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 118, 2242, 0.741);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 118, 2243, 0.259);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 118, 2244, 0.902);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 118, 2245, 0.098);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 118, 2246, 0.88);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 118, 2247, 0.12);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 118, 2248, 0.74);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 118, 2249, 0.26);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 118, 2250, 0.773);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 118, 2251, 0.22699999999999998);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 118, 2252, 0.765);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 118, 2253, 0.235);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 118, 2254, 0.744);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 118, 2255, 0.256);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 118, 2256, 0.859);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 118, 2257, 0.141);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 118, 2258, 0.774);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 118, 2259, 0.226);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 118, 2260, 0.7);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 118, 2261, 0.3);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 118, 2262, 0.661);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 118, 2263, 0.33899999999999997);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 118, 2264, 0.794);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 118, 2265, 0.20600000000000002);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 118, 2266, 0.8160000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 118, 2267, 0.184);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 118, 2268, 0.683);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 118, 2269, 0.317);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 118, 2270, 0.773);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 118, 2271, 0.22699999999999998);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 118, 2272, 0.736);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 118, 2273, 0.264);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 118, 2274, 0.608);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 118, 2275, 0.392);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 118, 2276, 0.392);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 118, 2277, 0.608);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 119, 2214, 0.984);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 119, 2215, 0.016);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 119, 2216, 0.968);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 119, 2217, 0.032);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 119, 2218, 0.998);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 119, 2219, 0.002);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 119, 2220, 0.965);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 119, 2221, 0.035);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 119, 2222, 0.995);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 119, 2223, 0.005);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 119, 2224, 0.989);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 119, 2225, 0.011000000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 119, 2226, 0.969);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 119, 2227, 0.031);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 119, 2228, 0.994);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 119, 2229, 0.006);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 119, 2230, 0.979);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 119, 2231, 0.021);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 119, 2232, 0.988);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 119, 2233, 0.012);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 119, 2234, 0.975);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 119, 2235, 0.025);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 119, 2236, 0.968);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 119, 2237, 0.032);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 119, 2238, 0.988);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 119, 2239, 0.012);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 119, 2240, 0.994);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 119, 2241, 0.006);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 119, 2242, 0.982);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 119, 2243, 0.018000000000000002);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 119, 2244, 0.992);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 119, 2245, 0.008);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 119, 2246, 0.995);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 119, 2247, 0.005);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 119, 2248, 0.963);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 119, 2249, 0.037000000000000005);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 119, 2250, 0.992);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 119, 2251, 0.008);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 119, 2252, 0.977);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 119, 2253, 0.023);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 119, 2254, 0.951);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 119, 2255, 0.049);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 119, 2256, 0.995);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 119, 2257, 0.005);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 119, 2258, 0.985);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 119, 2259, 0.015);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 119, 2260, 0.997);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 119, 2261, 0.003);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 119, 2262, 0.954);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 119, 2263, 0.046);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 119, 2264, 0.993);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 119, 2265, 0.006999999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 119, 2266, 0.995);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 119, 2267, 0.005);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 119, 2268, 0.944);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 119, 2269, 0.055999999999999994);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 119, 2270, 0.978);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 119, 2271, 0.022000000000000002);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 119, 2272, 0.979);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 119, 2273, 0.021);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 119, 2274, 0.967);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 119, 2275, 0.033);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 119, 2276, 0.034);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 119, 2277, 0.966);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2406, 0.449);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2407, 0.65);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2408, 0.825);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2409, 0.8959999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2410, 0.564);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2411, 0.513);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2412, 0.706);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2413, 0.902);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2414, 0.978);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2415, 0.665);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2416, 0.851);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2417, 0.95);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2418, 0.95);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2419, 1);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2420, 0.9129999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2421, 0.445);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2422, 0.589);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2423, 0.79);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2424, 0.941);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2425, 0.536);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2426, 0.669);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2427, 0.805);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2428, 0.937);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2429, 0.9540000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2430, 0.7759999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2431, 0.5429999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2432, 0.741);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2433, 0.894);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2434, 0.956);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2435, 0.662);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2436, 0.872);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2437, 0.951);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2438, 0.987);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2439, 0.996);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2440, 0.92);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2441, 0.525);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2442, 0.807);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2443, 0.894);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2444, 0.986);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2445, 0.6940000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2446, 0.447);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2447, 0.5529999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2448, 0.7070000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2449, 0.8540000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2450, 0.513);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2451, 0.8740000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2452, 0.9109999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2453, 0.977);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2454, 0.986);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2455, 0.897);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2456, 0.687);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2457, 0.753);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2458, 0.9229999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2459, 0.9520000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2460, 0.7340000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2461, 0.44799999999999995);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2462, 0.614);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2463, 0.823);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2464, 0.9259999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2465, 0.561);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2466, 0.746);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2467, 0.8370000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2468, 0.9109999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2469, 0.9440000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2470, 0.802);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2471, 0.6940000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2472, 0.845);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2473, 0.932);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2474, 0.9740000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2475, 0.778);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2476, 0.6579999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2477, 0.747);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2478, 0.879);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2479, 0.958);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2480, 0.727);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2481, 0.922);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2482, 0.971);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2483, 0.991);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2484, 0.993);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2485, 0.946);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2486, 0.7190000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2487, 0.805);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2488, 0.79);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2489, 0.91);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2490, 0.7659999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2491, 0.27899999999999997);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2492, 0.40399999999999997);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2493, 0.578);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2494, 0.75);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2495, 0.373);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2496, 0.7040000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2497, 0.9109999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2498, 0.976);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2499, 0.983);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2500, 0.818);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2501, 0.48200000000000004);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2502, 0.7);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2503, 0.883);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2504, 0.94);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2505, 0.6609999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2506, 0.627);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2507, 0.7859999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2508, 0.9259999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2509, 0.981);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2510, 0.732);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2511, 0.6729999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2512, 0.87);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2513, 0.9490000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2514, 0.996);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2515, 0.8009999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2516, 0.737);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2517, 0.8270000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2518, 0.855);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2519, 0.903);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2520, 0.782);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2521, 0.843);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2522, 0.9159999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2523, 0.953);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2524, 0.996);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2525, 0.893);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2526, 0.745);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2527, 0.8270000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2528, 0.955);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2529, 0.9670000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2530, 0.804);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2531, 0.903);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2532, 0.971);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2533, 0.985);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2534, 1);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2535, 0.9420000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2536, 0.517);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2537, 0.672);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2538, 0.843);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2539, 0.9);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2540, 0.617);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2541, 0.879);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2542, 0.9420000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2543, 0.993);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2544, 0.9990000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2545, 0.919);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2546, 0.6990000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2547, 0.8170000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2548, 0.9209999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2549, 0.966);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2550, 0.772);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2551, 0.348);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2552, 0.465);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2553, 0.675);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2554, 0.958);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2555, 0.43700000000000006);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2556, 0.376);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2557, 0.48700000000000004);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2558, 0.6970000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2559, 0.848);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2560, 0.452);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2561, 0.7120000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2562, 0.8540000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2563, 0.889);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2564, 0.935);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2565, 0.797);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2566, 0.758);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2567, 0.547);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2568, 0.43200000000000005);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2569, 0.618);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2570, 0.616);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2571, 0.5429999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2572, 0.564);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2573, 0.72);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2574, 0.61);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2575, 0.5670000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2576, 0.774);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2577, 0.82);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2578, 0.7090000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2579, 0.665);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2580, 0.9470000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2581, 0.905);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2582, 0.9109999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2583, 0.89);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2584, 0.9309999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2585, 0.875);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2586, 0.9129999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2587, 0.774);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2588, 0.478);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2589, 0.45299999999999996);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2590, 0.485);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2591, 0.747);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2592, 0.43);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2593, 0.536);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2594, 0.838);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2595, 0.7240000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2596, 0.68);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2597, 0.878);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2598, 0.894);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2599, 0.73);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2600, 0.7759999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2601, 0.725);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2602, 0.6409999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2603, 0.541);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2604, 0.7509999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2605, 0.747);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2606, 0.767);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2607, 0.662);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2608, 0.972);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2609, 0.872);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2610, 0.8809999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2611, 0.982);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2612, 0.982);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2613, 0.9079999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2614, 0.92);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2615, 0.8170000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2616, 0.66);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2617, 0.446);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2618, 0.833);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2619, 0.8290000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2620, 0.7959999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2621, 0.6940000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2622, 0.6459999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2623, 0.536);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2624, 0.578);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2625, 0.34);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2626, 0.6759999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2627, 0.13699999999999998);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2628, 0.513);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2629, 0.94);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2630, 0.888);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2631, 0.873);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2632, 0.853);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2633, 0.961);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2634, 0.927);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2635, 0.897);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2636, 0.78);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2637, 0.7020000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2638, 0.6729999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2639, 0.818);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2640, 0.688);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2641, 0.8540000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2642, 0.7340000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2643, 0.68);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2644, 0.5670000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2645, 0.523);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2646, 0.493);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2647, 0.6609999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2648, 0.45);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2649, 0.561);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2650, 0.893);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2651, 0.845);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2652, 0.735);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2653, 0.688);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2654, 0.8420000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2655, 0.5820000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2656, 0.802);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2657, 0.872);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2658, 0.775);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2659, 0.6579999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2660, 0.795);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2661, 0.905);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2662, 0.636);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2663, 0.778);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2664, 0.777);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2665, 0.723);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2666, 0.625);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2667, 0.768);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2668, 0.943);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2669, 0.8390000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2670, 0.727);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2671, 0.9790000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2672, 0.94);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2673, 0.8909999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2674, 0.938);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2675, 1);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2676, 0.905);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2677, 0.946);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2678, 0.8290000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2679, 0.75);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2680, 0.7559999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2681, 0.784);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2682, 0.8190000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2683, 0.363);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2684, 0.7659999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2685, 0.611);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2686, 0.354);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2687, 0.299);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2688, 0.46799999999999997);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2689, 0.451);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2690, 0.304);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2691, 0.373);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2692, 0.9009999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2693, 0.7909999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2694, 0.6609999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2695, 0.9209999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2696, 0.887);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2697, 0.9740000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2698, 0.818);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2699, 0.777);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2700, 0.596);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2701, 0.5710000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2702, 0.858);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2703, 0.894);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2704, 0.555);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2705, 0.6609999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2706, 0.847);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2707, 0.7120000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2708, 0.5589999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2709, 0.86);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2710, 0.9059999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2711, 0.79);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2712, 0.732);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2713, 0.932);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2714, 0.7559999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2715, 0.63);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2716, 0.9129999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2717, 0.84);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2718, 0.907);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2719, 0.8009999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2720, 0.907);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2721, 0.7490000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2722, 0.759);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2723, 0.753);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2724, 0.785);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2725, 0.632);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2726, 0.782);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2727, 0.945);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2728, 0.85);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2729, 0.961);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2730, 0.8859999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2731, 0.919);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2732, 0.7709999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2733, 0.893);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2734, 0.9059999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2735, 0.779);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2736, 0.636);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2737, 0.9209999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2738, 0.863);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2739, 0.9620000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2740, 0.804);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2741, 0.981);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2742, 0.9259999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2743, 0.902);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2744, 0.956);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2745, 0.976);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2746, 0.9329999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2747, 0.9420000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2748, 0.7);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2749, 0.5920000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2750, 0.565);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2751, 0.6579999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2752, 0.722);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2753, 0.42);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2754, 0.617);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2755, 0.9570000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2756, 0.9159999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2757, 0.861);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2758, 0.977);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2759, 0.953);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2760, 0.973);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2761, 0.919);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2762, 0.861);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2763, 0.764);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2764, 0.687);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2765, 0.7979999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2766, 0.833);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2767, 0.726);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2768, 0.772);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2769, 0.58);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2770, 0.397);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2771, 0.413);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2772, 0.44);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2773, 0.523);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2774, 0.22399999999999998);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2775, 0.43700000000000006);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2776, 0.5579999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2777, 0.493);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2778, 0.29);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2779, 0.466);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2780, 0.563);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2781, 0.408);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2782, 0.452);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2783, 0.9620000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2784, 0.736);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2785, 0.6779999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2786, 0.889);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2787, 0.9309999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2788, 0.787);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 120, 2789, 0.797);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 121, 2790, 0.541);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 121, 2791, 0.26899999999999996);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 121, 2792, 0.19);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 121, 2793, 0.423);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 121, 2794, 0.344);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 121, 2795, 0.23199999999999998);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 121, 2796, 0.163);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 121, 2797, 0.713);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 121, 2798, 0.12300000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 121, 2799, 0.51);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 121, 2800, 0.265);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 121, 2801, 0.225);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 121, 2802, 0.28600000000000003);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 121, 2803, 0.532);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 121, 2804, 0.182);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 121, 2805, 0.5670000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 121, 2806, 0.308);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 121, 2807, 0.125);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 121, 2808, 0.8320000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 121, 2809, 0.087);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 121, 2810, 0.081);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 121, 2811, 0.647);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 121, 2812, 0.27);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 121, 2813, 0.083);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 121, 2814, 0.44799999999999995);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 121, 2815, 0.46799999999999997);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 121, 2816, 0.084);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 121, 2817, 0.121);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 121, 2818, 0.78);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 121, 2819, 0.099);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 121, 2820, 0.638);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 121, 2821, 0.251);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 121, 2822, 0.111);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 121, 2823, 0.743);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 121, 2824, 0.172);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 121, 2825, 0.085);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 121, 2826, 0.11800000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 121, 2827, 0.78);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 121, 2828, 0.10099999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 121, 2829, 0.18899999999999997);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 121, 2830, 0.737);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 121, 2831, 0.07400000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 121, 2832, 0.633);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 121, 2833, 0.187);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 121, 2834, 0.18);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 121, 2835, 0.182);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 121, 2836, 0.624);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 121, 2837, 0.195);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 121, 2838, 0.32899999999999996);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 121, 2839, 0.615);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 121, 2840, 0.055999999999999994);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 121, 2841, 0.6659999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 121, 2842, 0.16);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 121, 2843, 0.174);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 121, 2844, 0.561);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 121, 2845, 0.376);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 121, 2846, 0.063);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 121, 2847, 0.444);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 121, 2848, 0.35);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 121, 2849, 0.20600000000000002);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 121, 2850, 0.573);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 121, 2851, 0.265);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 121, 2852, 0.162);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 121, 2853, 0.33399999999999996);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 121, 2854, 0.608);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 121, 2855, 0.057999999999999996);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 121, 2856, 0.203);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 121, 2857, 0.685);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 121, 2858, 0.11199999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 121, 2859, 0.389);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 121, 2860, 0.5589999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 121, 2861, 0.052000000000000005);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 121, 2862, 0.825);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 121, 2863, 0.044000000000000004);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 121, 2864, 0.131);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 121, 2865, 0.07400000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 121, 2866, 0.871);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 121, 2867, 0.055);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 121, 2868, 0.34);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 121, 2869, 0.5479999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 121, 2870, 0.113);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 121, 2871, 0.748);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 121, 2872, 0.094);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 121, 2873, 0.159);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 121, 2874, 0.47100000000000003);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 121, 2875, 0.39799999999999996);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 121, 2876, 0.131);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 121, 2877, 0.664);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 121, 2878, 0.14300000000000002);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 121, 2879, 0.192);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 121, 2880, 0.713);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 121, 2881, 0.064);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 121, 2882, 0.223);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 121, 2883, 0.75);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 121, 2884, 0.067);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 121, 2885, 0.183);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 122, 2214, 0.183);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 122, 2215, 0.797);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 122, 2216, 0.259);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 122, 2217, 0.736);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 122, 2218, 0.26899999999999996);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 122, 2219, 0.727);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 122, 2220, 0.253);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 122, 2221, 0.726);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 122, 2222, 0.087);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 122, 2223, 0.8959999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 122, 2224, 0.147);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 122, 2225, 0.843);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 122, 2226, 0.23600000000000002);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 122, 2227, 0.754);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 122, 2228, 0.068);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 122, 2229, 0.922);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 122, 2230, 0.19399999999999998);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 122, 2231, 0.768);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 122, 2232, 0.175);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 122, 2233, 0.8190000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 122, 2234, 0.207);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 122, 2235, 0.7909999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 122, 2236, 0.243);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 122, 2237, 0.753);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 122, 2238, 0.257);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 122, 2239, 0.69);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 122, 2240, 0.311);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 122, 2241, 0.6579999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 122, 2242, 0.255);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 122, 2243, 0.7390000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 122, 2244, 0.11599999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 122, 2245, 0.875);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 122, 2246, 0.248);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 122, 2247, 0.742);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 122, 2248, 0.267);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 122, 2249, 0.7090000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 122, 2250, 0.256);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 122, 2251, 0.7440000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 122, 2252, 0.245);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 122, 2253, 0.7509999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 122, 2254, 0.171);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 122, 2255, 0.804);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 122, 2256, 0.264);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 122, 2257, 0.733);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 122, 2258, 0.228);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 122, 2259, 0.758);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 122, 2260, 0.33399999999999996);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 122, 2261, 0.6609999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 122, 2262, 0.142);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 122, 2263, 0.851);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 122, 2264, 0.23600000000000002);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 122, 2265, 0.763);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 122, 2266, 0.044000000000000004);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 122, 2267, 0.9420000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 122, 2268, 0.152);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 122, 2269, 0.841);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 122, 2270, 0.16899999999999998);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 122, 2271, 0.8220000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 122, 2272, 0.209);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 122, 2273, 0.7090000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 122, 2274, 0.135);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 122, 2275, 0.8590000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 122, 2276, 0.7290000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 122, 2277, 0.257);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 122, 2886, 0.02);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 122, 2887, 0.005);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 122, 2888, 0.004);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 122, 2889, 0.021);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 122, 2890, 0.016);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 122, 2891, 0.01);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 122, 2892, 0.01);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 122, 2893, 0.01);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 122, 2894, 0.038);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 122, 2895, 0.006);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 122, 2896, 0.002);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 122, 2897, 0.003);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 122, 2898, 0.053);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 122, 2899, 0.031);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 122, 2900, 0.006);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 122, 2901, 0.009000000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 122, 2902, 0.009000000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 122, 2903, 0.024);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 122, 2904, 0);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 122, 2905, 0.004);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 122, 2906, 0.025);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 122, 2907, 0.002);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 122, 2908, 0.013999999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 122, 2909, 0.005);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 122, 2910, 0.006999999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 122, 2911, 0.001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 122, 2912, 0.013999999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 122, 2913, 0.008);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 122, 2914, 0.01);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 122, 2915, 0.013000000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 122, 2916, 0.081);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 122, 2917, 0.006);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2215, 0.784);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2217, 0.64);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2219, 0.527);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2221, 0.61);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2223, 0.591);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2225, 0.6920000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2227, 0.794);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2229, 0.5529999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2231, 0.684);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2233, 0.638);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2235, 0.72);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2237, 0.609);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2239, 0.5770000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2241, 0.5429999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2243, 0.636);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2245, 0.647);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2247, 0.46299999999999997);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2249, 0.642);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2251, 0.564);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2253, 0.594);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2255, 0.642);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2257, 0.479);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2259, 0.557);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2261, 0.6859999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2263, 0.757);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2265, 0.561);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2267, 0.444);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2269, 0.635);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2271, 0.6459999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2273, 0.603);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2275, 0.8140000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2276, 0.72);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2406, 0.815);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2407, 0.7440000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2408, 0.799);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2409, 0.871);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2410, 0.784);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2411, 0.626);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2412, 0.652);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2413, 0.611);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2414, 0.7390000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2415, 0.64);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2416, 0.526);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2417, 0.525);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2418, 0.525);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2419, 0.627);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2420, 0.527);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2421, 0.585);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2422, 0.642);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2423, 0.5870000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2424, 0.6759999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2425, 0.61);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2426, 0.619);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2427, 0.586);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2428, 0.563);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2429, 0.503);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2430, 0.591);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2431, 0.7040000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2432, 0.685);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2433, 0.667);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2434, 0.701);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2435, 0.6920000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2436, 0.8);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2437, 0.777);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2438, 0.848);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2439, 0.87);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2440, 0.794);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2441, 0.5479999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2442, 0.5760000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2443, 0.46399999999999997);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2444, 0.5820000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2445, 0.5529999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2446, 0.721);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2447, 0.669);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2448, 0.573);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2449, 0.371);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2450, 0.684);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2451, 0.66);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2452, 0.609);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2453, 0.622);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2454, 0.738);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2455, 0.638);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2456, 0.733);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2457, 0.7020000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2458, 0.736);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2459, 0.836);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2460, 0.72);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2461, 0.626);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2462, 0.589);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2463, 0.608);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2464, 0.684);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2465, 0.609);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2466, 0.727);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2467, 0.47600000000000003);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2468, 0.441);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2469, 0.49);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2470, 0.5770000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2471, 0.536);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2472, 0.5429999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2473, 0.5489999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2474, 0.6940000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2475, 0.5429999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2476, 0.638);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2477, 0.645);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2478, 0.594);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2479, 0.5920000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2480, 0.636);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2481, 0.6659999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2482, 0.632);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2483, 0.612);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2484, 0.617);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2485, 0.647);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2486, 0.467);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2487, 0.446);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2488, 0.48700000000000004);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2489, 0.639);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2490, 0.46299999999999997);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2491, 0.705);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2492, 0.62);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2493, 0.535);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2494, 0.46799999999999997);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2495, 0.642);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2496, 0.596);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2497, 0.552);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2498, 0.506);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2499, 0.447);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2500, 0.564);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2501, 0.7040000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2502, 0.529);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2503, 0.6659999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2504, 0.49200000000000005);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2505, 0.594);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2506, 0.711);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2507, 0.59);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2508, 0.647);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2509, 0.7490000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2510, 0.642);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2511, 0.479);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2512, 0.484);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2513, 0.455);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2514, 0.527);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2515, 0.479);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2516, 0.552);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2517, 0.5589999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2518, 0.584);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2519, 0.5489999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2520, 0.557);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2521, 0.7170000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2522, 0.6709999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2523, 0.6629999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2524, 0.6509999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2525, 0.6859999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2526, 0.745);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2527, 0.7509999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2528, 0.812);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2529, 0.812);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2530, 0.757);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2531, 0.565);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2532, 0.531);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2533, 0.59);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2534, 0.759);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2535, 0.561);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2536, 0.473);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2537, 0.42100000000000004);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2538, 0.431);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2539, 0.46);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2540, 0.444);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2541, 0.65);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2542, 0.615);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2543, 0.6559999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2544, 0.706);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2545, 0.635);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2546, 0.662);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2547, 0.631);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2548, 0.637);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2549, 0.6859999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2550, 0.6459999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2551, 0.718);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2552, 0.735);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2553, 0.6509999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2554, 0.802);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2555, 0.72);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2556, 0.584);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2557, 0.64);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2558, 0.519);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2559, 0.568);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2560, 0.603);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2561, 0.7979999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2562, 0.8170000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2563, 0.8440000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2564, 0.885);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2565, 0.8140000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2566, 0.732);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2567, 0.7859999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2568, 0.7959999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2569, 0.8440000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2570, 0.706);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2571, 0.774);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2572, 0.784);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2573, 0.529);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2574, 0.647);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2575, 0.608);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2576, 0.7609999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2577, 0.5589999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2578, 0.613);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2579, 0.64);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2580, 0.39799999999999996);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2581, 0.456);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2582, 0.691);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2583, 0.619);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2584, 0.495);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2585, 0.628);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2586, 0.527);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2587, 0.7040000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2588, 0.626);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2589, 0.565);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2590, 0.713);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2591, 0.528);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2592, 0.506);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2593, 0.61);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2594, 0.544);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2595, 0.5870000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2596, 0.618);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2597, 0.746);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2598, 0.392);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2599, 0.529);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2600, 0.591);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2601, 0.55);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2602, 0.7090000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2603, 0.7240000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2604, 0.738);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2605, 0.629);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2606, 0.5710000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2607, 0.6920000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2608, 0.773);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2609, 0.731);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2610, 0.823);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2611, 0.8959999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2612, 0.685);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2613, 0.877);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2614, 0.794);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2615, 0.5670000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2616, 0.515);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2617, 0.494);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2618, 0.763);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2619, 0.483);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2620, 0.6709999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2621, 0.5529999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2622, 0.599);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2623, 0.703);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2624, 0.625);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2625, 0.759);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2626, 0.718);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2627, 0.625);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2628, 0.684);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2629, 0.594);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2630, 0.6509999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2631, 0.628);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2632, 0.66);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2633, 0.612);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2634, 0.579);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2635, 0.638);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2636, 0.598);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2637, 0.64);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2638, 0.772);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2639, 0.812);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2640, 0.6970000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2641, 0.737);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2642, 0.72);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2643, 0.5479999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2644, 0.596);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2645, 0.615);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2646, 0.7190000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2647, 0.523);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2648, 0.5479999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2649, 0.609);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2650, 0.376);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2651, 0.602);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2652, 0.585);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2653, 0.852);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2654, 0.392);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2655, 0.715);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2656, 0.5770000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2657, 0.475);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2658, 0.518);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2659, 0.5529999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2660, 0.644);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2661, 0.534);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2662, 0.41200000000000003);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2663, 0.5429999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2664, 0.5670000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2665, 0.5720000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2666, 0.6859999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2667, 0.727);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2668, 0.55);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2669, 0.698);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2670, 0.636);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2671, 0.578);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2672, 0.6729999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2673, 0.5770000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2674, 0.784);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2675, 0.604);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2676, 0.6579999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2677, 0.647);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2678, 0.35600000000000004);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2679, 0.43);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2680, 0.53);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2681, 0.662);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2682, 0.42700000000000005);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2683, 0.45299999999999996);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2684, 0.46299999999999997);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2685, 0.522);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2686, 0.625);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2687, 0.585);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2688, 0.74);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2689, 0.733);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2690, 0.813);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2691, 0.642);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2692, 0.547);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2693, 0.5770000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2694, 0.652);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2695, 0.523);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2696, 0.44799999999999995);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2697, 0.429);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2698, 0.564);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2699, 0.586);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2700, 0.616);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2701, 0.51);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2702, 0.711);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2703, 0.514);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2704, 0.62);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2705, 0.594);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2706, 0.5429999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2707, 0.491);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2708, 0.722);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2709, 0.7859999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2710, 0.5720000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2711, 0.5529999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2712, 0.642);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2713, 0.496);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2714, 0.47100000000000003);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2715, 0.38299999999999995);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2716, 0.612);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2717, 0.5);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2718, 0.484);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2719, 0.479);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2720, 0.504);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2721, 0.5589999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2722, 0.5670000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2723, 0.695);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2724, 0.455);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2725, 0.581);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2726, 0.557);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2727, 0.607);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2728, 0.69);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2729, 0.733);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2730, 0.7709999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2731, 0.6459999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2732, 0.555);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2733, 0.6859999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2734, 0.69);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2735, 0.679);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2736, 0.7509999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2737, 0.905);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2738, 0.68);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2739, 0.805);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2740, 0.757);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2741, 0.469);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2742, 0.53);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2743, 0.615);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2744, 0.8059999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2745, 0.44299999999999995);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2746, 0.473);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2747, 0.561);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2748, 0.33299999999999996);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2749, 0.374);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2750, 0.555);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2751, 0.607);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2752, 0.42100000000000004);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2753, 0.322);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2754, 0.444);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2755, 0.5489999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2756, 0.5920000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2757, 0.628);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2758, 0.774);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2759, 0.515);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2760, 0.733);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2761, 0.635);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2762, 0.5589999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2763, 0.633);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2764, 0.653);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2765, 0.753);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2766, 0.58);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2767, 0.609);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2768, 0.6459999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2769, 0.541);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2770, 0.682);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2771, 0.7959999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2772, 0.8190000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2773, 0.648);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2774, 0.91);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2775, 0.72);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2776, 0.5870000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2777, 0.57);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2778, 0.5870000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2779, 0.745);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2780, 0.48);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2781, 0.65);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2782, 0.603);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2783, 0.677);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2784, 0.7929999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2785, 0.794);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2786, 0.927);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2787, 0.6629999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2788, 0.97);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 123, 2789, 0.8140000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 124, 2215, 0.784);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 124, 2217, 0.64);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 124, 2219, 0.527);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 124, 2221, 0.61);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 124, 2223, 0.591);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 124, 2225, 0.6920000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 124, 2227, 0.794);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 124, 2229, 0.5529999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 124, 2231, 0.684);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 124, 2233, 0.638);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 124, 2235, 0.72);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 124, 2237, 0.609);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 124, 2239, 0.5770000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 124, 2241, 0.5429999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 124, 2243, 0.636);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 124, 2245, 0.647);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 124, 2247, 0.46299999999999997);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 124, 2249, 0.642);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 124, 2251, 0.564);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 124, 2253, 0.594);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 124, 2255, 0.642);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 124, 2257, 0.479);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 124, 2259, 0.557);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 124, 2261, 0.6859999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 124, 2263, 0.757);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 124, 2265, 0.561);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 124, 2267, 0.444);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 124, 2269, 0.635);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 124, 2271, 0.6459999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 124, 2273, 0.603);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 124, 2275, 0.8140000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 124, 2276, 0.72);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 124, 2951, NULL);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 124, 2952, 0.27399999999999997);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 124, 2953, 0.114);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 124, 2954, 0.251);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 124, 2955, 0.11);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 124, 2956, NULL);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 124, 2957, 0.435);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 124, 2958, 0.069);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 124, 2959, 0.079);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 124, 2960, 0.258);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 124, 2961, 0.36700000000000005);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 124, 2962, 0.222);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 124, 2963, 0.162);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 124, 2964, 0.083);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 124, 2965, 0.191);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 124, 2966, 0.19);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 124, 2967, 0.09699999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 124, 2968, NULL);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 124, 2969, 0.11599999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 124, 2970, 0.139);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 124, 2971, 0.086);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 124, 2972, 0.10300000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 124, 2973, 0.086);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 124, 2974, 0.126);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 124, 2975, 0.54);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 124, 2976, 0.20199999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 124, 2977, 0.162);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 124, 2978, 0.162);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 124, 2979, 0.191);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 124, 2980, 0.5479999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 124, 2981, 0.081);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 124, 2982, 0.708);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 125, 1968, NULL);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 125, 1971, 0.27399999999999997);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 125, 1974, 0.114);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 125, 1977, 0.251);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 125, 1980, 0.11);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 125, 1983, NULL);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 125, 1986, 0.435);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 125, 1989, 0.069);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 125, 1992, 0.079);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 125, 1995, 0.258);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 125, 1998, 0.36700000000000005);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 125, 2001, 0.222);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 125, 2004, 0.162);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 125, 2007, 0.083);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 125, 2010, 0.191);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 125, 2013, 0.19);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 125, 2016, 0.09699999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 125, 2019, NULL);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 125, 2022, 0.11599999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 125, 2025, 0.139);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 125, 2028, 0.086);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 125, 2031, 0.10300000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 125, 2034, 0.086);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 125, 2037, 0.126);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 125, 2040, 0.54);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 125, 2043, 0.20199999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 125, 2046, 0.162);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 125, 2049, 0.162);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 125, 2052, 0.191);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 125, 2055, 0.081);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 125, 2058, 0.708);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 125, 2918, 0.784);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 125, 2919, 0.64);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 125, 2920, 0.527);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 125, 2921, 0.61);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 125, 2922, 0.591);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 125, 2923, 0.6920000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 125, 2924, 0.794);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 125, 2925, 0.5529999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 125, 2926, 0.684);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 125, 2927, 0.638);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 125, 2928, 0.72);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 125, 2929, 0.609);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 125, 2930, 0.5770000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 125, 2931, 0.5429999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 125, 2932, 0.636);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 125, 2933, 0.647);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 125, 2934, 0.46299999999999997);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 125, 2935, 0.642);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 125, 2936, 0.564);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 125, 2937, 0.594);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 125, 2938, 0.642);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 125, 2939, 0.479);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 125, 2940, 0.557);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 125, 2941, 0.6859999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 125, 2942, 0.757);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 125, 2943, 0.561);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 125, 2944, 0.444);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 125, 2945, 0.635);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 125, 2946, 0.6459999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 125, 2947, 0.72);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 125, 2948, 0.5479999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 125, 2949, 0.603);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 125, 2950, 0.8140000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 126, 2214, NULL);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 126, 2215, 0.7090000000000001);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 126, 2216, NULL);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 126, 2217, 0.711);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 126, 2218, NULL);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 126, 2219, 0.777);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 126, 2220, NULL);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 126, 2221, 0.645);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 126, 2222, NULL);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 126, 2223, 0.5529999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 126, 2224, NULL);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 126, 2225, 0.635);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 126, 2226, NULL);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 126, 2227, 0.805);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 126, 2228, NULL);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 126, 2229, 0.578);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 126, 2230, NULL);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 126, 2231, 0.5329999999999999);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 126, 2232, NULL);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 126, 2233, 0.479);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 126, 2234, NULL);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 126, 2235, 0.586);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 126, 2236, NULL);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 126, 2237, 0.377);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 126, 2238, NULL);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 126, 2239, 0.615);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 126, 2240, NULL);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 126, 2241, 0.504);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 126, 2242, NULL);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 126, 2243, 0.40299999999999997);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 126, 2244, NULL);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 126, 2245, 0.32799999999999996);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 126, 2246, NULL);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 126, 2247, 0.434);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 126, 2248, NULL);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 126, 2249, 0.24100000000000002);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 126, 2250, NULL);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 126, 2251, 0.618);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 126, 2252, NULL);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 126, 2253, 0.53);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 126, 2254, NULL);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 126, 2255, 0.27899999999999997);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 126, 2256, NULL);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 126, 2257, 0.489);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 126, 2258, NULL);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 126, 2259, 0.483);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 126, 2260, NULL);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 126, 2261, 0.904);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 126, 2262, NULL);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 126, 2263, 0.387);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 126, 2264, NULL);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 126, 2265, 0.519);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 126, 2266, NULL);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 126, 2267, 0.473);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 126, 2268, NULL);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 126, 2269, 0.486);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 126, 2270, NULL);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 126, 2271, 0.506);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 126, 2272, NULL);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 126, 2273, 0.35600000000000004);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 126, 2274, NULL);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 126, 2275, 0.47600000000000003);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 126, 2276, 0.653);
+INSERT INTO `value` (`dataset_id`, `indicator_id`, `profile_id`, `value`) VALUES
+	(15, 126, 2277, NULL);
 /*!40000 ALTER TABLE `value` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
