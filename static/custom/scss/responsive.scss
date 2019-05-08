@@ -1,3 +1,19 @@
+@media (max-width:1600px) {
+	.dvt-modal {
+	  width: 80%;
+	}
+}
+@media (max-width:1400px) {
+	.dvt-modal {
+	  width: 86%;
+	}
+}
+@media (max-width:1300px) {
+	.dvt-modal {
+	  width: 96%;
+	}
+}
+
 
 @media (max-width: 1480px) {
   /**** COKKIES DIWSCLAIMER ****/
@@ -1097,6 +1113,8 @@ and (max-width :767px)  {
 						display: flex;
 						flex-direction: column-reverse;
 		        .legend-info{
+							width: 100%;
+							padding: 1rem;
 		        }
 		        .logoGraphics-wrapper{
 		          float: none;

@@ -1421,12 +1421,12 @@
           }
           .title--card{
             font-size: 2.8rem;
-            margin: 0rem 0 0 10%;
+            margin: 0rem 0 0 3%;
             padding-top: 2rem;
             text-align: left;
           } 
           .chart--wrapper{
-            width: 80%;
+            width: 94%;
             height: auto;
             margin: 3vh auto 0;
             svg{
@@ -1444,13 +1444,13 @@
             text-align: center;
             font-style: italic;
             padding:1rem 0.5rem;
-            width: 80%;
-            margin-left: 10%;
+            width: 100%;
+            padding: 1rem 13rem;
             display: block !important;
           }
           .logoGraphics-wrapper{
             float: right;
-            padding-right: 10%;
+            padding-right: 0;
             img{
               width: 13rem;
             }            
