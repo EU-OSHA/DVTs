@@ -687,7 +687,7 @@ define(function (require) {
           .then(function (data) {
             $scope.amatrix = dataService.dataMapper(data);
 
-            $log.warn($scope.amatrix);
+            //$log.warn($scope.amatrix);
 
             $scope.firstPage();
 
