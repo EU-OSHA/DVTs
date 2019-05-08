@@ -7,6 +7,9 @@
   samp{
     font-family: $font-body !important;    
   }
+  .ccc-tt-ds .ccc-tt-dimValue .ccc-tt-valuePct{
+    display: none !important;
+  }
   body{
     font-family: $font-body;
     font-size:$font-size-body;
