@@ -1,0 +1,310 @@
+<dvt-dashboard promises="promises" parameters="dashboard.parameters">
+
+  <section data-ng-if="state.current.name != 'home'" id="not-home-cover" class="advice--icon--block advice--block-not-home background-main-light container-fluid section--page">
+    <div class="container horizontal-nopadding">
+      <div class="left-text col-md-8 col-sm-8 col-xs-12  nopadding">
+        <h1 class="main-color left-text" data-ng-bind="i18nLiterals.L22012"></h1>
+        <p data-ng-bind="i18nLiterals.L22054"></p>
+        <span data-ng-bind="i18nLiterals.L20700"></span> <span data-ng-bind="i18nLiterals.L20704"></span> <span><a data-ng-bind="i18nLiterals.L20705" ui-sref="about-tool"></a></span>
+      </div>
+      <div class="icon--advice culture-icon hide-mobile col-sm-4 col-md-4"></div>
+    </div>
+  </section>
+
+  <div class="compare--block regulation-page" bs-affix="" data-offset-top="420">
+    <div class="submenu--block container">
+      <label class="submenu-indicator" data-ng-click ="openIndicatorsList()">Select the indicator</label>
+      <ul class="submenu--items--wrapper">
+        <!-- INDICATORS -->
+        <li data-ng-if="indicator.anchor != 'level-of-reporting-of-non-fatal-accidents' && indicator.anchor != 'estimation-of-non-fatal-accidents'" data-ng-repeat="indicator in indicators" data-ng-class="{'active' : indicator.anchor == pIndicator }" class="submenu--item">
+          <a href="" data-ng-click="changeIndicator($event,indicator.anchor);" data-ng-bind="i18nLiterals['L'+indicator.text]" data-ng-class="{'active' : indicator.anchor == pIndicator }" ></a>
+        </li>
+      </ul>
+    </div>
+    <div class="line background-main-light"></div>
+  </div>
+
+  <section class="container section--page full-tablet">
+    <!-- Sickness absences analysed -->
+    <div class="" id="tab1" data-ng-show="pIndicator == 'sickness-absences-analysed'">
+      <div class="card--grid xxs-w1 xs-w1 w1 center-text">
+        <div class="card--block--chart">
+          <div class="chart--block">
+            <dvt-bar-chart
+              data-ng-cloak
+              query="getFatalAccidentsData" cda="{{::cdaOSHOutcomes }}"
+              width="330" height="470"
+              orientation="vertical" axis-fixed-min="0"
+              axis-fixed-max="6" step="{{step.chart3}}"
+              params="[['pDataset', datasetEurostat2016]]"
+              color-role="series" colors="[stories[2].color1, stories[2].color2]"
+              chart-title="{{i18nLiterals.L663}}" id="3"
+              axis-label-font="14px 'OpenSans-bold'"
+              plots="stories[2].plots"
+              values-visible="false"
+              values-font="14px 'OpenSans-bold'"
+              multiple-label-colors="false"
+              base-axis-label-text-baseline=""
+              leaf-content-overflow='visible'
+              dimensions="stories[2].dimensions"
+              legend="false"
+              angle="1"
+              base-axis-size="120"
+              legend-item-size="200"
+            ></dvt-bar-chart>
+          </div>
+        </div>
+        <div class="chart-legend">
+          <p data-ng-bind="i18nLiterals.L20566"></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Health and safety discussed -->
+    <div class="" id="tab2" data-ng-show="pIndicator == 'health-and-safety-discussed'">
+      <div class="card--grid xxs-w1 xs-w1 w1 center-text">
+        <div class="card--block--chart">
+          <div class="chart--block">
+            <dvt-bar-chart
+              data-ng-cloak
+              query="getFatalAccidentsData" cda="{{::cdaOSHOutcomes }}"
+              width="330" height="470"
+              orientation="vertical" axis-fixed-min="0"
+              axis-fixed-max="6" step="{{step.chart3}}"
+              params="[['pDataset', datasetEurostat2016]]"
+              color-role="series" colors="[stories[2].color1, stories[2].color2]"
+              chart-title="{{i18nLiterals.L664}}" id="3"
+              axis-label-font="14px 'OpenSans-bold'"
+              plots="stories[2].plots"
+              values-visible="false"
+              values-font="14px 'OpenSans-bold'"
+              multiple-label-colors="false"
+              base-axis-label-text-baseline=""
+              leaf-content-overflow='visible'
+              dimensions="stories[2].dimensions"
+              legend="false"
+              angle="1"
+              base-axis-size="120"
+              legend-item-size="200"
+            ></dvt-bar-chart>
+          </div>
+        </div>
+        <div class="chart-legend">
+          <p data-ng-bind="i18nLiterals.L20566"></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Action plan to prevent stress -->
+    <div class="" id="tab3" data-ng-show="pIndicator == 'action-plan-to-prevent-stress'">
+      <div class="card--grid xxs-w1 xs-w1 w1 center-text">
+        <div class="card--block--chart">
+          <div class="chart--block">
+            <dvt-bar-chart
+              data-ng-cloak
+              query="getFatalAccidentsData" cda="{{::cdaOSHOutcomes }}"
+              width="330" height="470"
+              orientation="vertical" axis-fixed-min="0"
+              axis-fixed-max="6" step="{{step.chart3}}"
+              params="[['pDataset', datasetEurostat2016]]"
+              color-role="series" colors="[stories[2].color1, stories[2].color2]"
+              chart-title="{{i18nLiterals.L665}}" id="3"
+              axis-label-font="14px 'OpenSans-bold'"
+              plots="stories[2].plots"
+              values-visible="false"
+              values-font="14px 'OpenSans-bold'"
+              multiple-label-colors="false"
+              base-axis-label-text-baseline=""
+              leaf-content-overflow='visible'
+              dimensions="stories[2].dimensions"
+              legend="false"
+              angle="1"
+              base-axis-size="120"
+              legend-item-size="200"
+            ></dvt-bar-chart>
+          </div>
+        </div>
+        <div class="chart-legend">
+          <p data-ng-bind="i18nLiterals.L20566"></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Procedure against bullying -->
+    <div class="" id="tab4" data-ng-show="pIndicator == 'procedure-against-bullying'">
+      <div class="card--grid xxs-w1 xs-w1 w1 center-text">
+        <div class="card--block--chart">
+          <div class="chart--block">
+            <dvt-bar-chart
+              data-ng-cloak
+              query="getFatalAccidentsData" cda="{{::cdaOSHOutcomes }}"
+              width="330" height="470"
+              orientation="vertical" axis-fixed-min="0"
+              axis-fixed-max="6" step="{{step.chart3}}"
+              params="[['pDataset', datasetEurostat2016]]"
+              color-role="series" colors="[stories[2].color1, stories[2].color2]"
+              chart-title="{{i18nLiterals.L666}}" id="3"
+              axis-label-font="14px 'OpenSans-bold'"
+              plots="stories[2].plots"
+              values-visible="false"
+              values-font="14px 'OpenSans-bold'"
+              multiple-label-colors="false"
+              base-axis-label-text-baseline=""
+              leaf-content-overflow='visible'
+              dimensions="stories[2].dimensions"
+              legend="false"
+              angle="1"
+              base-axis-size="120"
+              legend-item-size="200"
+            ></dvt-bar-chart>
+          </div>
+        </div>
+        <div class="chart-legend">
+          <p data-ng-bind="i18nLiterals.L20566"></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Procedure to deal with threats -->
+    <div class="" id="tab5" data-ng-show="pIndicator == 'procedure-to-deal-with-threats'">
+      <div class="card--grid xxs-w1 xs-w1 w1 center-text">
+        <div class="card--block--chart">
+          <div class="chart--block">
+            <dvt-bar-chart
+              data-ng-cloak
+              query="getFatalAccidentsData" cda="{{::cdaOSHOutcomes }}"
+              width="330" height="470"
+              orientation="vertical" axis-fixed-min="0"
+              axis-fixed-max="6" step="{{step.chart3}}"
+              params="[['pDataset', datasetEurostat2016]]"
+              color-role="series" colors="[stories[2].color1, stories[2].color2]"
+              chart-title="{{i18nLiterals.L667}}" id="3"
+              axis-label-font="14px 'OpenSans-bold'"
+              plots="stories[2].plots"
+              values-visible="false"
+              values-font="14px 'OpenSans-bold'"
+              multiple-label-colors="false"
+              base-axis-label-text-baseline=""
+              leaf-content-overflow='visible'
+              dimensions="stories[2].dimensions"
+              legend="false"
+              angle="1"
+              base-axis-size="120"
+              legend-item-size="200"
+            ></dvt-bar-chart>
+          </div>
+        </div>
+        <div class="chart-legend">
+          <p data-ng-bind="i18nLiterals.L20566"></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Measures in the past 3 years -->
+    <div class="" id="tab6" data-ng-show="pIndicator == 'measures-in-the-past-3-years'">
+      <div class="card--grid xxs-w1 xs-w1 w1 center-text">
+        <div class="card--block--chart">
+          <div class="chart--block">
+            <dvt-bar-chart
+              data-ng-cloak
+              query="getFatalAccidentsData" cda="{{::cdaOSHOutcomes }}"
+              width="330" height="470"
+              orientation="vertical" axis-fixed-min="0"
+              axis-fixed-max="6" step="{{step.chart3}}"
+              params="[['pDataset', datasetEurostat2016]]"
+              color-role="series" colors="[stories[2].color1, stories[2].color2]"
+              chart-title="{{i18nLiterals.L668}}" id="3"
+              axis-label-font="14px 'OpenSans-bold'"
+              plots="stories[2].plots"
+              values-visible="false"
+              values-font="14px 'OpenSans-bold'"
+              multiple-label-colors="false"
+              base-axis-label-text-baseline=""
+              leaf-content-overflow='visible'
+              dimensions="stories[2].dimensions"
+              legend="false"
+              angle="1"
+              base-axis-size="120"
+              legend-item-size="200"
+            ></dvt-bar-chart>
+          </div>
+        </div>
+        <div class="chart-legend">
+          <p data-ng-bind="i18nLiterals.L20566"></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Use of personal protective equipment -->
+    <div class="" id="tab7" data-ng-show="pIndicator == 'use-of-personal-protective-equipment'">
+      <div class="card--grid xxs-w1 xs-w1 w1 center-text">
+        <div class="card--block--chart">
+          <div class="chart--block">
+            <dvt-bar-chart
+              data-ng-cloak
+              query="getOshCultureData" cda="{{::cdaOSHOutcomes }}"
+              width="330" height="470" axis-percent="1"
+              orientation="vertical" axis-fixed-min="0"
+              axis-fixed-max="100" step="{{step.chart7}}"
+              params="[['pDataset', datasetEurofound], ['pIndicator', 63]]"
+              color-role="series" colors="[stories[1].color3, stories[1].color1, stories[1].color2]"
+              values-normalized="0" stacked="1"
+              chart-title="{{i18nLiterals.L320}}" id="3"
+              axis-label-font="14px 'OpenSans-bold'"
+              plots="stories[1].plots"
+              values-visible="false"
+              values-font="14px 'OpenSans-bold'"
+              multiple-label-colors="false"
+              base-axis-label-text-baseline=""
+              leaf-content-overflow='visible'
+              dimensions="stories[1].dimensions"
+              legend="true"
+              angle="1"
+              base-axis-size="120"
+              legend-item-size="230"
+            ></dvt-bar-chart>
+          </div>
+        </div>
+        <div class="chart-legend">
+          <p data-ng-bind="i18nLiterals.L20575"></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Information about risks -->
+    <div class="" id="tab8" data-ng-show="pIndicator == 'information-about-risks'">
+      <div class="card--grid xxs-w1 xs-w1 w1 center-text">
+        <div class="card--block--chart">
+          <div class="chart--block">
+            <dvt-bar-chart
+              data-ng-cloak
+              query="getOshCultureData" cda="{{::cdaOSHOutcomes }}"
+              width="330" height="470" axis-percent="1"
+              orientation="vertical" axis-fixed-min="0"
+              axis-fixed-max="100" step="{{step.chart8}}"
+              params="[['pDataset', datasetEurofound], ['pIndicator', 64]]"
+              color-role="series" colors="[stories[0].color1, stories[0].color2]"
+              values-normalized="0" stacked="1"
+              chart-title="{{i18nLiterals.L321}}" id="8"
+              axis-label-font="14px 'OpenSans-bold'"
+              plots="stories[0].plots"
+              values-visible="false"
+              values-font="14px 'OpenSans-bold'"
+              multiple-label-colors="false"
+              base-axis-label-text-baseline=""
+              leaf-content-overflow='visible'
+              dimensions="stories[0].dimensions"
+              legend="true"
+              angle="1"
+              base-axis-size="120"
+              legend-item-size="280"
+            ></dvt-bar-chart>
+          </div>
+        </div>
+        <div class="chart-legend">
+          <p data-ng-bind="i18nLiterals.L20576"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+</dvt-dashboard>

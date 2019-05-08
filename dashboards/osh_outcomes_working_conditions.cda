@@ -252,5 +252,39 @@
 			ORDER BY country_name ASC;
 	    </Query>
 	</DataAccess>
+
+	<!-- OSH OUTCOMES || ALL INDICATORS IN OSH CULTURE AND HEALTH AWARENESS -->
+	<DataAccess access="public" connection="dvt_conn" id="getOshCultureIndicators" type="sql">
+	    <Cache duration="3600" enabled="true" />
+	    <Columns />
+	    <Query>
+			SELECT id, literal_id 
+			FROM indicator
+			WHERE id IN (104, 105, 106, 107, 108, 109, 63, 64)
+			ORDER BY FIELD(id, 104, 105, 106, 107, 108, 109, 63, 64)
+	    </Query>
+	</DataAccess>
+
+	<!-- OSH OUTCOMES || ALL INDICATORS IN OSH CULTURE AND HEALTH AWARENESS -->
+	<DataAccess access="public" connection="dvt_conn" id="getOshCultureData" type="sql">
+	    <Cache duration="3600" enabled="true" />
+	    <Columns />
+	    <Parameters>
+	    	<Parameter default="10" name="pDataset" type="Numeric"/>
+	    	<Parameter default="64" name="pIndicator" type="Numeric"/>
+	    </Parameters>
+	    <Query>
+			SELECT t.text as Indicator, IF(n.name = 'European Union', n.country_code, CONCAT(n.name, " (", n.country_code, ")")) as Country, ROUND(v.value*100, 1) as Value
+			FROM nuts n, profile p, value v, dataset d, translation t, split_answer sa
+			WHERE n.id = p.nuts_id
+			AND v.indicator_id = ${pIndicator}
+			AND v.profile_id = p.id
+			AND p.answer_id = sa.id
+			AND sa.literal_id = t.literal_id
+			AND d.id = v.dataset_id
+			AND d.id = ${pDataset}
+			ORDER BY Indicator DESC, FIELD('EU28', n.country_code) DESC, FIELD(n.country_code, 'CH','NO'), n.country_code ASC;
+	    </Query>
+	</DataAccess>
    
 </CDADescriptor>

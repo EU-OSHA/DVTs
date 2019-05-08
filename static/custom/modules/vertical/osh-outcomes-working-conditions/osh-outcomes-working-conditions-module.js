@@ -60,8 +60,29 @@ define(function (require) {
               title: i18n.L22011 +  " - " + i18n.L22020 + " - " + i18n.L363
           }
         });
+
+        $stateProvider.state('osh-culture', {
+          url: "/osh-outcomes-working-conditions/osh-culture/:pIndicator",
+          params: {
+            pIndicator: {
+              value: 'sickness-absences-analysed',
+              squash: 'sickness-absences-analysed'
+            }
+          },
+          views: {
+              "content-main": {
+                  templateUrl: configService.getVerticalTplPath("osh-outcomes-working-conditions/osh-culture", "osh-culture"),
+                  controller: 'OshCultureController',
+                  resolve: configService.dynamicallyRegisterController($controllerProvider, 'vertical/osh-culture/OshCultureController', 'osh-culture', 'OshCultureController')
+              }
+          },
+          metaTags: {
+              title: i18n.L22012 +  " - " + i18n.L22020 + " - " + i18n.L363
+          }
+        });
     });
     
     module.factory('WorkAccidentsService', require('vertical/work-accidents/services/WorkAccidentsService'));
+    module.factory('OshCultureService', require('vertical/osh-culture/services/OshCultureService'));
     return module;
 });

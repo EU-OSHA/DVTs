@@ -709,6 +709,24 @@ define(function () {
 
             /***************************** END HEALTH PERCEPTION OF WORKERS *********************************/
 
+            /****************************** OSH CULTURE AND HEALTH AWARENESS *******************************/
+
+                 /**
+                 * @ngdoc method
+                 * @name dvt.configModule.DataService#getOshCultureIndicators
+                 * @methodOf dvt.configModule.DataService
+                 * @description
+                 * Get osh culture indicators
+                 */
+                getOshCultureIndicators: function () {
+                    var url = configService.getOshOutcomesWorkingConditionsDataPath() + "&dataAccessId=getOshCultureIndicators";
+                    $log.debug('getOshCultureIndicators url:' + url);
+                    return promise(url);
+                },
+                
+
+            /**************************** END OSH CULTURE AND HEALTH AWARENESS *******************************/
+
             /**
              * @ngdoc method
              * @name dvt.configModule.DataService#getCountryStrategies

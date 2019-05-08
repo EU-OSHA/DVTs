@@ -2,7 +2,7 @@
   .card--grid{
     justify-content: flex-start;
     .card--block--chart{
-      margin: 0 2rem 3rem 0;
+      margin: 0 1rem 3rem 0;
       .chart--block{
         padding: 2rem;
         header{
@@ -58,10 +58,12 @@
     position: relative;
     z-index: 10;
     min-height: 6rem;
+    width:94%;
     .filter--dropdown--wrapper{
-      flex-basis: 100%;
       position: relative;
       min-height: 5rem;
+      float: right;
+      width: 33%;
     }
   }
   .highlited--data--section{
@@ -74,7 +76,7 @@
       display: flex;
       .highlited-data-item{
         &:first-child{
-          width:30%;
+          width:20%;
           .flags--wrapper{
             float:left;
             margin-right: 2rem;
@@ -98,6 +100,7 @@
           justify-content: space-between;
           li{
             width: 20%;
+            padding: 0 1rem 0 0;
             span{
               font-family: 'Oswald';
               font-size: 3.6rem;
@@ -115,11 +118,93 @@
               font-size: 1.4rem;
               font-family: 'Oswald';
               font-weight: normal;
-
+              display: block;
             }
           }
         }
       }
     }
   }
+}
+
+@media only screen and (max-width: 1024px) and (min-width: 768px){  
+  .health-perception-workers{
+    .card--grid{
+      .card--block--chart{
+        margin: 0 1rem 2rem 0;
+      }
+    }  
+  }
+}
+
+@media only screen and (max-width: 767px){
+
+  .health-perception-workers{
+    .card--grid{
+      .card--block--chart{
+        .chart--block{
+          header{    
+          }
+          .highlited-data-list{
+            li{
+
+            }
+          }
+        }
+      }
+    } 
+    .highlited--data--section{
+      &.affix{
+      }
+      .highlited--data--block{
+        flex-direction: column;
+        .highlited-data-item{
+          width: 100%;
+          .highlited-data-list{
+            flex-wrap: nowrap;
+            li{
+              padding: 1rem 2rem 0 0;  
+            }
+          }
+        }
+      }
+    }
+  }
+
+}
+
+
+@media only screen and (max-width: 550px){
+
+  .health-perception-workers{
+    .card--grid{
+      .card--block--chart{
+        .chart--block{
+          header{    
+          }
+          .highlited-data-list{
+            li{
+
+            }
+          }
+        }
+      }
+    } 
+    .highlited--data--section{
+      &.affix{
+      }
+      .highlited--data--block{
+        .highlited-data-item{
+          .highlited-data-list{
+            flex-wrap: wrap;
+            li{
+              width: 30%;
+              padding: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+
 }

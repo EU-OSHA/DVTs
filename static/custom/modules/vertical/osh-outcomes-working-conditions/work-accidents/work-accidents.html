@@ -1,17 +1,18 @@
-<dvt-dashboard promises="promises" parameters="dashboard.parameters">
+<dvt-dashboard promises="promises" parameters="dashboard.parameters" class="work-accidents">
 
-  <section data-ng-if="state.current.name != 'home'" id="not-home-cover" class="advice--icon--block advice--block-not-home background-main-light container-fluid section--page">
+  <section data-ng-if="state.current.name != 'home'" id="not-home-cover" class="advice--icon--block advice--block-not-home background-main-light container-fluid">
     <div class="container horizontal-nopadding">
       <div class="left-text col-md-8 col-sm-8 col-xs-12  nopadding">
         <h1 class="main-color left-text" data-ng-bind="i18nLiterals.L22010"></h1>
         <p data-ng-bind="i18nLiterals.L22050"></p>
         <span data-ng-bind="i18nLiterals.L20704"></span> <span><a data-ng-bind="i18nLiterals.L20705" ui-sref="about-tool"></a></span>
       </div>
-      <div class="icon--advice regulation-icon hide-mobile col-sm-4 col-md-4"></div>
+      <div class="icon--advice physical-risk-icon hide-mobile col-sm-4 col-md-4"></div>
     </div>
   </section>
 
-  <div class="compare--block regulation-page" bs-affix="" data-offset-top="420">
+  <div class="">
+
     <div class="submenu--block container">
       <label class="submenu-indicator" data-ng-click ="openIndicatorsList()">Select the indicator</label>
       <ul class="submenu--items--wrapper">
@@ -21,14 +22,16 @@
         </li>
       </ul>
     </div>
+
     <div class="line background-main-light"></div>
+
   </div>
 
-  <section class="container section--page full-tablet">
+  <section>
     <!-- Non-fatal work accidents -->
-    <div class="" id="tab1" data-ng-show="pIndicator == 'non-fatal-work-accidents'">
+    <div id="tab1" class="compare--block" data-ng-show="pIndicator == 'non-fatal-work-accidents'">
       <!-- country selects -->
-      <form class="compare--block--form">
+      <form class="container compare--block--form">
         <ul class="compare--list">
           <!-- 1st country -->        
           <li>
@@ -41,16 +44,14 @@
           <li>
             <label data-ng-bind="i18nLiterals.L20610" for="comparewith"></label>
             <select id="comparewith" class="" ng-model="pCountry2" ng-selected="pCountry2" ng-change="countryChange()">
-              <option data-ng-bind="i18nLiterals.L20630" value="0" ></option>
               <option data-ng-repeat='country in countriesCompareWith' data-ng-bind="i18nLiterals['L'+country.country]" value="{{::country.country_code}}" ></option>
             </select>
           </li>        
         </ul>
       </form>
       <div class="line background-main-light"></div>
-      <br>
 
-      <div class="card--grid xxs-w1 xs-w2 w2 center-text">
+      <div class="container section--page card--grid xxs-w1 xs-w2 w2 center-text">
         <div class="card--block--chart">
           <div class="chart--block">
             <dvt-bar-chart
@@ -109,7 +110,7 @@
 
     <!-- Fatal work accidents -->
     <div class="" id="tab2" data-ng-show="pIndicator == 'fatal-work-accidents'">
-      <div class="card--grid xxs-w1 xs-w1 w1 center-text">
+      <div class="container section--page card--grid xxs-w1 xs-w1 w1 center-text">
         <div class="card--block--chart">
           <div class="chart--block">
             <dvt-bar-chart
