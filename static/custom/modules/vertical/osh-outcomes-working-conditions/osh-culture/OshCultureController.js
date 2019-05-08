@@ -34,6 +34,7 @@ define(function (require) {
     $scope.countriesCompareWith = [];
 
     $scope.indicators = [];
+    $scope.relatedLiterals = [20663, 20664, 20665, 20666, 20667, 20668, 320, 321];
 
     $scope.country1Data = {};
     $scope.country2Data = {};
@@ -42,8 +43,6 @@ define(function (require) {
     $scope.pCountry1 = ($stateParams.pCountry1 != null)?$stateParams.pCountry1:'AT';
     $scope.pCountry2 = ($stateParams.pCountry2 != null)?$stateParams.pCountry2:'BE';
     $scope.pIndicator = $stateParams.pIndicator;
-
-    //$log.warn($scope.pIndicator);
 
     $scope.dashboard = {};
     $scope.dashboard = {
@@ -132,14 +131,16 @@ define(function (require) {
     |                                DATA LOAD                                     |
     |******************************************************************************/
       dataService.getOshCultureIndicators().then(function (data) {
+        var index = 0;
         data.data.resultset.map(function (elem) {
             $scope.indicators.push({
               id: elem[0],
-              anchor: i18nLiterals['L'+elem[1]].toLowerCase().replace(/[\,\ ]/g, '-'),
-              text: elem[1]
+              anchor: i18nLiterals['L'+$scope.relatedLiterals[index]].toLowerCase().replace(/[\,\ ]/g, '-'),
+              text: $scope.relatedLiterals[index]
             });
+            index++;
         });
-        $log.warn($scope.indicators);
+        //$log.warn($scope.indicators);
       }).catch(function (err) {
           throw err;
       });
