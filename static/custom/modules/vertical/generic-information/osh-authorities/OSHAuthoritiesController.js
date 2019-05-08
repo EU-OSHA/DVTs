@@ -385,9 +385,7 @@ define(function (require) {
           angular.element('span#country'+valueToJson.country).remove();
         }
 
-        $scope.selectedCountries.sort();
-
-        var tags = angular.element('div.selected--tags-wrapper');
+        //$scope.selectedCountries.sort();
         
         for(var i = 0; i < $scope.searchParams.countries.length;i++){
           if(angular.element('span#country'+$scope.searchParams.countries[i]).length<=0){
@@ -644,14 +642,14 @@ define(function (require) {
        */
       $scope.deleteTag = function($event){
         var element = angular.element($event.currentTarget);
-        var countryId = element[0].id.slice(7,10);
+        var countryId = parseInt(element[0].id.slice(7,10));
         
         var quitChecked;
         if($event.target.id.indexOf('country') != -1){
 
           $scope.searchParams.countries.splice($scope.searchParams.countries.indexOf(countryId), 1);
           quitChecked = angular.element('.filter--dropdown--options #country-filter-'+countryId);
-          $log.warn(element[0].id.slice(7,10));
+          //$log.warn(element[0].id.slice(7,10));
         }else if($event.target.id == 'institutionFilter1'){
           quitChecked = angular.element('.filter--dropdown--options #institution-filter-1');
           $scope.searchParams.institutions.filter1=0;
@@ -689,7 +687,7 @@ define(function (require) {
           .then(function (data) {
             $scope.amatrix = dataService.dataMapper(data);
 
-            //$log.warn($scope.amatrix);
+            $log.warn($scope.amatrix);
 
             $scope.firstPage();
 
