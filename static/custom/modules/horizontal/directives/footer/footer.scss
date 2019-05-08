@@ -38,6 +38,7 @@
       font-family:$font-body;
       font-size: 14px;
       color: #57575a;
+      width: auto;
     } 
     .copyright a {
       color: #57575a;
@@ -46,7 +47,7 @@
       }
     }
     .footer-nav-accessibility {
-      margin:5px 0 0;
+      margin:8px 0 0;
       li {
         display: inline-block;
         list-style-type: none;
