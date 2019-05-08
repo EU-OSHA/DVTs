@@ -15,7 +15,8 @@
 	.see-more, .see-less, 
 	.social--network--nav, .footer-social-network, 
 	.footer-nav-accessibility, 
-	.chart--submenu{
+	.chart--submenu, 
+	#popUpMessage{
 	  display: none !important;
 	}
 	a[href]:after {
@@ -141,6 +142,24 @@
 				}
 			}
 		}
+		.compare--block{
+			.compare--list{
+				display: block;
+				li{
+					width: auto;
+					display: inline-block;
+					font-size: 1.6rem !important;
+					label{
+						width: auto;
+						font-size: 1.6rem !important;
+					}
+					select{
+						width: auto;
+						font-size: 1.6rem !important;
+					}
+				}
+			}
+		}
 	}
 
 	.workforce--page{
@@ -150,17 +169,32 @@
 
 			}
 		}
+		.survey--map--block{
+			display: none;
+		}
 		.survey--map--block-mobile{
+			display: block;
 			.matrix--elements--wrapper{
 			  margin: 1rem 0;
 			 	.matrix--element{
   				padding: 1rem;
   				margin: 0;
-					border-bottom: 1px dotted #666;
 					border-radius: 0;
+					.matrix--header--elements{
+						.flags--wrapper{
+							width: 1.5cm;
+						}
+					}
 				  .matrix--elements--data{
 						padding: 0;
 						margin: 1rem 0;
+						display: block;
+						min-height: 3cm;
+						li{
+							display: inline-block;
+							width: 19%;
+							vertical-align: top;
+						}
 				  }
 			  }
 			}
