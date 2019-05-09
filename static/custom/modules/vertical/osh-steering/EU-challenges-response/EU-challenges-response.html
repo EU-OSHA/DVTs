@@ -52,7 +52,7 @@
           <ul class="filter--dropdown--options">
             <li data-ng-repeat='country in countries'>
               <input id='country-filter-{{::country.country}}' ng-checked="(!!country.param && country.param ==country.country_code) || pCountry == country.country_code" data-ng-click="toggleCountryClick($event, $index);openSelect($event)" type="checkbox" value="{{::country}}" tabindex="-1"/>
-              <label for="country-filter-{{::country.country}}" data-ng-bind="(i18nLiterals['L'+country.country])+(' (')+(country.country_code)+(')')"></label>
+              <label for="country-filter-{{::country.country}}" data-ng-bind="('(')+(country.country_code)+(') ')+(i18nLiterals['L'+country.country])"></label>
             </li>
           </ul>
           <!--<p class="btn--block-filter" data-ng-click="openSelect($event)"><a class="btn-main-color btn-full" ng-click="confirmCountrySelection($event)" data-ng-bind="i18nLiterals.L20636"></a></p>-->

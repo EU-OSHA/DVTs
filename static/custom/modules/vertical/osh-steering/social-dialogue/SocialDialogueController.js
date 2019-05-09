@@ -342,13 +342,13 @@ define(function (require) {
           angular.element('span#country'+valueToJson.country).remove();
         }
 
-        $scope.selectedCountries.sort();
+        //$scope.selectedCountries.sort();
 
         var tags = angular.element('div.selected--tags-wrapper');
         
         for(var i = 0; i < $scope.searchParams.countries.length;i++){
           if(angular.element('span#country'+$scope.searchParams.countries[i]).length<=0){
-            var html = '<span class="selected-tag" id="country'+$scope.searchParams.countries[i] +'" data-ng-click="deleteTag($event)">'+ $scope.i18nLiterals['L'+$scope.searchParams.countries[i]] + ' ('+ valueToJson.country_code +')'+'</span>';
+            var html = '<span class="selected-tag" id="country'+$scope.searchParams.countries[i] +'" data-ng-click="deleteTag($event)">'+ '('+ valueToJson.country_code +') '+ $scope.i18nLiterals['L'+$scope.searchParams.countries[i]] + '</span>';
             tags.append( $compile(html)($scope) );
           }          
         }
@@ -400,7 +400,7 @@ define(function (require) {
        */
       $scope.deleteTag = function($event){
         var element = angular.element($event.currentTarget);
-        var countryId = element[0].id.slice(7,10);
+        var countryId = parseInt(element[0].id.slice(7,10));
         var quitChecked;
         if($event.target.id.indexOf('country') != -1){
           $scope.searchParams.countries.splice($scope.searchParams.countries.indexOf(countryId), 1);

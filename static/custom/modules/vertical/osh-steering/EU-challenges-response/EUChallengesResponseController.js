@@ -355,7 +355,7 @@ define(function (require) {
           });
           if(elem[0] == $scope.pCountry){
             var tags = angular.element('div.selected--tags-wrapper');
-            var html = '<span class="selected-tag" id="country'+elem[1]+'" data-ng-click="deleteTag($event)">'+$scope.i18nLiterals['L'+elem[1]] +' ('+elem[0]+')'+'</span>';
+            var html = '<span class="selected-tag" id="country'+elem[1]+'" data-ng-click="deleteTag($event)">'+'('+elem[0]+') '+$scope.i18nLiterals['L'+elem[1]] + '</span>';
             tags.append( $compile(html)($scope));
             $scope.searchParams.countries.push(elem[1].toString());
           }
@@ -414,7 +414,7 @@ define(function (require) {
         
         for(var i = 0; i < $scope.searchParams.countries.length;i++){
           if(angular.element('span#country'+$scope.searchParams.countries[i]).length<=0){
-            var html = '<span class="selected-tag" id="country'+$scope.searchParams.countries[i] +'" data-ng-click="deleteTag($event)">'+ $scope.i18nLiterals['L'+$scope.searchParams.countries[i]] + ' (' + valueToJson.country_code + ')' +'</span>';
+            var html = '<span class="selected-tag" id="country'+$scope.searchParams.countries[i] +'" data-ng-click="deleteTag($event)">'+  '(' + valueToJson.country_code + ') ' + $scope.i18nLiterals['L'+$scope.searchParams.countries[i]] + '</span>';
             tags.append( $compile(html)($scope) );
           }          
         }

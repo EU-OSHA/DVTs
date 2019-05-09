@@ -17,7 +17,7 @@
 			AND v.profile_id = p.id
 			AND v.indicator_id = 53
 			AND n.country_code NOT IN ('EU28')
-			ORDER BY n.literal_id ASC;
+			ORDER BY n.country_code ASC;
 	    </Query>
 	</DataAccess>
 
@@ -120,7 +120,7 @@
 	</DataAccess>
 
 	<!-- OSH OUTCOMES || DATA FOR FATAL WORK ACCIDENTS INDICATOR -->
-	<DataAccess access="public" connection="dvt_conn" id="getLevelOfReportingData" type="sql">
+	<!--<DataAccess access="public" connection="dvt_conn" id="getLevelOfReportingData" type="sql">
 	    <Cache duration="3600" enabled="true" />
 	    <Columns />
 	    <Parameters>
@@ -136,7 +136,7 @@
 			AND t.literal_id = 313
 			ORDER BY Value ASC
 	    </Query>
-	</DataAccess>
+	</DataAccess>-->
 
 	<!-- OSH OUTCOMES || ALL AVAILABLE COUNTRIES FOR INDICATORS IN HEALTH PERCEPTION -->
 	<DataAccess access="public" connection="dvt_conn" id="getHealthPerceptionCountries" type="sql">
@@ -149,7 +149,7 @@
 			AND v.profile_id = p.id
 			AND v.indicator_id IN (57, 58, 59, 60, 61, 62)
 			AND n.country_code NOT IN ('EU28')
-			ORDER BY n.literal_id ASC;
+			ORDER BY n.country_code ASC;
 	    </Query>
 	</DataAccess>
 

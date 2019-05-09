@@ -80,7 +80,7 @@
 	      FROM matrix_page mp, nuts n
 	      WHERE page = 'MATRIX_STRATEGY'
 	      AND n.id = mp.nuts_id
-	      ORDER BY country_name ASC;
+	      ORDER BY country_code ASC;
 	    </Query>
 	</DataAccess>
 
@@ -153,7 +153,7 @@
 			ON v.profile_id = p.id
 			WHERE v.indicator_id IN (100,101,102,103)
 			AND n.country_code NOT IN ('EU28')
-			ORDER BY country_name ASC;
+			ORDER BY country_code ASC;
 	    </Query>
 	</DataAccess>
 
