@@ -16,7 +16,7 @@
 	      INNER JOIN nuts n
 	      ON n.id = sp.nuts_id
 	      WHERE sp.page = 'STRATEGY'
-	      ORDER BY country ASC
+	      ORDER BY country_code ASC
 	    </Query>
 	</DataAccess>
 
@@ -30,7 +30,7 @@
 	      INNER JOIN nuts n
 	      ON n.id = sp.nuts_id
 	      WHERE sp.page = 'STRATEGY_REGULATION'
-	      ORDER BY country ASC
+	      ORDER BY country_code ASC
 	    </Query>
 	</DataAccess>
 
@@ -44,7 +44,7 @@
 	      INNER JOIN nuts n
 	      ON n.id = sp.nuts_id
 	      WHERE sp.page = 'STRATEGY_ENFOR_CAPACITY'
-	      ORDER BY country ASC
+	      ORDER BY country_code ASC
 	    </Query>
 	</DataAccess>
 
@@ -58,7 +58,7 @@
 	      INNER JOIN nuts n
 	      ON n.id = mp.nuts_id
 	      WHERE mp.page = 'MATRIX_STATISTICS'
-	      ORDER BY country ASC
+	      ORDER BY country_code ASC
 	    </Query>
 	</DataAccess>
 
@@ -75,7 +75,7 @@
 	      ON v.profile_id = p.id
 	      WHERE v.indicator_id IN (31, 36, 37, 38, 39, 40)
 	      AND n.country_code NOT IN ('EU28')
-	      ORDER BY country_name ASC;
+	      ORDER BY country_code ASC;
 	    </Query>
 	</DataAccess>
 
@@ -190,7 +190,7 @@
 	    INNER JOIN nuts n
 	    ON n.id = mp.nuts_id
 	    WHERE mp.page = 'MATRIX_AUTHORITY'
-	    ORDER BY FIELD(country_code, 'EU28') DESC, country ASC;
+	    ORDER BY FIELD(country_code, 'EU28') DESC, country_code ASC;
 	    </Query>
 	</DataAccess>
 
@@ -423,7 +423,7 @@
 	      AND v.profile_id = p.id 
 	      AND d.id = ${pDataset} AND d.id = v.dataset_id
 	      AND v.indicator_id IN (37, 38, 39)
-	      ORDER BY FIELD(n.country_code, 'EU28') DESC, country_name ASC;
+	      ORDER BY FIELD(n.country_code, 'EU28') DESC, countryKey ASC;
 	    </Query>
 	</DataAccess>
 

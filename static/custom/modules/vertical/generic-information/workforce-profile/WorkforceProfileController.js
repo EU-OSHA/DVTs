@@ -330,7 +330,7 @@ define(function (require) {
             if(valueToJson.country_code == 'EU28'){
               var html = '<span class="selected-tag" id="country'+$scope.countryFilter[i] +'" data-ng-click="deleteTag($event)">'+ $scope.i18nLiterals['L'+$scope.countryFilter[i]] +'</span>';
             }else{
-              var html = '<span class="selected-tag" id="country'+$scope.countryFilter[i] +'" data-ng-click="deleteTag($event)">'+ $scope.i18nLiterals['L'+$scope.countryFilter[i]] + ' ('+valueToJson.country_code+')' +'</span>';
+              var html = '<span class="selected-tag" id="country'+$scope.countryFilter[i] +'" data-ng-click="deleteTag($event)">' + '('+valueToJson.country_code+') ' + $scope.i18nLiterals['L'+$scope.countryFilter[i]] +'</span>';
             }
             
             tags.append( $compile(html)($scope) );

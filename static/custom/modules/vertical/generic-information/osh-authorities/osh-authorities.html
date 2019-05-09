@@ -58,7 +58,7 @@
             <li data-ng-repeat='country in countries'>
               <input id='country-filter-{{::country.country}}' ng-checked="!!country.param && country.param ==country.country_code"
                 data-ng-click="toggleCountryClick($event, $index)" type="checkbox" ng-attr-value="{{::country}}" tabindex="-1" />
-              <label data-ng-if="country.country_code != 'EU28'" for="country-filter-{{::country.country}}" data-ng-bind="(i18nLiterals['L'+country.country])+(' (')+(country.country_code)+(')')"></label>
+              <label data-ng-if="country.country_code != 'EU28'" for="country-filter-{{::country.country}}" data-ng-bind="('(')+(country.country_code)+(') ')+(i18nLiterals['L'+country.country])"></label>
               <label data-ng-if="country.country_code == 'EU28'" for="country-filter-{{::country.country}}" data-ng-bind="i18nLiterals['L'+country.country]"></label>
             </li>
           </ul>
