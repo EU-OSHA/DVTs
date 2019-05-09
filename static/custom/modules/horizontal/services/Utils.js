@@ -40,6 +40,9 @@ define(function (require) {
                     case 3:
                         return colors.country3;
                         break;
+                    case 4:
+                        return colors.country4;
+                    break;
                     case "1-overlapping":
                         return colors["comparison-first-pyramid-overlapping"];
                         break;

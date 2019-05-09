@@ -22,9 +22,9 @@ define (function (require) {
                             } else if(subIndicatorKey == 'From 20 to 49 persons employed') {
                             	return dvtUtils.getAccidentsColors(4);
                             } else if(subIndicatorKey == 'From 50 to 249 persons employed') {
-                            	return dvtUtils.getColorCountry(3);
-                            } else if(subIndicatorKey == '250 persons employed or more') {
                             	return dvtUtils.getColorCountry(12);
+                            } else if(subIndicatorKey == '250 persons employed or more') {
+                            	return dvtUtils.getColorCountry(2);
                             }
                             return dvtUtils.getChartLightGrayColor();
                         },

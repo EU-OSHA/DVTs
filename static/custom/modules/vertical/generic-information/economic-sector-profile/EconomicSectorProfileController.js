@@ -46,7 +46,7 @@ define(function (require) {
         color2: dvtUtils.getColorCountry(22),
         color3: dvtUtils.getAccidentsColors(4),
         color4: dvtUtils.getColorCountry(3),
-        color5: dvtUtils.getColorCountry(12),
+        color5: dvtUtils.getColorCountry(2),
         plots: EconomicSectorProfileService.getCompanySizeMainPlots($scope.pCountry1, $scope.pCountry2),
         dimensions: {
           value: {
@@ -64,9 +64,9 @@ define(function (require) {
         color2: dvtUtils.getColorCountry(22),
         color3: dvtUtils.getAccidentsColors(4),
         color4: dvtUtils.getColorCountry(3),
-        color5: dvtUtils.getColorCountry(12),
-        color6: dvtUtils.getColorCountry(2),
-        color7: dvtUtils.getChartLightGrayColor(),
+        color5: dvtUtils.getColorCountry(2),
+        color6: dvtUtils.getColorCountry(12),
+        color7: dvtUtils.getColorCountry(4),
         plots: EconomicSectorProfileService.getEmploymentPerSectorPlots(),
         dimensions: {
           value: {
