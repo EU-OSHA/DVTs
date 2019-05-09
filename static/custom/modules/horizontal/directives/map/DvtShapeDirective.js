@@ -153,9 +153,9 @@ define(function (require) {
                         +'<ul>'
                         +'<li class="data1"></li>'
                         +'<li class="data2"></li>'
-                        +'<li class="data3"></li>'
-                        +'<li class="data4"></li>'
                         +'<li class="data5"></li>'
+                        +'<li class="data4"></li>'
+                        +'<li class="data3"></li>'
                         +'</ul>'
                         +'</p>');
                     angular.element('.dvt-map-tooltip .country-name').text( this.label );

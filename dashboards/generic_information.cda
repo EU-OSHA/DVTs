@@ -405,7 +405,7 @@
 	    <Query>
 	      SELECT sg.id as gender_id, sg.literal_id as gender_name
 	      FROM split_gender sg
-	      ORDER BY FIELD(gender_id, 1, 2, 3)
+	      ORDER BY FIELD(gender_id, 3, 2 ,1)
 	    </Query>
 	</DataAccess>
 
