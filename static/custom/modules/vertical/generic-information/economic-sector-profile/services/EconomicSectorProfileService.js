@@ -18,19 +18,34 @@ define (function (require) {
                             if (subIndicatorKey == 'From 0 to 9 persons employed') {
                                 return dvtUtils.getColorCountry(1);
                             } else if(subIndicatorKey == 'From 10 to 19 persons employed'){
-                            	return dvtUtils.getChartLightGrayColor();
+                            	return dvtUtils.getColorCountry(22);
                             } else if(subIndicatorKey == 'From 20 to 49 persons employed') {
-                            	return dvtUtils.getColorCountry(2);
-                            } else if(subIndicatorKey == 'From 50 to 249 persons employed') {
-                            	return dvtUtils.getEUColor();
-                            } else if(subIndicatorKey == '250 persons employed or more') {
                             	return dvtUtils.getAccidentsColors(4);
+                            } else if(subIndicatorKey == 'From 50 to 249 persons employed') {
+                            	return dvtUtils.getColorCountry(3);
+                            } else if(subIndicatorKey == '250 persons employed or more') {
+                            	return dvtUtils.getColorCountry(12);
                             }
                             return dvtUtils.getChartLightGrayColor();
                         },
                         label_textMargin: 2,
                         valuesAnchor: 'right',
                         valuesOptimizeLegibility: true,
+                        visualRoles:{
+                            series:'series',
+                            category:'category'
+                        }
+                    }
+                ];
+            },
+            getEmploymentPerSectorPlots: function(){
+                var dashboard = this.dashboard;
+    
+                return [
+                    {
+                        name: "main",
+                        dataPart: "0",
+                        valuesOverflow: 'show',
                         visualRoles:{
                             series:'series',
                             category:'category'
@@ -69,7 +84,7 @@ define (function (require) {
                         valuesAnchor: 'right',
                         valuesOptimizeLegibility: true,
                         visualRoles:{
-                            category:'category',
+                            category:'category'
                         }
                     }
                 ];

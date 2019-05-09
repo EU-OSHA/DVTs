@@ -43,10 +43,10 @@ define(function (require) {
       //0 - Company size
       {
         color1: dvtUtils.getColorCountry(1),
-        color2: dvtUtils.getChartLightGrayColor(),
-        color3: dvtUtils.getColorCountry(2),
-        color4: dvtUtils.getEUColor(),
-        color5: dvtUtils.getAccidentsColors(4),
+        color2: dvtUtils.getColorCountry(22),
+        color3: dvtUtils.getAccidentsColors(4),
+        color4: dvtUtils.getColorCountry(3),
+        color5: dvtUtils.getColorCountry(12),
         plots: EconomicSectorProfileService.getCompanySizeMainPlots($scope.pCountry1, $scope.pCountry2),
         dimensions: {
           value: {
@@ -62,11 +62,20 @@ define(function (require) {
       {
         color1: dvtUtils.getColorCountry(1),
         color2: dvtUtils.getColorCountry(22),
-        color3: dvtUtils.getColorCountry(2),
-        color4: dvtUtils.getEUColor(),
-        color5: dvtUtils.getAccidentsColors(4),
-        color6: dvtUtils.getColorCountry(12),
-        color7: dvtUtils.getEUColor(2)
+        color3: dvtUtils.getAccidentsColors(4),
+        color4: dvtUtils.getColorCountry(3),
+        color5: dvtUtils.getColorCountry(12),
+        color6: dvtUtils.getColorCountry(2),
+        color7: dvtUtils.getChartLightGrayColor(),
+        plots: EconomicSectorProfileService.getEmploymentPerSectorPlots(),
+        dimensions: {
+          value: {
+            format: {
+              number: "0.#",
+              percent: "#%"
+            }
+          }
+        }
       },
       // 2 - Employment rate
       {

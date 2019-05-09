@@ -37,6 +37,9 @@ define(function (require) {
                     case 22:
                         return colors.country22;
                         break;
+                    case 3:
+                        return colors.country3;
+                        break;
                     case "1-overlapping":
                         return colors["comparison-first-pyramid-overlapping"];
                         break;
