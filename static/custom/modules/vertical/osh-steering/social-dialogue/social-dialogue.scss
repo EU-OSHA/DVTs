@@ -85,6 +85,9 @@
   background: $gray-lighter;
   padding: 3rem 0;
   border-bottom: 4px solid $eu;
+  &.affix{
+    padding: 2rem 0 0;
+  }
   .highlited--data--block{
     display: flex;
     .highlited-data-item{
