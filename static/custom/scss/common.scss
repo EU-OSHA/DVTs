@@ -108,7 +108,19 @@
     width: 100%;
     background: #FFF;
   }
-/** END DGENERAL TAGS  **/
+  .note{
+    p{
+      font-size: 1.4rem;
+      font-family: "OpenSans";
+      font-weight: normal;
+      text-align: right;
+      font-style: italic;
+      display: block;
+      margin: -2rem 2rem 2rem;
+      color: red;
+    }
+  }
+/** END GENERAL TAGS  **/
 
 
 /** CUSTOM CLASS  **/
