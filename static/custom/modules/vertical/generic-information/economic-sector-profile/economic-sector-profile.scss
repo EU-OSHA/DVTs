@@ -105,3 +105,12 @@
   }
 }
 
+.card--block--chart:nth-child(5){
+  .chart--wrapper{
+    svg{
+      rect{
+        cursor: default;
+      }
+    }
+  }
+}
