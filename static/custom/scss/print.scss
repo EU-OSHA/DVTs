@@ -122,6 +122,12 @@
 			border: 1px solid #666;
 		}
 	}
+	.matrix--elements--wrapper{
+		.matrix--element {
+			padding: 1rem !important;
+			margin: 1rem 0 !important;
+		}
+	} 
 	.economic--sector--profile{
 		.card--grid{
 			.card--block--chart {
@@ -200,6 +206,9 @@
 			}
 		} 
 	}
-
+	.note p {
+	  text-align: center;
+	  margin: 1rem 0rem;
+	}
 }
 
