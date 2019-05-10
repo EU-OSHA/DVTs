@@ -270,7 +270,7 @@
 	      <Parameter default="6" name="pDataset" type="Numeric" />
 	    </Parameters>
 	    <Query>
-	      SELECT t.text as Size, n.country_code as Country, (v.value*100) as Value
+	      SELECT t.text as Size, n.country_code as Country, ROUND((v.value*100),1) as Value
 	      FROM nuts n, profile p, indicator i, value v, split_company_size scs, dataset d, translation t
 	      WHERE n.id = p.nuts_id
 	      AND p.company_size_id = scs.id
@@ -294,7 +294,7 @@
 	      <Parameter default="6" name="pDataset" type="Numeric" />
 	    </Parameters>
 	    <Query>
-	      SELECT t.text as Sector, n.country_code as Country, (v.value*100) as Value
+	      SELECT t.text as Sector, n.country_code as Country, ROUND((v.value*100),1) as Value
 	      FROM nuts n, profile p, indicator i, value v, split_activity_sector sas, dataset d, translation t
 	      WHERE n.id = p.nuts_id 
 	      AND p.activity_sector_id = sas.id 

@@ -67,7 +67,7 @@ define(function (require) {
         color5: dvtUtils.getColorCountry(2),
         color6: dvtUtils.getColorCountry(12),
         color7: dvtUtils.getColorCountry(4),
-        plots: EconomicSectorProfileService.getEmploymentPerSectorPlots(),
+        //plots: EconomicSectorProfileService.getEmploymentPerSectorPlots(),
         dimensions: {
           value: {
             format: {
@@ -88,7 +88,7 @@ define(function (require) {
           value: {
             format: {
               number: "0.#",
-              percent: "#€"
+              percent: "#%"
             }
           }
         },
@@ -103,7 +103,7 @@ define(function (require) {
           value: {
             format: {
               number: "0.#",
-              percent: "#€"
+              percent: "#%"
             }
           }
         }
@@ -118,7 +118,7 @@ define(function (require) {
           value: {
             format: {
               number: "0",
-              percent: "#€"
+              percent: "#%"
             }
           }
         },
