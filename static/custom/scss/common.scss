@@ -49,7 +49,9 @@
   select:focus{
     border: 1px dotted $aquamarine !important;
   }
-
+  .ccc-tt-ds .ccc-tt-dimValue .ccc-tt-valuePct {
+    display: none;
+  }
   .section--page{
     padding: 4rem 0 2rem;
   }
