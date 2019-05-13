@@ -695,6 +695,7 @@
           &.active, &:hover, &:focus, &:visited {
             border-bottom: 4px solid $orange;
             text-decoration: none;
+            display: block;
             //color: $aquamarine;
           }
         }

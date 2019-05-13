@@ -160,6 +160,13 @@
         flex-direction: column;
         .highlited-data-item{
           width: 100%;
+          &:first-child{
+            width: 100%;
+            margin-bottom: 2rem;
+            .flags--wrapper {
+              margin-right: 0;
+            }        
+          }
           .highlited-data-list{
             flex-wrap: nowrap;
             li{
