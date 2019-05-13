@@ -102,6 +102,24 @@
 	body{
 	  padding-top:9rem;
 	}
+	.dvt-modal {
+    width: 98%;
+    height: 98%;
+    .modal-wrapper{
+    	.modal-body{
+    		.card--block--chart--wrapper{
+    			.title--card{
+    				margin: 0;
+    			}
+    			.chart--wrapper{
+						width: 100%;
+    			}
+    		}
+    	}
+    }
+  }
+
+	
 	.tablet-show{
 		display: block;
 	}
