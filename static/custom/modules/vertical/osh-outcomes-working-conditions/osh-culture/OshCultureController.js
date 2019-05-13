@@ -29,6 +29,7 @@ define(function (require) {
     $scope.datasetEurofound = $scope.datasetList.Eurofound;
     $scope.datasetEurostat2016 = $scope.datasetList.EUROSTAT2016; 
     $scope.datasetEurostatBetweenDates = $scope.datasetList.EUROSTATBetweenDates;
+    $scope.datasetESENER = $scope.datasetList.ESENER;
 
     $scope.countriesDataFor = [];
     $scope.countriesCompareWith = [];
@@ -97,10 +98,10 @@ define(function (require) {
     $scope.step = {
       chart1: 20,
       chart2: 20,
-      chart3: 1,
-      chart4: 1000,
+      chart3: 20,
+      chart4: 20,
       chart5: 20,
-      chart6: 0,
+      chart6: 20,
       chart7: 20,
       chart8: 20
     }

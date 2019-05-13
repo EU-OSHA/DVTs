@@ -32,30 +32,30 @@
           <div class="chart--block">
             <dvt-bar-chart
               data-ng-cloak
-              query="getFatalAccidentsData" cda="{{::cdaOSHOutcomes }}"
-              width="330" height="470"
+              query="getOshCultureData" cda="{{::cdaOSHOutcomes }}"
+              width="330" height="470" axis-percent="1"
               orientation="vertical" axis-fixed-min="0"
-              axis-fixed-max="6" step="{{step.chart3}}"
-              params="[['pDataset', datasetEurostat2016]]"
-              color-role="series" colors="[stories[2].color1, stories[2].color2]"
-              chart-title="{{i18nLiterals.L663}}" id="3"
+              axis-fixed-max="100" step="{{step.chart1}}"
+              params="[['pDataset', datasetESENER], ['pIndicator', 104]]"
+              color-role="series" colors="[stories[1].color1, stories[1].color2]"
+              chart-title="{{i18nLiterals.L20663}}" id="1"
               axis-label-font="14px 'OpenSans-bold'"
-              plots="stories[2].plots"
+              plots="stories[1].plots"
               values-visible="false"
               values-font="14px 'OpenSans-bold'"
               multiple-label-colors="false"
               base-axis-label-text-baseline=""
               leaf-content-overflow='visible'
-              dimensions="stories[2].dimensions"
-              legend="false"
-              angle="1"
+              dimensions="stories[1].dimensions"
+              legend="true"
+              angle="1" stacked="1"
               base-axis-size="120"
-              legend-item-size="200"
+              legend-item-size="55"
             ></dvt-bar-chart>
           </div>
         </div>
         <div class="chart-legend">
-          <p data-ng-bind="i18nLiterals.L20566"></p>
+          <p data-ng-bind="i18nLiterals.L20569"></p>
         </div>
       </div>
     </div>
@@ -67,30 +67,31 @@
           <div class="chart--block">
             <dvt-bar-chart
               data-ng-cloak
-              query="getFatalAccidentsData" cda="{{::cdaOSHOutcomes }}"
-              width="330" height="470"
+              query="getOshCultureData" cda="{{::cdaOSHOutcomes }}"
+              width="330" height="470" axis-percent="1"
               orientation="vertical" axis-fixed-min="0"
-              axis-fixed-max="6" step="{{step.chart3}}"
-              params="[['pDataset', datasetEurostat2016]]"
-              color-role="series" colors="[stories[2].color1, stories[2].color2]"
-              chart-title="{{i18nLiterals.L664}}" id="3"
+              axis-fixed-max="100" step="{{step.chart2}}"
+              params="[['pDataset', datasetESENER], ['pIndicator', 105]]"
+              color-role="series" colors="[stories[1].color3, stories[1].color1, stories[1].color2]"
+              chart-title="{{i18nLiterals.L20664}}" id="2"
               axis-label-font="14px 'OpenSans-bold'"
-              plots="stories[2].plots"
+              plots="stories[1].plots"
               values-visible="false"
               values-font="14px 'OpenSans-bold'"
               multiple-label-colors="false"
               base-axis-label-text-baseline=""
               leaf-content-overflow='visible'
-              dimensions="stories[2].dimensions"
-              legend="false"
-              angle="1"
+              dimensions="stories[1].dimensions"
+              legend="true"
+              angle="1" stacked="1"
+              legend-align="center"
               base-axis-size="120"
-              legend-item-size="200"
+              legend-item-size="100"
             ></dvt-bar-chart>
           </div>
         </div>
         <div class="chart-legend">
-          <p data-ng-bind="i18nLiterals.L20566"></p>
+          <p data-ng-bind="i18nLiterals.L20570"></p>
         </div>
       </div>
     </div>
@@ -102,30 +103,30 @@
           <div class="chart--block">
             <dvt-bar-chart
               data-ng-cloak
-              query="getFatalAccidentsData" cda="{{::cdaOSHOutcomes }}"
-              width="330" height="470"
+              query="getOshCultureData" cda="{{::cdaOSHOutcomes }}"
+              width="330" height="470" axis-percent="1"
               orientation="vertical" axis-fixed-min="0"
-              axis-fixed-max="6" step="{{step.chart3}}"
-              params="[['pDataset', datasetEurostat2016]]"
-              color-role="series" colors="[stories[2].color1, stories[2].color2]"
-              chart-title="{{i18nLiterals.L665}}" id="3"
+              axis-fixed-max="100" step="{{step.chart3}}"
+              params="[['pDataset', datasetESENER], ['pIndicator', 106]]"
+              color-role="series" colors="[stories[1].color1, stories[1].color2]"
+              chart-title="{{i18nLiterals.L20665}}" id="3"
               axis-label-font="14px 'OpenSans-bold'"
-              plots="stories[2].plots"
+              plots="stories[1].plots"
               values-visible="false"
               values-font="14px 'OpenSans-bold'"
               multiple-label-colors="false"
               base-axis-label-text-baseline=""
               leaf-content-overflow='visible'
-              dimensions="stories[2].dimensions"
-              legend="false"
-              angle="1"
+              dimensions="stories[1].dimensions"
+              legend="true"
+              angle="1" stacked="1"
               base-axis-size="120"
-              legend-item-size="200"
+              legend-item-size="55"
             ></dvt-bar-chart>
           </div>
         </div>
         <div class="chart-legend">
-          <p data-ng-bind="i18nLiterals.L20566"></p>
+          <p data-ng-bind="i18nLiterals.L20571"></p>
         </div>
       </div>
     </div>
@@ -137,65 +138,65 @@
           <div class="chart--block">
             <dvt-bar-chart
               data-ng-cloak
-              query="getFatalAccidentsData" cda="{{::cdaOSHOutcomes }}"
-              width="330" height="470"
+              query="getOshCultureData" cda="{{::cdaOSHOutcomes }}"
+              width="330" height="470" axis-percent="1"
               orientation="vertical" axis-fixed-min="0"
-              axis-fixed-max="6" step="{{step.chart3}}"
-              params="[['pDataset', datasetEurostat2016]]"
-              color-role="series" colors="[stories[2].color1, stories[2].color2]"
-              chart-title="{{i18nLiterals.L666}}" id="3"
+              axis-fixed-max="100" step="{{step.chart4}}"
+              params="[['pDataset', datasetESENER], ['pIndicator', 107]]"
+              color-role="series" colors="[stories[1].color1, stories[1].color2]"
+              chart-title="{{i18nLiterals.L20666}}" id="4"
               axis-label-font="14px 'OpenSans-bold'"
-              plots="stories[2].plots"
+              plots="stories[1].plots"
               values-visible="false"
               values-font="14px 'OpenSans-bold'"
               multiple-label-colors="false"
               base-axis-label-text-baseline=""
               leaf-content-overflow='visible'
-              dimensions="stories[2].dimensions"
-              legend="false"
-              angle="1"
+              dimensions="stories[1].dimensions"
+              legend="true"
+              angle="1" stacked="1"
               base-axis-size="120"
-              legend-item-size="200"
+              legend-item-size="55"
             ></dvt-bar-chart>
           </div>
         </div>
         <div class="chart-legend">
-          <p data-ng-bind="i18nLiterals.L20566"></p>
+          <p data-ng-bind="i18nLiterals.L20572"></p>
         </div>
       </div>
     </div>
 
     <!-- Procedure to deal with threats -->
-    <div class="" id="tab5" data-ng-show="pIndicator == 'procedure-to-deal-with-threats'">
+    <div class="" id="tab5" data-ng-show="pIndicator == 'procedures-to-deal-with-threats'">
       <div class="card--grid xxs-w1 xs-w1 w1 center-text">
         <div class="card--block--chart">
           <div class="chart--block">
             <dvt-bar-chart
               data-ng-cloak
-              query="getFatalAccidentsData" cda="{{::cdaOSHOutcomes }}"
-              width="330" height="470"
+              query="getOshCultureData" cda="{{::cdaOSHOutcomes }}"
+              width="330" height="470" axis-percent="1"
               orientation="vertical" axis-fixed-min="0"
-              axis-fixed-max="6" step="{{step.chart3}}"
-              params="[['pDataset', datasetEurostat2016]]"
-              color-role="series" colors="[stories[2].color1, stories[2].color2]"
-              chart-title="{{i18nLiterals.L667}}" id="3"
+              axis-fixed-max="100" step="{{step.chart5}}"
+              params="[['pDataset', datasetESENER], ['pIndicator', 108]]"
+              color-role="series" colors="[stories[1].color1, stories[1].color2]"
+              chart-title="{{i18nLiterals.L20667}}" id="5"
               axis-label-font="14px 'OpenSans-bold'"
-              plots="stories[2].plots"
+              plots="stories[1].plots"
               values-visible="false"
               values-font="14px 'OpenSans-bold'"
               multiple-label-colors="false"
               base-axis-label-text-baseline=""
               leaf-content-overflow='visible'
-              dimensions="stories[2].dimensions"
-              legend="false"
-              angle="1"
+              dimensions="stories[1].dimensions"
+              legend="true"
+              angle="1" stacked="1"
               base-axis-size="120"
-              legend-item-size="200"
+              legend-item-size="55"
             ></dvt-bar-chart>
           </div>
         </div>
         <div class="chart-legend">
-          <p data-ng-bind="i18nLiterals.L20566"></p>
+          <p data-ng-bind="i18nLiterals.L20573"></p>
         </div>
       </div>
     </div>
@@ -207,30 +208,30 @@
           <div class="chart--block">
             <dvt-bar-chart
               data-ng-cloak
-              query="getFatalAccidentsData" cda="{{::cdaOSHOutcomes }}"
-              width="330" height="470"
+              query="getOshCultureData" cda="{{::cdaOSHOutcomes }}"
+              width="330" height="470" axis-percent="1"
               orientation="vertical" axis-fixed-min="0"
-              axis-fixed-max="6" step="{{step.chart3}}"
-              params="[['pDataset', datasetEurostat2016]]"
-              color-role="series" colors="[stories[2].color1, stories[2].color2]"
-              chart-title="{{i18nLiterals.L668}}" id="3"
+              axis-fixed-max="100" step="{{step.chart6}}"
+              params="[['pDataset', datasetESENER], ['pIndicator', 109]]"
+              color-role="series" colors="[stories[1].color1, stories[1].color2]"
+              chart-title="{{i18nLiterals.L20668}}" id="6"
               axis-label-font="14px 'OpenSans-bold'"
-              plots="stories[2].plots"
+              plots="stories[1].plots" stacked="1"
               values-visible="false"
               values-font="14px 'OpenSans-bold'"
               multiple-label-colors="false"
               base-axis-label-text-baseline=""
               leaf-content-overflow='visible'
-              dimensions="stories[2].dimensions"
-              legend="false"
+              dimensions="stories[1].dimensions"
+              legend="true"
               angle="1"
               base-axis-size="120"
-              legend-item-size="200"
+              legend-item-size="55"
             ></dvt-bar-chart>
           </div>
         </div>
         <div class="chart-legend">
-          <p data-ng-bind="i18nLiterals.L20566"></p>
+          <p data-ng-bind="i18nLiterals.L20574"></p>
         </div>
       </div>
     </div>
@@ -242,14 +243,14 @@
           <div class="chart--block">
             <dvt-bar-chart
               data-ng-cloak
-              query="getOshCultureData" cda="{{::cdaOSHOutcomes }}"
+              query="getEurostatData" cda="{{::cdaOSHOutcomes }}"
               width="330" height="470" axis-percent="1"
               orientation="vertical" axis-fixed-min="0"
               axis-fixed-max="100" step="{{step.chart7}}"
               params="[['pDataset', datasetEurofound], ['pIndicator', 63]]"
               color-role="series" colors="[stories[1].color3, stories[1].color1, stories[1].color2]"
               values-normalized="0" stacked="1"
-              chart-title="{{i18nLiterals.L320}}" id="3"
+              chart-title="{{i18nLiterals.L320}}" id="7"
               axis-label-font="14px 'OpenSans-bold'"
               plots="stories[1].plots"
               values-visible="false"
@@ -278,7 +279,7 @@
           <div class="chart--block">
             <dvt-bar-chart
               data-ng-cloak
-              query="getOshCultureData" cda="{{::cdaOSHOutcomes }}"
+              query="getEurostatData" cda="{{::cdaOSHOutcomes }}"
               width="330" height="470" axis-percent="1"
               orientation="vertical" axis-fixed-min="0"
               axis-fixed-max="100" step="{{step.chart8}}"
