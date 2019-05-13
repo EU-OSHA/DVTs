@@ -71,8 +71,7 @@ define(function (require) {
         dimensions: {
           value: {
             format: {
-              number: "0.#",
-              percent: "#%"
+              number: "0.0"
             }
           }
         }

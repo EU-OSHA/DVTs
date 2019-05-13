@@ -105,12 +105,20 @@
   }
 }
 
-.card--block--chart:nth-child(5){
+.card--block--chart{
   .chart--wrapper{
     svg{
-      rect{
+      rect, circle, path{
         cursor: default;
       }
+    }
+  }
+}
+
+.dvt-modal{
+  svg{
+    rect, circle, path{
+      cursor: default;
     }
   }
 }
