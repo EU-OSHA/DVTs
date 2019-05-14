@@ -1,0 +1,122 @@
+<dvt-dashboard promises="promises" parameters="dashboard.parameters">
+
+  <section data-ng-if="state.current.name != 'home'" id="not-home-cover" class="advice--icon--block advice--block-not-home background-main-light container-fluid section--page">
+    <div class="container horizontal-nopadding">
+      <div class="left-text col-md-8 col-sm-8 col-xs-12  nopadding">
+        <h1 class="main-color left-text" data-ng-bind="i18nLiterals.L20709"></h1>
+        <p data-ng-bind="i18nLiterals.L20577"></p>
+        <span data-ng-bind="i18nLiterals.L20701"></span> <span data-ng-bind="i18nLiterals.L20704"></span> <span><a data-ng-bind="i18nLiterals.L20705" ui-sref="about-tool"></a></span>
+      </div>
+      <div class="icon--advice working-conditons-icon hide-mobile col-sm-4 col-md-4"></div>
+    </div>
+  </section>
+
+  <div class="compare--block regulation-page" bs-affix="" data-offset-top="420">
+    <div class="submenu--block container">
+      <label class="submenu-indicator" data-ng-click ="openIndicatorsList()">Select the indicator</label>
+      <ul class="submenu--items--wrapper">
+        <!-- INDICATORS -->
+        <li data-ng-class="{'active' : 'job-satisfaction' == pIndicator }" class="submenu--item">
+          <a href="" data-ng-click="changeIndicator($event,'job-satisfaction');" data-ng-bind="i18nLiterals.L322" data-ng-class="{'active' : 'job-satisfaction' == pIndicator }" ></a>
+        </li>
+        <li data-ng-class="{'active' : 'health-at-risk' == pIndicator }" class="submenu--item">
+          <a href="" data-ng-click="changeIndicator($event,'health-at-risk');" data-ng-bind="i18nLiterals.L323" data-ng-class="{'active' : 'health-at-risk' == pIndicator }" ></a>
+        </li>
+      </ul>
+    </div>
+    <div class="line background-main-light"></div>
+  </div>
+
+  <section class="container section--page full-tablet">
+    <!-- Job satisfaction -->
+    <div class="" id="tab1" data-ng-show="pIndicator == 'job-satisfaction'">
+      <div class="card--grid xxs-w1 xs-w1 w1 center-text">
+        <div class="card--block--chart">
+          <div class="chart--block">
+            <dvt-bar-chart
+              data-ng-cloak
+              query="getJobSatisfactionData" cda="{{::cdaOSHOutcomes }}"
+              width="330" height="470" axis-percent="1"
+              orientation="vertical" axis-fixed-min="0"
+              axis-fixed-max="100" step="{{step.chart1}}"
+              params="[['pDataset', datasetEurofound], ['pIndicator', 65]]"
+              color-role="series" colors="[stories[0].color4, stories[0].color3, stories[0].color2, stories[0].color1]"
+              chart-title="{{i18nLiterals.L322}}" id="1"
+              axis-label-font="14px 'OpenSans-bold'"
+              plots="stories[0].plots"
+              values-visible="false"
+              values-font="14px 'OpenSans-bold'"
+              multiple-label-colors="false"
+              base-axis-label-text-baseline=""
+              leaf-content-overflow='visible'
+              dimensions="stories[0].dimensions"
+              legend="true"
+              angle="1" stacked="1"
+              base-axis-size="120"
+              legend-item-size="200"
+            ></dvt-bar-chart>
+          </div>
+        </div>
+        <div class="chart-legend">
+          <p data-ng-bind="i18nLiterals.L20580"></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Health at risk -->
+    <div class="" id="tab2" data-ng-show="pIndicator == 'health-at-risk'">
+      <!-- country selects -->
+      <form class="container compare--block--form">
+        <ul class="compare--list">
+          <!-- 1st country -->        
+          <li>
+            <label data-ng-bind="i18nLiterals.L20609" for="datafor"></label>
+            <select id="datafor" class="" ng-model="pCountry1" ng-selected="pCountry1" ng-change="countryChange()">
+              <option data-ng-repeat='country in countriesDataFor' data-ng-bind="('(')+(country.country_code)+(') ')+(i18nLiterals['L'+country.country])" value="{{::country.country_code}}"></option>
+            </select>
+          </li>
+          <!-- 2nd country -->
+          <li>
+            <label data-ng-bind="i18nLiterals.L20610" for="comparewith"></label>
+            <select id="comparewith" class="" ng-model="pCountry2" ng-selected="pCountry2" ng-change="countryChange()">
+              <option data-ng-repeat='country in countriesCompareWith' data-ng-bind="('(')+(country.country_code)+(') ')+(i18nLiterals['L'+country.country])" value="{{::country.country_code}}" ></option>
+            </select>
+          </li>        
+        </ul>
+      </form>
+      <div class="line background-main-light"></div>
+      <div class="card--grid xxs-w1 xs-w1 w1 center-text">
+        <div class="card--block--chart">
+          <div class="chart--block">
+            <dvt-bar-chart
+              data-ng-cloak
+              query="getOshCultureData" cda="{{::cdaOSHOutcomes }}"
+              width="330" height="470" axis-percent="1"
+              orientation="vertical" axis-fixed-min="0"
+              axis-fixed-max="100" step="{{step.chart2}}"
+              params="[['pDataset', datasetEurofound], ['pIndicator', 66]]"
+              color-role="series" colors="[stories[1].color3, stories[1].color1, stories[1].color2]"
+              chart-title="{{i18nLiterals.L323}}" id="2"
+              axis-label-font="14px 'OpenSans-bold'"
+              plots="stories[1].plots"
+              values-visible="false"
+              values-font="14px 'OpenSans-bold'"
+              multiple-label-colors="false"
+              base-axis-label-text-baseline=""
+              leaf-content-overflow='visible'
+              dimensions="stories[1].dimensions"
+              legend="true"
+              angle="1" stacked="1"
+              legend-align="center"
+              base-axis-size="120"
+              legend-item-size="100"
+            ></dvt-bar-chart>
+          </div>
+        </div>
+        <div class="chart-legend">
+          <p data-ng-bind="i18nLiterals.L20570"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+</dvt-dashboard>

@@ -191,6 +191,13 @@
     /* OSH CULTURE AND HEALTH AWARENESS */
     requirePaths['vertical/osh-culture/OshCultureController'] = verticalModules + '/osh-outcomes-working-conditions/osh-culture/OshCultureController' + suffix;
     requirePaths['vertical/osh-culture/services/OshCultureService'] = verticalModules + '/osh-outcomes-working-conditions/osh-culture/services/OshCultureService' + suffix;
+    
+    /* WORKING CONDITIONS */
+    requirePaths['vertical/working-conditions/WorkingConditionsController'] = verticalModules + '/osh-outcomes-working-conditions/working-conditions/WorkingConditionsController' + suffix;
+
+    /* OVERALL OPINION */
+    requirePaths['vertical/overall-opinion/OverallOpinionController'] = verticalModules + '/osh-outcomes-working-conditions/overall-opinion/OverallOpinionController' + suffix;
+    requirePaths['vertical/overall-opinion/services/OverallOpinionService'] = verticalModules + '/osh-outcomes-working-conditions/overall-opinion/services/OverallOpinionService' + suffix;
 
     /* ABOUT THE VISUALISATION TOOL */
     requirePaths['vertical/about-tool/AboutToolController'] = verticalModules + '/about-tool/AboutToolController' + suffix;
