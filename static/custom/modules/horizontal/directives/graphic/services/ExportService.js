@@ -174,7 +174,13 @@ define(function(require){
                     } else {
                         if ($.isNumeric(value) && (value%1) > 0)
                         {
-                            value = Math.ceil(value*100)/100;
+                            //$log.warn(value);
+                            //All decimals
+                            value = value;
+                            //2 decimals without rounding
+                            //value = Math.floor(value * 100) / 100;
+                            //2 decimals rounding
+                            //value = Math.ceil(value*100)/100;
                         }
                         data+=value+";";
                     }

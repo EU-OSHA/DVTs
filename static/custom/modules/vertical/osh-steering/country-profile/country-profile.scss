@@ -15,6 +15,13 @@
 	}  
 }
 
+div.complete-text{
+	display: none;
+}
+
+div.partial-text{
+	display: block;
+}
 
 
 @media (max-width: 990px) {
