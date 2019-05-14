@@ -38,9 +38,6 @@
 /* Economic sector profile */
 @import '../modules/vertical/generic-information/economic-sector-profile/economic-sector-profile.scss';
 
-/* Economic sector profile */
-@import '../modules/vertical/generic-information/economic-sector-profile/economic-sector-profile.scss';
-
 /* Workforce profile */
 @import '../modules/vertical/generic-information/workforce-profile/workforce-profile.scss';
 
@@ -49,8 +46,14 @@
 
 
 
+/* Work accidents */
+@import '../modules/vertical/osh-outcomes-working-conditions/work-accidents/work-accidents.scss';
 
+/* health Perception Workers */
+@import '../modules/vertical/osh-outcomes-working-conditions/health-perception-of-workers/health-perception-of-workers.scss';
 
+/* OSH culture */
+@import '../modules/vertical/osh-outcomes-working-conditions/osh-culture/osh-culture.scss';
 
 
 /****** GENERAL *******/

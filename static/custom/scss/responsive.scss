@@ -119,7 +119,6 @@
     }
   }
 
-	
 	.tablet-show{
 		display: block;
 	}
@@ -567,15 +566,15 @@ and (max-width : 1024px)  {
 	}
 	.xs-w1{
 		.card--block{
-			width:50%;
+			width:100%;
 			margin: 0 1% 3rem;
 		}
 		.card--block--rounded{
-			width:48%;
+			width:100%;
 			margin: 0 1% 3rem;
 		}
 		.card--block--chart{
-			width:48%;
+			width:100%;
 			margin: 0 1% 3rem;
 		}
 	}
@@ -935,7 +934,12 @@ and (max-width :767px)  {
     top: -10rem;
     -webkit-transition: all 0.8s;
     transition: all 0.8s;
-    &.affix, &.affix-top{
+    &.affix{
+    	top: -25rem;
+    	background: $white;
+    	width: 100%;
+    }
+		&.affix-top{
     	top: -25rem;
     	background: $white;
     	width: 100%;
@@ -946,8 +950,14 @@ and (max-width :767px)  {
     top:0rem;
     -webkit-transition: all 0.8s; 
     transition: all 0.8s;
-    &.affix, &.affix-top{
+    &.affix{
     	top:9rem;
+    	background: $white;
+    	width: 100%;
+    }
+    &.affix-top{
+    	top:0rem;
+    	position: relative;
     	background: $white;
     	width: 100%;
     }
@@ -1148,6 +1158,7 @@ and (max-width :767px)  {
 						margin: 2rem auto;
             svg{
               text{
+              	font-size: 1rem !important;
               }
             }
           }      

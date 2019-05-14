@@ -2,8 +2,9 @@
 	"EUROSTATBetweenDates":"3",
 	"EUROSTATDGBetweenDates":"5",
 	"EUROSTAT":"6",
+	"EUROSTAT2016":"14",
 	"ESENER":"15",
-	"EUROSTATDG":"10",
-	"Eurofound":"11",
+	"EUROSTATDG":"9",
+	"Eurofound":"10",
 	"EUROSTAT2013":"12"
 }

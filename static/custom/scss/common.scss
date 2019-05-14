@@ -7,6 +7,9 @@
   samp{
     font-family: $font-body !important;    
   }
+  .ccc-tt-ds .ccc-tt-dimValue .ccc-tt-valuePct{
+    display: none !important;
+  }
   body{
     font-family: $font-body;
     font-size:$font-size-body;
@@ -472,9 +475,13 @@
       text-align: center;
     }
   }
+
   .advice--icon--block{
     position: relative;
     padding: 1rem 0;
+    .text-advice{
+      padding-bottom: 1rem;
+    }
     .title--section{
       font-family: 'Oswald';
       font-size: 3rem;
@@ -703,6 +710,13 @@
           &.active, &:hover, &:focus, &:visited {
             border-bottom: 4px solid $orange;
             text-decoration: none;
+            display: block;
+            //color: $aquamarine;
+          }
+        }
+        &.active{
+          a, a.active, a:hover, a:focus, a:visited {
+            color: $aquamarine;
           }
         }
       }
@@ -960,6 +974,10 @@
         }
         &.first{
           border-right: 2px solid $aquamarine-light;
+          &.full{
+            border-right: 0;
+            width: 100%;
+          }
           .columm--item--content{
             
           }

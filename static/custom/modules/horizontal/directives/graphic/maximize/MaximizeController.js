@@ -53,6 +53,7 @@ define(function (require) {
                     };
 
                     $scope.parameters = parameters;
+                    //$log.warn($scope.parameters);
 
                     /* GET GROUPS COLORS */
                     if (!!$stateParams.pGroup && $stateParams.pGroup != undefined) {
@@ -62,6 +63,15 @@ define(function (require) {
 
                     // maximize view parameter for queries that require it
                     $scope.parameters.parameters.push(['pMaximized', '1']);
+
+                    if (!!parameters.angle) {
+                        $scope.parameters.chartDefinition.baseAxisLabel_textAngle = (parameters.angle==1)?-Math.PI / 3:-Math.PI / 6.5;
+                        if ($scope.parameters.chartDefinition.orientation == 'horizontal') {
+                            $scope.parameters.chartDefinition.baseAxisLabel_textAngle = 0;
+                        }
+                        $scope.parameters.chartDefinition.baseAxisLabel_textAlign = 'right';
+                        $scope.parameters.chartDefinition.baseAxisLabel_textBaseline = 'top';
+                    }
 
                     if (!!$scope.parameters.chartDefinition) {
                         /*if ($state.current.name == "approaches-indicators") {
@@ -178,7 +188,6 @@ define(function (require) {
                             if($scope.parameters.name == 'dvt_bar_chart_2'){
                                 $scope.parameters.chartDefinition.valuesNormalized=1;
                                 $scope.parameters.chartDefinition.legendItemSize = 340;
-                                                         
                             }
                         }
 

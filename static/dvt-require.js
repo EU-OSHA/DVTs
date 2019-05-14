@@ -164,6 +164,41 @@
     requirePaths['vertical/workforce-profile/WorkforceProfileController'] = verticalModules + '/generic-information/workforce-profile/WorkforceProfileController' + suffix;
     requirePaths['vertical/workforce-profile/services/WorkforceProfileService'] = verticalModules + '/generic-information/workforce-profile/services/WorkforceProfileService' + suffix;
 
+    /*STEERING OF OSH*/
+    requirePaths['vertical/osh-steering/osh-steering-module'] = verticalModules + '/osh-steering/osh-steering-module' + suffix;
+
+    /*REGULATION*/
+    requirePaths['vertical/regulation/RegulationController'] = verticalModules + '/osh-steering/regulation/RegulationController' + suffix;
+
+    /*NATIONAL STRATEGIES*/
+    requirePaths['vertical/national-strategies/NationalStrategiesController'] = verticalModules + '/osh-steering/national-strategies/NationalStrategiesController' + suffix;
+    requirePaths['vertical/country-profile/CountryProfileController'] = verticalModules + '/osh-steering/country-profile/CountryProfileController' + suffix;
+    requirePaths['vertical/EU-challenges-response/EUChallengesResponseController'] = verticalModules + '/osh-steering/EU-challenges-response/EUChallengesResponseController' + suffix;
+
+    /*SOCIAL DIALOGUE*/
+    requirePaths['vertical/social-dialogue/SocialDialogueController'] = verticalModules + '/osh-steering/social-dialogue/SocialDialogueController' + suffix;
+
+    /* OSH OUTCOMES AND WORKING CONDITIONS */
+    requirePaths['vertical/osh-outcomes-working-conditions/osh-outcomes-working-conditions-module'] = verticalModules + '/osh-outcomes-working-conditions/osh-outcomes-working-conditions-module' + suffix;
+
+    /* WORK ACCIDENTS */
+    requirePaths['vertical/work-accidents/WorkAccidentsController'] = verticalModules + '/osh-outcomes-working-conditions/work-accidents/WorkAccidentsController' + suffix;
+    requirePaths['vertical/work-accidents/services/WorkAccidentsService'] = verticalModules + '/osh-outcomes-working-conditions/work-accidents/services/WorkAccidentsService' + suffix;
+
+    /* HEALTH PERCEPTION OF WORKERS */
+    requirePaths['vertical/health-perception-of-workers/HealthPerceptionOfWorkersController'] = verticalModules + '/osh-outcomes-working-conditions/health-perception-of-workers/HealthPerceptionOfWorkersController' + suffix;
+
+    /* OSH CULTURE AND HEALTH AWARENESS */
+    requirePaths['vertical/osh-culture/OshCultureController'] = verticalModules + '/osh-outcomes-working-conditions/osh-culture/OshCultureController' + suffix;
+    requirePaths['vertical/osh-culture/services/OshCultureService'] = verticalModules + '/osh-outcomes-working-conditions/osh-culture/services/OshCultureService' + suffix;
+    
+    /* WORKING CONDITIONS */
+    requirePaths['vertical/working-conditions/WorkingConditionsController'] = verticalModules + '/osh-outcomes-working-conditions/working-conditions/WorkingConditionsController' + suffix;
+
+    /* OVERALL OPINION */
+    requirePaths['vertical/overall-opinion/OverallOpinionController'] = verticalModules + '/osh-outcomes-working-conditions/overall-opinion/OverallOpinionController' + suffix;
+    requirePaths['vertical/overall-opinion/services/OverallOpinionService'] = verticalModules + '/osh-outcomes-working-conditions/overall-opinion/services/OverallOpinionService' + suffix;
+
     /* ABOUT THE VISUALISATION TOOL */
     requirePaths['vertical/about-tool/AboutToolController'] = verticalModules + '/about-tool/AboutToolController' + suffix;
     requirePaths['vertical/about-tool/about-tool-module'] = verticalModules + '/about-tool/about-tool-module' + suffix;
