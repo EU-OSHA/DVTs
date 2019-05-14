@@ -70,6 +70,7 @@ define(function (require) {
           }
 
         });
+        $scope.alphabet.sort();
       }).catch(function (err) {
           throw err;
       });
