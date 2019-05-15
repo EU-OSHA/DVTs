@@ -440,7 +440,7 @@ define(function (require) {
                 };
 
                 if(definition.chartDefinition.dataAccessId == 'getCompanySizeData'){
-                    $log.warn(definition);
+                    //$log.warn(definition);
                     if(resolution <= 425 && resolution > 325){
                         $log.warn('resolution <= 425');
                         definition.chartDefinition.legendItemSize = 250;
@@ -462,16 +462,13 @@ define(function (require) {
                 }
 
                 if(definition.chartDefinition.dataAccessId == 'getEmploymentPerSectorData'){
-                    definition.chartDefinition.valuesNormalized=1;
-                    definition.chartDefinition.legendItemSize = 340;
-
                     if(resolution <= 425){
-                        $log.warn('resolution < 425');
+                        //$log.warn('resolution < 425');
                         definition.chartDefinition.legendItemSize = 250;
                     }
 
                     if(resolution <= 325){
-                        $log.warn('resolution <= 325');
+                        //$log.warn('resolution <= 325');
                         definition.chartDefinition.legendItemSize = 200;
                     }
                 }
