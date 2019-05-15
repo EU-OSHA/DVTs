@@ -805,14 +805,14 @@ define(function (require) {
                             [['Download raw data', 'exportData', 'download-button']].forEach(function (item) {
                                 scope.contextuals.push(item);
                             });
-                            [['Download image', 'exportImage', 'download-button']].forEach(function (item) {
+                            [['Export as image', 'exportImage', 'download-button']].forEach(function (item) {
                                 scope.contextuals.push(item);
                             });
                         } else {
-                            [['Download image', 'exportData', 'download-button']].forEach(function (item) {
+                            [['Download raw data', 'exportData', 'download-button']].forEach(function (item) {
                                 scope.contextuals.push(item);
                             });
-                            [['Download image', 'exportImage', 'download-button']].forEach(function (item) {
+                            [['Export as image', 'exportImage', 'download-button']].forEach(function (item) {
                                 scope.contextuals.push(item);
                             });
                         }
