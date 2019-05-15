@@ -172,8 +172,18 @@ define(function (require) {
                                 }
                             }
 
-                            if($scope.parameters.name == 'dvt_bar_chart_1'){
+                            if($scope.parameters.chartDefinition.dataAccessId == 'getCompanySizeData'){
                                 $scope.parameters.chartDefinition.legendItemSize = 300;
+
+                                if(resolution <= 325){
+                                    $log.warn('resolution <= 325');
+                                    $scope.parameters.chartDefinition.legendItemSize = 100;
+                                }
+
+                                /*if(resolution <= 425){
+                                    $log.warn('resolution < 425');
+                                    $scope.parameters.chartDefinition.legendItemSize = 300;
+                                }*/
                                 
                                 /*if( resolution > 1256 &&  resolution <= 1684){
                                     $log.warn('resolution > 1360');
@@ -185,9 +195,19 @@ define(function (require) {
                                 }*/
                             }
 
-                            if($scope.parameters.name == 'dvt_bar_chart_2'){
+                            if($scope.parameters.chartDefinition.dataAccessId == 'getEmploymentPerSectorData'){
                                 $scope.parameters.chartDefinition.valuesNormalized=1;
                                 $scope.parameters.chartDefinition.legendItemSize = 340;
+
+                                if(resolution <= 425 && resolution > 325){
+                                    $log.warn('resolution <= 425');
+                                    $scope.parameters.chartDefinition.legendItemSize = 280;
+                                }
+
+                                if(resolution <= 325){
+                                    $log.warn('resolution <= 325');
+                                    $scope.parameters.chartDefinition.legendItemSize = 280;
+                                }
                             }
                         }
 

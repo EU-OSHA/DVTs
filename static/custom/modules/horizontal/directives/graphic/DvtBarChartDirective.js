@@ -288,6 +288,13 @@ define(function (require) {
             template:_template,
 
             link: function (scope, element, attributes, controllers) {
+
+                var resolution = screen.width;
+
+                $(window).on("resize",function(e){
+                  resolution = screen.width;
+                });
+
                 // FIX. enlarged views share same id, a prefix has been added that must be undone
                 if (attributes.id.split("_").length > 1){
                     attributes.id = attributes.id.split("_")[1];
@@ -431,6 +438,43 @@ define(function (require) {
                     }
 
                 };
+
+                if(definition.chartDefinition.dataAccessId == 'getCompanySizeData'){
+                    $log.warn(definition);
+                    if(resolution <= 425 && resolution > 325){
+                        $log.warn('resolution <= 425');
+                        definition.chartDefinition.legendItemSize = 250;
+                    }
+
+                    if(resolution <= 325){
+                        $log.warn('resolution <= 325');
+                        definition.chartDefinition.legendItemSize = 200;
+                    }
+                    
+                    /*if( resolution > 1256 &&  resolution <= 1684){
+                        $log.warn('resolution > 1360');
+                        $scope.parameters.chartDefinition.legendItemSize = 350;
+                    }
+                    if( resolution > 1684 ){
+                        $log.warn('resolution > 1684');
+                        $scope.parameters.chartDefinition.legendItemSize = 450;
+                    }*/
+                }
+
+                if(definition.chartDefinition.dataAccessId == 'getEmploymentPerSectorData'){
+                    definition.chartDefinition.valuesNormalized=1;
+                    definition.chartDefinition.legendItemSize = 340;
+
+                    if(resolution <= 425){
+                        $log.warn('resolution < 425');
+                        definition.chartDefinition.legendItemSize = 250;
+                    }
+
+                    if(resolution <= 325){
+                        $log.warn('resolution <= 325');
+                        definition.chartDefinition.legendItemSize = 200;
+                    }
+                }
 
                 if(scope.axisColor){
                     definition.chartDefinition.xAxis_fillStyle = 'transparent';
