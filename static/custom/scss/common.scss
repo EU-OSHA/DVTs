@@ -116,7 +116,7 @@
       font-size: 1.4rem;
       font-family: "OpenSans";
       font-weight: normal;
-      text-align: right;
+      text-align: left;
       font-style: italic;
       display: block;
       margin: -2rem 2rem 2rem;
@@ -1491,7 +1491,6 @@
             height: auto;
             margin: 3vh auto 0;
             svg{
-              border-radius: 1rem;
               text{
                 font-size: 14px !important;
               }
