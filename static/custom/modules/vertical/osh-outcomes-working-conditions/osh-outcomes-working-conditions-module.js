@@ -147,11 +147,33 @@ define(function (require) {
           title: i18n.L22013 +  " - " + i18n.L22020 + " - " + i18n.L363
         }
       });
+
+      $stateProvider.state('physical-risk', {
+        url: "/osh-outcomes-working-conditions/working-conditions/physical-risk/:pIndicator",
+        params: {
+          pIndicator: {
+            value: 'time-pressure',
+            squash: 'time-pressure'
+          }
+        },
+        views: {
+          "content-main": {
+            templateUrl: configService.getVerticalTplPath("osh-outcomes-working-conditions/physical-risk", "physical-risk"),
+            controller: 'PhysicalRiskController',
+            resolve: configService.dynamicallyRegisterController($controllerProvider, 'vertical/physical-risk/PhysicalRiskController', 'physical-risk', 'PhysicalRiskController')
+          }
+        },
+        metaTags: {
+          title: i18n.L22013 +  " - " + i18n.L22020 + " - " + i18n.L363
+        }
+      });
     });
 
     module.factory('WorkAccidentsService', require('vertical/work-accidents/services/WorkAccidentsService'));
     module.factory('OshCultureService', require('vertical/osh-culture/services/OshCultureService'));
     module.factory('OverallOpinionService', require('vertical/overall-opinion/services/OverallOpinionService'));
     module.factory('MentalRiskService', require('vertical/mental-risk/services/MentalRiskService'));
+    module.factory('PhysicalRiskService', require('vertical/physical-risk/services/PhysicalRiskService'));
+    
     return module;
 });

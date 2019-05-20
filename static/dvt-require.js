@@ -202,6 +202,10 @@
     /* MENTAL RISK */
     requirePaths['vertical/mental-risk/MentalRiskController'] = verticalModules + '/osh-outcomes-working-conditions/mental-risk/MentalRiskController' + suffix;
     requirePaths['vertical/mental-risk/services/MentalRiskService'] = verticalModules + '/osh-outcomes-working-conditions/mental-risk/services/MentalRiskService' + suffix;
+    
+    /* PHYSICAL RISK */
+    requirePaths['vertical/physical-risk/PhysicalRiskController'] = verticalModules + '/osh-outcomes-working-conditions/physical-risk/PhysicalRiskController' + suffix;
+    requirePaths['vertical/physical-risk/services/PhysicalRiskService'] = verticalModules + '/osh-outcomes-working-conditions/physical-risk/services/PhysicalRiskService' + suffix;
 
     /* ABOUT THE VISUALISATION TOOL */
     requirePaths['vertical/about-tool/AboutToolController'] = verticalModules + '/about-tool/AboutToolController' + suffix;
