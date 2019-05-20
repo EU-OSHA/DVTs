@@ -30,162 +30,125 @@
       <div class="card--grid xxs-w1 xs-w1 w1 center-text">
         <div class="card--block--chart">
           <!-- ESENER AND EUROFOUND filter -->
-          <select ng-model="pSplit">
+          <select ng-model="pSplit" data-ng-change="changeDataset(pIndicator, pSplit)">
             <option data-ng-bind="i18nLiterals.L20645" value="esener"></option>
             <option data-ng-bind="i18nLiterals.L20646" value="eurofound"></option>
           </select>
           <div class="chart--block" ng-hide="pSplit != 'esener'">
             <dvt-bar-chart
               data-ng-cloak
-              query="getJobSatisfactionData" cda="{{::cdaOSHOutcomes }}"
+              query="getMentalRiskData" cda="{{::cdaOSHOutcomes }}"
               width="{{::chartWidth}}" height="470" axis-percent="1"
               orientation="vertical" axis-fixed-min="0"
               axis-fixed-max="100" step="{{step.chart1}}"
-              params="[['pDataset', datasetEurofound], ['pIndicator', 65]]"
-              color-role="series" colors="[stories[0].color4, stories[0].color3, stories[0].color2, stories[0].color1]"
-              chart-title="{{i18nLiterals.L322}}" id="1"
+              params="[['pDataset', datasetESENER], ['pIndicator', 113]]"
+              color-role="series" colors="[stories[0].color2, stories[0].color1]"
+              chart-title="{{i18nLiterals.L340}}" id="1"
               axis-label-font="14px 'OpenSans-bold'"
               plots="stories[0].plots"
               values-visible="false"
               values-font="14px 'OpenSans-bold'"
               multiple-label-colors="false"
-              base-axis-label-text-baseline=""
               leaf-content-overflow='visible'
               dimensions="stories[0].dimensions"
               legend="true"
               angle="1" stacked="1"
-              base-axis-size="130"
-              legend-item-size="200"
+              base-axis-size="150"
+              legend-item-size="100"
             ></dvt-bar-chart>
           </div>
           <div class="chart--block" ng-hide="pSplit != 'eurofound'">
             <dvt-bar-chart
               data-ng-cloak
-              query="getJobSatisfactionData" cda="{{::cdaOSHOutcomes }}"
+              query="getMentalRiskData" cda="{{::cdaOSHOutcomes }}"
               width="{{::chartWidth}}" height="470" axis-percent="1"
               orientation="vertical" axis-fixed-min="0"
               axis-fixed-max="100" step="{{step.chart1}}"
-              params="[['pDataset', datasetEurofound], ['pIndicator', 65]]"
-              color-role="series" colors="[stories[0].color4, stories[0].color3, stories[0].color2, stories[0].color1]"
-              chart-title="{{i18nLiterals.L322}}" id="1"
+              params="[['pDataset', datasetEurofound], ['pIndicator', 83]]"
+              color-role="series" colors="[stories[0].color3, stories[0].color2, stories[0].color1]"
+              chart-title="{{i18nLiterals.L340}}" id="2"
               axis-label-font="14px 'OpenSans-bold'"
               plots="stories[0].plots"
-              values-visible="false"
-              values-font="14px 'OpenSans-bold'"
               multiple-label-colors="false"
-              base-axis-label-text-baseline=""
               leaf-content-overflow='visible'
-              dimensions="stories[0].dimensions"
+              values-visible="false"
               legend="true"
+              dimensions="stories[0].dimensions"
               angle="1" stacked="1"
-              base-axis-size="130"
+              base-axis-size="150"
               legend-item-size="200"
             ></dvt-bar-chart>
-          </div>
+          </div>          
         </div>
         <div class="chart-legend">
-          <p data-ng-bind="i18nLiterals.L20584" ng-show="pSplit == 'esener'"></p>
-          <p data-ng-bind="i18nLiterals.L20585" ng-show="pSplit == 'eurofound'"></p>
+          <p ng-show="pSplit == 'esener'" data-ng-bind="i18nLiterals.L20585" ></p>
+          <p ng-show="pSplit == 'eurofound'" data-ng-bind="i18nLiterals.L20584" ></p>
         </div>
       </div>
     </div>
 
     <!-- Poor communication -->
-    <div class="compare--block" id="tab2" data-ng-show="pIndicator == 'poor-communication'">
+    <div class="" id="tab2" data-ng-show="pIndicator == 'poor-communication'">
       <div class="line background-main-light"></div>
-      <div class="card--grid xxs-w1 xs-w1 w1 center-text">
-        
+      <div class="card--grid xxs-w1 xs-w1 w1 center-text">     
         <div class="card--block--chart" >
-          <!-- Sector, gender or age filter -->
-          <select ng-model="pSplit">
+          <!-- ESENER AND EUROFOUND filter -->
+          <select ng-model="pSplit" data-ng-change="changeDataset(pIndicator, pSplit)">
             <option data-ng-bind="i18nLiterals.L20645" value="esener"></option>
-            <option data-ng-bind="i18nLiterals.L20646" value="eourofound"></option>
+            <option data-ng-bind="i18nLiterals.L20646" value="eurofound"></option>
           </select>
-          <div class="chart--block" ng-hide="pSplit != 'sector'">
+          <div class="chart--block" ng-hide="pSplit != 'esener'">
             <dvt-bar-chart
             data-ng-cloak
-            query="getHealthAtRiskSectorData" cda="{{::cdaOSHOutcomes }}"
+            query="getMentalRiskData" cda="{{::cdaOSHOutcomes }}"
             width="330" height="470" axis-percent="1"
             orientation="vertical" axis-fixed-min="0"
-            axis-fixed-max="40" step="{{step.chart2}}"
-            params="[['pDataset', datasetEurofound], ['pIndicator', 66], ['pCountry1', pCountry1], ['pCountry2', pCountry2]]"
-            color-role="series" colors="[stories[1].color2, stories[1].color1, stories[1].color3]"
-            chart-title="{{i18nLiterals.L323}}" id="2"
-            axis-label-font="13px 'OpenSans-bold'"
-            plots="stories[1].plots"
-            values-visible="true"
+            axis-fixed-max="100" step="{{step.chart2}}"
+            params="[['pDataset', datasetESENER], ['pIndicator', 114]]"
+            color-role="series" colors="[stories[0].color1, stories[0].color2]"
+            chart-title="{{i18nLiterals.L341}}" id="3"
+            axis-label-font="14px 'OpenSans-bold'"
+            plots="stories[0].plots"
             values-overflow="show"
-            values-mask="{value}%"
             values-font="14px 'OpenSans-bold'"
             multiple-label-colors="false"
             base-axis-label-text-baseline="top"
             leaf-content-overflow='visible'
-            dimensions="stories[1].dimensions"
-            legend="true"
+            dimensions="stories[0].dimensions"
+            legend="true" stacked="1" angle="1"
             legend-align="center"
-            base-axis-size="50"
-            base-axis-band-size=""
-            legend-item-size="150"
-            axis-label-word-break="1"
+            base-axis-size="150"
+            legend-item-size="100"
             ></dvt-bar-chart>
           </div>
-          <div class="chart--block" ng-hide="pSplit != 'age'">
+          <div class="chart--block" ng-hide="pSplit != 'eurofound'">
             <dvt-bar-chart
               data-ng-cloak
-              query="getHealthAtRiskAgeData" cda="{{::cdaOSHOutcomes }}"
+              query="getEurofoundPoorCommunicationData" cda="{{::cdaOSHOutcomes }}"
               width="{{::chartWidth}}" height="470" axis-percent="1"
-              orientation="vertical" axis-fixed-min="0"
-              axis-fixed-max="40" step="{{step.chart2}}"
-              params="[['pDataset', datasetEurofound], ['pIndicator', 66], ['pCountry1', pCountry1], ['pCountry2', pCountry2]]"
-              color-role="series" colors="[stories[1].color2, stories[1].color1, stories[1].color3]"
-              chart-title="{{i18nLiterals.L323}}" id="2"
+              orientation="vertical" axis-fixed-min="60"
+              axis-fixed-max="100" step="{{step.chart2}}"
+              params="[['pDataset', datasetEurofound], ['pIndicator', 84]]"
+              color-role="series" colors="[stories[0].color1]"
+              chart-title="{{i18nLiterals.L341}}" id="4"
               axis-label-font="14px 'OpenSans-bold'"
-              plots="stories[1].plots"
-              values-visible="true"
+              plots="stories[0].plots"
               values-overflow="show"
-              values-mask="{value}%"
               values-font="14px 'OpenSans-bold'"
               multiple-label-colors="false"
               base-axis-label-text-baseline="top"
               leaf-content-overflow='visible'
-              dimensions="stories[1].dimensions"
-              legend="true"
+              legend="true" stacked="1" angle="1"
               legend-align="center"
-              base-axis-size="50"
-              legend-item-size="100"
-            ></dvt-bar-chart>
-          </div>
-          <div class="chart--block" ng-hide="pSplit != 'gender'">
-            <dvt-bar-chart
-              data-ng-cloak
-              query="getHealthAtRiskGenderData" cda="{{::cdaOSHOutcomes }}"
-              width="{{::chartWidth}}" height="470" axis-percent="1"
-              orientation="vertical" axis-fixed-min="0"
-              axis-fixed-max="40" step="{{step.chart2}}"
-              params="[['pDataset', datasetEurofound], ['pIndicator', 66], ['pCountry1', pCountry1], ['pCountry2', pCountry2]]"
-              color-role="series" colors="[stories[2].color2, stories[2].color1, stories[2].color3]"
-              chart-title="{{i18nLiterals.L323}}" id="2"
-              axis-label-font="14px 'OpenSans-bold'"
-              plots="stories[2].plots"
-              values-visible="true"
-              values-overflow="show"
-              values-mask="{value}%"
-              values-font="14px 'OpenSans-bold'"
-              multiple-label-colors="false"
-              base-axis-label-text-baseline="top"
-              leaf-content-overflow='visible'
-              dimensions="stories[2].dimensions"
-              legend="true"
-              legend-align="center"
-              base-axis-size="50"
-              legend-item-size="100"
+              base-axis-size="150"
+              legend-item-size="150"
             ></dvt-bar-chart>
           </div>
         </div>
         <!-- Dynamic chart legend depending on split selected -->
         <div class="chart-legend">
-          <p ng-show="pSplit == 'sector'" data-ng-bind="i18nLiterals.L20582"></p>
-          <p ng-show="pSplit == 'gender'" data-ng-bind="i18nLiterals.L20581"></p>
+          <p ng-show="pSplit == 'esener'" data-ng-bind="i18nLiterals.L20587"></p>
+          <p ng-show="pSplit == 'eurofound'" data-ng-bind="i18nLiterals.L20586"></p>
         </div>
       </div>
     </div>
@@ -194,100 +157,67 @@
     <div class="compare--block" id="tab3" data-ng-show="pIndicator == 'influence'">
       <div class="line background-main-light"></div>
       <div class="card--grid xxs-w1 xs-w1 w1 center-text">
-        
-        <div class="card--block--chart" >
-          <!-- Sector, gender or age filter -->
-          <select ng-model="pSplit">
-            <option data-ng-bind="i18nLiterals.L20648" value="sector"></option>
-            <option data-ng-bind="i18nLiterals.L20649" value="gender"></option>              
-            <option data-ng-bind="i18nLiterals.L20650" value="age"></option>
+        <div class="card--block--chart">
+          <!-- ESENER AND EUROFOUND filter -->
+          <select ng-model="pSplit" data-ng-change="changeDataset(pIndicator, pSplit)">
+            <option data-ng-bind="i18nLiterals.L20645" value="esener"></option>
+            <option data-ng-bind="i18nLiterals.L20646" value="eurofound"></option>
           </select>
-          <div class="chart--block" ng-hide="pSplit != 'sector'">
+          <div class="chart--block" ng-hide="pSplit != 'esener'">
             <dvt-bar-chart
             data-ng-cloak
-            query="getHealthAtRiskSectorData" cda="{{::cdaOSHOutcomes }}"
+            query="getMentalRiskData" cda="{{::cdaOSHOutcomes }}"
             width="330" height="470" axis-percent="1"
             orientation="vertical" axis-fixed-min="0"
-            axis-fixed-max="40" step="{{step.chart2}}"
-            params="[['pDataset', datasetEurofound], ['pIndicator', 66], ['pCountry1', pCountry1], ['pCountry2', pCountry2]]"
-            color-role="series" colors="[stories[1].color2, stories[1].color1, stories[1].color3]"
-            chart-title="{{i18nLiterals.L323}}" id="2"
-            axis-label-font="13px 'OpenSans-bold'"
-            plots="stories[1].plots"
-            values-visible="true"
+            axis-fixed-max="100" step="{{step.chart2}}"
+            params="[['pDataset', datasetESENER], ['pIndicator', 115]]"
+            color-role="series" colors="[stories[0].color1, stories[0].color2]"
+            chart-title="{{i18nLiterals.L342}}" id="5"
+            axis-label-font="14px 'OpenSans-bold'"
+            plots="stories[0].plots"
             values-overflow="show"
             values-mask="{value}%"
             values-font="14px 'OpenSans-bold'"
             multiple-label-colors="false"
             base-axis-label-text-baseline="top"
             leaf-content-overflow='visible'
-            dimensions="stories[1].dimensions"
-            legend="true"
+            dimensions="stories[0].dimensions"
+            legend="true" stacked="1" angle="1"
             legend-align="center"
-            base-axis-size="50"
-            base-axis-band-size=""
-            legend-item-size="150"
-            axis-label-word-break="1"
+            base-axis-size="150"
+            legend-item-size="100"
             ></dvt-bar-chart>
           </div>
-          <div class="chart--block" ng-hide="pSplit != 'age'">
+          <div class="chart--block" ng-hide="pSplit != 'eurofound'">
             <dvt-bar-chart
               data-ng-cloak
-              query="getHealthAtRiskAgeData" cda="{{::cdaOSHOutcomes }}"
+              query="getMentalRiskData" cda="{{::cdaOSHOutcomes }}"
               width="{{::chartWidth}}" height="470" axis-percent="1"
               orientation="vertical" axis-fixed-min="0"
-              axis-fixed-max="40" step="{{step.chart2}}"
-              params="[['pDataset', datasetEurofound], ['pIndicator', 66], ['pCountry1', pCountry1], ['pCountry2', pCountry2]]"
-              color-role="series" colors="[stories[1].color2, stories[1].color1, stories[1].color3]"
-              chart-title="{{i18nLiterals.L323}}" id="2"
+              axis-fixed-max="100" step="{{step.chart2}}"
+              params="[['pDataset', datasetEurofound], ['pIndicator', 85]]"
+              color-role="series" colors="[stories[0].color3, stories[0].color2, stories[0].color1]"
+              chart-title="{{i18nLiterals.L342}}" id="6"
               axis-label-font="14px 'OpenSans-bold'"
-              plots="stories[1].plots"
-              values-visible="true"
+              plots="stories[0].plots"
               values-overflow="show"
               values-mask="{value}%"
               values-font="14px 'OpenSans-bold'"
               multiple-label-colors="false"
               base-axis-label-text-baseline="top"
               leaf-content-overflow='visible'
-              dimensions="stories[1].dimensions"
-              legend="true"
+              dimensions="stories[0].dimensions"
+              legend="true" stacked="1" angle="1"
               legend-align="center"
-              base-axis-size="50"
-              legend-item-size="100"
-            ></dvt-bar-chart>
-          </div>
-          <div class="chart--block" ng-hide="pSplit != 'gender'">
-            <dvt-bar-chart
-              data-ng-cloak
-              query="getHealthAtRiskGenderData" cda="{{::cdaOSHOutcomes }}"
-              width="{{::chartWidth}}" height="470" axis-percent="1"
-              orientation="vertical" axis-fixed-min="0"
-              axis-fixed-max="40" step="{{step.chart2}}"
-              params="[['pDataset', datasetEurofound], ['pIndicator', 66], ['pCountry1', pCountry1], ['pCountry2', pCountry2]]"
-              color-role="series" colors="[stories[2].color2, stories[2].color1, stories[2].color3]"
-              chart-title="{{i18nLiterals.L323}}" id="2"
-              axis-label-font="14px 'OpenSans-bold'"
-              plots="stories[2].plots"
-              values-visible="true"
-              values-overflow="show"
-              values-mask="{value}%"
-              values-font="14px 'OpenSans-bold'"
-              multiple-label-colors="false"
-              base-axis-label-text-baseline="top"
-              leaf-content-overflow='visible'
-              dimensions="stories[2].dimensions"
-              legend="true"
-              legend-align="center"
-              base-axis-size="50"
-              legend-item-size="100"
+              base-axis-size="150"
+              legend-item-size="180"
             ></dvt-bar-chart>
           </div>
         </div>
         <!-- Dynamic chart legend depending on split selected -->
         <div class="chart-legend">
-          <p ng-show="pSplit == 'sector'" data-ng-bind="i18nLiterals.L20582"></p>
-          <p ng-show="pSplit == 'gender'" data-ng-bind="i18nLiterals.L20581"></p>
-          <p ng-show="pSplit == 'age'" data-ng-bind="i18nLiterals.L20583"></p>
+          <p ng-show="pSplit == 'esener'" data-ng-bind="i18nLiterals.L20589"></p>
+          <p ng-show="pSplit == 'eurofound'" data-ng-bind="i18nLiterals.L20588"></p>
         </div>
       </div>
     </div>
@@ -296,100 +226,67 @@
     <div class="compare--block" id="tab4" data-ng-show="pIndicator == 'job-insecurity'">
       <div class="line background-main-light"></div>
       <div class="card--grid xxs-w1 xs-w1 w1 center-text">
-        
-        <div class="card--block--chart" >
-          <!-- Sector, gender or age filter -->
-          <select ng-model="pSplit">
-            <option data-ng-bind="i18nLiterals.L20648" value="sector"></option>
-            <option data-ng-bind="i18nLiterals.L20649" value="gender"></option>              
-            <option data-ng-bind="i18nLiterals.L20650" value="age"></option>
+        <div class="card--block--chart">
+          <!-- ESENER AND EUROFOUND filter -->
+          <select ng-model="pSplit" data-ng-change="changeDataset(pIndicator, pSplit)">
+            <option data-ng-bind="i18nLiterals.L20645" value="esener"></option>
+            <option data-ng-bind="i18nLiterals.L20646" value="eurofound"></option>
           </select>
-          <div class="chart--block" ng-hide="pSplit != 'sector'">
+          <div class="chart--block" ng-hide="pSplit != 'esener'">
             <dvt-bar-chart
             data-ng-cloak
-            query="getHealthAtRiskSectorData" cda="{{::cdaOSHOutcomes }}"
+            query="getMentalRiskData" cda="{{::cdaOSHOutcomes }}"
             width="330" height="470" axis-percent="1"
             orientation="vertical" axis-fixed-min="0"
-            axis-fixed-max="40" step="{{step.chart2}}"
-            params="[['pDataset', datasetEurofound], ['pIndicator', 66], ['pCountry1', pCountry1], ['pCountry2', pCountry2]]"
-            color-role="series" colors="[stories[1].color2, stories[1].color1, stories[1].color3]"
-            chart-title="{{i18nLiterals.L323}}" id="2"
-            axis-label-font="13px 'OpenSans-bold'"
-            plots="stories[1].plots"
-            values-visible="true"
+            axis-fixed-max="100" step="{{step.chart2}}"
+            params="[['pDataset', datasetESENER], ['pIndicator', 116]]"
+            color-role="series" colors="[stories[0].color1, stories[0].color2]"
+            chart-title="{{i18nLiterals.L343}}" id="7"
+            axis-label-font="14px 'OpenSans-bold'"
+            plots="stories[0].plots"
             values-overflow="show"
             values-mask="{value}%"
             values-font="14px 'OpenSans-bold'"
             multiple-label-colors="false"
             base-axis-label-text-baseline="top"
             leaf-content-overflow='visible'
-            dimensions="stories[1].dimensions"
-            legend="true"
+            dimensions="stories[0].dimensions"
+            legend="true" stacked="1" angle="1"
             legend-align="center"
-            base-axis-size="50"
-            base-axis-band-size=""
-            legend-item-size="150"
-            axis-label-word-break="1"
+            base-axis-size="150"
+            legend-item-size="90"
             ></dvt-bar-chart>
           </div>
-          <div class="chart--block" ng-hide="pSplit != 'age'">
+          <div class="chart--block" ng-hide="pSplit != 'eurofound'">
             <dvt-bar-chart
               data-ng-cloak
-              query="getHealthAtRiskAgeData" cda="{{::cdaOSHOutcomes }}"
+              query="getMentalRiskData" cda="{{::cdaOSHOutcomes }}"
               width="{{::chartWidth}}" height="470" axis-percent="1"
               orientation="vertical" axis-fixed-min="0"
-              axis-fixed-max="40" step="{{step.chart2}}"
-              params="[['pDataset', datasetEurofound], ['pIndicator', 66], ['pCountry1', pCountry1], ['pCountry2', pCountry2]]"
-              color-role="series" colors="[stories[1].color2, stories[1].color1, stories[1].color3]"
-              chart-title="{{i18nLiterals.L323}}" id="2"
+              axis-fixed-max="100" step="{{step.chart2}}"
+              params="[['pDataset', datasetEurofound], ['pIndicator', 86]]"
+              color-role="series" colors="[stories[0].color3, stories[0].color2, stories[0].color1]"
+              chart-title="{{i18nLiterals.L343}}" id="8"
               axis-label-font="14px 'OpenSans-bold'"
-              plots="stories[1].plots"
-              values-visible="true"
+              plots="stories[0].plots"
               values-overflow="show"
               values-mask="{value}%"
               values-font="14px 'OpenSans-bold'"
               multiple-label-colors="false"
               base-axis-label-text-baseline="top"
               leaf-content-overflow='visible'
-              dimensions="stories[1].dimensions"
-              legend="true"
+              dimensions="stories[0].dimensions"
+              legend="true" stacked="1" angle="1"
               legend-align="center"
-              base-axis-size="50"
-              legend-item-size="100"
-            ></dvt-bar-chart>
-          </div>
-          <div class="chart--block" ng-hide="pSplit != 'gender'">
-            <dvt-bar-chart
-              data-ng-cloak
-              query="getHealthAtRiskGenderData" cda="{{::cdaOSHOutcomes }}"
-              width="{{::chartWidth}}" height="470" axis-percent="1"
-              orientation="vertical" axis-fixed-min="0"
-              axis-fixed-max="40" step="{{step.chart2}}"
-              params="[['pDataset', datasetEurofound], ['pIndicator', 66], ['pCountry1', pCountry1], ['pCountry2', pCountry2]]"
-              color-role="series" colors="[stories[2].color2, stories[2].color1, stories[2].color3]"
-              chart-title="{{i18nLiterals.L323}}" id="2"
-              axis-label-font="14px 'OpenSans-bold'"
-              plots="stories[2].plots"
-              values-visible="true"
-              values-overflow="show"
-              values-mask="{value}%"
-              values-font="14px 'OpenSans-bold'"
-              multiple-label-colors="false"
-              base-axis-label-text-baseline="top"
-              leaf-content-overflow='visible'
-              dimensions="stories[2].dimensions"
-              legend="true"
-              legend-align="center"
-              base-axis-size="50"
-              legend-item-size="100"
+              base-axis-size="150"
+              legend-item-size="200"
             ></dvt-bar-chart>
           </div>
         </div>
         <!-- Dynamic chart legend depending on split selected -->
         <div class="chart-legend">
-          <p ng-show="pSplit == 'sector'" data-ng-bind="i18nLiterals.L20582"></p>
-          <p ng-show="pSplit == 'gender'" data-ng-bind="i18nLiterals.L20581"></p>
-          <p ng-show="pSplit == 'age'" data-ng-bind="i18nLiterals.L20583"></p>
+          <p ng-show="pSplit == 'esener'" data-ng-bind="i18nLiterals.L20591"></p>
+          <p ng-show="pSplit == 'eurofound'" data-ng-bind="i18nLiterals.L20590"></p>
         </div>
       </div>
     </div>
@@ -397,101 +294,68 @@
     <!-- Difficult clients -->
     <div class="compare--block" id="tab5" data-ng-show="pIndicator == 'difficult-clients'">
       <div class="line background-main-light"></div>
-      <div class="card--grid xxs-w1 xs-w1 w1 center-text">
-        
-        <div class="card--block--chart" >
-          <!-- Sector, gender or age filter -->
-          <select ng-model="pSplit">
-            <option data-ng-bind="i18nLiterals.L20648" value="sector"></option>
-            <option data-ng-bind="i18nLiterals.L20649" value="gender"></option>              
-            <option data-ng-bind="i18nLiterals.L20650" value="age"></option>
+      <div class="card--grid xxs-w1 xs-w1 w1 center-text">        
+        <div class="card--block--chart">
+          <!-- ESENER AND EUROFOUND filter -->
+          <select ng-model="pSplit" data-ng-change="changeDataset(pIndicator, pSplit)">
+            <option data-ng-bind="i18nLiterals.L20645" value="esener"></option>
+            <option data-ng-bind="i18nLiterals.L20646" value="eurofound"></option>
           </select>
-          <div class="chart--block" ng-hide="pSplit != 'sector'">
+          <div class="chart--block" ng-hide="pSplit != 'esener'">
             <dvt-bar-chart
             data-ng-cloak
-            query="getHealthAtRiskSectorData" cda="{{::cdaOSHOutcomes }}"
+            query="getMentalRiskData" cda="{{::cdaOSHOutcomes }}"
             width="330" height="470" axis-percent="1"
             orientation="vertical" axis-fixed-min="0"
-            axis-fixed-max="40" step="{{step.chart2}}"
-            params="[['pDataset', datasetEurofound], ['pIndicator', 66], ['pCountry1', pCountry1], ['pCountry2', pCountry2]]"
-            color-role="series" colors="[stories[1].color2, stories[1].color1, stories[1].color3]"
-            chart-title="{{i18nLiterals.L323}}" id="2"
-            axis-label-font="13px 'OpenSans-bold'"
-            plots="stories[1].plots"
-            values-visible="true"
+            axis-fixed-max="100" step="{{step.chart2}}"
+            params="[['pDataset', datasetESENER], ['pIndicator', 117]]"
+            color-role="series" colors="[stories[0].color1, stories[0].color2]"
+            chart-title="{{i18nLiterals.L344}}" id="9"
+            axis-label-font="14px 'OpenSans-bold'"
+            plots="stories[0].plots"
             values-overflow="show"
             values-mask="{value}%"
             values-font="14px 'OpenSans-bold'"
             multiple-label-colors="false"
             base-axis-label-text-baseline="top"
             leaf-content-overflow='visible'
-            dimensions="stories[1].dimensions"
-            legend="true"
+            dimensions="stories[0].dimensions"
+            legend="true" stacked="1" angle="1"
             legend-align="center"
-            base-axis-size="50"
-            base-axis-band-size=""
-            legend-item-size="150"
-            axis-label-word-break="1"
+            base-axis-size="150"
+            legend-item-size="100"
             ></dvt-bar-chart>
           </div>
-          <div class="chart--block" ng-hide="pSplit != 'age'">
+          <div class="chart--block" ng-hide="pSplit != 'eurofound'">
             <dvt-bar-chart
               data-ng-cloak
-              query="getHealthAtRiskAgeData" cda="{{::cdaOSHOutcomes }}"
+              query="getMentalRiskData" cda="{{::cdaOSHOutcomes }}"
               width="{{::chartWidth}}" height="470" axis-percent="1"
               orientation="vertical" axis-fixed-min="0"
-              axis-fixed-max="40" step="{{step.chart2}}"
-              params="[['pDataset', datasetEurofound], ['pIndicator', 66], ['pCountry1', pCountry1], ['pCountry2', pCountry2]]"
-              color-role="series" colors="[stories[1].color2, stories[1].color1, stories[1].color3]"
-              chart-title="{{i18nLiterals.L323}}" id="2"
+              axis-fixed-max="100" step="{{step.chart2}}"
+              params="[['pDataset', datasetEurofound], ['pIndicator', 87]]"
+              color-role="series" colors="[stories[0].color3, stories[0].color2, stories[0].color1]"
+              chart-title="{{i18nLiterals.L344}}" id="10"
               axis-label-font="14px 'OpenSans-bold'"
-              plots="stories[1].plots"
-              values-visible="true"
+              plots="stories[0].plots"
               values-overflow="show"
               values-mask="{value}%"
               values-font="14px 'OpenSans-bold'"
               multiple-label-colors="false"
               base-axis-label-text-baseline="top"
               leaf-content-overflow='visible'
-              dimensions="stories[1].dimensions"
-              legend="true"
+              dimensions="stories[0].dimensions"
+              legend="true" stacked="1" angle="1"
               legend-align="center"
-              base-axis-size="50"
-              legend-item-size="100"
-            ></dvt-bar-chart>
-          </div>
-          <div class="chart--block" ng-hide="pSplit != 'gender'">
-            <dvt-bar-chart
-              data-ng-cloak
-              query="getHealthAtRiskGenderData" cda="{{::cdaOSHOutcomes }}"
-              width="{{::chartWidth}}" height="470" axis-percent="1"
-              orientation="vertical" axis-fixed-min="0"
-              axis-fixed-max="40" step="{{step.chart2}}"
-              params="[['pDataset', datasetEurofound], ['pIndicator', 66], ['pCountry1', pCountry1], ['pCountry2', pCountry2]]"
-              color-role="series" colors="[stories[2].color2, stories[2].color1, stories[2].color3]"
-              chart-title="{{i18nLiterals.L323}}" id="2"
-              axis-label-font="14px 'OpenSans-bold'"
-              plots="stories[2].plots"
-              values-visible="true"
-              values-overflow="show"
-              values-mask="{value}%"
-              values-font="14px 'OpenSans-bold'"
-              multiple-label-colors="false"
-              base-axis-label-text-baseline="top"
-              leaf-content-overflow='visible'
-              dimensions="stories[2].dimensions"
-              legend="true"
-              legend-align="center"
-              base-axis-size="50"
-              legend-item-size="100"
+              base-axis-size="150"
+              legend-item-size="220"
             ></dvt-bar-chart>
           </div>
         </div>
         <!-- Dynamic chart legend depending on split selected -->
         <div class="chart-legend">
-          <p ng-show="pSplit == 'sector'" data-ng-bind="i18nLiterals.L20582"></p>
-          <p ng-show="pSplit == 'gender'" data-ng-bind="i18nLiterals.L20581"></p>
-          <p ng-show="pSplit == 'age'" data-ng-bind="i18nLiterals.L20583"></p>
+          <p ng-show="pSplit == 'esener'" data-ng-bind="i18nLiterals.L20593"></p>
+          <p ng-show="pSplit == 'eurofound'" data-ng-bind="i18nLiterals.L20592"></p>
         </div>
       </div>
     </div>
@@ -499,101 +363,68 @@
     <!-- Working hours -->
     <div class="compare--block" id="tab6" data-ng-show="pIndicator == 'working-hours'">
       <div class="line background-main-light"></div>
-      <div class="card--grid xxs-w1 xs-w1 w1 center-text">
-        
-        <div class="card--block--chart" >
-          <!-- Sector, gender or age filter -->
-          <select ng-model="pSplit">
-            <option data-ng-bind="i18nLiterals.L20648" value="sector"></option>
-            <option data-ng-bind="i18nLiterals.L20649" value="gender"></option>              
-            <option data-ng-bind="i18nLiterals.L20650" value="age"></option>
+      <div class="card--grid xxs-w1 xs-w1 w1 center-text">        
+        <div class="card--block--chart">
+          <!-- ESENER AND EUROFOUND filter -->
+          <select ng-model="pSplit" data-ng-change="changeDataset(pIndicator, pSplit)">
+            <option data-ng-bind="i18nLiterals.L20645" value="esener"></option>
+            <option data-ng-bind="i18nLiterals.L20646" value="eurofound"></option>
           </select>
-          <div class="chart--block" ng-hide="pSplit != 'sector'">
+          <div class="chart--block" ng-hide="pSplit != 'esener'">
             <dvt-bar-chart
             data-ng-cloak
-            query="getHealthAtRiskSectorData" cda="{{::cdaOSHOutcomes }}"
+            query="getMentalRiskData" cda="{{::cdaOSHOutcomes }}"
             width="330" height="470" axis-percent="1"
             orientation="vertical" axis-fixed-min="0"
-            axis-fixed-max="40" step="{{step.chart2}}"
-            params="[['pDataset', datasetEurofound], ['pIndicator', 66], ['pCountry1', pCountry1], ['pCountry2', pCountry2]]"
-            color-role="series" colors="[stories[1].color2, stories[1].color1, stories[1].color3]"
-            chart-title="{{i18nLiterals.L323}}" id="2"
+            axis-fixed-max="100" step="{{step.chart2}}"
+            params="[['pDataset', datasetESENER], ['pIndicator', 118]]"
+            color-role="series" colors="[stories[0].color1, stories[0].color2]"
+            chart-title="{{i18nLiterals.L345}}" id="11"
             axis-label-font="13px 'OpenSans-bold'"
-            plots="stories[1].plots"
-            values-visible="true"
+            plots="stories[0].plots"
             values-overflow="show"
             values-mask="{value}%"
             values-font="14px 'OpenSans-bold'"
             multiple-label-colors="false"
             base-axis-label-text-baseline="top"
             leaf-content-overflow='visible'
-            dimensions="stories[1].dimensions"
-            legend="true"
+            dimensions="stories[0].dimensions"
+            legend="true" stacked="1" angle="1"
             legend-align="center"
-            base-axis-size="50"
-            base-axis-band-size=""
-            legend-item-size="150"
-            axis-label-word-break="1"
+            base-axis-size="150"
+            legend-item-size="100"
             ></dvt-bar-chart>
           </div>
-          <div class="chart--block" ng-hide="pSplit != 'age'">
+          <div class="chart--block" ng-hide="pSplit != 'eurofound'">
             <dvt-bar-chart
               data-ng-cloak
-              query="getHealthAtRiskAgeData" cda="{{::cdaOSHOutcomes }}"
+              query="getMentalRiskData" cda="{{::cdaOSHOutcomes }}"
               width="{{::chartWidth}}" height="470" axis-percent="1"
               orientation="vertical" axis-fixed-min="0"
-              axis-fixed-max="40" step="{{step.chart2}}"
-              params="[['pDataset', datasetEurofound], ['pIndicator', 66], ['pCountry1', pCountry1], ['pCountry2', pCountry2]]"
-              color-role="series" colors="[stories[1].color2, stories[1].color1, stories[1].color3]"
-              chart-title="{{i18nLiterals.L323}}" id="2"
+              axis-fixed-max="100" step="{{step.chart2}}"
+              params="[['pDataset', datasetEurofound], ['pIndicator', 88]]"
+              color-role="series" colors="[stories[0].color1, stories[0].color2]"
+              chart-title="{{i18nLiterals.L345}}" id="12"
               axis-label-font="14px 'OpenSans-bold'"
-              plots="stories[1].plots"
-              values-visible="true"
+              plots="stories[0].plots"
               values-overflow="show"
               values-mask="{value}%"
               values-font="14px 'OpenSans-bold'"
               multiple-label-colors="false"
               base-axis-label-text-baseline="top"
               leaf-content-overflow='visible'
-              dimensions="stories[1].dimensions"
-              legend="true"
+              dimensions="stories[0].dimensions"
+              legend="true" stacked="1" angle="1"
               legend-align="center"
-              base-axis-size="50"
-              legend-item-size="100"
-            ></dvt-bar-chart>
-          </div>
-          <div class="chart--block" ng-hide="pSplit != 'gender'">
-            <dvt-bar-chart
-              data-ng-cloak
-              query="getHealthAtRiskGenderData" cda="{{::cdaOSHOutcomes }}"
-              width="{{::chartWidth}}" height="470" axis-percent="1"
-              orientation="vertical" axis-fixed-min="0"
-              axis-fixed-max="40" step="{{step.chart2}}"
-              params="[['pDataset', datasetEurofound], ['pIndicator', 66], ['pCountry1', pCountry1], ['pCountry2', pCountry2]]"
-              color-role="series" colors="[stories[2].color2, stories[2].color1, stories[2].color3]"
-              chart-title="{{i18nLiterals.L323}}" id="2"
-              axis-label-font="14px 'OpenSans-bold'"
-              plots="stories[2].plots"
-              values-visible="true"
-              values-overflow="show"
-              values-mask="{value}%"
-              values-font="14px 'OpenSans-bold'"
-              multiple-label-colors="false"
-              base-axis-label-text-baseline="top"
-              leaf-content-overflow='visible'
-              dimensions="stories[2].dimensions"
-              legend="true"
-              legend-align="center"
-              base-axis-size="50"
-              legend-item-size="100"
+              base-axis-size="150"
+              legend-item-size="130"
             ></dvt-bar-chart>
           </div>
         </div>
         <!-- Dynamic chart legend depending on split selected -->
         <div class="chart-legend">
-          <p ng-show="pSplit == 'sector'" data-ng-bind="i18nLiterals.L20582"></p>
-          <p ng-show="pSplit == 'gender'" data-ng-bind="i18nLiterals.L20581"></p>
-          <p ng-show="pSplit == 'age'" data-ng-bind="i18nLiterals.L20583"></p>
+          <p ng-show="pSplit == 'esener'" data-ng-bind="i18nLiterals.L20593"></p>
+          <p ng-show="pSplit == 'eurofound'" data-ng-bind="i18nLiterals.L20594"></p>
         </div>
       </div>
     </div>
@@ -601,101 +432,68 @@
     <!-- Discrimination -->
     <div class="compare--block" id="tab7" data-ng-show="pIndicator == 'discrimination'">
       <div class="line background-main-light"></div>
-      <div class="card--grid xxs-w1 xs-w1 w1 center-text">
-        
-        <div class="card--block--chart" >
-          <!-- Sector, gender or age filter -->
-          <select ng-model="pSplit">
-            <option data-ng-bind="i18nLiterals.L20648" value="sector"></option>
-            <option data-ng-bind="i18nLiterals.L20649" value="gender"></option>              
-            <option data-ng-bind="i18nLiterals.L20650" value="age"></option>
+      <div class="card--grid xxs-w1 xs-w1 w1 center-text">        
+        <div class="card--block--chart">
+          <!-- ESENER AND EUROFOUND filter -->
+          <select ng-model="pSplit" data-ng-change="changeDataset(pIndicator, pSplit)">
+            <option data-ng-bind="i18nLiterals.L20645" value="esener"></option>
+            <option data-ng-bind="i18nLiterals.L20646" value="eurofound"></option>
           </select>
-          <div class="chart--block" ng-hide="pSplit != 'sector'">
+          <div class="chart--block" ng-hide="pSplit != 'esener'">
             <dvt-bar-chart
             data-ng-cloak
-            query="getHealthAtRiskSectorData" cda="{{::cdaOSHOutcomes }}"
+            query="getMentalRiskData" cda="{{::cdaOSHOutcomes }}"
             width="330" height="470" axis-percent="1"
             orientation="vertical" axis-fixed-min="0"
-            axis-fixed-max="40" step="{{step.chart2}}"
-            params="[['pDataset', datasetEurofound], ['pIndicator', 66], ['pCountry1', pCountry1], ['pCountry2', pCountry2]]"
-            color-role="series" colors="[stories[1].color2, stories[1].color1, stories[1].color3]"
-            chart-title="{{i18nLiterals.L323}}" id="2"
+            axis-fixed-max="100" step="{{step.chart2}}"
+            params="[['pDataset', datasetESENER], ['pIndicator', 119]]"
+            color-role="series" colors="[stories[0].color1, stories[0].color2]"
+            chart-title="{{i18nLiterals.L346}}" id="13"
             axis-label-font="13px 'OpenSans-bold'"
-            plots="stories[1].plots"
-            values-visible="true"
+            plots="stories[0].plots"
             values-overflow="show"
             values-mask="{value}%"
             values-font="14px 'OpenSans-bold'"
             multiple-label-colors="false"
             base-axis-label-text-baseline="top"
             leaf-content-overflow='visible'
-            dimensions="stories[1].dimensions"
-            legend="true"
+            dimensions="stories[0].dimensions"
+            legend="true" stacked="1" angle="1"
             legend-align="center"
-            base-axis-size="50"
-            base-axis-band-size=""
-            legend-item-size="150"
-            axis-label-word-break="1"
+            base-axis-size="150"
+            legend-item-size="100"
             ></dvt-bar-chart>
           </div>
-          <div class="chart--block" ng-hide="pSplit != 'age'">
+          <div class="chart--block" ng-hide="pSplit != 'eurofound'">
             <dvt-bar-chart
               data-ng-cloak
-              query="getHealthAtRiskAgeData" cda="{{::cdaOSHOutcomes }}"
+              query="getMentalRiskData" cda="{{::cdaOSHOutcomes }}"
               width="{{::chartWidth}}" height="470" axis-percent="1"
               orientation="vertical" axis-fixed-min="0"
-              axis-fixed-max="40" step="{{step.chart2}}"
-              params="[['pDataset', datasetEurofound], ['pIndicator', 66], ['pCountry1', pCountry1], ['pCountry2', pCountry2]]"
-              color-role="series" colors="[stories[1].color2, stories[1].color1, stories[1].color3]"
-              chart-title="{{i18nLiterals.L323}}" id="2"
+              axis-fixed-max="100" step="{{step.chart2}}"
+              params="[['pDataset', datasetEurofound], ['pIndicator', 89]]"
+              color-role="series" colors="[stories[0].color2, stories[0].color1, stories[0].color3]"
+              chart-title="{{i18nLiterals.L346}}" id="14"
               axis-label-font="14px 'OpenSans-bold'"
-              plots="stories[1].plots"
-              values-visible="true"
+              plots="stories[0].plots"
               values-overflow="show"
               values-mask="{value}%"
               values-font="14px 'OpenSans-bold'"
               multiple-label-colors="false"
               base-axis-label-text-baseline="top"
               leaf-content-overflow='visible'
-              dimensions="stories[1].dimensions"
-              legend="true"
+              dimensions="stories[0].dimensions"
+              legend="true" stacked="1" angle="1"
               legend-align="center"
-              base-axis-size="50"
-              legend-item-size="100"
-            ></dvt-bar-chart>
-          </div>
-          <div class="chart--block" ng-hide="pSplit != 'gender'">
-            <dvt-bar-chart
-              data-ng-cloak
-              query="getHealthAtRiskGenderData" cda="{{::cdaOSHOutcomes }}"
-              width="{{::chartWidth}}" height="470" axis-percent="1"
-              orientation="vertical" axis-fixed-min="0"
-              axis-fixed-max="40" step="{{step.chart2}}"
-              params="[['pDataset', datasetEurofound], ['pIndicator', 66], ['pCountry1', pCountry1], ['pCountry2', pCountry2]]"
-              color-role="series" colors="[stories[2].color2, stories[2].color1, stories[2].color3]"
-              chart-title="{{i18nLiterals.L323}}" id="2"
-              axis-label-font="14px 'OpenSans-bold'"
-              plots="stories[2].plots"
-              values-visible="true"
-              values-overflow="show"
-              values-mask="{value}%"
-              values-font="14px 'OpenSans-bold'"
-              multiple-label-colors="false"
-              base-axis-label-text-baseline="top"
-              leaf-content-overflow='visible'
-              dimensions="stories[2].dimensions"
-              legend="true"
-              legend-align="center"
-              base-axis-size="50"
+              base-axis-size="150"
               legend-item-size="100"
             ></dvt-bar-chart>
           </div>
         </div>
         <!-- Dynamic chart legend depending on split selected -->
         <div class="chart-legend">
-          <p ng-show="pSplit == 'sector'" data-ng-bind="i18nLiterals.L20582"></p>
-          <p ng-show="pSplit == 'gender'" data-ng-bind="i18nLiterals.L20581"></p>
-          <p ng-show="pSplit == 'age'" data-ng-bind="i18nLiterals.L20583"></p>
+          <p ng-show="pSplit == 'esener'" data-ng-bind="i18nLiterals.L20597"></p>
+          <p ng-show="pSplit == 'eurofound'" data-ng-bind="i18nLiterals.L20596"></p>
         </div>
       </div>
     </div>

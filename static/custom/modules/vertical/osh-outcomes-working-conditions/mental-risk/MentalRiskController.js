@@ -29,7 +29,7 @@ define(function (require) {
     $scope.countriesDataFor = [];
     $scope.countriesCompareWith = [];
 
-    $scope.pSplit = "esener";
+    $scope.pSplit = $stateParams.pDataset;
 
     $scope.indicators = [];
 
@@ -56,12 +56,11 @@ define(function (require) {
     }
 
     $scope.stories = [
-      //0 - Non-fatal work accidents first chart
+      //0 - Time pressure
       {
         color1: dvtUtils.getColorCountry(1),
         color2: dvtUtils.getColorCountry(22),
         color3: dvtUtils.getAccidentsColors(4),
-        color4: dvtUtils.getColorCountry(3),
         plots: MentalRiskService.getInfoAboutRisksData(),
         dimensions: {
           value: {
@@ -71,27 +70,10 @@ define(function (require) {
             }
           }
         }
-        //labelTextAlign: 'left'
       },
       {
-        color1: dvtUtils.getColorCountry(2),
-        color2: dvtUtils.getColorCountry(1),
-        color3: dvtUtils.getEUColor(),
-        plots: MentalRiskService.getHealthAtRiskSectorPlot($scope.pCountry1, $scope.pCountry2),
-        dimensions: {
-          value: {
-            format: {
-              number: "0.#",
-              percent: "#%"
-            }
-          }
-        }
-      },
-      {
-        color1: dvtUtils.getColorCountry(2),
-        color2: dvtUtils.getColorCountry(1),
-        color3: dvtUtils.getEUColor(),
-        plots: MentalRiskService.getHealthAtRiskGenderPlot($scope.pCountry1, $scope.pCountry2),
+        color1: dvtUtils.getColorCountry(1),
+        plots: MentalRiskService.getPoorCommunicationPlot(),
         dimensions: {
           value: {
             format: {
@@ -165,7 +147,17 @@ define(function (require) {
         $scope.openIndicatorsList();
         if ($state.current.name !== undefined) {
           $state.go($state.current.name, {
-            pIndicator: indicator
+            pIndicator: indicator,
+            pDataset: 'esener'
+          });
+        }
+      }
+
+      $scope.changeDataset = function(indicator, dataset){
+        if ($state.current.name !== undefined) {
+          $state.go($state.current.name, {
+            pIndicator: indicator,
+            pDataset: dataset
           });
         }
       }

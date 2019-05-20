@@ -125,11 +125,15 @@ define(function (require) {
       });
 
       $stateProvider.state('mental-risk', {
-        url: "/osh-outcomes-working-conditions/working-conditions/mental-risk/:pIndicator",
+        url: "/osh-outcomes-working-conditions/working-conditions/mental-risk/:pIndicator/:pDataset",
         params: {
           pIndicator: {
             value: 'time-pressure',
             squash: 'time-pressure'
+          },
+          pDataset: {
+            value: 'esener',
+            squash: 'esener'
           }
         },
         views: {

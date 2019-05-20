@@ -429,16 +429,16 @@ define(function (require) {
                         xAxis_fillStyle: '#f0f0f0',
                         panel_fillStyle: attributes.panelColor || '',
                         axisLabelWordBreak: attributes.axisLabelWordBreak || 0,
-                        customTooltip: attributes.customTooltip || 0
+                        //customTooltip: attributes.customTooltip || 0
                     }
 
                 };
 
                 //$log.warn(scope);
 
-                if(!!definition.chartDefinition.customTooltip == 1){
+                /*if(!!definition.chartDefinition.customTooltip == 1){
 
-                    /*definition.chartDefinition.tooltipFormat = function(scene){
+                    definition.chartDefinition.tooltipFormat = function(scene){
                         //$log.warn(this);
 
                         // Atoms of the first datum
@@ -448,8 +448,8 @@ define(function (require) {
                                  "<b>Country</b>: "   + atoms.category.label + "<br/>" + 
                                  "<b>Value</b>: " + atoms.value.label   + 
                                "</div>";
-                    }*/
-                }
+                    }
+                }*/
 
                 
                 

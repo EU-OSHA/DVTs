@@ -435,7 +435,7 @@
 	</DataAccess>
 
 	<!-- OVERALL OPINION || ALL MENTAL RISK DATA -->
-	<!--<DataAccess access="public" connection="dvt_conn" id="getJobSatisfactionData" type="sql">
+	<DataAccess access="public" connection="dvt_conn" id="getMentalRiskData" type="sql">
 	    <Cache duration="3600" enabled="true" />
 	    <Columns />
 	    <Parameters>
@@ -452,8 +452,105 @@
 			AND sa.literal_id = t.literal_id
 			AND d.id = v.dataset_id
 			AND d.id = ${pDataset}
-			ORDER BY Answer ASC, FIELD('EU28', n.country_code) DESC, FIELD(n.country_code, 'CH','NO'), n.country_code ASC, Value DESC;
+			ORDER BY Answer DESC, FIELD('EU28', n.country_code) DESC, FIELD(n.country_code, 'CH', 'IS', 'NO'), n.country_code ASC, Value DESC;
 	    </Query>
-	</DataAccess>-->
+	</DataAccess>
+
+	<!-- OVERALL OPINION || ALL MENTAL RISK DATA -->
+	<DataAccess access="public" connection="dvt_conn" id="getEurofoundPoorCommunicationData" type="sql">
+	    <Cache duration="3600" enabled="true" />
+	    <Columns />
+	    <Parameters>
+	    	<Parameter default="10" name="pDataset" type="Numeric"/>
+	    	<Parameter default="64" name="pIndicator" type="Numeric"/>
+	    </Parameters>
+	    <Query>
+			SELECT IF(n.name = 'European Union', n.country_code, CONCAT(n.name, " (", n.country_code, ")")) as Country, v.value*100 as Value
+			FROM nuts n, profile p, value v, dataset d, translation t
+			WHERE n.id = p.nuts_id
+			AND v.indicator_id = ${pIndicator}
+			AND v.profile_id = p.id
+			AND d.id = v.dataset_id
+			AND d.id = ${pDataset}
+			ORDER BY FIELD('EU28', n.country_code) DESC, FIELD(n.country_code, 'CH', 'IS', 'NO'), n.country_code ASC, Value DESC;
+	    </Query>
+	</DataAccess>
+
+	<!-- OVERALL OPINION || ALL OVERALL OPINION DATA -->
+	<DataAccess access="public" connection="dvt_conn" id="getHealthAtRiskAgeData" type="sql">
+	    <Cache duration="3600" enabled="true" />
+	    <Columns />
+	    <Parameters>
+	    	<Parameter default="10" name="pDataset" type="Numeric"/>
+	    	<Parameter default="64" name="pIndicator" type="Numeric"/>
+	    	<Parameter default="AT" name="pCountry1" type="String"/>
+	    	<Parameter default="BE" name="pCountry2" type="String"/>
+	    </Parameters>
+	    <Query>
+			SELECT IF(n.name = 'European Union', n.country_code, CONCAT(n.name, " (", n.country_code, ")")) as Country, t.text as Age, v.value*100 as Value
+			FROM nuts n, profile p, value v, dataset d, translation t, split_age_group sag
+			WHERE n.id = p.nuts_id
+			AND v.indicator_id = ${pIndicator}
+			AND v.profile_id = p.id
+			AND p.age_group_id = sag.id
+			AND sag.literal_id = t.literal_id
+			AND d.id = v.dataset_id
+			AND d.id = ${pDataset}
+			AND n.country_code IN (${pCountry1}, ${pCountry2}, 'EU28')
+			ORDER BY FIELD(sag.id, 1, 2, 3, 4), FIELD(n.country_code, ${pCountry1}, ${pCountry2}, 'EU28')
+	    </Query>
+	</DataAccess>
+
+	<!-- OSH OUTCOMES || ALL INDICATORS IN MENTAL RISK -->
+	<DataAccess access="public" connection="dvt_conn" id="getMentalRiskIndicators" type="sql">
+	    <Cache duration="3600" enabled="true" />
+	    <Columns />
+	    <Query>
+			SELECT id, literal_id 
+			FROM indicator
+			WHERE id IN (83, 84, 85, 86, 87, 88, 89)
+			ORDER BY FIELD(id, 83, 84, 85, 86, 87, 88, 89)
+	    </Query>
+	</DataAccess>
+
+	<!-- OVERALL OPINION || ALL MENTAL RISK DATA -->
+    <DataAccess access="public" connection="dvt_conn" id="getMentalRiskData" type="sql">
+        <Cache duration="3600" enabled="true" />
+        <Columns />
+        <Parameters>
+            <Parameter default="10" name="pDataset" type="Numeric"/>
+            <Parameter default="64" name="pIndicator" type="Numeric"/>
+        </Parameters>
+        <Query>
+            SELECT t.text as Answer, IF(n.name = 'European Union', n.country_code, CONCAT(n.name, " (", n.country_code, ")")) as Country, v.value*100 as Value
+            FROM nuts n, profile p, value v, dataset d, translation t, split_answer sa
+            WHERE n.id = p.nuts_id
+            AND v.indicator_id = ${pIndicator}
+            AND v.profile_id = p.id
+            AND p.answer_id = sa.id
+            AND sa.literal_id = t.literal_id
+            AND d.id = v.dataset_id
+            AND d.id = ${pDataset}
+            ORDER BY Answer DESC, FIELD('EU28', n.country_code) DESC, FIELD(n.country_code, 'CH', 'IS', 'NO'), n.country_code ASC, Value DESC;
+        </Query>
+    </DataAccess>
+
+    <!-- OVERALL OPINION || ALL MENTAL RISK DATA -->
+    <DataAccess access="public" connection="dvt_conn" id="getEurofoundPoorCommunicationData" type="sql">
+        <Cache duration="3600" enabled="true" />
+        <Columns />
+        <Parameters>
+            <Parameter default="10" name="pDataset" type="Numeric"/>
+            <Parameter default="64" name="pIndicator" type="Numeric"/>
+        </Parameters>
+        <Query>
+            SELECT IF(n.name = 'European Union', n.country_code, CONCAT(n.name, " (", n.country_code, ")")) as Country, v.value*100 as Value
+            FROM nuts n, profile p, value v, dataset d, translation t
+            WHERE n.id = p.nuts_id
+            AND v.indicator_id = ${pIndicator}
+            AND v.profile_id = p.id
+            AND d.id = v.dataset_id
+            AND d.id = ${pDataset}
+            ORDER BY FIELD('EU28', n.country_code) DESC, FIELD(n.country_code, 'CH', 'IS', 'NO'), n.country_code ASC, Value DESC;
    
 </CDADescriptor>
