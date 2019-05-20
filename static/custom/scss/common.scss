@@ -189,7 +189,7 @@
           position: absolute;
           top: 0;
           right: 0;
-          padding: 0.5rem 2rem;
+          padding: 0.6rem 2rem;
           color: $white;
         }
       }
@@ -206,7 +206,8 @@
       }
     }
     .btn-default{
-      padding: 1.4rem 2rem;
+      //padding: 1.4rem 2rem;
+      padding: 1.4rem 3.5rem 1.4rem 2rem;
       margin-bottom: 0;
       font-weight: normal;
       white-space: nowrap;
@@ -1491,7 +1492,7 @@
             height: auto;
             margin: 3vh auto 0;
             svg{
-              border-radius: 1rem;
+              //border-radius: 1rem;
               text{
                 font-size: 14px !important;
               }

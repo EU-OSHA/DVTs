@@ -97,11 +97,19 @@ define(function (require) {
       });
 
       $stateProvider.state('overall-opinion', {
-        url: "/osh-outcomes-working-conditions/working-conditions/overall-opinion/:pIndicator",
+        url: "/osh-outcomes-working-conditions/working-conditions/overall-opinion/:pIndicator/:pCountry1/:pCountry2",
         params: {
           pIndicator: {
             value: 'job-satisfaction',
             squash: 'job-satisfaction'
+          },
+          pCountry1: {
+            value: null,
+            squash: true
+          },
+          pCountry2: {
+            value: null,
+            squash: true
           }
         },
         views: {
@@ -115,10 +123,31 @@ define(function (require) {
           title: i18n.L22013 +  " - " + i18n.L22020 + " - " + i18n.L363
         }
       });
+
+      $stateProvider.state('mental-risk', {
+        url: "/osh-outcomes-working-conditions/working-conditions/mental-risk/:pIndicator",
+        params: {
+          pIndicator: {
+            value: 'time-pressure',
+            squash: 'time-pressure'
+          }
+        },
+        views: {
+          "content-main": {
+            templateUrl: configService.getVerticalTplPath("osh-outcomes-working-conditions/mental-risk", "mental-risk"),
+            controller: 'MentalRiskController',
+            resolve: configService.dynamicallyRegisterController($controllerProvider, 'vertical/mental-risk/MentalRiskController', 'mental-risk', 'MentalRiskController')
+          }
+        },
+        metaTags: {
+          title: i18n.L22013 +  " - " + i18n.L22020 + " - " + i18n.L363
+        }
+      });
     });
 
     module.factory('WorkAccidentsService', require('vertical/work-accidents/services/WorkAccidentsService'));
     module.factory('OshCultureService', require('vertical/osh-culture/services/OshCultureService'));
     module.factory('OverallOpinionService', require('vertical/overall-opinion/services/OverallOpinionService'));
+    module.factory('MentalRiskService', require('vertical/mental-risk/services/MentalRiskService'));
     return module;
 });

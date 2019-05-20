@@ -212,7 +212,7 @@ define(function (require) {
           };
 
           $state.transitionTo('work-accidents', {
-            pCountry1:$scope.pCountry1, 
+            pCountry1: $scope.pCountry1, 
             pCountry2: $scope.pCountry2
           }, {reload: true});
 

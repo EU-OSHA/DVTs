@@ -2,57 +2,14 @@ define (function (require) {
 
     var configService = require('horizontal/config/configService');
     var pv = require('cdf/lib/CCC/protovis');
-    var OverallOpinionService = function (dvtUtils, $log) {
+    var MentalRiskService = function (dvtUtils, $log) {
         return {
-            getJobSatisfactionPlot: function() {
+            getInfoAboutRisksData: function() {
                 return [
                     {
                         name: "main",
                         dataPart: "0",
                         barSizeMax: 20,
-                        bar_call: function(){
-                            //$log.warn('entra');
-                            this.add(pv.Rule)
-                                //.url(configService.getImagesPath()+'man_orange.svg')
-                                .top(0)
-                                .bottom(0)
-                                .height(null) // clear any inherited value
-                                .width(null)  // clear any inherited value
-                                .strokeStyle('black')
-                                .lineWidth(3)
-                                .left(function(scene){
-                                    //$log.warn(scene);
-                                    var countryKey = scene.firstAtoms.category;
-                                    var panelWidth = this.root.width();
-                                    return panelWidth/32;               
-                                });
-
-                            this.add(pv.Rule)
-                                //.url(configService.getImagesPath()+'man_orange.svg')
-                                .top(0)
-                                .bottom(0)
-                                .height(null) // clear any inherited value
-                                .width(null)  // clear any inherited value
-                                .strokeStyle('black')
-                                .lineWidth(3)
-                                .left(function(scene){
-                                    var countryKey = scene.firstAtoms.category;
-                                    var panelWidth = this.root.width();
-
-                                    var resolution = screen.width;
-                                    $(window).on("resize",function(e){
-                                      resolution = screen.width;
-                                    });
-
-                                    if(resolution < 1200){
-                                        return panelWidth/1.13;
-                                    }
-
-                                    //$log.warn(resolution);
-                                    
-                                    return panelWidth/1.12;               
-                                });
-                        },
                         visualRoles:{
                             series: 'series',
                             category:'category',
@@ -121,8 +78,8 @@ define (function (require) {
         };
     };
 
-    OverallOpinionService.$inject = ['dvtUtils', '$log'];
+    MentalRiskService.$inject = ['dvtUtils', '$log'];
 
-    return OverallOpinionService;
+    return MentalRiskService;
 
 });

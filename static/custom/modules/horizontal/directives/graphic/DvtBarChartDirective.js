@@ -427,10 +427,62 @@ define(function (require) {
                         leafContentOverflow: attributes.leafContentOverflow || 'auto',
                         base_fillStyle: "#f0f0f0",
                         xAxis_fillStyle: '#f0f0f0',
-                        panel_fillStyle: attributes.panelColor || ''
+                        panel_fillStyle: attributes.panelColor || '',
+                        axisLabelWordBreak: attributes.axisLabelWordBreak || 0,
+                        customTooltip: attributes.customTooltip || 0
                     }
 
                 };
+
+                //$log.warn(scope);
+
+                if(!!definition.chartDefinition.customTooltip == 1){
+
+                    /*definition.chartDefinition.tooltipFormat = function(scene){
+                        //$log.warn(this);
+
+                        // Atoms of the first datum
+                        var atoms = scene.firstAtoms;
+                        return "<div style='text-align:left'>" + 
+                                 "<b>Answer</b>: "  + atoms.series.label   + "<br/>" + 
+                                 "<b>Country</b>: "   + atoms.category.label + "<br/>" + 
+                                 "<b>Value</b>: " + atoms.value.label   + 
+                               "</div>";
+                    }*/
+                }
+
+                
+                
+                /*definition.chartDefinition.baseAxisBandSpacing = function(){
+                    $log.warn('Entra en funcion');
+                    return 30;
+                };*/
+
+                if(!!definition.chartDefinition.axisLabelWordBreak){
+                    definition.chartDefinition.baseAxisLabel_call = function(){
+                        var panel = this.sign.panel;
+                        this.add(pv.Label)
+                          .textMargin(15)
+                          .text(function(scene) {
+                            var value = scene.firstAtoms.category.value;
+                            scope.fullText = scene.firstAtoms.category.label;
+                            
+                            if(scope.fullText.length > 25){ 
+                                var separator = scope.fullText.indexOf(' ', scope.fullText.length/2);
+                                scene.firstAtoms.category.label = scope.fullText.substring(0, separator);
+                                scope.substring = scope.fullText.substring(separator+1);
+                                return scope.substring;
+                            }else{
+                                if(scope.fullText == value){
+                                    return ' ';
+                                }
+                                var index = value.indexOf(' ', value.length/2);
+                                return value.substring(index+1);
+                            }
+                            
+                          });
+                    }
+                }
 
                 if(scope.axisColor){
                     definition.chartDefinition.xAxis_fillStyle = 'transparent';

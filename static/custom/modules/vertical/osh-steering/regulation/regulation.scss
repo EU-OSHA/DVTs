@@ -27,38 +27,40 @@
 						a, a:hover, a:visited, a:focus{
 							color: $aquamarine;
 							border-bottom: 0;
+							&:after{
+								content: "\f078";
+								font: normal normal normal 14px/1 FontAwesome;
+								right: 1.5rem;
+								top: 1rem;
+								padding: 1rem;
+								position: absolute;
+							}
 						}		
-						&:after{
-							content: "\f078";
-							font: normal normal normal 14px/1 FontAwesome;
-							right: 15px;
-							top: 25px;
-							position: absolute;
-						}
 					}
 				}
 				&.open-list{
 					li{
 						display: block;
-						&:after{
-							content: "";
-						}
 						&.active{
 							display: block;
 							a, a:hover, a:visited, a:focus{
 								border-bottom: 0;
+								&:after{
+									content: "";
+								}
 							}							
 						}
 						&:nth-child(1){
 							a{
 								border-bottom: 0;
-							}
-							&:after{
-								content: "\f077";
-								font: normal normal normal 14px/1 FontAwesome;
-								right: 15px;
-								top: 25px;
-								position: absolute;
+								&:after{
+									content: "\f077" !important;
+									font: normal normal normal 14px/1 FontAwesome;
+									right: 1.5rem;
+									top: 1rem;
+									padding: 1rem;
+									position: absolute;
+								}
 							}
 						}
 					}

@@ -198,6 +198,10 @@
     /* OVERALL OPINION */
     requirePaths['vertical/overall-opinion/OverallOpinionController'] = verticalModules + '/osh-outcomes-working-conditions/overall-opinion/OverallOpinionController' + suffix;
     requirePaths['vertical/overall-opinion/services/OverallOpinionService'] = verticalModules + '/osh-outcomes-working-conditions/overall-opinion/services/OverallOpinionService' + suffix;
+    
+    /* MENTAL RISK */
+    requirePaths['vertical/mental-risk/MentalRiskController'] = verticalModules + '/osh-outcomes-working-conditions/mental-risk/MentalRiskController' + suffix;
+    requirePaths['vertical/mental-risk/services/MentalRiskService'] = verticalModules + '/osh-outcomes-working-conditions/mental-risk/services/MentalRiskService' + suffix;
 
     /* ABOUT THE VISUALISATION TOOL */
     requirePaths['vertical/about-tool/AboutToolController'] = verticalModules + '/about-tool/AboutToolController' + suffix;

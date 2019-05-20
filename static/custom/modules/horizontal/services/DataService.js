@@ -710,8 +710,7 @@ define(function () {
             /***************************** END HEALTH PERCEPTION OF WORKERS *********************************/
 
             /****************************** OSH CULTURE AND HEALTH AWARENESS *******************************/
-
-                 /**
+                /**
                  * @ngdoc method
                  * @name dvt.configModule.DataService#getOshCultureIndicators
                  * @methodOf dvt.configModule.DataService
@@ -724,8 +723,37 @@ define(function () {
                     return promise(url);
                 },
                 
-
             /**************************** END OSH CULTURE AND HEALTH AWARENESS *******************************/
+
+            /************************************** WORKING CONDITIONS ***************************************/
+
+                /**
+                 * @ngdoc method
+                 * @name dvt.configModule.DataService#getHealthAtRiskCountries
+                 * @methodOf dvt.configModule.DataService
+                 * @description
+                 * Get health at risk countries
+                 */
+                getHealthAtRiskCountries: function () {
+                    var url = configService.getOshOutcomesWorkingConditionsDataPath() + "&dataAccessId=getHealthAtRiskCountries";
+                    $log.debug('getHealthAtRiskCountries url:' + url);
+                    return promise(url);
+                },
+
+                /**
+                 * @ngdoc method
+                 * @name dvt.configModule.DataService#getMentalRiskIndicators
+                 * @methodOf dvt.configModule.DataService
+                 * @description
+                 * Get health at risk countries
+                 */
+                getMentalRiskIndicators: function () {
+                    var url = configService.getOshOutcomesWorkingConditionsDataPath() + "&dataAccessId=getMentalRiskIndicators";
+                    $log.debug('getMentalRiskIndicators url:' + url);
+                    return promise(url);
+                },
+
+            /************************************ END WORKING CONDITIONS ***************************************/
 
             /**
              * @ngdoc method

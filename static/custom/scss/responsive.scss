@@ -747,6 +747,9 @@ and (max-width :767px)  {
 	  top: 0rem;
 	  position: relative;
 	}
+	.note p{
+		text-align: center;
+	}
 	.breadcrumbs--social--network{
 		top:0rem;
 		flex-direction: column-reverse;

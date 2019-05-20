@@ -12,38 +12,29 @@ define(function (require) {
   'use strict';
 
 
-  function controller($scope, $stateParams, $state, configService, $log, $document,dataService, $window, $sce, $compile, $timeout, dvtUtils, OverallOpinionService) {
+  function controller($scope, $stateParams, $state, configService, $log, $document,dataService, $window, $sce, $compile, $timeout, dvtUtils, MentalRiskService) {
 
 
     // CDA
     $scope.cdaOSHOutcomes = configService.getOshOutcomesWorkingConditionsCda();
-    $scope.cdaGenericInformation = configService.getGenericInformationCda();
 
-    var i18n = require('json!vertical/osh-authorities/i18n');
     var i18nLiterals = configService.getLiterals();
-    $scope.i18n = i18n;
     $scope.i18nLiterals = i18nLiterals;
 
     // Datasets
     $scope.datasetList = configService.getDatasets();
     $scope.datasetEurofound = $scope.datasetList.Eurofound;
+    $scope.datasetESENER = $scope.datasetList.ESENER;
 
     $scope.countriesDataFor = [];
     $scope.countriesCompareWith = [];
 
-    $scope.pSplit = "sector";
+    $scope.pSplit = "esener";
 
     $scope.indicators = [];
-    $scope.relatedLiterals = [20663, 20664];
-
-    $scope.country1Data = {};
-    $scope.country2Data = {};
 
     $scope.chartWidth = angular.element('.card--block--chart .chart--block')[1].clientWidth;
 
-    // Country parameters
-    $scope.pCountry1 = ($stateParams.pCountry1 != null)?$stateParams.pCountry1:'AT';
-    $scope.pCountry2 = ($stateParams.pCountry2 != null)?$stateParams.pCountry2:'BE';
     $scope.pIndicator = $stateParams.pIndicator;
 
     $scope.dashboard = {};
@@ -71,7 +62,7 @@ define(function (require) {
         color2: dvtUtils.getColorCountry(22),
         color3: dvtUtils.getAccidentsColors(4),
         color4: dvtUtils.getColorCountry(3),
-        plots: OverallOpinionService.getJobSatisfactionPlot(),
+        plots: MentalRiskService.getInfoAboutRisksData(),
         dimensions: {
           value: {
             format: {
@@ -86,7 +77,7 @@ define(function (require) {
         color1: dvtUtils.getColorCountry(2),
         color2: dvtUtils.getColorCountry(1),
         color3: dvtUtils.getEUColor(),
-        plots: OverallOpinionService.getHealthAtRiskSectorPlot($scope.pCountry1, $scope.pCountry2),
+        plots: MentalRiskService.getHealthAtRiskSectorPlot($scope.pCountry1, $scope.pCountry2),
         dimensions: {
           value: {
             format: {
@@ -100,7 +91,7 @@ define(function (require) {
         color1: dvtUtils.getColorCountry(2),
         color2: dvtUtils.getColorCountry(1),
         color3: dvtUtils.getEUColor(),
-        plots: OverallOpinionService.getHealthAtRiskGenderPlot($scope.pCountry1, $scope.pCountry2),
+        plots: MentalRiskService.getHealthAtRiskGenderPlot($scope.pCountry1, $scope.pCountry2),
         dimensions: {
           value: {
             format: {
@@ -142,24 +133,17 @@ define(function (require) {
     /******************************************************************************|
     |                                DATA LOAD                                     |
     |******************************************************************************/
-      dataService.getHealthAtRiskCountries().then(function (data) {
+      dataService.getMentalRiskIndicators().then(function (data) {
         data.data.resultset.map(function (elem) {
-          if(elem[1] != $scope.pCountry2){
-            $scope.countriesDataFor.push({
-              country: elem[0],
-              country_code: elem[1]
-            });
-          }
-
-          if(elem[1] != $scope.pCountry1){
-            $scope.countriesCompareWith.push({
-              country: elem[0],
-              country_code: elem[1]
-            });
-          }
+          $scope.indicators.push({
+            id: elem[0],
+            anchor: i18nLiterals['L'+elem[1]].toLowerCase().replace(/[\,\ ]/g, '-'),
+            text: elem[1]
+          });
         });
+        //$log.warn($scope.indicators);
       }).catch(function (err) {
-        throw err;
+          throw err;
       });
 
     /******************************END DATA LOAD***********************************/
@@ -180,40 +164,14 @@ define(function (require) {
       $scope.changeIndicator = function(e,indicator) {
         $scope.openIndicatorsList();
         if ($state.current.name !== undefined) {
-          if(indicator == 'health-at-risk'){
-            $state.go($state.current.name, {
-              pIndicator: indicator,
-              pCountry1: 'AT',
-              pCountry2: 'BE'
-            });
-          }else{
-            $state.go($state.current.name, {
-              pIndicator: indicator,
-              pCountry1: null,
-              pCountry2: null
-            });
-          }
+          $state.go($state.current.name, {
+            pIndicator: indicator
+          });
         }
       }
-
-      $scope.countryChange = function () {
-        if ($state.current.name !== undefined) {
-          $scope.dashboard.parameters = {
-            "pCountry1": $scope.pCountry1,
-            "pCountry2": $scope.pCountry2
-          };
-
-          $state.transitionTo('overall-opinion', {
-            pIndicator: $scope.pIndicator,
-            pCountry1: $scope.pCountry1, 
-            pCountry2: $scope.pCountry2
-          }, {reload: true});
-        }
-      };
-
   }
 
-controller.$inject = ['$scope', '$stateParams', '$state', 'configService', '$log', '$document','dataService', '$window', '$sce', '$compile', '$timeout', 'dvtUtils', 'OverallOpinionService'];
+controller.$inject = ['$scope', '$stateParams', '$state', 'configService', '$log', '$document','dataService', '$window', '$sce', '$compile', '$timeout', 'dvtUtils', 'MentalRiskService'];
   return controller;
 
 
