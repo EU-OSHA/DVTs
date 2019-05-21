@@ -12,7 +12,7 @@ define(function (require) {
   'use strict';
 
 
-  function controller($scope, $stateParams, $state, configService, $log, $document,dataService, $window, $sce, $compile, $timeout, dvtUtils, MentalRiskService) {
+  function controller($scope, $stateParams, $state, configService, $log, $document,dataService, $window, $sce, $compile, $timeout, dvtUtils, PhysicalRiskService) {
 
 
     // CDA
@@ -27,15 +27,27 @@ define(function (require) {
     $scope.datasetESENER = $scope.datasetList.ESENER;
 
     $scope.countriesDataFor = [];
-    $scope.countriesCompareWith = [];
+    $scope.countriesCompareWith = [];    
 
-    $scope.pSplit = $stateParams.pDataset;
-
-    $scope.indicators = [];
+    $scope.indicators = [{
+      anchor: 'vibrations-loud-noise-and-temperature', 
+      text: '20654'
+    },
+    {
+      anchor: 'exposure-to-dangerous-substances',
+      text: '20655'
+    },
+    {
+      anchor: 'risks-involve-with-work',
+      text: '20656'
+    }];
 
     $scope.chartWidth = angular.element('.card--block--chart .chart--block')[1].clientWidth;
 
+    $scope.pSplit = $stateParams.pDataset;
     $scope.pIndicator = $stateParams.pIndicator;
+    $scope.pCountry1 = $stateParams.pCountry1;
+    $scope.pCountry2 = $stateParams.pCountry2;
 
     $scope.dashboard = {};
     $scope.dashboard = {
@@ -59,21 +71,12 @@ define(function (require) {
       //0 - Time pressure
       {
         color1: dvtUtils.getColorCountry(1),
-        color2: dvtUtils.getColorCountry(22),
+        color2: dvtUtils.getColorCountry(2),
         color3: dvtUtils.getAccidentsColors(4),
-        plots: MentalRiskService.getInfoAboutRisksData(),
-        dimensions: {
-          value: {
-            format: {
-              number: "0.#",
-              percent: "#%"
-            }
-          }
-        }
-      },
-      {
-        color1: dvtUtils.getColorCountry(1),
-        plots: MentalRiskService.getPoorCommunicationPlot(),
+        plots: PhysicalRiskService.getInfoAboutRisksData(),
+        promises: {
+          //story1: [dataService.getVibrationData($scope.datasetEurofound, $scope.pCountry1, $scope.pCountry2)]
+        },
         dimensions: {
           value: {
             format: {
@@ -115,17 +118,24 @@ define(function (require) {
     /******************************************************************************|
     |                                DATA LOAD                                     |
     |******************************************************************************/
-      dataService.getMentalRiskIndicators().then(function (data) {
+        dataService.getVibrationCountries().then(function (data) {
         data.data.resultset.map(function (elem) {
-          $scope.indicators.push({
-            id: elem[0],
-            anchor: i18nLiterals['L'+elem[1]].toLowerCase().replace(/[\,\ ]/g, '-'),
-            text: elem[1]
-          });
+          if(elem[1] != $scope.pCountry2){
+            $scope.countriesDataFor.push({
+              country: elem[0],
+              country_code: elem[1]
+            });
+          }
+
+          if(elem[1] != $scope.pCountry1){
+            $scope.countriesCompareWith.push({
+              country: elem[0],
+              country_code: elem[1]
+            });
+          }
         });
-        //$log.warn($scope.indicators);
       }).catch(function (err) {
-          throw err;
+        throw err;
       });
 
     /******************************END DATA LOAD***********************************/
@@ -163,7 +173,7 @@ define(function (require) {
       }
   }
 
-controller.$inject = ['$scope', '$stateParams', '$state', 'configService', '$log', '$document','dataService', '$window', '$sce', '$compile', '$timeout', 'dvtUtils', 'MentalRiskService'];
+controller.$inject = ['$scope', '$stateParams', '$state', 'configService', '$log', '$document','dataService', '$window', '$sce', '$compile', '$timeout', 'dvtUtils', 'PhysicalRiskService'];
   return controller;
 
 

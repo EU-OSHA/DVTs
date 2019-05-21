@@ -2,7 +2,7 @@ define (function (require) {
 
     var configService = require('horizontal/config/configService');
     var pv = require('cdf/lib/CCC/protovis');
-    var MentalRiskService = function (dvtUtils, $log) {
+    var PhysicalRiskService = function (dvtUtils, $log) {
         return {
             getInfoAboutRisksData: function() {
                 return [
@@ -35,8 +35,8 @@ define (function (require) {
         };
     };
 
-    MentalRiskService.$inject = ['dvtUtils', '$log'];
+    PhysicalRiskService.$inject = ['dvtUtils', '$log'];
 
-    return MentalRiskService;
+    return PhysicalRiskService;
 
 });

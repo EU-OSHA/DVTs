@@ -513,7 +513,7 @@
 	    </Query>
 	</DataAccess>
 
-	<!-- OVERALL OPINION || ALL MENTAL RISK DATA -->
+	<!-- MENTAL RISK || ALL MENTAL RISK DATA -->
     <DataAccess access="public" connection="dvt_conn" id="getMentalRiskData" type="sql">
         <Cache duration="3600" enabled="true" />
         <Columns />
@@ -535,7 +535,7 @@
         </Query>
     </DataAccess>
 
-    <!-- OVERALL OPINION || ALL MENTAL RISK DATA -->
+    <!-- MENTAL RISK || POOR COMMUNICATION EUROFOUND DATA -->
     <DataAccess access="public" connection="dvt_conn" id="getEurofoundPoorCommunicationData" type="sql">
         <Cache duration="3600" enabled="true" />
         <Columns />
@@ -552,6 +552,48 @@
             AND d.id = v.dataset_id
             AND d.id = ${pDataset}
             ORDER BY FIELD('EU28', n.country_code) DESC, FIELD(n.country_code, 'CH', 'IS', 'NO'), n.country_code ASC, Value DESC;
+        </Query>
+   	</DataAccess>
+
+   	<!-- PHYSICAL RISK || ALL COUNTRIES FOR VIBRATION, LOUD NOISE AVAILABLE -->
+    <DataAccess access="public" connection="dvt_conn" id="getVibrationCountries" type="sql">
+        <Cache duration="3600" enabled="true" />
+        <Columns />
+        <Parameters>
+            <Parameter default="10" name="pDataset" type="Numeric"/>
+        </Parameters>
+        <Query>
+            SELECT DISTINCT(n.literal_id), n.country_code
+	      	FROM nuts n, profile p, value v, dataset d
+			where n.id = p.nuts_id
+			AND v.profile_id = p.id
+			AND d.id = v.dataset_id
+            AND d.id = ${pDataset}
+			AND v.indicator_id IN (70, 69, 68, 67)
+			AND n.country_code NOT IN ('EU28')
+			ORDER BY n.country_code ASC;
+        </Query>
+   	</DataAccess>
+
+   	<!-- PHYSICAL RISK || ALL VIBRATION, LOUD NOISE DATA -->
+    <DataAccess access="public" connection="dvt_conn" id="getVibrationData" type="sql">
+        <Cache duration="3600" enabled="true" />
+        <Columns />
+        <Parameters>
+            <Parameter default="10" name="pDataset" type="Numeric"/>
+            <Parameter default="AT" name="pCountry1" type="String"/>
+	    	<Parameter default="BE" name="pCountry2" type="String"/>
+        </Parameters>
+        <Query>
+            SELECT IF(n.name = 'European Union', n.country_code, CONCAT(n.name, " (", n.country_code, ")")) as Country, v.value*100 as Value
+            FROM nuts n, profile p, value v, dataset d, translation t
+            WHERE n.id = p.nuts_id
+            AND v.indicator_id IN (70, 69, 68, 67)
+            AND v.profile_id = p.id
+            AND d.id = v.dataset_id
+            AND d.id = ${pDataset}
+            AND n.country_code IN ('EU28', ${pCountry1}, ${pCountry2})
+            ORDER BY n.country_code ASC;
         </Query>
    	</DataAccess>
 </CDADescriptor>
