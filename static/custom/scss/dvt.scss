@@ -41,8 +41,16 @@
 /* Workforce profile */
 @import '../modules/vertical/generic-information/workforce-profile/workforce-profile.scss';
 
-/* About the estimates */
-@import '../modules/vertical/about-tool/about-tool.scss';
+
+
+/* National strategies */
+@import '../modules/vertical/osh-steering/national-strategies/national-strategies.scss';
+
+/* Social dialogue */
+@import '../modules/vertical/osh-steering/social-dialogue/social-dialogue.scss';
+
+/* Regulation */
+@import '../modules/vertical/osh-steering/regulation/regulation.scss';
 
 
 
@@ -55,6 +63,10 @@
 /* OSH culture */
 @import '../modules/vertical/osh-outcomes-working-conditions/osh-culture/osh-culture.scss';
 
+
+
+/* About the estimates */
+@import '../modules/vertical/about-tool/about-tool.scss';
 
 /****** GENERAL *******/
 @mixin no-padding($side) {
