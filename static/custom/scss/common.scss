@@ -714,6 +714,7 @@
           padding:0;
           border-bottom: 4px solid transparent;
           display: inline-block;
+          height: 100%;
           &.active, &:hover, &:focus, &:visited {
             border-bottom: 4px solid $orange;
             text-decoration: none;
@@ -1008,6 +1009,7 @@
             font-size: 1.2rem;
             padding: 0.5rem 2rem; 
             background: $white;
+            position: relative;
             &:hover, &:focus{
               background: $orange!important;
               color: $white!important;
@@ -1020,7 +1022,7 @@
               background: $orange;
               position: absolute;
               top: -8px;
-              left: 48.5%;
+              left: 45.5%;
               padding: 0px;
               border-radius: 16px;
               width: 12px;
