@@ -429,8 +429,11 @@ define(function (require) {
         dataService.applySocialDialogueFilters($scope.datasetESENER, $scope.searchParams.countries)
           .then(function (data) {
             $scope.amatrix = dataService.dataMapper(data);
+            if($scope.amatrix.length == 32){
+              $scope.amatrix.pop();
+            }
 
-            //$log.warn($scope.amatrix);
+            $log.warn($scope.amatrix);
 
             $scope.firstPage();
 
