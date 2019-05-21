@@ -16,7 +16,9 @@
     color: $gray-base;
     padding-top: 130px;
     overflow: auto;
-
+    &.section-fixed{
+      padding-top:30rem;
+    }
     &.ovh{
       overflow: hidden;
     }
@@ -701,6 +703,9 @@
       li{
         width: 20%;
         text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
         a{          
           font-family: "Oswald", sans-serif;
           font-size: 1.8rem;
@@ -708,10 +713,11 @@
           font-weight: normal;
           padding:0;
           border-bottom: 4px solid transparent;
+          display: inline-block;
           &.active, &:hover, &:focus, &:visited {
             border-bottom: 4px solid $orange;
             text-decoration: none;
-            display: block;
+            display: inline-block;
             //color: $aquamarine;
           }
         }
@@ -980,8 +986,11 @@
             width: 100%;
           }
           .columm--item--content{
-            
+
           }
+        }
+        .flags--wrapper{
+          outline: 1px solid #EEE;
         }
         .see-more{
           text-align: center;

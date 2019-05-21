@@ -24,6 +24,7 @@
         $('body').addClass('plus');
     }
 
+
 define(function (require) {
     'use strict';
 
@@ -34,7 +35,7 @@ define(function (require) {
         return sequence++;
     }
 
-
+   
 
     function DvtMenuDirective($location, $log) {
         //TODO get data from ajax in JSON files
@@ -54,12 +55,26 @@ define(function (require) {
                     /** HEADER SHOW HIDE **/
 
                     var prevScrollpos = $window.pageYOffset;
+                    
 
                     $(window).on("resize",function(e){
                       resolution = screen.width;
                       angular.element('li.dropdown').removeClass('open');
                       angular.element('li.dropdown').off('hover');
                     });
+
+                    $window.onscroll = function() {
+                        if( angular.element('.highlited--data--section')[0] != undefined ){  
+                            var dataAffix = angular.element('.highlited--data--section')[0].dataset.offsetTop;
+                            if( dataAffix < $window.pageYOffset){
+                                angular.element("body").addClass('section-fixed');
+                            }else{
+                                angular.element("body").removeClass('section-fixed');
+                            }
+                        } else {
+                            angular.element("body").removeClass('section-fixed');
+                        }
+                    }
   
                     if( resolution < 768 ){
                         $window.onscroll = function() {

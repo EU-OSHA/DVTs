@@ -44,8 +44,9 @@
 						&:after{
 							content: "\f078";
 							font: normal normal normal 14px/1 FontAwesome;
-							right: 15px;
-							top: 25px;
+							right: 25px;
+							top: 20px;
+							color: $aquamarine;
 							position: absolute;
 						}
 					}
@@ -67,10 +68,11 @@
 								border-bottom: 0;
 							}
 							&:after{
-								content: "\f077";
+								//content: "\f077";
 								font: normal normal normal 14px/1 FontAwesome;
-								right: 15px;
-								top: 25px;
+							  right: 24px;
+							  top: 19px;
+							  color: $aquamarine;
 								position: absolute;
 							}
 						}
