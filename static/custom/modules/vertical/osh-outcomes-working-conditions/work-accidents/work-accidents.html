@@ -117,7 +117,7 @@
               data-ng-cloak
               query="getFatalAccidentsData" cda="{{::cdaOSHOutcomes }}"
               width="330" height="470"
-              orientation="vertical" axis-fixed-min="0"
+              orientation="{{orientation}}" axis-fixed-min="0"
               axis-fixed-max="6" step="{{step.chart3}}"
               params="[['pDataset', datasetEurostat2016]]"
               color-role="series" colors="[stories[2].color1, stories[2].color2]"
@@ -132,7 +132,7 @@
               dimensions="stories[2].dimensions"
               legend="false"
               angle="1"
-              base-axis-size="120"
+              base-axis-size="{{axisSize}}"
               legend-item-size="200"
             ></dvt-bar-chart>
           </div>
@@ -152,7 +152,7 @@
               data-ng-cloak
               query="getNonFatalAccidentsPerWorkersData" cda="{{::cdaOSHOutcomes }}"
               width="330" height="470"
-              orientation="vertical" axis-fixed-min="0"
+              orientation="{{orientation}}" axis-fixed-min="0"
               axis-fixed-max="6000" step="{{step.chart4}}"
               params="[['pDataset', datasetEurostat2016]]"
               color-role="series" colors="[stories[3].color1, stories[3].color2]"
@@ -169,7 +169,7 @@
               multiple-label-colors="false"
               legend="true"
               angle="1"
-              base-axis-size="100"
+              base-axis-size="{{axisSize}}"
               legend-item-size="450"
             ></dvt-bar-chart>
           </div>
@@ -190,7 +190,7 @@
               data-ng-cloak
               query="getLevelOfReportingData" cda="{{::cdaOSHOutcomes }}"
               width="330" height="380" type="bars" axis-percent="1"
-              orientation="vertical" axis-fixed-min="0"
+              orientation="{{orientation}}" axis-fixed-min="0"
               axis-fixed-max="100" step="{{step.chart5}}"
               params="[['pDataset', datasetEurostat2016]]"
               color-role="series" colors="[stories[2].color1, stories[2].color2]"
@@ -205,7 +205,7 @@
               leaf-content-overflow='visible'
               legend="false"
               angle="1"
-              base-axis-size="120"
+              base-axis-size="{{axisSize}}"
             ></dvt-bar-chart>
           </div>
         </div>
