@@ -1,11 +1,11 @@
 {
     "sections": {
-        "EU-challenges-response": "national-strategies",
-        "country-strategies": "national-strategies",
-        "accidents-trends":"eu-countries",
-        "fatal-accidents-ranking":"eu-countries",
-        "non-fatal-accidents-estimation":"eu-countries",
-        "non-fatal-accidents-reporting-level":"eu-countries"
+        "osh-authorities":"generic-information",
+        "economic-sector-profile":"generic-information",
+        "workforce-profile":"generic-information",
+        "regulation":"osh-steering",
+        "national-strategies":"osh-steering",
+        "social-dialogue":"osh-steering"
     },
     "home": "<span class='current-page'>Home</span>",
 
