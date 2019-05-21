@@ -16,7 +16,9 @@
     color: $gray-base;
     padding-top: 130px;
     overflow: auto;
-
+    &.section-fixed{
+      padding-top:30rem;
+    }
     &.ovh{
       overflow: hidden;
     }
@@ -116,7 +118,7 @@
       font-size: 1.4rem;
       font-family: "OpenSans";
       font-weight: normal;
-      text-align: left;
+      text-align: right;
       font-style: italic;
       display: block;
       margin: -2rem 2rem 2rem;
@@ -189,7 +191,7 @@
           position: absolute;
           top: 0;
           right: 0;
-          padding: 0.5rem 2rem;
+          padding: 0.6rem 2rem;
           color: $white;
         }
       }
@@ -206,7 +208,8 @@
       }
     }
     .btn-default{
-      padding: 1.4rem 2rem;
+      //padding: 1.4rem 2rem;
+      padding: 1.4rem 3.5rem 1.4rem 2rem;
       margin-bottom: 0;
       font-weight: normal;
       white-space: nowrap;
@@ -700,6 +703,9 @@
       li{
         width: 20%;
         text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
         a{          
           font-family: "Oswald", sans-serif;
           font-size: 1.8rem;
@@ -707,10 +713,11 @@
           font-weight: normal;
           padding:0;
           border-bottom: 4px solid transparent;
+          display: inline-block;
           &.active, &:hover, &:focus, &:visited {
             border-bottom: 4px solid $orange;
             text-decoration: none;
-            display: block;
+            display: inline-block;
             //color: $aquamarine;
           }
         }
@@ -979,8 +986,11 @@
             width: 100%;
           }
           .columm--item--content{
-            
+
           }
+        }
+        .flags--wrapper{
+          outline: 1px solid #EEE;
         }
         .see-more{
           text-align: center;
@@ -1491,6 +1501,7 @@
             height: auto;
             margin: 3vh auto 0;
             svg{
+              //border-radius: 1rem;
               text{
                 font-size: 14px !important;
               }
