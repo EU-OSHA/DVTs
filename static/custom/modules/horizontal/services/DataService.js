@@ -753,6 +753,33 @@ define(function () {
                     return promise(url);
                 },
 
+                /**
+                 * @ngdoc method
+                 * @name dvt.configModule.DataService#getVibrationCountries
+                 * @methodOf dvt.configModule.DataService
+                 * @description
+                 * Get vibration countries
+                 */
+                getVibrationCountries: function () {
+                    var url = configService.getOshOutcomesWorkingConditionsDataPath() + "&dataAccessId=getVibrationCountries";
+                    $log.debug('getVibrationCountries url:' + url);
+                    return promise(url);
+                },
+
+
+                /**
+                 * @ngdoc method
+                 * @name dvt.configModule.DataService#getVibrationData
+                 * @methodOf dvt.configModule.DataService
+                 * @description
+                 * Get vibrations, loud noise, and temperature data in pyhsical risks
+                 */
+                getVibrationData: function (pDataset, pCountry1, pCountry2) {
+                    var url = configService.getOshOutcomesWorkingConditionsDataPath() + "&dataAccessId=getVibrationData" + "&parampDataset=" + pDataset + "&parampCountry1=" + pCountry1 + "&parampCountry2=" + pCountry2;
+                    $log.debug('getVibrationData url:' + url);
+                    return promise(url);
+                },
+
             /************************************ END WORKING CONDITIONS ***************************************/
 
             /**
