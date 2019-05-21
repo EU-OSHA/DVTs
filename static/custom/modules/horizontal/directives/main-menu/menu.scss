@@ -171,7 +171,7 @@
                       -o-transition: all 0.4s ease-out;
                       transition: all 0.4s ease-out;
                       .dropdown-menu{
-                          display:block;
+                          display:block !important;
                       }
                     }
                     &:not( :hover ){
@@ -187,11 +187,6 @@
                     &:not( .open ){
                       .dropdown-menu{
                          // display:none !important;
-                      }
-                    }
-                    &:not( .open ){
-                      .dropdown-menu{
-                          display:none !important;
                       }
                     }
                     &:nth-child(1){
