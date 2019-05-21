@@ -178,6 +178,9 @@ define(function (require) {
                     case 1:
                         return colors.spider.indicator1;
                         break;
+                    case 2:
+                        return colors.spider.indicator2;
+                        break;
                     default:
                         return colors.spider.indicator0;
                 }

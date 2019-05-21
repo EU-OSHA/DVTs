@@ -75,7 +75,11 @@ define(function (require) {
         color3: dvtUtils.getAccidentsColors(4),
         plots: PhysicalRiskService.getInfoAboutRisksData(),
         promises: {
-          //story1: [dataService.getVibrationData($scope.datasetEurofound, $scope.pCountry1, $scope.pCountry2)]
+          story1: [
+            dataService.getCountry1VibrationData($scope.datasetEurofound, $scope.pCountry1), 
+            dataService.getCountry2VibrationData($scope.datasetEurofound, $scope.pCountry2),
+            dataService.getEU28VibrationData($scope.datasetEurofound)           
+          ]
         },
         dimensions: {
           value: {
@@ -163,12 +167,13 @@ define(function (require) {
         }
       }
 
-      $scope.changeDataset = function(indicator, dataset){
+      $scope.countryChange = function(){
         if ($state.current.name !== undefined) {
-          $state.go($state.current.name, {
-            pIndicator: indicator,
-            pDataset: dataset
-          });
+          $state.transitionTo('physical-risk', {
+            pIndicator: $scope.pIndicator,
+            pCountry1: $scope.pCountry1, 
+            pCountry2: $scope.pCountry2
+          }, {reload: true});
         }
       }
   }

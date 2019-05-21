@@ -576,24 +576,67 @@
    	</DataAccess>
 
    	<!-- PHYSICAL RISK || ALL VIBRATION, LOUD NOISE DATA -->
-    <DataAccess access="public" connection="dvt_conn" id="getVibrationData" type="sql">
+    <DataAccess access="public" connection="dvt_conn" id="getEU28VibrationData" type="sql">
         <Cache duration="3600" enabled="true" />
         <Columns />
         <Parameters>
             <Parameter default="10" name="pDataset" type="Numeric"/>
-            <Parameter default="AT" name="pCountry1" type="String"/>
-	    	<Parameter default="BE" name="pCountry2" type="String"/>
         </Parameters>
         <Query>
-            SELECT IF(n.name = 'European Union', n.country_code, CONCAT(n.name, " (", n.country_code, ")")) as Country, v.value*100 as Value
-            FROM nuts n, profile p, value v, dataset d, translation t
-            WHERE n.id = p.nuts_id
-            AND v.indicator_id IN (70, 69, 68, 67)
-            AND v.profile_id = p.id
-            AND d.id = v.dataset_id
-            AND d.id = ${pDataset}
-            AND n.country_code IN ('EU28', ${pCountry1}, ${pCountry2})
-            ORDER BY n.country_code ASC;
+            SELECT t.text as Indicator, v.value*100 as Value, n.country_code as Country
+			FROM nuts n, profile p, value v, dataset d, indicator i, translation t
+			WHERE n.id = p.nuts_id
+			AND v.indicator_id IN (70, 69, 68, 67)
+			AND i.id = v.indicator_id
+			AND i.literal_id = t.literal_id
+			AND v.profile_id = p.id
+			AND d.id = v.dataset_id
+			AND d.id = ${pDataset}
+			AND n.country_code = 'EU28';
+        </Query>
+   	</DataAccess>
+
+   	<!-- PHYSICAL RISK || ALL VIBRATION, LOUD NOISE DATA -->
+    <DataAccess access="public" connection="dvt_conn" id="getCountry1VibrationData" type="sql">
+        <Cache duration="3600" enabled="true" />
+        <Columns />
+        <Parameters>
+            <Parameter default="10" name="pDataset" type="Numeric"/>
+            <Parameter default="AT" name="pCountry" type="String"/>
+        </Parameters>
+        <Query>
+            SELECT t.text as Indicator, v.value*100 as Value, n.country_code as Country
+			FROM nuts n, profile p, value v, dataset d, indicator i, translation t
+			WHERE n.id = p.nuts_id
+			AND v.indicator_id IN (70, 69, 68, 67)
+			AND i.id = v.indicator_id
+			AND i.literal_id = t.literal_id
+			AND v.profile_id = p.id
+			AND d.id = v.dataset_id
+			AND d.id = ${pDataset}
+			AND n.country_code = ${pCountry};
+        </Query>
+   	</DataAccess>
+
+   	<!-- PHYSICAL RISK || ALL VIBRATION, LOUD NOISE DATA -->
+    <DataAccess access="public" connection="dvt_conn" id="getCountry2VibrationData" type="sql">
+        <Cache duration="3600" enabled="true" />
+        <Columns />
+        <Parameters>
+            <Parameter default="10" name="pDataset" type="Numeric"/>
+            <Parameter default="AT" name="pCountry" type="String"/>
+        </Parameters>
+        <Query>
+            SELECT t.text as Indicator, v.value*100 as Value, n.country_code as Country
+			FROM nuts n, profile p, value v, dataset d, indicator i, translation t
+			WHERE n.id = p.nuts_id
+			AND v.indicator_id IN (70, 69, 68, 67)
+			AND i.id = v.indicator_id
+			AND i.literal_id = t.literal_id
+			AND v.profile_id = p.id
+			AND d.id = v.dataset_id
+			AND d.id = ${pDataset}
+			AND n.country_code = ${pCountry};
         </Query>
    	</DataAccess>
 </CDADescriptor>

@@ -766,17 +766,43 @@ define(function () {
                     return promise(url);
                 },
 
-
-                /**
+                 /**
                  * @ngdoc method
-                 * @name dvt.configModule.DataService#getVibrationData
+                 * @name dvt.configModule.DataService#getEU28VibrationData
                  * @methodOf dvt.configModule.DataService
                  * @description
                  * Get vibrations, loud noise, and temperature data in pyhsical risks
                  */
-                getVibrationData: function (pDataset, pCountry1, pCountry2) {
-                    var url = configService.getOshOutcomesWorkingConditionsDataPath() + "&dataAccessId=getVibrationData" + "&parampDataset=" + pDataset + "&parampCountry1=" + pCountry1 + "&parampCountry2=" + pCountry2;
-                    $log.debug('getVibrationData url:' + url);
+                getEU28VibrationData: function (pDataset) {
+                    var url = configService.getOshOutcomesWorkingConditionsDataPath() + "&dataAccessId=getEU28VibrationData" + "&parampDataset=" + pDataset;
+                    $log.debug('getEU28VibrationData url:' + url);
+                    return promise(url);
+                },
+
+
+                /**
+                 * @ngdoc method
+                 * @name dvt.configModule.DataService#getCountry1VibrationData
+                 * @methodOf dvt.configModule.DataService
+                 * @description
+                 * Get vibrations, loud noise, and temperature data in pyhsical risks
+                 */
+                getCountry1VibrationData: function (pDataset, pCountry) {
+                    var url = configService.getOshOutcomesWorkingConditionsDataPath() + "&dataAccessId=getCountry1VibrationData" + "&parampDataset=" + pDataset + "&parampCountry="+ pCountry;
+                    $log.debug('getCountryVibrationData url:' + url);
+                    return promise(url);
+                },
+
+                /**
+                 * @ngdoc method
+                 * @name dvt.configModule.DataService#getCountry2VibrationData
+                 * @methodOf dvt.configModule.DataService
+                 * @description
+                 * Get vibrations, loud noise, and temperature data in pyhsical risks
+                 */
+                getCountry2VibrationData: function (pDataset, pCountry) {
+                    var url = configService.getOshOutcomesWorkingConditionsDataPath() + "&dataAccessId=getCountry2VibrationData" + "&parampDataset=" + pDataset + "&parampCountry="+ pCountry;
+                    $log.debug('getCountryVibrationData url:' + url);
                     return promise(url);
                 },
 

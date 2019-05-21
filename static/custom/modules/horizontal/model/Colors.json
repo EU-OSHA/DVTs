@@ -24,6 +24,7 @@
     "spider": {
         "indicator0":"rgb(135,206,250, .5)",
         "indicator1":"rgb(255,20,147, .5)",
+        "indicator2":"rgb(246, 164, 0, .5)",
         "valuesColor": "gray"
     },
 

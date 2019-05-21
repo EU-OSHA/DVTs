@@ -14,6 +14,7 @@ define (function (require) {
                             //$log.warn('entra');
                             this.add(pv.Rule)
                                 //.url(configService.getImagesPath()+'man_orange.svg')
+                                //Negative value in top line continues out of the chart
                                 .top(0)
                                 .bottom(0)
                                 .height(null) // clear any inherited value

@@ -226,7 +226,7 @@ define(function (require) {
 									attr: {
 										"text-anchor": (Math.round(x) === cx) ? "middle" : (x < cx ? "end" : "start"),
 										"font-size": opts.labelFontSize,
-										"font-family": "Open Sans",
+										"font-family": "OpenSans",
 										"font": ""
 									}
 								};
@@ -317,7 +317,15 @@ define(function (require) {
 
 							// Paint the line near the legend label
                             var shape = function(x,y,indicator){
-								var color = opts.indicators[indicator] == "EU28" ? dvtUtils.getEUColor() : dvtUtils.getColorCountry(indicator+1);
+								//var color = opts.indicators[indicator] == "EU28" ? dvtUtils.getEUColor() : dvtUtils.getColorCountry(1);
+								var color = dvtUtils.getEUColor();
+								if(indicator == 0){
+									color = opts.indicators[indicator]=="EU28" ? dvtUtils.getEUColor() : dvtUtils.getColorCountry(1);
+								}else if(indicator == 1){
+									color = opts.indicators[indicator]=="EU28" ? dvtUtils.getEUColor() : dvtUtils.getColorCountry(2);
+								}else if(indicator == 2 && opts.indicators[2] != undefined){
+									color = opts.indicators[indicator]=="EU28" ? dvtUtils.getEUColor() : dvtUtils.getColorCountry(2);
+								}
 								paper.circle( x,y,opts.pathCircleOuterRadius).attr({
 									fill: color,
 									stroke: 'none'
@@ -337,6 +345,19 @@ define(function (require) {
 
 							// Change the position and the colour of the legend text
                             var technicalLegend = function(x,y){
+                            	$log.warn(paper);
+                            	var st = paper.set();
+                            	var width = paper.width;
+                            	$log.warn('width: '+ width);
+                            	var height = paper.height;
+                            	$log.warn('height: '+ height);
+								st.push(
+								    paper.text(width/2.15, height/2.3, '0%'),
+								    paper.text(width/2.16, height/2.7, '10%'),
+								    paper.text(width/2.16, height/3.6, '20%'),
+								    paper.text(width/2.16, height/5, '30%'),
+								    paper.text(width/2.16, height/7.9, '40%')
+								);
 
                                 x = shape(x,y,0);
                                 paper.text(x, y, opts.indicators[0])
@@ -344,19 +365,19 @@ define(function (require) {
                                         "fill": opts.indicators[0]=="EU28" ? dvtUtils.getEUColor() : dvtUtils.getColorCountry(1),
                                         "text-anchor": "start",
                                         "font-size": "15px",
-                                        "font-family": "Open Sans",
+                                        "font-family": "OpenSans",
                                         "font": ""
                                     });
 								
 								var length = opts.indicators[0].length;
 								x += length > 10 ? length*7: length*10;
-                                x = shape(x,y,1);
+                                x = shape(x+10,y,1);
                                 paper.text(x, y, opts.indicators[1])
                                     .attr({
                                         "fill": opts.indicators[1]=="EU28" ? dvtUtils.getEUColor() : dvtUtils.getColorCountry(2),
                                         "text-anchor": "start",
                                         "font-size": "15px",
-                                        "font-family": "Open Sans",
+                                        "font-family": "OpenSans",
                                         "font": ""
                                     });
 
@@ -364,13 +385,13 @@ define(function (require) {
                                 {
                                     length = opts.indicators[1].length;
                                     x += length > 10 ? length*7: length*10;
-                                    x = shape(x,y,2);
+                                    x = shape(x+10,y,2);
                                     paper.text(x, y, opts.indicators[2])
                                         .attr({
-                                            "fill": dvtUtils.getEUColor(),
+                                            "fill": opts.indicators[2]=="EU28" ? dvtUtils.getEUColor() : dvtUtils.getColorCountry(2),
                                             "text-anchor": "start",
                                             "font-size": "15px",
-                                            "font-family": "Open Sans",
+                                            "font-family": "OpenSans",
                                             "font": ""
                                         });
                                 }                                
@@ -422,7 +443,7 @@ define(function (require) {
 									});
 									++i;
 								}
-							}
+							}						
 
 							//labels
 							if (!!opts.drawLabels) {
@@ -453,7 +474,7 @@ define(function (require) {
 										text.attr("font-size", fontSize);
 										text.attr("fill", labelStrokeColor);
 										text.attr("cursor", "context-menu");
-										text.attr("font-family", "Open Sans");
+										text.attr("font-family", "OpenSans");
 										text.id = fulltext;
 										//text.click(clicked);
 										/*text.hover(
@@ -529,7 +550,7 @@ define(function (require) {
 
 							//technical legend
 							if(!!opts.showTechnicalLegend){
-								var x = (paper.width * 0.15) - (opts.indicators[0].length*4);
+								var x = (paper.width * 0.35) - (opts.indicators[0].length*4);
 								var y = paper.height * 0.95;
 								technicalLegend(x,y);
 							}
@@ -568,10 +589,10 @@ define(function (require) {
 							//third indicator
 							if(!!thirdIndicatorValues){
 								var theme = {
-									pathStroke: dvtUtils.getEUColor(),
+									pathStroke: opts.indicators[2]=="EU28" ? dvtUtils.getEUColor() : dvtUtils.getColorCountry(2),
 									pathFill:'none',
 									pathStrokeWidth: 3,
-									pathCircleStroke: dvtUtils.getEUColor()
+									pathCircleStroke: opts.indicators[2]=="EU28" ? dvtUtils.getEUColor() : dvtUtils.getColorCountry(2)
 								};
 
 								path(cx, cy, r, startAngle, thirdIndicatorValues, opts.max, theme);
@@ -586,6 +607,7 @@ define(function (require) {
 								// values
 								if (!!opts.drawValues) {
 									var i = thirdIndicatorValues.length;
+									//$log.warn(thirdIndicatorValues);
 									while (i--) {
 										if(opts.drawAllValues || opts.labels[i]==country1 || opts.labels[i] == country2 || opts.labels[i] == "EU28") {
 											var textObject = labelvalue(cx, cy, r, startAngle + angle * i, thirdIndicatorValues[i], opts.max);
@@ -666,7 +688,7 @@ define(function (require) {
 								{
 									meshSize: attributes.meshSize || 20,//the space between adjacent meshes,
 									labels: firstIndicatorLabels,
-									labelFontSize: 16, //huge font
+									labelFontSize: 14, //huge font
 									labelColor: "black", // labels font color
 									drawLabels: attributes.drawLabels || true, //to draw labels or not
 									valuesColor: dvtUtils.getSpiderValuesColor(),
