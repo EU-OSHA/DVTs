@@ -35,6 +35,17 @@ define(function (require) {
 
     $scope.chartWidth = angular.element('.card--block--chart .chart--block')[1].clientWidth;
 
+    $scope.orientation = angular.element(window).width() > 768 ? "vertical" : "horizontal";
+    $scope.axisSize = angular.element(window).width() > 768 ? 150 : 110;
+
+    var width = angular.element($window).width();
+      angular.element($window).bind('resize', function() {
+        if (angular.element($window).width() != width) {
+          width = angular.element($window).width();
+          $state.reload();
+        }
+    });
+
     $scope.pIndicator = $stateParams.pIndicator;
 
     $scope.dashboard = {};

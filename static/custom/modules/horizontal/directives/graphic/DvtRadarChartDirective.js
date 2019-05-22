@@ -25,72 +25,62 @@ define(function (require) {
 	{
 		var ua = window.navigator.userAgent;
 		var msie = ua.indexOf("MSIE ");
-		var template='';
+		var _template= ''
+        + '<div class="card--block--chart--wrapper">'
 
-		if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)) 
-		{
-			template='<div class="col-md-12 dvt-chart radar">'
-				+ '<div class="col-xs-9 col-sm-10 col-md-11 col-lg-10">'
-				+ '<h3 ng-if="(!!title && !isMaximized) || (isMaximized && !longTitle)" class="title" data-ng-bind-html="title"></h3>'
-				+ '<h3 ng-if="!!isMaximized && !!longTitle" class="title" data-ng-bind-html="longTitle"></h3>'
-				+ '</div>'
-				+ '<div class="col-xs-3 col-sm-2 col-md-1 col-lg-2 text-right no-padding">'
-				+ '<div data-ng-if="!isMaximized && isHistorical" class="col-xs-8 col-sm-8 col-md-8 col-lg-9 pull-left nopadding contextual-menu cursor-pointer">'
-				+ '<i class="fa fa-history fa-2x" alt="Show historical evolution" data-ng-click="open(items[1].action)" ng-controller="IssueController" title="Show historical evolution" aria-hidden="true"></i>'
-				+ '</div>'
-				+ '<div data-ng-if="!isMaximized" class="col-xs-3 col-sm-3 col-md-3 col-lg-2 pull-right nopadding contextual-menu cursor-pointer maximizeImage">'
-				+ '<img alt="Maximize graphic" data-ng-click="open(items[0].action)" title="Maximize graphic" src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/more.png"/>'
-				+ '</div>'
-				+ '</div>'
-				+'<div class="col-xs-12">'
-				+ '<div class="radar"><div ng-attr-id="{{ id }}"></div></div>'
-				+ '<div class="logoGraphics-wrapper"><img alt="European Agency for Safety and Health at Work" src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/EU-OSHA-en.png" class="logoGraphics"></div>'
-				+ '<div class="functionalLegend" data-ng-bind-html="functionalLegend"></div>'
-				+'</div>'
-				+'</div>';
-		} 
-		else 
-		{
-			template='<div class="col-md-12 dvt-chart radar">'
-				+ '<div class="col-xs-9 col-sm-10 col-md-11 col-lg-10">'
-				+ '<h3 ng-if="(!!title && !isMaximized) || (isMaximized && !longTitle)" class="title" data-ng-bind-html="title"></h3>'
-				+ '<h3 ng-if="!!isMaximized && !!longTitle" class="title" data-ng-bind-html="longTitle"></h3>'
-				+ '</div>'
-				+ '<div class="col-xs-3 col-sm-2 col-md-1 col-lg-2 text-right no-padding">'
-				+ '<div data-ng-if="!isMaximized && isHistorical" class="col-xs-8 col-sm-8 col-md-8 col-lg-9 pull-left nopadding contextual-menu cursor-pointer">'
-				+ '<i class="fa fa-history fa-2x" alt="Show historical evolution" data-ng-click="open(items[1].action)" ng-controller="IssueController" title="Show historical evolution" aria-hidden="true"></i>'
-				+ '</div>'
-				+ '<div data-ng-if="!isMaximized" class="col-xs-3 col-sm-3 col-md-3 col-lg-2 pull-right nopadding contextual-menu cursor-pointer maximizeImage">';
+            + '<ul class="chart--submenu" ng-if="!isMaximized">'
+                + '<li>'
+                    + '<a data-ng-click="open(items[0].action)" class="{{items[0].class}}" title="{{items[0].text}}" role="button"><label class="sr-only" data-ng-bind="items[0].text"></label></a>'
+                + '</li>'
+                /*+  '<li class="dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><a href=""><label class="sr-only">Download</label></a></li>'                  
+                    + '<ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">'
 
-		   	// if(!configService.isMobile()) 
-		   	// {
-				template += '<img alt="Maximize graphic" data-ng-click="open(items[0].action)" title="Maximize graphic" src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/more.png"/>';
-		  	//  }
-			
-			template+='</div>'
-				+ '<div data-ng-if="isMaximized" class="contextual-menu">';
+                        //+ '<li><a data-ng-click="open(items[2].action)" role="button" data-ng-bind="items[2].text"></a></li>'
+                        + '<li><a data-ng-click="open(items[3].action)" role="button" data-ng-bind="items[3].text"></a></li>'
+                        
+                    + '</ul>'*/
+            + '</ul>'
 
-			if(!navigator.userAgent.match('iPad')) 
-			{
-				template += '<div class="dropdown" ng-if="!isEnlarge==true">'
-					+ '<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">'
-					+ '<i class="fa fa-download" title="Export"></i>'
-					+ '</button>'
-					+ '<ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">'
-					+ '<li data-ng-repeat="item in items"><a data-ng-click="open(item.action)" role="button" data-ng-bind="item.text"></a></li>'
-					+ '</ul>'
-					+ '</div>';
-			}
-			
-			template+='</div>'
-				+ '</div>'
-				+'<div class="col-xs-12">'
-				+ '<div class="radar"><div ng-attr-id="{{ id }}"></div></div>'
-				//+ '<div class="logoGraphics-wrapper"><img alt="European Agency for Safety and Health at Work" src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/EU-OSHA-en.png" class="logoGraphics"></div>'
-				+ '<div class="functionalLegend" data-ng-bind-html="functionalLegend"></div>'
-				+'</div>'
-				+'</div>';
-		}
+            + '<h2 ng-if="(!!chartTitle && !isMaximized && !titleH3) || (isMaximized && !longTitle)" data-ng-bind-html="chartTitle" class="title--card ng-binding">Company size</h2>'
+            + '<h2 ng-if="!!isMaximized && !!longTitle" data-ng-bind-html="longTitle" class="title--card ng-binding" >Company size</h2>'
+            + '<h2 data-ng-if="(!!chartTitle && !isMaximized && titleH3)" class="title--card ng-binding" data-ng-bind-html="chartTitle"></h2>'
+
+            + '<div data-ng-if="haveEnlarge" class="pull-right contextual-menu enlarge-button cursor-pointer">'
+                + '<button data-ng-click="open(items[0].action)" title="Compare with other groups">Compare groups</button>'
+            + '</div>'
+            
+            _template += '<div data-ng-if="!isMaximized && haveEnlarge" class="pull-right contextual-menu cursor-pointer maximizeImage">';
+
+                _template+='<img alt="Maximize graphic" data-ng-click="open(items[1].action)" title="Maximize graphic" src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/more.png"/>';
+                _template 
+                    += '<div class="dropdown" ng-if="!isEnlarge==true">'
+                        + '<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">'
+                        + '<i class="three-points-vertical" alt="Export" title="Export"></i>'
+                        + '</button>'
+                        + '<ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">'
+                        + '<li data-ng-repeat="item in items"><a data-ng-click="open(item.action)" role="button" data-ng-bind="item.text"></a></li>'
+                        + '</ul>'
+                    + '</div>';
+     //   }
+            _template+='</div>'            
+        
+            + '<div data-ng-if="isMaximized && isEnlarged==undefined && isZoom" class="pull-right contextual-menu export-button-modal">';
+                if(!navigator.userAgent.match('iPad')) {
+                    _template 
+                        += '<div class="dropdown" ng-if="!isEnlarge==true">'
+                            + '<a data-ng-click="open(\'exportImageLink\')" role="button"><i class="fa fa-arrow-down" aria-hidden="true"></i><i class="fa fa-picture-o" aria-hidden="true"></i> Export as Image</a>'
+                        + '</div>';
+                }
+            _template +='</div>'
+
+            + '<div class="chart--wrapper">'
+                + '<div data-ng-attr-id="{{ id }}"></div>'
+
+                + '<div class="legend-text-block">'
+                    + '<div ng-if="isMaximized " class="logoGraphics-wrapper"><img alt="European Agency for Safety and Health at Work" src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/EU-OSHA-en.png" class="logoGraphics"></div>'
+                    + '<div class="legend-info" ng-if="isMaximized && legendClickMode && legend">Click on each value on the legend to hide/show in on the chart</div>'
+                + '</div>'
+            + '</div>'
 
 		return {
 			restrict: 'E',
@@ -107,7 +97,7 @@ define(function (require) {
 
 			},
 			transclude: true,
-			template: template,
+			template: _template,
 			link: function (scope, element, attributes, controllers) {
 
 				// FIX. enlarged views share same id, a prefix has been added that must be undone
@@ -122,7 +112,9 @@ define(function (require) {
 				//In order to control metadata composition in max mode
 				scope.isMaximized = !!attributes.isMaximized;
 				scope.longTitle = attributes.longTitle;
+				scope.chartTitle = attributes.chartTitle;
 				scope.isHistorical = attributes.historical;
+				scope.isZoom = !!attributes.isZoom;
 				scope.isEnlarge=attributes.isEnlarged;
 
 				var dashboard = controllers[0];
@@ -345,12 +337,12 @@ define(function (require) {
 
 							// Change the position and the colour of the legend text
                             var technicalLegend = function(x,y){
-                            	$log.warn(paper);
+                            	//$log.warn(paper);
                             	var st = paper.set();
                             	var width = paper.width;
-                            	$log.warn('width: '+ width);
+                            	//$log.warn('width: '+ width);
                             	var height = paper.height;
-                            	$log.warn('height: '+ height);
+                            	//$log.warn('height: '+ height);
 								st.push(
 								    paper.text(width/2.15, height/2.3, '0%'),
 								    paper.text(width/2.16, height/2.7, '10%'),
@@ -744,7 +736,30 @@ define(function (require) {
 					}
 					capado hasta solución
 					*/
-					if(!!attributes.isMaximized && attributes.isMaximized == 'true') {
+					var ua = window.navigator.userAgent;
+                    var msie = ua.indexOf("MSIE ");
+                    
+                    if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv:11\./) || !!navigator.userAgent.match(/Edge/)) {
+                        // You use IE. That´s no good.
+                        [['Download raw data', 'exportData', 'download-button']].forEach(function (item) {
+                            scope.contextuals.push(item);
+                        });
+                    } else if (!configService.isMobile())  {
+                        [['Download raw data', 'exportData', 'download-button']].forEach(function (item) {
+                            scope.contextuals.push(item);
+                        });
+                        [['Export image', 'exportImage', 'download-button']].forEach(function (item) {
+                            scope.contextuals.push(item);
+                        });
+                    } else {
+                        [['Download raw data', 'exportData', 'download-button']].forEach(function (item) {
+                            scope.contextuals.push(item);
+                        });
+                        [['Export image', 'exportImage', 'download-button']].forEach(function (item) {
+                            scope.contextuals.push(item);
+                        });
+                    }
+					/*if(!!attributes.isMaximized && attributes.isMaximized == 'true') {
 
 						var ua = window.navigator.userAgent;
 						var msie = ua.indexOf("MSIE ");
@@ -762,7 +777,8 @@ define(function (require) {
 								scope.contextuals.push(item);
 							});
 						}
-					}
+					}*/
+
 				}
 
 				scope.showContextuals = (scope.contextuals && scope.contextuals.length > 0) || false;
@@ -800,6 +816,7 @@ define(function (require) {
 				definition ['id'] = attributes.id;
 				definition ['max'] = attributes.axisFixedMax;
 				definition ['longTitle'] = attributes.longTitle;
+				definition ['chartTitle'] = attributes.chartTitle;
 				definition ['radio'] = attributes.radio;
 				definition ['valuesFormat'] = attributes.valuesFormat;
 				definition ['meshSize'] =  attributes.meshSize || 30;
@@ -808,63 +825,71 @@ define(function (require) {
 				}
 
 			};
-			setMaximizeModeParameters();
 
-				/* modal service for charts*/
+			// only set maxim properties on normal view
+            if (!scope.isMaximized){
+                setMaximizeModeParameters();
+            }
+			//setMaximizeModeParameters();
 
-				/* pass definition to modal */
-				var dvtModal = maximize.setModal(definition);
+			/* modal service for charts*/
 
-				scope.open = function (action) {
+			/* pass definition to modal */
+			var dvtModal = maximize.setModal(definition);
 
-					if(typeof action === 'function') {
-						//If the second paramenter is a function, this function is binded to de click action
-						action.call(this);
-					} else {
+			scope.open = function (action) {
 
-						switch (action) {
-							case "enlarge":
-								var scrollTop=$(window).scrollTop();
-								$cookies.remove('scrollTop');
-								$cookies.put('scrollTop', scrollTop);
-								scope.clickAction();
-								break;
-							case "maximize":
-								maximize.doMaximize(dvtModal, definition, "maximizeRadar", "MaximizeController");
-								break;
-							case "exportImage":
-								exportService.exportImageAction(scope);
-								break;
-							case "exportData":
-								exportService.exportDataAction(scope, dashboard);
-								break;
-							default:
-								break;
-						}
+				if(typeof action === 'function') {
+					//If the second paramenter is a function, this function is binded to de click action
+					action.call(this);
+				} else {
+
+					switch (action) {
+						case "enlarge":
+							var scrollTop=$(window).scrollTop();
+							$cookies.remove('scrollTop');
+							$cookies.put('scrollTop', scrollTop);
+							scope.clickAction();
+							break;
+						case "maximize":
+							maximize.doMaximize(dvtModal, definition, "maximizeRadar", "MaximizeController", false);
+							break;
+						case "exportImage":
+							maximize.doMaximize(dvtModal, definition, "maximizeRadar", "MaximizeController", true);
+							break;
+						case "exportImageLink":
+                            exportService.exportImageAction(scope);
+                            break;
+						case "exportData":
+							exportService.exportDataAction(scope, dashboard);
+							break;
+						default:
+							break;
 					}
-				};
+				}
+			};
 
-				var chart = new RaphaelComponent(definition);
-				dashboard.register(chart);
+			var chart = new RaphaelComponent(definition);
+			dashboard.register(chart);
 
-				/* ------------------------------
-				 * fluidity
-				 * ------------------------------
-				 * duplicated code in:
-				 *  - DvtDashboarDirective
-				 *  - DvtBarchartDirective
-				 *  - DvtPyramidDirective
-				 *  - DvtRadarDirective
-				 *  ------------------------------
-				 */
-				chart.postExecution = function(){
+			/* ------------------------------
+			 * fluidity
+			 * ------------------------------
+			 * duplicated code in:
+			 *  - DvtDashboarDirective
+			 *  - DvtBarchartDirective
+			 *  - DvtPyramidDirective
+			 *  - DvtRadarDirective
+			 *  ------------------------------
+			 */
+			chart.postExecution = function(){
 
-					if (!!scope.postExecution){
-						scope.postExecution();
-					}
+				if (!!scope.postExecution){
+					scope.postExecution();
+				}
 
-					this.width = this.placeholder().width();
-				};
+				this.width = this.placeholder().width();
+			};
 			}
 		}
 	};

@@ -407,6 +407,7 @@ define(function (require) {
                         baseAxisLabel_text: !scope.isMaximized?scope.baseAxisLabelText:scope.baseAxisLabelLongText,
                         baseAxisLabel_visible: scope.baseAxisLabelVisible,
                         baseAxisLabel_textBaseline: attributes.baseAxisLabelTextBaseline || 'middle',
+                        baseAxisLabel_textAlign: attributes.baseAxisLabelTextBaseline || 'center',
                         xAxisLabel_textAlign: 'left',
                         baseAxisLabel_textStyle: attributes.baseAxisLabelTextStyle || 'gray' ,
                         baseAxisOverlappedLabelsMode: 'leave',
@@ -560,11 +561,12 @@ define(function (require) {
                 }
                 if (!!attributes.angle) {
                     definition.chartDefinition.baseAxisLabel_textAngle = (attributes.angle==1)?-Math.PI / 3:-Math.PI / 6.5;
-                    if (definition.chartDefinition.orientation == 'horizontal') {
+                    if (definition.chartDefinition.orientation == 'horizontal' || attributes.angle == 0) {
                         definition.chartDefinition.baseAxisLabel_textAngle = 0;
+                    }else{
+                        definition.chartDefinition.baseAxisLabel_textAlign = 'right';
+                        definition.chartDefinition.baseAxisLabel_textBaseline = 'top';
                     }
-                    definition.chartDefinition.baseAxisLabel_textAlign = 'right';
-                    definition.chartDefinition.baseAxisLabel_textBaseline = 'top';
                     if(attributes.angle>1)
                     {
                         definition.chartDefinition.margins = !scope.isMaximized ?'1 1 -30 1':'1 1 -5 1';

@@ -39,7 +39,7 @@
               data-ng-cloak
               query="getMentalRiskData" cda="{{::cdaOSHOutcomes }}"
               width="{{::chartWidth}}" height="470" axis-percent="1"
-              orientation="vertical" axis-fixed-min="0"
+              orientation="{{orientation}}" axis-fixed-min="0"
               axis-fixed-max="100" step="{{step.chart1}}"
               params="[['pDataset', datasetESENER], ['pIndicator', 113]]"
               color-role="series" colors="[stories[0].color2, stories[0].color1]"
@@ -53,7 +53,7 @@
               dimensions="stories[0].dimensions"
               legend="true"
               angle="1" stacked="1"
-              base-axis-size="150"
+              base-axis-size="{{axisSize}}"
               legend-item-size="100"
             ></dvt-bar-chart>
           </div>
@@ -62,7 +62,7 @@
               data-ng-cloak
               query="getMentalRiskData" cda="{{::cdaOSHOutcomes }}"
               width="{{::chartWidth}}" height="470" axis-percent="1"
-              orientation="vertical" axis-fixed-min="0"
+              orientation="{{orientation}}" axis-fixed-min="0"
               axis-fixed-max="100" step="{{step.chart1}}"
               params="[['pDataset', datasetEurofound], ['pIndicator', 83]]"
               color-role="series" colors="[stories[0].color3, stories[0].color2, stories[0].color1]"
@@ -75,7 +75,7 @@
               legend="true"
               dimensions="stories[0].dimensions"
               angle="1" stacked="1"
-              base-axis-size="150"
+              base-axis-size="{{axisSize}}"
               legend-item-size="200"
             ></dvt-bar-chart>
           </div>          
@@ -102,7 +102,7 @@
             data-ng-cloak
             query="getMentalRiskData" cda="{{::cdaOSHOutcomes }}"
             width="330" height="470" axis-percent="1"
-            orientation="vertical" axis-fixed-min="0"
+            orientation="{{orientation}}" axis-fixed-min="0"
             axis-fixed-max="100" step="{{step.chart2}}"
             params="[['pDataset', datasetESENER], ['pIndicator', 114]]"
             color-role="series" colors="[stories[0].color1, stories[0].color2]"
@@ -117,7 +117,7 @@
             dimensions="stories[0].dimensions"
             legend="true" stacked="1" angle="1"
             legend-align="center"
-            base-axis-size="150"
+            base-axis-size="{{axisSize}}"
             legend-item-size="100"
             ></dvt-bar-chart>
           </div>
@@ -126,7 +126,7 @@
               data-ng-cloak
               query="getEurofoundPoorCommunicationData" cda="{{::cdaOSHOutcomes }}"
               width="{{::chartWidth}}" height="470" axis-percent="1"
-              orientation="vertical" axis-fixed-min="60"
+              orientation="{{orientation}}" axis-fixed-min="60"
               axis-fixed-max="100" step="{{step.chart2}}"
               params="[['pDataset', datasetEurofound], ['pIndicator', 84]]"
               color-role="series" colors="[stories[0].color1]"
@@ -140,7 +140,7 @@
               leaf-content-overflow='visible'
               legend="true" stacked="1" angle="1"
               legend-align="center"
-              base-axis-size="150"
+              base-axis-size="{{axisSize}}"
               legend-item-size="150"
             ></dvt-bar-chart>
           </div>
@@ -168,7 +168,7 @@
             data-ng-cloak
             query="getMentalRiskData" cda="{{::cdaOSHOutcomes }}"
             width="330" height="470" axis-percent="1"
-            orientation="vertical" axis-fixed-min="0"
+            orientation="{{orientation}}" axis-fixed-min="0"
             axis-fixed-max="100" step="{{step.chart2}}"
             params="[['pDataset', datasetESENER], ['pIndicator', 115]]"
             color-role="series" colors="[stories[0].color1, stories[0].color2]"
@@ -184,7 +184,7 @@
             dimensions="stories[0].dimensions"
             legend="true" stacked="1" angle="1"
             legend-align="center"
-            base-axis-size="150"
+            base-axis-size="{{axisSize}}"
             legend-item-size="100"
             ></dvt-bar-chart>
           </div>
@@ -193,7 +193,7 @@
               data-ng-cloak
               query="getMentalRiskData" cda="{{::cdaOSHOutcomes }}"
               width="{{::chartWidth}}" height="470" axis-percent="1"
-              orientation="vertical" axis-fixed-min="0"
+              orientation="{{orientation}}" axis-fixed-min="0"
               axis-fixed-max="100" step="{{step.chart2}}"
               params="[['pDataset', datasetEurofound], ['pIndicator', 85]]"
               color-role="series" colors="[stories[0].color3, stories[0].color2, stories[0].color1]"
@@ -209,7 +209,7 @@
               dimensions="stories[0].dimensions"
               legend="true" stacked="1" angle="1"
               legend-align="center"
-              base-axis-size="150"
+              base-axis-size="{{axisSize}}"
               legend-item-size="180"
             ></dvt-bar-chart>
           </div>
@@ -237,7 +237,7 @@
             data-ng-cloak
             query="getMentalRiskData" cda="{{::cdaOSHOutcomes }}"
             width="330" height="470" axis-percent="1"
-            orientation="vertical" axis-fixed-min="0"
+            orientation="{{orientation}}" axis-fixed-min="0"
             axis-fixed-max="100" step="{{step.chart2}}"
             params="[['pDataset', datasetESENER], ['pIndicator', 116]]"
             color-role="series" colors="[stories[0].color1, stories[0].color2]"
@@ -253,7 +253,7 @@
             dimensions="stories[0].dimensions"
             legend="true" stacked="1" angle="1"
             legend-align="center"
-            base-axis-size="150"
+            base-axis-size="{{axisSize}}"
             legend-item-size="90"
             ></dvt-bar-chart>
           </div>
@@ -262,7 +262,7 @@
               data-ng-cloak
               query="getMentalRiskData" cda="{{::cdaOSHOutcomes }}"
               width="{{::chartWidth}}" height="470" axis-percent="1"
-              orientation="vertical" axis-fixed-min="0"
+              orientation="{{orientation}}" axis-fixed-min="0"
               axis-fixed-max="100" step="{{step.chart2}}"
               params="[['pDataset', datasetEurofound], ['pIndicator', 86]]"
               color-role="series" colors="[stories[0].color3, stories[0].color2, stories[0].color1]"
@@ -278,7 +278,7 @@
               dimensions="stories[0].dimensions"
               legend="true" stacked="1" angle="1"
               legend-align="center"
-              base-axis-size="150"
+              base-axis-size="{{axisSize}}"
               legend-item-size="200"
             ></dvt-bar-chart>
           </div>
@@ -306,7 +306,7 @@
             data-ng-cloak
             query="getMentalRiskData" cda="{{::cdaOSHOutcomes }}"
             width="330" height="470" axis-percent="1"
-            orientation="vertical" axis-fixed-min="0"
+            orientation="{{orientation}}" axis-fixed-min="0"
             axis-fixed-max="100" step="{{step.chart2}}"
             params="[['pDataset', datasetESENER], ['pIndicator', 117]]"
             color-role="series" colors="[stories[0].color1, stories[0].color2]"
@@ -322,7 +322,7 @@
             dimensions="stories[0].dimensions"
             legend="true" stacked="1" angle="1"
             legend-align="center"
-            base-axis-size="150"
+            base-axis-size="{{axisSize}}"
             legend-item-size="100"
             ></dvt-bar-chart>
           </div>
@@ -331,7 +331,7 @@
               data-ng-cloak
               query="getMentalRiskData" cda="{{::cdaOSHOutcomes }}"
               width="{{::chartWidth}}" height="470" axis-percent="1"
-              orientation="vertical" axis-fixed-min="0"
+              orientation="{{orientation}}" axis-fixed-min="0"
               axis-fixed-max="100" step="{{step.chart2}}"
               params="[['pDataset', datasetEurofound], ['pIndicator', 87]]"
               color-role="series" colors="[stories[0].color3, stories[0].color2, stories[0].color1]"
@@ -347,7 +347,7 @@
               dimensions="stories[0].dimensions"
               legend="true" stacked="1" angle="1"
               legend-align="center"
-              base-axis-size="150"
+              base-axis-size="{{axisSize}}"
               legend-item-size="220"
             ></dvt-bar-chart>
           </div>
@@ -375,7 +375,7 @@
             data-ng-cloak
             query="getMentalRiskData" cda="{{::cdaOSHOutcomes }}"
             width="330" height="470" axis-percent="1"
-            orientation="vertical" axis-fixed-min="0"
+            orientation="{{orientation}}" axis-fixed-min="0"
             axis-fixed-max="100" step="{{step.chart2}}"
             params="[['pDataset', datasetESENER], ['pIndicator', 118]]"
             color-role="series" colors="[stories[0].color1, stories[0].color2]"
@@ -391,7 +391,7 @@
             dimensions="stories[0].dimensions"
             legend="true" stacked="1" angle="1"
             legend-align="center"
-            base-axis-size="150"
+            base-axis-size="{{axisSize}}"
             legend-item-size="100"
             ></dvt-bar-chart>
           </div>
@@ -400,7 +400,7 @@
               data-ng-cloak
               query="getMentalRiskData" cda="{{::cdaOSHOutcomes }}"
               width="{{::chartWidth}}" height="470" axis-percent="1"
-              orientation="vertical" axis-fixed-min="0"
+              orientation="{{orientation}}" axis-fixed-min="0"
               axis-fixed-max="100" step="{{step.chart2}}"
               params="[['pDataset', datasetEurofound], ['pIndicator', 88]]"
               color-role="series" colors="[stories[0].color1, stories[0].color2]"
@@ -416,7 +416,7 @@
               dimensions="stories[0].dimensions"
               legend="true" stacked="1" angle="1"
               legend-align="center"
-              base-axis-size="150"
+              base-axis-size="{{axisSize}}"
               legend-item-size="130"
             ></dvt-bar-chart>
           </div>
@@ -444,7 +444,7 @@
             data-ng-cloak
             query="getMentalRiskData" cda="{{::cdaOSHOutcomes }}"
             width="330" height="470" axis-percent="1"
-            orientation="vertical" axis-fixed-min="0"
+            orientation="{{orientation}}" axis-fixed-min="0"
             axis-fixed-max="100" step="{{step.chart2}}"
             params="[['pDataset', datasetESENER], ['pIndicator', 119]]"
             color-role="series" colors="[stories[0].color1, stories[0].color2]"
@@ -460,7 +460,7 @@
             dimensions="stories[0].dimensions"
             legend="true" stacked="1" angle="1"
             legend-align="center"
-            base-axis-size="150"
+            base-axis-size="{{axisSize}}"
             legend-item-size="100"
             ></dvt-bar-chart>
           </div>
@@ -469,7 +469,7 @@
               data-ng-cloak
               query="getMentalRiskData" cda="{{::cdaOSHOutcomes }}"
               width="{{::chartWidth}}" height="470" axis-percent="1"
-              orientation="vertical" axis-fixed-min="0"
+              orientation="{{orientation}}" axis-fixed-min="0"
               axis-fixed-max="100" step="{{step.chart2}}"
               params="[['pDataset', datasetEurofound], ['pIndicator', 89]]"
               color-role="series" colors="[stories[0].color2, stories[0].color1, stories[0].color3]"
@@ -485,7 +485,7 @@
               dimensions="stories[0].dimensions"
               legend="true" stacked="1" angle="1"
               legend-align="center"
-              base-axis-size="150"
+              base-axis-size="{{axisSize}}"
               legend-item-size="100"
             ></dvt-bar-chart>
           </div>

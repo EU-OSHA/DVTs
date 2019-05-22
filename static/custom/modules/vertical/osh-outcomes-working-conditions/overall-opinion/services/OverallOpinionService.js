@@ -9,50 +9,70 @@ define (function (require) {
                     {
                         name: "main",
                         dataPart: "0",
-                        barSizeMax: 20,
+                        barSizeMax: 60,
                         bar_call: function(){
-                            //$log.warn('entra');
-                            this.add(pv.Rule)
-                                //.url(configService.getImagesPath()+'man_orange.svg')
-                                //Negative value in top line continues out of the chart
-                                .top(0)
-                                .bottom(0)
-                                .height(null) // clear any inherited value
-                                .width(null)  // clear any inherited value
-                                .strokeStyle('black')
-                                .lineWidth(3)
-                                .left(function(scene){
-                                    //$log.warn(scene);
-                                    var countryKey = scene.firstAtoms.category;
-                                    var panelWidth = this.root.width();
-                                    return panelWidth/32;               
-                                });
+                            var resolution = screen.width;
 
-                            this.add(pv.Rule)
-                                //.url(configService.getImagesPath()+'man_orange.svg')
-                                .top(0)
-                                .bottom(0)
-                                .height(null) // clear any inherited value
-                                .width(null)  // clear any inherited value
-                                .strokeStyle('black')
-                                .lineWidth(3)
-                                .left(function(scene){
-                                    var countryKey = scene.firstAtoms.category;
-                                    var panelWidth = this.root.width();
+                            $(window).on("resize",function(e){
+                              resolution = screen.width;
+                            });
 
-                                    var resolution = screen.width;
-                                    $(window).on("resize",function(e){
-                                      resolution = screen.width;
+                            if(resolution <= 768){
+                                //$log.warn(this);
+                                
+                                this.add(pv.Rule)
+                                    //Negative value in top line continues out of the chart
+                                    .top(function(scene){
+                                        var baseScale = this.getContext().chart.axes.base.scale;
+                                        //$log.warn(this.root);
+                                        return baseScale('Switzerland (CH)') + 10;
+                                    })
+                                    .height(null) // clear any inherited value
+                                    .width(null)  // clear any inherited value
+                                    .strokeStyle('#F0F0F0')
+                                    .lineWidth(10)
+                                    .left(0)
+                                    .right(function(scene){
+                                        return -this.root.width();
+                                    });
+                            }else{
+                                this.add(pv.Rule)
+                                    //Negative value in top line continues out of the chart
+                                    .top(0)
+                                    .bottom(0)
+                                    .height(null) // clear any inherited value
+                                    .width(null)  // clear any inherited value
+                                    .strokeStyle('black')
+                                    .lineWidth(3)
+                                    .left(function(scene){
+                                        //$log.warn(scene);
+                                        var countryKey = scene.firstAtoms.category;
+                                        var panelWidth = this.root.width();
+                                        return panelWidth/32;               
                                     });
 
-                                    if(resolution < 1200){
-                                        return panelWidth/1.13;
-                                    }
+                                this.add(pv.Rule)
+                                    //.url(configService.getImagesPath()+'man_orange.svg')
+                                    .top(0)
+                                    .bottom(0)
+                                    .height(null) // clear any inherited value
+                                    .width(null)  // clear any inherited value
+                                    .strokeStyle('black')
+                                    .lineWidth(3)
+                                    .left(function(scene){
+                                        var countryKey = scene.firstAtoms.category;
+                                        var panelWidth = this.root.width();
 
-                                    //$log.warn(resolution);
-                                    
-                                    return panelWidth/1.12;               
-                                });
+                                        if(resolution < 1200){
+                                            return panelWidth/1.13;
+                                        }
+
+                                        //$log.warn(resolution);
+                                        
+                                        return panelWidth/1.12;               
+                                    });
+                            }
+                            
                         },
                         visualRoles:{
                             series: 'series',

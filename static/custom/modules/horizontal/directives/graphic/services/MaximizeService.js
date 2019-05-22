@@ -52,11 +52,22 @@ define(function () {
             },
             doMaximize: function(dvtModal, definition, action, controller, pIsZoom) {
 
-                if (pIsZoom) {
-                    definition.chartDefinition.isZoom = pIsZoom;
-                } else {
-                    definition.chartDefinition.isZoom = '';
+                if(action == 'maximizeRadar'){
+                    if (pIsZoom) {
+                        definition.isZoom = pIsZoom;
+                    } else {
+                        definition.isZoom = '';
+                    }
                 }
+
+                if(action == 'maximize'){
+                    if (pIsZoom) {
+                        definition.chartDefinition.isZoom = pIsZoom;
+                    } else {
+                        definition.chartDefinition.isZoom = '';
+                    }
+                }
+                
 
                 definition.cssClass = 'chart-'+definition.id;
 
