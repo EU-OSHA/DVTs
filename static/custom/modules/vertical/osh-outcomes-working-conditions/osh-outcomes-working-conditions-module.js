@@ -149,19 +149,23 @@ define(function (require) {
       });
 
       $stateProvider.state('physical-risk', {
-        url: "/osh-outcomes-working-conditions/working-conditions/physical-risk/:pIndicator/:pCountry1/:pCountry2",
+        url: "/osh-outcomes-working-conditions/working-conditions/physical-risk/:pIndicator/:pSubIndicator/:pCountry1/:pCountry2",
         params: {
           pIndicator: {
             value: 'vibrations-loud-noise-and-temperature',
             squash: 'vibrations-loud-noise-and-temperature'
           },
+          pSubIndicator: {
+            value: null,
+            squash: true
+          },
           pCountry1: {
-            value: 'AT',
-            squash: 'AT'
+            value: null,
+            squash: false
           },
           pCountry2: {
-            value: 'BE',
-            squash: 'BE'
+            value: null,
+            squash: false
           }
         },
         views: {

@@ -17,11 +17,20 @@
       <ul class="submenu--items--wrapper">
         <!-- INDICATORS -->
         <li data-ng-repeat="indicator in indicators" data-ng-class="{'active' : indicator.anchor == pIndicator }" class="submenu--item">
-          <a href="" data-ng-click="changeIndicator($event, indicator.anchor);" data-ng-bind="i18nLiterals['L'+indicator.text]" data-ng-class="{'active' : indicator.anchor == pIndicator }" ></a>
+          <a href="" data-ng-click="changeIndicator($event, indicator.anchor, 'smoke-powder-or-dust');" data-ng-bind="i18nLiterals['L'+indicator.text]" data-ng-class="{'active' : indicator.anchor == pIndicator }" ></a>
         </li>
       </ul>
     </div>
     <div class="line background-main-light"></div>
+    <div data-ng-if="pIndicator == 'exposure-to-dangerous-substances'" class="submenu--block container">
+      <label class="submenu-indicator" data-ng-click ="openIndicatorsList()">Select the indicator</label>
+      <ul class="submenu--items--wrapper">
+        <!-- INDICATORS -->
+        <li data-ng-repeat="indicator in subIndicators" data-ng-class="{'active' : indicator.anchor == pSubIndicator }" class="submenu--item">
+          <a href="" data-ng-click="changeIndicator($event, pIndicator, indicator.anchor);" data-ng-bind="i18nLiterals['L'+indicator.text]" data-ng-class="{'active' : indicator.anchor == pSubIndicator }" ></a>
+        </li>
+      </ul>
+    </div>
   </div>
 
   <section class="container section--page full-tablet">
@@ -53,15 +62,12 @@
             <dvt-radar-chart
               data-ng-cloak
               promises="stories[0].promises.story1"
-              country1="pCountry1"
-              country2="pCountry2"
               axis-fixed-max="40"
               width="850" height="400"
               status="older-workers-employment"
               chart-title="{{i18nLiterals.L20654}}"
               id="1" radio="130" values-format="%"
-              mesh-size="30" draw-labels="true"
-              contextuals="[['Maximize', 'maximize']]">
+              mesh-size="30" draw-labels="true">
             </dvt-radar-chart>
           </div>
         </div>
@@ -73,12 +79,7 @@
       <div class="line background-main-light"></div>
       <div class="card--grid xxs-w1 xs-w1 w1 center-text">     
         <div class="card--block--chart" >
-          <!-- ESENER AND EUROFOUND filter -->
-          <select ng-model="pSplit" data-ng-change="changeDataset(pIndicator, pSplit)">
-            <option data-ng-bind="i18nLiterals.L20645" value="esener"></option>
-            <option data-ng-bind="i18nLiterals.L20646" value="eurofound"></option>
-          </select>
-          <div class="chart--block" ng-hide="pSplit != 'esener'">
+          <div class="chart--block" ng-show="pSubIndicator == 'smoke-powder-or-dust'">
             <dvt-bar-chart
             data-ng-cloak
             query="getMentalRiskData" cda="{{::cdaOSHOutcomes }}"
@@ -102,29 +103,6 @@
             legend-item-size="100"
             ></dvt-bar-chart>
           </div>
-          <div class="chart--block" ng-hide="pSplit != 'eurofound'">
-            <dvt-bar-chart
-              data-ng-cloak
-              query="getEurofoundPoorCommunicationData" cda="{{::cdaOSHOutcomes }}"
-              width="{{::chartWidth}}" height="470" axis-percent="1"
-              orientation="vertical" axis-fixed-min="60"
-              axis-fixed-max="100" step="{{step.chart2}}"
-              params="[['pDataset', datasetEurofound], ['pIndicator', 84]]"
-              color-role="series" colors="[stories[0].color1]"
-              chart-title="{{i18nLiterals.L341}}" id="4"
-              axis-label-font="14px 'OpenSans-bold'"
-              plots="stories[0].plots"
-              values-overflow="show"
-              values-font="14px 'OpenSans-bold'"
-              multiple-label-colors="false"
-              base-axis-label-text-baseline="top"
-              leaf-content-overflow='visible'
-              legend="true" stacked="1" angle="1"
-              legend-align="center"
-              base-axis-size="150"
-              legend-item-size="150"
-            ></dvt-bar-chart>
-          </div>
         </div>
         <!-- Dynamic chart legend depending on split selected -->
         <div class="chart-legend">
@@ -139,12 +117,7 @@
       <div class="line background-main-light"></div>
       <div class="card--grid xxs-w1 xs-w1 w1 center-text">
         <div class="card--block--chart">
-          <!-- ESENER AND EUROFOUND filter -->
-          <select ng-model="pSplit" data-ng-change="changeDataset(pIndicator, pSplit)">
-            <option data-ng-bind="i18nLiterals.L20645" value="esener"></option>
-            <option data-ng-bind="i18nLiterals.L20646" value="eurofound"></option>
-          </select>
-          <div class="chart--block" ng-hide="pSplit != 'esener'">
+          <div class="chart--block" >
             <dvt-bar-chart
             data-ng-cloak
             query="getMentalRiskData" cda="{{::cdaOSHOutcomes }}"
@@ -169,36 +142,10 @@
             legend-item-size="100"
             ></dvt-bar-chart>
           </div>
-          <div class="chart--block" ng-hide="pSplit != 'eurofound'">
-            <dvt-bar-chart
-              data-ng-cloak
-              query="getMentalRiskData" cda="{{::cdaOSHOutcomes }}"
-              width="{{::chartWidth}}" height="470" axis-percent="1"
-              orientation="vertical" axis-fixed-min="0"
-              axis-fixed-max="100" step="{{step.chart2}}"
-              params="[['pDataset', datasetEurofound], ['pIndicator', 85]]"
-              color-role="series" colors="[stories[0].color3, stories[0].color2, stories[0].color1]"
-              chart-title="{{i18nLiterals.L342}}" id="6"
-              axis-label-font="14px 'OpenSans-bold'"
-              plots="stories[0].plots"
-              values-overflow="show"
-              values-mask="{value}%"
-              values-font="14px 'OpenSans-bold'"
-              multiple-label-colors="false"
-              base-axis-label-text-baseline="top"
-              leaf-content-overflow='visible'
-              dimensions="stories[0].dimensions"
-              legend="true" stacked="1" angle="1"
-              legend-align="center"
-              base-axis-size="150"
-              legend-item-size="180"
-            ></dvt-bar-chart>
-          </div>
         </div>
         <!-- Dynamic chart legend depending on split selected -->
         <div class="chart-legend">
           <p ng-show="pSplit == 'esener'" data-ng-bind="i18nLiterals.L20589"></p>
-          <p ng-show="pSplit == 'eurofound'" data-ng-bind="i18nLiterals.L20588"></p>
         </div>
       </div>
     </div>

@@ -42,12 +42,31 @@ define(function (require) {
       text: '20656'
     }];
 
+    $scope.subIndicators = [{
+      anchor: 'smoke-powder-or-dust', 
+      text: '328'
+    },
+    {
+      anchor: 'vapours',
+      text: '329'
+    },
+    {
+      anchor: 'chemical-products',
+      text: '330'
+    }, {
+      anchor: 'infectious-materials',
+      text: '331'
+    }];
+
     $scope.chartWidth = angular.element('.card--block--chart .chart--block')[1].clientWidth;
 
-    $scope.pSplit = $stateParams.pDataset;
     $scope.pIndicator = $stateParams.pIndicator;
-    $scope.pCountry1 = $stateParams.pCountry1;
-    $scope.pCountry2 = $stateParams.pCountry2;
+    $scope.pSubIndicator = ($stateParams.pSubIndicator != null)?$stateParams.pSubIndicator:'smoke-powder-or-dust';
+    $scope.pCountry1 = ($stateParams.pCountry1 != null)?$stateParams.pCountry1:'AT';
+    $scope.pCountry2 = ($stateParams.pCountry2 != null)?$stateParams.pCountry2:'BE';
+
+    //$log.warn("Param pCountry1: "+$stateParams.pCountry1+", $scope pCountry1: "+$scope.pCountry1);
+    //$log.warn("Param pCountry2: "+$stateParams.pCountry2+", $scope pCountry2: "+$scope.pCountry2);
 
     $scope.dashboard = {};
     $scope.dashboard = {
@@ -157,20 +176,33 @@ define(function (require) {
           angular.element('.submenu-indicator').toggleClass('open-list');
       }
 
-      $scope.changeIndicator = function(e,indicator) {
+      $scope.changeIndicator = function(e,indicator, subindicator) {
         $scope.openIndicatorsList();
         if ($state.current.name !== undefined) {
-          $state.go($state.current.name, {
-            pIndicator: indicator,
-            pDataset: 'esener'
-          });
+
+          if(indicator == 'exposure-to-dangerous-substances'){
+            $state.go($state.current.name, {
+              pIndicator: indicator,
+              pSubIndicator: subindicator,
+              pCountry1: null, 
+              pCountry2: null
+            });
+          }else{
+            $state.go($state.current.name, {
+              pIndicator: indicator,
+              pSubIndicator: null,
+              pCountry1: 'AT', 
+              pCountry2: 'BE'
+            });
+          }
         }
       }
 
       $scope.countryChange = function(){
         if ($state.current.name !== undefined) {
           $state.transitionTo('physical-risk', {
-            pIndicator: $scope.pIndicator,
+            pIndicator: 'vibrations-loud-noise-and-temperature',
+            pSubIndicator: null,
             pCountry1: $scope.pCountry1, 
             pCountry2: $scope.pCountry2
           }, {reload: true});
