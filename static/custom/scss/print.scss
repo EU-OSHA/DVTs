@@ -16,7 +16,9 @@
 	.social--network--nav, .footer-social-network, 
 	.footer-nav-accessibility,
 	.chart--submenu, 
-	#popUpMessage{
+	#popUpMessage, 
+	.download-pdf, 
+	#cookiesConsent{
 	  display: none !important;
 	}
 	a[href]:after {
@@ -37,8 +39,11 @@
 
 
 	@page {
-   size: auto;
-  	margin: 10mm 25mm 25mm 25mm; 
+	  size: auto;
+	  margin:2.5cm; 
+	}
+	body{
+		padding: 0 !important;
 	}
 	h2{
 		font-size: 2.8rem !important;
@@ -60,21 +65,21 @@
         text-align: left;
         padding: 0rem;
         margin: 0;
-        //page-break-inside : avoid;
+        //page-break-inside : auto;
       }
       .card--block--rounded{
         width:100%;
         text-align: left;
         padding: 0rem;
         margin: 0;
-        //page-break-inside : avoid;
+        //page-break-inside : auto;
       }
       .card--block--chart{
         width:100%;
         text-align: left;
         padding: 0rem;
         margin: 0;
-        //page-break-inside : avoid;
+        //page-break-inside : auto;
       }
     }
   /** END WIDTH CARDS  **/
@@ -89,6 +94,7 @@
 	.home-cover{
 		border-top: 0px;
 		height: auto;
+		min-height: auto !important;
 	}
 	.advice--block{
 		top: 0;
@@ -133,8 +139,8 @@
 			.card--block--chart {
 		  	width: 45% !important;
 		  	margin: 2rem 2%;
-		  	page-break-inside: avoid;
-		  	page-break-after: avoid;
+		  	page-break-inside: auto;
+		  	page-break-after: auto;
 		  	display: block !important;
 				.title--card {
 					min-height: 6rem;
@@ -157,7 +163,7 @@
 					font-size: 1.6rem !important;
 					label{
 						width: auto;
-						font-size: 1.6rem !important;
+						font-size: 1.4rem !important;
 					}
 					select{
 						width: auto;
@@ -167,6 +173,52 @@
 			}
 		}
 	}
+
+	.country--profile--page{
+		.btn--block-full{
+			display: none;
+		}
+		.compare--block{
+			.compare--list{
+				display: block;
+				li{
+					width:auto;
+					display: inline-block;
+					font-size: 1.6rem !important;
+					label{
+						width: auto;
+						font-size: 1.4rem !important;
+					}
+					select{
+						width: auto;
+						font-size: 1.6rem !important;
+					}
+				}
+			}
+		}
+		.column--grid--block{
+			flex-wrap: wrap !important;
+			.column--item {
+			  border-right: 0 !important;
+			  padding: 1rem 0 2rem !important;
+			  width: 100% !important;
+			  .flags--wrapper{
+			  	border: 1px solid #CCC !important;
+				  width: 1cm !important;
+				  float: left !important;
+				  margin-right: 1rem !important;
+			  }
+			  .complete-text{
+			  	display: block !important;
+			  }
+			  .download-report, .partial-text{
+			  	display: none;
+			  }
+			}
+		} 
+	}
+
+
 
 	.workforce--page{
 		.filter--indicator--block{
@@ -210,5 +262,118 @@
 	  text-align: center;
 	  margin: 1rem 0rem;
 	}
+
+	.filter--letter--section {
+		display: none;
+	}
+	.alphabetic--card--section{		
+		.alphabetic--card--block{
+			.alphabetic--card--items{
+				.alphabetic-card-item{
+					border-radius: 0 !important;
+					padding: 0 1rem !important;
+					margin: 0 !important;
+					width: 20% !important;
+					page-break-inside : auto !important;
+					.additional-img{
+						img{
+							border:1px solid #CCC !important;
+						}						
+					}
+					.btn--block-full{
+						display: none;
+					}
+				}
+			}
+		}
+	}   
+	.highlited--data--section{
+		&.affix{
+  		position: initial !important; 
+		}
+	}
+	.social-dialogue, .health-perception-workers{
+	  .card--grid{
+	    .card--block--chart{
+	    	margin: 0 !important; 
+	      .chart--block{
+	        header{
+	          img{
+	          	border: 1px solid #ccc !important;
+	          }
+	          h2{
+	          }      
+	        }
+	        .highlited-data-list{
+	        	justify-content: flex-start !important;
+	          li{
+	            width: 25% !important;
+	            text-align: left !important;
+	            span{
+	              &.country-data{
+	                font-size: 1.8rem !important;
+	              }
+	              &.data-text{
+									font-size: 1.8rem !important;
+	              }
+	            } 
+	            label{
+								font-family: OpenSans !important;
+								padding-bottom: 0 1rem !important;
+								font-size: 1.6rem !important;
+	            }               
+	          }
+	        }
+	      }
+	    }
+	  } 
+	  .block--filter--wrapper {
+	  }
+	}
+
+	.work-accidents{
+		.card--grid{
+			display: block !important;
+			.card--block--chart{
+			  display: block !important;
+			  width: 100% !important;
+			  page-break-inside : auto !important;
+				.chart--block{
+					div [id$="protovis"]{
+						width: 100% !important;						
+						svg{
+							width: 21cm !important;
+						}
+					}
+				}
+			}
+		}
+		div [id$="protovis"]{
+			width: 100% !important;
+			page-break-inside : auto !important;
+			svg{
+				//width: 21cm !important;
+			}
+		}
+		.compare--block{
+			.compare--list{
+				display: block;
+				li{
+					width: auto;
+					display: inline-block;
+					font-size: 1.6rem !important;
+					label{
+						width: auto;
+						font-size: 1.4rem !important;
+					}
+					select{
+						width: auto;
+						font-size: 1.6rem !important;
+					}
+				}
+			}
+		}
+	}
+
 }
 
