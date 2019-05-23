@@ -504,7 +504,7 @@
             <Parameter default="10" name="pDataset" type="Numeric"/>
         </Parameters>
         <Query>
-            SELECT t.text as Indicator, v.value*100 as Value, n.country_code as Country
+            SELECT t.text as Indicator, ROUND(v.value*100,1) as Value, n.country_code as Country
 			FROM nuts n, profile p, value v, dataset d, indicator i, translation t
 			WHERE n.id = p.nuts_id
 			AND v.indicator_id IN (70, 69, 68, 67)
@@ -526,7 +526,7 @@
             <Parameter default="AT" name="pCountry" type="String"/>
         </Parameters>
         <Query>
-            SELECT t.text as Indicator, v.value*100 as Value, n.country_code as Country
+            SELECT t.text as Indicator, ROUND(v.value*100,1) as Value, n.country_code as Country
 			FROM nuts n, profile p, value v, dataset d, indicator i, translation t
 			WHERE n.id = p.nuts_id
 			AND v.indicator_id IN (70, 69, 68, 67)
@@ -548,7 +548,7 @@
             <Parameter default="AT" name="pCountry" type="String"/>
         </Parameters>
         <Query>
-            SELECT t.text as Indicator, v.value*100 as Value, n.country_code as Country
+            SELECT t.text as Indicator, ROUND(v.value*100,1) as Value, n.country_code as Country
 			FROM nuts n, profile p, value v, dataset d, indicator i, translation t
 			WHERE n.id = p.nuts_id
 			AND v.indicator_id IN (70, 69, 68, 67)
@@ -569,7 +569,7 @@
             <Parameter default="10" name="pDataset" type="Numeric"/>
         </Parameters>
         <Query>
-            SELECT t.text as Indicator, v.value*100 as Value, n.country_code as Country
+            SELECT t.text as Indicator, ROUND(v.value*100,1) as Value, n.country_code as Country
 			FROM nuts n, profile p, value v, dataset d, indicator i, translation t
 			WHERE n.id = p.nuts_id
 			AND v.indicator_id IN (90, 93, 92, 94, 91)
@@ -591,7 +591,7 @@
             <Parameter default="AT" name="pCountry" type="String"/>
         </Parameters>
         <Query>
-            SELECT t.text as Indicator, v.value*100 as Value, n.country_code as Country
+            SELECT t.text as Indicator, ROUND(v.value*100,1) as Value, n.country_code as Country
 			FROM nuts n, profile p, value v, dataset d, indicator i, translation t
 			WHERE n.id = p.nuts_id
 			AND v.indicator_id IN (90, 93, 92, 94, 91)
@@ -612,7 +612,7 @@
             <Parameter default="10" name="pDataset" type="Numeric"/>
         </Parameters>
         <Query>
-            SELECT t.text as Indicator, v.value*100 as Value, n.country_code as Country
+            SELECT t.text as Indicator, ROUND(v.value*100,1) as Value, n.country_code as Country
 			FROM nuts n, profile p, value v, dataset d, indicator i, translation t
 			WHERE n.id = p.nuts_id
 			AND v.indicator_id IN (110, 111, 112)
@@ -634,7 +634,7 @@
             <Parameter default="AT" name="pCountry" type="String"/>
         </Parameters>
         <Query>
-            SELECT t.text as Indicator, v.value*100 as Value, n.country_code as Country
+            SELECT t.text as Indicator, ROUND(v.value*100,1) as Value, n.country_code as Country
 			FROM nuts n, profile p, value v, dataset d, indicator i, translation t
 			WHERE n.id = p.nuts_id
 			AND v.indicator_id IN (110, 111, 112)
