@@ -41,8 +41,10 @@ define(function (require) {
         $scope.pageSize = 16;      
       } else {
         $scope.pageSize = 15;
-      }    
+      }
+      $scope.elementsEnd=$scope.pageSize;    
       $scope.$apply();
+      updateText();
     });
 
     //Variables pagination
@@ -56,7 +58,7 @@ define(function (require) {
     $scope.elementsEnd=$scope.pageSize;
 
     // Pagination Text
-    
+
     $scope.paginationText = 'Displaying ' + ($scope.elementsStart+1)+'-'+$scope.elementsEnd + ' of ' + $scope.amatrix.length;
 
     var updateText = function() {
