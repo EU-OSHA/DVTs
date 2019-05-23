@@ -20,7 +20,8 @@
         padding: 2rem;
         header{
           display: flex;
-          margin-bottom: 2rem;
+          margin-bottom: 0;
+          min-height: 36%;
           img{
             width: auto !important;
             margin-right: 1rem;

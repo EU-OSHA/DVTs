@@ -16,7 +16,8 @@
 	.social--network--nav, .footer-social-network, 
 	.footer-nav-accessibility,
 	.chart--submenu, 
-	#popUpMessage{
+	#popUpMessage, 
+	.download-pdf{
 	  display: none !important;
 	}
 	a[href]:after {
@@ -37,8 +38,11 @@
 
 
 	@page {
-   size: auto;
-  	margin: 10mm 25mm 25mm 25mm; 
+	  size: auto;
+	  margin:2.5cm; 
+	}
+	body{
+		padding: 0 !important;
 	}
 	h2{
 		font-size: 2.8rem !important;
@@ -89,6 +93,7 @@
 	.home-cover{
 		border-top: 0px;
 		height: auto;
+		min-height: auto !important;
 	}
 	.advice--block{
 		top: 0;
@@ -157,7 +162,7 @@
 					font-size: 1.6rem !important;
 					label{
 						width: auto;
-						font-size: 1.6rem !important;
+						font-size: 1.4rem !important;
 					}
 					select{
 						width: auto;
@@ -167,6 +172,52 @@
 			}
 		}
 	}
+
+	.country--profile--page{
+		.btn--block-full{
+			display: none;
+		}
+		.compare--block{
+			.compare--list{
+				display: block;
+				li{
+					width:auto;
+					display: inline-block;
+					font-size: 1.6rem !important;
+					label{
+						width: auto;
+						font-size: 1.4rem !important;
+					}
+					select{
+						width: auto;
+						font-size: 1.6rem !important;
+					}
+				}
+			}
+		}
+		.column--grid--block{
+			flex-wrap: wrap !important;
+			.column--item {
+			  border-right: 0 !important;
+			  padding: 1rem 0 2rem !important;
+			  width: 100% !important;
+			  .flags--wrapper{
+			  	border: 1px solid #CCC !important;
+				  width: 1cm !important;
+				  float: left !important;
+				  margin-right: 1rem !important;
+			  }
+			  .complete-text{
+			  	display: block !important;
+			  }
+			  .download-report, .partial-text{
+			  	display: none;
+			  }
+			}
+		} 
+	}
+
+
 
 	.workforce--page{
 		.filter--indicator--block{
@@ -210,5 +261,74 @@
 	  text-align: center;
 	  margin: 1rem 0rem;
 	}
+
+	.filter--letter--section {
+		display: none;
+	}
+	.alphabetic--card--section{		
+		.alphabetic--card--block{
+			.alphabetic--card--items{
+				.alphabetic-card-item{
+					border-radius: 0 !important;
+					padding: 0 1rem !important;
+					margin: 0 !important;
+					width: 20% !important;
+					page-break-inside : avoid !important;
+					.additional-img{
+						img{
+							border:1px solid #CCC !important;
+						}						
+					}
+					.btn--block-full{
+						display: none;
+					}
+				}
+			}
+		}
+	}   
+	.highlited--data--section{
+		&.affix{
+  		position: initial !important; 
+		}
+	}
+	.social-dialogue{
+	  .card--grid{
+	    .card--block--chart{
+	    	margin: 0 !important; 
+	      .chart--block{
+	        header{
+	          img{
+	          	border: 1px solid #ccc !important;
+	          }
+	          h2{
+	          }      
+	        }
+	        .highlited-data-list{
+	          li{
+	            width: 25% !important;
+	            text-align: left !important;
+	            span{
+	              &.country-data{
+	                font-size: 1.8rem !important;
+	              }
+	              &.data-text{
+									font-size: 1.8rem !important;
+	              }
+	            } 
+	            label{
+								font-family: OpenSans !important;
+								padding-bottom: 0 1rem !important;
+								font-size: 1.6rem !important;
+	            }               
+	          }
+	        }
+	      }
+	    }
+	  } 
+	  .block--filter--wrapper {
+	  }
+	}
+
+
 }
 
