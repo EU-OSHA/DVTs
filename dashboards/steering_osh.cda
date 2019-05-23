@@ -119,11 +119,11 @@
 			ON n.id = mp.nuts_id
 			INNER JOIN literal l
 			ON l.id = mp.text_1_literal_id
-			INNER JOIN literal l2
+			LEFT JOIN literal l2
 			ON l2.id = mp.text_2_literal_id
 			INNER JOIN translation t
 			ON l.id = t.literal_id
-			INNER JOIN translation t2
+			LEFT JOIN translation t2
 			ON l2.id = t2.literal_id
 			WHERE mp.page = 'MATRIX_STRATEGY' 
 			AND n.literal_id REGEXP ${countries}

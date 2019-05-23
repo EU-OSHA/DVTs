@@ -78,16 +78,30 @@ define(function (require) {
         var firstSplit =  shortText.substring(0, newMaxCharacter);
 
         if(firstSplit.match('<a')){
-          newMaxCharacter += 150;
-          //$log.warn(firstSplit);
+          pNumCharacters += 150;
         }
-        /*var index = shortText.indexOf('<');
-        if(index != 0 || index != -1){
+
+        var indexStart = shortText.indexOf('<a');
+        var indexEnd = shortText.indexOf('>', indexStart);
+        var cont = 0;
+
+        if(indexStart != -1){
+          while (indexStart != -1){
+            var link = shortText.substring(indexStart, indexEnd);
+            newMaxCharacter = newMaxCharacter + link.length;
+            indexStart = shortText.indexOf('<a', indexEnd);
+            indexEnd = shortText.indexOf('>', indexStart);
+            //$log.warn(link);
+            //$log.warn(link.length);
+          }
+        }
+        
+        /*if(index != 0 || index != -1){
           shortText = '<p>'+ shortText +'</p>';
           $log.warn(shortText);
         }*/
-        if (shortText.length > pNumCharacters) {
-          shortText = $.trim(shortText).substring(0, newMaxCharacter).split(" ").slice(0, -1).join(" ") + "<span class='dots'>...</span>";
+        if (shortText.length > newMaxCharacter ) {
+          shortText = $.trim(shortText).substring(0, pNumCharacters).split(" ").slice(0, -1).join(" ") + "<span class='dots'>...</span>";
         }
         return $sce.trustAsHtml(shortText);
       }
