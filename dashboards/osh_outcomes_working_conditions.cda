@@ -561,5 +561,90 @@
         </Query>
    	</DataAccess>
 
+   	<!-- PHYSICAL RISK || ALL Eurofound RISK INVOLVED WITH WORK DATA EU28 DATA -->
+    <DataAccess access="public" connection="dvt_conn" id="getEU28RisksInvolvedEurofoundData" type="sql">
+        <Cache duration="3600" enabled="true" />
+        <Columns />
+        <Parameters>
+            <Parameter default="10" name="pDataset" type="Numeric"/>
+        </Parameters>
+        <Query>
+            SELECT t.text as Indicator, v.value*100 as Value, n.country_code as Country
+			FROM nuts n, profile p, value v, dataset d, indicator i, translation t
+			WHERE n.id = p.nuts_id
+			AND v.indicator_id IN (90, 93, 92, 94, 91)
+			AND i.id = v.indicator_id
+			AND i.literal_id = t.literal_id
+			AND v.profile_id = p.id
+			AND d.id = v.dataset_id
+			AND d.id = ${pDataset}
+			AND n.country_code = 'EU28';
+        </Query>
+   	</DataAccess>
+
+   	<!-- PHYSICAL RISK || ALL Eurofound RISK INVOLVED WITH WORK DATA -->
+    <DataAccess access="public" connection="dvt_conn" id="getCountryRisksInvolvedEurofoundData" type="sql">
+        <Cache duration="3600" enabled="true" />
+        <Columns />
+        <Parameters>
+            <Parameter default="10" name="pDataset" type="Numeric"/>
+            <Parameter default="AT" name="pCountry" type="String"/>
+        </Parameters>
+        <Query>
+            SELECT t.text as Indicator, v.value*100 as Value, n.country_code as Country
+			FROM nuts n, profile p, value v, dataset d, indicator i, translation t
+			WHERE n.id = p.nuts_id
+			AND v.indicator_id IN (90, 93, 92, 94, 91)
+			AND i.id = v.indicator_id
+			AND i.literal_id = t.literal_id
+			AND v.profile_id = p.id
+			AND d.id = v.dataset_id
+			AND d.id = ${pDataset}
+			AND n.country_code = ${pCountry};
+        </Query>
+   	</DataAccess>
+
+   	<!-- PHYSICAL RISK || ALL ESENER RISK INVOLVED WITH WORK DATA EU28 DATA -->
+    <DataAccess access="public" connection="dvt_conn" id="getEU28RisksInvolvedESENERData" type="sql">
+        <Cache duration="3600" enabled="true" />
+        <Columns />
+        <Parameters>
+            <Parameter default="10" name="pDataset" type="Numeric"/>
+        </Parameters>
+        <Query>
+            SELECT t.text as Indicator, v.value*100 as Value, n.country_code as Country
+			FROM nuts n, profile p, value v, dataset d, indicator i, translation t
+			WHERE n.id = p.nuts_id
+			AND v.indicator_id IN (110, 111, 112)
+			AND i.id = v.indicator_id
+			AND i.literal_id = t.literal_id
+			AND v.profile_id = p.id
+			AND d.id = v.dataset_id
+			AND d.id = ${pDataset}
+			AND n.country_code = 'EU28';
+        </Query>
+   	</DataAccess>
+
+   	<!-- PHYSICAL RISK || ALL ESENER RISK INVOLVED WITH WORK DATA -->
+    <DataAccess access="public" connection="dvt_conn" id="getCountryRisksInvolvedESENERData" type="sql">
+        <Cache duration="3600" enabled="true" />
+        <Columns />
+        <Parameters>
+            <Parameter default="10" name="pDataset" type="Numeric"/>
+            <Parameter default="AT" name="pCountry" type="String"/>
+        </Parameters>
+        <Query>
+            SELECT t.text as Indicator, v.value*100 as Value, n.country_code as Country
+			FROM nuts n, profile p, value v, dataset d, indicator i, translation t
+			WHERE n.id = p.nuts_id
+			AND v.indicator_id IN (110, 111, 112)
+			AND i.id = v.indicator_id
+			AND i.literal_id = t.literal_id
+			AND v.profile_id = p.id
+			AND d.id = v.dataset_id
+			AND d.id = ${pDataset}
+			AND n.country_code = ${pCountry};
+        </Query>
+   	</DataAccess>
 
 </CDADescriptor>

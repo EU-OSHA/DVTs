@@ -335,21 +335,45 @@ define(function (require) {
 								return (x+10)
 							};
 
-							// Change the position and the colour of the legend text
-                            var technicalLegend = function(x,y){
-                            	//$log.warn(paper);
-                            	var st = paper.set();
+							// Show axis labels in radar chart
+							var showAxisLabels = function(){
+								var step = attributes.step;
+								var axisFixedMax = attributes.axisFixedMax;
+
+								//$log.warn(attributes);
+
+								var st = paper.set();
                             	var width = paper.width;
                             	//$log.warn('width: '+ width);
                             	var height = paper.height;
                             	//$log.warn('height: '+ height);
-								st.push(
-								    paper.text(width/2.15, height/2.3, '0%'),
-								    paper.text(width/2.16, height/2.7, '10%'),
-								    paper.text(width/2.16, height/3.6, '20%'),
-								    paper.text(width/2.16, height/5, '30%'),
-								    paper.text(width/2.16, height/7.9, '40%')
-								);
+
+								if(attributes.chartTitle == 'Vibrations, loud noise and temperature'){
+									$log.warn('entra');
+									st.push(
+									    paper.text(width/2.15, height/2.3, '0%'),
+									    paper.text(width/2.16, height/2.7, step+'10%'),
+									    paper.text(width/2.16, height/3.6, (step*2)+'20%'),
+									    paper.text(width/2.16, height/5, (step*3)+'30%'),
+									    paper.text(width/2.16, height/7.9, (step*4)+'40%')
+									);
+								}else if(attributes.chartTitle == 'Risks involved with work'){
+									st.push(
+									    paper.text(width/2.15, height/2.3, '0%'),
+									    paper.text(width/2.16, height/2.7, step+'20%'),
+									    paper.text(width/2.16, height/3.6, (step*2)+'40%'),
+									    paper.text(width/2.16, height/5, (step*3)+'60%'),
+									    paper.text(width/2.16, height/7.9, (axisFixedMax)+'80%')
+									);
+								}
+                            	
+								
+							};
+
+							// Change the position and the colour of the legend text
+                            var technicalLegend = function(x,y){
+                            	
+								//showAxisLabels();
 
                                 x = shape(x,y,0);
                                 paper.text(x, y, opts.indicators[0])

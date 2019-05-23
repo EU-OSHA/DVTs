@@ -59,11 +59,24 @@ define(function (require) {
     }];
 
     $scope.chartWidth = angular.element('.card--block--chart .chart--block')[1].clientWidth;
-
+  
     $scope.pIndicator = $stateParams.pIndicator;
     $scope.pSubIndicator = ($stateParams.pSubIndicator != null)?$stateParams.pSubIndicator:'smoke-powder-or-dust';
     $scope.pCountry1 = ($stateParams.pCountry1 != null)?$stateParams.pCountry1:'AT';
     $scope.pCountry2 = ($stateParams.pCountry2 != null)?$stateParams.pCountry2:'BE';
+
+    $scope.angle = angular.element(window).width() > 768 ? 1 : 0;
+    $scope.horizontalHeight = angular.element(window).width() > 768 ? 470 : 670;
+    $scope.orientation = angular.element(window).width() > 768 ? "vertical" : "horizontal";
+    $scope.axisSize = angular.element(window).width() > 768 ? 150 : 160;
+
+    var width = angular.element($window).width();
+      angular.element($window).bind('resize', function() {
+        if (angular.element($window).width() != width) {
+          width = angular.element($window).width();
+          $state.reload();
+        }
+    });
 
     //$log.warn("Param pCountry1: "+$stateParams.pCountry1+", $scope pCountry1: "+$scope.pCountry1);
     //$log.warn("Param pCountry2: "+$stateParams.pCountry2+", $scope pCountry2: "+$scope.pCountry2);
@@ -107,6 +120,21 @@ define(function (require) {
               percent: "#%"
             }
           }
+        }
+      },
+      //1 -  Risks Involved in work
+      {
+        promises: {
+          story1: [
+            dataService.getCountryRisksInvolvedEurofoundData($scope.datasetEurofound, $scope.pCountry1), 
+            dataService.getCountryRisksInvolvedEurofoundData($scope.datasetEurofound, $scope.pCountry2),
+            dataService.getEU28RisksInvolvedEurofoundData($scope.datasetEurofound)           
+          ],
+          story2: [
+            dataService.getCountryRisksInvolvedESENERData($scope.datasetESENER, $scope.pCountry1), 
+            dataService.getCountryRisksInvolvedESENERData($scope.datasetESENER, $scope.pCountry2),
+            dataService.getEU28RisksInvolvedESENERData($scope.datasetESENER)            
+          ]
         }
       }
     ];
@@ -187,10 +215,18 @@ define(function (require) {
               pCountry1: null, 
               pCountry2: null
             });
-          }else{
+          }else if(indicator == 'vibrations-loud-noise-and-temperature'){
             $state.go($state.current.name, {
               pIndicator: indicator,
               pSubIndicator: null,
+              pCountry1: 'AT', 
+              pCountry2: 'BE',
+              pSplit: null
+            });
+          }else{
+            $state.go($state.current.name, {
+              pIndicator: indicator,
+              pSubIndicator: 'eurofound',
               pCountry1: 'AT', 
               pCountry2: 'BE'
             });
@@ -198,11 +234,22 @@ define(function (require) {
         }
       }
 
+      $scope.changeSplit = function(){
+        if ($state.current.name !== undefined) {
+          $state.transitionTo('physical-risk', {
+            pIndicator: $scope.pIndicator,
+            pSubIndicator: $scope.pSubIndicator,
+            pCountry1: $scope.pCountry1, 
+            pCountry2: $scope.pCountry2,
+          }, {reload: true});
+        }
+      }
+
       $scope.countryChange = function(){
         if ($state.current.name !== undefined) {
           $state.transitionTo('physical-risk', {
-            pIndicator: 'vibrations-loud-noise-and-temperature',
-            pSubIndicator: null,
+            pIndicator: $scope.pIndicator,
+            pSubIndicator: ($scope.pIndicator=='vibrations-loud-noise-and-temperature')?null:$scope.pSubIndicator,
             pCountry1: $scope.pCountry1, 
             pCountry2: $scope.pCountry2
           }, {reload: true});

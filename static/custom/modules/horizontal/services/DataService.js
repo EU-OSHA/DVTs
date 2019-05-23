@@ -766,13 +766,13 @@ define(function () {
                     return promise(url);
                 },
 
-                 /**
+                /**
                  * @ngdoc method
                  * @name dvt.configModule.DataService#getEU28VibrationData
                  * @methodOf dvt.configModule.DataService
                  * @description
                  * Get vibrations, loud noise, and temperature data in pyhsical risks
-                 */
+                */
                 getEU28VibrationData: function (pDataset) {
                     var url = configService.getOshOutcomesWorkingConditionsDataPath() + "&dataAccessId=getEU28VibrationData" + "&parampDataset=" + pDataset;
                     $log.debug('getEU28VibrationData url:' + url);
@@ -803,6 +803,58 @@ define(function () {
                 getCountry2VibrationData: function (pDataset, pCountry) {
                     var url = configService.getOshOutcomesWorkingConditionsDataPath() + "&dataAccessId=getCountry2VibrationData" + "&parampDataset=" + pDataset + "&parampCountry="+ pCountry;
                     $log.debug('getCountryVibrationData url:' + url);
+                    return promise(url);
+                },
+
+                /**
+                 * @ngdoc method
+                 * @name dvt.configModule.DataService#getEU28RisksInvolvedEurofoundData
+                 * @methodOf dvt.configModule.DataService
+                 * @description
+                 * Get vibrations, loud noise, and temperature data in pyhsical risks
+                 */
+                getEU28RisksInvolvedEurofoundData: function (pDataset) {
+                    var url = configService.getOshOutcomesWorkingConditionsDataPath() + "&dataAccessId=getEU28RisksInvolvedEurofoundData" + "&parampDataset=" + pDataset;
+                    $log.debug('getEU28RisksInvolvedEurofoundData url:' + url);
+                    return promise(url);
+                },
+
+                /**
+                 * @ngdoc method
+                 * @name dvt.configModule.DataService#getCountryRisksInvolvedEurofoundData
+                 * @methodOf dvt.configModule.DataService
+                 * @description
+                 * Get vibrations, loud noise, and temperature data in pyhsical risks
+                 */
+                getCountryRisksInvolvedEurofoundData: function (pDataset, pCountry) {
+                    var url = configService.getOshOutcomesWorkingConditionsDataPath() + "&dataAccessId=getCountryRisksInvolvedEurofoundData" + "&parampDataset=" + pDataset + "&parampCountry="+ pCountry;
+                    $log.debug('getCountryRisksInvolvedEurofoundData url:' + url);
+                    return promise(url);
+                },
+
+                /**
+                 * @ngdoc method
+                 * @name dvt.configModule.DataService#getEU28RisksInvolvedESENERData
+                 * @methodOf dvt.configModule.DataService
+                 * @description
+                 * Get vibrations, loud noise, and temperature data in pyhsical risks
+                 */
+                getEU28RisksInvolvedESENERData: function (pDataset) {
+                    var url = configService.getOshOutcomesWorkingConditionsDataPath() + "&dataAccessId=getEU28RisksInvolvedESENERData" + "&parampDataset=" + pDataset;
+                    $log.debug('getEU28RisksInvolvedESENERData url:' + url);
+                    return promise(url);
+                },
+
+                /**
+                 * @ngdoc method
+                 * @name dvt.configModule.DataService#getCountryRisksInvolvedESENERData
+                 * @methodOf dvt.configModule.DataService
+                 * @description
+                 * Get vibrations, loud noise, and temperature data in pyhsical risks
+                 */
+                getCountryRisksInvolvedESENERData: function (pDataset, pCountry) {
+                    var url = configService.getOshOutcomesWorkingConditionsDataPath() + "&dataAccessId=getCountryRisksInvolvedESENERData" + "&parampDataset=" + pDataset + "&parampCountry="+ pCountry;
+                    $log.debug('getCountryRisksInvolvedESENERData url:' + url);
                     return promise(url);
                 },
 
