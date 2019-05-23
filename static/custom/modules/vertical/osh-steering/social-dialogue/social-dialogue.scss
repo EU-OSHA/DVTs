@@ -93,7 +93,7 @@
   .highlited--data--block{
     display: flex;
     .highlited-data-item{
-      &:first-child{
+      &:nth-child(1){
         width:30%;
         .flags--wrapper{
           float:left;
@@ -114,6 +114,9 @@
             }          
           }
         }
+      }
+      &:nth-child(2){
+        width:70%;
       }
       .highlited-data-list{
         list-style: none;
