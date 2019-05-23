@@ -17,8 +17,12 @@
 	.footer-nav-accessibility,
 	.chart--submenu, 
 	#popUpMessage, 
-	.download-pdf{
+	.download-pdf, 
+	.partial-text {
 	  display: none !important;
+	}
+	.complete-text{
+		display: block !important;
 	}
 	a[href]:after {
 	  content: "";
