@@ -33,7 +33,7 @@
             <dvt-bar-chart
               data-ng-cloak
               query="getOshCultureData" cda="{{::cdaOSHOutcomes }}"
-              width="330" height="470" axis-percent="1"
+              width="330" height="{{horizontalHeight}}" axis-percent="1"
               orientation="{{orientation}}" axis-fixed-min="0"
               axis-fixed-max="100" step="{{step.chart1}}"
               params="[['pDataset', datasetESENER], ['pIndicator', 104]]"
@@ -48,7 +48,7 @@
               leaf-content-overflow='visible'
               dimensions="stories[1].dimensions"
               legend="true"
-              angle="1" stacked="1"
+              angle="{{angle}}" stacked="1"
               base-axis-size="{{axisSize}}"
               legend-item-size="55"
             ></dvt-bar-chart>
@@ -68,7 +68,7 @@
             <dvt-bar-chart
               data-ng-cloak
               query="getOshCultureData" cda="{{::cdaOSHOutcomes }}"
-              width="330" height="470" axis-percent="1"
+              width="330" height="{{horizontalHeight}}" axis-percent="1"
               orientation="{{orientation}}" axis-fixed-min="0"
               axis-fixed-max="100" step="{{step.chart2}}"
               params="[['pDataset', datasetESENER], ['pIndicator', 105]]"
@@ -83,7 +83,7 @@
               leaf-content-overflow='visible'
               dimensions="stories[1].dimensions"
               legend="true"
-              angle="1" stacked="1"
+              angle="{{angle}}" stacked="1"
               legend-align="center"
               base-axis-size="{{axisSize}}"
               legend-item-size="100"
@@ -104,7 +104,7 @@
             <dvt-bar-chart
               data-ng-cloak
               query="getOshCultureData" cda="{{::cdaOSHOutcomes }}"
-              width="330" height="470" axis-percent="1"
+              width="330" height="{{horizontalHeight}}" axis-percent="1"
               orientation="{{orientation}}" axis-fixed-min="0"
               axis-fixed-max="100" step="{{step.chart3}}"
               params="[['pDataset', datasetESENER], ['pIndicator', 106]]"
@@ -119,7 +119,7 @@
               leaf-content-overflow='visible'
               dimensions="stories[1].dimensions"
               legend="true"
-              angle="1" stacked="1"
+              angle="{{angle}}" stacked="1"
               base-axis-size="{{axisSize}}"
               legend-item-size="55"
             ></dvt-bar-chart>
@@ -139,7 +139,7 @@
             <dvt-bar-chart
               data-ng-cloak
               query="getOshCultureData" cda="{{::cdaOSHOutcomes }}"
-              width="330" height="470" axis-percent="1"
+              width="330" height="{{horizontalHeight}}" axis-percent="1"
               orientation="{{orientation}}" axis-fixed-min="0"
               axis-fixed-max="100" step="{{step.chart4}}"
               params="[['pDataset', datasetESENER], ['pIndicator', 107]]"
@@ -154,7 +154,7 @@
               leaf-content-overflow='visible'
               dimensions="stories[1].dimensions"
               legend="true"
-              angle="1" stacked="1"
+              angle="{{angle}}" stacked="1"
               base-axis-size="{{axisSize}}"
               legend-item-size="55"
             ></dvt-bar-chart>
@@ -174,7 +174,7 @@
             <dvt-bar-chart
               data-ng-cloak
               query="getOshCultureData" cda="{{::cdaOSHOutcomes }}"
-              width="330" height="470" axis-percent="1"
+              width="330" height="{{horizontalHeight}}" axis-percent="1"
               orientation="{{orientation}}" axis-fixed-min="0"
               axis-fixed-max="100" step="{{step.chart5}}"
               params="[['pDataset', datasetESENER], ['pIndicator', 108]]"
@@ -189,7 +189,7 @@
               leaf-content-overflow='visible'
               dimensions="stories[1].dimensions"
               legend="true"
-              angle="1" stacked="1"
+              angle="{{angle}}" stacked="1"
               base-axis-size="{{axisSize}}"
               legend-item-size="55"
             ></dvt-bar-chart>
@@ -209,7 +209,7 @@
             <dvt-bar-chart
               data-ng-cloak
               query="getOshCultureData" cda="{{::cdaOSHOutcomes }}"
-              width="330" height="470" axis-percent="1"
+              width="330" height="{{horizontalHeight}}" axis-percent="1"
               orientation="{{orientation}}" axis-fixed-min="0"
               axis-fixed-max="100" step="{{step.chart6}}"
               params="[['pDataset', datasetESENER], ['pIndicator', 109]]"
@@ -223,7 +223,7 @@
               leaf-content-overflow='visible'
               dimensions="stories[1].dimensions"
               legend="true"
-              angle="1"
+              angle="{{angle}}"
               base-axis-size="{{axisSize}}"
               legend-item-size="55"
             ></dvt-bar-chart>
@@ -243,7 +243,7 @@
             <dvt-bar-chart
               data-ng-cloak
               query="getEurostatData" cda="{{::cdaOSHOutcomes }}"
-              width="600" height="470" axis-percent="1"
+              width="600" height="{{horizontalHeight}}" axis-percent="1"
               orientation="{{orientation}}" axis-fixed-min="0"
               axis-fixed-max="100" step="{{step.chart7}}"
               params="[['pDataset', datasetEurofound], ['pIndicator', 63]]"
@@ -258,7 +258,7 @@
               leaf-content-overflow='visible'
               dimensions="stories[1].dimensions"
               legend="true"
-              angle="1"
+              angle="{{angle}}"
               base-axis-size="{{axisSize}}"
               legend-item-size="230"
             ></dvt-bar-chart>
@@ -278,7 +278,7 @@
             <dvt-bar-chart
               data-ng-cloak
               query="getEurostatData" cda="{{::cdaOSHOutcomes }}"
-              width="330" height="470" axis-percent="1"
+              width="330" height="{{horizontalHeight}}" axis-percent="1"
               orientation="{{orientation}}" axis-fixed-min="0"
               axis-fixed-max="100" step="{{step.chart8}}"
               params="[['pDataset', datasetEurofound], ['pIndicator', 64]]"
@@ -294,7 +294,7 @@
               leaf-content-overflow='visible'
               dimensions="stories[0].dimensions"
               legend="true"
-              angle="1"
+              angle="{{angle}}"
               base-axis-size="{{axisSize}}"
               legend-item-size="280"
             ></dvt-bar-chart>
