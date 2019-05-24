@@ -9,7 +9,7 @@ define (function (require) {
                     {
                         name: "main",
                         dataPart: "0",
-                        barSizeMax: 60,
+                        barSizeMax: 15,
                         bar_call: function(){
                             var resolution = screen.width;
 
@@ -19,23 +19,39 @@ define (function (require) {
 
                             if(resolution <= 768){
                                 //$log.warn(this);
+
+                                //Non EU countries stroke separator horizontal
+                                this.add(pv.Rule)
+                                    //Negative value in top line continues out of the chart
+                                    .top(function(scene){
+                                        //$log.warn(this);
+                                        var baseScale = this.getContext().chart.axes.base.scale;
+                                        
+                                        return baseScale('Austria (AT)') + 11 /*this.sign.panel.barWidth/2*/;
+                                    })
+                                    .height(null) // clear any inherited value
+                                    .width(null)  // clear any inherited value
+                                    .strokeStyle('black')
+                                    .lineWidth(3)
+                                    .left(0)
+                                    .right(0);
                                 
+                                //EU28 stroke separator horizontal
                                 this.add(pv.Rule)
                                     //Negative value in top line continues out of the chart
                                     .top(function(scene){
                                         var baseScale = this.getContext().chart.axes.base.scale;
-                                        //$log.warn(this.root);
-                                        return baseScale('Switzerland (CH)') + 10;
+                                        
+                                        return baseScale('Switzerland (CH)') + 11;
                                     })
                                     .height(null) // clear any inherited value
                                     .width(null)  // clear any inherited value
-                                    .strokeStyle('#F0F0F0')
-                                    .lineWidth(10)
+                                    .strokeStyle('black')
+                                    .lineWidth(3)
                                     .left(0)
-                                    .right(function(scene){
-                                        return -this.root.width();
-                                    });
+                                    .right(0);
                             }else{
+                                //EU28 stroke separator vertical
                                 this.add(pv.Rule)
                                     //Negative value in top line continues out of the chart
                                     .top(0)
@@ -51,8 +67,8 @@ define (function (require) {
                                         return panelWidth/32;               
                                     });
 
+                                //Non EU countries stroke separator vertical
                                 this.add(pv.Rule)
-                                    //.url(configService.getImagesPath()+'man_orange.svg')
                                     .top(0)
                                     .bottom(0)
                                     .height(null) // clear any inherited value
@@ -60,16 +76,15 @@ define (function (require) {
                                     .strokeStyle('black')
                                     .lineWidth(3)
                                     .left(function(scene){
+                                        var baseScale = this.getContext().chart.axes.base.scale;
                                         var countryKey = scene.firstAtoms.category;
-                                        var panelWidth = this.root.width();
+                                        var panelWidth = this.root.width();                                        
 
-                                        if(resolution < 1200){
-                                            return panelWidth/1.13;
+                                        if(resolution < 960){
+                                            return baseScale('Switzerland (CH)') - 13;
                                         }
 
-                                        //$log.warn(resolution);
-                                        
-                                        return panelWidth/1.12;               
+                                        return baseScale('Switzerland (CH)') - this.sign.panel.barWidth; 
                                     });
                             }
                             

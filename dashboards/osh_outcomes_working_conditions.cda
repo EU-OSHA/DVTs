@@ -6,7 +6,7 @@
       </Connection>
    </DataSources>
 
-	<!-- OSH OUTCOMES || ALL AVAILABLE COUNTRIES FOR INDICATORS IN WORK ACCIDENTS -->
+	<!-- OSH OUTCOMES - WORK ACCIDENTS || ALL AVAILABLE COUNTRIES FOR INDICATORS IN WORK ACCIDENTS -->
 	<DataAccess access="public" connection="dvt_conn" id="getNonFatalAccidentsCountries" type="sql">
 	    <Cache duration="3600" enabled="true" />
 	    <Columns />
@@ -21,7 +21,7 @@
 	    </Query>
 	</DataAccess>
 
-	<!-- OSH OUTCOMES || ALL AVAILABLE COUNTRIES FOR INDICATORS IN WORK ACCIDENTS -->
+	<!-- OSH OUTCOMES - WORK ACCIDENTS || ALL AVAILABLE COUNTRIES FOR INDICATORS IN WORK ACCIDENTS -->
 	<DataAccess access="public" connection="dvt_conn" id="getWorkAccidentsIndicators" type="sql">
 	    <Cache duration="3600" enabled="true" />
 	    <Columns />
@@ -32,7 +32,7 @@
 	    </Query>
 	</DataAccess>
 
-	<!-- OSH OUTCOMES || DATA FOR NON FATAL ACCIDENTS INDICATOR -->
+	<!-- OSH OUTCOMES - WORK ACCIDENTS || DATA FOR NON FATAL ACCIDENTS INDICATOR -->
 	<DataAccess access="public" connection="dvt_conn" id="getNonFatalAccidentsData" type="sql">
 	    <Cache duration="3600" enabled="true" />
 	    <Columns />
@@ -52,7 +52,7 @@
 	    </Query>
 	</DataAccess>
 
-	<!-- OSH OUTCOMES || DATA FOR FATAL WORK ACCIDENTS INDICATOR -->
+	<!-- OSH OUTCOMES - WORK ACCIDENTS || DATA FOR FATAL WORK ACCIDENTS INDICATOR -->
 	<DataAccess access="public" connection="dvt_conn" id="getFatalAccidentsData" type="sql">
 	    <Cache duration="3600" enabled="true" />
 	    <Columns />
@@ -71,7 +71,7 @@
 	    </Query>
 	</DataAccess>
 
-	<!-- OSH OUTCOMES || DATA FOR FATAL WORK ACCIDENTS INDICATOR -->
+	<!-- OSH OUTCOMES - WORK ACCIDENTS || DATA FOR NON FATAL ACCIDENTS PER WORKER INDICATOR -->
 	<DataAccess access="public" connection="dvt_conn" id="getNonFatalAccidentsPerWorkersData" type="sql">
 	    <Cache duration="3600" enabled="true" />
 	    <Columns />
@@ -100,7 +100,7 @@
 	    </Query>
 	</DataAccess>
 
-	<!-- OSH OUTCOMES || DATA FOR FATAL WORK ACCIDENTS INDICATOR -->
+	<!-- OSH OUTCOMES - WORK ACCIDENTS || DATA FOR LEVEL OF REPORTING -->
 	<DataAccess access="public" connection="dvt_conn" id="getLevelOfReportingData" type="sql">
 	    <Cache duration="3600" enabled="true" />
 	    <Columns />
@@ -119,26 +119,7 @@
 	    </Query>
 	</DataAccess>
 
-	<!-- OSH OUTCOMES || DATA FOR FATAL WORK ACCIDENTS INDICATOR -->
-	<!--<DataAccess access="public" connection="dvt_conn" id="getLevelOfReportingData" type="sql">
-	    <Cache duration="3600" enabled="true" />
-	    <Columns />
-	    <Parameters>
-	    	<Parameter default="14" name="pDataset" type="Numeric"/>
-	    </Parameters>
-	    <Query>
-	      	SELECT t.text as Indicator, IF(n.name = 'European Union', n.country_code, CONCAT(n.name, " (", n.country_code, ")")) as Country, ROUND(v.value*100, 1) as Value
-	      	FROM nuts n, profile p, value v, translation t
-			WHERE n.id = p.nuts_id
-			AND v.profile_id = p.id
-			AND v.indicator_id = 56
-			AND v.dataset_id = ${pDataset}
-			AND t.literal_id = 313
-			ORDER BY Value ASC
-	    </Query>
-	</DataAccess>-->
-
-	<!-- OSH OUTCOMES || ALL AVAILABLE COUNTRIES FOR INDICATORS IN HEALTH PERCEPTION -->
+	<!-- OSH OUTCOMES - HEALTH PERCEPTION || ALL AVAILABLE COUNTRIES FOR INDICATORS IN HEALTH PERCEPTION -->
 	<DataAccess access="public" connection="dvt_conn" id="getHealthPerceptionCountries" type="sql">
 	    <Cache duration="3600" enabled="true" />
 	    <Columns />
@@ -153,7 +134,7 @@
 	    </Query>
 	</DataAccess>
 
-	<!-- OSH OUTCOMES || get health perception of workers countries with available data -->
+	<!-- OSH OUTCOMES - HEALTH PERCEPTION || get health perception of workers data -->
 	<DataAccess access="public" connection="dvt_conn" id="getHealthPerceptionData" type="sql">
 	    <Cache duration="3600" enabled="true" />
 	    <Columns />
@@ -202,7 +183,7 @@
 	    </Query>
 	</DataAccess>
 
-	<!-- STEERING OF OSH || get health perception countries with available data and filters -->
+	<!-- OSH OUTCOMES - HEALTH PERCEPTION || get health perception countries with available data and filters -->
 	<DataAccess access="public" connection="dvt_conn" id="applyHealthPerceptionFilters" type="sql">
 	    <Cache duration="3600" enabled="true" />
 	    <Columns />
@@ -253,7 +234,7 @@
 	    </Query>
 	</DataAccess>
 
-	<!-- OSH OUTCOMES || ALL INDICATORS IN OSH CULTURE AND HEALTH AWARENESS -->
+	<!-- OSH OUTCOMES - OSH CULTURE || ALL INDICATORS IN OSH CULTURE AND HEALTH AWARENESS -->
 	<DataAccess access="public" connection="dvt_conn" id="getOshCultureIndicators" type="sql">
 	    <Cache duration="3600" enabled="true" />
 	    <Columns />
@@ -265,7 +246,7 @@
 	    </Query>
 	</DataAccess>
 
-	<!-- OSH OUTCOMES || OSH CULTURE AND HEALTH AWARENESS DATA -->
+	<!-- OSH OUTCOMES - OSH CULTURE || OSH CULTURE AND HEALTH AWARENESS DATA -->
 	<DataAccess access="public" connection="dvt_conn" id="getOshCultureData" type="sql">
 	    <Cache duration="3600" enabled="true" />
 	    <Columns />
@@ -281,13 +262,14 @@
 			AND v.profile_id = p.id
 			AND p.answer_id = sa.id
 			AND sa.literal_id = t.literal_id
+			AND t.language = 'EN'
 			AND d.id = v.dataset_id
 			AND d.id = ${pDataset}
 			ORDER BY Answer ASC, FIELD('EU28', n.country_code) DESC, FIELD(n.country_code, 'CH','NO'), n.country_code ASC, Value DESC;
 	    </Query>
 	</DataAccess>
 
-	<!-- OSH OUTCOMES || ALL INDICATORS IN OSH CULTURE AND HEALTH AWARENESS -->
+	<!-- OSH OUTCOMES - OSH CULTURE ||OSH CULTURE AND HEALTH AWARENESS EUROSTAT DATA -->
 	<DataAccess access="public" connection="dvt_conn" id="getEurostatData" type="sql">
 	    <Cache duration="3600" enabled="true" />
 	    <Columns />
@@ -450,6 +432,7 @@
             AND v.profile_id = p.id
             AND p.answer_id = sa.id
             AND sa.literal_id = t.literal_id
+            AND t.language = 'EN'
             AND d.id = v.dataset_id
             AND d.id = ${pDataset}
             ORDER BY Answer DESC, FIELD('EU28', n.country_code) DESC, FIELD(n.country_code, 'CH', 'IS', 'NO'), n.country_code ASC, Value DESC;
@@ -526,7 +509,7 @@
             <Parameter default="AT" name="pCountry" type="String"/>
         </Parameters>
         <Query>
-            SELECT t.text as Indicator, ROUND(v.value*100,1) as Value, n.country_code as Country
+            SELECT t.text as Indicator, ROUND(v.value*100,1) as Value, IF(n.name = 'European Union', n.country_code, CONCAT(n.name, " (", n.country_code, ")")) as Country
 			FROM nuts n, profile p, value v, dataset d, indicator i, translation t
 			WHERE n.id = p.nuts_id
 			AND v.indicator_id IN (70, 69, 68, 67)
@@ -548,7 +531,7 @@
             <Parameter default="AT" name="pCountry" type="String"/>
         </Parameters>
         <Query>
-            SELECT t.text as Indicator, ROUND(v.value*100,1) as Value, n.country_code as Country
+            SELECT t.text as Indicator, ROUND(v.value*100,1) as Value, IF(n.name = 'European Union', n.country_code, CONCAT(n.name, " (", n.country_code, ")")) as Country
 			FROM nuts n, profile p, value v, dataset d, indicator i, translation t
 			WHERE n.id = p.nuts_id
 			AND v.indicator_id IN (70, 69, 68, 67)

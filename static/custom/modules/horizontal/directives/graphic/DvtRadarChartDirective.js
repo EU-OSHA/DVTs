@@ -78,7 +78,7 @@ define(function (require) {
 
                 + '<div class="legend-text-block">'
                     + '<div ng-if="isMaximized " class="logoGraphics-wrapper"><img alt="European Agency for Safety and Health at Work" src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/EU-OSHA-en.png" class="logoGraphics"></div>'
-                    + '<div class="legend-info" ng-if="isMaximized && legendClickMode && legend">Click on each value on the legend to hide/show in on the chart</div>'
+                    + '<div class="legend-info"> </div>'
                 + '</div>'
             + '</div>'
 
@@ -182,7 +182,6 @@ define(function (require) {
 							opts = defaultOpts;
 							var clicked = scope.clickAction;
 
-
 							// "Vertical" lines of the spider chart
                             var arm = function (cx, cy, r, angle) {
 								var rad = $r.rad(angle);
@@ -278,6 +277,54 @@ define(function (require) {
 								}
 							};
 
+							/* Tooltip mouseover function */
+				            var over = function (e) {
+			                    // background
+			                    this.animate({
+			                        opacity:.5
+			                    },100);
+
+			                    var elementSVG = angular.element('body');
+			                    angular.element(elementSVG).append('<div class="dvt-map-tooltip"></div>');
+			                    angular.element('.dvt-map-tooltip').append('<p class="country-name">'
+			                        +'<ul>'
+			                        +'<li class="data1"></li>'
+			                        +'</ul>'
+			                        +'</p>');
+
+			                    var question = this.attrs.title.substring(0, this.attrs.title.indexOf('-')-1);
+			                    var country = this.attrs.title.substring(this.attrs.title.indexOf('-')+1, this.attrs.title.indexOf(':'));
+			                    var value = this.attrs.title.substring(this.attrs.title.indexOf(':')+1)
+
+			                    angular.element('.dvt-map-tooltip .country-name').text( country );
+			                    angular.element('.dvt-map-tooltip .data1').html( '<label>' + question + ' ' + value+ '</label>' );
+
+			                    var widthTooltip = angular.element('.dvt-map-tooltip').width();
+			                    var heightTooltip = angular.element('.dvt-map-tooltip').height();
+			                    var positionSVG = elementSVG.position().top + elementSVG.height()/2;
+
+			                    angular.element( document ).on( "mousemove", function( event ) {
+			                        if( event.pageY < positionSVG ){
+			                            angular.element('.dvt-map-tooltip').removeClass('top');
+			                            angular.element('.dvt-map-tooltip').addClass('botton');
+			                            angular.element('.dvt-map-tooltip').css({'left':event.pageX - widthTooltip/2 - 25 ,'top':event.pageY + 30});
+			                        }else{
+			                            angular.element('.dvt-map-tooltip').removeClass('botton');
+			                            angular.element('.dvt-map-tooltip').addClass('top');
+			                            angular.element('.dvt-map-tooltip').css({'left':event.pageX - widthTooltip/2 - 25 ,'top':event.pageY - heightTooltip - 70});
+			                        }
+			                    });
+				            },
+
+				            out = function () {
+			                    // background
+			                    this.animate({
+			                        opacity:1
+			                    },100);
+
+			                   angular.element('.dvt-map-tooltip').remove();
+				            };
+
 							// Paint the circle to represent the values
                             var circle = function (cx, cy, r, angle, value, max, title, indicator, theme) {
 								var colorStroke =
@@ -295,7 +342,7 @@ define(function (require) {
 								// Selected countries outer radius
 								var outerRadius = opts.pathCircleOuterRadius * 2;
 
-								paper.circle(p.x, p.y, outerRadius).attr({
+								var prueba = paper.circle(p.x, p.y, outerRadius).attr({
 									fill: colorStroke,
 									stroke: 'none',
 									title: title + " - " + indicator + ": " + value
@@ -305,7 +352,9 @@ define(function (require) {
 									stroke: "none",
 									title: title + " - " + indicator + ": " + value
 								});
-							};
+
+								//prueba.hover(over,out);
+							};							
 
 							// Paint the line near the legend label
                             var shape = function(x,y,indicator){
@@ -349,7 +398,6 @@ define(function (require) {
                             	//$log.warn('height: '+ height);
 
 								if(attributes.chartTitle == 'Vibrations, loud noise and temperature'){
-									$log.warn('entra');
 									st.push(
 									    paper.text(width/2.15, height/2.3, '0%'),
 									    paper.text(width/2.16, height/2.7, step+'10%'),
@@ -731,6 +779,8 @@ define(function (require) {
 								});
 								// !! As of Raphael 2.1.0, specifying true as the `fit` parameter to `setViewBox()` translates into an invalid value for the SVG `preserveAspectRatio` attribute: "meet". To rule out this problem, we set that attribute directly.
 								paper.canvas.setAttribute('preserveAspectRatio', 'xMaxYMin'); // always scale to fill container, preserving aspect ratio.
+
+								
 							});
 					}
 				};
