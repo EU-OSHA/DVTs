@@ -44,6 +44,10 @@
 	@page {
 	  size: auto;
 	  margin:2.5cm; 
+
+	}
+	html{
+		font-size: 8px !important;		
 	}
 	body{
 		padding: 0 !important;
@@ -140,19 +144,19 @@
 	.economic--sector--profile{
 		.card--grid{
 			.card--block--chart {
-		  	width: 45% !important;
-		  	margin: 2rem 2%;
-		  	page-break-inside: avoid;
-		  	page-break-after: avoid;
+		  	width: 42% !important;
+		  	margin: 2rem 2%  !important;
+		  	page-break-inside: avoid  !important;
+		  	page-break-after: avoid  !important;
 		  	display: block !important;
 				.title--card {
-					min-height: 6rem;
+					min-height: 6rem !important;
 				}
 				.chart--wrapper{
 				  padding: 0 !important;
-				  vertical-align: top;
+				  vertical-align: top  !important;
 				  svg{
-				  	width: 100% !important;
+				  	width:10cm !important;
 				  }
 				}
 			}
@@ -177,7 +181,7 @@
 		}
 	}
 
-	.country--profile--page{
+	.country--profile--page, .regulation {
 		.btn--block-full{
 			display: none;
 		}
@@ -281,6 +285,7 @@
 					.additional-img{
 						img{
 							border:1px solid #CCC !important;
+							width: 6rem !important;
 						}						
 					}
 					.btn--block-full{
@@ -303,6 +308,7 @@
 	        header{
 	          img{
 	          	border: 1px solid #ccc !important;
+	          	width: 6rem !important;
 	          }
 	          h2{
 	          }      
