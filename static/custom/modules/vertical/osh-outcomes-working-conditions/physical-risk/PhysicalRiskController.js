@@ -66,7 +66,7 @@ define(function (require) {
     $scope.pCountry2 = ($stateParams.pCountry2 != null)?$stateParams.pCountry2:'BE';
 
     $scope.angle = angular.element(window).width() > 768 ? 1 : 0;
-    $scope.horizontalHeight = angular.element(window).width() > 768 ? 470 : 670;
+    $scope.horizontalHeight = angular.element(window).width() > 768 ? 470 : 770;
     $scope.orientation = angular.element(window).width() > 768 ? "vertical" : "horizontal";
     $scope.axisSize = angular.element(window).width() > 768 ? 150 : 160;
 
