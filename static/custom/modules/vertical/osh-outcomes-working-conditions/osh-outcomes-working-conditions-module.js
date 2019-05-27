@@ -179,6 +179,35 @@ define(function (require) {
           title: i18n.L22013 +  " - " + i18n.L22020 + " - " + i18n.L363
         }
       });
+
+      $stateProvider.state('prevention-companies', {
+        url: "/osh-outcomes-working-conditions/prevention-companies/:pIndicator/:pCountry1/:pCountry2",
+        params: {
+          pIndicator: {
+            value: 'risk-assessment',
+            squash: 'risk-assessment'
+          },
+          pCountry1: {
+            value: 'AT',
+            squash: true
+          },
+          pCountry2: {
+            value: 'BE',
+            squash: true
+          }
+        },
+        views: {
+          "content-main": {
+            templateUrl: configService.getVerticalTplPath("osh-outcomes-working-conditions/prevention-companies", "prevention-companies"),
+            controller: 'PreventionCompaniesController',
+            resolve: configService.dynamicallyRegisterController($controllerProvider, 'vertical/prevention-companies/PreventionCompaniesController', 'prevention-companies', 'PreventionCompaniesController')
+          }
+        },
+        metaTags: {
+          title: i18n.L22014 +  " - " + i18n.L22020 + " - " + i18n.L363
+        }
+      });
+
     });
 
     module.factory('WorkAccidentsService', require('vertical/work-accidents/services/WorkAccidentsService'));
@@ -186,6 +215,7 @@ define(function (require) {
     module.factory('OverallOpinionService', require('vertical/overall-opinion/services/OverallOpinionService'));
     module.factory('MentalRiskService', require('vertical/mental-risk/services/MentalRiskService'));
     module.factory('PhysicalRiskService', require('vertical/physical-risk/services/PhysicalRiskService'));
+    module.factory('PreventionCompaniesService', require('vertical/prevention-companies/services/PreventionCompaniesService'));
     
     return module;
 });

@@ -1,0 +1,195 @@
+@media only screen 
+and (min-width :768px) and (max-width :1024px) {
+
+	.regulation-page {
+		&.compare--block{
+			display: flex;
+			flex-wrap: nowrap;
+			box-shadow: 0 0px 2px #ccc;	
+			.line{
+				display: none;
+			}
+		  .submenu--block{
+		    padding: 0rem 0 0.5rem 3rem;
+				width: 40%;
+				margin: 0;
+		    label{
+				  font-family: 'OpenSans-Light';
+				  text-transform: uppercase;
+				  font-weight: normal;
+				  letter-spacing: 2px;
+				  display: block;
+				  &:after {
+					  content: "\f107";
+					  font-family: FontAwesome;
+					  text-rendering: auto;
+					  -webkit-font-smoothing: antialiased;
+					  -moz-osx-font-smoothing: grayscale;
+					  font-size: 2.6rem;
+					  position: relative;
+					  top: 2px;
+					  left: 0rem;
+					  padding:0 2rem;
+					  color: #58585A;
+					}
+					&.open-list{
+						&:after{
+							content: "\f106";
+						}
+					}
+		    }
+		    .submenu--items--wrapper{		    	
+		      padding:0; 
+		      flex-direction: column;
+				  height: 3rem;
+				  overflow: hidden;
+		      li{
+		        width: auto;
+		        a{          
+		          font-family: "Oswald", sans-serif;
+		          font-size:2.4rem;
+		          text-transform: uppercase;
+		          color: $gray-light;
+		          font-weight: normal;
+		          padding:0;
+		          border-bottom: 4px solid transparent;
+		          display: block;
+		          padding: 0 1rem;
+		          &.active, &:hover, &:focus, &:visited {
+		            border-bottom: 4px solid $orange;
+		            text-decoration: none;		            
+		          }
+		        }
+		        &.active{
+		        	a{
+								color: $black;
+		        	}
+		        }
+		      }
+		      &.open-list{
+					  height: auto;
+					  overflow: auto;
+					  position: absolute;
+					  background: #FFF;
+					  border: 1px solid;
+					  width: 90%;
+		      }
+		    }
+		  }
+		  .compare--block--form{
+				width: 60%;
+				margin: 0;
+				.compare--list{
+					padding: 0;
+					label{
+						width: 100%;
+					}
+					select{
+						 width: auto;
+					}
+				}
+		  }
+		}
+	}
+
+}
+
+
+@media only screen 
+and (max-width :767px){
+
+	.regulation-page {
+		&.compare--block{
+			display: flex;
+			flex-direction: column;
+			flex-wrap: wrap;
+			.line{
+				display: block;
+			}	
+		  .submenu--block{
+			  padding: 0;
+			  text-align: center;
+		    label{
+				  font-family: 'OpenSans-Light';
+				  text-transform: uppercase;
+				  font-weight: normal;
+				  letter-spacing: 2px;
+				  display: block;
+				  &:after {
+					  content: "\f107";
+					  font-family: FontAwesome;
+					  text-rendering: auto;
+					  -webkit-font-smoothing: antialiased;
+					  -moz-osx-font-smoothing: grayscale;
+					  font-size: 2.6rem;
+					  position: relative;
+					  top: 2px;
+					  left: 0rem;
+					  padding:0 2rem;
+					  color: #58585A;
+					}
+					&.open-list{
+						&:after{
+							content: "\f106";
+						}
+					}
+		    }
+		    .submenu--items--wrapper{		    	
+		      padding:0; 
+		      display: flex;
+		      justify-content: space-between;
+		      list-style: none;
+		      flex-direction: column;
+		      flex-wrap: nowrap;
+				  height: 3.5rem;
+				  overflow: hidden;
+		      li{
+		        width: auto;
+		        a{          
+		          font-family: "Oswald", sans-serif;
+		          font-size:2.6rem;
+		          text-transform: uppercase;
+		          color: $gray-light;
+		          font-weight: normal;
+		          padding:0;
+		          border-bottom: 4px solid transparent;
+		          display: block;
+		          padding: 0 1rem;
+		          &.active, &:hover, &:focus, &:visited {
+		            border-bottom: 4px solid $orange;
+		            text-decoration: none;		            
+		          }
+		        }
+		        &.active{
+		        	order: -1;
+		        	a{
+								color: $black;
+		        	}
+		        }
+		      }
+		      &.open-list{
+					  height: auto;
+					  overflow: auto;
+					  position: absolute;
+					  background:#f2f2f2;
+					  width: 100%;
+  					left: 0;
+  					z-index: 2;
+						-webkit-box-shadow: 0px 2px 4px 0px rgba(214,214,214,1);
+						-moz-box-shadow: 0px 2px 4px 0px rgba(214,214,214,1);
+						box-shadow: 0px 2px 4px 0px rgba(214,214,214,1);
+		      }
+		    }
+		  }
+		  .compare--block--form{
+					label{
+						width: 100%;
+					}
+					select{
+						 width: auto;
+					}
+		  }
+		}
+	}
+	
+}

@@ -860,6 +860,37 @@ define(function () {
 
             /************************************ END WORKING CONDITIONS ***************************************/
 
+            /************************************** PREVENTION COMPANIES ***************************************/
+
+                /**
+                 * @ngdoc method
+                 * @name dvt.configModule.DataService#getPreventionCompaniesCountries
+                 * @methodOf dvt.configModule.DataService
+                 * @description
+                 * Get prevention companies countries
+                 */
+                getPreventionCompaniesCountries: function (pDataset) {
+                    var url = configService.getOshOutcomesWorkingConditionsDataPath() + "&dataAccessId=getPreventionCompaniesCountries" + "&parampDataset=" + pDataset;
+                    $log.debug('getPreventionCompaniesCountries url:' + url);
+                    return promise(url);
+                },
+
+                /**
+                 * @ngdoc method
+                 * @name dvt.configModule.DataService#getPreventionCompaniesIndicators
+                 * @methodOf dvt.configModule.DataService
+                 * @description
+                 * Get prevention companies indicators
+                 */
+                getPreventionCompaniesIndicators: function () {
+                    var url = configService.getOshOutcomesWorkingConditionsDataPath() + "&dataAccessId=getPreventionCompaniesIndicators";
+                    $log.debug('getPreventionCompaniesIndicators url:' + url);
+                    return promise(url);
+                },
+
+            /************************************ END PREVENTION COMPANIES ***************************************/
+
+
             /**
              * @ngdoc method
              * @name dvt.configModule.DataService#getCountryStrategies

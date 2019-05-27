@@ -207,6 +207,10 @@
     requirePaths['vertical/physical-risk/PhysicalRiskController'] = verticalModules + '/osh-outcomes-working-conditions/physical-risk/PhysicalRiskController' + suffix;
     requirePaths['vertical/physical-risk/services/PhysicalRiskService'] = verticalModules + '/osh-outcomes-working-conditions/physical-risk/services/PhysicalRiskService' + suffix;
 
+    /* PREVENTION COMPANIES */
+    requirePaths['vertical/prevention-companies/PreventionCompaniesController'] = verticalModules + '/osh-outcomes-working-conditions/prevention-companies/PreventionCompaniesController' + suffix;
+    requirePaths['vertical/prevention-companies/services/PreventionCompaniesService'] = verticalModules + '/osh-outcomes-working-conditions/prevention-companies/services/PreventionCompaniesService' + suffix;
+
     /* ABOUT THE VISUALISATION TOOL */
     requirePaths['vertical/about-tool/AboutToolController'] = verticalModules + '/about-tool/AboutToolController' + suffix;
     requirePaths['vertical/about-tool/about-tool-module'] = verticalModules + '/about-tool/about-tool-module' + suffix;
