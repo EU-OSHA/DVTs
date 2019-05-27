@@ -79,8 +79,8 @@ define(function (require) {
     $scope.stories = [
       //0 - Non-fatal work accidents first chart
       {
-        color1: dvtUtils.getColorCountry(2),
-        color2: dvtUtils.getColorCountry(1),
+        color1: dvtUtils.getColorCountry(1),
+        color2: dvtUtils.getColorCountry(2),
         plots: OshCultureService.getInfoAboutRisksData(),
         dimensions: {
           value: {
@@ -93,8 +93,8 @@ define(function (require) {
         //labelTextAlign: 'left'
       },
       {
-        color1: dvtUtils.getColorCountry(2),
-        color2: dvtUtils.getColorCountry(1),
+        color1: dvtUtils.getColorCountry(1),
+        color2: dvtUtils.getColorCountry(2),
         color3: dvtUtils.getAccidentsColors(4),
         plots: OshCultureService.getPersonalProtectiveEquipmentPlot(),
         dimensions: {
@@ -108,16 +108,7 @@ define(function (require) {
       }
     ];
 
-    $scope.step = {
-      chart1: 20,
-      chart2: 20,
-      chart3: 20,
-      chart4: 20,
-      chart5: 20,
-      chart6: 20,
-      chart7: 20,
-      chart8: 20
-    }
+    $scope.step = 20;
 
     // Show/hide the Countries Filter List
     angular.element('div.countries-filters').css( "display",'none' );
