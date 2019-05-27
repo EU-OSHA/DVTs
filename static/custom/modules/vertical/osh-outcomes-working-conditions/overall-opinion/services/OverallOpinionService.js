@@ -80,11 +80,11 @@ define (function (require) {
                                         var countryKey = scene.firstAtoms.category;
                                         var panelWidth = this.root.width();                                        
 
-                                        if(resolution < 960){
+                                        if(resolution < 1200){
                                             return baseScale('Switzerland (CH)') - 13;
                                         }
 
-                                        return baseScale('Switzerland (CH)') - this.sign.panel.barWidth; 
+                                        return baseScale('Switzerland (CH)') - this.sign.panel.barWidth - 2; 
                                     });
                             }
                             
