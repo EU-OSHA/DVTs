@@ -31,8 +31,6 @@ define(function (require) {
     $scope.countriesDataFor = [];
     $scope.countriesCompareWith = [];
 
-    $scope.pSplit = "sector";
-
     $scope.indicators = [];
     $scope.relatedLiterals = [20663, 20664];
 
@@ -58,6 +56,7 @@ define(function (require) {
     $scope.pCountry1 = ($stateParams.pCountry1 != null)?$stateParams.pCountry1:'AT';
     $scope.pCountry2 = ($stateParams.pCountry2 != null)?$stateParams.pCountry2:'BE';
     $scope.pIndicator = $stateParams.pIndicator;
+    $scope.pSplit = ($stateParams.pSplit != null)?$stateParams.pSplit:'sector';
 
     $scope.dashboard = {};
     $scope.dashboard = {
@@ -197,13 +196,15 @@ define(function (require) {
             $state.go($state.current.name, {
               pIndicator: indicator,
               pCountry1: 'AT',
-              pCountry2: 'BE'
+              pCountry2: 'BE',
+              pSplit: 'sector'
             });
           }else{
             $state.go($state.current.name, {
               pIndicator: indicator,
               pCountry1: null,
-              pCountry2: null
+              pCountry2: null,
+              pSplit: null
             });
           }
         }
@@ -219,7 +220,8 @@ define(function (require) {
           $state.transitionTo('overall-opinion', {
             pIndicator: $scope.pIndicator,
             pCountry1: $scope.pCountry1, 
-            pCountry2: $scope.pCountry2
+            pCountry2: $scope.pCountry2,
+            pSplit: $scope.pSplit
           }, {reload: true});
         }
       };

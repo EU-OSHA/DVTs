@@ -97,7 +97,7 @@ define(function (require) {
       });
 
       $stateProvider.state('overall-opinion', {
-        url: "/osh-outcomes-working-conditions/working-conditions/overall-opinion/:pIndicator/:pCountry1/:pCountry2",
+        url: "/osh-outcomes-working-conditions/working-conditions/overall-opinion/:pIndicator/:pCountry1/:pCountry2/:pSplit",
         params: {
           pIndicator: {
             value: 'job-satisfaction',
@@ -108,6 +108,10 @@ define(function (require) {
             squash: true
           },
           pCountry2: {
+            value: null,
+            squash: true
+          },
+          pSplit: {
             value: null,
             squash: true
           }

@@ -88,12 +88,12 @@
         
         <div class="card--block--chart" >
           <!-- Sector, gender or age filter -->
-          <select ng-model="pSplit">
+          <select ng-model="pSplit" ng-change="countryChange()">
             <option data-ng-bind="i18nLiterals.L20648" value="sector"></option>
-            <option data-ng-bind="i18nLiterals.L20649" value="gender"></option>              
+            <option data-ng-bind="i18nLiterals.L20649" value="gender"></option>
             <option data-ng-bind="i18nLiterals.L20650" value="age"></option>
           </select>
-          <div class="chart--block" ng-hide="pSplit != 'sector'">
+          <div class="chart--block" ng-show="pSplit == 'sector'">
             <dvt-bar-chart
             data-ng-cloak
             query="getHealthAtRiskSectorData" cda="{{::cdaOSHOutcomes }}"
@@ -116,10 +116,9 @@
             legend="true"
             legend-align="center"
             base-axis-size="50"
-            axis-label-word-break="1"
             ></dvt-bar-chart>
           </div>
-          <div class="chart--block" ng-hide="pSplit != 'age'">
+          <div class="chart--block" ng-show="pSplit == 'age'">
             <dvt-bar-chart
               data-ng-cloak
               query="getHealthAtRiskAgeData" cda="{{::cdaOSHOutcomes }}"
@@ -144,7 +143,7 @@
               base-axis-size="50"
             ></dvt-bar-chart>
           </div>
-          <div class="chart--block" ng-hide="pSplit != 'gender'">
+          <div class="chart--block" ng-show="pSplit == 'gender'">
             <dvt-bar-chart
               data-ng-cloak
               query="getHealthAtRiskGenderData" cda="{{::cdaOSHOutcomes }}"
