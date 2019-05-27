@@ -309,7 +309,7 @@
 			AND sa.literal_id = t.literal_id
 			AND d.id = v.dataset_id
 			AND d.id = ${pDataset}
-			ORDER BY Answer DESC, FIELD('EU28', n.country_code) DESC, FIELD(n.country_code, 'CH','NO'), n.country_code ASC;
+			ORDER BY Answer ASC, FIELD('EU28', n.country_code) DESC, FIELD(n.country_code, 'CH','NO'), n.country_code ASC;
 	    </Query>
 	</DataAccess>
 
@@ -435,7 +435,7 @@
             AND t.language = 'EN'
             AND d.id = v.dataset_id
             AND d.id = ${pDataset}
-            ORDER BY Answer DESC, FIELD('EU28', n.country_code) DESC, FIELD(n.country_code, 'CH', 'IS', 'NO'), n.country_code ASC, Value DESC;
+            ORDER BY Answer ASC, FIELD('EU28', n.country_code) DESC, FIELD(n.country_code, 'CH', 'IS', 'NO'), n.country_code ASC, Value DESC;
         </Query>
     </DataAccess>
 
@@ -458,7 +458,7 @@
             AND t.language = 'EN'
             AND d.id = v.dataset_id
             AND d.id = ${pDataset}
-            ORDER BY Answer ASC, FIELD('EU28', n.country_code) DESC, FIELD(n.country_code, 'CH', 'IS', 'NO'), n.country_code ASC, Value DESC;
+            ORDER BY Answer DESC, FIELD('EU28', n.country_code) DESC, FIELD(n.country_code, 'CH', 'IS', 'NO'), n.country_code ASC, Value DESC;
         </Query>
     </DataAccess>
 
@@ -481,6 +481,29 @@
             ORDER BY FIELD('EU28', n.country_code) DESC, FIELD(n.country_code, 'CH', 'IS', 'NO'), n.country_code ASC, Value DESC;
         </Query>
    	</DataAccess>
+
+    <!-- MENTAL RISK || ALL MENTAL RISK DATA -->
+    <DataAccess access="public" connection="dvt_conn" id="getEurofoundDiscriminationData" type="sql">
+        <Cache duration="3600" enabled="true" />
+        <Columns />
+        <Parameters>
+            <Parameter default="10" name="pDataset" type="Numeric"/>
+            <Parameter default="64" name="pIndicator" type="Numeric"/>
+        </Parameters>
+        <Query>
+            SELECT t.text as Answer, IF(n.name = 'European Union', n.country_code, CONCAT(n.name, " (", n.country_code, ")")) as Country, v.value*100 as Value
+            FROM nuts n, profile p, value v, dataset d, translation t, split_answer sa
+            WHERE n.id = p.nuts_id
+            AND v.indicator_id = ${pIndicator}
+            AND v.profile_id = p.id
+            AND p.answer_id = sa.id
+            AND sa.literal_id = t.literal_id
+            AND t.language = 'EN'
+            AND d.id = v.dataset_id
+            AND d.id = ${pDataset}
+            ORDER BY Answer ASC, FIELD('EU28', n.country_code) DESC, FIELD(n.country_code, 'CH', 'IS', 'NO'), n.country_code ASC, Value DESC;
+        </Query>
+    </DataAccess>
 
    	<!-- PHYSICAL RISK || ALL COUNTRIES FOR VIBRATION, LOUD NOISE AVAILABLE -->
     <DataAccess access="public" connection="dvt_conn" id="getVibrationCountries" type="sql">
@@ -566,6 +589,29 @@
 			AND n.country_code = ${pCountry};
         </Query>
    	</DataAccess>
+
+   	<!-- PHYSICAL RISK || ALL MENTAL RISK DATA -->
+    <DataAccess access="public" connection="dvt_conn" id="getPhysicalRiskData" type="sql">
+        <Cache duration="3600" enabled="true" />
+        <Columns />
+        <Parameters>
+            <Parameter default="10" name="pDataset" type="Numeric"/>
+            <Parameter default="64" name="pIndicator" type="Numeric"/>
+        </Parameters>
+        <Query>
+            SELECT t.text as Answer, IF(n.name = 'European Union', n.country_code, CONCAT(n.name, " (", n.country_code, ")")) as Country, v.value*100 as Value
+            FROM nuts n, profile p, value v, dataset d, translation t, split_answer sa
+            WHERE n.id = p.nuts_id
+            AND v.indicator_id = ${pIndicator}
+            AND v.profile_id = p.id
+            AND p.answer_id = sa.id
+            AND sa.literal_id = t.literal_id
+            AND t.language = 'EN'
+            AND d.id = v.dataset_id
+            AND d.id = ${pDataset}
+            ORDER BY Answer DESC, FIELD('EU28', n.country_code) DESC, FIELD(n.country_code, 'CH', 'IS', 'NO'), n.country_code ASC, Value DESC;
+        </Query>
+    </DataAccess>
 
    	<!-- PHYSICAL RISK || ALL Eurofound RISK INVOLVED WITH WORK DATA EU28 DATA -->
     <DataAccess access="public" connection="dvt_conn" id="getEU28RisksInvolvedEurofoundData" type="sql">
