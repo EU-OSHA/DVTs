@@ -101,34 +101,34 @@
               </div>
             </header>
             <ul class="highlited-data-list">
-              <li>                
+              <li>
                 <span class="country-data" data-ng-bind="matrix.satisfaction_working != null ? (matrix.satisfaction_working) : '-'"></span>
-                <span class="data-text">&percnt;</span>
+                <span data-ng-if="matrix.satisfaction_working != null" class="data-text">&percnt;</span>
                 <label data-ng-bind="i18nLiterals['L314']"></label>
               </li>
-              <li>                
+              <li>
                 <span class="country-data" data-ng-bind="matrix.health_negative != null ? (matrix.health_negative) : '-'"> %</span>
-                <span class="data-text">&percnt;</span>
+                <span data-ng-if="matrix.health_negative != null" class="data-text">&percnt;</span>
                 <label data-ng-bind="i18nLiterals['L315']"></label>
               </li>
-              <li>                
+              <li>
                 <span class="country-data" data-ng-bind="matrix.health_problem != null ? (matrix.health_problem) : '-'"></span>
-                <span class="data-text">&percnt;</span>
+                <span data-ng-if="matrix.health_problem != null" class="data-text">&percnt;</span>
                 <label data-ng-bind="i18nLiterals['L316']"></label>
               </li>
-              <li>                
+              <li>
                 <span class="country-data" data-ng-bind="matrix.absence != null ? (matrix.absence) : '-'"></span>
-                <span class="data-text">&percnt;</span>
+                <span data-ng-if="matrix.absence != null" class="data-text">&percnt;</span>
                 <label data-ng-bind="i18nLiterals['L317']"></label>
               </li>
-              <li>                
+              <li>
                 <span class="country-data" data-ng-bind="matrix.sick_at_work != null ? (matrix.sick_at_work) : '-'"></span>
-                <span class="data-text">&percnt;</span>
+                <span data-ng-if="matrix.sick_at_work != null" class="data-text">&percnt;</span>
                 <label data-ng-bind="i18nLiterals['L318']"></label>
               </li>
-              <li>                
+              <li>
                 <span class="country-data" data-ng-bind="matrix.job_till_60 != null ? (matrix.job_till_60) : '-'"></span>
-                <span class="data-text">&percnt;</span>
+                <span data-ng-if="matrix.job_till_60 != null" class="data-text">&percnt;</span>
                 <label data-ng-bind="i18nLiterals['L319']"></label>
               </li>
             </ul>
