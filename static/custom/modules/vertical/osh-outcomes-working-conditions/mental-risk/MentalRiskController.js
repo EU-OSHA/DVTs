@@ -39,6 +39,7 @@ define(function (require) {
     $scope.axisSize = angular.element(window).width() > 768 ? 150 : 160;
     $scope.angle = angular.element(window).width() > 768 ? 1 : 0;
     $scope.horizontalHeight = angular.element(window).width() > 768 ? 470 : 770;
+    $scope.axisFixedMin = angular.element(window).width() > 768 ? 60 : 0;
 
     var width = angular.element($window).width();
       angular.element($window).bind('resize', function() {
@@ -74,7 +75,7 @@ define(function (require) {
         color1: dvtUtils.getColorCountry(1),
         color2: dvtUtils.getColorCountry(22),
         color3: dvtUtils.getAccidentsColors(4),
-        plots: MentalRiskService.getInfoAboutRisksData(),
+        plots: MentalRiskService.getESENERMentalRiskPlot(),
         dimensions: {
           value: {
             format: {
@@ -87,6 +88,20 @@ define(function (require) {
       {
         color1: dvtUtils.getColorCountry(1),
         plots: MentalRiskService.getPoorCommunicationPlot(),
+        dimensions: {
+          value: {
+            format: {
+              number: "0.#",
+              percent: "#%"
+            }
+          }
+        }
+      },
+      {
+        color1: dvtUtils.getColorCountry(1),
+        color2: dvtUtils.getColorCountry(22),
+        color3: dvtUtils.getAccidentsColors(4),
+        plots: MentalRiskService.getEurofoundMentalRiskPlot(),
         dimensions: {
           value: {
             format: {

@@ -80,8 +80,9 @@ define(function (require) {
       //0 - Non-fatal work accidents first chart
       {
         color1: dvtUtils.getColorCountry(1),
-        color2: dvtUtils.getColorCountry(2),
-        plots: OshCultureService.getInfoAboutRisksData(),
+        color2: dvtUtils.getColorCountry(22),
+        color3: dvtUtils.getAccidentsColors(4),
+        plots: OshCultureService.getGeneralOSHCulturePlot(),
         dimensions: {
           value: {
             format: {
@@ -90,13 +91,26 @@ define(function (require) {
             }
           }
         }
-        //labelTextAlign: 'left'
       },
       {
         color1: dvtUtils.getColorCountry(1),
-        color2: dvtUtils.getColorCountry(2),
+        color2: dvtUtils.getColorCountry(22),
         color3: dvtUtils.getAccidentsColors(4),
         plots: OshCultureService.getPersonalProtectiveEquipmentPlot(),
+        dimensions: {
+          value: {
+            format: {
+              number: "0.#",
+              percent: "#%"
+            }
+          }
+        }
+      },
+      {
+        color1: dvtUtils.getColorCountry(1),
+        color2: dvtUtils.getColorCountry(22),
+        color3: dvtUtils.getAccidentsColors(4),
+        plots: OshCultureService.getInfoAboutRisksPlot(),
         dimensions: {
           value: {
             format: {

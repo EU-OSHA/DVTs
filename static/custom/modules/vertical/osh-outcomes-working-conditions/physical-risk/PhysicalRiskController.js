@@ -103,7 +103,7 @@ define(function (require) {
       //0 - Time pressure
       {
         color1: dvtUtils.getColorCountry(1),
-        color2: dvtUtils.getColorCountry(2),
+        color2: dvtUtils.getColorCountry(22),
         color3: dvtUtils.getAccidentsColors(4),
         plots: PhysicalRiskService.getInfoAboutRisksData(),
         promises: {
