@@ -28,11 +28,10 @@ define(function (require) {
 
     $scope.pCountry1 = ($stateParams.pCountry1 != null)?$stateParams.pCountry1:'AT';
     $scope.pCountry2 = ($stateParams.pCountry2 != null)?$stateParams.pCountry2:'BE';
+    $scope.pSplit = ($stateParams.pSplit != null)?$stateParams.pSplit:'establishment-size';
 
     $scope.countriesDataFor = [];
     $scope.countriesCompareWith = [];
-
-    $scope.pSplit = $stateParams.pDataset;
 
     $scope.indicators = [];
     $scope.relatedLiterals = [20679, 20680, 20681, 20682, 20683];
@@ -53,7 +52,6 @@ define(function (require) {
 
     $scope.countriesDataFor = [];
     $scope.countriesCompareWith = [];
-    $scope.pSplit = 'establishment-size';
 
     $scope.pIndicator = $stateParams.pIndicator;
 
@@ -81,7 +79,7 @@ define(function (require) {
         color1: dvtUtils.getColorCountry(1),
         color2: dvtUtils.getColorCountry(22),
         color3: dvtUtils.getEUColor(),
-        plots: PreventionCompaniesService.getInfoAboutRisksData(),
+        plots: PreventionCompaniesService.getRiskAssessmentSplit($scope.pCountry1, $scope.pCountry2),
         dimensions: {
           value: {
             format: {
@@ -195,14 +193,26 @@ define(function (require) {
         }
       }
 
-      $scope.changeDataset = function(indicator, dataset){
+      $scope.countryChange = function () {
+        if ($state.current.name !== undefined) {
+         
+          $state.transitionTo('prevention-companies', {
+            pIndicator: $scope.pIndicator,
+            pCountry1: $scope.pCountry1, 
+            pCountry2: $scope.pCountry2,
+            pSplit: $scope.pSplit
+          }, {reload: true});
+        }
+      };
+
+      /*$scope.changeDataset = function(indicator, dataset){
         if ($state.current.name !== undefined) {
           $state.go($state.current.name, {
             pIndicator: indicator,
             pDataset: dataset
           });
         }
-      }
+      }*/
   }
 
 controller.$inject = ['$scope', '$stateParams', '$state', 'configService', '$log', '$document','dataService', '$window', '$sce', '$compile', '$timeout', 'dvtUtils', 'PreventionCompaniesService'];

@@ -9,7 +9,40 @@ define (function (require) {
                     {
                         name: "main",
                         dataPart: "0",
-                        barSizeMax: 25,
+                        barSizeMax: 30,
+                        label_textMargin: 7,
+                        label_textBaseline: 'bottom',
+                        valuesAnchor: 'top',
+                        valuesOptimizeLegibility: true,
+                        visualRoles:{
+                            series: 'series',
+                            category:'category',
+                            value: 'value'
+                        }
+                    }
+                ];
+            },
+            getRiskAssessmentSplit: function(pCountry1, pCountry2){
+                return [
+                    {
+                        name: "main",
+                        dataPart: "0",
+                        barSizeMax: 30,
+                        label_textMargin: 7,
+                        label_textBaseline: 'bottom',
+                        valuesAnchor: 'top',
+                        valuesOptimizeLegibility: true,
+                        label_textStyle: function(scene){
+                            var countryKey = scene.firstAtoms.series;
+                            if (countryKey == 'EU28') {
+                                return dvtUtils.getEUColor();
+                            } else if(countryKey.value.match(pCountry1)){
+                                return dvtUtils.getColorCountry(1);
+                            } else if(countryKey.value.match(pCountry2)) {
+                                return dvtUtils.getColorCountry(2);
+                            }
+                            return dvtUtils.getChartLightGrayColor();
+                        },
                         visualRoles:{
                             series: 'series',
                             category:'category',

@@ -185,18 +185,22 @@ define(function (require) {
       });
 
       $stateProvider.state('prevention-companies', {
-        url: "/osh-outcomes-working-conditions/prevention-companies/:pIndicator/:pCountry1/:pCountry2",
+        url: "/osh-outcomes-working-conditions/prevention-companies/:pIndicator/:pCountry1/:pCountry2/:pSplit",
         params: {
           pIndicator: {
             value: 'risk-assessment',
             squash: 'risk-assessment'
           },
           pCountry1: {
-            value: 'AT',
+            value: null,
             squash: true
           },
           pCountry2: {
-            value: 'BE',
+            value: null,
+            squash: true
+          },
+          pSplit: {
+            value: null,
             squash: true
           }
         },
