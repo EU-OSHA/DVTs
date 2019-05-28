@@ -127,7 +127,7 @@ define (function (require) {
                                         //$log.warn(this);
                                         var baseScale = this.getContext().chart.axes.base.scale;
                                         
-                                        return baseScale('Belgium (BE)') + 11 /*this.sign.panel.barWidth/2*/;
+                                        return baseScale('Austria (AT)') + 12 /*this.sign.panel.barWidth/2*/;
                                     })
                                     .height(null) // clear any inherited value
                                     .width(null)  // clear any inherited value
@@ -142,7 +142,7 @@ define (function (require) {
                                     .top(function(scene){
                                         var baseScale = this.getContext().chart.axes.base.scale;
                                         
-                                        return baseScale('Iceland (IS)') + 11;
+                                        return baseScale('Switzerland (CH)') + 11;
                                     })
                                     .height(null) // clear any inherited value
                                     .width(null)  // clear any inherited value

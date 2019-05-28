@@ -34,12 +34,13 @@ define(function (require) {
     $scope.countriesCompareWith = [];
 
     $scope.indicators = [];
-    $scope.relatedLiterals = [20679, 20680, 20681, 20682, 20683];
+    $scope.relatedLiterals = [20679, 20680, 20681, 20682];
 
     $scope.chartWidth = angular.element('.card--block--chart .chart--block')[1].clientWidth;
 
     $scope.orientation = angular.element(window).width() > 768 ? "vertical" : "horizontal";
     $scope.axisSize = angular.element(window).width() > 768 ? 150 : 160;
+    $scope.angle = angular.element(window).width() > 768 ? 1 : 0;
     $scope.horizontalHeight = angular.element(window).width() > 768 ? 470 : 770;
 
     var width = angular.element($window).width();
@@ -91,7 +92,9 @@ define(function (require) {
       },
       {
         color1: dvtUtils.getColorCountry(1),
-        plots: PreventionCompaniesService.getPoorCommunicationPlot(),
+        color2: dvtUtils.getColorCountry(22),
+        color3: dvtUtils.getAccidentsColors(4),
+        plots: PreventionCompaniesService.getInternalExternalRAPlots(),
         dimensions: {
           value: {
             format: {
@@ -186,10 +189,21 @@ define(function (require) {
       $scope.changeIndicator = function(e,indicator) {
         $scope.openIndicatorsList();
         if ($state.current.name !== undefined) {
-          $state.go($state.current.name, {
-            pIndicator: indicator,
-            pDataset: 'esener'
-          });
+          if(indicator == 'risk-assessment' || indicator == 'employees-participation-in-prevention'){
+            $state.go($state.current.name, {
+              pIndicator: indicator,
+              pCountry1: $scope.pCountry1, 
+              pCountry2: $scope.pCountry2,
+              pSplit: $scope.pSplit
+            });
+          }else{
+            $state.go($state.current.name, {
+              pIndicator: indicator,
+              pCountry1: null, 
+              pCountry2: null,
+              pSplit: null
+            });
+          }
         }
       }
 
@@ -204,15 +218,6 @@ define(function (require) {
           }, {reload: true});
         }
       };
-
-      /*$scope.changeDataset = function(indicator, dataset){
-        if ($state.current.name !== undefined) {
-          $state.go($state.current.name, {
-            pIndicator: indicator,
-            pDataset: dataset
-          });
-        }
-      }*/
   }
 
 controller.$inject = ['$scope', '$stateParams', '$state', 'configService', '$log', '$document','dataService', '$window', '$sce', '$compile', '$timeout', 'dvtUtils', 'PreventionCompaniesService'];
