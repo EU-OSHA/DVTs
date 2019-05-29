@@ -13,8 +13,6 @@ define(function (require) {
 
 
   function controller($scope, $stateParams, $state, configService, $log, $document,dataService, $window, $sce, $compile, $timeout, dvtUtils, OshCultureService) {
-
-
     // CDA
     $scope.cdaOSHOutcomes = configService.getOshOutcomesWorkingConditionsCda();
     $scope.cdaGenericInformation = configService.getGenericInformationCda();
@@ -40,10 +38,64 @@ define(function (require) {
     $scope.country1Data = {};
     $scope.country2Data = {};
 
+    // Country parameters
+    $scope.pCountry1 = ($stateParams.pCountry1 != null)?$stateParams.pCountry1:'AT';
+    $scope.pCountry2 = ($stateParams.pCountry2 != null)?$stateParams.pCountry2:'BE';
+    $scope.pIndicator = $stateParams.pIndicator;
+
+    $scope.stories = [
+      //0 - General plot for OSH Culture
+      {
+        plots: OshCultureService.getGeneralOSHCulturePlot(),
+        dimensions: {
+          value: {
+            format: {
+              number: "0.#",
+              percent: "#%"
+            }
+          }
+        }
+      },
+      // 1- Use of protective equipment plot
+      {
+        plots: OshCultureService.getPersonalProtectiveEquipmentPlot(),
+        dimensions: {
+          value: {
+            format: {
+              number: "0.#",
+              percent: "#%"
+            }
+          }
+        }
+      },
+      // 2 - Info about risks plot
+      {
+        plots: OshCultureService.getInfoAboutRisksPlot(),
+        dimensions: {
+          value: {
+            format: {
+              number: "0.#",
+              percent: "#%"
+            }
+          }
+        }
+      }
+    ];
+
+    $scope.step = 20;
+
+    // Properties changing dynamically depending on resolution
     $scope.orientation = angular.element(window).width() > 768 ? "vertical" : "horizontal";
     $scope.axisSize = angular.element(window).width() > 768 ? 150 : 160;
     $scope.angle = angular.element(window).width() > 768 ? 1 : 0;
     $scope.horizontalHeight = angular.element(window).width() > 768 ? 470 : 770;
+    $scope.query = angular.element(window).width() > 768 ? 'getOshCultureVerticalData' : 'getOshCultureHorizontalData';
+    $scope.eurostatQuery = angular.element(window).width() > 768 ? 'getEurostatVerticalData' : 'getEurostatHorizontalData';
+    $scope.risksQuery = angular.element(window).width() > 768 ? 'getInfoAboutRisksVerticalData' : 'getInfoAboutRisksHorizontalData';
+    $scope.color1 = angular.element(window).width() > 768 ? dvtUtils.getColorCountry(22) : dvtUtils.getColorCountry(1);
+    $scope.color2 = angular.element(window).width() > 768 ? dvtUtils.getColorCountry(1) : dvtUtils.getColorCountry(22);
+    $scope.color3 = angular.element(window).width() > 768 ? dvtUtils.getAccidentsColors(4) : dvtUtils.getColorCountry(1);
+    $scope.color4 = angular.element(window).width() > 768 ? dvtUtils.getColorCountry(1) : dvtUtils.getAccidentsColors(4);
 
     var width = angular.element($window).width();
       angular.element($window).bind('resize', function() {
@@ -52,11 +104,6 @@ define(function (require) {
           $state.reload();
         }
     });
-
-    // Country parameters
-    $scope.pCountry1 = ($stateParams.pCountry1 != null)?$stateParams.pCountry1:'AT';
-    $scope.pCountry2 = ($stateParams.pCountry2 != null)?$stateParams.pCountry2:'BE';
-    $scope.pIndicator = $stateParams.pIndicator;
 
     $scope.dashboard = {};
     $scope.dashboard = {
@@ -75,54 +122,6 @@ define(function (require) {
     var maxModeCriteriaText =  function(dataset) {
       return dataset.datum.atoms.category.value
     }
-
-    $scope.stories = [
-      //0 - Non-fatal work accidents first chart
-      {
-        color1: dvtUtils.getColorCountry(1),
-        color2: dvtUtils.getColorCountry(22),
-        color3: dvtUtils.getAccidentsColors(4),
-        plots: OshCultureService.getGeneralOSHCulturePlot(),
-        dimensions: {
-          value: {
-            format: {
-              number: "0.#",
-              percent: "#%"
-            }
-          }
-        }
-      },
-      {
-        color1: dvtUtils.getColorCountry(1),
-        color2: dvtUtils.getColorCountry(22),
-        color3: dvtUtils.getAccidentsColors(4),
-        plots: OshCultureService.getPersonalProtectiveEquipmentPlot(),
-        dimensions: {
-          value: {
-            format: {
-              number: "0.#",
-              percent: "#%"
-            }
-          }
-        }
-      },
-      {
-        color1: dvtUtils.getColorCountry(1),
-        color2: dvtUtils.getColorCountry(22),
-        color3: dvtUtils.getAccidentsColors(4),
-        plots: OshCultureService.getInfoAboutRisksPlot(),
-        dimensions: {
-          value: {
-            format: {
-              number: "0.#",
-              percent: "#%"
-            }
-          }
-        }
-      }
-    ];
-
-    $scope.step = 20;
 
     // Show/hide the Countries Filter List
     angular.element('div.countries-filters').css( "display",'none' );

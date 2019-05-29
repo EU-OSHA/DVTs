@@ -246,8 +246,8 @@
 	    </Query>
 	</DataAccess>
 
-	<!-- OSH OUTCOMES - OSH CULTURE || OSH CULTURE AND HEALTH AWARENESS DATA -->
-	<DataAccess access="public" connection="dvt_conn" id="getOshCultureData" type="sql">
+	<!-- OSH OUTCOMES - OSH CULTURE || OSH CULTURE AND HEALTH AWARENESS VERTICAL DATA -->
+	<DataAccess access="public" connection="dvt_conn" id="getOshCultureVerticalData" type="sql">
 	    <Cache duration="3600" enabled="true" />
 	    <Columns />
 	    <Parameters>
@@ -269,8 +269,31 @@
 	    </Query>
 	</DataAccess>
 
-	<!-- OSH OUTCOMES - OSH CULTURE ||OSH CULTURE AND HEALTH AWARENESS EUROSTAT DATA -->
-	<DataAccess access="public" connection="dvt_conn" id="getEurostatData" type="sql">
+	<!-- OSH OUTCOMES - OSH CULTURE || OSH CULTURE AND HEALTH AWARENESS HORIZONTAL DATA -->
+	<DataAccess access="public" connection="dvt_conn" id="getOshCultureHorizontalData" type="sql">
+	    <Cache duration="3600" enabled="true" />
+	    <Columns />
+	    <Parameters>
+	    	<Parameter default="10" name="pDataset" type="Numeric"/>
+	    	<Parameter default="64" name="pIndicator" type="Numeric"/>
+	    </Parameters>
+	    <Query>
+			SELECT t.text as Answer, IF(n.name = 'European Union', n.country_code, CONCAT(n.name, " (", n.country_code, ")")) as Country, v.value*100 as Value
+			FROM nuts n, profile p, value v, dataset d, translation t, split_answer sa
+			WHERE n.id = p.nuts_id
+			AND v.indicator_id = ${pIndicator}
+			AND v.profile_id = p.id
+			AND p.answer_id = sa.id
+			AND sa.literal_id = t.literal_id
+			AND t.language = 'EN'
+			AND d.id = v.dataset_id
+			AND d.id = ${pDataset}
+			ORDER BY Answer DESC, FIELD('EU28', n.country_code) DESC, FIELD(n.country_code, 'CH', 'IS', 'NO'), n.country_code ASC, Value DESC;
+	    </Query>
+	</DataAccess>
+
+	<!-- OSH OUTCOMES - OSH CULTURE ||OSH CULTURE AND HEALTH AWARENESS EUROSTAT VERTICAL DATA -->
+	<DataAccess access="public" connection="dvt_conn" id="getEurostatVerticalData" type="sql">
 	    <Cache duration="3600" enabled="true" />
 	    <Columns />
 	    <Parameters>
@@ -291,8 +314,8 @@
 	    </Query>
 	</DataAccess>
 
-	<!-- OSH OUTCOMES - OSH CULTURE ||OSH CULTURE AND HEALTH AWARENESS INFORMATION ABOUT RISKS DATA -->
-	<DataAccess access="public" connection="dvt_conn" id="getInfoAboutRisksData" type="sql">
+	<!-- OSH OUTCOMES - OSH CULTURE ||OSH CULTURE AND HEALTH AWARENESS EUROSTAT HORIZONTAL DATA -->
+	<DataAccess access="public" connection="dvt_conn" id="getEurostatHorizontalData" type="sql">
 	    <Cache duration="3600" enabled="true" />
 	    <Columns />
 	    <Parameters>
@@ -310,6 +333,50 @@
 			AND d.id = v.dataset_id
 			AND d.id = ${pDataset}
 			ORDER BY Answer DESC, FIELD('EU28', n.country_code) DESC, FIELD(n.country_code, 'CH', 'IS', 'NO'), n.country_code ASC, Value DESC;
+	    </Query>
+	</DataAccess>
+
+	<!-- OSH OUTCOMES - OSH CULTURE ||OSH CULTURE AND HEALTH AWARENESS INFORMATION ABOUT RISKS VERTICAL DATA -->
+	<DataAccess access="public" connection="dvt_conn" id="getInfoAboutRisksVerticalData" type="sql">
+	    <Cache duration="3600" enabled="true" />
+	    <Columns />
+	    <Parameters>
+	    	<Parameter default="10" name="pDataset" type="Numeric"/>
+	    	<Parameter default="64" name="pIndicator" type="Numeric"/>
+	    </Parameters>
+	    <Query>
+			SELECT t.text as Answer, IF(n.name = 'European Union', n.country_code, CONCAT(n.name, " (", n.country_code, ")")) as Country, v.value*100 as Value
+			FROM nuts n, profile p, value v, dataset d, translation t, split_answer sa
+			WHERE n.id = p.nuts_id
+			AND v.indicator_id = ${pIndicator}
+			AND v.profile_id = p.id
+			AND p.answer_id = sa.id
+			AND sa.literal_id = t.literal_id
+			AND d.id = v.dataset_id
+			AND d.id = ${pDataset}
+			ORDER BY Answer DESC, FIELD('EU28', n.country_code) DESC, FIELD(n.country_code, 'CH', 'IS', 'NO'), n.country_code ASC, Value DESC;
+	    </Query>
+	</DataAccess>
+
+	<!-- OSH OUTCOMES - OSH CULTURE ||OSH CULTURE AND HEALTH AWARENESS INFORMATION ABOUT RISKS HORIZONTAL DATA -->
+	<DataAccess access="public" connection="dvt_conn" id="getInfoAboutRisksHorizontalData" type="sql">
+	    <Cache duration="3600" enabled="true" />
+	    <Columns />
+	    <Parameters>
+	    	<Parameter default="10" name="pDataset" type="Numeric"/>
+	    	<Parameter default="64" name="pIndicator" type="Numeric"/>
+	    </Parameters>
+	    <Query>
+			SELECT t.text as Answer, IF(n.name = 'European Union', n.country_code, CONCAT(n.name, " (", n.country_code, ")")) as Country, v.value*100 as Value
+			FROM nuts n, profile p, value v, dataset d, translation t, split_answer sa
+			WHERE n.id = p.nuts_id
+			AND v.indicator_id = ${pIndicator}
+			AND v.profile_id = p.id
+			AND p.answer_id = sa.id
+			AND sa.literal_id = t.literal_id
+			AND d.id = v.dataset_id
+			AND d.id = ${pDataset}
+			ORDER BY Answer ASC, FIELD('EU28', n.country_code) DESC, FIELD(n.country_code, 'CH', 'IS', 'NO'), n.country_code ASC, Value DESC;
 	    </Query>
 	</DataAccess>
 

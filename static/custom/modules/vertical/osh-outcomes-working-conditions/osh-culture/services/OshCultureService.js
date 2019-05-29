@@ -14,7 +14,7 @@ define (function (require) {
                             if (split == '(very) Well informed') {
                                 return dvtUtils.getColorCountry(1);
                             } else if(split == 'Not very or not at all well informed'){
-                                return dvtUtils.getColorCountry(2);
+                                return dvtUtils.getColorCountry(22);
                             }
                             return dvtUtils.getChartLightGrayColor();
                         },
@@ -180,8 +180,8 @@ define (function (require) {
                                         var countryKey = scene.firstAtoms.category;
                                         var panelWidth = this.root.width();                                        
 
-                                        if(resolution < 1200){
-                                            return baseScale('Switzerland (CH)') - 11;
+                                        if(resolution < 960){
+                                            return baseScale('Switzerland (CH)') - 12;
                                         }
 
                                         return baseScale('Switzerland (CH)') - this.sign.panel.barWidth - 1; 
@@ -271,7 +271,7 @@ define (function (require) {
                                         var countryKey = scene.firstAtoms.category;
                                         var panelWidth = this.root.width();                                        
 
-                                        if(resolution < 1200){
+                                        if(resolution < 960){
                                             return baseScale('Switzerland (CH)') - 11;
                                         }
 

@@ -32,12 +32,12 @@
           <div class="chart--block">
             <dvt-bar-chart
               data-ng-cloak
-              query="getOshCultureData" cda="{{::cdaOSHOutcomes }}"
+              query="{{query}}" cda="{{::cdaOSHOutcomes }}"
               width="330" height="{{horizontalHeight}}" axis-percent="1"
               orientation="{{orientation}}" axis-fixed-min="0"
               axis-fixed-max="100" step="{{step}}"
               params="[['pDataset', datasetESENER], ['pIndicator', 104]]"
-              color-role="series" colors="[stories[0].color2, stories[0].color1]"
+              color-role="series" colors="[color1, color2]"
               chart-title="{{i18nLiterals.L20663}}" id="1"
               axis-label-font="14px 'OpenSans-bold'"
               plots="stories[0].plots"
@@ -66,12 +66,12 @@
           <div class="chart--block">
             <dvt-bar-chart
               data-ng-cloak
-              query="getOshCultureData" cda="{{::cdaOSHOutcomes }}"
+              query="{{query}}" cda="{{::cdaOSHOutcomes }}"
               width="330" height="{{horizontalHeight}}" axis-percent="1"
               orientation="{{orientation}}" axis-fixed-min="0"
               axis-fixed-max="100" step="{{step}}"
               params="[['pDataset', datasetESENER], ['pIndicator', 105]]"
-              color-role="series" colors="[stories[0].color3, stories[0].color2, stories[0].color1]"
+              color-role="series" colors="[color3, stories[0].color2, color4]"
               chart-title="{{i18nLiterals.L20664}}" id="2"
               axis-label-font="14px 'OpenSans-bold'"
               plots="stories[0].plots"
@@ -101,12 +101,12 @@
           <div class="chart--block">
             <dvt-bar-chart
               data-ng-cloak
-              query="getOshCultureData" cda="{{::cdaOSHOutcomes }}"
+              query="{{query}}" cda="{{::cdaOSHOutcomes }}"
               width="330" height="{{horizontalHeight}}" axis-percent="1"
               orientation="{{orientation}}" axis-fixed-min="0"
               axis-fixed-max="100" step="{{step}}"
               params="[['pDataset', datasetESENER], ['pIndicator', 106]]"
-              color-role="series" colors="[stories[0].color2, stories[0].color1]"
+              color-role="series" colors="[color1, color2]"
               chart-title="{{i18nLiterals.L20665}}" id="3"
               axis-label-font="14px 'OpenSans-bold'"
               plots="stories[0].plots"
@@ -135,12 +135,12 @@
           <div class="chart--block">
             <dvt-bar-chart
               data-ng-cloak
-              query="getOshCultureData" cda="{{::cdaOSHOutcomes }}"
+              query="{{query}}" cda="{{::cdaOSHOutcomes }}"
               width="330" height="{{horizontalHeight}}" axis-percent="1"
               orientation="{{orientation}}" axis-fixed-min="0"
               axis-fixed-max="100" step="{{step}}"
               params="[['pDataset', datasetESENER], ['pIndicator', 107]]"
-              color-role="series" colors="[stories[0].color2, stories[0].color1]"
+              color-role="series" colors="[color1, color2]"
               chart-title="{{i18nLiterals.L20666}}" id="4"
               axis-label-font="14px 'OpenSans-bold'"
               plots="stories[0].plots"
@@ -169,12 +169,12 @@
           <div class="chart--block">
             <dvt-bar-chart
               data-ng-cloak
-              query="getOshCultureData" cda="{{::cdaOSHOutcomes }}"
+              query="{{query}}" cda="{{::cdaOSHOutcomes }}"
               width="330" height="{{horizontalHeight}}" axis-percent="1"
               orientation="{{orientation}}" axis-fixed-min="0"
               axis-fixed-max="100" step="{{step}}"
               params="[['pDataset', datasetESENER], ['pIndicator', 108]]"
-              color-role="series" colors="[stories[0].color2, stories[0].color1]"
+              color-role="series" colors="[color1, color2]"
               chart-title="{{i18nLiterals.L20667}}" id="5"
               axis-label-font="14px 'OpenSans-bold'"
               plots="stories[0].plots"
@@ -203,12 +203,12 @@
           <div class="chart--block">
             <dvt-bar-chart
               data-ng-cloak
-              query="getOshCultureData" cda="{{::cdaOSHOutcomes }}"
+              query="{{query}}" cda="{{::cdaOSHOutcomes }}"
               width="330" height="{{horizontalHeight}}" axis-percent="1"
               orientation="{{orientation}}" axis-fixed-min="0"
               axis-fixed-max="100" step="{{step}}"
               params="[['pDataset', datasetESENER], ['pIndicator', 109]]"
-              color-role="series" colors="[stories[0].color2, stories[0].color1]"
+              color-role="series" colors="[color1, color2]"
               chart-title="{{i18nLiterals.L20668}}" id="6"
               axis-label-font="14px 'OpenSans-bold'"
               plots="stories[0].plots" stacked="1"
@@ -236,12 +236,12 @@
           <div class="chart--block">
             <dvt-bar-chart
               data-ng-cloak
-              query="getEurostatData" cda="{{::cdaOSHOutcomes }}"
+              query="{{eurostatQuery}}" cda="{{::cdaOSHOutcomes }}"
               width="600" height="{{horizontalHeight}}" axis-percent="1"
               orientation="{{orientation}}" axis-fixed-min="0"
               axis-fixed-max="100" step="{{step}}"
               params="[['pDataset', datasetEurofound], ['pIndicator', 63]]"
-              color-role="series" colors="[stories[1].color3, stories[1].color2, stories[1].color1]"
+              color-role="series" colors="[color3, stories[1].color2, color4]"
               values-normalized="0" stacked="1"
               chart-title="{{i18nLiterals.L320}}" id="7"
               axis-label-font="14px 'OpenSans-bold'"
@@ -269,12 +269,12 @@
           <div class="chart--block">
             <dvt-bar-chart
               data-ng-cloak
-              query="getInfoAboutRisksData" cda="{{::cdaOSHOutcomes }}"
+              query="{{risksQuery}}" cda="{{::cdaOSHOutcomes }}"
               width="330" height="{{horizontalHeight}}" axis-percent="1"
               orientation="{{orientation}}" axis-fixed-min="0"
               axis-fixed-max="100" step="{{step}}"
               params="[['pDataset', datasetEurofound], ['pIndicator', 64]]"
-              color-role="series" colors="[stories[2].color2, stories[2].color1]"
+              color-role="series" colors="[color1, color2]"
               values-normalized="0" stacked="1"
               chart-title="{{i18nLiterals.L321}}" id="8"
               axis-label-font="14px 'OpenSans-bold'"
