@@ -421,7 +421,8 @@ define(function (require) {
                         //tooltipOffset: 76
                         //new tooltip
                         tooltipFormat: scope.tooltipFormat,
-                        baseAxisTooltipEnabled : false,
+                        baseAxisTooltipEnabled : true,
+                        baseAxisLabelSpacingMin: 1,
                         orthoAxisTitle: attributes.orthoAxisTitle || '',
                         multipleLabelColors: attributes.multipleLabelColors === 'true' || false,
                         showEuroMask: attributes.showEuroMask === 'true' ? true : false,
@@ -434,8 +435,6 @@ define(function (require) {
                     }
 
                 };
-
-                //$log.warn(scope);
 
                 /*if(!!definition.chartDefinition.customTooltip == 1){
 
@@ -451,8 +450,6 @@ define(function (require) {
                                "</div>";
                     }
                 }*/
-
-                
                 
                 /*definition.chartDefinition.baseAxisBandSpacing = function(){
                     $log.warn('Entra en funcion');
@@ -460,9 +457,88 @@ define(function (require) {
                 };*/
 
                 if(!!definition.chartDefinition.axisLabelWordBreak){
+                    definition.chartDefinition.baseAxisTooltipFormat = function(scene){
+                        if(scene.group.key.length > 15){
+                            return scene.group.key;
+                        }
+                    }
+                    definition.chartDefinition.tooltipFormat = function(scene){
+                        // Atoms of the first datum
+                        var atoms = scene.firstAtoms;
+                        return '<div class="ccc-tt">'+
+                                    '<table class="ccc-tt-ds ccc-tt-plot ccc-tt-plot-bar ccc-tt-chartOrient-v" data-ccc-color="rgb(68,159,162)">'+
+                                        '<tbody>'+
+                                            '<tr class="ccc-tt-dim ccc-tt-dimValueType-Any ccc-tt-dimDiscrete">'+
+                                                '<td class="ccc-tt-dimLabel">'+
+                                                    '<span>Country</span>'+
+                                                '</td>'+
+                                                '<td class="ccc-tt-dimRoles">'+
+                                                    '<span class="ccc-tt-role ccc-tt-role-color">'+
+                                                        '<span class="ccc-tt-roleIcon"></span>'+
+                                                        '<span class="ccc-tt-roleLabel">Color</span>'+
+                                                    '</span>'+
+                                                    '<span class="ccc-tt-role ccc-tt-role-series">'+
+                                                        '<span class="ccc-tt-roleIcon"></span>'+
+                                                        '<span class="ccc-tt-roleLabel">Series</span>'+
+                                                    '</span>'+
+                                                '</td>'+
+                                                '<td class="ccc-tt-dimValue">'+
+                                                    '<span class="ccc-tt-value">'+atoms.series.key+'</span>'+
+                                                '</td>'+
+                                            '</tr>'+
+                                            '<tr class="ccc-tt-dim ccc-tt-dimValueType-Any ccc-tt-dimDiscrete">'+
+                                                '<td class="ccc-tt-dimLabel"><span>Sector</span></td>'+
+                                                '<td class="ccc-tt-dimRoles">'+
+                                                    '<span class="ccc-tt-role ccc-tt-role-category">'+
+                                                        '<span class="ccc-tt-roleIcon"></span>'+
+                                                        '<span class="ccc-tt-roleLabel">Category</span>'+
+                                                    '</span>'+
+                                                    '</td>'+
+                                                '<td class="ccc-tt-dimValue">'+
+                                                    '<span class="ccc-tt-value">'+atoms.category.key+'</span>'+
+                                                '</td>'+
+                                            '</tr>'+
+                                            '<tr class="ccc-tt-dim ccc-tt-dimValueType-Number ccc-tt-dimContinuous">'+
+                                                '<td class="ccc-tt-dimLabel"><span>Value</span></td>'+
+                                                '<td class="ccc-tt-dimRoles">'+
+                                                    '<span class="ccc-tt-role ccc-tt-role-value">'+
+                                                        '<span class="ccc-tt-roleIcon"></span>'+
+                                                        '<span class="ccc-tt-roleLabel">Value</span>'+
+                                                    '</span>'+
+                                                '</td>'+
+                                                '<td class="ccc-tt-dimValue">'+
+                                                    '<span class="ccc-tt-value">'+atoms.value.label+'</span>'+
+                                                '</td>'+
+                                            '</tr>'+
+                                        '</tbody>'+
+                                    '</table>'+
+                                '</div>';
+                        /*
+                        return "<div style='text-align:left'>" + 
+                                 "<b>Answer</b>: "  + atoms.series.label   + "<br/>" + 
+                                 "<b>Country</b>: "   + atoms.category.label + "<br/>" + 
+                                 "<b>Value</b>: " + atoms.value.label   + 
+                               "</div>";*/
+                    }
                     definition.chartDefinition.baseAxisLabel_call = function(){
                         var panel = this.sign.panel;
-                        this.add(pv.Label)
+                        var ticks = this.sign.chart.axes.x.ticks;
+
+                        var label = '';
+                        var separator = -1;
+                        //$log.warn(ticks);
+
+                        for(var i = 0; i<ticks.length; i++){
+                            label = ticks[i].atoms.category.label;
+                            //separator = label.indexOf(' ', 12);
+                            scope.substring = ticks[i].atoms.category.label.substring(0, 15);
+                            if(label.length > 15){
+                                ticks[i].atoms.category.label = scope.substring + '...';
+                            }
+                        }
+                        
+
+                        /*this.add(pv.Label)
                           .textMargin(15)
                           .text(function(scene) {
                             var value = scene.firstAtoms.category.value;
@@ -482,6 +558,7 @@ define(function (require) {
                             }
                             
                           });
+                        */
                     }
                 }
 

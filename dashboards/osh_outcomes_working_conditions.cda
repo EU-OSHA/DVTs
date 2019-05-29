@@ -1124,8 +1124,8 @@
 	    </Query>
 	</DataAccess>
 
-	<!-- PREVENTION COMPANIES || INTERNAL OR EXTERNAL RA DATA -->
-    <DataAccess access="public" connection="dvt_conn" id="getInternalExternalRAData" type="sql">
+	<!-- PREVENTION COMPANIES || INTERNAL OR EXTERNAL RA VERTICAL DATA -->
+    <DataAccess access="public" connection="dvt_conn" id="getInternalExternalRAVerticalData" type="sql">
         <Cache duration="3600" enabled="true" />
         <Columns />
         <Parameters>
@@ -1147,8 +1147,31 @@
 		</Query>
     </DataAccess>
 
-    <!-- PREVENTION COMPANIES || OSH INFORMATION DATA -->
-    <DataAccess access="public" connection="dvt_conn" id="getOshInformationData" type="sql">
+    <!-- PREVENTION COMPANIES || INTERNAL OR EXTERNAL RA HORIZONTAL sDATA -->
+    <DataAccess access="public" connection="dvt_conn" id="getInternalExternalRAHorizontalData" type="sql">
+        <Cache duration="3600" enabled="true" />
+        <Columns />
+        <Parameters>
+            <Parameter default="10" name="pDataset" type="Numeric"/>
+            <Parameter default="64" name="pIndicator" type="Numeric"/>
+        </Parameters>
+        <Query>
+            SELECT t.text as Answer, IF(n.name = 'European Union', n.country_code, CONCAT(n.name, " (", n.country_code, ")")) as Country, v.value*100 as Value
+            FROM nuts n, profile p, value v, dataset d, translation t, split_answer sa
+            WHERE n.id = p.nuts_id
+            AND v.indicator_id = ${pIndicator}
+            AND v.profile_id = p.id
+            AND p.answer_id = sa.id
+            AND sa.literal_id = t.literal_id
+            AND t.language = 'EN'
+            AND d.id = v.dataset_id
+            AND d.id = ${pDataset}
+            ORDER BY FIELD(sa.id, 28,29,30) , FIELD('EU28', n.country_code) DESC, FIELD(n.country_code, 'CH', 'IS', 'NO'), n.country_code ASC, Value DESC;
+		</Query>
+    </DataAccess>
+
+    <!-- PREVENTION COMPANIES || OSH INFORMATION VERTICAL DATA -->
+    <DataAccess access="public" connection="dvt_conn" id="getOshInformationVerticalData" type="sql">
         <Cache duration="3600" enabled="true" />
         <Columns />
         <Parameters>
@@ -1167,6 +1190,29 @@
             AND d.id = v.dataset_id
             AND d.id = ${pDataset}
             ORDER BY FIELD(sa.id, 31,2,1) , FIELD('EU28', n.country_code) DESC, FIELD(n.country_code, 'CH', 'IS', 'NO'), n.country_code ASC, Value DESC;
+		</Query>
+    </DataAccess>
+
+    <!-- PREVENTION COMPANIES || OSH INFORMATION HORIZONTAL DATA -->
+    <DataAccess access="public" connection="dvt_conn" id="getOshInformationHorizontalData" type="sql">
+        <Cache duration="3600" enabled="true" />
+        <Columns />
+        <Parameters>
+            <Parameter default="10" name="pDataset" type="Numeric"/>
+            <Parameter default="64" name="pIndicator" type="Numeric"/>
+        </Parameters>
+        <Query>
+            SELECT t.text as Answer, IF(n.name = 'European Union', n.country_code, CONCAT(n.name, " (", n.country_code, ")")) as Country, v.value*100 as Value
+            FROM nuts n, profile p, value v, dataset d, translation t, split_answer sa
+            WHERE n.id = p.nuts_id
+            AND v.indicator_id = ${pIndicator}
+            AND v.profile_id = p.id
+            AND p.answer_id = sa.id
+            AND sa.literal_id = t.literal_id
+            AND t.language = 'EN'
+            AND d.id = v.dataset_id
+            AND d.id = ${pDataset}
+            ORDER BY FIELD(sa.id, 1,2,31) , FIELD('EU28', n.country_code) DESC, FIELD(n.country_code, 'CH', 'IS', 'NO'), n.country_code ASC, Value DESC;
 		</Query>
     </DataAccess>
 
