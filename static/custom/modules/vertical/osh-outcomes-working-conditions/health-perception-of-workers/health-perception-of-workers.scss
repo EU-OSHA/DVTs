@@ -187,6 +187,7 @@
     .card--grid{
       .card--block--chart{
         .chart--block{
+          padding: 1rem;
           header{    
           }
           .highlited-data-list{
@@ -198,7 +199,8 @@
       }
     } 
     .highlited--data--section{
-      &.affix{
+      &.hide-header.affix{
+        top: -33rem;
       }
       .highlited--data--block{
         .highlited-data-item{
@@ -207,6 +209,9 @@
             li{
               width: 30%;
               padding: 0;
+              span{
+                font-size: 2rem !important;
+              }
             }
           }
         }
