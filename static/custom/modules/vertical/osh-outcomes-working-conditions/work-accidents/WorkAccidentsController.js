@@ -8,6 +8,9 @@
  * @description
  * ############################################
  */
+
+var resolution = screen.width;
+
 define(function (require) {
   'use strict';
 
@@ -237,10 +240,29 @@ define(function (require) {
     /******************************END FILTERS************************************/
 
       // Open indicators list like a select element
+
+
+      $(window).on("resize",function(e){
+        resolution = screen.width;
+      });
+
       $scope.openIndicatorsList = function() {
+        if( resolution < 990 ){
           angular.element('.submenu--items--wrapper').toggleClass('open-list');
           angular.element('.submenu-indicator').toggleClass('open-list');
+        } else {
+          angular.element('.submenu--items--wrapper').removeClass('open-list');
+          angular.element('.submenu-indicator').removeClass('open-list');
+        }
       }
+
+      angular.element('body').mouseup(function(e){
+        var container = angular.element('.submenu--items--wrapper');
+        if (!container.is(e.target) && container.has(e.target).length === 0){
+          angular.element('.submenu--items--wrapper').removeClass('open-list'); 
+        }
+      });
+
 
       $scope.changeIndicator = function(e,indicator) {
         $scope.openIndicatorsList();
