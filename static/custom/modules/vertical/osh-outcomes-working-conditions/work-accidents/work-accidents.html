@@ -16,7 +16,7 @@
     <label class="submenu-indicator" data-ng-click ="openIndicatorsList()">Select the indicator</label>
     <ul class="submenu--items--wrapper">
       <!-- INDICATORS -->
-      <li data-ng-if="indicator.anchor != 'level-of-reporting-of-non-fatal-accidents' && indicator.anchor != 'estimation-of-non-fatal-accidents'" data-ng-repeat="indicator in indicators" data-ng-class="{'active' : indicator.anchor == pIndicator }" data-ng-click ="openIndicatorsList($event)" class="submenu--item">
+      <li data-ng-if="indicator.anchor != 'level-of-reporting-of-non-fatal-accidents' && indicator.anchor != 'estimation-of-non-fatal-accidents'"  data-ng-repeat="indicator in indicators" data-ng-class="{'active' : indicator.anchor == pIndicator }" data-ng-click ="openIndicatorsList($event)" class="submenu--item">
         <a href="" data-ng-click="changeIndicator($event,indicator.anchor);"  data-ng-bind="i18nLiterals['L'+indicator.text]" data-ng-class="{'active' : indicator.anchor == pIndicator }" ></a>
       </li>
     </ul>
@@ -142,7 +142,7 @@
 
     <!-- Estimation of non-fatal accidents -->
     <div class="" id="tab3" data-ng-show="pIndicator == 'estimation-of-non-fatal-accidents'">
-      <div class="card--grid xxs-w1 xs-w1 w1 center-text">
+      <div class="container section--page card--grid xxs-w1 xs-w1 w1 center-text">
         <div class="card--block--chart">
           <div class="chart--block">
             <dvt-bar-chart
@@ -180,7 +180,7 @@
 
     <!-- Level of reporting -->
     <div class="" id="tab4" data-ng-show="pIndicator == 'level-of-reporting-of-non-fatal-accidents'">
-      <div class="card--grid xxs-w1 xs-w1 w1 center-text">
+      <div class="container section--page card--grid xxs-w1 xs-w1 w1 center-text">
         <div class="card--block--chart">
           <div class="chart--block">
             <dvt-bar-chart
@@ -205,10 +205,10 @@
               base-axis-size="{{axisSize}}"
             ></dvt-bar-chart>
           </div>
-        </div>
-        <div class="chart-legend">
-          <span data-ng-bind="i18nLiterals.L20568"></span>
-          <span data-ng-bind="i18nLiterals.L20704"></span> <span><a data-ng-bind="i18nLiterals.L20705" ui-sref="about-tool"></a></span>
+          <div class="chart-legend">
+            <span data-ng-bind="i18nLiterals.L20568"></span>
+            <span data-ng-bind="i18nLiterals.L20704"></span> <span><a data-ng-bind="i18nLiterals.L20705" ui-sref="about-tool"></a></span>
+          </div>
         </div>
       </div>
     </div>
