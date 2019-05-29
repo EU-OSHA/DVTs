@@ -40,6 +40,16 @@ define(function (require) {
     $scope.angle = angular.element(window).width() > 768 ? 1 : 0;
     $scope.horizontalHeight = angular.element(window).width() > 768 ? 470 : 770;
     $scope.axisFixedMin = angular.element(window).width() > 768 ? 60 : 0;
+    $scope.query = angular.element(window).width() > 768 ? 'getMentalRiskVerticalData' : 'getMentalRiskHorizontalData';
+    $scope.timePressureQuery = angular.element(window).width() > 768 ? 'getTimePressureEurofoundVerticalData' : 'getTimePressureEurofoundHorizontalData';
+    $scope.influenceQuery = angular.element(window).width() > 768 ? 'getInfluenceEurofoundVerticalData' : 'getInfluenceEurofoundHorizontalData';
+    $scope.jobInsecurity = angular.element(window).width() > 768 ? 'getJobInsecurityEurofoundVerticalData' : 'getJobInsecurityEurofoundHorizontalData';
+    $scope.discriminationQuery = angular.element(window).width() > 768 ? 'getEurofoundDiscriminationVerticalData' : 'getEurofoundDiscriminationHorizontalData';
+    $scope.eurofoundQuery = angular.element(window).width() > 768 ? 'getEurofoundVerticalData' : 'getEurofoundHorizontalData';
+    $scope.color1 = angular.element(window).width() > 768 ? dvtUtils.getColorCountry(22) : dvtUtils.getColorCountry(1);
+    $scope.color2 = angular.element(window).width() > 768 ? dvtUtils.getColorCountry(1) : dvtUtils.getColorCountry(22);
+    $scope.color3 = angular.element(window).width() > 768 ? dvtUtils.getAccidentsColors(4) : dvtUtils.getColorCountry(1);
+    $scope.color4 = angular.element(window).width() > 768 ? dvtUtils.getColorCountry(1) : dvtUtils.getAccidentsColors(4);
 
     var width = angular.element($window).width();
       angular.element($window).bind('resize', function() {

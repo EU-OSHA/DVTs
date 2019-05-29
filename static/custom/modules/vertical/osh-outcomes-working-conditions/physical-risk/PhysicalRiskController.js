@@ -69,6 +69,9 @@ define(function (require) {
     $scope.horizontalHeight = angular.element(window).width() > 768 ? 470 : 770;
     $scope.orientation = angular.element(window).width() > 768 ? "vertical" : "horizontal";
     $scope.axisSize = angular.element(window).width() > 768 ? 150 : 160;
+    $scope.query = angular.element(window).width() > 768 ? 'getPhysicalRiskVerticalData' : 'getPhysicalRiskHorizontalData';
+    $scope.color1 = angular.element(window).width() > 768 ? dvtUtils.getColorCountry(22) : dvtUtils.getColorCountry(1);
+    $scope.color2 = angular.element(window).width() > 768 ? dvtUtils.getColorCountry(1) : dvtUtils.getColorCountry(22);
 
     var width = angular.element($window).width();
       angular.element($window).bind('resize', function() {
@@ -100,11 +103,8 @@ define(function (require) {
     }
 
     $scope.stories = [
-      //0 - Time pressure
+      //0 - Vibrations, loud noise and temperature and Exposure to dangerous substances
       {
-        color1: dvtUtils.getColorCountry(1),
-        color2: dvtUtils.getColorCountry(22),
-        color3: dvtUtils.getAccidentsColors(4),
         plots: PhysicalRiskService.getInfoAboutRisksData(),
         promises: {
           story1: [
@@ -139,10 +139,7 @@ define(function (require) {
       }
     ];
 
-    $scope.step = {
-      chart1: 20,
-      chart2: 20
-    }
+    $scope.step = 20;
 
     // Show/hide the Countries Filter List
     angular.element('div.countries-filters').css( "display",'none' );

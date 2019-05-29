@@ -43,6 +43,11 @@ define(function (require) {
     $scope.horizontalHeight = angular.element(window).width() > 768 ? 470 : 770;
     $scope.orientation = angular.element(window).width() > 768 ? "vertical" : "horizontal";
     $scope.axisSize = angular.element(window).width() > 768 ? 150 : 160;
+    $scope.query = angular.element(window).width() > 768 ? 'getJobSatisfactionVerticalData' : 'getJobSatisfactionHorizontalData';
+    $scope.color1 = angular.element(window).width() > 768 ? dvtUtils.getColorCountry(3) : dvtUtils.getColorCountry(1);
+    $scope.color2 = angular.element(window).width() > 768 ? dvtUtils.getAccidentsColors(4) : dvtUtils.getColorCountry(22);
+    $scope.color3 = angular.element(window).width() > 768 ? dvtUtils.getColorCountry(22): dvtUtils.getAccidentsColors(4);
+    $scope.color4 = angular.element(window).width() > 768 ? dvtUtils.getColorCountry(1) : dvtUtils.getColorCountry(3);
 
     var width = angular.element($window).width();
       angular.element($window).bind('resize', function() {

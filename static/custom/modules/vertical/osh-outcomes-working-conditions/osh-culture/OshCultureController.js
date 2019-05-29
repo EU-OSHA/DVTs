@@ -58,6 +58,7 @@ define(function (require) {
       },
       // 1- Use of protective equipment plot
       {
+        color2: dvtUtils.getColorCountry(22),
         plots: OshCultureService.getPersonalProtectiveEquipmentPlot(),
         dimensions: {
           value: {

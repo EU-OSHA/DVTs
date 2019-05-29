@@ -82,12 +82,12 @@
           <div class="chart--block" ng-show="pSubIndicator == 'smoke-powder-or-dust'">
             <dvt-bar-chart
             data-ng-cloak
-            query="getPhysicalRiskData" cda="{{::cdaOSHOutcomes }}"
+            query="{{query}}" cda="{{::cdaOSHOutcomes }}"
             width="330" height="{{horizontalHeight}}" axis-percent="1"
             orientation="{{orientation}}" axis-fixed-min="0"
-            axis-fixed-max="100" step="{{step.chart1}}"
+            axis-fixed-max="100" step="{{step}}"
             params="[['pDataset', datasetEurofound], ['pIndicator', 71]]"
-            color-role="series" colors="[stories[0].color2, stories[0].color1]"
+            color-role="series" colors="[color1, color2]"
             chart-title="{{i18nLiterals.L328}}" id="2"
             axis-label-font="14px 'OpenSans-bold'"
             plots="stories[0].plots"
@@ -105,12 +105,12 @@
           <div class="chart--block" ng-show="pSubIndicator == 'vapours'">
             <dvt-bar-chart
             data-ng-cloak
-            query="getPhysicalRiskData" cda="{{::cdaOSHOutcomes }}"
+            query="{{query}}" cda="{{::cdaOSHOutcomes }}"
             width="330" height="{{horizontalHeight}}" axis-percent="1"
             orientation="{{orientation}}" axis-fixed-min="0"
-            axis-fixed-max="100" step="{{step.chart1}}"
+            axis-fixed-max="100" step="{{step}}"
             params="[['pDataset', datasetEurofound], ['pIndicator', 71]]"
-            color-role="series" colors="[stories[0].color2, stories[0].color1]"
+            color-role="series" colors="[color1, color2]"
             chart-title="{{i18nLiterals.L329}}" id="3"
             axis-label-font="14px 'OpenSans-bold'"
             plots="stories[0].plots"
@@ -128,12 +128,12 @@
           <div class="chart--block" ng-show="pSubIndicator == 'chemical-products'">
             <dvt-bar-chart
             data-ng-cloak
-            query="getPhysicalRiskData" cda="{{::cdaOSHOutcomes }}"
+            query="{{query}}" cda="{{::cdaOSHOutcomes }}"
             width="330" height="{{horizontalHeight}}" axis-percent="1"
             orientation="{{orientation}}" axis-fixed-min="0"
-            axis-fixed-max="100" step="{{step.chart1}}"
+            axis-fixed-max="100" step="{{step}}"
             params="[['pDataset', datasetEurofound], ['pIndicator', 73]]"
-            color-role="series" colors="[stories[0].color2, stories[0].color1]"
+            color-role="series" colors="[color1, color2]"
             chart-title="{{i18nLiterals.L330}}" id="4"
             axis-label-font="14px 'OpenSans-bold'"
             plots="stories[0].plots"
@@ -151,12 +151,12 @@
           <div class="chart--block" ng-show="pSubIndicator == 'infectious-materials'">
             <dvt-bar-chart
             data-ng-cloak
-            query="getPhysicalRiskData" cda="{{::cdaOSHOutcomes }}"
+            query="{{query}}" cda="{{::cdaOSHOutcomes }}"
             width="330" height="{{horizontalHeight}}" axis-percent="1"
             orientation="{{orientation}}" axis-fixed-min="0"
-            axis-fixed-max="100" step="{{step.chart1}}"
+            axis-fixed-max="100" step="{{step}}"
             params="[['pDataset', datasetEurofound], ['pIndicator', 74]]"
-            color-role="series" colors="[stories[0].color2, stories[0].color1]"
+            color-role="series" colors="[color1, color2]"
             chart-title="{{i18nLiterals.L331}}" id="5"
             axis-label-font="14px 'OpenSans-bold'"
             plots="stories[0].plots"
