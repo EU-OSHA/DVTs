@@ -1,17 +1,17 @@
-<dvt-dashboard promises="promises" parameters="dashboard.parameters">
+<dvt-dashboard promises="promises" parameters="dashboard.parameters" class="physical-risk">
 
-  <section data-ng-if="state.current.name != 'home'" id="not-home-cover" class="advice--icon--block advice--block-not-home background-main-light container-fluid section--page">
+  <section data-ng-if="state.current.name != 'home'" id="not-home-cover" class="advice--icon--block advice--block-not-home background-main-light container-fluid">
     <div class="container horizontal-nopadding">
       <div class="left-text col-md-8 col-sm-8 col-xs-12  nopadding">
         <h1 class="main-color left-text" data-ng-bind="i18nLiterals.L20711"></h1>
         <p data-ng-bind="i18nLiterals.L20579"></p>
         <span data-ng-bind="i18nLiterals.L20700"></span> <span data-ng-bind="i18nLiterals.L20704"></span> <span><a data-ng-bind="i18nLiterals.L20705" ui-sref="about-tool"></a></span>
       </div>
-      <div class="icon--advice mental-risk-icon hide-mobile col-sm-4 col-md-4"></div>
+      <div class="icon--advice physical-risk-icon hide-mobile col-sm-4 col-md-4"></div>
     </div>
   </section>
 
-  <div class="compare--block regulation-page" bs-affix="" data-offset-top="420">
+  <div class="compare--block">
     <div class="submenu--block container">
       <label class="submenu-indicator" data-ng-click ="openIndicatorsList()">Select the indicator</label>
       <ul class="submenu--items--wrapper">
@@ -33,10 +33,10 @@
     </div>
   </div>
 
-  <section class="container section--page full-tablet">
+  <section class="full-tablet">
     <!-- Vibrations, loud noise and temperature -->
     <div class="compare--block" id="tab1" data-ng-show="pIndicator == 'vibrations-loud-noise-and-temperature'">
-      <!-- country selects -->
+      <!-- country selects -->      
       <form class="container compare--block--form">
         <ul class="compare--list">
           <!-- 1st country -->        
@@ -56,7 +56,8 @@
         </ul>
       </form>
       <div class="line background-main-light"></div>
-      <div class="card--grid xxs-w1 xs-w1 w1 center-text">
+
+      <div class="container card--grid xxs-w1 xs-w1 w1 center-text">
         <div class="card--block--chart">
           <div class="chart--block">
             <dvt-radar-chart
@@ -77,7 +78,8 @@
     <!-- Exposure to dangerous substances -->
     <div class="" id="tab2" data-ng-show="pIndicator == 'exposure-to-dangerous-substances'">
       <div class="line background-main-light"></div>
-      <div class="card--grid xxs-w1 xs-w1 w1 center-text">     
+
+      <div class="container card--grid xxs-w1 xs-w1 w1 center-text">     
         <div class="card--block--chart" >
           <div class="chart--block" ng-show="pSubIndicator == 'smoke-powder-or-dust'">
             <dvt-bar-chart
@@ -184,7 +186,6 @@
 
     <!-- Risks involve with work -->
     <div class="compare--block" id="tab3" data-ng-show="pIndicator == 'risks-involve-with-work'">
-      <div class="line background-main-light"></div>
       <!-- country selects -->
       <form class="container compare--block--form">
         <ul class="compare--list">
@@ -205,13 +206,16 @@
         </ul>
       </form>
       <div class="line background-main-light"></div>
-      <div class="card--grid xxs-w1 xs-w1 w1 center-text">
+
+      <div class="container card--grid xxs-w1 xs-w1 w1 center-text">
         <div class="card--block--chart">
           <!-- ESENER or Eurofound filter -->
-          <select ng-model="pSubIndicator" ng-change="changeSplit()">
-            <option data-ng-bind="i18nLiterals.L20646" value="eurofound"></option>
-            <option data-ng-bind="i18nLiterals.L20645" value="esener"></option>
-          </select>
+          <div class="select-filter-chart">
+            <select ng-model="pSubIndicator" ng-change="changeSplit()">
+              <option data-ng-bind="i18nLiterals.L20646" value="eurofound"></option>
+              <option data-ng-bind="i18nLiterals.L20645" value="esener"></option>
+            </select>
+          </div>
           <div class="chart--block" ng-hide="pSubIndicator != 'eurofound'">
             <dvt-radar-chart
               data-ng-cloak
@@ -242,10 +246,10 @@
   </section>
 
   <!-- FOOTER -->
-  <section class="container-fluid background-gray section--page">
+  <section class="container-fluid background-gray section--page explore-section">
     <div class="container">
       <section class="card--grid xxs-w1 w3 center-text">
-        <h2 class="title-section second-color" data-ng-bind="i18nLiterals.L20712"></h2>
+        <h2 class="title-section second-color"><span  data-ng-bind="i18nLiterals.L20712"></span></h2>
         <div class="card--block--rounded">
           <a class="icon--card working-conditons-icon" ui-sref="overall-opinion"></a>
           <h3 class="title--card main-color"><a data-ng-bind="i18nLiterals.L20709" ui-sref="overall-opinion"></a></h3>

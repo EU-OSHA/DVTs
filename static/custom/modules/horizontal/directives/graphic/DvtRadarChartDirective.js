@@ -149,9 +149,9 @@ define(function (require) {
 
 							//TODO establice EU-OSHA default options
 							var defaultOpts = {
-								meshSize: 30,
+								meshSize: 250,
 								labels: [],
-								labelFontSize: 16,
+								labelFontSize: 14,
 								labelColor: "black",
 								valueFontSize: 13,
 								drawLabels: true,
@@ -428,7 +428,7 @@ define(function (require) {
                                     .attr({
                                         "fill": opts.indicators[0]=="EU28" ? dvtUtils.getEUColor() : dvtUtils.getColorCountry(1),
                                         "text-anchor": "start",
-                                        "font-size": "15px",
+                                        "font-size": "14px",
                                         "font-family": "OpenSans",
                                         "font": ""
                                     });
@@ -440,7 +440,7 @@ define(function (require) {
                                     .attr({
                                         "fill": opts.indicators[1]=="EU28" ? dvtUtils.getEUColor() : dvtUtils.getColorCountry(2),
                                         "text-anchor": "start",
-                                        "font-size": "15px",
+                                        "font-size": "14px",
                                         "font-family": "OpenSans",
                                         "font": ""
                                     });
@@ -454,7 +454,7 @@ define(function (require) {
                                         .attr({
                                             "fill": opts.indicators[2]=="EU28" ? dvtUtils.getEUColor() : dvtUtils.getColorCountry(2),
                                             "text-anchor": "start",
-                                            "font-size": "15px",
+                                            "font-size": "14px",
                                             "font-family": "OpenSans",
                                             "font": ""
                                         });
