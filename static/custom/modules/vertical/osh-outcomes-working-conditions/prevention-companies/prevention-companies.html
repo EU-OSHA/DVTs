@@ -24,7 +24,6 @@
         </li>
       </ul>
     </div>
-    <div class="line background-main-light"></div>
   </div>
 
   <section class="container section--page full-tablet">
@@ -149,9 +148,11 @@
       <div class="line background-main-light"></div>
       <div class="card--grid xxs-w1 xs-w1 w1 center-text">
         <div class="card--block--chart">
-          
+          <div class="">
+            <h2 class="title--card" data-ng-bind="i18nLiterals.L20681"></h2>
+            <img alt="European Agency for Safety and Health at Work" src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/Esener2Map.png">
+          </div>
         </div>
-        <!-- Dynamic chart legend depending on split selected -->
         <div class="chart-legend">
           <p data-ng-bind="i18nLiterals.L20605"></p>
         </div>
@@ -190,7 +191,7 @@
         </div>
         <!-- Dynamic chart legend depending on split selected -->
         <div class="chart-legend">
-          <p ng-show="pSplit == 'esener'" data-ng-bind="i18nLiterals.L20606"></p>
+          <p data-ng-bind="i18nLiterals.L20606"></p>
         </div>
       </div>
     </div>

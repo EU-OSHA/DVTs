@@ -84,7 +84,7 @@ define(function (require) {
       //0 - Time pressure
       {
         color1: dvtUtils.getColorCountry(1),
-        color2: dvtUtils.getColorCountry(22),
+        color2: dvtUtils.getColorCountry(2),
         color3: dvtUtils.getEUColor(),
         plots: PreventionCompaniesService.getRiskAssessmentSplit($scope.pCountry1, $scope.pCountry2),
         dimensions: {
