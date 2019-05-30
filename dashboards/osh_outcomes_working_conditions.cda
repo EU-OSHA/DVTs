@@ -1216,4 +1216,177 @@
 		</Query>
     </DataAccess>
 
+    <!-- PHYSICAL RISK || ALL COUNTRIES FOR VIBRATION, LOUD NOISE AVAILABLE -->
+    <DataAccess access="public" connection="dvt_conn" id="getWorkerInvolvementCountries" type="sql">
+        <Cache duration="3600" enabled="true" />
+        <Columns />
+        <Parameters>
+            <Parameter default="10" name="pDataset1" type="Numeric"/>
+            <Parameter default="10" name="pDataset2" type="Numeric"/>
+        </Parameters>
+        <Query>
+            SELECT DISTINCT(n.literal_id), n.country_code
+	      	FROM nuts n, profile p, value v, dataset d
+			where n.id = p.nuts_id
+			AND v.profile_id = p.id
+			AND d.id = v.dataset_id
+            AND d.id IN (${pDataset1},${pDataset2})
+			AND v.indicator_id IN (75,95,96,101,102,123,124,125)
+			AND n.country_code NOT IN ('EU28')
+			ORDER BY n.country_code ASC;
+        </Query>
+   	</DataAccess>
+
+    <!-- WORKER INVOLVEMENT || ALL Eurofound WORKER INVOLVEMENT WITH WORK DATA -->
+    <DataAccess access="public" connection="dvt_conn" id="getCountryWorkerInvolvementESENERData" type="sql">
+        <Cache duration="3600" enabled="true" />
+        <Columns />
+        <Parameters>
+            <Parameter default="10" name="pDataset" type="Numeric"/>
+            <Parameter default="AT" name="pCountry" type="String"/>
+        </Parameters>
+        <Query>
+			(SELECT t.text as Indicator, ROUND(v.value*100,1) as Value, n.country_code as Country
+			FROM nuts n, profile p, value v, dataset d, indicator i, translation t, split_answer sa
+			WHERE n.id = p.nuts_id
+			AND v.indicator_id IN (101, 102, 123)
+			AND i.id = v.indicator_id
+			AND i.literal_id = t.literal_id
+			AND v.profile_id = p.id
+			AND p.answer_id = sa.id
+			AND p.company_size_id IS NULL 
+			AND p.activity_sector_id IS NULL
+			AND sa.id = 1
+			AND d.id = v.dataset_id
+			AND d.id = 15
+			AND n.country_code = ${pCountry}
+			)UNION(
+			SELECT t.text as Indicator, SUM(ROUND(v.value*100,1)) as Value, n.country_code as Country
+			FROM nuts n, profile p, value v, dataset d, indicator i, translation t, split_answer sa
+			WHERE n.id = p.nuts_id
+			AND v.indicator_id = 124
+			AND i.id = v.indicator_id
+			AND i.literal_id = t.literal_id
+			AND v.profile_id = p.id
+			AND p.answer_id = sa.id
+			AND sa.id IN (1, 35)
+			AND d.id = v.dataset_id
+			AND d.id = 15
+			AND n.country_code = ${pCountry}
+			Group by Indicator
+			)UNION(
+			SELECT t.text as Indicator, SUM(ROUND(v.value*100,1)) as Value, n.country_code as Country
+			FROM nuts n, profile p, value v, dataset d, indicator i, translation t, split_answer sa
+			WHERE n.id = p.nuts_id
+			AND v.indicator_id = 125
+			AND i.id = v.indicator_id
+			AND i.literal_id = t.literal_id
+			AND v.profile_id = p.id
+			AND p.answer_id = sa.id
+			AND sa.id IN (34,20)
+			AND d.id = v.dataset_id
+			AND d.id = 15
+			AND n.country_code = ${pCountry}
+			Group by Indicator
+			)
+        </Query>
+   	</DataAccess>
+
+   	<!-- WORKER INVOLVEMENT || ALL ESENER WORKER INVOLVEMENT WITH WORK DATA EU28 DATA -->
+    <DataAccess access="public" connection="dvt_conn" id="getEU28WorkerInvolvementESENERData" type="sql">
+        <Cache duration="3600" enabled="true" />
+        <Columns />
+        <Parameters>
+            <Parameter default="10" name="pDataset" type="Numeric"/>
+        </Parameters>
+        <Query>
+			(SELECT t.text as Indicator, ROUND(v.value*100,1) as Value, n.country_code as Country
+			FROM nuts n, profile p, value v, dataset d, indicator i, translation t, split_answer sa
+			WHERE n.id = p.nuts_id
+			AND v.indicator_id IN (101, 102, 123)
+			AND i.id = v.indicator_id
+			AND i.literal_id = t.literal_id
+			AND v.profile_id = p.id
+			AND p.answer_id = sa.id
+			AND p.company_size_id IS NULL 
+			AND p.activity_sector_id IS NULL
+			AND sa.id = 1
+			AND d.id = v.dataset_id
+			AND d.id = 15
+			AND n.country_code = 'EU28'
+			)UNION(
+			SELECT t.text as Indicator, SUM(ROUND(v.value*100,1)) as Value, n.country_code as Country
+			FROM nuts n, profile p, value v, dataset d, indicator i, translation t, split_answer sa
+			WHERE n.id = p.nuts_id
+			AND v.indicator_id = 124
+			AND i.id = v.indicator_id
+			AND i.literal_id = t.literal_id
+			AND v.profile_id = p.id
+			AND p.answer_id = sa.id
+			AND sa.id IN (1, 35)
+			AND d.id = v.dataset_id
+			AND d.id = 15
+			AND n.country_code = 'EU28'
+			Group by Indicator
+			)UNION(
+			SELECT t.text as Indicator, SUM(ROUND(v.value*100,1)) as Value, n.country_code as Country
+			FROM nuts n, profile p, value v, dataset d, indicator i, translation t, split_answer sa
+			WHERE n.id = p.nuts_id
+			AND v.indicator_id = 125
+			AND i.id = v.indicator_id
+			AND i.literal_id = t.literal_id
+			AND v.profile_id = p.id
+			AND p.answer_id = sa.id
+			AND sa.id IN (34,20)
+			AND d.id = v.dataset_id
+			AND d.id = 15
+			AND n.country_code = 'EU28'
+			Group by Indicator
+			)
+        </Query>
+   	</DataAccess>
+
+   	<!-- WORKER INVOLVEMENT || ALL Eurofound WORKER INVOLVEMENT WITH WORK DATA -->
+    <DataAccess access="public" connection="dvt_conn" id="getCountryWorkerInvolvementEurofoundData" type="sql">
+        <Cache duration="3600" enabled="true" />
+        <Columns />
+        <Parameters>
+            <Parameter default="10" name="pDataset" type="Numeric"/>
+            <Parameter default="AT" name="pCountry" type="String"/>
+        </Parameters>
+        <Query>
+            SELECT t.text as Indicator, ROUND(v.value*100,1) as Value, n.country_code as Country
+			FROM nuts n, profile p, value v, dataset d, indicator i, translation t
+			WHERE n.id = p.nuts_id
+			AND v.indicator_id IN (95,96,75)
+			AND i.id = v.indicator_id
+			AND i.literal_id = t.literal_id
+			AND v.profile_id = p.id
+			AND d.id = v.dataset_id
+			AND d.id = ${pDataset}
+			AND n.country_code = ${pCountry};
+        </Query>
+   	</DataAccess>
+
+   	<!-- WORKER INVOLVEMENT || ALL ESENER WORKER INVOLVEMENT WITH WORK DATA EU28 DATA -->
+    <DataAccess access="public" connection="dvt_conn" id="getEU28WorkerInvolvementEurofoundData" type="sql">
+        <Cache duration="3600" enabled="true" />
+        <Columns />
+        <Parameters>
+            <Parameter default="10" name="pDataset" type="Numeric"/>
+        </Parameters>
+        <Query>
+            SELECT t.text as Indicator, ROUND(v.value*100,1) as Value, n.country_code as Country
+			FROM nuts n, profile p, value v, dataset d, indicator i, translation t
+			WHERE n.id = p.nuts_id
+			AND v.indicator_id IN (95,96,75)
+			AND i.id = v.indicator_id
+			AND i.literal_id = t.literal_id
+			AND v.profile_id = p.id
+			AND d.id = v.dataset_id
+			AND d.id = ${pDataset}
+			AND n.country_code = 'EU28';
+        </Query>
+   	</DataAccess>
+
 </CDADescriptor>

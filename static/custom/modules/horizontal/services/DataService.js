@@ -890,6 +890,74 @@ define(function () {
 
             /************************************ END PREVENTION COMPANIES ***************************************/
 
+            /*************************************** WORKER INVOLVEMENT ******************************************/
+
+                /**
+                 * @ngdoc method
+                 * @name dvt.configModule.DataService#getWorkerInvolvementCountries
+                 * @methodOf dvt.configModule.DataService
+                 * @description
+                 * Get vibration countries
+                 */
+                getWorkerInvolvementCountries: function () {
+                    var url = configService.getOshOutcomesWorkingConditionsDataPath() + "&dataAccessId=getWorkerInvolvementCountries";
+                    $log.debug('getWorkerInvolvementCountries url:' + url);
+                    return promise(url);
+                },
+
+                /**
+                 * @ngdoc method
+                 * @name dvt.configModule.DataService#getEU28WorkerInvolvementESENERData
+                 * @methodOf dvt.configModule.DataService
+                 * @description
+                 * Get vibrations, loud noise, and temperature data in pyhsical risks
+                 */
+                getEU28WorkerInvolvementESENERData: function (pDataset) {
+                    var url = configService.getOshOutcomesWorkingConditionsDataPath() + "&dataAccessId=getEU28WorkerInvolvementESENERData" + "&parampDataset=" + pDataset;
+                    $log.debug('getEU28WorkerInvolvementESENERData url:' + url);
+                    return promise(url);
+                },
+
+                /**
+                 * @ngdoc method
+                 * @name dvt.configModule.DataService#getCountryWorkerInvolvementESENERData
+                 * @methodOf dvt.configModule.DataService
+                 * @description
+                 * Get vibrations, loud noise, and temperature data in pyhsical risks
+                 */
+                getCountryWorkerInvolvementESENERData: function (pDataset, pCountry) {
+                    var url = configService.getOshOutcomesWorkingConditionsDataPath() + "&dataAccessId=getCountryWorkerInvolvementESENERData" + "&parampDataset=" + pDataset + "&parampCountry="+ pCountry;
+                    $log.debug('getCountryWorkerInvolvementESENERData url:' + url);
+                    return promise(url);
+                },
+
+                /**
+                 * @ngdoc method
+                 * @name dvt.configModule.DataService#getEU28WorkerInvolvementEurofoundData
+                 * @methodOf dvt.configModule.DataService
+                 * @description
+                 * Get vibrations, loud noise, and temperature data in pyhsical risks
+                 */
+                getEU28WorkerInvolvementEurofoundData: function (pDataset) {
+                    var url = configService.getOshOutcomesWorkingConditionsDataPath() + "&dataAccessId=getEU28WorkerInvolvementEurofoundData" + "&parampDataset=" + pDataset;
+                    $log.debug('getEU28WorkerInvolvementEurofoundData url:' + url);
+                    return promise(url);
+                },
+
+                /**
+                 * @ngdoc method
+                 * @name dvt.configModule.DataService#getCountryWorkerInvolvementEurofoundData
+                 * @methodOf dvt.configModule.DataService
+                 * @description
+                 * Get vibrations, loud noise, and temperature data in pyhsical risks
+                 */
+                getCountryWorkerInvolvementEurofoundData: function (pDataset, pCountry) {
+                    var url = configService.getOshOutcomesWorkingConditionsDataPath() + "&dataAccessId=getCountryWorkerInvolvementEurofoundData" + "&parampDataset=" + pDataset + "&parampCountry="+ pCountry;
+                    $log.debug('getCountryWorkerInvolvementEurofoundData url:' + url);
+                    return promise(url);
+                },
+
+            /************************************** END WORKER INVOLVEMENT *****************************************/
 
             /**
              * @ngdoc method

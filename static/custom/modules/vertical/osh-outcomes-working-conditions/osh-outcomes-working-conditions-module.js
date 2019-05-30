@@ -216,6 +216,34 @@ define(function (require) {
         }
       });
 
+      $stateProvider.state('worker-involvement', {
+        url: "/osh-outcomes-working-conditions/worker-involvement/:pCountry1/:pCountry2/:pSplit",
+        params: {
+          pCountry1: {
+            value: 'AT',
+            squash: 'AT'
+          },
+          pCountry2: {
+            value: 'BE',
+            squash: 'BE'
+          },
+          pSplit: {
+            value: 'esener',
+            squash: 'esener'
+          }
+        },
+        views: {
+          "content-main": {
+            templateUrl: configService.getVerticalTplPath("osh-outcomes-working-conditions/worker-involvement", "worker-involvement"),
+            controller: 'WorkerInvolvementController',
+            resolve: configService.dynamicallyRegisterController($controllerProvider, 'vertical/worker-involvement/WorkerInvolvementController', 'worker-involvement', 'WorkerInvolvementController')
+          }
+        },
+        metaTags: {
+          title: i18n.L22015 +  " - " + i18n.L22020 + " - " + i18n.L363
+        }
+      });
+
     });
 
     module.factory('WorkAccidentsService', require('vertical/work-accidents/services/WorkAccidentsService'));
@@ -224,6 +252,7 @@ define(function (require) {
     module.factory('MentalRiskService', require('vertical/mental-risk/services/MentalRiskService'));
     module.factory('PhysicalRiskService', require('vertical/physical-risk/services/PhysicalRiskService'));
     module.factory('PreventionCompaniesService', require('vertical/prevention-companies/services/PreventionCompaniesService'));
+    module.factory('WorkerInvolvementService', require('vertical/worker-involvement/services/WorkerInvolvementService'));
     
     return module;
 });

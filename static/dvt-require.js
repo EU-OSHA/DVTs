@@ -211,6 +211,10 @@
     requirePaths['vertical/prevention-companies/PreventionCompaniesController'] = verticalModules + '/osh-outcomes-working-conditions/prevention-companies/PreventionCompaniesController' + suffix;
     requirePaths['vertical/prevention-companies/services/PreventionCompaniesService'] = verticalModules + '/osh-outcomes-working-conditions/prevention-companies/services/PreventionCompaniesService' + suffix;
 
+    /* WORKER INVOLVEMENT */
+    requirePaths['vertical/worker-involvement/WorkerInvolvementController'] = verticalModules + '/osh-outcomes-working-conditions/worker-involvement/WorkerInvolvementController' + suffix;
+    requirePaths['vertical/worker-involvement/services/WorkerInvolvementService'] = verticalModules + '/osh-outcomes-working-conditions/worker-involvement/services/WorkerInvolvementService' + suffix;
+
     /* ABOUT THE VISUALISATION TOOL */
     requirePaths['vertical/about-tool/AboutToolController'] = verticalModules + '/about-tool/AboutToolController' + suffix;
     requirePaths['vertical/about-tool/about-tool-module'] = verticalModules + '/about-tool/about-tool-module' + suffix;
