@@ -1,5 +1,5 @@
 
-.overall-opinion{
+.overall-opinion, .prevention-companies, .mental-risk{
 	.submenu--block{
 		.submenu--items--wrapper{
 			justify-content: flex-start;
@@ -30,7 +30,7 @@
 				position: absolute;
 				right: 9rem;
 				top: 0;
-			  width: 15%;
+			  width: 20%;
 			  z-index: 10;
 				&:after{
 					content: "\f107";
@@ -69,7 +69,7 @@
 
 @media (max-width: 990px) {
 
-	.overall-opinion{
+	.overall-opinion, .prevention-companies, .mental-risk{
 		.compare--block{
 			.compare--list{
 				li{

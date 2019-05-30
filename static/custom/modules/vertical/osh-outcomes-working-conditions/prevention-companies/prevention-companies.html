@@ -1,4 +1,4 @@
-<dvt-dashboard promises="promises" parameters="dashboard.parameters">
+<dvt-dashboard promises="promises" parameters="dashboard.parameters" class="prevention-companies">
 
   <section data-ng-if="state.current.name != 'home'" id="not-home-cover" class="advice--icon--block advice--block-not-home background-main-light container-fluid section--page">
     <div class="container horizontal-nopadding">
@@ -11,7 +11,7 @@
     </div>
   </section>
 
-  <div class="compare--block regulation-page" bs-affix="" data-offset-top="420">
+  <div class="compare--block">
     <div class="submenu--block container">
       <label class="submenu-indicator" data-ng-click ="openIndicatorsList()">Select the indicator</label>
       <ul class="submenu--items--wrapper">
@@ -25,36 +25,41 @@
       </ul>
     </div>
   </div>
-
-  <section class="container section--page full-tablet">
+  <div class="line background-main-light"></div>
+  <section class="full-tablet">
     <!-- Risk Assesment -->
-    <div class="compare--block" id="tab1" data-ng-show="pIndicator == 'risk-assessment'">
+    <div class="" id="tab1" data-ng-show="pIndicator == 'risk-assessment'">
       <!-- country selects -->
-      <form class="container compare--block--form">
-        <ul class="compare--list">
-          <!-- 1st country -->        
-          <li>
-            <label data-ng-bind="i18nLiterals.L20609" for="datafor"></label>
-            <select id="datafor" class="" ng-model="pCountry1" ng-selected="pCountry1" ng-change="countryChange()">
-              <option data-ng-repeat='country in countriesDataFor' data-ng-bind="('(')+(country.country_code)+(') ')+(i18nLiterals['L'+country.country])" value="{{::country.country_code}}"></option>
-            </select>
-          </li>
-          <!-- 2nd country -->
-          <li>
-            <label data-ng-bind="i18nLiterals.L20610" for="comparewith"></label>
-            <select id="comparewith" class="" ng-model="pCountry2" ng-selected="pCountry2" ng-change="countryChange()">
-              <option data-ng-repeat='country in countriesCompareWith' data-ng-bind="('(')+(country.country_code)+(') ')+(i18nLiterals['L'+country.country])" value="{{::country.country_code}}" ></option>
-            </select>
-          </li>
-        </ul>
-      </form>
-      <div class="card--grid xxs-w1 xs-w1 w1 center-text">
+      <div class="compare--block">
+        <form class="container compare--block--form">
+          <ul class="compare--list">
+            <!-- 1st country -->        
+            <li>
+              <label data-ng-bind="i18nLiterals.L20609" for="datafor"></label>
+              <select id="datafor" class="" ng-model="pCountry1" ng-selected="pCountry1" ng-change="countryChange()">
+                <option data-ng-repeat='country in countriesDataFor' data-ng-bind="('(')+(country.country_code)+(') ')+(i18nLiterals['L'+country.country])" value="{{::country.country_code}}"></option>
+              </select>
+            </li>
+            <!-- 2nd country -->
+            <li>
+              <label data-ng-bind="i18nLiterals.L20610" for="comparewith"></label>
+              <select id="comparewith" class="" ng-model="pCountry2" ng-selected="pCountry2" ng-change="countryChange()">
+                <option data-ng-repeat='country in countriesCompareWith' data-ng-bind="('(')+(country.country_code)+(') ')+(i18nLiterals['L'+country.country])" value="{{::country.country_code}}" ></option>
+              </select>
+            </li>
+          </ul>
+        </form>
+      </div>
+      <div class="line background-main-light"></div>
+      <div class="container card--grid xxs-w1 xs-w1 w1 center-text">
         <div class="card--block--chart">
           <!-- Establishment size and sector filter -->
-          <select ng-model="pSplit" ng-change="countryChange()">
-            <option data-ng-bind="i18nLiterals.L20647" value="establishment-size"></option>
-            <option data-ng-bind="i18nLiterals.L20648" value="sector"></option>
-          </select>
+          <div class="select-filter-chart">
+            <select ng-model="pSplit" ng-change="countryChange()">
+              <option data-ng-bind="i18nLiterals.L20647" value="establishment-size"></option>
+              <option data-ng-bind="i18nLiterals.L20648" value="sector"></option>
+            </select>
+          </div>
           <div class="chart--block" ng-hide="pSplit != 'establishment-size'">
             <dvt-bar-chart
               data-ng-cloak
@@ -108,9 +113,8 @@
     </div>
 
     <!-- Internal or external RA -->
-    <div class="" id="tab2" data-ng-show="pIndicator == 'internal-or-external-ra'">
-      <div class="line background-main-light"></div>
-      <div class="card--grid xxs-w1 xs-w1 w1 center-text">     
+    <div class="" id="tab2" data-ng-show="pIndicator == 'internal-or-external-ra'">      
+      <div class="container card--grid xxs-w1 xs-w1 w1 center-text">     
         <div class="card--block--chart" >
           <div class="chart--block">
             <dvt-bar-chart
@@ -145,8 +149,7 @@
 
     <!-- Evaluated aspects -->
     <div class="" id="tab3" data-ng-show="pIndicator == 'evaluated-aspects'">
-      <div class="line background-main-light"></div>
-      <div class="card--grid xxs-w1 xs-w1 w1 center-text">
+      <div class="container card--grid xxs-w1 xs-w1 w1 center-text">
         <div class="card--block--chart">
           <div class="">
             <h2 class="title--card" data-ng-bind="i18nLiterals.L20681"></h2>
@@ -161,8 +164,7 @@
 
     <!-- OSH Information -->
     <div class="" id="tab4" data-ng-show="pIndicator == 'osh-information'">
-      <div class="line background-main-light"></div>
-      <div class="card--grid xxs-w1 xs-w1 w1 center-text">
+      <div class="container card--grid xxs-w1 xs-w1 w1 center-text">
         <div class="card--block--chart">
           <div class="chart--block">
             <dvt-bar-chart
@@ -197,33 +199,38 @@
     </div>
 
     <!-- Employment participation in prevention -->
-    <div class="compare--block" id="tab5" data-ng-show="pIndicator == 'employees-participation-in-prevention'">
+    <div class="" id="tab5" data-ng-show="pIndicator == 'employees-participation-in-prevention'">
       <!-- country selects -->
-      <form class="container compare--block--form">
-        <ul class="compare--list">
-          <!-- 1st country -->        
-          <li>
-            <label data-ng-bind="i18nLiterals.L20609" for="datafor"></label>
-            <select id="datafor" class="" ng-model="pCountry1" ng-selected="pCountry1" ng-change="countryChange()">
-              <option data-ng-repeat='country in countriesDataFor' data-ng-bind="('(')+(country.country_code)+(') ')+(i18nLiterals['L'+country.country])" value="{{::country.country_code}}"></option>
-            </select>
-          </li>
-          <!-- 2nd country -->
-          <li>
-            <label data-ng-bind="i18nLiterals.L20610" for="comparewith"></label>
-            <select id="comparewith" class="" ng-model="pCountry2" ng-selected="pCountry2" ng-change="countryChange()">
-              <option data-ng-repeat='country in countriesCompareWith' data-ng-bind="('(')+(country.country_code)+(') ')+(i18nLiterals['L'+country.country])" value="{{::country.country_code}}" ></option>
-            </select>
-          </li>
-        </ul>
-      </form>
-      <div class="card--grid xxs-w1 xs-w1 w1 center-text">
+      <div class="compare--block">
+        <form class="container compare--block--form">
+          <ul class="compare--list">
+            <!-- 1st country -->        
+            <li>
+              <label data-ng-bind="i18nLiterals.L20609" for="datafor"></label>
+              <select id="datafor" class="" ng-model="pCountry1" ng-selected="pCountry1" ng-change="countryChange()">
+                <option data-ng-repeat='country in countriesDataFor' data-ng-bind="('(')+(country.country_code)+(') ')+(i18nLiterals['L'+country.country])" value="{{::country.country_code}}"></option>
+              </select>
+            </li>
+            <!-- 2nd country -->
+            <li>
+              <label data-ng-bind="i18nLiterals.L20610" for="comparewith"></label>
+              <select id="comparewith" class="" ng-model="pCountry2" ng-selected="pCountry2" ng-change="countryChange()">
+                <option data-ng-repeat='country in countriesCompareWith' data-ng-bind="('(')+(country.country_code)+(') ')+(i18nLiterals['L'+country.country])" value="{{::country.country_code}}" ></option>
+              </select>
+            </li>
+          </ul>
+        </form>
+      </div>
+      <div class="line background-main-light"></div>
+      <div class="container card--grid xxs-w1 xs-w1 w1 center-text">
         <div class="card--block--chart">
           <!-- Establishment size and sector filter -->
-          <select ng-model="pSplit" ng-change="countryChange()">
-            <option data-ng-bind="i18nLiterals.L20647" value="establishment-size"></option>
-            <option data-ng-bind="i18nLiterals.L20648" value="sector"></option>
-          </select>
+          <div class="select-filter-chart">
+            <select ng-model="pSplit" ng-change="countryChange()">
+              <option data-ng-bind="i18nLiterals.L20647" value="establishment-size"></option>
+              <option data-ng-bind="i18nLiterals.L20648" value="sector"></option>
+            </select>
+          </div>
           <div class="chart--block" ng-hide="pSplit != 'establishment-size'">
             <dvt-bar-chart
               data-ng-cloak
