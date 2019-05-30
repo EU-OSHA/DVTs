@@ -5,9 +5,21 @@
 			justify-content: flex-start;
 		}
 	} 
-
+	.explore-section{
+		.card--grid{
+			flex-wrap: nowrap;
+		}
+	}
 	.card--grid{
 		margin: 4rem auto;
+		.title-section{
+			span{
+			  padding-left: 12rem;
+			  padding-right: 2rem;
+			  display: block;
+			  text-align: right;
+			}
+		}
 		.card--block--chart{
 			position: relative;		  
 			.chart--submenu {
@@ -47,6 +59,9 @@
 				}				
 			}
 		}
+		.card--block--rounded{
+			flex-grow: 4;
+		}
 	} 
 }
 
@@ -55,6 +70,18 @@
 @media (max-width: 990px) {
 
 	.overall-opinion{
+		.compare--block{
+			.compare--list{
+				li{
+					label{
+					  font-size: 1.2rem;
+					}
+					select{
+					  font-size: 1.8rem;
+					}
+				}
+			}
+		} 
 		.submenu--block{
 			.submenu--items--wrapper{
 				//min-height: 7rem;
@@ -117,6 +144,19 @@
 				}
 			}
 		}	
+	}
+	.explore-section{
+		.title-section{
+			width: 100%;
+			span{
+				text-align: left !important;
+				padding: 0 !important;
+			}			
+		}
+		.card--grid{
+			flex-wrap: wrap !important;
+			margin: 0 !important;
+		}
 	}
  
 }
