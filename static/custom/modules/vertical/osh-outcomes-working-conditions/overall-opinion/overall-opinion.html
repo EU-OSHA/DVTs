@@ -27,9 +27,9 @@
     <div class="line background-main-light"></div>
   </div>
 
-  <section class="container section--page full-tablet">
+  <section class="full-tablet">
     <!-- Job satisfaction -->
-    <div class="" id="tab1" data-ng-show="pIndicator == 'job-satisfaction'">
+    <div class="container" id="tab1" data-ng-show="pIndicator == 'job-satisfaction'">
       <div class="card--grid xxs-w1 xs-w1 w1 center-text">
         <div class="card--block--chart">
           <div class="chart--block">
@@ -84,15 +84,17 @@
         </ul>
       </form>
       <div class="line background-main-light"></div>
-      <div class="card--grid xxs-w1 xs-w1 w1 center-text">
-        
+
+      <div class="container card--grid xxs-w1 xs-w1 w1 center-text">        
         <div class="card--block--chart" >
           <!-- Sector, gender or age filter -->
-          <select ng-model="pSplit" ng-change="countryChange()">
-            <option data-ng-bind="i18nLiterals.L20648" value="sector"></option>
-            <option data-ng-bind="i18nLiterals.L20649" value="gender"></option>
-            <option data-ng-bind="i18nLiterals.L20650" value="age"></option>
-          </select>
+          <div class="select-filter-chart">
+            <select ng-model="pSplit" ng-change="countryChange()">
+              <option data-ng-bind="i18nLiterals.L20648" value="sector"></option>
+              <option data-ng-bind="i18nLiterals.L20649" value="gender"></option>
+              <option data-ng-bind="i18nLiterals.L20650" value="age"></option>
+            </select>
+          </div>
           <div class="chart--block" ng-show="pSplit == 'sector'">
             <dvt-bar-chart
             data-ng-cloak

@@ -1,9 +1,55 @@
 
-.submenu--block{
-	.submenu--items--wrapper{
-		justify-content: flex-start;
-	}
-} 
+.overall-opinion{
+	.submenu--block{
+		.submenu--items--wrapper{
+			justify-content: flex-start;
+		}
+	} 
+
+	.card--grid{
+		margin: 4rem auto;
+		.card--block--chart{
+			position: relative;		  
+			.chart--submenu {
+			  top: 1rem;
+			  right: -1rem;
+			}
+			.select-filter-chart{
+				position: absolute;
+				right: 9rem;
+				top: 0;
+			  width: 15%;
+			  z-index: 10;
+				&:after{
+					content: "\f107";
+					font-family: FontAwesome;
+					font-weight: normal;
+					font-size: 2rem;
+					color: $aquamarine;
+					right: 0;
+					top: 1rem;
+					height: auto;
+					padding: 1rem;
+					position: absolute;
+					pointer-events: none;
+				}
+				select{
+					width: 100%;
+				  margin: 1rem 0;
+				  padding: 1rem 2rem;
+				  border-radius: 4px;
+				  border: 1px solid $aquamarine;
+				  color: $aquamarine;
+				  background: #FFF;
+				  -webkit-appearance: none;
+				  -moz-appearance: none;
+				  appearance: none;
+				}				
+			}
+		}
+	} 
+}
+
 
 
 @media (max-width: 990px) {
