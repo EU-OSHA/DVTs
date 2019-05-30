@@ -252,7 +252,6 @@ define(function (require) {
     module.factory('MentalRiskService', require('vertical/mental-risk/services/MentalRiskService'));
     module.factory('PhysicalRiskService', require('vertical/physical-risk/services/PhysicalRiskService'));
     module.factory('PreventionCompaniesService', require('vertical/prevention-companies/services/PreventionCompaniesService'));
-    module.factory('WorkerInvolvementService', require('vertical/worker-involvement/services/WorkerInvolvementService'));
     
     return module;
 });
