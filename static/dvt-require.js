@@ -214,6 +214,13 @@
     /* WORKER INVOLVEMENT */
     requirePaths['vertical/worker-involvement/WorkerInvolvementController'] = verticalModules + '/osh-outcomes-working-conditions/worker-involvement/WorkerInvolvementController' + suffix;
 
+    /* OSH INFRASTRUCTURE */
+    requirePaths['vertical/osh-infrastructure/osh-infrastructure-module'] = verticalModules + '/osh-infrastructure/osh-infrastructure-module' + suffix;
+
+    /* ENFORCEMENT CAPACITY */
+    requirePaths['vertical/enforcement-capacity/EnforcementCapacityController'] = verticalModules + '/osh-infrastructure/enforcement-capacity/EnforcementCapacityController' + suffix;
+    requirePaths['vertical/enforcement-capacity/services/EnforcementCapacityService'] = verticalModules + '/osh-infrastructure/enforcement-capacity/services/EnforcementCapacityService' + suffix;
+
     /* ABOUT THE VISUALISATION TOOL */
     requirePaths['vertical/about-tool/AboutToolController'] = verticalModules + '/about-tool/AboutToolController' + suffix;
     requirePaths['vertical/about-tool/about-tool-module'] = verticalModules + '/about-tool/about-tool-module' + suffix;

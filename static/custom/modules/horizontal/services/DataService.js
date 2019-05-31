@@ -959,6 +959,10 @@ define(function () {
 
             /************************************** END WORKER INVOLVEMENT *****************************************/
 
+            /************************************** ENFORCEMENT CAPACITIES *****************************************/
+
+            /************************************** END ENFORCEMENT CAPACITIES *****************************************/
+
             /**
              * @ngdoc method
              * @name dvt.configModule.DataService#getCountryStrategies

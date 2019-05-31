@@ -38,7 +38,7 @@
               query="{{query}}" cda="{{::cdaOSHOutcomes }}"
               width="330" height="{{horizontalHeight}}" axis-percent="1"
               orientation="{{orientation}}" axis-fixed-min="0"
-              axis-fixed-max="100" step="{{step.chart1}}"
+              axis-fixed-max="100" step="{{step}}"
               params="[['pDataset', datasetEurofound], ['pIndicator', 65]]"
               color-role="series" colors="[color1, color2, color3, color4]"
               chart-title="{{i18nLiterals.L322}}" id="1"
@@ -101,7 +101,7 @@
             query="getHealthAtRiskSectorData" cda="{{::cdaOSHOutcomes }}"
             width="330" height="470" axis-percent="1"
             orientation="vertical" axis-fixed-min="0"
-            axis-fixed-max="40" step="{{step.chart2}}"
+            axis-fixed-max="40" step="{{step}}"
             params="[['pDataset', datasetEurofound], ['pIndicator', 66], ['pCountry1', pCountry1], ['pCountry2', pCountry2]]"
             color-role="series" colors="[stories[1].color2, stories[1].color1, stories[1].color3]"
             chart-title="{{i18nLiterals.L323}}" id="2"
@@ -123,9 +123,9 @@
             <dvt-bar-chart
               data-ng-cloak
               query="getHealthAtRiskAgeData" cda="{{::cdaOSHOutcomes }}"
-              width="{{::chartWidth}}" height="470" axis-percent="1"
+              width="330" height="470" axis-percent="1"
               orientation="vertical" axis-fixed-min="0"
-              axis-fixed-max="40" step="{{step.chart2}}"
+              axis-fixed-max="40" step="{{step}}"
               params="[['pDataset', datasetEurofound], ['pIndicator', 66], ['pCountry1', pCountry1], ['pCountry2', pCountry2]]"
               color-role="series" colors="[stories[1].color2, stories[1].color1, stories[1].color3]"
               chart-title="{{i18nLiterals.L323}}" id="2"
@@ -148,9 +148,9 @@
             <dvt-bar-chart
               data-ng-cloak
               query="getHealthAtRiskGenderData" cda="{{::cdaOSHOutcomes }}"
-              width="{{::chartWidth}}" height="470" axis-percent="1"
+              width="330" height="470" axis-percent="1"
               orientation="vertical" axis-fixed-min="0"
-              axis-fixed-max="40" step="{{step.chart2}}"
+              axis-fixed-max="40" step="{{step}}"
               params="[['pDataset', datasetEurofound], ['pIndicator', 66], ['pCountry1', pCountry1], ['pCountry2', pCountry2]]"
               color-role="series" colors="[stories[2].color2, stories[2].color1, stories[2].color3]"
               chart-title="{{i18nLiterals.L323}}" id="2"

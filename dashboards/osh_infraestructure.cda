@@ -6,5 +6,14 @@
       </Connection>
    </DataSources>
 
-   
+   	<!-- OSH INFRASTRUCTURE || ALL INDICATORS IN ENFORCEMENT CAPACITIES -->
+	<DataAccess access="public" connection="dvt_conn" id="getEnforcementCapacitiesIndicators" type="sql">
+	    <Cache duration="3600" enabled="true" />
+	    <Columns />
+	    <Query>
+			SELECT id, literal_id 
+			FROM indicator
+			WHERE id IN (76,77,78,79)
+	    </Query>
+	</DataAccess>
 </CDADescriptor>

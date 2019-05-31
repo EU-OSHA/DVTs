@@ -41,5 +41,9 @@
     "mental-risk":"<a ui-sref='home'>Home</a><i class='fa fa-angle-right' aria-hidden='true'></i> OSH outcomes and working conditions <i class='fa fa-angle-right' aria-hidden='true'></i><a ui-sref='working-conditions'>Working conditions</a><i class='fa fa-angle-right' aria-hidden='true'></i><span class=''>Mental risk</span>",
     "physical-risk":"<a ui-sref='home'>Home</a><i class='fa fa-angle-right' aria-hidden='true'></i> OSH outcomes and working conditions <i class='fa fa-angle-right' aria-hidden='true'></i><a ui-sref='working-conditions'>Working conditions</a><i class='fa fa-angle-right' aria-hidden='true'></i><span class=''>Physical risk</span>",
     "prevention-companies":"<a ui-sref='home'>Home</a><i class='fa fa-angle-right' aria-hidden='true'></i> OSH outcomes and working conditions <i class='fa fa-angle-right' aria-hidden='true'></i><span class=''>Prevention companies</span>",
-    "worker-involvement":"<a ui-sref='home'>Home</a><i class='fa fa-angle-right' aria-hidden='true'></i> OSH outcomes and working conditions <i class='fa fa-angle-right' aria-hidden='true'></i><span class=''>Worker involvement</span>"
+    "worker-involvement":"<a ui-sref='home'>Home</a><i class='fa fa-angle-right' aria-hidden='true'></i> OSH outcomes and working conditions <i class='fa fa-angle-right' aria-hidden='true'></i><span class=''>Worker involvement</span>",
+
+    "_SECTION-OSH_INFRASTRUCTURE":null,
+    "work-accidents":"<a ui-sref='home'>Home</a><i class='fa fa-angle-right' aria-hidden='true'></i> OSH infrastructure <i class='fa fa-angle-right' aria-hidden='true'></i><span class=''>Enforcement capacity</span>"
+
 }

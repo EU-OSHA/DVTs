@@ -46,6 +46,7 @@ define(function (require) {
     $scope.stories = [
       //0 - General plot for OSH Culture
       {
+        color2: dvtUtils.getColorCountry(22),
         plots: OshCultureService.getGeneralOSHCulturePlot(),
         dimensions: {
           value: {

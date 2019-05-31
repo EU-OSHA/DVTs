@@ -40,7 +40,7 @@ define(function (require) {
     $scope.country1Data = {};
     $scope.country2Data = {};
 
-    $scope.chartWidth = angular.element('.card--block--chart .chart--block')[1].clientWidth;
+    //$scope.chartWidth = angular.element('.card--block--chart .chart--block')[1].clientWidth;
 
     $scope.angle = angular.element(window).width() > 768 ? 1 : 0;
     $scope.horizontalHeight = angular.element(window).width() > 768 ? 470 : 770;
@@ -132,10 +132,7 @@ define(function (require) {
       }
     ];
 
-    $scope.step = {
-      chart1: 20,
-      chart2: 20
-    }
+    $scope.step = 20;
 
     // Show/hide the Countries Filter List
     angular.element('div.countries-filters').css( "display",'none' );

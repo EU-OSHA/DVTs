@@ -182,10 +182,10 @@
 	            <p class="btn--card--block"><a ui-sref="prevention-companies({pIndicator: 'risk-assessment', pCountry1:'AT', pCountry2: 'BE', pSplit: 'establishment-size'})" class="btn--card main-color" data-ng-bind-html="i18n.L22026"></a></p>
 	        </div>
 	        <div class="card--block">
-	            <a class="icon--card workers-icon" href="#"></a>
-	            <h3 class="title--card main-color"><a href="#" data-ng-bind="i18n.L22015"></a></h3>
+	            <a class="icon--card workers-icon" ui-sref="worker-involvement"></a>
+	            <h3 class="title--card main-color"><a ui-sref="worker-involvement" data-ng-bind="i18n.L22015"></a></h3>
 	            <p data-ng-bind="i18n.L22060"></p>
-	            <p class="btn--card--block"><a href="#" class="btn--card main-color" data-ng-bind-html="i18n.L22026">
+	            <p class="btn--card--block"><a ui-sref="worker-involvement" class="btn--card main-color" data-ng-bind-html="i18n.L22026">
 	            </a></p>
 	        </div>
 	    </section>
@@ -197,21 +197,21 @@
 	        <h2 class="title-section main-color" data-ng-bind="i18n.L22016"></h2>
 	        <section class="card--grid xxs-w1 w2 center-text">
 	            <div class="card--block--rounded">
-	                <a class="icon--card enforcement-icon" href="#"></a>
-	                <h3 class="title--card second-color"><a href="#" data-ng-bind="i18n.L22017"></a></h3>
+	                <a class="icon--card enforcement-icon" ui-sref="enforcement-capacity"></a>
+	                <h3 class="title--card second-color"><a ui-sref="enforcement-capacity" data-ng-bind="i18n.L22017"></a></h3>
 	                <p data-ng-bind="i18n.L22063"></p>
 	                <!--<p class="left-text"><a href="#" class="btn--card main-color" data-ng-bind-html="i18n.L22026"></a></p>-->
 	                <div class="btn-group-card left-text">
 	                    <form>
 	                        <label data-ng-bind-html="i18n.L22034"></label>
-	                        <div class="select-default">                            
+	                        <div class="select-default">
 	                            <select class="">
 	                                <option data-ng-bind="i18n.L22035"></option>
 	                                <option data-ng-repeat='country in capacitiesCountries' data-ng-bind="('(')+(country.country_code)+(') ')+(i18n['L'+country.country])"></option>
 	                            </select>
 	                        </div>
 	                    </form>
-	                    <p class="btn--block-full left-text"><a href="#" class="btn-default btn-main-color btn-full" data-ng-bind="i18n.L22100"></a></p>
+	                    <p class="btn--block-full left-text"><a ui-sref="enforcement-capacity" class="btn-default btn-main-color btn-full" data-ng-bind="i18n.L22100"></a></p>
 	                </div>
 	            </div>
 	            <div class="card--block--rounded">
@@ -222,7 +222,7 @@
 	                <div class="btn-group-card left-text">
 	                    <form>
 	                        <label data-ng-bind-html="i18n.L22034"></label>
-	                        <div class="select-default">                            
+	                        <div class="select-default">
 	                            <select class="">
 	                                <option data-ng-bind="i18n.L22035"></option>
 	                                <option data-ng-repeat='country in statisticsCountries' data-ng-bind="('(')+(country.country_code)+(') ')+(i18n['L'+country.country])"></option>
