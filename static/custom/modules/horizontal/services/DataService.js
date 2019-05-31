@@ -961,6 +961,33 @@ define(function () {
 
             /************************************** ENFORCEMENT CAPACITIES *****************************************/
 
+                /**
+                * @ngdoc method
+                * @name dvt.configModule.DataService#getEnforcementCapacityIndicators
+                * @methodOf dvt.configModule.DataService
+                * @description
+                * Get enforcement capacity indicators
+                */
+                getEnforcementCapacityIndicators: function () {
+                    var url = configService.getOshInfraestructureDataPath() + "&dataAccessId=getEnforcementCapacityIndicators";
+                    $log.debug('getEnforcementCapacityIndicators url:' + url);
+                    return promise(url);
+                },
+
+                /**
+                 * @ngdoc method
+                 * @name dvt.configModule.DataService#getEnforcementCapacityData
+                 * @methodOf dvt.configModule.DataService
+                 * @description
+                 * Get enforcement capacity data
+                 */
+                getEnforcementCapacityData: function (pCountry) {
+                    var url = configService.getOshInfraestructureDataPath() + "&dataAccessId=getEnforcementCapacityData" + "&parampCountry=" + pCountry;
+                    $log.debug('getEnforcementCapacityData url:' + url);
+                    return promise(url);
+                },
+
+
             /************************************** END ENFORCEMENT CAPACITIES *****************************************/
 
             /**

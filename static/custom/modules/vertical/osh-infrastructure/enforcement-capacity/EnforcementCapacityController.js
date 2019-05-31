@@ -15,16 +15,18 @@ define(function (require) {
   'use strict';
 
 
-  function controller($scope, $stateParams, $state, configService, $log, $document,dataService, $window, $sce, $compile, $timeout) {
+  function controller($scope, $stateParams, $state, configService, dvtUtils, $log, $document,dataService, $window, $sce, $compile, $timeout, EnforcementCapacityService) {
 
 
     // CDA
-    $scope.cda =  configService.getBarometerCda();
+    $scope.cda =  configService.getOshInfraestructureCda();
 
-    var i18n = require('json!vertical/osh-authorities/i18n');
     var i18nLiterals = configService.getLiterals();
-    $scope.i18n = i18n;
     $scope.i18nLiterals = i18nLiterals;
+
+    // Datasets
+    $scope.datasetList = configService.getDatasets();
+    $scope.datasetESENER = $scope.datasetList.ESENER;
 
     $scope.countriesDataFor = [];
     $scope.countriesCompareWith = [];
@@ -36,10 +38,11 @@ define(function (require) {
 
     // Country parameters
     $scope.pCountry1 = $stateParams.pCountry1;
-    $scope.pCountry2 = $stateParams.pCountry2;
+    $scope.pCountry2 = ($stateParams.pCountry2 != null)?$stateParams.pCountry2:'0';
     $scope.pIndicator = $stateParams.pIndicator;
 
     $scope.maxCharacters = 200;
+    $scope.step = 20;
 
     // Read more
     $scope.trimText = function(pVal, pNumCharacters){
@@ -81,11 +84,6 @@ define(function (require) {
       }
     }
 
-    /*$scope.longText = function(pVal, pNumCharacters) {
-      var longText = "<samp style='display:none'> " + pVal.split(" ").slice($.trim(pVal).substring(0, pNumCharacters).split(" ").slice(0, -1).length).join(" ") + '</samp>';
-      return longText;
-    }*/
-
     $scope.toggleText = function($event) {
 
       if ($(this).is(':visible')) {
@@ -105,11 +103,28 @@ define(function (require) {
       angular.element(' a', angular.element($event.target).parent()).toggle();
     }
 
+    $scope.stories = [
+      //0 - Establishments inspected
+      {
+        color1: dvtUtils.getColorCountry(1),
+        color2: dvtUtils.getColorCountry(2),
+        plots: EnforcementCapacityService.getGeneralOSHCulturePlot(),
+        dimensions: {
+          value: {
+            format: {
+              number: "0.#",
+              percent: "#%"
+            }
+          }
+        },
+        labelTextAlign: 'left'
+      }]
+
 
     /******************************************************************************|
     |                                DATA LOAD                                     |
     |******************************************************************************/
-      dataService.getStrategiesCountries().then(function (data) {
+      dataService.getCapacitiesCountries().then(function (data) {
         data.data.resultset.map(function (elem) {
           var param = (!!$stateParams.filter) ? $stateParams.filter : undefined;
           if(elem[1] != $scope.pCountry2){
@@ -130,53 +145,59 @@ define(function (require) {
           throw err;
       });
 
-      dataService.getStrategiesIndicators().then(function (data) {
+      dataService.getEnforcementCapacityIndicators().then(function (data) {
         data.data.resultset.map(function (elem) {
           var param = (!!$stateParams.filter) ? $stateParams.filter : undefined;
-          $scope.indicators.push({
-            id: elem[0],
-            anchor: i18nLiterals['L'+elem[1]].toLowerCase().replace(/ /g, '-'),
-            text: elem[1]
-          });
+          if(elem[0] == 126){
+            $scope.indicators.push({
+              id: elem[0],
+              anchor: 'establishments-inspected',
+              text: '20692'
+            });
+          }else if(elem[0] == 79){
+            $scope.indicators.push({
+              id: elem[0],
+              anchor: 'strategy-plan',
+              text: elem[1]
+            });
+          }else{
+            $scope.indicators.push({
+              id: elem[0],
+              anchor: i18nLiterals['L'+elem[1]].toLowerCase().replace(/ /g , '-'),
+              text: elem[1]
+            });
+          }
         });
-        //$log.warn($scope.indicators);
+        $log.warn($scope.indicators);
       }).catch(function (err) {
           throw err;
       });
 
-      dataService.getStructureStrategiesData($scope.pCountry1).then(function (data) {
+      dataService.getEnforcementCapacityData($scope.pCountry1).then(function (data) {
         data.data.resultset.map(function (elem) {
           $scope.country1Data = {
             country_code: elem[0],
             country_name: elem[1],
-            text1: elem[2],
-            text2: elem[3],
-            text3: elem[4],
-            text4: elem[5],
-            text5: elem[6],
-            text6: elem[7],
-            text7: elem[8],
-            text8: elem[9]
+            authority: elem[2],
+            scope: elem[3],
+            inspector: elem[4],
+            strategy: elem[5]
           };
         });
-        //$log.warn($scope.country1Data);
+        $log.warn($scope.country1Data);
       }).catch(function (err) {
           throw err;
       });
 
-      dataService.getStructureStrategiesData($scope.pCountry2).then(function (data) {
+      dataService.getEnforcementCapacityData($scope.pCountry2).then(function (data) {
         data.data.resultset.map(function (elem) {
           $scope.country2Data = {
             country_code: elem[0],
             country_name: elem[1],
-            text1: elem[2],
-            text2: elem[3],
-            text3: elem[4],
-            text4: elem[5],
-            text5: elem[6],
-            text6: elem[7],
-            text7: elem[8],
-            text8: elem[9]
+            authority: elem[2],
+            scope: elem[3],
+            inspector: elem[4],
+            strategy: elem[5]
           };
         });
         //$log.warn($scope.country2Data);
@@ -237,14 +258,10 @@ define(function (require) {
             pIndicator: indicator
           });
         }
-
       }
-
-     
-
   }
 
-  controller.$inject = ['$scope', '$stateParams', '$state', 'configService', '$log', '$document','dataService', '$window', '$sce', '$compile', '$timeout'];
+  controller.$inject = ['$scope', '$stateParams', '$state', 'configService', 'dvtUtils', '$log', '$document','dataService', '$window', '$sce', '$compile', '$timeout', 'EnforcementCapacityService'];
   return controller;
 
 

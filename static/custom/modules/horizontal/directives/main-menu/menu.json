@@ -112,7 +112,7 @@
             {
                 "id":"enforcement-capacity",
                 "name":"L22017",
-                "sref":"enforcement-capacity",
+                "sref":"enforcement-capacity({pIndicator: 'authority', pCountry1:'AT', pCountry2: 'BG'})",
                 "accesskey":"C"
             },
             {
