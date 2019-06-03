@@ -46,6 +46,26 @@ define(function (require) {
         }
       });
 
+      $stateProvider.state('osh-statistics', {
+        url: "/osh-infrastructure/osh-statistics/:pCountry",
+        params: {
+          pCountry: {
+            value: '0',
+            squash: '0'
+          }
+        },
+        views: {
+          "content-main": {
+              templateUrl: configService.getVerticalTplPath("osh-infrastructure/osh-statistics", "osh-statistics"),
+              controller: 'OSHStatisticsController',
+              resolve: configService.dynamicallyRegisterController($controllerProvider, 'vertical/osh-statistics/OSHStatisticsController', 'osh-statistics', 'OSHStatisticsController')
+          }
+        },
+        metaTags: {
+          title: i18n.L22018 +  " - " + i18n.L22020 + " - " + i18n.L363
+        }
+      });
+
     });
 
     module.factory('EnforcementCapacityService', require('vertical/enforcement-capacity/services/EnforcementCapacityService'));

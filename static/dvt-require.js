@@ -221,6 +221,9 @@
     requirePaths['vertical/enforcement-capacity/EnforcementCapacityController'] = verticalModules + '/osh-infrastructure/enforcement-capacity/EnforcementCapacityController' + suffix;
     requirePaths['vertical/enforcement-capacity/services/EnforcementCapacityService'] = verticalModules + '/osh-infrastructure/enforcement-capacity/services/EnforcementCapacityService' + suffix;
 
+    /* OSH STATISTICS */
+    requirePaths['vertical/osh-statistics/OSHStatisticsController'] = verticalModules + '/osh-infrastructure/osh-statistics/OSHStatisticsController' + suffix;
+    
     /* ABOUT THE VISUALISATION TOOL */
     requirePaths['vertical/about-tool/AboutToolController'] = verticalModules + '/about-tool/AboutToolController' + suffix;
     requirePaths['vertical/about-tool/about-tool-module'] = verticalModules + '/about-tool/about-tool-module' + suffix;

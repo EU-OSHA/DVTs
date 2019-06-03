@@ -33,8 +33,7 @@ define(function (require) {
         $scope.regulationCountrySelected = "0";
         $scope.strategyCountrySelected = "0";
         $scope.enforcementCountrySelected = "0";
-
-        
+        $scope.statisticsCountrySelected = "0";
 
         $scope.EUData = {};
 

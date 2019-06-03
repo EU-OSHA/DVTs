@@ -91,7 +91,7 @@ define(function () {
                 getSocialDialogueEU28Data: function(pDataset){
                     $log.warn(pDataset);
                     var url = configService.getGenericInformationDataPath() + "&dataAccessId=getSocialDialogueEU28Data" + "&parampDataset="+pDataset;
-                    $log.warn('getSocialDialogueEU28Data url:' + url);
+                    $log.debug('getSocialDialogueEU28Data url:' + url);
 
                     return promise(url);
                 },
@@ -999,9 +999,75 @@ define(function () {
                     $log.debug('getEnforcementCapacityData url:' + url);
                     return promise(url);
                 },
-
-
             /************************************** END ENFORCEMENT CAPACITIES *****************************************/
+
+            /***************************************** OSH STATISTICS *****************************************/
+
+                /**
+                 * @ngdoc method
+                 * @name dvt.configModule.DataService#getMatrixStatisticsCountries
+                 * @methodOf dvt.configModule.DataService
+                 * @description
+                 * Get osh statistics countries with available data
+                 */
+                getMatrixStatisticsCountries: function () {
+                    var url = configService.getOshInfraestructureDataPath() + "&dataAccessId=getMatrixStatisticsCountries";
+                    $log.debug('getMatrixStatisticsCountries url:' + url);
+                    return promise(url);
+                },
+
+                /**
+                 * @ngdoc method
+                 * @name dvt.configModule.DataService#getAllMatrixStatistics
+                 * @methodOf dvt.configModule.DataService
+                 * @description
+                 * Get osh statistics countries with available data
+                 */
+                getAllMatrixStatistics: function (pCountries) {
+                    var block1 = pCountries.length <= 0 ? ".*" : pCountries.join("|");
+                    var url = configService.getOshInfraestructureDataPath() + "&dataAccessId=getAllMatrixStatistics" + "&parampCountries=" + block1;
+                    $log.debug('getAllMatrixStatistics url:' + url);
+                    return promise(url);
+                },
+
+                /**
+                 * @ngdoc method
+                 * @name dvt.configModule.DataService#getStatisticsFiltersData
+                 * @methodOf dvt.configModule.DataService
+                 * @description
+                 * Get osh statistics countries with available data
+                 */
+                getStatisticsFiltersData: function (term, categories, countries) {
+                    var term2 = !term ? ".*" : ".*" + term;
+
+                    if (categories.filter1==1){
+                      block1 = 1;
+                    }else {
+                      block1 = 2;
+                    }
+                    if (categories.filter2==1){
+                      block2 = 1;
+                    }else {
+                      block2 = 2;
+                    }
+                    if (categories.filter3==1){
+                      block3 = 1;
+                    }else {
+                      block3 = 2;
+                    }
+                    if(categories.filter1==0 && categories.filter2==0 && categories.filter3==0){
+                        block1 = 1;
+                        block2 = 1;
+                        block3 = 1;
+                    }
+
+                    var block4 = countries.length <= 0 ? ".*" : countries.join("|");
+                    var url = configService.getOshInfraestructureDataPath() + "&dataAccessId=getStatisticsFiltersData" + "&paramterm=" + term2 + "&paramcategory1=" + block1 +"&paramcategory2=" + block2 +"&paramcategory3=" + block3 +"&parampCountries=" + block4;
+                    $log.debug('getStatisticsFiltersData url:' + url);
+                    return promise(url);
+                },
+
+            /*************************************** END OSH STATISTICS *****************************************/
 
             /**
              * @ngdoc method

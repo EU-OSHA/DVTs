@@ -205,7 +205,7 @@
 	                    <form>
 	                        <label data-ng-bind-html="i18n.L22034"></label>
 	                        <div class="select-default">
-	                            <select class="" data-ng-model="enforcementCountrySelected" ng-change="change()">
+	                            <select class="" data-ng-model="enforcementCountrySelected">
 	                                <option data-ng-bind="i18n.L22035" value="0"></option>
 	                                <option data-ng-repeat='country in capacitiesCountries' data-ng-bind="('(')+(country.country_code)+(') ')+(i18n['L'+country.country])" ng-value="country.country_code"></option>
 	                            </select>
@@ -215,27 +215,27 @@
 	                    	<a ng-if="enforcementCountrySelected != '0'" ui-sref="enforcement-capacity({pIndicator: 'authority', pCountry1: enforcementCountrySelected})" class="btn-default btn-main-color btn-full" data-ng-bind="i18n.L22100"></a>
 	                    	<a ng-if="enforcementCountrySelected == '0'" ui-sref="enforcement-capacity({pIndicator: 'authority', pCountry1: 'AT', pCountry2: 'BG'})" class="btn-default btn-main-color btn-full" data-ng-bind="i18n.L22100"></a>
 	                    </p>
-	                    <p class="btn--block-full left-text">
-
-	                    </p>
 	                </div>
 	            </div>
 	            <div class="card--block--rounded">
-	                <a class="icon--card statistics-icon" href="#"></a>
-	                <h3 class="title--card second-color"><a href="#" data-ng-bind="i18n.L22018"></a></h3>
+	                <a class="icon--card statistics-icon" ui-sref="osh-statistics"></a>
+	                <h3 class="title--card second-color"><a ui-sref="osh-statistics" data-ng-bind="i18n.L22018"></a></h3>
 	                <p data-ng-bind="i18n.L22065"></p>
 	                <!--<p class="left-text"><a href="#" class="btn--card main-color" data-ng-bind-html="i18n.L22066"></a></p>-->
 	                <div class="btn-group-card left-text">
 	                    <form>
 	                        <label data-ng-bind-html="i18n.L22034"></label>
 	                        <div class="select-default">
-	                            <select class="">
-	                                <option data-ng-bind="i18n.L22035"></option>
-	                                <option data-ng-repeat='country in statisticsCountries' data-ng-bind="('(')+(country.country_code)+(') ')+(i18n['L'+country.country])"></option>
+	                            <select class="" data-ng-model="statisticsCountrySelected">
+	                                <option data-ng-bind="i18n.L22035" value="0"></option>
+	                                <option data-ng-repeat='country in statisticsCountries' data-ng-bind="('(')+(country.country_code)+(') ')+(i18n['L'+country.country])" ng-value="country.country_code"></option>
 	                            </select>
 	                        </div>
 	                    </form>
-	                    <p class="btn--block-full left-text"><a href="#" class="btn-default btn-main-color btn-full" data-ng-bind="i18n.L22067"></a></p>
+	                    <p class="btn--block-full left-text">
+	                    	<a ng-if="statisticsCountrySelected != '0'" ui-sref="osh-statistics({pCountry: statisticsCountrySelected})" class="btn-default btn-main-color btn-full" data-ng-bind="i18n.L22067"></a>
+	                    	<a ng-if="statisticsCountrySelected == '0'" ui-sref="osh-statistics" class="btn-default btn-main-color btn-full" data-ng-bind="i18n.L22067"></a>
+	                    </p>
 	                </div>
 	            </div>
 	        </section>

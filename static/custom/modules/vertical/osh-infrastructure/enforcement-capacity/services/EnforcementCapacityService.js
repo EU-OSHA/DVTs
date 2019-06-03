@@ -4,7 +4,7 @@ define (function (require) {
     var pv = require('cdf/lib/CCC/protovis');
     var EnforcementCapacityService = function (dvtUtils, $log) {
         return {
-            getGeneralOSHCulturePlot: function() {
+            getGeneralOSHInfrastructurePlot: function() {
                 return [
                     {
                         name: "main",

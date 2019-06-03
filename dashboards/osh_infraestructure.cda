@@ -95,4 +95,75 @@
 			ORDER BY Answer DESC;
 	    </Query>
 	</DataAccess>
+
+	<!-- OSH INFRASTRUCTURE || GET OSH STATISTICS COUNTRIES -->
+	<DataAccess access="public" connection="dvt_conn" id="getMatrixStatisticsCountries" type="sql">
+	    <Cache duration="3600" enabled="true" />
+	    <Columns />
+	    <Query>
+	    SELECT DISTINCT (n.literal_id) AS country, n.country_code AS country_code
+	    FROM matrix_page mp
+	    INNER JOIN nuts n
+	    ON n.id = mp.nuts_id
+	    WHERE mp.page = 'MATRIX_STATISTICS'
+	    ORDER BY country_code ASC;
+	    </Query>
+	</DataAccess>
+
+	<!-- OSH INFRASTRUCTURE || GET OSH STATISTICS DATA -->
+	<DataAccess access="public" connection="dvt_conn" id="getAllMatrixStatistics" type="sql">
+	    <Cache duration="3600" enabled="true" />
+	    <Columns />
+	    <Parameters>
+	    	<Parameter default=".*" name="pCountries" type="String" />
+	    </Parameters>
+	    <Query>
+	      SELECT DISTINCT(mp.id) AS id, n.literal_id AS country_name, n.country_code as country_code, mp.check_1 AS osh_statistics, mp.check_2 AS surveys, mp.check_3 AS research_institutes, mp.text_1_literal_id AS name_institution, mp.text_2_literal_id AS detail_institution
+	      FROM matrix_page mp
+	      INNER JOIN nuts n
+	      ON n.id = mp.nuts_id
+	      WHERE mp.page = 'MATRIX_STATISTICS'
+	      AND n.country_code REGEXP ${pCountries}
+	      ORDER BY country_name ASC, osh_statistics DESC, surveys DESC, research_institutes DESC, id ASC;
+	    </Query>
+	</DataAccess>
+
+	<!-- OSH INFRASTRUCTURE || GET OSH STATISTICS DATA WITH FILTERS -->
+	<DataAccess access="public" connection="dvt_conn" id="getStatisticsFiltersData" type="sql">
+		<Cache duration="3600" enabled="true" />
+		<Columns/>
+	    <Parameters>
+	      <Parameter default=".*" name="term" type="String" />
+	      <Parameter default="null" name="category1" type="Numeric"/>
+	      <Parameter default="null" name="category2" type="Numeric"/>
+	      <Parameter default="null" name="category3" type="Numeric"/>
+	      <Parameter default=".*" name="pCountries" type="String"/>
+	    </Parameters>
+	    <Query>
+	      SELECT DISTINCT(mp.id) AS id, n.literal_id AS country_name, n.country_code as country_code, mp.check_1 AS osh_statistics, mp.check_2 AS surveys, mp.check_3 AS research_institutes, mp.text_1_literal_id AS name_institution, mp.text_2_literal_id AS detail_institution
+	      FROM matrix_page mp
+	      INNER JOIN nuts n
+	      ON n.id = mp.nuts_id
+	      INNER JOIN literal l
+	      ON l.id = mp.text_1_literal_id
+	      INNER JOIN literal l2
+	      ON l2.id = mp.text_2_literal_id
+	      INNER JOIN translation t
+	      ON l.id = t.literal_id
+	      INNER JOIN translation t2
+	      ON l2.id = t2.literal_id
+	      WHERE mp.page = 'MATRIX_STATISTICS' 
+	      AND n.literal_id REGEXP ${pCountries}
+	      AND (mp.check_1=${category1}
+	      OR mp.check_2=${category2}
+	      OR mp.check_3=${category3})
+	      AND (n.name REGEXP ${term} OR t.text REGEXP ${term} OR t2.text REGEXP ${term}
+	        OR ((mp.check_1= IF('osh statistics' REGEXP ${term}, 1, 0) AND mp.check_2= 0 AND mp.check_3= 0)
+	        OR (mp.check_2= IF('surveys' REGEXP ${term}, 1, 0) AND mp.check_1= 0 AND mp.check_3= 0)
+	        OR (mp.check_3= IF('research institutes' REGEXP ${term}, 1, 0) AND mp.check_1= 0 AND mp.check_2= 0)))
+	      ORDER BY country_name ASC, osh_statistics DESC, surveys DESC, research_institutes DESC, id ASC;
+	    </Query>
+	</DataAccess>
+
+	
 </CDADescriptor>

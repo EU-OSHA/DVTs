@@ -108,7 +108,7 @@ define(function (require) {
       {
         color1: dvtUtils.getColorCountry(1),
         color2: dvtUtils.getColorCountry(2),
-        plots: EnforcementCapacityService.getGeneralOSHCulturePlot(),
+        plots: EnforcementCapacityService.getGeneralOSHInfrastructurePlot(),
         dimensions: {
           value: {
             format: {
@@ -194,7 +194,7 @@ define(function (require) {
             });
           }
         });
-        $log.warn($scope.indicators);
+        //$log.warn($scope.indicators);
       }).catch(function (err) {
           throw err;
       });
@@ -210,7 +210,7 @@ define(function (require) {
             strategy: elem[5]
           };
         });
-        $log.warn($scope.country1Data);
+        //$log.warn($scope.country1Data);
       }).catch(function (err) {
           throw err;
       });
