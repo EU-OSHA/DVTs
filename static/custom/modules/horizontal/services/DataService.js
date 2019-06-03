@@ -975,6 +975,19 @@ define(function () {
                 },
 
                 /**
+                * @ngdoc method
+                * @name dvt.configModule.DataService#getEnforcementCapacityCountries
+                * @methodOf dvt.configModule.DataService
+                * @description
+                * Get enforcement capacity countries
+                */
+                getEnforcementCapacityCountries: function () {
+                    var url = configService.getOshInfraestructureDataPath() + "&dataAccessId=getEnforcementCapacityCountries";
+                    $log.debug('getEnforcementCapacityCountries url:' + url);
+                    return promise(url);
+                },
+
+                /**
                  * @ngdoc method
                  * @name dvt.configModule.DataService#getEnforcementCapacityData
                  * @methodOf dvt.configModule.DataService

@@ -17,27 +17,30 @@
 	    </Query>
 	</DataAccess>
 
-	<!-- Hacer query para que coja todos los países de los indicadores cualitativos mas del indicador 126 de esener -->
-	
-	   	<!-- OSH INFRASTRUCTURE || ALL INDICATORS IN ENFORCEMENT CAPACITIES -->
-	<!--<DataAccess access="public" connection="dvt_conn" id="getEnforcementCapacityIndicators" type="sql">
+	<!-- OSH INFRASTRUCTURE || ALL INDICATORS IN ENFORCEMENT CAPACITIES -->
+	<DataAccess access="public" connection="dvt_conn" id="getEnforcementCapacityCountries" type="sql">
 	    <Cache duration="3600" enabled="true" />
 	    <Columns />
 	    <Query>
+			(	      
 			SELECT DISTINCT (n.literal_id) AS country, n.country_code AS country_code
-			FROM indicator, nuts n, profile p, value v
+			FROM strategies_page sp
 			INNER JOIN nuts n
 			ON n.id = sp.nuts_id
 			WHERE sp.page = 'STRATEGY_ENFOR_CAPACITY'
-			ORDER BY country_code ASC
-			FROM nuts n, profile p, value v
-			where n.id = p.nuts_id
-			AND v.profile_id = p.id
-			AND v.indicator_id = 53
 			AND n.country_code NOT IN ('EU28')
-			ORDER BY n.country_code ASC;
+			ORDER BY country_code ASC
+			)UNION(
+			SELECT DISTINCT (n.literal_id) AS country, n.country_code AS country_code
+			FROM nuts n, profile p, value v
+			WHERE (n.id = p.nuts_id
+			AND p.id = v.profile_id
+			AND v.indicator_id = 126)
+			AND n.country_code NOT IN ('EU28')
+			ORDER BY country_code ASC
+			)
 	    </Query>
-	</DataAccess>-->
+	</DataAccess>
 
 	<!-- OSH INFRASTRUCTURE || GET ENFORCEMENT CAPACITY DATA -->
 	<DataAccess access="public" connection="dvt_conn" id="getEnforcementCapacityData" type="sql">

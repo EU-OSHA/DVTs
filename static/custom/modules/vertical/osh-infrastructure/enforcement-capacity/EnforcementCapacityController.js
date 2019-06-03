@@ -124,7 +124,7 @@ define(function (require) {
     /******************************************************************************|
     |                                DATA LOAD                                     |
     |******************************************************************************/
-      dataService.getCapacitiesCountries().then(function (data) {
+      dataService.getEnforcementCapacityCountries().then(function (data) {
         data.data.resultset.map(function (elem) {
           var param = (!!$stateParams.filter) ? $stateParams.filter : undefined;
           if(elem[1] != $scope.pCountry2){
@@ -140,6 +140,32 @@ define(function (require) {
               country_code: elem[1]
             });
           }
+        });
+        $scope.countriesDataFor.sort(function(a, b){
+          var codeA = a.country_code;
+          var codeB = b.country_code;
+          if (codeA < codeB) {
+            return -1;
+          }
+          if (codeA > codeB) {
+            return 1;
+          }
+
+          //  be equal
+          return 0;
+        });
+        $scope.countriesCompareWith.sort(function(a, b){
+          var codeA = a.country_code;
+          var codeB = b.country_code;
+          if (codeA < codeB) {
+            return -1;
+          }
+          if (codeA > codeB) {
+            return 1;
+          }
+
+          //  be equal
+          return 0;
         });
       }).catch(function (err) {
           throw err;

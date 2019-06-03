@@ -26,8 +26,8 @@ define(function (require) {
             squash: 'authority'
           },
           pCountry1: {
-            value: null,
-            squash: true
+            value: 'AT',
+            squash: 'AT'
           },
           pCountry2: {
             value: null,
