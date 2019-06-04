@@ -2,13 +2,13 @@
 <section class="container site--map--block" >
     <ul>
         <li ng-repeat="level0 in structure">
-            <a role="button" ng-if="!level0.levels && level0.id != 'home'" ui-sref='{{ level0.sref }}' data-ng-bind-html="i18n_literals[level0.name]"></a> 
+            <a role="button" ng-if="!level0.levels && level0.id != 'home'" ui-sref='{{ level0.sref }}' data-ng-bind-html="i18nLiterals[level0.name]"></a> 
             <a role="button" ng-if="!level0.levels && level0.id == 'home'" ui-sref='{{ level0.sref }}' data-ng-bind-html="level0.name"></a>
-            <span ng-if="!!level0.levels && level0.id != 'home'" data-ng-bind-html="i18n_literals[level0.name]"></span>
+            <span ng-if="!!level0.levels && level0.id != 'home'" data-ng-bind-html="i18nLiterals[level0.name]"></span>
             <ul ng-if="level0.levels">
                 <li ng-repeat="level1 in level0.levels">
-                    <a ng-if="level1.target" data-ng-bind-html="i18n_literals[level1.name]"></a>
-                    <a ng-if="level1.sref" ui-sref='{{ level1.sref }}' data-ng-bind-html="i18n_literals[level1.name]"></a>
+                    <a ng-if="level1.target" data-ng-bind-html="i18nLiterals[level1.name]"></a>
+                    <a ng-if="level1.sref" ui-sref='{{ level1.sref }}' data-ng-bind-html="i18nLiterals[level1.name]"></a>
                 </li>
             </ul>
 
