@@ -25,6 +25,7 @@ define(function (require) {
                     var cookieName = "disclaimerCookie";
 
                     $scope.popUpButtonPressed = false;
+                    $scope.showPopUpMessage = true;
 
                     if($window.screen.width<1024 && !$cookies.get("disclaimer")){
                         $cookies.put(cookieName,true,{expires:cookieLife});
@@ -41,7 +42,7 @@ define(function (require) {
                         if ($('body').hasClass('hasCookies')) {
                             $('body').removeClass('hasCookies');                            
                         }
-                        $scope.showPopUpMessage = true;
+                        //$scope.showPopUpMessage = true;
                     }
 
                     $scope.consentDecline = function() {
@@ -49,7 +50,7 @@ define(function (require) {
                             $('body').removeClass('hasCookies');                            
                         }
                         $('#cookiesConsent').hide();
-                        $scope.showPopUpMessage = true;
+                        //$scope.showPopUpMessage = true;
                     }
 
                     $scope.closePopUp = function () {
