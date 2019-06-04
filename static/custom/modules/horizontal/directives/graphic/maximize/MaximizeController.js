@@ -197,7 +197,6 @@ define(function (require) {
                             }
 
                             if($scope.parameters.chartDefinition.dataAccessId == 'getEmploymentPerSectorData'){
-                                $scope.parameters.chartDefinition.valuesNormalized=1;
                                 $scope.parameters.chartDefinition.legendItemSize = 340;
 
                                 if(resolution <= 425 && resolution > 325){
