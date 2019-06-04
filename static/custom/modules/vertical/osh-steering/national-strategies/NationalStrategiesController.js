@@ -29,11 +29,23 @@ define(function (require) {
 
     $scope.alphabet = [];
 
+    var resolution = screen.width;
+
+    $(window).on("resize",function(e){
+      resolution = screen.width;
+    });
+
+    $log.warn(resolution);
+
     if($location.hash() != null && $location.hash() != ''){
-      $log.warn($location.hash());
+      //$log.warn($location.hash());
       $timeout(function(){
         //$anchorScroll();
-        angular.element('html, body').animate({'scrollTop': angular.element('#'+$location.hash())[0].offsetTop - 250}, 'slow', 'swing');
+        if(resolution < 768){
+          angular.element('html, body').animate({'scrollTop': angular.element('#'+$location.hash())[0].offsetTop + 200}, 'slow', 'swing');
+        }else{
+          angular.element('html, body').animate({'scrollTop': angular.element('#'+$location.hash())[0].offsetTop - 250}, 'slow', 'swing');
+        }
       }, 500);
 
     }
@@ -83,7 +95,11 @@ define(function (require) {
       $scope.goToAnchor = function(letter){
         var newHash = 'section' + letter;
         if ($location.hash() !== newHash) {
-          angular.element('html, body').animate({'scrollTop': angular.element('#'+newHash)[0].offsetTop - 250}, 'slow', 'swing');
+          if(resolution < 768){
+            angular.element('html, body').animate({'scrollTop': angular.element('#'+newHash)[0].offsetTop + 200}, 'slow', 'swing');
+          }else{
+            angular.element('html, body').animate({'scrollTop': angular.element('#'+newHash)[0].offsetTop - 250}, 'slow', 'swing');
+          }
           $location.hash('section' + letter);
         } /*else {
           $anchorScroll();
