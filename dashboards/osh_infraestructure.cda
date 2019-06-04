@@ -14,11 +14,12 @@
 			SELECT id, literal_id 
 			FROM indicator
 			WHERE id IN (76,77,78,79,126)
+			ORDER BY FIELD(id, 126) DESC, id ASC
 	    </Query>
 	</DataAccess>
 
 	<!-- OSH INFRASTRUCTURE || ALL INDICATORS IN ENFORCEMENT CAPACITIES -->
-	<DataAccess access="public" connection="dvt_conn" id="getEnforcementCapacityCountries" type="sql">
+	<!--<DataAccess access="public" connection="dvt_conn" id="getEnforcementCapacityCountries" type="sql">
 	    <Cache duration="3600" enabled="true" />
 	    <Columns />
 	    <Query>
@@ -40,7 +41,7 @@
 			ORDER BY country_code ASC
 			)
 	    </Query>
-	</DataAccess>
+	</DataAccess>-->
 
 	<!-- OSH INFRASTRUCTURE || GET ENFORCEMENT CAPACITY DATA -->
 	<DataAccess access="public" connection="dvt_conn" id="getEnforcementCapacityData" type="sql">

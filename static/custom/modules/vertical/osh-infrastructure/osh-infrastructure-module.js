@@ -22,8 +22,8 @@ define(function (require) {
         url: "/osh-infrastructure/enforcement-capacity/:pIndicator/:pCountry1/:pCountry2",
         params: {
           pIndicator: {
-            value: 'authority',
-            squash: 'authority'
+            value: 'establishments-inspected',
+            squash: 'establishments-inspected'
           },
           pCountry1: {
             value: 'AT',

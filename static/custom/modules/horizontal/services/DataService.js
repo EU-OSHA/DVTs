@@ -74,10 +74,16 @@ define(function () {
                     return promise(url);
                 },
 
-                getCapacitiesCountries: function(){
+                /*getCapacitiesCountries: function(){
                     var url = configService.getGenericInformationDataPath() + "&dataAccessId=getCapacitiesCountries";
                     $log.debug('getCapacitiesCountries url:' + url);
 
+                    return promise(url);
+                },*/
+
+                getEnforcementCapacityCountries: function () {
+                    var url = configService.getGenericInformationDataPath() + "&dataAccessId=getEnforcementCapacityCountries";
+                    $log.debug('getEnforcementCapacityCountries url:' + url);
                     return promise(url);
                 },
 
@@ -981,11 +987,11 @@ define(function () {
                 * @description
                 * Get enforcement capacity countries
                 */
-                getEnforcementCapacityCountries: function () {
-                    var url = configService.getOshInfraestructureDataPath() + "&dataAccessId=getEnforcementCapacityCountries";
+                /*getEnforcementCapacityCountries: function () {
+                    var url = configService.getGenericInformationDataPath() + "&dataAccessId=getEnforcementCapacityCountries";
                     $log.debug('getEnforcementCapacityCountries url:' + url);
                     return promise(url);
-                },
+                },*/
 
                 /**
                  * @ngdoc method
