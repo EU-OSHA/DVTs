@@ -1,15 +1,5 @@
 -- The tool is already created
 
-INSERT INTO chart (id, section_id)  VALUES(20014,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="ECONOMIC_SECTOR_PROFILE" AND t.name="osha_dvt_barometer"	) );
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Income per capita");
-SET @datasetId = (SELECT id FROM dataset WHERE source="EUROSTAT" AND date_from="2010-01-01" AND date_to="2016-12-31");
-INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20014, @indicatorId, @datasetId);
-
-INSERT INTO chart (id, section_id)  VALUES(20022,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="WORK_ACCIDENTS" AND t.name="osha_dvt_barometer"	) );
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Non-fatal work accidents");
-SET @datasetId = (SELECT id FROM dataset WHERE source="EUROSTAT" AND date_from="2010-01-01" AND date_to="2016-12-31");
-INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20022, @indicatorId, @datasetId);
-
 INSERT INTO chart (id, section_id)  VALUES(20010,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="ECONOMIC_SECTOR_PROFILE" AND t.name="osha_dvt_barometer"	) );
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Employment per sector");
 SET @datasetId = (SELECT id FROM dataset WHERE source="EUROSTAT" AND date_from="2017-01-01");
@@ -219,6 +209,16 @@ INSERT INTO chart (id, section_id)  VALUES(20085,	(	SELECT s.id  FROM section s 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Does your organisation have a trade union, works council or a similar committee representing employees? - Eurofound EWCS Data");
 SET @datasetId = (SELECT id FROM dataset WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
 INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20085, @indicatorId, @datasetId);
+
+INSERT INTO chart (id, section_id)  VALUES(20014,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="ECONOMIC_SECTOR_PROFILE" AND t.name="osha_dvt_barometer"	) );
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Income per capita");
+SET @datasetId = (SELECT id FROM dataset WHERE source="EUROSTAT" AND date_from="2010-01-01" AND date_to="2016-12-31");
+INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20014, @indicatorId, @datasetId);
+
+INSERT INTO chart (id, section_id)  VALUES(20022,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="WORK_ACCIDENTS" AND t.name="osha_dvt_barometer"	) );
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Non-fatal work accidents");
+SET @datasetId = (SELECT id FROM dataset WHERE source="EUROSTAT" AND date_from="2010-01-01" AND date_to="2016-12-31");
+INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20022, @indicatorId, @datasetId);
 
 INSERT INTO chart (id, section_id)  VALUES(20086,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="WORKER_INVOLVEMENT" AND t.name="osha_dvt_barometer"	) );
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Does your organisation have a health and safety delegate or committee? - Eurofound EWCS Data");
@@ -5081,7 +5081,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "See more in <a target=\"blank\" href=\"https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Poland\">OSHwiki</a>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "null");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "");
 INSERT INTO matrix_page(page, nuts_id, check_1, check_2, check_3, check_4, text_1_literal_id, text_2_literal_id, text_3_literal_id)  VALUES ("MATRIX_AUTHORITY", @nutsId, 0, 0, 1, 0, @maxId+1, @maxId+2, @maxId+3);
 
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
