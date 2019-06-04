@@ -225,9 +225,6 @@ SET @indicatorId = (SELECT id FROM indicator WHERE name="Does your organisation 
 SET @datasetId = (SELECT id FROM dataset WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
 INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20086, @indicatorId, @datasetId);
 
-SET @toolID = (SELECT id FROM tool WHERE name = "osha_dvt_barometer");
-INSERT INTO section (name, tool_id) VALUES ("ECONOMIC_AND_SECTOR_PROFILE", @toolID);
-
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+70, null, @sectionId, "STRATEGY_BASIC INFO");
@@ -1750,7 +1747,7 @@ INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+401, null, @sectionId, "STRATEGY_BASIC INFO");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+401, "EN", 1, "<p><strong>Current strategy in greek:</strong></p><p><a href=\"http://www.et.gr/idocs-nph/search/pdfViewerForm.html?args=5C7QrtC22wEsrjP0JAlxBXdtvSoClrL8bReVM9NqpX_3U4LPcASlceJInJ48_97uHrMts-zFzeyCiBSQOpYnTy36MacmUFCx2ppFvBej56Mmc8Qdb8ZfRJqZnsIAdk8Lv_e6czmhEembNmZCMxLMteg4qiK6queFJfXza5ZKd11w0E97FM7_RXZ_zBXpQd1c\" target=\"_blank\">Εθνική Στρατηγική για την Υγεία και Ασφάλεια στην Εργασία 2016 – 2020</a><a title=\"\" name=\"_ftnref1\" href=\"file:///C:/Users/Iruizdiaz002/Desktop/OSHA/OSH%20Barometer/Data%20extraction/Indicator%202.2%20National%20strategies/GREECE.docx#_ftn1\"><br /></a></p><p>Title in english: “National Strategy for Health and Safety at Work 2016 – 2020”</p><p><strong>Former OSH strategies:</strong></p><p>“Εθνική Στρατηγική για την Ασφάλεια και Υγεία στην Εργασία&nbsp;2010 – 2013»</p><p>“National Strategy for Safety and Health at Work 2010 – 2013</p>");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+401, "EN", 1, "<p><strong>Current strategy in greek:</strong></p><p><a href=\"http://www.et.gr/idocs-nph/search/pdfViewerForm.html?args=5C7QrtC22wEsrjP0JAlxBXdtvSoClrL8bReVM9NqpX_3U4LPcASlceJInJ48_97uHrMts-zFzeyCiBSQOpYnTy36MacmUFCx2ppFvBej56Mmc8Qdb8ZfRJqZnsIAdk8Lv_e6czmhEembNmZCMxLMteg4qiK6queFJfXza5ZKd11w0E97FM7_RXZ_zBXpQd1c\" target=\"_blank\">Εθνική Στρατηγική για την Υγεία και Ασφάλεια στην Εργασία 2016 – 2020</a><a title=\"\" name=\"_ftnref1\" href=\"http://www.et.gr/idocs-nph/search/pdfViewerForm.html?args=5C7QrtC22wEsrjP0JAlxBXdtvSoClrL8bReVM9NqpX_3U4LPcASlceJInJ48_97uHrMts-zFzeyCiBSQOpYnTy36MacmUFCx2ppFvBej56Mmc8Qdb8ZfRJqZnsIAdk8Lv_e6czmhEembNmZCMxLMteg4qiK6queFJfXza5ZKd11w0E97FM7_RXZ_zBXpQd1c\"><br /></a></p><p>Title in english: “National Strategy for Health and Safety at Work 2016 – 2020”</p><p><strong>Former OSH strategies:</strong></p><p>“Εθνική Στρατηγική για την Ασφάλεια και Υγεία στην Εργασία&nbsp;2010 – 2013»</p><p>“National Strategy for Safety and Health at Work 2010 – 2013</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
@@ -2655,12 +2652,12 @@ INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="OVERALL_OP" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+582, null, @sectionId, "CHART FOOTER");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+582, "EN", 1, "The diagram presents the responses of the EUROFOUND European Working Conditions Survey 2015 Survey - per Member State and Sector - to the question : “Do you think your health or safety is at risk because of your work?”");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+582, "EN", 1, "The diagram presents the responses of the EUROFOUND European Working Conditions Survey 2015 - per Member State and Sector - to the question : “Do you think your health or safety is at risk because of your work?”");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="OVERALL_OP" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+583, null, @sectionId, "CHART FOOTER");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+583, "EN", 1, "The diagram presents the responses of the EUROFOUND European Working Conditions Survey 2015 Survey - per Member State and Age - to the question : “Do you think your health or safety is at risk because of your work?”");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+583, "EN", 1, "The diagram presents the responses of the EUROFOUND European Working Conditions Survey 2015 - per Member State and Age - to the question : “Do you think your health or safety is at risk because of your work?”");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="MENTAL_RISKS" AND tool_id=@toolId);
@@ -3490,7 +3487,7 @@ INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2081, null, @sectionId, "HEADER");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2081, "EN", 1, "<p>The translations of this website from the original English are made by a machine translation service developed by Google. Consequently, the quality of those translations might not be accurate in all instances. You can know more about this system on<a title=\"Open in a new window\" href=\"https://en.wikipedia.org/wiki/Google_Translate\" target=\"_blank\">https://en.wikipedia.org/wiki/Google_Translate</a></p>");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2081, "EN", 1, "<p>The translations of this website from the original English are made by a machine translation service developed by Google. Consequently, the quality of those translations might not be accurate in all instances. You can know more about this system on <a title=\"Open in a new window\" href=\"https://en.wikipedia.org/wiki/Google_Translate\" target=\"_blank\">https://en.wikipedia.org/wiki/Google_Translate</a></p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
@@ -4282,8 +4279,7 @@ SET @nutsId = (SELECT id FROM nuts WHERE country_code="FR");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "Regional Directorates for Companies, Competition, Consumption, Labour and Employment (Directions Régionales des Entreprises, de la Concurrence, de la Consommation, du Travail et de l’Emploi- DIRECCTEs)– Labour Inspectorates");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "See more in its <a target=\"_blank\" href=\"http://direccte.gouv.fr/Organisation-d-une-Direccte.html
-http://travail-emploi.gouv.fr/emploi/accompagnement-des-tpe-pme/tpe-pme/gerer-mes-ressources-humaines/article/le-role-de-l-inspection-du-travail\">website</a> and in <a target=\"_blank\" href=\"https://oshwiki.eu/wiki/OSH_system_at_national_level_-_France\">OSHwiki</a>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "See more in its <a target=\"_blank\" href=\"https://travail-emploi.gouv.fr/ministere/organisation/article/direccte-directions-regionales-des-entreprises-de-la-concurrence-de-la \">website</a> and in <a target=\"_blank\" href=\"https://oshwiki.eu/wiki/OSH_system_at_national_level_-_France\">OSHwiki</a>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "The Labour Inspectorate (Inspection du Travail) services have been attached to the DIRECCTEs that were set up by Decree 2009-1377 of 10 November 2009. Labour inspection is carried out mainly by the labour inspectors and controllers in charge of inspecting companies and informing the public. They check that labour law is being properly implemented, they advise and inform employers, employees and staff representatives about their rights and obligations, and they facilitate out-of-court conciliation between the parties, in particular for collective disputes. The Labour Medical Inspectorate (Inspection Médicale du Travail) constitutes a specific technical support body within the Labour Inspectorate services.");
 INSERT INTO matrix_page(page, nuts_id, check_1, check_2, check_3, check_4, text_1_literal_id, text_2_literal_id, text_3_literal_id)  VALUES ("MATRIX_AUTHORITY", @nutsId, 1, 0, 0, 0, @maxId+1, @maxId+2, @maxId+3);
@@ -5085,7 +5081,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "See more in <a target=\"blank\" href=\"https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Poland\">OSHwiki</a>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "null");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "");
 INSERT INTO matrix_page(page, nuts_id, check_1, check_2, check_3, check_4, text_1_literal_id, text_2_literal_id, text_3_literal_id)  VALUES ("MATRIX_AUTHORITY", @nutsId, 0, 0, 1, 0, @maxId+1, @maxId+2, @maxId+3);
 
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -5173,7 +5169,7 @@ SET @nutsId = (SELECT id FROM nuts WHERE country_code="PT");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "The Portuguese Quality Institute (IPQ – Instituto Portugues da Qualidade)");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "See more in its <a target=\"blank\" href=\"http://http://www1.ipq.pt/PT/Pages/Homepage.aspx\">website</a> and in <a target=\"_blank\" href=\"https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Portugal\">OSHwiki</a>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "See more in its <a target=\"blank\" href=\"http://www1.ipq.pt/PT/Pages/Homepage.aspx\">website</a> and in <a target=\"_blank\" href=\"https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Portugal\">OSHwiki</a>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "The Portuguese Quality Institute (IPQ – Instituto Portugues da Qualidade)  is the national organization that manages and promotes the development of the Portuguese System for Quality (SQP - Sistema Português para a Qualidade), with its three sub-systems - Standardization, Metrology and Qualification. Therefore, IPQ is the Portuguese representative body in the quality field at international level, and keeps a close co-operation with its European counterparts. Within the SPQ framework, IPQ copes with the role of National Standardization Body (ONN), thus ensuring the co-ordination with European and International standardization bodies, and supervises the activity of the Central Laboratory of Metrology.");
 INSERT INTO matrix_page(page, nuts_id, check_1, check_2, check_3, check_4, text_1_literal_id, text_2_literal_id, text_3_literal_id)  VALUES ("MATRIX_AUTHORITY", @nutsId, 0, 0, 0, 1, @maxId+1, @maxId+2, @maxId+3);
@@ -5880,7 +5876,7 @@ INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, NU
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "Ministry of Labour and Pension System - Labour
 Inspectorate");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, NULL, "MATRIX_STATISTICS_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p><strong>Data holder:</strong></p><p><a href=\"http://www.20hzzo.hr\" target=\"_blank\">not published</a></p><p><strong>Functionalities:</strong></p><ul><li>Monitoring of work accidents&nbsp;-&nbsp;year range</li></ul>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p><strong>Data holder:</strong></p><p><a href=\"http://www.hzzo.hr\" target=\"_blank\">not published</a></p><p><strong>Functionalities:</strong></p><ul><li>Monitoring of work accidents&nbsp;-&nbsp;year range</li></ul>");
 INSERT INTO matrix_page(page, nuts_id, check_1, check_2, check_3, check_4, text_1_literal_id, text_2_literal_id, text_3_literal_id) VALUES ("MATRIX_STATISTICS", @nutsId, 1, 0, 0, false, @maxId+1, @maxId+2, null);
 
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
