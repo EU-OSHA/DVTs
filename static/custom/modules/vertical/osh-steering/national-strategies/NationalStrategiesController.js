@@ -35,8 +35,6 @@ define(function (require) {
       resolution = screen.width;
     });
 
-    $log.warn(resolution);
-
     if($location.hash() != null && $location.hash() != ''){
       //$log.warn($location.hash());
       $timeout(function(){

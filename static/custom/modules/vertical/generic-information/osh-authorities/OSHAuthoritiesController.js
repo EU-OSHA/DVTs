@@ -92,33 +92,36 @@ define(function (require) {
     $scope.trimtext = function(pVal, pNumCharacters){
       var shortText = pVal;
       var finalHtml = '';
-      if(shortText.match('<p>')){
-        var minimized_elements = $compile(pVal)($scope);
-        for(var i = 0; i < minimized_elements.length; i++){
-          var elem = minimized_elements[i];
-          if(i == 0){
-            $(elem).addClass("first");
-            var t = $(elem).text();
-            $(elem).html($.trim(t).substring(0, pNumCharacters).split(" ").slice(0, -1).join(" ") + $scope.longText(t, pNumCharacters) + "<span class='see-more'>...</span>");
-            var newHtml = $(elem)[0].outerHTML;
-            finalHtml += newHtml;
-          }else{
-            $(elem).css('display','none');
-            $(elem).addClass("text-part");
-            var newHtml = $(elem)[0].outerHTML;
-            finalHtml += newHtml;
+      if(shortText != null && shortText != 'null'){
+        if(shortText.match('<p>')){
+          var minimized_elements = $compile(pVal)($scope);
+          for(var i = 0; i < minimized_elements.length; i++){
+            var elem = minimized_elements[i];
+            if(i == 0){
+              $(elem).addClass("first");
+              var t = $(elem).text();
+              $(elem).html($.trim(t).substring(0, pNumCharacters).split(" ").slice(0, -1).join(" ") + $scope.longText(t, pNumCharacters) + "<span class='see-more'>...</span>");
+              var newHtml = $(elem)[0].outerHTML;
+              finalHtml += newHtml;
+            }else{
+              $(elem).css('display','none');
+              $(elem).addClass("text-part");
+              var newHtml = $(elem)[0].outerHTML;
+              finalHtml += newHtml;
+            }
           }
+          return $sce.trustAsHtml(finalHtml);
+          /*if (shortText.length > pNumCharacters) {
+            shortText = $.trim(pVal).substring(0, pNumCharacters).split(" ").slice(0, -1).join(" ") + $scope.longText(pVal, pNumCharacters) + "<span class='see-more'>...</span>";
+          }*/
+        }else{
+          if (shortText.length > pNumCharacters) {
+            shortText = $.trim(pVal).substring(0, pNumCharacters).split(" ").slice(0, -1).join(" ") + $scope.longText(pVal, pNumCharacters) + "<span class='see-more'>...</span>";
+          }
+          return $sce.trustAsHtml(shortText);
         }
-        return $sce.trustAsHtml(finalHtml);
-        /*if (shortText.length > pNumCharacters) {
-          shortText = $.trim(pVal).substring(0, pNumCharacters).split(" ").slice(0, -1).join(" ") + $scope.longText(pVal, pNumCharacters) + "<span class='see-more'>...</span>";
-        }*/
-      }else{
-        if (shortText.length > pNumCharacters) {
-          shortText = $.trim(pVal).substring(0, pNumCharacters).split(" ").slice(0, -1).join(" ") + $scope.longText(pVal, pNumCharacters) + "<span class='see-more'>...</span>";
-        }
-        return $sce.trustAsHtml(shortText);
       }
+      
     }
 
     $scope.longText = function(pVal, pNumCharacters) {
