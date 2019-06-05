@@ -92,14 +92,14 @@ define(function (require) {
     |******************************************************************************/
       $scope.goToAnchor = function(letter){
         var newHash = 'section' + letter;
-        if ($location.hash() !== newHash) {
+        //if ($location.hash() !== newHash) {
           if(resolution < 768){
             angular.element('html, body').animate({'scrollTop': angular.element('#'+newHash)[0].offsetTop + 200}, 'slow', 'swing');
           }else{
             angular.element('html, body').animate({'scrollTop': angular.element('#'+newHash)[0].offsetTop - 250}, 'slow', 'swing');
           }
           $location.hash('section' + letter);
-        } /*else {
+        /*} else {
           $anchorScroll();
           $log.warn($anchorScroll());
         }*/
