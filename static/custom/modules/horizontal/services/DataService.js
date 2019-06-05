@@ -113,8 +113,35 @@ define(function () {
                  * @description
                  * Gets all data for OSH Authorities view
                  */
-                getAllMatrixAuthorities: function () {
-                    var url = configService.getGenericInformationDataPath() + "&dataAccessId=getAllMatrixAuthorities";
+                getAllMatrixAuthorities: function (countries, institutions) {
+                    var block5 = countries.length <= 0 ? ".*" : countries.join("|");
+                    if (institutions.filter1==1){
+                      block1 = 1;
+                    }else {
+                      block1 = 2;
+                    }
+                    if (institutions.filter2==1){
+                      block2 = 1;
+                    }else {
+                      block2 = 2;
+                    }
+                    if (institutions.filter3==1){
+                      block3 = 1;
+                    }else {
+                      block3 = 2;
+                    }
+                    if (institutions.filter4==1){
+                      block4 = 1;
+                    }else {
+                      block4 = 2;
+                    }
+                    if(institutions.filter1==0 && institutions.filter2==0 && institutions.filter3==0 && institutions.filter4==0){
+                        block1 = 1;
+                        block2 = 1;
+                        block3 = 1;
+                        block4 = 1;
+                    }
+                    var url = configService.getGenericInformationDataPath() + "&dataAccessId=getAllMatrixAuthorities" + "&paramcountries=" + block5 + "&paraminstitution1=" + block1 + "&paraminstitution2=" + block2 + "&paraminstitution3=" + block3 + "&paraminstitution4=" + block4;
                     $log.debug('getAllMatrixAuthorities url:' + url);
 
                     return promise(url);

@@ -173,7 +173,7 @@
 	      INNER JOIN translation t3
 	      ON l3.id = t3.literal_id
 	      WHERE mp.page = 'MATRIX_AUTHORITY' 
-	      AND n.literal_id REGEXP ${countries}
+	      AND n.country_code REGEXP ${countries}
 	      AND (mp.check_1=${institution1}
 	      OR mp.check_2=${institution2}
 	      OR mp.check_3=${institution3}
@@ -192,7 +192,11 @@
 	    <Cache duration="3600" enabled="true" />
 	    <Columns />
 	    <Parameters>
-	    	<Parameter default="" name="pFilter" type="String" />
+	    	<Parameter default=".*" name="countries" type="String" />
+	    	<Parameter default="null" name="institution1" type="Numeric"/>
+	      	<Parameter default="null" name="institution2" type="Numeric"/>
+	      	<Parameter default="null" name="institution3" type="Numeric"/>
+	      	<Parameter default="null" name="institution4" type="Numeric"/>
 	    </Parameters>
 	    <Query>
 	      SELECT DISTINCT(mp.id) AS id, n.literal_id AS country_name, n.country_code as country_code, mp.check_1 AS osh_authority, mp.check_2 AS compensation, 
@@ -201,6 +205,11 @@
 	      INNER JOIN nuts n
 	      ON n.id = mp.nuts_id
 	      WHERE mp.page = 'MATRIX_AUTHORITY'
+	      AND n.country_code REGEXP ${countries}
+	      AND (mp.check_1=${institution1}
+		      OR mp.check_2=${institution2}
+		      OR mp.check_3=${institution3}
+		      OR mp.check_4=${institution4})
 	      ORDER BY FIELD(n.country_code, 'EU28') DESC, country_name ASC, osh_authority DESC, compensation DESC, prevention DESC, standardisation DESC, id ASC;
 	    </Query>
 	</DataAccess>

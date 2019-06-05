@@ -19,19 +19,13 @@ define(function (require) {
         $uiViewScrollProvider.useAnchorScroll();
 
         $stateProvider.state('osh-authorities', {
-          url: "/generic-information/osh-authorities/:pCountry/:pInstitution/:pSearch",
+          url: "/generic-information/osh-authorities",
           params: {
             pCountry: {
-                  value: null,
-                  squash: true
+              value: null
             },
             pInstitution: {
-                value: null,
-                squash: true
-            },
-            pSearch: {
-              value: null,
-              squash: true
+              value: null
             }
           },
           views: {

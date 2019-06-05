@@ -32,7 +32,7 @@ define(function (require) {
         filter3:0,
         filter4:0
       },
-      countries: [] //challenges
+      countries: [] //countries
     };
 
     $scope.searchText = '';
@@ -45,13 +45,15 @@ define(function (require) {
     $scope.elementsStart=0;
     $scope.elementsEnd=$scope.pageSize;
 
+    $scope.pCountry = $stateParams.pCountry;
+    $scope.pInstitution = $stateParams.pInstitution;
+
     // Pagination Text
     $scope.paginationText = 'Displaying ' + ($scope.elementsStart+1)+'-'+$scope.elementsEnd + ' of ' + $scope.amatrix.length;
 
     var updateText = function() {
       $scope.paginationText = 'Displaying ' + ($scope.elementsStart+1)+'-'+$scope.elementsEnd + ' of ' + $scope.amatrix.length;
     }
-
 
     // Open/Hide checkbox dropdown list
     $scope.openSelect = function($event){
@@ -300,7 +302,49 @@ define(function (require) {
     /******************************************************************************|
     |                                DATA LOAD                                     |
     |******************************************************************************/
-      dataService.getAllMatrixAuthorities().then(function (data) {
+      dataService.getMatrixAuthsCountries().then(function (data) {
+        data.data.resultset.map(function (elem) {
+          var param = (!!$stateParams.filter) ? $stateParams.filter : undefined;
+          $scope.countries.push({
+            country: elem[0],
+            country_code: elem[1]
+          });
+          if($scope.pCountry == elem[1]){
+            var tags = angular.element('div.selected--tags-wrapper');
+            var html = '<span class="selected-tag" id="country'+$scope.pCountry +'" data-ng-click="deleteTag($event)">' + '('+$scope.pCountry+') ' + $scope.i18nLiterals['L'+elem[0]] +'</span>';
+            tags.append( $compile(html)($scope) );
+          }
+        });
+      }).catch(function (err) {
+        throw err;
+      });
+
+      if($scope.pCountry != null){
+        $scope.searchParams.countries.push($scope.pCountry);
+      }
+
+      if($scope.pInstitution != null){
+        var tags = angular.element('div.selected--tags-wrapper');
+        if($scope.pInstitution == 'osh-authority'){
+          $scope.searchParams.institutions.filter1 = 1;
+          var html = '<span class="selected-tag" id="institutionFilter1" data-ng-click="deleteTag($event)" data-ng-bind="i18nLiterals.L20614"></span>';
+          tags.append( $compile(html)($scope) );
+        }else if($scope.pInstitution == 'compensation-and-insurance-body'){
+          $scope.searchParams.institutions.filter2 = 1;
+          var html = '<span class="selected-tag" id="institutionFilter2" data-ng-click="deleteTag($event)" data-ng-bind="i18nLiterals.L20611"></span>';
+          tags.append( $compile(html)($scope) );
+        }else if($scope.pInstitution == 'prevention-institute'){
+          $scope.searchParams.institutions.filter3 = 1;
+          var html = '<span class="selected-tag" id="institutionFilter3" data-ng-click="deleteTag($event)" data-ng-bind="i18nLiterals.L20612"></span>';
+          tags.append( $compile(html)($scope) );
+        }else if($scope.pInstitution == 'standardisation-body'){
+          $scope.searchParams.institutions.filter4 = 1;
+          var html = '<span class="selected-tag" id="institutionFilter4" data-ng-click="deleteTag($event)" data-ng-bind="i18nLiterals.L20613"></span>';
+          tags.append( $compile(html)($scope) );
+        }
+      }
+
+      dataService.getAllMatrixAuthorities($scope.searchParams.countries, $scope.searchParams.institutions).then(function (data) {
         $log.debug('getAllMatrixAuthorities');
         //$log.warn(data);
 
@@ -337,21 +381,6 @@ define(function (require) {
       }).catch(function (err) {
           throw err;
       });
-      
-      dataService.getMatrixAuthsCountries().then(function (data) {
-
-        data.data.resultset.map(function (elem) {
-          var param = (!!$stateParams.filter) ? $stateParams.filter : undefined;
-          $scope.countries.push({
-              country: elem[0],
-              country_code: elem[1]
-          });
-        });
-
-        //$log.warn($scope.countries);
-      }).catch(function (err) {
-          throw err;
-      });
 
     /******************************END DATA LOAD***********************************/
 
@@ -371,17 +400,18 @@ define(function (require) {
         var element = angular.element($event.currentTarget);
         var tags = angular.element('div.selected--tags-wrapper');
         var valueToJson = JSON.parse(element.attr('value'));
+        //$log.warn(valueToJson);
         
         if (element.prop('checked')) {
           //$scope.selectedCountries.push(element.attr('value'));
           //$scope.searchParams.countries.push(element.attr('value'));
-          $scope.searchParams.countries.push(valueToJson.country);
+          $scope.searchParams.countries.push(valueToJson.country_code);
         } else {
           //if($scope.deleteCountryTags.indexOf(element.attr('value')) == -1){
           //  $scope.deleteCountryTags.push(element.attr('value'));
           //}
           //$scope.selectedCountries.splice($scope.selectedCountries.indexOf(element.attr('value')), 1);
-          $scope.searchParams.countries.splice($scope.searchParams.countries.indexOf(valueToJson.country), 1);
+          $scope.searchParams.countries.splice($scope.searchParams.countries.indexOf(valueToJson.country_code), 1);
           angular.element('span#country'+valueToJson.country).remove();
         }
 
@@ -390,9 +420,9 @@ define(function (require) {
         for(var i = 0; i < $scope.searchParams.countries.length;i++){
           if(angular.element('span#country'+$scope.searchParams.countries[i]).length<=0){
             if(valueToJson.country_code == 'EU28'){
-              var html = '<span class="selected-tag" id="country'+$scope.searchParams.countries[i] +'" data-ng-click="deleteTag($event)">'+ $scope.i18nLiterals['L'+$scope.searchParams.countries[i]] +'</span>';
+              var html = '<span class="selected-tag" id="country'+$scope.searchParams.countries[i] +'" data-ng-click="deleteTag($event)">'+ $scope.i18nLiterals['L'+valueToJson.country] +'</span>';
             }else{
-              var html = '<span class="selected-tag" id="country'+$scope.searchParams.countries[i] +'" data-ng-click="deleteTag($event)">' + '('+valueToJson.country_code+') ' + $scope.i18nLiterals['L'+$scope.searchParams.countries[i]] +'</span>';
+              var html = '<span class="selected-tag" id="country'+$scope.searchParams.countries[i] +'" data-ng-click="deleteTag($event)">' + '('+valueToJson.country_code+') ' + $scope.i18nLiterals['L'+valueToJson.country] +'</span>';
             }
             tags.append( $compile(html)($scope) );
           }          
@@ -414,19 +444,6 @@ define(function (require) {
         var check2 = $('#institution-filter-2:checked').length > 0;
         var check3 = $('#institution-filter-3:checked').length > 0;
         var check4 = $('#institution-filter-4:checked').length > 0;
-
-        /*if(!check1) {
-          $scope.searchParams.institutions.filter1=0;
-        }
-        if(!check2) {
-          $scope.searchParams.institutions.filter2=0;
-        }
-        if(!check3) {
-          $scope.searchParams.institutions.filter3=0;
-        }
-        if(!check4) {
-          $scope.searchParams.institutions.filter4=0;
-        }*/
 
         var tags = angular.element('div.selected--tags-wrapper');
 
@@ -480,160 +497,6 @@ define(function (require) {
 
       /**
        * @ngdoc method
-       * @name ng.controller:OSHAuthoritiesController#confirmSelection
-       * @param {$event} $event from the browser
-       * @methodOf barometer.osh-authorities.controller:OSHAuthoritiesController
-       * @description
-       * Function launched when clicking confirm button of Institutions and Countries Select
-       */
-      /*$scope.confirmSelection = function($event){
-        var check1 = $('#institution-filter-1:checked').length > 0;
-        var check2 = $('#institution-filter-2:checked').length > 0;
-        var check3 = $('#institution-filter-3:checked').length > 0;
-        var check4 = $('#institution-filter-4:checked').length > 0;
-
-        var tags = angular.element('div.selected--tags-wrapper');
-        tags.empty();
-
-        var par="country";
-        if(check1) {
-          $scope.searchParams.institutions.filter1=1;
-          par="institution";
-
-          var html = '<span class="selected-tag" id="institutionFilter1" data-ng-click="deleteTag($event)" data-ng-bind="i18nLiterals.L20614"></span>';
-          tags.append( $compile(html)($scope) );
-        }
-        if(check2) {
-          $scope.searchParams.institutions.filter2=1;
-          par="institution";
-          var html = '<span class="selected-tag" id="institutionFilter2" data-ng-click="deleteTag($event)" data-ng-bind="i18nLiterals.L20611"></span>';
-          tags.append( $compile(html)($scope) );
-        }
-        if(check3) {
-          $scope.searchParams.institutions.filter3=1;
-          par="institution";
-          var html = '<span class="selected-tag" id="institutionFilter3" data-ng-click="deleteTag($event)" data-ng-bind="i18nLiterals.L20612"></span>';
-          tags.append( $compile(html)($scope) );
-        }
-        if(check4) {
-          $scope.searchParams.institutions.filter4=1;
-          par="institution";
-          var html = '<span class="selected-tag" id="institutionFilter4" data-ng-click="deleteTag($event)" data-ng-bind="i18nLiterals.L20613"></span>';
-          tags.append( $compile(html)($scope) );
-        }
-
-        $scope.searchParams.countries.sort();
-        
-        for(var i = 0; i < $scope.searchParams.countries.length;i++){
-          var html = '<span class="selected-tag" id="country'+$scope.searchParams.countries[i] +'" data-ng-click="deleteTag($event)">'+$scope.searchParams.countries[i]+'</span>';
-          tags.append( $compile(html)($scope) );
-        }
-
-        search($event,par);
-      }*/
-
-      /**
-       * @ngdoc method
-       * @name ng.controller:OSHAuthoritiesController#confirmCountrySelection
-       * @param {$event} $event from the browser
-       * @methodOf barometer.osh-authorities.controller:OSHAuthoritiesController
-       * @description
-       * Function launched when clicking confirm button of Countries Select
-       */
-      $scope.confirmCountrySelection = function($event){
-        $scope.selectedCountries.sort();
-
-        var tags = angular.element('div.selected--tags-wrapper');
-        //tags.empty();
-        
-        for(var i = 0; i < $scope.selectedCountries.length;i++){
-          if(angular.element('span#country'+$scope.selectedCountries[i]).length<=0){
-            var html = '<span class="selected-tag" id="country'+$scope.selectedCountries[i] +'" data-ng-click="deleteTag($event)">'+ $scope.i18nLiterals['L'+$scope.selectedCountries[i]] +'</span>';
-            tags.append( $compile(html)($scope) );
-          }          
-        }
-
-        for(var i = 0; i < $scope.deleteCountryTags.length;i++){
-          if(angular.element('#country-filter-'+$scope.deleteCountryTags[i]+':checked').length<=0){
-            angular.element('span#country'+$scope.deleteCountryTags[i]).remove();
-          }
-        }
-
-        $scope.deleteCountryTags = [];
-
-        $scope.searchParams.countries = $scope.selectedCountries;
-
-        search($event,'countries');
-      }
-
-      /**
-       * @ngdoc method
-       * @name ng.controller:OSHAuthoritiesController#confirmInstitutionSelection
-       * @param {$event} $event from the browser
-       * @methodOf barometer.osh-authorities.controller:OSHAuthoritiesController
-       * @description
-       * Function launched when clicking confirm button of Institutions Select
-       */
-      $scope.confirmInstitutionSelection = function($event){
-        var check1 = $('#institution-filter-1:checked').length > 0;
-        var check2 = $('#institution-filter-2:checked').length > 0;
-        var check3 = $('#institution-filter-3:checked').length > 0;
-        var check4 = $('#institution-filter-4:checked').length > 0;
-
-        var tags = angular.element('div.selected--tags-wrapper');
-        //tags.empty();
-
-        var par;
-        if(check1) {
-          $scope.searchParams.institutions.filter1=1;
-          par="institution";
-
-          if(angular.element('span#institutionFilter1').length<=0){
-            var html = '<span class="selected-tag" id="institutionFilter1" data-ng-click="deleteTag($event)" data-ng-bind="i18nLiterals.L20614"></span>';
-            tags.append( $compile(html)($scope) );
-          }
-          
-        }else{
-          angular.element('span#institutionFilter1').remove();
-        }
-        if(check2) {
-          $scope.searchParams.institutions.filter2=1;
-          par="institution";
-          if(angular.element('span#institutionFilter2').length<=0){
-            var html = '<span class="selected-tag" id="institutionFilter2" data-ng-click="deleteTag($event)" data-ng-bind="i18nLiterals.L20611"></span>';
-            tags.append( $compile(html)($scope) );
-          }
-        }else{
-          angular.element('span#institutionFilter2').remove();
-        }
-
-        if(check3) {
-          $scope.searchParams.institutions.filter3=1;
-          par="institution";
-          if(angular.element('span#institutionFilter3').length<=0){
-            var html = '<span class="selected-tag" id="institutionFilter3" data-ng-click="deleteTag($event)" data-ng-bind="i18nLiterals.L20612"></span>';
-            tags.append( $compile(html)($scope) );
-          }
-        }else{
-          angular.element('span#institutionFilter3').remove();
-        }
-
-        if(check4) {
-          $scope.searchParams.institutions.filter4=1;
-          par="institution";
-          if(angular.element('span#institutionFilter4').length<=0){
-            var html = '<span class="selected-tag" id="institutionFilter4" data-ng-click="deleteTag($event)" data-ng-bind="i18nLiterals.L20613"></span>';
-            tags.append( $compile(html)($scope) );
-          }
-        }else{
-          angular.element('span#institutionFilter4').remove();
-        }
-
-        search($event,par);        
-      }
-
-      /**
-       * @ngdoc method
        * @name ng.controller:OSHAuthoritiesController#deleteTag
        * @param {$event} $event from the browser
        * @methodOf barometer.osh-authorities.controller:OSHAuthoritiesController
@@ -642,14 +505,13 @@ define(function (require) {
        */
       $scope.deleteTag = function($event){
         var element = angular.element($event.currentTarget);
-        var countryId = parseInt(element[0].id.slice(7,10));
+        var countryId = element[0].id.slice(7,9);
         
         var quitChecked;
         if($event.target.id.indexOf('country') != -1){
 
           $scope.searchParams.countries.splice($scope.searchParams.countries.indexOf(countryId), 1);
           quitChecked = angular.element('.filter--dropdown--options #country-filter-'+countryId);
-          //$log.warn(element[0].id.slice(7,10));
         }else if($event.target.id == 'institutionFilter1'){
           quitChecked = angular.element('.filter--dropdown--options #institution-filter-1');
           $scope.searchParams.institutions.filter1=0;
@@ -682,7 +544,7 @@ define(function (require) {
        */
       function search($event,filter) {
         //$log.warn($scope.amatrix);
-
+        //$log.warn($scope.searchParams.countries);
         dataService.getSearchTerm($scope.searchText, $scope.searchParams.institutions, $scope.searchParams.countries)
           .then(function (data) {
             $scope.amatrix = dataService.dataMapper(data);
