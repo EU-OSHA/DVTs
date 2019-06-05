@@ -26,7 +26,7 @@
     "workforce-profile": "<a ui-sref='home'>Home</a><i class='fa fa-angle-right' aria-hidden='true'></i> Generic Information <i class='fa fa-angle-right' aria-hidden='true'></i><span class=''>Workforce profile</span>",
 
     "_SECTION-OSH-STEERING": null,
-    "regulation": "<a ui-sref='home'>Home</a><i class='fa fa-angle-right' aria-hidden='true'></i> Steering of OSH <i class='fa fa-angle-right' aria-hidden='true'></i><span class=''>Regulations</span>",
+    "regulation": "<a ui-sref='home'>Home</a><i class='fa fa-angle-right' aria-hidden='true'></i> Steering of OSH <i class='fa fa-angle-right' aria-hidden='true'></i><span class=''>Regulation</span>",
     "national-strategies": "<a ui-sref='home'>Home</a><i class='fa fa-angle-right' aria-hidden='true'></i> Steering of OSH <i class='fa fa-angle-right' aria-hidden='true'></i><span class=''>National Strategies</span>",
     "country-profile": "<a ui-sref='home'>Home</a><i class='fa fa-angle-right' aria-hidden='true'></i> Steering of OSH <i class='fa fa-angle-right' aria-hidden='true'></i><a ui-sref='national-strategies'>National Strategies</a><i class='fa fa-angle-right' aria-hidden='true'></i><span class=''>Structure of each National Strategy</span>",
     "EU-challenges-response": "<a ui-sref='home'>Home</a><i class='fa fa-angle-right' aria-hidden='true'></i> Steering of OSH <i class='fa fa-angle-right' aria-hidden='true'></i><a ui-sref='national-strategies'>National Strategies</a><i class='fa fa-angle-right' aria-hidden='true'></i><span class=''>Response of National Strategies to EU Challenges</span>",
