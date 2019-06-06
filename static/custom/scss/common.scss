@@ -17,7 +17,7 @@
     padding-top: 130px;
     overflow: auto;
     &.section-fixed{
-      padding-top:30rem;
+      padding-top:32rem;
     }
     &.ovh{
       overflow: hidden;
@@ -990,7 +990,7 @@
           }
         }
         .flags--wrapper{
-          outline: 1px solid #EEE;
+          outline: 1px solid #CCC;
         }
         .see-more{
           text-align: center;
@@ -1131,6 +1131,7 @@
         right: 28px;
         z-index: 999999;
         box-shadow: 0px 0px 4px #aaa;
+        text-align: left;
     }
   /* END GOOGLE TRANSLATE */
 

@@ -531,7 +531,23 @@
 @media only screen 
 and (min-width : 768px) 
 and (max-width : 1024px)  {
-
+	.bar-header{
+		.header--top{
+			.menu-tools-top{
+				.menu-tools-top--items{
+					.zoom--text{
+						display: none;
+					}
+					.print--block{
+						display: none;
+					}
+				}
+			}
+		}
+	}
+	#google_translate_element_wrapper{
+		margin: 10px 0px 0em 0;
+	}
 
 /** pop up */
   #popUpMessage{
@@ -696,8 +712,24 @@ and (min-width : 768px)
 and (max-width : 1024px) 
 and (orientation : landscape) { 
 
-}
+	.compare--block--form{
+		margin: 0;
+		width: 100%;
+		padding: 0;
+		.compare--list{
+  		justify-content: space-between;
+  		li{
+  			label{
+  				width: 35%;
+  			}
+  			select{
+  				width: 63%;
+  			}
+  		}
+		}
+	}
 
+}
 
 
 @media only screen 
@@ -710,7 +742,7 @@ and (orientation : portrait) {
 	}
 	.compare--block{
 		.compare--list{
-		  width: 80%;
+		  width: 90%;
 		  margin: 1rem auto;
 			li{
 				label{

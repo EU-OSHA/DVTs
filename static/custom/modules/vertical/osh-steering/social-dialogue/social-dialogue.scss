@@ -78,7 +78,7 @@
     position: relative;
     z-index: 10;
     min-height: 6rem;
-    width:95%;
+    width:95.5%;
     .filter--dropdown--wrapper{
       position: relative;
       min-height: 5rem;
@@ -275,6 +275,9 @@
             }
           }
         }
+        &:nth-child(2){
+          width: 100%;
+        }
         .highlited-data-list{
           padding: 0;
           flex-wrap: nowrap;
@@ -330,6 +333,7 @@
           flex-wrap: wrap;
           li{
             width: 100%;
+            text-align: left;
             span{
               &.country-data{
 
@@ -339,7 +343,8 @@
               }
             }
             label{
-
+              width: 70%;
+              line-height: 16px;
             }
           }
         }
