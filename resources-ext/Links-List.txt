@@ -128,9 +128,10 @@
 400-http://www.strategy.bg/strategicdocuments/View.aspx?lang=bg-BG&amp;Id=901
 400-http://www.strategy.bg/StrategicDocuments/View.aspx?lang=bg-BG&amp;Id=859
 401-http://www.et.gr/idocs-nph/search/pdfViewerForm.html?args=5C7QrtC22wEsrjP0JAlxBXdtvSoClrL8bReVM9NqpX_3U4LPcASlceJInJ48_97uHrMts-zFzeyCiBSQOpYnTy36MacmUFCx2ppFvBej56Mmc8Qdb8ZfRJqZnsIAdk8Lv_e6czmhEembNmZCMxLMteg4qiK6queFJfXza5ZKd11w0E97FM7_RXZ_zBXpQd1c
-401-file:///C:/Users/Iruizdiaz002/Desktop/OSHA/OSH%20Barometer/Data%20extraction/Indicator%202.2%20National%20strategies/GREECE.docx#_ftn1
+401-http://www.et.gr/idocs-nph/search/pdfViewerForm.html?args=5C7QrtC22wEsrjP0JAlxBXdtvSoClrL8bReVM9NqpX_3U4LPcASlceJInJ48_97uHrMts-zFzeyCiBSQOpYnTy36MacmUFCx2ppFvBej56Mmc8Qdb8ZfRJqZnsIAdk8Lv_e6czmhEembNmZCMxLMteg4qiK6queFJfXza5ZKd11w0E97FM7_RXZ_zBXpQd1c
 402-http://www.pisrs.si/Pis.web/pregledPredpisa?id=RESO26
 402-https://www.uradni-list.si/glasilo-uradni-list-rs/vsebina?urlid=2003126&amp;stevilka=5394
+605-https://osha.europa.eu/en/surveys-and-statistics-osh/esener
 2081-https://en.wikipedia.org/wiki/Google_Translate
 2102-https://www.sozialministerium.at/siteEN/ 
 2102-https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Austria 
@@ -282,7 +283,7 @@
 2327-https://oshwiki.eu/wiki/OSH_system_at_national_level_-_France
 2330-http://solidarites-sante.gouv.fr/ministere/organisation/directions/article/dss-direction-de-la-securite-sociale
 2330-https://oshwiki.eu/wiki/OSH_system_at_national_level_-_France
-2333-http://direccte.gouv.fr/Organisation-d-une-Direccte.htmlhttp://travail-emploi.gouv.fr/emploi/accompagnement-des-tpe-pme/tpe-pme/gerer-mes-ressources-humaines/article/le-role-de-l-inspection-du-travail
+2333-https://travail-emploi.gouv.fr/ministere/organisation/article/direccte-directions-regionales-des-entreprises-de-la-concurrence-de-la 
 2333-https://oshwiki.eu/wiki/OSH_system_at_national_level_-_France
 2336-https://www.ameli.fr/l-assurance-maladie/connaitre-l-assurance-maladie/missions-et-organisation/index.php
 2336-https://oshwiki.eu/wiki/OSH_system_at_national_level_-_France
@@ -452,7 +453,7 @@
 2588-https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Poland
 2591-https://www.mpips.gov.pl/en/
 2591-https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Poland
-2594-http://http://www1.ipq.pt/PT/Pages/Homepage.aspx
+2594-http://www1.ipq.pt/PT/Pages/Homepage.aspx
 2594-https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Portugal
 2597-http://www.seg-social.pt/doenca-profissional
 2597-https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Portugal
@@ -579,7 +580,7 @@
 2791-http://www.hzzzsr.hr
 2793-http://www.mirovinsko.hr/default.aspx
 2795-www.hzzo.hr
-2797-http://www.20hzzo.hr
+2797-http://www.hzzo.hr
 2799-https://www.hzjz.hr/
 2801-http://www.mlsi.gov.cy/mlsi/dli/dliup.nsf/2DFFCA3DE7913C73C2257E0500310675/$file/Analysi%20Atyximatwn%202014%20-%20final.docx
 2803-http://www.mlsi.gov.cy/mlsi/dli/dliup.nsf/pageh5_gr/pageh5_gr?OpenDocument
@@ -835,27 +836,16 @@
 3247-http://www.hsl.gov.uk/
 3247-https://oshwiki.eu/wiki/OSH_system_at_national_level_-_United_Kingdom
 3249-http://www.terviseamet.ee/fileadmin/dok/Tervishoid/tootervis/KH_ja_TPH_statistika_2014.pdf
-3252-&lt;a%20data-ui-sref=&quot;OSH-authorities&quot;&gt;Labour-Inspection&lt;/a&gt;
 3252-http://www.arbeitsinspektion.gv.at/inspektorat/
-3256-&lt;a%20data-ui-sref=&quot;OSH-authorities&quot;&gt;Labour-Inspection&lt;/a&gt;
 3256-http://www.gli.government.bg/
-3260-&lt;a%20data-ui-sref=&quot;OSH-authorities&quot;&gt;Labour-Inspection&lt;/a&gt;
 3260-http://www.mlsi.gov.cy/dli
-3264-&lt;a%20data-ui-sref=&quot;OSH-authorities&quot;&gt;Labour-Inspection&lt;/a&gt;
 3264-http://ti.ee/en/
 3268-http://www.tyosuojelu.fi/web/en/home
-3268-&lt;a%20data-ui-sref=&quot;OSH-authorities&quot;&gt;Labour-Inspection&lt;/a&gt;
 3268-http://stm.fi/en/occupational-safety-and-health
-3272-&lt;a%20data-ui-sref=&quot;OSH-authorities&quot;&gt;Labour-Inspection&lt;/a&gt;
 3272-https://www.sepenet.gr
-3276-&lt;a%20data-ui-sref=&quot;OSH-authorities&quot;&gt;Labour-Inspection&lt;/a&gt;
 3276-http://www.ommf.gov.hu
-3280-&lt;a%20data-ui-sref=&quot;OSH-authorities&quot;&gt;Labour-Inspection&lt;/a&gt;
 3280-http://www.ommf.gov.hu
-3284-&lt;a%20data-ui-sref=&quot;OSH-authorities&quot;&gt;Labour-Inspection&lt;/a&gt;
 3284-http://www.vdi.lt
 3287-http://www.vdi.lt/
-3288-&lt;a%20data-ui-sref=&quot;OSH-authorities&quot;&gt;Labour-Inspection&lt;/a&gt;
 3288-http://www.pip.gov.pl
-3292-&lt;a%20data-ui-sref=&quot;OSH-authorities&quot;&gt;Labour-Inspection&lt;/a&gt;
 
