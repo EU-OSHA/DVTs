@@ -1,13 +1,19 @@
 .download-report{
+  text-align: left;
   a{
-    color: #58585A; 
+    color: #58585A;
+    font-family: 'Oswald';
+    &:hover{
+      color:$aquamarine;
+    }  
     &:before{
       content:" ";
       width:2rem;
       height: 2rem;
       background: url(../img/icon-download-report.png) top left no-repeat;
+      background-size: cover;
       display: inline-block;
-      margin-right: 1rem;
+      margin-right: 0.6rem;
     }               
   }          
 }
@@ -17,7 +23,7 @@
     .card--block--chart{
       margin: 0 2rem 3rem 0;
       .chart--block{
-        padding: 2rem;
+        padding:20px;
         header{
           display: flex;
           margin-bottom: 0;
@@ -107,7 +113,7 @@
           }
           .download-report{
             a{
-              color: $black;
+              font-family: 'Oswald';
               &:hover{
                 color:$aquamarine;
               }           
@@ -123,7 +129,8 @@
         display: flex;
         justify-content: space-between;
         li{
-          width: 20%;
+          text-align: center;
+          width: 23%;
           span{
             font-family: 'Oswald';
             font-size: 3.6rem;
@@ -138,7 +145,7 @@
             }
           }
           label{
-            font-size: 1.4rem;
+            //font-size: 1.4rem;
             font-family: 'Oswald';
             font-weight: normal;
 
