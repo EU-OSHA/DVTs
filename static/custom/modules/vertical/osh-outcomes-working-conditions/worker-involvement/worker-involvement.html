@@ -1,4 +1,4 @@
-<dvt-dashboard promises="promises" parameters="dashboard.parameters">
+<dvt-dashboard promises="promises" parameters="dashboard.parameters" class="worker-involvement">
 
   <section data-ng-if="state.current.name != 'home'" id="not-home-cover" class="advice--icon--block advice--block-not-home background-main-light container-fluid section--page">
     <div class="container horizontal-nopadding">
@@ -37,10 +37,12 @@
       <div class="card--grid xxs-w1 xs-w1 w1 center-text">
         <div class="card--block--chart">
           <!-- ESENER or Eurofound filter -->
-          <select ng-model="pSplit" ng-change="changeSplit()">
-            <option data-ng-bind="i18nLiterals.L20645" value="esener"></option>
-            <option data-ng-bind="i18nLiterals.L20646" value="eurofound"></option>
-          </select>
+          <div class="select-filter-chart">
+            <select ng-model="pSplit" ng-change="changeSplit()">
+              <option data-ng-bind="i18nLiterals.L20645" value="esener"></option>
+              <option data-ng-bind="i18nLiterals.L20646" value="eurofound"></option>
+            </select>
+          </div>
           <div class="chart--block">
             <dvt-radar-chart
               data-ng-cloak

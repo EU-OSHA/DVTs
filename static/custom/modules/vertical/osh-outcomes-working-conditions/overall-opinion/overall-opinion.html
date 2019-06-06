@@ -48,7 +48,6 @@
               base-axis-label-text-baseline="middle"
               values-font="12px 'OpenSans'"
               multiple-label-colors="false"
-              leaf-content-overflow='visible'
               dimensions="stories[0].dimensions"
               legend="true"
               stacked="1" angle="{{angle}}"
@@ -100,23 +99,24 @@
             data-ng-cloak
             query="getHealthAtRiskSectorData" cda="{{::cdaOSHOutcomes }}"
             width="330" height="470" axis-percent="1"
-            orientation="vertical" axis-fixed-min="0"
+            orientation="{{orientation}}" axis-fixed-min="0"
             axis-fixed-max="40" step="{{step}}"
             params="[['pDataset', datasetEurofound], ['pIndicator', 66], ['pCountry1', pCountry1], ['pCountry2', pCountry2]]"
             color-role="series" colors="[stories[1].color2, stories[1].color1, stories[1].color3]"
             chart-title="{{i18nLiterals.L323}}" id="2"
             axis-label-font="12px 'OpenSans'"
-            plots="stories[1].plots"
+            plots="healthBySector"
             values-visible="true"
+            label-text-align="alignment"
             values-overflow="show"
             values-mask="{value}%"
+            dataset="Eurofound"
             values-font="12px 'OpenSans'"
             multiple-label-colors="false"
-            base-axis-label-text-baseline="top"
             leaf-content-overflow='visible'
             dimensions="stories[1].dimensions"
-            legend="true" axis-label-word-break="1"
-            legend-align="center" base-axis-size="50"
+            legend="true" axis-label-word-break="{{axisWordBreak}}"
+            legend-align="center" base-axis-size="{{axisSizeHealth}}"
             ></dvt-bar-chart>
           </div>
           <div class="chart--block" ng-show="pSplit == 'age'">
@@ -124,24 +124,24 @@
               data-ng-cloak
               query="getHealthAtRiskAgeData" cda="{{::cdaOSHOutcomes }}"
               width="330" height="470" axis-percent="1"
-              orientation="vertical" axis-fixed-min="0"
+              orientation="{{orientation}}" axis-fixed-min="0"
               axis-fixed-max="40" step="{{step}}"
               params="[['pDataset', datasetEurofound], ['pIndicator', 66], ['pCountry1', pCountry1], ['pCountry2', pCountry2]]"
               color-role="series" colors="[stories[1].color2, stories[1].color1, stories[1].color3]"
-              chart-title="{{i18nLiterals.L323}}" id="2"
+              chart-title="{{i18nLiterals.L323}}" id="3"
               axis-label-font="12px 'OpenSans'"
-              plots="stories[1].plots"
+              plots="healthBySector"
+              label-text-align="alignment"
               values-visible="true"
               values-overflow="show"
               values-mask="{value}%"
               values-font="12px 'OpenSans'"
               multiple-label-colors="false"
-              base-axis-label-text-baseline="top"
               leaf-content-overflow='visible'
               dimensions="stories[1].dimensions"
               legend="true"
               legend-align="center"
-              base-axis-size="50"
+              base-axis-size="{{axisSizeHealth}}"
             ></dvt-bar-chart>
           </div>
           <div class="chart--block" ng-show="pSplit == 'gender'">
@@ -149,24 +149,24 @@
               data-ng-cloak
               query="getHealthAtRiskGenderData" cda="{{::cdaOSHOutcomes }}"
               width="330" height="470" axis-percent="1"
-              orientation="vertical" axis-fixed-min="0"
+              orientation="{{orientation}}" axis-fixed-min="0"
               axis-fixed-max="40" step="{{step}}"
               params="[['pDataset', datasetEurofound], ['pIndicator', 66], ['pCountry1', pCountry1], ['pCountry2', pCountry2]]"
               color-role="series" colors="[stories[2].color2, stories[2].color1, stories[2].color3]"
-              chart-title="{{i18nLiterals.L323}}" id="2"
+              chart-title="{{i18nLiterals.L323}}" id="4"
               axis-label-font="12px 'OpenSans'"
-              plots="stories[2].plots"
+              plots="healthByGender"
+              label-text-align="alignment"
               values-visible="true"
               values-overflow="show"
               values-mask="{value}%"
               values-font="12px 'OpenSans'"
               multiple-label-colors="false"
-              base-axis-label-text-baseline="top"
               leaf-content-overflow='visible'
               dimensions="stories[2].dimensions"
               legend="true"
               legend-align="center"
-              base-axis-size="50"
+              base-axis-size="{{axisSizeHealth}}"
             ></dvt-bar-chart>
           </div>
         </div>
@@ -180,6 +180,7 @@
     </div>
   </section>
 
+  <!-- Footer -->
   <section class="container-fluid background-gray section--page explore-section">
     <div class="container">
       <section class="card--grid xxs-w1 w3 center-text">

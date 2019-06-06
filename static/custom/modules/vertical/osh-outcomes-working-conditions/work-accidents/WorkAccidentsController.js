@@ -47,7 +47,7 @@ define(function (require) {
     $scope.pIndicator = $stateParams.pIndicator;
 
     $scope.orientation = angular.element(window).width() > 768 ? "vertical" : "horizontal";
-    $scope.axisSize = angular.element(window).width() > 768 ? 150 : 110;
+    $scope.axisSize = angular.element(window).width() > 768 ? 150 : 140;
 
     var width = angular.element($window).width();
       angular.element($window).bind('resize', function() {

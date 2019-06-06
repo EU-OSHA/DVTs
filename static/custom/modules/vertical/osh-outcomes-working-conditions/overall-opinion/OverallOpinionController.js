@@ -46,11 +46,13 @@ define(function (require) {
     $scope.horizontalHeight = angular.element(window).width() > 768 ? 470 : 770;
     $scope.orientation = angular.element(window).width() > 768 ? "vertical" : "horizontal";
     $scope.axisSize = angular.element(window).width() > 768 ? 150 : 160;
+    $scope.axisSizeHealth = angular.element(window).width() > 768 ? 50 : 100;
     $scope.query = angular.element(window).width() > 768 ? 'getJobSatisfactionVerticalData' : 'getJobSatisfactionHorizontalData';
     $scope.color1 = angular.element(window).width() > 768 ? dvtUtils.getColorCountry(3) : dvtUtils.getColorCountry(1);
     $scope.color2 = angular.element(window).width() > 768 ? dvtUtils.getAccidentsColors(4) : dvtUtils.getColorCountry(22);
     $scope.color3 = angular.element(window).width() > 768 ? dvtUtils.getColorCountry(22): dvtUtils.getAccidentsColors(4);
     $scope.color4 = angular.element(window).width() > 768 ? dvtUtils.getColorCountry(1) : dvtUtils.getColorCountry(3);
+    $scope.axisWordBreak = angular.element(window).width() > 768 ? 1 : '';
 
     var width = angular.element($window).width();
       angular.element($window).bind('resize', function() {
@@ -85,7 +87,7 @@ define(function (require) {
     }
 
     $scope.stories = [
-      //0 - Non-fatal work accidents first chart
+      //0 - Job Satisfaction
       {
         color1: dvtUtils.getColorCountry(1),
         color2: dvtUtils.getColorCountry(22),
@@ -102,11 +104,13 @@ define(function (require) {
         }
         //labelTextAlign: 'left'
       },
+      // 1- Health at risk by sector and age
       {
         color1: dvtUtils.getColorCountry(2),
         color2: dvtUtils.getColorCountry(1),
         color3: dvtUtils.getEUColor(),
-        plots: OverallOpinionService.getHealthAtRiskSectorPlot($scope.pCountry1, $scope.pCountry2),
+        plotsVertical: OverallOpinionService.getHealthAtRiskSectorPlotVertical($scope.pCountry1, $scope.pCountry2),
+        plotsHorizontal: OverallOpinionService.getHealthAtRiskSectorPlotHorizontal($scope.pCountry1, $scope.pCountry2),        
         dimensions: {
           value: {
             format: {
@@ -116,11 +120,13 @@ define(function (require) {
           }
         }
       },
+      // 2 - Health at risk by gender
       {
         color1: dvtUtils.getColorCountry(2),
         color2: dvtUtils.getColorCountry(1),
         color3: dvtUtils.getEUColor(),
-        plots: OverallOpinionService.getHealthAtRiskGenderPlot($scope.pCountry1, $scope.pCountry2),
+        plotsVertical: OverallOpinionService.getHealthAtRiskGenderPlotVertical($scope.pCountry1, $scope.pCountry2),
+        plotsHorizontal: OverallOpinionService.getHealthAtRiskGenderPlotHorizontal($scope.pCountry1, $scope.pCountry2), 
         dimensions: {
           value: {
             format: {
@@ -132,6 +138,10 @@ define(function (require) {
       }
     ];
 
+    $scope.healthBySector = angular.element(window).width() > 768 ? $scope.stories[1].plotsVertical : $scope.stories[1].plotsHorizontal;
+    $scope.alignment = angular.element(window).width() > 768 ? 'center' : 'left';
+    $scope.healthByGender = angular.element(window).width() > 768 ? $scope.stories[2].plotsVertical : $scope.stories[2].plotsHorizontal;
+    
     $scope.step = 20;
 
     // Show/hide the Countries Filter List

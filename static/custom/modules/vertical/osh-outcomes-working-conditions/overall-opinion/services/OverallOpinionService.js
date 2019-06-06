@@ -96,7 +96,7 @@ define (function (require) {
                     }
                 ];
             },
-            getHealthAtRiskSectorPlot: function(pCountry1, pCountry2) {
+            getHealthAtRiskSectorPlotVertical: function(pCountry1, pCountry2) {
                 return [
                     {
                         name: "main",
@@ -125,7 +125,36 @@ define (function (require) {
                     }
                 ];
             },
-            getHealthAtRiskGenderPlot: function(pCountry1, pCountry2) {
+            getHealthAtRiskSectorPlotHorizontal: function(pCountry1, pCountry2) {
+                return [
+                    {
+                        name: "main",
+                        dataPart: "0",
+                        barSizeMax: 35,
+                        valuesAnchor: 'right',
+                        label_textMargin: 5,
+                        label_textBaseline: 'middle',
+                        valuesOptimizeLegibility: true,
+                        label_textStyle: function(scene){
+                            var countryKey = scene.firstAtoms.series;
+                            //$log.warn(countryKey);
+                            if (countryKey == 'EU28') {
+                                return dvtUtils.getEUColor();
+                            } else if(countryKey.value.match(pCountry1)){
+                                return dvtUtils.getColorCountry(1);
+                            } else if(countryKey.value.match(pCountry2)) {
+                                return dvtUtils.getColorCountry(2);
+                            }
+                            return dvtUtils.getChartLightGrayColor();
+                        },
+                        visualRoles:{
+                            series: 'series',
+                            category:'category',
+                        }
+                    }
+                ];
+            },
+            getHealthAtRiskGenderPlotVertical: function(pCountry1, pCountry2) {
                 return [
                     {
                         name: "main",
@@ -134,6 +163,35 @@ define (function (require) {
                         label_textMargin: 7,
                         label_textBaseline: 'bottom',
                         valuesAnchor: 'top',
+                        valuesOptimizeLegibility: true,
+                        label_textStyle: function(scene){
+                            var countryKey = scene.firstAtoms.series;
+                            //$log.warn(countryKey);
+                            if (countryKey == 'EU28') {
+                                return dvtUtils.getEUColor();
+                            } else if(countryKey.value.match(pCountry1)){
+                                return dvtUtils.getColorCountry(1);
+                            } else if(countryKey.value.match(pCountry2)) {
+                                return dvtUtils.getColorCountry(2);
+                            }
+                            return dvtUtils.getChartLightGrayColor();
+                        },
+                        visualRoles:{
+                            series: 'series',
+                            category:'category',
+                        }
+                    }
+                ];
+            },
+            getHealthAtRiskGenderPlotHorizontal: function(pCountry1, pCountry2) {
+                return [
+                    {
+                        name: "main",
+                        dataPart: "0",
+                        barSizeMax: 50,
+                        valuesAnchor: 'right',
+                        label_textMargin: 5,
+                        label_textBaseline: 'middle',
                         valuesOptimizeLegibility: true,
                         label_textStyle: function(scene){
                             var countryKey = scene.firstAtoms.series;
