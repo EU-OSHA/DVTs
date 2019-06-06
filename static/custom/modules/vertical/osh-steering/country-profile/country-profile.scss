@@ -1,7 +1,7 @@
 .country--profile--page{
 	.btn--block-full{
-	  margin: 2rem;
-	  text-align: center;
+	  margin: 2rem 0;
+	  text-align: left;
 		a{
 			  padding-right: 5rem;
 		}
@@ -27,6 +27,10 @@ div.partial-text{
 @media (max-width: 990px) {
 
 	.country--profile--page{
+		.btn--block-full{
+		 // margin: 2rem;
+		 // text-align: center;
+		}
 		.submenu--block{
 			.submenu--items--wrapper{
 				min-height: 7rem;
@@ -87,6 +91,29 @@ div.partial-text{
 		}	
 	}
  
+}
+
+
+
+@media (max-width: 550px) {
+	.country--profile--page{
+		.btn--block-full{
+		  margin: 2rem 0;
+		  padding: 0;
+		  text-align: center;
+			a{
+				padding-right: 4rem;
+				width: 100%;
+				display: block;
+				&:after{
+					padding: 0.5rem 1rem;
+				}
+			}
+		}
+	}
+	.regulation-page .submenu--block .submenu--items--wrapper li.active a{
+	  margin: 0 3rem;
+	}
 }
 
 
