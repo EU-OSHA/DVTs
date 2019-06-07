@@ -52,6 +52,7 @@
               legend="true"
               stacked="1" angle="{{angle}}"
               base-axis-size="{{axisSize}}"
+              datasource-and-dates="[datasetEurofound,65]"
             ></dvt-bar-chart>
           </div>
         </div>
@@ -115,8 +116,10 @@
             multiple-label-colors="false"
             leaf-content-overflow='visible'
             dimensions="stories[1].dimensions"
+            base-axis-label-text-baseline="top"
             legend="true" axis-label-word-break="{{axisWordBreak}}"
             legend-align="center" base-axis-size="{{axisSizeHealth}}"
+            datasource-and-dates="[datasetEurofound,66]"
             ></dvt-bar-chart>
           </div>
           <div class="chart--block" ng-show="pSplit == 'age'">
@@ -140,8 +143,10 @@
               leaf-content-overflow='visible'
               dimensions="stories[1].dimensions"
               legend="true"
+              base-axis-label-text-baseline="top"
               legend-align="center"
               base-axis-size="{{axisSizeHealth}}"
+              datasource-and-dates="[datasetEurofound,66]"
             ></dvt-bar-chart>
           </div>
           <div class="chart--block" ng-show="pSplit == 'gender'">
@@ -164,9 +169,10 @@
               multiple-label-colors="false"
               leaf-content-overflow='visible'
               dimensions="stories[2].dimensions"
-              legend="true"
+              legend="true" base-axis-label-text-baseline="top"
               legend-align="center"
               base-axis-size="{{axisSizeHealth}}"
+              datasource-and-dates="[datasetEurofound,66]"
             ></dvt-bar-chart>
           </div>
         </div>

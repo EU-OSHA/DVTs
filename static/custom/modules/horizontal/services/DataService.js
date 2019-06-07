@@ -58,6 +58,15 @@ define(function () {
                 return promise(url);
             },
 
+
+            getDatasourceAndDates: function(pDataset, pIndicator){
+                var url = configService.getGenericInformationDataPath() + "&dataAccessId=getDatasourceAndDates" + "&parampDataset=" + pDataset + "&parampIndicator=" + pIndicator;
+                $log.debug('getDatasourceAndDates url:' + url);
+
+                return promise(url);
+            },
+
+
             /************************************* HOME ***********************************/
 
                 getStrategiesCountries: function(){

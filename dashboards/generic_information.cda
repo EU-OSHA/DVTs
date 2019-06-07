@@ -6,6 +6,23 @@
       </Connection>
 	</DataSources>
 
+	<!-- GET DATASOURCE AND DATES -->
+	<DataAccess access="public" connection="dvt_conn" id="getDatasourceAndDates" type="sql">
+	    <Cache duration="3600" enabled="true" />
+	    <Columns />
+	   	<Parameters>
+	    	<Parameter default="15" name="pDataset" type="String"/>
+	    	<Parameter default="15" name="pIndicator" type="String"/>
+	    </Parameters>
+	    <Query>
+		    SELECT d.source, d.date_from, d.date_to 
+			FROM indicators_in_dataset iid, dataset d
+			WHERE iid.dataset_id = d.id
+			AND iid.indicator_id = ${pIndicator}
+			AND iid.dataset_id = ${pDataset};
+	    </Query>
+	</DataAccess>
+
 	<!-- HOME || ALL AVAILABLE COUNTRIES FOR NATIONAL STRATEGIES -->
 	<DataAccess access="public" connection="dvt_conn" id="getStrategiesCountries" type="sql">
 	    <Cache duration="3600" enabled="true" />

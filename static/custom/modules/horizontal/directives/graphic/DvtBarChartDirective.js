@@ -38,7 +38,7 @@
     else {
         return height * 0.55;
     }
-}</pre>
+ }</pre>
  * @param {Boolean} [label-visible="false"] Show labels
  * @param {String} [label-text-align="left"]
  * The horizontal text alignment. One of:
@@ -248,6 +248,11 @@ define(function (require) {
                 + '<div class="legend-text-block">'
                     + '<div ng-if="isMaximized && query != gauss" class="logoGraphics-wrapper"><img alt="European Agency for Safety and Health at Work" src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/EU-OSHA-en.png" class="logoGraphics"></div>'
                     + '<div class="legend-info" ng-if="isMaximized && legendClickMode && legend">Click on each value on the legend to hide/show in on the chart</div>'
+                    + '<div class="" ng-if="isMaximized">' 
+                        + '<span><b>Datasource:</b> {{datasources[0].datasource}} </span>'
+                        + '<span><b>Date:</b> from {{datasources[0].date_from}} </span>'
+                        +' <span ng-if="datasources[0].date_to != null"><b>to</b> {{datasources[0].date_to}}</span>'
+                    + '</div>'
                 + '</div>'
             + '</div>'
             //+ '<div ng-if="!!functionalLegend" class="functionalLegend" data-ng-bind-html="functionalLegend"></div>'
@@ -282,7 +287,9 @@ define(function (require) {
                 contextuals: '=?',
                 maxLabelTop:'=',
                 enlargeAction: '=',
-                axisColor: '='
+                axisColor: '=',
+                datasourceAndDates: '='
+
             },
             // TODO extract template
             template:_template,
@@ -322,6 +329,7 @@ define(function (require) {
                 scope.query = attributes.query;
                 scope.gauss = 'getGaussChartValues';
 
+                scope.datasources = [];
 
                 var definition = {
                     type: "cccBarChart",
@@ -431,10 +439,27 @@ define(function (require) {
                         xAxis_fillStyle: '#f0f0f0',
                         panel_fillStyle: attributes.panelColor || '',
                         axisLabelWordBreak: attributes.axisLabelWordBreak || 0,
-                        //customTooltip: attributes.customTooltip || 0
+                        //customTooltip: attributes.customTooltip || 0,
+                        datasourceAndDates: scope.datasourceAndDates || []
                     }
 
                 };
+
+                if(!!scope.datasourceAndDates){
+                    var datasource = scope.datasourceAndDates[0];
+                    var indicator = scope.datasourceAndDates[1];
+                    dataService.getDatasourceAndDates(datasource, indicator).then(function (data) {
+                        data.data.resultset.map(function (elem) {
+                          scope.datasources.push({
+                            datasource: elem[0],
+                            date_from: elem[1],
+                            date_to: elem[2]
+                          });
+                        });
+                    }).catch(function (err) {
+                      throw err;
+                    });
+                }
 
                 /*if(!!definition.chartDefinition.customTooltip == 1){
 
@@ -450,11 +475,6 @@ define(function (require) {
                                "</div>";
                     }
                 }*/
-                
-                /*definition.chartDefinition.baseAxisBandSpacing = function(){
-                    $log.warn('Entra en funcion');
-                    return 30;
-                };*/
 
                 if(!!definition.chartDefinition.axisLabelWordBreak){
                     definition.chartDefinition.baseAxisTooltipFormat = function(scene){
@@ -536,8 +556,6 @@ define(function (require) {
                                 ticks[i].atoms.category.label = scope.substring + '...';
                             }
                         }
-                        
-
                         /*this.add(pv.Label)
                           .textMargin(15)
                           .text(function(scene) {
