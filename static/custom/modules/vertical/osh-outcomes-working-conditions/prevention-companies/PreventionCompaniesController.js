@@ -50,7 +50,9 @@ define(function (require) {
     $scope.color1 = angular.element(window).width() > 768 ? dvtUtils.getColorCountry(22) : dvtUtils.getColorCountry(1);
     $scope.color2 = angular.element(window).width() > 768 ? dvtUtils.getColorCountry(1) : dvtUtils.getColorCountry(22);
     $scope.color3 = angular.element(window).width() > 768 ? dvtUtils.getAccidentsColors(4) : dvtUtils.getColorCountry(1);
-    $scope.color4 = angular.element(window).width() > 768 ? dvtUtils.getColorCountry(1) : dvtUtils.getAccidentsColors(4) ;
+    $scope.color4 = angular.element(window).width() > 768 ? dvtUtils.getColorCountry(1) : dvtUtils.getAccidentsColors(4);
+    $scope.axisSizeRA = angular.element(window).width() > 768 ? 50 : 100;
+    $scope.axisWordBreak = angular.element(window).width() > 768 ? 1 : '';
 
     var width = angular.element($window).width();
       angular.element($window).bind('resize', function() {
@@ -89,7 +91,8 @@ define(function (require) {
         color1: dvtUtils.getColorCountry(1),
         color2: dvtUtils.getColorCountry(2),
         color3: dvtUtils.getEUColor(),
-        plots: PreventionCompaniesService.getRiskAssessmentSplit($scope.pCountry1, $scope.pCountry2),
+        plotsVertical: PreventionCompaniesService.getRiskAssessmentSplitVertical($scope.pCountry1, $scope.pCountry2),
+        plotsHorizontal: PreventionCompaniesService.getRiskAssessmentSplitHorizontal($scope.pCountry1, $scope.pCountry2),
         dimensions: {
           value: {
             format: {
@@ -114,6 +117,9 @@ define(function (require) {
         }
       }
     ];
+
+    $scope.riskAssesmentPlots = angular.element(window).width() > 768 ? $scope.stories[0].plotsVertical : $scope.stories[0].plotsHorizontal;
+    $scope.alignment = angular.element(window).width() > 768 ? 'center' : 'left';
 
     $scope.step = {
       chart1: 20,
