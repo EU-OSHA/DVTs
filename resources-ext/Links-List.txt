@@ -131,6 +131,7 @@
 401-http://www.et.gr/idocs-nph/search/pdfViewerForm.html?args=5C7QrtC22wEsrjP0JAlxBXdtvSoClrL8bReVM9NqpX_3U4LPcASlceJInJ48_97uHrMts-zFzeyCiBSQOpYnTy36MacmUFCx2ppFvBej56Mmc8Qdb8ZfRJqZnsIAdk8Lv_e6czmhEembNmZCMxLMteg4qiK6queFJfXza5ZKd11w0E97FM7_RXZ_zBXpQd1c
 402-http://www.pisrs.si/Pis.web/pregledPredpisa?id=RESO26
 402-https://www.uradni-list.si/glasilo-uradni-list-rs/vsebina?urlid=2003126&amp;stevilka=5394
+605-https://osha.europa.eu/en/surveys-and-statistics-osh/esener
 2081-https://en.wikipedia.org/wiki/Google_Translate
 2102-https://www.sozialministerium.at/siteEN/ 
 2102-https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Austria 
@@ -835,27 +836,16 @@
 3247-http://www.hsl.gov.uk/
 3247-https://oshwiki.eu/wiki/OSH_system_at_national_level_-_United_Kingdom
 3249-http://www.terviseamet.ee/fileadmin/dok/Tervishoid/tootervis/KH_ja_TPH_statistika_2014.pdf
-3252-&lt;a%20data-ui-sref=&quot;OSH-authorities&quot;&gt;Labour-Inspection&lt;/a&gt;
 3252-http://www.arbeitsinspektion.gv.at/inspektorat/
-3256-&lt;a%20data-ui-sref=&quot;OSH-authorities&quot;&gt;Labour-Inspection&lt;/a&gt;
 3256-http://www.gli.government.bg/
-3260-&lt;a%20data-ui-sref=&quot;OSH-authorities&quot;&gt;Labour-Inspection&lt;/a&gt;
 3260-http://www.mlsi.gov.cy/dli
-3264-&lt;a%20data-ui-sref=&quot;OSH-authorities&quot;&gt;Labour-Inspection&lt;/a&gt;
 3264-http://ti.ee/en/
 3268-http://www.tyosuojelu.fi/web/en/home
-3268-&lt;a%20data-ui-sref=&quot;OSH-authorities&quot;&gt;Labour-Inspection&lt;/a&gt;
 3268-http://stm.fi/en/occupational-safety-and-health
-3272-&lt;a%20data-ui-sref=&quot;OSH-authorities&quot;&gt;Labour-Inspection&lt;/a&gt;
 3272-https://www.sepenet.gr
-3276-&lt;a%20data-ui-sref=&quot;OSH-authorities&quot;&gt;Labour-Inspection&lt;/a&gt;
 3276-http://www.ommf.gov.hu
-3280-&lt;a%20data-ui-sref=&quot;OSH-authorities&quot;&gt;Labour-Inspection&lt;/a&gt;
 3280-http://www.ommf.gov.hu
-3284-&lt;a%20data-ui-sref=&quot;OSH-authorities&quot;&gt;Labour-Inspection&lt;/a&gt;
 3284-http://www.vdi.lt
 3287-http://www.vdi.lt/
-3288-&lt;a%20data-ui-sref=&quot;OSH-authorities&quot;&gt;Labour-Inspection&lt;/a&gt;
 3288-http://www.pip.gov.pl
-3292-&lt;a%20data-ui-sref=&quot;OSH-authorities&quot;&gt;Labour-Inspection&lt;/a&gt;
 
