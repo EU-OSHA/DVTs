@@ -33,19 +33,27 @@ define(function (require) {
 
     $(window).on("resize",function(e){
       resolution = screen.width;
+      anchorOffset();
     });
 
-    if($location.hash() != null && $location.hash() != ''){
-      //$log.warn($location.hash());
-      $timeout(function(){
-        //$anchorScroll();
-        if(resolution < 768){
-          angular.element('html, body').animate({'scrollTop': angular.element('#'+$location.hash())[0].offsetTop + 200}, 'slow', 'swing');
-        }else{
-          angular.element('html, body').animate({'scrollTop': angular.element('#'+$location.hash())[0].offsetTop - 250}, 'slow', 'swing');
-        }
-      }, 500);
+    anchorOffset();
 
+    function anchorOffset(){
+      if($location.hash() != null && $location.hash() != ''){
+        //$log.warn($location.hash());
+        $timeout(function(){
+          //$anchorScroll();
+          if(resolution < 768){
+            //console.log( angular.element('#'+$location.hash())[0].offsetTop );
+            angular.element('html, body').animate({'scrollTop': angular.element('#'+$location.hash())[0].offsetTop + 290 }, 'slow', 'swing');
+          }else if(resolution >= 768 && resolution < 1024){
+            angular.element('html, body').animate({'scrollTop': angular.element('#'+$location.hash())[0].offsetTop - 90 }, 'slow', 'swing');
+          }
+          else{
+            angular.element('html, body').animate({'scrollTop': angular.element('#'+$location.hash())[0].offsetTop-200}, 'slow', 'swing');
+          }
+        }, 500);
+      }
     }
 
     // Show/hide the Countries Filter List
