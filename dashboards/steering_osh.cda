@@ -48,8 +48,8 @@
 	    <Query>
 	      SELECT id, literal_id 
 	      FROM indicator 
-	      WHERE id IN (46, 47, 48, 49, 98, 50, 51, 99)
-	      ORDER BY FIELD (id ,46, 47, 48, 49, 98, 50, 51, 99)
+	      WHERE id IN (46, 47, 48, 49, 50, 98, 51, 99)
+	      ORDER BY FIELD (id ,46, 47, 48, 49, 50, 98, 51, 99)
 	    </Query>
 	</DataAccess>
 
@@ -61,7 +61,7 @@
 	      <Parameter default="AT" name="pCountry" type="String" />
 	    </Parameters>
 	    <Query>
-	      SELECT n.country_code as country_code, n.literal_id as country_name, text_1_literal_id as text1, text_2_literal_id as text2, text_3_literal_id as text3, text_4_literal_id as text4, text_5_literal_id as text5, text_6_literal_id as text6, text_7_literal_id as text7, text_8_literal_id as text8
+	      SELECT n.country_code as country_code, n.literal_id as country_name, text_1_literal_id as text1, text_2_literal_id as text2, text_3_literal_id as text3, text_4_literal_id as text4, text_6_literal_id as text5, text_5_literal_id as text6, text_7_literal_id as text7, text_8_literal_id as text8
 	      FROM strategies_page sp, nuts n
 	      where page='STRATEGY'
 	      AND n.id = sp.nuts_id
