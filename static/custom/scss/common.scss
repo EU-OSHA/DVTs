@@ -825,6 +825,11 @@
             opacity:0.6;
           }
         }
+        &.min-height{
+          .title--card{
+            min-height: 10rem;
+          }
+        }
         .title--card{
           font-size:2.8rem;
           display: block;
