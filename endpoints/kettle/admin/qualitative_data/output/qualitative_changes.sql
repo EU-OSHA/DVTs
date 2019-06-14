@@ -1,5 +1,53 @@
 -- The tool is already created
 
+INSERT INTO dataset (name, source, date_from, date_to) VALUES ("BAROMETER_DATA", "National Strategies reports", "2018-01-01", null);
+
+SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);
+INSERT INTO literal (id, chart_id, section_id, type) VALUES (@maxId, NULL, NULL, "INDICATOR_NAME");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@maxId, "EN", 1, "Resources and timeframe");
+INSERT INTO indicator (name, literal_id) VALUES ("Resources and timeframe", @maxId);
+
+SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);
+INSERT INTO literal (id, chart_id, section_id, type) VALUES (@maxId, NULL, NULL, "INDICATOR_NAME");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@maxId, "EN", 1, "Relationship to EU Strategic Framework");
+INSERT INTO indicator (name, literal_id) VALUES ("Relationship to EU Strategic Framework", @maxId);
+
+SET @datasetId = (SELECT id FROM dataset  WHERE source="National Strategies reports" AND date_from="2018-01-01");
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Basic information");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
+
+SET @datasetId = (SELECT id FROM dataset  WHERE source="National Strategies reports" AND date_from="2018-01-01");
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Background");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
+
+SET @datasetId = (SELECT id FROM dataset  WHERE source="National Strategies reports" AND date_from="2018-01-01");
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Characteristics and objectives");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
+
+SET @datasetId = (SELECT id FROM dataset  WHERE source="National Strategies reports" AND date_from="2018-01-01");
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Details and activity");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
+
+SET @datasetId = (SELECT id FROM dataset  WHERE source="National Strategies reports" AND date_from="2018-01-01");
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Actors and stakeholders");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
+
+SET @datasetId = (SELECT id FROM dataset  WHERE source="National Strategies reports" AND date_from="2018-01-01");
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Evaluation");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
+
+SET @datasetId = (SELECT id FROM dataset  WHERE source="National Strategies reports" AND date_from="2018-01-01");
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Response to EU Challenges");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
+
+SET @datasetId = (SELECT id FROM dataset  WHERE source="National Strategies reports" AND date_from="2018-01-01");
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Resources and timeframe");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
+
+SET @datasetId = (SELECT id FROM dataset  WHERE source="National Strategies reports" AND date_from="2018-01-01");
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Relationship to EU Strategic Framework");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
+
 INSERT INTO chart (id, section_id)  VALUES(20010,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="ECONOMIC_SECTOR_PROFILE" AND t.name="osha_dvt_barometer"	) );
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Employment per sector");
 SET @datasetId = (SELECT id FROM dataset WHERE source="EUROSTAT" AND date_from="2017-01-01");
@@ -34,6 +82,16 @@ INSERT INTO chart (id, section_id)  VALUES(20017,	(	SELECT s.id  FROM section s 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Total, male and female employment rate");
 SET @datasetId = (SELECT id FROM dataset WHERE source="EUROSTAT" AND date_from="2017-01-01");
 INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20017, @indicatorId, @datasetId);
+
+INSERT INTO chart (id, section_id)  VALUES(20014,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="ECONOMIC_SECTOR_PROFILE" AND t.name="osha_dvt_barometer"	) );
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Income per capita");
+SET @datasetId = (SELECT id FROM dataset WHERE source="EUROSTAT" AND date_from="2010-01-01" AND date_to="2016-12-31");
+INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20014, @indicatorId, @datasetId);
+
+INSERT INTO chart (id, section_id)  VALUES(20022,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="WORK_ACCIDENTS" AND t.name="osha_dvt_barometer"	) );
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Non-fatal work accidents");
+SET @datasetId = (SELECT id FROM dataset WHERE source="EUROSTAT" AND date_from="2010-01-01" AND date_to="2016-12-31");
+INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20022, @indicatorId, @datasetId);
 
 INSERT INTO chart (id, section_id)  VALUES(20023,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="WORK_ACCIDENTS" AND t.name="osha_dvt_barometer"	) );
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Fatal work accidents");
@@ -210,20 +268,13 @@ SET @indicatorId = (SELECT id FROM indicator WHERE name="Does your organisation 
 SET @datasetId = (SELECT id FROM dataset WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
 INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20085, @indicatorId, @datasetId);
 
-INSERT INTO chart (id, section_id)  VALUES(20014,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="ECONOMIC_SECTOR_PROFILE" AND t.name="osha_dvt_barometer"	) );
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Income per capita");
-SET @datasetId = (SELECT id FROM dataset WHERE source="EUROSTAT" AND date_from="2010-01-01" AND date_to="2016-12-31");
-INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20014, @indicatorId, @datasetId);
-
-INSERT INTO chart (id, section_id)  VALUES(20022,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="WORK_ACCIDENTS" AND t.name="osha_dvt_barometer"	) );
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Non-fatal work accidents");
-SET @datasetId = (SELECT id FROM dataset WHERE source="EUROSTAT" AND date_from="2010-01-01" AND date_to="2016-12-31");
-INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20022, @indicatorId, @datasetId);
-
 INSERT INTO chart (id, section_id)  VALUES(20086,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="WORKER_INVOLVEMENT" AND t.name="osha_dvt_barometer"	) );
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Does your organisation have a health and safety delegate or committee? - Eurofound EWCS Data");
 SET @datasetId = (SELECT id FROM dataset WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
 INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20086, @indicatorId, @datasetId);
+
+SET @toolID = (SELECT id FROM tool WHERE name = "osha_dvt_barometer");
+INSERT INTO section (name, tool_id) VALUES ("ECONOMIC_AND_SECTOR_PROFILE", @toolID);
 
 SET @toolID = (SELECT id FROM tool WHERE name = "osha_dvt_barometer");
 INSERT INTO section (name, tool_id) VALUES ("OSH_STATISTICS", @toolID);
@@ -251,13 +302,7 @@ INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+74, null, @sectionId, "STRATEGY_ACTORS");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+74, "EN", 1, "According to the Austrian sources experiences from previous occupational safety and health strategies have shown that good cooperation of all stakeholders involved in the field of safety and health at work is crucial for the success of the strategy. For that reason, the Austrian OSH Strategy 2013 – 2020 will try to further extend the cooperation of all stakeholders.
-The Occupational Safety and Health Advisory Board officially appoints the leaders of:
-
-The four working groups
-The strategic platform
-The evaluation team
-The Labour Inspectorate published a list of members of the four working groups. Members of the strategic platform are: AUVA - Austrian Social Insurance for Occupational Risks, WKO - Austrian Federal Economic Chamber, IV - Federation of Austrian Industries, BAK - the Federal Chamber of Labour, ÖGB - Confederation of Austrian Trade Unions, ÖÄK – Austrian Medical Association, ZAI – Central Labour Inspectorate.The evaluation team consists of experts from institutions of the strategic platform.");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+74, "EN", 1, "<p>According to the Austrian sources experiences from previous occupational safety and health strategies have shown that good cooperation of all stakeholders involved in the field of safety and health at work is crucial for the success of the strategy. For that reason, the Austrian OSH Strategy 2013 – 2020 will try to further extend the cooperation of all stakeholders. The Occupational Safety and Health Advisory Board officially appoints the leaders of:</p><ul><li>The four working groups</li><li>The strategic platform</li><li>The evaluation team</li></ul><p>The Labour Inspectorate published a list of members of the four working groups. Members of the strategic platform are: AUVA - Austrian Social Insurance for Occupational Risks, WKO - Austrian Federal Economic Chamber, IV - Federation of Austrian Industries, BAK - the Federal Chamber of Labour, ÖGB - Confederation of Austrian Trade Unions, ÖÄK – Austrian Medical Association, ZAI – Central Labour Inspectorate.The evaluation team consists of experts from institutions of the strategic platform.</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
@@ -1025,7 +1070,7 @@ INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+225, null, @sectionId, "STRATEGY_DETAILS");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+225, "EN", 1, "<p><strong>Objective 1: Improve the effectiveness of the institutions dedicated to occupational risk prevention </strong>.</p><ul><li>Strengthen and enhance public institutions dedicated to the prevention of occupational hazards and adjust their functions to the current demands of society.</li><li>Create and implement mechanisms for coordination among institutions competent in prevention, both in the workplace and in the health, education and industry.</li><li>Promote institutional collaboration in the development of public policies preventive.</li><li>Strengthen the leadership of the government in managing the prevention of occupational hazards</li></ul><p><strong>Objective 2: Boost action by the public authorities in the area of analysis, research, promotion, support, technical assistance, supervision and control of occupational risk prevention </strong><br />2.A Promotion, Support and Technical Assistance</p><ul><li>Inform and make aware businesses with particular attention to SMEs and micro enterprises about the prevention of occupational hazards and the availability of official tools that facilitate enforcement.</li><li>Improve accessibility and enforcement in the prevention of occupational hazards</li></ul><p>2.B Surveillance and control of compliance</p><ul><li>Adjust the penalties and procedural rules for offenses in the Social policy legislation</li><li>Develop specific inspection activities designed to promote, facilitate and ensure compliance with norms</li><li>Improve and strengthen complementarity between analysis and assistance, monitoring and control</li><li>Develop procedures for cooperation between public authorities to enhance joint action and new tools actions</li></ul><p>2. C Incentive development</p><ul><li>Promote excellence in the management of safety and health at work by recognizing, exchange and dissemination of good practice.</li><li>To promote the analysis and efficiency of incentive measures</li></ul><p>2.D Awareness</p><ul><li>Enhance the awareness of society in the prevention of occupational risks, with greater involvement of the media</li></ul><p>2.E Education and training</p><ul><li>Consolidate the integration of training related to the prevention of occupational risks into different stages of the education system.</li><li>Design and promote the education of specific groups.</li><li>Adapt the rules on training in PRL to changes</li></ul><p>2.F Information and Research</p><ul><li>Improve the coordination of the activities developed by governmental institutions in the collection, analysis and dissemination of information about the prevention of occupational risks and about studies and research in that area, setting up a quality information system</li><li>Strengthen and revitalize the network of public research institutes dealing with OSH. Strengthen their cooperation to optimise R &amp; D in OSH.</li><li>Promote the generation of knowledge on safety and health work and improve its accessibility.</li></ul><p><strong>Objective 3: Promote the improvement of occupational safety and health conditions with the participation of the social partners and regional governments, particularly in the sectors, activities, groups and companies at greatest risk </strong><br />3.A Strengthen actions of the government, with the&nbsp;participation of the social partners, aimed at sectors, activities, groups and companies most at risK:</p><ul><li>Promote the improvement of working conditions in sectors and activities with high incidence rates of occupational accidents and diseases.</li><li>Promote road safety in cooperation with the Directorate General of Traffic, with the aim of reducing work related traffic accidents</li><li>Design and implement an action plan for reducing musculoskeletal disorders</li><li>Promote safety and health of specific groups.</li><li>Develop and disseminate reference methodologies for assessing</li><li>Psychosocial risks reference, enabling a better understanding and prevention of such risks.</li><li>Studying emerging risks, their causes and impact on safety and health workers, particularly those derived from new technologies.</li></ul><p>3.B Occupational diseases</p><ul><li>Improve and promote the research on occupational diseases,&nbsp;as well as detection and communication, with the aim of preferring prevention to rehabilitation.</li></ul><p>3.C Health Surveillance</p><ul><li>Promote more efficient monitoring of health.</li><li>Health promotion: promote the culture of healthy behaviour in the workplace.</li></ul><p>3.D Prevention management in SMEs</p><ul><li>Develop tools to facilitate and harmonize preventive management in small businesses regardless of preventive methodologies</li><li>Promote the integration of prevention in the business processes, especially in SMEs and micro-enterprises.</li><li>Develop and disseminate tools to facilitate the coordination of business activities</li></ul><p><strong> Objective 4: Strengthen the engagement of the social partners and the involvement of employers and workers in improving occupational safety and health</strong><br />4.A Institutional participation.&nbsp;</p><ul><li>Strengthen the role of consultative bodies and institutional participation in prevention of occupational hazards:</li><li>Set up Working Groups in the National Commission on Safety and Health at Work to promote compliance with the objectives and priorities agreed upon in this strategy.</li><li>Promote the actions of the Foundation for the Prevention of Occupational Hazards.</li></ul><p>4.B Collective bargaining</p><ul><li>Enhance collective bargaining to reach agreements to promote the integration of prevention of occupational risks in enterprises and the involvement of workers and employers in complying with their preventive obligations.</li><li>Promote the inclusion of the corresponding collective bargaining agreements (through its Monitoring Committee) criteria and guidelines on prevention of occupational hazards.</li><li>Strengthen the commitment of the workers and employers to comply with the plan of prevention of occupational risks of the enterprise.</li></ul><p>4.C Support for SMEs</p><ul><li>Promote the integration of risk prevention in SMEs with greater involvement of employers and workers</li><li>Develop sectoral programs that foster greater involvement of employers, workers and their representatives in preventive activities through specific agreements of the parties in the collective bargaining aimed at SMEs and in cross-cutting programs.</li></ul><p>4.D Business leadership and participation of workers.</p><ul><li>Encourage the commitment of the company in the management of prevention and collaboration of workers in preventive activity to achieve integrated prevention management</li><li>Design and implement formulas recognition and incentives to companies that promote collaboration and involvement of workers, through their representatives in the preventive management.</li></ul><p>4.E OSH culture in companies</p><ul><li>Promote the culture of safety and health in the company:</li><li>Promote training in prevention of occupational risks for prevention delegates and middle managers to achieve a dynamic effect on strengthening preventive culture.</li><li>Promote awareness of employers about the benefits of management leadership in improving working conditions and the importance of a results-oriented prevention policy.</li></ul>");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+225, "EN", 1, "<p><strong>Objective 1: Improve the effectiveness of the institutions dedicated to occupational risk prevention </strong>.</p><ul><li>Strengthen and enhance public institutions dedicated to the prevention of occupational hazards and adjust their functions to the current demands of society.</li><li>Create and implement mechanisms for coordination among institutions competent in prevention, both in the workplace and in the health, education and industry.</li><li>Promote institutional collaboration in the development of public policies preventive.</li><li>Strengthen the leadership of the government in managing the prevention of occupational hazards</li></ul><p><strong>Objective 2: Boost action by the public authorities in the area of analysis, research, promotion, support, technical assistance, supervision and control of occupational risk prevention </strong><br />2.A Promotion, Support and Technical Assistance</p><ul><li>Inform and make aware businesses with particular attention to SMEs and micro enterprises about the prevention of occupational hazards and the availability of official tools that facilitate enforcement.</li><li>Improve accessibility and enforcement in the prevention of occupational hazards</li></ul><p>2.B Surveillance and control of compliance</p><ul><li>Adjust the penalties and procedural rules for offenses in the Social policy legislation</li><li>Develop specific inspection activities designed to promote, facilitate and ensure compliance with norms</li><li>Improve and strengthen complementarity between analysis and assistance, monitoring and control</li><li>Develop procedures for cooperation between public authorities to enhance joint action and new tools actions</li></ul><p>2.C Incentive development</p><ul><li>Promote excellence in the management of safety and health at work by recognizing, exchange and dissemination of good practice.</li><li>To promote the analysis and efficiency of incentive measures</li></ul><p>2.D Awareness</p><ul><li>Enhance the awareness of society in the prevention of occupational risks, with greater involvement of the media</li></ul><p>2.E Education and training</p><ul><li>Consolidate the integration of training related to the prevention of occupational risks into different stages of the education system.</li><li>Design and promote the education of specific groups.</li><li>Adapt the rules on training in PRL to changes</li></ul><p>2.F Information and Research</p><ul><li>Improve the coordination of the activities developed by governmental institutions in the collection, analysis and dissemination of information about the prevention of occupational risks and about studies and research in that area, setting up a quality information system</li><li>Strengthen and revitalize the network of public research institutes dealing with OSH. Strengthen their cooperation to optimise R &amp; D in OSH.</li><li>Promote the generation of knowledge on safety and health work and improve its accessibility.</li></ul><p><strong>Objective 3: Promote the improvement of occupational safety and health conditions with the participation of the social partners and regional governments, particularly in the sectors, activities, groups and companies at greatest risk </strong><br />3.A Strengthen actions of the government, with the&nbsp;participation of the social partners, aimed at sectors, activities, groups and companies most at risK:</p><ul><li>Promote the improvement of working conditions in sectors and activities with high incidence rates of occupational accidents and diseases.</li><li>Promote road safety in cooperation with the Directorate General of Traffic, with the aim of reducing work related traffic accidents</li><li>Design and implement an action plan for reducing musculoskeletal disorders</li><li>Promote safety and health of specific groups.</li><li>Develop and disseminate reference methodologies for assessing</li><li>Psychosocial risks reference, enabling a better understanding and prevention of such risks.</li><li>Studying emerging risks, their causes and impact on safety and health workers, particularly those derived from new technologies.</li></ul><p>3.B Occupational diseases</p><ul><li>Improve and promote the research on occupational diseases,&nbsp;as well as detection and communication, with the aim of preferring prevention to rehabilitation.</li></ul><p>3.C Health Surveillance</p><ul><li>Promote more efficient monitoring of health.</li><li>Health promotion: promote the culture of healthy behaviour in the workplace.</li></ul><p>3.D Prevention management in SMEs</p><ul><li>Develop tools to facilitate and harmonize preventive management in small businesses regardless of preventive methodologies</li><li>Promote the integration of prevention in the business processes, especially in SMEs and micro-enterprises.</li><li>Develop and disseminate tools to facilitate the coordination of business activities</li></ul><p><strong> Objective 4: Strengthen the engagement of the social partners and the involvement of employers and workers in improving occupational safety and health</strong><br />4.A Institutional participation.&nbsp;</p><ul><li>Strengthen the role of consultative bodies and institutional participation in prevention of occupational hazards:</li><li>Set up Working Groups in the National Commission on Safety and Health at Work to promote compliance with the objectives and priorities agreed upon in this strategy.</li><li>Promote the actions of the Foundation for the Prevention of Occupational Hazards.</li></ul><p>4.B Collective bargaining</p><ul><li>Enhance collective bargaining to reach agreements to promote the integration of prevention of occupational risks in enterprises and the involvement of workers and employers in complying with their preventive obligations.</li><li>Promote the inclusion of the corresponding collective bargaining agreements (through its Monitoring Committee) criteria and guidelines on prevention of occupational hazards.</li><li>Strengthen the commitment of the workers and employers to comply with the plan of prevention of occupational risks of the enterprise.</li></ul><p>4.C Support for SMEs</p><ul><li>Promote the integration of risk prevention in SMEs with greater involvement of employers and workers</li><li>Develop sectoral programs that foster greater involvement of employers, workers and their representatives in preventive activities through specific agreements of the parties in the collective bargaining aimed at SMEs and in cross-cutting programs.</li></ul><p>4.D Business leadership and participation of workers.</p><ul><li>Encourage the commitment of the company in the management of prevention and collaboration of workers in preventive activity to achieve integrated prevention management</li><li>Design and implement formulas recognition and incentives to companies that promote collaboration and involvement of workers, through their representatives in the preventive management.</li></ul><p>4.E OSH culture in companies</p><ul><li>Promote the culture of safety and health in the company:</li><li>Promote training in prevention of occupational risks for prevention delegates and middle managers to achieve a dynamic effect on strengthening preventive culture.</li><li>Promote awareness of employers about the benefits of management leadership in improving working conditions and the importance of a results-oriented prevention policy.</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
@@ -3268,6 +3313,11 @@ INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+716, null, @
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+716, "EN", 1, "Research Institutes");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
+SET @sectionId = (SELECT id FROM section WHERE name="WORKING_CONDITIONS" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+718, null, @sectionId, "BOX_MESSAGE");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+718, "EN", 1, "Percentages might not total 100% due to rounding");
+
+SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2001, null, @sectionId, "MENU");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2001, "EN", 1, "Generic information");
@@ -3345,7 +3395,7 @@ INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2016, null, @sectionId, "MENU");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2016, "EN", 1, "OSH infrastucture");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2016, "EN", 1, "OSH infrastructure");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
@@ -3507,6 +3557,21 @@ INSERT INTO translation (literal_id, language, is_default, text)  VALUES (@maxId
 
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId, null, null, "BUTTON");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (@maxId, "EN", 1, "See less");
+
+SET @maxLiteralId = (SELECT MAX(id)+1 FROM literal WHERE id<10000);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxLiteralId, NULL, NULL, "SPLIT_ANSWER_NAME");
+INSERT INTO translation (literal_id, language, is_default, text) VALUE (@maxLiteralId, "EN", 1, "Often");
+INSERT INTO split_answer (literal_id) VALUES(@maxLiteralId);
+
+SET @maxLiteralId = (SELECT MAX(id)+1 FROM literal WHERE id<10000);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxLiteralId, NULL, NULL, "SPLIT_ANSWER_NAME");
+INSERT INTO translation (literal_id, language, is_default, text) VALUE (@maxLiteralId, "EN", 1, "In some departments");
+INSERT INTO split_answer (literal_id) VALUES(@maxLiteralId);
+
+SET @maxLiteralId = (SELECT MAX(id)+1 FROM literal WHERE id<10000);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxLiteralId, NULL, NULL, "SPLIT_COMPANY_SIZE_NAME");
+INSERT INTO translation (literal_id, language, is_default, text) VALUE (@maxLiteralId, "EN", 1, "50 to 249 employees");
+INSERT INTO split_company_size (literal_id) VALUES(@maxLiteralId);
 
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="AT");
@@ -6528,7 +6593,7 @@ SET @nutsId = (SELECT id FROM nuts WHERE country_code="PT");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, NULL, "MATRIX_STATISTICS_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "Ministério da Saúde; Administração Central do Sistema de Saúde, I.P. (ACSS, I.P.) ");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, NULL, "MATRIX_STATISTICS_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p><strong>Data holder<a>:</a></strong></p><p><a href=\"http://www.acss.minsaude.pt/DepartamentoseUnidades/DepartamentoGest%C3%A3oePlaneamentoRH/EstudosePlaneamentoemRecursosHumanos/EstudoseRelat%C3%B3rios/AcidentesdeTrabalho/tabid/332/language/pt-PT/Default.aspx\" target=\"_blank\">&nbsp;Ministério da Saúde; Administração Central do Sistema de Saúde, I.P. (ACSS, I.P.)&nbsp;</a></p><p><a><strong style=\"color: #000000;\">Functionalities:</strong></a></p><ul><li>Monitoring of work accidents - (Data available for 2007, 2011-2013; 2012-2014)</li></ul>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p><strong>Data holder<a>:</a></strong></p><p><a href=\"https://www.sns.gov.pt/entidades-de-saude/administracao-central-do-sistema-de-saude/\" target=\"_blank\">&nbsp;Ministério da Saúde; Administração Central do Sistema de Saúde, I.P. (ACSS, I.P.)&nbsp;</a></p><p><a><strong style=\"color: #000000;\">Functionalities:</strong></a></p><ul><li>Monitoring of work accidents - (Data available for 2007, 2011-2013; 2012-2014)</li></ul>");
 INSERT INTO matrix_page(page, nuts_id, check_1, check_2, check_3, check_4, text_1_literal_id, text_2_literal_id, text_3_literal_id) VALUES ("MATRIX_STATISTICS", @nutsId, 1, 0, 0, false, @maxId+1, @maxId+2, null);
 
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -7629,7 +7694,7 @@ SET @nutsId = (SELECT id FROM nuts WHERE country_code="ES");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, NULL, "MATRIX_STATISTICS_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "The Centre for Research in Occupational Health (Centro de Investigación en Salud Laboral, CISAL)");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, NULL, "MATRIX_STATISTICS_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p><a href=\"http://www.upf.edu/cisal/cisal/presentacion.html\" target=\"_blank\">Link&nbsp;</a>to the institute<br /><strong>Short abstract<br /></strong></p><p>The Centre for Research in Occupational Health (Centro de Investigación en Salud Laboral, CISAL) at the University Pompeu Fabra in Barcelona was set up as Observatory for Occupational Health (Observatorio de Salud Laboral, OSL). It is a joint initiative by the university, the accident insurance association Unión de Mutuas, and ISTAS. It conducts research into health risks, vulnerable groups of workers, and OSH policies</p><p>See more in&nbsp;<a href=\"https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Spain\" target=\"_blank\">OSHWiki</a></p><p><strong>&nbsp;</strong></p><p><strong>&nbsp;</strong></p><p>&nbsp;</p><p><strong>&nbsp;</strong></p><p>&nbsp;</p>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p><a href=\"https://www.upf.edu/web/cisal\" target=\"_blank\">Link&nbsp;</a>to the institute<br /><strong>Short abstract<br /></strong></p><p>The Centre for Research in Occupational Health (Centro de Investigación en Salud Laboral, CISAL) at the University Pompeu Fabra in Barcelona was set up as Observatory for Occupational Health (Observatorio de Salud Laboral, OSL). It is a joint initiative by the university, the accident insurance association Unión de Mutuas, and ISTAS. It conducts research into health risks, vulnerable groups of workers, and OSH policies</p><p>See more in&nbsp;<a href=\"https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Spain\" target=\"_blank\">OSHWiki</a></p><p><strong>&nbsp;</strong></p><p><strong>&nbsp;</strong></p><p>&nbsp;</p><p><strong>&nbsp;</strong></p><p>&nbsp;</p>");
 INSERT INTO matrix_page(page, nuts_id, check_1, check_2, check_3, check_4, text_1_literal_id, text_2_literal_id, text_3_literal_id) VALUES ("MATRIX_STATISTICS", @nutsId, 0, 0, 1, false, @maxId+1, @maxId+2, null);
 
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);

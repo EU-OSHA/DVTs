@@ -111,7 +111,7 @@
   <hop> <from>endDate not defined</from><to>Filter rows</to><enabled>Y</enabled> </hop>
   <hop> <from>Modified Java Script Value</from><to>Text file output</to><enabled>Y</enabled> </hop>
   <hop> <from>Filter rows</from><to>Modified Java Script Value</to><enabled>Y</enabled> </hop>
-  <hop> <from>Modified Java Script Value</from><to>Insert dataset without endDate</to><enabled>N</enabled> </hop>
+  <hop> <from>Modified Java Script Value</from><to>Insert dataset without endDate</to><enabled>Y</enabled> </hop>
   <hop> <from>Get Variables</from><to>endDate not defined</to><enabled>Y</enabled> </hop>
   </order>
   <step>
