@@ -142,7 +142,7 @@ UPDATE value SET value = 1.056 WHERE profile_id=@profileID AND indicator_id=@ind
 SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.country_code="EU28"  AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="GPD per capita in relation to EU28 average");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.992 WHERE profile_id=@profileID AND indicator_id=@indicatorID AND dataset_id=@datasetID;
+UPDATE value SET value = 1 WHERE profile_id=@profileID AND indicator_id=@indicatorID AND dataset_id=@datasetID;
 
 SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.country_code="IS"  AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="GPD per capita in relation to EU28 average");
