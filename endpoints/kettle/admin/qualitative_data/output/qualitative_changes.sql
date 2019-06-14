@@ -1,53 +1,5 @@
 -- The tool is already created
 
-INSERT INTO dataset (name, source, date_from, date_to) VALUES ("BAROMETER_DATA", "National Strategies reports", "2018-01-01", null);
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);
-INSERT INTO literal (id, chart_id, section_id, type) VALUES (@maxId, NULL, NULL, "INDICATOR_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@maxId, "EN", 1, "Resources and timeframe");
-INSERT INTO indicator (name, literal_id) VALUES ("Resources and timeframe", @maxId);
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);
-INSERT INTO literal (id, chart_id, section_id, type) VALUES (@maxId, NULL, NULL, "INDICATOR_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@maxId, "EN", 1, "Relationship to EU Strategic Framework");
-INSERT INTO indicator (name, literal_id) VALUES ("Relationship to EU Strategic Framework", @maxId);
-
-SET @datasetId = (SELECT id FROM dataset  WHERE source="National Strategies reports" AND date_from="2018-01-01");
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Basic information");
-INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
-
-SET @datasetId = (SELECT id FROM dataset  WHERE source="National Strategies reports" AND date_from="2018-01-01");
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Background");
-INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
-
-SET @datasetId = (SELECT id FROM dataset  WHERE source="National Strategies reports" AND date_from="2018-01-01");
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Characteristics and objectives");
-INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
-
-SET @datasetId = (SELECT id FROM dataset  WHERE source="National Strategies reports" AND date_from="2018-01-01");
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Details and activity");
-INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
-
-SET @datasetId = (SELECT id FROM dataset  WHERE source="National Strategies reports" AND date_from="2018-01-01");
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Actors and stakeholders");
-INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
-
-SET @datasetId = (SELECT id FROM dataset  WHERE source="National Strategies reports" AND date_from="2018-01-01");
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Evaluation");
-INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
-
-SET @datasetId = (SELECT id FROM dataset  WHERE source="National Strategies reports" AND date_from="2018-01-01");
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Response to EU Challenges");
-INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
-
-SET @datasetId = (SELECT id FROM dataset  WHERE source="National Strategies reports" AND date_from="2018-01-01");
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Resources and timeframe");
-INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
-
-SET @datasetId = (SELECT id FROM dataset  WHERE source="National Strategies reports" AND date_from="2018-01-01");
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Relationship to EU Strategic Framework");
-INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
-
 INSERT INTO chart (id, section_id)  VALUES(20010,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="ECONOMIC_SECTOR_PROFILE" AND t.name="osha_dvt_barometer"	) );
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Employment per sector");
 SET @datasetId = (SELECT id FROM dataset WHERE source="EUROSTAT" AND date_from="2017-01-01");
@@ -4070,7 +4022,8 @@ SET @nutsId = (SELECT id FROM nuts WHERE country_code="EE");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "The Labour Inspectorate (Tööinspektsioon)");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "See more in its <a target=\"_blank\" href=\"http://www.ti.ee/index.php?page=3& 
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "See more in its <a target=\"_blank\" href=\"http://www.ti.ee/index.php?page=3& 
+
 \">website</a> and in <a target=\"_blank\" href=\"https://oshwiki.eu/wiki/OSH_system_at_national_level_–_Estonia\">OSHwiki</a>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p>The Labour Inspectorateis a government agency operating under the jurisdiction of the Ministry of Social Affairs, and its main functions are to:</p><ul><li>Arrange for the exercise of state supervision in the working environment with respect to compliance with the requirements of legislation regulating occupational health and safety and labour relations and to apply enforcement by the state on the bases and to the extent prescribed by law;&nbsp;</li><li>Exercise market supervision over safety of the personal protective equipment in the use in the working environment and to ensure the protective properties of the equipment at sites of manufacturing and sale;&nbsp;</li><li>Exercise supervision over investigations into occupational accidents and diseases and over the implementation of measures for the prevention of occupational accidents and diseases;&nbsp;</li><li>Investigate fatal and if there is a need, then conduct an analysis of the causes of serious occupational accidents and diseases and analyze their causes;&nbsp;</li><li>Collect statistics of accidents at work and conduct analysis thereof;&nbsp;</li><li>Exercise supervision over the use of genetically modified micro-organisms in closed environments to the extent prescribed by law;&nbsp;</li><li>Take decisions in cases prescribed by law on issuing or withholding approval;&nbsp;</li><li>Carry out administrative proceedings; approve administrative acts and rules;&nbsp;</li><li>Carry out extrajudicial proceeding of misdemeanours to the extent prescribed by law;&nbsp;</li><li>Initiate criminal proceedings and carry out urgent investigative actions;&nbsp;</li><li>Carry out and resolve petitions from individuals on working environment issues;&nbsp;</li><li>Resolve individual labour disputes pursuant to the procedures prescribed by law.</li></ul>");
@@ -4749,7 +4702,8 @@ SET @nutsId = (SELECT id FROM nuts WHERE country_code="LV");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "Ministry of Welfare");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "See more in its <a target=\"_blank\" href=\"http://www.lm.gov.lv/ 
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "See more in its <a target=\"_blank\" href=\"http://www.lm.gov.lv/ 
+
 \">website</a> and in <a target=\"_blank\" href=\"https://oshwiki.eu/wiki/OSH_systems_at_national_level_-_Latvia\">OSHwiki</a>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p>The main tasks of the Ministry of Welfare in the field of occupational safety and health are following:</p><ul><li>To develop the national policy of OSH and to facilitate its implementation;</li><li>To ensure elaboration of national OSH legislation and its compliance with the EU and international legal acts in this field;</li><li>To promote creation of safe and harmless working environment, protection of the employees’ right to occupational health and safety and social guarantees;</li><li>To facilitate the process of development of OSH administration system;</li><li>To promote informing of employers and employees on occupational safety and health issues.</li></ul><p>In order to achieve these objectives the Ministry of Welfare is actively working together with several other institutions and social partners. The structure of the Ministry of Welfare is based on several departments of which the Department of Labour Relations and OSH Policy is responsible for OSH area. Several other departments are involved (like Social Insurance Department, Department of Labour Market policy etc.).&nbsp;</p><p>The Ministry of Welfare mainly collaborates with all the institutions under its supervision and authority, including the key institution for supervision and control of the occupational safety and health protection system – the State Labour Inspectorate. The Ministry also collaborates with social partners like the Latvian Trade Union Confederation and the Employers’ Confederation of Latvia. Collaboration is mostly accomplished during the process of elaboration of new OSH legislative acts. Representatives of the social partners are involved in the process as from the initial stages of drafting legislation providing opportunity for their contribution co-ordinate joint activities. The Department of Labour Relations and OSH Policy in collaboration with the State Labour Inspectorate is also responsible for coordination of proposals for the annual preventive action plan funded by the State Social Insurance Agency (Valsts Sociālās apdrošināšanas aģentūra).</p>");
@@ -4801,7 +4755,8 @@ SET @nutsId = (SELECT id FROM nuts WHERE country_code="LT");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "The Ministry of Social Security and Labour (Socialinės apsaugos ir darbo ministerija)");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "See more in its <a target=\"_blank\" href=\"http://www.socmin.lt/
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "See more in its <a target=\"_blank\" href=\"http://www.socmin.lt/
+
 \">website</a> and in <a target=\"_blank\" href=\"https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Lithuania \">OSHwiki</a>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "The Ministry of Social Security and Labour (Socialinės apsaugos ir darbo ministerija) and the Ministry of Health (Sveikatos apsaugos ministerija) implement State policy in the OSH area in accordance with the Constitution of the Republic of Lithuania, the Labour Code, the laws, resolutions of the Government and other regulations. The Minister of Social Security and Labour himself or together with another minister or ministers approves the OSH regulations establishing the procedure for their entry into force and application. The Health Minister approves health care regulations (hygiene norms), which establish the levels of working environment factors not harmful to workers’ health.");
@@ -4822,7 +4777,8 @@ SET @nutsId = (SELECT id FROM nuts WHERE country_code="LT");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "The State Labour Inspectorate");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "See more in its <a target=\"_blank\" href=\"http://www.vdi.lt/
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "See more in its <a target=\"_blank\" href=\"http://www.vdi.lt/
+
 \">website</a> and in <a target=\"_blank\" href=\"https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Lithuania \">OSHwiki</a>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p>Remit of the State Labour Inspectorate under the Ministry of Social Security and Labour includes the prevention of accidents at work, occupational diseases and violations of occupational safety and health requirements of standard acts on labour law. It also covers the control of compliance of the Labour Code of the Republic of Lithuania, laws and other standard acts regulating occupational safety and health as well as labour relations in enterprises, institutions, organisations or other organisational structures, irrespective of their forms of ownership, type, nature of activity, also in these cases when an employer is a natural person (hereinafter referred to as the „employers“).</p><p>The State Labour Inspectorate consists of the administration and territorial divisions. The administration consists of the Chief State Labour Inspector and his deputies as well as divisions and services coordinating and organising activities of the State Labour Inspectorate. The number and subordination of these divisions and services as well as territorial divisions is established by approval of the structure of the State Labour Inspectorate. Sectors uniting specialists of certain activities may be established within the structural subdivisions.</p>");
