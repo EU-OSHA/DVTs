@@ -1,5 +1,5 @@
 -- |----------------------------------------------------------- |
--- |     Load version Estable 1.7 of the qualitative database   |
+-- |     Load version Estable 1.8 of the qualitative database   |
 -- |----------------------------------------------------------- |
 -- Delete the literals from Barometer (Literal id 20000-29999)
 DELETE FROM literal WHERE id >= 20000 AND id < 30000;
@@ -83,230 +83,281 @@ CREATE TABLE IF NOT EXISTS `strategies_page` (
 
 -- The tool is already created
 
-INSERT INTO chart (id, section_id)  VALUES(20010, ( SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="ECONOMIC_SECTOR_PROFILE" AND t.name="osha_dvt_barometer"  ) );
+INSERT INTO dataset (name, source, date_from, date_to) VALUES ("BAROMETER_DATA", "National Strategies reports", "2018-01-01", null);
+
+SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);
+INSERT INTO literal (id, chart_id, section_id, type) VALUES (@maxId, NULL, NULL, "INDICATOR_NAME");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@maxId, "EN", 1, "Resources and timeframe");
+INSERT INTO indicator (name, literal_id) VALUES ("Resources and timeframe", @maxId);
+
+SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);
+INSERT INTO literal (id, chart_id, section_id, type) VALUES (@maxId, NULL, NULL, "INDICATOR_NAME");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@maxId, "EN", 1, "Relationship to EU Strategic Framework");
+INSERT INTO indicator (name, literal_id) VALUES ("Relationship to EU Strategic Framework", @maxId);
+
+SET @datasetId = (SELECT id FROM dataset  WHERE source="National Strategies reports" AND date_from="2018-01-01");
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Basic information");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
+
+SET @datasetId = (SELECT id FROM dataset  WHERE source="National Strategies reports" AND date_from="2018-01-01");
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Background");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
+
+SET @datasetId = (SELECT id FROM dataset  WHERE source="National Strategies reports" AND date_from="2018-01-01");
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Characteristics and objectives");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
+
+SET @datasetId = (SELECT id FROM dataset  WHERE source="National Strategies reports" AND date_from="2018-01-01");
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Details and activity");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
+
+SET @datasetId = (SELECT id FROM dataset  WHERE source="National Strategies reports" AND date_from="2018-01-01");
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Actors and stakeholders");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
+
+SET @datasetId = (SELECT id FROM dataset  WHERE source="National Strategies reports" AND date_from="2018-01-01");
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Evaluation");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
+
+SET @datasetId = (SELECT id FROM dataset  WHERE source="National Strategies reports" AND date_from="2018-01-01");
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Response to EU Challenges");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
+
+SET @datasetId = (SELECT id FROM dataset  WHERE source="National Strategies reports" AND date_from="2018-01-01");
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Resources and timeframe");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
+
+SET @datasetId = (SELECT id FROM dataset  WHERE source="National Strategies reports" AND date_from="2018-01-01");
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Relationship to EU Strategic Framework");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
+
+INSERT INTO chart (id, section_id)  VALUES(20010,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="ECONOMIC_SECTOR_PROFILE" AND t.name="osha_dvt_barometer"	) );
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Employment per sector");
 SET @datasetId = (SELECT id FROM dataset WHERE source="EUROSTAT" AND date_from="2017-01-01");
 INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20010, @indicatorId, @datasetId);
 
-INSERT INTO chart (id, section_id)  VALUES(20011, ( SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="ECONOMIC_SECTOR_PROFILE" AND t.name="osha_dvt_barometer"  ) );
+INSERT INTO chart (id, section_id)  VALUES(20011,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="ECONOMIC_SECTOR_PROFILE" AND t.name="osha_dvt_barometer"	) );
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Employment rate");
 SET @datasetId = (SELECT id FROM dataset WHERE source="EUROSTAT" AND date_from="2017-01-01");
 INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20011, @indicatorId, @datasetId);
 
-INSERT INTO chart (id, section_id)  VALUES(20012, ( SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="ECONOMIC_SECTOR_PROFILE" AND t.name="osha_dvt_barometer"  ) );
+INSERT INTO chart (id, section_id)  VALUES(20012,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="ECONOMIC_SECTOR_PROFILE" AND t.name="osha_dvt_barometer"	) );
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Unemployment rate");
 SET @datasetId = (SELECT id FROM dataset WHERE source="EUROSTAT" AND date_from="2017-01-01");
 INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20012, @indicatorId, @datasetId);
 
-INSERT INTO chart (id, section_id)  VALUES(20013, ( SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="ECONOMIC_SECTOR_PROFILE" AND t.name="osha_dvt_barometer"  ) );
+INSERT INTO chart (id, section_id)  VALUES(20013,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="ECONOMIC_SECTOR_PROFILE" AND t.name="osha_dvt_barometer"	) );
 SET @indicatorId = (SELECT id FROM indicator WHERE name="GPD per capita in relation to EU28 average");
 SET @datasetId = (SELECT id FROM dataset WHERE source="EUROSTAT" AND date_from="2017-01-01");
 INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20013, @indicatorId, @datasetId);
 
-INSERT INTO chart (id, section_id)  VALUES(20015, ( SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="WORKFORCE_PROFILE" AND t.name="osha_dvt_barometer"  ) );
+INSERT INTO chart (id, section_id)  VALUES(20015,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="WORKFORCE_PROFILE" AND t.name="osha_dvt_barometer"	) );
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Median age of population");
 SET @datasetId = (SELECT id FROM dataset WHERE source="EUROSTAT" AND date_from="2017-01-01");
 INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20015, @indicatorId, @datasetId);
 
-INSERT INTO chart (id, section_id)  VALUES(20016, ( SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="WORKFORCE_PROFILE" AND t.name="osha_dvt_barometer"  ) );
+INSERT INTO chart (id, section_id)  VALUES(20016,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="WORKFORCE_PROFILE" AND t.name="osha_dvt_barometer"	) );
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Ageing workers (55 to 64) employment rate");
 SET @datasetId = (SELECT id FROM dataset WHERE source="EUROSTAT" AND date_from="2017-01-01");
 INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20016, @indicatorId, @datasetId);
 
-INSERT INTO chart (id, section_id)  VALUES(20017, ( SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="WORKFORCE_PROFILE" AND t.name="osha_dvt_barometer"  ) );
+INSERT INTO chart (id, section_id)  VALUES(20017,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="WORKFORCE_PROFILE" AND t.name="osha_dvt_barometer"	) );
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Total, male and female employment rate");
 SET @datasetId = (SELECT id FROM dataset WHERE source="EUROSTAT" AND date_from="2017-01-01");
 INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20017, @indicatorId, @datasetId);
 
-INSERT INTO chart (id, section_id)  VALUES(20023, ( SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="WORK_ACCIDENTS" AND t.name="osha_dvt_barometer" ) );
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Fatal work accidents");
-SET @datasetId = (SELECT id FROM dataset WHERE source="EUROSTAT" AND date_from="2016-01-01");
-INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20023, @indicatorId, @datasetId);
-
-INSERT INTO chart (id, section_id)  VALUES(20024, ( SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="WORK_ACCIDENTS" AND t.name="osha_dvt_barometer" ) );
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Estimation of non-fatal accidents based on fatal accidents (estimated)");
-SET @datasetId = (SELECT id FROM dataset WHERE source="EUROSTAT" AND date_from="2016-01-01");
-INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20024, @indicatorId, @datasetId);
-
-INSERT INTO chart (id, section_id)  VALUES(20025, ( SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="WORK_ACCIDENTS" AND t.name="osha_dvt_barometer" ) );
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Level of reporting of non-fatal accidents");
-SET @datasetId = (SELECT id FROM dataset WHERE source="EUROSTAT" AND date_from="2016-01-01");
-INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20025, @indicatorId, @datasetId);
-
-INSERT INTO chart (id, section_id)  VALUES(20026, ( SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="HEALTH_PERCEPTION" AND t.name="osha_dvt_barometer"  ) );
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Satisfaction with working conditions");
-SET @datasetId = (SELECT id FROM dataset WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
-INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20026, @indicatorId, @datasetId);
-
-INSERT INTO chart (id, section_id)  VALUES(20027, ( SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="HEALTH_PERCEPTION" AND t.name="osha_dvt_barometer"  ) );
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Health negative affection");
-SET @datasetId = (SELECT id FROM dataset WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
-INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20027, @indicatorId, @datasetId);
-
-INSERT INTO chart (id, section_id)  VALUES(20028, ( SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="HEALTH_PERCEPTION" AND t.name="osha_dvt_barometer"  ) );
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Health problem in the last 12 months");
-SET @datasetId = (SELECT id FROM dataset WHERE source="EUROSTAT" AND date_from="2013-01-01");
-INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20028, @indicatorId, @datasetId);
-
-INSERT INTO chart (id, section_id)  VALUES(20029, ( SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="HEALTH_PERCEPTION" AND t.name="osha_dvt_barometer"  ) );
-SET @indicatorId = (SELECT id FROM indicator WHERE name="More than 15 days of absence");
-SET @datasetId = (SELECT id FROM dataset WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
-INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20029, @indicatorId, @datasetId);
-
-INSERT INTO chart (id, section_id)  VALUES(20030, ( SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="HEALTH_PERCEPTION" AND t.name="osha_dvt_barometer"  ) );
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Sick at work");
-SET @datasetId = (SELECT id FROM dataset WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
-INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20030, @indicatorId, @datasetId);
-
-INSERT INTO chart (id, section_id)  VALUES(20031, ( SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="HEALTH_PERCEPTION" AND t.name="osha_dvt_barometer"  ) );
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Be able to do current job until 60 years old");
-SET @datasetId = (SELECT id FROM dataset WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
-INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20031, @indicatorId, @datasetId);
-
-INSERT INTO chart (id, section_id)  VALUES(20038, ( SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="OSH_CULTURE_HEALTH_AWARENESS" AND t.name="osha_dvt_barometer" ) );
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Use of personal protective equipment");
-SET @datasetId = (SELECT id FROM dataset WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
-INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20038, @indicatorId, @datasetId);
-
-INSERT INTO chart (id, section_id)  VALUES(20039, ( SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="OSH_CULTURE_HEALTH_AWARENESS" AND t.name="osha_dvt_barometer" ) );
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Information about risks");
-SET @datasetId = (SELECT id FROM dataset WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
-INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20039, @indicatorId, @datasetId);
-
-INSERT INTO chart (id, section_id)  VALUES(20040, ( SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="OVERALL_OPINION" AND t.name="osha_dvt_barometer"  ) );
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Job satisfaction");
-SET @datasetId = (SELECT id FROM dataset WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
-INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20040, @indicatorId, @datasetId);
-
-INSERT INTO chart (id, section_id)  VALUES(20041, ( SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="OVERALL_OPINION" AND t.name="osha_dvt_barometer"  ) );
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Health at risk");
-SET @datasetId = (SELECT id FROM dataset WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
-INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20041, @indicatorId, @datasetId);
-
-INSERT INTO chart (id, section_id)  VALUES(20049, ( SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer" ) );
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Exposure to vibrations");
-SET @datasetId = (SELECT id FROM dataset WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
-INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20049, @indicatorId, @datasetId);
-
-INSERT INTO chart (id, section_id)  VALUES(20050, ( SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer" ) );
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Exposure to loud noise");
-SET @datasetId = (SELECT id FROM dataset WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
-INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20050, @indicatorId, @datasetId);
-
-INSERT INTO chart (id, section_id)  VALUES(20051, ( SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer" ) );
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Exposure to temperatures");
-SET @datasetId = (SELECT id FROM dataset WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
-INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20051, @indicatorId, @datasetId);
-
-INSERT INTO chart (id, section_id)  VALUES(20052, ( SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer" ) );
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Exposure to low temperatures");
-SET @datasetId = (SELECT id FROM dataset WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
-INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20052, @indicatorId, @datasetId);
-
-INSERT INTO chart (id, section_id)  VALUES(20053, ( SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer" ) );
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Exposure to breathing in smoke, fumes, powder or dust");
-SET @datasetId = (SELECT id FROM dataset WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
-INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20053, @indicatorId, @datasetId);
-
-INSERT INTO chart (id, section_id)  VALUES(20054, ( SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer" ) );
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Exposure to breathing in vapours");
-SET @datasetId = (SELECT id FROM dataset WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
-INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20054, @indicatorId, @datasetId);
-
-INSERT INTO chart (id, section_id)  VALUES(20055, ( SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer" ) );
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Exposure to chemical products or substances");
-SET @datasetId = (SELECT id FROM dataset WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
-INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20055, @indicatorId, @datasetId);
-
-INSERT INTO chart (id, section_id)  VALUES(20056, ( SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer" ) );
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Exposure to infections materials");
-SET @datasetId = (SELECT id FROM dataset WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
-INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20056, @indicatorId, @datasetId);
-
-INSERT INTO chart (id, section_id)  VALUES(20069, ( SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="WORKER_INVOLVEMENT" AND t.name="osha_dvt_barometer" ) );
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Does your organisation have a regular meeting in which employees can express their views about what is happening in the organisation?");
-SET @datasetId = (SELECT id FROM dataset WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
-INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20069, @indicatorId, @datasetId);
-
-INSERT INTO chart (id, section_id)  VALUES(20073, ( SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="MENTAL_RISKS" AND t.name="osha_dvt_barometer" ) );
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Time pressure - Eurofound EWCS Data");
-SET @datasetId = (SELECT id FROM dataset WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
-INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20073, @indicatorId, @datasetId);
-
-INSERT INTO chart (id, section_id)  VALUES(20074, ( SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="MENTAL_RISKS" AND t.name="osha_dvt_barometer" ) );
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Poor communication - Eurofound EWCS Data");
-SET @datasetId = (SELECT id FROM dataset WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
-INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20074, @indicatorId, @datasetId);
-
-INSERT INTO chart (id, section_id)  VALUES(20075, ( SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="MENTAL_RISKS" AND t.name="osha_dvt_barometer" ) );
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Influence - Eurofound EWCS Data");
-SET @datasetId = (SELECT id FROM dataset WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
-INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20075, @indicatorId, @datasetId);
-
-INSERT INTO chart (id, section_id)  VALUES(20076, ( SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="MENTAL_RISKS" AND t.name="osha_dvt_barometer" ) );
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Job insecurity - Eurofound EWCS Data");
-SET @datasetId = (SELECT id FROM dataset WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
-INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20076, @indicatorId, @datasetId);
-
-INSERT INTO chart (id, section_id)  VALUES(20077, ( SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="MENTAL_RISKS" AND t.name="osha_dvt_barometer" ) );
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Difficult clients - Eurofound EWCS Data");
-SET @datasetId = (SELECT id FROM dataset WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
-INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20077, @indicatorId, @datasetId);
-
-INSERT INTO chart (id, section_id)  VALUES(20078, ( SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="MENTAL_RISKS" AND t.name="osha_dvt_barometer" ) );
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Working hours - Eurofound EWCS Data");
-SET @datasetId = (SELECT id FROM dataset WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
-INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20078, @indicatorId, @datasetId);
-
-INSERT INTO chart (id, section_id)  VALUES(20079, ( SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="MENTAL_RISKS" AND t.name="osha_dvt_barometer" ) );
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Discrimination - Eurofound EWCS Data");
-SET @datasetId = (SELECT id FROM dataset WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
-INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20079, @indicatorId, @datasetId);
-
-INSERT INTO chart (id, section_id)  VALUES(20080, ( SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer" ) );
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Tiring or painful positions - Eurofound EWCS Data");
-SET @datasetId = (SELECT id FROM dataset WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
-INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20080, @indicatorId, @datasetId);
-
-INSERT INTO chart (id, section_id)  VALUES(20081, ( SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer" ) );
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Does your work involve sitting? - Eurofound EWCS Data");
-SET @datasetId = (SELECT id FROM dataset WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
-INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20081, @indicatorId, @datasetId);
-
-INSERT INTO chart (id, section_id)  VALUES(20082, ( SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer" ) );
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Carrying or moving heavy loads - Eurofound EWCS Data");
-SET @datasetId = (SELECT id FROM dataset WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
-INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20082, @indicatorId, @datasetId);
-
-INSERT INTO chart (id, section_id)  VALUES(20083, ( SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer" ) );
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Repetitive hand or arm movements - Eurofound EWCS Data");
-SET @datasetId = (SELECT id FROM dataset WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
-INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20083, @indicatorId, @datasetId);
-
-INSERT INTO chart (id, section_id)  VALUES(20084, ( SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer" ) );
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Lifting or moving people - Eurofound EWCS Data");
-SET @datasetId = (SELECT id FROM dataset WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
-INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20084, @indicatorId, @datasetId);
-
-INSERT INTO chart (id, section_id)  VALUES(20085, ( SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="WORKER_INVOLVEMENT" AND t.name="osha_dvt_barometer" ) );
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Does your organisation have a trade union, works council or a similar committee representing employees? - Eurofound EWCS Data");
-SET @datasetId = (SELECT id FROM dataset WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
-INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20085, @indicatorId, @datasetId);
-
-INSERT INTO chart (id, section_id)  VALUES(20014, ( SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="ECONOMIC_SECTOR_PROFILE" AND t.name="osha_dvt_barometer"  ) );
+INSERT INTO chart (id, section_id)  VALUES(20014,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="ECONOMIC_SECTOR_PROFILE" AND t.name="osha_dvt_barometer"	) );
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Income per capita");
 SET @datasetId = (SELECT id FROM dataset WHERE source="EUROSTAT" AND date_from="2010-01-01" AND date_to="2016-12-31");
 INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20014, @indicatorId, @datasetId);
 
-INSERT INTO chart (id, section_id)  VALUES(20022, ( SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="WORK_ACCIDENTS" AND t.name="osha_dvt_barometer" ) );
+INSERT INTO chart (id, section_id)  VALUES(20022,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="WORK_ACCIDENTS" AND t.name="osha_dvt_barometer"	) );
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Non-fatal work accidents");
 SET @datasetId = (SELECT id FROM dataset WHERE source="EUROSTAT" AND date_from="2010-01-01" AND date_to="2016-12-31");
 INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20022, @indicatorId, @datasetId);
 
-INSERT INTO chart (id, section_id)  VALUES(20086, ( SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="WORKER_INVOLVEMENT" AND t.name="osha_dvt_barometer" ) );
+INSERT INTO chart (id, section_id)  VALUES(20023,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="WORK_ACCIDENTS" AND t.name="osha_dvt_barometer"	) );
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Fatal work accidents");
+SET @datasetId = (SELECT id FROM dataset WHERE source="EUROSTAT" AND date_from="2016-01-01");
+INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20023, @indicatorId, @datasetId);
+
+INSERT INTO chart (id, section_id)  VALUES(20024,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="WORK_ACCIDENTS" AND t.name="osha_dvt_barometer"	) );
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Estimation of non-fatal accidents based on fatal accidents (estimated)");
+SET @datasetId = (SELECT id FROM dataset WHERE source="EUROSTAT" AND date_from="2016-01-01");
+INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20024, @indicatorId, @datasetId);
+
+INSERT INTO chart (id, section_id)  VALUES(20025,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="WORK_ACCIDENTS" AND t.name="osha_dvt_barometer"	) );
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Level of reporting of non-fatal accidents");
+SET @datasetId = (SELECT id FROM dataset WHERE source="EUROSTAT" AND date_from="2016-01-01");
+INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20025, @indicatorId, @datasetId);
+
+INSERT INTO chart (id, section_id)  VALUES(20026,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="HEALTH_PERCEPTION" AND t.name="osha_dvt_barometer"	) );
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Satisfaction with working conditions");
+SET @datasetId = (SELECT id FROM dataset WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
+INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20026, @indicatorId, @datasetId);
+
+INSERT INTO chart (id, section_id)  VALUES(20027,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="HEALTH_PERCEPTION" AND t.name="osha_dvt_barometer"	) );
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Health negative affection");
+SET @datasetId = (SELECT id FROM dataset WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
+INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20027, @indicatorId, @datasetId);
+
+INSERT INTO chart (id, section_id)  VALUES(20028,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="HEALTH_PERCEPTION" AND t.name="osha_dvt_barometer"	) );
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Health problem in the last 12 months");
+SET @datasetId = (SELECT id FROM dataset WHERE source="EUROSTAT" AND date_from="2013-01-01");
+INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20028, @indicatorId, @datasetId);
+
+INSERT INTO chart (id, section_id)  VALUES(20029,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="HEALTH_PERCEPTION" AND t.name="osha_dvt_barometer"	) );
+SET @indicatorId = (SELECT id FROM indicator WHERE name="More than 15 days of absence");
+SET @datasetId = (SELECT id FROM dataset WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
+INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20029, @indicatorId, @datasetId);
+
+INSERT INTO chart (id, section_id)  VALUES(20030,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="HEALTH_PERCEPTION" AND t.name="osha_dvt_barometer"	) );
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Sick at work");
+SET @datasetId = (SELECT id FROM dataset WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
+INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20030, @indicatorId, @datasetId);
+
+INSERT INTO chart (id, section_id)  VALUES(20031,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="HEALTH_PERCEPTION" AND t.name="osha_dvt_barometer"	) );
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Be able to do current job until 60 years old");
+SET @datasetId = (SELECT id FROM dataset WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
+INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20031, @indicatorId, @datasetId);
+
+INSERT INTO chart (id, section_id)  VALUES(20038,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="OSH_CULTURE_HEALTH_AWARENESS" AND t.name="osha_dvt_barometer"	) );
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Use of personal protective equipment");
+SET @datasetId = (SELECT id FROM dataset WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
+INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20038, @indicatorId, @datasetId);
+
+INSERT INTO chart (id, section_id)  VALUES(20039,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="OSH_CULTURE_HEALTH_AWARENESS" AND t.name="osha_dvt_barometer"	) );
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Information about risks");
+SET @datasetId = (SELECT id FROM dataset WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
+INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20039, @indicatorId, @datasetId);
+
+INSERT INTO chart (id, section_id)  VALUES(20040,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="OVERALL_OPINION" AND t.name="osha_dvt_barometer"	) );
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Job satisfaction");
+SET @datasetId = (SELECT id FROM dataset WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
+INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20040, @indicatorId, @datasetId);
+
+INSERT INTO chart (id, section_id)  VALUES(20041,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="OVERALL_OPINION" AND t.name="osha_dvt_barometer"	) );
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Health at risk");
+SET @datasetId = (SELECT id FROM dataset WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
+INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20041, @indicatorId, @datasetId);
+
+INSERT INTO chart (id, section_id)  VALUES(20049,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer"	) );
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Exposure to vibrations");
+SET @datasetId = (SELECT id FROM dataset WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
+INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20049, @indicatorId, @datasetId);
+
+INSERT INTO chart (id, section_id)  VALUES(20050,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer"	) );
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Exposure to loud noise");
+SET @datasetId = (SELECT id FROM dataset WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
+INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20050, @indicatorId, @datasetId);
+
+INSERT INTO chart (id, section_id)  VALUES(20051,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer"	) );
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Exposure to temperatures");
+SET @datasetId = (SELECT id FROM dataset WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
+INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20051, @indicatorId, @datasetId);
+
+INSERT INTO chart (id, section_id)  VALUES(20052,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer"	) );
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Exposure to low temperatures");
+SET @datasetId = (SELECT id FROM dataset WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
+INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20052, @indicatorId, @datasetId);
+
+INSERT INTO chart (id, section_id)  VALUES(20053,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer"	) );
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Exposure to breathing in smoke, fumes, powder or dust");
+SET @datasetId = (SELECT id FROM dataset WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
+INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20053, @indicatorId, @datasetId);
+
+INSERT INTO chart (id, section_id)  VALUES(20054,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer"	) );
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Exposure to breathing in vapours");
+SET @datasetId = (SELECT id FROM dataset WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
+INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20054, @indicatorId, @datasetId);
+
+INSERT INTO chart (id, section_id)  VALUES(20055,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer"	) );
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Exposure to chemical products or substances");
+SET @datasetId = (SELECT id FROM dataset WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
+INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20055, @indicatorId, @datasetId);
+
+INSERT INTO chart (id, section_id)  VALUES(20056,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer"	) );
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Exposure to infections materials");
+SET @datasetId = (SELECT id FROM dataset WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
+INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20056, @indicatorId, @datasetId);
+
+INSERT INTO chart (id, section_id)  VALUES(20069,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="WORKER_INVOLVEMENT" AND t.name="osha_dvt_barometer"	) );
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Does your organisation have a regular meeting in which employees can express their views about what is happening in the organisation?");
+SET @datasetId = (SELECT id FROM dataset WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
+INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20069, @indicatorId, @datasetId);
+
+INSERT INTO chart (id, section_id)  VALUES(20073,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="MENTAL_RISKS" AND t.name="osha_dvt_barometer"	) );
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Time pressure - Eurofound EWCS Data");
+SET @datasetId = (SELECT id FROM dataset WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
+INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20073, @indicatorId, @datasetId);
+
+INSERT INTO chart (id, section_id)  VALUES(20074,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="MENTAL_RISKS" AND t.name="osha_dvt_barometer"	) );
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Poor communication - Eurofound EWCS Data");
+SET @datasetId = (SELECT id FROM dataset WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
+INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20074, @indicatorId, @datasetId);
+
+INSERT INTO chart (id, section_id)  VALUES(20075,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="MENTAL_RISKS" AND t.name="osha_dvt_barometer"	) );
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Influence - Eurofound EWCS Data");
+SET @datasetId = (SELECT id FROM dataset WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
+INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20075, @indicatorId, @datasetId);
+
+INSERT INTO chart (id, section_id)  VALUES(20076,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="MENTAL_RISKS" AND t.name="osha_dvt_barometer"	) );
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Job insecurity - Eurofound EWCS Data");
+SET @datasetId = (SELECT id FROM dataset WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
+INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20076, @indicatorId, @datasetId);
+
+INSERT INTO chart (id, section_id)  VALUES(20077,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="MENTAL_RISKS" AND t.name="osha_dvt_barometer"	) );
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Difficult clients - Eurofound EWCS Data");
+SET @datasetId = (SELECT id FROM dataset WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
+INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20077, @indicatorId, @datasetId);
+
+INSERT INTO chart (id, section_id)  VALUES(20078,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="MENTAL_RISKS" AND t.name="osha_dvt_barometer"	) );
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Working hours - Eurofound EWCS Data");
+SET @datasetId = (SELECT id FROM dataset WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
+INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20078, @indicatorId, @datasetId);
+
+INSERT INTO chart (id, section_id)  VALUES(20079,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="MENTAL_RISKS" AND t.name="osha_dvt_barometer"	) );
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Discrimination - Eurofound EWCS Data");
+SET @datasetId = (SELECT id FROM dataset WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
+INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20079, @indicatorId, @datasetId);
+
+INSERT INTO chart (id, section_id)  VALUES(20080,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer"	) );
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Tiring or painful positions - Eurofound EWCS Data");
+SET @datasetId = (SELECT id FROM dataset WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
+INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20080, @indicatorId, @datasetId);
+
+INSERT INTO chart (id, section_id)  VALUES(20081,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer"	) );
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Does your work involve sitting? - Eurofound EWCS Data");
+SET @datasetId = (SELECT id FROM dataset WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
+INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20081, @indicatorId, @datasetId);
+
+INSERT INTO chart (id, section_id)  VALUES(20082,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer"	) );
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Carrying or moving heavy loads - Eurofound EWCS Data");
+SET @datasetId = (SELECT id FROM dataset WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
+INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20082, @indicatorId, @datasetId);
+
+INSERT INTO chart (id, section_id)  VALUES(20083,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer"	) );
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Repetitive hand or arm movements - Eurofound EWCS Data");
+SET @datasetId = (SELECT id FROM dataset WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
+INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20083, @indicatorId, @datasetId);
+
+INSERT INTO chart (id, section_id)  VALUES(20084,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer"	) );
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Lifting or moving people - Eurofound EWCS Data");
+SET @datasetId = (SELECT id FROM dataset WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
+INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20084, @indicatorId, @datasetId);
+
+INSERT INTO chart (id, section_id)  VALUES(20085,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="WORKER_INVOLVEMENT" AND t.name="osha_dvt_barometer"	) );
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Does your organisation have a trade union, works council or a similar committee representing employees? - Eurofound EWCS Data");
+SET @datasetId = (SELECT id FROM dataset WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
+INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20085, @indicatorId, @datasetId);
+
+INSERT INTO chart (id, section_id)  VALUES(20086,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="WORKER_INVOLVEMENT" AND t.name="osha_dvt_barometer"	) );
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Does your organisation have a health and safety delegate or committee? - Eurofound EWCS Data");
 SET @datasetId = (SELECT id FROM dataset WHERE source="Eurofound EWCS Data" AND date_from="2015-01-01");
 INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20086, @indicatorId, @datasetId);
+
+SET @toolID = (SELECT id FROM tool WHERE name = "osha_dvt_barometer");
+INSERT INTO section (name, tool_id) VALUES ("ECONOMIC_AND_SECTOR_PROFILE", @toolID);
 
 SET @toolID = (SELECT id FROM tool WHERE name = "osha_dvt_barometer");
 INSERT INTO section (name, tool_id) VALUES ("OSH_STATISTICS", @toolID);
@@ -334,13 +385,7 @@ INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+74, null, @sectionId, "STRATEGY_ACTORS");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+74, "EN", 1, "According to the Austrian sources experiences from previous occupational safety and health strategies have shown that good cooperation of all stakeholders involved in the field of safety and health at work is crucial for the success of the strategy. For that reason, the Austrian OSH Strategy 2013 – 2020 will try to further extend the cooperation of all stakeholders.
-The Occupational Safety and Health Advisory Board officially appoints the leaders of:
-
-The four working groups
-The strategic platform
-The evaluation team
-The Labour Inspectorate published a list of members of the four working groups. Members of the strategic platform are: AUVA - Austrian Social Insurance for Occupational Risks, WKO - Austrian Federal Economic Chamber, IV - Federation of Austrian Industries, BAK - the Federal Chamber of Labour, ÖGB - Confederation of Austrian Trade Unions, ÖÄK – Austrian Medical Association, ZAI – Central Labour Inspectorate.The evaluation team consists of experts from institutions of the strategic platform.");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+74, "EN", 1, "<p>According to the Austrian sources experiences from previous occupational safety and health strategies have shown that good cooperation of all stakeholders involved in the field of safety and health at work is crucial for the success of the strategy. For that reason, the Austrian OSH Strategy 2013 – 2020 will try to further extend the cooperation of all stakeholders. The Occupational Safety and Health Advisory Board officially appoints the leaders of:</p><ul><li>The four working groups</li><li>The strategic platform</li><li>The evaluation team</li></ul><p>The Labour Inspectorate published a list of members of the four working groups. Members of the strategic platform are: AUVA - Austrian Social Insurance for Occupational Risks, WKO - Austrian Federal Economic Chamber, IV - Federation of Austrian Industries, BAK - the Federal Chamber of Labour, ÖGB - Confederation of Austrian Trade Unions, ÖÄK – Austrian Medical Association, ZAI – Central Labour Inspectorate.The evaluation team consists of experts from institutions of the strategic platform.</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
@@ -453,16 +498,16 @@ SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+96, null, @sectionId, "STRATEGY_CHARACTERISTICS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+96, "EN", 1, "The NAP for the period 2017-2018 includes seven priority areas with the following tasks:<ol>
-  <li>Introduction of the Accident Insurance System - measure 1</li>
-  <li>Ensuring the financing of the OSH system - measures 2, 3</li>
-  <li>Prevention of occupational risks - measures 4, 5, 6, 7, 8</li>
-  <li>Safety and health of children, pupils and students - measures 9, 10, 11</li>
-  <li>Rehabilitation after Occupational Injury and Occupational Disease - measure 12</li>
-  <li>Training of workers in occupational health and safety - measures 13, 14, 15, 16, 17</li>
-  <li>Research and development - measures 18, 19, 20, 21, 22, 23, 24, 25</li>
-  <li>Medical services - measures 26, 27, 28</li>
-  <li>OSH Education and Promotion - measures 29, 30</li>
-  <li>International cooperation - measures 31, 32</li>
+	<li>Introduction of the Accident Insurance System - measure 1</li>
+	<li>Ensuring the financing of the OSH system - measures 2, 3</li>
+	<li>Prevention of occupational risks - measures 4, 5, 6, 7, 8</li>
+	<li>Safety and health of children, pupils and students - measures 9, 10, 11</li>
+	<li>Rehabilitation after Occupational Injury and Occupational Disease - measure 12</li>
+	<li>Training of workers in occupational health and safety - measures 13, 14, 15, 16, 17</li>
+	<li>Research and development - measures 18, 19, 20, 21, 22, 23, 24, 25</li>
+	<li>Medical services - measures 26, 27, 28</li>
+	<li>OSH Education and Promotion - measures 29, 30</li>
+	<li>International cooperation - measures 31, 32</li>
 </ol> Attention will be paid to risk prevention in education to ensure the safety and health of children, pupils and students in schools and educational establishments and in preparation for future occupations.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
@@ -1101,14 +1146,14 @@ SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+224, null, @sectionId, "STRATEGY_CHARACTERISTICS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+224, "EN", 1, "<strong>General objectives</strong>:</ul>
-  <li>Promote better enforcement of legislation on safety and health at work and consolidation in the autonomous regions, especially in small and medium enterprises.</li>
-  <li>Encourage continuous improvement of working conditions of all workers with special attention to the prevention of occupational diseases and work-related diseases.</li>
+	<li>Promote better enforcement of legislation on safety and health at work and consolidation in the autonomous regions, especially in small and medium enterprises.</li>
+	<li>Encourage continuous improvement of working conditions of all workers with special attention to the prevention of occupational diseases and work-related diseases.</li>
 </ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+225, null, @sectionId, "STRATEGY_DETAILS");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+225, "EN", 1, "<p><strong>Objective 1: Improve the effectiveness of the institutions dedicated to occupational risk prevention </strong>.</p><ul><li>Strengthen and enhance public institutions dedicated to the prevention of occupational hazards and adjust their functions to the current demands of society.</li><li>Create and implement mechanisms for coordination among institutions competent in prevention, both in the workplace and in the health, education and industry.</li><li>Promote institutional collaboration in the development of public policies preventive.</li><li>Strengthen the leadership of the government in managing the prevention of occupational hazards</li></ul><p><strong>Objective 2: Boost action by the public authorities in the area of analysis, research, promotion, support, technical assistance, supervision and control of occupational risk prevention </strong><br />2.A Promotion, Support and Technical Assistance</p><ul><li>Inform and make aware businesses with particular attention to SMEs and micro enterprises about the prevention of occupational hazards and the availability of official tools that facilitate enforcement.</li><li>Improve accessibility and enforcement in the prevention of occupational hazards</li></ul><p>2.B Surveillance and control of compliance</p><ul><li>Adjust the penalties and procedural rules for offenses in the Social policy legislation</li><li>Develop specific inspection activities designed to promote, facilitate and ensure compliance with norms</li><li>Improve and strengthen complementarity between analysis and assistance, monitoring and control</li><li>Develop procedures for cooperation between public authorities to enhance joint action and new tools actions</li></ul><p>2. C Incentive development</p><ul><li>Promote excellence in the management of safety and health at work by recognizing, exchange and dissemination of good practice.</li><li>To promote the analysis and efficiency of incentive measures</li></ul><p>2.D Awareness</p><ul><li>Enhance the awareness of society in the prevention of occupational risks, with greater involvement of the media</li></ul><p>2.E Education and training</p><ul><li>Consolidate the integration of training related to the prevention of occupational risks into different stages of the education system.</li><li>Design and promote the education of specific groups.</li><li>Adapt the rules on training in PRL to changes</li></ul><p>2.F Information and Research</p><ul><li>Improve the coordination of the activities developed by governmental institutions in the collection, analysis and dissemination of information about the prevention of occupational risks and about studies and research in that area, setting up a quality information system</li><li>Strengthen and revitalize the network of public research institutes dealing with OSH. Strengthen their cooperation to optimise R &amp; D in OSH.</li><li>Promote the generation of knowledge on safety and health work and improve its accessibility.</li></ul><p><strong>Objective 3: Promote the improvement of occupational safety and health conditions with the participation of the social partners and regional governments, particularly in the sectors, activities, groups and companies at greatest risk </strong><br />3.A Strengthen actions of the government, with the&nbsp;participation of the social partners, aimed at sectors, activities, groups and companies most at risK:</p><ul><li>Promote the improvement of working conditions in sectors and activities with high incidence rates of occupational accidents and diseases.</li><li>Promote road safety in cooperation with the Directorate General of Traffic, with the aim of reducing work related traffic accidents</li><li>Design and implement an action plan for reducing musculoskeletal disorders</li><li>Promote safety and health of specific groups.</li><li>Develop and disseminate reference methodologies for assessing</li><li>Psychosocial risks reference, enabling a better understanding and prevention of such risks.</li><li>Studying emerging risks, their causes and impact on safety and health workers, particularly those derived from new technologies.</li></ul><p>3.B Occupational diseases</p><ul><li>Improve and promote the research on occupational diseases,&nbsp;as well as detection and communication, with the aim of preferring prevention to rehabilitation.</li></ul><p>3.C Health Surveillance</p><ul><li>Promote more efficient monitoring of health.</li><li>Health promotion: promote the culture of healthy behaviour in the workplace.</li></ul><p>3.D Prevention management in SMEs</p><ul><li>Develop tools to facilitate and harmonize preventive management in small businesses regardless of preventive methodologies</li><li>Promote the integration of prevention in the business processes, especially in SMEs and micro-enterprises.</li><li>Develop and disseminate tools to facilitate the coordination of business activities</li></ul><p><strong> Objective 4: Strengthen the engagement of the social partners and the involvement of employers and workers in improving occupational safety and health</strong><br />4.A Institutional participation.&nbsp;</p><ul><li>Strengthen the role of consultative bodies and institutional participation in prevention of occupational hazards:</li><li>Set up Working Groups in the National Commission on Safety and Health at Work to promote compliance with the objectives and priorities agreed upon in this strategy.</li><li>Promote the actions of the Foundation for the Prevention of Occupational Hazards.</li></ul><p>4.B Collective bargaining</p><ul><li>Enhance collective bargaining to reach agreements to promote the integration of prevention of occupational risks in enterprises and the involvement of workers and employers in complying with their preventive obligations.</li><li>Promote the inclusion of the corresponding collective bargaining agreements (through its Monitoring Committee) criteria and guidelines on prevention of occupational hazards.</li><li>Strengthen the commitment of the workers and employers to comply with the plan of prevention of occupational risks of the enterprise.</li></ul><p>4.C Support for SMEs</p><ul><li>Promote the integration of risk prevention in SMEs with greater involvement of employers and workers</li><li>Develop sectoral programs that foster greater involvement of employers, workers and their representatives in preventive activities through specific agreements of the parties in the collective bargaining aimed at SMEs and in cross-cutting programs.</li></ul><p>4.D Business leadership and participation of workers.</p><ul><li>Encourage the commitment of the company in the management of prevention and collaboration of workers in preventive activity to achieve integrated prevention management</li><li>Design and implement formulas recognition and incentives to companies that promote collaboration and involvement of workers, through their representatives in the preventive management.</li></ul><p>4.E OSH culture in companies</p><ul><li>Promote the culture of safety and health in the company:</li><li>Promote training in prevention of occupational risks for prevention delegates and middle managers to achieve a dynamic effect on strengthening preventive culture.</li><li>Promote awareness of employers about the benefits of management leadership in improving working conditions and the importance of a results-oriented prevention policy.</li></ul>");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+225, "EN", 1, "<p><strong>Objective 1: Improve the effectiveness of the institutions dedicated to occupational risk prevention </strong>.</p><ul><li>Strengthen and enhance public institutions dedicated to the prevention of occupational hazards and adjust their functions to the current demands of society.</li><li>Create and implement mechanisms for coordination among institutions competent in prevention, both in the workplace and in the health, education and industry.</li><li>Promote institutional collaboration in the development of public policies preventive.</li><li>Strengthen the leadership of the government in managing the prevention of occupational hazards</li></ul><p><strong>Objective 2: Boost action by the public authorities in the area of analysis, research, promotion, support, technical assistance, supervision and control of occupational risk prevention </strong><br />2.A Promotion, Support and Technical Assistance</p><ul><li>Inform and make aware businesses with particular attention to SMEs and micro enterprises about the prevention of occupational hazards and the availability of official tools that facilitate enforcement.</li><li>Improve accessibility and enforcement in the prevention of occupational hazards</li></ul><p>2.B Surveillance and control of compliance</p><ul><li>Adjust the penalties and procedural rules for offenses in the Social policy legislation</li><li>Develop specific inspection activities designed to promote, facilitate and ensure compliance with norms</li><li>Improve and strengthen complementarity between analysis and assistance, monitoring and control</li><li>Develop procedures for cooperation between public authorities to enhance joint action and new tools actions</li></ul><p>2.C Incentive development</p><ul><li>Promote excellence in the management of safety and health at work by recognizing, exchange and dissemination of good practice.</li><li>To promote the analysis and efficiency of incentive measures</li></ul><p>2.D Awareness</p><ul><li>Enhance the awareness of society in the prevention of occupational risks, with greater involvement of the media</li></ul><p>2.E Education and training</p><ul><li>Consolidate the integration of training related to the prevention of occupational risks into different stages of the education system.</li><li>Design and promote the education of specific groups.</li><li>Adapt the rules on training in PRL to changes</li></ul><p>2.F Information and Research</p><ul><li>Improve the coordination of the activities developed by governmental institutions in the collection, analysis and dissemination of information about the prevention of occupational risks and about studies and research in that area, setting up a quality information system</li><li>Strengthen and revitalize the network of public research institutes dealing with OSH. Strengthen their cooperation to optimise R &amp; D in OSH.</li><li>Promote the generation of knowledge on safety and health work and improve its accessibility.</li></ul><p><strong>Objective 3: Promote the improvement of occupational safety and health conditions with the participation of the social partners and regional governments, particularly in the sectors, activities, groups and companies at greatest risk </strong><br />3.A Strengthen actions of the government, with the&nbsp;participation of the social partners, aimed at sectors, activities, groups and companies most at risK:</p><ul><li>Promote the improvement of working conditions in sectors and activities with high incidence rates of occupational accidents and diseases.</li><li>Promote road safety in cooperation with the Directorate General of Traffic, with the aim of reducing work related traffic accidents</li><li>Design and implement an action plan for reducing musculoskeletal disorders</li><li>Promote safety and health of specific groups.</li><li>Develop and disseminate reference methodologies for assessing</li><li>Psychosocial risks reference, enabling a better understanding and prevention of such risks.</li><li>Studying emerging risks, their causes and impact on safety and health workers, particularly those derived from new technologies.</li></ul><p>3.B Occupational diseases</p><ul><li>Improve and promote the research on occupational diseases,&nbsp;as well as detection and communication, with the aim of preferring prevention to rehabilitation.</li></ul><p>3.C Health Surveillance</p><ul><li>Promote more efficient monitoring of health.</li><li>Health promotion: promote the culture of healthy behaviour in the workplace.</li></ul><p>3.D Prevention management in SMEs</p><ul><li>Develop tools to facilitate and harmonize preventive management in small businesses regardless of preventive methodologies</li><li>Promote the integration of prevention in the business processes, especially in SMEs and micro-enterprises.</li><li>Develop and disseminate tools to facilitate the coordination of business activities</li></ul><p><strong> Objective 4: Strengthen the engagement of the social partners and the involvement of employers and workers in improving occupational safety and health</strong><br />4.A Institutional participation.&nbsp;</p><ul><li>Strengthen the role of consultative bodies and institutional participation in prevention of occupational hazards:</li><li>Set up Working Groups in the National Commission on Safety and Health at Work to promote compliance with the objectives and priorities agreed upon in this strategy.</li><li>Promote the actions of the Foundation for the Prevention of Occupational Hazards.</li></ul><p>4.B Collective bargaining</p><ul><li>Enhance collective bargaining to reach agreements to promote the integration of prevention of occupational risks in enterprises and the involvement of workers and employers in complying with their preventive obligations.</li><li>Promote the inclusion of the corresponding collective bargaining agreements (through its Monitoring Committee) criteria and guidelines on prevention of occupational hazards.</li><li>Strengthen the commitment of the workers and employers to comply with the plan of prevention of occupational risks of the enterprise.</li></ul><p>4.C Support for SMEs</p><ul><li>Promote the integration of risk prevention in SMEs with greater involvement of employers and workers</li><li>Develop sectoral programs that foster greater involvement of employers, workers and their representatives in preventive activities through specific agreements of the parties in the collective bargaining aimed at SMEs and in cross-cutting programs.</li></ul><p>4.D Business leadership and participation of workers.</p><ul><li>Encourage the commitment of the company in the management of prevention and collaboration of workers in preventive activity to achieve integrated prevention management</li><li>Design and implement formulas recognition and incentives to companies that promote collaboration and involvement of workers, through their representatives in the preventive management.</li></ul><p>4.E OSH culture in companies</p><ul><li>Promote the culture of safety and health in the company:</li><li>Promote training in prevention of occupational risks for prevention delegates and middle managers to achieve a dynamic effect on strengthening preventive culture.</li><li>Promote awareness of employers about the benefits of management leadership in improving working conditions and the importance of a results-oriented prevention policy.</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
@@ -2723,7 +2768,7 @@ INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="WORKING_CONDITIONS" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+579, null, @sectionId, "PHYSICAL_RISKS_HEADER");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+579, "EN", 1, " This topic displays data on exposure to chemical and biological substances, exposure to noise, vibrations and high or low temperatures, and working tasks involving carrying, lifting or work in tiring or painful positions.");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+579, "EN", 1, "	This topic displays data on exposure to chemical and biological substances, exposure to noise, vibrations and high or low temperatures, and working tasks involving carrying, lifting or work in tiring or painful positions.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="OVERALL_OP" AND tool_id=@toolId);
@@ -2883,7 +2928,7 @@ INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="OSH_AUTHORITIES" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+611, null, @sectionId, "INSTITUTION_TYPE");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+611, "EN", 1, " Compensation and insurance body");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+611, "EN", 1, "	Compensation and insurance body");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="OSH_AUTHORITIES" AND tool_id=@toolId);
@@ -3351,6 +3396,11 @@ INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+716, null, @
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+716, "EN", 1, "Research Institutes");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
+SET @sectionId = (SELECT id FROM section WHERE name="WORKING_CONDITIONS" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+718, null, @sectionId, "BOX_MESSAGE");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+718, "EN", 1, "Percentages might not total 100% due to rounding");
+
+SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2001, null, @sectionId, "MENU");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2001, "EN", 1, "Generic information");
@@ -3428,7 +3478,7 @@ INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2016, null, @sectionId, "MENU");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2016, "EN", 1, "OSH infrastucture");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2016, "EN", 1, "OSH infrastructure");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
@@ -3590,6 +3640,21 @@ INSERT INTO translation (literal_id, language, is_default, text)  VALUES (@maxId
 
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId, null, null, "BUTTON");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (@maxId, "EN", 1, "See less");
+
+SET @maxLiteralId = (SELECT MAX(id)+1 FROM literal WHERE id<10000);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxLiteralId, NULL, NULL, "SPLIT_ANSWER_NAME");
+INSERT INTO translation (literal_id, language, is_default, text) VALUE (@maxLiteralId, "EN", 1, "Often");
+INSERT INTO split_answer (literal_id) VALUES(@maxLiteralId);
+
+SET @maxLiteralId = (SELECT MAX(id)+1 FROM literal WHERE id<10000);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxLiteralId, NULL, NULL, "SPLIT_ANSWER_NAME");
+INSERT INTO translation (literal_id, language, is_default, text) VALUE (@maxLiteralId, "EN", 1, "In some departments");
+INSERT INTO split_answer (literal_id) VALUES(@maxLiteralId);
+
+SET @maxLiteralId = (SELECT MAX(id)+1 FROM literal WHERE id<10000);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxLiteralId, NULL, NULL, "SPLIT_COMPANY_SIZE_NAME");
+INSERT INTO translation (literal_id, language, is_default, text) VALUE (@maxLiteralId, "EN", 1, "50 to 249 employees");
+INSERT INTO split_company_size (literal_id) VALUES(@maxLiteralId);
 
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="AT");
@@ -4730,7 +4795,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "See more in its <a target=\"_blank\" href=\"http://www.salute.gov.it/portale/home.html\">website</a> and in <a target=\"_blank\" href=\"https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Italy\">OSHwiki</a>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "The General Directorate for prevention at the Ministry of Health performs, among others, the following functions: -  Prevention of occupational diseases and accidents, including other health-related competences, as defined by the Legislative Decree 81, Implementation of the Article 1 of the Act no. 123, August 3rd, 2007, concerning the protection of health and safety at workplaces of April 9th, 2008. Prevention of exposure to chemical, physical and biological agents in the natural and living environment, in water for human consumption and in working environment. The functions of the Conference of Regions and Autonomous Provinces may be distinguished into 3 major priority areas: improving the connection to and the dialogue with the central State through the development of documents shared by the entire “system of regional Governments”; the establishment of a permanent interregional dialogue in order to disseminate best practices; the necessity of representing the “system of regional Governments” on an ongoing basis at the external and in the institutional relations In particular, the IX Commission on Education, Labour, Innovation and Research is competent in relation to: education and professional training, labour policies, safety at work, university and scientific research, professions. Inspection services According to the provisions laid down in Art. 13 of legislative Decree no. 81/2008 Legislative decree no. 81, April 9th 2008, Implementation of the Article 1 of the Act no. 123, August 3rd, 2007, concerning the protection of health and safety at workplaces, the inspection services on compliance with safety and health regulations are carried on by ASL, which are competent on the territory and, as for its specific competence, by the national Fire brigade department.");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "The General Directorate for prevention at the Ministry of Health performs, among others, the following functions: -	Prevention of occupational diseases and accidents, including other health-related competences, as defined by the Legislative Decree 81, Implementation of the Article 1 of the Act no. 123, August 3rd, 2007, concerning the protection of health and safety at workplaces of April 9th, 2008. Prevention of exposure to chemical, physical and biological agents in the natural and living environment, in water for human consumption and in working environment. The functions of the Conference of Regions and Autonomous Provinces may be distinguished into 3 major priority areas: improving the connection to and the dialogue with the central State through the development of documents shared by the entire “system of regional Governments”; the establishment of a permanent interregional dialogue in order to disseminate best practices; the necessity of representing the “system of regional Governments” on an ongoing basis at the external and in the institutional relations In particular, the IX Commission on Education, Labour, Innovation and Research is competent in relation to: education and professional training, labour policies, safety at work, university and scientific research, professions. Inspection services According to the provisions laid down in Art. 13 of legislative Decree no. 81/2008 Legislative decree no. 81, April 9th 2008, Implementation of the Article 1 of the Act no. 123, August 3rd, 2007, concerning the protection of health and safety at workplaces, the inspection services on compliance with safety and health regulations are carried on by ASL, which are competent on the territory and, as for its specific competence, by the national Fire brigade department.");
 INSERT INTO matrix_page(page, nuts_id, check_1, check_2, check_3, check_4, text_1_literal_id, text_2_literal_id, text_3_literal_id)  VALUES ("MATRIX_AUTHORITY", @nutsId, 1, 0, 0, 0, @maxId+1, @maxId+2, @maxId+3);
 
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -5002,11 +5067,11 @@ The organisation is overseen by the Ministry of Social Security and is run by a 
 The AAA provides insurance and pays compensation in the event of accident or illness for workers in both the private and public sector.
 The organisation has a Prevention Service and a Payment Service (compensation). The reform of accident insurance, in 2010, put an end to the compulsory prevention regulations introduced specifically by the organisation in addition to the legislation on safety and health; these regulations were replaced by recommendations.
 The role of the AAA’s prevention service is to:
-- analyse the causes of work-related accidents and illnesses;
-- monitor the legal and regulatory requirements with regard to OSH;
-- devise prevention recommendations;
-- inform, advise and raise the awareness of employers,
-- propose financial incentives to employers (no claims bonus system, financial support for the management of occupational health and safety in companies).");
+-	analyse the causes of work-related accidents and illnesses;
+-	monitor the legal and regulatory requirements with regard to OSH;
+-	devise prevention recommendations;
+-	inform, advise and raise the awareness of employers,
+-	propose financial incentives to employers (no claims bonus system, financial support for the management of occupational health and safety in companies).");
 INSERT INTO matrix_page(page, nuts_id, check_1, check_2, check_3, check_4, text_1_literal_id, text_2_literal_id, text_3_literal_id)  VALUES ("MATRIX_AUTHORITY", @nutsId, 0, 1, 0, 0, @maxId+1, @maxId+2, @maxId+3);
 
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -6615,7 +6680,7 @@ SET @nutsId = (SELECT id FROM nuts WHERE country_code="PT");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, NULL, "MATRIX_STATISTICS_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "Ministério da Saúde; Administração Central do Sistema de Saúde, I.P. (ACSS, I.P.) ");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, NULL, "MATRIX_STATISTICS_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p><strong>Data holder<a>:</a></strong></p><p><a href=\"http://www.acss.minsaude.pt/DepartamentoseUnidades/DepartamentoGest%C3%A3oePlaneamentoRH/EstudosePlaneamentoemRecursosHumanos/EstudoseRelat%C3%B3rios/AcidentesdeTrabalho/tabid/332/language/pt-PT/Default.aspx\" target=\"_blank\">&nbsp;Ministério da Saúde; Administração Central do Sistema de Saúde, I.P. (ACSS, I.P.)&nbsp;</a></p><p><a><strong style=\"color: #000000;\">Functionalities:</strong></a></p><ul><li>Monitoring of work accidents - (Data available for 2007, 2011-2013; 2012-2014)</li></ul>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p><strong>Data holder<a>:</a></strong></p><p><a href=\"https://www.sns.gov.pt/entidades-de-saude/administracao-central-do-sistema-de-saude/\" target=\"_blank\">&nbsp;Ministério da Saúde; Administração Central do Sistema de Saúde, I.P. (ACSS, I.P.)&nbsp;</a></p><p><a><strong style=\"color: #000000;\">Functionalities:</strong></a></p><ul><li>Monitoring of work accidents - (Data available for 2007, 2011-2013; 2012-2014)</li></ul>");
 INSERT INTO matrix_page(page, nuts_id, check_1, check_2, check_3, check_4, text_1_literal_id, text_2_literal_id, text_3_literal_id) VALUES ("MATRIX_STATISTICS", @nutsId, 1, 0, 0, false, @maxId+1, @maxId+2, null);
 
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -7716,7 +7781,7 @@ SET @nutsId = (SELECT id FROM nuts WHERE country_code="ES");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, NULL, "MATRIX_STATISTICS_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "The Centre for Research in Occupational Health (Centro de Investigación en Salud Laboral, CISAL)");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, NULL, "MATRIX_STATISTICS_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p><a href=\"http://www.upf.edu/cisal/cisal/presentacion.html\" target=\"_blank\">Link&nbsp;</a>to the institute<br /><strong>Short abstract<br /></strong></p><p>The Centre for Research in Occupational Health (Centro de Investigación en Salud Laboral, CISAL) at the University Pompeu Fabra in Barcelona was set up as Observatory for Occupational Health (Observatorio de Salud Laboral, OSL). It is a joint initiative by the university, the accident insurance association Unión de Mutuas, and ISTAS. It conducts research into health risks, vulnerable groups of workers, and OSH policies</p><p>See more in&nbsp;<a href=\"https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Spain\" target=\"_blank\">OSHWiki</a></p><p><strong>&nbsp;</strong></p><p><strong>&nbsp;</strong></p><p>&nbsp;</p><p><strong>&nbsp;</strong></p><p>&nbsp;</p>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p><a href=\"https://www.upf.edu/web/cisal\" target=\"_blank\">Link&nbsp;</a>to the institute<br /><strong>Short abstract<br /></strong></p><p>The Centre for Research in Occupational Health (Centro de Investigación en Salud Laboral, CISAL) at the University Pompeu Fabra in Barcelona was set up as Observatory for Occupational Health (Observatorio de Salud Laboral, OSL). It is a joint initiative by the university, the accident insurance association Unión de Mutuas, and ISTAS. It conducts research into health risks, vulnerable groups of workers, and OSH policies</p><p>See more in&nbsp;<a href=\"https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Spain\" target=\"_blank\">OSHWiki</a></p><p><strong>&nbsp;</strong></p><p><strong>&nbsp;</strong></p><p>&nbsp;</p><p><strong>&nbsp;</strong></p><p>&nbsp;</p>");
 INSERT INTO matrix_page(page, nuts_id, check_1, check_2, check_3, check_4, text_1_literal_id, text_2_literal_id, text_3_literal_id) VALUES ("MATRIX_STATISTICS", @nutsId, 0, 0, 1, false, @maxId+1, @maxId+2, null);
 
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -8301,489 +8366,174 @@ SET @nutsId = (SELECT id FROM nuts WHERE country_code="UK");
 INSERT INTO strategies_page(page, nuts_id, text_1_literal_id, text_2_literal_id, text_3_literal_id, text_4_literal_id, text_5_literal_id, text_6_literal_id, text_7_literal_id, text_8_literal_id, text_9_literal_id, text_10_literal_id, text_11_literal_id, text_12_literal_id, text_13_literal_id)  VALUES ("STRATEGY_REGULATION", @nutsId, 20443, 20449, null, null, null, null, null, 20451, 20478, 20505, 20506, 20511, 20562);
 
 -- |----------------------------------------------------------- |
--- | END Load version Estable 1.7 of the qualitative database   |
+-- |    End load version Estable 1.8 of the qualitative database   |
 -- |----------------------------------------------------------- |
 
 -- |----------------------------------------------------------- |
--- |     Load version Estable 1.2 of the quantitative database  |
+-- |   Load version Estable 1.3 of the qualitative database   |
 -- |----------------------------------------------------------- |
--- 1.2.5 - GDP
+
 
 SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.country_code="AT"  AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="GPD per capita in relation to EU28 average");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 1.2670000000000001 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=@datasetID;
+UPDATE value SET value = 1.2670000000000001 WHERE profile_id=@profileID AND indicator_id=@indicatorID AND dataset_id=@datasetID;
 
 SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.country_code="BE"  AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="GPD per capita in relation to EU28 average");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 1.1640000000000001 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=@datasetID;
+UPDATE value SET value = 1.1640000000000001 WHERE profile_id=@profileID AND indicator_id=@indicatorID AND dataset_id=@datasetID;
 
 SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.country_code="BG"  AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="GPD per capita in relation to EU28 average");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.493 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=@datasetID;
+UPDATE value SET value = 0.493 WHERE profile_id=@profileID AND indicator_id=@indicatorID AND dataset_id=@datasetID;
 
 SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.country_code="CY"  AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="GPD per capita in relation to EU28 average");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.85 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=@datasetID;
+UPDATE value SET value = 0.85 WHERE profile_id=@profileID AND indicator_id=@indicatorID AND dataset_id=@datasetID;
 
 SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.country_code="HR"  AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="GPD per capita in relation to EU28 average");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.617 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=@datasetID;
+UPDATE value SET value = 0.617 WHERE profile_id=@profileID AND indicator_id=@indicatorID AND dataset_id=@datasetID;
 
 SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.country_code="CZ"  AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="GPD per capita in relation to EU28 average");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.894 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=@datasetID;
+UPDATE value SET value = 0.894 WHERE profile_id=@profileID AND indicator_id=@indicatorID AND dataset_id=@datasetID;
 
 SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.country_code="DK"  AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="GPD per capita in relation to EU28 average");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 1.278 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=@datasetID;
+UPDATE value SET value = 1.278 WHERE profile_id=@profileID AND indicator_id=@indicatorID AND dataset_id=@datasetID;
 
 SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.country_code="EE"  AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="GPD per capita in relation to EU28 average");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.787 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=@datasetID;
+UPDATE value SET value = 0.787 WHERE profile_id=@profileID AND indicator_id=@indicatorID AND dataset_id=@datasetID;
 
 SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.country_code="FI"  AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="GPD per capita in relation to EU28 average");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 1.09 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=@datasetID;
+UPDATE value SET value = 1.09 WHERE profile_id=@profileID AND indicator_id=@indicatorID AND dataset_id=@datasetID;
 
 SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.country_code="FR"  AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="GPD per capita in relation to EU28 average");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 1.04 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=@datasetID;
+UPDATE value SET value = 1.04 WHERE profile_id=@profileID AND indicator_id=@indicatorID AND dataset_id=@datasetID;
 
 SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.country_code="DE"  AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="GPD per capita in relation to EU28 average");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 1.236 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=@datasetID;
+UPDATE value SET value = 1.236 WHERE profile_id=@profileID AND indicator_id=@indicatorID AND dataset_id=@datasetID;
 
 SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.country_code="EL"  AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="GPD per capita in relation to EU28 average");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.672 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=@datasetID;
+UPDATE value SET value = 0.672 WHERE profile_id=@profileID AND indicator_id=@indicatorID AND dataset_id=@datasetID;
 
 SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.country_code="HU"  AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="GPD per capita in relation to EU28 average");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.677 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=@datasetID;
+UPDATE value SET value = 0.677 WHERE profile_id=@profileID AND indicator_id=@indicatorID AND dataset_id=@datasetID;
 
 SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.country_code="IE"  AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="GPD per capita in relation to EU28 average");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 1.808 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=@datasetID;
+UPDATE value SET value = 1.808 WHERE profile_id=@profileID AND indicator_id=@indicatorID AND dataset_id=@datasetID;
 
 SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.country_code="IT"  AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="GPD per capita in relation to EU28 average");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.963 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=@datasetID;
+UPDATE value SET value = 0.963 WHERE profile_id=@profileID AND indicator_id=@indicatorID AND dataset_id=@datasetID;
 
 SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.country_code="LV"  AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="GPD per capita in relation to EU28 average");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.667 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=@datasetID;
+UPDATE value SET value = 0.667 WHERE profile_id=@profileID AND indicator_id=@indicatorID AND dataset_id=@datasetID;
 
 SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.country_code="LT"  AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="GPD per capita in relation to EU28 average");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.7829999999999999 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=@datasetID;
+UPDATE value SET value = 0.7829999999999999 WHERE profile_id=@profileID AND indicator_id=@indicatorID AND dataset_id=@datasetID;
 
 SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.country_code="LU"  AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="GPD per capita in relation to EU28 average");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 2.528 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=@datasetID;
+UPDATE value SET value = 2.528 WHERE profile_id=@profileID AND indicator_id=@indicatorID AND dataset_id=@datasetID;
 
 SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.country_code="MT"  AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="GPD per capita in relation to EU28 average");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.976 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=@datasetID;
+UPDATE value SET value = 0.976 WHERE profile_id=@profileID AND indicator_id=@indicatorID AND dataset_id=@datasetID;
 
 SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.country_code="NL"  AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="GPD per capita in relation to EU28 average");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 1.28 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=@datasetID;
+UPDATE value SET value = 1.28 WHERE profile_id=@profileID AND indicator_id=@indicatorID AND dataset_id=@datasetID;
 
 SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.country_code="PL"  AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="GPD per capita in relation to EU28 average");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.696 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=@datasetID;
+UPDATE value SET value = 0.696 WHERE profile_id=@profileID AND indicator_id=@indicatorID AND dataset_id=@datasetID;
 
 SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.country_code="PT"  AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="GPD per capita in relation to EU28 average");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.765 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=@datasetID;
+UPDATE value SET value = 0.765 WHERE profile_id=@profileID AND indicator_id=@indicatorID AND dataset_id=@datasetID;
 
 SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.country_code="RO"  AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="GPD per capita in relation to EU28 average");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.625 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=@datasetID;
+UPDATE value SET value = 0.625 WHERE profile_id=@profileID AND indicator_id=@indicatorID AND dataset_id=@datasetID;
 
 SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.country_code="SK"  AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="GPD per capita in relation to EU28 average");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.7609999999999999 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=@datasetID;
+UPDATE value SET value = 0.7609999999999999 WHERE profile_id=@profileID AND indicator_id=@indicatorID AND dataset_id=@datasetID;
 
 SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.country_code="SI"  AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="GPD per capita in relation to EU28 average");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.85 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=@datasetID;
+UPDATE value SET value = 0.85 WHERE profile_id=@profileID AND indicator_id=@indicatorID AND dataset_id=@datasetID;
 
 SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.country_code="ES"  AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="GPD per capita in relation to EU28 average");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.919 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=@datasetID;
+UPDATE value SET value = 0.919 WHERE profile_id=@profileID AND indicator_id=@indicatorID AND dataset_id=@datasetID;
 
 SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.country_code="SE"  AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="GPD per capita in relation to EU28 average");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 1.209 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=@datasetID;
+UPDATE value SET value = 1.209 WHERE profile_id=@profileID AND indicator_id=@indicatorID AND dataset_id=@datasetID;
 
 SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.country_code="UK"  AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="GPD per capita in relation to EU28 average");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 1.056 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=@datasetID;
+UPDATE value SET value = 1.056 WHERE profile_id=@profileID AND indicator_id=@indicatorID AND dataset_id=@datasetID;
 
 SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.country_code="EU28"  AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="GPD per capita in relation to EU28 average");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 0.992 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=@datasetID;
+UPDATE value SET value = 1 WHERE profile_id=@profileID AND indicator_id=@indicatorID AND dataset_id=@datasetID;
 
 SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.country_code="IS"  AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="GPD per capita in relation to EU28 average");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 1.301 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=@datasetID;
+UPDATE value SET value = 1.301 WHERE profile_id=@profileID AND indicator_id=@indicatorID AND dataset_id=@datasetID;
 
 SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.country_code="NO"  AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="GPD per capita in relation to EU28 average");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 2.238 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=@datasetID;
+UPDATE value SET value = 2.238 WHERE profile_id=@profileID AND indicator_id=@indicatorID AND dataset_id=@datasetID;
 
 SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE n.country_code="CH" AND activity_sector_id IS NULL AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL AND year IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="GPD per capita in relation to EU28 average");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 1.462);
 
--- 1.2.6 - Income per Capita
-
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="CH");
-INSERT INTO profile (nuts_id, year) VALUE (@nutsId, 2017);
-
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE p.year=2010 AND n.country_code="AT" AND p.age_group_id IS NULL AND p.answer_id IS NULL AND p.company_size_id IS NULL AND p.currency_id IS NULL AND p.gender_id IS NULL AND p.illness_id IS NULL AND p.subindicator_id IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Income per capita");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 19516 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=@datasetID;
-
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE p.year=2017 AND n.country_code="AT" AND p.age_group_id IS NULL AND p.answer_id IS NULL AND p.company_size_id IS NULL AND p.currency_id IS NULL AND p.gender_id IS NULL AND p.illness_id IS NULL AND p.subindicator_id IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Income per capita");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 23343 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=@datasetID;
-
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE p.year=2010 AND n.country_code="BE" AND p.age_group_id IS NULL AND p.answer_id IS NULL AND p.company_size_id IS NULL AND p.currency_id IS NULL AND p.gender_id IS NULL AND p.illness_id IS NULL AND p.subindicator_id IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Income per capita");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 17331 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=@datasetID;
-
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE p.year=2017 AND n.country_code="BE" AND p.age_group_id IS NULL AND p.answer_id IS NULL AND p.company_size_id IS NULL AND p.currency_id IS NULL AND p.gender_id IS NULL AND p.illness_id IS NULL AND p.subindicator_id IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Income per capita");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 20944 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=@datasetID;
-
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE p.year=2010 AND n.country_code="BG" AND p.age_group_id IS NULL AND p.answer_id IS NULL AND p.company_size_id IS NULL AND p.currency_id IS NULL AND p.gender_id IS NULL AND p.illness_id IS NULL AND p.subindicator_id IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Income per capita");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 5885 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=@datasetID;
-
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE p.year=2017 AND n.country_code="BG" AND p.age_group_id IS NULL AND p.answer_id IS NULL AND p.company_size_id IS NULL AND p.currency_id IS NULL AND p.gender_id IS NULL AND p.illness_id IS NULL AND p.subindicator_id IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Income per capita");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 7527 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=@datasetID;
-
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE p.year=2010 AND n.country_code="CY" AND p.age_group_id IS NULL AND p.answer_id IS NULL AND p.company_size_id IS NULL AND p.currency_id IS NULL AND p.gender_id IS NULL AND p.illness_id IS NULL AND p.subindicator_id IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Income per capita");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 18026 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=@datasetID;
-
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE p.year=2017 AND n.country_code="CY" AND p.age_group_id IS NULL AND p.answer_id IS NULL AND p.company_size_id IS NULL AND p.currency_id IS NULL AND p.gender_id IS NULL AND p.illness_id IS NULL AND p.subindicator_id IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Income per capita");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 16477 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=@datasetID;
-
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE p.year=2010 AND n.country_code="HR" AND p.age_group_id IS NULL AND p.answer_id IS NULL AND p.company_size_id IS NULL AND p.currency_id IS NULL AND p.gender_id IS NULL AND p.illness_id IS NULL AND p.subindicator_id IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Income per capita");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 7612 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=@datasetID;
-
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE p.year=2017 AND n.country_code="HR" AND p.age_group_id IS NULL AND p.answer_id IS NULL AND p.company_size_id IS NULL AND p.currency_id IS NULL AND p.gender_id IS NULL AND p.illness_id IS NULL AND p.subindicator_id IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Income per capita");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 9470 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=@datasetID;
-
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE p.year=2010 AND n.country_code="CZ" AND p.age_group_id IS NULL AND p.answer_id IS NULL AND p.company_size_id IS NULL AND p.currency_id IS NULL AND p.gender_id IS NULL AND p.illness_id IS NULL AND p.subindicator_id IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Income per capita");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 9660 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=@datasetID;
-
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE p.year=2017 AND n.country_code="CZ" AND p.age_group_id IS NULL AND p.answer_id IS NULL AND p.company_size_id IS NULL AND p.currency_id IS NULL AND p.gender_id IS NULL AND p.illness_id IS NULL AND p.subindicator_id IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Income per capita");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 12632 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=@datasetID;
-
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE p.year=2010 AND n.country_code="DK" AND p.age_group_id IS NULL AND p.answer_id IS NULL AND p.company_size_id IS NULL AND p.currency_id IS NULL AND p.gender_id IS NULL AND p.illness_id IS NULL AND p.subindicator_id IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Income per capita");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 17949 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=@datasetID;
-
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE p.year=2017 AND n.country_code="DK" AND p.age_group_id IS NULL AND p.answer_id IS NULL AND p.company_size_id IS NULL AND p.currency_id IS NULL AND p.gender_id IS NULL AND p.illness_id IS NULL AND p.subindicator_id IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Income per capita");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 20945 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=@datasetID;
-
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE p.year=2010 AND n.country_code="EE" AND p.age_group_id IS NULL AND p.answer_id IS NULL AND p.company_size_id IS NULL AND p.currency_id IS NULL AND p.gender_id IS NULL AND p.illness_id IS NULL AND p.subindicator_id IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Income per capita");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 7413 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=@datasetID;
-
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE p.year=2017 AND n.country_code="EE" AND p.age_group_id IS NULL AND p.answer_id IS NULL AND p.company_size_id IS NULL AND p.currency_id IS NULL AND p.gender_id IS NULL AND p.illness_id IS NULL AND p.subindicator_id IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Income per capita");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 12502 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=@datasetID;
-
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE p.year=2010 AND n.country_code="FI" AND p.age_group_id IS NULL AND p.answer_id IS NULL AND p.company_size_id IS NULL AND p.currency_id IS NULL AND p.gender_id IS NULL AND p.illness_id IS NULL AND p.subindicator_id IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Income per capita");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 17211 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=@datasetID;
-
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE p.year=2017 AND n.country_code="FI" AND p.age_group_id IS NULL AND p.answer_id IS NULL AND p.company_size_id IS NULL AND p.currency_id IS NULL AND p.gender_id IS NULL AND p.illness_id IS NULL AND p.subindicator_id IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Income per capita");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 19804 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=@datasetID;
-
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE p.year=2010 AND n.country_code="FR" AND p.age_group_id IS NULL AND p.answer_id IS NULL AND p.company_size_id IS NULL AND p.currency_id IS NULL AND p.gender_id IS NULL AND p.illness_id IS NULL AND p.subindicator_id IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Income per capita");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 17782 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=@datasetID;
-
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE p.year=2017 AND n.country_code="FR" AND p.age_group_id IS NULL AND p.answer_id IS NULL AND p.company_size_id IS NULL AND p.currency_id IS NULL AND p.gender_id IS NULL AND p.illness_id IS NULL AND p.subindicator_id IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Income per capita");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 20446 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=@datasetID;
-
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE p.year=2010 AND n.country_code="DE" AND p.age_group_id IS NULL AND p.answer_id IS NULL AND p.company_size_id IS NULL AND p.currency_id IS NULL AND p.gender_id IS NULL AND p.illness_id IS NULL AND p.subindicator_id IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Income per capita");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 17573 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=@datasetID;
-
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE p.year=2017 AND n.country_code="DE" AND p.age_group_id IS NULL AND p.answer_id IS NULL AND p.company_size_id IS NULL AND p.currency_id IS NULL AND p.gender_id IS NULL AND p.illness_id IS NULL AND p.subindicator_id IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Income per capita");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 21250 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=@datasetID;
-
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE p.year=2010 AND n.country_code="EL" AND p.age_group_id IS NULL AND p.answer_id IS NULL AND p.company_size_id IS NULL AND p.currency_id IS NULL AND p.gender_id IS NULL AND p.illness_id IS NULL AND p.subindicator_id IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Income per capita");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 12599 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=@datasetID;
-
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE p.year=2017 AND n.country_code="EL" AND p.age_group_id IS NULL AND p.answer_id IS NULL AND p.company_size_id IS NULL AND p.currency_id IS NULL AND p.gender_id IS NULL AND p.illness_id IS NULL AND p.subindicator_id IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Income per capita");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 9018 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=@datasetID;
-
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE p.year=2010 AND n.country_code="HU" AND p.age_group_id IS NULL AND p.answer_id IS NULL AND p.company_size_id IS NULL AND p.currency_id IS NULL AND p.gender_id IS NULL AND p.illness_id IS NULL AND p.subindicator_id IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Income per capita");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 6708 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=@datasetID;
-
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE p.year=2017 AND n.country_code="HU" AND p.age_group_id IS NULL AND p.answer_id IS NULL AND p.company_size_id IS NULL AND p.currency_id IS NULL AND p.gender_id IS NULL AND p.illness_id IS NULL AND p.subindicator_id IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Income per capita");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 8306 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=@datasetID;
-
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE p.year=2010 AND n.country_code="IE" AND p.age_group_id IS NULL AND p.answer_id IS NULL AND p.company_size_id IS NULL AND p.currency_id IS NULL AND p.gender_id IS NULL AND p.illness_id IS NULL AND p.subindicator_id IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Income per capita");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 16837 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=@datasetID;
-
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE p.year=2017 AND n.country_code="IE" AND p.age_group_id IS NULL AND p.answer_id IS NULL AND p.company_size_id IS NULL AND p.currency_id IS NULL AND p.gender_id IS NULL AND p.illness_id IS NULL AND p.subindicator_id IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Income per capita");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 18186 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=@datasetID;
-
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE p.year=2010 AND n.country_code="IT" AND p.age_group_id IS NULL AND p.answer_id IS NULL AND p.company_size_id IS NULL AND p.currency_id IS NULL AND p.gender_id IS NULL AND p.illness_id IS NULL AND p.subindicator_id IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Income per capita");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 15225 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=@datasetID;
-
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE p.year=2017 AND n.country_code="IT" AND p.age_group_id IS NULL AND p.answer_id IS NULL AND p.company_size_id IS NULL AND p.currency_id IS NULL AND p.gender_id IS NULL AND p.illness_id IS NULL AND p.subindicator_id IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Income per capita");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 16506 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=@datasetID;
-
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE p.year=2010 AND n.country_code="LV" AND p.age_group_id IS NULL AND p.answer_id IS NULL AND p.company_size_id IS NULL AND p.currency_id IS NULL AND p.gender_id IS NULL AND p.illness_id IS NULL AND p.subindicator_id IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Income per capita");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 5876 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=@datasetID;
-
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE p.year=2017 AND n.country_code="LV" AND p.age_group_id IS NULL AND p.answer_id IS NULL AND p.company_size_id IS NULL AND p.currency_id IS NULL AND p.gender_id IS NULL AND p.illness_id IS NULL AND p.subindicator_id IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Income per capita");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 9224 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=@datasetID;
-
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE p.year=2010 AND n.country_code="LT" AND p.age_group_id IS NULL AND p.answer_id IS NULL AND p.company_size_id IS NULL AND p.currency_id IS NULL AND p.gender_id IS NULL AND p.illness_id IS NULL AND p.subindicator_id IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Income per capita");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 6018 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=@datasetID;
-
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE p.year=2017 AND n.country_code="LT" AND p.age_group_id IS NULL AND p.answer_id IS NULL AND p.company_size_id IS NULL AND p.currency_id IS NULL AND p.gender_id IS NULL AND p.illness_id IS NULL AND p.subindicator_id IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Income per capita");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 9786 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=@datasetID;
-
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE p.year=2010 AND n.country_code="LU" AND p.age_group_id IS NULL AND p.answer_id IS NULL AND p.company_size_id IS NULL AND p.currency_id IS NULL AND p.gender_id IS NULL AND p.illness_id IS NULL AND p.subindicator_id IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Income per capita");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 26602 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=@datasetID;
-
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE p.year=2017 AND n.country_code="LU" AND p.age_group_id IS NULL AND p.answer_id IS NULL AND p.company_size_id IS NULL AND p.currency_id IS NULL AND p.gender_id IS NULL AND p.illness_id IS NULL AND p.subindicator_id IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Income per capita");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 29341 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=@datasetID;
-
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE p.year=2010 AND n.country_code="MT" AND p.age_group_id IS NULL AND p.answer_id IS NULL AND p.company_size_id IS NULL AND p.currency_id IS NULL AND p.gender_id IS NULL AND p.illness_id IS NULL AND p.subindicator_id IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Income per capita");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 13371 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=@datasetID;
-
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE p.year=2017 AND n.country_code="MT" AND p.age_group_id IS NULL AND p.answer_id IS NULL AND p.company_size_id IS NULL AND p.currency_id IS NULL AND p.gender_id IS NULL AND p.illness_id IS NULL AND p.subindicator_id IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Income per capita");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 17871 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=@datasetID;
-
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE p.year=2010 AND n.country_code="NL" AND p.age_group_id IS NULL AND p.answer_id IS NULL AND p.company_size_id IS NULL AND p.currency_id IS NULL AND p.gender_id IS NULL AND p.illness_id IS NULL AND p.subindicator_id IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Income per capita");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 18814 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=@datasetID;
-
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE p.year=2017 AND n.country_code="NL" AND p.age_group_id IS NULL AND p.answer_id IS NULL AND p.company_size_id IS NULL AND p.currency_id IS NULL AND p.gender_id IS NULL AND p.illness_id IS NULL AND p.subindicator_id IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Income per capita");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 21184 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=@datasetID;
-
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE p.year=2010 AND n.country_code="PL" AND p.age_group_id IS NULL AND p.answer_id IS NULL AND p.company_size_id IS NULL AND p.currency_id IS NULL AND p.gender_id IS NULL AND p.illness_id IS NULL AND p.subindicator_id IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Income per capita");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 7578 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=@datasetID;
-
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE p.year=2017 AND n.country_code="PL" AND p.age_group_id IS NULL AND p.answer_id IS NULL AND p.company_size_id IS NULL AND p.currency_id IS NULL AND p.gender_id IS NULL AND p.illness_id IS NULL AND p.subindicator_id IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Income per capita");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 11059 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=@datasetID;
-
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE p.year=2010 AND n.country_code="PT" AND p.age_group_id IS NULL AND p.answer_id IS NULL AND p.company_size_id IS NULL AND p.currency_id IS NULL AND p.gender_id IS NULL AND p.illness_id IS NULL AND p.subindicator_id IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Income per capita");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 9728 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=@datasetID;
-
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE p.year=2017 AND n.country_code="PT" AND p.age_group_id IS NULL AND p.answer_id IS NULL AND p.company_size_id IS NULL AND p.currency_id IS NULL AND p.gender_id IS NULL AND p.illness_id IS NULL AND p.subindicator_id IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Income per capita");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 10792 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=@datasetID;
-
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE p.year=2010 AND n.country_code="RO" AND p.age_group_id IS NULL AND p.answer_id IS NULL AND p.company_size_id IS NULL AND p.currency_id IS NULL AND p.gender_id IS NULL AND p.illness_id IS NULL AND p.subindicator_id IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Income per capita");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 3537 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=@datasetID;
-
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE p.year=2017 AND n.country_code="RO" AND p.age_group_id IS NULL AND p.answer_id IS NULL AND p.company_size_id IS NULL AND p.currency_id IS NULL AND p.gender_id IS NULL AND p.illness_id IS NULL AND p.subindicator_id IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Income per capita");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 5303 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=@datasetID;
-
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE p.year=2010 AND n.country_code="SK" AND p.age_group_id IS NULL AND p.answer_id IS NULL AND p.company_size_id IS NULL AND p.currency_id IS NULL AND p.gender_id IS NULL AND p.illness_id IS NULL AND p.subindicator_id IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Income per capita");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 8360 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=@datasetID;
-
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE p.year=2017 AND n.country_code="SK" AND p.age_group_id IS NULL AND p.answer_id IS NULL AND p.company_size_id IS NULL AND p.currency_id IS NULL AND p.gender_id IS NULL AND p.illness_id IS NULL AND p.subindicator_id IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Income per capita");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 10573 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=@datasetID;
-
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE p.year="2010" AND n.country_code="CH" AND p.age_group_id IS NULL AND p.answer_id IS NULL AND p.company_size_id IS NULL AND p.currency_id IS NULL AND p.gender_id IS NULL AND p.illness_id IS NULL AND p.subindicator_id IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Income per capita");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 22279);
-
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE p.year="2017" AND n.country_code="CH" AND p.age_group_id IS NULL AND p.answer_id IS NULL AND p.company_size_id IS NULL AND p.currency_id IS NULL AND p.gender_id IS NULL AND p.illness_id IS NULL AND p.subindicator_id IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Income per capita");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 27042);
-
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE p.year=2010 AND n.country_code="SI" AND p.age_group_id IS NULL AND p.answer_id IS NULL AND p.company_size_id IS NULL AND p.currency_id IS NULL AND p.gender_id IS NULL AND p.illness_id IS NULL AND p.subindicator_id IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Income per capita");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 13349 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=@datasetID;
-
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE p.year=2017 AND n.country_code="SI" AND p.age_group_id IS NULL AND p.answer_id IS NULL AND p.company_size_id IS NULL AND p.currency_id IS NULL AND p.gender_id IS NULL AND p.illness_id IS NULL AND p.subindicator_id IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Income per capita");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 15217 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=@datasetID;
-
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE p.year=2010 AND n.country_code="ES" AND p.age_group_id IS NULL AND p.answer_id IS NULL AND p.company_size_id IS NULL AND p.currency_id IS NULL AND p.gender_id IS NULL AND p.illness_id IS NULL AND p.subindicator_id IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Income per capita");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 14945 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=@datasetID;
-
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE p.year=2017 AND n.country_code="ES" AND p.age_group_id IS NULL AND p.answer_id IS NULL AND p.company_size_id IS NULL AND p.currency_id IS NULL AND p.gender_id IS NULL AND p.illness_id IS NULL AND p.subindicator_id IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Income per capita");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 15508 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=@datasetID;
-
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE p.year=2010 AND n.country_code="SE" AND p.age_group_id IS NULL AND p.answer_id IS NULL AND p.company_size_id IS NULL AND p.currency_id IS NULL AND p.gender_id IS NULL AND p.illness_id IS NULL AND p.subindicator_id IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Income per capita");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 17558 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=@datasetID;
-
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE p.year=2017 AND n.country_code="SE" AND p.age_group_id IS NULL AND p.answer_id IS NULL AND p.company_size_id IS NULL AND p.currency_id IS NULL AND p.gender_id IS NULL AND p.illness_id IS NULL AND p.subindicator_id IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Income per capita");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 20159 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=@datasetID;
-
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE p.year=2010 AND n.country_code="UK" AND p.age_group_id IS NULL AND p.answer_id IS NULL AND p.company_size_id IS NULL AND p.currency_id IS NULL AND p.gender_id IS NULL AND p.illness_id IS NULL AND p.subindicator_id IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Income per capita");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 15869 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=@datasetID;
-
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE p.year=2017 AND n.country_code="UK" AND p.age_group_id IS NULL AND p.answer_id IS NULL AND p.company_size_id IS NULL AND p.currency_id IS NULL AND p.gender_id IS NULL AND p.illness_id IS NULL AND p.subindicator_id IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Income per capita");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 18043 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=@datasetID;
-
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE p.year=2010 AND n.country_code="EU28" AND p.age_group_id IS NULL AND p.answer_id IS NULL AND p.company_size_id IS NULL AND p.currency_id IS NULL AND p.gender_id IS NULL AND p.illness_id IS NULL AND p.subindicator_id IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Income per capita");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 14841 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=@datasetID;
-
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE p.year=2017 AND n.country_code="EU28" AND p.age_group_id IS NULL AND p.answer_id IS NULL AND p.company_size_id IS NULL AND p.currency_id IS NULL AND p.gender_id IS NULL AND p.illness_id IS NULL AND p.subindicator_id IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Income per capita");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 16909 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=@datasetID;
-
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE p.year=2010 AND n.country_code="NO" AND p.age_group_id IS NULL AND p.answer_id IS NULL AND p.company_size_id IS NULL AND p.currency_id IS NULL AND p.gender_id IS NULL AND p.illness_id IS NULL AND p.subindicator_id IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Income per capita");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 23243 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=@datasetID;
-
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id WHERE p.year=2017 AND n.country_code="NO" AND p.age_group_id IS NULL AND p.answer_id IS NULL AND p.company_size_id IS NULL AND p.currency_id IS NULL AND p.gender_id IS NULL AND p.illness_id IS NULL AND p.subindicator_id IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Income per capita");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
-UPDATE value SET value = 26233 WHERE profile_id=@profileIDAND indicator_id=@indicatorID AND dataset_id=@datasetID;
-
 -- |----------------------------------------------------------- |
--- | END Load version Estable 1.2 of the quantitative database  |
+-- |   End load version Estable 1.3 of the qualitative database   |
 -- |----------------------------------------------------------- |
