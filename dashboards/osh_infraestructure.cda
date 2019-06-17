@@ -70,24 +70,14 @@
 	      <Parameter default="AT" name="pCountry" type="String" />
 	    </Parameters>
 	    <Query>
-	      	SELECT t.text as Answer, n.country_code as Country, IF(t.text = 'NO', 
-		      	100 - (SELECT v.value*100 FROM nuts n, profile p, value v, dataset d, translation t, split_answer sa 
-		      	WHERE n.id = p.nuts_id
-				AND n.country_code = ${pCountry}
-				AND v.indicator_id = ${pIndicator}
-				AND v.profile_id = p.id
-				AND p.answer_id = sa.id
-				AND sa.id = 1
-				AND sa.literal_id = t.literal_id
-				AND t.language = 'EN'
-				AND d.id = v.dataset_id
-				AND d.id = ${pDataset}), v.value*100) as Value
+	      	SELECT t.text as Answer, n.country_code as Country, v.value*100 as Value
 			FROM nuts n, profile p, value v, dataset d, translation t, split_answer sa
 			WHERE n.id = p.nuts_id
 			AND n.country_code = ${pCountry}
 			AND v.indicator_id = ${pIndicator}
 			AND v.profile_id = p.id
 			AND p.answer_id = sa.id
+			AND p.activity_sector_id = 14
 			AND sa.id IN (1, 2)
 			AND sa.literal_id = t.literal_id
 			AND t.language = 'EN'
