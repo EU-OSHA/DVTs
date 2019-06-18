@@ -33,13 +33,32 @@ define(function (require) {
     $scope.selectedCountries = [];
     $scope.deleteCountryTags = [];
 
+    var resolution = screen.width;
+
+    $(window).on("resize",function(e){
+      resolution = screen.width;      
+      if(resolution >=768 && resolution <=1024){
+        $scope.pageSize = 16;      
+      } else {
+        $scope.pageSize = 15;
+      }
+      $scope.elementsEnd=$scope.pageSize;    
+      $scope.$apply();
+      updateText();
+    });
+
     //Variables pagination
     $scope.currentPage = 0;
-    $scope.pageSize = 15;
+    if(resolution >=768 && resolution <=1024){
+      $scope.pageSize = 16;      
+    } else {
+      $scope.pageSize = 15;
+    }
     $scope.elementsStart=0;
     $scope.elementsEnd=$scope.pageSize;
 
     // Pagination Text
+
     $scope.paginationText = 'Displaying ' + ($scope.elementsStart+1)+'-'+$scope.elementsEnd + ' of ' + $scope.amatrix.length;
 
     var updateText = function() {
@@ -429,8 +448,11 @@ define(function (require) {
         dataService.applySocialDialogueFilters($scope.datasetESENER, $scope.searchParams.countries)
           .then(function (data) {
             $scope.amatrix = dataService.dataMapper(data);
+            if($scope.amatrix.length == 32){
+              $scope.amatrix.pop();
+            }
 
-            //$log.warn($scope.amatrix);
+            $log.warn($scope.amatrix);
 
             $scope.firstPage();
 

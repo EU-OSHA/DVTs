@@ -96,8 +96,37 @@ define(function (require) {
     $scope.trimText = function(pVal, pNumCharacters){
       var shortText = pVal;
       var finalHtml = '';
+      var text = 0;
+      var newMaxCharacter = pNumCharacters;
+
+      if(shortText != null){
+        var firstSplit =  shortText.substring(0, newMaxCharacter);
+
+        if(firstSplit.match('<a')){
+          pNumCharacters += 150;
+        }
+
+        var indexStart = shortText.indexOf('<a');
+        var indexEnd = shortText.indexOf('>', indexStart);
+        var cont = 0;
+
+        if(indexStart != -1){
+          while (indexStart != -1){
+            var link = shortText.substring(indexStart, indexEnd);
+            newMaxCharacter = newMaxCharacter + link.length;
+            indexStart = shortText.indexOf('<a', indexEnd);
+            indexEnd = shortText.indexOf('>', indexStart);
+          }
+        }
+        if (shortText.length > newMaxCharacter ) {
+          shortText = $.trim(shortText).substring(0, pNumCharacters).split(" ").slice(0, -1).join(" ") + "<span class='dots'>...</span>";
+        }
+        return $sce.trustAsHtml(shortText);
+      }
+      /*var shortText = pVal;
+      var finalHtml = '';
       if(pVal != null){
-        if(shortText.match('<p>')){
+        if(shortText.match('<p>') || shortText.match('<ul>') || shortText.match('<ol>')){
           if(shortText.length>pNumCharacters){
             var minimized_elements = $compile(pVal)($scope);
             for(var i = 0; i < minimized_elements.length; i++){
@@ -128,21 +157,22 @@ define(function (require) {
           }
           return $sce.trustAsHtml(shortText);
         }
-      }
+      }*/
     }
 
-    $scope.longText = function(pVal, pNumCharacters) {
+    /*$scope.longText = function(pVal, pNumCharacters) {
       var longText = "<samp style='display:none'> " + pVal.split(" ").slice($.trim(pVal).substring(0, pNumCharacters).split(" ").slice(0, -1).length).join(" ") + '</samp>';
       return longText;
-    }
+    }*/
 
     $scope.toggleText = function($event) {
       if ($(this).is(':visible')) {
-
-      angular.element(' samp', angular.element($event.target).parent().parent()).toggleClass('visible-inline');
-      angular.element(' .text-part', angular.element($event.target).parent().parent()).toggleClass('visible');
-
+        //angular.element(' samp', angular.element($event.target).parent().parent()).toggleClass('visible-inline');
+        //angular.element(' .text-part', angular.element($event.target).parent().parent()).toggleClass('visible');
+        angular.element('div.complete-text', angular.element($event.target).parent().parent()).toggle();
+        angular.element('div.partial-text', angular.element($event.target).parent().parent()).toggle();
       }
+
       //Para ocultar los puntos suspensivos del recorte
       angular.element(' span.dots', angular.element($event.target).parent().parent()).toggle();
       //Para cambiar del boton see more al boton see less
@@ -150,7 +180,6 @@ define(function (require) {
     }
 
     // Show/hide the Countries Filter List
-
     angular.element('div.countries-filters').css( "display",'none' );
     angular.element('#filter2 h2').addClass('showChallenges');
     $scope.toggleFilters = function() {
@@ -616,7 +645,7 @@ define(function (require) {
        * Apply the filters and load the filtered content
        */
       function search($event,filter) {
-        //$log.warn($scope.searchParams.countries);
+        //$log.warn($scope.searchParams);
 
         dataService.getEUChallengesWithFilters($scope.searchText, $scope.searchParams.challenges, $scope.searchParams.countries)
           .then(function (data) {

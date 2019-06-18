@@ -174,7 +174,13 @@ define(function(require){
                     } else {
                         if ($.isNumeric(value) && (value%1) > 0)
                         {
-                            value = Math.ceil(value*100)/100;
+                            //All decimals
+                            //value = value;
+                            //2 decimals without rounding
+                            //value = Math.floor(value * 100) / 100;
+                            //2 decimals rounding
+                            //value = Math.ceil(value*10)/10;
+                            value = round(value,1);
                         }
                         data+=value+";";
                     }
@@ -198,6 +204,11 @@ define(function(require){
             downloadCSV();
            //exportComponent.exportData();
         };
+
+        function round(value, precision) {
+            var multiplier = Math.pow(10, precision || 0);
+            return Math.round(value * multiplier) / multiplier;
+        }
 
         return{
             exportImageAction: exportImage,

@@ -17,7 +17,7 @@
     padding-top: 130px;
     overflow: auto;
     &.section-fixed{
-      padding-top:30rem;
+      padding-top:32rem;
     }
     &.ovh{
       overflow: hidden;
@@ -119,7 +119,6 @@
       font-size: 1.4rem;
       font-family: "OpenSans";
       font-weight: normal;
-      text-align: right;
       font-style: italic;
       display: block;
       margin: -2rem 2rem 2rem;
@@ -715,6 +714,7 @@
           padding:0;
           border-bottom: 4px solid transparent;
           display: inline-block;
+          height: 100%;
           &.active, &:hover, &:focus, &:visited {
             border-bottom: 4px solid $orange;
             text-decoration: none;
@@ -996,7 +996,7 @@
           }
         }
         .flags--wrapper{
-          outline: 1px solid #EEE;
+          outline: 1px solid #CCC;
         }
         .see-more{
           text-align: center;
@@ -1014,6 +1014,7 @@
             font-size: 1.2rem;
             padding: 0.5rem 2rem; 
             background: $white;
+            position: relative;
             &:hover, &:focus{
               background: $orange!important;
               color: $white!important;
@@ -1026,7 +1027,7 @@
               background: $orange;
               position: absolute;
               top: -8px;
-              left: 48.5%;
+              left: 45.5%;
               padding: 0px;
               border-radius: 16px;
               width: 12px;
@@ -1136,6 +1137,7 @@
         right: 28px;
         z-index: 999999;
         box-shadow: 0px 0px 4px #aaa;
+        text-align: left;
     }
   /* END GOOGLE TRANSLATE */
 

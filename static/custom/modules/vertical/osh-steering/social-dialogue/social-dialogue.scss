@@ -1,13 +1,19 @@
 .download-report{
+  text-align: left;
   a{
-    color: $black; 
+    color: #58585A;
+    font-family: 'Oswald';
+    &:hover{
+      color:$aquamarine;
+    }  
     &:before{
       content:" ";
       width:2rem;
       height: 2rem;
       background: url(../img/icon-download-report.png) top left no-repeat;
+      background-size: cover;
       display: inline-block;
-      margin-right: 1rem;
+      margin-right: 0.6rem;
     }               
   }          
 }
@@ -17,12 +23,13 @@
     .card--block--chart{
       margin: 0 2rem 3rem 0;
       .chart--block{
-        padding: 2rem;
+        padding:20px;
         header{
           display: flex;
-          margin-bottom: 2rem;
+          margin-bottom: 0;
+          min-height: 36%;
           img{
-            width: auto !important;
+            width: auto;
             margin-right: 1rem;
           }
           h2{
@@ -71,7 +78,7 @@
     position: relative;
     z-index: 10;
     min-height: 6rem;
-    width:94%;
+    width:95.5%;
     .filter--dropdown--wrapper{
       position: relative;
       min-height: 5rem;
@@ -92,7 +99,7 @@
   .highlited--data--block{
     display: flex;
     .highlited-data-item{
-      &:first-child{
+      &:nth-child(1){
         width:30%;
         .flags--wrapper{
           float:left;
@@ -107,6 +114,7 @@
           .download-report{
             a{
               color: $black;
+              font-family: 'Oswald';
               &:hover{
                 color:$aquamarine;
               }           
@@ -114,12 +122,16 @@
           }
         }
       }
+      &:nth-child(2){
+        width:70%;
+      }
       .highlited-data-list{
         list-style: none;
         display: flex;
         justify-content: space-between;
         li{
-          width: 20%;
+          text-align: center;
+          width: 23%;
           span{
             font-family: 'Oswald';
             font-size: 3.6rem;
@@ -134,7 +146,7 @@
             }
           }
           label{
-            font-size: 1.4rem;
+            //font-size: 1.4rem;
             font-family: 'Oswald';
             font-weight: normal;
 
@@ -264,6 +276,9 @@
             }
           }
         }
+        &:nth-child(2){
+          width: 100%;
+        }
         .highlited-data-list{
           padding: 0;
           flex-wrap: nowrap;
@@ -319,6 +334,7 @@
           flex-wrap: wrap;
           li{
             width: 100%;
+            text-align: left;
             span{
               &.country-data{
 
@@ -328,7 +344,8 @@
               }
             }
             label{
-
+              width: 70%;
+              line-height: 16px;
             }
           }
         }

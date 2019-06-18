@@ -1416,5 +1416,4 @@
 			AND n.country_code = 'EU28';
         </Query>
    	</DataAccess>
-
 </CDADescriptor>

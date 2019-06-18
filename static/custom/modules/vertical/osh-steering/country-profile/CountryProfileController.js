@@ -71,36 +71,60 @@ define(function (require) {
     $scope.trimText = function(pVal, pNumCharacters){
       var shortText = pVal;
       var finalHtml = '';
-      var totalLetters = 0;
-      var textReduced = false;
-      
-      console.log(pVal);
+      var text = 0;
+      var newMaxCharacter = pNumCharacters;
 
-      if(pVal != null){
-        /*var index = shortText.indexOf('<');
-        if(index != 0 || index != -1){
+      if(shortText != null){
+        var firstSplit =  shortText.substring(0, newMaxCharacter);
+
+        if(firstSplit.match('<a')){
+          pNumCharacters += 150;
+        }
+
+        var indexStart = shortText.indexOf('<a');
+        var indexEnd = shortText.indexOf('>', indexStart);
+        var cont = 0;
+
+        if(indexStart != -1){
+          while (indexStart != -1){
+            var link = shortText.substring(indexStart, indexEnd);
+            newMaxCharacter = newMaxCharacter + link.length;
+            indexStart = shortText.indexOf('<a', indexEnd);
+            indexEnd = shortText.indexOf('>', indexStart);
+            //$log.warn(link);
+            //$log.warn(link.length);
+          }
+        }
+        
+        /*if(index != 0 || index != -1){
           shortText = '<p>'+ shortText +'</p>';
           $log.warn(shortText);
         }*/
-          if (shortText.length > pNumCharacters) {
-            shortText = $.trim(pVal).substring(0, pNumCharacters).split(" ").slice(0, -1).join(" ") + $scope.longText(pVal, pNumCharacters) + "<span class='dots'>...</span>";
-          }
-          return $sce.trustAsHtml(shortText);
+        if (shortText.length > newMaxCharacter ) {
+          shortText = $.trim(shortText).substring(0, pNumCharacters).split(" ").slice(0, -1).join(" ") + "<span class='dots'>...</span>";
+        }
+        return $sce.trustAsHtml(shortText);
       }
     }
 
-    $scope.longText = function(pVal, pNumCharacters) {
+    /*$scope.longText = function(pVal, pNumCharacters) {
       var longText = "<samp style='display:none'> " + pVal.split(" ").slice($.trim(pVal).substring(0, pNumCharacters).split(" ").slice(0, -1).length).join(" ") + '</samp>';
       return longText;
-    }
+    }*/
 
     $scope.toggleText = function($event) {
+
       if ($(this).is(':visible')) {
 
-      angular.element(' samp', angular.element($event.target).parent().parent()).toggleClass('visible-inline');
-      angular.element(' .text-part', angular.element($event.target).parent().parent()).toggleClass('visible');
+        //angular.element(' samp', angular.element($event.target).parent().parent()).toggleClass('visible-inline');
+        //angular.element(' .text-part', angular.element($event.target).parent().parent()).toggleClass('visible');
 
+        //$log.warn(angular.element('div.partial-text', angular.element($event.target).parent().parent()).is(':visible'));
+        angular.element('div.complete-text', angular.element($event.target).parent().parent()).toggle();
+        angular.element('div.partial-text', angular.element($event.target).parent().parent()).toggle();
+        
       }
+
       //Para ocultar los puntos suspensivos del recorte
       angular.element(' span.dots', angular.element($event.target).parent().parent()).toggle();
       //Para cambiar del boton see more al boton see less

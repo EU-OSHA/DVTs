@@ -103,7 +103,8 @@ define(function (require) {
                         $scope.parameters.chartDefinition.legend = !$scope.parameters.pyramid ? true : false;
 
                         if ($state.current.name == "economic-sector-profile") {
-                            if($scope.parameters.name == 'dvt_bar_chart_5'){
+                            if($scope.parameters.chartDefinition.dataAccessId == 'getGDPData'){
+                                $log.warn($scope.parameters.name);
                                 $scope.parameters.chartDefinition.plots[0].bar_call = function(){
                                     this.add(pv.Image)
                                       .url(function(scene) {
@@ -162,7 +163,7 @@ define(function (require) {
                                                     return panelWidth - (barWidth + this.width()/2) - 10;
                                                 }else{
                                                     //return panelWidth/1.5 + (barWidth - this.width())/2 - 5;
-                                                    return panelWidth - this.width()/2 - panelWidth/5.5;
+                                                    return panelWidth - this.width()/2 - panelWidth/5.45;
                                                 }
                                             }
                                         }
@@ -172,8 +173,18 @@ define(function (require) {
                                 }
                             }
 
-                            if($scope.parameters.name == 'dvt_bar_chart_1'){
+                            if($scope.parameters.chartDefinition.dataAccessId == 'getCompanySizeData'){
                                 $scope.parameters.chartDefinition.legendItemSize = 300;
+
+                                if(resolution <= 325){
+                                    //$log.warn('resolution <= 325');
+                                    $scope.parameters.chartDefinition.legendItemSize = 100;
+                                }
+
+                                /*if(resolution <= 425){
+                                    $log.warn('resolution < 425');
+                                    $scope.parameters.chartDefinition.legendItemSize = 300;
+                                }*/
                                 
                                 /*if( resolution > 1256 &&  resolution <= 1684){
                                     $log.warn('resolution > 1360');
@@ -185,9 +196,18 @@ define(function (require) {
                                 }*/
                             }
 
-                            if($scope.parameters.name == 'dvt_bar_chart_2'){
-                                $scope.parameters.chartDefinition.valuesNormalized=1;
+                            if($scope.parameters.chartDefinition.dataAccessId == 'getEmploymentPerSectorData'){
                                 $scope.parameters.chartDefinition.legendItemSize = 340;
+
+                                if(resolution <= 425 && resolution > 325){
+                                    //$log.warn('resolution <= 425');
+                                    $scope.parameters.chartDefinition.legendItemSize = 280;
+                                }
+
+                                if(resolution <= 325){
+                                    //$log.warn('resolution <= 325');
+                                    $scope.parameters.chartDefinition.legendItemSize = 280;
+                                }
                             }
                         }
 

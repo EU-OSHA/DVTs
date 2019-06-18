@@ -7,7 +7,7 @@
           <p data-ng-bind="i18nLiterals.L22038"></p>
           <span data-ng-bind="i18nLiterals.L20704"></span> <span><a data-ng-bind="i18nLiterals.L20705" ui-sref="about-tool"></a></span>
         </div>
-        <div class="icon--advice regulation-icon hide-mobile col-sm-4 col-md-4"></div>
+        <div class="icon--advice national-icon hide-mobile col-sm-4 col-md-4"></div>
       </div>
   </section>
 
@@ -60,15 +60,16 @@
         </div>
         <h2 data-ng-bind="i18nLiterals.L303"></h2>
         <div class="columm--item--content">
-          <p class="download-report" data-ng-bind="i18nLiterals.L20639"></p>
+          <!--<p class="download-report" data-ng-bind="i18nLiterals.L20639"></p>-->
           <p class="download-report">
-            <a href="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/modules/vertical/osh-steering/country-profile/pdf/National-Strategies-Mapping_2017_{{i18nLiterals['L'+country1Data.country_name]}}.pdf" class="download-pdf" data-ng-bind-html="i18nLiterals.L20640" target="_blank"></a>
+            <a href="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/modules/vertical/osh-steering/country-profile/pdf/National-Strategies-Mapping_2017_{{i18nLiterals['L'+country1Data.country_name]}}.pdf" class="download-pdf" data-ng-bind-html="i18nLiterals.L20639+' '+i18nLiterals.L20640" target="_blank"></a>
           </p>
-          <div data-ng-bind-html="i18nLiterals['L'+country1Data.text1]"></div>
-          <!--<p class="see-more" data-ng-if="i18nLiterals['L'+country1Data.text1].length > maxCharacters">
-            <a href ng-click='toggleText($event)' class="see-more">{{i18nLiterals.L20641}}<i class="fa fa-angle-down" aria-hidden="true"></i></a> 
-            <a href ng-click='toggleText($event)' class="see-less" style="display:none">{{i18nLiterals.L20642}}<i class="fa fa-angle-up" aria-hidden="true"></i></a>
-          </p>-->
+          <div class="partial-text" data-ng-bind-html="trimText(i18nLiterals['L'+country1Data.text1], maxCharacters)"></div>
+          <div class="complete-text" data-ng-bind-html="i18nLiterals['L'+country1Data.text1]"></div>
+          <p class="see-more" data-ng-if="i18nLiterals['L'+country1Data.text1].length > maxCharacters">
+            <a href ng-click='toggleText($event)' class="see-more">{{i18nLiterals.L480}}<i class="fa fa-angle-down" aria-hidden="true"></i></a> 
+            <a href ng-click='toggleText($event)' class="see-less" style="display:none">{{i18nLiterals.L481}}<i class="fa fa-angle-up" aria-hidden="true"></i></a>
+          </p>
         </div>
       </div>
 
@@ -78,15 +79,16 @@
         </div>
         <h2 data-ng-bind="i18nLiterals.L303"></h2>
         <div class="columm--item--content">
-          <p class="download-report" data-ng-bind="i18nLiterals.L20639"></p>
+          <!--<p class="download-report" data-ng-bind="i18nLiterals.L20639"></p>-->
           <p class="download-report">
-            <a href="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/modules/vertical/osh-steering/country-profile/pdf/National-Strategies-Mapping_2017_{{i18nLiterals['L'+country1Data.country_name]}}.pdf" class="download-pdf" data-ng-bind-html="i18nLiterals.L20640" target="_blank"></a>
+            <a href="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/modules/vertical/osh-steering/country-profile/pdf/National-Strategies-Mapping_2017_{{i18nLiterals['L'+country1Data.country_name]}}.pdf" class="download-pdf" data-ng-bind-html="i18nLiterals.L20639+' '+i18nLiterals.L20640" target="_blank"></a>
           </p>
-          <div data-ng-bind-html="i18nLiterals['L'+country2Data.text1]"></div>
-          <!--<p class="see-more" data-ng-if="i18nLiterals['L'+country2Data.text1].length > maxCharacters">
-            <a href ng-click='toggleText($event)' class="see-more">{{i18nLiterals.L20641}}<i class="fa fa-angle-down" aria-hidden="true"></i></a> 
-            <a href ng-click='toggleText($event)' class="see-less" style="display:none">{{i18nLiterals.L20642}}<i class="fa fa-angle-up" aria-hidden="true"></i></a>
-          </p>-->
+          <div class="partial-text" data-ng-bind-html="trimText(i18nLiterals['L'+country2Data.text1], maxCharacters)"></div>
+          <div class="complete-text" data-ng-bind-html="i18nLiterals['L'+country2Data.text1]"></div>
+          <p class="see-more" data-ng-if="i18nLiterals['L'+country2Data.text1].length > maxCharacters">
+            <a href ng-click='toggleText($event)' class="see-more">{{i18nLiterals.L480}}<i class="fa fa-angle-down" aria-hidden="true"></i></a> 
+            <a href ng-click='toggleText($event)' class="see-less" style="display:none">{{i18nLiterals.L481}}<i class="fa fa-angle-up" aria-hidden="true"></i></a>
+          </p>
         </div>
       </div>
     </div>
@@ -99,14 +101,15 @@
         </div>
         <h2 data-ng-bind="i18nLiterals.L304"></h2>
         <div class="columm--item--content">
-          <p class="download-report" data-ng-bind="i18nLiterals.L20639"></p>
+          <!--<p class="download-report" data-ng-bind="i18nLiterals.L20639"></p>-->
           <p class="download-report">
-            <a href="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/modules/vertical/osh-steering/country-profile/pdf/National-Strategies-Mapping_2017_{{i18nLiterals['L'+country1Data.country_name]}}.pdf" class="download-pdf" data-ng-bind-html="i18nLiterals.L20640" target="_blank"></a>
+            <a href="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/modules/vertical/osh-steering/country-profile/pdf/National-Strategies-Mapping_2017_{{i18nLiterals['L'+country1Data.country_name]}}.pdf" class="download-pdf" data-ng-bind-html="i18nLiterals.L20639+' '+i18nLiterals.L20640" target="_blank"></a>
           </p>
-          <div data-ng-bind-html="trimText(i18nLiterals['L'+country1Data.text2], maxCharacters)"></div>
+          <div class="partial-text" data-ng-bind-html="trimText(i18nLiterals['L'+country1Data.text2], maxCharacters)"></div>
+          <div class="complete-text" data-ng-bind-html="i18nLiterals['L'+country1Data.text2]"></div>
           <p class="see-more" data-ng-if="i18nLiterals['L'+country1Data.text2].length > maxCharacters">
-            <a href ng-click='toggleText($event)' class="see-more">{{i18nLiterals.L20641}}<i class="fa fa-angle-down" aria-hidden="true"></i></a> 
-            <a href ng-click='toggleText($event)' class="see-less" style="display:none">{{i18nLiterals.L20642}}<i class="fa fa-angle-up" aria-hidden="true"></i></a>
+            <a href ng-click='toggleText($event)' class="see-more">{{i18nLiterals.L480}}<i class="fa fa-angle-down" aria-hidden="true"></i></a> 
+            <a href ng-click='toggleText($event)' class="see-less" style="display:none">{{i18nLiterals.L481}}<i class="fa fa-angle-up" aria-hidden="true"></i></a>
           </p>
         </div>
       </div>
@@ -117,14 +120,15 @@
         </div>
         <h2 data-ng-bind="i18nLiterals.L304"></h2>
         <div class="columm--item--content">
-          <p class="download-report" data-ng-bind="i18nLiterals.L20639"></p>
+          <!--<p class="download-report" data-ng-bind="i18nLiterals.L20639"></p>-->
           <p class="download-report">
-            <a href="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/modules/vertical/osh-steering/country-profile/pdf/National-Strategies-Mapping_2017_{{i18nLiterals['L'+country1Data.country_name]}}.pdf" class="download-pdf" data-ng-bind-html="i18nLiterals.L20640" target="_blank"></a>
+            <a href="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/modules/vertical/osh-steering/country-profile/pdf/National-Strategies-Mapping_2017_{{i18nLiterals['L'+country1Data.country_name]}}.pdf" class="download-pdf" data-ng-bind-html="i18nLiterals.L20639+' '+i18nLiterals.L20640" target="_blank"></a>
           </p>
-          <div data-ng-bind-html="trimText(i18nLiterals['L'+country2Data.text2], maxCharacters)"></div>
+          <div class="partial-text" data-ng-bind-html="trimText(i18nLiterals['L'+country2Data.text2], maxCharacters)"></div>
+          <div class="complete-text" data-ng-bind-html="i18nLiterals['L'+country2Data.text2]"></div>
           <p class="see-more" data-ng-if="i18nLiterals['L'+country2Data.text2].length > maxCharacters">
-            <a href ng-click='toggleText($event)' class="see-more">{{i18nLiterals.L20641}}<i class="fa fa-angle-down" aria-hidden="true"></i></a> 
-            <a href ng-click='toggleText($event)' class="see-less" style="display:none">{{i18nLiterals.L20642}}<i class="fa fa-angle-up" aria-hidden="true"></i></a>
+            <a href ng-click='toggleText($event)' class="see-more">{{i18nLiterals.L480}}<i class="fa fa-angle-down" aria-hidden="true"></i></a> 
+            <a href ng-click='toggleText($event)' class="see-less" style="display:none">{{i18nLiterals.L481}}<i class="fa fa-angle-up" aria-hidden="true"></i></a>
           </p>
         </div>
       </div>
@@ -138,14 +142,15 @@
         </div>
         <h2 data-ng-bind="i18nLiterals.L305"></h2>
         <div class="columm--item--content">
-          <p class="download-report" data-ng-bind="i18nLiterals.L20639"></p>
+          <!--<p class="download-report" data-ng-bind="i18nLiterals.L20639"></p>-->
           <p class="download-report">
-            <a href="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/modules/vertical/osh-steering/country-profile/pdf/National-Strategies-Mapping_2017_{{i18nLiterals['L'+country1Data.country_name]}}.pdf" class="download-pdf" data-ng-bind-html="i18nLiterals.L20640" target="_blank"></a>
+            <a href="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/modules/vertical/osh-steering/country-profile/pdf/National-Strategies-Mapping_2017_{{i18nLiterals['L'+country1Data.country_name]}}.pdf" class="download-pdf" data-ng-bind-html="i18nLiterals.L20639+' '+i18nLiterals.L20640" target="_blank"></a>
           </p>
-          <div data-ng-bind-html="trimText(i18nLiterals['L'+country1Data.text3], 200)"></div>
+          <div class="partial-text" data-ng-bind-html="trimText(i18nLiterals['L'+country1Data.text3], maxCharacters)"></div>
+          <div class="complete-text" data-ng-bind-html="i18nLiterals['L'+country1Data.text3]"></div>
           <p class="see-more" data-ng-if="i18nLiterals['L'+country1Data.text3].length > maxCharacters">
-            <a href ng-click='toggleText($event)' class="see-more">{{i18nLiterals.L20641}}<i class="fa fa-angle-down" aria-hidden="true"></i></a> 
-            <a href ng-click='toggleText($event)' class="see-less" style="display:none">{{i18nLiterals.L20642}}<i class="fa fa-angle-up" aria-hidden="true"></i></a>
+            <a href ng-click='toggleText($event)' class="see-more">{{i18nLiterals.L480}}<i class="fa fa-angle-down" aria-hidden="true"></i></a> 
+            <a href ng-click='toggleText($event)' class="see-less" style="display:none">{{i18nLiterals.L481}}<i class="fa fa-angle-up" aria-hidden="true"></i></a>
           </p>
         </div>
       </div>
@@ -156,14 +161,15 @@
         </div>
         <h2 data-ng-bind="i18nLiterals.L305"></h2>
         <div class="columm--item--content">
-          <p class="download-report" data-ng-bind="i18nLiterals.L20639"></p>
+          <!--<p class="download-report" data-ng-bind="i18nLiterals.L20639"></p>-->
           <p class="download-report">
-            <a href="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/modules/vertical/osh-steering/country-profile/pdf/National-Strategies-Mapping_2017_{{i18nLiterals['L'+country1Data.country_name]}}.pdf" class="download-pdf" data-ng-bind-html="i18nLiterals.L20640" target="_blank"></a>
+            <a href="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/modules/vertical/osh-steering/country-profile/pdf/National-Strategies-Mapping_2017_{{i18nLiterals['L'+country1Data.country_name]}}.pdf" class="download-pdf" data-ng-bind-html="i18nLiterals.L20639+' '+i18nLiterals.L20640" target="_blank"></a>
           </p>
-          <div data-ng-bind-html="trimText(i18nLiterals['L'+country2Data.text3], 200)"></div>
+          <div class="partial-text" data-ng-bind-html="trimText(i18nLiterals['L'+country2Data.text3], maxCharacters)"></div>
+          <div class="complete-text" data-ng-bind-html="i18nLiterals['L'+country2Data.text3]"></div>
           <p class="see-more" data-ng-if="i18nLiterals['L'+country2Data.text3].length > maxCharacters">
-            <a href ng-click='toggleText($event)' class="see-more">{{i18nLiterals.L20641}}<i class="fa fa-angle-down" aria-hidden="true"></i></a> 
-            <a href ng-click='toggleText($event)' class="see-less" style="display:none">{{i18nLiterals.L20642}}<i class="fa fa-angle-up" aria-hidden="true"></i></a>
+            <a href ng-click='toggleText($event)' class="see-more">{{i18nLiterals.L480}}<i class="fa fa-angle-down" aria-hidden="true"></i></a> 
+            <a href ng-click='toggleText($event)' class="see-less" style="display:none">{{i18nLiterals.L481}}<i class="fa fa-angle-up" aria-hidden="true"></i></a>
           </p>
         </div>
         
@@ -178,14 +184,15 @@
         </div>
         <h2 data-ng-bind="i18nLiterals.L306"></h2>
         <div class="columm--item--content">
-          <p class="download-report" data-ng-bind="i18nLiterals.L20639"></p>
+          <!--<p class="download-report" data-ng-bind="i18nLiterals.L20639"></p>-->
           <p class="download-report">
-            <a href="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/modules/vertical/osh-steering/country-profile/pdf/National-Strategies-Mapping_2017_{{i18nLiterals['L'+country1Data.country_name]}}.pdf" class="download-pdf" data-ng-bind-html="i18nLiterals.L20640" target="_blank"></a>
+            <a href="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/modules/vertical/osh-steering/country-profile/pdf/National-Strategies-Mapping_2017_{{i18nLiterals['L'+country1Data.country_name]}}.pdf" class="download-pdf" data-ng-bind-html="i18nLiterals.L20639+' '+i18nLiterals.L20640" target="_blank"></a>
           </p>
-          <div data-ng-bind-html="trimText(i18nLiterals['L'+country1Data.text4], maxCharacters)"></div>
+          <div class="partial-text" data-ng-bind-html="trimText(i18nLiterals['L'+country1Data.text4], maxCharacters)"></div>
+          <div class="complete-text" data-ng-bind-html="i18nLiterals['L'+country1Data.text4]"></div>
           <p class="see-more" data-ng-if="i18nLiterals['L'+country1Data.text4].length > maxCharacters">
-            <a href ng-click='toggleText($event)' class="see-more">{{i18nLiterals.L20641}}<i class="fa fa-angle-down" aria-hidden="true"></i></a> 
-            <a href ng-click='toggleText($event)' class="see-less" style="display:none">{{i18nLiterals.L20642}}<i class="fa fa-angle-up" aria-hidden="true"></i></a>
+            <a href ng-click='toggleText($event)' class="see-more">{{i18nLiterals.L480}}<i class="fa fa-angle-down" aria-hidden="true"></i></a> 
+            <a href ng-click='toggleText($event)' class="see-less" style="display:none">{{i18nLiterals.L481}}<i class="fa fa-angle-up" aria-hidden="true"></i></a>
           </p>
         </div>
       </div>
@@ -196,53 +203,15 @@
         </div>
         <h2 data-ng-bind="i18nLiterals.L306"></h2>
         <div class="columm--item--content">
-          <p class="download-report" data-ng-bind="i18nLiterals.L20639"></p>
+          <!--<p class="download-report" data-ng-bind="i18nLiterals.L20639"></p>-->
           <p class="download-report">
-            <a href="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/modules/vertical/osh-steering/country-profile/pdf/National-Strategies-Mapping_2017_{{i18nLiterals['L'+country1Data.country_name]}}.pdf" class="download-pdf" data-ng-bind-html="i18nLiterals.L20640" target="_blank"></a>
+            <a href="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/modules/vertical/osh-steering/country-profile/pdf/National-Strategies-Mapping_2017_{{i18nLiterals['L'+country1Data.country_name]}}.pdf" class="download-pdf" data-ng-bind-html="i18nLiterals.L20639+' '+i18nLiterals.L20640" target="_blank"></a>
           </p>
-          <div data-ng-bind-html="trimText(i18nLiterals['L'+country2Data.text4], maxCharacters)"></div>
+          <div class="partial-text" data-ng-bind-html="trimText(i18nLiterals['L'+country2Data.text4], maxCharacters)"></div>
+          <div class="complete-text" data-ng-bind-html="i18nLiterals['L'+country2Data.text4]"></div>
           <p class="see-more" data-ng-if="i18nLiterals['L'+country2Data.text4].length > maxCharacters">
-            <a href ng-click='toggleText($event)' class="see-more">{{i18nLiterals.L20641}}<i class="fa fa-angle-down" aria-hidden="true"></i></a> 
-            <a href ng-click='toggleText($event)' class="see-less" style="display:none">{{i18nLiterals.L20642}}<i class="fa fa-angle-up" aria-hidden="true"></i></a>
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Resources and Timeframe -->
-    <div class="column--grid--block" id="tab5" data-ng-if="pIndicator == 'resources-and-timeframe'">
-      <div class="column--item first" ng-class="{true: 'full', false: 'no-full'}[pCountry2 == 0]">
-        <div class="">
-          <img  class="flags--wrapper" ng-src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/flag/{{::country1Data.country_code.toLowerCase()}}.png">
-        </div>
-        <h2 data-ng-bind="i18nLiterals.L20251"></h2>
-        <div class="columm--item--content">
-          <p class="download-report" data-ng-bind="i18nLiterals.L20639"></p>
-          <p class="download-report">
-            <a href="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/modules/vertical/osh-steering/country-profile/pdf/National-Strategies-Mapping_2017_{{i18nLiterals['L'+country1Data.country_name]}}.pdf" class="download-pdf" data-ng-bind-html="i18nLiterals.L20640" target="_blank"></a>
-          </p>
-          <div data-ng-bind-html="trimText(i18nLiterals['L'+country1Data.text5], maxCharacters)"></div>
-          <p class="see-more" data-ng-if="i18nLiterals['L'+country1Data.text5].length > maxCharacters">
-            <a href ng-click='toggleText($event)' class="see-more">{{i18nLiterals.L20641}}<i class="fa fa-angle-down" aria-hidden="true"></i></a> 
-            <a href ng-click='toggleText($event)' class="see-less" style="display:none">{{i18nLiterals.L20642}}<i class="fa fa-angle-up" aria-hidden="true"></i></a>
-          </p>
-        </div>       
-      </div>
-
-      <div class="column--item second" data-ng-if="pCountry2 != 0">
-        <div class="">
-          <img  class="flags--wrapper" ng-src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/flag/{{::country2Data.country_code.toLowerCase()}}.png">
-        </div>
-        <h2 data-ng-bind="i18nLiterals.L20251"></h2>
-        <div class="columm--item--content">
-          <p class="download-report" data-ng-bind="i18nLiterals.L20639"></p>
-          <p class="download-report">
-            <a href="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/modules/vertical/osh-steering/country-profile/pdf/National-Strategies-Mapping_2017_{{i18nLiterals['L'+country1Data.country_name]}}.pdf" class="download-pdf" data-ng-bind-html="i18nLiterals.L20640" target="_blank"></a>
-          </p>
-          <div data-ng-bind-html="trimText(i18nLiterals['L'+country2Data.text5],maxCharacters)"></div>
-          <p class="see-more" data-ng-if="i18nLiterals['L'+country2Data.text5].length > maxCharacters">
-            <a href ng-click='toggleText($event)' class="see-more">{{i18nLiterals.L20641}}<i class="fa fa-angle-down" aria-hidden="true"></i></a> 
-            <a href ng-click='toggleText($event)' class="see-less" style="display:none">{{i18nLiterals.L20642}}<i class="fa fa-angle-up" aria-hidden="true"></i></a>
+            <a href ng-click='toggleText($event)' class="see-more">{{i18nLiterals.L480}}<i class="fa fa-angle-down" aria-hidden="true"></i></a> 
+            <a href ng-click='toggleText($event)' class="see-less" style="display:none">{{i18nLiterals.L481}}<i class="fa fa-angle-up" aria-hidden="true"></i></a>
           </p>
         </div>
       </div>
@@ -256,14 +225,15 @@
         </div>
         <h2 data-ng-bind="i18nLiterals.L307"></h2>
         <div class="columm--item--content">
-          <p class="download-report" data-ng-bind="i18nLiterals.L20639"></p>
+          <!--<p class="download-report" data-ng-bind="i18nLiterals.L20639"></p>-->
           <p class="download-report">
-            <a href="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/modules/vertical/osh-steering/country-profile/pdf/National-Strategies-Mapping_2017_{{i18nLiterals['L'+country1Data.country_name]}}.pdf" class="download-pdf" data-ng-bind-html="i18nLiterals.L20640" target="_blank"></a>
+            <a href="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/modules/vertical/osh-steering/country-profile/pdf/National-Strategies-Mapping_2017_{{i18nLiterals['L'+country1Data.country_name]}}.pdf" class="download-pdf" data-ng-bind-html="i18nLiterals.L20639+' '+i18nLiterals.L20640" target="_blank"></a>
           </p>
-          <div data-ng-bind-html="trimText(i18nLiterals['L'+country1Data.text6], maxCharacters)"></div>
-          <p class="see-more" data-ng-if="i18nLiterals['L'+country1Data.text6].length > maxCharacters">
-            <a href ng-click='toggleText($event)' class="see-more">{{i18nLiterals.L20641}}<i class="fa fa-angle-down" aria-hidden="true"></i></a> 
-            <a href ng-click='toggleText($event)' class="see-less" style="display:none">{{i18nLiterals.L20642}}<i class="fa fa-angle-up" aria-hidden="true"></i></a>
+          <div class="partial-text" data-ng-bind-html="trimText(i18nLiterals['L'+country1Data.text5], maxCharacters)"></div>
+          <div class="complete-text" data-ng-bind-html="i18nLiterals['L'+country1Data.text5]"></div>
+          <p class="see-more" data-ng-if="i18nLiterals['L'+country1Data.text5].length > maxCharacters">
+            <a href ng-click='toggleText($event)' class="see-more">{{i18nLiterals.L480}}<i class="fa fa-angle-down" aria-hidden="true"></i></a> 
+            <a href ng-click='toggleText($event)' class="see-less" style="display:none">{{i18nLiterals.L481}}<i class="fa fa-angle-up" aria-hidden="true"></i></a>
           </p>
         </div>       
       </div>
@@ -274,14 +244,56 @@
         </div>
         <h2 data-ng-bind="i18nLiterals.L307"></h2>
         <div class="columm--item--content">
-          <p class="download-report" data-ng-bind="i18nLiterals.L20639"></p>
+          <!--<p class="download-report" data-ng-bind="i18nLiterals.L20639"></p>-->
           <p class="download-report">
-            <a href="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/modules/vertical/osh-steering/country-profile/pdf/National-Strategies-Mapping_2017_{{i18nLiterals['L'+country1Data.country_name]}}.pdf" class="download-pdf" data-ng-bind-html="i18nLiterals.L20640" target="_blank"></a>
+            <a href="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/modules/vertical/osh-steering/country-profile/pdf/National-Strategies-Mapping_2017_{{i18nLiterals['L'+country1Data.country_name]}}.pdf" class="download-pdf" data-ng-bind-html="i18nLiterals.L20639+' '+i18nLiterals.L20640" target="_blank"></a>
           </p>
-          <div data-ng-bind-html="trimText(i18nLiterals['L'+country2Data.text6],maxCharacters)"></div>
+          <div class="partial-text" data-ng-bind-html="trimText(i18nLiterals['L'+country2Data.text5],maxCharacters)"></div>
+          <div class="complete-text" data-ng-bind-html="i18nLiterals['L'+country2Data.text5]"></div>
+          <p class="see-more" data-ng-if="i18nLiterals['L'+country2Data.text5].length > maxCharacters">
+            <a href ng-click='toggleText($event)' class="see-more">{{i18nLiterals.L480}}<i class="fa fa-angle-down" aria-hidden="true"></i></a> 
+            <a href ng-click='toggleText($event)' class="see-less" style="display:none">{{i18nLiterals.L481}}<i class="fa fa-angle-up" aria-hidden="true"></i></a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Resources and Timeframe -->
+    <div class="column--grid--block" id="tab5" data-ng-if="pIndicator == 'resources-and-timeframe'">
+      <div class="column--item first" ng-class="{true: 'full', false: 'no-full'}[pCountry2 == 0]">
+        <div class="">
+          <img  class="flags--wrapper" ng-src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/flag/{{::country1Data.country_code.toLowerCase()}}.png">
+        </div>
+        <h2 data-ng-bind="i18nLiterals.L20251"></h2>
+        <div class="columm--item--content">
+          <!--<p class="download-report" data-ng-bind="i18nLiterals.L20639"></p>-->
+          <p class="download-report">
+            <a href="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/modules/vertical/osh-steering/country-profile/pdf/National-Strategies-Mapping_2017_{{i18nLiterals['L'+country1Data.country_name]}}.pdf" class="download-pdf" data-ng-bind-html="i18nLiterals.L20639+' '+i18nLiterals.L20640" target="_blank"></a>
+          </p>
+          <div class="partial-text" data-ng-bind-html="trimText(i18nLiterals['L'+country1Data.text6], maxCharacters)"></div>
+          <div class="complete-text" data-ng-bind-html="i18nLiterals['L'+country1Data.text6]"></div>
+          <p class="see-more" data-ng-if="i18nLiterals['L'+country1Data.text6].length > maxCharacters">
+            <a href ng-click='toggleText($event)' class="see-more">{{i18nLiterals.L480}}<i class="fa fa-angle-down" aria-hidden="true"></i></a> 
+            <a href ng-click='toggleText($event)' class="see-less" style="display:none">{{i18nLiterals.L481}}<i class="fa fa-angle-up" aria-hidden="true"></i></a>
+          </p>
+        </div>       
+      </div>
+
+      <div class="column--item second" data-ng-if="pCountry2 != 0">
+        <div class="">
+          <img  class="flags--wrapper" ng-src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/flag/{{::country2Data.country_code.toLowerCase()}}.png">
+        </div>
+        <h2 data-ng-bind="i18nLiterals.L20251"></h2>
+        <div class="columm--item--content">
+          <!--<p class="download-report" data-ng-bind="i18nLiterals.L20639"></p>-->
+          <p class="download-report">
+            <a href="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/modules/vertical/osh-steering/country-profile/pdf/National-Strategies-Mapping_2017_{{i18nLiterals['L'+country1Data.country_name]}}.pdf" class="download-pdf" data-ng-bind-html="i18nLiterals.L20639+' '+i18nLiterals.L20640" target="_blank"></a>
+          </p>
+          <div class="partial-text" data-ng-bind-html="trimText(i18nLiterals['L'+country2Data.text6],maxCharacters)"></div>
+          <div class="complete-text" data-ng-bind-html="i18nLiterals['L'+country2Data.text6]"></div>
           <p class="see-more" data-ng-if="i18nLiterals['L'+country2Data.text6].length > maxCharacters">
-            <a href ng-click='toggleText($event)' class="see-more">{{i18nLiterals.L20641}}<i class="fa fa-angle-down" aria-hidden="true"></i></a> 
-            <a href ng-click='toggleText($event)' class="see-less" style="display:none">{{i18nLiterals.L20642}}<i class="fa fa-angle-up" aria-hidden="true"></i></a>
+            <a href ng-click='toggleText($event)' class="see-more">{{i18nLiterals.L480}}<i class="fa fa-angle-down" aria-hidden="true"></i></a> 
+            <a href ng-click='toggleText($event)' class="see-less" style="display:none">{{i18nLiterals.L481}}<i class="fa fa-angle-up" aria-hidden="true"></i></a>
           </p>
         </div>
       </div>
@@ -295,14 +307,15 @@
         </div>
         <h2 data-ng-bind="i18nLiterals.L308"></h2>
         <div class="columm--item--content">
-          <p class="download-report" data-ng-bind="i18nLiterals.L20639"></p>
+          <!--<p class="download-report" data-ng-bind="i18nLiterals.L20639"></p>-->
           <p class="download-report">
-            <a href="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/modules/vertical/osh-steering/country-profile/pdf/National-Strategies-Mapping_2017_{{i18nLiterals['L'+country1Data.country_name]}}.pdf" class="download-pdf" data-ng-bind-html="i18nLiterals.L20640" target="_blank"></a>
+            <a href="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/modules/vertical/osh-steering/country-profile/pdf/National-Strategies-Mapping_2017_{{i18nLiterals['L'+country1Data.country_name]}}.pdf" class="download-pdf" data-ng-bind-html="i18nLiterals.L20639+' '+i18nLiterals.L20640" target="_blank"></a>
           </p>
-          <div data-ng-bind-html="trimText(i18nLiterals['L'+country1Data.text7], maxCharacters)"></div>
+          <div class="partial-text" data-ng-bind-html="trimText(i18nLiterals['L'+country1Data.text7], maxCharacters)"></div>
+          <div class="complete-text" data-ng-bind-html="i18nLiterals['L'+country1Data.text7]"></div>
           <p class="see-more" data-ng-if="i18nLiterals['L'+country1Data.text7].length > maxCharacters">
-            <a href ng-click='toggleText($event)' class="see-more">{{i18nLiterals.L20641}}<i class="fa fa-angle-down" aria-hidden="true"></i></a> 
-            <a href ng-click='toggleText($event)' class="see-less" style="display:none">{{i18nLiterals.L20642}}<i class="fa fa-angle-up" aria-hidden="true"></i></a>
+            <a href ng-click='toggleText($event)' class="see-more">{{i18nLiterals.L480}}<i class="fa fa-angle-down" aria-hidden="true"></i></a> 
+            <a href ng-click='toggleText($event)' class="see-less" style="display:none">{{i18nLiterals.L481}}<i class="fa fa-angle-up" aria-hidden="true"></i></a>
           </p>
         </div>
       </div>
@@ -313,14 +326,15 @@
         </div>
         <h2 data-ng-bind="i18nLiterals.L308"></h2>
         <div class="columm--item--content">
-          <p class="download-report" data-ng-bind="i18nLiterals.L20639"></p>
+          <!--<p class="download-report" data-ng-bind="i18nLiterals.L20639"></p>-->
           <p class="download-report">
-            <a href="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/modules/vertical/osh-steering/country-profile/pdf/National-Strategies-Mapping_2017_{{i18nLiterals['L'+country1Data.country_name]}}.pdf" class="download-pdf" data-ng-bind-html="i18nLiterals.L20640" target="_blank"></a>
+            <a href="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/modules/vertical/osh-steering/country-profile/pdf/National-Strategies-Mapping_2017_{{i18nLiterals['L'+country1Data.country_name]}}.pdf" class="download-pdf" data-ng-bind-html="i18nLiterals.L20639+' '+i18nLiterals.L20640" target="_blank"></a>
           </p>
-          <div data-ng-bind-html="trimText(i18nLiterals['L'+country2Data.text7],maxCharacters)"></div>
+          <div class="partial-text" data-ng-bind-html="trimText(i18nLiterals['L'+country2Data.text7],maxCharacters)"></div>
+          <div class="complete-text" data-ng-bind-html="i18nLiterals['L'+country2Data.text7]"></div>
           <p class="see-more" data-ng-if="i18nLiterals['L'+country2Data.text7].length > maxCharacters">
-            <a href ng-click='toggleText($event)' class="see-more">{{i18nLiterals.L20641}}<i class="fa fa-angle-down" aria-hidden="true"></i></a> 
-            <a href ng-click='toggleText($event)' class="see-less" style="display:none">{{i18nLiterals.L20642}}<i class="fa fa-angle-up" aria-hidden="true"></i></a>
+            <a href ng-click='toggleText($event)' class="see-more">{{i18nLiterals.L480}}<i class="fa fa-angle-down" aria-hidden="true"></i></a> 
+            <a href ng-click='toggleText($event)' class="see-less" style="display:none">{{i18nLiterals.L481}}<i class="fa fa-angle-up" aria-hidden="true"></i></a>
           </p>
         </div>
       </div>
@@ -334,14 +348,15 @@
         </div>
         <h2 data-ng-bind="i18nLiterals.L20253"></h2>
         <div class="columm--item--content">
-          <p class="download-report" data-ng-bind="i18nLiterals.L20639"></p>
+          <!--<p class="download-report" data-ng-bind="i18nLiterals.L20639"></p>-->
           <p class="download-report">
-            <a href="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/modules/vertical/osh-steering/country-profile/pdf/National-Strategies-Mapping_2017_{{i18nLiterals['L'+country1Data.country_name]}}.pdf" class="download-pdf" data-ng-bind-html="i18nLiterals.L20640" target="_blank"></a>
+            <a href="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/modules/vertical/osh-steering/country-profile/pdf/National-Strategies-Mapping_2017_{{i18nLiterals['L'+country1Data.country_name]}}.pdf" class="download-pdf" data-ng-bind-html="i18nLiterals.L20639+' '+i18nLiterals.L20640" target="_blank"></a>
           </p>
-          <div data-ng-bind-html="trimText(i18nLiterals['L'+country1Data.text8], maxCharacters)"></div>
+          <div class="partial-text" data-ng-bind-html="trimText(i18nLiterals['L'+country1Data.text8], maxCharacters)"></div>
+          <div class="complete-text" data-ng-bind-html="i18nLiterals['L'+country1Data.text8]"></div>
           <p class="see-more" data-ng-if="i18nLiterals['L'+country1Data.text8].length > maxCharacters">
-            <a href ng-click='toggleText($event)' class="see-more">{{i18nLiterals.L20641}}<i class="fa fa-angle-down" aria-hidden="true"></i></a> 
-            <a href ng-click='toggleText($event)' class="see-less" style="display:none">{{i18nLiterals.L20642}}<i class="fa fa-angle-up" aria-hidden="true"></i></a>
+            <a href ng-click='toggleText($event)' class="see-more">{{i18nLiterals.L480}}<i class="fa fa-angle-down" aria-hidden="true"></i></a> 
+            <a href ng-click='toggleText($event)' class="see-less" style="display:none">{{i18nLiterals.L481}}<i class="fa fa-angle-up" aria-hidden="true"></i></a>
           </p>
         </div>
       </div>
@@ -352,14 +367,15 @@
         </div>
         <h2 data-ng-bind="i18nLiterals.L20253"></h2>
         <div class="columm--item--content">
-          <p class="download-report" data-ng-bind="i18nLiterals.L20639"></p>
+          <!--<p class="download-report" data-ng-bind="i18nLiterals.L20639"></p>-->
           <p class="download-report">
-            <a href="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/modules/vertical/osh-steering/country-profile/pdf/National-Strategies-Mapping_2017_{{i18nLiterals['L'+country1Data.country_name]}}.pdf" class="download-pdf" data-ng-bind-html="i18nLiterals.L20640" target="_blank"></a>
+            <a href="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/modules/vertical/osh-steering/country-profile/pdf/National-Strategies-Mapping_2017_{{i18nLiterals['L'+country1Data.country_name]}}.pdf" class="download-pdf" data-ng-bind-html="i18nLiterals.L20639+' '+i18nLiterals.L20640" target="_blank"></a>
           </p>
-          <div data-ng-bind-html="trimText(i18nLiterals['L'+country2Data.text8],maxCharacters)"></div>
+          <div class="partial-text" data-ng-bind-html="trimText(i18nLiterals['L'+country2Data.text8],maxCharacters)"></div>
+          <div class="complete-text" data-ng-bind-html="i18nLiterals['L'+country2Data.text8]"></div>
           <p class="see-more" data-ng-if="i18nLiterals['L'+country2Data.text8].length > maxCharacters">
-            <a href ng-click='toggleText($event)' class="see-more">{{i18nLiterals.L20641}}<i class="fa fa-angle-down" aria-hidden="true"></i></a> 
-            <a href ng-click='toggleText($event)' class="see-less" style="display:none">{{i18nLiterals.L20642}}<i class="fa fa-angle-up" aria-hidden="true"></i></a>
+            <a href ng-click='toggleText($event)' class="see-more">{{i18nLiterals.L480}}<i class="fa fa-angle-down" aria-hidden="true"></i></a> 
+            <a href ng-click='toggleText($event)' class="see-less" style="display:none">{{i18nLiterals.L481}}<i class="fa fa-angle-up" aria-hidden="true"></i></a>
           </p>
         </div>
       </div>

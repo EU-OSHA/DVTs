@@ -93,22 +93,22 @@
             <ul class="highlited-data-list">
               <li>                
                 <span class="country-data" data-ng-bind="matrix.joint_consultative != null ? (matrix.joint_consultative) : '-'"></span>
-                <span class="data-text">&percnt;</span>
+                <span data-ng-if="matrix.joint_consultative != null" class="data-text">&percnt;</span>
                 <label data-ng-bind="i18nLiterals['L20659']"></label>
               </li>
               <li>                
                 <span class="country-data" data-ng-bind="matrix.trade_union != null ? (matrix.trade_union) : '-'"> %</span>
-                <span class="data-text">&percnt;</span>
+                <span data-ng-if="matrix.trade_union != null" class="data-text">&percnt;</span>
                 <label data-ng-bind="i18nLiterals['L20660']"></label>
               </li>
               <li>                
                 <span class="country-data" data-ng-bind="matrix.health_representative != null ? (matrix.health_representative) : '-'"></span>
-                <span class="data-text">&percnt;</span>
+                <span data-ng-if="matrix.health_representative != null" class="data-text">&percnt;</span>
                 <label data-ng-bind="i18nLiterals['L20661']"></label>
               </li>
               <li>                
                 <span class="country-data" data-ng-bind="matrix.health_committee != null ? (matrix.health_committee) : '-'"></span>
-                <span class="data-text">&percnt;</span>
+                <span data-ng-if="matrix.health_committee != null" class="data-text">&percnt;</span>
                 <label data-ng-bind="i18nLiterals['L20662']"></label>
               </li>
             </ul>

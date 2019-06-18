@@ -7,7 +7,7 @@
           <p data-ng-bind-html="i18nLiterals.L20382"></p>
           <span data-ng-bind="i18nLiterals.L20704"></span> <span><a data-ng-bind="i18nLiterals.L20705" ui-sref="about-tool"></a></span>
         </div>
-        <div class="icon--advice forum-icon hide-mobile col-sm-4 col-md-4"></div>
+        <div class="icon--advice national-icon hide-mobile col-sm-4 col-md-4"></div>
       </div>
   </section>
 
@@ -77,10 +77,11 @@
             <h3 class="" ng-if="::matrix.tackling_demographic==1" data-ng-bind="i18nLiterals.L20633"></h3>
 
             <div data-ng-bind-html="i18nLiterals['L'+matrix.objectives]"></div>
-            <div data-ng-bind-html="trimText(i18nLiterals['L'+matrix.groups_and_activities], 300)"></div>
-            <p data-ng-if="i18nLiterals['L'+matrix.groups_and_activities].length > 300" class="see--more--wrapper"> 
-              <a ng-click='toggleText($event)' data-ng-bind="i18nLiterals.L20641" class="see-more main-color"></a>
-              <a ng-click='toggleText($event)' data-ng-bind="i18nLiterals.L20642" class="see-less main-color" style="display:none"></a>
+            <div class="partial-text" data-ng-bind-html="trimText(i18nLiterals['L'+matrix.groups_and_activities], 200)"></div>
+            <div class="complete-text" data-ng-bind-html="i18nLiterals['L'+matrix.groups_and_activities]"></div>
+            <p data-ng-if="i18nLiterals['L'+matrix.groups_and_activities].length > 200" class="see--more--wrapper"> 
+              <a ng-click='toggleText($event)' data-ng-bind="i18nLiterals.L480" class="see-more main-color"></a>
+              <a ng-click='toggleText($event)' data-ng-bind="i18nLiterals.L481" class="see-less main-color" style="display:none"></a>
             </p>
 
             <div class="">

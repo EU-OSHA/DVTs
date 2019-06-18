@@ -14,7 +14,7 @@ define(function (require) {
     function controller($scope, $stateParams, $state, $document, $http, configService, $cookies) {
 
         // Literals / i18n
-        $scope.i18n_literals = configService.getLiterals();
+        $scope.i18nLiterals = configService.getLiterals();
 
         var i18n = require('json!vertical/footer-pages/i18n');
         $scope.i18n = i18n;
