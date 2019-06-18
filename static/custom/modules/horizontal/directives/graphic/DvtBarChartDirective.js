@@ -506,12 +506,12 @@ define(function (require) {
                                 .left(function(scene){
                                     var panelWidth = this.root.width();
                                     if(panelWidth != 200){
-                                        return panelWidth/12;
+                                        return panelWidth/13;
                                     }
                                 })
                                 .right(function(scene){
                                     var panelWidth = this.root.width();
-                                    return panelWidth/12;
+                                    return panelWidth/13;
                                 });
                     };
                 }
