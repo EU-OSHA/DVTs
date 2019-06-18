@@ -421,7 +421,7 @@ define(function (require) {
                         legendShape: 'square',
                         legendAlign: attributes.legendAlign || 'center',
                         legendOverflow: attributes.legendOverflow || 'clip',
-                        legendItemSize: attributes.legendItemSize || 250,
+                        legendItemSize: attributes.legendItemSize,
                         color2AxisLegendShape: attributes.color2AxisLegendShape || "square",
                         baseAxisLabel_text: !scope.isMaximized?scope.baseAxisLabelText:scope.baseAxisLabelLongText,
                         baseAxisLabel_visible: scope.baseAxisLabelVisible,

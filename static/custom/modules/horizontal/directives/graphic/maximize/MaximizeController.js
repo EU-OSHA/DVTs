@@ -181,10 +181,10 @@ define(function (require) {
                                     $scope.parameters.chartDefinition.legendItemSize = 100;
                                 }
 
-                                /*if(resolution <= 425){
+                                if(resolution <= 380 && resolution > 325){
                                     $log.warn('resolution < 425');
-                                    $scope.parameters.chartDefinition.legendItemSize = 300;
-                                }*/
+                                    $scope.parameters.chartDefinition.legendItemSize = 320;
+                                }
                                 
                                 /*if( resolution > 1256 &&  resolution <= 1684){
                                     $log.warn('resolution > 1360');

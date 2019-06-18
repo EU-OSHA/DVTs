@@ -1752,3 +1752,15 @@
     } 
   }
 }
+
+@media only screen 
+and (min-width :300px)
+and (max-width :380px) {
+  .modal-wrapper div[query='getCompanySizeData'] div[id^='dvt_bar_chart']{
+    svg{
+      > g > g:nth-child(1) > g > g{
+        transform: translate(70px, 343px) !important;
+      }
+    }
+  }
+}
