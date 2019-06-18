@@ -27,13 +27,13 @@
     <div class="line background-main-light"></div>
   </div>
 
-  <section class="full-tablet">
+  <section class="full-tablet section--page">
     <!-- Job satisfaction -->
     <div class="container" id="tab1" data-ng-show="pIndicator == 'job-satisfaction'">
-      <div class="note">
-        <p data-ng-bind="i18nLiterals.L20718"></p>
-      </div>
       <div class="card--grid xxs-w1 xs-w1 w1 center-text">
+        <div class="note">
+          <p data-ng-bind="i18nLiterals.L20718"></p>
+        </div>
         <div class="card--block--chart">
           <div class="chart--block">
             <dvt-bar-chart
@@ -45,11 +45,11 @@
               params="[['pDataset', datasetEurofound], ['pIndicator', 65]]"
               color-role="series" colors="[color1, color2, color3, color4]"
               chart-title="{{i18nLiterals.L322}}" id="1"
-              axis-label-font="12px 'OpenSans'"
+              axis-label-font="14px 'OpenSans-bold'"
               plots="stories[0].plots"
               values-visible="false"
               base-axis-label-text-baseline="middle"
-              values-font="12px 'OpenSans'"
+              values-font="14px 'OpenSans-bold'"
               multiple-label-colors="false"
               dimensions="stories[0].dimensions"
               legend="true"
