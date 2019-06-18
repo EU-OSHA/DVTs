@@ -166,32 +166,48 @@
 	    </Parameters>
 	    <Query>
 			SELECT DISTINCT(n.literal_id) as country_name, n.country_code as country_code, (ROUND(v.value*100)) as joint_consultative, ( ROUND(v2.value*100)) as trade_union, 
-			(ROUND(v3.value*100)) as health_representative, (ROUND(v4.value*100)) as health_committee
-			FROM nuts n, profile p, profile p2, profile p3, profile p4,indicator i, value v, value v2, value v3, value v4, dataset d
-			WHERE
-			/* JOIN CONSULTATIVE */
-			n.id = p.nuts_id
-			AND v.indicator_id = 100
-			AND v.profile_id = p.id
-			AND d.id = v.dataset_id
-			/* TRADE UNION */
-			AND n.id = p2.nuts_id
-			AND v2.indicator_id = 101
-			AND v2.profile_id = p2.id
-			AND d.id = v2.dataset_id
-			/* HEALTH REPRESENTATIVE */
-			AND n.id = p3.nuts_id
-			AND v3.indicator_id = 102
-			AND v3.profile_id = p3.id
-			AND d.id = v3.dataset_id
-			/* HEALTH COMMITTEE */
-			AND n.id = p4.nuts_id
-			AND v4.indicator_id = 103
-			AND v4.profile_id = p4.id
-			AND d.id = v4.dataset_id
-			/* COMMON */
-			AND d.id = ${dataset}
-			ORDER BY country_name ASC;
+            (ROUND(v3.value*100)) as health_representative, (ROUND(v4.value*100)) as health_committee
+            FROM nuts n, profile p, profile p2, profile p3, profile p4, indicator i, indicator i2, indicator i3, indicator i4, value v, value v2, value v3, value v4, dataset d, split_activity_sector sas, split_answer a, translation t, translation t1
+            WHERE
+            /* JOIN CONSULTATIVE */
+            n.id = p.nuts_id
+            AND v.indicator_id = i.id
+            AND i.id=100
+            AND v.profile_id = p.id
+            AND d.id = v.dataset_id
+            AND p.activity_sector_id=sas.id
+            AND p.answer_id=a.id
+            /* TRADE UNION */
+            AND n.id = p2.nuts_id
+            AND v2.indicator_id = i2.id
+            AND i2.id=101
+            AND v2.profile_id = p2.id
+            AND d.id = v2.dataset_id
+            AND p2.activity_sector_id=sas.id
+            AND p2.answer_id=a.id
+            /* HEALTH REPRESENTATIVE */
+            AND n.id = p3.nuts_id
+            AND v3.indicator_id = i3.id
+            AND i3.id=102
+            AND v3.profile_id = p3.id
+            AND d.id = v3.dataset_id
+            AND p3.activity_sector_id=sas.id
+            AND p3.answer_id=a.id
+            /* HEALTH COMMITTEE */
+            AND n.id = p4.nuts_id
+            AND v4.indicator_id = i4.id
+            AND i4.id=103
+            AND v4.profile_id = p4.id
+            AND d.id = v4.dataset_id
+            AND p4.activity_sector_id=sas.id
+            AND p4.answer_id=a.id
+            /* COMMON */
+            AND d.id = ${dataset}
+            AND sas.literal_id=t.literal_id
+            AND a.literal_id=t1.literal_id
+            AND t.LANGUAGE="EN" AND t.TEXT="All"
+            AND t1.LANGUAGE="EN" AND t1.TEXT="Yes"
+            ORDER BY n.country_code ASC;
 	    </Query>
 	</DataAccess>
 
