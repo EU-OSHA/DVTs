@@ -488,6 +488,7 @@ define(function (require) {
                             return scene.group.key;
                         }
                     }
+
                     definition.chartDefinition.tooltipFormat = function(scene){
                         // Atoms of the first datum
                         var atoms = scene.firstAtoms;
@@ -546,6 +547,7 @@ define(function (require) {
                                  "<b>Value</b>: " + atoms.value.label   + 
                                "</div>";*/
                     }
+
                     definition.chartDefinition.baseAxisLabel_call = function(){
                         var panel = this.sign.panel;
                         var ticks = this.sign.chart.axes.x.ticks;
@@ -583,26 +585,20 @@ define(function (require) {
                             
                           });
                         */
+                    }
+                }
+
                 if(definition.chartDefinition.dataAccessId == 'getCompanySizeData'){
                     //$log.warn(definition);
                     if(resolution <= 425 && resolution > 325){
-                        $log.warn('resolution <= 425');
+                        //$log.warn('resolution <= 425');
                         definition.chartDefinition.legendItemSize = 250;
                     }
 
                     if(resolution <= 325){
-                        $log.warn('resolution <= 325');
+                        //$log.warn('resolution <= 325');
                         definition.chartDefinition.legendItemSize = 200;
                     }
-                    
-                    /*if( resolution > 1256 &&  resolution <= 1684){
-                        $log.warn('resolution > 1360');
-                        $scope.parameters.chartDefinition.legendItemSize = 350;
-                    }
-                    if( resolution > 1684 ){
-                        $log.warn('resolution > 1684');
-                        $scope.parameters.chartDefinition.legendItemSize = 450;
-                    }*/
                 }
 
                 if(definition.chartDefinition.dataAccessId == 'getEmploymentPerSectorData'){
