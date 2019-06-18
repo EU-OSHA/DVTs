@@ -110,6 +110,14 @@ define (function (require) {
                               resolution = screen.width;
                             });
 
+                            var ticks = this.sign.chart.axes.x.ticks;
+
+                            for(var i = 0; i < ticks.length; i++){
+                                if (ticks[i].label == 'Macedonia, The former Yugoslav Rep. of (MK)'){
+                                    this.sign.chart.axes.x.ticks[i].atoms.category.label = 'Macedonia (MK)';
+                                }
+                            }
+
                             if(resolution <= 768){
                                 //$log.warn(this);
 
@@ -120,7 +128,7 @@ define (function (require) {
                                         //$log.warn(this);
                                         var baseScale = this.getContext().chart.axes.base.scale;
                                         
-                                        return baseScale('Belgium (BE)') + 11 /*this.sign.panel.barWidth/2*/;
+                                        return baseScale('Austria (AT)') + 11 /*this.sign.panel.barWidth/2*/;
                                     })
                                     .height(null) // clear any inherited value
                                     .width(null)  // clear any inherited value
@@ -157,7 +165,7 @@ define (function (require) {
                                         //$log.warn(scene);
                                         var countryKey = scene.firstAtoms.category;
                                         var panelWidth = this.root.width();
-                                        return panelWidth/33.5;               
+                                        return panelWidth/40;               
                                     });
 
                                 //Non EU countries stroke separator vertical
