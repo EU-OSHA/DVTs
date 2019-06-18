@@ -654,7 +654,7 @@
 2949-http://www.krus.gov.pl/fileadmin/moje_dokumenty/obrazki/broszury_prewencja/2015/Wypadki_przy_pracy_2015_vp4.pdf
 2953-http://stat.gov.pl/download/gfx/portalinformacyjny/pl/defaultaktualnosci/5476/2/2/7/pw_wypadki_przy_pracy_i_problemy_zdrow_zwiazane_z_praca.pdf
 2955-http://www.gep.msess.gov.pt/estatistica/estatisticanp/sst/at.php
-2957-https://www.sns.gov.pt/entidades-de-saude/administracao-central-do-sistema-de-saude/
+2957-http://www.acss.minsaude.pt/DepartamentoseUnidades/DepartamentoGest%C3%A3oePlaneamentoRH/EstudosePlaneamentoemRecursosHumanos/EstudoseRelat%C3%B3rios/AcidentesdeTrabalho/tabid/332/language/pt-PT/Default.aspx
 2959-http://www.gep.msess.gov.pt/estatistica/condicoes/sst2013pub.pdf
 2963-https://www.ine.pt/xportal/xmain?xpid=INE&amp;xpgid=ine_publicacoes&amp;PUBLICACOESpub_boui=210767753&amp;PUBLICACOESmodo=2
 2965-http://www.inspectiamuncii.ro
@@ -815,7 +815,7 @@
 3227-https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Slovenia
 3229-http://www.insht.es/
 3229-https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Spain
-3231-https://www.upf.edu/web/cisal
+3231-http://www.upf.edu/cisal/cisal/presentacion.html
 3231-https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Spain
 3233-http://ibv.org/en/what-is-the-ibv
 3233-https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Spain

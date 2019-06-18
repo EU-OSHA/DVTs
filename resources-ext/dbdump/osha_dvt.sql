@@ -83,54 +83,6 @@ CREATE TABLE IF NOT EXISTS `strategies_page` (
 
 -- The tool is already created
 
-INSERT INTO dataset (name, source, date_from, date_to) VALUES ("BAROMETER_DATA", "National Strategies reports", "2018-01-01", null);
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);
-INSERT INTO literal (id, chart_id, section_id, type) VALUES (@maxId, NULL, NULL, "INDICATOR_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@maxId, "EN", 1, "Resources and timeframe");
-INSERT INTO indicator (name, literal_id) VALUES ("Resources and timeframe", @maxId);
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id < 10000)+1,1);
-INSERT INTO literal (id, chart_id, section_id, type) VALUES (@maxId, NULL, NULL, "INDICATOR_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@maxId, "EN", 1, "Relationship to EU Strategic Framework");
-INSERT INTO indicator (name, literal_id) VALUES ("Relationship to EU Strategic Framework", @maxId);
-
-SET @datasetId = (SELECT id FROM dataset  WHERE source="National Strategies reports" AND date_from="2018-01-01");
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Basic information");
-INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
-
-SET @datasetId = (SELECT id FROM dataset  WHERE source="National Strategies reports" AND date_from="2018-01-01");
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Background");
-INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
-
-SET @datasetId = (SELECT id FROM dataset  WHERE source="National Strategies reports" AND date_from="2018-01-01");
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Characteristics and objectives");
-INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
-
-SET @datasetId = (SELECT id FROM dataset  WHERE source="National Strategies reports" AND date_from="2018-01-01");
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Details and activity");
-INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
-
-SET @datasetId = (SELECT id FROM dataset  WHERE source="National Strategies reports" AND date_from="2018-01-01");
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Actors and stakeholders");
-INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
-
-SET @datasetId = (SELECT id FROM dataset  WHERE source="National Strategies reports" AND date_from="2018-01-01");
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Evaluation");
-INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
-
-SET @datasetId = (SELECT id FROM dataset  WHERE source="National Strategies reports" AND date_from="2018-01-01");
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Response to EU Challenges");
-INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
-
-SET @datasetId = (SELECT id FROM dataset  WHERE source="National Strategies reports" AND date_from="2018-01-01");
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Resources and timeframe");
-INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
-
-SET @datasetId = (SELECT id FROM dataset  WHERE source="National Strategies reports" AND date_from="2018-01-01");
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Relationship to EU Strategic Framework");
-INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
-
 INSERT INTO chart (id, section_id)  VALUES(20010,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="ECONOMIC_SECTOR_PROFILE" AND t.name="osha_dvt_barometer"	) );
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Employment per sector");
 SET @datasetId = (SELECT id FROM dataset WHERE source="EUROSTAT" AND date_from="2017-01-01");
