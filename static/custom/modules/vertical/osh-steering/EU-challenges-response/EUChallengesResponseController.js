@@ -502,7 +502,7 @@ define(function (require) {
         if(check3) {
           $scope.searchParams.challenges.filter3=1;
           if(angular.element('span#challengeFilter3').length<=0){
-            var html = '<span class="selected-tag" id="challengeFilter3" data-ng-click="deleteTag($event)" data-ng-bind="i18nLiterals.L20653"></span>';
+            var html = '<span class="selected-tag" id="challengeFilter3" data-ng-click="deleteTag($event)" data-ng-bind="i18nLiterals.L20633"></span>';
             tags.append( $compile(html)($scope) );
           }
         }else{
@@ -590,7 +590,7 @@ define(function (require) {
           $scope.searchParams.challenges.filter3=1;
           par="challenge";
           if(angular.element('span#challengeFilter3').length<=0){
-            var html = '<span class="selected-tag" id="challengeFilter3" data-ng-click="deleteTag($event)" data-ng-bind="i18nLiterals.L20653"></span>';
+            var html = '<span class="selected-tag" id="challengeFilter3" data-ng-click="deleteTag($event)" data-ng-bind="i18nLiterals.L20633"></span>';
             tags.append( $compile(html)($scope) );
           }
         }else{
