@@ -64,13 +64,31 @@ define(function (require) {
                     // maximize view parameter for queries that require it
                     $scope.parameters.parameters.push(['pMaximized', '1']);
 
-                    if (!!parameters.angle) {
+                    /*if (!!parameters.angle) {
                         $scope.parameters.chartDefinition.baseAxisLabel_textAngle = (parameters.angle==1)?-Math.PI / 3:-Math.PI / 6.5;
                         if ($scope.parameters.chartDefinition.orientation == 'horizontal') {
                             $scope.parameters.chartDefinition.baseAxisLabel_textAngle = 0;
                         }
                         $scope.parameters.chartDefinition.baseAxisLabel_textAlign = 'right';
                         $scope.parameters.chartDefinition.baseAxisLabel_textBaseline = 'top';
+                    }*/
+
+                    if ($scope.parameters.chartDefinition.orientation == 'vertical'){
+                        $scope.parameters.chartDefinition.baseAxisLabel_textAlign = $scope.parameters.baseAxisLabelTextAlign || 'center';
+                    }else if ($scope.parameters.chartDefinition.orientation == 'horizontal'){
+                        $scope.parameters.chartDefinition.baseAxisLabel_textAlign =  $scope.parameters.baseAxisLabelTextAlign || 'right';
+                    }
+
+                    if (!!parameters.angle) {
+                        $scope.parameters.chartDefinition.baseAxisLabel_textAngle = (parameters.angle==1)?-Math.PI / 3:-Math.PI / 6.5;
+                        if ($scope.parameters.chartDefinition.orientation == 'horizontal' || parameters.angle == 0) {
+                            $scope.parameters.chartDefinition.baseAxisLabel_textAngle = 0;
+                            $scope.parameters.chartDefinition.baseAxisLabel_textAlign = 'right';
+                            $scope.parameters.chartDefinition.baseAxisLabel_textBaseline = 'middle';
+                        }else{
+                            $scope.parameters.chartDefinition.baseAxisLabel_textAlign = 'right';
+                            $scope.parameters.chartDefinition.baseAxisLabel_textBaseline = 'top';
+                        }
                     }
 
                     if (!!$scope.parameters.chartDefinition) {
@@ -84,6 +102,14 @@ define(function (require) {
                                 component.chartDefinition.colorMap[europe] = dashboard.getParameterValue("pEUColor");
                             };
                         }*/
+
+                        if ($state.current.url.match('osh-outcomes-working-conditions')) {
+                            if(resolution <= 768){
+                                $scope.parameters.baseAxisSize = 100;
+                            }else{
+                                $scope.parameters.baseAxisSize = 190;
+                            }
+                        }
 
                         /* ESTABLISH MAX COMMON PARAMETERS  */
                         $scope.parameters.chartDefinition.baseAxisLabel_font = '18px "OpenSans-bold"';

@@ -255,7 +255,7 @@
 	    	<Parameter default="64" name="pIndicator" type="Numeric"/>
 	    </Parameters>
 	    <Query>
-			SELECT t.text as Answer, IF(n.name = 'European Union', n.country_code, CONCAT(n.name, " (", n.country_code, ")")) as Country, v.value*100 as Value
+			SELECT t.text as Answer, IF(n.name = 'European Union', n.country_code, IF(n.name = 'Macedonia, The former Yugoslav Rep. of', CONCAT('Macedonia', " (", n.country_code, ")"), CONCAT(n.name, " (", n.country_code, ")"))) as Country, v.value*100 as Value
 			FROM nuts n, profile p, value v, dataset d, translation t, split_answer sa
 			WHERE n.id = p.nuts_id
 			AND v.indicator_id = ${pIndicator}
@@ -279,7 +279,7 @@
 	    	<Parameter default="64" name="pIndicator" type="Numeric"/>
 	    </Parameters>
 	    <Query>
-			SELECT t.text as Answer, IF(n.name = 'European Union', n.country_code, CONCAT(n.name, " (", n.country_code, ")")) as Country, v.value*100 as Value
+			SELECT t.text as Answer, IF(n.name = 'European Union', n.country_code, IF(n.name = 'Macedonia, The former Yugoslav Rep. of', CONCAT('Macedonia', " (", n.country_code, ")"), CONCAT(n.name, " (", n.country_code, ")"))) as Country, v.value*100 as Value
 			FROM nuts n, profile p, value v, dataset d, translation t, split_answer sa
 			WHERE n.id = p.nuts_id
 			AND v.indicator_id = ${pIndicator}

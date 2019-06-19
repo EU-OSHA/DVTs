@@ -208,14 +208,6 @@ define (function (require) {
                               resolution = screen.width;
                             });
 
-                            var ticks = this.sign.chart.axes.x.ticks;
-
-                            for(var i = 0; i < ticks.length; i++){
-                                if (ticks[i].label == 'Macedonia, The former Yugoslav Rep. of (MK)'){
-                                    this.sign.chart.axes.x.ticks[i].atoms.category.label = 'Macedonia (MK)';
-                                }
-                            }
-
                             if(resolution <= 768){
                                 //$log.warn(this);
 
