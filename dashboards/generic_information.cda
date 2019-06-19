@@ -593,7 +593,7 @@
 	      <Parameter default="0" name="pRange" type="Numeric" />
 	    </Parameters>
 	    <Query>
-	      (SELECT CONCAT(ROUND(${pMinValue},1), '%') as Distribution, IF(${pSubIndicator} != 0, COUNT(v.value*100), COUNT(v.value)) as Total
+	      (SELECT IF(${pIndicator} = 37, CONCAT(ROUND(${pMinValue},1), ''), CONCAT(ROUND(${pMinValue},1), '%')) as Distribution, IF(${pSubIndicator} != 0, COUNT(v.value*100), COUNT(v.value)) as Total
 	      FROM nuts n, profile p, value v, dataset d
 	      WHERE n.id = p.nuts_id 
 	      AND v.profile_id = p.id 
@@ -603,7 +603,7 @@
 	      AND IF(${pSubIndicator} != 0, v.value*100, v.value) = ${pMinValue}
 	      ORDER BY v.value ASC
 	      )UNION(
-	      SELECT CONCAT(ROUND(${pMinValue}+${pRange},1), '%'), IF(${pSubIndicator} != 0, COUNT(v.value*100), COUNT(v.value)) 
+	      SELECT IF(${pIndicator} = 37, CONCAT(ROUND(${pMinValue}+${pRange},1), ''), CONCAT(ROUND(${pMinValue}+${pRange},1), '%')) , IF(${pSubIndicator} != 0, COUNT(v.value*100), COUNT(v.value)) 
 	      FROM nuts n, profile p, value v, dataset d
 	      WHERE n.id = p.nuts_id 
 	      AND v.profile_id = p.id 
@@ -613,7 +613,7 @@
 	      AND (IF(${pSubIndicator} != 0, v.value*100, v.value) BETWEEN (${pMinValue} + 0.01) AND (${pMinValue} + ${pRange}))
 	      ORDER BY v.value ASC
 	      )UNION(
-	      SELECT CONCAT(ROUND(${pMinValue}+${pRange}*2, 1), '%'), IF(${pSubIndicator} != 0, COUNT(v.value*100), COUNT(v.value)) 
+	      SELECT IF(${pIndicator} = 37, CONCAT(ROUND(${pMinValue}+${pRange}*2, 1), ''), CONCAT(ROUND(${pMinValue}+${pRange}*2, 1), '%')) , IF(${pSubIndicator} != 0, COUNT(v.value*100), COUNT(v.value)) 
 	      FROM nuts n, profile p, value v, dataset d
 	      WHERE n.id = p.nuts_id 
 	      AND v.profile_id = p.id 
@@ -623,7 +623,7 @@
 	      AND (IF(${pSubIndicator} != 0, v.value*100, v.value) BETWEEN ((${pMinValue} + ${pRange}) + 0.01) AND (${pMinValue}+${pRange}*2))
 	      ORDER BY v.value ASC
 	      )UNION(
-	      SELECT CONCAT(ROUND(${pMaxValue} - ${pRange},1), '%'), IF(${pSubIndicator} != 0, COUNT(v.value*100), COUNT(v.value)) 
+	      SELECT IF(${pIndicator} = 37, CONCAT(ROUND(${pMaxValue} - ${pRange},1), ''), CONCAT(ROUND(${pMaxValue} - ${pRange},1), '%')), IF(${pSubIndicator} != 0, COUNT(v.value*100), COUNT(v.value)) 
 	      FROM nuts n, profile p, value v, dataset d
 	      WHERE n.id = p.nuts_id 
 	      AND v.profile_id = p.id 
@@ -633,7 +633,7 @@
 	      AND (IF(${pSubIndicator} != 0, v.value*100, v.value) BETWEEN ((${pMinValue} + ${pRange}*2) + 0.01) AND (${pMaxValue} - ${pRange}))
 	      ORDER BY v.value ASC
 	      )UNION(
-	      SELECT  CONCAT(ROUND(${pMaxValue}, 1), '%'), IF(${pSubIndicator} != 0, COUNT(v.value*100), COUNT(v.value)) 
+	      SELECT IF(${pIndicator} = 37, CONCAT(ROUND(${pMaxValue}, 1), ''), CONCAT(ROUND(${pMaxValue}, 1), '%')), IF(${pSubIndicator} != 0, COUNT(v.value*100), COUNT(v.value)) 
 	      FROM nuts n, profile p, value v, dataset d
 	      WHERE n.id = p.nuts_id 
 	      AND v.profile_id = p.id 
