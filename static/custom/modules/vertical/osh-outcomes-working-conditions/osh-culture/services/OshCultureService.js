@@ -218,7 +218,7 @@ define (function (require) {
                                         //$log.warn(this);
                                         var baseScale = this.getContext().chart.axes.base.scale;
                                         
-                                        return baseScale('Belgium (BE)') + 10 /*this.sign.panel.barWidth/2*/;
+                                        return baseScale('Austria (AT)') + 10 /*this.sign.panel.barWidth/2*/;
                                     })
                                     .height(null) // clear any inherited value
                                     .width(null)  // clear any inherited value
