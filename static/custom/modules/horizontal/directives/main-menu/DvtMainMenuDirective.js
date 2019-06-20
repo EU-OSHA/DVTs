@@ -107,9 +107,9 @@ define(function (require) {
                     
                     //hide print icon in mobile
                     if(configService.isMobile()) {
-                        angular.element(".a2a_button_print").remove();
-                        angular.element(".print--block").remove();
-                        angular.element(".zoom--text").remove();                        
+                        //angular.element(".a2a_button_print").remove();
+                        //angular.element(".print--block").remove();
+                        //angular.element(".zoom--text").remove();
                     }
 
 
