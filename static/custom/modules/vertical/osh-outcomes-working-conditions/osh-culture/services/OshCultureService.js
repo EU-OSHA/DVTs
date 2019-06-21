@@ -11,6 +11,11 @@ define (function (require) {
                         dataPart: "0",
                         bar_fillStyle: function(scene){
                             var split = scene.firstAtoms.series;
+
+                            if(!scene.firstAtoms.value.label.match('%')){
+                                scene.firstAtoms.value.label = scene.firstAtoms.value.label + '%';
+                            }
+
                             if (split == '(very) Well informed') {
                                 return dvtUtils.getColorCountry(1);
                             } else if(split == 'Not very or not at all well informed'){
@@ -126,7 +131,9 @@ define (function (require) {
                                     .top(function(scene){
                                         //$log.warn(this);
                                         var baseScale = this.getContext().chart.axes.base.scale;
-                                        
+                                        if(!scene.firstAtoms.value.label.match('%')){
+                                            scene.firstAtoms.value.label = scene.firstAtoms.value.label + '%';
+                                        }
                                         return baseScale('Austria (AT)') + 12 /*this.sign.panel.barWidth/2*/;
                                     })
                                     .height(null) // clear any inherited value
@@ -164,6 +171,9 @@ define (function (require) {
                                         //$log.warn(scene);
                                         var countryKey = scene.firstAtoms.category;
                                         var panelWidth = this.root.width();
+                                        if(!scene.firstAtoms.value.label.match('%')){
+                                            scene.firstAtoms.value.label = scene.firstAtoms.value.label + '%';
+                                        }
                                         return panelWidth/33.5;               
                                     });
 
@@ -217,7 +227,9 @@ define (function (require) {
                                     .top(function(scene){
                                         //$log.warn(this);
                                         var baseScale = this.getContext().chart.axes.base.scale;
-                                        
+                                        if(!scene.firstAtoms.value.label.match('%')){
+                                            scene.firstAtoms.value.label = scene.firstAtoms.value.label + '%';
+                                        }
                                         return baseScale('Austria (AT)') + 10 /*this.sign.panel.barWidth/2*/;
                                     })
                                     .height(null) // clear any inherited value
@@ -269,7 +281,11 @@ define (function (require) {
                                     .left(function(scene){
                                         var baseScale = this.getContext().chart.axes.base.scale;
                                         var countryKey = scene.firstAtoms.category;
-                                        var panelWidth = this.root.width();                                        
+                                        var panelWidth = this.root.width();         
+
+                                        if(!scene.firstAtoms.value.label.match('%')){
+                                            scene.firstAtoms.value.label = scene.firstAtoms.value.label + '%';
+                                        }
 
                                         if(resolution < 960){
                                             return baseScale('Switzerland (CH)') - 11;
