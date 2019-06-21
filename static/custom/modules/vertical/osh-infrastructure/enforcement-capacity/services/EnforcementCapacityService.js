@@ -13,7 +13,9 @@ define (function (require) {
                         barSizeRatio: 0.6,
                         label_textStyle: function(scene){
                             var subIndicatorKey = scene.firstAtoms.series;
-                            
+                            if(!scene.firstAtoms.value.label.match('%')){
+                                scene.firstAtoms.value.label = scene.firstAtoms.value.label + '%';
+                            }
                             if (subIndicatorKey == 'Yes') {
                                 return dvtUtils.getColorCountry(1);
                             } else if(subIndicatorKey == 'No'){

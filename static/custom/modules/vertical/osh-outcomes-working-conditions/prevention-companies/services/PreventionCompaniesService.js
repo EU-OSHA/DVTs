@@ -34,7 +34,9 @@ define (function (require) {
                                     .top(function(scene){
                                         //$log.warn(this);
                                         var baseScale = this.getContext().chart.axes.base.scale;
-                                        
+                                        if(!scene.firstAtoms.value.label.match('%')){
+                                            scene.firstAtoms.value.label = scene.firstAtoms.value.label + '%';
+                                        }
                                         return baseScale('Austria (AT)') + 11 /*this.sign.panel.barWidth/2*/;
                                     })
                                     .height(null) // clear any inherited value
@@ -70,6 +72,9 @@ define (function (require) {
                                     .lineWidth(3)
                                     .left(function(scene){
                                         //$log.warn(scene);
+                                        if(!scene.firstAtoms.value.label.match('%')){
+                                            scene.firstAtoms.value.label = scene.firstAtoms.value.label + '%';
+                                        }
                                         var countryKey = scene.firstAtoms.category;
                                         var panelWidth = this.root.width();
                                         return panelWidth/40;               
@@ -120,6 +125,9 @@ define (function (require) {
                         valuesOptimizeLegibility: true,
                         label_textStyle: function(scene){
                             var countryKey = scene.firstAtoms.series;
+                            if(!scene.firstAtoms.value.label.match('%')){
+                                scene.firstAtoms.value.label = scene.firstAtoms.value.label + '%';
+                            }
                             if (countryKey == 'EU28') {
                                 return dvtUtils.getEUColor();
                             } else if(countryKey.value.match(pCountry1)){
@@ -149,6 +157,9 @@ define (function (require) {
                         valuesOptimizeLegibility: true,
                         label_textStyle: function(scene){
                             var countryKey = scene.firstAtoms.series;
+                            if(!scene.firstAtoms.value.label.match('%')){
+                                scene.firstAtoms.value.label = scene.firstAtoms.value.label + '%';
+                            }
                             if (countryKey == 'EU28') {
                                 return dvtUtils.getEUColor();
                             } else if(countryKey.value.match(pCountry1)){

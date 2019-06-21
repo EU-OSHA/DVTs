@@ -345,7 +345,7 @@ define(function (require) {
 								var prueba = paper.circle(p.x, p.y, outerRadius).attr({
 									fill: colorStroke,
 									stroke: 'none',
-									title: title + " - " + indicator + ": " + value
+									title: title + " - " + indicator + ": " + value + '%'
 								});
 								paper.circle(p.x, p.y, opts.pathCircleInnerRadius * 2).attr({
 									fill: "#fff",
