@@ -46,15 +46,14 @@ define(function (require) {
     $scope.pCountry2 = ($stateParams.pCountry2 != null)?$stateParams.pCountry2:'BE';
     $scope.pIndicator = $stateParams.pIndicator;
 
-    $scope.orientation = angular.element(window).width() > 768 ? "vertical" : "horizontal";
-    $scope.axisSize = angular.element(window).width() > 768 ? 150 : 140;
+    var resolution = screen.width;
 
-    var width = angular.element($window).width();
-      angular.element($window).bind('resize', function() {
-        if (angular.element($window).width() != width) {
-          width = angular.element($window).width();
-          $state.reload();
-        }
+    $scope.orientation = resolution > 768 ? "vertical" : "horizontal";
+    $scope.axisSize = resolution > 768 ? 150 : (resolution > 480 ? 160 : 80);
+
+    $(window).on("resize",function(e){
+      resolution = screen.width;
+      $state.reload();
     });
 
     $scope.dashboard = {};
