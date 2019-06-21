@@ -98,16 +98,17 @@
         data="data">
       </dvt-map> 
     </div>    
-    <div class="map--gauss--block container " data-ng-repeat="value in minMaxValues" >
+    <!--<div class="map--gauss--block container " data-ng-repeat="value in minMaxValues" >-->
+    <div class="map--gauss--block container">
       <dvt-bar-chart
         data-ng-cloak
         query="getGaussChartValues" cda="{{::cdaGenericInformation }}"
         width="200" height="200" type="lines"
         orientation="vertical" axis-fixed-min="0"
-        listen-to="[value.min_value, value.max_value, value.range_value]"
+        listen-to="[minMaxValues.min_value, minMaxValues.max_value, minMaxValues.range_value]"
         axis-fixed-max="20" step="{{step.chart1}}"
         params="[['pDataset', datasetEurostat], ['pIndicator',pIndicator], ['pSubIndicator',pSubIndicator], 
-        ['pMinValue', value.min_value], ['pMaxValue', value.max_value], ['pRange', value.range_value]]"
+        ['pMinValue', minMaxValues.min_value], ['pMaxValue', minMaxValues.max_value], ['pRange', minMaxValues.range_value]]"
         color-role="category" colors="[stories[0].color1]" id="5"
         axis-label-font="14px 'OpenSans-bold'"
         plots="stories[0].plots"

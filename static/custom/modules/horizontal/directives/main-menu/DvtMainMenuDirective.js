@@ -64,7 +64,6 @@ define(function (require) {
                     });
 
                     $window.onscroll = function() {
-                        console.log( angular.element('.highlited--data--section')[0] );
                         if( angular.element('.highlited--data--section')[0] != undefined ){  
                             var dataAffix = angular.element('.highlited--data--section')[0].dataset.offsetTop;
                             if( dataAffix < $window.pageYOffset){
