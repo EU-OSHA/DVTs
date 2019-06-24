@@ -42,24 +42,23 @@ define(function (require) {
 
     //$scope.chartWidth = angular.element('.card--block--chart .chart--block')[1].clientWidth;
 
-    $scope.angle = angular.element(window).width() > 768 ? 1 : 0;
-    $scope.horizontalHeight = angular.element(window).width() > 768 ? 470 : 770;
-    $scope.orientation = angular.element(window).width() > 768 ? "vertical" : "horizontal";
-    $scope.axisSize = angular.element(window).width() > 768 ? 150 : 160;
-    $scope.axisSizeHealth = angular.element(window).width() > 768 ? 50 : 100;
-    $scope.query = angular.element(window).width() > 768 ? 'getJobSatisfactionVerticalData' : 'getJobSatisfactionHorizontalData';
-    $scope.color1 = angular.element(window).width() > 768 ? dvtUtils.getColorCountry(3) : dvtUtils.getColorCountry(1);
-    $scope.color2 = angular.element(window).width() > 768 ? dvtUtils.getAccidentsColors(4) : dvtUtils.getColorCountry(22);
-    $scope.color3 = angular.element(window).width() > 768 ? dvtUtils.getColorCountry(22): dvtUtils.getAccidentsColors(4);
-    $scope.color4 = angular.element(window).width() > 768 ? dvtUtils.getColorCountry(1) : dvtUtils.getColorCountry(3);
-    $scope.axisWordBreak = angular.element(window).width() > 768 ? 1 : '';
+    var resolution = screen.width;
 
-    var width = angular.element($window).width();
-      angular.element($window).bind('resize', function() {
-        if (angular.element($window).width() != width) {
-          width = angular.element($window).width();
-          $state.reload();
-        }
+    $scope.angle = resolution > 768 ? 1 : 0;
+    $scope.horizontalHeight = resolution > 768 ? 470 : 770;
+    $scope.orientation = resolution > 768 ? "vertical" : "horizontal";
+    $scope.axisSize = resolution > 768 ? 150 : 160;
+    $scope.axisSizeHealth = resolution > 768 ? 50 : 100;
+    $scope.query = resolution > 768 ? 'getJobSatisfactionVerticalData' : 'getJobSatisfactionHorizontalData';
+    $scope.color1 = resolution > 768 ? dvtUtils.getColorCountry(3) : dvtUtils.getColorCountry(1);
+    $scope.color2 = resolution > 768 ? dvtUtils.getAccidentsColors(4) : dvtUtils.getColorCountry(22);
+    $scope.color3 = resolution > 768 ? dvtUtils.getColorCountry(22): dvtUtils.getAccidentsColors(4);
+    $scope.color4 = resolution > 768 ? dvtUtils.getColorCountry(1) : dvtUtils.getColorCountry(3);
+    $scope.axisWordBreak = resolution > 768 ? 1 : '';
+
+    $(window).on("resize",function(e){
+      resolution = screen.width;
+      $state.reload();
     });
 
     // Country parameters

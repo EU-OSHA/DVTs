@@ -57,28 +57,25 @@ define(function (require) {
       anchor: 'infectious-materials',
       text: '331'
     }];
-
-    $scope.chartWidth = angular.element('.card--block--chart .chart--block')[1].clientWidth;
   
     $scope.pIndicator = $stateParams.pIndicator;
     $scope.pSubIndicator = ($stateParams.pSubIndicator != null)?$stateParams.pSubIndicator:'smoke-powder-or-dust';
     $scope.pCountry1 = ($stateParams.pCountry1 != null)?$stateParams.pCountry1:'AT';
     $scope.pCountry2 = ($stateParams.pCountry2 != null)?$stateParams.pCountry2:'BE';
 
-    $scope.angle = angular.element(window).width() > 768 ? 1 : 0;
-    $scope.horizontalHeight = angular.element(window).width() > 768 ? 470 : 770;
-    $scope.orientation = angular.element(window).width() > 768 ? "vertical" : "horizontal";
-    $scope.axisSize = angular.element(window).width() > 768 ? 150 : 160;
-    $scope.query = angular.element(window).width() > 768 ? 'getPhysicalRiskVerticalData' : 'getPhysicalRiskHorizontalData';
-    $scope.color1 = angular.element(window).width() > 768 ? dvtUtils.getColorCountry(22) : dvtUtils.getColorCountry(1);
-    $scope.color2 = angular.element(window).width() > 768 ? dvtUtils.getColorCountry(1) : dvtUtils.getColorCountry(22);
+    var resolution = screen.width;
 
-    var width = angular.element($window).width();
-      angular.element($window).bind('resize', function() {
-        if (angular.element($window).width() != width) {
-          width = angular.element($window).width();
-          $state.reload();
-        }
+    $scope.angle = resolution > 768 ? 1 : 0;
+    $scope.horizontalHeight = resolution > 768 ? 470 : 770;
+    $scope.orientation = resolution > 768 ? "vertical" : "horizontal";
+    $scope.axisSize = resolution > 768 ? 150 : 160;
+    $scope.query = resolution > 768 ? 'getPhysicalRiskVerticalData' : 'getPhysicalRiskHorizontalData';
+    $scope.color1 = resolution > 768 ? dvtUtils.getColorCountry(22) : dvtUtils.getColorCountry(1);
+    $scope.color2 = resolution > 768 ? dvtUtils.getColorCountry(1) : dvtUtils.getColorCountry(22);
+
+    $(window).on("resize",function(e){
+      resolution = screen.width;
+      $state.reload();
     });
 
     //$log.warn("Param pCountry1: "+$stateParams.pCountry1+", $scope pCountry1: "+$scope.pCountry1);
