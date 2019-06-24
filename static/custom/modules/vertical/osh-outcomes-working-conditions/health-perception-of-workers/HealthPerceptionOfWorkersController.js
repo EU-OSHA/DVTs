@@ -28,17 +28,11 @@ define(function (require) {
     $scope.amatrix = [];
     $scope.EUData = {};
     $scope.searchParams = {
-      countries: [] //challenges
+      countries: []
     };
 
     $scope.selectedCountries = [];
     $scope.deleteCountryTags = [];
-
-    //Variables pagination
-    /*$scope.currentPage = 0;
-    $scope.pageSize = 15;
-    $scope.elementsStart=0;
-    $scope.elementsEnd=$scope.pageSize;*/
 
     var resolution = screen.width;
 
@@ -454,9 +448,7 @@ define(function (require) {
        * Apply the filters and load the filtered content
        */
       function search($event,filter) {
-        //$log.warn($scope.amatrix);
-
-        dataService.applyHealthPerceptionFilters(10, 11, $scope.searchParams.countries)
+        dataService.applyHealthPerceptionFilters($scope.datasetEurofound, $scope.EUROSTAT, $scope.searchParams.countries)
           .then(function (data) {
             $scope.amatrix = dataService.dataMapper(data);
 
@@ -473,13 +465,6 @@ define(function (require) {
         });
 
         $scope.currentPage = 0;
-      }
-
-      //CLICK ENTER --------------------------------------------------------------------------------------
-      $scope.clickEnter=function($event) {
-         if($event.which === 13 || $event.which === 1) {
-             search($event, 'search');
-         }
       }
 
     /******************************END FILTERS************************************/
