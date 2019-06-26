@@ -153,13 +153,10 @@
                         &:focus, &:visited{
                           background: transparent;
                         }
-                        .main-menu-selected{
-                          color: $aquamarine;
-                        }
                     }
                     &.active{
                         //border-bottom: 6px solid $orange;
-                        box-shadow: 0 6px 0 0px $orange;
+                        //box-shadow: 0 6px 0 0px $orange;
                         a{
                             color: $aquamarine;
                         }                   
@@ -212,7 +209,12 @@
                         }
                         
                     } 
-                }
+                }.main-menu-selected{
+                          box-shadow: 0 6px 0 0px $orange;
+                          > a{
+                              color: $aquamarine !important;
+                          }
+                        }
             };
             .navbar-toggle .icon-bar {
             color: #666;
