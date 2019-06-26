@@ -15,7 +15,7 @@
 	    	<Parameter default="15" name="pIndicator" type="String"/>
 	    </Parameters>
 	    <Query>
-		    SELECT d.source, d.date_from, d.date_to 
+		    SELECT d.source, YEAR(d.date_from), YEAR(d.date_to) 
 			FROM indicators_in_dataset iid, dataset d
 			WHERE iid.dataset_id = d.id
 			AND iid.indicator_id = ${pIndicator}
@@ -52,7 +52,7 @@
 	</DataAccess>
 
 	<!-- HOME || ALL AVAILABLE COUNTRIES FOR ENFORCE CAPACITIES -->
-	<DataAccess access="public" connection="dvt_conn" id="getCapacitiesCountries" type="sql">
+	<!--<DataAccess access="public" connection="dvt_conn" id="getCapacitiesCountries" type="sql">
 	    <Cache duration="3600" enabled="true" />
 	    <Columns />
 	    <Query>
@@ -62,6 +62,31 @@
 	      ON n.id = sp.nuts_id
 	      WHERE sp.page = 'STRATEGY_ENFOR_CAPACITY'
 	      ORDER BY country_code ASC
+	    </Query>
+	</DataAccess>-->
+
+	<!-- HOME || ALL COUNTRIES IN ENFORCEMENT CAPACITIES -->
+	<DataAccess access="public" connection="dvt_conn" id="getEnforcementCapacityCountries" type="sql">
+	    <Cache duration="3600" enabled="true" />
+	    <Columns />
+	    <Query>
+			(
+			SELECT DISTINCT (n.literal_id) AS country, n.country_code AS country_code
+			FROM nuts n, profile p, value v
+			WHERE (n.id = p.nuts_id
+			AND p.id = v.profile_id
+			AND v.indicator_id = 126)
+			AND n.country_code NOT IN ('EU28')
+			ORDER BY country_code ASC
+			)UNION(	      
+			SELECT DISTINCT (n.literal_id) AS country, n.country_code AS country_code
+			FROM strategies_page sp
+			INNER JOIN nuts n
+			ON n.id = sp.nuts_id
+			WHERE sp.page = 'STRATEGY_ENFOR_CAPACITY'
+			AND n.country_code NOT IN ('EU28')
+			ORDER BY country_code ASC
+			)
 	    </Query>
 	</DataAccess>
 
@@ -106,7 +131,7 @@
 	    <Query>
 			SELECT (ROUND(v.value*100)) as joint_consultative, ( ROUND(v2.value*100)) as trade_union, 
 			(ROUND(v3.value*100)) as health_representative, (ROUND(v4.value*100)) as health_committee
-			FROM nuts n, profile p, profile p2, profile p3, profile p4,indicator i, value v, value v2, value v3, value v4, dataset d
+			FROM nuts n, profile p, profile p2, profile p3, profile p4, value v, value v2, value v3, value v4, dataset d
 			WHERE
 			/* JOIN CONSULTATIVE */
 			n.id = p.nuts_id

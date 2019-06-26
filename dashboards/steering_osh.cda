@@ -171,26 +171,22 @@
 			WHERE
 			/* JOIN CONSULTATIVE */
 			n.id = p.nuts_id
-			AND v.indicator_id = i.id
-			AND i.id=100
+			AND v.indicator_id = 100
 			AND v.profile_id = p.id
 			AND d.id = v.dataset_id
 			/* TRADE UNION */
 			AND n.id = p2.nuts_id
-			AND v2.indicator_id = i2.id
-			AND i2.id=101
+			AND v2.indicator_id = 101
 			AND v2.profile_id = p2.id
 			AND d.id = v2.dataset_id
 			/* HEALTH REPRESENTATIVE */
 			AND n.id = p3.nuts_id
-			AND v3.indicator_id = i3.id
-			AND i3.id=102
+			AND v3.indicator_id = 102
 			AND v3.profile_id = p3.id
 			AND d.id = v3.dataset_id
 			/* HEALTH COMMITTEE */
 			AND n.id = p4.nuts_id
-			AND v4.indicator_id = i4.id
-			AND i4.id=103
+			AND v4.indicator_id = 103
 			AND v4.profile_id = p4.id
 			AND d.id = v4.dataset_id
 			/* COMMON */
@@ -214,26 +210,22 @@
 			WHERE
 			/* JOIN CONSULTATIVE */
 			n.id = p.nuts_id
-			AND v.indicator_id = i.id
-			AND i.id=100
+			AND v.indicator_id = 100
 			AND v.profile_id = p.id
 			AND d.id = v.dataset_id
 			/* TRADE UNION */
 			AND n.id = p2.nuts_id
-			AND v2.indicator_id = i2.id
-			AND i2.id=101
+			AND v2.indicator_id = 101
 			AND v2.profile_id = p2.id
 			AND d.id = v2.dataset_id
 			/* HEALTH REPRESENTATIVE */
 			AND n.id = p3.nuts_id
-			AND v3.indicator_id = i3.id
-			AND i3.id=102
+			AND v3.indicator_id = 102
 			AND v3.profile_id = p3.id
 			AND d.id = v3.dataset_id
 			/* HEALTH COMMITTEE */
 			AND n.id = p4.nuts_id
-			AND v4.indicator_id = i4.id
-			AND i4.id=103
+			AND v4.indicator_id = 103
 			AND v4.profile_id = p4.id
 			AND d.id = v4.dataset_id
 			/* COMMON */
