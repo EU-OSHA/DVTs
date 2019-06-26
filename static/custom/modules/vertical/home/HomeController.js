@@ -60,7 +60,7 @@ define(function (require) {
               });
             });
 
-            dataService.getCapacitiesCountries().then(function (data) {
+            dataService.getEnforcementCapacityCountries().then(function (data) {
 
               data.data.resultset.map(function (elem) {
                 var param = (!!$stateParams.filter) ? $stateParams.filter : undefined;
@@ -68,9 +68,23 @@ define(function (require) {
                     country: elem[0],
                     country_code: elem[1]
                 });
+                $scope.capacitiesCountries.sort(function(a, b){
+                  var codeA = a.country_code;
+                  var codeB = b.country_code;
+                  if (codeA < codeB) {
+                    return -1;
+                  }
+                  if (codeA > codeB) {
+                    return 1;
+                  }
+
+                  //  be equal
+                  return 0;
+                });
               });
             });
-
+            
+            
             dataService.getStatisticsCountries().then(function (data) {
 
               data.data.resultset.map(function (elem) {
