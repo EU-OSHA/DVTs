@@ -145,7 +145,7 @@
 	    <Query>
 			SELECT DISTINCT(n.literal_id) as country_name, n.country_code as country_code, (ROUND(v.value*100)) as satisfaction_working, ( ROUND(v2.value*100)) as health_negative, 
 			(ROUND(v3.value*100)) as health_problem, (ROUND(v4.value*100)) as absence, (ROUND(v5.value*100)) as sick_at_work, (ROUND(v6.value*100)) as job_till_60
-			FROM nuts n, profile p, profile p2, profile p3, profile p4, profile p5, profile p6, indicator i, value v, value v2, value v3, value v4, value v5, value v6, dataset d
+			FROM nuts n, profile p, profile p2, profile p3, profile p4, profile p5, profile p6, value v, value v2, value v3, value v4, value v5, value v6, dataset d
 			WHERE
 			/* SATISFACTION WITH WORKING CONDITIONS */
 			n.id = p.nuts_id
@@ -195,7 +195,7 @@
 	    <Query>
 			SELECT DISTINCT(n.literal_id) as country_name, n.country_code as country_code, (ROUND(v.value*100)) as satisfaction_working, ( ROUND(v2.value*100)) as health_negative, 
 			(ROUND(v3.value*100)) as health_problem, (ROUND(v4.value*100)) as absence, (ROUND(v5.value*100)) as sick_at_work, (ROUND(v6.value*100)) as job_till_60
-			FROM nuts n, profile p, profile p2, profile p3, profile p4, profile p5, profile p6, indicator i, value v, value v2, value v3, value v4, value v5, value v6, dataset d
+			FROM nuts n, profile p, profile p2, profile p3, profile p4, profile p5, profile p6, value v, value v2, value v3, value v4, value v5, value v6, dataset d
 			WHERE
 			/* SATISFACTION WITH WORKING CONDITIONS */
 			n.id = p.nuts_id
