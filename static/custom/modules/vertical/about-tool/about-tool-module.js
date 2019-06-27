@@ -19,7 +19,7 @@ define(function (require) {
         $uiViewScrollProvider.useAnchorScroll();
 
         $stateProvider.state('about-tool', {
-            url: "/about",
+            url: "/about-tool",
             params: {
 
             },

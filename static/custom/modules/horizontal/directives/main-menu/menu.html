@@ -57,21 +57,21 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="main-menu">
                 <ul class="nav navbar-nav">
-                    <li class="dropdown" ng-repeat="level0 in structure" >
+                    <li class="dropdown" ng-repeat="level0 in structure" ng-class="isCurrentStateMenu('{{ level0.id }}')" >
                         <a ng-if='level0.levels && level0.target' class="dropdown-toggle" data-toggle="dropdown" role="button"
                            aria-haspopup="true" target="_self" aria-expanded="false" tabindex="{{level0.tabindex}}">
-                            <span ng-class="isCurrentSection('{{ level0.id }}')" data-ng-bind-html="i18n_literals[level0.name]"></span>
+                            <span data-ng-bind-html="i18n_literals[level0.name]"></span>
                             <i class="fa fa-caret-down" aria-hidden="true"></i>
                         </a>
                         <a ng-if='level0.levels && level0.sref' ui-sref= '{{ level0.sref}}'
                            class="dropdown-toggle {{level0.class}}"
                            data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" tabindex="{{level0.tabindex}}">
-                            <span ng-class="isCurrentStateMenu('{{ level0.id }}')" data-ng-bind-html="i18n_literals[level0.name]"></span>
+                            <span data-ng-bind-html="i18n_literals[level0.name]"></span>
                             <i class="fa fa-caret-down" aria-hidden="true"></i>
                         </a>
                         <a ng-if='!level0.levels && level0.sref' ui-sref='{{ level0.sref}}' accesskey="{{level0.accesskey}}" tabindex="{{level0.tabindex}}">
-                            <span ng-if="level0.id == 'home'" ng-class="isCurrentStateMenu('{{ level0.id }}')" data-ng-bind-html="level0.name"></span>
-                            <span ng-if="level0.id != 'home'" ng-class="isCurrentStateMenu('{{ level0.id }}')" data-ng-bind-html="i18n_literals[level0.name]"></span>
+                            <span ng-if="level0.id == 'home'" data-ng-bind-html="level0.name"></span>
+                            <span ng-if="level0.id != 'home'" data-ng-bind-html="i18n_literals[level0.name]"></span>
                         </a>
                         <ul class="dropdown-menu" ng-if="level0.levels">
                             <!--
@@ -81,9 +81,9 @@
                                 </a>
                             </li>
                         -->
-                            <li ng-repeat="level1 in level0.levels">
+                            <li ng-repeat="level1 in level0.levels" ng-class="isCurrentStateMenu('{{ level1.id }}')">
                                 <a ng-if="level1.sref" ui-sref='{{ level1.sref }}' id='{{ level1.id }}' accesskey="{{level1.accesskey}}">
-                                    <span ng-class="isCurrentStateMenu('{{ level1.id }}')" data-ng-bind-html="i18n_literals[level1.name]"></span>
+                                    <span  data-ng-bind-html="i18n_literals[level1.name]"></span>
                                 </a>
                             </li>
                         </ul>
