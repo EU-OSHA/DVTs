@@ -732,6 +732,7 @@ and (orientation : landscape) {
   		li{
   			label{
   				width: 35%;
+  				letter-spacing: 0px;
   			}
   			select{
   				width: 63%;
@@ -1331,7 +1332,9 @@ and (max-width :420px){
 	form.compare--block--form {
 	  text-align: left;
 	}	
-
+	.social-dialogue .card--grid .card--block--chart .chart--block {
+	  padding: 2rem 0rem !important;
+	}
 }
 
 
@@ -1441,6 +1444,7 @@ and (max-width :370px){
 		  }
 		}
 	}
+
 }
 
 
