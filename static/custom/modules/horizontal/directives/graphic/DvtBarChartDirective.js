@@ -618,6 +618,13 @@ define(function (require) {
                     }
                 }
 
+                if(definition.chartDefinition.dataAccessId == 'getNonFatalAccidentsPerWorkersData'){
+                    if(resolution <= 425){
+                        //$log.warn('resolution < 425');
+                        definition.chartDefinition.legendItemSize = 120;
+                    }
+                }
+
                 if(scope.axisColor){
                     definition.chartDefinition.xAxis_fillStyle = 'transparent';
                     definition.chartDefinition.xAxis_call = function(){

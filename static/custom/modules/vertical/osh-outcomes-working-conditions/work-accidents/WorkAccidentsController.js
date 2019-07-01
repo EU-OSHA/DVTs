@@ -49,7 +49,7 @@ define(function (require) {
     var resolution = screen.width;
 
     $scope.orientation = resolution > 768 ? "vertical" : "horizontal";
-    $scope.axisSize = resolution > 768 ? 150 : (resolution > 480 ? 160 : 80);
+    $scope.axisSize = resolution > 768 ? 150 : (resolution > 480 ? 110 : 50);
 
     $(window).on("resize",function(e){
       resolution = screen.width;
