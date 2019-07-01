@@ -165,6 +165,81 @@
 	    	<Parameter default="15" name="dataset" type="Numeric"/>
 	    </Parameters>
 	    <Query>
+	    	select q1.country_name, q1.country_code, q1.joint_consultative, q2.trade_union, q3.health_representative, q4.health_committee from 
+			(SELECT DISTINCT(n.literal_id) as country_name, n.country_code as country_code, (ROUND(v.value*100)) as joint_consultative
+			FROM nuts n, profile p, value v, dataset d, split_activity_sector sas, split_answer a, translation t, translation t1
+			WHERE
+			/* COMMON */
+			d.id = 15
+			AND sas.literal_id=t.literal_id
+			AND a.literal_id=t1.literal_id
+			AND t.LANGUAGE="EN" AND t.TEXT="All"
+			AND t1.LANGUAGE="EN" AND t1.TEXT="Yes"
+			/* JOIN CONSULTATIVE */
+			AND n.id = p.nuts_id
+			AND v.indicator_id = 100
+			AND v.profile_id = p.id
+			AND d.id = v.dataset_id
+			AND (p.activity_sector_id=sas.id OR v.value IS NULL)
+			AND p.answer_id=a.id) as q1, 
+			(SELECT DISTINCT(n.literal_id) as country_name, n.country_code as country_code, (ROUND(v.value*100)) as trade_union
+			FROM nuts n, profile p, value v, dataset d, split_activity_sector sas, split_answer a, translation t, translation t1
+			WHERE
+			/* COMMON */
+			d.id = 15
+			AND sas.literal_id=t.literal_id
+			AND a.literal_id=t1.literal_id
+			AND t.LANGUAGE="EN" AND t.TEXT="All"
+			AND t1.LANGUAGE="EN" AND t1.TEXT="Yes"
+			/* JOIN CONSULTATIVE */
+			AND n.id = p.nuts_id
+			AND v.indicator_id = 101
+			AND v.profile_id = p.id
+			AND d.id = v.dataset_id
+			AND (p.activity_sector_id=sas.id OR v.value IS NULL)
+			AND p.answer_id=a.id) as q2, 
+			(SELECT DISTINCT(n.literal_id) as country_name, n.country_code as country_code, (ROUND(v.value*100)) as health_representative
+			FROM nuts n, profile p, value v, dataset d, split_activity_sector sas, split_answer a, translation t, translation t1
+			WHERE
+			/* COMMON */
+			d.id = 15
+			AND sas.literal_id=t.literal_id
+			AND a.literal_id=t1.literal_id
+			AND t.LANGUAGE="EN" AND t.TEXT="All"
+			AND t1.LANGUAGE="EN" AND t1.TEXT="Yes"
+			/* JOIN CONSULTATIVE */
+			AND n.id = p.nuts_id
+			AND v.indicator_id = 102
+			AND v.profile_id = p.id
+			AND d.id = v.dataset_id
+			AND (p.activity_sector_id=sas.id OR v.value IS NULL)
+			AND p.answer_id=a.id) as q3, 
+			(SELECT DISTINCT(n.literal_id) as country_name, n.country_code as country_code, (ROUND(v.value*100)) as health_committee
+			FROM nuts n, profile p, value v, dataset d, split_activity_sector sas, split_answer a, translation t, translation t1
+			WHERE
+			/* COMMON */
+			d.id = 15
+			AND sas.literal_id=t.literal_id
+			AND a.literal_id=t1.literal_id
+			AND t.LANGUAGE="EN" AND t.TEXT="All"
+			AND t1.LANGUAGE="EN" AND t1.TEXT="Yes"
+			/* JOIN CONSULTATIVE */
+			AND n.id = p.nuts_id
+			AND v.indicator_id = 103
+			AND v.profile_id = p.id
+			AND d.id = v.dataset_id
+			AND (p.activity_sector_id=sas.id OR v.value IS NULL)
+			AND p.answer_id=a.id) as q4 
+			where 
+			q1.country_name = q2.country_name
+			AND q2.country_name = q3.country_name
+			AND q3.country_name = q4.country_name
+			AND q1.country_code = q2.country_code
+			AND q2.country_code = q3.country_code
+			AND q4.country_code = q4.country_code
+			ORDER BY q1.country_name ASC;
+	    </Query>
+	    <!--<Query>
 			SELECT DISTINCT(n.literal_id) as country_name, n.country_code as country_code, (ROUND(v.value*100)) as joint_consultative, ( ROUND(v2.value*100)) as trade_union, (ROUND(v3.value*100)) as health_representative, (ROUND(v4.value*100)) as health_committee
 			FROM nuts n, profile p, profile p2, profile p3, profile p4, value v, value v2, value v3, value v4, dataset d, split_activity_sector sas, split_answer a, translation t, translation t1
 			WHERE
@@ -203,7 +278,7 @@
 			AND t.LANGUAGE="EN" AND t.TEXT="All"
 			AND t1.LANGUAGE="EN" AND t1.TEXT="Yes"
 			ORDER BY n.literal_id ASC;
-	    </Query>
+	    </Query>-->
 	</DataAccess>
 
 		<!-- STEERING OF OSH || get social dialogue countries with available data -->
@@ -215,6 +290,85 @@
 	    	<Parameter default=".*" name="countries" type="String"/>
 	    </Parameters>
 	    <Query>
+	    	select q1.country_name, q1.country_code, q1.joint_consultative, q2.trade_union, q3.health_representative, q4.health_committee from 
+			(SELECT DISTINCT(n.literal_id) as country_name, n.country_code as country_code, (ROUND(v.value*100)) as joint_consultative
+			FROM nuts n, profile p, value v, dataset d, split_activity_sector sas, split_answer a, translation t, translation t1
+			WHERE
+			/* COMMON */
+			d.id = 15
+			AND n.literal_id REGEXP ${countries}
+			AND sas.literal_id=t.literal_id
+			AND a.literal_id=t1.literal_id
+			AND t.LANGUAGE="EN" AND t.TEXT="All"
+			AND t1.LANGUAGE="EN" AND t1.TEXT="Yes"
+			/* JOIN CONSULTATIVE */
+			AND n.id = p.nuts_id
+			AND v.indicator_id = 100
+			AND v.profile_id = p.id
+			AND d.id = v.dataset_id
+			AND (p.activity_sector_id=sas.id OR v.value IS NULL)
+			AND p.answer_id=a.id) as q1, 
+			(SELECT DISTINCT(n.literal_id) as country_name, n.country_code as country_code, (ROUND(v.value*100)) as trade_union
+			FROM nuts n, profile p, value v, dataset d, split_activity_sector sas, split_answer a, translation t, translation t1
+			WHERE
+			/* COMMON */
+			d.id = 15
+			AND n.literal_id REGEXP ${countries}
+			AND sas.literal_id=t.literal_id
+			AND a.literal_id=t1.literal_id
+			AND t.LANGUAGE="EN" AND t.TEXT="All"
+			AND t1.LANGUAGE="EN" AND t1.TEXT="Yes"
+			/* JOIN CONSULTATIVE */
+			AND n.id = p.nuts_id
+			AND v.indicator_id = 101
+			AND v.profile_id = p.id
+			AND d.id = v.dataset_id
+			AND (p.activity_sector_id=sas.id OR v.value IS NULL)
+			AND p.answer_id=a.id) as q2, 
+			(SELECT DISTINCT(n.literal_id) as country_name, n.country_code as country_code, (ROUND(v.value*100)) as health_representative
+			FROM nuts n, profile p, value v, dataset d, split_activity_sector sas, split_answer a, translation t, translation t1
+			WHERE
+			/* COMMON */
+			d.id = 15
+			AND n.literal_id REGEXP ${countries}
+			AND sas.literal_id=t.literal_id
+			AND a.literal_id=t1.literal_id
+			AND t.LANGUAGE="EN" AND t.TEXT="All"
+			AND t1.LANGUAGE="EN" AND t1.TEXT="Yes"
+			/* JOIN CONSULTATIVE */
+			AND n.id = p.nuts_id
+			AND v.indicator_id = 102
+			AND v.profile_id = p.id
+			AND d.id = v.dataset_id
+			AND (p.activity_sector_id=sas.id OR v.value IS NULL)
+			AND p.answer_id=a.id) as q3, 
+			(SELECT DISTINCT(n.literal_id) as country_name, n.country_code as country_code, (ROUND(v.value*100)) as health_committee
+			FROM nuts n, profile p, value v, dataset d, split_activity_sector sas, split_answer a, translation t, translation t1
+			WHERE
+			/* COMMON */
+			d.id = 15
+			AND n.literal_id REGEXP ${countries}
+			AND sas.literal_id=t.literal_id
+			AND a.literal_id=t1.literal_id
+			AND t.LANGUAGE="EN" AND t.TEXT="All"
+			AND t1.LANGUAGE="EN" AND t1.TEXT="Yes"
+			/* JOIN CONSULTATIVE */
+			AND n.id = p.nuts_id
+			AND v.indicator_id = 103
+			AND v.profile_id = p.id
+			AND d.id = v.dataset_id
+			AND (p.activity_sector_id=sas.id OR v.value IS NULL)
+			AND p.answer_id=a.id) as q4 
+			where 
+			q1.country_name = q2.country_name
+			AND q2.country_name = q3.country_name
+			AND q3.country_name = q4.country_name
+			AND q1.country_code = q2.country_code
+			AND q2.country_code = q3.country_code
+			AND q4.country_code = q4.country_code
+			ORDER BY q1.country_name ASC;
+	    </Query>
+	    <!--<Query>
 			SELECT DISTINCT(n.literal_id) as country_name, n.country_code as country_code, (ROUND(v.value*100)) as joint_consultative, ( ROUND(v2.value*100)) as trade_union, (ROUND(v3.value*100)) as health_representative, (ROUND(v4.value*100)) as health_committee
 			FROM nuts n, profile p, profile p2, profile p3, profile p4, value v, value v2, value v3, value v4, dataset d, split_activity_sector sas, split_answer a, translation t, translation t1
 			WHERE
@@ -254,7 +408,7 @@
 			AND t.LANGUAGE="EN" AND t.TEXT="All"
 			AND t1.LANGUAGE="EN" AND t1.TEXT="Yes"
 			ORDER BY n.literal_id ASC;
-	    </Query>
+	    </Query>-->
 	</DataAccess>
    
 </CDADescriptor>
