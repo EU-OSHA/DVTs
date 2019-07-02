@@ -15,7 +15,7 @@
 	    	<Parameter default="15" name="pIndicator" type="String"/>
 	    </Parameters>
 	    <Query>
-		    SELECT d.source, d.date_from, d.date_to 
+		    SELECT d.source, YEAR(d.date_from), YEAR(d.date_to) 
 			FROM indicators_in_dataset iid, dataset d
 			WHERE iid.dataset_id = d.id
 			AND iid.indicator_id = ${pIndicator}
