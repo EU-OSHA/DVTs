@@ -142,28 +142,6 @@ define(function (require) {
       chart5: 20
     }
 
-    // Show/hide the Countries Filter List
-    angular.element('div.countries-filters').css( "display",'none' );
-    angular.element('#filter2 h2').addClass('showChallenges');
-    $scope.toggleFilters = function() {
-      if ($window.outerWidth < 768) {
-            angular.element('#filter2 h2').toggleClass('showChallenges');
-            angular.element('div.countries-filters').slideToggle( "slow" );
-        }
-    };
-
-    console.log( 'column--item -->' + angular.element('.column--item').length );
-
-    // Show/hide the Countries Filter List
-    angular.element('div.countries-filters').css( "display",'none' );
-    angular.element('#filter2 h2').addClass('showChallenges');
-    $scope.toggleFilters = function() {
-      if ($window.outerWidth < 768) {
-            angular.element('#filter2 h2').toggleClass('showChallenges');
-            angular.element('div.countries-filters').slideToggle( "slow" );
-        }
-    }
-
     /******************************************************************************|
     |                                DATA LOAD                                     |
     |******************************************************************************/
@@ -271,7 +249,6 @@ define(function (require) {
           });
         }
       }
-
 
   }
 

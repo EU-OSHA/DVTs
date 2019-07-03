@@ -1335,6 +1335,16 @@ and (max-width :420px){
 	.social-dialogue .card--grid .card--block--chart .chart--block {
 	  padding: 2rem 0rem !important;
 	}
+  .hide-header{
+    -webkit-transition: all 1.2s;
+    transition: all 1.2s;
+    &.affix{
+    	top: -30rem;
+    }
+		&.affix-top{
+    	top: -30rem;
+    }
+  }
 }
 
 
