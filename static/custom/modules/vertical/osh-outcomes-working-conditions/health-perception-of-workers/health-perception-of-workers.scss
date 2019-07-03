@@ -5,9 +5,11 @@
       margin: 0 1rem 3rem 0;
       .chart--block{
         padding: 2rem;
+        height: 100%;
         header{
           display: flex;
-          margin-bottom: 2rem;
+          margin-bottom: 0;
+          min-height: 24%;
           img{
             width: auto !important;
             margin-right: 1rem;
@@ -68,7 +70,8 @@
   }
   .highlited--data--section{
     background: $gray-lighter;
-    padding: 2rem 0 1rem;
+    padding: 2rem 0 0rem;
+    border-bottom: 4px solid #003399;
     &.affix{
       padding: 2rem 0 0;
     }
@@ -94,6 +97,9 @@
             }
           }
         }
+        &:nth-child(2){
+          width: 80%;
+        }
         .highlited-data-list{
           list-style: none;
           display: flex;
@@ -101,10 +107,15 @@
           li{
             width: 20%;
             padding: 0 1rem 0 0;
+            .group-data{
+              display: flex;
+              flex-direction: row;
+              justify-content: center;
+            }
             span{
               font-family: 'Oswald';
               font-size: 3.6rem;
-              margin: 0rem 0 2rem;
+              margin: 0rem;
               color: $eu;
               font-weight: bold;
               &.country-data{
@@ -137,6 +148,33 @@
   }
 }
 
+@media only screen and (max-width: 990px) and (min-width: 768px){  
+  .health-perception-workers{
+    .highlited--data--section{
+      .highlited--data--block{
+        .highlited-data-item{
+          &:first-child{
+            width:10%;
+            .flags--wrapper{
+            }
+            .eu-data{
+              h2{
+              }
+              .download-report{
+                a{
+                }          
+              }
+            }
+          }
+          &:nth-child(2){
+            width: 90%;
+          }
+        }
+      }
+    } 
+  }
+}
+
 @media only screen and (max-width: 767px){
 
   .health-perception-workers{
@@ -159,16 +197,33 @@
       .highlited--data--block{
         flex-direction: column;
         .highlited-data-item{
-          width: 100%;
+          width: 100% !important;
           &:first-child{
             width: 100%;
-            margin-bottom: 2rem;
+            margin-bottom: 1rem;
             .flags--wrapper {
               margin-right: 0;
+              img{
+                width: 6rem;
+                margin-right: 2rem;
+              }
+            }
+            .eu-data{
+              h2{
+                font-size: 3rem;
+              }
+              .download-report{
+                a{
+                  &:before{
+                    display:block;
+                  }
+                }          
+              }
             }        
           }
           .highlited-data-list{
             flex-wrap: nowrap;
+            padding:0; 
             li{
               padding: 1rem 2rem 0 0;  
             }
@@ -200,7 +255,7 @@
     } 
     .highlited--data--section{
       &.hide-header.affix{
-        top: -33rem;
+        top: -43rem;
       }
       .highlited--data--block{
         .highlited-data-item{
@@ -210,7 +265,70 @@
               width: 30%;
               padding: 0;
               span{
-                font-size: 2rem !important;
+               // font-size: 2rem !important;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+}
+
+
+@media only screen and (max-width: 365px) {
+  .health-perception-workers{
+    .highlited--data--section{
+      z-index: 100;
+      .highlited--data--block{
+        display: flex;
+        flex-direction: column;
+        .highlited-data-item{
+          &:first-child{
+            .flags--wrapper{
+              img{
+                width: 6rem;
+                margin-right: 2rem;
+              }
+            }
+            .eu-data{
+              h2{
+                font-size: 3rem;
+              }
+              .download-report{
+                a{
+                  &:before{
+                    display:block;
+                  }
+                }          
+              }
+            }
+          }
+          .highlited-data-list{
+            flex-wrap: wrap;
+            li{
+              width: 100%;
+              text-align: left;
+              display: flex;
+              flex-wrap: wrap;
+              align-items: center;
+              .group-data{
+                width: 20%;
+                justify-content: start;
+              }
+              span{
+                &.country-data{
+
+                }
+                &.data-text{
+
+                }
+              }
+              label{
+                width: 70%;
+                line-height: 16px;
+                padding-left: 1.6rem;
               }
             }
           }
