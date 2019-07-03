@@ -41,7 +41,7 @@ define (function (require) {
                                         //$log.warn(this);
                                         var baseScale = this.getContext().chart.axes.base.scale;
                                         
-                                        return baseScale('Austria (AT)') + 12 /*this.sign.panel.barWidth/2*/;
+                                        return baseScale('Belgium (BE)') + 12 /*this.sign.panel.barWidth/2*/;
                                     })
                                     .height(null) // clear any inherited value
                                     .width(null)  // clear any inherited value
@@ -56,7 +56,7 @@ define (function (require) {
                                     .top(function(scene){
                                         var baseScale = this.getContext().chart.axes.base.scale;
                                         
-                                        return baseScale('Switzerland (CH)') + 11;
+                                        return baseScale('Norway (NO)') + 11;
                                     })
                                     .height(null) // clear any inherited value
                                     .width(null)  // clear any inherited value
@@ -134,7 +134,7 @@ define (function (require) {
                                         if(!scene.firstAtoms.value.label.match('%')){
                                             scene.firstAtoms.value.label = scene.firstAtoms.value.label + '%';
                                         }
-                                        return baseScale('Austria (AT)') + 12 /*this.sign.panel.barWidth/2*/;
+                                        return baseScale('Belgium (BE)') + 12 /*this.sign.panel.barWidth/2*/;
                                     })
                                     .height(null) // clear any inherited value
                                     .width(null)  // clear any inherited value
@@ -149,7 +149,7 @@ define (function (require) {
                                     .top(function(scene){
                                         var baseScale = this.getContext().chart.axes.base.scale;
                                         
-                                        return baseScale('Switzerland (CH)') + 11;
+                                        return baseScale('Norway (NO)') + 11;
                                     })
                                     .height(null) // clear any inherited value
                                     .width(null)  // clear any inherited value
@@ -230,7 +230,7 @@ define (function (require) {
                                         if(!scene.firstAtoms.value.label.match('%')){
                                             scene.firstAtoms.value.label = scene.firstAtoms.value.label + '%';
                                         }
-                                        return baseScale('Austria (AT)') + 10 /*this.sign.panel.barWidth/2*/;
+                                        return baseScale('Belgium (BE)') + 10 /*this.sign.panel.barWidth/2*/;
                                     })
                                     .height(null) // clear any inherited value
                                     .width(null)  // clear any inherited value
@@ -245,7 +245,7 @@ define (function (require) {
                                     .top(function(scene){
                                         var baseScale = this.getContext().chart.axes.base.scale;
                                         
-                                        return baseScale('Iceland (IS)') + 10;
+                                        return baseScale('Norway (NO)') + 10;
                                     })
                                     .height(null) // clear any inherited value
                                     .width(null)  // clear any inherited value
