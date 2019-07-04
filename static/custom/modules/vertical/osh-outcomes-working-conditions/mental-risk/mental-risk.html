@@ -129,12 +129,12 @@
           <div class="chart--block" ng-hide="pSplit != 'eurofound'">
             <dvt-bar-chart
               data-ng-cloak
-              query="getEurofoundPoorCommunicationData" cda="{{::cdaOSHOutcomes }}"
+              query="{{poorCommunicationQuery}}" cda="{{::cdaOSHOutcomes }}"
               width="330" height="{{horizontalHeight}}" axis-percent="1"
               orientation="{{orientation}}" axis-fixed-min="{{axisFixedMin}}"
               axis-fixed-max="100" step="{{step.chart2}}"
               params="[['pDataset', datasetEurofound], ['pIndicator', 84]]"
-              color-role="series" colors="[stories[1].color1]"
+              color-role="c" colors="[stories[1].color1]"
               chart-title="{{i18nLiterals.L341}}" id="4"
               axis-label-font="14px 'OpenSans-bold'"
               plots="stories[1].plots"
@@ -142,7 +142,7 @@
               values-font="14px 'OpenSans-bold'"
               multiple-label-colors="false"
               leaf-content-overflow='visible'
-              legend="true" stacked="1" angle="{{angle}}"
+              legend="false" stacked="1" angle="{{angle}}"
               legend-align="center"
               base-axis-size="{{axisSize}}"
               legend-item-size="150"
@@ -185,7 +185,6 @@
             values-mask="{value}%"
             values-font="14px 'OpenSans-bold'"
             multiple-label-colors="false"
-            base-axis-label-text-baseline="top"
             leaf-content-overflow='visible'
             dimensions="stories[0].dimensions"
             legend="true" stacked="1" angle="{{angle}}"
@@ -210,7 +209,6 @@
               values-mask="{value}%"
               values-font="14px 'OpenSans-bold'"
               multiple-label-colors="false"
-              base-axis-label-text-baseline="top"
               leaf-content-overflow='visible'
               dimensions="stories[2].dimensions"
               legend="true" stacked="1" angle="{{angle}}"
@@ -258,7 +256,6 @@
             values-mask="{value}%"
             values-font="14px 'OpenSans-bold'"
             multiple-label-colors="false"
-            base-axis-label-text-baseline="top"
             leaf-content-overflow='visible'
             dimensions="stories[0].dimensions"
             legend="true" stacked="1" angle="{{angle}}"
@@ -283,7 +280,6 @@
               values-mask="{value}%"
               values-font="14px 'OpenSans-bold'"
               multiple-label-colors="false"
-              base-axis-label-text-baseline="top"
               leaf-content-overflow='visible'
               dimensions="stories[2].dimensions"
               legend="true" stacked="1" angle="{{angle}}"
@@ -331,7 +327,6 @@
             values-mask="{value}%"
             values-font="14px 'OpenSans-bold'"
             multiple-label-colors="false"
-            base-axis-label-text-baseline="top"
             leaf-content-overflow='visible'
             dimensions="stories[0].dimensions"
             legend="true" stacked="1" angle="{{angle}}"
@@ -356,7 +351,6 @@
               values-mask="{value}%"
               values-font="14px 'OpenSans-bold'"
               multiple-label-colors="false"
-              base-axis-label-text-baseline="top"
               leaf-content-overflow='visible'
               dimensions="stories[2].dimensions"
               legend="true" stacked="1" angle="{{angle}}"
@@ -401,7 +395,6 @@
             values-mask="{value}%"
             values-font="14px 'OpenSans-bold'"
             multiple-label-colors="false"
-            base-axis-label-text-baseline="top"
             leaf-content-overflow='visible'
             dimensions="stories[0].dimensions"
             legend="true" stacked="1" angle="{{angle}}"
@@ -426,7 +419,6 @@
               values-mask="{value}%"
               values-font="14px 'OpenSans-bold'"
               multiple-label-colors="false"
-              base-axis-label-text-baseline="top"
               leaf-content-overflow='visible'
               dimensions="stories[2].dimensions"
               legend="true" stacked="1" angle="{{angle}}"
@@ -471,7 +463,6 @@
             values-mask="{value}%"
             values-font="14px 'OpenSans-bold'"
             multiple-label-colors="false"
-            base-axis-label-text-baseline="top"
             leaf-content-overflow='visible'
             dimensions="stories[0].dimensions"
             legend="true" stacked="1" angle="{{angle}}"
@@ -496,7 +487,6 @@
               values-mask="{value}%"
               values-font="14px 'OpenSans-bold'"
               multiple-label-colors="false"
-              base-axis-label-text-baseline="top"
               leaf-content-overflow='visible'
               dimensions="stories[2].dimensions"
               legend="true" stacked="1" angle="{{angle}}"

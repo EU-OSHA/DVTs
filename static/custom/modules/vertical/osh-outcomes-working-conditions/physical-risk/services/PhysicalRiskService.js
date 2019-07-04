@@ -29,7 +29,7 @@ define (function (require) {
                                         if(!scene.firstAtoms.value.label.match('%')){
                                             scene.firstAtoms.value.label = scene.firstAtoms.value.label + '%';
                                         }
-                                        return baseScale('Austria (AT)') + 11 /*this.sign.panel.barWidth/2*/;
+                                        return baseScale('Belgium (BE)') + 11 /*this.sign.panel.barWidth/2*/;
                                     })
                                     .height(null) // clear any inherited value
                                     .width(null)  // clear any inherited value
@@ -44,7 +44,7 @@ define (function (require) {
                                     .top(function(scene){
                                         var baseScale = this.getContext().chart.axes.base.scale;
                                         
-                                        return baseScale('Switzerland (CH)') + 11;
+                                        return baseScale('Norway (NO)') + 11;
                                     })
                                     .height(null) // clear any inherited value
                                     .width(null)  // clear any inherited value

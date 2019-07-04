@@ -47,6 +47,7 @@ define(function (require) {
     $scope.axisFixedMin = resolution > 768 ? 60 : 0;
     $scope.query = resolution > 768 ? 'getMentalRiskVerticalData' : 'getMentalRiskHorizontalData';
     $scope.timePressureQuery = resolution > 768 ? 'getTimePressureEurofoundVerticalData' : 'getTimePressureEurofoundHorizontalData';
+    $scope.poorCommunicationQuery = resolution > 768 ? 'getEurofoundPoorCommunicationVerticalData' : 'getEurofoundPoorCommunicationHorizontalData';
     $scope.influenceQuery = resolution > 768 ? 'getInfluenceEurofoundVerticalData' : 'getInfluenceEurofoundHorizontalData';
     $scope.jobInsecurity = resolution > 768 ? 'getJobInsecurityEurofoundVerticalData' : 'getJobInsecurityEurofoundHorizontalData';
     $scope.discriminationQuery = resolution > 768 ? 'getEurofoundDiscriminationVerticalData' : 'getEurofoundDiscriminationHorizontalData';
