@@ -114,7 +114,11 @@ define(function (require) {
       $scope.pSubIndicator = 3;
     }
 
-    $scope.minMaxValues = [];
+    $scope.minMaxValues = {
+      minValue: 0,
+      maxValue: 100,
+      range: 25
+    };;
 
     // Open/Hide checkbox dropdown list
     $scope.openSelect = function($event){
@@ -184,11 +188,8 @@ define(function (require) {
           }
         }
 
-        minValue = minValue;
-        maxValue = maxValue;
-
         var range = (maxValue - minValue) / 4;
-        $scope.minMaxValues.push({min_value: minValue,max_value: maxValue,range_value: range}); 
+        $scope.minMaxValues = {min_value: minValue,max_value: maxValue,range_value: range}; 
       }
       else
       {
@@ -249,6 +250,7 @@ define(function (require) {
         $scope.data.subIndicator = $scope.selectedSubIndicator;
 
         $scope.getMinMaxValues();
+        $state.reload();
       });
     }
     else

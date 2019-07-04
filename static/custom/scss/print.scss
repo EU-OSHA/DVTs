@@ -226,7 +226,12 @@
 		} 
 	}
 
-
+  .flags--wrapper{
+  	outline: 1px solid #CCC !important;
+	  width: 1cm !important;
+	  float: left !important;
+	  margin-right: 1rem !important;
+  }
 
 	.workforce--page{
 		.filter--indicator--block{

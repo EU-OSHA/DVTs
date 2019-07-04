@@ -85,7 +85,8 @@ define(function (require) {
                 });
               });
             });
-
+            
+            
             dataService.getStatisticsCountries().then(function (data) {
 
               data.data.resultset.map(function (elem) {
