@@ -15,6 +15,11 @@ define (function (require) {
                         valuesOverflow: 'show',
                         label_textStyle: function(scene){
                         	var subIndicatorKey = scene.firstAtoms.series;
+
+                            if(!scene.firstAtoms.value.label.match('%')){
+                                scene.firstAtoms.value.label = scene.firstAtoms.value.label + '%';
+                            }
+
                             if (subIndicatorKey == 'From 0 to 9 persons employed') {
                                 return dvtUtils.getColorCountry(1);
                             } else if(subIndicatorKey == 'From 10 to 19 persons employed'){
@@ -45,6 +50,29 @@ define (function (require) {
                     {
                         name: "main",
                         dataPart: "0",
+                        bar_fillStyle: function(scene){
+                            var subIndicatorKey = scene.firstAtoms.series;
+
+                            if(!scene.firstAtoms.value.label.match('%')){
+                                scene.firstAtoms.value.label = scene.firstAtoms.value.label + '%';
+                            }
+
+                            if (subIndicatorKey == 'Agriculture, forestry and fishing') {
+                                return dvtUtils.getColorCountry(1);
+                            } else if(subIndicatorKey == 'Manufacturing'){
+                                return dvtUtils.getColorCountry(22);
+                            } else if(subIndicatorKey == 'Construction, waste management, water and electricity supply') {
+                                return dvtUtils.getAccidentsColors(4);
+                            } else if(subIndicatorKey == 'Trade, transport, food/accommodation and recreation activities') {
+                                return dvtUtils.getColorCountry(3);
+                            } else if(subIndicatorKey == 'IT, Finance, real state and other technical scientific or personal service activities') {
+                                return dvtUtils.getColorCountry(2);
+                            } else if(subIndicatorKey == 'Public administration') {
+                                return dvtUtils.getColorCountry(12);
+                            } else if(subIndicatorKey == 'Education, human health and social work activities') {
+                                return dvtUtils.getColorCountry(4);
+                            }
+                        },
                         visualRoles:{
                             series:'series',
                             category:'category'
@@ -59,6 +87,11 @@ define (function (require) {
                         dataPart: "0",
                         label_textStyle: function(scene){
                         	var countryKey = scene.firstAtoms.category;
+
+                            if(!scene.firstAtoms.value.label.match('%')){
+                                scene.firstAtoms.value.label = scene.firstAtoms.value.label + '%';
+                            }
+
                             if (countryKey == 'EU28') {
                                 return dvtUtils.getEUColor();
                             } else if(countryKey == pCountry1){
@@ -95,6 +128,11 @@ define (function (require) {
                         dataPart: "0",
                         label_textStyle: function(scene){
                         	var countryKey = scene.firstAtoms.category;
+
+                            if(!scene.firstAtoms.value.label.match('%')){
+                                scene.firstAtoms.value.label = scene.firstAtoms.value.label + '%';
+                            }
+
                             if (countryKey == 'EU28') {
                                 return dvtUtils.getEUColor();
                             } else if(countryKey == pCountry1){
@@ -230,6 +268,10 @@ define (function (require) {
                         line_strokeStyle: function(scene){
                             var countryKey = scene.firstAtoms.series;
                             var countryValue = scene.firstAtoms.value;
+
+                            if(!scene.firstAtoms.value.label.match('€')){
+                                scene.firstAtoms.value.label = scene.firstAtoms.value.label + ' €';
+                            }
 
                             if(countryValue.value > parseInt(this.sign.chart.options.orthoAxisFixedMax)){
                                 this.sign.chart.options.orthoAxisFixedMax = countryValue.value + 1000;

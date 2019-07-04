@@ -191,7 +191,7 @@
 			AND d.id = v4.dataset_id
 			/* COMMON */
 			AND d.id = ${dataset}
-			ORDER BY country_name ASC;
+			ORDER BY n.country_code ASC;
 	    </Query>
 	</DataAccess>
 
@@ -204,7 +204,7 @@
 	    	<Parameter default=".*" name="countries" type="String"/>
 	    </Parameters>
 	    <Query>
-			SELECT DISTINCT(n.literal_id) as country_name, n.country_code as country_code, (ROUND(v.value*100)) as joint_consultative, (ROUND(v2.value*100)) as trade_union, 
+			SELECT DISTINCT(n.literal_id) as country_name, n.country_code as country_code, (ROUND(v.value*100)) as joint_consultative, ( ROUND(v2.value*100)) as trade_union, 
 			(ROUND(v3.value*100)) as health_representative, (ROUND(v4.value*100)) as health_committee
 			FROM nuts n, profile p, profile p2, profile p3, profile p4, value v, value v2, value v3, value v4, dataset d
 			WHERE

@@ -246,13 +246,18 @@ define(function (require) {
                 + '<div data-ng-attr-id="{{ id }}"></div>'
 
                 + '<div class="legend-text-block">'
-                    + '<div ng-if="isMaximized && query != gauss" class="logoGraphics-wrapper"><img alt="European Agency for Safety and Health at Work" src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/EU-OSHA-en.png" class="logoGraphics"></div>'
-                    + '<div class="legend-info" ng-if="isMaximized && legendClickMode && legend">Click on each value on the legend to hide/show in on the chart</div>'
-                    + '<div class="" ng-if="isMaximized">' 
-                        + '<span>{{datasources[0].datasource}} </span>'
-                        + '<span>, {{datasources[0].date_from}} </span>'
+                    +'<div ng-if="isMaximized && query != gauss" class="logoGraphics-wrapper">'
+                        + '<span>{{datasources[0].datasource}}, </span>'
+                        + '<span>{{datasources[0].date_from}} </span>'
                         +' <span ng-if="datasources[0].date_to != null">/ {{datasources[0].date_to}}</span>'
-                    + '</div>'
+                        +'<img alt="European Agency for Safety and Health at Work" src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/EU-OSHA-en.png" class="logoGraphics">'
+                    +'</div>'
+                    + '<div class="legend-info" ng-if="isMaximized && legendClickMode && legend">Click on each value on the legend to hide/show in on the chart</div>'
+                    /*+ '<div class="" ng-if="isMaximized">' 
+                        + '<span>{{datasources[0].datasource}}, </span>'
+                        + '<span>{{datasources[0].date_from}} </span>'
+                        +' <span ng-if="datasources[0].date_to != null">/ {{datasources[0].date_to}}</span>'
+                    + '</div>'*/
                 + '</div>'
             + '</div>'
             //+ '<div ng-if="!!functionalLegend" class="functionalLegend" data-ng-bind-html="functionalLegend"></div>'
@@ -622,12 +627,12 @@ define(function (require) {
                                 .left(function(scene){
                                     var panelWidth = this.root.width();
                                     if(panelWidth != 200){
-                                        return panelWidth/12;
+                                        return panelWidth/13;
                                     }
                                 })
                                 .right(function(scene){
                                     var panelWidth = this.root.width();
-                                    return panelWidth/12;
+                                    return panelWidth/13;
                                 });
                     };
                 }
