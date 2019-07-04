@@ -116,7 +116,7 @@
               query="getFatalAccidentsData" cda="{{::cdaOSHOutcomes }}"
               width="330" height="470"
               orientation="{{orientation}}" axis-fixed-min="0"
-              axis-fixed-max="6" step="{{step.chart3}}"
+              axis-fixed-max="5" step="{{step.chart3}}"
               params="[['pDataset', datasetEurostat2016]]"
               color-role="series" colors="[stories[2].color1, stories[2].color2]"
               chart-title="{{i18nLiterals.L311}}" id="3"
@@ -167,7 +167,7 @@
               multiple-label-colors="false"
               legend="true"
               angle="1"
-              base-axis-size="{{axisSize}}"
+              base-axis-size="{{axisSizeSmaller}}"
               datasource-and-dates="[datasetEurostat2016,55]"
             ></dvt-bar-chart>
           </div>
@@ -203,14 +203,14 @@
               leaf-content-overflow='visible'
               legend="false"
               angle="1"
-              base-axis-size="{{axisSize}}"
+              base-axis-size="{{axisSizeSmaller}}"
               datasource-and-dates="[datasetEurostat2016,56]"
             ></dvt-bar-chart>
           </div>
-          <div class="chart-legend">
-            <span data-ng-bind="i18nLiterals.L20568"></span>
-            <span data-ng-bind="i18nLiterals.L20704"></span> <span><a data-ng-bind="i18nLiterals.L20705" ui-sref="about-tool"></a></span>
-          </div>
+        </div>
+        <div class="chart-legend">
+          <span data-ng-bind="i18nLiterals.L20568"></span>
+          <span data-ng-bind="i18nLiterals.L20704"></span> <span><a data-ng-bind="i18nLiterals.L20705" ui-sref="about-tool"></a></span>
         </div>
       </div>
     </div>

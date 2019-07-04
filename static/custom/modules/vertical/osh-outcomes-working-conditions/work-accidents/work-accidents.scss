@@ -17,12 +17,12 @@
 	.work-accidents{
 		.submenu--block{
 			.submenu--items--wrapper{
-				min-height: 7rem;
+				min-height: auto;
 				overflow: hidden;
 				display: block;
 				li{
 					width: 100%;
-					padding: 0 0rem 1.5rem 1rem;
+					padding: 0;
 					display: none;
 					position: relative;
 					a{
@@ -39,8 +39,8 @@
 						&:after{
 							content: "\f078";
 							font: normal normal normal 14px/1 FontAwesome;
-							right: 15px;
-							top: 25px;
+							right: 1.5rem;
+							top: 2.2rem;
 							position: absolute;
 						}
 					}

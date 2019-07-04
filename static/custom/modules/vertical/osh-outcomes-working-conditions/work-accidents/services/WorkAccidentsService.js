@@ -13,8 +13,12 @@ define (function (require) {
                         name: "main",
                         dataPart: "0",
                         line_lineWidth: function(scene){
+                            var countryValue = scene.firstAtoms.value;
                             if(!scene.firstAtoms.value.label.match('%')){
                                 scene.firstAtoms.value.label = scene.firstAtoms.value.label + '%';
+                            }
+                            if(countryValue.value > parseInt(this.sign.chart.options.orthoAxisFixedMax)){
+                                this.sign.chart.options.orthoAxisFixedMax = countryValue.value;
                             }
                             return 1.5;
                         },
