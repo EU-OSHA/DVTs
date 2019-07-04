@@ -49,11 +49,17 @@ define(function (require) {
     var resolution = screen.width;
 
     $scope.orientation = resolution > 768 ? "vertical" : "horizontal";
-    $scope.axisSize = resolution > 768 ? 150 : (resolution > 480 ? 110 : 50);
+    $scope.axisSize = resolution > 768 ? 150 : (resolution > 480 ? 160 : 120);
+    $scope.axisSizeSmaller = resolution > 768 ? 150 : (resolution > 480 ? 110 : 50);
 
     $(window).on("resize",function(e){
-      resolution = screen.width;
-      $state.reload();
+      e.preventDefault();
+      $log.warn(resolution);
+      if(resolution != screen.width){
+        $log.warn('Resolución ha cambiado!');
+        resolution = screen.width;
+        $state.reload();
+      }
     });
 
     $scope.dashboard = {};
@@ -217,9 +223,9 @@ define(function (require) {
       // Open indicators list like a select element
 
 
-      $(window).on("resize",function(e){
+      /*$(window).on("resize",function(e){
         resolution = screen.width;
-      });
+      });*/
 
       $scope.openIndicatorsList = function() {
         if( resolution < 990 ){
