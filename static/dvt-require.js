@@ -192,6 +192,38 @@
     requirePaths['vertical/osh-culture/OshCultureController'] = verticalModules + '/osh-outcomes-working-conditions/osh-culture/OshCultureController' + suffix;
     requirePaths['vertical/osh-culture/services/OshCultureService'] = verticalModules + '/osh-outcomes-working-conditions/osh-culture/services/OshCultureService' + suffix;
     
+    /* WORKING CONDITIONS */
+    requirePaths['vertical/working-conditions/WorkingConditionsController'] = verticalModules + '/osh-outcomes-working-conditions/working-conditions/WorkingConditionsController' + suffix;
+
+    /* OVERALL OPINION */
+    requirePaths['vertical/overall-opinion/OverallOpinionController'] = verticalModules + '/osh-outcomes-working-conditions/overall-opinion/OverallOpinionController' + suffix;
+    requirePaths['vertical/overall-opinion/services/OverallOpinionService'] = verticalModules + '/osh-outcomes-working-conditions/overall-opinion/services/OverallOpinionService' + suffix;
+    
+    /* MENTAL RISK */
+    requirePaths['vertical/mental-risk/MentalRiskController'] = verticalModules + '/osh-outcomes-working-conditions/mental-risk/MentalRiskController' + suffix;
+    requirePaths['vertical/mental-risk/services/MentalRiskService'] = verticalModules + '/osh-outcomes-working-conditions/mental-risk/services/MentalRiskService' + suffix;
+    
+    /* PHYSICAL RISK */
+    requirePaths['vertical/physical-risk/PhysicalRiskController'] = verticalModules + '/osh-outcomes-working-conditions/physical-risk/PhysicalRiskController' + suffix;
+    requirePaths['vertical/physical-risk/services/PhysicalRiskService'] = verticalModules + '/osh-outcomes-working-conditions/physical-risk/services/PhysicalRiskService' + suffix;
+
+    /* PREVENTION COMPANIES */
+    requirePaths['vertical/prevention-companies/PreventionCompaniesController'] = verticalModules + '/osh-outcomes-working-conditions/prevention-companies/PreventionCompaniesController' + suffix;
+    requirePaths['vertical/prevention-companies/services/PreventionCompaniesService'] = verticalModules + '/osh-outcomes-working-conditions/prevention-companies/services/PreventionCompaniesService' + suffix;
+
+    /* WORKER INVOLVEMENT */
+    requirePaths['vertical/worker-involvement/WorkerInvolvementController'] = verticalModules + '/osh-outcomes-working-conditions/worker-involvement/WorkerInvolvementController' + suffix;
+
+    /* OSH INFRASTRUCTURE */
+    requirePaths['vertical/osh-infrastructure/osh-infrastructure-module'] = verticalModules + '/osh-infrastructure/osh-infrastructure-module' + suffix;
+
+    /* ENFORCEMENT CAPACITY */
+    requirePaths['vertical/enforcement-capacity/EnforcementCapacityController'] = verticalModules + '/osh-infrastructure/enforcement-capacity/EnforcementCapacityController' + suffix;
+    requirePaths['vertical/enforcement-capacity/services/EnforcementCapacityService'] = verticalModules + '/osh-infrastructure/enforcement-capacity/services/EnforcementCapacityService' + suffix;
+
+    /* OSH STATISTICS */
+    requirePaths['vertical/osh-statistics/OSHStatisticsController'] = verticalModules + '/osh-infrastructure/osh-statistics/OSHStatisticsController' + suffix;
+
     /* ABOUT THE VISUALISATION TOOL */
     requirePaths['vertical/about-tool/AboutToolController'] = verticalModules + '/about-tool/AboutToolController' + suffix;
     requirePaths['vertical/about-tool/about-tool-module'] = verticalModules + '/about-tool/about-tool-module' + suffix;
