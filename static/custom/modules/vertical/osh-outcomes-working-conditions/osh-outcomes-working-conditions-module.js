@@ -184,66 +184,6 @@ define(function (require) {
         }
       });
 
-      $stateProvider.state('prevention-companies', {
-        url: "/osh-outcomes-working-conditions/prevention-companies/:pIndicator/:pCountry1/:pCountry2/:pSplit",
-        params: {
-          pIndicator: {
-            value: 'risk-assessment',
-            squash: 'risk-assessment'
-          },
-          pCountry1: {
-            value: null,
-            squash: true
-          },
-          pCountry2: {
-            value: null,
-            squash: true
-          },
-          pSplit: {
-            value: null,
-            squash: true
-          }
-        },
-        views: {
-          "content-main": {
-            templateUrl: configService.getVerticalTplPath("osh-outcomes-working-conditions/prevention-companies", "prevention-companies"),
-            controller: 'PreventionCompaniesController',
-            resolve: configService.dynamicallyRegisterController($controllerProvider, 'vertical/prevention-companies/PreventionCompaniesController', 'prevention-companies', 'PreventionCompaniesController')
-          }
-        },
-        metaTags: {
-          title: i18n.L22014 +  " - " + i18n.L22020 + " - " + i18n.L363
-        }
-      });
-
-      $stateProvider.state('worker-involvement', {
-        url: "/osh-outcomes-working-conditions/worker-involvement/:pCountry1/:pCountry2/:pSplit",
-        params: {
-          pCountry1: {
-            value: 'AT',
-            squash: 'AT'
-          },
-          pCountry2: {
-            value: 'BE',
-            squash: 'BE'
-          },
-          pSplit: {
-            value: 'esener',
-            squash: 'esener'
-          }
-        },
-        views: {
-          "content-main": {
-            templateUrl: configService.getVerticalTplPath("osh-outcomes-working-conditions/worker-involvement", "worker-involvement"),
-            controller: 'WorkerInvolvementController',
-            resolve: configService.dynamicallyRegisterController($controllerProvider, 'vertical/worker-involvement/WorkerInvolvementController', 'worker-involvement', 'WorkerInvolvementController')
-          }
-        },
-        metaTags: {
-          title: i18n.L22015 +  " - " + i18n.L22020 + " - " + i18n.L363
-        }
-      });
-
     });
 
     module.factory('WorkAccidentsService', require('vertical/work-accidents/services/WorkAccidentsService'));
@@ -251,7 +191,6 @@ define(function (require) {
     module.factory('OverallOpinionService', require('vertical/overall-opinion/services/OverallOpinionService'));
     module.factory('MentalRiskService', require('vertical/mental-risk/services/MentalRiskService'));
     module.factory('PhysicalRiskService', require('vertical/physical-risk/services/PhysicalRiskService'));
-    module.factory('PreventionCompaniesService', require('vertical/prevention-companies/services/PreventionCompaniesService'));
     
     return module;
 });
