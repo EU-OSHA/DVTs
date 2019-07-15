@@ -415,7 +415,8 @@ define(function (require) {
           //}
           //$scope.selectedCountries.splice($scope.selectedCountries.indexOf(element.attr('value')), 1);
           $scope.searchParams.countries.splice($scope.searchParams.countries.indexOf(valueToJson.country_code), 1);
-          angular.element('span#country'+valueToJson.country).remove();
+
+          angular.element('span#country'+valueToJson.country_code).remove();
         }
 
         //$scope.selectedCountries.sort();

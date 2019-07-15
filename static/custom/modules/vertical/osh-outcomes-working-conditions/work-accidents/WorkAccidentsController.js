@@ -46,15 +46,20 @@ define(function (require) {
     $scope.pCountry2 = ($stateParams.pCountry2 != null)?$stateParams.pCountry2:'BE';
     $scope.pIndicator = $stateParams.pIndicator;
 
-    $scope.orientation = angular.element(window).width() > 768 ? "vertical" : "horizontal";
-    $scope.axisSize = angular.element(window).width() > 768 ? 150 : 140;
+    var resolution = screen.width;
 
-    var width = angular.element($window).width();
-      angular.element($window).bind('resize', function() {
-        if (angular.element($window).width() != width) {
-          width = angular.element($window).width();
-          $state.reload();
-        }
+    $scope.orientation = resolution > 768 ? "vertical" : "horizontal";
+    $scope.axisSize = resolution > 768 ? 150 : (resolution > 480 ? 160 : 120);
+    $scope.axisSizeSmaller = resolution > 768 ? 150 : (resolution > 480 ? 110 : 50);
+
+    $(window).on("resize",function(e){
+      e.preventDefault();
+      $log.warn(resolution);
+      if(resolution != screen.width){
+        $log.warn('Resolución ha cambiado!');
+        resolution = screen.width;
+        $state.reload();
+      }
     });
 
     $scope.dashboard = {};
@@ -114,8 +119,7 @@ define(function (require) {
         dimensions: {
           value: {
             format: {
-              number: "0.#",
-              percent: "#%"
+              number: "0.#"
             }
           }
         }
@@ -129,8 +133,7 @@ define(function (require) {
         dimensions: {
           value: {
             format: {
-              number: "0.#",
-              percent: "#%"
+              number: "0.#"
             }
           }
         }
@@ -143,28 +146,6 @@ define(function (require) {
       chart3: 1,
       chart4: 1000,
       chart5: 20
-    }
-
-    // Show/hide the Countries Filter List
-    angular.element('div.countries-filters').css( "display",'none' );
-    angular.element('#filter2 h2').addClass('showChallenges');
-    $scope.toggleFilters = function() {
-      if ($window.outerWidth < 768) {
-            angular.element('#filter2 h2').toggleClass('showChallenges');
-            angular.element('div.countries-filters').slideToggle( "slow" );
-        }
-    };
-
-    console.log( 'column--item -->' + angular.element('.column--item').length );
-
-    // Show/hide the Countries Filter List
-    angular.element('div.countries-filters').css( "display",'none' );
-    angular.element('#filter2 h2').addClass('showChallenges');
-    $scope.toggleFilters = function() {
-      if ($window.outerWidth < 768) {
-            angular.element('#filter2 h2').toggleClass('showChallenges');
-            angular.element('div.countries-filters').slideToggle( "slow" );
-        }
     }
 
     /******************************************************************************|
@@ -242,9 +223,9 @@ define(function (require) {
       // Open indicators list like a select element
 
 
-      $(window).on("resize",function(e){
+      /*$(window).on("resize",function(e){
         resolution = screen.width;
-      });
+      });*/
 
       $scope.openIndicatorsList = function() {
         if( resolution < 990 ){
@@ -274,7 +255,6 @@ define(function (require) {
           });
         }
       }
-
 
   }
 

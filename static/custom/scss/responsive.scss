@@ -397,6 +397,8 @@
 							padding: 0;
 							font-weight: normal;
 							font-family: 'Oswald';
+							margin: 0;
+  						min-height: 4.7rem;
 			  		}
 			  		.data{
 			  			color: $aquamarine;
@@ -615,7 +617,7 @@ and (max-width : 1024px)  {
 			margin: 0 1% 3rem;
 		}
 		.card--block--chart{
-			width:48%;
+			width:47%;
 			margin: 0 1% 3rem;
 		}
 	}
@@ -732,6 +734,7 @@ and (orientation : landscape) {
   		li{
   			label{
   				width: 35%;
+  				letter-spacing: 0px;
   			}
   			select{
   				width: 63%;
@@ -962,7 +965,8 @@ and (max-width :767px)  {
 		  	li{
 		  		width:33% !important;
 		  		padding:1rem !important;
-		  		label{							
+		  		label{
+		  		min-height: auto !important;							
 		  		}
 		  		.data{
 		  		}
@@ -1321,7 +1325,9 @@ and (max-width :520px) {
       }
     }
   }	
-
+	.survey--map--block-mobile .matrix--elements--wrapper .matrix--elements--data li label {
+	  min-height: 4.7rem !important;
+	}
 }
 
 
@@ -1331,7 +1337,19 @@ and (max-width :420px){
 	form.compare--block--form {
 	  text-align: left;
 	}	
-
+	.social-dialogue .card--grid .card--block--chart .chart--block {
+	  padding: 2rem 0rem !important;
+	}
+  .hide-header{
+    -webkit-transition: all 1.2s;
+    transition: all 1.2s;
+    &.affix{
+    	top: -30rem;
+    }
+		&.affix-top{
+    	top: -30rem;
+    }
+  }
 }
 
 
@@ -1431,7 +1449,8 @@ and (max-width :370px){
 		  	  margin: 0 !important;
 		  	li{
 		  		width:100% !important;
-		  		label{							
+		  		label{
+		  			min-height: auto !important;							
 		  		}
 		  		.data{
 		  		}
@@ -1441,6 +1460,7 @@ and (max-width :370px){
 		  }
 		}
 	}
+
 }
 
 

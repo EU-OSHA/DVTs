@@ -81,7 +81,7 @@
                                 </a>
                             </li>
                         -->
-                            <li ng-repeat="level1 in level0.levels">
+                            <li ng-repeat="level1 in level0.levels" ng-class="isCurrentStateMenu('{{ level1.id }}')">
                                 <a ng-if="level1.sref" ui-sref='{{ level1.sref }}' id='{{ level1.id }}' accesskey="{{level1.accesskey}}">
                                     <span data-ng-bind-html="i18n_literals[level1.name]"></span>
                                 </a>

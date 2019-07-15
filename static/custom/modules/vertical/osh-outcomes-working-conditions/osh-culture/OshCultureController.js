@@ -86,25 +86,24 @@ define(function (require) {
 
     $scope.step = 20;
 
-    // Properties changing dynamically depending on resolution
-    $scope.orientation = angular.element(window).width() > 768 ? "vertical" : "horizontal";
-    $scope.axisSize = angular.element(window).width() > 768 ? 150 : 160;
-    $scope.angle = angular.element(window).width() > 768 ? 1 : 0;
-    $scope.horizontalHeight = angular.element(window).width() > 768 ? 470 : 770;
-    $scope.query = angular.element(window).width() > 768 ? 'getOshCultureVerticalData' : 'getOshCultureHorizontalData';
-    $scope.eurostatQuery = angular.element(window).width() > 768 ? 'getEurostatVerticalData' : 'getEurostatHorizontalData';
-    $scope.risksQuery = angular.element(window).width() > 768 ? 'getInfoAboutRisksVerticalData' : 'getInfoAboutRisksHorizontalData';
-    $scope.color1 = angular.element(window).width() > 768 ? dvtUtils.getColorCountry(22) : dvtUtils.getColorCountry(1);
-    $scope.color2 = angular.element(window).width() > 768 ? dvtUtils.getColorCountry(1) : dvtUtils.getColorCountry(22);
-    $scope.color3 = angular.element(window).width() > 768 ? dvtUtils.getAccidentsColors(4) : dvtUtils.getColorCountry(1);
-    $scope.color4 = angular.element(window).width() > 768 ? dvtUtils.getColorCountry(1) : dvtUtils.getAccidentsColors(4);
+    var resolution = screen.width;
 
-    var width = angular.element($window).width();
-      angular.element($window).bind('resize', function() {
-        if (angular.element($window).width() != width) {
-          width = angular.element($window).width();
-          $state.reload();
-        }
+    // Properties changing dynamically depending on resolution
+    $scope.orientation = resolution > 768 ? "vertical" : "horizontal";
+    $scope.axisSize = resolution > 768 ? 150 : (resolution > 460 ? 160 : 100);
+    $scope.angle = resolution > 768 ? 1 : 0;
+    $scope.horizontalHeight = resolution > 768 ? 470 : 770;
+    $scope.query = resolution > 768 ? 'getOshCultureVerticalData' : 'getOshCultureHorizontalData';
+    $scope.eurostatQuery = resolution > 768 ? 'getEurostatVerticalData' : 'getEurostatHorizontalData';
+    $scope.risksQuery = resolution > 768 ? 'getInfoAboutRisksVerticalData' : 'getInfoAboutRisksHorizontalData';
+    $scope.color1 = resolution > 768 ? dvtUtils.getColorCountry(22) : dvtUtils.getColorCountry(1);
+    $scope.color2 = resolution > 768 ? dvtUtils.getColorCountry(1) : dvtUtils.getColorCountry(22);
+    $scope.color3 = resolution > 768 ? dvtUtils.getAccidentsColors(4) : dvtUtils.getColorCountry(1);
+    $scope.color4 = resolution > 768 ? dvtUtils.getColorCountry(1) : dvtUtils.getAccidentsColors(4);
+
+    $(window).on("resize",function(e){
+      resolution = screen.width;
+      $state.reload();
     });
 
     $scope.dashboard = {};

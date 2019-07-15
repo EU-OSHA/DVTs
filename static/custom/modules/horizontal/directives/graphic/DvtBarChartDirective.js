@@ -618,6 +618,13 @@ define(function (require) {
                     }
                 }
 
+                if(definition.chartDefinition.dataAccessId == 'getNonFatalAccidentsPerWorkersData'){
+                    if(resolution <= 425){
+                        //$log.warn('resolution < 425');
+                        definition.chartDefinition.legendItemSize = 120;
+                    }
+                }
+
                 if(scope.axisColor){
                     definition.chartDefinition.xAxis_fillStyle = 'transparent';
                     definition.chartDefinition.xAxis_call = function(){
@@ -696,6 +703,7 @@ define(function (require) {
                     definition.chartDefinition.baseAxisLabel_textAngle = (attributes.angle==1)?-Math.PI / 3:-Math.PI / 6.5;
                     if (definition.chartDefinition.orientation == 'horizontal' || attributes.angle == 0) {
                         definition.chartDefinition.baseAxisLabel_textAngle = 0;
+                        definition.chartDefinition.baseAxisLabel_textBaseline = 'middle';
                     }else{
                         definition.chartDefinition.baseAxisLabel_textAlign = 'right';
                         definition.chartDefinition.baseAxisLabel_textBaseline = 'top';

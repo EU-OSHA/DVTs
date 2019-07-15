@@ -11,6 +11,11 @@ define (function (require) {
                         dataPart: "0",
                         bar_fillStyle: function(scene){
                             var split = scene.firstAtoms.series;
+
+                            if(!scene.firstAtoms.value.label.match('%')){
+                                scene.firstAtoms.value.label = scene.firstAtoms.value.label + '%';
+                            }
+
                             if (split == '(very) Well informed') {
                                 return dvtUtils.getColorCountry(1);
                             } else if(split == 'Not very or not at all well informed'){
@@ -36,7 +41,7 @@ define (function (require) {
                                         //$log.warn(this);
                                         var baseScale = this.getContext().chart.axes.base.scale;
                                         
-                                        return baseScale('Austria (AT)') + 12 /*this.sign.panel.barWidth/2*/;
+                                        return baseScale('Belgium (BE)') + 12 /*this.sign.panel.barWidth/2*/;
                                     })
                                     .height(null) // clear any inherited value
                                     .width(null)  // clear any inherited value
@@ -51,7 +56,7 @@ define (function (require) {
                                     .top(function(scene){
                                         var baseScale = this.getContext().chart.axes.base.scale;
                                         
-                                        return baseScale('Switzerland (CH)') + 11;
+                                        return baseScale('Norway (NO)') + 11;
                                     })
                                     .height(null) // clear any inherited value
                                     .width(null)  // clear any inherited value
@@ -126,8 +131,10 @@ define (function (require) {
                                     .top(function(scene){
                                         //$log.warn(this);
                                         var baseScale = this.getContext().chart.axes.base.scale;
-                                        
-                                        return baseScale('Austria (AT)') + 12 /*this.sign.panel.barWidth/2*/;
+                                        if(!scene.firstAtoms.value.label.match('%')){
+                                            scene.firstAtoms.value.label = scene.firstAtoms.value.label + '%';
+                                        }
+                                        return baseScale('Belgium (BE)') + 12 /*this.sign.panel.barWidth/2*/;
                                     })
                                     .height(null) // clear any inherited value
                                     .width(null)  // clear any inherited value
@@ -142,7 +149,7 @@ define (function (require) {
                                     .top(function(scene){
                                         var baseScale = this.getContext().chart.axes.base.scale;
                                         
-                                        return baseScale('Switzerland (CH)') + 11;
+                                        return baseScale('Norway (NO)') + 11;
                                     })
                                     .height(null) // clear any inherited value
                                     .width(null)  // clear any inherited value
@@ -164,6 +171,9 @@ define (function (require) {
                                         //$log.warn(scene);
                                         var countryKey = scene.firstAtoms.category;
                                         var panelWidth = this.root.width();
+                                        if(!scene.firstAtoms.value.label.match('%')){
+                                            scene.firstAtoms.value.label = scene.firstAtoms.value.label + '%';
+                                        }
                                         return panelWidth/33.5;               
                                     });
 
@@ -208,14 +218,6 @@ define (function (require) {
                               resolution = screen.width;
                             });
 
-                            var ticks = this.sign.chart.axes.x.ticks;
-
-                            for(var i = 0; i < ticks.length; i++){
-                                if (ticks[i].label == 'Macedonia, The former Yugoslav Rep. of (MK)'){
-                                    this.sign.chart.axes.x.ticks[i].atoms.category.label = 'Macedonia (MK)';
-                                }
-                            }
-
                             if(resolution <= 768){
                                 //$log.warn(this);
 
@@ -225,7 +227,9 @@ define (function (require) {
                                     .top(function(scene){
                                         //$log.warn(this);
                                         var baseScale = this.getContext().chart.axes.base.scale;
-                                        
+                                        if(!scene.firstAtoms.value.label.match('%')){
+                                            scene.firstAtoms.value.label = scene.firstAtoms.value.label + '%';
+                                        }
                                         return baseScale('Belgium (BE)') + 10 /*this.sign.panel.barWidth/2*/;
                                     })
                                     .height(null) // clear any inherited value
@@ -241,7 +245,7 @@ define (function (require) {
                                     .top(function(scene){
                                         var baseScale = this.getContext().chart.axes.base.scale;
                                         
-                                        return baseScale('Iceland (IS)') + 10;
+                                        return baseScale('Norway (NO)') + 10;
                                     })
                                     .height(null) // clear any inherited value
                                     .width(null)  // clear any inherited value
@@ -277,7 +281,11 @@ define (function (require) {
                                     .left(function(scene){
                                         var baseScale = this.getContext().chart.axes.base.scale;
                                         var countryKey = scene.firstAtoms.category;
-                                        var panelWidth = this.root.width();                                        
+                                        var panelWidth = this.root.width();         
+
+                                        if(!scene.firstAtoms.value.label.match('%')){
+                                            scene.firstAtoms.value.label = scene.firstAtoms.value.label + '%';
+                                        }
 
                                         if(resolution < 960){
                                             return baseScale('Switzerland (CH)') - 11;

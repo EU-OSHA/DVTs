@@ -1435,6 +1435,7 @@
       }
       .modal-body {
         height: 100%;
+        background: #FFF !important;
         .card--block--chart--wrapper {
           .chart--submenu{
             list-style: none;
@@ -1459,7 +1460,7 @@
             }
           }
           .export-button-modal{
-            margin: 1rem 10% 1rem 1rem;
+            margin: 1rem 3% 1rem 1rem;
             a{
               padding: 0.8rem 1rem;
               border-radius: 0.3rem;
@@ -1522,6 +1523,7 @@
             font-size: 1.4rem;
             text-align: center;
             font-style: italic;
+            float:left;
             padding:1rem 0.5rem;
             width: 100%;
             padding: 1rem 13rem;
