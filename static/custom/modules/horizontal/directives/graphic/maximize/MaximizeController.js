@@ -73,12 +73,6 @@ define(function (require) {
                         $scope.parameters.chartDefinition.baseAxisLabel_textBaseline = 'top';
                     }*/
 
-                    if ($scope.parameters.chartDefinition.orientation == 'vertical'){
-                        $scope.parameters.chartDefinition.baseAxisLabel_textAlign = $scope.parameters.baseAxisLabelTextAlign || 'center';
-                    }else if ($scope.parameters.chartDefinition.orientation == 'horizontal'){
-                        $scope.parameters.chartDefinition.baseAxisLabel_textAlign =  $scope.parameters.baseAxisLabelTextAlign || 'right';
-                    }
-
                     if (!!parameters.angle) {
                         $scope.parameters.chartDefinition.baseAxisLabel_textAngle = (parameters.angle==1)?-Math.PI / 3:-Math.PI / 6.5;
                         if ($scope.parameters.chartDefinition.orientation == 'horizontal' || parameters.angle == 0) {
@@ -92,6 +86,12 @@ define(function (require) {
                     }
 
                     if (!!$scope.parameters.chartDefinition) {
+                        if ($scope.parameters.chartDefinition.orientation == 'vertical'){
+                            $scope.parameters.chartDefinition.baseAxisLabel_textAlign = $scope.parameters.baseAxisLabelTextAlign || 'center';
+                        }else if ($scope.parameters.chartDefinition.orientation == 'horizontal'){
+                            $scope.parameters.chartDefinition.baseAxisLabel_textAlign =  $scope.parameters.baseAxisLabelTextAlign || 'right';
+                        }
+                        
                         /*if ($state.current.name == "approaches-indicators") {
                             $scope.parameters.postFetch = function () {
                                 dvtUtils.fixGroupColor($stateParams.pGroup.replace("group", ""), $scope);
