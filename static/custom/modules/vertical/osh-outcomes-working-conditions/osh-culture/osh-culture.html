@@ -16,7 +16,7 @@
       <label class="submenu-indicator" data-ng-click ="openIndicatorsList()">Select the indicator</label>
       <ul class="submenu--items--wrapper">
         <!-- INDICATORS -->
-        <li data-ng-if="indicator.anchor != 'level-of-reporting-of-non-fatal-accidents' && indicator.anchor != 'estimation-of-non-fatal-accidents'" data-ng-repeat="indicator in indicators" data-ng-class="{'active' : indicator.anchor == pIndicator }" class="submenu--item">
+        <li data-ng-if="indicator.anchor != 'level-of-reporting-of-non-fatal-accidents' && indicator.anchor != 'estimation-of-non-fatal-accidents'" data-ng-repeat="indicator in indicators" data-ng-click ="openIndicatorsList($event)" data-ng-class="{'active' : indicator.anchor == pIndicator }" class="submenu--item">
           <a href="" data-ng-click="changeIndicator($event,indicator.anchor);" data-ng-bind="i18nLiterals['L'+indicator.text]" data-ng-class="{'active' : indicator.anchor == pIndicator }" ></a>
         </li>
       </ul>

@@ -241,13 +241,20 @@ define(function (require) {
         resolution = screen.width;
       });
 
-      $scope.openIndicatorsList = function(e) {      
-
+      $scope.openIndicatorsList = function(e) {    
         if( resolution < 990 ){
-          var parentTag = e.target.offsetParent.nextSibling.parentNode.className;
+          //var parentTag = e.target.offsetParent.nextSibling.parentNode.className;          
+          var parentNode = e.target.parentElement.nodeName;          
+          if( parentNode == "LI"){
+            var parentTag = e.target.parentElement.parentElement.className;
+          } else {
+            var parentTag = e.target.parentElement.className;
+          }
+
           if( parentTag.indexOf('open-list') < 0 ){
             angular.element('.submenu--items--wrapper').addClass('open-list');
           } else {
+
             angular.element('.submenu--items--wrapper').removeClass('open-list');
           }
         }
@@ -261,7 +268,7 @@ define(function (require) {
       });
     
       $scope.changeIndicator = function(e,indicator) {
-       // $scope.openIndicatorsList();
+       // $scope.openIndicatorsList(e);
         if ($state.current.name !== undefined) {
           $state.go($state.current.name, {
             pCountry1: $scope.pCountry1,

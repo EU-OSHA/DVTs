@@ -67,27 +67,32 @@
 	}
 
   /** WIDTH CARDS  **/
+      .card--block, .card--block--rounded, .card--block--chart{
+-webkit-column-break-inside: avoid!important;
+          page-break-inside: avoid!important;
+               break-inside: avoid!important;
+      }
     .w2, .w3, .w4, .w4{
       .card--block, .card--block--rounded, .card--block--chart{
         width:100%;
         text-align: left;
         padding: 0rem;
         margin: 0;
-        //page-break-inside : auto;
+        page-break-inside : avoid !important;
       }
       .card--block--rounded{
         width:100%;
         text-align: left;
         padding: 0rem;
         margin: 0;
-        //page-break-inside : auto;
+        page-break-inside : avoid !important;
       }
       .card--block--chart{
         width:100%;
         text-align: left;
         padding: 0rem;
         margin: 0;
-        //page-break-inside : auto;
+        page-break-inside : avoid !important;
       }
     }
   /** END WIDTH CARDS  **/

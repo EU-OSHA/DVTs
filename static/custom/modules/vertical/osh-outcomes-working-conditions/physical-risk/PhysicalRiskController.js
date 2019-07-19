@@ -193,17 +193,38 @@ define(function (require) {
     /******************************END FILTERS************************************/
 
       // Open indicators list like a select element
+
       $(window).on("resize",function(e){
         resolution = screen.width;
       });
 
-      $scope.openIndicatorsList = function() {
+      $scope.openIndicatorsList = function(e) {    
         if( resolution < 990 ){
-          angular.element('.submenu--items--wrapper').toggleClass('open-list');
-          angular.element('.submenu-indicator').toggleClass('open-list');
-        } else {
-          angular.element('.submenu--items--wrapper').removeClass('open-list');
-          angular.element('.submenu-indicator').removeClass('open-list');
+          //var parentTag = e.target.offsetParent.nextSibling.parentNode.className;          
+          var parentNode = e.target.parentElement.nodeName;  
+       
+          if( parentNode == "LI"){
+            var parentTag = e.target.parentElement.parentElement.className;
+          } else {
+            var parentTag = e.target.parentElement.className;
+          }
+
+          if( parentTag.indexOf('open-list') < 0 ){
+
+            if(parentTag.indexOf('level2') < 0){
+              angular.element('.level1').addClass('open-list');
+            } else {
+              angular.element('.level2').addClass('open-list');
+            }
+
+          } else {
+            if(parentTag.indexOf('level2') < 0){
+              angular.element('.level1').removeClass('open-list');
+            } else {
+              angular.element('.level2').removeClass('open-list');
+            }
+            
+          }
         }
       }
 
@@ -214,8 +235,9 @@ define(function (require) {
         }
       });
 
+
       $scope.changeIndicator = function(e,indicator, subindicator) {
-        $scope.openIndicatorsList();
+        //$scope.openIndicatorsList(e);
         if ($state.current.name !== undefined) {
 
           if(indicator == 'exposure-to-dangerous-substances'){

@@ -198,17 +198,27 @@ define(function (require) {
     /******************************END FILTERS************************************/
 
       // Open indicators list like a select element
+
       $(window).on("resize",function(e){
         resolution = screen.width;
       });
 
-      $scope.openIndicatorsList = function() {
+      $scope.openIndicatorsList = function(e) {    
         if( resolution < 990 ){
-          angular.element('.submenu--items--wrapper').toggleClass('open-list');
-          angular.element('.submenu-indicator').toggleClass('open-list');
-        } else {
-          angular.element('.submenu--items--wrapper').removeClass('open-list');
-          angular.element('.submenu-indicator').removeClass('open-list');
+          //var parentTag = e.target.offsetParent.nextSibling.parentNode.className;          
+          var parentNode = e.target.parentElement.nodeName;          
+          if( parentNode == "LI"){
+            var parentTag = e.target.parentElement.parentElement.className;
+          } else {
+            var parentTag = e.target.parentElement.className;
+          }
+
+          if( parentTag.indexOf('open-list') < 0 ){
+            angular.element('.submenu--items--wrapper').addClass('open-list');
+          } else {
+
+            angular.element('.submenu--items--wrapper').removeClass('open-list');
+          }
         }
       }
 
@@ -219,8 +229,9 @@ define(function (require) {
         }
       });
 
+
       $scope.changeIndicator = function(e,indicator) {
-        $scope.openIndicatorsList();
+        //$scope.openIndicatorsList(e);
         if ($state.current.name !== undefined) {
           if(indicator == 'health-at-risk'){
             $state.go($state.current.name, {

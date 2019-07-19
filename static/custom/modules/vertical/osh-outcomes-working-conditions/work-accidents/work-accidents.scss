@@ -39,9 +39,11 @@
 						&:after{
 							content: "\f078";
 							font: normal normal normal 14px/1 FontAwesome;
-							right: 1.5rem;
-							top: 2.2rem;
-							position: absolute;
+					    right: 1.5rem;
+					    top: 1rem;
+					    padding: 1rem;
+					    position: absolute;
+					    z-index: 10;
 						}
 					}
 				}
@@ -64,9 +66,11 @@
 							&:after{
 								content: "\f077";
 								font: normal normal normal 14px/1 FontAwesome;
-								right: 15px;
-								top: 25px;
-								position: absolute;
+						    right: 1.5rem;
+						    top: 1rem;
+						    padding: 1rem;
+						    position: absolute;
+					    	z-index: 10;
 							}
 						}
 					}

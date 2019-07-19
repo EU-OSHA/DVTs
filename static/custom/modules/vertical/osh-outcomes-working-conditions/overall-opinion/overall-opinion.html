@@ -7,7 +7,7 @@
         <p data-ng-bind="i18nLiterals.L20577"></p>
         <span data-ng-bind="i18nLiterals.L20701"></span> <span data-ng-bind="i18nLiterals.L20704"></span> <span><a data-ng-bind="i18nLiterals.L20705" ui-sref="about-tool"></a></span>
       </div>
-      <div class="icon--advice working-conditons-icon hide-mobile col-sm-4 col-md-4"></div>
+      <div class="icon--advice overall-opinion-icon hide-mobile col-sm-4 col-md-4"></div>
     </div>
   </section>
 
@@ -16,10 +16,10 @@
       <label class="submenu-indicator" data-ng-click ="openIndicatorsList()">Select the indicator</label>
       <ul class="submenu--items--wrapper">
         <!-- INDICATORS -->
-        <li data-ng-class="{'active' : 'job-satisfaction' == pIndicator }" class="submenu--item">
+        <li data-ng-class="{'active' : 'job-satisfaction' == pIndicator }" data-ng-click ="openIndicatorsList($event)" class="submenu--item">
           <a href="" data-ng-click="changeIndicator($event,'job-satisfaction');" data-ng-bind="i18nLiterals.L322" data-ng-class="{'active' : 'job-satisfaction' == pIndicator }" ></a>
         </li>
-        <li data-ng-class="{'active' : 'health-at-risk' == pIndicator }" class="submenu--item">
+        <li data-ng-class="{'active' : 'health-at-risk' == pIndicator }" data-ng-click ="openIndicatorsList($event)" class="submenu--item">
           <a href="" data-ng-click="changeIndicator($event,'health-at-risk');" data-ng-bind="i18nLiterals.L323" data-ng-class="{'active' : 'health-at-risk' == pIndicator }" ></a>
         </li>
       </ul>

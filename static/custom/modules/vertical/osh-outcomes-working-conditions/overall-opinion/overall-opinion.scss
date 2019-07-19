@@ -3,7 +3,20 @@
 	.submenu--block{
 		.submenu--items--wrapper{
 			justify-content: flex-start;
+			&.level2{
+				li{
+					&.active{
+						a, a:visited, a:focus{
+							color: $aquamarine;
+							border-bottom: 0 !important;
+						}					
+					}
+				}
+			}
 		}
+	}
+	.section--page {
+    padding: 0rem 0 2rem;
 	} 
 	.explore-section{
 		.card--grid{
@@ -62,7 +75,7 @@
 		.card--block--rounded{
 			flex-grow: 4;
 		}
-	} 
+	}
 }
 
 
@@ -74,15 +87,15 @@
 			.compare--list{
 				li{
 					label{
-					  font-size: 1.2rem;
+					  //font-size: 1.2rem;
 					}
 					select{
-					  font-size: 1.8rem;
+					  //font-size: 1.8rem;
 					}
 				}
 			}
 		} 
-		.submenu--block{
+		.submenu--block,{
 			.submenu--items--wrapper{
 				//min-height: 7rem;
 				min-height: auto;
@@ -98,21 +111,24 @@
 						display: block;
 						padding: 1rem 0;
 						font-size: 2.4rem;
+				    width: 90%;
+				    padding-left: 5%;
 					}
 					&.active{
 						display: block;
 						a, a:hover, a:visited, a:focus{
 							color: $aquamarine;
 							border-bottom: 0;
-							&:after{
-								content: "\f078";
-								font: normal normal normal 14px/1 FontAwesome;
-								right: 1.5rem;
-								top: 1rem;
-								padding: 1rem;
-								position: absolute;
-							}
 						}		
+					}
+					&:after{
+						content: "\f078";
+						font: normal normal normal 14px/1 FontAwesome;
+						right: 1.5rem;
+						top: 1rem;
+						padding: 1rem;
+						position: absolute;
+				    z-index: 10;
 					}
 				}
 				&.open-list{
@@ -122,28 +138,42 @@
 							display: block;
 							a, a:hover, a:visited, a:focus{
 								border-bottom: 0;
-								&:after{
-									content: "";
-								}
 							}							
+						}
+						&:after{
+							content: "";
 						}
 						&:nth-child(1){
 							a{
 								border-bottom: 0;
-								&:after{
-									content: "\f077" !important;
-									font: normal normal normal 14px/1 FontAwesome;
-									right: 1.5rem;
-									top: 1rem;
-									padding: 1rem;
-									position: absolute;
-								}
+							}
+							&:after{
+								content: "\f077" !important;
+								font: normal normal normal 14px/1 FontAwesome;
+								right: 1.5rem;
+								top: 1rem;
+								padding: 1rem;
+								position: absolute;
+					    	z-index: 10;
 							}
 						}
 					}
 				}
 			}
 		}
+		.submenu--block{
+			.submenu--items--wrapper{
+				&.level2{
+					li{
+						&.active{
+							a{
+								opacity: 0.6;
+							}							
+						}
+					}
+				}
+			}
+		}	
 		.card--block--chart{ 
 			.chart--submenu {
 				top: 4rem !important;
@@ -172,4 +202,24 @@
 		}
 	}
  
+}
+
+@media only screen and (max-width: 520px) {
+
+	.overall-opinion, .prevention-companies, .mental-risk, .physical-risk{
+		div[query="getJobSatisfactionHorizontalData"],
+		div[query="getMentalRiskHorizontalData"], 
+		div[query="getPhysicalRiskHorizontalData"]{
+			text{
+				font-size: 1rem !important;
+			}
+		}
+		.section--page{
+			padding: 2rem 0rem;
+		}
+		.card--block--chart{ 
+	    border-radius: 0;
+		}
+	}
+
 }
