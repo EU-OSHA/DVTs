@@ -223,9 +223,10 @@ define(function (require) {
       // Open indicators list like a select element
 
 
-      /*$(window).on("resize",function(e){
-        resolution = screen.width;
-      });*/
+      $(window).on("resize",function(e){
+        resolution = $(window).width();
+      });
+        resolution = $(window).width();
 
       $scope.openIndicatorsList = function(e) {
         if( resolution < 990 ){

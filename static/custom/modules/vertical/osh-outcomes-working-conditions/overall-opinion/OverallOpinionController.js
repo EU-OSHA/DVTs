@@ -200,11 +200,13 @@ define(function (require) {
       // Open indicators list like a select element
 
       $(window).on("resize",function(e){
-        resolution = screen.width;
+        resolution = $(window).width();
       });
+        resolution = $(window).width();
 
-      $scope.openIndicatorsList = function(e) {    
-        if( resolution < 990 ){
+      $scope.openIndicatorsList = function(e) {  
+
+        if( resolution <= 990 ){
           //var parentTag = e.target.offsetParent.nextSibling.parentNode.className;          
           var parentNode = e.target.parentElement.nodeName;          
           if( parentNode == "LI"){
@@ -212,6 +214,8 @@ define(function (require) {
           } else {
             var parentTag = e.target.parentElement.className;
           }
+
+
 
           if( parentTag.indexOf('open-list') < 0 ){
             angular.element('.submenu--items--wrapper').addClass('open-list');

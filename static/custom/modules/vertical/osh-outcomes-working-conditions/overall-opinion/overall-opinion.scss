@@ -6,10 +6,14 @@
 			&.level2{
 				li{
 					&.active{
-						a, a:visited, a:focus{
+						a,a:visited, a:focus{
 							color: $aquamarine;
 							border-bottom: 0 !important;
-						}					
+						}
+						a:hover{
+							color: $orange;
+							border-bottom: 0 !important;
+						}				
 					}
 				}
 			}
