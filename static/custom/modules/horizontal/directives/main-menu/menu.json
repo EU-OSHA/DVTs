@@ -22,12 +22,14 @@
                 "id":"economic-sector-profile",
                 "name":"L22003",
                 "sref":"economic-sector-profile",
-                "tabindex":"4"
+                "tabindex":"4",
+                "accesskey":""
             },{
                 "id":"workforce-profile",
                 "name":"L22004",
                 "sref":"workforce-profile",
-                "tabindex":"5"
+                "tabindex":"5",
+                "accesskey":""
             }
         ]
 
@@ -49,13 +51,15 @@
                 "id":"national-strategies",
                 "name":"L22007",
                 "sref":"national-strategies",
-                "tabindex":"8"
+                "tabindex":"8",
+                "accesskey":""
             },
             {
                 "id":"social-dialogue",
                 "name":"L22008",
                 "sref":"social-dialogue",
-                "tabindex":"9"
+                "tabindex":"9",
+                "accesskey":""
             }
         ]
     },
@@ -63,7 +67,6 @@
         "id": "osh-outcomes-working-conditions",
         "name":"L22009",
         "sref": "osh-outcome",
-        "accesskey": "T",
         "tabindex":"10",
         "levels":[
             {
@@ -77,31 +80,36 @@
                 "id":"health-perception-of-workers",
                 "name":"L22011",
                 "sref":"health-perception-of-workers",
-                "tabindex":"12"
+                "tabindex":"12",
+                "accesskey":""
             },
             {
                 "id":"osh-culture",
                 "name":"L22012",
                 "sref":"osh-culture",
-                "tabindex":"13"
+                "tabindex":"13",
+                "accesskey":""
             },
             {
                 "id":"working-conditions",
                 "name":"L22013",
                 "sref":"working-conditions",
-                "tabindex":"14"
+                "tabindex":"14",
+                "accesskey":""
             },
             {
                 "id":"prevention-companies",
                 "name":"L22014",
                 "sref":"prevention-companies({pIndicator: 'risk-assessment', pCountry1:'AT', pCountry2: 'BE', pSplit: 'establishment-size'})",
-                "tabindex":"15"
+                "tabindex":"15",
+                "accesskey":""
             },
             {
                 "id":"worker-involvement",
                 "name":"L22015",
                 "sref":"worker-involvement",
-                "tabindex":"16"
+                "tabindex":"16",
+                "accesskey":""
             }
         ]
 
@@ -123,7 +131,8 @@
                 "id":"osh-statistics",
                 "name":"L22018",
                 "sref":"osh-statistics",
-                "tabindex":"19"
+                "tabindex":"19",
+                "accesskey":""
             }
         ]
     },
