@@ -113,9 +113,9 @@ define(function (require) {
       },
       // 2
       {
-        color1: resolution > 768 ? dvtUtils.getColorCountry(22) : dvtUtils.getColorCountry(1),
-        color2: dvtUtils.getAccidentsColors(4),
-        color3: resolution > 768 ? dvtUtils.getColorCountry(1) : dvtUtils.getColorCountry(22),
+        color1: resolution > 768 ? dvtUtils.getAccidentsColors(4) : dvtUtils.getColorCountry(1),
+        color2: dvtUtils.getColorCountry(22),
+        color3: resolution > 768 ? dvtUtils.getColorCountry(1) : dvtUtils.getAccidentsColors(4),
         plots: MentalRiskService.getEurofoundMentalRiskPlot(),
         dimensions: {
           value: {
