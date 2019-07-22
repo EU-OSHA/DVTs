@@ -117,12 +117,17 @@
 						font-size: 2.4rem;
 				    width: 90%;
 				    padding-left: 5%;
+				    border-bottom: 0 !important;
+				    &:hover{
+				    	border-bottom: 0 !important;
+				    }
 					}
 					&.active{
 						display: block;
+						border-bottom: 0;
 						a, a:hover, a:visited, a:focus{
-							color: $aquamarine;
-							//border-bottom: 0;
+							color: $aquamarine !important;
+							border-bottom: 0;
 						}		
 					}
 					&:after{
