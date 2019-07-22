@@ -60,7 +60,7 @@
               <option data-ng-bind="i18nLiterals.L20648" value="sector"></option>
             </select>
           </div>
-          <div class="chart--block" ng-hide="pSplit != 'establishment-size'">
+          <div class="chart--block" ng-show="pSplit == 'establishment-size'">
             <dvt-bar-chart
               data-ng-cloak
               query="getEstablishmentSizeData" cda="{{::cdaOSHOutcomes }}"
@@ -70,12 +70,12 @@
               params="[['pDataset', datasetESENER], ['pIndicator', 120], ['pCountry1', pCountry1], ['pCountry2', pCountry2]]"
               color-role="series" colors="[stories[0].color1, stories[0].color2, stories[0].color3]"
               chart-title="{{i18nLiterals.L20679}}" id="1"
-              axis-label-font="12px 'OpenSans'"
+              axis-label-font="12px 'OpenSans-bold'"
               base-axis-label-text-baseline="top"
               plots="riskAssesmentPlots"
               values-visible="true"
               values-mask="{value}"
-              values-font="12px 'OpenSans-bold'"
+              values-font="12px 'OpenSans'"
               multiple-label-colors="false"
               leaf-content-overflow='visible'
               dimensions="stories[0].dimensions"
@@ -84,7 +84,7 @@
               datasource-and-dates="[datasetESENER,120]"
             ></dvt-bar-chart>
           </div>
-          <div class="chart--block" ng-hide="pSplit != 'sector'">
+          <div class="chart--block" ng-show="pSplit == 'sector'">
             <dvt-bar-chart
               data-ng-cloak
               query="getSectorActivityData" cda="{{::cdaOSHOutcomes }}"
@@ -94,20 +94,21 @@
               params="[['pDataset', datasetESENER], ['pIndicator', 120], ['pCountry1', pCountry1], ['pCountry2', pCountry2]]"
               color-role="series" colors="[stories[0].color1, stories[0].color2, stories[0].color3]"
               chart-title="{{i18nLiterals.L20679}}" id="2"
-              axis-label-font="12px 'OpenSans'"
+              axis-label-font="12px 'OpenSans-bold'"
               base-axis-label-text-baseline="top"
               plots="riskAssesmentPlots"
-              values-visible="true" axis-label-word-break="{{axisWordBreak}}"
+              values-visible="true"
               values-mask="{value}"
-              values-font="12px 'OpenSans-bold'"
+              values-font="12px 'OpenSans'"
               multiple-label-colors="false"
               leaf-content-overflow='visible'
               dimensions="stories[0].dimensions"
               legend="true" base-axis-size="{{axisSizeRA}}"
               label-text-align="alignment"
+              axis-label-word-break="{{axisWordBreak}}"
               datasource-and-dates="[datasetESENER,120]"
             ></dvt-bar-chart>
-          </div>          
+          </div>        
         </div>
         <div class="chart-legend">
           <p data-ng-if="pSplit == 'sector'" data-ng-bind="i18nLiterals.L20603" ></p>
@@ -162,13 +163,13 @@
           </div>
         </div>
         <div class="chart-legend">
-          <p data-ng-bind="i18nLiterals.L20605"></p>
+          <p data-ng-bind-html="i18nLiterals.L20605"></p>
         </div>
       </div>
     </div>
 
     <!-- OSH Information -->
-    <div class="" id="tab4" data-ng-show="pIndicator == 'osh-information'">
+    <div class="" id="tab4" data-ng-show="pIndicator == 'training-in-osh'">
       <div class="container card--grid xxs-w1 xs-w1 w1 center-text">
         <div class="card--block--chart">
           <div class="chart--block">

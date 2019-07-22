@@ -114,8 +114,8 @@ define(function (require) {
       }
     ];
 
-    $scope.riskAssesmentPlots = angular.element(window).width() > 768 ? $scope.stories[0].plotsVertical : $scope.stories[0].plotsHorizontal;
-    $scope.alignment = angular.element(window).width() > 768 ? 'center' : 'left';
+    $scope.riskAssesmentPlots = resolution > 768 ? $scope.stories[0].plotsVertical : $scope.stories[0].plotsHorizontal;
+    $scope.alignment = resolution > 768 ? 'center' : 'left';
 
     $scope.step = {
       chart1: 20,
@@ -192,9 +192,9 @@ define(function (require) {
     /******************************END FILTERS************************************/
 
       // Open indicators list like a select element
-      $(window).on("resize",function(e){
+      /*$(window).on("resize",function(e){
         resolution = screen.width;
-      });
+      });*/
 
       $scope.openIndicatorsList = function() {
         if( resolution < 990 ){
@@ -236,7 +236,10 @@ define(function (require) {
 
       $scope.countryChange = function () {
         if ($state.current.name !== undefined) {
-         
+          $scope.dashboard.parameters = {
+            "pCountry1": $scope.pCountry1,
+            "pCountry2": $scope.pCountry2
+          };
           $state.transitionTo('prevention-companies', {
             pIndicator: $scope.pIndicator,
             pCountry1: $scope.pCountry1, 

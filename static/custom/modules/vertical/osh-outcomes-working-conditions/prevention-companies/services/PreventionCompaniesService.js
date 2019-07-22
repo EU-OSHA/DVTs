@@ -37,7 +37,7 @@ define (function (require) {
                                         if(!scene.firstAtoms.value.label.match('%')){
                                             scene.firstAtoms.value.label = scene.firstAtoms.value.label + '%';
                                         }
-                                        return baseScale('Austria (AT)') + 11 /*this.sign.panel.barWidth/2*/;
+                                        return baseScale('Belgium (BE)') + 10 /*this.sign.panel.barWidth/2*/;
                                     })
                                     .height(null) // clear any inherited value
                                     .width(null)  // clear any inherited value
@@ -52,7 +52,7 @@ define (function (require) {
                                     .top(function(scene){
                                         var baseScale = this.getContext().chart.axes.base.scale;
                                         
-                                        return baseScale('Iceland (IS)') + 11;
+                                        return baseScale('Norway (NO)') + 10;
                                     })
                                     .height(null) // clear any inherited value
                                     .width(null)  // clear any inherited value
@@ -124,10 +124,25 @@ define (function (require) {
                         valuesAnchor: 'top',
                         valuesOptimizeLegibility: true,
                         label_textStyle: function(scene){
+                            var i18n = configService.getLiterals();
                             var countryKey = scene.firstAtoms.series;
+                            var category = scene.firstAtoms.category;
+                            var label = '';
+
                             if(!scene.firstAtoms.value.label.match('%')){
                                 scene.firstAtoms.value.label = scene.firstAtoms.value.label + '%';
                             }
+
+                            if(i18n['L'+category] != undefined){
+                                category.key = i18n['L'+category];
+                                category.label = i18n['L'+category];
+                                label = category.label;
+                                var substring = category.label.substring(0, 15);
+                                if(label.length > 15){
+                                    category.label = substring + '...';
+                                }
+                            }
+
                             if (countryKey == 'EU28') {
                                 return dvtUtils.getEUColor();
                             } else if(countryKey.value.match(pCountry1)){
