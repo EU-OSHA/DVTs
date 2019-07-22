@@ -8,11 +8,11 @@
 					&.active{
 						a,a:visited, a:focus{
 							color: $aquamarine;
-							border-bottom: 0 !important;
+							//border-bottom: 0 !important;
 						}
 						a:hover{
 							color: $orange;
-							border-bottom: 0 !important;
+							//border-bottom: 0 !important;
 						}				
 					}
 				}
@@ -99,7 +99,7 @@
 				}
 			}
 		} 
-		.submenu--block,{
+		.submenu--block{
 			.submenu--items--wrapper{
 				//min-height: 7rem;
 				min-height: auto;
@@ -122,7 +122,7 @@
 						display: block;
 						a, a:hover, a:visited, a:focus{
 							color: $aquamarine;
-							border-bottom: 0;
+							//border-bottom: 0;
 						}		
 					}
 					&:after{
