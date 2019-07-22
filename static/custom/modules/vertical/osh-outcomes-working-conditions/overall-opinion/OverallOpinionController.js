@@ -137,9 +137,9 @@ define(function (require) {
       }
     ];
 
-    $scope.healthBySector = angular.element(window).width() > 768 ? $scope.stories[1].plotsVertical : $scope.stories[1].plotsHorizontal;
-    $scope.alignment = angular.element(window).width() > 768 ? 'center' : 'left';
-    $scope.healthByGender = angular.element(window).width() > 768 ? $scope.stories[2].plotsVertical : $scope.stories[2].plotsHorizontal;
+    $scope.healthBySector = resolution > 768 ? $scope.stories[1].plotsVertical : $scope.stories[1].plotsHorizontal;
+    $scope.alignment = resolution > 768 ? 'center' : 'left';
+    $scope.healthByGender = resolution > 768 ? $scope.stories[2].plotsVertical : $scope.stories[2].plotsHorizontal;
     
     $scope.step = 20;
 

@@ -487,7 +487,7 @@ define(function (require) {
                     }
                 }*/
 
-                if(!!definition.chartDefinition.axisLabelWordBreak){
+                if(definition.chartDefinition.axisLabelWordBreak == '1'){
                     definition.chartDefinition.baseAxisTooltipFormat = function(scene){
                         if(scene.group.key.length > 15){
                             return scene.group.key;

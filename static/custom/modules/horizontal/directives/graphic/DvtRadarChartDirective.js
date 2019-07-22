@@ -77,8 +77,18 @@ define(function (require) {
                 + '<div data-ng-attr-id="{{ id }}"></div>'
 
                 + '<div class="legend-text-block">'
-                    + '<div ng-if="isMaximized " class="logoGraphics-wrapper"><img alt="European Agency for Safety and Health at Work" src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/EU-OSHA-en.png" class="logoGraphics"></div>'
-                    + '<div class="legend-info"> </div>'
+                    +'<div ng-if="isMaximized" class="logoGraphics-wrapper">'
+                        + '<span>{{datasources[0].datasource}}, </span>'
+                        + '<span>{{datasources[0].date_from}} </span>'
+                        +' <span ng-if="datasources[0].date_to != null">/ {{datasources[0].date_to}}</span>'
+                        +'<img alt="European Agency for Safety and Health at Work" src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/EU-OSHA-en.png" class="logoGraphics">'
+                    +'</div>'
+                //  + '<div class="legend-info" ng-if="isMaximized && legendClickMode && legend">Click on each value on the legend to hide/show in on the chart</div>'
+                    /*+ '<div class="" ng-if="isMaximized">' 
+                        + '<span>{{datasources[0].datasource}}, </span>'
+                        + '<span>{{datasources[0].date_from}} </span>'
+                        +' <span ng-if="datasources[0].date_to != null">/ {{datasources[0].date_to}}</span>'
+                    + '</div>'*/
                 + '</div>'
             + '</div>'
 
@@ -93,8 +103,8 @@ define(function (require) {
 				contextuals: '=?',
 				listenTo: '=',
 				params: '=',
-				clickAction:'='
-
+				clickAction:'=',
+				datasourceAndDates: '='
 			},
 			transclude: true,
 			template: _template,
@@ -117,6 +127,8 @@ define(function (require) {
 				scope.isZoom = !!attributes.isZoom;
 				scope.isEnlarge=attributes.isEnlarged;
 
+				scope.datasources = [];
+
 				var dashboard = controllers[0];
 				var country1 = scope.country1;
 				var country2 = scope.country2;
@@ -137,6 +149,7 @@ define(function (require) {
 					height: attributes.height || 600,
 					htmlObject: scope.id,
 					listeners: [],
+					datasourceAndDates: scope.datasourceAndDates || [],
 					customfunction: function f() {
 						function Radar(paper, cx, cy, r, values, secondIndicatorValues, thirdIndicatorValues, opts) {
 
@@ -175,6 +188,7 @@ define(function (require) {
 								closePath: true,
 								indicators: ['indicator1', 'indicator2', 'indicator3']
 							};
+
 							//replacing default opts with explicitly provided
 							for (var prop in opts) {
 								defaultOpts[prop] = opts[prop];
@@ -784,6 +798,22 @@ define(function (require) {
 							});
 					}
 				};
+
+				if(!!scope.datasourceAndDates){
+                    var datasource = scope.datasourceAndDates[0];
+                    var indicator = scope.datasourceAndDates[1];
+                    dataService.getDatasourceAndDates(datasource, indicator).then(function (data) {
+                        data.data.resultset.map(function (elem) {
+                          scope.datasources.push({
+                            datasource: elem[0],
+                            date_from: elem[1],
+                            date_to: elem[2]
+                          });
+                        });
+                    }).catch(function (err) {
+                      throw err;
+                    });
+                }
 
 				$log.debug("Link function of " + scope.id);
 
