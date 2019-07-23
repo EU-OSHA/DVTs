@@ -399,7 +399,8 @@
 			.card--block--chart{
 				.chart--block{
 					header{
-						display: block;
+				   min-height: auto !important;
+				   display: block !important;
 					}
 				}
 			}
