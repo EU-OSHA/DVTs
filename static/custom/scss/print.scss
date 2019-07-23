@@ -406,5 +406,34 @@
 			}
 		}
 	}
+	.overall-opinion, 
+	.osh-culture, 
+	.prevention-companies, 
+	.mental-risk, 
+	.physical-risk, 
+	.worker-involvement{
+		div[id^=dvt_bar_chart]{
+			zoom:0.9;
+		}
+		.compare--block{
+			.compare--list{
+				display: block;
+				li{
+					width: auto;
+					display: inline-block;
+					font-size: 1.6rem !important;
+					label{
+						width: auto;
+						font-size: 1.4rem !important;
+					}
+					select{
+						width: auto;
+						font-size: 1.6rem !important;
+					}
+				}
+			}
+		}
+	}
+
 }
 
