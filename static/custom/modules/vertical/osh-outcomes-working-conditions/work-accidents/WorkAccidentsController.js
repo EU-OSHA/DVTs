@@ -50,7 +50,7 @@ define(function (require) {
 
     $scope.orientation = resolution > 768 ? "vertical" : "horizontal";
     $scope.axisSize = resolution > 768 ? 150 : (resolution > 480 ? 160 : 120);
-    $scope.axisSizeSmaller = resolution > 768 ? 150 : (resolution > 480 ? 110 : 50);
+    $scope.axisSizeSmaller = resolution > 768 ? 150 : (resolution > 480 ? 110 : 100);
 
     $(window).on("resize",function(e){
       e.preventDefault();

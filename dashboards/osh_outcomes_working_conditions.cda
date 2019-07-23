@@ -1111,8 +1111,8 @@
 	    	<Parameter default="BE" name="pCountry2" type="String"/>
 	    </Parameters>
 	    <Query>
-			SELECT IF(n.name = 'European Union', n.country_code, CONCAT(n.name, " (", n.country_code, ")")) as Country, t.text as Age, v.value*100 as Value
-			FROM nuts n, profile p, value v, dataset d, translation t, split_company_size scs
+			SELECT IF(n.name = 'European Union', n.country_code, CONCAT(n.name, " (", n.country_code, ")")) as Country, t.text as Size, v.value*100 as Value
+			FROM nuts n, profile p, value v, translation t, split_company_size scs
 			WHERE n.id = p.nuts_id
 			AND v.indicator_id = ${pIndicator}
 			AND v.profile_id = p.id
@@ -1121,8 +1121,7 @@
 			AND scs.id IN (7, 8, 9, 10, 6)
 			AND scs.literal_id = t.literal_id
 			AND t.language = 'EN'
-			AND d.id = v.dataset_id
-			AND d.id = ${pDataset}
+			AND v.dataset_id = ${pDataset}
 			AND n.country_code IN (${pCountry1}, ${pCountry2}, 'EU28')
 			ORDER BY FIELD(scs.id, 7, 8, 9, 10, 6), FIELD(n.country_code, ${pCountry1}, ${pCountry2}, 'EU28')
 	    </Query>
@@ -1139,18 +1138,15 @@
 	    	<Parameter default="BE" name="pCountry2" type="String"/>
 	    </Parameters>
 	    <Query>
-			SELECT IF(n.name = 'European Union', n.country_code, CONCAT(n.name, " (", n.country_code, ")")) as Country, t.text as Age, v.value*100 as Value
-			FROM nuts n, profile p, value v, dataset d, translation t, split_activity_sector sas
+			SELECT IF(n.name = 'European Union', n.country_code, CONCAT(n.name, " (", n.country_code, ")")) as Country, sas.literal_id as Age, v.value*100 as Value
+			FROM nuts n, profile p, value v, split_activity_sector sas
 			WHERE n.id = p.nuts_id
 			AND v.indicator_id = ${pIndicator}
 			AND v.profile_id = p.id
 			AND p.activity_sector_id = sas.id
 			AND p.answer_id = 1
 			AND sas.id IN (2,3,4,5,6,7,8)
-			AND sas.literal_id = t.literal_id
-			AND t.language = 'EN'
-			AND d.id = v.dataset_id
-			AND d.id = ${pDataset}
+			AND v.dataset_id = ${pDataset}
 			AND n.country_code IN (${pCountry1}, ${pCountry2}, 'EU28')
 			ORDER BY FIELD(sas.id, 2, 3, 4, 5, 6, 7, 8), FIELD(n.country_code, ${pCountry1}, ${pCountry2}, 'EU28')
 	    </Query>
@@ -1200,7 +1196,7 @@
             AND t.language = 'EN'
             AND d.id = v.dataset_id
             AND d.id = ${pDataset}
-            ORDER BY FIELD(sa.id, 28,29,30) , FIELD('EU28', n.country_code) DESC, FIELD(n.country_code, 'CH', 'IS', 'NO'), n.country_code ASC, Value DESC;
+            ORDER BY FIELD(sa.id, 28,29,30) , FIELD('EU28', n.country_code) ASC, FIELD(n.country_code, 'CH', 'IS', 'NO')DESC, n.country_code DESC, Value DESC;
 		</Query>
     </DataAccess>
 
@@ -1224,7 +1220,7 @@
             AND t.language = 'EN'
             AND d.id = v.dataset_id
             AND d.id = ${pDataset}
-            ORDER BY FIELD(sa.id, 31,2,1) , FIELD('EU28', n.country_code) DESC, FIELD(n.country_code, 'CH', 'IS', 'NO'), n.country_code ASC, Value DESC;
+            ORDER BY FIELD(sa.id,2,71,1) , FIELD('EU28', n.country_code) DESC, FIELD(n.country_code, 'CH', 'IS', 'NO'), n.country_code ASC;
 		</Query>
     </DataAccess>
 
@@ -1248,7 +1244,7 @@
             AND t.language = 'EN'
             AND d.id = v.dataset_id
             AND d.id = ${pDataset}
-            ORDER BY FIELD(sa.id, 1,2,31) , FIELD('EU28', n.country_code) DESC, FIELD(n.country_code, 'CH', 'IS', 'NO'), n.country_code ASC, Value DESC;
+            ORDER BY FIELD(sa.id, 1,71,2), FIELD('EU28', n.country_code) ASC, FIELD(n.country_code, 'CH', 'IS', 'NO')DESC, n.country_code DESC;
 		</Query>
     </DataAccess>
 

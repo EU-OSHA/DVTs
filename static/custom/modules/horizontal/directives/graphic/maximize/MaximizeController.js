@@ -109,6 +109,10 @@ define(function (require) {
                             }else{
                                 $scope.parameters.baseAxisSize = 190;
                             }
+
+                            if($scope.parameters.chartTitle == 'Health at risk'){
+                                $scope.parameters.baseAxisSize = 90;
+                            }
                         }
 
                         /* ESTABLISH MAX COMMON PARAMETERS  */

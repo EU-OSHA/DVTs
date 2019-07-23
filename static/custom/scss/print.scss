@@ -394,6 +394,17 @@
 			}
 		}
 	}
-
+	.health-perception-workers{
+		.card--grid{
+			.card--block--chart{
+				.chart--block{
+					header{
+				   min-height: auto !important;
+				   display: block !important;
+					}
+				}
+			}
+		}
+	}
 }
 
