@@ -934,14 +934,27 @@ define(function () {
 
                 /**
                  * @ngdoc method
-                 * @name dvt.configModule.DataService#getWorkerInvolvementCountries
+                 * @name dvt.configModule.DataService#getWorkerInvolvementEurofoundCountries
                  * @methodOf dvt.configModule.DataService
                  * @description
                  * Get vibration countries
                  */
-                getWorkerInvolvementCountries: function () {
-                    var url = configService.getOshOutcomesWorkingConditionsDataPath() + "&dataAccessId=getWorkerInvolvementCountries";
-                    $log.debug('getWorkerInvolvementCountries url:' + url);
+                getWorkerInvolvementEurofoundCountries: function (pDataset) {
+                    var url = configService.getOshOutcomesWorkingConditionsDataPath() + "&dataAccessId=getWorkerInvolvementEurofoundCountries" + "&parampDataset=" + pDataset;
+                    $log.debug('getWorkerInvolvementEurofoundCountries url:' + url);
+                    return promise(url);
+                },
+
+                /**
+                 * @ngdoc method
+                 * @name dvt.configModule.DataService#getWorkerInvolvementESENERCountries
+                 * @methodOf dvt.configModule.DataService
+                 * @description
+                 * Get vibration countries
+                 */
+                getWorkerInvolvementESENERCountries: function (pDataset) {
+                    var url = configService.getOshOutcomesWorkingConditionsDataPath() + "&dataAccessId=getWorkerInvolvementESENERCountries" + "&parampDataset=" + pDataset;
+                    $log.debug('getWorkerInvolvementESENERCountries url:' + url);
                     return promise(url);
                 },
 

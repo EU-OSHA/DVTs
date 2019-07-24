@@ -1091,6 +1091,7 @@
             SELECT DISTINCT(n.literal_id), n.country_code
 	      	FROM nuts n, profile p, value v, dataset d
 			where n.id = p.nuts_id
+			AND n.country_code NOT IN('AL', 'ME', 'MK', 'RS', 'TR')
 			AND v.profile_id = p.id
 			AND d.id = v.dataset_id
             AND d.id = ${pDataset}
@@ -1164,6 +1165,7 @@
             SELECT t.text as Answer, IF(n.name = 'European Union', n.country_code, CONCAT(n.name, " (", n.country_code, ")")) as Country, v.value*100 as Value
             FROM nuts n, profile p, value v, dataset d, translation t, split_answer sa
             WHERE n.id = p.nuts_id
+            AND n.country_code NOT IN('AL', 'ME', 'MK', 'RS', 'TR')            
             AND v.indicator_id = ${pIndicator}
             AND v.profile_id = p.id
             AND p.answer_id = sa.id
@@ -1188,6 +1190,7 @@
             SELECT t.text as Answer, IF(n.name = 'European Union', n.country_code, CONCAT(n.name, " (", n.country_code, ")")) as Country, v.value*100 as Value
             FROM nuts n, profile p, value v, dataset d, translation t, split_answer sa
             WHERE n.id = p.nuts_id
+            AND n.country_code NOT IN('AL', 'ME', 'MK', 'RS', 'TR')
             AND v.indicator_id = ${pIndicator}
             AND v.profile_id = p.id
             AND p.answer_id = sa.id
@@ -1212,6 +1215,7 @@
             SELECT t.text as Answer, IF(n.name = 'European Union', n.country_code, CONCAT(n.name, " (", n.country_code, ")")) as Country, v.value*100 as Value
             FROM nuts n, profile p, value v, dataset d, translation t, split_answer sa
             WHERE n.id = p.nuts_id
+            AND n.country_code NOT IN('AL', 'ME', 'MK', 'RS', 'TR')
             AND v.indicator_id = ${pIndicator}
             AND v.profile_id = p.id
             AND p.answer_id = sa.id
@@ -1236,6 +1240,7 @@
             SELECT t.text as Answer, IF(n.name = 'European Union', n.country_code, CONCAT(n.name, " (", n.country_code, ")")) as Country, v.value*100 as Value
             FROM nuts n, profile p, value v, dataset d, translation t, split_answer sa
             WHERE n.id = p.nuts_id
+            AND n.country_code NOT IN('AL', 'ME', 'MK', 'RS', 'TR')
             AND v.indicator_id = ${pIndicator}
             AND v.profile_id = p.id
             AND p.answer_id = sa.id
@@ -1249,12 +1254,11 @@
     </DataAccess>
 
     <!-- PHYSICAL RISK || ALL COUNTRIES FOR VIBRATION, LOUD NOISE AVAILABLE -->
-    <DataAccess access="public" connection="dvt_conn" id="getWorkerInvolvementCountries" type="sql">
+    <DataAccess access="public" connection="dvt_conn" id="getWorkerInvolvementEurofoundCountries" type="sql">
         <Cache duration="3600" enabled="true" />
         <Columns />
         <Parameters>
-            <Parameter default="10" name="pDataset1" type="Numeric"/>
-            <Parameter default="10" name="pDataset2" type="Numeric"/>
+            <Parameter default="10" name="pDataset" type="Numeric"/>
         </Parameters>
         <Query>
             SELECT DISTINCT(n.literal_id), n.country_code
@@ -1262,8 +1266,29 @@
 			where n.id = p.nuts_id
 			AND v.profile_id = p.id
 			AND d.id = v.dataset_id
-            AND d.id IN (${pDataset1},${pDataset2})
-			AND v.indicator_id IN (75,95,96,101,102,123,124,125)
+            AND d.id = ${pDataset}
+			AND v.indicator_id IN (75,95,96)
+			AND n.country_code NOT IN ('EU28')
+			ORDER BY n.country_code ASC;
+        </Query>
+   	</DataAccess>
+
+   	<!-- PHYSICAL RISK || ALL COUNTRIES FOR VIBRATION, LOUD NOISE AVAILABLE -->
+    <DataAccess access="public" connection="dvt_conn" id="getWorkerInvolvementESENERCountries" type="sql">
+        <Cache duration="3600" enabled="true" />
+        <Columns />
+        <Parameters>
+            <Parameter default="10" name="pDataset" type="Numeric"/>
+        </Parameters>
+        <Query>
+            SELECT DISTINCT(n.literal_id), n.country_code
+	      	FROM nuts n, profile p, value v, dataset d
+			where n.id = p.nuts_id
+			AND n.country_code NOT IN('AL', 'ME', 'MK', 'RS', 'TR')
+			AND v.profile_id = p.id
+			AND d.id = v.dataset_id
+            AND d.id = ${pDataset}
+			AND v.indicator_id IN (101,102,123,124,125)
 			AND n.country_code NOT IN ('EU28')
 			ORDER BY n.country_code ASC;
         </Query>
