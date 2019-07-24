@@ -230,7 +230,7 @@ define (function (require) {
                                         if(!scene.firstAtoms.value.label.match('%')){
                                             scene.firstAtoms.value.label = scene.firstAtoms.value.label + '%';
                                         }
-                                        return baseScale('Belgium (BE)') + 10 /*this.sign.panel.barWidth/2*/;
+                                        return baseScale('Bulgaria (BG)') + 11 /*this.sign.panel.barWidth/2*/;
                                     })
                                     .height(null) // clear any inherited value
                                     .width(null)  // clear any inherited value
@@ -245,7 +245,7 @@ define (function (require) {
                                     .top(function(scene){
                                         var baseScale = this.getContext().chart.axes.base.scale;
                                         
-                                        return baseScale('Norway (NO)') + 10;
+                                        return baseScale('Norway (NO)') + 11;
                                     })
                                     .height(null) // clear any inherited value
                                     .width(null)  // clear any inherited value
@@ -265,9 +265,11 @@ define (function (require) {
                                     .lineWidth(3)
                                     .left(function(scene){
                                         //$log.warn(scene);
+                                        var baseScale = this.getContext().chart.axes.base.scale;
                                         var countryKey = scene.firstAtoms.category;
                                         var panelWidth = this.root.width();
-                                        return panelWidth/40;               
+                                        //return panelWidth/40;               
+                                        return baseScale('Austria (AT)') - 16;
                                     });
 
                                 //Non EU countries stroke separator vertical

@@ -163,25 +163,72 @@ define(function (require) {
     /******************************************************************************|
     |                                DATA LOAD                                     |
     |******************************************************************************/
-        dataService.getVibrationCountries().then(function (data) {
-        data.data.resultset.map(function (elem) {
-          if(elem[1] != $scope.pCountry2){
-            $scope.countriesDataFor.push({
-              country: elem[0],
-              country_code: elem[1]
-            });
-          }
 
-          if(elem[1] != $scope.pCountry1){
-            $scope.countriesCompareWith.push({
-              country: elem[0],
-              country_code: elem[1]
-            });
-          }
+      if($scope.pIndicator == 'vibrations-loud-noise-and-temperature'){
+        dataService.getVibrationCountries().then(function (data) {
+          data.data.resultset.map(function (elem) {
+            if(elem[1] != $scope.pCountry2){
+              $scope.countriesDataFor.push({
+                country: elem[0],
+                country_code: elem[1]
+              });
+            }
+
+            if(elem[1] != $scope.pCountry1){
+              $scope.countriesCompareWith.push({
+                country: elem[0],
+                country_code: elem[1]
+              });
+            }
+          });
+        }).catch(function (err) {
+          throw err;
         });
-      }).catch(function (err) {
-        throw err;
-      });
+      }
+
+      if($scope.pIndicator == 'risks-involve-with-work'){
+        if($scope.pSubIndicator == 'eurofound'){
+          dataService.getEurofoundRisksCountries($scope.datasetEurofound).then(function (data) {
+            data.data.resultset.map(function (elem) {
+              if(elem[1] != $scope.pCountry2){
+                $scope.countriesDataFor.push({
+                  country: elem[0],
+                  country_code: elem[1]
+                });
+              }
+
+              if(elem[1] != $scope.pCountry1){
+                $scope.countriesCompareWith.push({
+                  country: elem[0],
+                  country_code: elem[1]
+                });
+              }
+            });
+          }).catch(function (err) {
+            throw err;
+          });
+        }else{
+          dataService.getESENERRisksCountries($scope.datasetESENER).then(function (data) {
+            data.data.resultset.map(function (elem) {
+              if(elem[1] != $scope.pCountry2){
+                $scope.countriesDataFor.push({
+                  country: elem[0],
+                  country_code: elem[1]
+                });
+              }
+
+              if(elem[1] != $scope.pCountry1){
+                $scope.countriesCompareWith.push({
+                  country: elem[0],
+                  country_code: elem[1]
+                });
+              }
+            });
+          }).catch(function (err) {
+            throw err;
+          });
+        }
+      }
 
     /******************************END DATA LOAD***********************************/
 
