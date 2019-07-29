@@ -50,9 +50,9 @@
     <!-- % of establishment inspected -->
     <div class="column--grid--block" id="tab1" data-ng-show="pIndicator == 'establishments-inspected'">
       <div class="column--item first" ng-class="{true: 'full', false: 'no-full'}[pCountry2 == 0]">
-        <div class="">
+        <!--<div class="">
           <img  class="flags--wrapper" ng-src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/flag/{{::pCountry1.toLowerCase()}}.png">
-        </div>
+        </div>-->
         <h2 data-ng-bind="i18nLiterals.L20692"></h2>
         <div class="columm--item--content">
           <div class="card--grid center-text">     
@@ -64,8 +64,8 @@
                 width="330" height="330" axis-percent="1"
                 orientation="horizontal" axis-fixed-min="0"
                 axis-fixed-max="100" step="{{step}}" id="1"
-                params="[['pDataset', datasetESENER], ['pIndicator', 126], ['pCountry', pCountry1]]"
-                color-role="series" colors="[stories[0].color1, stories[0].color2]"
+                params="[['pDataset', datasetESENER], ['pIndicator', 126], ['pCountry1', pCountry1], ['pCountry2', pCountry2], ['pAnswer', 1]]"
+                color-role="series" colors="[stories[0].color1, stories[0].color2, stories[0].color3]"
                 chart-title="{{i18nLiterals.L20693}}" 
                 axis-label-font="14px 'OpenSans-bold'"
                 plots="stories[0].plots"
@@ -75,8 +75,9 @@
                 multiple-label-colors="false"
                 label-text-align="stories[0].labelTextAlign"
                 dimensions="stories[0].dimensions"
-                legend="true" legend-align="center"
+                legend="false" legend-align="center"
                 datasource-and-dates="[datasetESENER,126]"
+                base-axis-size="50"
                 ></dvt-bar-chart>
               </div>
             </div>
@@ -85,10 +86,11 @@
       </div>
 
       <div class="column--item second" data-ng-show="pCountry2 != 0">
-        <div class="">
+        <!--<div class="">
           <img  class="flags--wrapper" ng-src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/flag/{{::pCountry2.toLowerCase()}}.png">
-        </div>
-        <h2 data-ng-bind="i18nLiterals.L20692"></h2>
+        </div>-->
+        <!--<h2 data-ng-bind="i18nLiterals.L20692"></h2>-->
+        <h2>% of estalishments not inspected</h2>
         <div class="columm--item--content">
           <div class="card--grid center-text">     
             <div class="card--block--chart" >
@@ -99,8 +101,8 @@
                 width="330" height="330" axis-percent="1"
                 orientation="horizontal" axis-fixed-min="0"
                 axis-fixed-max="100" step="{{step}}" id="1"
-                params="[['pDataset', datasetESENER], ['pIndicator', 126], ['pCountry', pCountry2]]"
-                color-role="series" colors="[stories[0].color1, stories[0].color2]"
+                params="[['pDataset', datasetESENER], ['pIndicator', 126], ['pCountry1', pCountry1], ['pCountry2', pCountry2], ['pAnswer', 2]]"
+                color-role="series" colors="[stories[0].color1, stories[0].color2, stories[0].color3]"
                 chart-title="{{i18nLiterals.L20693}}" 
                 axis-label-font="14px 'OpenSans-bold'"
                 plots="stories[0].plots"
@@ -110,8 +112,9 @@
                 multiple-label-colors="false"
                 label-text-align="stories[0].labelTextAlign"
                 dimensions="stories[0].dimensions"
-                legend="true" legend-align="center"
+                legend="false" legend-align="center"
                 datasource-and-dates="[datasetESENER,126]"
+                base-axis-size="50"
                 ></dvt-bar-chart>
               </div>
             </div>

@@ -108,7 +108,8 @@ define(function (require) {
       {
         color1: dvtUtils.getColorCountry(1),
         color2: dvtUtils.getColorCountry(2),
-        plots: EnforcementCapacityService.getGeneralOSHInfrastructurePlot(),
+        color3: dvtUtils.getColorCountry(),
+        plots: EnforcementCapacityService.getGeneralOSHInfrastructurePlot($scope.pCountry1, $scope.pCountry2),
         dimensions: {
           value: {
             format: {
