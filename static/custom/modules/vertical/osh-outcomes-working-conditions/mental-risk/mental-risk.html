@@ -75,7 +75,7 @@
               axis-label-font="14px 'OpenSans-bold'"
               plots="stories[2].plots"
               multiple-label-colors="false"
-              leaf-content-overflow='visible'
+              leaf-content-overflow='auto'
               values-visible="false"
               legend="true"
               dimensions="stories[2].dimensions"
@@ -161,6 +161,9 @@
 
     <!-- Influence -->
     <div class="" id="tab3" data-ng-show="pIndicator == 'influence'">
+      <div class="note">
+        <p data-ng-bind="i18nLiterals.L20718"></p>
+      </div>
       <div class="card--grid xxs-w1 xs-w1 w1 center-text">
         <div class="card--block--chart">
           <!-- ESENER AND EUROFOUND filter -->
@@ -210,7 +213,7 @@
               values-mask="{value}%"
               values-font="14px 'OpenSans-bold'"
               multiple-label-colors="false"
-              leaf-content-overflow='visible'
+              leaf-content-overflow='auto'
               dimensions="stories[2].dimensions"
               legend="true" stacked="1" angle="{{angle}}"
               legend-align="center"
@@ -281,7 +284,7 @@
               values-mask="{value}%"
               values-font="14px 'OpenSans-bold'"
               multiple-label-colors="false"
-              leaf-content-overflow='visible'
+              leaf-content-overflow='auto'
               dimensions="stories[2].dimensions"
               legend="true" stacked="1" angle="{{angle}}"
               legend-align="center"
@@ -352,7 +355,7 @@
               values-mask="{value}%"
               values-font="14px 'OpenSans-bold'"
               multiple-label-colors="false"
-              leaf-content-overflow='visible'
+              leaf-content-overflow='auto'
               dimensions="stories[2].dimensions"
               legend="true" stacked="1" angle="{{angle}}"
               legend-align="center"
