@@ -29,9 +29,9 @@ define(function (require) {
 
                     if($window.screen.width<1024 && !$cookies.get("disclaimer")){
                         $cookies.put(cookieName,true,{expires:cookieLife});
-                        //$scope.showwidthdisclaimer= true;
+                        $scope.showwidthdisclaimer= true;
                     }else {
-                        //$scope.showwidthdisclaimer = false;
+                        $scope.showwidthdisclaimer = false;
                         $cookies.put(cookieName,false,{expires:cookieLife});
                         if ($('body').hasClass('hasCookies')) {
                             $('body').removeClass('hasCookies');
