@@ -65,7 +65,8 @@ define (function (require) {
                                 return dvtUtils.getAccidentsColors(4);
                             } else if(subIndicatorKey == 'Trade, transport, food/accommodation and recreation activities') {
                                 return dvtUtils.getColorCountry(3);
-                            } else if(subIndicatorKey == 'IT, Finance, real state and other technical scientific or personal service activities') {
+                            } else if(subIndicatorKey == 'IT, Finance, real state and other technical scientific or personal service activities' 
+                                || subIndicatorKey == 'IT, Finance, Real estate and other technical scientific or personal service activities') {
                                 return dvtUtils.getColorCountry(2);
                             } else if(subIndicatorKey == 'Public administration') {
                                 return dvtUtils.getColorCountry(12);
