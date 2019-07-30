@@ -178,10 +178,14 @@ define (function (require) {
                         valuesOptimizeLegibility: true,
                         label_textStyle: function(scene){
                             var countryKey = scene.firstAtoms.series;
-                            //$log.warn(countryKey);
+                            var valueKey = scene.firstAtoms.value;
 
                             if(!scene.firstAtoms.value.label.match('%')){
                                 scene.firstAtoms.value.label = scene.firstAtoms.value.label + '%';
+                            }
+
+                            if(valueKey.value > parseInt(this.sign.chart.options.orthoAxisFixedMax)){
+                                this.sign.chart.options.orthoAxisFixedMax = valueKey.value;
                             }
 
                             if (countryKey == 'EU28') {
@@ -212,11 +216,17 @@ define (function (require) {
                         valuesOptimizeLegibility: true,
                         label_textStyle: function(scene){
                             var countryKey = scene.firstAtoms.series;
+                            var valueKey = scene.firstAtoms.value;
+                            //$log.warn(countryKey);
 
                             if(!scene.firstAtoms.value.label.match('%')){
                                 scene.firstAtoms.value.label = scene.firstAtoms.value.label + '%';
                             }
-                            //$log.warn(countryKey);
+
+                            if(valueKey.value > parseInt(this.sign.chart.options.orthoAxisFixedMax)){
+                                this.sign.chart.options.orthoAxisFixedMax = valueKey.value;
+                            }
+
                             if (countryKey == 'EU28') {
                                 return dvtUtils.getEUColor();
                             } else if(countryKey.value.match(pCountry1)){
