@@ -55,8 +55,13 @@ define(function (require) {
     $scope.axisWordBreak = resolution > 768 ? 1 : '';
 
     $(window).on("resize",function(e){
-      resolution = screen.width;
-      $state.reload();
+      if(screen.width != resolution){
+        resolution = screen.width;
+        //$log.warn('Resolucion ha cambiado');
+        $state.reload();
+      }else{
+        //$log.warn('Resolucion no ha cambiado');
+      }
     });
 
     $scope.countriesDataFor = [];
