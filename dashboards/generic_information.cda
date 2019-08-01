@@ -76,7 +76,7 @@
 			WHERE (n.id = p.nuts_id
 			AND p.id = v.profile_id
 			AND v.indicator_id = 126)
-			AND n.country_code NOT IN ('EU28')
+			AND n.country_code NOT IN ('EU28', 'AL', 'ME', 'MK', 'RS', 'TR')
 			ORDER BY country_code ASC
 			)UNION(	      
 			SELECT DISTINCT (n.literal_id) AS country, n.country_code AS country_code
@@ -84,7 +84,7 @@
 			INNER JOIN nuts n
 			ON n.id = sp.nuts_id
 			WHERE sp.page = 'STRATEGY_ENFOR_CAPACITY'
-			AND n.country_code NOT IN ('EU28')
+			AND n.country_code NOT IN ('EU28', 'AL', 'ME', 'MK', 'RS', 'TR')
 			ORDER BY country_code ASC
 			)
 	    </Query>

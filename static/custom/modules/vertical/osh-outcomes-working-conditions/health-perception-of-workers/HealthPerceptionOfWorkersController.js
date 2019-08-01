@@ -36,7 +36,7 @@ define(function (require) {
 
     var resolution = screen.width;
 
-    $(window).on("resize",function(e){
+    /*$(window).on("resize",function(e){
       resolution = screen.width;      
       if(resolution >=768 && resolution <=1024){
         $scope.pageSize = 16;      
@@ -46,6 +46,23 @@ define(function (require) {
       $scope.elementsEnd=$scope.pageSize;    
       $scope.$apply();
       updateText();
+    });*/
+
+    $(window).on("resize",function(e){
+      if(screen.width != resolution){
+        resolution = screen.width;
+        if(resolution >=768 && resolution <=1024){
+          $scope.pageSize = 16;      
+        } else {
+          $scope.pageSize = 15;
+        }
+        $scope.elementsEnd=$scope.pageSize;    
+        $scope.$apply();
+        updateText();
+        //$log.warn('Resolucion ha cambiado');
+      }else{
+        //$log.warn('Resolucion no ha cambiado');
+      }
     });
 
     //Variables pagination

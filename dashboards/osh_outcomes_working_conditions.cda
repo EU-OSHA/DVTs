@@ -142,7 +142,7 @@
 	    	<Parameter default="10" name="pDataset1" type="Numeric"/>
 	    	<Parameter default="11" name="pDataset2" type="Numeric"/>
 	    </Parameters>
-	    <!--<Query>
+	    <Query>
 			SELECT DISTINCT(n.literal_id) as country_name, n.country_code as country_code, (ROUND(v.value*100)) as satisfaction_working, ( ROUND(v2.value*100)) as health_negative, 
 			(ROUND(v3.value*100)) as health_problem, (ROUND(v4.value*100)) as absence, (ROUND(v5.value*100)) as sick_at_work, (ROUND(v6.value*100)) as job_till_60
 			FROM nuts n, profile p, profile p2, profile p3, profile p4, profile p5, profile p6, value v, value v2, value v3, value v4, value v5, value v6, dataset d
@@ -180,76 +180,6 @@
 			/* COMMON */
 			AND d.id = 10
 			ORDER BY country_name ASC;
-	    </Query>-->
-	    <Query>
-	    	select q1.country_name, q1.country_code, q1.satisfaction_working, q2.health_negative, q3.health_problem, q4.absence, q5.sick_at_work, q6.job_till_60 from 
-			(SELECT DISTINCT(n.literal_id) as country_name, n.country_code as country_code, (ROUND(v.value*100)) as satisfaction_working
-				FROM nuts n, profile p, value v
-				WHERE
-				/* SATISFACTION WITH WORKING CONDITIONS */
-				n.id = p.nuts_id
-				AND v.indicator_id = 57
-				AND v.profile_id = p.id
-				AND v.dataset_id = 10) as q1, 
-				(SELECT DISTINCT(n.literal_id) as country_name, n.country_code as country_code, (ROUND(v.value*100)) as health_negative
-				FROM nuts n, profile p, value v
-				WHERE
-			/* HEALTH NEGATIVE AFFECTION */
-				n.id = p.nuts_id
-				AND v.indicator_id = 58
-				AND v.profile_id = p.id
-				AND v.dataset_id = 10) as q2, 
-
-				(SELECT DISTINCT(n.literal_id) as country_name, n.country_code as country_code, (ROUND(v.value*100)) as health_problem
-				FROM nuts n, profile p, value v
-				WHERE
-			/* HEALTH PROBLEMS IN LAST 12 MONTHS */
-				n.id = p.nuts_id
-				AND v.indicator_id = 59
-				AND v.profile_id = p.id
-				AND v.dataset_id = 11) as q3, 
-
-				(SELECT DISTINCT(n.literal_id) as country_name, n.country_code as country_code, (ROUND(v.value*100)) as absence
-				FROM nuts n, profile p, value v
-				WHERE
-			/* MORE THAN 15 DAYS OF ABSENCE */
-				n.id = p.nuts_id
-				AND v.indicator_id = 60
-				AND v.profile_id = p.id
-				AND v.dataset_id = 10) as q4, 
-
-				(SELECT DISTINCT(n.literal_id) as country_name, n.country_code as country_code, (ROUND(v.value*100)) as sick_at_work
-				FROM nuts n, profile p, value v
-				WHERE
-
-			/* SICK AT WORK */
-				n.id = p.nuts_id
-				AND v.indicator_id = 61
-				AND v.profile_id = p.id
-				AND v.dataset_id = 10) as q5,
-
-				(SELECT DISTINCT(n.literal_id) as country_name, n.country_code as country_code, (ROUND(v.value*100)) as job_till_60
-				FROM nuts n, profile p, value v
-				WHERE
-
-			/* BE ABLE TO DO CURRENT JOB TIL 60 YEARS OLD */
-				n.id = p.nuts_id
-				AND v.indicator_id = 62
-				AND v.profile_id = p.id
-				AND v.dataset_id = 10) as q6
-			where 
-			q1.country_name = q2.country_name
-			AND q2.country_name = q3.country_name
-			AND q3.country_name = q4.country_name
-			AND q4.country_name = q5.country_name
-			AND q5.country_name = q6.country_name
-
-			AND q1.country_code = q2.country_code
-			AND q2.country_code = q3.country_code
-			AND q3.country_code = q4.country_code
-			AND q4.country_code = q5.country_code
-			AND q5.country_code = q6.country_code
-			ORDER BY q1.country_name ASC;
 	    </Query>
 	</DataAccess>
 
@@ -325,10 +255,9 @@
 	    	<Parameter default="64" name="pIndicator" type="Numeric"/>
 	    </Parameters>
 	    <Query>
-            SELECT t.text as Answer, IF(n.name = 'European Union', n.country_code, CONCAT(n.name, " (", n.country_code, ")")) as Country, v.value*100 as Value
+            SELECT t.text as Answer, IF(n.name = 'European Union', n.country_code, IF(n.name = 'Macedonia, The former Yugoslav Rep. of', CONCAT('Macedonia', " (", n.country_code, ")"), CONCAT(n.name, " (", n.country_code, ")"))) as Country, v.value*100 as Value
 			FROM nuts n, profile p, value v, dataset d, translation t, split_answer sa
 			WHERE n.id = p.nuts_id
-			AND n.country_code NOT IN('AL', 'ME', 'MK', 'RS', 'TR')
 			AND v.indicator_id = ${pIndicator}
 			AND v.profile_id = p.id
 			AND p.answer_id = sa.id
@@ -350,10 +279,9 @@
 	    	<Parameter default="64" name="pIndicator" type="Numeric"/>
 	    </Parameters>
 	    <Query>
-            SELECT t.text as Answer, IF(n.name = 'European Union', n.country_code, CONCAT(n.name, " (", n.country_code, ")")) as Country, v.value*100 as Value
+            SELECT t.text as Answer, IF(n.name = 'European Union', n.country_code, IF(n.name = 'Macedonia, The former Yugoslav Rep. of', CONCAT('Macedonia', " (", n.country_code, ")"), CONCAT(n.name, " (", n.country_code, ")"))) as Country, v.value*100 as Value
 			FROM nuts n, profile p, value v, dataset d, translation t, split_answer sa
 			WHERE n.id = p.nuts_id
-			AND n.country_code NOT IN('AL', 'ME', 'MK', 'RS', 'TR')
 			AND v.indicator_id = ${pIndicator}
 			AND v.profile_id = p.id
 			AND p.answer_id = sa.id
@@ -613,7 +541,6 @@
             SELECT t.text as Answer, IF(n.name = 'European Union', n.country_code, IF(n.name = 'Macedonia, The former Yugoslav Rep. of', CONCAT('Macedonia', " (", n.country_code, ")"), CONCAT(n.name, " (", n.country_code, ")"))) as Country, v.value*100 as Value
             FROM nuts n, profile p, value v, dataset d, translation t, split_answer sa
             WHERE n.id = p.nuts_id
-            AND n.country_code NOT IN('AL', 'ME', 'MK', 'RS', 'TR')
             AND v.indicator_id = ${pIndicator}
             AND v.profile_id = p.id
             AND p.answer_id = sa.id
@@ -638,7 +565,6 @@
             SELECT t.text as Answer, IF(n.name = 'European Union', n.country_code, IF(n.name = 'Macedonia, The former Yugoslav Rep. of', CONCAT('Macedonia', " (", n.country_code, ")"), CONCAT(n.name, " (", n.country_code, ")"))) as Country, v.value*100 as Value
             FROM nuts n, profile p, value v, dataset d, translation t, split_answer sa
             WHERE n.id = p.nuts_id
-            AND n.country_code NOT IN('AL', 'ME', 'MK', 'RS', 'TR')
             AND v.indicator_id = ${pIndicator}
             AND v.profile_id = p.id
             AND p.answer_id = sa.id
@@ -670,7 +596,7 @@
             AND t.language = 'EN'
             AND d.id = v.dataset_id
             AND d.id = ${pDataset}
-            ORDER BY Answer ASC, FIELD('EU28', n.country_code) DESC, FIELD(n.country_code, 'CH', 'IS', 'NO'), n.country_code ASC, Value DESC;
+            ORDER BY Answer DESC, FIELD('EU28', n.country_code) DESC, FIELD(n.country_code, 'CH', 'IS', 'NO'), n.country_code ASC, Value DESC;
         </Query>
     </DataAccess>
 
@@ -892,7 +818,7 @@
             AND t.language = 'EN'
             AND d.id = v.dataset_id
             AND d.id = ${pDataset}
-            ORDER BY Answer ASC, FIELD('EU28', n.country_code) DESC, FIELD(n.country_code, 'CH', 'IS', 'NO'), n.country_code ASC, Value DESC;
+            ORDER BY Answer DESC, FIELD('EU28', n.country_code) DESC, FIELD(n.country_code, 'CH', 'IS', 'NO'), n.country_code ASC, Value DESC;
         </Query>
     </DataAccess>
 
@@ -1050,26 +976,6 @@
         </Query>
     </DataAccess>
 
-    <!-- PHYSICAL RISK || ALL COUNTRIES FOR RISKS INVOLVED WITH WORK EUROFOUND -->
-    <DataAccess access="public" connection="dvt_conn" id="getEurofoundRisksCountries" type="sql">
-        <Cache duration="3600" enabled="true" />
-        <Columns />
-        <Parameters>
-            <Parameter default="10" name="pDataset" type="Numeric"/>
-        </Parameters>
-        <Query>
-            SELECT DISTINCT(n.literal_id), n.country_code
-	      	FROM nuts n, profile p, value v, dataset d
-			where n.id = p.nuts_id
-			AND v.profile_id = p.id
-			AND d.id = v.dataset_id
-            AND d.id = ${pDataset}
-			AND v.indicator_id IN (90, 93, 92, 94, 91)
-			AND n.country_code NOT IN ('EU28')
-			ORDER BY n.country_code ASC;
-        </Query>
-   	</DataAccess>
-
    	<!-- PHYSICAL RISK || ALL Eurofound RISK INVOLVED WITH WORK DATA EU28 DATA -->
     <DataAccess access="public" connection="dvt_conn" id="getEU28RisksInvolvedEurofoundData" type="sql">
         <Cache duration="3600" enabled="true" />
@@ -1110,27 +1016,6 @@
 			AND d.id = v.dataset_id
 			AND d.id = ${pDataset}
 			AND n.country_code = ${pCountry};
-        </Query>
-   	</DataAccess>
-
-   	<!-- PHYSICAL RISK || ALL COUNTRIES FOR RISKS INVOLVED WITH WORK ESENER -->
-    <DataAccess access="public" connection="dvt_conn" id="getESENERRisksCountries" type="sql">
-        <Cache duration="3600" enabled="true" />
-        <Columns />
-        <Parameters>
-            <Parameter default="10" name="pDataset" type="Numeric"/>
-        </Parameters>
-        <Query>
-            SELECT DISTINCT(n.literal_id), n.country_code
-	      	FROM nuts n, profile p, value v, dataset d
-			where n.id = p.nuts_id
-			AND n.country_code NOT IN('AL', 'ME', 'MK', 'RS', 'TR')
-			AND v.profile_id = p.id
-			AND d.id = v.dataset_id
-            AND d.id = ${pDataset}
-			AND v.indicator_id IN (110, 111, 112)
-			AND n.country_code NOT IN ('EU28')
-			ORDER BY n.country_code ASC;
         </Query>
    	</DataAccess>
 
@@ -1206,6 +1091,7 @@
             SELECT DISTINCT(n.literal_id), n.country_code
 	      	FROM nuts n, profile p, value v, dataset d
 			where n.id = p.nuts_id
+			AND n.country_code NOT IN('AL', 'ME', 'MK', 'RS', 'TR')
 			AND v.profile_id = p.id
 			AND d.id = v.dataset_id
             AND d.id = ${pDataset}
@@ -1279,6 +1165,7 @@
             SELECT t.text as Answer, IF(n.name = 'European Union', n.country_code, CONCAT(n.name, " (", n.country_code, ")")) as Country, v.value*100 as Value
             FROM nuts n, profile p, value v, dataset d, translation t, split_answer sa
             WHERE n.id = p.nuts_id
+            AND n.country_code NOT IN('AL', 'ME', 'MK', 'RS', 'TR')            
             AND v.indicator_id = ${pIndicator}
             AND v.profile_id = p.id
             AND p.answer_id = sa.id
@@ -1303,6 +1190,7 @@
             SELECT t.text as Answer, IF(n.name = 'European Union', n.country_code, CONCAT(n.name, " (", n.country_code, ")")) as Country, v.value*100 as Value
             FROM nuts n, profile p, value v, dataset d, translation t, split_answer sa
             WHERE n.id = p.nuts_id
+            AND n.country_code NOT IN('AL', 'ME', 'MK', 'RS', 'TR')
             AND v.indicator_id = ${pIndicator}
             AND v.profile_id = p.id
             AND p.answer_id = sa.id
@@ -1327,6 +1215,7 @@
             SELECT t.text as Answer, IF(n.name = 'European Union', n.country_code, CONCAT(n.name, " (", n.country_code, ")")) as Country, v.value*100 as Value
             FROM nuts n, profile p, value v, dataset d, translation t, split_answer sa
             WHERE n.id = p.nuts_id
+            AND n.country_code NOT IN('AL', 'ME', 'MK', 'RS', 'TR')
             AND v.indicator_id = ${pIndicator}
             AND v.profile_id = p.id
             AND p.answer_id = sa.id
@@ -1351,6 +1240,7 @@
             SELECT t.text as Answer, IF(n.name = 'European Union', n.country_code, CONCAT(n.name, " (", n.country_code, ")")) as Country, v.value*100 as Value
             FROM nuts n, profile p, value v, dataset d, translation t, split_answer sa
             WHERE n.id = p.nuts_id
+            AND n.country_code NOT IN('AL', 'ME', 'MK', 'RS', 'TR')
             AND v.indicator_id = ${pIndicator}
             AND v.profile_id = p.id
             AND p.answer_id = sa.id
@@ -1364,12 +1254,11 @@
     </DataAccess>
 
     <!-- PHYSICAL RISK || ALL COUNTRIES FOR VIBRATION, LOUD NOISE AVAILABLE -->
-    <DataAccess access="public" connection="dvt_conn" id="getWorkerInvolvementCountries" type="sql">
+    <DataAccess access="public" connection="dvt_conn" id="getWorkerInvolvementEurofoundCountries" type="sql">
         <Cache duration="3600" enabled="true" />
         <Columns />
         <Parameters>
-            <Parameter default="10" name="pDataset1" type="Numeric"/>
-            <Parameter default="10" name="pDataset2" type="Numeric"/>
+            <Parameter default="10" name="pDataset" type="Numeric"/>
         </Parameters>
         <Query>
             SELECT DISTINCT(n.literal_id), n.country_code
@@ -1377,8 +1266,29 @@
 			where n.id = p.nuts_id
 			AND v.profile_id = p.id
 			AND d.id = v.dataset_id
-            AND d.id IN (${pDataset1},${pDataset2})
-			AND v.indicator_id IN (75,95,96,101,102,123,124,125)
+            AND d.id = ${pDataset}
+			AND v.indicator_id IN (75,95,96)
+			AND n.country_code NOT IN ('EU28')
+			ORDER BY n.country_code ASC;
+        </Query>
+   	</DataAccess>
+
+   	<!-- PHYSICAL RISK || ALL COUNTRIES FOR VIBRATION, LOUD NOISE AVAILABLE -->
+    <DataAccess access="public" connection="dvt_conn" id="getWorkerInvolvementESENERCountries" type="sql">
+        <Cache duration="3600" enabled="true" />
+        <Columns />
+        <Parameters>
+            <Parameter default="10" name="pDataset" type="Numeric"/>
+        </Parameters>
+        <Query>
+            SELECT DISTINCT(n.literal_id), n.country_code
+	      	FROM nuts n, profile p, value v, dataset d
+			where n.id = p.nuts_id
+			AND n.country_code NOT IN('AL', 'ME', 'MK', 'RS', 'TR')
+			AND v.profile_id = p.id
+			AND d.id = v.dataset_id
+            AND d.id = ${pDataset}
+			AND v.indicator_id IN (101,102,123,124,125)
 			AND n.country_code NOT IN ('EU28')
 			ORDER BY n.country_code ASC;
         </Query>

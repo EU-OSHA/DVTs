@@ -66,24 +66,26 @@
 	    <Columns/>
 	    <Parameters>
 	      <Parameter default="15" name="pDataset" type="Numeric" />
-	      <Parameter default="126" name="pIndicator" type="Numeric" />
-	      <Parameter default="AT" name="pCountry" type="String" />
+	      <Parameter default="126" name="pIndicator" type="Numeric"/>
+	      <Parameter default="AT" name="pCountry1" type="String" />
+	      <Parameter default="BE" name="pCountry2" type="String" />
+	      <Parameter default="1" name="pAnswer" type="Numeric"/>
 	    </Parameters>
 	    <Query>
 	      	SELECT t.text as Answer, n.country_code as Country, v.value*100 as Value
 			FROM nuts n, profile p, value v, dataset d, translation t, split_answer sa
 			WHERE n.id = p.nuts_id
-			AND n.country_code = ${pCountry}
+			AND n.country_code IN (${pCountry1}, ${pCountry2}, 'EU28')
 			AND v.indicator_id = ${pIndicator}
 			AND v.profile_id = p.id
 			AND p.answer_id = sa.id
 			AND p.activity_sector_id = 14
-			AND sa.id IN (1, 2)
+			AND sa.id = ${pAnswer}
 			AND sa.literal_id = t.literal_id
 			AND t.language = 'EN'
 			AND d.id = v.dataset_id
 			AND d.id = ${pDataset}
-			ORDER BY Answer DESC;
+			ORDER BY FIELD (n.country_code, 'EU28', ${pCountry2}, ${pCountry1} );
 	    </Query>
 	</DataAccess>
 
