@@ -142,7 +142,7 @@
 	    	<Parameter default="10" name="pDataset1" type="Numeric"/>
 	    	<Parameter default="11" name="pDataset2" type="Numeric"/>
 	    </Parameters>
-	    <Query>
+	    <!--<Query>
 			SELECT DISTINCT(n.literal_id) as country_name, n.country_code as country_code, (ROUND(v.value*100)) as satisfaction_working, ( ROUND(v2.value*100)) as health_negative, 
 			(ROUND(v3.value*100)) as health_problem, (ROUND(v4.value*100)) as absence, (ROUND(v5.value*100)) as sick_at_work, (ROUND(v6.value*100)) as job_till_60
 			FROM nuts n, profile p, profile p2, profile p3, profile p4, profile p5, profile p6, value v, value v2, value v3, value v4, value v5, value v6, dataset d
@@ -180,6 +180,76 @@
 			/* COMMON */
 			AND d.id = 10
 			ORDER BY country_name ASC;
+	    </Query>-->
+	    <Query>
+	    	select q1.country_name, q1.country_code, q1.satisfaction_working, q2.health_negative, q3.health_problem, q4.absence, q5.sick_at_work, q6.job_till_60 from 
+			(SELECT DISTINCT(n.literal_id) as country_name, n.country_code as country_code, (ROUND(v.value*100)) as satisfaction_working
+				FROM nuts n, profile p, value v
+				WHERE
+				/* SATISFACTION WITH WORKING CONDITIONS */
+				n.id = p.nuts_id
+				AND v.indicator_id = 57
+				AND v.profile_id = p.id
+				AND v.dataset_id = 10) as q1, 
+				(SELECT DISTINCT(n.literal_id) as country_name, n.country_code as country_code, (ROUND(v.value*100)) as health_negative
+				FROM nuts n, profile p, value v
+				WHERE
+			/* HEALTH NEGATIVE AFFECTION */
+				n.id = p.nuts_id
+				AND v.indicator_id = 58
+				AND v.profile_id = p.id
+				AND v.dataset_id = 10) as q2, 
+
+				(SELECT DISTINCT(n.literal_id) as country_name, n.country_code as country_code, (ROUND(v.value*100)) as health_problem
+				FROM nuts n, profile p, value v
+				WHERE
+			/* HEALTH PROBLEMS IN LAST 12 MONTHS */
+				n.id = p.nuts_id
+				AND v.indicator_id = 59
+				AND v.profile_id = p.id
+				AND v.dataset_id = 11) as q3, 
+
+				(SELECT DISTINCT(n.literal_id) as country_name, n.country_code as country_code, (ROUND(v.value*100)) as absence
+				FROM nuts n, profile p, value v
+				WHERE
+			/* MORE THAN 15 DAYS OF ABSENCE */
+				n.id = p.nuts_id
+				AND v.indicator_id = 60
+				AND v.profile_id = p.id
+				AND v.dataset_id = 10) as q4, 
+
+				(SELECT DISTINCT(n.literal_id) as country_name, n.country_code as country_code, (ROUND(v.value*100)) as sick_at_work
+				FROM nuts n, profile p, value v
+				WHERE
+
+			/* SICK AT WORK */
+				n.id = p.nuts_id
+				AND v.indicator_id = 61
+				AND v.profile_id = p.id
+				AND v.dataset_id = 10) as q5,
+
+				(SELECT DISTINCT(n.literal_id) as country_name, n.country_code as country_code, (ROUND(v.value*100)) as job_till_60
+				FROM nuts n, profile p, value v
+				WHERE
+
+			/* BE ABLE TO DO CURRENT JOB TIL 60 YEARS OLD */
+				n.id = p.nuts_id
+				AND v.indicator_id = 62
+				AND v.profile_id = p.id
+				AND v.dataset_id = 10) as q6
+			where 
+			q1.country_name = q2.country_name
+			AND q2.country_name = q3.country_name
+			AND q3.country_name = q4.country_name
+			AND q4.country_name = q5.country_name
+			AND q5.country_name = q6.country_name
+
+			AND q1.country_code = q2.country_code
+			AND q2.country_code = q3.country_code
+			AND q3.country_code = q4.country_code
+			AND q4.country_code = q5.country_code
+			AND q5.country_code = q6.country_code
+			ORDER BY q1.country_name ASC;
 	    </Query>
 	</DataAccess>
 

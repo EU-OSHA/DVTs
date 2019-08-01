@@ -52,13 +52,23 @@ define(function (require) {
     $scope.axisSize = resolution > 768 ? 150 : (resolution > 480 ? 160 : 120);
     $scope.axisSizeSmaller = resolution > 768 ? 150 : (resolution > 480 ? 110 : 100);
 
-    $(window).on("resize",function(e){
+    /*$(window).on("resize",function(e){
       e.preventDefault();
       $log.warn(resolution);
       if(resolution != screen.width){
         $log.warn('Resolución ha cambiado!');
         resolution = screen.width;
         $state.reload();
+      }
+    });*/
+
+    $(window).on("resize",function(e){
+      if(screen.width != resolution){
+        resolution = screen.width;
+        //$log.warn('Resolucion ha cambiado');
+        $state.reload();
+      }else{
+        //$log.warn('Resolucion no ha cambiado');
       }
     });
 

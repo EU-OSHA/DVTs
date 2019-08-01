@@ -101,9 +101,19 @@ define(function (require) {
     $scope.color3 = resolution > 768 ? dvtUtils.getAccidentsColors(4) : dvtUtils.getColorCountry(1);
     $scope.color4 = resolution > 768 ? dvtUtils.getColorCountry(1) : dvtUtils.getAccidentsColors(4);
 
-    $(window).on("resize",function(e){
+    /*$(window).on("resize",function(e){
       resolution = screen.width;
       $state.reload();
+    });*/
+
+    $(window).on("resize",function(e){
+      if(screen.width != resolution){
+        resolution = screen.width;
+        //$log.warn('Resolucion ha cambiado');
+        $state.reload();
+      }else{
+        //$log.warn('Resolucion no ha cambiado');
+      }
     });
 
     $scope.dashboard = {};

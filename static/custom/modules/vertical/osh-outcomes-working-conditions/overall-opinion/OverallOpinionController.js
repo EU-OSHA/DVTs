@@ -56,9 +56,19 @@ define(function (require) {
     $scope.color4 = resolution > 768 ? dvtUtils.getColorCountry(1) : dvtUtils.getColorCountry(3);
     $scope.axisWordBreak = resolution > 768 ? 1 : '';
 
-    $(window).on("resize",function(e){
+    /*$(window).on("resize",function(e){
       resolution = screen.width;
       $state.reload();
+    });*/
+
+    $(window).on("resize",function(e){
+      if(screen.width != resolution){
+        resolution = screen.width;
+        //$log.warn('Resolucion ha cambiado');
+        $state.reload();
+      }else{
+        //$log.warn('Resolucion no ha cambiado');
+      }
     });
 
     // Country parameters
