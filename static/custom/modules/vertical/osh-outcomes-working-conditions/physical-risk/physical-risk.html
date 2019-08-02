@@ -71,6 +71,7 @@
               mesh-size="30" draw-labels="true"
               datasource-and-dates="[datasetEurofound,70]">
             </dvt-radar-chart>
+            <button class="btn-default btn-main-color" data-ng-click="exportData(stories[0].promises.story1, i18nLiterals.L20654, 1)">Export data</button>
           </div>
         </div>
       </div>
@@ -233,6 +234,7 @@
               mesh-size="30" draw-labels="true"
               datasource-and-dates="[datasetEurofound,90]">
             </dvt-radar-chart>
+            <button class="btn-default btn-main-color" data-ng-click="exportData(stories[1].promises.story1, i18nLiterals.L20656, 2)">Export data</button>
           </div>
           <div class="chart--block" ng-hide="pSubIndicator != 'esener'">
             <dvt-radar-chart
@@ -246,6 +248,7 @@
               mesh-size="30" draw-labels="true"
               datasource-and-dates="[datasetESENER,110]">
             </dvt-radar-chart>
+            <button class="btn-default btn-main-color" data-ng-click="exportData(stories[1].promises.story2, i18nLiterals.L20656, 3)">Export data</button>
           </div>
         </div>
       </div>

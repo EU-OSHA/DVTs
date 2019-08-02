@@ -205,6 +205,124 @@ define(function(require){
            //exportComponent.exportData();
         };
 
+        var exportRadarChartData = function(promises, titleChart, id){
+            $log.warn(promises);
+            var list = [];
+
+            Promise.all([promises[0], promises[1], promises[2]]).then(function(res)
+            {
+                var row = {};
+                list.push(res[0]);
+                list.push(res[1]);
+                list.push(res[2]);
+
+                /*res[0].data.resultset.map(function (elem) 
+                {
+                    list.push({
+                        indicator: elem[0],
+                        country: elem[1],
+                        value: row[2]
+                    });
+                });
+
+                res[1].data.resultset.map(function (elem) 
+                {
+                    list.push({
+                        indicator: elem[0],
+                        country: elem[1],
+                        value: row[2]
+                    });
+                });
+
+                res[2].data.resultset.map(function (elem) 
+                {
+                    list.push({
+                        indicator: elem[0],
+                        country: elem[1],
+                        value: row[2]
+                    });
+                });*/
+
+                var title = "chart-data";
+                if (titleChart != "")
+                {
+                    title = (titleChart);
+                }
+                title=title.replace(/;/g," ").replace(/,/g, " ").replace(/ +/g, "_");
+                var exportDefinition = {
+                    type: "ExportPopupComponent",
+                    dataExportAttachmentName: title
+                };
+
+                var component = '' + id;
+                exportDefinition.dataExportType = "csv";
+                exportDefinition.dataComponent = list;
+
+                var exportComponent = new ExportPopupComponent(exportDefinition);
+
+                //exportComponent.dashboard = dashboard.dashboard;
+
+                $log.warn(exportComponent);
+
+                var columns="";
+                var numberColumns=exportComponent.dataComponent[0].data.metadata.length;
+
+
+                for(i=0;i<numberColumns;i++) {
+                    columns+=exportComponent.dataComponent[0].data.metadata[i].colName+";"
+                }
+                columns=columns.substring(0, columns.length - 1);
+
+
+                var data="";
+
+                for(j=0;j<exportComponent.dataComponent.length;j++){
+                    for(i=0;i<exportComponent.dataComponent[j].data.resultset.length;i++) {
+
+                        var dataTMP=exportComponent.dataComponent[j].data.resultset[i];
+
+                        for(a=0;a<dataTMP.length;a++) {
+
+                            var value=exportComponent.dataComponent[j].data.resultset[i][a];
+
+                            if(!isNaN(value) && (value<-1 || (value>-1 && value<0))) {
+                                data+=Math.abs(value)+";";
+                            } else {
+                                if ($.isNumeric(value) && (value%1) > 0)
+                                {
+                                    //All decimals
+                                    //value = value;
+                                    //2 decimals without rounding
+                                    //value = Math.floor(value * 100) / 100;
+                                    //2 decimals rounding
+                                    //value = Math.ceil(value*10)/10;
+                                    value = round(value,1);
+                                }
+                                data+=value+";";
+                            }
+                        }
+                        data=data.substring(0, data.length - 1)+"\n";
+                    }
+                }
+
+                // Insert empty line and line with how to visualize it in Excel
+                data += "\n\n";
+                data += i18n.L20387;
+
+                var downloadCSV = function() {
+                    var BOM = "\uFEFF";
+                    var csv = BOM + columns+"\n"+data;
+                   // var csv =columns+"\n"+data;
+
+                    var blob = new Blob([ csv ], { type: "text/csv;charset=UTF-8" });
+                    saveAs(blob, title+".csv");
+                };
+
+                downloadCSV();
+               //exportComponent.exportData();
+            });
+        };
+
         function round(value, precision) {
             var multiplier = Math.pow(10, precision || 0);
             return Math.round(value * multiplier) / multiplier;
@@ -212,7 +330,8 @@ define(function(require){
 
         return{
             exportImageAction: exportImage,
-            exportDataAction: exportData
+            exportDataAction: exportData,
+            exportRadarData: exportRadarChartData
         }
     };
 
