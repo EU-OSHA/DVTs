@@ -1349,7 +1349,7 @@
             <Parameter default="AT" name="pCountry" type="String"/>
         </Parameters>
         <Query>
-			(SELECT t.text as Indicator, ROUND(v.value*100,1) as Value, n.country_code as Country
+			(SELECT t.text as Indicator, if(v.value*100 IS NULL, 0, ROUND(v.value*100, 1)) as Value, IF(n.name = 'European Union', n.country_code, CONCAT(n.name, " (", n.country_code, ")")) as Country
 			FROM nuts n, profile p, value v, dataset d, indicator i, translation t, split_answer sa
 			WHERE n.id = p.nuts_id
 			AND v.indicator_id IN (101, 102, 123)
@@ -1365,7 +1365,7 @@
 			AND d.id = 15
 			AND n.country_code = ${pCountry}
 			)UNION(
-			SELECT t.text as Indicator, SUM(ROUND(v.value*100,1)) as Value, n.country_code as Country
+			SELECT t.text as Indicator, SUM(ROUND(v.value*100,1)) as Value, IF(n.name = 'European Union', n.country_code, CONCAT(n.name, " (", n.country_code, ")")) as Country
 			FROM nuts n, profile p, value v, dataset d, indicator i, translation t, split_answer sa
 			WHERE n.id = p.nuts_id
 			AND v.indicator_id = 124
@@ -1381,7 +1381,7 @@
 			AND n.country_code = ${pCountry}
 			Group by Indicator
 			)UNION(
-			SELECT t.text as Indicator, SUM(ROUND(v.value*100,1)) as Value, n.country_code as Country
+			SELECT t.text as Indicator, SUM(ROUND(v.value*100,1)) as Value, IF(n.name = 'European Union', n.country_code, CONCAT(n.name, " (", n.country_code, ")")) as Country
 			FROM nuts n, profile p, value v, dataset d, indicator i, translation t, split_answer sa
 			WHERE n.id = p.nuts_id
 			AND v.indicator_id = 125
@@ -1468,7 +1468,7 @@
             <Parameter default="AT" name="pCountry" type="String"/>
         </Parameters>
         <Query>
-            SELECT t.text as Indicator, ROUND(v.value*100,1) as Value, n.country_code as Country
+            SELECT t.text as Indicator, ROUND(v.value*100,1) as Value, IF(n.name = 'European Union', n.country_code, CONCAT(n.name, " (", n.country_code, ")")) as Country
 			FROM nuts n, profile p, value v, dataset d, indicator i, translation t
 			WHERE n.id = p.nuts_id
 			AND v.indicator_id IN (95,96,75)
