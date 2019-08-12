@@ -41,7 +41,7 @@ define(function (require) {
     var resolution = screen.width;
 
     $scope.orientation = resolution > 768 ? "vertical" : "horizontal";
-    $scope.axisSize = resolution > 768 ? 150 : 160;
+    $scope.axisSize = resolution > 768 ? 150 : 150;
     $scope.angle = resolution > 768 ? 1 : 0;
     $scope.horizontalHeight = resolution > 768 ? 470 : 770;
     $scope.axisFixedMin = resolution > 768 ? 60 : 0;
