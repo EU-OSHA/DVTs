@@ -7,7 +7,7 @@
         <p data-ng-bind="i18nLiterals.L20577"></p>
         <span data-ng-bind="i18nLiterals.L20701"></span> <span data-ng-bind="i18nLiterals.L20704"></span> <span><a data-ng-bind="i18nLiterals.L20705" ui-sref="about-tool"></a></span>
       </div>
-      <div class="icon--advice working-conditons-icon hide-mobile col-sm-4 col-md-4"></div>
+      <div class="icon--advice overall-opinion-icon hide-mobile col-sm-4 col-md-4"></div>
     </div>
   </section>
 
@@ -16,10 +16,10 @@
       <label class="submenu-indicator" data-ng-click ="openIndicatorsList()">Select the indicator</label>
       <ul class="submenu--items--wrapper">
         <!-- INDICATORS -->
-        <li data-ng-class="{'active' : 'job-satisfaction' == pIndicator }" class="submenu--item">
+        <li data-ng-class="{'active' : 'job-satisfaction' == pIndicator }" data-ng-click ="openIndicatorsList($event)" class="submenu--item">
           <a href="" data-ng-click="changeIndicator($event,'job-satisfaction');" data-ng-bind="i18nLiterals.L322" data-ng-class="{'active' : 'job-satisfaction' == pIndicator }" ></a>
         </li>
-        <li data-ng-class="{'active' : 'health-at-risk' == pIndicator }" class="submenu--item">
+        <li data-ng-class="{'active' : 'health-at-risk' == pIndicator }" data-ng-click ="openIndicatorsList($event)" class="submenu--item">
           <a href="" data-ng-click="changeIndicator($event,'health-at-risk');" data-ng-bind="i18nLiterals.L323" data-ng-class="{'active' : 'health-at-risk' == pIndicator }" ></a>
         </li>
       </ul>
@@ -107,8 +107,8 @@
             axis-fixed-max="40" step="{{step}}"
             params="[['pDataset', datasetEurofound], ['pIndicator', 66], ['pCountry1', pCountry1], ['pCountry2', pCountry2]]"
             color-role="series" colors="[stories[1].color2, stories[1].color1, stories[1].color3]"
-            chart-title="{{i18nLiterals.L323}}" id="2"
-            axis-label-font="12px 'OpenSans'"
+            chart-title="{{i18nLiterals.L323}}" long-title="{{i18nLiterals.L323}} - {{i18nLiterals.L20648}}" id="2"
+            axis-label-font="12px 'OpenSans-bold'"
             plots="healthBySector"
             values-visible="true"
             label-text-align="alignment"
@@ -134,8 +134,8 @@
               axis-fixed-max="40" step="{{step}}"
               params="[['pDataset', datasetEurofound], ['pIndicator', 66], ['pCountry1', pCountry1], ['pCountry2', pCountry2]]"
               color-role="series" colors="[stories[1].color2, stories[1].color1, stories[1].color3]"
-              chart-title="{{i18nLiterals.L323}}" id="3"
-              axis-label-font="12px 'OpenSans'"
+              chart-title="{{i18nLiterals.L323}}" long-title="{{i18nLiterals.L323}} - {{i18nLiterals.L20650}}" id="3"
+              axis-label-font="12px 'OpenSans-bold'"
               plots="healthBySector"
               label-text-align="alignment"
               values-visible="true"
@@ -161,8 +161,8 @@
               axis-fixed-max="40" step="{{step}}"
               params="[['pDataset', datasetEurofound], ['pIndicator', 66], ['pCountry1', pCountry1], ['pCountry2', pCountry2]]"
               color-role="series" colors="[stories[2].color2, stories[2].color1, stories[2].color3]"
-              chart-title="{{i18nLiterals.L323}}" id="4"
-              axis-label-font="12px 'OpenSans'"
+              chart-title="{{i18nLiterals.L323}}" long-title="{{i18nLiterals.L323}} - {{i18nLiterals.L20649}}" id="4"
+              axis-label-font="12px 'OpenSans-bold'"
               plots="healthByGender"
               label-text-align="alignment"
               values-visible="true"

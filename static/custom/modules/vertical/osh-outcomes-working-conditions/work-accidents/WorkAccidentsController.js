@@ -50,15 +50,25 @@ define(function (require) {
 
     $scope.orientation = resolution > 768 ? "vertical" : "horizontal";
     $scope.axisSize = resolution > 768 ? 150 : (resolution > 480 ? 160 : 120);
-    $scope.axisSizeSmaller = resolution > 768 ? 150 : (resolution > 480 ? 110 : 50);
+    $scope.axisSizeSmaller = resolution > 768 ? 150 : (resolution > 480 ? 110 : 100);
 
-    $(window).on("resize",function(e){
+    /*$(window).on("resize",function(e){
       e.preventDefault();
       $log.warn(resolution);
       if(resolution != screen.width){
         $log.warn('Resolución ha cambiado!');
         resolution = screen.width;
         $state.reload();
+      }
+    });*/
+
+    $(window).on("resize",function(e){
+      if(screen.width != resolution){
+        resolution = screen.width;
+        //$log.warn('Resolucion ha cambiado');
+        $state.reload();
+      }else{
+        //$log.warn('Resolucion no ha cambiado');
       }
     });
 
@@ -223,17 +233,27 @@ define(function (require) {
       // Open indicators list like a select element
 
 
-      /*$(window).on("resize",function(e){
-        resolution = screen.width;
-      });*/
+      $(window).on("resize",function(e){
+        resolution = $(window).width();
+      });
+        resolution = $(window).width();
 
-      $scope.openIndicatorsList = function() {
+      $scope.openIndicatorsList = function(e) {
         if( resolution < 990 ){
-          angular.element('.submenu--items--wrapper').toggleClass('open-list');
-          angular.element('.submenu-indicator').toggleClass('open-list');
-        } else {
-          angular.element('.submenu--items--wrapper').removeClass('open-list');
-          angular.element('.submenu-indicator').removeClass('open-list');
+          //var parentTag = e.target.offsetParent.nextSibling.parentNode.className;     
+          var parentNode = e.target.parentElement.nodeName;          
+          if( parentNode == "LI"){
+            var parentTag = e.target.parentElement.parentElement.className;
+          } else {
+            var parentTag = e.target.parentElement.className;
+          }
+
+          if( parentTag.indexOf('open-list') < 0 ){
+            angular.element('.submenu--items--wrapper').addClass('open-list');
+          } else {
+
+            angular.element('.submenu--items--wrapper').removeClass('open-list');
+          }
         }
       }
 
@@ -246,7 +266,7 @@ define(function (require) {
 
 
       $scope.changeIndicator = function(e,indicator) {
-        $scope.openIndicatorsList();
+        //$scope.openIndicatorsList(e);
         if ($state.current.name !== undefined) {
           $state.go($state.current.name, {
             pIndicator: indicator,

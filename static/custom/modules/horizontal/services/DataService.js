@@ -848,6 +848,32 @@ define(function () {
 
                 /**
                  * @ngdoc method
+                 * @name dvt.configModule.DataService#getEurofoundRisksCountries
+                 * @methodOf dvt.configModule.DataService
+                 * @description
+                 * Get eurofound risks involved with work indicator countries
+                 */
+                getEurofoundRisksCountries: function (pDataset) {
+                    var url = configService.getOshOutcomesWorkingConditionsDataPath() + "&dataAccessId=getEurofoundRisksCountries" + "&parampDataset=" + pDataset;
+                    $log.debug('getEurofoundRisksCountries url:' + url);
+                    return promise(url);
+                },
+
+                /**
+                 * @ngdoc method
+                 * @name dvt.configModule.DataService#getESENERRisksCountries
+                 * @methodOf dvt.configModule.DataService
+                 * @description
+                 * Get esener risks involved with work indicator countries
+                 */
+                getESENERRisksCountries: function (pDataset) {
+                    var url = configService.getOshOutcomesWorkingConditionsDataPath() + "&dataAccessId=getESENERRisksCountries" + "&parampDataset=" + pDataset;
+                    $log.debug('getESENERRisksCountries url:' + url);
+                    return promise(url);
+                },
+
+                /**
+                 * @ngdoc method
                  * @name dvt.configModule.DataService#getEU28RisksInvolvedEurofoundData
                  * @methodOf dvt.configModule.DataService
                  * @description

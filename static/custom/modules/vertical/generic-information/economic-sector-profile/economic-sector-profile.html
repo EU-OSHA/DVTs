@@ -83,8 +83,7 @@
               orientation="horizontal" axis-percent="1"
               axis-fixed-max="100" step="{{step.chart2}}"
               params="[['pIndicator','32'],['pCountry1', pCountry1],['pCountry2', pCountry2],['pDataset', datasetEurostat]]"
-              color-role="series" colors="[stories[1].color1, stories[1].color2, 
-              stories[1].color3, stories[1].color4, stories[1].color5, stories[1].color6, stories[1].color7]"
+              color-role="series" colors="[stories[1].color1, stories[1].color2, stories[1].color3, stories[1].color4, stories[1].color5, stories[1].color6, stories[1].color7]"
               chart-title="{{i18nLiterals.L289}}" id="2"
               stacked="1" plots="stories[1].plots"
               base-axis-band-size-ratio= "0.40"
@@ -123,7 +122,6 @@
               dimensions="stories[2].dimensions"
               label-text-align="stories[2].labelTextAlign"
               multiple-label-colors="true"
-              datasource-and-dates="[datasetEurostat,33]"
               legend="false"
               datasource-and-dates="[datasetEurostat,33]"
             ></dvt-bar-chart>
@@ -173,7 +171,7 @@
               axis-label-font="15px 'OpenSans-bold'"
               values-visible="true"
               values-font="14px 'OpenSans-bold'"
-              values-mask="{value}%"
+              values-mask="{value}"
               ortho-axis-visible="false"
               ortho-axis-grid="false"
               hoverable="false"

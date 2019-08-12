@@ -32,8 +32,21 @@ define(function (require) {
     var resolution = screen.width;
 
     $(window).on("resize",function(e){
-      resolution = screen.width;
-      anchorOffset();
+      //debugger;
+      /*$log.warn(e);
+      $log.warn("screen width: "+screen.width);
+      $log.warn("screen height: "+screen.height);
+      $log.warn(screen);
+      $log.warn("resolution: "+resolution);*/
+
+      if(screen.width != resolution){
+        resolution = screen.width;
+        anchorOffset();
+        //$log.warn('Resolucion ha cambiado');
+      }else{
+        //$log.warn('Resolucion no ha cambiado');
+      }
+      
     });
 
     anchorOffset();

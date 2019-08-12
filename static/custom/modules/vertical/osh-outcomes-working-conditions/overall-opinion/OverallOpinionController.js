@@ -56,9 +56,19 @@ define(function (require) {
     $scope.color4 = resolution > 768 ? dvtUtils.getColorCountry(1) : dvtUtils.getColorCountry(3);
     $scope.axisWordBreak = resolution > 768 ? 1 : '';
 
-    $(window).on("resize",function(e){
+    /*$(window).on("resize",function(e){
       resolution = screen.width;
       $state.reload();
+    });*/
+
+    $(window).on("resize",function(e){
+      if(screen.width != resolution){
+        resolution = screen.width;
+        //$log.warn('Resolucion ha cambiado');
+        $state.reload();
+      }else{
+        //$log.warn('Resolucion no ha cambiado');
+      }
     });
 
     // Country parameters
@@ -137,9 +147,9 @@ define(function (require) {
       }
     ];
 
-    $scope.healthBySector = angular.element(window).width() > 768 ? $scope.stories[1].plotsVertical : $scope.stories[1].plotsHorizontal;
-    $scope.alignment = angular.element(window).width() > 768 ? 'center' : 'left';
-    $scope.healthByGender = angular.element(window).width() > 768 ? $scope.stories[2].plotsVertical : $scope.stories[2].plotsHorizontal;
+    $scope.healthBySector = resolution > 768 ? $scope.stories[1].plotsVertical : $scope.stories[1].plotsHorizontal;
+    $scope.alignment = resolution > 768 ? 'center' : 'left';
+    $scope.healthByGender = resolution > 768 ? $scope.stories[2].plotsVertical : $scope.stories[2].plotsHorizontal;
     
     $scope.step = 20;
 
@@ -198,17 +208,31 @@ define(function (require) {
     /******************************END FILTERS************************************/
 
       // Open indicators list like a select element
-      $(window).on("resize",function(e){
-        resolution = screen.width;
-      });
 
-      $scope.openIndicatorsList = function() {
-        if( resolution < 990 ){
-          angular.element('.submenu--items--wrapper').toggleClass('open-list');
-          angular.element('.submenu-indicator').toggleClass('open-list');
-        } else {
-          angular.element('.submenu--items--wrapper').removeClass('open-list');
-          angular.element('.submenu-indicator').removeClass('open-list');
+      $(window).on("resize",function(e){
+        resolution = $(window).width();
+      });
+        resolution = $(window).width();
+
+      $scope.openIndicatorsList = function(e) {  
+
+        if( resolution <= 990 ){
+          //var parentTag = e.target.offsetParent.nextSibling.parentNode.className;          
+          var parentNode = e.target.parentElement.nodeName;          
+          if( parentNode == "LI"){
+            var parentTag = e.target.parentElement.parentElement.className;
+          } else {
+            var parentTag = e.target.parentElement.className;
+          }
+
+
+
+          if( parentTag.indexOf('open-list') < 0 ){
+            angular.element('.submenu--items--wrapper').addClass('open-list');
+          } else {
+
+            angular.element('.submenu--items--wrapper').removeClass('open-list');
+          }
         }
       }
 
@@ -219,8 +243,9 @@ define(function (require) {
         }
       });
 
+
       $scope.changeIndicator = function(e,indicator) {
-        $scope.openIndicatorsList();
+        //$scope.openIndicatorsList(e);
         if ($state.current.name !== undefined) {
           if(indicator == 'health-at-risk'){
             $state.go($state.current.name, {

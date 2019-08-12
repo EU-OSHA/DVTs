@@ -4,7 +4,7 @@
 
 @media (max-width: 990px) {
 
-	.regulation-page{
+	.regulation-page {
 		.submenu--block{
 			.submenu--items--wrapper{
 				//min-height: 7rem;
@@ -21,21 +21,26 @@
 						display: block;
 						padding: 1rem 0;
 						font-size: 2.4rem;
+	          &:hover{
+	            color: $orange;
+	            border-bottom: 0 !important;
+	          } 
 					}
 					&.active{
 						display: block;
 						a, a:hover, a:visited, a:focus{
 							color: $aquamarine;
 							border-bottom: 0;
-							&:after{
-								content: "\f078";
-								font: normal normal normal 14px/1 FontAwesome;
-								right: 1.5rem;
-								top: 1rem;
-								padding: 1rem;
-								position: absolute;
-							}
 						}		
+					}
+					&:after{
+						content: "\f078";
+						font: normal normal normal 14px/1 FontAwesome;
+						right: 1.5rem;
+						top: 1rem;
+						padding: 1rem;
+						position: absolute;
+				    z-index: 10;
 					}
 				}
 				&.open-list{
@@ -45,22 +50,23 @@
 							display: block;
 							a, a:hover, a:visited, a:focus{
 								border-bottom: 0;
-								&:after{
-									content: "";
-								}
 							}							
+						}
+						&:after{
+							content: "";
 						}
 						&:nth-child(1){
 							a{
 								border-bottom: 0;
-								&:after{
-									content: "\f077" !important;
-									font: normal normal normal 14px/1 FontAwesome;
-									right: 1.5rem;
-									top: 1rem;
-									padding: 1rem;
-									position: absolute;
-								}
+							}
+							&:after{
+								content: "\f077" !important;
+								font: normal normal normal 14px/1 FontAwesome;
+								right: 1.5rem;
+								top: 1rem;
+								padding: 1rem;
+								position: absolute;
+					    	z-index: 10;
 							}
 						}
 					}

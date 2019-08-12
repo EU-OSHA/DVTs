@@ -3,7 +3,7 @@
         "id": "home",
         "name":"<i class='fa fa-home' aria-hidden='true'></i> <span>Home</span>",
         "sref": "home",
-        "accesskey": "H",
+        "accesskey": "0",
         "tabindex":"1"
     },
     {
@@ -16,17 +16,20 @@
                 "id":"osh-authorities",
                 "name":"L22002",
                 "sref":"osh-authorities",
-                "accesskey":"C"
+                "tabindex":"3",
+                "accesskey":"1"
             },{
                 "id":"economic-sector-profile",
                 "name":"L22003",
                 "sref":"economic-sector-profile",
-                "accesskey":"C"
+                "tabindex":"4",
+                "accesskey":""
             },{
                 "id":"workforce-profile",
                 "name":"L22004",
                 "sref":"workforce-profile",
-                "accesskey":"C"
+                "tabindex":"5",
+                "accesskey":""
             }
         ]
 
@@ -35,25 +38,28 @@
         "id": "osh-steering",
         "name":"L22005",
         "target":"osh-steering",
-        "tabindex":"3",
+        "tabindex":"6",
         "levels":[
             {
                 "id":"regulation",
                 "name":"L22006",
                 "sref":"regulation",
-                "accesskey":"C"
+                "accesskey":"2",
+                "tabindex":"7"
             },
             {
                 "id":"national-strategies",
                 "name":"L22007",
                 "sref":"national-strategies",
-                "accesskey":"X"
+                "tabindex":"8",
+                "accesskey":""
             },
             {
                 "id":"social-dialogue",
                 "name":"L22008",
                 "sref":"social-dialogue",
-                "accesskey":"X"
+                "tabindex":"9",
+                "accesskey":""
             }
         ]
     },
@@ -61,44 +67,49 @@
         "id": "osh-outcomes-working-conditions",
         "name":"L22009",
         "sref": "osh-outcome",
-        "accesskey": "T",
-        "tabindex":"4",
+        "tabindex":"10",
         "levels":[
             {
                 "id":"work-accidents",
                 "name":"L22010",
                 "sref":"work-accidents",
-                "accesskey":"C"
+                "tabindex":"11",
+                "accesskey":"3"
             },
             {
                 "id":"health-perception-of-workers",
                 "name":"L22011",
                 "sref":"health-perception-of-workers",
-                "accesskey":"X"
+                "tabindex":"12",
+                "accesskey":""
             },
             {
                 "id":"osh-culture",
                 "name":"L22012",
                 "sref":"osh-culture",
-                "accesskey":"X"
+                "tabindex":"13",
+                "accesskey":""
             },
             {
                 "id":"working-conditions",
                 "name":"L22013",
                 "sref":"working-conditions",
-                "accesskey":"X"
+                "tabindex":"14",
+                "accesskey":""
             },
             {
                 "id":"prevention-companies",
                 "name":"L22014",
                 "sref":"prevention-companies({pIndicator: 'risk-assessment', pCountry1:'AT', pCountry2: 'BE', pSplit: 'establishment-size'})",
-                "accesskey":"X"
+                "tabindex":"15",
+                "accesskey":""
             },
             {
                 "id":"worker-involvement",
                 "name":"L22015",
                 "sref":"worker-involvement",
-                "accesskey":"X"
+                "tabindex":"16",
+                "accesskey":""
             }
         ]
 
@@ -107,19 +118,21 @@
         "id": "osh-infrastructure",
         "name":"L22016",
         "target":"osh-infrastructure",
-        "tabindex":"3",
+        "tabindex":"17",
         "levels":[
             {
                 "id":"enforcement-capacity",
                 "name":"L22017",
                 "sref":"enforcement-capacity({pIndicator: 'establishments-inspected', pCountry1:'AT', pCountry2: 'BG'})",
-                "accesskey":"C"
+                "tabindex":"18",
+                "accesskey":"4"
             },
             {
                 "id":"osh-statistics",
                 "name":"L22018",
                 "sref":"osh-statistics",
-                "accesskey":"X"
+                "tabindex":"19",
+                "accesskey":""
             }
         ]
     },
@@ -127,8 +140,7 @@
         "id": "about-tool",
         "name":"L22019",
         "sref": "about-tool",
-        "accesskey": "T",
-        "tabindex":"4"
-
+        "accesskey": "5",
+        "tabindex":"20"
     }
 ]

@@ -152,7 +152,7 @@
 			INNER JOIN value v
 			ON v.profile_id = p.id
 			WHERE v.indicator_id IN (100,101,102,103)
-			AND n.country_code NOT IN ('EU28')
+			AND n.country_code NOT IN ('EU28', 'AL', 'ME', 'RS', 'TR')
 			ORDER BY country_code ASC;
 	    </Query>
 	</DataAccess>
@@ -177,6 +177,7 @@
 			AND t1.LANGUAGE="EN" AND t1.TEXT="Yes"
 			/* JOIN CONSULTATIVE */
 			AND n.id = p.nuts_id
+			AND n.country_code NOT IN('AL', 'ME', 'RS', 'TR')
 			AND v.indicator_id = 100
 			AND v.profile_id = p.id
 			AND d.id = v.dataset_id
@@ -193,6 +194,7 @@
 			AND t1.LANGUAGE="EN" AND t1.TEXT="Yes"
 			/* JOIN CONSULTATIVE */
 			AND n.id = p.nuts_id
+			AND n.country_code NOT IN('AL', 'ME', 'RS', 'TR')
 			AND v.indicator_id = 101
 			AND v.profile_id = p.id
 			AND d.id = v.dataset_id
@@ -209,6 +211,7 @@
 			AND t1.LANGUAGE="EN" AND t1.TEXT="Yes"
 			/* JOIN CONSULTATIVE */
 			AND n.id = p.nuts_id
+			AND n.country_code NOT IN('AL', 'ME', 'RS', 'TR')
 			AND v.indicator_id = 102
 			AND v.profile_id = p.id
 			AND d.id = v.dataset_id
@@ -225,6 +228,7 @@
 			AND t1.LANGUAGE="EN" AND t1.TEXT="Yes"
 			/* JOIN CONSULTATIVE */
 			AND n.id = p.nuts_id
+			AND n.country_code NOT IN('AL', 'ME', 'RS', 'TR')
 			AND v.indicator_id = 103
 			AND v.profile_id = p.id
 			AND d.id = v.dataset_id
@@ -303,6 +307,7 @@
 			AND t1.LANGUAGE="EN" AND t1.TEXT="Yes"
 			/* JOIN CONSULTATIVE */
 			AND n.id = p.nuts_id
+			AND n.country_code NOT IN('AL', 'ME', 'RS', 'TR')
 			AND v.indicator_id = 100
 			AND v.profile_id = p.id
 			AND d.id = v.dataset_id
@@ -320,6 +325,7 @@
 			AND t1.LANGUAGE="EN" AND t1.TEXT="Yes"
 			/* JOIN CONSULTATIVE */
 			AND n.id = p.nuts_id
+			AND n.country_code NOT IN('AL', 'ME', 'RS', 'TR')
 			AND v.indicator_id = 101
 			AND v.profile_id = p.id
 			AND d.id = v.dataset_id
@@ -337,6 +343,7 @@
 			AND t1.LANGUAGE="EN" AND t1.TEXT="Yes"
 			/* JOIN CONSULTATIVE */
 			AND n.id = p.nuts_id
+			AND n.country_code NOT IN('AL', 'ME', 'RS', 'TR')
 			AND v.indicator_id = 102
 			AND v.profile_id = p.id
 			AND d.id = v.dataset_id
@@ -354,6 +361,7 @@
 			AND t1.LANGUAGE="EN" AND t1.TEXT="Yes"
 			/* JOIN CONSULTATIVE */
 			AND n.id = p.nuts_id
+			AND n.country_code NOT IN('AL', 'ME', 'RS', 'TR')
 			AND v.indicator_id = 103
 			AND v.profile_id = p.id
 			AND d.id = v.dataset_id

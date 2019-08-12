@@ -562,7 +562,7 @@ and (max-width : 1024px)  {
 		margin: 10px 0px 0em 0;
 	}
 
-/** pop up */
+	/** pop up */
   #popUpMessage{
     background: rgba(0,0,0,0.6);
     position: fixed;
@@ -732,6 +732,7 @@ and (orientation : landscape) {
 		.compare--list{
   		justify-content: space-between;
   		li{
+  			width: auto;
   			label{
   				width: 35%;
   				letter-spacing: 0px;
@@ -1056,7 +1057,7 @@ and (max-width :767px)  {
 			}
   	}
 	}
-/** pop up */
+	/** pop up */
   #popUpMessage{
     .popUpMessage--text--block{
 		  width: 90vw;
@@ -1131,7 +1132,7 @@ and (max-width :767px)  {
 	  }
 	}
 
-/**** MODAL WINDOW ****/
+	/**** MODAL WINDOW ****/
   .dvt-modal {
     width: 95%;
     height: 98%;

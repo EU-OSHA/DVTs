@@ -58,7 +58,7 @@
 
 /* ------------------------------------------------------------------------------------------------- */
 
-/* Regulation */
+/* Work accidents */
 @import '../modules/vertical/osh-outcomes-working-conditions/work-accidents/work-accidents.scss';
 
 /* health perception of workers */
@@ -67,7 +67,21 @@
 /* OSH culture and health awareness */
 @import '../modules/vertical/osh-outcomes-working-conditions/osh-culture/osh-culture.scss';
 
+/* Overall opinion */
+@import '../modules/vertical/osh-outcomes-working-conditions/overall-opinion/overall-opinion.scss';
+
+/* Working conditions */
+@import '../modules/vertical/osh-outcomes-working-conditions/working-conditions/working-conditions.scss';
+
 /* ------------------------------------------------------------------------------------------------- */
+
+
+
+
+
+
+
+
 
 /* About the estimates */
 @import '../modules/vertical/about-tool/about-tool.scss';

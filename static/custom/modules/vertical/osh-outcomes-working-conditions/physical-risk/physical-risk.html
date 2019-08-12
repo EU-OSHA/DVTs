@@ -14,9 +14,9 @@
   <div class="compare--block">
     <div class="submenu--block container">
       <label class="submenu-indicator" data-ng-click ="openIndicatorsList()">Select the indicator</label>
-      <ul class="submenu--items--wrapper">
+      <ul class="submenu--items--wrapper level1">
         <!-- INDICATORS -->
-        <li data-ng-repeat="indicator in indicators" data-ng-class="{'active' : indicator.anchor == pIndicator }" class="submenu--item">
+        <li data-ng-repeat="indicator in indicators" data-ng-click ="openIndicatorsList($event)" data-ng-class="{'active' : indicator.anchor == pIndicator }" class="submenu--item">
           <a href="" data-ng-click="changeIndicator($event, indicator.anchor, 'smoke-powder-or-dust');" data-ng-bind="i18nLiterals['L'+indicator.text]" data-ng-class="{'active' : indicator.anchor == pIndicator }" ></a>
         </li>
       </ul>
@@ -24,9 +24,9 @@
     <div class="line background-main-light"></div>
     <div data-ng-if="pIndicator == 'exposure-to-dangerous-substances'" class="submenu--block container">
       <label class="submenu-indicator" data-ng-click ="openIndicatorsList()">Select the indicator</label>
-      <ul class="submenu--items--wrapper">
+      <ul class="submenu--items--wrapper level2">
         <!-- INDICATORS -->
-        <li data-ng-repeat="indicator in subIndicators" data-ng-class="{'active' : indicator.anchor == pSubIndicator }" class="submenu--item">
+        <li data-ng-repeat="indicator in subIndicators" data-ng-click ="openIndicatorsList($event)" data-ng-class="{'active' : indicator.anchor == pSubIndicator }" class="submenu--item">
           <a href="" data-ng-click="changeIndicator($event, pIndicator, indicator.anchor);" data-ng-bind="i18nLiterals['L'+indicator.text]" data-ng-class="{'active' : indicator.anchor == pSubIndicator }" ></a>
         </li>
       </ul>
@@ -68,8 +68,10 @@
               status="vibrations-loud-noise"
               chart-title="{{i18nLiterals.L20654}}"
               id="1" radio="130" values-format="%"
-              mesh-size="30" draw-labels="true">
+              mesh-size="30" draw-labels="true"
+              datasource-and-dates="[datasetEurofound,70]">
             </dvt-radar-chart>
+            <!--<button class="btn-default btn-main-color" data-ng-click="exportData(stories[0].promises.story1, i18nLiterals.L20654, 1)">Export data</button>-->
           </div>
         </div>
       </div>
@@ -229,8 +231,10 @@
               status="risk-involved-work"
               chart-title="{{i18nLiterals.L20656}}"
               id="6" radio="130" values-format="%"
-              mesh-size="30" draw-labels="true">
+              mesh-size="30" draw-labels="true"
+              datasource-and-dates="[datasetEurofound,90]">
             </dvt-radar-chart>
+            <!--<button class="btn-default btn-main-color" data-ng-click="exportData(stories[1].promises.story1, i18nLiterals.L20656, 2)">Export data</button>-->
           </div>
           <div class="chart--block" ng-hide="pSubIndicator != 'esener'">
             <dvt-radar-chart
@@ -241,8 +245,10 @@
               status="older-workers-employment"
               chart-title="{{i18nLiterals.L20656}}"
               id="7" radio="130" values-format="%"
-              mesh-size="30" draw-labels="true">
+              mesh-size="30" draw-labels="true"
+              datasource-and-dates="[datasetESENER,110]">
             </dvt-radar-chart>
+            <!--<button class="btn-default btn-main-color" data-ng-click="exportData(stories[1].promises.story2, i18nLiterals.L20656, 3)">Export data</button>-->
           </div>
         </div>
       </div>
@@ -255,7 +261,7 @@
       <section class="card--grid xxs-w1 w3 center-text">
         <h2 class="title-section second-color"><span  data-ng-bind="i18nLiterals.L20712"></span></h2>
         <div class="card--block--rounded">
-          <a class="icon--card working-conditons-icon" ui-sref="overall-opinion"></a>
+          <a class="icon--card overall-opinion-icon" ui-sref="overall-opinion"></a>
           <h3 class="title--card main-color"><a data-ng-bind="i18nLiterals.L20709" ui-sref="overall-opinion"></a></h3>
           <p class="btn--card--block"><a ui-sref="overall-opinion" class="btn--card main-color" data-ng-bind-html="i18nLiterals.L480"></a></p>
         </div>
