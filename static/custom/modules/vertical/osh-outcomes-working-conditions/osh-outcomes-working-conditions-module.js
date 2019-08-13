@@ -152,24 +152,100 @@ define(function (require) {
         }
       });
 
-      $stateProvider.state('physical-risk', {
-        url: "/osh-outcomes-working-conditions/working-conditions/physical-risk/:pIndicator/:pSubIndicator/:pCountry1/:pCountry2",
+      $stateProvider.state('physical-risk-vibrations-loud-noise-and-temperature', {
+        url: "/osh-outcomes-working-conditions/working-conditions/physical-risk-vibrations-loud-noise-and-temperature/:pCountry1/:pCountry2",
         params: {
           pIndicator: {
             value: 'vibrations-loud-noise-and-temperature',
             squash: 'vibrations-loud-noise-and-temperature'
           },
           pSubIndicator: {
-            value: null,
-            squash: true
+            value: 'smoke-powder-or-dust',
+            squash: 'smoke-powder-or-dust'
+          },
+          pFilter: {
+            value: 'esener',
+            squash: 'esener'
           },
           pCountry1: {
-            value: null,
-            squash: false
+            value: 'AT',
+            squash: 'AT'
           },
           pCountry2: {
-            value: null,
-            squash: false
+            value: 'BE',
+            squash: 'BE'
+          }
+        },
+        views: {
+          "content-main": {
+            templateUrl: configService.getVerticalTplPath("osh-outcomes-working-conditions/physical-risk", "physical-risk"),
+            controller: 'PhysicalRiskController',
+            resolve: configService.dynamicallyRegisterController($controllerProvider, 'vertical/physical-risk/PhysicalRiskController', 'physical-risk', 'PhysicalRiskController')
+          }
+        },
+        metaTags: {
+          title: i18n.L22013 +  " - " + i18n.L22020 + " - " + i18n.L363
+        }
+      });
+
+      $stateProvider.state('physical-risk-exposure-to-dangerous-substances', {
+        url: "/osh-outcomes-working-conditions/working-conditions/physical-risk-exposure-to-dangerous-substances/:pSubIndicator",
+        params: {
+          pIndicator: {
+            value: 'vibrations-loud-noise-and-temperature',
+            squash: 'vibrations-loud-noise-and-temperature'
+          },
+          pSubIndicator: {
+            value: 'smoke-powder-or-dust',
+            squash: 'smoke-powder-or-dust'
+          },
+          pFilter: {
+            value: 'esener',
+            squash: 'esener'
+          },
+          pCountry1: {
+            value: 'AT',
+            squash: 'AT'
+          },
+          pCountry2: {
+            value: 'BE',
+            squash: 'BE'
+          }
+        },
+        views: {
+          "content-main": {
+            templateUrl: configService.getVerticalTplPath("osh-outcomes-working-conditions/physical-risk", "physical-risk"),
+            controller: 'PhysicalRiskController',
+            resolve: configService.dynamicallyRegisterController($controllerProvider, 'vertical/physical-risk/PhysicalRiskController', 'physical-risk', 'PhysicalRiskController')
+          }
+        },
+        metaTags: {
+          title: i18n.L22013 +  " - " + i18n.L22020 + " - " + i18n.L363
+        }
+      });
+
+      $stateProvider.state('physical-risk-risks-involved-with-work', {
+        url: "/osh-outcomes-working-conditions/working-conditions/physical-risk-risks-involved-with-work/:pFilter/:pCountry1/:pCountry2",
+        params: {
+          pIndicator: {
+            value: 'vibrations-loud-noise-and-temperature',
+            squash: 'vibrations-loud-noise-and-temperature'
+          },
+          pSubIndicator: {
+            value: 'smoke-powder-or-dust',
+            squash: 'smoke-powder-or-dust'
+          },
+          pFilter: {
+            value: 'esener',
+            squash: 'esener'
+          },
+          pCountry1: {
+            value: 'AT',
+            squash: 'AT'
+          },
+          pCountry2: {
+            value: 'BE',
+            squash: 'BE'
           }
         },
         views: {
