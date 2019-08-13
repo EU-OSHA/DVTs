@@ -1185,7 +1185,7 @@
 	    	<Parameter default="BE" name="pCountry2" type="String"/>
 	    </Parameters>
 	    <Query>
-			SELECT IF(n.name = 'European Union', n.country_code, CONCAT(n.name, " (", n.country_code, ")")) as Country, sas.literal_id as Age, v.value*100 as Value
+			SELECT IF(n.name = 'European Union', n.country_code, CONCAT(n.name, " (", n.country_code, ")")) as Country, sas.literal_id as Sector, v.value*100 as Value
 			FROM nuts n, profile p, value v, split_activity_sector sas
 			WHERE n.id = p.nuts_id
 			AND v.indicator_id = ${pIndicator}
@@ -1354,7 +1354,7 @@
 			WHERE n.id = p.nuts_id
 			AND v.indicator_id IN (101, 102, 123)
 			AND i.id = v.indicator_id
-			AND i.literal_id = t.literal_id
+			AND t.literal_id = IF(v.indicator_id = 101, 20687, IF(v.indicator_id = 102, 20685, 20686))
 			AND t.language = 'EN'
 			AND v.profile_id = p.id
 			AND p.answer_id = sa.id
@@ -1370,7 +1370,7 @@
 			WHERE n.id = p.nuts_id
 			AND v.indicator_id = 124
 			AND i.id = v.indicator_id
-			AND i.literal_id = t.literal_id
+			AND t.literal_id = 20687
 			AND t.language = 'EN'
 			AND v.profile_id = p.id
 			AND p.answer_id = sa.id
@@ -1386,7 +1386,7 @@
 			WHERE n.id = p.nuts_id
 			AND v.indicator_id = 125
 			AND i.id = v.indicator_id
-			AND i.literal_id = t.literal_id
+			AND t.literal_id = 20688
 			AND t.language = 'EN'
 			AND v.profile_id = p.id
 			AND p.answer_id = sa.id
@@ -1413,7 +1413,7 @@
 			WHERE n.id = p.nuts_id
 			AND v.indicator_id IN (101, 102, 123)
 			AND i.id = v.indicator_id
-			AND i.literal_id = t.literal_id
+			AND t.literal_id = IF(v.indicator_id = 101, 20687, IF(v.indicator_id = 102, 20685, 20686))
 			AND t.language = 'EN'
 			AND v.profile_id = p.id
 			AND p.answer_id = sa.id
@@ -1429,7 +1429,7 @@
 			WHERE n.id = p.nuts_id
 			AND v.indicator_id = 124
 			AND i.id = v.indicator_id
-			AND i.literal_id = t.literal_id
+			AND t.literal_id = 20687
 			AND t.language = 'EN'
 			AND v.profile_id = p.id
 			AND p.answer_id = sa.id
@@ -1445,7 +1445,7 @@
 			WHERE n.id = p.nuts_id
 			AND v.indicator_id = 125
 			AND i.id = v.indicator_id
-			AND i.literal_id = t.literal_id
+			AND t.literal_id = 20688
 			AND t.language = 'EN'
 			AND v.profile_id = p.id
 			AND p.answer_id = sa.id

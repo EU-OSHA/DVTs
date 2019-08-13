@@ -31,7 +31,7 @@ define(function (require) {
 
     $scope.pCountry1 = ($stateParams.pCountry1 != null)?$stateParams.pCountry1:'AT';
     $scope.pCountry2 = ($stateParams.pCountry2 != null)?$stateParams.pCountry2:'BE';
-    $scope.pSplit = ($stateParams.pSplit != null)?$stateParams.pSplit:'establishment-size';
+    $scope.pSplit = ($stateParams.pSplit != null)?$stateParams.pSplit:'sector';
 
     $scope.countriesDataFor = [];
     $scope.countriesCompareWith = [];

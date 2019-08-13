@@ -51,7 +51,8 @@
               width="850" height="{{height}}"
               chart-title="{{i18nLiterals.L22015}}"
               id="1" radio="130" values-format="%"
-              mesh-size="30" draw-labels="true">
+              mesh-size="30" draw-labels="true"
+              datasource-and-dates="datasourcesAndDates">>
             </dvt-radar-chart>
             <button data-ng-if="pSplit == 'esener'" class="btn-default btn-main-color" data-ng-click="exportData(stories[0].promises.story1, i18nLiterals.L22015, 1)">Export data</button>
             <button data-ng-if="pSplit == 'eurofound'" class="btn-default btn-main-color" data-ng-click="exportData(stories[1].promises.story2, i18nLiterals.L22015, 2)">Export data</button>
