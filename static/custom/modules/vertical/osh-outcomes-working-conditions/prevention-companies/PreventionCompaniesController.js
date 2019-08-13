@@ -32,6 +32,7 @@ define(function (require) {
     $scope.pCountry1 = ($stateParams.pCountry1 != null)?$stateParams.pCountry1:'AT';
     $scope.pCountry2 = ($stateParams.pCountry2 != null)?$stateParams.pCountry2:'BE';
     $scope.pSplit = ($stateParams.pSplit != null)?$stateParams.pSplit:'sector';
+    $log.warn($scope.pSplit);
 
     $scope.countriesDataFor = [];
     $scope.countriesCompareWith = [];
@@ -229,11 +230,9 @@ define(function (require) {
               pSplit: $scope.pSplit
             });
           }else{
-            $state.go($state.current.name, {
+            $state.go('prevention-companies-tabs', {
               pIndicator: indicator,
-              pCountry1: null, 
-              pCountry2: null,
-              pSplit: null
+              pSplit: $scope.pSplit
             });
           }
         }

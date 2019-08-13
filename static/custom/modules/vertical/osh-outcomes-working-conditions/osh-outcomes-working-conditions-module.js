@@ -216,6 +216,31 @@ define(function (require) {
         }
       });
 
+      $stateProvider.state('prevention-companies-tabs', {
+        url: "/osh-outcomes-working-conditions/prevention-companies-tabs/:pIndicator",
+        params: {
+          pIndicator: {
+            value: 'risk-assessment',
+            squash: 'risk-assessment'
+          },
+          pSplit: {
+            value: 'sector',
+            squash: 'sector'
+          }
+        },
+        views: {
+          "content-main": {
+            templateUrl: configService.getVerticalTplPath("osh-outcomes-working-conditions/prevention-companies", "prevention-companies"),
+            controller: 'PreventionCompaniesController',
+            resolve: configService.dynamicallyRegisterController($controllerProvider, 'vertical/prevention-companies/PreventionCompaniesController', 'prevention-companies', 'PreventionCompaniesController')
+          }
+        },
+        metaTags: {
+          title: i18n.L22014 +  " - " + i18n.L22020 + " - " + i18n.L363
+        }
+      });
+
+
       $stateProvider.state('worker-involvement', {
         url: "/osh-outcomes-working-conditions/worker-involvement/:pCountry1/:pCountry2/:pSplit",
         params: {
