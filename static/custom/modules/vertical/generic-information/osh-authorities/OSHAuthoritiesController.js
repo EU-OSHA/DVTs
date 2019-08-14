@@ -403,7 +403,7 @@ define(function (require) {
         var element = angular.element($event.currentTarget);
         var tags = angular.element('div.selected--tags-wrapper');
         var valueToJson = JSON.parse(element.attr('value'));
-        $log.warn(valueToJson);
+        //$log.warn(valueToJson);
         
         if (element.prop('checked')) {
           //$scope.selectedCountries.push(element.attr('value'));
@@ -513,11 +513,9 @@ define(function (require) {
         
         var quitChecked;
         if($event.target.id.indexOf('country') != -1){
-          
+
           $scope.searchParams.countries.splice($scope.searchParams.countries.indexOf(countryId), 1);
           quitChecked = angular.element('.filter--dropdown--options #country-filter-'+countryId);
-          $log.warn(countryId);
-          $log.warn(quitChecked);
         }else if($event.target.id == 'institutionFilter1'){
           quitChecked = angular.element('.filter--dropdown--options #institution-filter-1');
           $scope.searchParams.institutions.filter1=0;

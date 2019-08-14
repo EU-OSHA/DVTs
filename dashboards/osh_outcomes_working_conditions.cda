@@ -1354,7 +1354,7 @@
 			WHERE n.id = p.nuts_id
 			AND v.indicator_id IN (101, 102, 123)
 			AND i.id = v.indicator_id
-			AND t.literal_id = IF(v.indicator_id = 101, 20687, IF(v.indicator_id = 102, 20685, 20686))
+			AND t.literal_id = IF(v.indicator_id = 101, 20684, IF(v.indicator_id = 102, 20685, 20686))
 			AND t.language = 'EN'
 			AND v.profile_id = p.id
 			AND p.answer_id = sa.id
@@ -1413,7 +1413,7 @@
 			WHERE n.id = p.nuts_id
 			AND v.indicator_id IN (101, 102, 123)
 			AND i.id = v.indicator_id
-			AND t.literal_id = IF(v.indicator_id = 101, 20687, IF(v.indicator_id = 102, 20685, 20686))
+			AND t.literal_id = IF(v.indicator_id = 101, 20684, IF(v.indicator_id = 102, 20685, 20686))
 			AND t.language = 'EN'
 			AND v.profile_id = p.id
 			AND p.answer_id = sa.id
