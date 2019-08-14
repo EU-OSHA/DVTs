@@ -152,7 +152,7 @@
 			INNER JOIN value v
 			ON v.profile_id = p.id
 			WHERE v.indicator_id IN (100,101,102,103)
-			AND n.country_code NOT IN ('EU28', 'AL', 'ME', 'RS', 'TR')
+			AND n.country_code NOT IN ('EU28', 'AL', 'ME', 'MK', 'RS', 'TR')
 			ORDER BY country_code ASC;
 	    </Query>
 	</DataAccess>
