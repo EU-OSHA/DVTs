@@ -52,7 +52,7 @@ define(function (require) {
     $scope.color2 = resolution > 768 ? dvtUtils.getColorCountry(1) : dvtUtils.getColorCountry(22);
     $scope.color3 = resolution > 768 ? dvtUtils.getAccidentsColors(4) : dvtUtils.getColorCountry(1);
     $scope.color4 = resolution > 768 ? dvtUtils.getColorCountry(1) : dvtUtils.getAccidentsColors(4);
-    $scope.axisSizeRA = resolution > 768 ? 50 : 100;
+    $scope.axisSizeRA = resolution > 768 ? 60 : 100;
     $scope.axisWordBreak = resolution > 768 ? 1 : '';
 
     $(window).on("resize",function(e){

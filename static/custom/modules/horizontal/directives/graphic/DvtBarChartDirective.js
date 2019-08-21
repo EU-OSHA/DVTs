@@ -488,15 +488,22 @@ define(function (require) {
                 }*/
 
                 if(definition.chartDefinition.axisLabelWordBreak == '1'){
-                    definition.chartDefinition.baseAxisTooltipFormat = function(scene){
+                    /*definition.chartDefinition.baseAxisTooltipFormat = function(scene){
                         if(scene.group.key.length > 15){
                             return scene.group.key;
                         }
-                    }
+                    }*/
 
                     definition.chartDefinition.tooltipFormat = function(scene){
+                        //$log.warn(scene);
                         // Atoms of the first datum
                         var atoms = scene.firstAtoms;
+                        var key = atoms.category.key;
+
+                        if(i18n['L'+key] != undefined){
+                            key = i18n['L'+key];
+                        }
+
                         return '<div class="ccc-tt">'+
                                     '<table class="ccc-tt-ds ccc-tt-plot ccc-tt-plot-bar ccc-tt-chartOrient-v" data-ccc-color="rgb(68,159,162)">'+
                                         '<tbody>'+
@@ -527,7 +534,7 @@ define(function (require) {
                                                     '</span>'+
                                                     '</td>'+
                                                 '<td class="ccc-tt-dimValue">'+
-                                                    '<span class="ccc-tt-value">'+atoms.category.key+'</span>'+
+                                                    '<span class="ccc-tt-value">'+key+'</span>'+
                                                 '</td>'+
                                             '</tr>'+
                                             '<tr class="ccc-tt-dim ccc-tt-dimValueType-Number ccc-tt-dimContinuous">'+
@@ -561,35 +568,117 @@ define(function (require) {
                         var separator = -1;
                         //$log.warn(ticks);
 
-                        for(var i = 0; i<ticks.length; i++){
+                        /*for(var i = 0; i<ticks.length; i++){
                             label = ticks[i].atoms.category.label;
                             //separator = label.indexOf(' ', 12);
                             scope.substring = ticks[i].atoms.category.label.substring(0, 15);
                             if(label.length > 15){
                                 ticks[i].atoms.category.label = scope.substring + '...';
                             }
-                        }
-                        /*this.add(pv.Label)
-                          .textMargin(15)
+                        }*/
+
+                        this.add(pv.Label)
+                            .textMargin(15)
+                            .text(function(scene) {
+                                var value = scene.firstAtoms.category.value;
+                                scope.fullText = scene.firstAtoms.category.label;
+
+                                if(i18n['L'+value] != undefined){
+                                    value = i18n['L'+value];
+                                    scene.firstAtoms.category.label = value;
+                                    scope.fullText = value;
+                                }
+                                
+                                if(scope.fullText.length > 25){ 
+                                    //var separator = scope.fullText.indexOf(' ', scope.fullText.length/2);
+                                    var separator = scope.fullText.indexOf(' ', 15);
+                                    scene.firstAtoms.category.label = scope.fullText.substring(0, separator);
+                                    scope.substring = scope.fullText.substring(separator+1);
+
+                                    if(scope.substring.length < 25){
+                                        return scope.substring;
+                                    }else{
+                                        var separator2 = scope.substring.indexOf(' ', 15);
+                                        scope.substring2 = scope.substring.substring(0, separator2);
+                                        return scope.substring2;
+                                    }
+                                    
+                                }else{
+                                    if(scope.fullText == value){
+                                        return ' ';
+                                    }
+                                    var index = value.indexOf(' ', 15);
+                                    return value.substring(index+1);
+                                }
+                            });
+
+                        this.add(pv.Label)
+                          .textMargin(28)
                           .text(function(scene) {
                             var value = scene.firstAtoms.category.value;
                             scope.fullText = scene.firstAtoms.category.label;
-                            
-                            if(scope.fullText.length > 25){ 
-                                var separator = scope.fullText.indexOf(' ', scope.fullText.length/2);
-                                scene.firstAtoms.category.label = scope.fullText.substring(0, separator);
-                                scope.substring = scope.fullText.substring(separator+1);
-                                return scope.substring;
-                            }else{
-                                if(scope.fullText == value){
-                                    return ' ';
-                                }
-                                var index = value.indexOf(' ', value.length/2);
-                                return value.substring(index+1);
+
+                            if(i18n['L'+value] != undefined){
+                                value = i18n['L'+value];
+                                scene.firstAtoms.category.label = value;
+                                scope.fullText = value;
                             }
-                            
+
+                            if(scope.fullText.length >= 50){
+                                if(scope.fullText.length > 25){ 
+                                    //var separator = scope.fullText.indexOf(' ', scope.fullText.length/2);
+                                    var separator = scope.fullText.indexOf(' ', 15);
+                                    scene.firstAtoms.category.label = scope.fullText.substring(0, separator);
+                                    scope.substring = scope.fullText.substring(separator+1);
+
+                                    if(scope.substring.length > 25){
+                                        var separator2 = scope.substring.indexOf(' ', 15);
+                                        scope.substring2 = scope.substring.substring(separator2+1);
+
+                                        if(scope.substring2.length < 25){
+                                            return scope.substring2;
+                                        }else{
+                                            var separator3 = scope.substring2.indexOf(' ', 15);
+                                            scope.substring3 = scope.substring2.substring(0, separator3);
+                                            return scope.substring3;
+                                        }                         
+                                    }
+                                }
+                            }
+
                           });
-                        */
+
+                          this.add(pv.Label)
+                          .textMargin(41)
+                          .text(function(scene) {
+                            var value = scene.firstAtoms.category.value;
+                            scope.fullText = scene.firstAtoms.category.label;
+
+                            if(i18n['L'+value] != undefined){
+                                value = i18n['L'+value];
+                                scene.firstAtoms.category.label = value;
+                                scope.fullText = value;
+                            }
+
+                                if(scope.fullText.length > 25){ 
+                                    //var separator = scope.fullText.indexOf(' ', scope.fullText.length/2);
+                                    var separator = scope.fullText.indexOf(' ', 15);
+                                    scene.firstAtoms.category.label = scope.fullText.substring(0, separator);
+                                    scope.substring = scope.fullText.substring(separator+1);
+
+                                    if(scope.substring.length > 25){
+                                        var separator2 = scope.substring.indexOf(' ', 15);
+                                        scope.substring2 = scope.substring.substring(separator2+1);
+                                        var separator3 = scope.substring2.indexOf(' ', 15);
+                                        scope.substring3 = scope.substring2.substring(separator3+1);
+                                        if(scope.fullText.length > 75){
+                                            return scope.substring3;
+                                        }
+                                        
+                                    }
+                                }
+
+                          });
                     }
                 }
 
@@ -752,6 +841,7 @@ define(function (require) {
                      */
 
                     var fullwitdh = this.placeholder().width();
+                    //$log.warn(this.placeholder());
                     this.chart.options.width = fullwitdh;
                     this.chart.render(true, true, false);
                 };
