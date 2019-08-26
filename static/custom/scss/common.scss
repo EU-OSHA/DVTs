@@ -1792,3 +1792,14 @@ and (max-width :380px) {
     }
   }
 }
+
+
+/* hack IE11 */
+@media all and (-ms-high-contrast:none)
+{     
+   .foo { color: green } /* IE10 */
+   *::-ms-backdrop, .foo { color: red } /* IE11 */
+  dvt-radar-chart svg{
+    height:630px !important
+  }
+}
