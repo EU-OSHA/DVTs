@@ -202,13 +202,24 @@ define(function (require) {
         resolution = screen.width;
       });*/
 
-      $scope.openIndicatorsList = function() {
-        if( resolution < 990 ){
-          angular.element('.submenu--items--wrapper').toggleClass('open-list');
-          angular.element('.submenu-indicator').toggleClass('open-list');
+      $scope.openIndicatorsList = function(e) {       
+        
+        //var parentTag = e.target.offsetParent.nextSibling.parentNode.className;
+        
+        var parentTag = e.target.parentNode.className;
+
+        if(parentTag.indexOf('submenu--items') >= 0  ){
+          var parentTag = e.target.parentNode.className;
         } else {
-          angular.element('.submenu--items--wrapper').removeClass('open-list');
-          angular.element('.submenu-indicator').removeClass('open-list');
+          var parentTag = e.target.offsetParent.nextSibling.parentNode.className;
+        }
+
+        if( resolution < 990 ){
+          if( parentTag.indexOf('open-list') < 0 ){
+            angular.element('.submenu--items--wrapper').addClass('open-list');
+          } else {
+            angular.element('.submenu--items--wrapper').removeClass('open-list');
+          }
         }
       }
 
@@ -220,7 +231,6 @@ define(function (require) {
       });
 
       $scope.changeIndicator = function(e,indicator) {
-        $scope.openIndicatorsList();
         if ($state.current.name !== undefined) {
           if(indicator == 'risk-assessment' || indicator == 'employees-participation-in-prevention'){
             $state.go($state.current.name, {
