@@ -195,6 +195,9 @@
           color: $white;
         }
       }
+      &.btn-alone{
+        margin-top: 5rem;
+      }
     }
     .btn--block-filter{
       padding: 0rem;
@@ -1787,5 +1790,16 @@ and (max-width :380px) {
         transform: translate(70px, 343px) !important;
       }
     }
+  }
+}
+
+
+/* hack IE11 */
+@media all and (-ms-high-contrast:none)
+{     
+   .foo { color: green } /* IE10 */
+   *::-ms-backdrop, .foo { color: red } /* IE11 */
+  dvt-radar-chart svg{
+    height:630px !important
   }
 }

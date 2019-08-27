@@ -2,7 +2,8 @@
 .overall-opinion, .prevention-companies, .mental-risk, .physical-risk, .worker-involvement{
 	.submenu--block{
 		.submenu--items--wrapper{
-			justify-content: flex-start;
+			//justify-content: flex-start;
+	    justify-content: center;
 			&.level2{
 				li{
 					&.active{
@@ -73,7 +74,10 @@
 				  -webkit-appearance: none;
 				  -moz-appearance: none;
 				  appearance: none;
-				}				
+				}
+				select::-ms-expand {
+				    display: none;
+				}		
 			}
 		}
 		.card--block--rounded{

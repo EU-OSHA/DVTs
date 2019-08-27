@@ -434,6 +434,16 @@
 			}
 		}
 	}
+	.overall-opinion, 
+	.mental-risk, 
+	.physical-risk, 
+	.osh-culture{
+		.chart--block{
+			svg{
+				zoom:0.8;
+			}
+		}
+	}
 
 }
 
