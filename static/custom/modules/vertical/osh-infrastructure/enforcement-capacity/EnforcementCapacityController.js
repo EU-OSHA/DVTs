@@ -257,8 +257,15 @@ define(function (require) {
       });
 
       $scope.openIndicatorsList = function(e) {       
+        
+        //var parentTag = e.target.offsetParent.nextSibling.parentNode.className;
+        var parentTag = e.target.parentNode.className;
 
-        var parentTag = e.target.offsetParent.nextSibling.parentNode.className;
+        if(parentTag.indexOf('submenu--items--wrapper') >= 0  ){
+          var parentTag = e.target.parentNode.className;
+        } else {
+          var parentTag = e.target.offsetParent.nextSibling.parentNode.className;
+        }
 
         if( resolution < 990 ){
           if( parentTag.indexOf('open-list') < 0 ){
