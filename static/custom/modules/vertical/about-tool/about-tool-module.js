@@ -36,6 +36,24 @@ define(function (require) {
             }
         });
 
+        $stateProvider.state('about-tool-detail-page', {
+            url: "/about-tool-detail-page",
+            params: {
+
+            },
+            views: {
+                "content-main": {
+                    templateUrl: configService.getVerticalTplPath("about-tool", "about-tool"),
+                    controller: 'AboutToolController',
+                    resolve: configService.dynamicallyRegisterController($controllerProvider, 'vertical/about-tool/AboutToolController', 'about-tool', 'AboutToolController')
+                }
+            },
+            metaTags: {
+                title: i18n.L22019 +  " - " + i18n.L22020 + " - " + i18n.L363,
+                description: i18n.L22019,
+            }
+        });
+
     });
 
     return module;

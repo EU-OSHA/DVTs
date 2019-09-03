@@ -26,6 +26,9 @@ define(function (require) {
         var i18nLiterals = configService.getLiterals();
         $scope.i18nLiterals = i18nLiterals;
 
+        $scope.currentState = $state.current.name;
+        $log.warn($scope.currentState);
+
         $scope.status = 'ready';
     }
     
