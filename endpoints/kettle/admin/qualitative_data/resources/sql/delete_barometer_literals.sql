@@ -4,7 +4,7 @@ DELETE FROM literal WHERE id >= 20000 AND id < 30000;
 DELETE FROM chart WHERE id >= 20000 AND id < 30000;
 
 -- Create Database Table for the pages
--- Enforcement Capacity, Regulation and Strategy
+-- Enforcement Capacity, Regulation, Strategy and Methodology
 DROP TABLE IF EXISTS `matrix_page`;
 CREATE TABLE IF NOT EXISTS `matrix_page` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -76,4 +76,55 @@ CREATE TABLE IF NOT EXISTS `strategies_page` (
   CONSTRAINT `strategies_text_11_literal_id` FOREIGN KEY (`text_11_literal_id`) REFERENCES `literal` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `strategies_text_12_literal_id` FOREIGN KEY (`text_12_literal_id`) REFERENCES `literal` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `strategies_text_13_literal_id` FOREIGN KEY (`text_13_literal_id`) REFERENCES `literal` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+DROP TABLE IF EXISTS `methodology`;
+CREATE TABLE `methodology` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `indicator_id` int(11) NOT NULL,
+  `dataset_id` int(11) NOT NULL,
+  `section_id` int(11) NOT NULL,
+  `additional_comments_literal_id` int(11) DEFAULT NULL,
+  `description_literal_id` int(11) DEFAULT NULL,
+  `source_methodology_literal_id` int(11) DEFAULT NULL,
+  `specific_table_literal_id` int(11) DEFAULT NULL,
+  `url_literal_id` int(11) DEFAULT NULL,
+  `reference_year_literal_id` int(11) DEFAULT NULL,
+  `last_update_literal_id` int(11) DEFAULT NULL,
+  `coverage_literal_id` int(11) DEFAULT NULL,
+  `filtering_options_literal_id` int(11) DEFAULT NULL,
+  `calculations_literal_id` int(11) DEFAULT NULL,
+  `unit_measure_literal_id` int(11) DEFAULT NULL,
+  `visualisation_literal_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `methodology_indicator_id` (`indicator_id`),
+  KEY `methodology_dataset_id` (`dataset_id`),
+  KEY `methodology_section_id` (`section_id`),
+  KEY `methodology_additional_comments_literal_id` (`additional_comments_literal_id`),
+  KEY `methodology_description_literal_id` (`description_literal_id`),
+  KEY `methodology_source_methodology_literal_id` (`source_methodology_literal_id`),
+  KEY `methodology_specific_table_literal_id` (`specific_table_literal_id`),
+  KEY `methodology_url_literal_id` (`url_literal_id`),
+  KEY `methodology_reference_year_literal_id` (`reference_year_literal_id`),
+  KEY `methodology_last_update_literal_id` (`last_update_literal_id`),
+  KEY `methodology_coverage_literal_id` (`coverage_literal_id`),
+  KEY `methodology_filtering_options_literal_id` (`filtering_options_literal_id`),
+  KEY `methodology_calculations_literal_id` (`calculations_literal_id`),
+  KEY `methodology_unit_measure_literal_id` (`unit_measure_literal_id`),
+  KEY `methodology_visualisation_literal_id` (`visualisation_literal_id`),
+  CONSTRAINT `methodology_indicator_id` FOREIGN KEY (`indicator_id`) REFERENCES `indicator` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `methodology_dataset_id` FOREIGN KEY (`dataset_id`) REFERENCES `dataset` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `methodology_section_id` FOREIGN KEY (`section_id`) REFERENCES `section` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `methodology_additional_comments_literal_id` FOREIGN KEY (`additional_comments_literal_id`) REFERENCES `literal` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `methodology_description_literal_id` FOREIGN KEY (`description_literal_id`) REFERENCES `literal` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `methodology_source_methodology_literal_id` FOREIGN KEY (`source_methodology_literal_id`) REFERENCES `literal` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `methodology_specific_table_literal_id` FOREIGN KEY (`specific_table_literal_id`) REFERENCES `literal` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `methodology_url_literal_id` FOREIGN KEY (`url_literal_id`) REFERENCES `literal` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `methodology_reference_year_literal_id` FOREIGN KEY (`reference_year_literal_id`) REFERENCES `literal` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `methodology_last_update_literal_id` FOREIGN KEY (`last_update_literal_id`) REFERENCES `literal` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `methodology_coverage_literal_id` FOREIGN KEY (`coverage_literal_id`) REFERENCES `literal` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `methodology_filtering_options_literal_id` FOREIGN KEY (`filtering_options_literal_id`) REFERENCES `literal` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `methodology_calculations_literal_id` FOREIGN KEY (`calculations_literal_id`) REFERENCES `literal` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `methodology_unit_measure_literal_id` FOREIGN KEY (`unit_measure_literal_id`) REFERENCES `literal` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `methodology_visualisation_literal_id` FOREIGN KEY (`visualisation_literal_id`) REFERENCES `literal` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
