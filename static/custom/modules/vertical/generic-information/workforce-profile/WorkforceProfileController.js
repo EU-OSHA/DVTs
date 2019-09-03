@@ -412,12 +412,7 @@ define(function (require) {
         });
       }
 
-    angular.element('body').mouseup(function(e){
-      var container = angular.element('.filter--dropdown--wrapper');
-      if (!container.is(e.target) && container.has(e.target).length === 0){
-        angular.element('.filter--dropdown--wrapper').removeClass('viewOptions'); 
-      }
-    });
+
 
     $scope.status = 'ready';
 
