@@ -27,7 +27,13 @@ define(function (require) {
         $scope.i18nLiterals = i18nLiterals;
 
         $scope.currentState = $state.current.name;
-        $log.warn($scope.currentState);
+
+        $scope.sections = [{name: 'L22001'},{name: 'L22005'},{name: 'L22009'},{name: 'L22016'}];
+        $log.warn($scope.sections);
+
+        $scope.subsections = [];
+        
+        
 
         $scope.status = 'ready';
     }

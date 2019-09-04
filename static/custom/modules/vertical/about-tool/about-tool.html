@@ -10,6 +10,29 @@
 	<div data-ng-if="currentState == 'about-tool-detail-page'" class="container">
 		<h2 class="title-section second-color ng-binding text-center" data-ng-bind="i18nLiterals.L22019"></h2>
 		<h3 data-ng-bind="i18nLiterals.L20705"></h3>
-		<!--<div data-ng-bind-html="i18nLiterals.L20737" class="about-estimates">-->
+		<div class="about-estimates">
+			"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+		</div>
+
+		<!-- SECTION MENU -->
+		<div>
+			<ul data-ng-repeat="section in sections">
+				<li><a href data-ng-bind="i18nLiterals[section.name]"></a></li>
+			</ul>
+		</div>
+
+		<!-- SUBSECTION MENU -->
+	    <div class="submenu--block container">
+	    	<ul class="submenu--items--wrapper">
+	    		<li data-ng-repeat="subsection in subsections" data-ng-click ="openIndicatorsList($event)" class="submenu--item">
+	        		<a href="" data-ng-click="" ></a>
+	        	</li>
+	      	</ul>
+	    </div>
+
+		<!-- DROPDOWN LIST WITH INDICATORS -->
+		<div>
+			
+		</div>
 	</div>
 </dvt-dashboard>
