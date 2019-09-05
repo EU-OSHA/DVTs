@@ -21,7 +21,7 @@ define(function (require) {
         $stateProvider.state('about-tool', {
             url: "/about-tool",
             params: {
-
+                
             },
             views: {
                 "content-main": {
@@ -37,9 +37,20 @@ define(function (require) {
         });
 
         $stateProvider.state('about-tool-detail-page', {
-            url: "/about-tool-detail-page",
+            url: "/about-tool-detail-page/:pSection/:pSubsection/:pIndicator",
             params: {
-
+                pSection:{
+                    value: 'generic-information',
+                    squash: 'generic-information'
+                },
+                pSubsection:{
+                    value: 'OSH_AUTHORITIES',
+                    squash: 'OSH_AUTHORITIES'
+                },
+                pIndicator: {
+                    value: '27',
+                    squash: '27'
+                }
             },
             views: {
                 "content-main": {
