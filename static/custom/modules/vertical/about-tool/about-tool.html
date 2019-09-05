@@ -27,16 +27,23 @@
 		</ul>
 
 		<!-- DROPDOWN LIST WITH INDICATORS -->
-		<form>
+		<form class="indicators--wrapper">
 			<label for="indicators" data-ng-bind="i18nLiterals.L20623"></label>
-			<select id="indicators" ng-model="pIndicator" ng-selected="pIndicator" ng-change="changeIndicator()">
-				<option data-ng-repeat="indicator in indicators" data-ng-bind="i18nLiterals['L'+indicator.text]" value="{{indicator.id}}"></option>
-			</select>
+			<div class="indicators-select">
+				<select id="indicators" ng-model="pIndicator" ng-selected="pIndicator" ng-change="changeIndicator()">
+					<option data-ng-repeat="indicator in indicators" data-ng-bind="i18nLiterals['L'+indicator.text]" value="{{indicator.id}}"></option>
+				</select>
+			</div>
 		</form>
 
 
-		<section class="methodology--grid--wrapper">
-
+		<section class="methodology--grid--wrapper forum-icon">
+			<h3>Unit of measure</h3>
+			<p>Percentage of active population. ‘Active population’ is defined by EUROSTAT as follows: “The labour force or workforce or economically active population, also shortened to active population, includes both employed (employees and self-employed) and unemployed people, but not the economically inactive, such as pre-school children, school children, students and pensioners.”</p>
+			<h3>Unit of measure</h3>
+			<p>Percentage of active population. ‘Active population’ is defined by EUROSTAT as follows: “The labour force or workforce or economically active population, also shortened to active population, includes both employed (employees and self-employed) and unemployed people, but not the economically inactive, such as pre-school children, school children, students and pensioners.”</p>
+			<h3>Unit of measure</h3>
+			<p>Percentage of active population. ‘Active population’ is defined by EUROSTAT as follows: “The labour force or workforce or economically active population, also shortened to active population, includes both employed (employees and self-employed) and unemployed people, but not the economically inactive, such as pre-school children, school children, students and pensioners.”</p>
 
 		</section>
 

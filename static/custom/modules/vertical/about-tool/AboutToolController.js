@@ -181,10 +181,12 @@ define(function (require) {
                         angular.element('.indicators--submenu--wrapper').toggleClass('open-list'); 
 
                         var nodeName = parentTag.nodeName;
+
                         if( nodeName == 'LI' ) {
                             angular.element('.indicators--submenu--wrapper li').removeClass('active');
                             angular.element(parentTag).toggleClass('active');
-                            angular.element('.indicators--submenu--wrapper').toggleClass('open-list'); 
+                            angular.element('.indicators--submenu--wrapper').toggleClass('open-list');
+                            console.log( nodeName ); 
                         }else{
 
                         }   

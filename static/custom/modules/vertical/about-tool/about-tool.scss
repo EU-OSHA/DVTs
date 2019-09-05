@@ -18,9 +18,10 @@
     margin: 6rem 0 0rem;
     .indicators-item{
       width: 16rem;
-      height:24rem;
+      height: 20rem;
       position: relative;
       text-align: center;
+      margin-bottom: 2rem;
       &:nth-child(1){
         background: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/methodology01.png) 50% 0rem no-repeat;
         &:hover{
@@ -77,6 +78,58 @@
           color: $orange;
         }
       }
+    }
+  }
+  form.indicators--wrapper{
+    display: flex;
+    width: 60%;
+    margin: 4rem auto 4rem;
+    label{
+      padding: 1.8rem 1rem;
+      color: $gray;
+      font-weight: normal;
+    }
+    .indicators-select{
+      position: relative;
+      select{
+        width: 100%;
+        margin: 1rem 0;
+        padding: 1rem 2rem;
+        border-radius: 4px;
+        border: 1px solid #529FA2;
+        color: #529FA2;
+        position: relative;
+        background: #FFF;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        option{
+          color: $gray !important;
+        }
+      }
+      &:after{
+        content: "\f107";
+        font-family: 'FontAwesome';
+        font-weight: normal;
+        font-size: 2rem;
+        color: #00A0A4;
+        right: 0rem;
+        top: 14%;
+        height: auto;
+        padding: 1rem;
+        position: absolute;
+        pointer-events: none;
+      }      
+    }
+  }
+  .methodology--grid--wrapper{
+    padding-left: 30rem;
+    background-position: 3rem 0rem;
+    background-size: 20rem;  
+    h3{
+      color: $aquamarine;
+      border-bottom: 1px solid;
+      margin-top: 4rem;
     }
   }
 }
