@@ -23,13 +23,10 @@
 		</ul>
 
 		<!-- SUBSECTION MENU -->		
-		<ul class="indicators--submenu--wrapper">
+		<ul class="indicators--submenu--wrapper" id="indicatorsSubmenu" data-ng-click ="openIndicatorsList($event)" >
 			<li data-ng-repeat="subsection in subsections" data-ng-click ="openIndicatorsList($event)" class="submenu--item">
         		<a href data-ng-click="getIndicators(subsection)" data-ng-bind="i18nLiterals[subsection.name]"></a>
         	</li>
-			<!--<li><a href="#">OSH authorities</a></li>
-			<li><a href="#">Economic and Sector profile</a></li>
-			<li><a href="#">Workforce profile</a></li>-->
 		</ul>
 
 		<!-- DROPDOWN LIST WITH INDICATORS -->

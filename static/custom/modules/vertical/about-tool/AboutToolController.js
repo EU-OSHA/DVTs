@@ -86,6 +86,10 @@ define(function (require) {
         /****************************************** DATA FILTERS *********************************************/
 
             $scope.changeSection = function(id){
+                
+                //$(document).scrollTop( $("#indicatorsSubmenu").offset().top ); 
+                $('html,body').animate({scrollTop: $("#indicatorsSubmenu").offset().top},'3000'); 
+
                 for(var i=0;i<$scope.structure.length;i++){
                     if($scope.structure[i].id == id){
                         $scope.subsections = $scope.structure[i].levels;
@@ -123,6 +127,40 @@ define(function (require) {
             $scope.changeIndicator = function(){
                 $log.warn($scope.selectedIndicator);
             }
+
+            // Open indicators list like a select element
+            // 
+                $(window).on("resize",function(e){
+                resolution = $(window).width();
+                });
+                resolution = $(window).width();
+
+                $scope.openIndicatorsList = function(e) {    
+                
+
+                    if( resolution < 990 ){
+                          //var parentTag = e.target.offsetParent.nextSibling.parentNode.className;          
+                        var parentTag = e.currentTarget;
+                        angular.element('.indicators--submenu--wrapper').toggleClass('open-list'); 
+
+                        var nodeName = parentTag.nodeName;
+                        if( nodeName == 'LI' ) {
+                            angular.element('.indicators--submenu--wrapper li').removeClass('active');
+                            angular.element(parentTag).toggleClass('active');
+                            angular.element('.indicators--submenu--wrapper').toggleClass('open-list'); 
+                        }else{
+
+                        }   
+
+                    }
+                }
+
+                angular.element('body').mouseup(function(e){
+                var container = angular.element('.indicators--submenu--wrapper');
+                if (!container.is(e.target) && container.has(e.target).length === 0){
+                  angular.element('.indicators--submenu--wrapper').removeClass('open-list'); 
+                }
+                });
 
         /**************************************** END DATA FILTERS *******************************************/
 
