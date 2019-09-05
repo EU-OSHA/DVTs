@@ -18,31 +18,25 @@
 		</section>
 
 		<!-- SECTION MENU -->
-			<ul class="indicators--list--wrapper">
-					<li class="indicators-item"  data-ng-repeat="section in sections"><a href data-ng-bind="i18nLiterals[section.name]"></a></li>
-			</ul>
-
+		<ul class="indicators--list--wrapper">
+			<li class="indicators-item" data-ng-repeat="section in sections"><a href data-ng-bind="i18nLiterals[section.name]" data-ng-click="changeSection(section.id)"></a></li>
+		</ul>
 
 		<!-- SUBSECTION MENU -->		
-			<ul class="indicators--submenu--wrapper">
-				<li><a href="#">OSH authorities</a></li>
-				<li><a href="#">Economic and Sector profile</a></li>
-				<li><a href="#">Workforce profile</a></li>
-			</ul>
-
-	    <div class="submenu--block container">
-	    	<ul class="submenu--items--wrapper">
-	    		<li data-ng-repeat="subsection in subsections" data-ng-click ="openIndicatorsList($event)" class="submenu--item">
-	        		<a href="" data-ng-click="" ></a>
-	        	</li>
-	      	</ul>
-	    </div>
+		<ul class="indicators--submenu--wrapper">
+			<li data-ng-repeat="subsection in subsections" data-ng-click ="openIndicatorsList($event)" class="submenu--item">
+        		<a href data-ng-click="getIndicators(subsection)" data-ng-bind="i18nLiterals[subsection.name]"></a>
+        	</li>
+			<!--<li><a href="#">OSH authorities</a></li>
+			<li><a href="#">Economic and Sector profile</a></li>
+			<li><a href="#">Workforce profile</a></li>-->
+		</ul>
 
 		<!-- DROPDOWN LIST WITH INDICATORS -->
-		<form>
-			<label for="indicators">SELECT INDICATOR</label>
-			<select id="indicators">
-				<option>Unemployment rate</option>
+		<form data-ng-if="selectedIndicator">
+			<label for="indicators" data-ng-bind="i18nLiterals.L20623"></label>
+			<select id="indicators" ng-model="selectedIndicator" ng-selected="selectedIndicator" ng-change="changeIndicator()">
+				<option data-ng-repeat="indicator in indicators" data-ng-bind="i18nLiterals['L'+indicator.text]" value="{{indicator.id}}"></option>
 			</select>
 		</form>
 
