@@ -44,8 +44,8 @@ define(function (require) {
                     squash: 'generic-information'
                 },
                 pSubsection:{
-                    value: 'OSH_AUTHORITIES',
-                    squash: 'OSH_AUTHORITIES'
+                    value: 'osh_authorities',
+                    squash: 'osh_authorities'
                 },
                 pIndicator: {
                     value: '27',

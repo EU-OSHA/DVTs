@@ -37,22 +37,22 @@ define(function (require) {
             {
                 id: 'generic-information', 
                 name: 'L22001',
-                firstSubsection: 'OSH_AUTHORITIES'
+                firstSubsection: 'osh_authorities'
             },
             {
                 id: 'osh-steering', 
                 name: 'L22005',
-                firstSubsection: 'REGULATION'
+                firstSubsection: 'regulation'
             },
             {
                 id: 'osh-outcomes-working-conditions', 
                 name: 'L22009',
-                firstSubsection: 'WORKACC'
+                firstSubsection: 'workacc'
             },
             {
                 id: 'osh-infrastructure', 
                 name: 'L22016',
-                firstSubsection: 'ENFORCEMENT_CAPACITY'
+                firstSubsection: 'enforcement_capacity'
         }];
 
         //Lists
@@ -70,6 +70,7 @@ define(function (require) {
                         if($scope.structure[i].id == $scope.pSection){
                             $scope.subsections = $scope.structure[i].levels;
                             for(var j=0;j<$scope.subsections.length;j++){
+                                $scope.subsections[j].database_name = $scope.subsections[j].database_name.toLowerCase();
                                 if($scope.subsections[j].database_name == ""){
                                     $scope.subsections.splice(j, 1);
                                 }
@@ -79,7 +80,7 @@ define(function (require) {
                     }
                 });
 
-                dataService.getMethodologyIndicators($scope.pSubsection).then(function (data) {
+                dataService.getMethodologyIndicators($scope.pSubsection.toUpperCase()).then(function (data) {
                     data.data.resultset.map(function (elem) {
                       var param = (!!$stateParams.filter) ? $stateParams.filter : undefined;
                       $scope.indicators.push({
@@ -113,7 +114,7 @@ define(function (require) {
                             additional_comments: elem[12]
                         };
                     });
-                //$log.warn($scope.data);
+                $log.warn($scope.data);
                 }).catch(function (err) {
                     throw err;
                 });
@@ -136,14 +137,13 @@ define(function (require) {
                                 $scope.subsections.splice(j, 1);
                             }
                         }
-                        break;
                     }
                 }
                 //$log.warn($scope.subsections);
             }
 
             $scope.getIndicators = function(subsection){
-                $scope.indicators = [];
+                //$scope.indicators = [];
                 dataService.getMethodologyIndicators(subsection.database_name).then(function (data) {
                     data.data.resultset.map(function (elem) {
                       var param = (!!$stateParams.filter) ? $stateParams.filter : undefined;
@@ -154,8 +154,6 @@ define(function (require) {
                       });
                     });
                     $log.warn($scope.indicators);
-                    $scope.pIndicator = $scope.indicators[0].id;
-                    $log.warn($scope.pIndicator);
                 }).catch(function (err) {
                     throw err;
                 });
@@ -163,6 +161,14 @@ define(function (require) {
 
             $scope.changeIndicator = function(){
                 $log.warn($scope.pIndicator);
+                /*$state.transitionTo($scope.currentState, {
+                    pSection: $scope.pSection,
+                    pSubsection: $scope.pSubsection,
+                    pIndicator: $scope.pIndicator
+                }, 
+                {
+                    reload: true
+                });*/
             }
 
             // Open indicators list like a select element
@@ -179,9 +185,7 @@ define(function (require) {
                           //var parentTag = e.target.offsetParent.nextSibling.parentNode.className;          
                         var parentTag = e.currentTarget;
                         angular.element('.indicators--submenu--wrapper').toggleClass('open-list'); 
-
-                        var nodeName = parentTag.nodeName;
-
+                        /*var nodeName = parentTag.nodeName;
                         if( nodeName == 'LI' ) {
                             angular.element('.indicators--submenu--wrapper li').removeClass('active');
                             angular.element(parentTag).toggleClass('active');
@@ -189,7 +193,7 @@ define(function (require) {
                             console.log( nodeName ); 
                         }else{
 
-                        }   
+                        }   */
 
                     }
                 }
