@@ -9,6 +9,7 @@
 			.submenu--items--wrapper{
 				//min-height: 7rem;
 				min-height: auto;
+				max-height:7rem;
 				overflow: hidden;
 				display: block;
 				li{
@@ -44,6 +45,9 @@
 					}
 				}
 				&.open-list{
+		      max-height:70rem;
+		      -webkit-transition: max-height 1.5s; 
+		      transition: max-height 1.5s;
 					li{
 						display: block;
 						&.active{

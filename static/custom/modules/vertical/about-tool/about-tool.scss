@@ -24,25 +24,25 @@
       margin-bottom: 2rem;
       &:nth-child(1){
         background: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/methodology01.png) 50% 0rem no-repeat;
-        &:hover{
+        &:hover, &.active{
           background: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/methodology01-hover.png) 50% 0rem no-repeat;
         }
       }
       &:nth-child(2){
         background: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/methodology02.png) 50% 0rem no-repeat;
-        &:hover{
+        &:hover, &.active{
           background: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/methodology02-hover.png) 50% 0rem no-repeat;
         }
       }
       &:nth-child(3){
         background: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/methodology03.png) 50% 0rem no-repeat;
-        &:hover{
+        &:hover, &.active{
           background: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/methodology03-hover.png) 50% 0rem no-repeat;
         }
       }
       &:nth-child(4){
         background: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/methodology04.png) 50% 0rem no-repeat;
-        &:hover{
+        &:hover, &.active{
           background: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/methodology04-hover.png) 50% 0rem no-repeat;
         }
       }
@@ -175,18 +175,20 @@
   } 
   .indicators--submenu--wrapper{
     height: 7rem;
+    max-height:7rem;
     overflow: hidden;
     flex-wrap: wrap;
     position: relative;
+    -webkit-transition: max-height 1.5s; 
+    transition: max-height 1.5s;
     li{
       width: 100%;
       padding: 0;
       position: relative;
       display: none;
       a{
-        display: block;
-        padding: 1rem 0;
-        font-size: 2.4rem;
+        display: block !important;
+        text-align: center;
         &:hover{
           color: $orange;
           border-bottom: 0 !important;
@@ -195,7 +197,7 @@
       &.active{
         display: block;
         a, a:hover, a:visited, a:focus{
-          color: $orange;
+          color: $orange !important;
           border-bottom: 0;
         }   
       }
@@ -213,6 +215,9 @@
     }
     &.open-list{
       height:auto;
+      max-height:70rem;
+      -webkit-transition: max-height 1.5s; 
+      transition: max-height 1.5s;
       li{
         display: block;
         &.active{

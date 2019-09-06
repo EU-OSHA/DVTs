@@ -130,8 +130,7 @@ define(function (require) {
 
             $scope.changeSection = function(id){
                 
-                //$(document).scrollTop( $("#indicatorsSubmenu").offset().top ); 
-                $('html,body').animate({scrollTop: $("#indicatorsSubmenu").offset().top},'3000'); 
+               // $('html,body').animate({scrollTop: $("#indicatorsSubmenu").offset().top},'3000'); 
 
                 for(var i=0;i<$scope.structure.length;i++){
                     if($scope.structure[i].id == id){

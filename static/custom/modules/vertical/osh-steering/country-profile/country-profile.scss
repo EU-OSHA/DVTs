@@ -36,7 +36,8 @@ div.partial-text{
 		}
 		.submenu--block{
 			.submenu--items--wrapper{
-				min-height: 7rem;
+				max-height: 6rem;
+				min-height: auto;
 				overflow: hidden;
 				display: block;
 				li{
@@ -62,14 +63,17 @@ div.partial-text{
 						&:after{
 							content: "\f078";
 							font: normal normal normal 14px/1 FontAwesome;
-							right: 25px;
-							top: 20px;
+							right:1.4rem;
+							top:1.4rem;
 							color: $aquamarine;
 							position: absolute;
 						}
 					}
 				}
 				&.open-list{
+		      max-height:70rem;
+		      -webkit-transition: max-height 1.5s; 
+		      transition: max-height 1.5s;
 					li{
 						display: block;
 						&:after{
@@ -88,8 +92,8 @@ div.partial-text{
 							&:after{
 								//content: "\f077";
 								font: normal normal normal 14px/1 FontAwesome;
-							  right: 24px;
-							  top: 19px;
+							  right:1.4rem;
+							  top: 1.4rem;
 							  color: $aquamarine;
 								position: absolute;
 							}
