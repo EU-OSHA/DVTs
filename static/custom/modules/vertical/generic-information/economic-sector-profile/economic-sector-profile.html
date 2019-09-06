@@ -155,8 +155,14 @@
           </div>
         </div>
         <!-- GDP PER CAPITA IN RELATION TO EU28 AVERAGE -->
-        <div class="card--block--chart">            
-          <div class="chart--block">
+        <div class="card--block--chart">
+          <div class="select-filter-chart">
+            <select ng-model="pSplit" ng-change="changeType()">
+              <option value="normal">NORMAL</option>
+              <option value="euro">EURO</option>
+            </select>
+          </div>
+          <div class="chart--block" ng-show="pSplit == 'normal'">
             <dvt-bar-chart
               data-ng-cloak
               query="getGDPData" cda="{{::cdaGenericInformation }}"
@@ -183,10 +189,44 @@
               datasource-and-dates="[datasetEurostat,35]"
             ></dvt-bar-chart>
           </div>
+          <!-- GDP PER CAPITA IN RELATION TO EU28 AVERAGE EURO -->
+          <div class="chart--block" ng-show="pSplit == 'euro'">
+            <dvt-bar-chart
+              data-ng-cloak
+              query="getGDPData" cda="{{::cdaGenericInformation }}"
+              height="360"
+              orientation="vertical"
+              axis-fixed-max="260" step="{{step.chart5}}"
+              params="[['pIndicator','278'],['pCountry1', pCountry1],['pCountry2', pCountry2],['pDataset', datasetEurostat]]"
+              color-role="category" colors="[stories[4].color1, stories[4].color2, stories[4].color3]"
+              chart-title="{{i18nLiterals.L292}}" id="5"
+              plots="stories[4].plots"
+              base-axis-position="top"
+              axis-label-font="15px 'OpenSans-bold'"
+              values-visible="true"
+              values-font="14px 'OpenSans-bold'"
+              values-mask="{value}"
+              ortho-axis-visible="false"
+              ortho-axis-grid="false"
+              hoverable="false"
+              multiple-label-colors="true"
+              leaf-content-overflow='visible'
+              dimensions="stories[4].dimensions"
+              base-axis-label-text-baseline="bottom"
+              legend="false"
+              datasource-and-dates="[datasetEurostat,278]"
+            ></dvt-bar-chart>
+          </div>
         </div>
         <!-- INCOME PER CAPITA -->
         <div class="card--block--chart">
-          <div class="chart--block">
+          <div class="select-filter-chart">
+            <select ng-model="pSplit" ng-change="changeType()">
+              <option value="normal">NORMAL</option>
+              <option value="euro">EURO</option>
+            </select>
+          </div>
+          <div class="chart--block" ng-show="pSplit == 'normal'">
             <dvt-bar-chart
               data-ng-cloak
               query="getIncomePerCapitaData" cda="{{::cdaGenericInformation }}"
@@ -211,8 +251,33 @@
               datasource-and-dates="[datasetEurostatBetweenDates,36]"
             ></dvt-bar-chart>
           </div>
+          <!-- INCOME PER CAPITA EURO -->
+          <div class="chart--block" ng-show="pSplit == 'euro'">
+            <dvt-bar-chart
+              data-ng-cloak
+              query="getIncomePerCapitaData" cda="{{::cdaGenericInformation }}"
+              width="330" height="370" type="lines"
+              orientation="vertical" axis-fixed-min="10000"
+              axis-fixed-max="20000" step="{{step.chart6}}"
+              params="[['pIndicator','279'],['pCountry1', pCountry1],['pCountry2', pCountry2],['pDataset', 17]]"
+              color-role="series" colors="[stories[5].color1, stories[5].color2, stories[5].color3]"
+              chart-title="{{i18nLiterals.L293}}" id="6"
+              axis-label-font="14px 'OpenSans-bold'"
+              plots="stories[5].plots"
+              dimensions="stories[5].dimensions"
+              values-visible="true"
+              values-font="14px 'OpenSans-bold'"
+              values-mask="{value}"
+              show-euro-mask="true"
+              multiple-label-colors="false"
+              base-axis-label-text-baseline="top"
+              leaf-content-overflow='visible'
+              legend="true"
+              legend-item-size="70"
+              datasource-and-dates="[datasetEurostatBetweenDates,279]"
+            ></dvt-bar-chart>
+          </div>
         </div>
-
     <!-- END CONTENT -->
     </div>
   </section>

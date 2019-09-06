@@ -39,6 +39,9 @@ define(function (require) {
         }
     };
 
+    $scope.pSplit = $stateParams.pSplit;
+    //$scope.pSplit2 = 'normal';
+
     $scope.stories = [
       //0 - Company size
       {
@@ -195,10 +198,19 @@ define(function (require) {
           //$state.transitionTo('economic-sector-profile', {pCountry1: $scope.pCountry1, pCountry2: $scope.pCountry2,}, {notify: false});
           $state.go($state.current.name, {
             pCountry1: $scope.pCountry1,
-            pCountry2: $scope.pCountry2
+            pCountry2: $scope.pCountry2,
+            pSplit: $scope.pSplit
           });
         }
       };
+
+      $scope.changeType = function(){
+        $state.go($state.current.name, {
+            pCountry1: $scope.pCountry1,
+            pCountry2: $scope.pCountry2,
+            pSplit: $scope.pSplit
+          },{reload:true});
+      }
 
     /******************************END FILTERS************************************/
   }

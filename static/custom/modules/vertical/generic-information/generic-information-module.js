@@ -42,15 +42,19 @@ define(function (require) {
         });
 
         $stateProvider.state('economic-sector-profile', {
-          url: "/generic-information/economic-sector-profile/:pCountry1/:pCountry2",
+          url: "/generic-information/economic-sector-profile/:pCountry1/:pCountry2/:pSplit",
           params: {
             pCountry1: {
-                  value: "AT",
-                  squash: "AT"
+              value: "AT",
+              squash: "AT"
             },
             pCountry2: {
-                  value: "BE",
-                  squash: "BE"
+              value: "BE",
+              squash: "BE"
+            },
+            pSplit: {
+              value: 'normal',
+              squash: 'normal'
             }
           },
           views: {
