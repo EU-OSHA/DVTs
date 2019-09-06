@@ -21,7 +21,7 @@
 
 		<!-- SUBSECTION MENU -->		
 		<ul class="indicators--submenu--wrapper" id="indicatorsSubmenu" data-ng-click ="openIndicatorsList($event)" >
-			<li data-ng-class="{'active':(subsection.database_name == pSubsection)}" data-ng-repeat="subsection in subsections" data-ng-click ="openIndicatorsList($event)" class="submenu--item">
+			<li data-ng-class="{'active':(pSubsection == subsection.database_name)}" data-ng-repeat="subsection in subsections" data-ng-click ="openIndicatorsList($event)" class="submenu--item">
         		<a ui-sref="about-tool-detail-page({pSection: pSection, pSubsection: subsection.database_name, pIndicator: pIndicator})" href data-ng-bind="i18nLiterals[subsection.name]"></a>
         	</li>
 		</ul>
@@ -30,7 +30,7 @@
 		<form class="indicators--wrapper">
 			<label for="indicators" data-ng-bind="i18nLiterals.L20623"></label>
 			<div class="indicators-select">
-				<select id="indicators" data-ng-model="pIndicator" data-ng-selected="pIndicator" data-ng-change="changeIndicator()">
+				<select id="indicators" data-ng-model="pIndicator" data-ng-selected="pIndicator" data-ng-change="changeIndicator(pIndicator)">
 					<option data-ng-repeat="indicator in indicators" data-ng-bind="i18nLiterals['L'+indicator.text]" value="{{indicator.id}}"></option>
 				</select>
 			</div>
@@ -48,34 +48,34 @@
 			<h3 data-ng-bind="i18nLiterals.L20722"></h3>
 			<p>{{data.datasource}}</p>
 			<!-- Specific table / Question -->
-			<h3 data-ng-bind="i18nLiterals.L20723"></h3>
+			<h3 data-ng-bind="i18nLiterals.L20723" data-ng-if="i18nLiterals['L'+data.specific_table] != ''"></h3>
 			<p data-ng-bind-html="i18nLiterals['L'+data.specific_table]"></p>
 			<!-- URL / Source file -->
-			<h3 data-ng-bind="i18nLiterals.L20724"></h3>
+			<h3 data-ng-bind="i18nLiterals.L20724" data-ng-if="i18nLiterals['L'+data.url] != ''"></h3>
 			<p data-ng-bind-html="i18nLiterals['L'+data.url]"></p>
 			<!-- Filtering options applied -->
-			<h3 data-ng-bind="i18nLiterals.L20728"></h3>
+			<h3 data-ng-bind="i18nLiterals.L20728" data-ng-if="i18nLiterals['L'+data.options_applied] != ''"></h3>
 			<p data-ng-bind-html="i18nLiterals['L'+data.options_applied]"></p>
 			<!-- Reference year / period -->
-			<h3 data-ng-bind="i18nLiterals.L20725"></h3>
+			<h3 data-ng-bind="i18nLiterals.L20725" data-ng-if="i18nLiterals['L'+data.reference_year] != ''"></h3>
 			<p data-ng-bind-html="i18nLiterals['L'+data.reference_year]"></p>
 			<!-- Last update -->
-			<h3 data-ng-bind="i18nLiterals.L20726"></h3>
+			<h3 data-ng-bind="i18nLiterals.L20726" data-ng-if="i18nLiterals['L'+data.last_update] != ''"></h3>
 			<p data-ng-bind-html="i18nLiterals['L'+data.last_update]"></p>
 			<!-- Coverage -->
-			<h3 data-ng-bind="i18nLiterals.L20727"></h3>
+			<h3 data-ng-bind="i18nLiterals.L20727" data-ng-if="i18nLiterals['L'+data.coverage] != ''"></h3>
 			<p data-ng-bind-html="i18nLiterals['L'+data.coverage]"></p>
 			<!-- Unit of measure -->
-			<h3 data-ng-bind="i18nLiterals.L20730"></h3>
+			<h3 data-ng-bind="i18nLiterals.L20730" data-ng-if="i18nLiterals['L'+data.unit_measure] != ''"></h3>
 			<p data-ng-bind-html="i18nLiterals['L'+data.unit_measure]"></p>
 			<!-- Calculations on the data source -->
-			<h3 data-ng-bind="i18nLiterals.L20729"></h3>
+			<h3 data-ng-bind="i18nLiterals.L20729" data-ng-if="i18nLiterals['L'+data.calculations] != ''"></h3>
 			<p data-ng-bind-html="i18nLiterals['L'+data.calculations]"></p>
 			<!-- Visualisation -->
-			<h3 data-ng-bind="i18nLiterals.L20731"></h3>
+			<h3 data-ng-bind="i18nLiterals.L20731" data-ng-if="i18nLiterals['L'+data.visualisation] != ''"></h3>
 			<p data-ng-bind-html="i18nLiterals['L'+data.visualisation]"></p>
 			<!-- Additional comments -->
-			<h3 data-ng-bind="i18nLiterals.L20732"></h3>
+			<h3 data-ng-bind="i18nLiterals.L20732" data-ng-if="i18nLiterals['L'+data.additional_comments] != ''"></h3>
 			<p data-ng-bind-html="i18nLiterals['L'+data.additional_comments]"></p>
 		</section>
 	</div>

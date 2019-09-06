@@ -159,16 +159,16 @@ define(function (require) {
                 });
             }
 
-            $scope.changeIndicator = function(){
-                $log.warn($scope.pIndicator);
-                /*$state.transitionTo($scope.currentState, {
+            $scope.changeIndicator = function(indicator){
+                $log.warn(indicator);
+                $state.transitionTo($scope.currentState, {
                     pSection: $scope.pSection,
                     pSubsection: $scope.pSubsection,
-                    pIndicator: $scope.pIndicator
+                    pIndicator: indicator
                 }, 
                 {
                     reload: true
-                });*/
+                });
             }
 
             // Open indicators list like a select element
