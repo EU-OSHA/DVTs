@@ -105,4 +105,62 @@
   }
 }
 
+.economic--sector--profile{
+  .card--grid{
+    justify-content: center;
+    .card--block--chart{
+      margin: 1rem;
+      position: relative;
+      .select-filter-chart{
+        position: relative;
+        /*
+        position: absolute;
+        right: 9rem;
+        top: 0;
+        width: 65%;
+        z-index: 10;
+        */
+        &:after{
+          content: "\f107";
+          font-family: FontAwesome;
+          font-weight: normal;
+          font-size: 2rem;
+          color: $aquamarine;
+          right: 0;
+          top: 1rem;
+          height: auto;
+          padding: 1rem;
+          position: absolute;
+          pointer-events: none;
+        }
+        select{
+          width: 100%;
+          margin: 1rem 0 3rem;
+          padding: 1rem 2rem;
+          border-radius: 4px;
+          border: 1px solid $aquamarine;
+          color: $aquamarine;
+          background: #FFF;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+        }
+        select::-ms-expand {
+            display: none;
+        }   
+      }
+    }
+  }
+}
 
+@media only screen 
+and (max-width : 1024px){
+  .economic--sector--profile{
+    .card--grid{
+      justify-content: space-between;
+      .card--block--chart{
+        //margin: 1rem;
+      }
+    }
+  }
+}
