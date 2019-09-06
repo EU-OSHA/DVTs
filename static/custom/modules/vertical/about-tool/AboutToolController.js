@@ -37,22 +37,26 @@ define(function (require) {
             {
                 id: 'generic-information', 
                 name: 'L22001',
-                firstSubsection: 'osh_authorities'
+                firstSubsection: 'osh_authorities',
+                firstIndicatorId: '27'
             },
             {
                 id: 'osh-steering', 
                 name: 'L22005',
-                firstSubsection: 'regulation'
+                firstSubsection: 'regulation',
+                firstIndicatorId: '40'
             },
             {
                 id: 'osh-outcomes-working-conditions', 
                 name: 'L22009',
-                firstSubsection: 'workacc'
+                firstSubsection: 'workacc',
+                firstIndicatorId: '53'
             },
             {
                 id: 'osh-infrastructure', 
                 name: 'L22016',
-                firstSubsection: 'enforcement_capacity'
+                firstSubsection: 'enforcement_capacity',
+                firstIndicatorId: '76'
         }];
 
         //Lists
