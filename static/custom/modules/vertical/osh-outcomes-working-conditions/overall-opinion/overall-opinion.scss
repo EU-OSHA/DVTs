@@ -87,7 +87,10 @@
 }
 
 
-dvt-radar-chart[chart-title="Worker involvement"]{
+dvt-radar-chart[datasource-and-dates="[datasetEurofound,70]"], 
+dvt-radar-chart[datasource-and-dates="[datasetEurofound,90]"], 
+dvt-radar-chart[datasource-and-dates="[datasetESENER,110]"], 
+dvt-radar-chart[datasource-and-dates="datasourcesAndDates"]{
 	svg{
 		width:100%;
 		margin: 0 0 0 0%;
