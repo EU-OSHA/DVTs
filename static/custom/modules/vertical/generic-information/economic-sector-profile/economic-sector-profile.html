@@ -159,19 +159,16 @@
         <!-- GDP PER CAPITA IN RELATION TO EU28 AVERAGE -->
         <div class="card--block--chart">
           <div class="select-filter-chart">
-            <select ng-model="pSplit" ng-change="changeType()">
-              <option value="normal">NORMAL</option>
-              <option value="euro">EURO</option>
-            </select>
           </div>
-          <div class="chart--block" ng-show="pSplit == 'normal'">
+          <selector chart="GDP" ng-model="dashboard.parameters.pSplit"></selector>
+          <div class="chart--block">
             <dvt-bar-chart
               data-ng-cloak
               query="getGDPData" cda="{{::cdaGenericInformation }}"
               height="360"
-              orientation="vertical"
+              orientation="vertical" listen-to="['pSplit']"
               axis-fixed-max="260" step="{{step.chart5}}"
-              params="[['pIndicator','35'],['pCountry1', pCountry1],['pCountry2', pCountry2],['pDataset', datasetEurostat]]"
+              params="[['pIndicator','pSplit'],['pCountry1', pCountry1],['pCountry2', pCountry2],['pDataset', datasetEurostat]]"
               color-role="category" colors="[stories[4].color1, stories[4].color2, stories[4].color3]"
               chart-title="{{i18nLiterals.L292}}" id="5"
               plots="stories[4].plots"
@@ -192,7 +189,7 @@
             ></dvt-bar-chart>
           </div>
           <!-- GDP PER CAPITA IN RELATION TO EU28 AVERAGE EURO -->
-          <div class="chart--block" ng-show="pSplit == 'euro'">
+          <!--<div class="chart--block" ng-show="pSplit == 'euro'">
             <dvt-bar-chart
               data-ng-cloak
               query="getGDPData" cda="{{::cdaGenericInformation }}"
@@ -218,24 +215,25 @@
               legend="false"
               datasource-and-dates="[datasetEurostat,278]"
             ></dvt-bar-chart>
-          </div>
+          </div>-->
         </div>
         <!-- INCOME PER CAPITA -->
         <div class="card--block--chart">
           <div class="select-filter-chart">
-            <select ng-model="pSplit" ng-change="changeType()">
-              <option value="normal">NORMAL</option>
-              <option value="euro">EURO</option>
-            </select>
+            <selector chart="IncomePerCapita" ng-model="dashboard.parameters.pSplit2"></selector>
+            <!--<select ng-model="dashboard.parameters.pSplit" ng-change="changeType(dashboard.parameters.pSplit)">
+              <option value="36">NORMAL</option>
+              <option value="279">EURO</option>
+            </select>-->
           </div>
-          <div class="chart--block" ng-show="pSplit == 'normal'">
+          <div class="chart--block">
             <dvt-bar-chart
               data-ng-cloak
               query="getIncomePerCapitaData" cda="{{::cdaGenericInformation }}"
-              width="330" height="370" type="lines"
+              width="330" height="370" type="lines" listen-to="['pSplit']"
               orientation="vertical" axis-fixed-min="10000"
               axis-fixed-max="20000" step="{{step.chart6}}"
-              params="[['pIndicator','36'],['pCountry1', pCountry1],['pCountry2', pCountry2],['pDataset', datasetEurostatBetweenDates]]"
+              params="[['pIndicator','pSplit2'],['pCountry1', pCountry1],['pCountry2', pCountry2],['pDataset', 'pDataset']]"
               color-role="series" colors="[stories[5].color1, stories[5].color2, stories[5].color3]"
               chart-title="{{i18nLiterals.L293}}" id="6"
               axis-label-font="14px 'OpenSans-bold'"
@@ -254,7 +252,7 @@
             ></dvt-bar-chart>
           </div>
           <!-- INCOME PER CAPITA EURO -->
-          <div class="chart--block" ng-show="pSplit == 'euro'">
+          <!--<div class="chart--block" ng-show="pSplit == 'euro'">
             <dvt-bar-chart
               data-ng-cloak
               query="getIncomePerCapitaData" cda="{{::cdaGenericInformation }}"
@@ -278,7 +276,7 @@
               legend-item-size="70"
               datasource-and-dates="[datasetEurostatBetweenDates,279]"
             ></dvt-bar-chart>
-          </div>
+          </div>-->
         </div>
     <!-- END CONTENT -->
     </div>

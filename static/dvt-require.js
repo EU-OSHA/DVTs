@@ -159,6 +159,7 @@
     /* ECONOMIC AND SECTOR PROFILE */
     requirePaths['vertical/economic-sector-profile/EconomicSectorProfileController'] = verticalModules + '/generic-information/economic-sector-profile/EconomicSectorProfileController' + suffix;
     requirePaths['vertical/economic-sector-profile/services/EconomicSectorProfileService'] = verticalModules + '/generic-information/economic-sector-profile/services/EconomicSectorProfileService' + suffix;
+    requirePaths['vertical/economic-sector-profile/selector'] = verticalModules + '/generic-information/economic-sector-profile/directives/SelectorDirective' + suffix;
 
     /* WORKFORCE PROFILE */
     requirePaths['vertical/workforce-profile/WorkforceProfileController'] = verticalModules + '/generic-information/workforce-profile/WorkforceProfileController' + suffix;

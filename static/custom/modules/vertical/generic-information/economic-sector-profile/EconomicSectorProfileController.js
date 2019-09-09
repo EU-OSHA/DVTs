@@ -30,16 +30,19 @@ define(function (require) {
     // Country parameters
     $scope.pCountry1 = $stateParams.pCountry1;
     $scope.pCountry2 = $stateParams.pCountry2;
+    //$scope.pSplit = '36';
 
     $scope.dashboard = {};
     $scope.dashboard = {
         parameters: {
             "pCountry1": $scope.pCountry1,
-            "pCountry2": $scope.pCountry2
+            "pCountry2": $scope.pCountry2,
+            "pSplit": '35',
+            "pSplit2": '36',
+            "pDataset": $scope.datasetEurostatBetweenDates
         }
     };
-
-    $scope.pSplit = $stateParams.pSplit;
+    
     //$scope.pSplit2 = 'normal';
 
     $scope.stories = [
@@ -204,12 +207,18 @@ define(function (require) {
         }
       };
 
-      $scope.changeType = function(){
-        $state.go($state.current.name, {
-            pCountry1: $scope.pCountry1,
-            pCountry2: $scope.pCountry2,
-            pSplit: $scope.pSplit
-          },{reload:true});
+      $scope.changeType = function(pSplit){
+        $log.warn(pSplit);
+        $log.warn(this);
+        //ngModel.$setViewValue($scope.dashboard.parameters.pSplit, 'change');
+        //$scope.dashboard.fireChange('pSplit', pSplit);        
+
+        //$scope.dashboard.parameters.pSplit = pSplit;
+        /*$state.go($state.current.name, {
+          pCountry1: $scope.pCountry1,
+          pCountry2: $scope.pCountry2,
+          pSplit: $scope.pSplit
+        },{reload:true});*/
       }
 
     /******************************END FILTERS************************************/

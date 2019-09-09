@@ -42,7 +42,7 @@ define(function (require) {
         });
 
         $stateProvider.state('economic-sector-profile', {
-          url: "/generic-information/economic-sector-profile/:pCountry1/:pCountry2/:pSplit",
+          url: "/generic-information/economic-sector-profile/:pCountry1/:pCountry2",
           params: {
             pCountry1: {
               value: "AT",
@@ -51,10 +51,6 @@ define(function (require) {
             pCountry2: {
               value: "BE",
               squash: "BE"
-            },
-            pSplit: {
-              value: 'normal',
-              squash: 'normal'
             }
           },
           views: {
@@ -93,6 +89,8 @@ define(function (require) {
           }
         });
     });
+
+    module.directive('selector', require('vertical/economic-sector-profile/selector'));
     module.factory('EconomicSectorProfileService', require('vertical/economic-sector-profile/services/EconomicSectorProfileService'));
     module.factory('WorkforceProfileService', require('vertical/workforce-profile/services/WorkforceProfileService'));
     return module;
