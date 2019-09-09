@@ -415,7 +415,7 @@
 	      <Parameter default="6" name="pDataset" type="Numeric" />
 	    </Parameters>
 	    <Query>
-	      SELECT n.country_code as Country, (v.value*100) as Value
+	      SELECT  n.country_code as Country, (v.value*100) as Value
 	      FROM nuts n, profile p, indicator i, value v, dataset d
 	      WHERE n.id = p.nuts_id
 	      AND i.id = v.indicator_id
@@ -437,7 +437,7 @@
 	      <Parameter default="6" name="pDataset" type="Numeric" />
 	    </Parameters>
 	    <Query>
-	      SELECT n.country_code as Country, p.year as Year, v.value as Income
+	      SELECT IF(n.name REGEXP 'European Union', n.country_code, CONCAT("(", n.country_code, ") ", n.name)) as Country, p.year as Year, v.value as Income
 	      FROM nuts n, profile p, indicator i, value v, dataset d
 	      WHERE n.id = p.nuts_id
 	      AND i.id = v.indicator_id

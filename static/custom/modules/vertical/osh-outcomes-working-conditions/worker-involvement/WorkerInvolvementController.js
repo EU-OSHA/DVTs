@@ -41,7 +41,8 @@ define(function (require) {
           story1: [
             dataService.getCountryWorkerInvolvementESENERData($scope.datasetESENER, $scope.pCountry1), 
             dataService.getCountryWorkerInvolvementESENERData($scope.datasetESENER, $scope.pCountry2),
-            dataService.getEU28WorkerInvolvementESENERData($scope.datasetESENER)           
+            dataService.getCountryWorkerInvolvementESENERData($scope.datasetESENER, 'EU28')
+            //dataService.getEU28WorkerInvolvementESENERData($scope.datasetESENER)           
           ]
         }
       },
