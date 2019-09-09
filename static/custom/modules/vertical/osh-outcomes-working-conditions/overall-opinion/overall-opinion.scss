@@ -87,10 +87,25 @@
 }
 
 
+dvt-radar-chart[chart-title="Worker involvement"]{
+	svg{
+		width:100%;
+		margin: 0 0 0 0%;
+		text[fill="#000000"]{
+			tspan{
+				font-size: 1.2rem;
+			}			
+		}
+		text[text-anchor="middle"]{
+			transform: translateY(-1rem);
+		}
+	}
+}
+
 
 @media (max-width: 990px) {
 
-	.overall-opinion, .prevention-companies, .mental-risk, .physical-risk{
+	.overall-opinion, .prevention-companies, .mental-risk, .physical-risk, .worker-involvement {
 		.compare--block{
 			.compare--list{
 				li{
@@ -216,10 +231,24 @@
 	}
  
 }
+@media only screen and (max-width: 768px) {
+
+	.overall-opinion, .prevention-companies, .mental-risk, .physical-risk, .worker-involvement{
+		.card--grid{
+			.card--block--chart{ 
+		    margin: 0 2rem;
+				.select-filter-chart{
+				}
+			}			
+		}
+	
+	}
+
+}
 
 @media only screen and (max-width: 520px) {
 
-	.overall-opinion, .prevention-companies, .mental-risk, .physical-risk{
+	.overall-opinion, .prevention-companies, .mental-risk, .physical-risk, .worker-involvement{
 		div[query="getJobSatisfactionHorizontalData"],
 		div[query="getMentalRiskHorizontalData"], 
 		div[query="getPhysicalRiskHorizontalData"]{
@@ -232,7 +261,9 @@
 		}
 		.card--block--chart{ 
 	    border-radius: 0;
-		}
+			.select-filter-chart{
+			}
+		}	
 	}
 
 }
