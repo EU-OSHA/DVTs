@@ -445,5 +445,20 @@
 		}
 	}
 
+	.about-tool{
+		.indicators--list--wrapper{
+			.indicators-item{
+				a{
+					height: auto;
+					position: relative;
+					font-size: 1.4rem;	
+				}
+				&.active{
+					font-weight: bold;
+				}
+			}
+		}
+	}  
+
 }
 
