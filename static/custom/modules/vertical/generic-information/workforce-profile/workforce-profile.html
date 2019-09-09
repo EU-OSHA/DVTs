@@ -18,11 +18,12 @@
           <select id="indicatorSelect" class="filter--dropdown--list" data-ng-model="selectedIndicator" data-ng-change="selectChange()">
             <option value="median-age" data-ng-bind="i18nLiterals.L294"></option>
             <option value="employment-rate" data-ng-bind="i18nLiterals.L20621"></option>
+            <option value="unemployment-rate" data-ng-bind="i18nLiterals.L291"></option>
           </select>
         </li>
-        <li id="filter2" data-ng-class="{'disabled':selectedIndicator == 'median-age' }" >
+        <li id="filter2" data-ng-class="{'disabled':selectedIndicator == 'median-age' || selectedIndicator == 'unemployment-rate'}" >
           <label for="employeeGroupSelect" data-ng-bind="i18nLiterals.L20622"></label>
-          <select id="employeeGroupSelect" class="filter--dropdown--list" data-ng-disabled="selectedIndicator == 'median-age'" data-ng-model="selectedSubIndicator" data-ng-change="selectChange()">  
+          <select id="employeeGroupSelect" class="filter--dropdown--list" data-ng-disabled="selectedIndicator == 'median-age' || selectedIndicator== 'unemployment-rate'" data-ng-model="selectedSubIndicator" data-ng-change="selectChange()">  
             <option data-ng-bind="i18nLiterals.L295" value="ageing-workers"></option>
             <option data-ng-repeat='gender in genders' value="{{i18nLiterals['L'+gender.gender_name]}}" data-ng-bind="i18nLiterals['L'+gender.gender_name]"></option>
           </select>
@@ -84,6 +85,11 @@
           <li>
             <label data-ng-bind="i18nLiterals['L20617']"></label>
             <span class="data" data-ng-bind="data.totalEmployment['EU28'].value"></span>
+            <span class="data-text">&percnt;</span>
+          </li>
+          <li>
+            <label data-ng-bind="i18nLiterals['L291']"></label>
+            <span class="data" data-ng-bind="data.unemploymentRate['EU28'].value"></span>
             <span class="data-text">&percnt;</span>
           </li>
         </ul>
@@ -165,6 +171,11 @@
               <li>                
                 <label data-ng-bind="i18nLiterals['L20619']"></label>
                 <span class="data" data-ng-bind="data.femaleEmployment[country.country_code].value"></span>
+                <span class="data-text">&percnt;</span>
+              </li>
+              <li>                
+                <label data-ng-bind="i18nLiterals['L291']"></label>
+                <span class="data" data-ng-bind="data.unemploymentRate[country.country_code].value"></span>
                 <span class="data-text">&percnt;</span>
               </li>
             </ul>

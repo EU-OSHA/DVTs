@@ -331,7 +331,7 @@ define(function () {
                  * @name dvt.configModule.DataService#getUnemploymentRateData
                  * @methodOf dvt.configModule.DataService
                  * @description
-                 * Get uneployment rate data
+                 * Get uneployment rate data for two countries
                  */
                 getUnemploymentRateData: function (pIndicator, pCountry1, pCountry2) {
                     var url = configService.getGenericInformationDataPath() + "&dataAccessId=getUnemploymentRateData" + "&pIndicator=" + pIndicator + "&parampCountry1=" + pCountry1 + "&parampCountry2=" + pCountry2;
@@ -471,6 +471,19 @@ define(function () {
                 getFemaleEmploymentData: function(pDataset){
                     var url = configService.getGenericInformationDataPath() + "&dataAccessId=getFemaleEmploymentData"+"&parampDataset="+pDataset;
                     $log.debug('getFemaleEmploymentData url:' + url);
+                    return promise(url);
+                },
+
+                /**
+                 * @ngdoc method
+                 * @name dvt.configModule.DataService#getUnemploymentData
+                 * @methodOf dvt.configModule.DataService
+                 * @description
+                 * Get uneployment rate data
+                 */
+                getUnemploymentData: function (pDataset) {
+                    var url = configService.getGenericInformationDataPath() + "&dataAccessId=getUnemploymentData" + "&pDataset=" + pDataset;
+                    $log.debug('getUnemploymentData url:' + url);
                     return promise(url);
                 },
 

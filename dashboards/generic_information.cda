@@ -592,6 +592,24 @@
 	    </Query>
 	</DataAccess>
 
+	<!-- WORKFORCE PROFILE || get unemployment rate data -->
+	<DataAccess access="public" connection="dvt_conn" id="getUnemploymentData" type="sql">
+	    <Cache duration="3600" enabled="true" />
+	    <Columns />
+	    <Parameters>
+	      <Parameter default="6" name="pDataset" type="Numeric" />
+	    </Parameters>
+	    <Query>
+	      SELECT n.country_code as countryKey, n.literal_id as country_name, ROUND(value*100, 1) as value
+	      FROM nuts n, profile p, value v, dataset d
+	      WHERE n.id = p.nuts_id 
+	      AND v.profile_id = p.id 
+	      AND d.id = ${pDataset} AND d.id = v.dataset_id
+	      AND v.indicator_id = 34
+	      ORDER BY country_name ASC
+	    </Query>
+	</DataAccess>
+
 	<!-- WORKFORCE PROFILE || get min and max value of selected indicators -->
 	<DataAccess access="public" connection="dvt_conn" id="getMinMaxValues" type="sql">
 	    <Cache duration="3600" enabled="true" />
@@ -628,54 +646,54 @@
 	      <Parameter default="25" name="pRange" type="Numeric" />
 	    </Parameters>
 	    <Query>
-	      (SELECT IF(${pIndicator} = 37, CONCAT(ROUND(${pMinValue},1), ''), CONCAT(ROUND(${pMinValue},1), '%')) as Distribution, IF(${pSubIndicator} != 0, COUNT(v.value*100), COUNT(v.value)) as Total
+	      (SELECT IF(${pIndicator} = 37, CONCAT(ROUND(${pMinValue},1), ''), CONCAT(ROUND(${pMinValue},1), '%')) as Distribution, IF(${pSubIndicator} != 0 || ${pIndicator} = 34, COUNT(v.value*100), COUNT(v.value)) as Total
 	      FROM nuts n, profile p, value v, dataset d
 	      WHERE n.id = p.nuts_id 
 	      AND v.profile_id = p.id 
 	      AND d.id = ${pDataset} AND d.id = v.dataset_id
 	      AND v.indicator_id = ${pIndicator}
 	      AND (p.gender_id IS NULL OR p.gender_id = ${pSubIndicator})
-	      AND IF(${pSubIndicator} != 0, v.value*100, v.value) = ${pMinValue}
+	      AND IF(${pSubIndicator} != 0 || ${pIndicator} = 34, v.value*100, v.value) = ${pMinValue}
 	      ORDER BY v.value ASC
 	      )UNION(
-	      SELECT IF(${pIndicator} = 37, CONCAT(ROUND(${pMinValue}+${pRange},1), ''), CONCAT(ROUND(${pMinValue}+${pRange},1), '%')) , IF(${pSubIndicator} != 0, COUNT(v.value*100), COUNT(v.value)) 
+	      SELECT IF(${pIndicator} = 37, CONCAT(ROUND(${pMinValue}+${pRange},1), ''), CONCAT(ROUND(${pMinValue}+${pRange},1), '%')) , IF(${pSubIndicator} != 0 || ${pIndicator} = 34, COUNT(v.value*100), COUNT(v.value)) 
 	      FROM nuts n, profile p, value v, dataset d
 	      WHERE n.id = p.nuts_id 
 	      AND v.profile_id = p.id 
 	      AND d.id = ${pDataset} AND d.id = v.dataset_id
 	      AND v.indicator_id = ${pIndicator}
 	      AND (p.gender_id IS NULL OR p.gender_id = ${pSubIndicator})
-	      AND (IF(${pSubIndicator} != 0, v.value*100, v.value) BETWEEN (${pMinValue} + 0.01) AND (${pMinValue} + ${pRange}))
+	      AND (IF(${pSubIndicator} != 0 || ${pIndicator} = 34, v.value*100, v.value) BETWEEN (${pMinValue} + 0.01) AND (${pMinValue} + ${pRange}))
 	      ORDER BY v.value ASC
 	      )UNION(
-	      SELECT IF(${pIndicator} = 37, CONCAT(ROUND(${pMinValue}+${pRange}*2, 1), ''), CONCAT(ROUND(${pMinValue}+${pRange}*2, 1), '%')) , IF(${pSubIndicator} != 0, COUNT(v.value*100), COUNT(v.value)) 
+	      SELECT IF(${pIndicator} = 37, CONCAT(ROUND(${pMinValue}+${pRange}*2, 1), ''), CONCAT(ROUND(${pMinValue}+${pRange}*2, 1), '%')) , IF(${pSubIndicator} != 0 || ${pIndicator} = 34, COUNT(v.value*100), COUNT(v.value)) 
 	      FROM nuts n, profile p, value v, dataset d
 	      WHERE n.id = p.nuts_id 
 	      AND v.profile_id = p.id 
 	      AND d.id = ${pDataset} AND d.id = v.dataset_id
 	      AND v.indicator_id = ${pIndicator}
 	      AND (p.gender_id IS NULL OR p.gender_id = ${pSubIndicator})
-	      AND (IF(${pSubIndicator} != 0, v.value*100, v.value) BETWEEN ((${pMinValue} + ${pRange}) + 0.01) AND (${pMinValue}+${pRange}*2))
+	      AND (IF(${pSubIndicator} != 0 || ${pIndicator} = 34, v.value*100, v.value) BETWEEN ((${pMinValue} + ${pRange}) + 0.01) AND (${pMinValue}+${pRange}*2))
 	      ORDER BY v.value ASC
 	      )UNION(
-	      SELECT IF(${pIndicator} = 37, CONCAT(ROUND(${pMaxValue} - ${pRange},1), ''), CONCAT(ROUND(${pMaxValue} - ${pRange},1), '%')), IF(${pSubIndicator} != 0, COUNT(v.value*100), COUNT(v.value)) 
+	      SELECT IF(${pIndicator} = 37, CONCAT(ROUND(${pMaxValue} - ${pRange},1), ''), CONCAT(ROUND(${pMaxValue} - ${pRange},1), '%')), IF(${pSubIndicator} != 0 || ${pIndicator} = 34, COUNT(v.value*100), COUNT(v.value)) 
 	      FROM nuts n, profile p, value v, dataset d
 	      WHERE n.id = p.nuts_id 
 	      AND v.profile_id = p.id 
 	      AND d.id = ${pDataset} AND d.id = v.dataset_id
 	      AND v.indicator_id = ${pIndicator}
 	      AND (p.gender_id IS NULL OR p.gender_id = ${pSubIndicator})
-	      AND (IF(${pSubIndicator} != 0, v.value*100, v.value) BETWEEN ((${pMinValue} + ${pRange}*2) + 0.01) AND (${pMaxValue} - ${pRange}))
+	      AND (IF(${pSubIndicator} != 0 || ${pIndicator} = 34, v.value*100, v.value) BETWEEN ((${pMinValue} + ${pRange}*2) + 0.01) AND (${pMaxValue} - ${pRange}))
 	      ORDER BY v.value ASC
 	      )UNION(
-	      SELECT IF(${pIndicator} = 37, CONCAT(ROUND(${pMaxValue}, 1), ''), CONCAT(ROUND(${pMaxValue}, 1), '%')), IF(${pSubIndicator} != 0, COUNT(v.value*100), COUNT(v.value)) 
+	      SELECT IF(${pIndicator} = 37, CONCAT(ROUND(${pMaxValue}, 1), ''), CONCAT(ROUND(${pMaxValue}, 1), '%')), IF(${pSubIndicator} != 0 || ${pIndicator} = 34, COUNT(v.value*100), COUNT(v.value)) 
 	      FROM nuts n, profile p, value v, dataset d
 	      WHERE n.id = p.nuts_id 
 	      AND v.profile_id = p.id 
 	      AND d.id = ${pDataset} AND d.id = v.dataset_id
 	      AND v.indicator_id = ${pIndicator}
 	      AND (p.gender_id IS NULL OR p.gender_id = ${pSubIndicator})
-	      AND (IF(${pSubIndicator} != 0, v.value*100, v.value) BETWEEN ((${pMaxValue} - ${pRange}) + 0.01) AND ${pMaxValue})
+	      AND (IF(${pSubIndicator} != 0 || ${pIndicator} = 34, v.value*100, v.value) BETWEEN ((${pMaxValue} - ${pRange}) + 0.01) AND ${pMaxValue})
 	      ORDER BY v.value ASC
 	      )
 	    </Query>

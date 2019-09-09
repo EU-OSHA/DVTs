@@ -62,7 +62,8 @@ define(function (require) {
       dataService.getAgeingWorkersData($scope.datasetEurostat),
       dataService.getTotalEmploymentData($scope.datasetEurostat),
       dataService.getMaleEmploymentData($scope.datasetEurostat),
-      dataService.getFemaleEmploymentData($scope.datasetEurostat)
+      dataService.getFemaleEmploymentData($scope.datasetEurostat),
+      dataService.getUnemploymentData($scope.datasetEurostat)
     ];
 
     $scope.stories = [
@@ -94,7 +95,8 @@ define(function (require) {
       ageingWorkers: [], // 38
       totalEmployment: [], // 39, 1 total
       maleEmployment: [], // 39, 2 male
-      femaleEmployment: [] // 39, 3 female
+      femaleEmployment: [], // 39, 3 female
+      unemploymentRate: [] // 34
     };
 
     if($scope.selectedIndicator == 'median-age') {
@@ -112,6 +114,9 @@ define(function (require) {
     } else if($scope.selectedIndicator == 'employment-rate' && $scope.selectedSubIndicator == 'Female'){
       $scope.pIndicator = 39;
       $scope.pSubIndicator = 3;
+    } else if($scope.selectedIndicator == 'unemployment-rate' && $scope.selectedSubIndicator == 'ageing-workers'){
+      $scope.pIndicator = 34;
+      $scope.pSubIndicator = 0;
     }
 
     $scope.minMaxValues = {
@@ -168,6 +173,8 @@ define(function (require) {
         data = $scope.data.maleEmployment;
       } else if($scope.selectedIndicator == 'employment-rate' && $scope.selectedSubIndicator == 'Female'){
         data = $scope.data.femaleEmployment;
+      } else if($scope.selectedIndicator == 'unemployment-rate' && $scope.selectedSubIndicator == 'ageing-workers'){
+        data = $scope.data.unemploymentRate;
       }
 
       var minValue = 100;
@@ -203,7 +210,7 @@ define(function (require) {
 
     if ($rootScope.data == undefined)
     {
-      Promise.all([$scope.dataPromises[1],$scope.dataPromises[2],$scope.dataPromises[3],$scope.dataPromises[4],$scope.dataPromises[5]]).then(function(res)
+      Promise.all([$scope.dataPromises[1],$scope.dataPromises[2],$scope.dataPromises[3],$scope.dataPromises[4],$scope.dataPromises[5],$scope.dataPromises[6]]).then(function(res)
       {
         var row = {};
         res[0].data.resultset.map(function (elem) {
@@ -244,6 +251,14 @@ define(function (require) {
                 $scope.data.femaleEmployment[row[0]]={};
             $scope.data.femaleEmployment[row[0]].country_name = row[1];
             $scope.data.femaleEmployment[row[0]].value = row[2];
+        });
+        var row = {};
+        res[5].data.resultset.map(function (elem) {
+            row = elem;
+            if(!$scope.data.unemploymentRate[row[0]])
+                $scope.data.unemploymentRate[row[0]]={};
+            $scope.data.unemploymentRate[row[0]].country_name = row[1];
+            $scope.data.unemploymentRate[row[0]].value = row[2];
         });
 
         $scope.data.indicator = $scope.selectedIndicator;
