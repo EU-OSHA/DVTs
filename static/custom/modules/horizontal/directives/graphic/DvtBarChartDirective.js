@@ -509,7 +509,7 @@ define(function (require) {
                                         '<tbody>'+
                                             '<tr class="ccc-tt-dim ccc-tt-dimValueType-Any ccc-tt-dimDiscrete">'+
                                                 '<td class="ccc-tt-dimLabel">'+
-                                                    '<span>Country</span>'+
+                                                    '<span>Sector</span>'+
                                                 '</td>'+
                                                 '<td class="ccc-tt-dimRoles">'+
                                                     '<span class="ccc-tt-role ccc-tt-role-color">'+
@@ -522,11 +522,11 @@ define(function (require) {
                                                     '</span>'+
                                                 '</td>'+
                                                 '<td class="ccc-tt-dimValue">'+
-                                                    '<span class="ccc-tt-value">'+atoms.series.key+'</span>'+
+                                                    '<span class="ccc-tt-value">'+key+'</span>'+
                                                 '</td>'+
                                             '</tr>'+
                                             '<tr class="ccc-tt-dim ccc-tt-dimValueType-Any ccc-tt-dimDiscrete">'+
-                                                '<td class="ccc-tt-dimLabel"><span>Sector</span></td>'+
+                                                '<td class="ccc-tt-dimLabel"><span>Country</span></td>'+
                                                 '<td class="ccc-tt-dimRoles">'+
                                                     '<span class="ccc-tt-role ccc-tt-role-category">'+
                                                         '<span class="ccc-tt-roleIcon"></span>'+
@@ -534,7 +534,7 @@ define(function (require) {
                                                     '</span>'+
                                                     '</td>'+
                                                 '<td class="ccc-tt-dimValue">'+
-                                                    '<span class="ccc-tt-value">'+key+'</span>'+
+                                                    '<span class="ccc-tt-value">'+atoms.series.key+'</span>'+
                                                 '</td>'+
                                             '</tr>'+
                                             '<tr class="ccc-tt-dim ccc-tt-dimValueType-Number ccc-tt-dimContinuous">'+
