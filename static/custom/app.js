@@ -40,7 +40,7 @@ define(function (require) {
                                      genericInformationModule.name,
                                      steeringOfOshModule.name,
                                      oshOutcomesWorkingConditionsModule.name,
-                                      oshInfrastructureModule.name,
+                                     oshInfrastructureModule.name,
                                      aboutToolModule.name,
                                      configModule.name,
                                      directivesModule.name,

@@ -78,13 +78,6 @@ define(function (require) {
       }
     };
 
-    angular.element('body').mouseup(function(e){
-      var container = angular.element('.filter--dropdown--wrapper');
-      if (!container.is(e.target) && container.has(e.target).length === 0){
-        angular.element('.filter--dropdown--wrapper').removeClass('viewOptions'); 
-      }
-    });
-
     $scope.closeSelect = function($event){      
       angular.element('.filter--dropdown--wrapper').removeClass('viewOptions');     
     };
@@ -314,7 +307,7 @@ define(function (require) {
           });
           if($scope.pCountry == elem[1]){
             var tags = angular.element('div.selected--tags-wrapper');
-            var html = '<span class="selected-tag" id="country'+$scope.pCountry +'" data-ng-click="deleteTag($event)">' + '('+$scope.pCountry+') ' + $scope.i18nLiterals['L'+elem[0]] +'</span>';
+            var html = '<span class="selected-tag" id="country'+$scope.elem[0] +'" data-ng-click="deleteTag($event)">' + '('+$scope.pCountry+') ' + $scope.i18nLiterals['L'+elem[0]] +'</span>';
             tags.append( $compile(html)($scope) );
           }
         });
@@ -424,9 +417,9 @@ define(function (require) {
         for(var i = 0; i < $scope.searchParams.countries.length;i++){
           if(angular.element('span#country'+$scope.searchParams.countries[i]).length<=0){
             if(valueToJson.country_code == 'EU28'){
-              var html = '<span class="selected-tag" id="country'+$scope.searchParams.countries[i] +'" data-ng-click="deleteTag($event)">'+ $scope.i18nLiterals['L'+valueToJson.country] +'</span>';
+              var html = '<span class="selected-tag" id="country'+valueToJson.country +'" data-ng-click="deleteTag($event)">'+ $scope.i18nLiterals['L'+valueToJson.country] +'</span>';
             }else{
-              var html = '<span class="selected-tag" id="country'+$scope.searchParams.countries[i] +'" data-ng-click="deleteTag($event)">' + '('+valueToJson.country_code+') ' + $scope.i18nLiterals['L'+valueToJson.country] +'</span>';
+              var html = '<span class="selected-tag" id="country'+valueToJson.country +'" data-ng-click="deleteTag($event)">' + '('+valueToJson.country_code+') ' + $scope.i18nLiterals['L'+valueToJson.country] +'</span>';
             }
             tags.append( $compile(html)($scope) );
           }          

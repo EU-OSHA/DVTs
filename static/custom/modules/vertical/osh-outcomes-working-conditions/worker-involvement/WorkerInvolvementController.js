@@ -12,7 +12,7 @@ define(function (require) {
   'use strict';
 
 
-  function controller($scope, $stateParams, $state, configService, $log, $document,dataService, $window, $sce, $compile, $timeout, dvtUtils) {
+  function controller($scope, $stateParams, $state, configService, $log, $document,dataService, $window, $sce, $compile, $timeout, dvtUtils, exportService) {
 
 
     // CDA
@@ -32,6 +32,7 @@ define(function (require) {
     $scope.pCountry1 = ($stateParams.pCountry1 != null)?$stateParams.pCountry1:'AT';
     $scope.pCountry2 = ($stateParams.pCountry2 != null)?$stateParams.pCountry2:'BE';
     $scope.pSplit = ($stateParams.pSplit != null)?$stateParams.pSplit:'esener';
+    $scope.datasourcesAndDates = $scope.pSplit == 'esener'?[$scope.datasetESENER,123]:[$scope.datasetEurofound,95];
 
     $scope.stories = [
       //0 - Worker Involvement ESENER
@@ -40,7 +41,8 @@ define(function (require) {
           story1: [
             dataService.getCountryWorkerInvolvementESENERData($scope.datasetESENER, $scope.pCountry1), 
             dataService.getCountryWorkerInvolvementESENERData($scope.datasetESENER, $scope.pCountry2),
-            dataService.getEU28WorkerInvolvementESENERData($scope.datasetESENER)           
+            dataService.getCountryWorkerInvolvementESENERData($scope.datasetESENER, 'EU28')
+            //dataService.getEU28WorkerInvolvementESENERData($scope.datasetESENER)           
           ]
         }
       },
@@ -59,7 +61,7 @@ define(function (require) {
     $scope.step = 20;
 
     $scope.axisMax = ($scope.pSplit == 'esener')?100:80;
-    $scope.height = ($scope.pSplit == 'esener')?400:500;
+    $scope.height = ($scope.pSplit == 'esener')?420:450;
     $scope.story = ($scope.pSplit == 'esener')?$scope.stories[0].promises.story1:$scope.stories[1].promises.story2;
 
     $scope.dashboard = {};
@@ -147,9 +149,13 @@ define(function (require) {
           }, {reload: true});
         }
       }
+
+      $scope.exportData = function(promises, title, id){
+        exportService.exportRadarData(promises, title, id);
+      }
   }
 
-controller.$inject = ['$scope', '$stateParams', '$state', 'configService', '$log', '$document','dataService', '$window', '$sce', '$compile', '$timeout', 'dvtUtils'];
+controller.$inject = ['$scope', '$stateParams', '$state', 'configService', '$log', '$document','dataService', '$window', '$sce', '$compile', '$timeout', 'dvtUtils', 'exportService'];
   return controller;
 
 

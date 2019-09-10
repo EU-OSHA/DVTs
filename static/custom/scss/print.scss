@@ -437,8 +437,9 @@
 	.overall-opinion, 
 	.mental-risk, 
 	.physical-risk, 
-	.osh-culture{
-		.chart--block{
+	.osh-culture, 
+	.prevention-companies{
+		.chart--block, .chart--wrapper{
 			svg{
 				zoom:0.8;
 			}

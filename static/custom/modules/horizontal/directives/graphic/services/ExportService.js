@@ -169,6 +169,12 @@ define(function(require){
 
                     var value=exportComponent.dataComponent.chart.resultset[i][a];
 
+                    if(exportComponent.dataComponent.chartDefinition.dataAccessId == 'getSectorActivityData'){
+                        if(a == 1){
+                            value = i18n['L'+value];
+                        }
+                    }
+
                     if(!isNaN(value) && (value<-1 || (value>-1 && value<0))) {
                         data+=Math.abs(value)+";";
                     } else {

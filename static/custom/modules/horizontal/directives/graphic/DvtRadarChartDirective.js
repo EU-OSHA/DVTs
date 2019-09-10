@@ -629,7 +629,7 @@ define(function (require) {
 							//technical legend
 							if(!!opts.showTechnicalLegend){
 								var x = (paper.width * 0.35) - (opts.indicators[0].length*4);
-								var y = paper.height * 0.95;
+								var y = paper.height * 0.89;
 								technicalLegend(x,y);
 							}
 

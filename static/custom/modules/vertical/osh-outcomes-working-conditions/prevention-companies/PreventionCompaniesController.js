@@ -31,7 +31,8 @@ define(function (require) {
 
     $scope.pCountry1 = ($stateParams.pCountry1 != null)?$stateParams.pCountry1:'AT';
     $scope.pCountry2 = ($stateParams.pCountry2 != null)?$stateParams.pCountry2:'BE';
-    $scope.pSplit = ($stateParams.pSplit != null)?$stateParams.pSplit:'establishment-size';
+    $scope.pSplit = ($stateParams.pSplit != null)?$stateParams.pSplit:'sector';
+    $log.warn($scope.pSplit);
 
     $scope.countriesDataFor = [];
     $scope.countriesCompareWith = [];
@@ -51,7 +52,7 @@ define(function (require) {
     $scope.color2 = resolution > 768 ? dvtUtils.getColorCountry(1) : dvtUtils.getColorCountry(22);
     $scope.color3 = resolution > 768 ? dvtUtils.getAccidentsColors(4) : dvtUtils.getColorCountry(1);
     $scope.color4 = resolution > 768 ? dvtUtils.getColorCountry(1) : dvtUtils.getAccidentsColors(4);
-    $scope.axisSizeRA = resolution > 768 ? 50 : 100;
+    $scope.axisSizeRA = resolution > 768 ? 60 : 100;
     $scope.axisWordBreak = resolution > 768 ? 1 : '';
 
     $(window).on("resize",function(e){
@@ -201,13 +202,24 @@ define(function (require) {
         resolution = screen.width;
       });*/
 
-      $scope.openIndicatorsList = function() {
-        if( resolution < 990 ){
-          angular.element('.submenu--items--wrapper').toggleClass('open-list');
-          angular.element('.submenu-indicator').toggleClass('open-list');
+      $scope.openIndicatorsList = function(e) {       
+        
+        //var parentTag = e.target.offsetParent.nextSibling.parentNode.className;
+        
+        var parentTag = e.target.parentNode.className;
+
+        if(parentTag.indexOf('submenu--items') >= 0  ){
+          var parentTag = e.target.parentNode.className;
         } else {
-          angular.element('.submenu--items--wrapper').removeClass('open-list');
-          angular.element('.submenu-indicator').removeClass('open-list');
+          var parentTag = e.target.offsetParent.nextSibling.parentNode.className;
+        }
+
+        if( resolution < 990 ){
+          if( parentTag.indexOf('open-list') < 0 ){
+            angular.element('.submenu--items--wrapper').addClass('open-list');
+          } else {
+            angular.element('.submenu--items--wrapper').removeClass('open-list');
+          }
         }
       }
 
@@ -219,7 +231,6 @@ define(function (require) {
       });
 
       $scope.changeIndicator = function(e,indicator) {
-        $scope.openIndicatorsList();
         if ($state.current.name !== undefined) {
           if(indicator == 'risk-assessment' || indicator == 'employees-participation-in-prevention'){
             $state.go($state.current.name, {
@@ -229,11 +240,9 @@ define(function (require) {
               pSplit: $scope.pSplit
             });
           }else{
-            $state.go($state.current.name, {
+            $state.go('prevention-companies-tabs', {
               pIndicator: indicator,
-              pCountry1: null, 
-              pCountry2: null,
-              pSplit: null
+              pSplit: $scope.pSplit
             });
           }
         }

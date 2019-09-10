@@ -59,9 +59,10 @@ define(function (require) {
     }];
   
     $scope.pIndicator = $stateParams.pIndicator;
-    $scope.pSubIndicator = ($stateParams.pSubIndicator != null)?$stateParams.pSubIndicator:'smoke-powder-or-dust';
-    $scope.pCountry1 = ($stateParams.pCountry1 != null)?$stateParams.pCountry1:'AT';
-    $scope.pCountry2 = ($stateParams.pCountry2 != null)?$stateParams.pCountry2:'BE';
+    $scope.pSubIndicator = $stateParams.pSubIndicator;
+    $scope.pCountry1 = $stateParams.pCountry1;
+    $scope.pCountry2 = $stateParams.pCountry2;
+    $scope.pFilter = $stateParams.pFilter;
 
     var resolution = screen.width;
 
@@ -294,31 +295,33 @@ define(function (require) {
       });
 
 
-      $scope.changeIndicator = function(e,indicator, subindicator) {
+      $scope.changeIndicator = function(e,indicator, subIndicator) {
         //$scope.openIndicatorsList(e);
         if ($state.current.name !== undefined) {
 
           if(indicator == 'exposure-to-dangerous-substances'){
-            $state.go($state.current.name, {
+            $state.go('physical-risk-exposure-to-dangerous-substances', {
               pIndicator: indicator,
-              pSubIndicator: subindicator,
-              pCountry1: null, 
-              pCountry2: null
+              pSubIndicator: subIndicator,
+              pFilter: $scope.pFilter,
+              pCountry1: $scope.pCountry1, 
+              pCountry2: $scope.pCountry2
             });
           }else if(indicator == 'vibrations-loud-noise-and-temperature'){
-            $state.go($state.current.name, {
+            $state.go('physical-risk-vibrations-loud-noise-and-temperature', {
               pIndicator: indicator,
-              pSubIndicator: null,
-              pCountry1: 'AT', 
-              pCountry2: 'BE',
-              pSplit: null
+              pSubIndicator: subIndicator,
+              pFilter: $scope.pFilter,
+              pCountry1: $scope.pCountry1, 
+              pCountry2: $scope.pCountry2
             });
           }else{
-            $state.go($state.current.name, {
+            $state.go('physical-risk-risks-involved-with-work', {
               pIndicator: indicator,
-              pSubIndicator: 'eurofound',
-              pCountry1: 'AT', 
-              pCountry2: 'BE'
+              pSubIndicator: subIndicator,
+              pFilter: $scope.pFilter,
+              pCountry1: $scope.pCountry1, 
+              pCountry2: $scope.pCountry2
             });
           }
         }
@@ -326,16 +329,17 @@ define(function (require) {
 
       $scope.changeSplit = function(){
         if ($state.current.name !== undefined) {
-          $state.transitionTo('physical-risk', {
+          $state.transitionTo('physical-risk-risks-involved-with-work', {
             pIndicator: $scope.pIndicator,
             pSubIndicator: $scope.pSubIndicator,
+            pFilter: $scope.pFilter,
             pCountry1: $scope.pCountry1, 
             pCountry2: $scope.pCountry2,
           }, {reload: true});
         }
       }
 
-      $scope.countryChange = function(){
+      /*$scope.countryChange = function(){
         if ($state.current.name !== undefined) {
           $state.transitionTo('physical-risk', {
             pIndicator: $scope.pIndicator,
@@ -344,7 +348,7 @@ define(function (require) {
             pCountry2: $scope.pCountry2
           }, {reload: true});
         }
-      }
+      }*/
 
       $scope.exportData = function(promises, title, id){
         exportService.exportRadarData(promises, title, id);

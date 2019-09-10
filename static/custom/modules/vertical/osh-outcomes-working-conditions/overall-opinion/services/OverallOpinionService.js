@@ -113,8 +113,13 @@ define (function (require) {
                         valuesOptimizeLegibility: true,
                         label_textStyle: function(scene){
                             var countryKey = scene.firstAtoms.series;
+                            var valueKey = scene.firstAtoms.value;
                             if(!scene.firstAtoms.value.label.match('%')){
                                 scene.firstAtoms.value.label = scene.firstAtoms.value.label + '%';
+                            }
+
+                            if(valueKey.value > parseInt(this.sign.chart.options.orthoAxisFixedMax)){
+                                this.sign.chart.options.orthoAxisFixedMax = valueKey.value;
                             }
                             //$log.warn(countryKey);
                             if (countryKey == 'EU28') {
@@ -143,11 +148,18 @@ define (function (require) {
                         label_textMargin: 5,
                         label_textBaseline: 'middle',
                         valuesOptimizeLegibility: true,
+                        valuesOverflow: 'show',
                         label_textStyle: function(scene){
                             var countryKey = scene.firstAtoms.series;
+                            var valueKey = scene.firstAtoms.value;
+
                             //$log.warn(countryKey);
                             if(!scene.firstAtoms.value.label.match('%')){
                                 scene.firstAtoms.value.label = scene.firstAtoms.value.label + '%';
+                            }
+
+                            if(valueKey.value > parseInt(this.sign.chart.options.orthoAxisFixedMax)){
+                                this.sign.chart.options.orthoAxisFixedMax = valueKey.value;
                             }
 
                             if (countryKey == 'EU28') {
@@ -175,6 +187,7 @@ define (function (require) {
                         label_textMargin: 7,
                         label_textBaseline: 'bottom',
                         valuesAnchor: 'top',
+                        valuesOverflow: 'show',
                         valuesOptimizeLegibility: true,
                         label_textStyle: function(scene){
                             var countryKey = scene.firstAtoms.series;

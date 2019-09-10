@@ -257,12 +257,12 @@
 		  padding: 1.5rem 0;
 	    margin: 0;
 			.navbar-nav{
-				  box-shadow: 0 6px 0 0px #f6a400 !important;
-					> li{
-						padding: 0.5rem 1.5rem;
-						background:$white;
-						&:hover{
-							box-shadow: none !important;							
+			  box-shadow: 0 6px 0 0px #f6a400;
+				> li{
+					padding: 0.5rem 1.5rem;
+					background:$white;
+					&:hover{
+						box-shadow: none !important;							
 					}
 					a{
 						font-size: 1.8rem !important;
@@ -272,6 +272,9 @@
 					}						
 					ul.dropdown-menu{
 						display: none !important;
+					}
+					&.dropdown.main-menu-selected{
+						box-shadow: 0 0 0 0px #F6A400;
 					}
 				}
 			}
@@ -298,6 +301,7 @@
 							padding: 0rem 0 2rem;
 							width: 100%;
 							background:$white;
+							box-shadow: 0 0 0 0 !important;
 							li.open{
 								box-shadow: none !important;								
 								ul.dropdown-menu{

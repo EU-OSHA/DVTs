@@ -17,7 +17,7 @@
       <ul class="submenu--items--wrapper level1">
         <!-- INDICATORS -->
         <li data-ng-repeat="indicator in indicators" data-ng-click ="openIndicatorsList($event)" data-ng-class="{'active' : indicator.anchor == pIndicator }" class="submenu--item">
-          <a href="" data-ng-click="changeIndicator($event, indicator.anchor, 'smoke-powder-or-dust');" data-ng-bind="i18nLiterals['L'+indicator.text]" data-ng-class="{'active' : indicator.anchor == pIndicator }" ></a>
+          <a href="" data-ng-click="changeIndicator($event, indicator.anchor);" data-ng-bind="i18nLiterals['L'+indicator.text]" data-ng-class="{'active' : indicator.anchor == pIndicator }" ></a>
         </li>
       </ul>
     </div>
@@ -42,14 +42,14 @@
           <!-- 1st country -->        
           <li>
             <label data-ng-bind="i18nLiterals.L20609" for="datafor"></label>
-            <select id="datafor" class="" ng-model="pCountry1" ng-selected="pCountry1" ng-change="countryChange()">
+            <select id="datafor" class="" ng-model="pCountry1" ng-selected="pCountry1" ng-change="changeIndicator($event, pIndicator, 'smoke-powder-or-dust')">
               <option data-ng-repeat='country in countriesDataFor' data-ng-bind="('(')+(country.country_code)+(') ')+(i18nLiterals['L'+country.country])" value="{{::country.country_code}}"></option>
             </select>
           </li>
           <!-- 2nd country -->
           <li>
             <label data-ng-bind="i18nLiterals.L20610" for="comparewith"></label>
-            <select id="comparewith" class="" ng-model="pCountry2" ng-selected="pCountry2" ng-change="countryChange()">
+            <select id="comparewith" class="" ng-model="pCountry2" ng-selected="pCountry2" ng-change="changeIndicator($event, pIndicator, 'smoke-powder-or-dust')">
               <option data-ng-repeat='country in countriesCompareWith' data-ng-bind="('(')+(country.country_code)+(') ')+(i18nLiterals['L'+country.country])" value="{{::country.country_code}}" ></option>
             </select>
           </li>
@@ -71,7 +71,7 @@
               mesh-size="30" draw-labels="true"
               datasource-and-dates="[datasetEurofound,70]">
             </dvt-radar-chart>
-            <!--<button class="btn-default btn-main-color" data-ng-click="exportData(stories[0].promises.story1, i18nLiterals.L20654, 1)">Export data</button>-->
+            <button class="btn-default btn-main-color" data-ng-click="exportData(stories[0].promises.story1, i18nLiterals.L20654, 1)">Export data</button>
           </div>
         </div>
       </div>
@@ -114,7 +114,7 @@
             width="330" height="{{horizontalHeight}}" axis-percent="1"
             orientation="{{orientation}}" axis-fixed-min="0"
             axis-fixed-max="100" step="{{step}}"
-            params="[['pDataset', datasetEurofound], ['pIndicator', 71]]"
+            params="[['pDataset', datasetEurofound], ['pIndicator', 72]]"
             color-role="series" colors="[color1, color2]"
             chart-title="{{i18nLiterals.L329}}" id="3"
             axis-label-font="14px 'OpenSans-bold'"
@@ -128,7 +128,7 @@
             legend="true" stacked="1" angle="{{angle}}"
             legend-align="center"
             base-axis-size="{{axisSize}}"
-            datasource-and-dates="[datasetEurofound,71]"
+            datasource-and-dates="[datasetEurofound,72]"
             ></dvt-bar-chart>
           </div>
           <div class="chart--block" ng-show="pSubIndicator == 'chemical-products'">
@@ -198,14 +198,14 @@
           <!-- 1st country -->        
           <li>
             <label data-ng-bind="i18nLiterals.L20609" for="datafor"></label>
-            <select id="datafor" class="" ng-model="pCountry1" ng-selected="pCountry1" ng-change="countryChange()">
+            <select id="datafor" class="" ng-model="pCountry1" ng-selected="pCountry1" ng-change="changeIndicator($event, pIndicator, 'smoke-powder-or-dust')">
               <option data-ng-repeat='country in countriesDataFor' data-ng-bind="('(')+(country.country_code)+(') ')+(i18nLiterals['L'+country.country])" value="{{::country.country_code}}"></option>
             </select>
           </li>
           <!-- 2nd country -->
           <li>
             <label data-ng-bind="i18nLiterals.L20610" for="comparewith"></label>
-            <select id="comparewith" class="" ng-model="pCountry2" ng-selected="pCountry2" ng-change="countryChange()">
+            <select id="comparewith" class="" ng-model="pCountry2" ng-selected="pCountry2" ng-change="changeIndicator($event, pIndicator, 'smoke-powder-or-dust')">
               <option data-ng-repeat='country in countriesCompareWith' data-ng-bind="('(')+(country.country_code)+(') ')+(i18nLiterals['L'+country.country])" value="{{::country.country_code}}" ></option>
             </select>
           </li>
@@ -217,12 +217,12 @@
         <div class="card--block--chart">
           <!-- ESENER or Eurofound filter -->
           <div class="select-filter-chart">
-            <select ng-model="pSubIndicator" ng-change="changeSplit()">
-              <option data-ng-bind="i18nLiterals.L20646" value="eurofound"></option>
+            <select ng-model="pFilter" ng-change="changeSplit()">
               <option data-ng-bind="i18nLiterals.L20645" value="esener"></option>
+              <option data-ng-bind="i18nLiterals.L20646" value="eurofound"></option>
             </select>
           </div>
-          <div class="chart--block" ng-hide="pSubIndicator != 'eurofound'">
+          <div class="chart--block" ng-hide="pFilter != 'eurofound'">
             <dvt-radar-chart
               data-ng-cloak
               promises="stories[1].promises.story1"
@@ -234,9 +234,9 @@
               mesh-size="30" draw-labels="true"
               datasource-and-dates="[datasetEurofound,90]">
             </dvt-radar-chart>
-            <!--<button class="btn-default btn-main-color" data-ng-click="exportData(stories[1].promises.story1, i18nLiterals.L20656, 2)">Export data</button>-->
+            <button class="btn-default btn-main-color" data-ng-click="exportData(stories[1].promises.story1, i18nLiterals.L20656, 2)">Export data</button>
           </div>
-          <div class="chart--block" ng-hide="pSubIndicator != 'esener'">
+          <div class="chart--block" ng-hide="pFilter != 'esener'">
             <dvt-radar-chart
               data-ng-cloak
               promises="stories[1].promises.story2"
@@ -248,7 +248,7 @@
               mesh-size="30" draw-labels="true"
               datasource-and-dates="[datasetESENER,110]">
             </dvt-radar-chart>
-            <!--<button class="btn-default btn-main-color" data-ng-click="exportData(stories[1].promises.story2, i18nLiterals.L20656, 3)">Export data</button>-->
+            <button class="btn-default btn-main-color" data-ng-click="exportData(stories[1].promises.story2, i18nLiterals.L20656, 3)">Export data</button>
           </div>
         </div>
       </div>
