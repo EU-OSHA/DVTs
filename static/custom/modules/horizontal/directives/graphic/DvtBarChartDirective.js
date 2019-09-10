@@ -451,10 +451,43 @@ define(function (require) {
                         panel_fillStyle: attributes.panelColor || '',
                         axisLabelWordBreak: attributes.axisLabelWordBreak || 0,
                         //customTooltip: attributes.customTooltip || 0,
-                        datasourceAndDates: scope.datasourceAndDates || []
+                        datasourceAndDates: scope.datasourceAndDates || [],
+                        legendDot_fillStyle: attributes.legendFillStyle
                     }
 
                 };
+
+                if(attributes.customLabel){
+                    definition.chartDefinition.baseAxisLabel_text = function(scene){
+                        $log.warn(scene);
+                        var country = scene.firstAtoms.category.label;
+                        var pCountry1 = definition.parameters[1] ? definition.parameters[1][1] : null;
+                        var pCountry2 = definition.parameters[2] ? definition.parameters[2][1] : null;
+
+
+                        if(country.includes(pCountry1)){
+                            return pCountry1;
+                        }else if(country.includes(pCountry2)){
+                            return pCountry2;
+                        }
+                    }
+                }
+
+                if(attributes.legendFillStyle){
+                    definition.chartDefinition.legendDot_fillStyle = function(scene){
+                        var country = scene.firstAtoms.category.label;
+                        var pCountry1 = definition.parameters[1] ? definition.parameters[1][1] : null;
+                        var pCountry2 = definition.parameters[2] ? definition.parameters[2][1] : null;
+
+                        if(country == 'EU28'){
+                            return dvtUtils.getEUColor();
+                        }else if(country == pCountry1){
+                            return dvtUtils.getColorCountry(1)
+                        }else if(country == pCountry2){
+                            return dvtUtils.getColorCountry(2)
+                        }
+                    }
+                }
 
                 if(!!scope.datasourceAndDates){
                     var datasource = scope.datasourceAndDates[0];
@@ -1032,9 +1065,9 @@ define(function (require) {
                         definition.chartDefinition.baseAxisLabel_textStyle= function (){
                             if(this.scene.vars.tick.label == 'EU28'){
                                 return dvtUtils.getEUColor();
-                            }else if(this.scene.vars.tick.label == pCountry1){
+                            }else if(this.scene.vars.tick.label.includes(pCountry1)){
                                 return dvtUtils.getColorCountry(1);
-                            }else if(this.scene.vars.tick.label == pCountry2){
+                            }else if(this.scene.vars.tick.label.includes(pCountry2)){
                                 return dvtUtils.getColorCountry(2);
                             }
                             return 'gray';

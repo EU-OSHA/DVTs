@@ -87,7 +87,7 @@ define (function (require) {
                         name: "main",
                         dataPart: "0",
                         label_textStyle: function(scene){
-                        	var countryKey = scene.firstAtoms.category;
+                        	var countryKey = scene.firstAtoms.category.label;
 
                             if(!scene.firstAtoms.value.label.match('%')){
                                 scene.firstAtoms.value.label = scene.firstAtoms.value.label + '%';
@@ -95,20 +95,20 @@ define (function (require) {
 
                             if (countryKey == 'EU28') {
                                 return dvtUtils.getEUColor();
-                            } else if(countryKey == pCountry1){
+                            } else if(countryKey.includes(pCountry1)){
                             	return dvtUtils.getColorCountry(1);
-                            } else if(countryKey == pCountry2) {
+                            } else if(countryKey.includes(pCountry2)) {
                             	return dvtUtils.getColorCountry(2);
                             }
                             return dvtUtils.getChartLightGrayColor();
                         },
                         bar_fillStyle: function(scene){
-                            var countryKey = scene.firstAtoms.category;
+                            var countryKey = scene.firstAtoms.category.label;
                             if (countryKey == 'EU28') {
                                 return dvtUtils.getEUColor();
-                            } else if(countryKey == pCountry1){
+                            } else if(countryKey.includes(pCountry1)){
                                 return dvtUtils.getColorCountry(1);
-                            } else if(countryKey == pCountry2) {
+                            } else if(countryKey.includes(pCountry2)) {
                                 return dvtUtils.getColorCountry(2);
                             }
                             return dvtUtils.getChartLightGrayColor();
