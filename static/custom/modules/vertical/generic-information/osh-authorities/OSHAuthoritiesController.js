@@ -46,6 +46,7 @@ define(function (require) {
     $scope.elementsEnd=$scope.pageSize;
 
     $scope.pCountry = $stateParams.pCountry;
+    $log.warn($scope.pCountry);
     $scope.pInstitution = $stateParams.pInstitution;
 
     // Pagination Text
@@ -307,7 +308,7 @@ define(function (require) {
           });
           if($scope.pCountry == elem[1]){
             var tags = angular.element('div.selected--tags-wrapper');
-            var html = '<span class="selected-tag" id="country'+$scope.elem[0] +'" data-ng-click="deleteTag($event)">' + '('+$scope.pCountry+') ' + $scope.i18nLiterals['L'+elem[0]] +'</span>';
+            var html = '<span class="selected-tag" id="country'+elem[0] +'" data-ng-click="deleteTag($event)">' + '('+$scope.pCountry+') ' + $scope.i18nLiterals['L'+elem[0]] +'</span>';
             tags.append( $compile(html)($scope) );
           }
         });

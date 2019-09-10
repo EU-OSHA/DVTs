@@ -43,6 +43,18 @@ define(function (require) {
 
     $scope.maxCharacters = 200;
     $scope.step = 20;
+    $scope.already = false;
+
+
+    $scope.compileText = function(text){
+      if(text != null){
+        var auth = angular.element('#tab2 .columm--item--content')
+        if($scope.already == false){
+          auth.append($compile(text)($scope) );
+          $scope.already = true;
+        }
+      }
+    }
 
     // Read more
     $scope.trimText = function(pVal, pNumCharacters){
@@ -205,7 +217,7 @@ define(function (require) {
           $scope.country1Data = {
             country_code: elem[0],
             country_name: elem[1],
-            authority: elem[2],
+            authority: (i18nLiterals['L'+elem[2]]),
             scope: elem[3],
             inspector: elem[4],
             strategy: elem[5]

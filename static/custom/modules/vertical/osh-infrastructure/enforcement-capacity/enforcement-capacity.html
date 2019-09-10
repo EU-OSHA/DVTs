@@ -134,11 +134,9 @@
         <h2 data-ng-bind="i18nLiterals.L333"></h2>
         <div class="columm--item--content">
           <div data-ng-if="country1Data.authority == null" data-ng-bind="i18nLiterals.L20706"></div>
-          <div class="partial-text" data-ng-bind-html="trimText(i18nLiterals['L'+country1Data.authority], maxCharacters)"></div>
-          <div class="complete-text" data-ng-bind-html="i18nLiterals['L'+country1Data.authority]"></div>
-
-          <!--<hr>
-          <p>Sozialministerium</p><p>Zentral-Arbeitsinspektorat</p><p>See more in <a ui-sref="osh-authorities({pCountry: 'AT', pInstitution: 'osh-authority'})">OSH Authorities</a> in the Labour Inspection section or in the <a href="http://www.arbeitsinspektion.gv.at/inspektorat/">website</a></p>-->
+          <div class="partial-text" data-ng-bind-html="compileText(country1Data.authority)"></div>
+          <!--<div class="complete-text" data-ng-bind-html="prueba(i18nLiterals['L'+country1Data.authority])"></div>-->
+          
           <p class="see-more" data-ng-if="i18nLiterals['L'+country1Data.authority].length > 316">
             <a href ng-click='toggleText($event)' class="see-more">{{i18nLiterals.L480}}<i class="fa fa-angle-down" aria-hidden="true"></i></a> 
             <a href ng-click='toggleText($event)' class="see-less" style="display:none">{{i18nLiterals.L481}}<i class="fa fa-angle-up" aria-hidden="true"></i></a>
