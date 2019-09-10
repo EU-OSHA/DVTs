@@ -174,9 +174,23 @@ define (function (require) {
                         valuesOptimizeLegibility: true,
                         label_textStyle: function(scene){
                             var countryKey = scene.firstAtoms.series;
+                            var category = scene.firstAtoms.category;
+                            var i18n = configService.getLiterals();
+
                             if(!scene.firstAtoms.value.label.match('%')){
                                 scene.firstAtoms.value.label = scene.firstAtoms.value.label + '%';
                             }
+
+                            if(i18n['L'+category] != undefined){
+                                category.key = i18n['L'+category];
+                                category.label = i18n['L'+category];
+                                label = category.label;
+                                var substring = category.label.substring(0, 15);
+                                if(label.length > 15){
+                                    category.label = substring + '...';
+                               }
+                            }
+
                             if (countryKey == 'EU28') {
                                 return dvtUtils.getEUColor();
                             } else if(countryKey.value.match(pCountry1)){

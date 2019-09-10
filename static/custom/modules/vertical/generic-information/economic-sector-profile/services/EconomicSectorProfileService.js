@@ -284,9 +284,9 @@ define (function (require) {
 
                             if (countryKey == 'EU28') {
                                 return dvtUtils.getEUColor();
-                            } else if(countryKey == pCountry1){
+                            } else if(countryKey.label.includes(pCountry1)){
                                 return dvtUtils.getColorCountry(1);
-                            } else if(countryKey == pCountry2) {
+                            } else if(countryKey.label.includes(pCountry2)) {
                                 return dvtUtils.getColorCountry(2);
                             }
 
@@ -306,7 +306,7 @@ define (function (require) {
 
                             if (countryKey == 'EU28') {
                                 return dvtUtils.getEUColor();
-                            } else if(countryKey == pCountry1){
+                            } else if(countryKey.label.includes(pCountry1)){
                                 return dvtUtils.getColorCountry(1);
                             } else if(countryKey == pCountry2) {
                                 return dvtUtils.getColorCountry(2);
@@ -328,9 +328,9 @@ define (function (require) {
 
                             if (countryKey == 'EU28') {
                                 return dvtUtils.getEUColor();
-                            } else if(countryKey == pCountry1){
+                            } else if(countryKey.label.includes(pCountry1)){
                                 return dvtUtils.getColorCountry(1);
-                            } else if(countryKey == pCountry2) {
+                            } else if(countryKey.label.includes(pCountry2)){
                                 return dvtUtils.getColorCountry(2);
                             }
 
@@ -340,9 +340,9 @@ define (function (require) {
                         	var countryKey = scene.firstAtoms.series;
                             if (countryKey == 'EU28') {
                                 return dvtUtils.getEUColor();
-                            } else if(countryKey == pCountry1){
+                            } else if(countryKey.label.includes(pCountry1)){
                             	return dvtUtils.getColorCountry(1);
-                            } else if(countryKey == pCountry2) {
+                            } else if(countryKey.label.includes(pCountry2)){
                             	return dvtUtils.getColorCountry(2);
                             }
                             return dvtUtils.getChartLightGrayColor();
@@ -352,9 +352,9 @@ define (function (require) {
 
                             if (countryKey == 'EU28') {
                                 return 5;
-                            } else if(countryKey == pCountry1){
+                            } else if(countryKey.label.includes(pCountry1)){
                                 return 8;
-                            } else if(countryKey == pCountry2) {
+                            } else if(countryKey.label.includes(pCountry2)){
                                 return 9;
                             }
                         },
@@ -405,14 +405,14 @@ define (function (require) {
                                     }
 
                                     return 'top';
-                                } else if(countryKey == pCountry1){
+                                } else if(countryKey.label.includes(pCountry1)){
                                     if(difference1 && countryYear == '2010'){
                                         return 'top';
                                     }else if(difference2 && countryYear == '2016'){
                                         return 'top';
                                     }
                                     return 'bottom';
-                                } else if(countryKey == pCountry2) {
+                                } else if(countryKey.label.includes(pCountry2)){
                                     if(difference5 && countryYear == '2010'){
                                         return 'top';
                                     }else if(difference6 && countryYear == '2016'){
@@ -426,11 +426,11 @@ define (function (require) {
                             //If one country selected has data
                             }else if(resultset.length == 4){
 
-                                if(countryKey == pCountry1){
+                                if(countryKey.label.includes(pCountry1)){
                                     this.sign.chart.options.colors = [dvtUtils.getColorCountry(1), dvtUtils.getEUColor()];
                                 }
 
-                                if(countryKey == pCountry2){
+                                if(countryKey.label.includes(pCountry2)){
                                     this.sign.chart.options.colors = [dvtUtils.getColorCountry(2), dvtUtils.getEUColor()];
                                 }
 
