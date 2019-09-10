@@ -142,7 +142,7 @@ define(function (require) {
             /* Tooltip mouseover function */
             var over = function (e) {
                 if (noDataCountries.indexOf(this.id) < 0) {
-
+                     
                     // background
                     this.animate({
                         opacity:.5
@@ -176,11 +176,11 @@ define(function (require) {
                         if( event.pageY < positionSVG ){
                             angular.element('.dvt-map-tooltip').removeClass('top');
                             angular.element('.dvt-map-tooltip').addClass('botton');
-                            angular.element('.dvt-map-tooltip').css({'left':event.pageX - widthTooltip/2 - 25 ,'top':event.pageY + 30});
+                            angular.element('.dvt-map-tooltip').css({'left':event.pageX - widthTooltip/2 - 25 ,'top':event.pageY + 40});
                         }else{
                             angular.element('.dvt-map-tooltip').removeClass('botton');
                             angular.element('.dvt-map-tooltip').addClass('top');
-                            angular.element('.dvt-map-tooltip').css({'left':event.pageX - widthTooltip/2 - 25 ,'top':event.pageY - heightTooltip - 70});
+                            angular.element('.dvt-map-tooltip').css({'left':event.pageX - widthTooltip/2 - 25 ,'top':event.pageY - heightTooltip - 80});
                         }
                         
                     });
