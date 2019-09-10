@@ -135,7 +135,7 @@ define (function (require) {
                                 scene.firstAtoms.value.label = scene.firstAtoms.value.label + '%';
                             }
 
-                            if(i18n['L'+category] != undefined){
+                            /*if(i18n['L'+category] != undefined){
                                 category.key = i18n['L'+category];
                                 category.label = i18n['L'+category];
                                 label = category.label;
@@ -143,7 +143,7 @@ define (function (require) {
                                 if(label.length > 15){
                                     category.label = substring + '...';
                                 }
-                            }
+                            }*/
 
                             if (countryKey == 'EU28') {
                                 return dvtUtils.getEUColor();

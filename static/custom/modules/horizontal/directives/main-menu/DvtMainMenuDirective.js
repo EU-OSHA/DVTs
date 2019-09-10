@@ -113,16 +113,13 @@ define(function (require) {
 
                     //angular.element('body').mouseup(function(e){
                     /*
-                    $('body').click(function(e) {
+                    $(document).click(function(e) {
                       var container = angular.element('.filter--dropdown--wrapper');
-                     //console.log('desktop -------------------------' + e.target);
                       if (!container.is(e.target) && container.has(e.target).length === 0){
                         angular.element('.filter--dropdown--wrapper').removeClass('viewOptions'); 
                       }
                     });
                     */
-
-
                     $('body').on('click touchstart', function(e) {
                       var container = angular.element('.filter--dropdown--wrapper');
                       //console.log('movil -------------------------' + e.target);
@@ -130,7 +127,6 @@ define(function (require) {
                         angular.element('.filter--dropdown--wrapper').removeClass('viewOptions'); 
                       }
                     });
-
 
 
                     // when click banner link to Home

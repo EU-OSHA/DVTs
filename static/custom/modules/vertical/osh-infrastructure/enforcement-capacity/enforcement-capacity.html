@@ -1,4 +1,4 @@
-<dvt-dashboard promises="promises" parameters="dashboard.parameters" class="country--profile--page">
+<dvt-dashboard promises="promises" parameters="dashboard.parameters" class="country--profile--page enforcement-capacity">
 
   <section data-ng-if="state.current.name != 'home'" id="not-home-cover" class="advice--icon--block advice--block-not-home background-main-light container-fluid section--page">
       <div class="container horizontal-nopadding">
@@ -49,7 +49,7 @@
   <section class="container section--page full-tablet">
     <!-- % of establishment inspected -->
     <div class="column--grid--block" id="tab1" data-ng-show="pIndicator == 'establishments-inspected'">
-      <div class="column--item first" ng-class="{true: 'full', false: 'no-full'}[pCountry2 == 0]">
+      <div class="column--item first no-full">
         <!--<div class="">
           <img  class="flags--wrapper" ng-src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/flag/{{::pCountry1.toLowerCase()}}.png">
         </div>-->
@@ -64,7 +64,7 @@
                 width="330" height="330" axis-percent="1"
                 orientation="horizontal" axis-fixed-min="0"
                 axis-fixed-max="100" step="{{step}}" id="1"
-                params="[['pDataset', datasetESENER], ['pIndicator', 126], ['pCountry1', pCountry1], ['pCountry2', pCountry2], ['pAnswer', 1]]"
+                params="[['pIndicator', 126], ['pCountry1', pCountry1], ['pCountry2', pCountry2], ['pDataset', datasetESENER], ['pAnswer', 1]]"
                 color-role="series" colors="[stories[0].color1, stories[0].color2, stories[0].color3]"
                 chart-title="{{i18nLiterals.L20693}}" 
                 axis-label-font="14px 'OpenSans-bold'"
@@ -72,7 +72,7 @@
                 values-visible="true"
                 values-mask="{value}"
                 values-font="14px 'OpenSans-bold'"
-                multiple-label-colors="false"
+                multiple-label-colors="true"
                 label-text-align="stories[0].labelTextAlign"
                 dimensions="stories[0].dimensions"
                 leaf-content-overflow='visible'
@@ -86,12 +86,12 @@
         </div>
       </div>
 
-      <div class="column--item second" data-ng-show="pCountry2 != 0">
+      <div class="column--item second no-full">
         <!--<div class="">
           <img  class="flags--wrapper" ng-src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/flag/{{::pCountry2.toLowerCase()}}.png">
         </div>-->
         <!--<h2 data-ng-bind="i18nLiterals.L20692"></h2>-->
-        <h2>% of estalishments not inspected</h2>
+        <h2 data-ng-bind="i18nLiterals.L20734"></h2>
         <div class="columm--item--content">
           <div class="card--grid center-text">     
             <div class="card--block--chart" >
@@ -102,7 +102,7 @@
                 width="330" height="330" axis-percent="1"
                 orientation="horizontal" axis-fixed-min="0"
                 axis-fixed-max="100" step="{{step}}" id="1"
-                params="[['pDataset', datasetESENER], ['pIndicator', 126], ['pCountry1', pCountry1], ['pCountry2', pCountry2], ['pAnswer', 2]]"
+                params="[['pIndicator', 126], ['pCountry1', pCountry1], ['pCountry2', pCountry2], ['pDataset', datasetESENER], ['pAnswer', 2]]"
                 color-role="series" colors="[stories[0].color1, stories[0].color2, stories[0].color3]"
                 chart-title="{{i18nLiterals.L20693}}" 
                 axis-label-font="14px 'OpenSans-bold'"
@@ -110,8 +110,8 @@
                 values-visible="true"
                 values-mask="{value}"
                 values-font="14px 'OpenSans-bold'"
-                multiple-label-colors="false"
                 leaf-content-overflow='visible'
+                multiple-label-colors="true"
                 label-text-align="stories[0].labelTextAlign"
                 dimensions="stories[0].dimensions"
                 legend="false" legend-align="center"
@@ -137,8 +137,8 @@
           <div class="partial-text" data-ng-bind-html="trimText(i18nLiterals['L'+country1Data.authority], maxCharacters)"></div>
           <div class="complete-text" data-ng-bind-html="i18nLiterals['L'+country1Data.authority]"></div>
 
-          <hr>
-          <p>Sozialministerium</p><p>Zentral-Arbeitsinspektorat</p><p>See more in <a ui-sref="osh-authorities({pCountry: 'AT', pInstitution: 'osh-authority'})">OSH Authorities</a> in the Labour Inspection section or in the <a href="http://www.arbeitsinspektion.gv.at/inspektorat/">website</a></p>
+          <!--<hr>
+          <p>Sozialministerium</p><p>Zentral-Arbeitsinspektorat</p><p>See more in <a ui-sref="osh-authorities({pCountry: 'AT', pInstitution: 'osh-authority'})">OSH Authorities</a> in the Labour Inspection section or in the <a href="http://www.arbeitsinspektion.gv.at/inspektorat/">website</a></p>-->
           <p class="see-more" data-ng-if="i18nLiterals['L'+country1Data.authority].length > 316">
             <a href ng-click='toggleText($event)' class="see-more">{{i18nLiterals.L480}}<i class="fa fa-angle-down" aria-hidden="true"></i></a> 
             <a href ng-click='toggleText($event)' class="see-less" style="display:none">{{i18nLiterals.L481}}<i class="fa fa-angle-up" aria-hidden="true"></i></a>

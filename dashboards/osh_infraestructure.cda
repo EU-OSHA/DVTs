@@ -65,10 +65,10 @@
 	    <Cache duration="3600" enabled="true"/>
 	    <Columns/>
 	    <Parameters>
-	      <Parameter default="15" name="pDataset" type="Numeric" />
 	      <Parameter default="126" name="pIndicator" type="Numeric"/>
 	      <Parameter default="AT" name="pCountry1" type="String" />
 	      <Parameter default="BE" name="pCountry2" type="String" />
+	      <Parameter default="15" name="pDataset" type="Numeric" />
 	      <Parameter default="1" name="pAnswer" type="Numeric"/>
 	    </Parameters>
 	    <Query>
@@ -85,7 +85,7 @@
 			AND t.language = 'EN'
 			AND d.id = v.dataset_id
 			AND d.id = ${pDataset}
-			ORDER BY FIELD (n.country_code, 'EU28', ${pCountry2}, ${pCountry1} );
+			ORDER BY FIELD (n.country_code, ${pCountry1}, ${pCountry2}, 'EU28') DESC;
 	    </Query>
 	</DataAccess>
 

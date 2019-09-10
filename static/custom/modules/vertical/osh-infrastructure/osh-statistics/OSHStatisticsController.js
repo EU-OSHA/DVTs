@@ -81,12 +81,6 @@ define(function (require) {
       }
     };
 
-    angular.element('body').mouseup(function(e){
-      var container = angular.element('.filter--dropdown--wrapper');
-      if (!container.is(e.target) && container.has(e.target).length === 0){
-        angular.element('.filter--dropdown--wrapper').removeClass('viewOptions'); 
-      }
-    });
 
     $scope.closeSelect = function($event){      
       angular.element('.filter--dropdown--wrapper').removeClass('viewOptions');     
@@ -445,7 +439,7 @@ define(function (require) {
         if(check1) {
           $scope.searchParams.categories.filter1=1;
           if(angular.element('span#categoryFilter1').length<=0){
-            var html = '<span class="selected-tag" id="categoryFilter1" data-ng-click="deleteTag($event)">OSH Statistics</span>';
+            var html = '<span class="selected-tag" id="categoryFilter1" data-ng-click="deleteTag($event)" data-ng-bind="i18nLiterals.L20714"></span>';
             tags.append( $compile(html)($scope) );
           }
           
@@ -457,7 +451,7 @@ define(function (require) {
         if(check2) {
           $scope.searchParams.categories.filter2=1;
           if(angular.element('span#categoryFilter2').length<=0){
-            var html = '<span class="selected-tag" id="categoryFilter2" data-ng-click="deleteTag($event)">Surveys</span>';
+            var html = '<span class="selected-tag" id="categoryFilter2" data-ng-click="deleteTag($event)" data-ng-bind="i18nLiterals.L20715"></span>';
             tags.append( $compile(html)($scope) );
           }
         }else{
@@ -468,7 +462,7 @@ define(function (require) {
         if(check3) {
           $scope.searchParams.categories.filter3=1;
           if(angular.element('span#categoryFilter3').length<=0){
-            var html = '<span class="selected-tag" id="categoryFilter3" data-ng-click="deleteTag($event)">Research Institutes</span>';
+            var html = '<span class="selected-tag" id="categoryFilter3" data-ng-click="deleteTag($event)" data-ng-bind="i18nLiterals.L20716"></span>';
             tags.append( $compile(html)($scope) );
           }
         }else{

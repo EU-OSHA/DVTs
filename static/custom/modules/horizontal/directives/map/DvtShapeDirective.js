@@ -131,6 +131,7 @@ define(function (require) {
                 textObj.eRateTotal = path.eRateTotal;
                 textObj.eRateMale = path.eRateMale;
                 textObj.eRateFemale = path.eRateFemale;
+                textObj.unemploymentRate = path.unemploymentRate;
                 if (noDataCountries.indexOf(pathObj.id) < 0) {
                     textObj.click(clicked);
                     $log.debug("Country ID: " + pathObj.id);
@@ -156,6 +157,7 @@ define(function (require) {
                         +'<li class="data5"></li>'
                         +'<li class="data4"></li>'
                         +'<li class="data3"></li>'
+                        +'<li class="data6"></li>'
                         +'</ul>'
                         +'</p>');
                     angular.element('.dvt-map-tooltip .country-name').text( this.label );
@@ -164,6 +166,7 @@ define(function (require) {
                     angular.element('.dvt-map-tooltip .data3').html( '<label>' + i18nLiterals['L20617'] +'</label>'+this.eRateTotal+' %' );
                     angular.element('.dvt-map-tooltip .data4').html( '<label>' + i18nLiterals['L20618'] +'</label>'+this.eRateMale+' %' );
                     angular.element('.dvt-map-tooltip .data5').html( '<label>' + i18nLiterals['L20619'] +'</label>'+this.eRateFemale+' %' );
+                    angular.element('.dvt-map-tooltip .data6').html( '<label>' + i18nLiterals['L291'] +'</label>'+this.unemploymentRate+' %' );
 
                     var widthTooltip = angular.element('.dvt-map-tooltip').width();
                     var heightTooltip = angular.element('.dvt-map-tooltip').height();
@@ -218,6 +221,8 @@ define(function (require) {
                 scope.countryDataToShow = scope.data.maleEmployment;
             } else if(scope.data.indicator == 'employment-rate' && scope.data.subIndicator == 'Female'){
                 scope.countryDataToShow = scope.data.femaleEmployment;
+            } else if(scope.data.indicator == 'unemployment-rate'){
+                scope.countryDataToShow = scope.data.unemploymentRate;
             }
 
             var minMaxValues = getMinMaxValue(scope.countryDataToShow);
@@ -245,6 +250,11 @@ define(function (require) {
                     path.eRateTotal = scope.data.totalEmployment[index].value;
                     path.eRateMale = scope.data.maleEmployment[index].value;
                     path.eRateFemale = scope.data.femaleEmployment[index].value;
+                    // There is no data for CH for Unemployment Rate
+                    if (index != "CH")
+                    {
+                        path.unemploymentRate = scope.data.unemploymentRate[index].value;    
+                    }                    
 
                     var labeltext = labelPath(path, index);
                 }else{
@@ -407,6 +417,7 @@ define(function (require) {
                     totalEmployment: [], // 39, 1 total
                     maleEmployment: [], // 39, 2 male
                     femaleEmployment: [], // 39, 3 female
+                    unemploymentRate: [], // 34
                     indicator: "",
                     subIndicator: ""
                 };
@@ -418,7 +429,7 @@ define(function (require) {
 
                 if (!!$scope.promise && $rootScope.data == undefined)
                 {
-                    Promise.all([$scope.promise[1], $scope.promise[2], $scope.promise[3], $scope.promise[4], $scope.promise[5]]).then(function(res)
+                    Promise.all([$scope.promise[1], $scope.promise[2], $scope.promise[3], $scope.promise[4], $scope.promise[5], $scope.promise[6]]).then(function(res)
                     {
                         var indicator = $stateParams.pIndicator;
                         var subIndicator = $stateParams.pSubIndicator;
@@ -463,6 +474,14 @@ define(function (require) {
                             $scope.mapData.femaleEmployment[row[0]].country_name = row[1];
                             $scope.mapData.femaleEmployment[row[0]].value = row[2];
                         });
+                        var row = {};
+                        res[5].data.resultset.map(function (elem) {
+                            row = elem;
+                            if(!$scope.mapData.unemploymentRate[row[0]])
+                                $scope.mapData.unemploymentRate[row[0]]={};
+                            $scope.mapData.unemploymentRate[row[0]].country_name = row[1];
+                            $scope.mapData.unemploymentRate[row[0]].value = row[2];
+                        });
 
                         $scope.mapData.indicator = indicator;
                         $scope.mapData.subIndicator = subIndicator;
@@ -490,7 +509,7 @@ define(function (require) {
 
                     if ($rootScope.data == undefined)
                     {
-                        Promise.all([scope.promise[0], scope.promise[1], scope.promise[2], scope.promise[3], scope.promise[4], scope.promise[5]]).then(function(res) {
+                        Promise.all([scope.promise[0], scope.promise[1], scope.promise[2], scope.promise[3], scope.promise[4], scope.promise[5], scope.promise[6]]).then(function(res) {
                             
                             var row = {};
                             res[1].data.resultset.map(function (elem) {
@@ -531,6 +550,14 @@ define(function (require) {
                                     scope.mapData.femaleEmployment[row[0]]={};
                                 scope.mapData.femaleEmployment[row[0]].country_name = row[1];
                                 scope.mapData.femaleEmployment[row[0]].value = row[2];
+                            });
+                            var row = {};
+                            res[6].data.resultset.map(function (elem) {
+                                row = elem;
+                                if(!scope.mapData.unemploymentRate[row[0]])
+                                    scope.mapData.unemploymentRate[row[0]]={};
+                                scope.mapData.unemploymentRate[row[0]].country_name = row[1];
+                                scope.mapData.unemploymentRate[row[0]].value = row[2];
                             });
 
                             $rootScope.data = scope.mapData;
