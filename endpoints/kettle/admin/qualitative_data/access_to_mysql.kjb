@@ -120,7 +120,7 @@
       </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>416</xloc>
+      <xloc>448</xloc>
       <yloc>96</yloc>
       </entry>
     <entry>
@@ -151,7 +151,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>1136</xloc>
+      <xloc>1168</xloc>
       <yloc>96</yloc>
       </entry>
     <entry>
@@ -182,7 +182,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>992</xloc>
+      <xloc>1024</xloc>
       <yloc>96</yloc>
       </entry>
     <entry>
@@ -213,7 +213,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>864</xloc>
+      <xloc>896</xloc>
       <yloc>96</yloc>
       </entry>
     <entry>
@@ -244,7 +244,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>736</xloc>
+      <xloc>768</xloc>
       <yloc>96</yloc>
       </entry>
     <entry>
@@ -275,7 +275,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>624</xloc>
+      <xloc>656</xloc>
       <yloc>96</yloc>
       </entry>
     <entry>
@@ -306,7 +306,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>512</xloc>
+      <xloc>544</xloc>
       <yloc>96</yloc>
       </entry>
     <entry>
@@ -337,20 +337,11 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>1280</xloc>
+      <xloc>1312</xloc>
       <yloc>96</yloc>
       </entry>
   </entries>
   <hops>
-    <hop>
-      <from>Create output file</from>
-      <to>Insert Tool</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
     <hop>
       <from>Output File Exists</from>
       <to>Delete output file</to>
@@ -444,6 +435,15 @@
     <hop>
       <from>Read Strategies Pages</from>
       <to>Read Methodology</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Create output file</from>
+      <to>Insert Tool</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
