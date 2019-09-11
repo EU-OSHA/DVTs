@@ -451,15 +451,13 @@ define(function (require) {
                         panel_fillStyle: attributes.panelColor || '',
                         axisLabelWordBreak: attributes.axisLabelWordBreak || 0,
                         //customTooltip: attributes.customTooltip || 0,
-                        datasourceAndDates: scope.datasourceAndDates || [],
-                        legendDot_fillStyle: attributes.legendFillStyle
+                        datasourceAndDates: scope.datasourceAndDates || []
                     }
 
                 };
 
                 if(attributes.customLabel){
                     definition.chartDefinition.baseAxisLabel_text = function(scene){
-                        $log.warn(scene);
                         var country = scene.firstAtoms.category.label;
                         var pCountry1 = definition.parameters[1] ? definition.parameters[1][1] : null;
                         var pCountry2 = definition.parameters[2] ? definition.parameters[2][1] : null;
@@ -481,9 +479,9 @@ define(function (require) {
 
                         if(country == 'EU28'){
                             return dvtUtils.getEUColor();
-                        }else if(country == pCountry1){
+                        }else if(country.includes(pCountry1)){
                             return dvtUtils.getColorCountry(1)
-                        }else if(country == pCountry2){
+                        }else if(country.includes(pCountry2)){
                             return dvtUtils.getColorCountry(2)
                         }
                     }
@@ -1172,6 +1170,7 @@ define(function (require) {
                     definition ['hoverable'] = attributes.hoverable;
                     definition ['orthoAxisVisible'] = attributes.orthoAxisVisible;
                     definition ['baseAxisSize'] = attributes.baseAxisSize;
+                    definition ['customLabel'] = attributes.customLabel
 
 
                     if(!!attributes.maxFunctionalLegend){

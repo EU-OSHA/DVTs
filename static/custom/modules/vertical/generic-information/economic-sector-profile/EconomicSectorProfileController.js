@@ -12,7 +12,7 @@ define(function (require) {
   'use strict';
 
 
-  function controller($scope, $stateParams, $state, configService, $log, $document,dataService, $window, $sce, $compile, $timeout, dvtUtils, EconomicSectorProfileService) {
+  function controller($scope, $stateParams, $state, configService, $log, $document,dataService, $window, $sce, $compile, $timeout, dvtUtils, EconomicSectorProfileService, $rootScope) {
 
     // CDA
     $scope.cda =  configService.getBarometerCda();
@@ -30,20 +30,24 @@ define(function (require) {
     // Country parameters
     $scope.pCountry1 = $stateParams.pCountry1;
     $scope.pCountry2 = $stateParams.pCountry2;
-    //$scope.pSplit = '36';
+    $scope.pSplit = $stateParams.pSplit;
+    $rootScope.pSplit = $scope.pSplit;
+    $scope.pSplit2 = $stateParams.pSplit2;
+    $rootScope.pSplit2 = $scope.pSplit2;
+    $rootScope.pDataset = $scope.datasetEurostatBetweenDates;
 
-    $scope.dashboard = {};
+    //$scope.dashboard = {};
     $scope.dashboard = {
         parameters: {
             "pCountry1": $scope.pCountry1,
             "pCountry2": $scope.pCountry2,
-            "pSplit": '35',
-            "pSplit2": '36',
+            "pSplit": $scope.pSplit,
+            "pSplit2": $scope.pSplit2,
             "pDataset": $scope.datasetEurostatBetweenDates
         }
     };
-    
-    //$scope.pSplit2 = 'normal';
+
+    $log.warn($scope.dashboard.parameters);
 
     $scope.stories = [
       //0 - Company size
@@ -224,7 +228,7 @@ define(function (require) {
     /******************************END FILTERS************************************/
   }
 
-  controller.$inject = ['$scope', '$stateParams', '$state', 'configService', '$log', '$document','dataService', '$window', '$sce', '$compile', '$timeout', 'dvtUtils', 'EconomicSectorProfileService'];
+  controller.$inject = ['$scope', '$stateParams', '$state', 'configService', '$log', '$document','dataService', '$window', '$sce', '$compile', '$timeout', 'dvtUtils', 'EconomicSectorProfileService', '$rootScope'];
   return controller;
 
 

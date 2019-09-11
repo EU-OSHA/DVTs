@@ -192,10 +192,10 @@ define (function (require) {
                             this.add(pv.Image)
 				              .url(function(scene) {
 				              	var countryKey = scene.firstAtoms.category;
-				              	if(countryKey == pCountry1){
+				              	if(countryKey.label.includes(pCountry1)){
                   					//return 'http://localhost:8080/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/man_orange.svg';
                                     return configService.getImagesPath()+'man_orange.svg';
-				              	}else if(countryKey == pCountry2){
+				              	}else if(countryKey.label.includes(pCountry2)){
 				              		return configService.getImagesPath()+'man.svg'
 				              	}else if(countryKey == 'EU28'){
 				              		return configService.getImagesPath()+'man_blue.svg'
@@ -225,13 +225,13 @@ define (function (require) {
 				              	var barWidth = panelWidth/3.5;
 				              	var countryKey = scene.firstAtoms.category;
 				              	if(panelWidth != 300){ //Default panel value
-									if(countryKey == pCountry1){
-                                        if(scene.nextSibling.firstAtoms.category != pCountry2){
+									if(countryKey.label.includes(pCountry1)){
+                                        if(!scene.nextSibling.firstAtoms.category.label.includes(pCountry2)){
                                             return panelWidth/2 - (barWidth + this.width()/2) + 5; //5 is the panel margin
                                         }else{
                                             return (barWidth - this.width())/2 +5; //5 is the panel margin
                                         }
-					              	}else if(countryKey == pCountry2){
+					              	}else if(countryKey.label.includes(pCountry2)){
                                         var sibling = scene.previousSibling;
                                         if(sibling == null){
                                             return panelWidth/2 - (barWidth + this.width()/2) + 5;
@@ -240,7 +240,7 @@ define (function (require) {
                                         }
 					              	}else if(countryKey == 'EU28'){
                                         var firstSibling = scene.previousSibling.previousSibling;
-                                        if(scene.previousSibling.firstAtoms.category != pCountry2 || firstSibling == null){
+                                        if(!scene.previousSibling.firstAtoms.category.label.includes(pCountry2) || firstSibling == null){
                                             return panelWidth/2 + (this.width())/1.5;
                                         }else{
                                             return panelWidth/1.5 + (barWidth - this.width())/2 - 5;
@@ -308,7 +308,7 @@ define (function (require) {
                                 return dvtUtils.getEUColor();
                             } else if(countryKey.label.includes(pCountry1)){
                                 return dvtUtils.getColorCountry(1);
-                            } else if(countryKey == pCountry2) {
+                            } else if(countryKey.label.includes(pCountry2)) {
                                 return dvtUtils.getColorCountry(2);
                             }
 
@@ -382,7 +382,7 @@ define (function (require) {
                                 // country 1 value 1 - eu value 1
                                 var difference3 =  ((country1Value1 - euValue1 < 1000 && country1Value1 - euValue1 > 0) || (country1Value1 - euValue1 > -1000 && country1Value1 - euValue1 < 0)) ? true : false;
                                 // country 1 value 2 - eu value 2
-                                var difference4 =  ((country1Value2 - euValue2 < 1000 && country1Value2 - euValue2 > 0) || (country1Value2 - euValue2 > -1000 && country1Value2 - euValue2 < 0)) ? true : false;
+                                var difference4 =  ((country1Value2 - euValue2 < 2000 && country1Value2 - euValue2 > 0) || (country1Value2 - euValue2 > -2000 && country1Value2 - euValue2 < 0)) ? true : false;
                                 // country 2 value 1 - eu value 1
                                 var difference5 =  ((country2Value1 - euValue1 < 1000 && country2Value1 - euValue1 > 0) || (country2Value1 - euValue1 > -1000 && country2Value1 - euValue1 < 0)) ? true : false;
                                 // country 2 value 2 - eu value 2
@@ -392,30 +392,31 @@ define (function (require) {
                                 $log.warn('Value: '+ countryValue);*/
 
                                 if (countryKey == 'EU28') {
+                                    var baseline = 'top';
                                     if(difference5 && countryYear == '2010'){
-                                        return 'bottom';
-                                    }else if(difference6 && countryYear == '2016'){
-                                        return 'bottom';
+                                        baseline = 'bottom';
+                                    }else if(difference6 && countryYear == '2017'){
+                                        baseline = 'bottom';
                                     }
 
                                     if(difference3 && countryYear == '2010'){
-                                        return 'bottom';
-                                    }else if(difference4 && countryYear == '2016'){
-                                        return 'bottom';
+                                        baseline = 'top';
+                                    }else if(difference4 && countryYear == '2017'){
+                                        baseline =  'bottom';
                                     }
 
-                                    return 'top';
+                                    return baseline;
                                 } else if(countryKey.label.includes(pCountry1)){
                                     if(difference1 && countryYear == '2010'){
                                         return 'top';
-                                    }else if(difference2 && countryYear == '2016'){
+                                    }else if(difference2 && countryYear == '2017'){
                                         return 'top';
                                     }
                                     return 'bottom';
                                 } else if(countryKey.label.includes(pCountry2)){
                                     if(difference5 && countryYear == '2010'){
                                         return 'top';
-                                    }else if(difference6 && countryYear == '2016'){
+                                    }else if(difference6 && countryYear == '2017'){
                                         return 'top';
                                     }
 
@@ -451,7 +452,7 @@ define (function (require) {
 
                                     if(difference3 && countryYear == '2010'){
                                         return 'bottom';
-                                    }else if(difference4 && countryYear == '2016'){
+                                    }else if(difference4 && countryYear == '2017'){
                                         return 'bottom';
                                     }
 

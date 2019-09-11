@@ -51,6 +51,14 @@ define(function (require) {
             pCountry2: {
               value: "BE",
               squash: "BE"
+            },
+            pSplit: {
+              value: '35',
+              squash: '35'
+            }, 
+            pSplit2: {
+              value: '36',
+              squash: '36'
             }
           },
           views: {

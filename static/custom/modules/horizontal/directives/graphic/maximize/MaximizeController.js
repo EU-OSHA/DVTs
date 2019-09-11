@@ -21,7 +21,7 @@ define(function (require) {
     return {
         generateController: function (module, ctrlName) {
             return angular.module(module)
-                .controller(ctrlName, function ($scope, $modalInstance, $log, $state, $stateParams, parameters, dvtUtils, configService) {
+                .controller(ctrlName, function ($scope, $modalInstance, $log, $state, $stateParams, parameters, dvtUtils, configService, $rootScope) {
                     /* GET FUNCTIONAL LEGEND */
 
                     var resolution = screen.width;
@@ -33,6 +33,9 @@ define(function (require) {
                     /*ESTABLISH NEEDED DASH PARAMS FOR RENDER COMPONENTS */
                     $scope.dashboard = {
                         parameters: {
+                            "pSplit": $rootScope.pSplit,
+                            "pSplit2": $rootScope.pSplit2,
+                            "pDataset": $rootScope.pDataset
                             /*"approach": $stateParams.pGroup,
                             "pCountry1": $stateParams.pCountry1,
                             "pCountry2": $stateParams.pCountry2,
@@ -85,6 +88,20 @@ define(function (require) {
                         }
                     }
 
+                    if($scope.parameters.customLabel){
+                        $scope.parameters.chartDefinition.baseAxisLabelLongText = function(scene){
+                            var country = scene.firstAtoms.category.label;
+                            var pCountry1 = $scope.parameters.parameters[1] ? $scope.parameters.parameters[1][1] : null;
+                            var pCountry2 = $scope.parameters.parameters[2] ? $scope.parameters.parameters[2][1] : null;
+
+                            if(country.includes(pCountry1)){
+                                return pCountry1;
+                            }else if(country.includes(pCountry2)){
+                                return pCountry2;
+                            }
+                        }
+                    }
+
                     if (!!$scope.parameters.chartDefinition) {
                         if ($scope.parameters.chartDefinition.orientation == 'vertical'){
                             $scope.parameters.chartDefinition.baseAxisLabel_textAlign = $scope.parameters.baseAxisLabelTextAlign || 'center';
@@ -134,14 +151,14 @@ define(function (require) {
 
                         if ($state.current.name == "economic-sector-profile") {
                             if($scope.parameters.chartDefinition.dataAccessId == 'getGDPData'){
-                                $log.warn($scope.parameters.name);
+                                $scope.parameters.legendClickMode = 'none';
                                 $scope.parameters.chartDefinition.plots[0].bar_call = function(){
                                     this.add(pv.Image)
                                       .url(function(scene) {
                                         var countryKey = scene.firstAtoms.category;
-                                        if(countryKey == $stateParams.pCountry1){
+                                        if(countryKey.label.includes($stateParams.pCountry1)){
                                             return configService.getImagesPath()+'man_orange.svg'
-                                        }else if(countryKey == $stateParams.pCountry2){
+                                        }else if(countryKey.label.includes($stateParams.pCountry2)){
                                             return configService.getImagesPath()+'man.svg'
                                         }else if(countryKey == 'EU28'){
                                             return configService.getImagesPath()+'man_blue.svg'
@@ -150,6 +167,16 @@ define(function (require) {
                                       .bottom(20)
                                       .height(function(scene){
                                         /*SVG default width:68*150:height proportion W = H*0.45333333333 */
+                                        this.root.sign.chart.options.legendDot_fillStyle = function(scene){
+                                            var countryKey = scene.firstAtoms.category;
+                                            if(countryKey.label.includes($stateParams.pCountry1)){
+                                                return dvtUtils.getColorCountry(1);
+                                            }else if(countryKey.label.includes($stateParams.pCountry2)){
+                                                return dvtUtils.getColorCountry(2);
+                                            }else if(countryKey == 'EU28'){
+                                                return dvtUtils.getEUColor();
+                                            }
+                                        };
                                         var axisFixedMax = this.root.sign.chart.options.axisFixedMax;
                                         var panelHeight = this.root.height();
                                         var valueKey = scene.firstAtoms.value;
@@ -171,15 +198,15 @@ define(function (require) {
                                         var barWidth = panelWidth/4;
                                         var countryKey = scene.firstAtoms.category;
                                         if(panelWidth != 300){ //Default panel value
-                                            if(countryKey == $stateParams.pCountry1){
-                                                if(scene.nextSibling.firstAtoms.category != $stateParams.pCountry2){
+                                            if(countryKey.label.includes($stateParams.pCountry1)){
+                                                if(!scene.nextSibling.firstAtoms.category.label.includes($stateParams.pCountry2)){
                                                     //return panelWidth/2 - (barWidth + this.width()/2) + 10; //5 is the panel margin
                                                     return panelWidth/2 - this.width()/2 - barWidth - 5;
                                                 }else{
                                                     //return (barWidth - this.width())/2 + 5; //5 is the panel margin
                                                     return panelWidth/2 - this.width()/2 - panelWidth/3;
                                                 }
-                                            }else if(countryKey == $stateParams.pCountry2){
+                                            }else if(countryKey.label.includes($stateParams.pCountry2)){
                                                 var sibling = scene.previousSibling;
                                                 if(sibling == null){
                                                     return panelWidth/2 - (barWidth + this.width()/2) - 5;
@@ -189,7 +216,7 @@ define(function (require) {
                                                 }
                                             }else if(countryKey == 'EU28'){
                                                 var firstSibling = scene.previousSibling.previousSibling;
-                                                if(scene.previousSibling.firstAtoms.category != $stateParams.pCountry2 || firstSibling == null){
+                                                if(!scene.previousSibling.firstAtoms.category.label.includes($stateParams.pCountry2) || firstSibling == null){
                                                     return panelWidth - (barWidth + this.width()/2) - 10;
                                                 }else{
                                                     //return panelWidth/1.5 + (barWidth - this.width())/2 - 5;
@@ -201,6 +228,9 @@ define(function (require) {
                                       .events("all")
                                       .cursor("hand");
                                 }
+                                /*$scope.parameters.chartDefinition.legendDot_fillStyle = function(){
+                                    return '#fff'
+                                };*/
                             }
 
                             if($scope.parameters.chartDefinition.dataAccessId == 'getCompanySizeData'){
@@ -212,7 +242,7 @@ define(function (require) {
                                 }
 
                                 if(resolution <= 380 && resolution > 325){
-                                    $log.warn('resolution < 425');
+                                    //$log.warn('resolution < 425');
                                     $scope.parameters.chartDefinition.legendItemSize = 320;
                                 }
                                 

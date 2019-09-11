@@ -13,7 +13,7 @@ define(function (require) {
 		var scope = this;
 	}
 
-	function SelectorDirective($log, dataService, $state, $stateParams) {
+	function SelectorDirective($log, dataService, $state, $stateParams, $rootScope) {
 		return {
 			restrict: 'E',
 			transclude: true,
@@ -27,8 +27,8 @@ define(function (require) {
 				var ngModel = controllers[0];
 
 				scope.chart = attributes.chart;
-				scope.pSplit = '35';
-				scope.pSplit2 = '36';
+				scope.pSplit = $stateParams.pSplit;
+				scope.pSplit2 = $stateParams.pSplit2;
 				scope.pDataset = 3;
 
 				scope.changeType = function(pChangedFilter, value)
@@ -39,7 +39,7 @@ define(function (require) {
 							console.log('pSplit changed: '+scope.pSplit);
 							scope.pSplit = value;
 							dashboard.dashboard.parameters.pSplit = scope.pSplit;
-							
+							$rootScope.pSplit = scope.pSplit;
 							break;
 						case "split2":
 							console.log('pSplit2 changed: '+scope.pSplit2);
@@ -52,7 +52,9 @@ define(function (require) {
 							}
 
 							dashboard.dashboard.parameters.pSplit2 = scope.pSplit2;
+							$rootScope.pSplit2 = scope.pSplit2;
 							dashboard.dashboard.parameters.pDataset = scope.pDataset;
+							$rootScope.pDataset = scope.pDataset;
 							break;
 						default:
 							console.log("No change detected");
@@ -71,7 +73,7 @@ define(function (require) {
 		}
 	}
 
-	SelectorDirective.$inject = ['$log', 'dataService', '$state', '$stateParams'];
+	SelectorDirective.$inject = ['$log', 'dataService', '$state', '$stateParams', '$rootScope'];
 
 	return SelectorDirective;
 });
