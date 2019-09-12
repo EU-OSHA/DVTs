@@ -5,14 +5,17 @@
 		<h2 data-ng-bind="i18nLiterals.L20735"></h2>
 		<section data-ng-bind-html="i18nLiterals.L20737" class="about-tool-content">
 		</section>
-		<p class="btn--wrapper">
+		<p class="btn--wrapper text-center">
 			<a ui-sref="about-tool-detail-page" class="btn-default btn-main-color text-center" data-ng-bind="i18nLiterals.L20736"></a>
 		</p>
 	</div>
 
 	<div data-ng-if="currentState == 'about-tool-detail-page'" class="container">
 		<h1 class="title-section second-color ng-binding text-center" data-ng-bind="i18nLiterals.L22019"></h1>
-		<h2 data-ng-bind="i18nLiterals.L20705"></h2>
+		<!--<h2 data-ng-bind="i18nLiterals.L20705"></h2>-->
+		<p class="btn--wrapper text-center">
+			<a ui-sref="about-tool" class="btn-default btn-main-color text-center">Back to introduction</a>
+		</p>
 
 		<!-- SECTION MENU -->
 		<ul class="indicators--list--wrapper">
@@ -39,44 +42,44 @@
 
 		<section class="methodology--grid--wrapper forum-icon">
 			<!-- Diagram -->
-			<h3 data-ng-bind="i18nLiterals.L20720"></h3>
-			<p data-ng-bind-html="i18nLiterals['L'+data.diagram]"></p>
+			<h3 data-ng-bind="i18nLiterals.L20720" data-ng-if="i18nLiterals['L'+data.diagram] != 'null'"></h3>
+			<p data-ng-bind-html="i18nLiterals['L'+data.diagram]" data-ng-if="i18nLiterals['L'+data.diagram] != 'null'"></p>
 			<!-- Description -->
-			<h3 data-ng-bind="i18nLiterals.L20721"></h3>
-			<p data-ng-bind-html="i18nLiterals['L'+data.description]"></p>
+			<h3 data-ng-bind="i18nLiterals.L20721" data-ng-if="i18nLiterals['L'+data.description] != 'null'"></h3>
+			<p data-ng-bind-html="i18nLiterals['L'+data.description]" data-ng-if="i18nLiterals['L'+data.description] != 'null'"></p>
 			<!-- Datasource -->
-			<h3 data-ng-bind="i18nLiterals.L20722"></h3>
-			<p>{{data.datasource}}</p>
+			<h3 data-ng-bind="i18nLiterals.L20722" data-ng-if="data.datasource != 'null'"></h3>
+			<p data-ng-if="data.datasource != 'null'">{{data.datasource}}</p>
 			<!-- Specific table / Question -->
-			<h3 data-ng-bind="i18nLiterals.L20723" data-ng-if="i18nLiterals['L'+data.specific_table] != ''"></h3>
-			<p data-ng-bind-html="i18nLiterals['L'+data.specific_table]"></p>
+			<h3 data-ng-bind="i18nLiterals.L20723" data-ng-if="i18nLiterals['L'+data.specific_table] != 'null'"></h3>
+			<p data-ng-bind-html="i18nLiterals['L'+data.specific_table]" data-ng-if="i18nLiterals['L'+data.specific_table] != 'null'"></p>
 			<!-- URL / Source file -->
-			<h3 data-ng-bind="i18nLiterals.L20724" data-ng-if="i18nLiterals['L'+data.url] != ''"></h3>
-			<p data-ng-bind-html="i18nLiterals['L'+data.url]"></p>
+			<h3 data-ng-bind="i18nLiterals.L20724" data-ng-if="i18nLiterals['L'+data.url] != 'null'"></h3>
+			<p data-ng-bind-html="i18nLiterals['L'+data.url]" data-ng-if="i18nLiterals['L'+data.url] != 'null'"></p>
 			<!-- Filtering options applied -->
-			<h3 data-ng-bind="i18nLiterals.L20728" data-ng-if="i18nLiterals['L'+data.options_applied] != ''"></h3>
-			<p data-ng-bind-html="i18nLiterals['L'+data.options_applied]"></p>
+			<h3 data-ng-bind="i18nLiterals.L20728" data-ng-if="i18nLiterals['L'+data.options_applied] != 'null'"></h3>
+			<p data-ng-bind-html="i18nLiterals['L'+data.options_applied]" data-ng-if="i18nLiterals['L'+data.options_applied] != 'null'"></p>
 			<!-- Reference year / period -->
-			<h3 data-ng-bind="i18nLiterals.L20725" data-ng-if="i18nLiterals['L'+data.reference_year] != ''"></h3>
-			<p data-ng-bind-html="i18nLiterals['L'+data.reference_year]"></p>
+			<h3 data-ng-bind="i18nLiterals.L20725" data-ng-if="i18nLiterals['L'+data.reference_year] != 'null'"></h3>
+			<p data-ng-bind-html="i18nLiterals['L'+data.reference_year]" data-ng-if="i18nLiterals['L'+data.reference_year] != 'null'"></p>
 			<!-- Last update -->
-			<h3 data-ng-bind="i18nLiterals.L20726" data-ng-if="i18nLiterals['L'+data.last_update] != ''"></h3>
-			<p data-ng-bind-html="i18nLiterals['L'+data.last_update]"></p>
+			<h3 data-ng-bind="i18nLiterals.L20726" data-ng-if="i18nLiterals['L'+data.last_update] != 'null'"></h3>
+			<p data-ng-bind-html="i18nLiterals['L'+data.last_update]" data-ng-if="i18nLiterals['L'+data.last_update] != 'null'"></p>
 			<!-- Coverage -->
-			<h3 data-ng-bind="i18nLiterals.L20727" data-ng-if="i18nLiterals['L'+data.coverage] != ''"></h3>
-			<p data-ng-bind-html="i18nLiterals['L'+data.coverage]"></p>
+			<h3 data-ng-bind="i18nLiterals.L20727" data-ng-if="i18nLiterals['L'+data.coverage] != 'null'"></h3>
+			<p data-ng-bind-html="i18nLiterals['L'+data.coverage]" data-ng-if="i18nLiterals['L'+data.coverage] != 'null'"></p>
 			<!-- Unit of measure -->
-			<h3 data-ng-bind="i18nLiterals.L20730" data-ng-if="i18nLiterals['L'+data.unit_measure] != ''"></h3>
-			<p data-ng-bind-html="i18nLiterals['L'+data.unit_measure]"></p>
+			<h3 data-ng-bind="i18nLiterals.L20730" data-ng-if="i18nLiterals['L'+data.unit_measure] != 'null'"></h3>
+			<p data-ng-bind-html="i18nLiterals['L'+data.unit_measure]" data-ng-if="i18nLiterals['L'+data.unit_measure] != 'null'"></p>
 			<!-- Calculations on the data source -->
-			<h3 data-ng-bind="i18nLiterals.L20729" data-ng-if="i18nLiterals['L'+data.calculations] != ''"></h3>
-			<p data-ng-bind-html="i18nLiterals['L'+data.calculations]"></p>
+			<h3 data-ng-bind="i18nLiterals.L20729" data-ng-if="i18nLiterals['L'+data.calculations] != 'null'"></h3>
+			<p data-ng-bind-html="i18nLiterals['L'+data.calculations]" data-ng-if="i18nLiterals['L'+data.calculations] != 'null'"></p>
 			<!-- Visualisation -->
-			<h3 data-ng-bind="i18nLiterals.L20731" data-ng-if="i18nLiterals['L'+data.visualisation] != ''"></h3>
-			<p data-ng-bind-html="i18nLiterals['L'+data.visualisation]"></p>
+			<h3 data-ng-bind="i18nLiterals.L20731" data-ng-if="i18nLiterals['L'+data.visualisation] != 'null'"></h3>
+			<p data-ng-bind-html="i18nLiterals['L'+data.visualisation]" data-ng-if="i18nLiterals['L'+data.visualisation] != 'null'"></p>
 			<!-- Additional comments -->
-			<h3 data-ng-bind="i18nLiterals.L20732" data-ng-if="i18nLiterals['L'+data.additional_comments] != ''"></h3>
-			<p data-ng-bind-html="i18nLiterals['L'+data.additional_comments]"></p>
+			<h3 data-ng-bind="i18nLiterals.L20732" data-ng-if="i18nLiterals['L'+data.additional_comments] != 'null'"></h3>
+			<p data-ng-bind-html="i18nLiterals['L'+data.additional_comments]" data-ng-if="i18nLiterals['L'+data.additional_comments] != 'null'"></p>
 		</section>
 	</div>
 </dvt-dashboard>
