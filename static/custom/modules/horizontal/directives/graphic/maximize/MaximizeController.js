@@ -133,10 +133,10 @@ define(function (require) {
                         }
 
                         /* ESTABLISH MAX COMMON PARAMETERS  */
-                        $scope.parameters.chartDefinition.baseAxisLabel_font = '18px "OpenSans-bold"';
+                        $scope.parameters.chartDefinition.baseAxisLabel_font = '14px "OpenSans-bold"';
                         $scope.parameters.chartDefinition.baseAxisLabel_textAlign = 'center';
-                        $scope.parameters.chartDefinition.axisLabel_font = '18px "OpenSans-bold"';
-                        $scope.parameters.chartDefinition.legend_font = 'normal 18px "OpenSans"',
+                        $scope.parameters.chartDefinition.axisLabel_font = '14px "OpenSans-bold"';
+                        $scope.parameters.chartDefinition.legend_font = 'normal 14px "OpenSans"',
                         $scope.parameters.chartDefinition.clickable = false;
                         $scope.parameters.chartDefinition.hoverable = false;
 
