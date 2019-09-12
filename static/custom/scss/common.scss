@@ -265,6 +265,16 @@
         color: $orange;
       }
     }
+    .btn-back{
+      i{
+        &:before{
+          font-size: 2.4rem;
+          position: relative;
+          top: 2px;
+          left: -5px;
+        }
+      }
+    }
   /** END BUTTONS ELEMENT AND BLOCK  **/
 
   /** FORM ELEMENTS  **/
