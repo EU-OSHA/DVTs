@@ -44,7 +44,7 @@ define(function (require) {
     $scope.currentPage = 0;
     $scope.pageSize = 5;
     $scope.elementsStart=0;
-    $scope.elementsEnd=$scope.pageSize;
+    $scope.elementsEnd = $scope.pageSize;
 
     var initialFilter = $scope.pCountry != 0 ? [$scope.pCountry] : [];
 
@@ -351,6 +351,10 @@ define(function (require) {
 
         });
         //$log.warn($scope.amatrix);
+
+        if(initialFilter != 0){
+          $scope.elementsEnd = $scope.amatrix.length;
+        }
 
         updateText();
 
