@@ -403,19 +403,26 @@ define(function (require) {
           //$scope.selectedCountries.push(element.attr('value'));
           //$scope.searchParams.countries.push(element.attr('value'));
           $scope.searchParams.countries.push(valueToJson.country_code);
+          if(valueToJson.country_code == 'EU28'){
+            var html = '<span class="selected-tag" id="country'+valueToJson.country +'" data-ng-click="deleteTag($event)">'+ $scope.i18nLiterals['L'+valueToJson.country] +'</span>';
+          }else{
+            var html = '<span class="selected-tag" id="country'+valueToJson.country +'" data-ng-click="deleteTag($event)">' + '('+valueToJson.country_code+') ' + $scope.i18nLiterals['L'+valueToJson.country] +'</span>';
+            }
+          tags.append( $compile(html)($scope) );
         } else {
           //if($scope.deleteCountryTags.indexOf(element.attr('value')) == -1){
           //  $scope.deleteCountryTags.push(element.attr('value'));
           //}
+
           //$scope.selectedCountries.splice($scope.selectedCountries.indexOf(element.attr('value')), 1);
           $scope.searchParams.countries.splice($scope.searchParams.countries.indexOf(valueToJson.country_code), 1);
-
-          angular.element('span#country'+valueToJson.country_code).remove();
+          angular.element('span#country'+valueToJson.country).remove();
+          //$log.warn(angular.element('span#country'+valueToJson.country));
         }
 
         //$scope.selectedCountries.sort();
         
-        for(var i = 0; i < $scope.searchParams.countries.length;i++){
+        /*for(var i = 0; i < $scope.searchParams.countries.length;i++){
           if(angular.element('span#country'+$scope.searchParams.countries[i]).length<=0){
             if(valueToJson.country_code == 'EU28'){
               var html = '<span class="selected-tag" id="country'+valueToJson.country +'" data-ng-click="deleteTag($event)">'+ $scope.i18nLiterals['L'+valueToJson.country] +'</span>';
@@ -424,7 +431,7 @@ define(function (require) {
             }
             tags.append( $compile(html)($scope) );
           }          
-        }
+        }*/
 
         search($event,'countries');
       };
@@ -503,13 +510,16 @@ define(function (require) {
        */
       $scope.deleteTag = function($event){
         var element = angular.element($event.currentTarget);
-        var countryId = element[0].id.slice(7,9);
+        var countryName = element[0].id.slice(7,9);
+        var countryCode = element[0].innerHTML.slice(1,3);
+
+        //buscar en el value del input correspondiente al id de literal
         
         var quitChecked;
         if($event.target.id.indexOf('country') != -1){
 
-          $scope.searchParams.countries.splice($scope.searchParams.countries.indexOf(countryId), 1);
-          quitChecked = angular.element('.filter--dropdown--options #country-filter-'+countryId);
+          $scope.searchParams.countries.splice($scope.searchParams.countries.indexOf(countryCode), 1);
+          quitChecked = angular.element('.filter--dropdown--options #country-filter-'+countryName);
         }else if($event.target.id == 'institutionFilter1'){
           quitChecked = angular.element('.filter--dropdown--options #institution-filter-1');
           $scope.searchParams.institutions.filter1=0;
