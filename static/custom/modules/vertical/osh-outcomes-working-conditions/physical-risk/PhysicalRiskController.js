@@ -69,7 +69,7 @@ define(function (require) {
     $scope.angle = resolution > 768 ? 1 : 0;
     $scope.horizontalHeight = resolution > 768 ? 470 : 770;
     $scope.orientation = resolution > 768 ? "vertical" : "horizontal";
-    $scope.axisSize = resolution > 768 ? 150 : 160;
+    $scope.axisSize = resolution > 768 ? 150 : 110;
     $scope.query = resolution > 768 ? 'getPhysicalRiskVerticalData' : 'getPhysicalRiskHorizontalData';
     $scope.color1 = resolution > 768 ? dvtUtils.getColorCountry(22) : dvtUtils.getColorCountry(1);
     $scope.color2 = resolution > 768 ? dvtUtils.getColorCountry(1) : dvtUtils.getColorCountry(22);
