@@ -58,6 +58,14 @@
 
 /* ------------------------------------------------------------------------------------------------- */
 
+/* Enforcement capacity */
+@import '../modules/vertical/osh-infrastructure/enforcement-capacity/enforcement-capacity.scss';
+
+/* OSH Statistics */
+@import '../modules/vertical/osh-infrastructure/osh-statistics/osh-statistics.scss';
+
+/* ------------------------------------------------------------------------------------------------- */
+
 /* Work accidents */
 @import '../modules/vertical/osh-outcomes-working-conditions/work-accidents/work-accidents.scss';
 
@@ -73,11 +81,9 @@
 /* Working conditions */
 @import '../modules/vertical/osh-outcomes-working-conditions/working-conditions/working-conditions.scss';
 
-/* Enforcement capacity */
-@import '../modules/vertical/osh-infrastructure/enforcement-capacity/enforcement-capacity.scss';
+/* prevention companies */
+@import '../modules/vertical/osh-outcomes-working-conditions/prevention-companies/prevention-companies.scss';
 
-/* OSH Statistics */
-@import '../modules/vertical/osh-infrastructure/osh-statistics/osh-statistics.scss';
 /* ------------------------------------------------------------------------------------------------- */
 
 /* About the estimates */

@@ -126,7 +126,7 @@ dvt-radar-chart[datasource-and-dates="datasourcesAndDates"]{
 		} 
 		.submenu--block{
 			.submenu--items--wrapper{
-				max-height: 7rem;
+				max-height: 8rem;
 				min-height: auto;
 				overflow: hidden;
 				display: block;
@@ -245,13 +245,19 @@ dvt-radar-chart[datasource-and-dates="datasourcesAndDates"]{
 	.overall-opinion, .prevention-companies, .mental-risk, .physical-risk, .worker-involvement{
 		.card--grid{
 			.card--block--chart{ 
-		    margin: 0 2rem;
+		    margin: 0rem;
 				.select-filter-chart{
 				}
 			}			
 		}
-	
+		.card--block--chart{ 
+			.chart--submenu {
+				top: 1rem !important;
+				right: -1rem;
+			}
+		}	
 	}
+
 
 }
 
