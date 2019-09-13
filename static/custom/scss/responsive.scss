@@ -750,7 +750,14 @@ and (orientation : landscape) {
   		}
 		}
 	}
-
+	.card--block--rounded{
+		.carousel--card{
+			margin-top: auto;
+			.btn--block-full.btn-alone {
+			  margin-top: 12rem;
+			}
+		}
+	}
 }
 
 
@@ -777,6 +784,14 @@ and (orientation : portrait) {
 					position: relative;
 					left: -0.5rem;
 				}
+			}
+		}
+	}
+	.card--block--rounded{
+		.carousel--card{
+			margin-top: auto;
+			.btn--block-full.btn-alone {
+		    margin-top: 12rem;
 			}
 		}
 	}
