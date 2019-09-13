@@ -186,9 +186,6 @@ define (function (require) {
                                 category.label = i18n['L'+category];
                                 label = category.label;
                                 var substring = category.label.substring(0, 15);
-                                if(label.length > 15){
-                                    category.label = substring + '...';
-                               }
                             }
 
                             if (countryKey == 'EU28') {
