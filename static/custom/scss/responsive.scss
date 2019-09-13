@@ -385,6 +385,9 @@
 			display: block;
 			.matrix--elements--wrapper{
 			  margin: 2rem;
+				.matrix--element{
+					padding: 2rem 4rem;
+				}
 			  .matrix--elements--data{
 					display: flex;
 					flex-wrap: wrap;
@@ -392,7 +395,7 @@
 					padding: 0;
 					margin: 2rem 0 2rem;
 			  	li{
-			  		width: 20%;
+			  		width: 16%;
 			  		padding: 0 1rem;
 			  		label{							
 							font-size: 1.6rem;
@@ -778,6 +781,24 @@ and (orientation : portrait) {
 		}
 	}
 
+}
+
+
+@media only screen 
+and (min-width : 768px) 
+and (max-width : 860px) {
+	.workforce--page{
+		.survey--map--block-mobile{
+			.matrix--elements--wrapper{
+			  .matrix--elements--data{
+			  	li{
+			  		width: 25% !important;
+			  		padding: 1rem !important;
+			  	}
+			  }
+			}
+		}		
+	}
 }
 
 
