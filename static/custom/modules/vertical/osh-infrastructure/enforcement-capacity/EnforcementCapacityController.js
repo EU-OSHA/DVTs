@@ -44,14 +44,19 @@ define(function (require) {
     $scope.maxCharacters = 200;
     $scope.step = 20;
     $scope.already = false;
+    $scope.already2 = false;
 
 
-    $scope.compileText = function(text){
+    $scope.compileText = function(text, num){
       if(text != null){
-        var auth = angular.element('#tab2 .columm--item--content')
-        if($scope.already == false){
+        if($scope.already == false && num == 1){
+          var auth = angular.element('#tab2 .first .columm--item--content');
           auth.append($compile(text)($scope) );
           $scope.already = true;
+        }else if($scope.already2 == false && num == 2){
+          var auth2 = angular.element('#tab2 .second .columm--item--content');
+          auth2.append($compile(text)($scope) );
+          $scope.already2 = true;
         }
       }
     }
@@ -239,7 +244,7 @@ define(function (require) {
             strategy: elem[5]
           };
         });
-        //$log.warn($scope.country2Data);
+        $log.warn($scope.country2Data);
       }).catch(function (err) {
           throw err;
       });

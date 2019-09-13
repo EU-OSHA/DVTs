@@ -134,7 +134,8 @@
         <h2 data-ng-bind="i18nLiterals.L333"></h2>
         <div class="columm--item--content">
           <div data-ng-if="country1Data.authority == null" data-ng-bind="i18nLiterals.L20706"></div>
-          <div class="partial-text" data-ng-bind-html="compileText(country1Data.authority)"></div>
+          <div data-ng-if="country1Data.authority == null" data-ng-bind="i18nLiterals.L20740"></div>
+          <div class="partial-text" data-ng-bind-html="compileText(country1Data.authority, 1)"></div>
           <!--<div class="complete-text" data-ng-bind-html="prueba(i18nLiterals['L'+country1Data.authority])"></div>-->
           
           <p class="see-more" data-ng-if="i18nLiterals['L'+country1Data.authority].length > 316">
@@ -149,10 +150,12 @@
           <img  class="flags--wrapper" ng-src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/flag/{{::pCountry2.toLowerCase()}}.png">
         </div>
         <h2 data-ng-bind="i18nLiterals.L333"></h2>
-        <div class="columm--item--content">
+        <div id="secondColumn" class="columm--item--content">
           <div data-ng-if="country2Data.authority == null" data-ng-bind="i18nLiterals.L20706"></div>
-          <div class="partial-text" data-ng-bind-html="trimText(i18nLiterals['L'+country2Data.authority], maxCharacters)"></div>
-          <div class="complete-text" data-ng-bind-html="i18nLiterals['L'+country2Data.authority]"></div>
+          <div data-ng-if="country2Data.authority == null" data-ng-bind="i18nLiterals.L20740"></div>
+          <div class="partial-text" data-ng-bind-html="compileText(i18nLiterals['L'+country2Data.authority], 2)"></div>
+          <!--<div class="partial-text" data-ng-bind-html="trimText(i18nLiterals['L'+country2Data.authority], maxCharacters)"></div>-->
+          <!--<div class="complete-text" data-ng-bind-html="i18nLiterals['L'+country2Data.authority]"></div>-->
           <p class="see-more" data-ng-if="i18nLiterals['L'+country2Data.authority].length > 316">
             <a href ng-click='toggleText($event)' class="see-more">{{i18nLiterals.L480}}<i class="fa fa-angle-down" aria-hidden="true"></i></a> 
             <a href ng-click='toggleText($event)' class="see-less" style="display:none">{{i18nLiterals.L481}}<i class="fa fa-angle-up" aria-hidden="true"></i></a>
@@ -170,6 +173,7 @@
         <h2 data-ng-bind="i18nLiterals.L334"></h2>
         <div class="columm--item--content">
           <div data-ng-if="country1Data.scope == null" data-ng-bind="i18nLiterals.L20706"></div>
+          <div data-ng-if="country1Data.scope == null" data-ng-bind="i18nLiterals.L20740"></div>
           <div class="partial-text" data-ng-bind-html="trimText(i18nLiterals['L'+country1Data.scope], maxCharacters)"></div>
           <div class="complete-text" data-ng-bind-html="i18nLiterals['L'+country1Data.scope]"></div>
           <p class="see-more" data-ng-if="i18nLiterals['L'+country1Data.scope].length > maxCharacters">
@@ -186,6 +190,7 @@
         <h2 data-ng-bind="i18nLiterals.L334"></h2>
         <div class="columm--item--content">
           <div data-ng-if="country2Data.scope == null" data-ng-bind="i18nLiterals.L20706"></div>
+          <div data-ng-if="country2Data.scope == null" data-ng-bind="i18nLiterals.L20740"></div>
           <div class="partial-text" data-ng-bind-html="trimText(i18nLiterals['L'+country2Data.scope], maxCharacters)"></div>
           <div class="complete-text" data-ng-bind-html="i18nLiterals['L'+country2Data.scope]"></div>
           <p class="see-more" data-ng-if="i18nLiterals['L'+country2Data.scope].length > maxCharacters">
@@ -205,6 +210,7 @@
         <h2 data-ng-bind="i18nLiterals.L335"></h2>
         <div class="columm--item--content">
           <div data-ng-if="country1Data.inspector == null" data-ng-bind="i18nLiterals.L20706"></div>
+          <div data-ng-if="country1Data.inspector == null" data-ng-bind="i18nLiterals.L20740"></div>
           <div class="partial-text" data-ng-bind-html="trimText(i18nLiterals['L'+country1Data.inspector], maxCharacters)"></div>
           <div class="complete-text" data-ng-bind-html="i18nLiterals['L'+country1Data.inspector]"></div>
           <p class="see-more" data-ng-if="i18nLiterals['L'+country1Data.inspector].length > maxCharacters">
@@ -221,6 +227,7 @@
         <h2 data-ng-bind="i18nLiterals.L335"></h2>
         <div class="columm--item--content">
           <div data-ng-if="country2Data.inspector == null" data-ng-bind="i18nLiterals.L20706"></div>
+          <div data-ng-if="country2Data.inspector == null" data-ng-bind="i18nLiterals.L20740"></div>
           <div class="partial-text" data-ng-bind-html="trimText(i18nLiterals['L'+country2Data.inspector], maxCharacters)"></div>
           <div class="complete-text" data-ng-bind-html="i18nLiterals['L'+country2Data.inspector]"></div>
           <p class="see-more" data-ng-if="i18nLiterals['L'+country2Data.inspector].length > maxCharacters">
@@ -241,6 +248,7 @@
         <h2 data-ng-bind="i18nLiterals.L336"></h2>
         <div class="columm--item--content">
           <div data-ng-if="country1Data.strategy == null" data-ng-bind="i18nLiterals.L20706"></div>
+          <div data-ng-if="country1Data.strategy == null" data-ng-bind="i18nLiterals.L20740"></div>
           <div class="partial-text" data-ng-bind-html="trimText(i18nLiterals['L'+country1Data.strategy], maxCharacters)"></div>
           <div class="complete-text" data-ng-bind-html="i18nLiterals['L'+country1Data.strategy]"></div>
           <p class="see-more" data-ng-if="i18nLiterals['L'+country1Data.strategy].length > maxCharacters">
@@ -257,6 +265,7 @@
         <h2 data-ng-bind="i18nLiterals.L336"></h2>
         <div class="columm--item--content">
           <div data-ng-if="country2Data.strategy == null" data-ng-bind="i18nLiterals.L20706"></div>
+          <div data-ng-if="country2Data.strategy == null" data-ng-bind="i18nLiterals.L20740"></div>
           <div class="partial-text" data-ng-bind-html="trimText(i18nLiterals['L'+country2Data.strategy], maxCharacters)"></div>
           <div class="complete-text" data-ng-bind-html="i18nLiterals['L'+country2Data.strategy]"></div>
           <p class="see-more" data-ng-if="i18nLiterals['L'+country2Data.strategy].length > maxCharacters">
