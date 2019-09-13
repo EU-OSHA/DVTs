@@ -47,7 +47,7 @@ define(function (require) {
     $scope.angle = resolution > 768 ? 1 : 0;
     $scope.horizontalHeight = resolution > 768 ? 470 : 770;
     $scope.orientation = resolution > 768 ? "vertical" : "horizontal";
-    $scope.axisSize = resolution > 768 ? 150 : 160;
+    $scope.axisSize = resolution > 768 ? 150 : 100;
     $scope.axisSizeHealth = resolution > 768 ? 50 : 100;
     $scope.query = resolution > 768 ? 'getJobSatisfactionVerticalData' : 'getJobSatisfactionHorizontalData';
     $scope.color1 = resolution > 768 ? dvtUtils.getColorCountry(3) : dvtUtils.getColorCountry(1);

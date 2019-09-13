@@ -43,7 +43,7 @@ define(function (require) {
     var resolution = screen.width;
 
     $scope.orientation = resolution > 768 ? "vertical" : "horizontal";
-    $scope.axisSize = resolution > 768 ? 150 : 130;
+    $scope.axisSize = resolution > 768 ? 150 : 110;
     $scope.angle = resolution > 768 ? 1 : 0;
     $scope.horizontalHeight = resolution > 768 ? 470 : 770;
     $scope.oshInformationQuery = resolution > 768 ? 'getOshInformationVerticalData' : 'getOshInformationHorizontalData';
@@ -52,7 +52,7 @@ define(function (require) {
     $scope.color2 = resolution > 768 ? dvtUtils.getColorCountry(1) : dvtUtils.getColorCountry(22);
     $scope.color3 = resolution > 768 ? dvtUtils.getAccidentsColors(4) : dvtUtils.getColorCountry(1);
     $scope.color4 = resolution > 768 ? dvtUtils.getColorCountry(1) : dvtUtils.getAccidentsColors(4);
-    $scope.axisSizeRA = resolution > 768 ? 60 : 100;
+    $scope.axisSizeRA = resolution > 768 ? 60 : 90;
     $scope.axisWordBreak = resolution > 768 ? 1 : '';
 
     $(window).on("resize",function(e){
