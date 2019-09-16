@@ -181,6 +181,8 @@
     position: relative;
     -webkit-transition: max-height 1.5s; 
     transition: max-height 1.5s;
+    margin: 0;
+    padding: 0;
     li{
       width: 100%;
       padding: 0;
@@ -262,6 +264,10 @@
     .methodology--grid--wrapper{
       background: none;
       padding-left: 0;
+    }
+    .indicators--submenu--wrapper:after{
+      right:0rem;
+      top: 1rem;
     }
   }
 }
