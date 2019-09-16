@@ -149,6 +149,10 @@ define(function (require) {
                     $scope.isCurrentStateMenu = function (path) {
                         var lPath = $location.path().split("/");
                         $log.debug("isCurrentStateMenu and menu variable  |  path: " + path + "  |  " + "lPath[1]: " + lPath[1]);
+                        if(path == 'structure-strategy' || path == 'response-strategy' || path == 'overall-opinion' || path == 'mental-risk'
+                             || path == 'physical-risk'){
+                            return 'hidden';
+                        }
                         return (path === lPath[1]
                             || (lPath[1] == "" && path == "home")
                             || (lPath[1] == "site-map" && path == "home")
