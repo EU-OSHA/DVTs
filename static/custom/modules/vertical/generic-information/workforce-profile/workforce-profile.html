@@ -28,6 +28,7 @@
             <option data-ng-repeat='gender in genders' value="{{i18nLiterals['L'+gender.gender_name]}}" data-ng-bind="i18nLiterals['L'+gender.gender_name]"></option>
           </select>
           <label data-ng-if="selectedIndicator == 'median-age'" class="alert-disabled" data-ng-bind="i18nLiterals.L20694"></label>
+          <label data-ng-if="selectedIndicator == 'unemployment-rate'" class="alert-disabled">Not applied to Unemployment rate</label>
         </li>
         <!-- COUNTRY FILTER JUST IN < 1024 PX -->
         <li  id="filter3" class="filter--dropdown--wrapper" >
