@@ -5836,6 +5836,16 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO matrix_page(page, nuts_id, check_1, check_2, check_3, check_4, text_1_literal_id, text_2_literal_id, text_3_literal_id)  VALUES ("MATRIX_AUTHORITY", @nutsId, 1, 0, 0, 0, @maxId+1, @maxId+2, @maxId+3);
 
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="EU28");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "Advisory Committee for Safety and Health at Work (ACSH)");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "See more in its <a target=\"blank\" href=\"https://ec.europa.eu/social/main.jsp?catId=148&langId=en&intPageId=683\">website</a> and in <a target=\"_blank\" href=\"https://www.eurofound.europa.eu/country/eu-level\">OSHwiki</a>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p>The Advisory Committee for Safety and Health at Work (ACSH) assists the European Commission in the preparation, implementation and evaluation of activities in the field of occupational safety and health (OSH) and facilitates cooperation between national administrations, trade unions and employers' organisations. <br />The ACSH is composed of three full members per Member State, representing national governments, trade unions and employers' organisations. The Committee reports on its tasks and activities in annual activity reports, prepared by the Bureau and discussed and adopted by the Committee. The Committee meets twice a year in the ACSH plenary meeting. </p>");
+INSERT INTO matrix_page(page, nuts_id, check_1, check_2, check_3, check_4, text_1_literal_id, text_2_literal_id, text_3_literal_id)  VALUES ("MATRIX_AUTHORITY", @nutsId, 1, 0, 0, 0, @maxId+1, @maxId+2, @maxId+3);
+
+SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="AT");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, NULL, "MATRIX_STATISTICS_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "Statistisches Handbuch der österreichischen Sozialversicherung (HVB-ÖS)");
