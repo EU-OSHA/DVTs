@@ -513,11 +513,15 @@ define(function (require) {
         var countryName = element[0].id.slice(7,9);
         var countryCode = element[0].innerHTML.slice(1,3);
 
+        if(countryCode == 'U2'){
+          countryCode = 'EU28';
+          countryName = 264;
+        }
+
         //buscar en el value del input correspondiente al id de literal
         
         var quitChecked;
         if($event.target.id.indexOf('country') != -1){
-
           $scope.searchParams.countries.splice($scope.searchParams.countries.indexOf(countryCode), 1);
           quitChecked = angular.element('.filter--dropdown--options #country-filter-'+countryName);
         }else if($event.target.id == 'institutionFilter1'){

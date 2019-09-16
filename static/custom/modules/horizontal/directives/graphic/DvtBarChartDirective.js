@@ -463,9 +463,9 @@ define(function (require) {
                         var pCountry2 = definition.parameters[2] ? definition.parameters[2][1] : null;
 
 
-                        if(country.includes(pCountry1)){
+                        if(country.match(pCountry1)){
                             return pCountry1;
-                        }else if(country.includes(pCountry2)){
+                        }else if(country.match(pCountry2)){
                             return pCountry2;
                         }
                     }
@@ -479,9 +479,9 @@ define(function (require) {
 
                         if(country == 'EU28'){
                             return dvtUtils.getEUColor();
-                        }else if(country.includes(pCountry1)){
+                        }else if(country.match(pCountry1)){
                             return dvtUtils.getColorCountry(1)
-                        }else if(country.includes(pCountry2)){
+                        }else if(country.match(pCountry2)){
                             return dvtUtils.getColorCountry(2)
                         }
                     }
@@ -1064,9 +1064,9 @@ define(function (require) {
                         definition.chartDefinition.baseAxisLabel_textStyle= function (){
                             if(this.scene.vars.tick.label == 'EU28'){
                                 return dvtUtils.getEUColor();
-                            }else if(this.scene.vars.tick.label.includes(pCountry1)){
+                            }else if(this.scene.vars.tick.label.match(pCountry1)){
                                 return dvtUtils.getColorCountry(1);
-                            }else if(this.scene.vars.tick.label.includes(pCountry2)){
+                            }else if(this.scene.vars.tick.label.match(pCountry2)){
                                 return dvtUtils.getColorCountry(2);
                             }
                             return 'gray';
