@@ -7,38 +7,38 @@
 	</DataSources>
 
 	<!-- GET INDICATORS FOR METHODOLOGY -->
-	<DataAccess access="public" connection="dvt_conn" id="getMethodologyIndicators" type="sql">
-	    <Cache duration="3600" enabled="true" />
-	    <Columns />
-	   	<Parameters>
-	    	<Parameter default="OSH_AUTHORITIES" name="pSubsection" type="String"/>
-	    </Parameters>
-	    <Query>
-		    SELECT indicator_id as Id, i.literal_id as Literal, t.text as Name
-			FROM methodology m, section s, indicator i, translation t
-			WHERE m.section_id = s.id
-			AND s.name = ${pSubsection}
-			AND i.id = m.indicator_id
-			AND i.literal_id = t.literal_id
-			AND t.language = 'EN';
-	    </Query>
-	</DataAccess>
+    <DataAccess access="public" connection="dvt_conn" id="getMethodologyIndicators" type="sql">
+        <Cache duration="3600" enabled="true" />
+        <Columns />
+           <Parameters>
+            <Parameter default="OSH_AUTHORITIES" name="pSubsection" type="String"/>
+        </Parameters>
+        <Query>
+            SELECT indicator_id as Id, i.literal_id as Literal, t.text as Name
+            FROM methodology m, section s, indicator i, translation t
+            WHERE m.section_id = s.id
+            AND s.name = ${pSubsection}
+            AND i.id = m.indicator_id
+            AND i.literal_id = t.literal_id
+            AND t.language = 'EN';
+        </Query>
+    </DataAccess>
 
-	<!-- GET DATA OF AN INDICATOR FOR METHODOLOGY -->
-	<DataAccess access="public" connection="dvt_conn" id="getMethodologyData" type="sql">
-	    <Cache duration="3600" enabled="true" />
-	    <Columns />
-	   	<Parameters>
-	    	<Parameter default="27" name="pIndicator" type="Numeric"/>
-	    </Parameters>
-	    <Query>
-			SELECT i.literal_id as diagram, m.description_literal_id as description, d.source as datasource, m.specific_table_literal_id as specific_table,	m.url_literal_id as url, m.filtering_options_literal_id as options_applied, m.reference_year_literal_id as reference_year, m.last_update_literal_id as last_update, m.coverage_literal_id as coverage, m.unit_measure_literal_id as unit_measure, m.calculations_literal_id as calculations, m.visualisation_literal_id as visualisation, m.additional_comments_literal_id as additional_comments
-			FROM methodology m, dataset d, indicator i
-			WHERE m.indicator_id = ${pIndicator}
-			AND m.indicator_id = i.id
-			AND m.dataset_id = d.id
-	    </Query>
-	</DataAccess>
+    <!-- GET DATA OF AN INDICATOR FOR METHODOLOGY -->
+    <DataAccess access="public" connection="dvt_conn" id="getMethodologyData" type="sql">
+        <Cache duration="3600" enabled="true" />
+        <Columns />
+           <Parameters>
+            <Parameter default="27" name="pIndicator" type="Numeric"/>
+        </Parameters>
+        <Query>
+            SELECT i.literal_id as diagram, m.description_literal_id as description, m.source_methodology_literal_id as datasource, m.specific_table_literal_id as specific_table, m.url_literal_id as url, m.filtering_options_literal_id as options_applied, m.reference_year_literal_id as reference_year, m.last_update_literal_id as last_update, m.coverage_literal_id as coverage, m.unit_measure_literal_id as unit_measure, m.calculations_literal_id as calculations, m.visualisation_literal_id as visualisation, m.additional_comments_literal_id as additional_comments
+            FROM methodology m, dataset d, indicator i
+            WHERE m.indicator_id = ${pIndicator}
+            AND m.indicator_id = i.id
+            AND m.dataset_id = d.id
+        </Query>
+    </DataAccess>
 
 	<!-- GET DATASOURCE AND DATES -->
 	<DataAccess access="public" connection="dvt_conn" id="getDatasourceAndDates" type="sql">
@@ -412,7 +412,7 @@
 	      AND v.profile_id = p.id
 	      AND d.id = ${pDataset} AND d.id = v.dataset_id
 	      AND n.country_code IN (${pCountry1}, ${pCountry2}, 'EU28') AND i.id = ${pIndicator}
-	      ORDER BY FIELD(n.country_code, ${pCountry1}, ${pCountry2}, 'EU28') DESC
+	      ORDER BY FIELD(n.country_code, ${pCountry1}, ${pCountry2}, 'EU28') ASC
 	    </Query>
 	</DataAccess>
 

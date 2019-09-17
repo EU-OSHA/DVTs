@@ -49,7 +49,7 @@
 			<p data-ng-bind-html="i18nLiterals['L'+data.description]" data-ng-if="i18nLiterals['L'+data.description] != 'null'"></p>
 			<!-- Datasource -->
 			<h3 data-ng-bind="i18nLiterals.L20722" data-ng-if="data.datasource != 'null'"></h3>
-			<p data-ng-if="data.datasource != 'null'">{{data.datasource}}</p>
+			<p data-ng-if="i18nLiterals['L'+data.datasource] != 'null'" data-ng-bind-html="i18nLiterals['L'+data.datasource]"></p>
 			<!-- Specific table / Question -->
 			<h3 data-ng-bind="i18nLiterals.L20723" data-ng-if="i18nLiterals['L'+data.specific_table] != 'null'"></h3>
 			<p data-ng-bind-html="i18nLiterals['L'+data.specific_table]" data-ng-if="i18nLiterals['L'+data.specific_table] != 'null'"></p>
