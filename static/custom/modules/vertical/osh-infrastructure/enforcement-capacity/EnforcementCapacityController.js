@@ -244,7 +244,7 @@ define(function (require) {
             strategy: elem[5]
           };
         });
-        $log.warn($scope.country2Data);
+        //$log.warn($scope.country2Data);
       }).catch(function (err) {
           throw err;
       });

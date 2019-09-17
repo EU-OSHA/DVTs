@@ -160,13 +160,16 @@ define(function (require) {
                         +'<li class="data6"></li>'
                         +'</ul>'
                         +'</p>');
+
+                    var unemployment = (this.unemploymentRate == undefined)?'0':this.unemploymentRate;
+
                     angular.element('.dvt-map-tooltip .country-name').text( this.label );
                     angular.element('.dvt-map-tooltip .data1').html( '<label>' + i18nLiterals['L20615'] +'</label>'+this.medianAge+' '+i18nLiterals['L20620'] );
                     angular.element('.dvt-map-tooltip .data2').html( '<label>' + i18nLiterals['L20616'] +'</label>'+this.ageingWorkers+' %' );
                     angular.element('.dvt-map-tooltip .data3').html( '<label>' + i18nLiterals['L20617'] +'</label>'+this.eRateTotal+' %' );
                     angular.element('.dvt-map-tooltip .data4').html( '<label>' + i18nLiterals['L20618'] +'</label>'+this.eRateMale+' %' );
                     angular.element('.dvt-map-tooltip .data5').html( '<label>' + i18nLiterals['L20619'] +'</label>'+this.eRateFemale+' %' );
-                    angular.element('.dvt-map-tooltip .data6').html( '<label>' + i18nLiterals['L291'] +'</label>'+this.unemploymentRate+' %' );
+                    angular.element('.dvt-map-tooltip .data6').html( '<label>' + i18nLiterals['L291'] +'</label>'+unemployment+' %' );
 
                     var widthTooltip = angular.element('.dvt-map-tooltip').width();
                     var heightTooltip = angular.element('.dvt-map-tooltip').height();

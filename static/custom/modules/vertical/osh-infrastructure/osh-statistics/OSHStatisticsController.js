@@ -92,31 +92,37 @@ define(function (require) {
       var shortText = pVal;
       var finalHtml = '';
       var text = 0;
-      $scope.newMaxCharacter = pNumCharacters;
+      //$log.warn(pVal);
 
       if(shortText != null){
-        var firstSplit =  shortText.substring(0, $scope.newMaxCharacter);
+        if(pNumCharacters == 1){
+          return $sce.trustAsHtml(shortText);
+        }else{
+          $scope.newMaxCharacter = pNumCharacters;
+          var firstSplit =  shortText.substring(0, $scope.newMaxCharacter);
 
-        if(firstSplit.match('<a')){
-          pNumCharacters += 150;
-        }
-
-        var indexStart = shortText.indexOf('<a');
-        var indexEnd = shortText.indexOf('>', indexStart);
-        var cont = 0;
-
-        if(indexStart != -1){
-          while (indexStart != -1){
-            var link = shortText.substring(indexStart, indexEnd);
-            $scope.newMaxCharacter = $scope.newMaxCharacter + link.length;
-            indexStart = shortText.indexOf('<a', indexEnd);
-            indexEnd = shortText.indexOf('>', indexStart);
+          if(firstSplit.match('<a')){
+            pNumCharacters += 150;
           }
+
+          var indexStart = shortText.indexOf('<a');
+          var indexEnd = shortText.indexOf('>', indexStart);
+          var cont = 0;
+
+          if(indexStart != -1){
+            while (indexStart != -1){
+              var link = shortText.substring(indexStart, indexEnd);
+              $scope.newMaxCharacter = $scope.newMaxCharacter + link.length;
+              indexStart = shortText.indexOf('<a', indexEnd);
+              indexEnd = shortText.indexOf('>', indexStart);
+            }
+          }
+          if (shortText.length > $scope.newMaxCharacter ) {
+            shortText = $.trim(shortText).substring(0, pNumCharacters).split(" ").slice(0, -1).join(" ") + "<span class='dots'>...</span>";
+          }
+          return $sce.trustAsHtml(shortText);
         }
-        if (shortText.length > $scope.newMaxCharacter ) {
-          shortText = $.trim(shortText).substring(0, pNumCharacters).split(" ").slice(0, -1).join(" ") + "<span class='dots'>...</span>";
-        }
-        return $sce.trustAsHtml(shortText);
+
       }
     }
 
