@@ -176,8 +176,10 @@
               </li>
               <li>                
                 <label data-ng-bind="i18nLiterals['L291']"></label>
-                <span class="data" data-ng-bind="data.unemploymentRate[country.country_code].value"></span>
+                <span data-ng-if="data.unemploymentRate[country.country_code].value != undefined" class="data" data-ng-bind="data.unemploymentRate[country.country_code].value"></span>
+                <span data-ng-if="data.unemploymentRate[country.country_code].value == undefined" class="data">- </span>
                 <span class="data-text">&percnt;</span>
+
               </li>
             </ul>
         </div>
