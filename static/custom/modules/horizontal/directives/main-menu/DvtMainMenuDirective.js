@@ -194,6 +194,13 @@ define(function (require) {
                             $log.debug(path);
                             $log.warn($state.current.name);
 
+
+                            // hide tooltip of european map page 
+                            if($state.current.name != 'workforce-profile'){
+                                $('.dvt-map-tooltip').remove();
+                            }
+
+
                             var cadena = "";
                             
                             $scope.breadCrumb = breadCrumbStructure[$state.current.name];

@@ -93,7 +93,7 @@ define(function (require) {
                         text: elem[1]
                       });
                     });
-                    $log.warn($scope.indicators);
+                    //$log.warn($scope.indicators);
                     //$scope.pIndicator = $scope.indicators[0].id;
                     //$log.warn($scope.pIndicator);
                 }).catch(function (err) {
@@ -142,7 +142,7 @@ define(function (require) {
                         }
                     }
                 }
-                //$log.warn($scope.subsections);
+                $log.warn($scope.subsections);
             }
 
             $scope.getIndicators = function(subsection){
@@ -174,6 +174,9 @@ define(function (require) {
                 });
             }
 
+
+
+
             // Open indicators list like a select element
             // 
                 $(window).on("resize",function(e){
@@ -181,27 +184,24 @@ define(function (require) {
                 });
                 resolution = $(window).width();
 
-                $scope.openIndicatorsList = function(e) {    
-                
+                $scope.openIndicatorsList = function(e) {  
 
                     if( resolution < 990 ){
                           //var parentTag = e.target.offsetParent.nextSibling.parentNode.className;          
                         var parentTag = e.currentTarget;
-                        angular.element('.indicators--submenu--wrapper').toggleClass('open-list'); 
-                        /*var nodeName = parentTag.nodeName;
+                         angular.element('.indicators--submenu--wrapper').toggleClass('open-list');
+
+                       /* var nodeName = parentTag.nodeName;
                         if( nodeName == 'LI' ) {
-                            angular.element('.indicators--submenu--wrapper li').removeClass('active');
-                            angular.element(parentTag).toggleClass('active');
                             angular.element('.indicators--submenu--wrapper').toggleClass('open-list');
-                            console.log( nodeName ); 
-                        }else{
-
-                        }   */
-
+                        }else if( nodeName == 'UL' ){
+                            angular.element('.indicators--submenu--wrapper').toggleClass('open-list'); 
+                        }  
+*/
                     }
                 }
 
-                angular.element('body').mouseup(function(e){
+                $('body').on('click touchstart', function(e) {
                 var container = angular.element('.indicators--submenu--wrapper');
                 if (!container.is(e.target) && container.has(e.target).length === 0){
                   angular.element('.indicators--submenu--wrapper').removeClass('open-list'); 
@@ -210,7 +210,6 @@ define(function (require) {
 
         /**************************************** END DATA FILTERS *******************************************/
 
-
         $scope.status = 'ready';
     }
     
@@ -218,3 +217,5 @@ define(function (require) {
     return controller;
     
 });
+
+
