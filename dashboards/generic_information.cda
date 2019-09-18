@@ -19,6 +19,7 @@
             WHERE m.section_id = s.id
             AND s.name = ${pSubsection}
             AND i.id = m.indicator_id
+            AND CASE WHEN (${pSubsection} = 'WORKACC') THEN i.id NOT IN (55,56,97) END
             AND i.literal_id = t.literal_id
             AND t.language = 'EN';
         </Query>
