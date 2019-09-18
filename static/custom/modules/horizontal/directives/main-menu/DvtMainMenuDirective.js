@@ -158,7 +158,8 @@ define(function (require) {
                             || (lPath[1] == "site-map" && path == "home")
                             || (lPath[1] == "accessibility" && path == "home")
                             || (lPath[1] == "privacy-notice" && path == "home")
-                            || (lPath[1] == "legal-notice" && path == "home") ) ? 'main-menu-selected' : '';
+                            || (lPath[1] == "legal-notice" && path == "home")
+                            || (lPath[1] == "about-tool-detail-page"  && path == "about-tool") ) ? 'main-menu-selected' : '';
 
                         //return (path === lPath[1] || (lPath[1] == "" && path == "home")) ? 'main-menu-selected' : '';
                     };
