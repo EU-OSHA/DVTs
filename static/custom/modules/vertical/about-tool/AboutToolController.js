@@ -100,7 +100,7 @@ define(function (require) {
                     throw err;
                 });
 
-                dataService.getMethodologyData($scope.pIndicator).then(function (data) {
+                dataService.getMethodologyData($scope.pIndicator, $scope.pSubsection.toUpperCase()).then(function (data) {
                     data.data.resultset.map(function (elem) {
                         $scope.data = {
                             diagram: elem[0],
