@@ -272,8 +272,6 @@ define(function (require) {
 
     };
     var afterPrint = function() {
-        $('.card--block--chart--wrapper svg').attr({ 'width':'20m','height':'10cm',"preserveAspectRatio":"xminymin meet","viewBox": "0 0 20cm 10cm" });
-
     };
 
     if (window.matchMedia) {
