@@ -18,7 +18,7 @@ INSERT INTO indicator (name, literal_id) VALUES ("Q166_3", @maxId);
 -- Q166_4
 SET @maxId = (SELECT MAX(id)+1 FROM literal WHERE id < 10000);
 INSERT INTO literal (id, chart_id, section_id, type) VALUES (@maxId, NULL, NULL, "INDICATOR_NAME");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@maxId, "EN", 1, "A health and safety representative or representative of employee safety");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@maxId, "EN", 1, "A health and safety committee");
 INSERT INTO indicator (name, literal_id) VALUES ("Q166_4", @maxId);
 -- Q160
 SET @maxId = (SELECT MAX(id)+1 FROM literal WHERE id < 10000);
