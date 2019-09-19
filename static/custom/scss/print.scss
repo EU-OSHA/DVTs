@@ -71,6 +71,7 @@
 -webkit-column-break-inside: avoid!important;
           page-break-inside: avoid!important;
                break-inside: avoid!important;
+					page-break-after: avoid  !important;
       }
     .w2, .w3, .w4, .w4{
       .card--block, .card--block--rounded, .card--block--chart{
@@ -79,6 +80,7 @@
         padding: 0rem;
         margin: 0;
         page-break-inside : avoid !important;
+        page-break-after: avoid  !important;
       }
       .card--block--rounded{
         width:100%;
@@ -86,6 +88,7 @@
         padding: 0rem;
         margin: 0;
         page-break-inside : avoid !important;
+        page-break-after: avoid  !important;
       }
       .card--block--chart{
         width:100%;
@@ -93,6 +96,7 @@
         padding: 0rem;
         margin: 0;
         page-break-inside : avoid !important;
+        page-break-after: avoid  !important;
       }
     }
   /** END WIDTH CARDS  **/
@@ -149,20 +153,27 @@
 	} 
 	.economic--sector--profile{
 		.card--grid{
+			display: block;
+			justify-content: unset;
+			flex-wrap: initial;
 			.card--block--chart {
-		  	width: 42% !important;
-		  	margin: 2rem 2%  !important;
+		  	width: 100% !important;
+		  	margin: 4rem 0 0 !important;
 		  	page-break-inside: avoid  !important;
 		  	page-break-after: avoid  !important;
 		  	display: block !important;
 				.title--card {
-					min-height: 6rem !important;
+					min-height: auto !important;
 				}
 				.chart--wrapper{
 				  padding: 0 !important;
 				  vertical-align: top  !important;
-				  svg{
-				  	width:10cm !important;
+				  width:100% !important;
+		  		div[id^=dvt_bar_chart]{
+						display: block !important;
+					}
+				  svg{				    
+				    zoom: 0.75 !important;
 				  }
 				}
 			}
@@ -256,6 +267,8 @@
   				padding: 1rem;
   				margin: 0;
 					border-radius: 0;
+					page-break-inside: avoid  !important;
+					page-break-after: avoid  !important;
 					.matrix--header--elements{
 						.flags--wrapper{
 							width: 1.5cm;
@@ -268,8 +281,12 @@
 						min-height: 3cm;
 						li{
 							display: inline-block;
-							width: 19%;
+							width: 32%;
 							vertical-align: top;
+							margin-bottom: 1.6rem;
+							label{
+								min-height: auto;
+							}
 						}
 				  }
 			  }
@@ -292,7 +309,8 @@
 					padding: 0 1rem !important;
 					margin: 0 !important;
 					width: 20% !important;
-					page-break-inside : avoid !important;
+					page-break-inside: avoid  !important;
+					page-break-after: avoid  !important;
 					.additional-img{
 						img{
 							border:1px solid #CCC !important;
@@ -312,26 +330,35 @@
 		}
 	}
 	.social-dialogue{
+    .highlited--data--section{
+			border-bottom: 2px solid #003399 !important;
+    }
 	  .card--grid{
 	    .card--block--chart{
 	    	margin: 0 !important; 
 	      .chart--block{
+					page-break-inside: avoid  !important;
+					page-break-after: avoid  !important;
 	        header{
-	          img{
-	          	border: 1px solid #ccc !important;
-	          	width: 6rem !important;
-	          }
+	        	.flags--wrapper{
+	        		outline: 0 !important;
+		          img{
+		          	border: 0px solid #ccc !important;
+		          	width: 6rem !important;
+		          }	        		
+	        	}
 	          h2{
 	          }      
 	        }
 	        .highlited-data-list{
-	        	justify-content: flex-start !important;
+	        	justify-content: flex-start !important;	        	
 	          li{
 	            width: 25% !important;
 	            text-align: left !important;
+	            padding: 0 2rem 0 0 !important;
 	            span{
 	              &.country-data{
-	                font-size: 1.8rem !important;
+	                font-size: 3.8rem !important;
 	              }
 	              &.data-text{
 									font-size: 1.8rem !important;
@@ -351,18 +378,21 @@
 	  }
 	}
 
+html,body,svg { height:100% }
 	.work-accidents{
 		.card--grid{
 			display: block !important;
 			.card--block--chart{
 			  display: block !important;
 			  width: 100% !important;
-			  page-break-inside : auto !important;
+			  page-break-inside: avoid  !important;
+				page-break-after: avoid  !important;
 				.chart--block{
 					div [id$="protovis"]{
 						width: 100% !important;						
 						svg{
-							width: 21cm !important;
+							//width: 100% !important;
+							//zoom:0.55;
 						}
 					}
 				}
@@ -370,7 +400,8 @@
 		}
 		div [id$="protovis"]{
 			width: 100% !important;
-			page-break-inside : auto !important;
+			page-break-inside: avoid  !important;
+			page-break-after: avoid  !important;
 			svg{
 				//width: 21cm !important;
 			}
@@ -440,6 +471,9 @@
 	.osh-culture, 
 	.prevention-companies{
 		.chart--block, .chart--wrapper{
+			.title--card{
+				min-height: auto;
+			}
 			svg{
 				zoom:0.8;
 			}
