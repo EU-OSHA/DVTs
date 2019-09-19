@@ -216,7 +216,7 @@ define(function (require) {
         }
       }
 
-      angular.element('body').mouseup(function(e){
+      $('body').on('click touchstart', function(e) {
         var container = angular.element('.submenu--items--wrapper');
         if (!container.is(e.target) && container.has(e.target).length === 0){
           angular.element('.submenu--items--wrapper').removeClass('open-list'); 

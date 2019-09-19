@@ -158,7 +158,8 @@ define(function (require) {
                             || (lPath[1] == "site-map" && path == "home")
                             || (lPath[1] == "accessibility" && path == "home")
                             || (lPath[1] == "privacy-notice" && path == "home")
-                            || (lPath[1] == "legal-notice" && path == "home") ) ? 'main-menu-selected' : '';
+                            || (lPath[1] == "legal-notice" && path == "home")
+                            || (lPath[1] == "about-tool-detail-page"  && path == "about-tool") ) ? 'main-menu-selected' : '';
 
                         //return (path === lPath[1] || (lPath[1] == "" && path == "home")) ? 'main-menu-selected' : '';
                     };
@@ -192,6 +193,13 @@ define(function (require) {
                             var path = $location.path();
                             $log.debug(path);
                             $log.warn($state.current.name);
+
+
+                            // hide tooltip of european map page 
+                            if($state.current.name != 'workforce-profile'){
+                                $('.dvt-map-tooltip').remove();
+                            }
+
 
                             var cadena = "";
                             

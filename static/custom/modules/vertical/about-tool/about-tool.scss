@@ -79,7 +79,7 @@
         }
       }
       &.active{
-        a:visited, a:focus{
+        a, a:visited, a:focus{
           color: $orange;
           border-bottom: 0;
         }
@@ -265,9 +265,22 @@
       background: none;
       padding-left: 0;
     }
-    .indicators--submenu--wrapper:after{
-      right:0rem;
-      top: 1rem;
+    .indicators--submenu--wrapper{
+      height: 10rem;
+      max-height: 10rem;        
+      &.open-list{
+        height: auto;
+        max-height: 70rem;
+      }
+      li{
+        a{
+          padding: 2rem 3rem 2rem 0.5rem;
+        }
+      }
+      &:after{
+        right:0rem;
+        top: 1rem;
+      }
     }
   }
 }
@@ -276,7 +289,10 @@
     .indicators--list--wrapper{
       .indicators-item{
         width: 100%;
-        height: 20rem;
+        height: 17rem;
+        &:last-child{
+          margin-bottom:8rem;
+        }
       }
     }
   }
