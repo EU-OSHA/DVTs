@@ -106,12 +106,32 @@
 		position: relative !important;
 		.header--top{
 			display: block;
+			.eu-osha-logo{
+				img{
+					width: 5cm !important;
+					height: auto !important;
+				}
+			}
 		}
-	} 
+	}
+	h1{
+		font-size: 3rem;
+	}
 	.home-cover{
 		border-top: 0px;
 		height: auto;
 		min-height: auto !important;
+		.main-title{
+			padding: 0 !important;
+			margin: 0 !important;		
+		} 
+		.lead-title {
+			padding-left: 0 !important;
+			padding-top: 1rem !important;
+		}
+	}
+	.breadcrumbs--social--network{
+		padding-left: 0 !important;
 	}
 	.advice--block{
 		top: 0;
@@ -222,12 +242,17 @@
 		}
 		.column--grid--block{
 			flex-wrap: wrap !important;
+			page-break-inside: avoid  !important;
+			page-break-after: avoid  !important;
 			.column--item {
 			  border-right: 0 !important;
 			  padding: 1rem 0 2rem !important;
 			  width: 100% !important;
+			  > h2{
+			  	border-bottom: 1px dashed  $gray-light;
+			  }
 			  .flags--wrapper{
-			  	outline: 1px solid #CCC !important;
+			  	outline:none !important;
 				  width: 1cm !important;
 				  float: left !important;
 				  margin-right: 1rem !important;
@@ -238,6 +263,12 @@
 			  .download-report, .partial-text{
 			  	display: none;
 			  }
+			}
+			.card--block--chart{
+				padding: 0 !important;
+				h2{
+					color: $gray !important;
+				}
 			}
 		} 
 	}
@@ -378,7 +409,7 @@
 	  }
 	}
 
-html,body,svg { height:100% }
+
 	.work-accidents{
 		.card--grid{
 			display: block !important;
@@ -387,6 +418,10 @@ html,body,svg { height:100% }
 			  width: 100% !important;
 			  page-break-inside: avoid  !important;
 				page-break-after: avoid  !important;
+				margin-bottom: 5rem  !important;
+				.title--card{
+					min-height: auto !important;
+				}
 				.chart--block{
 					div [id$="protovis"]{
 						width: 100% !important;						
@@ -405,6 +440,9 @@ html,body,svg { height:100% }
 			svg{
 				//width: 21cm !important;
 			}
+		}
+		div[query="getFatalAccidentsData"]{
+			zoom:0.7;
 		}
 		.compare--block{
 			.compare--list{

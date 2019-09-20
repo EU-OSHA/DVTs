@@ -265,30 +265,6 @@ define(function (require) {
       });
 
 
-(function() {
-
-    var beforePrint = function() {
-    $('.card--block--chart--wrapper svg').attr({ 'width':'20cm','height':'10cm',"preserveAspectRatio":"xminymin meet","viewBox": "0 0 20cm 10cm" });
-
-    };
-    var afterPrint = function() {
-    };
-
-    if (window.matchMedia) {
-        var mediaQueryList = window.matchMedia('print');
-        mediaQueryList.addListener(function(mql) {
-            if (mql.matches) {
-                beforePrint();
-            } else {
-                afterPrint();
-            }
-        });
-    }
-
-    window.onbeforeprint = beforePrint;
-    window.onafterprint = afterPrint;
-}());
-
       $scope.changeIndicator = function(e,indicator) {
         //$scope.openIndicatorsList(e);
         if ($state.current.name !== undefined) {
