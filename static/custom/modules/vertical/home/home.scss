@@ -40,6 +40,32 @@
   }
 }
 
+
+@media only screen 
+and (min-width : 768px) 
+and (max-width : 1024px)
+and (orientation : portrait){
+  .home{
+    .osh--infrastructure--section{
+      .card--grid{
+        .card--block--rounded{
+          > h3{
+            min-height: 10rem;
+          }
+          > p{
+            min-height: 12rem;
+          }
+          > .btn-group-card{
+            min-height: 19rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
 /** ICONS */
   .forum-icon{
     background: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/forum.png) center top no-repeat;
