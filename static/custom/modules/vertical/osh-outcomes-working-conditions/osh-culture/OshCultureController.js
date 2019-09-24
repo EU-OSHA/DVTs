@@ -86,7 +86,7 @@ define(function (require) {
 
     $scope.step = 20;
 
-    var resolution = screen.width;
+    var resolution = window.resolution;
 
     // Properties changing dynamically depending on resolution
     $scope.orientation = resolution > 768 ? "vertical" : "horizontal";
@@ -106,13 +106,19 @@ define(function (require) {
       $state.reload();
     });*/
 
-    $(window).on("resize",function(e){
+    /*$(window).on("resize",function(e){
       if(screen.width != resolution){
         resolution = screen.width;
-        //$log.warn('Resolucion ha cambiado');
         $state.reload();
-      }else{
-        //$log.warn('Resolucion no ha cambiado');
+      }
+    });*/
+
+    $(window).on("resize",function(e){
+      if( window.outerWidth != resolution){
+        resolution = window.resolution;
+        //$log.warn('Resolucion ha cambiado');
+        //$log.warn(window);
+        $state.reload();
       }
     });
 

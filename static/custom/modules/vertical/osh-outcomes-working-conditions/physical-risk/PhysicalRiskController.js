@@ -64,7 +64,7 @@ define(function (require) {
     $scope.pCountry2 = $stateParams.pCountry2;
     $scope.pFilter = $stateParams.pFilter;
 
-    var resolution = screen.width;
+    var resolution = window.width;
 
     $scope.angle = resolution > 768 ? 1 : 0;
     $scope.horizontalHeight = resolution > 768 ? 470 : 770;
@@ -79,13 +79,19 @@ define(function (require) {
       $state.reload();
     });*/
 
-    $(window).on("resize",function(e){
+    /*$(window).on("resize",function(e){
       if(screen.width != resolution){
         resolution = screen.width;
-        //$log.warn('Resolucion ha cambiado');
         $state.reload();
-      }else{
-        //$log.warn('Resolucion no ha cambiado');
+      }
+    });*/
+
+    $(window).on("resize",function(e){
+      if( window.outerWidth != resolution){
+        resolution = window.resolution;
+        //$log.warn('Resolucion ha cambiado');
+        //$log.warn(window);
+        $state.reload();
       }
     });
 

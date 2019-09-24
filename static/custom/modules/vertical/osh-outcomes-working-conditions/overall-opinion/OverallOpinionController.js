@@ -42,7 +42,7 @@ define(function (require) {
 
     //$scope.chartWidth = angular.element('.card--block--chart .chart--block')[1].clientWidth;
 
-    var resolution = screen.width;
+    var resolution = window.width;
 
     $scope.angle = resolution > 768 ? 1 : 0;
     $scope.horizontalHeight = resolution > 768 ? 470 : 770;
@@ -61,13 +61,19 @@ define(function (require) {
       $state.reload();
     });*/
 
-    $(window).on("resize",function(e){
+    /*$(window).on("resize",function(e){
       if(screen.width != resolution){
         resolution = screen.width;
-        //$log.warn('Resolucion ha cambiado');
         $state.reload();
-      }else{
-        //$log.warn('Resolucion no ha cambiado');
+      }
+    });*/
+
+    $(window).on("resize",function(e){
+      if( window.outerWidth != resolution){
+        resolution = window.resolution;
+        //$log.warn('Resolucion ha cambiado');
+        //$log.warn(window);
+        $state.reload();
       }
     });
 
