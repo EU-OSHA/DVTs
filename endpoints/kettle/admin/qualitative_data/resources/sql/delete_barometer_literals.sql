@@ -96,6 +96,7 @@ CREATE TABLE `methodology` (
   `calculations_literal_id` int(11) DEFAULT NULL,
   `unit_measure_literal_id` int(11) DEFAULT NULL,
   `visualisation_literal_id` int(11) DEFAULT NULL,
+  `indicator_name_displayed_literal_id` int(11) DEfAULT NULL,
   PRIMARY KEY (`id`),
   KEY `methodology_indicator_id` (`indicator_id`),
   KEY `methodology_dataset_id` (`dataset_id`),
@@ -112,6 +113,7 @@ CREATE TABLE `methodology` (
   KEY `methodology_calculations_literal_id` (`calculations_literal_id`),
   KEY `methodology_unit_measure_literal_id` (`unit_measure_literal_id`),
   KEY `methodology_visualisation_literal_id` (`visualisation_literal_id`),
+  KEY `methodology_indicator_name_displayed_literal_id` (`indicator_name_displayed_literal_id`),
   CONSTRAINT `methodology_indicator_id` FOREIGN KEY (`indicator_id`) REFERENCES `indicator` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `methodology_dataset_id` FOREIGN KEY (`dataset_id`) REFERENCES `dataset` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `methodology_section_id` FOREIGN KEY (`section_id`) REFERENCES `section` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
@@ -126,5 +128,6 @@ CREATE TABLE `methodology` (
   CONSTRAINT `methodology_filtering_options_literal_id` FOREIGN KEY (`filtering_options_literal_id`) REFERENCES `literal` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `methodology_calculations_literal_id` FOREIGN KEY (`calculations_literal_id`) REFERENCES `literal` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `methodology_unit_measure_literal_id` FOREIGN KEY (`unit_measure_literal_id`) REFERENCES `literal` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `methodology_visualisation_literal_id` FOREIGN KEY (`visualisation_literal_id`) REFERENCES `literal` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+  CONSTRAINT `methodology_visualisation_literal_id` FOREIGN KEY (`visualisation_literal_id`) REFERENCES `literal` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `methodology_indicator_name_displayed_literal_id` FOREIGN KEY (`indicator_name_displayed_literal_id`) REFERENCES `literal` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
