@@ -2,62 +2,62 @@
 
 INSERT INTO chart (id, section_id)  VALUES(20010,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="ECONOMIC_SECTOR_PROFILE" AND t.name="osha_dvt_barometer"	) );
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetId = (SELECT id FROM dataset WHERE source="EUROSTAT" AND date_from="2017-01-01");
+SET @datasetId = (SELECT id FROM dataset WHERE source="Eurostat" AND date_from="2017-01-01");
 INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20010, @indicatorId, @datasetId);
 
 INSERT INTO chart (id, section_id)  VALUES(20011,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="ECONOMIC_SECTOR_PROFILE" AND t.name="osha_dvt_barometer"	) );
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Employment rate");
-SET @datasetId = (SELECT id FROM dataset WHERE source="EUROSTAT" AND date_from="2017-01-01");
+SET @datasetId = (SELECT id FROM dataset WHERE source="Eurostat" AND date_from="2017-01-01");
 INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20011, @indicatorId, @datasetId);
 
 INSERT INTO chart (id, section_id)  VALUES(20012,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="WORKFORCE_PROFILE" AND t.name="osha_dvt_barometer"	) );
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Unemployment rate");
-SET @datasetId = (SELECT id FROM dataset WHERE source="EUROSTAT" AND date_from="2017-01-01");
+SET @datasetId = (SELECT id FROM dataset WHERE source="Eurostat" AND date_from="2017-01-01");
 INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20012, @indicatorId, @datasetId);
 
 INSERT INTO chart (id, section_id)  VALUES(20013,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="ECONOMIC_SECTOR_PROFILE" AND t.name="osha_dvt_barometer"	) );
 SET @indicatorId = (SELECT id FROM indicator WHERE name="GDP per capita in relation to EU28 average");
-SET @datasetId = (SELECT id FROM dataset WHERE source="EUROSTAT" AND date_from="2017-01-01");
+SET @datasetId = (SELECT id FROM dataset WHERE source="Eurostat" AND date_from="2017-01-01");
 INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20013, @indicatorId, @datasetId);
 
 INSERT INTO chart (id, section_id)  VALUES(20015,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="WORKFORCE_PROFILE" AND t.name="osha_dvt_barometer"	) );
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Median age of population");
-SET @datasetId = (SELECT id FROM dataset WHERE source="EUROSTAT" AND date_from="2017-01-01");
+SET @datasetId = (SELECT id FROM dataset WHERE source="Eurostat" AND date_from="2017-01-01");
 INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20015, @indicatorId, @datasetId);
 
 INSERT INTO chart (id, section_id)  VALUES(20016,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="WORKFORCE_PROFILE" AND t.name="osha_dvt_barometer"	) );
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Ageing workers (55 to 64) employment rate");
-SET @datasetId = (SELECT id FROM dataset WHERE source="EUROSTAT" AND date_from="2017-01-01");
+SET @datasetId = (SELECT id FROM dataset WHERE source="Eurostat" AND date_from="2017-01-01");
 INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20016, @indicatorId, @datasetId);
 
 INSERT INTO chart (id, section_id)  VALUES(20017,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="WORKFORCE_PROFILE" AND t.name="osha_dvt_barometer"	) );
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Total, male and female employment rate");
-SET @datasetId = (SELECT id FROM dataset WHERE source="EUROSTAT" AND date_from="2017-01-01");
+SET @datasetId = (SELECT id FROM dataset WHERE source="Eurostat" AND date_from="2017-01-01");
 INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20017, @indicatorId, @datasetId);
 
 INSERT INTO chart (id, section_id)  VALUES(20014,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="ECONOMIC_SECTOR_PROFILE" AND t.name="osha_dvt_barometer"	) );
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Income per capita");
-SET @datasetId = (SELECT id FROM dataset WHERE source="EUROSTAT" AND date_from="2010-01-01" AND date_to="2017-12-31");
+SET @datasetId = (SELECT id FROM dataset WHERE source="Eurostat" AND date_from="2010-01-01" AND date_to="2017-12-31");
 INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20014, @indicatorId, @datasetId);
 
 INSERT INTO chart (id, section_id)  VALUES(20022,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="WORK_ACCIDENTS" AND t.name="osha_dvt_barometer"	) );
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Non-fatal work accidents");
-SET @datasetId = (SELECT id FROM dataset WHERE source="EUROSTAT" AND date_from="2010-01-01" AND date_to="2016-12-31");
+SET @datasetId = (SELECT id FROM dataset WHERE source="Eurostat" AND date_from="2010-01-01" AND date_to="2016-12-31");
 INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20022, @indicatorId, @datasetId);
 
 INSERT INTO chart (id, section_id)  VALUES(20023,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="WORK_ACCIDENTS" AND t.name="osha_dvt_barometer"	) );
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Fatal work accidents");
-SET @datasetId = (SELECT id FROM dataset WHERE source="EUROSTAT" AND date_from="2010-01-01" AND date_to="2014-12-31");
+SET @datasetId = (SELECT id FROM dataset WHERE source="Eurostat" AND date_from="2010-01-01" AND date_to="2014-12-31");
 INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20023, @indicatorId, @datasetId);
 
 INSERT INTO chart (id, section_id)  VALUES(20024,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="WORK_ACCIDENTS" AND t.name="osha_dvt_barometer"	) );
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Estimation of non-fatal accidents based on fatal accidents (estimated)");
-SET @datasetId = (SELECT id FROM dataset WHERE source="EUROSTAT" AND date_from="2010-01-01" AND date_to="2014-12-31");
+SET @datasetId = (SELECT id FROM dataset WHERE source="Eurostat" AND date_from="2010-01-01" AND date_to="2014-12-31");
 INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20024, @indicatorId, @datasetId);
 
 INSERT INTO chart (id, section_id)  VALUES(20025,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="WORK_ACCIDENTS" AND t.name="osha_dvt_barometer"	) );
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Level of reporting of non-fatal accidents");
-SET @datasetId = (SELECT id FROM dataset WHERE source="EUROSTAT" AND date_from="2010-01-01" AND date_to="2014-12-31");
+SET @datasetId = (SELECT id FROM dataset WHERE source="Eurostat" AND date_from="2010-01-01" AND date_to="2014-12-31");
 INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20025, @indicatorId, @datasetId);
 
 INSERT INTO chart (id, section_id)  VALUES(20026,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="HEALTH_PERCEPTION" AND t.name="osha_dvt_barometer"	) );
@@ -66,13 +66,13 @@ SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditio
 INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20026, @indicatorId, @datasetId);
 
 INSERT INTO chart (id, section_id)  VALUES(20027,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="HEALTH_PERCEPTION" AND t.name="osha_dvt_barometer"	) );
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Health negative affection");
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Health affected by work");
 SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
 INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20027, @indicatorId, @datasetId);
 
 INSERT INTO chart (id, section_id)  VALUES(20028,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="HEALTH_PERCEPTION" AND t.name="osha_dvt_barometer"	) );
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Health problem in the last 12 months");
-SET @datasetId = (SELECT id FROM dataset WHERE source="EUROSTAT" AND date_from="2013-01-01");
+SET @datasetId = (SELECT id FROM dataset WHERE source="Eurostat" AND date_from="2013-01-01");
 INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20028, @indicatorId, @datasetId);
 
 INSERT INTO chart (id, section_id)  VALUES(20029,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="HEALTH_PERCEPTION" AND t.name="osha_dvt_barometer"	) );
@@ -227,12 +227,12 @@ INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20
 
 INSERT INTO chart (id, section_id)  VALUES(20087,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="ECONOMIC_SECTOR_PROFILE" AND t.name="osha_dvt_barometer"	) );
 SET @indicatorId = (SELECT id FROM indicator WHERE name="GDP per capita in relation to EU28 average EURO");
-SET @datasetId = (SELECT id FROM dataset WHERE source="EUROSTAT" AND date_from="2017-01-01");
+SET @datasetId = (SELECT id FROM dataset WHERE source="Eurostat" AND date_from="2017-01-01");
 INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20087, @indicatorId, @datasetId);
 
 INSERT INTO chart (id, section_id)  VALUES(20088,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="ECONOMIC_SECTOR_PROFILE" AND t.name="osha_dvt_barometer"	) );
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Income per capita EURO");
-SET @datasetId = (SELECT id FROM dataset WHERE source="EUROSTAT" AND date_from="2010-01-01" AND date_to="2017-12-31");
+SET @datasetId = (SELECT id FROM dataset WHERE source="Eurostat" AND date_from="2010-01-01" AND date_to="2017-12-31");
 INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20088, @indicatorId, @datasetId);
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
@@ -2941,7 +2941,7 @@ INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="WORKACC" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+646, null, @sectionId, "FILTER_LITERAL");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+646, "EN", 1, "EUROFOUND");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+646, "EN", 1, "EWCS");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="PREVENTION" AND tool_id=@toolId);
@@ -3376,12 +3376,27 @@ INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="METHODOLOGY" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+739, null, @sectionId, "BOX_MESSAGE");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+739, "EN", 1, "Back to introduction");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+739, "EN", 1, "Go to the introduction");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="ENFORCEMENT_CAPACITY" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+740, null, @sectionId, "KEY_MESSAGE");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+740, "EN", 1, "SLIC does not cover all the countries");
+
+SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
+SET @sectionId = (SELECT id FROM section WHERE name="WORKFORCE_PROFILE" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+741, null, @sectionId, "KEY_MESSAGE");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+741, "EN", 1, "Not applied to Unemployment rate");
+
+SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
+SET @sectionId = (SELECT id FROM section WHERE name="ECONOMIC_AND_SECTOR_PROFILE" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+742, null, @sectionId, "FILTER_LITERAL");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+742, "EN", 1, "Euro (€)");
+
+SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
+SET @sectionId = (SELECT id FROM section WHERE name="ECONOMIC_AND_SECTOR_PROFILE" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+743, null, @sectionId, "FILTER_LITERAL");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+743, "EN", 1, "Purchasing Power Standards");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
@@ -5339,7 +5354,7 @@ SET @nutsId = (SELECT id FROM nuts WHERE country_code="RO");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "Romanian Standards Association (ASRO)");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "See more in its <a target=\"blank\" href=\"http://www.asro.ro/ \">website</a> and in <a target=\"_blank\" href=\"https://oshwiki.eu/wiki/OSH_systems_at_national_level_-_Romania\">OSHwiki</a>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "See more in its <a target=\"blank\" href=\"https://www.asro.ro/\">website</a> and in <a target=\"_blank\" href=\"https://oshwiki.eu/wiki/OSH_systems_at_national_level_-_Romania\">OSHwiki</a>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p>ASRO is a member of the International Organisation for Standardisation, the International Electrotechnical Commission, the European Committee for Standardisation, the European Committee for Electrotechnical Standardisation and the European Telecommunications Standards Institute. It is the national standardisation body that develops standardisation activities in all fields of European and international standardisation.</p><p>ASRO is a non-profit, private body of public interest authorised by the government through Law No 355/2002. ASRO has been developing standardisation activities in Romania since 1928, when it was established, for all national economy sectors.</p><p>At present, ASRO operates through representatives of all economic sectors, the national authorities, industry, research and development entities, the academic media, members of employer and employee organisations, consumer associations, etc.</p>");
 INSERT INTO matrix_page(page, nuts_id, check_1, check_2, check_3, check_4, text_1_literal_id, text_2_literal_id, text_3_literal_id)  VALUES ("MATRIX_AUTHORITY", @nutsId, 0, 0, 0, 1, @maxId+1, @maxId+2, @maxId+3);
@@ -6232,7 +6247,7 @@ INSERT INTO matrix_page(page, nuts_id, check_1, check_2, check_3, check_4, text_
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="DE");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, NULL, "MATRIX_STATISTICS_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "<p>Kosten arbeitsbedingter Erkrankungen (2002)<br />Kosten der Frühberentung (2006)</p><p><strong>&nbsp;</strong></p>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "<p>Kosten a<p>Kosten arbeitsbedingter Erkrankungen (2002)<br />Kosten der Frühberentung (2006)</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, NULL, "MATRIX_STATISTICS_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p><strong>Data holder:</strong></p><p>Boedeker, Wolfgang et al. / Federal Institute for Occupational Safety and Health (BAuA, Ed.)</p><p><strong>Functionalities:</strong></p><ul><li>Monitoring of work-related illness</li></ul>");
 INSERT INTO matrix_page(page, nuts_id, check_1, check_2, check_3, check_4, text_1_literal_id, text_2_literal_id, text_3_literal_id) VALUES ("MATRIX_STATISTICS", @nutsId, 1, 0, 0, false, @maxId+1, @maxId+2, null);
@@ -6601,7 +6616,7 @@ INSERT INTO matrix_page(page, nuts_id, check_1, check_2, check_3, check_4, text_
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="PL");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, NULL, "MATRIX_STATISTICS_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "\"Occupational Diseases in Poland in 2014\" (in Polish: \"Choroby zawodowe w Polsce w 2014r.\"");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "\"Occupational Diseases in Poland in 2014\" (in Polish: \"Choroby zawodowe w Polsce w 2014r.)\"");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, NULL, "MATRIX_STATISTICS_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p><strong>Data holder<a>:</a></strong></p><p>Instytut Medycyny Pracy im. Prof.. J. Nofera, Centralny Rejestr Chorób Zawodowych</p><p><a><strong style=\"color: #000000;\">Functionalities:</strong></a></p><ul><li>Monitoring of occupational diseases&nbsp;- annually</li></ul>");
 INSERT INTO matrix_page(page, nuts_id, check_1, check_2, check_3, check_4, text_1_literal_id, text_2_literal_id, text_3_literal_id) VALUES ("MATRIX_STATISTICS", @nutsId, 1, 0, 0, false, @maxId+1, @maxId+2, null);
@@ -7015,7 +7030,7 @@ SET @nutsId = (SELECT id FROM nuts WHERE country_code="LV");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, NULL, "MATRIX_STATISTICS_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "Work conditions and risks in Latvia 2012-2013");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, NULL, "MATRIX_STATISTICS_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<ul><li><a href=\"http://www.lm.gov.lv/text/3114%20\" target=\"_blank\">Link</a>&nbsp;to the survey</li><li><strong>Focus of the survey:</strong>&nbsp;Analysis of the development of labour safety system in dynamics by evaluation implementation of the proposals provided in similar studies both in 2005–2007 and in 2009–2010.</li><li><strong>Time span</strong>: 2012-2013</li></ul>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<ul><li><a href=\"http://www.lm.gov.lv/text/3114\" target=\"_blank\">Link</a>&nbsp;to the survey</li><li><strong>Focus of the survey:</strong>&nbsp;Analysis of the development of labour safety system in dynamics by evaluation implementation of the proposals provided in similar studies both in 2005–2007 and in 2009–2010.</li><li><strong>Time span</strong>: 2012-2013</li></ul>");
 INSERT INTO matrix_page(page, nuts_id, check_1, check_2, check_3, check_4, text_1_literal_id, text_2_literal_id, text_3_literal_id) VALUES ("MATRIX_STATISTICS", @nutsId, 0, 1, 0, false, @maxId+1, @maxId+2, null);
 
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -8304,16 +8319,15 @@ SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p>This part consists of a harmonised short description of OSH-Authorities and OSH-Institutions in Member States. It is possible to select one of the 28 countries and European Union and one of four categories of the &lsquo;Institution types&rsquo;. <strong>Specifically for this indicator:</strong></p>
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p>This part consists of a harmonised short description of OSH authorities and OSH institutions in Member States. You can select one of the 28 Member States, the European Union or one of four categories of the &lsquo;Institution types&rsquo;. <strong>Specifically this indicator relates to:</strong></p>
 <ul>
 <li><strong>OSH authority</strong></li>
-<li>Compensation and Insurance body</li>
+<li>Compensation and insurance body</li>
 <li>Prevention institute</li>
 <li>Standardisation body</li>
 </ul>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "The source for OSH-authorities and OSH-institutions is a preparatory report for DG Employment from 2018. Most of the data has been compiled in 2016 or 2017.
-(Kooperationsstelle Hamburg IFE / EUROGIP: Development and design of a structural model for the construction and implementation of an EU OSH Information System, Final Report, March 2018, Service contract No VC/2016/0055).");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p>The source for OSH-authorities and OSH-institutions is a preparatory report for DG Employment from 2018. Most of the data has been compiled in 2016 or 2017.<br />(Kooperationsstelle Hamburg IFE / EUROGIP: Development and design of a structural model for the construction and implementation of an EU OSH Information System, Final Report, March 2018, Service contract No VC/2016/0055).</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "null");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -8323,7 +8337,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2018");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "The intended coverage is: 28 EU countries. All data for the coverage is available.");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The <strong>intended coverage</strong> is: 28 EU countries. All data for the coverage is available.</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "null");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -8331,7 +8345,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "null");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "Text boxes for all 28 countries, selection of countries and institution type possible");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "Text boxes for all 28 countries, selection of countries and institution type possible.");
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Compensation and insurance bodies");
@@ -8342,16 +8356,15 @@ SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p>This part consists of a harmonised short description of OSH-Authorities and OSH-Institutions in Member States. It is possible to select one of the 28 countries and European Union and one of four categories of the &lsquo;Institution types&rsquo;. <strong>Specifically for this indicator:</strong></p>
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p>This part consists of a harmonised short description of OSH authorities and OSH institutions in Member States. You can select one of the 28 Member States, the European Union or one of four categories of the &lsquo;Institution types&rsquo;. <strong>Specifically this indicator relates to:</strong></p>
 <ul>
 <li>OSH authority</li>
-<li><strong>Compensation and Insurance body</strong></li>
+<li><strong>Compensation and insurance body</strong></li>
 <li>Prevention institute</li>
 <li>Standardisation body</li>
 </ul>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "The source for OSH-authorities and OSH-institutions is a preparatory report for DG Employment from 2018. Most of the data has been compiled in 2016 or 2017.
-(Kooperationsstelle Hamburg IFE / EUROGIP: Development and design of a structural model for the construction and implementation of an EU OSH Information System, Final Report, March 2018, Service contract No VC/2016/0055).");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p>The source for OSH-authorities and OSH-institutions is a preparatory report for DG Employment from 2018. Most of the data has been compiled in 2016 or 2017.<br />(Kooperationsstelle Hamburg IFE / EUROGIP: Development and design of a structural model for the construction and implementation of an EU OSH Information System, Final Report, March 2018, Service contract No VC/2016/0055).</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "null");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -8361,7 +8374,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2018");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "The intended coverage is: 28 EU countries. All data for the coverage is available.");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The <strong>intended coverage</strong> is: 28 EU countries. All data for the coverage is available.</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "null");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -8369,7 +8382,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "null");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "Text boxes for all 28 countries, selection of countries and institution type possible");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "Text boxes for all 28 countries, selection of countries and institution type possible.");
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Prevention institute");
@@ -8380,16 +8393,15 @@ SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p>This part consists of a harmonised short description of OSH-Authorities and OSH-Institutions in Member States. It is possible to select one of the 28 countries and European Union and one of four categories of the &lsquo;Institution types&rsquo;. <strong>Specifically for this indicator:</strong></p>
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p>This part consists of a harmonised short description of OSH authorities and OSH institutions in Member States. You can select one of the 28 Member States, the European Union or one of four categories of the &lsquo;Institution types&rsquo;. <strong>Specifically this indicator relates to:</strong></p>
 <ul>
 <li>OSH authority</li>
-<li>Compensation and Insurance body</li>
+<li>Compensation and insurance body</li>
 <li><strong>Prevention institute</strong></li>
 <li>Standardisation body</li>
 </ul>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "The source for OSH-authorities and OSH-institutions is a preparatory report for DG Employment from 2018. Most of the data has been compiled in 2016 or 2017.
-(Kooperationsstelle Hamburg IFE / EUROGIP: Development and design of a structural model for the construction and implementation of an EU OSH Information System, Final Report, March 2018, Service contract No VC/2016/0055).");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p>The source for OSH-authorities and OSH-institutions is a preparatory report for DG Employment from 2018. Most of the data has been compiled in 2016 or 2017.<br />(Kooperationsstelle Hamburg IFE / EUROGIP: Development and design of a structural model for the construction and implementation of an EU OSH Information System, Final Report, March 2018, Service contract No VC/2016/0055).</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "null");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -8399,7 +8411,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2018");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "The intended coverage is: 28 EU countries. All data for the coverage is available.");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The <strong>intended coverage</strong> is: 28 EU countries. All data for the coverage is available.</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "null");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -8407,7 +8419,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "null");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "Text boxes for all 28 countries, selection of countries and institution type possible");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "Text boxes for all 28 countries, selection of countries and institution type possible.");
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Standardisation bodies");
@@ -8418,16 +8430,15 @@ SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p>This part consists of a harmonised short description of OSH-Authorities and OSH-Institutions in Member States. It is possible to select one of the 28 countries and European Union and one of four categories of the &lsquo;Institution types&rsquo;. <strong>Specifically for this indicator:</strong></p>
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p>This part consists of a harmonised short description of OSH authorities and OSH institutions in Member States. You can select one of the 28 Member States, the European Union or one of four categories of the &lsquo;Institution types&rsquo;. <strong>Specifically this indicator relates to:</strong></p>
 <ul>
 <li>OSH authority</li>
-<li>Compensation and Insurance body</li>
+<li>Compensation and insurance body</li>
 <li>Prevention institute</li>
 <li><strong>Standardisation body</strong></li>
 </ul>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "The source for OSH-authorities and OSH-institutions is a preparatory report for DG Employment from 2018. Most of the data has been compiled in 2016 or 2017.
-(Kooperationsstelle Hamburg IFE / EUROGIP: Development and design of a structural model for the construction and implementation of an EU OSH Information System, Final Report, March 2018, Service contract No VC/2016/0055).");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p>The source for OSH-authorities and OSH-institutions is a preparatory report for DG Employment from 2018. Most of the data has been compiled in 2016 or 2017.<br />(Kooperationsstelle Hamburg IFE / EUROGIP: Development and design of a structural model for the construction and implementation of an EU OSH Information System, Final Report, March 2018, Service contract No VC/2016/0055).</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "null");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -8437,7 +8448,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2018");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "The intended coverage is: 28 EU countries. All data for the coverage is available.");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The <strong>intended coverage</strong> is: 28 EU countries. All data for the coverage is available.</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "null");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -8445,70 +8456,67 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "null");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "Text boxes for all 28 countries, selection of countries and institution type possible");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "Text boxes for all 28 countries, selection of countries and institution type possible.");
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Company size");
 SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="ECONOMIC_SECTOR_PROFILE" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="EUROSTAT" AND date_from="2016-01-01");
+SET @datasetId = (SELECT id FROM dataset WHERE source="Eurostat" AND date_from="2016-01-01");
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "The indicator ‘Economic and sector profile’ provides basic background data on the economic structures of the countries. One important structural characteristic is the size of companies; size can influence strongly the OSH-policies and practices in a company.");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "The indicator ‘Economic and sector profile’ provides basic background data on the economic structures of the countries. One important structural characteristic is the size of companies; size can strongly influence the OSH policies and practices in a company.");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "EUROSTAT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "Eurostat");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "Number of enterprises in the non-financial business economy by size class of employment");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>EUROSTAT:</p><p><a href=\"http://ec.europa.eu/eurostat/tgm/table.do?tab=table&amp;init=1&amp;language=en&amp;pcode=tin00145&amp;plugin=1\">http://ec.europa.eu/eurostat/tgm/table.do?tab=table&amp;init=1&amp;language=en&amp;pcode=tin00145&amp;plugin=1</a></p>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>Eurostat:</p><p><a href=\"http://ec.europa.eu/eurostat/tgm/table.do?tab=table&amp;init=1&amp;language=en&amp;pcode=tin00145&amp;plugin=1\">http://ec.europa.eu/eurostat/tgm/table.do?tab=table&amp;init=1&amp;language=en&amp;pcode=tin00145&amp;plugin=1</a></p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2016");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "20/12/18");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "The intended coverage is: 28 EU countries plus Iceland, Norway and Switzerland. Currently, not all data for Cyprus, Greece, Ireland, Iceland Switzerland and Norway is available. ");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The <strong>intended coverage</strong> is: 28 EU countries plus Iceland, Norway and Switzerland. Currently, not all data for Cyprus, Greece, Ireland, Iceland, Switzerland and Norway is available.</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "Time: 2016");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<ul>
+<li>Time: 2016</li>
+</ul>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "EUROSTAT provides absolute numbers, EU-OSHA calculated the percentages per size category.");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "Eurostat provides absolute numbers, EU-OSHA calculated the percentages per size category.");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentage of the enterprises in five size categories");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "The percentages of each company size categories are visualised as bar chart (EU 28 average plus two countries)");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "<p>The percentages of each <strong>company size categories</strong> are visualised as bar chart (EU 28 average plus two countries).</p>");
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Employment per sector");
 SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="ECONOMIC_SECTOR_PROFILE" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="EUROSTAT" AND date_from="2017-01-01");
+SET @datasetId = (SELECT id FROM dataset WHERE source="Eurostat" AND date_from="2017-01-01");
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "The indicator ‘Economic and sector profile’ provides basic background data on the economic structures of the countries. The size and share of sectors in a national economy has a relevant impact on the status of OSH.");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "The indicator ‘Economic and sector profile’ provides basic background data on the economic structures of the countries. The sizes and proportions of sectors in a national economy have a significant impact on the status of OSH.");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "EUROSTAT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "Eurostat");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "Employment by sex, age and economic activity (from 2008 onwards, NACE Rev. 2) - 1 000’");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>EUROSTAT:</p><p><a href=\"http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=lfsq_egan2&amp;lang=en\">http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=lfsq_egan2&amp;lang=en</a></p>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>Eurostat:</p><p><a href=\"http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=lfsq_egan2&amp;lang=en\">http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=lfsq_egan2&amp;lang=en</a></p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2017");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "09/01/2019");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "The intended coverage is: 28 EU countries plus Iceland, Norway and Switzerland. All data for the coverage is available.");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The <strong>intended coverage</strong> is: 28 EU countries plus Iceland, Norway and Switzerland. All data for the coverage is available.</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<p>The following <strong>filter options</strong> were applied by EU-OSHA in the EUROSTAT-table:</p><ul><li>Sex: Total</li><li>Age class: From 15 to 64 years</li></ul>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<p>The following <strong>filter options</strong> were applied by EU-OSHA in the Eurostat-table:</p><ul><li>Sex: Total</li><li>Age class: From 15 to 64 years</li></ul>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "Some of the economic activities of the 19 individual sectors according to NACE (EUROSTAT) were aggregated by EU-OSHA to sector groups as follows:Nace rev.2 sector(s)nace rev.2 division(s)sector group description
-size class (number of workers)
-5-9  10-49  50-249  250+A01-03Agriculture, forestry and fishing C10-33Manufacturing B,D,E,F05-09;35-43Construction, waste management, water and electricity supply G,H,I,R45-56;90-93Trade, transport, food/accommodation and recreation activities J,K,L,M,N,S58-82;94-96IT, finance, real estate and other technical scientific or personal service activities 
-O
-84Public administration P,Q85-88Education, human health and social work activities 
-EUROSTAT provides absolute numbers, EU-OSHA calculated the percentages per sector.");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "<p>Some of the economic activities of the 19 individual sectors according to NACE (Eurostat) were aggregated by EU-OSHA to sector groups as follows:</p><table><thead><tr><th>Nace rev.2 sector(s)</th><th>nace rev.2 division(s)</th><th>sector group description</th><th><p>size class (number of workers)</p><p>5-9&nbsp; 10-49&nbsp; 50-249&nbsp; 250+</p></th></tr></thead><tbody><tr><td>A</td><td>01-03</td><td>Agriculture, forestry and fishing</td><td>&nbsp;</td></tr><tr><td>C</td><td>10-33</td><td>Manufacturing</td><td>&nbsp;</td></tr><tr><td>B,D,E,F</td><td>05-09;35-43</td><td>Construction, waste management, water and electricity supply</td><td>&nbsp;</td></tr><tr><td>G,H,I,R</td><td>45-56;90-93</td><td>Trade, transport, food/accommodation and recreation activities</td><td>&nbsp;</td></tr><tr><td>J,K,L,M,N,S</td><td>58-82;94-96</td><td>IT, finance, real estate and other technical scientific or personal service activities</td><td>&nbsp;</td></tr><tr><td><p>O</p></td><td><p>84</p></td><td>Public administration</td><td>&nbsp;</td></tr><tr><td>P,Q</td><td>85-88</td><td>Education, human health and social work activities</td><td>&nbsp;</td></tr></tbody></table><p>Eurostat provides absolute numbers, EU-OSHA calculated the percentages per sector.</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Number of employees in sectors");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -8518,26 +8526,26 @@ INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_l
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Employment rate");
 SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="ECONOMIC_SECTOR_PROFILE" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="EUROSTAT" AND date_from="2017-01-01");
+SET @datasetId = (SELECT id FROM dataset WHERE source="Eurostat" AND date_from="2017-01-01");
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "Eurostat provides percentages and explains: ‘The employment rate of the total population is calculated by dividing the number of person aged 20 to 64 in employment by the total population of the same age group.’");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "The indicator ‘Economic and sector profile’ provides basic background data on the economic structures of the countries. The rate of employed persons is a necessary background figure, e.g. when looking at the absolute numbers of work accidents.");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "The indicator ‘Economic and sector profile’ provides basic background data on the economic structures of the countries. The employment rate is a necessary background figure, e.g. when looking at the absolute numbers of work accidents.");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "EUROSTAT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "Eurostat");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "Employment rate by sex");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>EUROSTAT:</p><p><a href=\"https://ec.europa.eu/eurostat/tgm/table.do?tab=table&amp;init=1&amp;language=en&amp;pcode=tesem010&amp;plugin=1\">https://ec.europa.eu/eurostat/tgm/table.do?tab=table&amp;init=1&amp;language=en&amp;pcode=tesem010&amp;plugin=1</a></p>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>Eurostat:</p><p><a href=\"https://ec.europa.eu/eurostat/tgm/table.do?tab=table&amp;init=1&amp;language=en&amp;pcode=tesem010&amp;plugin=1\">https://ec.europa.eu/eurostat/tgm/table.do?tab=table&amp;init=1&amp;language=en&amp;pcode=tesem010&amp;plugin=1</a></p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2017");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "24/10/2018");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "The intended coverage is: 28 EU countries plus Iceland, Norway and Switzerland. All data for the coverage is available.");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The <strong>intended coverage</strong> is: 28 EU countries plus Iceland, Norway and Switzerland. All data for the coverage is available.</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<p>The following <strong>filter options</strong> were applied by EU-OSHA in the EUROSTAT-table:</p><ul><li>Sex: Total</li></ul>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<p>The following <strong>filter options</strong> were applied by EU-OSHA in the Eurostat-table:</p><ul><li>Sex: Total</li></ul>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "null");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -8546,66 +8554,71 @@ INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "The percentages are visualised as bar chart (total EU 28 Average plus two countries of choice)");
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
 
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Unemployment rate");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="WORKFORCE_PROFILE" AND t.name="osha_dvt_barometer");
-SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="EUROSTAT" AND date_from="2017-01-01");
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "The indicator ‘Economic and sector profile’ provides basic background data on the economic structures of the countries. The unemployment rate can significantly influence the acceptance of OSH.");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "EUROSTAT");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "Unemployment by sex and age - annual average");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>EUROSTAT:</p><p><a href=\"http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=une_rt_a&amp;lang=en\">http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=une_rt_a&amp;lang=en</a></p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2017");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "10/01/19");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "The intended coverage is: 28 EU countries plus Iceland, Norway and Switzerland. Currently, not all data for Switzerland is available.
-The intended coverage is: 28 EU countries plus Iceland, Norway and Switzerland. Currently, not all data for Switzerland is available.  
- 
- ");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<p>The following <strong>filter options</strong> were applied by EU-OSHA in the EUROSTAT-table:</p><ul><li>Percentage of active population</li><li>Sex: Total</li><li>Age class: total</li></ul>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentage of active population. ‘Active population’ is defined by EUROSTAT as follows: “The labour force or workforce or economically active population, also shortened to active population, includes both employed (employees and self-employed) and unemployed people, but not the economically inactive, such as pre-school children, school children, students and pensioners.”");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "The percentages are visualised as bar chart (total EU 28 Average plus two countries of choice)");
-INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
-
 SET @indicatorId = (SELECT id FROM indicator WHERE name="GDP per capita in relation to EU28 average");
 SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="ECONOMIC_SECTOR_PROFILE" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="EUROSTAT" AND date_from="2017-01-01");
+SET @datasetId = (SELECT id FROM dataset WHERE source="Eurostat" AND date_from="2017-01-01");
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "The indicator ‘Economic and sector profile’ provides basic background data on the economic structures of the countries. The GDP per capita is a major indicator of the economic overall wealth of a society, which also influences the status of OSH.");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "EUROSTAT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "Eurostat");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "Main GDP aggregates per capita");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>EUROSTAT:</p><p><a href=\"http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=nama_10_pc&amp;lang=en\">http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=nama_10_pc&amp;lang=en</a></p>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>Eurostat:</p><p><a href=\"http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=nama_10_pc&amp;lang=en\">http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=nama_10_pc&amp;lang=en</a></p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2017");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "03/06/2019 for PPS and 15/01/2019 for Euro ");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "The intended coverage is: 28 EU countries plus Iceland, Norway and Switzerland. All data for the coverage is available.");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The <strong>intended coverage</strong> is: 28 EU countries plus Iceland, Norway and Switzerland. All data for the coverage is available.</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<p>The following <strong>filter options</strong> were applied by EU-OSHA in the EUROSTAT-table:</p><ul><li>Gross domestic product at market prices</li><li><strong>Percentage of EU28 total per capita (based on million purchasing power standards), current p");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<p>The following <strong>filter options</strong> were applied by EU-OSHA in the Eurostat-table:</p>
+<ul>
+<li>Gross domestic product at market prices</li>
+<li>Percentage of EU28 total per capita (based on million purchasing power standards), current prices/Percentage of EU28 total per capita (based on million euro), current prices</li>
+</ul>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "EUROSTAT provides the calculation of percentages by its filtering options, those values are taken as base for the calculation.
-EU-OSHA calculated the percentages in relation to EU 28 average, EU 28 average = 100. ");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "<p>Eurostat provides the calculation of percentages by its filtering options, those values are taken as base for the calculation.</p><p>EU-OSHA calculated the percentages in relation to EU 28 average, EU 28 average = 100.&nbsp;</p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentages (in relation to EU 28 average, EU 28 average = 100)");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "The percentages are visualised as drawing of a person for EU and two selected countries, changing its sizes depending on the percentage calculated, EU = always 100. Split to select between the unit of measures.");
+INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
+
+SET @indicatorId = (SELECT id FROM indicator WHERE name="GDP per capita in relation to EU28 average EURO");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="ECONOMIC_SECTOR_PROFILE" AND t.name="osha_dvt_barometer");
+SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
+SET @datasetId = (SELECT id FROM dataset WHERE source="Eurostat" AND date_from="2017-01-01");
+SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "The indicator ‘Economic and sector profile’ provides basic background data on the economic structures of the countries. The GDP per capita is a major indicator of the economic overall wealth of a society, which also influences the status of OSH.");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "Eurostat");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "Main GDP aggregates per capita");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>Eurostat:</p><p><a href=\"http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=nama_10_pc&amp;lang=en\">http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=nama_10_pc&amp;lang=en</a></p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2017");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "03/06/2019 for PPS and 15/01/2019 for Euro ");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The <strong>intended coverage</strong> is: 28 EU countries plus Iceland, Norway and Switzerland. All data for the coverage is available.</p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<p>The following <strong>filter options</strong> were applied by EU-OSHA in the Eurostat-table:</p>
+<ul>
+<li>Gross domestic product at market prices</li>
+<li>Percentage of EU28 total per capita (based on million purchasing power standards), current prices/<strong>Percentage of EU28 total per capita (based on million euro), current prices</strong></li>
+</ul>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "Eurostat provides the calculation of percentages by its filtering options, those values are taken as base for the calculation.
+EU-OSHA calculated the percentages in relation to EU 28 average, EU 28 average = 100.");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentages (in relation to EU 28 average, EU 28 average = 100)");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -8615,26 +8628,57 @@ INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_l
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Income per capita");
 SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="ECONOMIC_SECTOR_PROFILE" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="EUROSTAT" AND date_from="2010-01-01" AND date_to="2017-12-31");
+SET @datasetId = (SELECT id FROM dataset WHERE source="Eurostat" AND date_from="2010-01-01" AND date_to="2017-12-31");
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "The indicator ‘Economic and sector profile’ provides basic background data on the economic structures of the countries. Income per capita is an indicator of the economic situation of the individuals in a society.");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "EUROSTAT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "Eurostat");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "Mean and median income by age and sex – EU SILC survey");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>EUROSTAT:</p><p><a href=\"http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=ilc_di03&amp;lang=en\">http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=ilc_di03&amp;lang=en</a></p>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>Eurostat:</p><p><a href=\"http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=ilc_di03&amp;lang=en\">http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=ilc_di03&amp;lang=en</a></p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2010 - 2017");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "22/05/2019 for PPS and 26/04/2019 for Euro");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "The intended coverage is: 28 EU countries plus Iceland, Norway and Switzerland. All data for the coverage is available.");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The <strong>intended coverage</strong> is: 28 EU countries plus Iceland, Norway and Switzerland. Currently, not all data for Iceland is available.</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<p>The following <strong>filter options</strong> were applied by EU-OSHA in the EUROSTAT-table:</p><ul><li>Median equivalised net income</li><li>Age class: Total</li><li>Sex: Total</li><li><strong>Purchasing power standard (PPS)</strong>/Euro</li></ul>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<p>The following <strong>filter options</strong> were applied by EU-OSHA in the Eurostat-table:</p><ul><li>Median equivalised net income</li><li>Age class: Total</li><li>Sex: Total</li><li><strong>Purchasing power standard (PPS)</strong>/Euro</li></ul>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "EU-OSHA visualises the trend between 2010 and 2017 as trend line between the start and the end of the reference period.");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Euro; percentages");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "The percentages are visualised as line diagram (total EU 28 Average plus two countries of choice). Split to select between the unit of measure.");
+INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
+
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Income per capita EURO");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="ECONOMIC_SECTOR_PROFILE" AND t.name="osha_dvt_barometer");
+SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
+SET @datasetId = (SELECT id FROM dataset WHERE source="Eurostat" AND date_from="2010-01-01" AND date_to="2017-12-31");
+SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "The indicator ‘Economic and sector profile’ provides basic background data on the economic structures of the countries. Income per capita is an indicator of the economic situation of the individuals in a society.");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "Eurostat");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "Mean and median income by age and sex – EU SILC survey");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>Eurostat:</p><p><a href=\"http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=ilc_di03&amp;lang=en\">http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=ilc_di03&amp;lang=en</a></p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2010 - 2017");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "22/05/2019 for PPS and 26/04/2019 for Euro");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The <strong>intended coverage</strong> is: 28 EU countries plus Iceland, Norway and Switzerland. Currently, not all data for Iceland is available.</p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<p>The following <strong>filter options</strong> were applied by EU-OSHA in the Eurostat-table:</p><ul><li>Median equivalised net income</li><li>Age class: Total</li><li>Sex: Total</li><li>Purchasing power standard (PPS)/<strong>Euro</strong></li></ul>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "EU-OSHA visualises the trend between 2010 and 2017 as trend line between the start and the end of the reference period");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -8646,94 +8690,161 @@ INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_l
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Median age of population");
 SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="WORKFORCE_PROFILE" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="EUROSTAT" AND date_from="2017-01-01");
+SET @datasetId = (SELECT id FROM dataset WHERE source="Eurostat" AND date_from="2017-01-01");
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "The indicator ‘Workforce profile’ provides basic background data on the composition of the workforce of the countries. The median age of population is one indicator to assess the overall health status of a society.");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "EUROSTAT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "Eurostat");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "Population: Structure indicators");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>EUROSTAT:</p><p><a href=\"http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=demo_pjanind&amp;lang=en\">http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=demo_pjanind&amp;lang=en</a>&nbsp;&nbsp;</p>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>Eurostat:</p><p><a href=\"http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=demo_pjanind&amp;lang=en\">http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=demo_pjanind&amp;lang=en</a>&nbsp;&nbsp;</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2017");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "07/09/2018");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "The intended coverage is: 28 EU countries plus Iceland, Norway and Switzerland. All data for the coverage is available.");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The <strong>intended coverage</strong> is: 28 EU countries plus Iceland, Norway and Switzerland. All data for the coverage is available.</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<p>The following <strong>filter options</strong> were applied by EU-OSHA in the EUROSTAT-table:</p><ul><li>Median age of population</li></ul>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<p>The following <strong>filter options</strong> were applied by EU-OSHA in the Eurostat-table:</p><ul><li>Median age of population</li></ul>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "null");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Age");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "<p>Visualisation of all five values in a European map, per country in a mouse over. <strong>Specifically for this indicator</strong>:</p><ul><li><strong>Median Age</strong></li><li>Employment rate (55-64)</li><li>Employment rate (Female)</li><li>Employmen");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "<p>Visualisation of all five values in a European map, per country in a mouse over. <strong>Specifically for this indicator</strong>:</p><ul><li><strong>Median Age</strong></li><li>Employment rate (55-64)</li><li>Employment rate (Female)</li><li>Employment rate (Male)</li><li>Employment rate (Total)</li></ul>");
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Ageing workers (55 to 64) employment rate");
 SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="WORKFORCE_PROFILE" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="EUROSTAT" AND date_from="2017-01-01");
+SET @datasetId = (SELECT id FROM dataset WHERE source="Eurostat" AND date_from="2017-01-01");
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "The indicator ‘Workforce profile’ provides basic background data on the composition of the workforce of the countries. The ageing workers employment rate is an important indicator of the impact of working conditions on workers’ health over their lifetime.");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "EUROSTAT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "Eurostat");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "Employment and activity by sex and age - annual data");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>EUROSTAT:</p><p><a href=\"http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=lfsi_emp_a&amp;lang=en\">http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=lfsi_emp_a&amp;lang=en</a></p>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>Eurostat:</p><p><a href=\"http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=lfsi_emp_a&amp;lang=en\">http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=lfsi_emp_a&amp;lang=en</a></p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2017");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "16/01/2019");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "The intended coverage is: 28 EU countries plus Iceland, Norway and Switzerland. All data for the coverage is available.");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The <strong>intended coverage</strong> is: 28 EU countries plus Iceland, Norway and Switzerland. All data for the coverage is available.</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<p>The following <strong>filter options</strong> were applied by EU-OSHA in the EUROSTAT-table in this section. <strong>Specifically for this indicator</strong>:</p><ul><li><strong>Sex: Total </strong></li><li>Sex: Male</li><li>Sex: Female</li><li>Employm");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<p>The following <strong>filter options</strong> were applied by EU-OSHA in the Eurostat-table in this section. <strong>Specifically for this indicator</strong>:</p>
+<ul>
+<li>
+<p><strong>Sex: Total </strong></p>
+</li>
+<li>
+<p>Sex: Male</p>
+</li>
+<li>
+<p>Sex: Female</p>
+</li>
+<li>
+<p>Employment rate total &ndash; age class: 20 to 64</p>
+</li>
+<li>
+<p><strong>Employment rate total &ndash; age class: 55 to 64 </strong></p>
+</li>
+<li><strong>Total employment concept (resident populations - LFS)</strong></li>
+</ul>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "EUROSTAT provides the calculation of percentages by its filtering options, those values are taken as base for the visualisation.");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "Eurostat provides the calculation of percentages by its filtering options, those values are taken as base for the visualisation.");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Employment rate percentages total and per sex and selected age classes");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "<p>Visualisation of all five values in a European map, per country in a mouse over. <strong>Specifically for this indicator</strong>:</p><ul><li>Median Age</li><li><strong>Employment rate (55-64)</strong></li><li>Employment rate (Female)</li><li>Employmen");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "<p>Visualisation of all five values in a European map, per country in a mouse over. <strong>Specifically for this indicator</strong>:</p><ul><li>Median Age</li><li><strong>Employment rate (55-64)</strong></li><li>Employment rate (Female)</li><li>Employment rate (Male)</li><li>Employment rate (Total)</li></ul>");
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Total, male and female employment rate");
 SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="WORKFORCE_PROFILE" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="EUROSTAT" AND date_from="2017-01-01");
+SET @datasetId = (SELECT id FROM dataset WHERE source="Eurostat" AND date_from="2017-01-01");
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "The indicator ‘Workforce profile’ provides basic background data on the composition of the workforce of the countries. The available data make it possible to separate men and women and to identify potential relevant differences.");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "EUROSTAT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "Eurostat");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "Employment and activity by sex and age - annual data");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>EUROSTAT:</p><p><a href=\"http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=lfsi_emp_a&amp;lang=en\">http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=lfsi_emp_a&amp;lang=en</a></p>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>Eurostat:</p><p><a href=\"http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=lfsi_emp_a&amp;lang=en\">http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=lfsi_emp_a&amp;lang=en</a></p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2017");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "16/01/2019");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "The intended coverage is: 28 EU countries plus Iceland, Norway and Switzerland. All data for the coverage is available.");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The <strong>intended coverage</strong> is: 28 EU countries plus Iceland, Norway and Switzerland. All data for the coverage is available.</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<p>The following <strong>filter options</strong> were applied by EU-OSHA in the EUROSTAT-table in this section. <strong>Specifically for this indicator</strong>:</p><ul><li><strong>Sex: Total </strong></li><li><strong>Sex: Male</strong></li><li><strong>Se");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<p>The following <strong>filter options</strong> were applied by EU-OSHA in the Eurostat-table in this section. <strong>Specifically for this indicator</strong>:</p>
+<ul>
+<li>
+<p><strong>Sex: Total </strong></p>
+</li>
+<li>
+<p><strong>Sex: Male</strong></p>
+</li>
+<li>
+<p><strong>Sex: Female</strong></p>
+</li>
+<li>
+<p><strong>Employment rate total &ndash; age class: 20 to 64</strong></p>
+</li>
+<li>
+<p>Employment rate total &ndash; age class: 55 to 64</p>
+</li>
+<li><strong>Total employment concept (resident populations - LFS)</strong></li>
+</ul>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "EUROSTAT provides the calculation of percentages by its filtering options, those values are taken as base for the visualisation.");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "Eurostat provides the calculation of percentages by its filtering options, those values are taken as base for the visualisation.");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Employment rate percentages total and per sex and selected age classes");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "<p>Visualisation of all five values in a European map, per country in a mouse over. <strong>Specifically for this indicator</strong>:</p><ul><li>Median Age</li><li>Employment rate (55-64)</li><li><strong>Employment rate (Female)</strong></li><li><strong>E");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "<p>Visualisation of all five values in a European map, per country in a mouse over. <strong>Specifically for this indicator</strong>:</p><ul><li>Median Age</li><li>Employment rate (55-64)</li><li><strong>Employment rate (Female)</strong></li><li><strong>Employment rate (Male)</strong></li><li><strong>Employment rate (Total)</strong></li></ul>");
+INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
+
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Unemployment rate");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="WORKFORCE_PROFILE" AND t.name="osha_dvt_barometer");
+SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
+SET @datasetId = (SELECT id FROM dataset WHERE source="Eurostat" AND date_from="2017-01-01");
+SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "<p>Eurostat provides the calculation of percentages by its filtering options; those values were taken as base for the visualisation</p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "The indicator ‘Economic and sector profile’ provides basic background data on the economic structures of the countries. The unemployment rate can significantly influence the acceptance of OSH.");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "Eurostat");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "Unemployment by sex and age - annual average");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>Eurostat:</p><p><a href=\"http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=une_rt_a&amp;lang=en\">http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=une_rt_a&amp;lang=en</a></p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2017");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "10/01/19");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The<strong> intended coverage</strong> is: 28 EU countries plus Iceland, Norway and Switzerland. Currently, not all data for Switzerland is available.</p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<p>The following <strong>filter options</strong> were applied by EU-OSHA in the Eurostat-table:</p><ul><li>Percentage of active population</li><li>Sex: Total</li><li>Age class: total</li></ul>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "null");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "<p>Percentage of active population. &lsquo;Active population&rsquo; is defined by Eurostat as follows: <em>&ldquo;The labour force or workforce or economically active population, also shortened to active population, includes both employed (employees and self-employed) and unemployed people, but not the economically inactive, such as pre-school children, school children, students and pensioners.&rdquo;</em></p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "The percentages are visualised as bar chart (total EU 28 Average plus two countries of choice)");
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Secondary legislation");
@@ -8744,9 +8855,18 @@ SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p>The data are displayed as text for each Member State. It is possible to select two of the 28 in order to perform a comparison between those two Member States. It is also possible to select two of the 28 Member States and one of six specific categories of Member State secondary legislation. <strong>Specifically; this indicator relates to</strong>:</p><ul><li><strong>Secondary legislation</strong></li><li>Derogations</li><li>Transitional period</li><li>Risk assessment compliance</li><li>Exemptions</li><li>SME specific regulation</li></ul>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p>The data are displayed as text for each Member State. It is possible to select two of the 28 in order to perform a comparison between those two Member States. It is also possible to select two of the 28 Member States and one of six specific categories of Member State secondary legislation. <strong>Specifically this indicator relates to</strong>:</p>
+<ul>
+<li><strong>Secondary legislation</strong></li>
+<li>Derogations</li>
+<li>Transitional period</li>
+<li>Risk assessment compliance</li>
+<li>Exemptions</li>
+<li>SME-specific regulation</li>
+</ul>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p>The source for the indicator ‘Regulation’ is a preparatory report for DG Employment from 2018 (Kooperationsstelle Hamburg IFE / EUROGIP: Development and design of a structural model for the construction and implementation of an EU OSH Information System, Final Report, March 2018, Service contract No VC/2016/0055).</p><p>All data in this preparatory report related to the indicator ‘regulation’ are based on the DG EMPL report on the ‘Evaluation of the Practical Implementation of the EU Occupational Safety and Health (OSH) Directives in EU Member States’ from 2015&nbsp;</p>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p>The source for the indicator &lsquo;Regulation&rsquo; is a preparatory report for DG Employment from 2018 (Kooperationsstelle Hamburg IFE / EUROGIP: Development and design of a structural model for the construction and implementation of an EU OSH Information System, Final Report, March 2018, Service contract No VC/2016/0055).</p>
+<p>All data in this preparatory report related to the indicator &lsquo;regulation&rsquo; are based on the DG Employment, Social Affairs and Inclusion report on the &lsquo;Evaluation of the Practical Implementation of the EU Occupational Safety and Health (OSH) Directives in EU Member States&rsquo; from 2015</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "null");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -8756,7 +8876,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "No update until 2019");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "The intended coverage is: 28 EU countries. All data for the coverage is available.");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The <strong>intended coverage</strong> is: 28 EU countries. All data for the coverage is available.</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "null");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -8775,9 +8895,18 @@ SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p>The data are displayed as text for each Member State. It is possible to select two of the 28 in order to perform a comparison between those two Member States. It is also possible to select two of the 28 Member States and one of six specific categories of Member State secondary legislation. <strong>Specifically; this indicator relates to</strong>:</p><ul><li>Secondary legislation</li><li><strong>Derogations</strong></li><li>Transitional period</li><li>Risk assessment compliance</li><li>Exemptions</li><li>SME specific regulation</li></ul>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p>The data are displayed as text for each Member State. It is possible to select two of the 28 in order to perform a comparison between those two Member States. It is also possible to select two of the 28 Member States and one of six specific categories of Member State secondary legislation. <strong>Specifically this indicator relates to</strong>:</p>
+<ul>
+<li>Secondary legislation</li>
+<li><strong>Derogations</strong></li>
+<li>Transitional period</li>
+<li>Risk assessment compliance</li>
+<li>Exemptions</li>
+<li>SME-specific regulation</li>
+</ul>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p>The source for the indicator ‘Regulation’ is a preparatory report for DG Employment from 2018 (Kooperationsstelle Hamburg IFE / EUROGIP: Development and design of a structural model for the construction and implementation of an EU OSH Information Syste");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p>The source for the indicator &lsquo;Regulation&rsquo; is a preparatory report for DG Employment from 2018 (Kooperationsstelle Hamburg IFE / EUROGIP: Development and design of a structural model for the construction and implementation of an EU OSH Information System, Final Report, March 2018, Service contract No VC/2016/0055).</p>
+<p>All data in this preparatory report related to the indicator &lsquo;regulation&rsquo; are based on the DG Employment, Social Affairs and Inclusion report on the &lsquo;Evaluation of the Practical Implementation of the EU Occupational Safety and Health (OSH) Directives in EU Member States&rsquo; from 2015</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "null");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -8787,7 +8916,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "No update until 2019");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "The intended coverage is: 28 EU countries. All data for the coverage is available.");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The <strong>intended coverage</strong> is: 28 EU countries. All data for the coverage is available.</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "null");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -8806,9 +8935,18 @@ SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p>The data are displayed as text for each Member State. It is possible to select two of the 28 in order to perform a comparison between those two Member States. It is also possible to select two of the 28 Member States and one of six specific categories of Member State secondary legislation. <strong>Specifically; this indicator relates to</strong>:</p><ul><li>Secondary legislation</li><li>Derogations</li><li><strong>Transitional period</strong></li><li>Risk assessment compliance</li><li>Exemptions</li><li>SME specific regulation</li></ul>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p>The data are displayed as text for each Member State. It is possible to select two of the 28 in order to perform a comparison between those two Member States. It is also possible to select two of the 28 Member States and one of six specific categories of Member State secondary legislation. <strong>Specifically this indicator relates to</strong>:</p>
+<ul>
+<li>Secondary legislation</li>
+<li>Derogations</li>
+<li><strong>Transitional period</strong></li>
+<li>Risk assessment compliance</li>
+<li>Exemptions</li>
+<li>SME-specific regulation</li>
+</ul>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p>The source for the indicator ‘Regulation’ is a preparatory report for DG Employment from 2018 (Kooperationsstelle Hamburg IFE / EUROGIP: Development and design of a structural model for the construction and implementation of an EU OSH Information Syste");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p>The source for the indicator &lsquo;Regulation&rsquo; is a preparatory report for DG Employment from 2018 (Kooperationsstelle Hamburg IFE / EUROGIP: Development and design of a structural model for the construction and implementation of an EU OSH Information System, Final Report, March 2018, Service contract No VC/2016/0055).</p>
+<p>All data in this preparatory report related to the indicator &lsquo;regulation&rsquo; are based on the DG Employment, Social Affairs and Inclusion report on the &lsquo;Evaluation of the Practical Implementation of the EU Occupational Safety and Health (OSH) Directives in EU Member States&rsquo; from 2015</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "null");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -8818,7 +8956,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "No update until 2019");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "The intended coverage is: 28 EU countries. All data for the coverage is available.");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The <strong>intended coverage</strong> is: 28 EU countries. All data for the coverage is available.</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "null");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -8837,9 +8975,18 @@ SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p>The data are displayed as text for each Member State. It is possible to select two of the 28 in order to perform a comparison between those two Member States. It is also possible to select two of the 28 Member States and one of six specific categories of Member State secondary legislation. <strong>Specifically; this indicator relates to</strong>:</p><ul><li>Secondary legislation</li><li>Derogations</li><li><strong>Transitional period</strong></li><li>Risk assessment compliance</li><li>Exemptions</li><li>SME specific regulation</li></ul>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p>The data are displayed as text for each Member State. It is possible to select two of the 28 in order to perform a comparison between those two Member States. It is also possible to select two of the 28 Member States and one of six specific categories of Member State secondary legislation. <strong>Specifically this indicator relates to</strong>:</p>
+<ul>
+<li>Secondary legislation</li>
+<li>Derogations</li>
+<li>Transitional period</li>
+<li><strong>Risk assessment compliance</strong></li>
+<li>Exemptions</li>
+<li>SME-specific regulation</li>
+</ul>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p>The source for the indicator ‘Regulation’ is a preparatory report for DG Employment from 2018 (Kooperationsstelle Hamburg IFE / EUROGIP: Development and design of a structural model for the construction and implementation of an EU OSH Information Syste");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p>The source for the indicator &lsquo;Regulation&rsquo; is a preparatory report for DG Employment from 2018 (Kooperationsstelle Hamburg IFE / EUROGIP: Development and design of a structural model for the construction and implementation of an EU OSH Information System, Final Report, March 2018, Service contract No VC/2016/0055).</p>
+<p>All data in this preparatory report related to the indicator &lsquo;regulation&rsquo; are based on the DG Employment, Social Affairs and Inclusion report on the &lsquo;Evaluation of the Practical Implementation of the EU Occupational Safety and Health (OSH) Directives in EU Member States&rsquo; from 2015</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "null");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -8849,7 +8996,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "No update until 2019");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "The intended coverage is: 28 EU countries. All data for the coverage is available.");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The <strong>intended coverage</strong> is: 28 EU countries. All data for the coverage is available.</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "null");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -8868,9 +9015,18 @@ SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p>The data are displayed as text for each Member State. It is possible to select two of the 28 in order to perform a comparison between those two Member States. It is also possible to select two of the 28 Member States and one of six specific categories of Member State secondary legislation. <strong>Specifically; this indicator relates to</strong>:</p><ul><li>Secondary legislation</li><li>Derogations</li><li>Transitional period</li><li>Risk assessment compliance</li><li><strong>Exemptions</strong></li><li>SME specific regulation</li></ul>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p>The data are displayed as text for each Member State. It is possible to select two of the 28 in order to perform a comparison between those two Member States. It is also possible to select two of the 28 Member States and one of six specific categories of Member State secondary legislation. <strong>Specifically this indicator relates to</strong>:</p>
+<ul>
+<li>Secondary legislation</li>
+<li>Derogations</li>
+<li>Transitional period</li>
+<li>Risk assessment compliance</li>
+<li><strong>Exemptions</strong></li>
+<li>SME-specific regulation</li>
+</ul>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p>The source for the indicator ‘Regulation’ is a preparatory report for DG Employment from 2018 (Kooperationsstelle Hamburg IFE / EUROGIP: Development and design of a structural model for the construction and implementation of an EU OSH Information Syste");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p>The source for the indicator &lsquo;Regulation&rsquo; is a preparatory report for DG Employment from 2018 (Kooperationsstelle Hamburg IFE / EUROGIP: Development and design of a structural model for the construction and implementation of an EU OSH Information System, Final Report, March 2018, Service contract No VC/2016/0055).</p>
+<p>All data in this preparatory report related to the indicator &lsquo;regulation&rsquo; are based on the DG Employment, Social Affairs and Inclusion report on the &lsquo;Evaluation of the Practical Implementation of the EU Occupational Safety and Health (OSH) Directives in EU Member States&rsquo; from 2015</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "null");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -8880,7 +9036,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "No update until 2019");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "The intended coverage is: 28 EU countries. All data for the coverage is available.");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The <strong>intended coverage</strong> is: 28 EU countries. All data for the coverage is available.</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "null");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -8899,9 +9055,18 @@ SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p>The data are displayed as text for each Member State. It is possible to select two of the 28 in order to perform a comparison between those two Member States. It is also possible to select two of the 28 Member States and one of six specific categories of Member State secondary legislation. <strong>Specifically; this indicator relates to</strong>:</p><ul><li>Secondary legislation</li><li>Derogations</li><li>Transitional period</li><li>Risk assessment compliance</li><li>Exemptions</li><li><strong>SME specific regulation</strong></li></ul>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p>The data are displayed as text for each Member State. It is possible to select two of the 28 in order to perform a comparison between those two Member States. It is also possible to select two of the 28 Member States and one of six specific categories of Member State secondary legislation. <strong>Specifically this indicator relates to</strong>:</p>
+<ul>
+<li>Secondary legislation</li>
+<li>Derogations</li>
+<li>Transitional period</li>
+<li>Risk assessment compliance</li>
+<li>Exemptions</li>
+<li><strong>SME-specific regulation</strong></li>
+</ul>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p>The source for the indicator ‘Regulation’ is a preparatory report for DG Employment from 2018 (Kooperationsstelle Hamburg IFE / EUROGIP: Development and design of a structural model for the construction and implementation of an EU OSH Information Syste");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p>The source for the indicator &lsquo;Regulation&rsquo; is a preparatory report for DG Employment from 2018 (Kooperationsstelle Hamburg IFE / EUROGIP: Development and design of a structural model for the construction and implementation of an EU OSH Information System, Final Report, March 2018, Service contract No VC/2016/0055).</p>
+<p>All data in this preparatory report related to the indicator &lsquo;regulation&rsquo; are based on the DG Employment, Social Affairs and Inclusion report on the &lsquo;Evaluation of the Practical Implementation of the EU Occupational Safety and Health (OSH) Directives in EU Member States&rsquo; from 2015</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "null");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -8911,7 +9076,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "No update until 2019");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "The intended coverage is: 28 EU countries. All data for the coverage is available.");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The <strong>intended coverage</strong> is: 28 EU countries. All data for the coverage is available.</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "null");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -8942,7 +9107,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2019");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "The intended coverage is: 28 EU countries. All data for the coverage is available.");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The <strong>intended coverage</strong> is: 28 EU countries. All data for the coverage is available.</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "null");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -8973,7 +9138,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2019");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "The intended coverage is: 28 EU countries. All data for the coverage is available.");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The <strong>intended coverage</strong> is: 28 EU countries. All data for the coverage is available.</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "null");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -9004,7 +9169,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2019");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "The intended coverage is: 28 EU countries. All data for the coverage is available.");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The <strong>intended coverage</strong> is: 28 EU countries. All data for the coverage is available.</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "null");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -9035,7 +9200,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2019");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "The intended coverage is: 28 EU countries. All data for the coverage is available.");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The <strong>intended coverage</strong> is: 28 EU countries. All data for the coverage is available.</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "null");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -9066,7 +9231,38 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2019");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "The intended coverage is: 28 EU countries. All data for the coverage is available.");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The <strong>intended coverage</strong> is: 28 EU countries. All data for the coverage is available.</p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "null");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "null");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "null");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "Text based, selection options");
+INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
+
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Resources and timeframe");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="STRUCTURE_STRATEGY" AND t.name="osha_dvt_barometer");
+SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
+SET @datasetId = (SELECT id FROM dataset WHERE source="National Strategies reports" AND date_from="2016-01-01" AND date_to="2019-12-31");
+SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p>This part contains harmonised structured descriptions of national strategies. <br /> It is possible to select two of the 28 Member States in order to perform a comparison between them, related to eight structural characteristics. <strong>Specifically this indicator relates to:</strong></p><ul><li>Basic information</li><li>Background</li><li>Characteristics and objectives</li><li>Details and activities</li><li>Actors and stakeholders</li><li><strong>Resources and timeframe</strong></li><li>Evaluation and lessons learned</li><li>Relationship to EU strategic framework</li></ul>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "The source for all data of the indicator ‘National strategies’ is the EU-OSHA report ‘National Strategies in the field of Occupational Safety and Health in that EU-OSHA received from Member States.");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "null");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p><a href=\"https://osha.europa.eu/en/safety-and-health-legislation/osh-strategies\">https://osha.europa.eu/en/safety-and-health-legislation/osh-strategies</a></p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2016/2017/2018/2019");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2019");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The <strong>intended coverage</strong> is: 28 EU countries. All data for the coverage is available.</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "null");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -9097,1552 +9293,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2019");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "The intended coverage is: 28 EU countries. All data for the coverage is available.");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "Text based, selection options");
-INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
-
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Response to EU Challenges");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="RESPONSE_STRATEGY" AND t.name="osha_dvt_barometer");
-SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="National Strategies reports" AND date_from="2016-01-01" AND date_to="2019-12-31");
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p>Response to EU challenges. <br /> It is possible to select one or more Member States and to identify and compare their responses to the challenges of the EU strategy (EU strategy: <a href=\"https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=COM:2014:332:FIN\">https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=COM:2014:332:FIN</a>). </p><p>Challenge 1: Improving the implementation record (particularly by supporting SMEs and micro-enterprises)</p><p>Challenge 2: Improving the prevention of work-related diseases by tackling existing, new and emerging risks</p><p>Challenge 3: Tackling demographic change</p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "The source for all data of the indicator ‘National strategies’ is the EU-OSHA report ‘National Strategies in the field of Occupational Safety and Health in that EU-OSHA received from Member States. EU OSHA Report, Annex 4, page 206 - 229");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p><a href=\"https://osha.europa.eu/en/safety-and-health-legislation/osh-strategies\">https://osha.europa.eu/en/safety-and-health-legislation/osh-strategies</a></p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2016/2017/2018/2019");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2019");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "The intended coverage is: 28 EU countries. All data for the coverage is available.");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "Text based, selection options");
-INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
-
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Non-fatal work accidents");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="WORKACC" AND t.name="osha_dvt_barometer");
-SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="EUROSTAT" AND date_from="2010-01-01" AND date_to="2016-12-31");
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "The base year was taken as 2010 to mitigate the considerable influence of the financial crisis of 2008 and 2009 on economic activity and consequently on work accidents.");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "The diagram shows the development of non-fatal accidents from 2010 to 2016 in percentages. The number in 2010 is equal to 100%. It is possible to select two countries. Each diagram also displays the trend for the EU-28 average.");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "EUROSTAT");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "Non-fatal accidents at work by NACE Rev. 2 activity and sex");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p><ins cite=\"mailto:Iker%20Ruiz%20Diaz\" datetime=\"2019-07-11T10:21\">EUROSTAT:</ins></p><p><a href=\"http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=hsw_n2_01&amp;lang=en\">http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=hsw_n2_01&amp;lang=en</a></p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2010 to 2016");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "14/11/2018");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "The intended coverage is: 28 EU countries plus Iceland, Norway and Switzerland. Currently, not all data for Iceland is available.");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<ul><li>Economic activities: Total – All NACE Activities</li><li>Sex: Total</li><li>Unit of measures: Number</li></ul>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "2010 is set as base value 100%. The numbers of non-fatal accidents for the years 2010 to 2016 are calculated for each year as percentage in relation to the base year. ");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentages based on total numbers");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "Trendline, two countries plus EU 28EU 28 Average");
-INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
-
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Fatal work accidents");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="WORKACC" AND t.name="osha_dvt_barometer");
-SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="EUROSTAT" AND date_from="2010-01-01" AND date_to="2014-12-31");
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "The base year was taken as 2010 to mitigate the considerable influence of the financial crisis of 2008 and 2009 on economic activity and work accidents. 
-Employers and self-employed people are not covered; that would require using the total number of economically active persons. However, whereas the registration of accidents of employees is harmonised, the registration of such accidents of self-employed persons and employers varies significantly between Member States. 
-Future: when data for 2019 are available, the data for the next 5-year period can be calculated and a trend shown.");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "This bar chart shows the average number of fatal accidents for every Member State per 100,000 workers in the 5-year period 2010-2014");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "EUROSTAT");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<ol><li><em>Fatal Accidents at work by NACE Rev. 2 activity</em></li><li><em>Employment by sex, age and </em><em>economic activity (from 2008 onwards, NACE Rev. 2) - 1 000</em></li></ol>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p><ins cite=\"mailto:Iker%20Ruiz%20Diaz\" datetime=\"2019-07-11T10:21\">EUROSTAT:</ins><ins cite=\"mailto:Iker%20Ruiz%20Diaz\" datetime=\"2019-07-11T10:21\"></ins></p><ol><li><a href=\"http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=hsw_n2_02&amp;lang=en\">http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=hsw_n2_02&amp;lang=en</a></li><li><a href=\"http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=lfsa_egan2&amp;lang=en\">http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=lfsa_egan2&amp;lang=en</a></li></ol>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2010 to 2014");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "14/11/2019");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "The intended coverage is: 28 EU countries plus Iceland, Norway and Switzerland. Currently, not all data for Iceland is available.");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<p><strong>Fatal Accidents</strong>:</p><ul><li>Economic activities: Total – All NACE Activities</li><li>Unit of measures: Number</li></ul><p><strong>Employment</strong></p><ul><li>Age class: 15 – 64</li><li>Economic activities: Total – All NACE Activitie");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "Calculation 1: Average of a five years period of “fatal work accidents” for each country including the average for EU 28. Calculated is the arithmetic mean for the five years 2010 to 2014. 
-Calculation 2: Average of the “employment rate” for each country including the average for EU 28. Calculated is the arithmetic mean of the five years 2010 to 2014.
-Calculation 3: Average of the fatal work accidents divide by the average of the employment rate (Result of calculation 1/Result of calculation2). 
-Calculation 4: The result of this calculation is shown as rate of fatal accidents per 100,000 employed workers – the incidence rate.");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Rate of fatal accidents per 100,000 employees");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "Bar chart for all countries plus EU ");
-INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
-
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Estimation of non-fatal accidents based on fatal accidents (estimated)");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="WORKACC" AND t.name="osha_dvt_barometer");
-SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="EUROSTAT" AND date_from="2010-01-01" AND date_to="2014-12-31");
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "null");
-INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
-
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Level of reporting of non-fatal accidents");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="WORKACC" AND t.name="osha_dvt_barometer");
-SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="EUROSTAT" AND date_from="2010-01-01" AND date_to="2014-12-31");
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "null");
-INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
-
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Satisfaction with working conditions");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="HEALTH_PERCEPTION" AND t.name="osha_dvt_barometer");
-SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "This gives the percentages of positive responses to five questions in the Eurofound European Working Conditions Survey (EWCS, 2015) and one response to a question in the Eurostat Labour Force Survey (LFS).
-The percentages of the responses to these questions are displayed in a box for each country. Specifically this indicator relates to:
-
-Satisfaction with working conditions
-Negative effect on health
-Health problems in the last 12 months
-More than 15 days of absence
-Being sick at work
-Likelihood of staying in current job until 60 years old
-Fifteen countries can be displayed at the same time. The EU average is always displayed on top.");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p><strong>European Working Conditions Survey (EWCS, 2015)</strong></p><p>EUROSTAT (LFS SURVEY 2013)</p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to five <strong>EWCS Questions below. Specifically this indicator relates to</strong>:</p><ol><li><strong>How satisfied are you with working conditions in your main paid job?</strong></li><li>Does your work affect your health?</li><li>Over the past 12 months how many days were you absent from work due to sick leave or health related leave?</li><li>Over the past 12 months, did you work when you were sick?</li><li>Do you think you will be able to do your current job or a similar one until you are 60 years old?</li></ol><p>Answer options:</p><ol><li><strong>Very satisfied, satisfied, not very satisfied; Not at all satisfied</strong></li><li>Yes, mainly positively; Yes, mainly negatively; No</li><li>[The respondent could insert a number of days]</li><li>Yes; no; I was not sick</li><li>Yes; No</li></ol><p>Responses are displayed to one <strong>LFS question</strong></p><ol><li>Persons reporting a work-related health problem by sex, age and NACE Rev. 2 activity</li></ol>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p><strong>EWCS</strong></p><p><strong><a href=\"https://www.eurofound.europa.eu/data/european-working-conditions-survey\">https://www.eurofound.europa.eu/data/european-working-conditions-survey</a></strong></p><p>EUROSTAT LFS</p><p><a href=\"http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=hsw_pb6b&amp;lang=en\">http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=hsw_pb6b&amp;lang=en</a></p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2015 for EWCS and 2013 for LFS");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2015 and 05/06/2018 respectively");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "The intended coverage is: 28 EU countries plus, Norway and Switzerland. All data for the coverage is available.");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<ul><li>Activity sector: <strong>All</strong></li></ul>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "Specifically for this indicator:
-EWCS 
-Question 1: Calculated and displayed is the sum of the responses: ‘very satisfied’ and ‘satisfied’.
-Question 2: Displayed the percentage of responses: ‘Yes, mainly negatively’.
-Question 3: EWCS generated from the responses three categories: ‘More than 15 days, 1 to fifteen days, none’.
-Visualised is the percentage of responses of the category: More than 15 days.
-Question 4: EWCS differentiates only between ‘Yes’ and No’-responses. Displayed the percentage of “Yes” responses.
-Question 5: Displayed the percentage of “Yes” responses
-LFS
-Displayed the percentage of positive “Yes”responses");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentages");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "All six responses in a box, country wise");
-INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
-
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Health negative affection");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="HEALTH_PERCEPTION" AND t.name="osha_dvt_barometer");
-SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p>This gives the percentages of positive responses to five questions in the Eurofound European Working Conditions Survey (EWCS, 2015) and one response to a question in the Eurostat Labour Force Survey (LFS).<br /> The percentages of the responses to these questions are displayed in a box for each country. <strong>Specifically this indicator relates to</strong>:</p><ul><li>Satisfaction with working conditions</li><li><strong>Negative effect on health</strong></li><li>Health problems in the last 12 months</li><li>More than 15 days of absence</li><li>Being sick at work</li><li>Likelihood of staying in current job until 60 years old</li></ul><p>Fifteen countries can be displayed at the same time. The EU average is always displayed on top.</p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p><strong>European Working Conditions Survey (EWCS, 2015)</strong></p><p>EUROSTAT (LFS SURVEY 2013)</p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to five <strong>EWCS Questions below. Specifically this indicator relates to</strong>:</p><ol><li>How satisfied are you with working conditions in your main paid job?</li><li><strong>Does your work affect your health?</strong></li><li>Over the past 12 months how many days were you absent from work due to sick leave or health related leave?</li><li>Over the past 12 months, did you work when you were sick?</li><li>Do you think you will be able to do your current job or a similar one until you are 60 years old?</li></ol><p>Answer options:</p><ol><li>Very satisfied, satisfied, not very satisfied; Not at all satisfied</li><li><strong>Yes, mainly positively; Yes, mainly negatively; No</strong></li><li>[The respondent could insert a number of days]</li><li>Yes; no; I was not sick</li><li>Yes; No</li></ol><p>Responses are displayed to one <strong>LFS question</strong></p><ol><li>Persons reporting a work-related health problem by sex, age and NACE Rev. 2 activity</li></ol>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p><strong>EWCS</strong></p><p><strong><a href=\"https://www.eurofound.europa.eu/data/european-working-conditions-survey\">https://www.eurofound.europa.eu/data/european-working-conditions-survey</a></strong></p><p>EUROSTAT LFS</p><p><a href=\"http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=hsw_pb6b&amp;lang=en\">http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=hsw_pb6b&amp;lang=en</a></p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2015 for EWCS and 2013 for LFS");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2015 and 05/06/2018 respectively");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "The intended coverage is: 28 EU countries plus, Norway and Switzerland. All data for the coverage is available.");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<ul><li>Activity sector: <strong>All</strong></li></ul>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "Specifically for this indicator:
-EWCS 
-Question 1: Calculated and displayed is the sum of the responses: ‘very satisfied’ and ‘satisfied’.
-Question 2: Displayed the percentage of responses: ‘Yes, mainly negatively’.
-Question 3: EWCS generated from the responses three categories: ‘More than 15 days, 1 to fifteen days, none’.
-Visualised is the percentage of responses of the category: More than 15 days.
-Question 4: EWCS differentiates only between ‘Yes’ and No’-responses. Displayed the percentage of “Yes” responses.
-Question 5: Displayed the percentage of “Yes” responses
-LFS
-Displayed the percentage of positive “Yes”responses");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentages");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "All six responses in a box, country wise");
-INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
-
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Health problem in the last 12 months");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="HEALTH_PERCEPTION" AND t.name="osha_dvt_barometer");
-SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="EUROSTAT" AND date_from="2013-01-01");
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p>This gives the percentages of positive responses to five questions in the Eurofound European Working Conditions Survey (EWCS, 2015) and one response to a question in the Eurostat Labour Force Survey (LFS).<br /> The percentages of the responses to these questions are displayed in a box for each country. <strong>Specifically this indicator relates to</strong>:</p><ul><li>Satisfaction with working conditions</li><li>Negative effect on health</li><li><strong>Health problems in the last 12 months</strong></li><li>More than 15 days of absence</li><li>Being sick at work</li><li>Likelihood of staying in current job until 60 years old</li></ul><p>Fifteen countries can be displayed at the same time. The EU average is always displayed on top.</p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p>European Working Conditions Survey (EWCS, 2015)</p><p><strong>EUROSTAT (LFS SURVEY 2013)</strong></p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to five <strong>EWCS Questions below. Specifically this indicator relates to</strong>:</p><ol><li>How satisfied are you with working conditions in your main paid job?</li><li>Does your work affect your health?</li><li>Over the past 12 months how many days were you absent from work due to sick leave or health related leave?</li><li>Over the past 12 months, did you work when you were sick?</li><li>Do you think you will be able to do your current job or a similar one until you are 60 years old?</li></ol><p>Answer options:</p><ol><li>Very satisfied, satisfied, not very satisfied; Not at all satisfied</li><li>Yes, mainly positively; Yes, mainly negatively; No</li><li>[The respondent could insert a number of days]</li><li>Yes; no; I was not sick</li><li>Yes; No</li></ol><p>Responses are displayed to one <strong>LFS question</strong></p><ol><li><strong>Persons reporting a work-related health problem by sex, age and NACE Rev. 2 activity</strong></li></ol>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>EWCS</p><p><a href=\"https://www.eurofound.europa.eu/data/european-working-conditions-survey\">https://www.eurofound.europa.eu/data/european-working-conditions-survey</a></p><p><strong>EUROSTAT LFS</strong></p><p><strong><a href=\"http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=hsw_pb6b&amp;lang=en\">http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=hsw_pb6b&amp;lang=en</a></strong></p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2015 for EWCS and 2013 for LFS");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2015 and 05/06/2018 respectively");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "The intended coverage is: 28 EU countries plus, Norway and Switzerland. All data for the coverage is available.");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<ul><li>Sex&nbsp;: Total</li><li>Age&nbsp;: From 15 to 64 years</li><li>Unit of measure&nbsp;: Percentage</li><li>Economic activities: Total – All NACE Activities&nbsp;</li></ul>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "Specifically for this indicator:
-EWCS 
-Question 1: Calculated and displayed is the sum of the responses: ‘very satisfied’ and ‘satisfied’.
-Question 2: Displayed the percentage of responses: ‘Yes, mainly negatively’.
-Question 3: EWCS generated from the responses three categories: ‘More than 15 days, 1 to fifteen days, none’.
-Visualised is the percentage of responses of the category: More than 15 days.
-Question 4: EWCS differentiates only between ‘Yes’ and No’-responses. Displayed the percentage of “Yes” responses.
-Question 5: Displayed the percentage of “Yes” responses
-LFS
-Displayed the percentage of positive “Yes”responses");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentages");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "All six responses in a box, country wise");
-INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
-
-SET @indicatorId = (SELECT id FROM indicator WHERE name="More than 15 days of absence");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="HEALTH_PERCEPTION" AND t.name="osha_dvt_barometer");
-SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p>This gives the percentages of positive responses to five questions in the Eurofound European Working Conditions Survey (EWCS, 2015) and one response to a question in the Eurostat Labour Force Survey (LFS).<br /> The percentages of the responses to these questions are displayed in a box for each country. <strong>Specifically this indicator relates to</strong>:</p><ul><li>Satisfaction with working conditions</li><li>Negative effect on health</li><li>Health problems in the last 12 months</li><li><strong>More than 15 days of absence</strong></li><li>Being sick at work</li><li>Likelihood of staying in current job until 60 years old</li></ul><p>Fifteen countries can be displayed at the same time. The EU average is always displayed on top.</p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p><strong>European Working Conditions Survey (EWCS, 2015)</strong></p><p>EUROSTAT (LFS SURVEY 2013)</p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to five <strong>EWCS Questions below. Specifically this indicator relates to</strong>:</p><ol><li>How satisfied are you with working conditions in your main paid job?</li><li>Does your work affect your health?</li><li><strong>Over the past 12 months how many days were you absent from work due to sick leave or health related leave?</strong></li><li>Over the past 12 months, did you work when you were sick?</li><li>Do you think you will be able to do your current job or a similar one until you are 60 years old?</li></ol><p>Answer options:</p><ol><li>Very satisfied, satisfied, not very satisfied; Not at all satisfied</li><li>Yes, mainly positively; Yes, mainly negatively; No</li><li><strong>[The respondent could insert a number of days]</strong></li><li>Yes; no; I was not sick</li><li>Yes; No</li></ol><p>Responses are displayed to one <strong>LFS question</strong></p><ol><li>Persons reporting a work-related health problem by sex, age and NACE Rev. 2 activity</li></ol>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p><strong>EWCS</strong></p><p><strong><a href=\"https://www.eurofound.europa.eu/data/european-working-conditions-survey\">https://www.eurofound.europa.eu/data/european-working-conditions-survey</a></strong></p><p>EUROSTAT LFS</p><p><a href=\"http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=hsw_pb6b&amp;lang=en\">http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=hsw_pb6b&amp;lang=en</a></p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2015 for EWCS and 2013 for LFS");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2015 and 05/06/2018 respectively");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "The intended coverage is: 28 EU countries plus, Norway and Switzerland. All data for the coverage is available.");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<ul><li>Activity sector: <strong>All</strong></li></ul>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "Specifically for this indicator:
-EWCS 
-Question 1: Calculated and displayed is the sum of the responses: ‘very satisfied’ and ‘satisfied’.
-Question 2: Displayed the percentage of responses: ‘Yes, mainly negatively’.
-Question 3: EWCS generated from the responses three categories: ‘More than 15 days, 1 to fifteen days, none’. 
-Visualised is the percentage of responses of the category: More than 15 days. 
-Question 4: EWCS differentiates only between ‘Yes’ and No’-responses. Displayed the percentage of “Yes” responses.
-Question 5: Displayed the percentage of “Yes” responses
-LFS
-Displayed the percentage of positive “Yes”responses");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentages");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "All six responses in a box, country wise");
-INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
-
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Sick at working");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="HEALTH_PERCEPTION" AND t.name="osha_dvt_barometer");
-SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p>This gives the percentages of positive responses to five questions in the Eurofound European Working Conditions Survey (EWCS, 2015) and one response to a question in the Eurostat Labour Force Survey (LFS).<br /> The percentages of the responses to these questions are displayed in a box for each country. <strong>Specifically this indicator relates to</strong>:</p><ul><li>Satisfaction with working conditions</li><li>Negative effect on health</li><li>Health problems in the last 12 months</li><li>More than 15 days of absence</li><li><strong>Being sick at work</strong></li><li>Likelihood of staying in current job until 60 years old</li></ul><p>Fifteen countries can be displayed at the same time. The EU average is always displayed on top.</p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p><strong>European Working Conditions Survey (EWCS, 2015)</strong></p><p>EUROSTAT (LFS SURVEY 2013)</p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to five <strong>EWCS Questions below. Specifically this indicator relates to</strong>:</p><ol><li>How satisfied are you with working conditions in your main paid job?</li><li>Does your work affect your health?</li><li>Over the past 12 months how many days were you absent from work due to sick leave or health related leave?</li><li><strong>Over the past 12 months, did you work when you were sick?</strong></li><li>Do you think you will be able to do your current job or a similar one until you are 60 years old?</li></ol><p>Answer options:</p><ol><li>Very satisfied, satisfied, not very satisfied; Not at all satisfied</li><li>Yes, mainly positively; Yes, mainly negatively; No</li><li>[The respondent could insert a number of days]</li><li><strong>Yes; no; I was not sick</strong></li><li>Yes; No</li></ol><p>Responses are displayed to one <strong>LFS question</strong></p><ol><li>Persons reporting a work-related health problem by sex, age and NACE Rev. 2 activity</li></ol>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p><strong>EWCS</strong></p><p><strong><a href=\"https://www.eurofound.europa.eu/data/european-working-conditions-survey\">https://www.eurofound.europa.eu/data/european-working-conditions-survey</a></strong></p><p>EUROSTAT LFS</p><p><a href=\"http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=hsw_pb6b&amp;lang=en\">http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=hsw_pb6b&amp;lang=en</a></p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2015 for EWCS and 2013 for LFS");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2015 and 05/06/2018 respectively");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "The intended coverage is: 28 EU countries plus, Norway and Switzerland. All data for the coverage is available.");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<ul><li>Activity sector: <strong>All</strong></li></ul>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "Specifically for this indicator:
-EWCS 
-Question 1: Calculated and displayed is the sum of the responses: ‘very satisfied’ and ‘satisfied’.
-Question 2: Displayed the percentage of responses: ‘Yes, mainly negatively’.
-Question 3: EWCS generated from the responses three categories: ‘More than 15 days, 1 to fifteen days, none’.
-Visualised is the percentage of responses of the category: More than 15 days.
-Question 4: EWCS differentiates only between ‘Yes’ and No’-responses. Displayed the percentage of “Yes” responses.
-Question 5: Displayed the percentage of “Yes” responses
-LFS
-Displayed the percentage of positive “Yes”responses");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentages");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "All six responses in a box, country wise");
-INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
-
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Be able to do current job until 60 years old");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="HEALTH_PERCEPTION" AND t.name="osha_dvt_barometer");
-SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p>This gives the percentages of positive responses to five questions in the Eurofound European Working Conditions Survey (EWCS, 2015) and one response to a question in the Eurostat Labour Force Survey (LFS).<br /> The percentages of the responses to these questions are displayed in a box for each country. <strong>Specifically this indicator relates to</strong>:</p><ul><li>Satisfaction with working conditions</li><li>Negative effect on health</li><li>Health problems in the last 12 months</li><li>More than 15 days of absence</li><li>Being sick at work</li><li><strong>Likelihood of staying in current job until 60 years old</strong></li></ul><p>Fifteen countries can be displayed at the same time. The EU average is always displayed on top.</p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p><strong>European Working Conditions Survey (EWCS, 2015)</strong></p><p>EUROSTAT (LFS SURVEY 2013)</p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to five <strong>EWCS Questions below. Specifically this indicator relates to</strong>:</p><ol><li>How satisfied are you with working conditions in your main paid job?</li><li>Does your work affect your health?</li><li>Over the past 12 months how many days were you absent from work due to sick leave or health related leave?</li><li>Over the past 12 months, did you work when you were sick?</li><li><strong>Do you think you will be able to do your current job or a similar one until you are 60 years old?</strong></li></ol><p>Answer options:</p><ol><li>Very satisfied, satisfied, not very satisfied; Not at all satisfied</li><li>Yes, mainly positively; Yes, mainly negatively; No</li><li>[The respondent could insert a number of days]</li><li>Yes; no; I was not sick</li><li><strong>Yes; No</strong></li></ol><p>Responses are displayed to one <strong>LFS question</strong></p><ol><li>Persons reporting a work-related health problem by sex, age and NACE Rev. 2 activity</li></ol>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p><strong>EWCS</strong></p><p><strong><a href=\"https://www.eurofound.europa.eu/data/european-working-conditions-survey\">https://www.eurofound.europa.eu/data/european-working-conditions-survey</a></strong></p><p>EUROSTAT LFS</p><p><a href=\"http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=hsw_pb6b&amp;lang=en\">http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=hsw_pb6b&amp;lang=en</a></p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2015 for EWCS and 2013 for LFS");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2015 and 05/06/2018 respectively");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "The intended coverage is: 28 EU countries plus, Norway and Switzerland. All data for the coverage is available.");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<ul><li>Activity sector: <strong>All</strong></li></ul>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "Specifically for this indicator:
-EWCS 
-Question 1: Calculated and displayed is the sum of the responses: ‘very satisfied’ and ‘satisfied’.
-Question 2: Displayed the percentage of responses: ‘Yes, mainly negatively’.
-Question 3: EWCS generated from the responses three categories: ‘More than 15 days, 1 to fifteen days, none’.
-Visualised is the percentage of responses of the category: More than 15 days.
-Question 4: EWCS differentiates only between ‘Yes’ and No’-responses. Displayed the percentage of “Yes” responses.
-Question 5: Displayed the percentage of “Yes” responses
-LFS
-Displayed the percentage of positive “Yes”responses");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentages");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "All six responses in a box, country wise");
-INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
-
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Use of personal protective equipment");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="OSH_CULTURE_HEALTH_AWARENESS" AND t.name="osha_dvt_barometer");
-SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p>The percentages of positive responses to six questions in ESENER and positive responses to two questions in the EWCS are displayed in bar charts. Each bar chart shows the percentages of the responses for each EU Member State, the average for the EU-28 and the responses for Iceland, Switzerland and Norway.</p><p>;</p><p>The questions cover the aspects below. <strong>Specifically this indicator relates to</strong>:</p><ul><li>Sickness absence analysed</li><li>Health and safety discussed</li><li>Action plan to prevent stress</li><li>Procedure against bullying</li><li>Procedures to deal with threats</li><li>Measure in the past 3 years</li><li><strong>Use of personal protective equipment</strong></li><li>Information about risks</li></ul>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p>ESENER 2014 Survey <br /><strong>European Working Conditions Survey (EWCS, 2015)</strong></p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to six ESENER 2014 Survey Questions below. <strong>Specifically this indicator relates to:</strong></p><ol><li>Are sickness absences routinely analysed with a view to improving the working conditions?</li><li>How often is health and safety discussed between employee representatives and the management? Do such discussions take place regularly, only when particular health and safety issues arise or not at all?</li><li>Does your establishment have an action plan to prevent work-related stress?</li><li>Is there a procedure in place to deal with possible cases of bullying or harassment?</li><li>Is there a procedure to deal with possible cases of threats, abuse or assaults by clients, patients pupils or members in public?</li><li>In the last 3 years, has your establishment used any of the following measures to prevent psychosocial risks? Reorganisation of work in order to reduce job demands and work pressure.</li></ol><p>Answer options:</p><ol><li>Yes; No</li><li>Yes; Only when particular issues arise; No</li><li>Yes; No</li><li>Yes; No</li><li>Yes; No</li><li>Yes; No</li></ol><p>Responses are displayed to two EWCS Questions below. <br /><br /></p><ol><li><strong>Does your job ever require that you wear personal protective equipment and do you use it?</strong></li><li>How well informed are you about health and safety risks related to your job?</li></ol><p>Answer options:</p><ol><li><strong>No, not required; Yes, and I always use it; Yes, but I don’t always use it</strong></li><li>Very well informed; Well informed; Not very well informed; Not at all well informed</li></ol>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>ESENER:</p><p><a href=\"https://osha.europa.eu/en/surveys-and-statistics-osh/esener\" target=\"_blank\">https://osha.europa.eu/en/surveys-and-statistics-osh/esener&nbsp;</a></p><p><strong>EWCS:</strong></p><p><strong><a href=\"https://www.eurofound.europa.eu/data/european-working-conditions-survey\" target=\"_blank\">https://www.eurofound.europa.eu/data/european-working-conditions-survey</a></strong></p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2014 for ESENER 2014 Survey and 2015 for EWCS");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2014 for ESENER 2014 Survey and 2015 for EWCS");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The intended coverage for ESENER 2014 Survey is: 28 EU countries plus, Iceland, Norway and Switzerland. All data for the coverage is available.<br /><strong>The intended coverage for EWCS is: 28 EU countries plus, Norway and Switzerland. All data for the coverage is available.</strong></p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<ul><li>Activity sector: <strong>All</strong></li></ul>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "For ESENER 2014 Survey questions:
-Question 1, 3, 4, 5 and 6: Displayed the percentage of “Yes” responses.
-Question 2: Displayed the percentage of all three possible responses
-For EWCS questions:
-Question 1: Displayed the percentage of all possible responses
-Question 2: Displayed the percentage of the sum of the positive answers (“very well informed” and “well informed” and the percentage of the sum of the two negative answers (“not very well informed” and “not at all well informed”).");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentages");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "Bar chart, all countries plus EU 28 Average");
-INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
-
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Information about risks");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="OSH_CULTURE_HEALTH_AWARENESS" AND t.name="osha_dvt_barometer");
-SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p>The percentages of positive responses to six questions in ESENER and positive responses to two questions in the EWCS are displayed in bar charts. Each bar chart shows the percentages of the responses for each EU Member State, the average for the EU-28 and the responses for Iceland, Switzerland and Norway.</p><p>;</p><p>The questions cover the aspects below. <strong>Specifically this indicator relates to</strong>:</p><ul><li>Sickness absence analysed</li><li>Health and safety discussed</li><li>Action plan to prevent stress</li><li>Procedure against bullying</li><li>Procedures to deal with threats</li><li>Measure in the past 3 years</li><li>Use of personal protective equipment</li><li><strong>Information about risks</strong></li></ul>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p>ESENER 2014 Survey <br /><strong>European Working Conditions Survey (EWCS, 2015)</strong></p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to six ESENER 2014 Survey Questions below. <strong>Specifically this indicator relates to:</strong></p><ol><li>Are sickness absences routinely analysed with a view to improving the working conditions?</li><li>How often is health and safety discussed between employee representatives and the management? Do such discussions take place regularly, only when particular health and safety issues arise or not at all?</li><li>Does your establishment have an action plan to prevent work-related stress?</li><li>Is there a procedure in place to deal with possible cases of bullying or harassment?</li><li>Is there a procedure to deal with possible cases of threats, abuse or assaults by clients, patients pupils or members in public?</li><li>In the last 3 years, has your establishment used any of the following measures to prevent psychosocial risks? Reorganisation of work in order to reduce job demands and work pressure.</li></ol><p>Answer options:</p><ol><li>Yes; No</li><li>Yes; Only when particular issues arise; No</li><li>Yes; No</li><li>Yes; No</li><li>Yes; No</li><li>Yes; No</li></ol><p>Responses are displayed to two EWCS Questions below. <br /><br /></p><ol><li>Does your job ever require that you wear personal protective equipment and do you use it?</li><li><strong>How well informed are you about health and safety risks related to your job?</strong></li></ol><p>Answer options:</p><ol><li>No, not required; Yes, and I always use it; Yes, but I don’t always use it</li><li><strong>Very well informed; Well informed; Not very well informed; Not at all well informed</strong></li></ol>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>ESENER:</p><p><a href=\"https://osha.europa.eu/en/surveys-and-statistics-osh/esener\" target=\"_blank\">https://osha.europa.eu/en/surveys-and-statistics-osh/esener&nbsp;</a></p><p><strong>EWCS:</strong></p><p><strong><a href=\"https://www.eurofound.europa.eu/data/european-working-conditions-survey\" target=\"_blank\">https://www.eurofound.europa.eu/data/european-working-conditions-survey</a></strong></p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2014 for ESENER 2014 Survey and 2015 for EWCS");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2014 for ESENER 2014 Survey and 2015 for EWCS");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The intended coverage for ESENER 2014 Survey is: 28 EU countries plus, Iceland, Norway and Switzerland. All data for the coverage is available.<br /><strong>The intended coverage for EWCS is: 28 EU countries plus, Norway and Switzerland. All data for the coverage is available.</strong></p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<ul><li>Activity sector: <strong>All</strong></li></ul>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "For ESENER 2014 Survey questions:
-Question 1, 3, 4, 5 and 6: Displayed the percentage of “Yes” responses.
-Question 2: Displayed the percentage of all three possible responses
-For EWCS questions:
-Question 1: Displayed the percentage of all possible responses
-Question 2: Displayed the percentage of the sum of the positive answers (“very well informed” and “well informed” and the percentage of the sum of the two negative answers (“not very well informed” and “not at all well informed”).");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentages");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "Bar chart, all countries plus EU 28 Average");
-INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
-
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Job satisfaction");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="OVERALL_OPINION" AND t.name="osha_dvt_barometer");
-SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "The percentages of responses to this question in the EWCS are displayed in a bar chart. Each bar has four different colours and shows the percentages of the specific responses for each EU Member State, the average for the EU-28 and the responses for Switzerland and Norway.");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "European Working Conditions Survey (EWCS, 2015)");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to the EWCS Question below: <br />How satisfied are you with working conditions in your main paid job?<br />Answer options: </p><ol><li>Not at all satisfied</li><li>Not very satisfied</li><li>Satisfied</li><li>Very satisfied</li></ol>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>EWCS:</p><p><a href=\"https://www.eurofound.europa.eu/data/european-working-conditions-survey\">https://www.eurofound.europa.eu/data/european-working-conditions-survey</a></p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2015");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2015");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "The intended coverage for EWCS is: 28 EU countries plus, Norway and Switzerland. All data for the coverage is available.");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<ul><li>Activity sector: <strong>All</strong></li></ul>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "No");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentages");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "Bar chart, all countries plus EU 28 Average, all answers in different colours");
-INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
-
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Health at risk");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="OVERALL_OPINION" AND t.name="osha_dvt_barometer");
-SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "The percentages of responses to this question in the EWCS are displayed in a bar chart. It is possible to display three data sets. The EU average is always displayed and two countries can be selected. Moreover, the splits between five aggregations of sectors, between male and female responses and between three age groups are shown.");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "European Working Conditions Survey (EWCS, 2015)");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to the EWCS Question below: <br />Does your work affect your health?</p><p>Answer options: </p><ol><li>Yes</li><li>No</li></ol><p>Split of the five aggregated sector groups (total is always displayed): </p><ul><li>Agriculture and industry</li><li>Commerce and hospitality</li><li>Construction and transport</li><li>Financial and other services</li><li>Public administration, education and health</li></ul><p>Split between male and female (total is always displayed): </p><ul><li>Male</li><li>Female</li></ul><p>Split between the three age groups (total is always displayed): </p><ul><li>Under 35</li><li>35-49</li><li>50 and over</li></ul>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>EWCS:</p><p><a href=\"https://www.eurofound.europa.eu/data/european-working-conditions-survey\">https://www.eurofound.europa.eu/data/european-working-conditions-survey</a></p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2015");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2015");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "The intended coverage for EWCS is: 28 EU countries plus, Norway and Switzerland. All data for the coverage is available.");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<p>Activity Sector: <strong>All</strong><br />For the detailed visualisation of sectors: <strong>Five sector groups</strong><br />For the detailed visualisation of sex groups: <strong>Two sex groups</strong><br />For the detailed visualisation of age grou");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "No");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentages");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "Bar chart, all countries plus EU 28EU 28 Average, Yes-“Yes” answers, split male/femaleselector");
-INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
-
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Exposure to vibrations");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer");
-SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "The percentages of responses to four questions on physical risks in the EWCS are displayed in a spider diagram. It is possible to compare two selected countries; the EU average is always displayed.");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "European Working Conditions Survey (EWCS, 2015)");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to the EWCS Questions below. <strong>Specifically this indicator relates to</strong>:<br /> <strong>Are you exposed to vibrations from tools or machinery?</strong></p><p>Are you exposed to low temperatures?</p><p>Are you exposed to high temperatures?</p><p>Are you exposed to loud noise?</p><p>Answer options:</p><ol><li>At least ¼ of the time</li><li>Less than ¼ of the time</li></ol>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>EWCS:</p><p><a href=\"https://www.eurofound.europa.eu/data/european-working-conditions-survey\">https://www.eurofound.europa.eu/data/european-working-conditions-survey</a></p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2015");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2015");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "The intended coverage is: 28 EU countries plus Iceland, Norway and Switzerland. All data for the coverage is available.");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<p>Activity Sector: <strong>All</strong><br />For the detailed visualisation of sectors: <strong>Five sector groups</strong><br />For the detailed visualisation of sex groups: <strong>Two sex groups</strong><br />For the detailed visualisation of age grou");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "No");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentages");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "Spider diagram, all countries plus EU 28 Average, percentages for answers ‘At least ¼ of the time’ ");
-INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
-
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Exposure to loud noise");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer");
-SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "The percentages of responses to four questions on physical risks in the EWCS are displayed in a spider diagram. It is possible to compare two selected countries; the EU average is always displayed.");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "European Working Conditions Survey (EWCS, 2015)");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to the EWCS Questions below. <strong>Specifically this indicator relates to</strong>:<br /> Are you exposed to vibrations from tools or machinery?</p><p>Are you exposed to low temperatures?</p><p>Are you exposed to high temperatures?</p><p><strong>Are you exposed to loud noise?</strong></p><p>Answer options:</p><ol><li>At least ¼ of the time</li><li>Less than ¼ of the time</li></ol>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>EWCS:</p><p><a href=\"https://www.eurofound.europa.eu/data/european-working-conditions-survey\">https://www.eurofound.europa.eu/data/european-working-conditions-survey</a></p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2015");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2015");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "The intended coverage is: 28 EU countries plus Iceland, Norway and Switzerland. All data for the coverage is available.");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<p>Activity Sector: <strong>All</strong><br />For the detailed visualisation of sectors: <strong>Five sector groups</strong><br />For the detailed visualisation of sex groups: <strong>Two sex groups</strong><br />For the detailed visualisation of age grou");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "No");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentages");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "Spider diagram, all countries plus EU 28 Average, percentages for answers ‘At least ¼ of the time’ ");
-INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
-
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Exposure to temperatures");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer");
-SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "The percentages of responses to four questions on physical risks in the EWCS are displayed in a spider diagram. It is possible to compare two selected countries; the EU average is always displayed.");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "European Working Conditions Survey (EWCS, 2015)");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to the EWCS Questions below. <strong>Specifically this indicator relates to</strong>:<br /> Are you exposed to vibrations from tools or machinery?</p><p>Are you exposed to low temperatures?</p><p><strong>Are you exposed to high temperatures?</strong></p><p>Are you exposed to loud noise?</p><p>Answer options:</p><ol><li>At least ¼ of the time</li><li>Less than ¼ of the time</li></ol>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>EWCS:</p><p><a href=\"https://www.eurofound.europa.eu/data/european-working-conditions-survey\">https://www.eurofound.europa.eu/data/european-working-conditions-survey</a></p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2015");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2015");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "The intended coverage is: 28 EU countries plus Iceland, Norway and Switzerland. All data for the coverage is available.");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<p>Activity Sector: <strong>All</strong><br />For the detailed visualisation of sectors: <strong>Five sector groups</strong><br />For the detailed visualisation of sex groups: <strong>Two sex groups</strong><br />For the detailed visualisation of age grou");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "No");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentages");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "Spider diagram, all countries plus EU 28 Average, percentages for answers ‘At least ¼ of the time’ ");
-INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
-
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Exposure to low temperatures");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer");
-SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "The percentages of responses to four questions on physical risks in the EWCS are displayed in a spider diagram. It is possible to compare two selected countries; the EU average is always displayed.");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "European Working Conditions Survey (EWCS, 2015)");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to the EWCS Questions below. <strong>Specifically this indicator relates to</strong>:<br /> Are you exposed to vibrations from tools or machinery?</p><p><strong>Are you exposed to low temperatures?</strong></p><p>Are you exposed to high temperatures?</p><p>Are you exposed to loud noise?</p><p>Answer options:</p><ol><li>At least ¼ of the time</li><li>Less than ¼ of the time</li></ol>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>EWCS:</p><p><a href=\"https://www.eurofound.europa.eu/data/european-working-conditions-survey\">https://www.eurofound.europa.eu/data/european-working-conditions-survey</a></p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2015");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2015");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "The intended coverage is: 28 EU countries plus Iceland, Norway and Switzerland. All data for the coverage is available.");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<p>Activity Sector: <strong>All</strong><br />For the detailed visualisation of sectors: <strong>Five sector groups</strong><br />For the detailed visualisation of sex groups: <strong>Two sex groups</strong><br />For the detailed visualisation of age grou");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "No");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentages");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "Spider diagram, all countries plus EU 28 Average, percentages for answers ‘At least ¼ of the time’ ");
-INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
-
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Exposure to breathing in smoke, fumes, powder or dust");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer");
-SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "The percentages of responses to this question in the EWCS are displayed in a bar chart. Each bar has two different colours and shows the percentages of the two possible responses for each EU Member State, the average for the EU-28 and the responses for Switzerland and Norway.");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "European Working Conditions Survey (EWCS, 2015)");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to the EWCS Question below: <br /> “Are you exposed to breathing in smoke, fumes, powder or dust?”</p><p>Answer options:</p><ol><li>At least ¼ of the time</li><li>Less than ¼ of the time</li></ol>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>EWCS:</p><p><a href=\"https://www.eurofound.europa.eu/data/european-working-conditions-survey\">https://www.eurofound.europa.eu/data/european-working-conditions-survey</a></p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2015");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2015");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "The intended coverage is: 28 EU countries plus Iceland, Norway and Switzerland. All data for the coverage is available.");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<p>Activity Sector: <strong>All</strong><br />For the detailed visualisation of sectors: <strong>Five sector groups</strong><br />For the detailed visualisation of sex groups: <strong>Two sex groups</strong><br />For the detailed visualisation of age grou");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "No");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentages");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "Bar chart, all countries plus EU 28 Average, percentages for answers ‘At least ¼ of the time’ and ‘Less than ¼ of the time’");
-INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
-
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Exposure to breathing in vapours");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer");
-SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "The percentages of responses to this question in the EWCS are displayed in a bar chart. Each bar has two different colours and shows the percentages of the two possible responses for each EU Member State, the average for the EU-28 and the responses for Switzerland and Norway.");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "European Working Conditions Survey (EWCS, 2015)");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to the EWCS Question: <br /> “Are you exposed to breathing in vapours?”</p><p>Answer options:</p><ol><li>At least ¼ of the time</li><li>Less than ¼ of the time</li></ol>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>EWCS:</p><p><a href=\"https://www.eurofound.europa.eu/data/european-working-conditions-survey\">https://www.eurofound.europa.eu/data/european-working-conditions-survey</a></p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2015");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2015");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "The intended coverage is: 28 EU countries plus Iceland, Norway and Switzerland. All data for the coverage is available.");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<p>Activity Sector: <strong>All</strong><br />For the detailed visualisation of sectors: <strong>Five sector groups</strong><br />For the detailed visualisation of sex groups: <strong>Two sex groups</strong><br />For the detailed visualisation of age grou");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "No");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentages");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "Bar chart, all countries plus EU 28 Average, percentages for answers ‘At least ¼ of the time’ and ‘Less than ¼ of the time’");
-INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
-
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Exposure to chemical products or substances");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer");
-SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "The percentages of responses to this question in the EWCS are displayed in a bar chart. Each bar has two different colours and shows the percentages of the two possible responses for each EU Member State, the average for the EU-28 and the responses for Switzerland and Norway.");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "European Working Conditions Survey (EWCS, 2015)");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to the EWCS Question: <br /> “Are you exposed to chemical products or substances?”</p><p>Answer options:</p><ol><li>At least ¼ of the time</li><li>Less than ¼ of the time</li></ol>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>EWCS:</p><p><a href=\"https://www.eurofound.europa.eu/data/european-working-conditions-survey\">https://www.eurofound.europa.eu/data/european-working-conditions-survey</a></p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2015");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2015");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "The intended coverage is: 28 EU countries plus Iceland, Norway and Switzerland. All data for the coverage is available.");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<p>Activity Sector: <strong>All</strong><br />For the detailed visualisation of sectors: <strong>Five sector groups</strong><br />For the detailed visualisation of sex groups: <strong>Two sex groups</strong><br />For the detailed visualisation of age grou");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "No");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentages");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "Bar chart, all countries plus EU 28 Average, percentages for answers ‘At least ¼ of the time’ and ‘Less than ¼ of the time’");
-INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
-
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Exposure to infections materials");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer");
-SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "The percentages of responses to this question in the EWCS are displayed in a bar chart. Each bar has two different colours and shows the percentages of the two possible responses for each EU Member State, the average for the EU-28 and the responses for Switzerland and Norway.");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "European Working Conditions Survey (EWCS, 2015)");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to the EWCS Question: <br /> “Are you exposed to materials which can be infectious?”</p><p>&nbsp;Answer options:</p><ol><li>At least ¼ of the time</li><li>Less than ¼ of the time</li></ol>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>EWCS:</p><p><a href=\"https://www.eurofound.europa.eu/data/european-working-conditions-survey\">https://www.eurofound.europa.eu/data/european-working-conditions-survey</a></p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2015");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2015");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "The intended coverage is: 28 EU countries plus Iceland, Norway and Switzerland. All data for the coverage is available.");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<p>Activity Sector: <strong>All</strong><br />For the detailed visualisation of sectors: <strong>Five sector groups</strong><br />For the detailed visualisation of sex groups: <strong>Two sex groups</strong><br />For the detailed visualisation of age grou");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "No");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentages");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "Bar chart, all countries plus EU 28 Average, percentages for answers ‘At least ¼ of the time’ and ‘Less than ¼ of the time’");
-INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
-
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Does your organisation have a regular meeting in which employees can express their views about what is happening in the organisation?");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="WORKER_INVOLVEMENT" AND t.name="osha_dvt_barometer");
-SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p>The percentages of responses to five questions on worker involvement in ESENER 2014 and three questions on worker involvement in the EWCS are displayed in a spider diagram. It is possible to compare two selected countries; the EU average is always displayed.</p><p><strong>Specifically this indicator relates to: </strong></p><ul><li>Role in the design and set-up of measures to address psychosocial risks</li><li>Trade union, works council or similar committee representing employees</li><li><strong>Health and safety issues regularly discussed in staff or team meetings</strong></li><li>Health and safety delegate or committee</li><li>Health and safety discussion</li></ul>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p>ESENER 2014 Survey &nbsp;</p><p><strong>European Working Conditions Survey (EWCS, 2015)&nbsp;</strong></p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to the ESENER 2014 Survey Questions below.</p><ul><li>Did the employees have a role in the design and set-up of measures to address psychosocial risks?</li><li>Does your organisation have a trade union, works council or a similar committee representing employees?</li><li>Are health and safety issues regularly discussed in staff or team meetings</li><li>Does your organisation have a health and safety delegate or committee?</li><li>How often controversies on health and safety arise? Is this often, sometimes or practically never the case?</li></ul><p>Answer options:</p><ol><li>Yes; No</li><li>Yes; No</li><li>Yes, No; In some departments only</li><li>Yes, No</li><li>Often; Sometimes; Practically never</li></ol><p>Responses are displayed to the EWCS Questions below.<strong>&nbsp;<strong>Specifically this indicator relates to:</strong></strong></p><p>“Does your organisation have …?:</p><ul><li>a trade union, works council or a similar committee representing employees?</li><li>a health and safety delegate or committee?</li><li><strong>a regular meeting in which employees can express their views about what is happening in the organisation?”</strong></li></ul><p>Answer options:</p><ol><li>Yes</li><li>No</li></ol>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>ESENER:</p><p><a href=\"https://osha.europa.eu/en/surveys-and-statistics-osh/esener\">https://osha.europa.eu/en/surveys-and-statistics-osh/esener</a></p><p><strong>EWCS:</strong></p><p><strong><a href=\"https://www.eurofound.europa.eu/data/european-working-conditions-survey\">https://www.eurofound.europa.eu/data/european-working-conditions-survey</a></strong></p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2014 for ESENER 2014 Survey and 2015 for EWCS");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2014 for ESENER 2014 Survey and 2015 for EWCS
- ");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The intended coverage for ESENER 2014 Survey is: 28 EU countries plus, Iceland, Norway and Switzerland. All data for the coverage is available.</p><p><strong>The intended coverage for EWCS is: 28 EU countries plus, Norway and Switzerland. All data for the coverage is available.</strong></p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<ul><li>Activity sector: <strong>All</strong></li></ul>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "Answers to ESENER Q1, Q2 and Q4: No calculation, only percentage of “Yes” Answers taken
-Answer to ESENER Q3: Addition of responses ‘Yes’ and ‘In some departments only’
-Answer to ESENER Q5: Addition of responses ‘Often’ and ‘Sometimes’
-No calculations for EWCS");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentages");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "<p>Spider diagram, all countries plus EU 28 Average, percentages of “Yes” answers for Q1, Q2, and Q4, for Q3 and Q5 see ‘Calculations’ in ESENER</p><p><strong>Spider diagram, all countries plus EU 28 Average, percentage for answers ‘Yes’ in EWCS</str");
-INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
-
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Authority");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="ENFORCEMENT_CAPACITY" AND t.name="osha_dvt_barometer");
-SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="SLIC Reports (DG EMPL)" AND date_from="2016-01-01" AND date_to="2017-12-31");
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p>It is possible to select two of the 28 Member States in order to perform a comparison between those two Member States, related to four structural characteristics.</p><p>This part is based on the non-confidential parts of the SLIC evaluation of Member States. It is structured according to this scheme.</p><p><strong>Specifically this indicator relates to</strong>:</p><ul><li><strong>Authority</strong></li><li>Scope of the labour inspection</li><li>Inspectors’ powers</li><li>Strategy/plan</li></ul>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p>The source for OSH-authorities and OSH-institutions is a preparatory report for DG Employment from 2018. Most of the data have been compiled in 2016 or 2017.</p><p>(Kooperationsstelle Hamburg IFE / EUROGIP: Development and design of a structural model for the construction and implementation of an EU OSH Information System, Final Report, March 2018, Service contract No VC/2016/0055).</p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2010/2017");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2018");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "Currently 17 Member States (Austria, Bulgaria, Cyprus, Estonia, Finland, Greece, Hungary, Latvia, Lithuania, Poland and Portugal) aiming to reach all 28.  ");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "Text based, country selection options");
-INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
-
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Scope of the Labor Inspection");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="ENFORCEMENT_CAPACITY" AND t.name="osha_dvt_barometer");
-SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="SLIC Reports (DG EMPL)" AND date_from="2016-01-01" AND date_to="2017-12-31");
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p>It is possible to select two of the 28 Member States in order to perform a comparison between those two Member States, related to four structural characteristics.</p><p>This part is based on the non-confidential parts of the SLIC evaluation of Member States. It is structured according to this scheme.</p><p><strong>Specifically this indicator relates to</strong>:</p><ul><li>Authority</li><li><strong>Scope of the labour inspection</strong></li><li>Inspectors’ powers</li><li>Strategy/plan</li></ul>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p>The source for OSH-authorities and OSH-institutions is a preparatory report for DG Employment from 2018. Most of the data have been compiled in 2016 or 2017.</p><p>(Kooperationsstelle Hamburg IFE / EUROGIP: Development and design of a structural model for the construction and implementation of an EU OSH Information System, Final Report, March 2018, Service contract No VC/2016/0055).</p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2010/2017");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2018");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "Currently 17 Member States (Austria, Bulgaria, Cyprus, Estonia, Finland, Greece, Hungary, Latvia, Lithuania, Poland and Portugal) aiming to reach all 28.  ");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "Text based, country selection options");
-INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
-
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Inspector powers");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="ENFORCEMENT_CAPACITY" AND t.name="osha_dvt_barometer");
-SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="SLIC Reports (DG EMPL)" AND date_from="2016-01-01" AND date_to="2017-12-31");
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p>It is possible to select two of the 28 Member States in order to perform a comparison between those two Member States, related to four structural characteristics.</p><p>This part is based on the non-confidential parts of the SLIC evaluation of Member States. It is structured according to this scheme.</p><p><strong>Specifically this indicator relates to</strong>:</p><ul><li>Authority</li><li>Scope of the labour inspection</li><li><strong>Inspectors’ powers</strong></li><li>Strategy/plan</li></ul>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p>The source for OSH-authorities and OSH-institutions is a preparatory report for DG Employment from 2018. Most of the data have been compiled in 2016 or 2017.</p><p>(Kooperationsstelle Hamburg IFE / EUROGIP: Development and design of a structural model for the construction and implementation of an EU OSH Information System, Final Report, March 2018, Service contract No VC/2016/0055).</p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2010/2017");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2018");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "Currently 17 Member States (Austria, Bulgaria, Cyprus, Estonia, Finland, Greece, Hungary, Latvia, Lithuania, Poland and Portugal) aiming to reach all 28.  ");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "Text based, country selection options");
-INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
-
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Strategy/Plan");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="ENFORCEMENT_CAPACITY" AND t.name="osha_dvt_barometer");
-SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="SLIC Reports (DG EMPL)" AND date_from="2016-01-01" AND date_to="2017-12-31");
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p>It is possible to select two of the 28 Member States in order to perform a comparison between those two Member States, related to four structural characteristics.</p><p>This part is based on the non-confidential parts of the SLIC evaluation of Member States. It is structured according to this scheme.</p><p><strong>Specifically this indicator relates to</strong>:</p><ul><li>Authority</li><li>Scope of the labour inspection</li><li>Inspectors’ powers</li><li><strong>Strategy/plan</strong></li></ul>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p>The source for OSH-authorities and OSH-institutions is a preparatory report for DG Employment from 2018. Most of the data have been compiled in 2016 or 2017.</p><p>(Kooperationsstelle Hamburg IFE / EUROGIP: Development and design of a structural model for the construction and implementation of an EU OSH Information System, Final Report, March 2018, Service contract No VC/2016/0055).</p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2010/2017");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2018");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "Currently 17 Member States (Austria, Bulgaria, Cyprus, Estonia, Finland, Greece, Hungary, Latvia, Lithuania, Poland and Portugal) aiming to reach all 28.  ");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "Text based, country selection options");
-INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
-
-SET @indicatorId = (SELECT id FROM indicator WHERE name="OSH statistics");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="OSH_STATISTICS" AND t.name="osha_dvt_barometer");
-SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="DG EMPL" AND date_from="2016-01-01" AND date_to="2017-12-31");
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "This indicator provides an overview of the availability of the most important OSH statistics, surveys and OSH research institutions in the different Member States and the EU.");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p>The source for <strong>OSH Statistics, surveys and research </strong>is a preparatory report for DG Employment from 2018. Most of the data have been compiled in 2016 or 2017.</p><p>(Kooperationsstelle Hamburg IFE / EUROGIP: Development and design of a structural model for the construction and implementation of an EU OSH Information System, Final Report, March 2018, Service contract No VC/2016/0055).</p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>It is possible to select one of the 28 countries and one of the categories.</p><p><strong>Specifically for this indicator:</strong></p><ul><li><strong>Statistics </strong></li><li>Surveys</li><li>Research</li></ul><p>The system providers as response per dataset:</p><ul><li>Name of the OSH statistic source, survey or institution</li><li>Type of item (surveys, OSH statistic, etc.),</li><li>Data holder,</li><li>Link to the source.</li></ul>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2016/2017");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2018");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "The intended coverage is: 28 EU countries plus Iceland, Norway and Switzerland. All data for the coverage is available.");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "Text boxes for all 28 countries, selection of countries and one of the three categories");
-INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
-
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Surveys on Working conditions");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="OSH_STATISTICS" AND t.name="osha_dvt_barometer");
-SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="DG EMPL" AND date_from="2016-01-01" AND date_to="2017-12-31");
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "This indicator provides an overview of the availability of the most important OSH statistics, surveys and OSH research institutions in the different Member States and the EU.");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p>The source for <strong>OSH Statistics, surveys and research </strong>is a preparatory report for DG Employment from 2018. Most of the data have been compiled in 2016 or 2017.</p><p>(Kooperationsstelle Hamburg IFE / EUROGIP: Development and design of a structural model for the construction and implementation of an EU OSH Information System, Final Report, March 2018, Service contract No VC/2016/0055).</p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>It is possible to select one of the 28 countries and one of the categories.</p><p><strong>Specifically for this indicator:</strong></p><ul><li>Statistics</li><li><strong>Surveys</strong></li><li>Research</li></ul><p>The system providers as response per dataset:</p><ul><li>Name of the OSH statistic source, survey or institution</li><li>Type of item (surveys, OSH statistic, etc.),</li><li>Data holder,</li><li>Link to the source.</li></ul>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2016/2017");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2018");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "The intended coverage is: 28 EU countries plus Iceland, Norway and Switzerland. All data for the coverage is available.");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "Text boxes for all 28 countries, selection of countries and one of the three categories");
-INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
-
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Research institutes");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="OSH_STATISTICS" AND t.name="osha_dvt_barometer");
-SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="DG EMPL" AND date_from="2016-01-01" AND date_to="2017-12-31");
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "This indicator provides an overview of the availability of the most important OSH statistics, surveys and OSH research institutions in the different Member States and the EU.");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p>The source for <strong>OSH Statistics, surveys and research </strong>is a preparatory report for DG Employment from 2018. Most of the data have been compiled in 2016 or 2017.</p><p>(Kooperationsstelle Hamburg IFE / EUROGIP: Development and design of a structural model for the construction and implementation of an EU OSH Information System, Final Report, March 2018, Service contract No VC/2016/0055).</p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>It is possible to select one of the 28 countries and one of the categories.</p><p><strong>Specifically for this indicator:</strong></p><ul><li>Statistics</li><li>Surveys</li><li><strong>Research</strong></li></ul><p>The system providers as response per dataset:</p><ul><li>Name of the OSH statistic source, survey or institution</li><li>Type of item (surveys, OSH statistic, etc.),</li><li>Data holder,</li><li>Link to the source.</li></ul>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2016/2017");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2018");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "The intended coverage is: 28 EU countries plus Iceland, Norway and Switzerland. All data for the coverage is available.");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "Text boxes for all 28 countries, selection of countries and one of the three categories");
-INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
-
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Time pressure - Eurofound EWCS Data");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="MENTAL_RISKS" AND t.name="osha_dvt_barometer");
-SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "The percentages of responses to this question in ESENER 2014 and the EWCS are displayed in a bar chart. Each bar has different colours and shows the percentages of the specific responses for each EU Member State, the average for the EU-28 and the responses for Iceland, Switzerland and Norway.");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p>ESENER 2014 Survey &nbsp;</p><p><strong>European Working Conditions Survey (EWCS, 2015)&nbsp;</strong></p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to the ESENER 2014 Survey Question below:</p><p>“Please tell me for each of the following risks whether or not it is present in the establishment? Time pressure”</p><p>Answer options:&nbsp;</p><ol><li>Yes</li><li>No</li></ol><p><strong>Responses are displayed to the EWCS Question below:</strong><br /> “Does your job involve working to tight deadlines?<br /> Answer options: </p><ol><li>(Almost) all of the time</li><li>Between ¼ and ¾ of the time</li><li>(Almost ) never</li></ol>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>ESENER:</p><p><a href=\"https://osha.europa.eu/en/surveys-and-statistics-osh/esener\">https://osha.europa.eu/en/surveys-and-statistics-osh/esener</a></p><p><strong>EWCS:</strong></p><p><strong><a href=\"https://www.eurofound.europa.eu/data/european-working-conditions-survey\">https://www.eurofound.europa.eu/data/european-working-conditions-survey</a></strong></p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2014 for ESENER 2014 Survey and 2015 for EWCS");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2014 for ESENER 2014 Survey and 2015 for EWCS");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The intended coverage for ESENER 2014 Survey is: 28 EU countries plus, Iceland, Norway and Switzerland. All data for the coverage is available.</p><p><strong>The intended coverage for EWCS is: 28 EU countries plus, Norway and Switzerland. All data for the coverage is available.</strong></p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<ul><li>Activity sector: <strong>All</strong></li></ul>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "No");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentages");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "Bar chart, all countries plus EU 28 Average, percentages of all answers");
-INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
-
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Poor communication - Eurofound EWCS Data");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="MENTAL_RISKS" AND t.name="osha_dvt_barometer");
-SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "The percentages of responses to this question in ESENER 2014 and the EWCS are displayed in a bar chart. Each bar has different colours and shows the percentages of the specific responses for each EU Member State, the average for the EU-28 and the responses for Iceland, Switzerland and Norway.");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p>ESENER 2014 Survey &nbsp;</p><p><strong>European Working Conditions Survey (EWCS, 2015)&nbsp;</strong></p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to the ESENER 2014 Survey Question below:</p><p>“Please tell me for each of the following risks whether or not it is present in the establishment? Poor communication or cooperation?”</p><p>Answer options:&nbsp;</p><ol><li>Yes</li><li>No</li></ol><p><strong>Responses are displayed to the EWCS Question below:</strong></p><p>“Level of fairness, cooperation and trust”</p><p>Answer options:</p><ol><li>Composite indicator formed by Eurofound, only the value is displayed.</li></ol>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>ESENER:</p><p><a href=\"https://osha.europa.eu/en/surveys-and-statistics-osh/esener\">https://osha.europa.eu/en/surveys-and-statistics-osh/esener</a></p><p><strong>EWCS:</strong></p><p><strong><a href=\"https://www.eurofound.europa.eu/data/european-working-conditions-survey\">https://www.eurofound.europa.eu/data/european-working-conditions-survey</a></strong></p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2014 for ESENER 2014 Survey and 2015 for EWCS");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2014 for ESENER 2014 Survey and 2015 for EWCS");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The intended coverage for ESENER 2014 Survey is: 28 EU countries plus, Iceland, Norway and Switzerland. All data for the coverage is available.</p><p><strong>The intended coverage for EWCS is: 28 EU countries plus, Norway and Switzerland. All data for the coverage is available.</strong></p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<ul><li>Activity sector: <strong>All</strong></li></ul>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "No");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentages");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "Bar chart, all countries plus EU 28 Average, percentages of all answers");
-INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
-
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Influence - Eurofound EWCS Data");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="MENTAL_RISKS" AND t.name="osha_dvt_barometer");
-SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p>The percentages of positive responses to six questions in ESENER and positive responses to two questions in the EWCS are displayed in bar charts. Each bar chart shows the percentages of the responses for each EU Member State, the average for the EU-28 and the responses for Iceland, Switzerland and Norway.</p><p>;</p><p>The questions cover the aspects below. <strong>Specifically this indicator relates to</strong>:</p><ul><li>Sickness absence analysed</li><li>Health and safety discussed</li><li>Action plan to prevent stress</li><li>Procedure against bullying</li><li>Procedures to deal with threats</li><li>Measure in the past 3 years</li><li>Use of personal protective equipment</li><li><strong>Information about risks</strong></li></ul>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p>ESENER 2014 Survey &nbsp;</p><p><strong>European Working Conditions Survey (EWCS, 2015)&nbsp;</strong></p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to the ESENER 2014 Survey Question below:</p><p>Please tell me for each of the following risks whether or not it is present in the establishment? Employees’ lack of influence over their work pace or work processes</p><p>Answer options:</p><ol><li>Yes</li><li>No</li></ol><p><strong>Responses are displayed to the EWCS Question below:</strong></p><p>“Can you influence decisions that are important for your work?”</p><p>Answer options:</p><ol><li>Always or most of the time</li><li>Sometimes</li><li>Rarely or never</li></ol>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>ESENER:</p><p><a href=\"https://osha.europa.eu/en/surveys-and-statistics-osh/esener\">https://osha.europa.eu/en/surveys-and-statistics-osh/esener</a></p><p><strong>EWCS:</strong></p><p><strong><a href=\"https://www.eurofound.europa.eu/data/european-working-conditions-survey\">https://www.eurofound.europa.eu/data/european-working-conditions-survey</a></strong></p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2014 for ESENER 2014 Survey and 2015 for EWCS");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2014 for ESENER 2014 Survey and 2015 for EWCS");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The intended coverage for ESENER 2014 Survey is: 28 EU countries plus, Iceland, Norway and Switzerland. All data for the coverage is available.</p><p><strong>The intended coverage for EWCS is: 28 EU countries plus, Norway and Switzerland. All data for the coverage is available.</strong></p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<ul><li>Activity sector: <strong>All</strong></li></ul>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "No");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentages");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "Bar chart, all countries plus EU 28 Average, percentages of all answers");
-INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
-
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Job insecurity - Eurofound EWCS Data");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="MENTAL_RISKS" AND t.name="osha_dvt_barometer");
-SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "The percentages of responses to this question in ESENER 2014 and the EWCS are displayed in a bar chart. Each bar has different colours and shows the percentages of the specific responses for each EU Member State, the average for the EU-28 and the responses for Iceland, Switzerland and Norway.");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p>ESENER 2014 Survey &nbsp;</p><p><strong>European Working Conditions Survey (EWCS, 2015)&nbsp;</strong></p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to the ESENER 2014 Survey Question below:</p><p>&nbsp;“Please tell me for each of the following risks whether or not it is present in the establishment?” <br /> The diagram shows the response to the following answer option: <br /> <strong>“</strong>Job insecurity<strong>.”</strong></p><p>Answer options:&nbsp;</p><ol><li>Yes</li><li>No</li></ol><p><strong>Responses are displayed to the EWCS Question below:</strong></p><p>“I might lose my job in the next 6 months”</p><p>Answer options: </p><ol><li>Agree</li><li>Neither agree nor disagree</li><li>Disagree</li></ol>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>ESENER:</p><p><a href=\"https://osha.europa.eu/en/surveys-and-statistics-osh/esener\">https://osha.europa.eu/en/surveys-and-statistics-osh/esener</a></p><p><strong>EWCS:</strong></p><p><strong><a href=\"https://www.eurofound.europa.eu/data/european-working-conditions-survey\">https://www.eurofound.europa.eu/data/european-working-conditions-survey</a></strong></p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2014 for ESENER 2014 Survey and 2015 for EWCS");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2014 for ESENER 2014 Survey and 2015 for EWCS");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The intended coverage for ESENER 2014 Survey is: 28 EU countries plus, Iceland, Norway and Switzerland. All data for the coverage is available.</p><p><strong>The intended coverage for EWCS is: 28 EU countries plus, Norway and Switzerland. All data for the coverage is available.</strong></p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<ul><li>Activity sector: <strong>All</strong></li></ul>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "No");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentages");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "Bar chart, all countries plus EU 28 Average, percentages of all answers");
-INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
-
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Difficult clients - Eurofound EWCS Data");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="MENTAL_RISKS" AND t.name="osha_dvt_barometer");
-SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "The percentages of responses to this question in ESENER 2014 and the EWCS are displayed in a bar chart. Each bar has different colours and shows the percentages of the specific responses for each EU Member State, the average for the EU-28 and the responses for Iceland, Switzerland and Norway.");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p>ESENER 2014 Survey &nbsp;</p><p><strong>European Working Conditions Survey (EWCS, 2015)&nbsp;</strong></p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to this ESENER 2014 Survey Question below:</p><p>“Please tell me for each of the following risks whether or not it is present in the establishment?” <br /> The diagram shows the response to the following answer option: <strong>“</strong>Having to deal with difficult customers, patients, pupils etc.”</p><p>Answer options:</p><ol><li>Yes</li><li>No</li></ol><p><strong>Responses are displayed to the EWCS Question below:</strong></p><p>“Does your work involve handling angry clients?”</p><p>Answer options:</p><ol><li>(Almost) all of the time</li><li>Between ¼ and ¾ of the time</li><li>(Almost ) never</li></ol>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>ESENER:</p><p><a href=\"https://osha.europa.eu/en/surveys-and-statistics-osh/esener\">https://osha.europa.eu/en/surveys-and-statistics-osh/esener</a></p><p><strong>EWCS:</strong></p><p><strong><a href=\"https://www.eurofound.europa.eu/data/european-working-conditions-survey\">https://www.eurofound.europa.eu/data/european-working-conditions-survey</a></strong></p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2014 for ESENER 2014 Survey and 2015 for EWCS");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2014 for ESENER 2014 Survey and 2015 for EWCS");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The intended coverage for ESENER 2014 Survey is: 28 EU countries plus, Iceland, Norway and Switzerland. All data for the coverage is available.</p><p><strong>The intended coverage for EWCS is: 28 EU countries plus, Norway and Switzerland. All data for the coverage is available.</strong></p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<ul><li>Activity sector: <strong>All</strong></li></ul>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "No");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentages");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "Bar chart, all countries plus EU 28 Average, percentages of all answers");
-INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
-
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Working hours - Eurofound EWCS Data");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="MENTAL_RISKS" AND t.name="osha_dvt_barometer");
-SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "The percentages of responses to this question in ESENER 2014 and the EWCS are displayed in a bar chart. Each bar has different colours and shows the percentages of the specific responses for each EU Member State, the average for the EU-28 and the responses for Iceland, Switzerland and Norway.");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p>ESENER 2014 Survey &nbsp;</p><p><strong>European Working Conditions Survey (EWCS, 2015)&nbsp;</strong></p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to this ESENER 2014 Survey Question below:</p><p>Please tell me for each of the following risks whether or not it is present in the establishment?” <br /> The diagram shows the response to the following answer option: <br /> “Long or irregular working hours.”</p><p>Answer options: </p><ol><li>Yes</li><li>No</li></ol><p><strong>Responses are displayed to the EWCS Question below:</strong></p><p>“How many times a month do you work more than 10 hours a day?”</p><p>Answer options:&nbsp;</p><ol><li>Never</li><li>Once or more</li></ol>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>ESENER:</p><p><a href=\"https://osha.europa.eu/en/surveys-and-statistics-osh/esener\">https://osha.europa.eu/en/surveys-and-statistics-osh/esener</a></p><p><strong>EWCS:</strong></p><p><strong><a href=\"https://www.eurofound.europa.eu/data/european-working-conditions-survey\">https://www.eurofound.europa.eu/data/european-working-conditions-survey</a></strong></p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2014 for ESENER 2014 Survey and 2015 for EWCS");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2014 for ESENER 2014 Survey and 2015 for EWCS");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The intended coverage for ESENER 2014 Survey is: 28 EU countries plus, Iceland, Norway and Switzerland. All data for the coverage is available.</p><p><strong>The intended coverage for EWCS is: 28 EU countries plus, Norway and Switzerland. All data for the coverage is available.</strong></p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<ul><li>Activity sector: <strong>All</strong></li></ul>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "No");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentages");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "Bar chart, all countries plus EU 28 Average, percentages of all answers");
-INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
-
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Discrimination - Eurofound EWCS Data");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="MENTAL_RISKS" AND t.name="osha_dvt_barometer");
-SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "The percentages of responses to this question in ESENER 2014 and the EWCS are displayed in a bar chart. Each bar has different colours and shows the percentages of the specific responses for each EU Member State, the average for the EU-28 and the responses for Iceland, Switzerland and Norway.");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p>ESENER 2014 Survey &nbsp;</p><p><strong>European Working Conditions Survey (EWCS, 2015)&nbsp;</strong></p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to this ESENER 2014 Survey Question below:</p><p>Please tell me for each of the following risks whether or not it is present in the establishment?” <br /> The diagram shows the response to the following answer option: <br /> “Discrimination, for example due to gender, age or ethnicity.”</p><p>Answer options:&nbsp;</p><ol><li>Yes</li><li>No</li></ol><p><strong>Responses are displayed to the EWCS Question:&nbsp;</strong></p><p>“Have you been subjected to discrimination at work in the last 12 months?”</p><p>Answer options:&nbsp;</p><ol><li>Yes</li><li>No</li></ol>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>ESENER:</p><p><a href=\"https://osha.europa.eu/en/surveys-and-statistics-osh/esener\">https://osha.europa.eu/en/surveys-and-statistics-osh/esener</a></p><p><strong>EWCS:</strong></p><p><strong><a href=\"https://www.eurofound.europa.eu/data/european-working-conditions-survey\">https://www.eurofound.europa.eu/data/european-working-conditions-survey</a></strong></p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2014 for ESENER 2014 Survey and 2015 for EWCS");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2014 for ESENER 2014 Survey and 2015 for EWCS");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The intended coverage for ESENER 2014 Survey is: 28 EU countries plus, Iceland, Norway and Switzerland. All data for the coverage is available.</p><p><strong>The intended coverage for EWCS is: 28 EU countries plus, Norway and Switzerland. All data for the coverage is available.</strong></p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<ul><li>Activity sector: <strong>All</strong></li></ul>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "No");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentages");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "Bar chart, all countries plus EU 28 Average, percentages of all answers");
-INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
-
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Tiring or painful positions - Eurofound EWCS Data");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer");
-SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p>The percentages of responses to five questions on physical risks in the EWCS and three questions on physical risks in ESENER 2014 are displayed in a spider diagram. It is possible to compare two selected countries; the EU average is always displayed. The questions cover the aspects below. <strong>Specifically this indicator relates to:</strong></p><ul><li><strong>Work involving tiring or painful positions</strong></li><li>Work involving sitting</li><li>Work involving carrying or moving heavy loads</li><li>Work involving repetitive hand or arm movements</li><li>Work involving lifting or moving people</li></ul>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p>ESENER 2014 Survey &nbsp;</p><p><strong>European Working Conditions Survey (EWCS, 2015)&nbsp;</strong></p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to the ESENER 2014 Survey Questions below. </p><p>Depending on the type of work, there are different types of risks and hazards. Please tell me for each of the following risk factors whether it is present or not in your establishment, regardless of whether it is currently under control and regardless of the number of employees it affects:</p><p>“Tiring or painful positions, including sitting for long periods”</p><p>“Lifting or moving people or heavy loads”</p><p>“Repetitive hand or arm movements”</p><p>&nbsp;Answer options:&nbsp;</p><ol><li>Yes</li><li>No</li></ol><p>&nbsp;Responses are displayed to the EWCS Questions below.<strong> Specifically this indicator relates to</strong>:</p><p><strong>“Does your work involve tiring or painful positions?”</strong></p><p>“Does your work involve sitting?”</p><p>“Does your work involve Carrying or moving heavy loads?”</p><p>“Does your work involve Repetitive hand or arm movements?”</p><p>“Does your work involve lifting or moving people?”</p><p>&nbsp;Answer options:</p><ol><li>At least ¼ of the time</li><li>Less than ¼ of the time</li></ol>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>ESENER:</p><p><a href=\"https://osha.europa.eu/en/surveys-and-statistics-osh/esener\">https://osha.europa.eu/en/surveys-and-statistics-osh/esener</a></p><p><strong>EWCS:</strong></p><p><strong><a href=\"https://www.eurofound.europa.eu/data/european-working-conditions-survey\">https://www.eurofound.europa.eu/data/european-working-conditions-survey</a></strong></p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2014 for ESENER 2014 Survey and 2015 for EWCS");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2014 for ESENER 2014 Survey and 2015 for EWCS");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The intended coverage for ESENER 2014 Survey is: 28 EU countries plus, Iceland, Norway and Switzerland. All data for the coverage is available.</p><p><strong>The intended coverage for EWCS is: 28 EU countries plus, Norway and Switzerland. All data for the coverage is available.</strong></p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<ul><li>Activity sector: <strong>All</strong></li></ul>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "No");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentages");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "<p>Spider diagram, all countries plus EU 28 Average, percentage for answers ‘Yes’ in ESENER</p><p><strong>Spider diagram, all countries plus EU 28 Average, percentage for answers ‘At least ¼ of the time’ in EWCS</strong></p>");
-INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
-
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Does your work involve sitting? - Eurofound EWCS Data");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer");
-SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p>The percentages of responses to five questions on physical risks in the EWCS and three questions on physical risks in ESENER 2014 are displayed in a spider diagram. It is possible to compare two selected countries; the EU average is always displayed. The questions cover the aspects below. <strong>Specifically this indicator relates to:</strong></p><ul><li>Work involving tiring or painful positions</li><li><strong>Work involving sitting</strong></li><li>Work involving carrying or moving heavy loads</li><li>Work involving repetitive hand or arm movements</li><li>Work involving lifting or moving people</li></ul>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p>ESENER 2014 Survey &nbsp;</p><p><strong>European Working Conditions Survey (EWCS, 2015)&nbsp;</strong></p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to the ESENER 2014 Survey Questions below.</p><p>Depending on the type of work, there are different types of risks and hazards. Please tell me for each of the following risk factors whether it is present or not in your establishment, regardless of whether it is currently under control and regardless of the number of employees it affects:</p><p>“Tiring or painful positions, including sitting for long periods”</p><p>“Lifting or moving people or heavy loads”</p><p>“Repetitive hand or arm movements”</p><p>&nbsp;Answer options:&nbsp;</p><ol><li>Yes</li><li>No</li></ol><p>&nbsp;Responses are displayed to the EWCS Questions below.<strong> Specifically this indicator relates to</strong>:</p><p>“Does your work involve tiring or painful positions?”</p><p><strong>“Does your work involve sitting?”</strong></p><p>“Does your work involve Carrying or moving heavy loads?”</p><p>“Does your work involve Repetitive hand or arm movements?”</p><p>“Does your work involve lifting or moving people?”</p><p>&nbsp;Answer options:</p><ol><li>At least ¼ of the time</li><li>Less than ¼ of the time</li></ol>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>ESENER:</p><p><a href=\"https://osha.europa.eu/en/surveys-and-statistics-osh/esener\">https://osha.europa.eu/en/surveys-and-statistics-osh/esener</a></p><p><strong>EWCS:</strong></p><p><strong><a href=\"https://www.eurofound.europa.eu/data/european-working-conditions-survey\">https://www.eurofound.europa.eu/data/european-working-conditions-survey</a></strong></p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2014 for ESENER 2014 Survey and 2015 for EWCS");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2014 for ESENER 2014 Survey and 2015 for EWCS");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The intended coverage for ESENER 2014 Survey is: 28 EU countries plus, Iceland, Norway and Switzerland. All data for the coverage is available.</p><p><strong>The intended coverage for EWCS is: 28 EU countries plus, Norway and Switzerland. All data for the coverage is available.</strong></p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<ul><li>Activity sector: <strong>All</strong></li></ul>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "No");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentages");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "<p>Spider diagram, all countries plus EU 28 Average, percentage for answers ‘Yes’ in ESENER</p><p><strong>Spider diagram, all countries plus EU 28 Average, percentage for answers ‘At least ¼ of the time’ in EWCS</strong></p>");
-INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
-
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Carrying or moving heavy loads - Eurofound EWCS Data");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer");
-SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p>The percentages of responses to five questions on physical risks in the EWCS and three questions on physical risks in ESENER 2014 are displayed in a spider diagram. It is possible to compare two selected countries; the EU average is always displayed. The questions cover the aspects below. <strong>Specifically this indicator relates to:</strong></p><ul><li>Work involving tiring or painful positions</li><li>Work involving sitting</li><li><strong>Work involving carrying or moving heavy loads</strong></li><li>Work involving repetitive hand or arm movements</li><li>Work involving lifting or moving people</li></ul>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p>ESENER 2014 Survey &nbsp;</p><p><strong>European Working Conditions Survey (EWCS, 2015)&nbsp;</strong></p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to the ESENER 2014 Survey Questions below.</p><p>Depending on the type of work, there are different types of risks and hazards. Please tell me for each of the following risk factors whether it is present or not in your establishment, regardless of whether it is currently under control and regardless of the number of employees it affects:</p><p>“Tiring or painful positions, including sitting for long periods”</p><p>“Lifting or moving people or heavy loads”</p><p>“Repetitive hand or arm movements”</p><p>&nbsp;Answer options:&nbsp;</p><ol><li>Yes</li><li>No</li></ol><p>&nbsp;Responses are displayed to the EWCS Questions below.<strong> Specifically this indicator relates to</strong>:</p><p>“Does your work involve tiring or painful positions?”</p><p>“Does your work involve sitting?”</p><p><strong>“Does your work involve Carrying or moving heavy loads?”</strong></p><p>“Does your work involve Repetitive hand or arm movements?”</p><p>“Does your work involve lifting or moving people?”</p><p>&nbsp;Answer options:</p><ol><li>At least ¼ of the time</li><li>Less than ¼ of the time</li></ol>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>ESENER:</p><p><a href=\"https://osha.europa.eu/en/surveys-and-statistics-osh/esener\">https://osha.europa.eu/en/surveys-and-statistics-osh/esener</a></p><p><strong>EWCS:</strong></p><p><strong><a href=\"https://www.eurofound.europa.eu/data/european-working-conditions-survey\">https://www.eurofound.europa.eu/data/european-working-conditions-survey</a></strong></p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2014 for ESENER 2014 Survey and 2015 for EWCS");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2014 for ESENER 2014 Survey and 2015 for EWCS");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The intended coverage for ESENER 2014 Survey is: 28 EU countries plus, Iceland, Norway and Switzerland. All data for the coverage is available.</p><p><strong>The intended coverage for EWCS is: 28 EU countries plus, Norway and Switzerland. All data for the coverage is available.</strong></p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<ul><li>Activity sector: <strong>All</strong></li></ul>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "No");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentages");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "<p>Spider diagram, all countries plus EU 28 Average, percentage for answers ‘Yes’ in ESENER</p><p><strong>Spider diagram, all countries plus EU 28 Average, percentage for answers ‘At least ¼ of the time’ in EWCS</strong></p>");
-INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
-
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Repetitive hand or arm movements - Eurofound EWCS Data");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer");
-SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p>The percentages of responses to five questions on physical risks in the EWCS and three questions on physical risks in ESENER 2014 are displayed in a spider diagram. It is possible to compare two selected countries; the EU average is always displayed. The questions cover the aspects below. <strong>Specifically this indicator relates to:</strong></p><ul><li>Work involving tiring or painful positions</li><li>Work involving sitting</li><li>Work involving carrying or moving heavy loads</li><li><strong>Work involving repetitive hand or arm movements</strong></li><li>Work involving lifting or moving people</li></ul>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p>ESENER 2014 Survey &nbsp;</p><p><strong>European Working Conditions Survey (EWCS, 2015)&nbsp;</strong></p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to the ESENER 2014 Survey Questions below.</p><p>Depending on the type of work, there are different types of risks and hazards. Please tell me for each of the following risk factors whether it is present or not in your establishment, regardless of whether it is currently under control and regardless of the number of employees it affects:</p><p>“Tiring or painful positions, including sitting for long periods”</p><p>“Lifting or moving people or heavy loads”</p><p>“Repetitive hand or arm movements”</p><p>&nbsp;Answer options:&nbsp;</p><ol><li>Yes</li><li>No</li></ol><p>&nbsp;Responses are displayed to the EWCS Questions below.<strong> Specifically this indicator relates to</strong>:</p><p>“Does your work involve tiring or painful positions?”</p><p>“Does your work involve sitting?”</p><p>“Does your work involve Carrying or moving heavy loads?”</p><p><strong>“Does your work involve Repetitive hand or arm movements?”</strong></p><p>“Does your work involve lifting or moving people?”</p><p>&nbsp;Answer options:</p><ol><li>At least ¼ of the time</li><li>Less than ¼ of the time</li></ol>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>ESENER:</p><p><a href=\"https://osha.europa.eu/en/surveys-and-statistics-osh/esener\">https://osha.europa.eu/en/surveys-and-statistics-osh/esener</a></p><p><strong>EWCS:</strong></p><p><strong><a href=\"https://www.eurofound.europa.eu/data/european-working-conditions-survey\">https://www.eurofound.europa.eu/data/european-working-conditions-survey</a></strong></p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2014 for ESENER 2014 Survey and 2015 for EWCS");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2014 for ESENER 2014 Survey and 2015 for EWCS");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The intended coverage for ESENER 2014 Survey is: 28 EU countries plus, Iceland, Norway and Switzerland. All data for the coverage is available.</p><p><strong>The intended coverage for EWCS is: 28 EU countries plus, Norway and Switzerland. All data for the coverage is available.</strong></p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<ul><li>Activity sector: <strong>All</strong></li></ul>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "No");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentages");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "<p>Spider diagram, all countries plus EU 28 Average, percentage for answers ‘Yes’ in ESENER</p><p><strong>Spider diagram, all countries plus EU 28 Average, percentage for answers ‘At least ¼ of the time’ in EWCS</strong></p>");
-INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
-
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Lifting or moving people - Eurofound EWCS Data");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer");
-SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p>The percentages of responses to five questions on physical risks in the EWCS and three questions on physical risks in ESENER 2014 are displayed in a spider diagram. It is possible to compare two selected countries; the EU average is always displayed. The questions cover the aspects below. <strong>Specifically this indicator relates to:</strong></p><ul><li>Work involving tiring or painful positions</li><li>Work involving sitting</li><li>Work involving carrying or moving heavy loads</li><li>Work involving repetitive hand or arm movements</li><li><strong>Work involving lifting or moving people</strong></li></ul>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p>ESENER 2014 Survey &nbsp;</p><p><strong>European Working Conditions Survey (EWCS, 2015)&nbsp;</strong></p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to the ESENER 2014 Survey Questions below.</p><p>Depending on the type of work, there are different types of risks and hazards. Please tell me for each of the following risk factors whether it is present or not in your establishment, regardless of whether it is currently under control and regardless of the number of employees it affects:</p><p>“Tiring or painful positions, including sitting for long periods”</p><p>“Lifting or moving people or heavy loads”</p><p>“Repetitive hand or arm movements”</p><p>&nbsp;Answer options:&nbsp;</p><ol><li>Yes</li><li>No</li></ol><p>&nbsp;Responses are displayed to the EWCS Questions below.<strong> Specifically this indicator relates to</strong>:</p><p>“Does your work involve tiring or painful positions?”</p><p>“Does your work involve sitting?”</p><p>“Does your work involve Carrying or moving heavy loads?”</p><p>“Does your work involve Repetitive hand or arm movements?”</p><p><strong>“Does your work involve lifting or moving people?”</strong></p><p>&nbsp;Answer options:</p><ol><li>At least ¼ of the time</li><li>Less than ¼ of the time</li></ol>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>ESENER:</p><p><a href=\"https://osha.europa.eu/en/surveys-and-statistics-osh/esener\">https://osha.europa.eu/en/surveys-and-statistics-osh/esener</a></p><p><strong>EWCS:</strong></p><p><strong><a href=\"https://www.eurofound.europa.eu/data/european-working-conditions-survey\">https://www.eurofound.europa.eu/data/european-working-conditions-survey</a></strong></p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2014 for ESENER 2014 Survey and 2015 for EWCS");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2014 for ESENER 2014 Survey and 2015 for EWCS");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The intended coverage for ESENER 2014 Survey is: 28 EU countries plus, Iceland, Norway and Switzerland. All data for the coverage is available.</p><p><strong>The intended coverage for EWCS is: 28 EU countries plus, Norway and Switzerland. All data for the coverage is available.</strong></p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<ul><li>Activity sector: <strong>All</strong></li></ul>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "No");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentages");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "<p>Spider diagram, all countries plus EU 28 Average, percentage for answers ‘Yes’ in ESENER</p><p><strong>Spider diagram, all countries plus EU 28 Average, percentage for answers ‘At least ¼ of the time’ in EWCS</strong></p>");
-INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
-
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Does your organisation have a trade union, works council or a similar committee representing employees? - Eurofound EWCS Data");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="WORKER_INVOLVEMENT" AND t.name="osha_dvt_barometer");
-SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p>The percentages of responses to five questions on worker involvement in ESENER 2014 and three questions on worker involvement in the EWCS are displayed in a spider diagram. It is possible to compare two selected countries; the EU average is always displayed.</p><p><strong>Specifically this indicator relates to: </strong></p><ul><li>Role in the design and set-up of measures to address psychosocial risks</li><li><strong>Trade union, works council or similar committee representing employees</strong></li><li>Health and safety issues regularly discussed in staff or team meetings</li><li>Health and safety delegate or committee</li><li>Health and safety discussion</li></ul>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p>ESENER 2014 Survey &nbsp;</p><p><strong>European Working Conditions Survey (EWCS, 2015)&nbsp;</strong></p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to the ESENER 2014 Survey Questions below.</p><ul><li>Did the employees have a role in the design and set-up of measures to address psychosocial risks?</li><li>Does your organisation have a trade union, works council or a similar committee representing employees?</li><li>Are health and safety issues regularly discussed in staff or team meetings</li><li>Does your organisation have a health and safety delegate or committee?</li><li>How often controversies on health and safety arise? Is this often, sometimes or practically never the case?</li></ul><p>Answer options:</p><ol><li>Yes; No</li><li>Yes; No</li><li>Yes, No; In some departments only</li><li>Yes, No</li><li>Often; Sometimes; Practically never</li></ol><p>Responses are displayed to the EWCS Questions below.<strong>&nbsp;<strong>Specifically this indicator relates to:</strong></strong></p><p>“Does your organisation have …?:</p><ul><li><strong>a trade union, works council or a similar committee representing employees?</strong></li><li>a health and safety delegate or committee?</li><li>a regular meeting in which employees can express their views about what is happening in the organisation?”</li></ul><p>Answer options:</p><ol><li>Yes</li><li>No</li></ol>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>ESENER:</p><p><a href=\"https://osha.europa.eu/en/surveys-and-statistics-osh/esener\">https://osha.europa.eu/en/surveys-and-statistics-osh/esener</a></p><p><strong>EWCS:</strong></p><p><strong><a href=\"https://www.eurofound.europa.eu/data/european-working-conditions-survey\">https://www.eurofound.europa.eu/data/european-working-conditions-survey</a></strong></p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2014 for ESENER 2014 Survey and 2015 for EWCS");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2014 for ESENER 2014 Survey and 2015 for EWCS");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The intended coverage for ESENER 2014 Survey is: 28 EU countries plus, Iceland, Norway and Switzerland. All data for the coverage is available.</p><p><strong>The intended coverage for EWCS is: 28 EU countries plus, Norway and Switzerland. All data for the coverage is available.</strong></p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<ul><li>Activity sector: <strong>All</strong></li></ul>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "Answers to ESENER Q1, Q2 and Q4: No calculation, only percentage of “Yes” Answers taken
-Answer to ESENER Q3: Addition of responses ‘Yes’ and ‘In some departments only’
-Answer to ESENER Q5: Addition of responses ‘Often’ and ‘Sometimes’
-No calculations for EWCS");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentages");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "<p>Spider diagram, all countries plus EU 28 Average, percentages of “Yes” answers for Q1, Q2, and Q4, for Q3 and Q5 see ‘Calculations’ in ESENER</p><p><strong>Spider diagram, all countries plus EU 28 Average, percentage for answers ‘Yes’ in EWCS</str");
-INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
-
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Does your organisation have a health and safety delegate or committee? - Eurofound EWCS Data");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="WORKER_INVOLVEMENT" AND t.name="osha_dvt_barometer");
-SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p>The percentages of responses to five questions on worker involvement in ESENER 2014 and three questions on worker involvement in the EWCS are displayed in a spider diagram. It is possible to compare two selected countries; the EU average is always displayed.</p><p><strong>Specifically this indicator relates to: </strong></p><ul><li>Role in the design and set-up of measures to address psychosocial risks</li><li>Trade union, works council or similar committee representing employees</li><li>Health and safety issues regularly discussed in staff or team meetings</li><li><strong>Health and safety delegate or committee</strong></li><li>Health and safety discussion</li></ul>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p>ESENER 2014 Survey &nbsp;</p><p><strong>European Working Conditions Survey (EWCS, 2015)&nbsp;</strong></p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to the ESENER 2014 Survey Questions below.</p><ul><li>Did the employees have a role in the design and set-up of measures to address psychosocial risks?</li><li>Does your organisation have a trade union, works council or a similar committee representing employees?</li><li>Are health and safety issues regularly discussed in staff or team meetings</li><li>Does your organisation have a health and safety delegate or committee?</li><li>How often controversies on health and safety arise? Is this often, sometimes or practically never the case?</li></ul><p>Answer options:</p><ol><li>Yes; No</li><li>Yes; No</li><li>Yes, No; In some departments only</li><li>Yes, No</li><li>Often; Sometimes; Practically never</li></ol><p>Responses are displayed to the EWCS Questions below.<strong>&nbsp;<strong>Specifically this indicator relates to:</strong></strong></p><p>“Does your organisation have …?:</p><ul><li>a trade union, works council or a similar committee representing employees?</li><li><strong>a health and safety delegate or committee?</strong></li><li>a regular meeting in which employees can express their views about what is happening in the organisation?”</li></ul><p>Answer options:</p><ol><li>Yes</li><li>No</li></ol>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>ESENER:</p><p><a href=\"https://osha.europa.eu/en/surveys-and-statistics-osh/esener\">https://osha.europa.eu/en/surveys-and-statistics-osh/esener</a></p><p><strong>EWCS:</strong></p><p><strong><a href=\"https://www.eurofound.europa.eu/data/european-working-conditions-survey\">https://www.eurofound.europa.eu/data/european-working-conditions-survey</a></strong></p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2014 for ESENER 2014 Survey and 2015 for EWCS");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2014 for ESENER 2014 Survey and 2015 for EWCS");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The intended coverage for ESENER 2014 Survey is: 28 EU countries plus, Iceland, Norway and Switzerland. All data for the coverage is available.</p><p><strong>The intended coverage for EWCS is: 28 EU countries plus, Norway and Switzerland. All data for the coverage is available.</strong></p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<ul><li>Activity sector: <strong>All</strong></li></ul>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "Answers to ESENER Q1, Q2 and Q4: No calculation, only percentage of “Yes” Answers taken
-Answer to ESENER Q3: Addition of responses ‘Yes’ and ‘In some departments only’
-Answer to ESENER Q5: Addition of responses ‘Often’ and ‘Sometimes’
-No calculations for EWCS");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentages");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "<p>Spider diagram, all countries plus EU 28 Average, percentages of “Yes” answers for Q1, Q2, and Q4, for Q3 and Q5 see ‘Calculations’ in ESENER</p><p><strong>Spider diagram, all countries plus EU 28 Average, percentage for answers ‘Yes’ in EWCS</str");
-INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
-
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Estimation of non-fatal accidents based on fatal accidents (reported)");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="WORKACC" AND t.name="osha_dvt_barometer");
-SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="EUROSTAT" AND date_from="2016-01-01");
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "null");
-INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
-
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Resources and timeframe");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="STRUCTURE_STRATEGY" AND t.name="osha_dvt_barometer");
-SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="National Strategies reports" AND date_from="2016-01-01" AND date_to="2019-12-31");
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p>This part contains harmonised structured descriptions of national strategies. <br /> It is possible to select two of the 28 Member States in order to perform a comparison between them, related to eight structural characteristics. <strong>Specifically this indicator relates to:</strong></p><ul><li>Basic information</li><li>Background</li><li>Characteristics and objectives</li><li>Details and activities</li><li>Actors and stakeholders</li><li><strong>Resources and timeframe</strong></li><li>Evaluation and lessons learned</li><li>Relationship to EU strategic framework</li></ul>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "The source for all data of the indicator ‘National strategies’ is the EU-OSHA report ‘National Strategies in the field of Occupational Safety and Health in that EU-OSHA received from Member States.");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p><a href=\"https://osha.europa.eu/en/safety-and-health-legislation/osh-strategies\">https://osha.europa.eu/en/safety-and-health-legislation/osh-strategies</a></p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2016/2017/2018/2019");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2019");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "The intended coverage is: 28 EU countries. All data for the coverage is available.");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The <strong>intended coverage</strong> is: 28 EU countries. All data for the coverage is available.</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "null");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -10673,7 +9324,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2019");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "The intended coverage is: 28 EU countries. All data for the coverage is available.");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The <strong>intended coverage</strong> is: 28 EU countries. All data for the coverage is available.</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "null");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -10684,6 +9335,37 @@ INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "Text based, selection options");
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
 
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Response to EU Challenges");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="RESPONSE_STRATEGY" AND t.name="osha_dvt_barometer");
+SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
+SET @datasetId = (SELECT id FROM dataset WHERE source="National Strategies reports" AND date_from="2016-01-01" AND date_to="2019-12-31");
+SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p>Response to EU challenges. <br /> It is possible to select one or more Member States and to identify and compare their responses to the challenges of the EU strategy (EU strategy: <a href=\"https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=COM:2014:332:FIN\">https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=COM:2014:332:FIN</a>). </p><p>Challenge 1: Improving the implementation record (particularly by supporting SMEs and micro-enterprises)</p><p>Challenge 2: Improving the prevention of work-related diseases by tackling existing, new and emerging risks</p><p>Challenge 3: Tackling demographic change</p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p>The source for all data of the indicator &lsquo;National strategies&rsquo; is the EU-OSHA report &lsquo;National Strategies in the field of Occupational Safety and Health in that EU-OSHA received from Member States. <em>EU OSHA Report, Annex 4, page 206 - 229</em></p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "null");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p><a href=\"https://osha.europa.eu/en/safety-and-health-legislation/osh-strategies\">https://osha.europa.eu/en/safety-and-health-legislation/osh-strategies</a></p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2016/2017/2018/2019");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2019");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The <strong>intended coverage</strong> is: 28 EU countries. All data for the coverage is available.</p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "null");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "null");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "null");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "Text and matrix based, selection options");
+INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
+
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Q166_1");
 SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="SOCIAL_DIALOGUE" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
@@ -10692,11 +9374,26 @@ SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "<p>A description of the social dialogue in each country, downloadable as a PDF file, is available too. The source of the descriptions of social dialogue is a preparatory report for DG Employment, Social Affairs and Inclusion from 2018. Most of the data were compiled in 2016 or 2017.<br /> (Kooperationsstelle Hamburg IFE/EUROGIP: Development and design of a structural model for the construction and implementation of an EU OSH Information System, Final Report, March 2018, Service contract No VC/2016/0055)</p><p>The description was prepared by the contractor based on literature, particularly from Eurofound <br /> <a href=\"https://www.eurofound.europa.eu/topic/social-dialogue\">https://www.eurofound.europa.eu/topic/social-dialogue</a> <br /> and EU-OSHA’s OSHwiki information offer<br /> <a href=\"https://oshwiki.eu/wiki/Category:OSH_systems_at_national_level\">https://oshwiki.eu/wiki/Category:OSH_systems_at_national_level</a></p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p>The percentages of positive responses to four questions in ESENER 2014 are displayed for each Member State in a box as percentages. <strong>This indicator asks specifically about the existence of:</strong></p><ul><li><strong>A joint consultative committee</strong></li><li>Trade union representation</li><li>A health and safety representative</li><li>A health and safety committee</li></ul><p>Fifteen countries can be displayed at the same time, as well as the EU average.;</p>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p>The percentages of positive responses to four questions in ESENER 2014 are displayed for each Member State in a box as percentages. <strong>This indicator asks specifically about the existence of:</strong></p>
+<ul>
+<li><strong>A joint consultative committee</strong></li>
+<li>Trade union representation</li>
+<li>A health and safety representative</li>
+<li>A health and safety committee</li>
+</ul>
+<p>Fifteen countries can be displayed at the same time, as well as the EU average.</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "ESENER 2014 Survey");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>The ESENER 2014 Survey Questions are:</p><p>Which of the following forms of employee representation do you have in this establishment? <strong>Specifically this indicator answers to</strong>:</p><ul><li><strong>A joint consultative committee, employee ");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>The ESENER 2014 Survey Questions are:</p>
+<p>Which of the following forms of employee representation do you have in this establishment? <strong>Specifically this indicator anwers to:</strong></p>
+<ul>
+<li><strong>A joint consultative committee, employee forum or equivalent body</strong></li>
+<li>A recognised trade union representation</li>
+<li>A health and safety representative or representative of employee safety</li>
+<li>A health and safety representative committee</li>
+</ul>
+<p>Answer options: <br />1. Yes<br />2. No</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>ESENER:</p><p><a href=\"https://osha.europa.eu/en/surveys-and-statistics-osh/esener\">https://osha.europa.eu/en/surveys-and-statistics-osh/esener</a></p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -10704,11 +9401,14 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2014 for ESENER 2014 Survey and 2018 for the documents");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "The intended coverage is: 28 EU countries plus Iceland, Norway and Switzerland. Currently, not all data for Bulgaria, Cyprus, Estonia and Sweden is available.");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The <strong>intended coverage</strong> is: 28 EU countries plus Iceland, Norway and Switzerland. Currently, not all data for Bulgaria, Cyprus, Estonia and Sweden is available.</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<ul><li>Activity sector: All</li><li>Answer: Yes</li></ul>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<ul>
+<li>Activity sector: <strong>All</strong></li>
+<li>Answer:<strong> Yes</strong></li>
+</ul>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "No");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "null");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentages");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -10723,11 +9423,26 @@ SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "<p>A description of the social dialogue in each country, downloadable as a PDF file, is available too. The source of the descriptions of social dialogue is a preparatory report for DG Employment, Social Affairs and Inclusion from 2018. Most of the data were compiled in 2016 or 2017.<br /> (Kooperationsstelle Hamburg IFE/EUROGIP: Development and design of a structural model for the construction and implementation of an EU OSH Information System, Final Report, March 2018, Service contract No VC/2016/0055)</p><p>The description was prepared by the contractor based on literature, particularly from Eurofound <br /> <a href=\"https://www.eurofound.europa.eu/topic/social-dialogue\">https://www.eurofound.europa.eu/topic/social-dialogue</a> <br /> and EU-OSHA’s OSHwiki information offer<br /> <a href=\"https://oshwiki.eu/wiki/Category:OSH_systems_at_national_level\">https://oshwiki.eu/wiki/Category:OSH_systems_at_national_level</a></p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p>The percentages of positive responses to four questions in ESENER 2014 are displayed for each Member State in a box as percentages. <strong>This indicator asks specifically about the existence of:</strong></p><ul><li>A joint consultative committee</li><li><strong>Trade union representation</strong></li><li>A health and safety representative</li><li>A health and safety committee</li></ul><p>Fifteen countries can be displayed at the same time, as well as the EU average.;</p>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p>The percentages of positive responses to four questions in ESENER 2014 are displayed for each Member State in a box as percentages. <strong>This indicator asks specifically about the existence of:</strong></p>
+<ul>
+<li>A joint consultative committee</li>
+<li><strong>Trade union representation</strong></li>
+<li>A health and safety representative</li>
+<li>A health and safety committee</li>
+</ul>
+<p>Fifteen countries can be displayed at the same time, as well as the EU average.</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "ESENER 2014 Survey");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>The ESENER 2014 Survey Questions are:</p><p>Which of the following forms of employee representation do you have in this establishment? <strong>Specifically this indicator answers to</strong>:</p><ul><li>A joint consultative committee, employee forum or");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>The ESENER 2014 Survey Questions are:</p>
+<p>Which of the following forms of employee representation do you have in this establishment? <strong>Specifically this indicator anwers to:</strong></p>
+<ul>
+<li>A joint consultative committee, employee forum or equivalent body</li>
+<li><strong>A recognised trade union representation</strong></li>
+<li>A health and safety representative or representative of employee safety</li>
+<li>A health and safety representative committee</li>
+</ul>
+<p>Answer options: <br />1. Yes<br />2. No</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>ESENER:</p><p><a href=\"https://osha.europa.eu/en/surveys-and-statistics-osh/esener\">https://osha.europa.eu/en/surveys-and-statistics-osh/esener</a></p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -10735,11 +9450,14 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2014 for ESENER 2014 Survey and 2018 for the documents");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "The intended coverage is: 28 EU countries plus Iceland, Norway and Switzerland. Currently, not all data for Austria, Germany and Luxembourg is available.");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The <strong>intended coverage</strong> is: 28 EU countries plus Iceland, Norway and Switzerland. Currently, not all data for Austria, Germany and Luxembourg is available.</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<ul><li>Activity sector: All</li><li>Answer: Yes</li></ul>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<ul>
+<li>Activity sector: <strong>All</strong></li>
+<li>Answer:<strong> Yes</strong></li>
+</ul>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "No");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "null");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentages");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -10754,11 +9472,26 @@ SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "<p>A description of the social dialogue in each country, downloadable as a PDF file, is available too. The source of the descriptions of social dialogue is a preparatory report for DG Employment, Social Affairs and Inclusion from 2018. Most of the data were compiled in 2016 or 2017.<br /> (Kooperationsstelle Hamburg IFE/EUROGIP: Development and design of a structural model for the construction and implementation of an EU OSH Information System, Final Report, March 2018, Service contract No VC/2016/0055)</p><p>The description was prepared by the contractor based on literature, particularly from Eurofound <br /> <a href=\"https://www.eurofound.europa.eu/topic/social-dialogue\">https://www.eurofound.europa.eu/topic/social-dialogue</a> <br /> and EU-OSHA’s OSHwiki information offer<br /> <a href=\"https://oshwiki.eu/wiki/Category:OSH_systems_at_national_level\">https://oshwiki.eu/wiki/Category:OSH_systems_at_national_level</a></p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p>The percentages of positive responses to four questions in ESENER 2014 are displayed for each Member State in a box as percentages. <strong>This indicator asks specifically about the existence of:</strong></p><ul><li>A joint consultative committee</li><li>Trade union representation</li><li><strong>A health and safety representative</strong></li><li>A health and safety committee</li></ul><p>Fifteen countries can be displayed at the same time, as well as the EU average.;</p>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p>The percentages of positive responses to four questions in ESENER 2014 are displayed for each Member State in a box as percentages. <strong>This indicator asks specifically about the existence of:</strong></p>
+<ul>
+<li>A joint consultative committee</li>
+<li>Trade union representation</li>
+<li><strong>A health and safety representative</strong></li>
+<li>A health and safety committee</li>
+</ul>
+<p>Fifteen countries can be displayed at the same time, as well as the EU average.</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "ESENER 2014 Survey");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>The ESENER 2014 Survey Questions are:</p><p>Which of the following forms of employee representation do you have in this establishment? <strong>Specifically this indicator answers to</strong>:</p><ul><li>A joint consultative committee, employee forum or");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>The ESENER 2014 Survey Questions are:</p>
+<p>Which of the following forms of employee representation do you have in this establishment? <strong>Specifically this indicator anwers to:</strong></p>
+<ul>
+<li>A joint consultative committee, employee forum or equivalent body</li>
+<li>A recognised trade union representation</li>
+<li><strong>A health and safety representative or representative of employee safety</strong></li>
+<li>A health and safety representative committee</li>
+</ul>
+<p>Answer options: <br />1. Yes<br />2. No</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>ESENER:</p><p><a href=\"https://osha.europa.eu/en/surveys-and-statistics-osh/esener\">https://osha.europa.eu/en/surveys-and-statistics-osh/esener</a></p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -10766,11 +9499,14 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2014 for ESENER 2014 Survey and 2018 for the documents");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "The intended coverage is: 28 EU countries plus Iceland, Norway and Switzerland. All data for the coverage is available.");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The <strong>intended coverage</strong> is: 28 EU countries plus Iceland, Norway and Switzerland. All data for the coverage is available.</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<ul><li>Activity sector: All</li><li>Answer: Yes</li></ul>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<ul>
+<li>Activity sector: <strong>All</strong></li>
+<li>Answer:<strong> Yes</strong></li>
+</ul>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "No");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "null");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentages");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -10785,11 +9521,26 @@ SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "<p>A description of the social dialogue in each country, downloadable as a PDF file, is available too. The source of the descriptions of social dialogue is a preparatory report for DG Employment, Social Affairs and Inclusion from 2018. Most of the data were compiled in 2016 or 2017.<br /> (Kooperationsstelle Hamburg IFE/EUROGIP: Development and design of a structural model for the construction and implementation of an EU OSH Information System, Final Report, March 2018, Service contract No VC/2016/0055)</p><p>The description was prepared by the contractor based on literature, particularly from Eurofound <br /> <a href=\"https://www.eurofound.europa.eu/topic/social-dialogue\">https://www.eurofound.europa.eu/topic/social-dialogue</a> <br /> and EU-OSHA’s OSHwiki information offer<br /> <a href=\"https://oshwiki.eu/wiki/Category:OSH_systems_at_national_level\">https://oshwiki.eu/wiki/Category:OSH_systems_at_national_level</a></p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p>The percentages of positive responses to four questions in ESENER 2014 are displayed for each Member State in a box as percentages. <strong>This indicator asks specifically about the existence of:</strong></p><ul><li>A joint consultative committee</li><li>Trade union representation</li><li>A health and safety representative</li><li><strong>A health and safety committee</strong></li></ul><p>Fifteen countries can be displayed at the same time, as well as the EU average.;</p>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p>The percentages of positive responses to four questions in ESENER 2014 are displayed for each Member State in a box as percentages. <strong>This indicator asks specifically about the existence of:</strong></p>
+<ul>
+<li>A joint consultative committee</li>
+<li>Trade union representation</li>
+<li>A health and safety representative</li>
+<li><strong>A health and safety committee</strong></li>
+</ul>
+<p>Fifteen countries can be displayed at the same time, as well as the EU average.</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "ESENER 2014 Survey");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>The ESENER 2014 Survey Questions are:</p><p>Which of the following forms of employee representation do you have in this establishment? <strong>Specifically this indicator answers to</strong>:</p><ul><li>A joint consultative committee, employee forum or");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>The ESENER 2014 Survey Questions are:</p>
+<p>Which of the following forms of employee representation do you have in this establishment? <strong>Specifically this indicator anwers to:</strong></p>
+<ul>
+<li>A joint consultative committee, employee forum or equivalent body</li>
+<li>A recognised trade union representation</li>
+<li>A health and safety representative or representative of employee safety</li>
+<li><strong>A health and safety representative committee</strong></li>
+</ul>
+<p>Answer options: <br />1. Yes<br />2. No</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>ESENER:</p><p><a href=\"https://osha.europa.eu/en/surveys-and-statistics-osh/esener\">https://osha.europa.eu/en/surveys-and-statistics-osh/esener</a></p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -10797,15 +9548,288 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2014 for ESENER 2014 Survey and 2018 for the documents");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "The intended coverage is: 28 EU countries plus Iceland, Norway and Switzerland. Currently, not all data Slovenia is available.");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The <strong>intended coverage</strong> is: 28 EU countries plus Iceland, Norway and Switzerland. Currently, not all data for Slovenia is available.</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<ul><li>Activity sector: All</li><li>Answer: Yes</li></ul>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<ul>
+<li>Activity sector: <strong>All</strong></li>
+<li>Answer:<strong> Yes</strong></li>
+</ul>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "No");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "null");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentages");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "Percentages in boxes, country wise");
+INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
+
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Non-fatal work accidents");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="WORKACC" AND t.name="osha_dvt_barometer");
+SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
+SET @datasetId = (SELECT id FROM dataset WHERE source="Eurostat" AND date_from="2010-01-01" AND date_to="2016-12-31");
+SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "The base year was taken as 2010 to mitigate the considerable influence of the financial crisis of 2008 and 2009 on economic activity and consequently on work accidents.");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "The diagram shows the development of non-fatal accidents from 2010 to 2016 in percentages. The number in 2010 is equal to 100%. It is possible to select two countries. Each diagram also displays the trend for the EU-28 average.");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "Eurostat");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "Non-fatal accidents at work by NACE Rev. 2 activity and sex");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p><ins cite=\"mailto:Iker%20Ruiz%20Diaz\" datetime=\"2019-07-11T10:21\">Eurostat:</ins></p><p><a href=\"http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=hsw_n2_01&amp;lang=en\">http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=hsw_n2_01&amp;lang=en</a></p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2010 to 2016");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "14/11/2018");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The <strong>intended coverage</strong> is: 28 EU countries plus Iceland, Norway and Switzerland. Currently, not all data for Iceland is available.</p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<ul><li>Economic activities: Total – All NACE Activities</li><li>Sex: Total</li><li>Unit of measures: Number</li></ul>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "<p><strong>2010 is set as base value 100%.</strong> The numbers of non-fatal accidents for the years 2010 to 2016 are calculated for each year as percentage in relation to the base year.&nbsp;</p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentages based on total numbers");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "Trendline, two countries plus EU 28 Average");
+INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
+
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Fatal work accidents");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="WORKACC" AND t.name="osha_dvt_barometer");
+SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
+SET @datasetId = (SELECT id FROM dataset WHERE source="Eurostat" AND date_from="2010-01-01" AND date_to="2014-12-31");
+SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "<p>The base year was taken as 2010 to mitigate the considerable influence of the financial crisis of 2008 and 2009 on economic activity and work accidents.</p>
+<p>Employers and self-employed people are not covered; that would require using the total number of economically active persons. However, whereas the registration of accidents of employees is harmonised, the registration of such accidents of self-employed persons and employers varies significantly between Member States.</p>
+<p>Future: when data for 2019 are available, the data for the next 5-year period can be calculated and a trend shown.</p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "This bar chart shows the average number of fatal accidents for every Member State per 100,000 workers in the 5-year period 2010-2014");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "Eurostat");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<ol><li><em>Fatal Accidents at work by NACE Rev. 2 activity</em></li><li><em>Employment by sex, age and </em><em>economic activity (from 2008 onwards, NACE Rev. 2) - 1 000</em></li></ol>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p><ins cite=\"mailto:Iker%20Ruiz%20Diaz\" datetime=\"2019-07-11T10:21\">Eurostat:</ins><ins cite=\"mailto:Iker%20Ruiz%20Diaz\" datetime=\"2019-07-11T10:21\"></ins></p><ol><li><a href=\"http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=hsw_n2_02&amp;lang=en\">http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=hsw_n2_02&amp;lang=en</a></li><li><a href=\"http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=lfsa_egan2&amp;lang=en\">http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=lfsa_egan2&amp;lang=en</a></li></ol>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2010 to 2014");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "14/11/2019");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The <strong>intended coverage</strong> is: 28 EU countries plus Iceland, Norway and Switzerland. Currently, not all data for Iceland is available.</p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<p><strong>Fatal Accidents</strong>:</p>
+<ul>
+<li>Economic activities: Total &ndash; All NACE Activities</li>
+<li>Unit of measures: Number</li>
+</ul>
+<p><strong>Employment</strong></p>
+<ul>
+<li>Age class: 15 &ndash; 64</li>
+<li>Economic activities: Total &ndash; All NACE Activities</li>
+<li>Sex: Total</li>
+<li>Unit of measures: Thousands</li>
+</ul>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "<p><strong>Calculation 1:</strong> Average of a five years period of “fatal work accidents” for each country including the average for EU 28. Calculated is the arithmetic mean for the five years 2010 to 2014. <br /><strong>Calculation 2:</strong> Average of the “employment rate” for each country including the average for EU 28. Calculated is the arithmetic mean of the five years 2010 to 2014.<br /><strong>Calculation 3:</strong> Average of the fatal work accidents divide by the average of the employment rate (Result of calculation 1/Result of calculation2). <br /><strong>Calculation 4:&nbsp;</strong>The result of this calculation is shown as rate of fatal accidents per 100,000 employed workers – the incidence rate.</p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Rate of fatal accidents per 100,000 employees");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "Bar chart for all countries plus EU ");
+INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
+
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Satisfaction with working conditions");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="HEALTH_PERCEPTION" AND t.name="osha_dvt_barometer");
+SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
+SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
+SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p>This gives the percentages of positive responses to five questions in the Eurofound European Working Conditions Survey (EWCS, 2015) and one response to a question in the Eurostat Labour Force Survey (LFS).<br />The percentages of the responses to these questions are displayed in a box for each country. <strong>Specifically this indicator relates to</strong>:</p>
+<ul>
+<li><strong>Satisfaction with working conditions</strong></li>
+<li>Negative effect on health</li>
+<li>Health problems in the last 12 months</li>
+<li>More than 15 days of absence</li>
+<li>Being sick at work</li>
+<li>Likelihood of staying in current job until 60 years old</li>
+</ul>
+<p>Fifteen countries can be displayed at the same time. The EU average is always displayed on top.</p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p><strong>European Working Conditions Survey (EWCS, 2015)</strong></p><p>Eurostat (LFS SURVEY 2013)</p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to five <strong>EWCS Questions below. Specifically this indicator relates to</strong>:</p><ol><li><strong>How satisfied are you with working conditions in your main paid job?</strong></li><li>Does your work affect your health?</li><li>Over the past 12 months how many days were you absent from work due to sick leave or health related leave?</li><li>Over the past 12 months, did you work when you were sick?</li><li>Do you think you will be able to do your current job or a similar one until you are 60 years old?</li></ol><p>Answer options:</p><ol><li><strong>Very satisfied, satisfied, not very satisfied; Not at all satisfied</strong></li><li>Yes, mainly positively; Yes, mainly negatively; No</li><li>[The respondent could insert a number of days]</li><li>Yes; no; I was not sick</li><li>Yes; No</li></ol><p>Responses are displayed to one <strong>LFS question</strong></p><ol><li>Persons reporting a work-related health problem by sex, age and NACE Rev. 2 activity</li></ol>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p><strong>EWCS</strong></p><p><strong><a href=\"https://www.eurofound.europa.eu/data/european-working-conditions-survey\">https://www.eurofound.europa.eu/data/european-working-conditions-survey</a></strong></p><p>Eurostat LFS</p><p><a href=\"http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=hsw_pb6b&amp;lang=en\">http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=hsw_pb6b&amp;lang=en</a></p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2015 for EWCS and 2013 for LFS");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2015 and 05/06/2018 respectively");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The <strong>intended coverage</strong> is: 28 EU countries plus, Norway and Switzerland. All data for the coverage is available.</p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<ul><li>Activity sector: <strong>All</strong></li></ul>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "<p><strong>Specifically for this indicator:</strong></p><p><strong>EWCS</strong> <br /><strong>Question 1: Calculated and displayed is the sum of the responses: ‘very satisfied’ and ‘satisfied’.</strong><br />Question 2: Displayed the percentage of responses: ‘Yes, mainly negatively’.<br />Question 3: EUROFOUND generated from the responses three categories: ‘More than 15 days, 1 to fifteen days, none’. <br />Visualised is the percentage of responses of the category: More than 15 days. <br />Question 4: EUROFOUND differentiates only between ‘Yes’ and No’-responses. Displayed the percentage of “Yes” responses.<br />Question 5: Displayed the percentage of “Yes” responses</p><p>LFS<br />Displayed the percentage of positive “Yes”responses</p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentages");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "All six responses in a box, country wise");
+INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
+
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Health affected by work");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="HEALTH_PERCEPTION" AND t.name="osha_dvt_barometer");
+SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
+SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
+SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p>This gives the percentages of positive responses to five questions in the Eurofound European Working Conditions Survey (EWCS, 2015) and one response to a question in the Eurostat Labour Force Survey (LFS).<br /> The percentages of the responses to these questions are displayed in a box for each country. <strong>Specifically this indicator relates to</strong>:</p><ul><li>Satisfaction with working conditions</li><li><strong>Negative effect on health</strong></li><li>Health problems in the last 12 months</li><li>More than 15 days of absence</li><li>Being sick at work</li><li>Likelihood of staying in current job until 60 years old</li></ul><p>Fifteen countries can be displayed at the same time. The EU average is always displayed on top.</p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p><strong>European Working Conditions Survey (EWCS, 2015)</strong></p><p>Eurostat (LFS SURVEY 2013)</p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to five <strong>EWCS Questions below. Specifically this indicator relates to</strong>:</p><ol><li>How satisfied are you with working conditions in your main paid job?</li><li><strong>Does your work affect your health?</strong></li><li>Over the past 12 months how many days were you absent from work due to sick leave or health related leave?</li><li>Over the past 12 months, did you work when you were sick?</li><li>Do you think you will be able to do your current job or a similar one until you are 60 years old?</li></ol><p>Answer options:</p><ol><li>Very satisfied, satisfied, not very satisfied; Not at all satisfied</li><li><strong>Yes, mainly positively; Yes, mainly negatively; No</strong></li><li>[The respondent could insert a number of days]</li><li>Yes; no; I was not sick</li><li>Yes; No</li></ol><p>Responses are displayed to one <strong>LFS question</strong></p><ol><li>Persons reporting a work-related health problem by sex, age and NACE Rev. 2 activity</li></ol>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p><strong>EWCS</strong></p><p><strong><a href=\"https://www.eurofound.europa.eu/data/european-working-conditions-survey\">https://www.eurofound.europa.eu/data/european-working-conditions-survey</a></strong></p><p>Eurostat LFS</p><p><a href=\"http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=hsw_pb6b&amp;lang=en\">http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=hsw_pb6b&amp;lang=en</a></p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2015 for EWCS and 2013 for LFS");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2015 and 05/06/2018 respectively");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The <strong>intended coverage</strong> is: 28 EU countries plus, Norway and Switzerland. All data for the coverage is available.</p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<ul><li>Activity sector: <strong>All</strong></li></ul>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "<p><strong>Specifically for this indicator:</strong></p><p><strong>EWCS</strong> <br />Question 1: Calculated and displayed is the sum of the responses: ‘very satisfied’ and ‘satisfied’.<br /><strong>Question 2: Displayed the percentage of responses: ‘Yes, mainly negatively’.</strong><br />Question 3: EUROFOUND generated from the responses three categories: ‘More than 15 days, 1 to fifteen days, none’. <br />Visualised is the percentage of responses of the category: More than 15 days. <br />Question 4: EUROFOUND differentiates only between ‘Yes’ and No’-responses. Displayed the percentage of “Yes” responses.<br />Question 5: Displayed the percentage of “Yes” responses</p><p>LFS<br />Displayed the percentage of positive “Yes”responses</p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentages");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "All six responses in a box, country wise");
+INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
+
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Health problem in the last 12 months");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="HEALTH_PERCEPTION" AND t.name="osha_dvt_barometer");
+SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
+SET @datasetId = (SELECT id FROM dataset WHERE source="Eurostat" AND date_from="2013-01-01");
+SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p>This gives the percentages of positive responses to five questions in the Eurofound European Working Conditions Survey (EWCS, 2015) and one response to a question in the Eurostat Labour Force Survey (LFS).<br /> The percentages of the responses to these questions are displayed in a box for each country. <strong>Specifically this indicator relates to</strong>:</p><ul><li>Satisfaction with working conditions</li><li>Negative effect on health</li><li><strong>Health problems in the last 12 months</strong></li><li>More than 15 days of absence</li><li>Being sick at work</li><li>Likelihood of staying in current job until 60 years old</li></ul><p>Fifteen countries can be displayed at the same time. The EU average is always displayed on top.</p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p>European Working Conditions Survey (EWCS, 2015)</p><p><strong>Eurostat (LFS SURVEY 2013)</strong></p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to five <strong>EWCS Questions below. Specifically this indicator relates to</strong>:</p><ol><li>How satisfied are you with working conditions in your main paid job?</li><li>Does your work affect your health?</li><li>Over the past 12 months how many days were you absent from work due to sick leave or health related leave?</li><li>Over the past 12 months, did you work when you were sick?</li><li>Do you think you will be able to do your current job or a similar one until you are 60 years old?</li></ol><p>Answer options:</p><ol><li>Very satisfied, satisfied, not very satisfied; Not at all satisfied</li><li>Yes, mainly positively; Yes, mainly negatively; No</li><li>[The respondent could insert a number of days]</li><li>Yes; no; I was not sick</li><li>Yes; No</li></ol><p>Responses are displayed to one <strong>LFS question</strong></p><ol><li><strong>Persons reporting a work-related health problem by sex, age and NACE Rev. 2 activity</strong></li></ol>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>EWCS</p><p><a href=\"https://www.eurofound.europa.eu/data/european-working-conditions-survey\">https://www.eurofound.europa.eu/data/european-working-conditions-survey</a></p><p><strong>Eurostat LFS</strong></p><p><strong><a href=\"http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=hsw_pb6b&amp;lang=en\">http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=hsw_pb6b&amp;lang=en</a></strong></p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2015 for EWCS and 2013 for LFS");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2015 and 05/06/2018 respectively");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The <strong>intended coverage</strong> is: 28 EU countries plus, Norway and Switzerland. All data for the coverage is available.</p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<ul><li>Sex&nbsp;: Total</li><li>Age&nbsp;: From 15 to 64 years</li><li>Unit of measure&nbsp;: Percentage</li><li>Economic activities: Total – All NACE Activities&nbsp;</li></ul>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "<p><strong>Specifically for this indicator:</strong></p><p>EWCS <br />Question 1: Calculated and displayed is the sum of the responses: ‘very satisfied’ and ‘satisfied’.<br />Question 2: Displayed the percentage of responses: ‘Yes, mainly negatively’.<br />Question 3: EUROFOUND generated from the responses three categories: ‘More than 15 days, 1 to fifteen days, none’. <br />Visualised is the percentage of responses of the category: More than 15 days. <br />Question 4: EUROFOUND differentiates only between ‘Yes’ and No’-responses. Displayed the percentage of “Yes” responses.<br />Question 5: Displayed the percentage of “Yes” responses</p><p><strong>LFS</strong><br /><strong>Displayed the percentage of positive “Yes”responses</strong></p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentages");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "All six responses in a box, country wise");
+INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
+
+SET @indicatorId = (SELECT id FROM indicator WHERE name="More than 15 days of absence");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="HEALTH_PERCEPTION" AND t.name="osha_dvt_barometer");
+SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
+SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
+SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p>This gives the percentages of positive responses to five questions in the Eurofound European Working Conditions Survey (EWCS, 2015) and one response to a question in the Eurostat Labour Force Survey (LFS).<br /> The percentages of the responses to these questions are displayed in a box for each country. <strong>Specifically this indicator relates to</strong>:</p><ul><li>Satisfaction with working conditions</li><li>Negative effect on health</li><li>Health problems in the last 12 months</li><li><strong>More than 15 days of absence</strong></li><li>Being sick at work</li><li>Likelihood of staying in current job until 60 years old</li></ul><p>Fifteen countries can be displayed at the same time. The EU average is always displayed on top.</p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p><strong>European Working Conditions Survey (EWCS, 2015)</strong></p><p>Eurostat (LFS SURVEY 2013)</p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to five <strong>EWCS Questions below. Specifically this indicator relates to</strong>:</p><ol><li>How satisfied are you with working conditions in your main paid job?</li><li>Does your work affect your health?</li><li><strong>Over the past 12 months how many days were you absent from work due to sick leave or health related leave?</strong></li><li>Over the past 12 months, did you work when you were sick?</li><li>Do you think you will be able to do your current job or a similar one until you are 60 years old?</li></ol><p>Answer options:</p><ol><li>Very satisfied, satisfied, not very satisfied; Not at all satisfied</li><li>Yes, mainly positively; Yes, mainly negatively; No</li><li><strong>[The respondent could insert a number of days]</strong></li><li>Yes; no; I was not sick</li><li>Yes; No</li></ol><p>Responses are displayed to one <strong>LFS question</strong></p><ol><li>Persons reporting a work-related health problem by sex, age and NACE Rev. 2 activity</li></ol>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p><strong>EWCS</strong></p><p><strong><a href=\"https://www.eurofound.europa.eu/data/european-working-conditions-survey\">https://www.eurofound.europa.eu/data/european-working-conditions-survey</a></strong></p><p>Eurostat LFS</p><p><a href=\"http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=hsw_pb6b&amp;lang=en\">http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=hsw_pb6b&amp;lang=en</a></p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2015 for EWCS and 2013 for LFS");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2015 and 05/06/2018 respectively");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The <strong>intended coverage</strong> is: 28 EU countries plus, Norway and Switzerland. All data for the coverage is available.</p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<ul><li>Activity sector: <strong>All</strong></li></ul>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "<p><strong>Specifically for this indicator:</strong></p><p><strong>EWCS</strong> <br />Question 1: Calculated and displayed is the sum of the responses: ‘very satisfied’ and ‘satisfied’.<br />Question 2: Displayed the percentage of responses: ‘Yes, mainly negatively’.<br /><strong>Question 3: EUROFOUND generated from the responses three categories: ‘More than 15 days, 1 to fifteen days, none’. </strong><br /><strong>Visualised is the percentage of responses of the category: More than 15 days.</strong> <br />Question 4: EUROFOUND differentiates only between ‘Yes’ and No’-responses. Displayed the percentage of “Yes” responses.<br />Question 5: Displayed the percentage of “Yes” responses</p><p>LFS<br />Displayed the percentage of positive “Yes”responses</p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentages");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "All six responses in a box, country wise");
+INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
+
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Sick at working");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="HEALTH_PERCEPTION" AND t.name="osha_dvt_barometer");
+SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
+SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
+SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p>This gives the percentages of positive responses to five questions in the Eurofound European Working Conditions Survey (EWCS, 2015) and one response to a question in the Eurostat Labour Force Survey (LFS).<br /> The percentages of the responses to these questions are displayed in a box for each country. <strong>Specifically this indicator relates to</strong>:</p><ul><li>Satisfaction with working conditions</li><li>Negative effect on health</li><li>Health problems in the last 12 months</li><li>More than 15 days of absence</li><li><strong>Being sick at work</strong></li><li>Likelihood of staying in current job until 60 years old</li></ul><p>Fifteen countries can be displayed at the same time. The EU average is always displayed on top.</p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p><strong>European Working Conditions Survey (EWCS, 2015)</strong></p><p>Eurostat (LFS SURVEY 2013)</p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to five <strong>EWCS Questions below. Specifically this indicator relates to</strong>:</p><ol><li>How satisfied are you with working conditions in your main paid job?</li><li>Does your work affect your health?</li><li>Over the past 12 months how many days were you absent from work due to sick leave or health related leave?</li><li><strong>Over the past 12 months, did you work when you were sick?</strong></li><li>Do you think you will be able to do your current job or a similar one until you are 60 years old?</li></ol><p>Answer options:</p><ol><li>Very satisfied, satisfied, not very satisfied; Not at all satisfied</li><li>Yes, mainly positively; Yes, mainly negatively; No</li><li>[The respondent could insert a number of days]</li><li><strong>Yes; no; I was not sick</strong></li><li>Yes; No</li></ol><p>Responses are displayed to one <strong>LFS question</strong></p><ol><li>Persons reporting a work-related health problem by sex, age and NACE Rev. 2 activity</li></ol>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p><strong>EWCS</strong></p><p><strong><a href=\"https://www.eurofound.europa.eu/data/european-working-conditions-survey\">https://www.eurofound.europa.eu/data/european-working-conditions-survey</a></strong></p><p>Eurostat LFS</p><p><a href=\"http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=hsw_pb6b&amp;lang=en\">http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=hsw_pb6b&amp;lang=en</a></p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2015 for EWCS and 2013 for LFS");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2015 and 05/06/2018 respectively");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The <strong>intended coverage</strong> is: 28 EU countries plus, Norway and Switzerland. All data for the coverage is available.</p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<ul><li>Activity sector: <strong>All</strong></li></ul>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "<p><strong>Specifically for this indicator:</strong></p><p><strong>EWCS</strong> <br />Question 1: Calculated and displayed is the sum of the responses: ‘very satisfied’ and ‘satisfied’.<br />Question 2: Displayed the percentage of responses: ‘Yes, mainly negatively’.<br />Question 3: EUROFOUND generated from the responses three categories: ‘More than 15 days, 1 to fifteen days, none’. <br />Visualised is the percentage of responses of the category: More than 15 days. <br /><strong>Question 4: EUROFOUND differentiates only between ‘Yes’ and No’-responses. Displayed the percentage of “Yes” responses.</strong><br />Question 5: Displayed the percentage of “Yes” responses</p><p>LFS<br />Displayed the percentage of positive “Yes”responses</p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentages");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "All six responses in a box, country wise");
+INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
+
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Be able to do current job until 60 years old");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="HEALTH_PERCEPTION" AND t.name="osha_dvt_barometer");
+SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
+SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
+SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p>This gives the percentages of positive responses to five questions in the Eurofound European Working Conditions Survey (EWCS, 2015) and one response to a question in the Eurostat Labour Force Survey (LFS).<br /> The percentages of the responses to these questions are displayed in a box for each country. <strong>Specifically this indicator relates to</strong>:</p><ul><li>Satisfaction with working conditions</li><li>Negative effect on health</li><li>Health problems in the last 12 months</li><li>More than 15 days of absence</li><li>Being sick at work</li><li><strong>Likelihood of staying in current job until 60 years old</strong></li></ul><p>Fifteen countries can be displayed at the same time. The EU average is always displayed on top.</p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p><strong>European Working Conditions Survey (EWCS, 2015)</strong></p><p>Eurostat (LFS SURVEY 2013)</p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to five <strong>EWCS Questions below. Specifically this indicator relates to</strong>:</p><ol><li>How satisfied are you with working conditions in your main paid job?</li><li>Does your work affect your health?</li><li>Over the past 12 months how many days were you absent from work due to sick leave or health related leave?</li><li>Over the past 12 months, did you work when you were sick?</li><li><strong>Do you think you will be able to do your current job or a similar one until you are 60 years old?</strong></li></ol><p>Answer options:</p><ol><li>Very satisfied, satisfied, not very satisfied; Not at all satisfied</li><li>Yes, mainly positively; Yes, mainly negatively; No</li><li>[The respondent could insert a number of days]</li><li>Yes; no; I was not sick</li><li><strong>Yes; No</strong></li></ol><p>Responses are displayed to one <strong>LFS question</strong></p><ol><li>Persons reporting a work-related health problem by sex, age and NACE Rev. 2 activity</li></ol>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p><strong>EWCS</strong></p><p><strong><a href=\"https://www.eurofound.europa.eu/data/european-working-conditions-survey\">https://www.eurofound.europa.eu/data/european-working-conditions-survey</a></strong></p><p>Eurostat LFS</p><p><a href=\"http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=hsw_pb6b&amp;lang=en\">http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=hsw_pb6b&amp;lang=en</a></p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2015 for EWCS and 2013 for LFS");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2015 and 05/06/2018 respectively");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The <strong>intended coverage</strong> is: 28 EU countries plus, Norway and Switzerland. All data for the coverage is available.</p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<ul><li>Activity sector: <strong>All</strong></li></ul>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "<p><strong>Specifically for this indicator:</strong></p><p><strong>EWCS</strong> <br />Question 1: Calculated and displayed is the sum of the responses: ‘very satisfied’ and ‘satisfied’.<br />Question 2: Displayed the percentage of responses: ‘Yes, mainly negatively’.<br />Question 3: EUROFOUND generated from the responses three categories: ‘More than 15 days, 1 to fifteen days, none’. <br />Visualised is the percentage of responses of the category: More than 15 days. <br />Question 4: EUROFOUND differentiates only between ‘Yes’ and No’-responses. Displayed the percentage of “Yes” responses.<br /><strong>Question 5: Displayed the percentage of “Yes” responses</strong></p><p>LFS<br />Displayed the percentage of positive “Yes”responses</p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentages");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "All six responses in a box, country wise");
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Q160");
@@ -10816,7 +9840,18 @@ SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p>The percentages of positive responses to six questions in ESENER and positive responses to two questions in the EWCS are displayed in bar charts. Each bar chart shows the percentages of the responses for each EU Member State, the average for the EU-28 and the responses for Iceland, Switzerland and Norway.</p><p>;</p><p>The questions cover the aspects below. <strong>Specifically this indicator relates to</strong>:</p><ul><li><strong>Sickness absence analysed</strong></li><li>Health and safety discussed</li><li>Action plan to prevent stress</li><li>Procedure against bullying</li><li>Procedures to deal with threats</li><li>Measure in the past 3 years</li><li>Use of personal protective equipment</li><li>Information about risks</li></ul>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p>The percentages of positive responses to six questions in ESENER and positive responses to two questions in the EWCS are displayed in bar charts. Each bar chart shows the percentages of the responses for each EU Member State, the average for the EU-28 and the responses for Iceland, Switzerland and Norway.</p>
+<p>The questions cover the aspects below. <strong>Specifically this indicator relates to</strong>:</p>
+<ul>
+<li><strong>Sickness absence analysed</strong></li>
+<li>Health and safety discussed</li>
+<li>Action plan to prevent stress</li>
+<li>Procedure against bullying</li>
+<li>Procedures to deal with threats</li>
+<li>Measure in the past 3 years</li>
+<li>Use of personal protective equipment</li>
+<li>Information about risks</li>
+</ul>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p><strong>ESENER 2014 Survey</strong> <br />European Working Conditions Survey (EWCS, 2015)</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -10832,12 +9867,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<ul><li>Activity sector: <strong>All</strong></li></ul>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "For ESENER 2014 Survey questions:
-Question 1, 3, 4, 5 and 6: Displayed the percentage of “Yes” responses.
-Question 2: Displayed the percentage of all three possible responses
-For EWCS questions:
-Question 1: Displayed the percentage of all possible responses
-Question 2: Displayed the percentage of the sum of the positive answers (“very well informed” and “well informed” and the percentage of the sum of the two negative answers (“not very well informed” and “not at all well informed”).");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "<p><strong>For ESENER 2014 Survey questions:</strong><br /><strong>Question 1, 3, 4, 5 and 6: Displayed the percentage of “Yes” responses.</strong><br />Question 2: Displayed the percentage of all three possible responses<br />For EWCS questions:<br />Question 1: Displayed the percentage of all possible responses<br />Question 2: Displayed the percentage of the sum of the positive answers (“very well informed” and “well informed” and the percentage of the sum of the two negative answers (“not very well informed” and “not at all well informed”).</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentages");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -10852,7 +9882,18 @@ SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p>The percentages of positive responses to six questions in ESENER and positive responses to two questions in the EWCS are displayed in bar charts. Each bar chart shows the percentages of the responses for each EU Member State, the average for the EU-28 and the responses for Iceland, Switzerland and Norway.</p><p>;</p><p>The questions cover the aspects below. <strong>Specifically this indicator relates to</strong>:</p><ul><li>Sickness absence analysed</li><li><strong>Health and safety discussed</strong></li><li>Action plan to prevent stress</li><li>Procedure against bullying</li><li>Procedures to deal with threats</li><li>Measure in the past 3 years</li><li>Use of personal protective equipment</li><li>Information about risks</li></ul>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p>The percentages of positive responses to six questions in ESENER and positive responses to two questions in the EWCS are displayed in bar charts. Each bar chart shows the percentages of the responses for each EU Member State, the average for the EU-28 and the responses for Iceland, Switzerland and Norway.</p>
+<p>The questions cover the aspects below. <strong>Specifically this indicator relates to</strong>:</p>
+<ul>
+<li>Sickness absence analysed</li>
+<li><strong>Health and safety discussed</strong></li>
+<li>Action plan to prevent stress</li>
+<li>Procedure against bullying</li>
+<li>Procedures to deal with threats</li>
+<li>Measure in the past 3 years</li>
+<li>Use of personal protective equipment</li>
+<li>Information about risks</li>
+</ul>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p><strong>ESENER 2014 Survey</strong> <br />European Working Conditions Survey (EWCS, 2015)</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -10868,12 +9909,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<ul><li>Activity sector: <strong>All</strong></li></ul>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "For ESENER 2014 Survey questions:
-Question 1, 3, 4, 5 and 6: Displayed the percentage of “Yes” responses.
-Question 2: Displayed the percentage of all three possible responses
-For EWCS questions:
-Question 1: Displayed the percentage of all possible responses
-Question 2: Displayed the percentage of the sum of the positive answers (“very well informed” and “well informed” and the percentage of the sum of the two negative answers (“not very well informed” and “not at all well informed”).");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "<p><strong>For ESENER 2014 Survey questions:</strong><br />Question 1, 3, 4, 5 and 6: Displayed the percentage of “Yes” responses.<br /><strong>Question 2: Displayed the percentage of all three possible responses</strong><br />For EWCS questions:<br />Question 1: Displayed the percentage of all possible responses<br />Question 2: Displayed the percentage of the sum of the positive answers (“very well informed” and “well informed” and the percentage of the sum of the two negative answers (“not very well informed” and “not at all well informed”).</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentages");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -10888,7 +9924,18 @@ SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p>The percentages of positive responses to six questions in ESENER and positive responses to two questions in the EWCS are displayed in bar charts. Each bar chart shows the percentages of the responses for each EU Member State, the average for the EU-28 and the responses for Iceland, Switzerland and Norway.</p><p>;</p><p>The questions cover the aspects below. <strong>Specifically this indicator relates to</strong>:</p><ul><li>Sickness absence analysed</li><li>Health and safety discussed</li><li><strong>Action plan to prevent stress</strong></li><li>Procedure against bullying</li><li>Procedures to deal with threats</li><li>Measure in the past 3 years</li><li>Use of personal protective equipment</li><li>Information about risks</li></ul>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p>The percentages of positive responses to six questions in ESENER and positive responses to two questions in the EWCS are displayed in bar charts. Each bar chart shows the percentages of the responses for each EU Member State, the average for the EU-28 and the responses for Iceland, Switzerland and Norway.</p>
+<p>The questions cover the aspects below. <strong>Specifically this indicator relates to</strong>:</p>
+<ul>
+<li>Sickness absence analysed</li>
+<li>Health and safety discussed</li>
+<li><strong>Action plan to prevent stress</strong></li>
+<li>Procedure against bullying</li>
+<li>Procedures to deal with threats</li>
+<li>Measure in the past 3 years</li>
+<li>Use of personal protective equipment</li>
+<li>Information about risks</li>
+</ul>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p><strong>ESENER 2014 Survey</strong> <br />European Working Conditions Survey (EWCS, 2015)</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -10904,12 +9951,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<ul><li>Activity sector: <strong>All</strong></li></ul>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "For ESENER 2014 Survey questions:
-Question 1, 3, 4, 5 and 6: Displayed the percentage of “Yes” responses.
-Question 2: Displayed the percentage of all three possible responses
-For EWCS questions:
-Question 1: Displayed the percentage of all possible responses
-Question 2: Displayed the percentage of the sum of the positive answers (“very well informed” and “well informed” and the percentage of the sum of the two negative answers (“not very well informed” and “not at all well informed”).");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "<p><strong>For ESENER 2014 Survey questions:</strong><br /><strong>Question 1, 3, 4, 5 and 6: Displayed the percentage of “Yes” responses.</strong><br />Question 2: Displayed the percentage of all three possible responses<br />For EWCS questions:<br />Question 1: Displayed the percentage of all possible responses<br />Question 2: Displayed the percentage of the sum of the positive answers (“very well informed” and “well informed” and the percentage of the sum of the two negative answers (“not very well informed” and “not at all well informed”).</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentages");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -10924,7 +9966,18 @@ SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p>The percentages of positive responses to six questions in ESENER and positive responses to two questions in the EWCS are displayed in bar charts. Each bar chart shows the percentages of the responses for each EU Member State, the average for the EU-28 and the responses for Iceland, Switzerland and Norway.</p><p>;</p><p>The questions cover the aspects below. <strong>Specifically this indicator relates to</strong>:</p><ul><li>Sickness absence analysed</li><li>Health and safety discussed</li><li>Action plan to prevent stress</li><li><strong>Procedure against bullying</strong></li><li>Procedures to deal with threats</li><li>Measure in the past 3 years</li><li>Use of personal protective equipment</li><li>Information about risks</li></ul>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p>The percentages of positive responses to six questions in ESENER and positive responses to two questions in the EWCS are displayed in bar charts. Each bar chart shows the percentages of the responses for each EU Member State, the average for the EU-28 and the responses for Iceland, Switzerland and Norway.</p>
+<p>The questions cover the aspects below. <strong>Specifically this indicator relates to</strong>:</p>
+<ul>
+<li>Sickness absence analysed</li>
+<li>Health and safety discussed</li>
+<li>Action plan to prevent stress</li>
+<li><strong>Procedure against bullying</strong></li>
+<li>Procedures to deal with threats</li>
+<li>Measure in the past 3 years</li>
+<li>Use of personal protective equipment</li>
+<li>Information about risks</li>
+</ul>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p><strong>ESENER 2014 Survey</strong> <br />European Working Conditions Survey (EWCS, 2015)</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -10940,12 +9993,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<ul><li>Activity sector: <strong>All</strong></li></ul>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "For ESENER 2014 Survey questions:
-Question 1, 3, 4, 5 and 6: Displayed the percentage of “Yes” responses.
-Question 2: Displayed the percentage of all three possible responses
-For EWCS questions:
-Question 1: Displayed the percentage of all possible responses
-Question 2: Displayed the percentage of the sum of the positive answers (“very well informed” and “well informed” and the percentage of the sum of the two negative answers (“not very well informed” and “not at all well informed”).");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "<p><strong>For ESENER 2014 Survey questions:</strong><br /><strong>Question 1, 3, 4, 5 and 6: Displayed the percentage of “Yes” responses.</strong><br />Question 2: Displayed the percentage of all three possible responses<br />For EWCS questions:<br />Question 1: Displayed the percentage of all possible responses<br />Question 2: Displayed the percentage of the sum of the positive answers (“very well informed” and “well informed” and the percentage of the sum of the two negative answers (“not very well informed” and “not at all well informed”).</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentages");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -10960,7 +10008,18 @@ SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p>The percentages of positive responses to six questions in ESENER and positive responses to two questions in the EWCS are displayed in bar charts. Each bar chart shows the percentages of the responses for each EU Member State, the average for the EU-28 and the responses for Iceland, Switzerland and Norway.</p><p>;</p><p>The questions cover the aspects below. <strong>Specifically this indicator relates to</strong>:</p><ul><li>Sickness absence analysed</li><li>Health and safety discussed</li><li>Action plan to prevent stress</li><li>Procedure against bullying</li><li><strong>Procedures to deal with threats</strong></li><li>Measure in the past 3 years</li><li>Use of personal protective equipment</li><li>Information about risks</li></ul>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p>The percentages of positive responses to six questions in ESENER and positive responses to two questions in the EWCS are displayed in bar charts. Each bar chart shows the percentages of the responses for each EU Member State, the average for the EU-28 and the responses for Iceland, Switzerland and Norway.</p>
+<p>The questions cover the aspects below. <strong>Specifically this indicator relates to</strong>:</p>
+<ul>
+<li>Sickness absence analysed</li>
+<li>Health and safety discussed</li>
+<li>Action plan to prevent stress</li>
+<li>Procedure against bullying</li>
+<li><strong>Procedures to deal with threats</strong></li>
+<li>Measure in the past 3 years</li>
+<li>Use of personal protective equipment</li>
+<li>Information about risks</li>
+</ul>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p><strong>ESENER 2014 Survey</strong> <br />European Working Conditions Survey (EWCS, 2015)</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -10976,12 +10035,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<ul><li>Activity sector: <strong>All</strong></li></ul>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "For ESENER 2014 Survey questions:
-Question 1, 3, 4, 5 and 6: Displayed the percentage of “Yes” responses.
-Question 2: Displayed the percentage of all three possible responses
-For EWCS questions:
-Question 1: Displayed the percentage of all possible responses
-Question 2: Displayed the percentage of the sum of the positive answers (“very well informed” and “well informed” and the percentage of the sum of the two negative answers (“not very well informed” and “not at all well informed”).");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "<p><strong>For ESENER 2014 Survey questions:</strong><br /><strong>Question 1, 3, 4, 5 and 6: Displayed the percentage of “Yes” responses.</strong><br />Question 2: Displayed the percentage of all three possible responses<br />For EWCS questions:<br />Question 1: Displayed the percentage of all possible responses<br />Question 2: Displayed the percentage of the sum of the positive answers (“very well informed” and “well informed” and the percentage of the sum of the two negative answers (“not very well informed” and “not at all well informed”).</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentages");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -10996,7 +10050,18 @@ SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p>The percentages of positive responses to six questions in ESENER and positive responses to two questions in the EWCS are displayed in bar charts. Each bar chart shows the percentages of the responses for each EU Member State, the average for the EU-28 and the responses for Iceland, Switzerland and Norway.</p><p>;</p><p>The questions cover the aspects below. <strong>Specifically this indicator relates to</strong>:</p><ul><li>Sickness absence analysed</li><li>Health and safety discussed</li><li>Action plan to prevent stress</li><li>Procedure against bullying</li><li>Procedures to deal with threats</li><li><strong>Measure in the past 3 years</strong></li><li>Use of personal protective equipment</li><li>Information about risks</li></ul>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p>The percentages of positive responses to six questions in ESENER and positive responses to two questions in the EWCS are displayed in bar charts. Each bar chart shows the percentages of the responses for each EU Member State, the average for the EU-28 and the responses for Iceland, Switzerland and Norway.</p>
+<p>The questions cover the aspects below. <strong>Specifically this indicator relates to</strong>:</p>
+<ul>
+<li>Sickness absence analysed</li>
+<li>Health and safety discussed</li>
+<li>Action plan to prevent stress</li>
+<li>Procedure against bullying</li>
+<li>Procedures to deal with threats</li>
+<li><strong>Measure in the past 3 years</strong></li>
+<li>Use of personal protective equipment</li>
+<li>Information about risks</li>
+</ul>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p><strong>ESENER 2014 Survey</strong> <br />European Working Conditions Survey (EWCS, 2015)</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -11012,109 +10077,157 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<ul><li>Activity sector: <strong>All</strong></li></ul>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "For ESENER 2014 Survey questions:
-Question 1, 3, 4, 5 and 6: Displayed the percentage of “Yes” responses.
-Question 2: Displayed the percentage of all three possible responses
-For EWCS questions:
-Question 1: Displayed the percentage of all possible responses
-Question 2: Displayed the percentage of the sum of the positive answers (“very well informed” and “well informed” and the percentage of the sum of the two negative answers (“not very well informed” and “not at all well informed”).");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "<p><strong>For ESENER 2014 Survey questions:</strong><br /><strong>Question 1, 3, 4, 5 and 6: Displayed the percentage of “Yes” responses.</strong><br />Question 2: Displayed the percentage of all three possible responses<br />For EWCS questions:<br />Question 1: Displayed the percentage of all possible responses<br />Question 2: Displayed the percentage of the sum of the positive answers (“very well informed” and “well informed” and the percentage of the sum of the two negative answers (“not very well informed” and “not at all well informed”).</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentages");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "Bar chart, all countries plus EU 28 Average");
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
 
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Q200_1");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer");
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Use of personal protective equipment");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="OSH_CULTURE_HEALTH_AWARENESS" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="ESENER" AND date_from="2014-01-01");
+SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p>The percentages of responses to five questions on physical risks in the EWCS and three questions on physical risks in ESENER 2014 are displayed in a spider diagram. It is possible to compare two selected countries; the EU average is always displayed. The questions cover the aspects below. <strong>Specifically this indicator relates to:</strong></p><ul><li><strong>Work involving tiring or painful positions</strong></li><li><strong>Work involving sitting</strong></li><li>Work involving carrying or moving heavy loads</li><li>Work involving repetitive hand or arm movements</li><li>Work involving lifting or moving people</li></ul>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p>The percentages of positive responses to six questions in ESENER and positive responses to two questions in the EWCS are displayed in bar charts. Each bar chart shows the percentages of the responses for each EU Member State, the average for the EU-28 and the responses for Iceland, Switzerland and Norway.</p>
+<p>The questions cover the aspects below. <strong>Specifically this indicator relates to</strong>:</p>
+<ul>
+<li>Sickness absence analysed</li>
+<li>Health and safety discussed</li>
+<li>Action plan to prevent stress</li>
+<li>Procedure against bullying</li>
+<li>Procedures to deal with threats</li>
+<li>Measure in the past 3 years</li>
+<li><strong>Use of personal protective equipment</strong></li>
+<li>Information about risks</li>
+</ul>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p><strong>ESENER 2014 Survey &nbsp;</strong></p><p>European Working Conditions Survey (EWCS, 2015)&nbsp;</p>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p>ESENER 2014 Survey <br /><strong>European Working Conditions Survey (EWCS, 2015)</strong></p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to the ESENER 2014 Survey Questions below.<strong>Specifically this indicator relates to</strong>:</p><p><strong>Depending on the type of work, there are different types of risks and hazards. Please tell me for each of the following risk factors whether it is present or not in your establishment, regardless of whether it is currently under control and regardless of the number of employees it affects:</strong></p><p><strong>“Tiring or painful positions, including sitting for long periods”</strong></p><p>“Lifting or moving people or heavy loads”</p><p>“Repetitive hand or arm movements”</p><p>&nbsp;Answer options:&nbsp;</p><ol><li>Yes</li><li>No</li></ol><p>&nbsp;Responses are displayed to the EWCS Questions below.<strong>&nbsp;</strong></p><p>“Does your work involve tiring or painful positions?”</p><p>“Does your work involve sitting?”</p><p>“Does your work involve Carrying or moving heavy loads?”</p><p>“Does your work involve Repetitive hand or arm movements?”</p><p>“Does your work involve lifting or moving people?”</p><p>&nbsp;Answer options:</p><ol><li>At least ¼ of the time</li><li>Less than ¼ of the time</li></ol>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to six ESENER 2014 Survey Questions below. <strong>Specifically this indicator relates to:</strong></p><ol><li>Are sickness absences routinely analysed with a view to improving the working conditions?</li><li>How often is health and safety discussed between employee representatives and the management? Do such discussions take place regularly, only when particular health and safety issues arise or not at all?</li><li>Does your establishment have an action plan to prevent work-related stress?</li><li>Is there a procedure in place to deal with possible cases of bullying or harassment?</li><li>Is there a procedure to deal with possible cases of threats, abuse or assaults by clients, patients pupils or members in public?</li><li>In the last 3 years, has your establishment used any of the following measures to prevent psychosocial risks? Reorganisation of work in order to reduce job demands and work pressure.</li></ol><p>Answer options:</p><ol><li>Yes; No</li><li>Yes; Only when particular issues arise; No</li><li>Yes; No</li><li>Yes; No</li><li>Yes; No</li><li>Yes; No</li></ol><p>Responses are displayed to two EWCS Questions below. <br /><br /></p><ol><li><strong>Does your job ever require that you wear personal protective equipment and do you use it?</strong></li><li>How well informed are you about health and safety risks related to your job?</li></ol><p>Answer options:</p><ol><li><strong>No, not required; Yes, and I always use it; Yes, but I don’t always use it</strong></li><li>Very well informed; Well informed; Not very well informed; Not at all well informed</li></ol>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p><strong>ESENER:</strong></p><p><strong><a href=\"https://osha.europa.eu/en/surveys-and-statistics-osh/esener\">https://osha.europa.eu/en/surveys-and-statistics-osh/esener</a></strong></p><p>EWCS:</p><p><a href=\"https://www.eurofound.europa.eu/data/european-working-conditions-survey\">https://www.eurofound.europa.eu/data/european-working-conditions-survey</a></p>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>ESENER:</p><p><a href=\"https://osha.europa.eu/en/surveys-and-statistics-osh/esener\" target=\"_blank\">https://osha.europa.eu/en/surveys-and-statistics-osh/esener&nbsp;</a></p><p><strong>EWCS:</strong></p><p><strong><a href=\"https://www.eurofound.europa.eu/data/european-working-conditions-survey\" target=\"_blank\">https://www.eurofound.europa.eu/data/european-working-conditions-survey</a></strong></p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2014 for ESENER 2014 Survey and 2015 for EWCS");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2014 for ESENER 2014 Survey and 2015 for EWCS");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p><strong>The intended coverage for ESENER 2014 Survey is: 28 EU countries plus, Iceland, Norway and Switzerland. All data for the coverage is available.</strong></p><p>The intended coverage for EWCS is: 28 EU countries plus, Norway and Switzerland. All data for the coverage is available.</p>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The intended coverage for ESENER 2014 Survey is: 28 EU countries plus, Iceland, Norway and Switzerland. All data for the coverage is available.<br /><strong>The intended coverage for EWCS is: 28 EU countries plus, Norway and Switzerland. All data for the coverage is available.</strong></p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<ul><li>Activity sector: <strong>All</strong></li></ul>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "No");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "<p>For ESENER 2014 Survey questions:<br />Question 1, 3, 4, 5 and 6: Displayed the percentage of “Yes” responses.<br />Question 2: Displayed the percentage of all three possible responses<br /><strong>For EWCS questions:</strong><br /><strong>Question 1: Displayed the percentage of all possible responses</strong><br />Question 2: Displayed the percentage of the sum of the positive answers (“very well informed” and “well informed” and the percentage of the sum of the two negative answers (“not very well informed” and “not at all well informed”).</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentages");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "<p><strong>Spider diagram, all countries plus EU 28 Average, percentage for answers ‘Yes’ in ESENER</strong></p><p>Spider diagram, all countries plus EU 28 Average, percentage for answers ‘At least ¼ of the time’ in EWCS</p>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "Bar chart, all countries plus EU 28 Average");
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
 
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Q200_2");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer");
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Information about risks");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="OSH_CULTURE_HEALTH_AWARENESS" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="ESENER" AND date_from="2014-01-01");
+SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p>The percentages of responses to five questions on physical risks in the EWCS and three questions on physical risks in ESENER 2014 are displayed in a spider diagram. It is possible to compare two selected countries; the EU average is always displayed. The questions cover the aspects below. <strong>Specifically this indicator relates to:</strong></p><ul><li>Work involving tiring or painful positions</li><li>Work involving sitting</li><li><strong>Work involving carrying or moving heavy loads</strong></li><li>Work involving repetitive hand or arm movements</li><li><strong>Work involving lifting or moving people</strong></li></ul>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p>The percentages of positive responses to six questions in ESENER and positive responses to two questions in the EWCS are displayed in bar charts. Each bar chart shows the percentages of the responses for each EU Member State, the average for the EU-28 and the responses for Iceland, Switzerland and Norway.</p>
+<p>The questions cover the aspects below. <strong>Specifically this indicator relates to</strong>:</p>
+<ul>
+<li>Sickness absence analysed</li>
+<li>Health and safety discussed</li>
+<li>Action plan to prevent stress</li>
+<li>Procedure against bullying</li>
+<li>Procedures to deal with threats</li>
+<li>Measure in the past 3 years</li>
+<li>Use of personal protective equipment</li>
+<li><strong>Information about risks</strong></li>
+</ul>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p><strong>ESENER 2014 Survey &nbsp;</strong></p><p>European Working Conditions Survey (EWCS, 2015)&nbsp;</p>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p>ESENER 2014 Survey <br /><strong>European Working Conditions Survey (EWCS, 2015)</strong></p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to the ESENER 2014 Survey Questions below.<strong>Specifically this indicator relates to</strong>:</p><p><strong>Depending on the type of work, there are different types of risks and hazards. Please tell me for each of the following risk factors whether it is present or not in your establishment, regardless of whether it is currently under control and regardless of the number of employees it affects:</strong></p><p>“Tiring or painful positions, including sitting for long periods”</p><p><strong>“Lifting or moving people or heavy loads”</strong></p><p>“Repetitive hand or arm movements”</p><p>&nbsp;Answer options:&nbsp;</p><ol><li>Yes</li><li>No</li></ol><p>&nbsp;Responses are displayed to the EWCS Questions below.<strong>&nbsp;</strong></p><p>“Does your work involve tiring or painful positions?”</p><p>“Does your work involve sitting?”</p><p>“Does your work involve Carrying or moving heavy loads?”</p><p>“Does your work involve Repetitive hand or arm movements?”</p><p>“Does your work involve lifting or moving people?”</p><p>&nbsp;Answer options:</p><ol><li>At least ¼ of the time</li><li>Less than ¼ of the time</li></ol>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to six ESENER 2014 Survey Questions below. <strong>Specifically this indicator relates to:</strong></p><ol><li>Are sickness absences routinely analysed with a view to improving the working conditions?</li><li>How often is health and safety discussed between employee representatives and the management? Do such discussions take place regularly, only when particular health and safety issues arise or not at all?</li><li>Does your establishment have an action plan to prevent work-related stress?</li><li>Is there a procedure in place to deal with possible cases of bullying or harassment?</li><li>Is there a procedure to deal with possible cases of threats, abuse or assaults by clients, patients pupils or members in public?</li><li>In the last 3 years, has your establishment used any of the following measures to prevent psychosocial risks? Reorganisation of work in order to reduce job demands and work pressure.</li></ol><p>Answer options:</p><ol><li>Yes; No</li><li>Yes; Only when particular issues arise; No</li><li>Yes; No</li><li>Yes; No</li><li>Yes; No</li><li>Yes; No</li></ol><p>Responses are displayed to two EWCS Questions below. <br /><br /></p><ol><li>Does your job ever require that you wear personal protective equipment and do you use it?</li><li><strong>How well informed are you about health and safety risks related to your job?</strong></li></ol><p>Answer options:</p><ol><li>No, not required; Yes, and I always use it; Yes, but I don’t always use it</li><li><strong>Very well informed; Well informed; Not very well informed; Not at all well informed</strong></li></ol>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p><strong>ESENER:</strong></p><p><strong><a href=\"https://osha.europa.eu/en/surveys-and-statistics-osh/esener\">https://osha.europa.eu/en/surveys-and-statistics-osh/esener</a></strong></p><p>EWCS:</p><p><a href=\"https://www.eurofound.europa.eu/data/european-working-conditions-survey\">https://www.eurofound.europa.eu/data/european-working-conditions-survey</a></p>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>ESENER:</p><p><a href=\"https://osha.europa.eu/en/surveys-and-statistics-osh/esener\" target=\"_blank\">https://osha.europa.eu/en/surveys-and-statistics-osh/esener&nbsp;</a></p><p><strong>EWCS:</strong></p><p><strong><a href=\"https://www.eurofound.europa.eu/data/european-working-conditions-survey\" target=\"_blank\">https://www.eurofound.europa.eu/data/european-working-conditions-survey</a></strong></p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2014 for ESENER 2014 Survey and 2015 for EWCS");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2014 for ESENER 2014 Survey and 2015 for EWCS");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p><strong>The intended coverage for ESENER 2014 Survey is: 28 EU countries plus, Iceland, Norway and Switzerland. All data for the coverage is available.</strong></p><p>The intended coverage for EWCS is: 28 EU countries plus, Norway and Switzerland. All data for the coverage is available.</p>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The intended coverage for ESENER 2014 Survey is: 28 EU countries plus, Iceland, Norway and Switzerland. All data for the coverage is available.<br /><strong>The intended coverage for EWCS is: 28 EU countries plus, Norway and Switzerland. All data for the coverage is available.</strong></p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<ul><li>Activity sector: <strong>All</strong></li></ul>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "No");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "<p>For ESENER 2014 Survey questions:<br />Question 1, 3, 4, 5 and 6: Displayed the percentage of “Yes” responses.<br />Question 2: Displayed the percentage of all three possible responses<br /><strong>For EWCS questions:</strong><br />Question 1: Displayed the percentage of all possible responses<br /><strong>Question 2: Displayed the percentage of the sum of the positive answers (“very well informed” and “well informed” and the percentage of the sum of the two negative answers (“not very well informed” and “not at all well informed”).</strong></p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentages");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "<p><strong>Spider diagram, all countries plus EU 28 Average, percentage for answers ‘Yes’ in ESENER</strong></p><p>Spider diagram, all countries plus EU 28 Average, percentage for answers ‘At least ¼ of the time’ in EWCS</p>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "Bar chart, all countries plus EU 28 Average");
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
 
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Q200_4");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer");
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Job satisfaction");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="OVERALL_OPINION" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="ESENER" AND date_from="2014-01-01");
+SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p>The percentages of responses to five questions on physical risks in the EWCS and three questions on physical risks in ESENER 2014 are displayed in a spider diagram. It is possible to compare two selected countries; the EU average is always displayed. The questions cover the aspects below. <strong>Specifically this indicator relates to:</strong></p><ul><li>Work involving tiring or painful positions</li><li>Work involving sitting</li><li>Work involving carrying or moving heavy loads</li><li><strong>Work involving repetitive hand or arm movements</strong></li><li>Work involving lifting or moving people</li></ul>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "The percentages of responses to this question in the EWCS are displayed in a bar chart. Each bar has four different colours and shows the percentages of the specific responses for each EU Member State, the average for the EU-28 and the responses for Switzerland and Norway.");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p><strong>ESENER 2014 Survey &nbsp;</strong></p><p>European Working Conditions Survey (EWCS, 2015)&nbsp;</p>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "European Working Conditions Survey (EWCS, 2015)");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to the ESENER 2014 Survey Questions below.<strong>Specifically this indicator relates to</strong>:</p><p><strong>Depending on the type of work, there are different types of risks and hazards. Please tell me for each of the following risk factors whether it is present or not in your establishment, regardless of whether it is currently under control and regardless of the number of employees it affects:</strong></p><p>“Tiring or painful positions, including sitting for long periods”</p><p>“Lifting or moving people or heavy loads”</p><p><strong>“Repetitive hand or arm movements”</strong></p><p>&nbsp;Answer options:&nbsp;</p><ol><li>Yes</li><li>No</li></ol><p>&nbsp;Responses are displayed to the EWCS Questions below.<strong>&nbsp;</strong></p><p>“Does your work involve tiring or painful positions?”</p><p>“Does your work involve sitting?”</p><p>“Does your work involve Carrying or moving heavy loads?”</p><p>“Does your work involve Repetitive hand or arm movements?”</p><p>“Does your work involve lifting or moving people?”</p><p>&nbsp;Answer options:</p><ol><li>At least ¼ of the time</li><li>Less than ¼ of the time</li></ol>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to the EWCS Question below: <br />How satisfied are you with working conditions in your main paid job?<br />Answer options: </p><ol><li>Not at all satisfied</li><li>Not very satisfied</li><li>Satisfied</li><li>Very satisfied</li></ol>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p><strong>ESENER:</strong></p><p><strong><a href=\"https://osha.europa.eu/en/surveys-and-statistics-osh/esener\">https://osha.europa.eu/en/surveys-and-statistics-osh/esener</a></strong></p><p>EWCS:</p><p><a href=\"https://www.eurofound.europa.eu/data/european-working-conditions-survey\">https://www.eurofound.europa.eu/data/european-working-conditions-survey</a></p>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>EWCS:</p><p><a href=\"https://www.eurofound.europa.eu/data/european-working-conditions-survey\">https://www.eurofound.europa.eu/data/european-working-conditions-survey</a></p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2014 for ESENER 2014 Survey and 2015 for EWCS");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2015");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2014 for ESENER 2014 Survey and 2015 for EWCS");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2015");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p><strong>The intended coverage for ESENER 2014 Survey is: 28 EU countries plus, Iceland, Norway and Switzerland. All data for the coverage is available.</strong></p><p>The intended coverage for EWCS is: 28 EU countries plus, Norway and Switzerland. All data for the coverage is available.</p>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The <strong>intended coverage</strong> is: 28 EU countries plus Norway and Switzerland. All data for the coverage is available.</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<ul><li>Activity sector: <strong>All</strong></li></ul>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "No");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "null");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentages");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "<p><strong>Spider diagram, all countries plus EU 28 Average, percentage for answers ‘Yes’ in ESENER</strong></p><p>Spider diagram, all countries plus EU 28 Average, percentage for answers ‘At least ¼ of the time’ in EWCS</p>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "Bar chart, all countries plus EU 28 Average, all answers in different colours");
+INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
+
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Health at risk");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="OVERALL_OPINION" AND t.name="osha_dvt_barometer");
+SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
+SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
+SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "The percentages of responses to this question in the EWCS are displayed in a bar chart. It is possible to display three data sets. The EU average is always displayed and two countries can be selected. Moreover, the splits between five aggregations of sectors, between male and female responses and between three age groups are shown.");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "European Working Conditions Survey (EWCS, 2015)");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to the EWCS Question below: <br />Does your work affect your health?</p><p>Answer options: </p><ol><li>Yes</li><li>No</li></ol><p>Split of the five aggregated sector groups (total is always displayed): </p><ul><li>Agriculture and industry</li><li>Commerce and hospitality</li><li>Construction and transport</li><li>Financial and other services</li><li>Public administration, education and health</li></ul><p>Split between male and female (total is always displayed): </p><ul><li>Male</li><li>Female</li></ul><p>Split between the three age groups (total is always displayed): </p><ul><li>Under 35</li><li>35-49</li><li>50 and over</li></ul>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>EWCS:</p><p><a href=\"https://www.eurofound.europa.eu/data/european-working-conditions-survey\">https://www.eurofound.europa.eu/data/european-working-conditions-survey</a></p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2015");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2015");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The <strong>intended coverage</strong> is: 28 EU countries plus Norway and Switzerland. All data for the coverage is available.</p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<p>Activity Sector: <strong>All</strong><br />For the detailed visualisation of sectors: <strong>Five sector groups</strong><br />For the detailed visualisation of sex groups: <strong>Two sex groups</strong><br />For the detailed visualisation of age groups: <strong>Three age groups</strong></p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "null");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentages");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "<p>Bar chart, all countries plus EU 28EU 28 Average, &ldquo;Yes&rdquo; answers, split selector</p>");
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Q201_1");
@@ -11141,7 +10254,38 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<ul><li>Activity sector: <strong>All</strong></li></ul>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "No");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "null");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentages");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "Bar chart, all countries plus EU 28 Average, percentages of all answers");
+INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
+
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Time pressure - Eurofound EWCS Data");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="MENTAL_RISKS" AND t.name="osha_dvt_barometer");
+SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
+SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
+SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "The percentages of responses to this question in ESENER 2014 and the EWCS are displayed in a bar chart. Each bar has different colours and shows the percentages of the specific responses for each EU Member State, the average for the EU-28 and the responses for Iceland, Switzerland and Norway.");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p>ESENER 2014 Survey &nbsp;</p><p><strong>European Working Conditions Survey (EWCS, 2015)&nbsp;</strong></p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to the ESENER 2014 Survey Question below:</p><p>“Please tell me for each of the following risks whether or not it is present in the establishment? Time pressure”</p><p>Answer options:&nbsp;</p><ol><li>Yes</li><li>No</li></ol><p><strong>Responses are displayed to the EWCS Question below:</strong><br /> “Does your job involve working to tight deadlines?<br /> Answer options: </p><ol><li>(Almost) all of the time</li><li>Between ¼ and ¾ of the time</li><li>(Almost ) never</li></ol>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>ESENER:</p><p><a href=\"https://osha.europa.eu/en/surveys-and-statistics-osh/esener\">https://osha.europa.eu/en/surveys-and-statistics-osh/esener</a></p><p><strong>EWCS:</strong></p><p><strong><a href=\"https://www.eurofound.europa.eu/data/european-working-conditions-survey\">https://www.eurofound.europa.eu/data/european-working-conditions-survey</a></strong></p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2014 for ESENER 2014 Survey and 2015 for EWCS");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2014 for ESENER 2014 Survey and 2015 for EWCS");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The intended coverage for ESENER 2014 Survey is: 28 EU countries plus, Iceland, Norway and Switzerland. All data for the coverage is available.</p><p><strong>The intended coverage for EWCS is: 28 EU countries plus, Norway and Switzerland. All data for the coverage is available.</strong></p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<ul><li>Activity sector: <strong>All</strong></li></ul>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "null");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentages");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -11172,7 +10316,38 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<ul><li>Activity sector: <strong>All</strong></li></ul>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "No");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "null");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentages");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "Bar chart, all countries plus EU 28 Average, percentages of all answers");
+INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
+
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Poor communication - Eurofound EWCS Data");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="MENTAL_RISKS" AND t.name="osha_dvt_barometer");
+SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
+SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
+SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "The percentages of responses to this question in ESENER 2014 and the EWCS are displayed in a bar chart. Each bar has different colours and shows the percentages of the specific responses for each EU Member State, the average for the EU-28 and the responses for Iceland, Switzerland and Norway.");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p>ESENER 2014 Survey &nbsp;</p><p><strong>European Working Conditions Survey (EWCS, 2015)&nbsp;</strong></p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to the ESENER 2014 Survey Question below:</p><p>“Please tell me for each of the following risks whether or not it is present in the establishment? Poor communication or cooperation?”</p><p>Answer options:&nbsp;</p><ol><li>Yes</li><li>No</li></ol><p><strong>Responses are displayed to the EWCS Question below:</strong></p><p>“Level of fairness, cooperation and trust”</p><p>Answer options:</p><ol><li>Composite indicator formed by Eurofound, only the value is displayed.</li></ol>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>ESENER:</p><p><a href=\"https://osha.europa.eu/en/surveys-and-statistics-osh/esener\">https://osha.europa.eu/en/surveys-and-statistics-osh/esener</a></p><p><strong>EWCS:</strong></p><p><strong><a href=\"https://www.eurofound.europa.eu/data/european-working-conditions-survey\">https://www.eurofound.europa.eu/data/european-working-conditions-survey</a></strong></p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2014 for ESENER 2014 Survey and 2015 for EWCS");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2014 for ESENER 2014 Survey and 2015 for EWCS");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The intended coverage for ESENER 2014 Survey is: 28 EU countries plus, Iceland, Norway and Switzerland. All data for the coverage is available.</p><p><strong>The intended coverage for EWCS is: 28 EU countries plus, Norway and Switzerland. All data for the coverage is available.</strong></p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<ul><li>Activity sector: <strong>All</strong></li></ul>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "null");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentages");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -11187,7 +10362,7 @@ SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p>The percentages of positive responses to six questions in ESENER and positive responses to two questions in the EWCS are displayed in bar charts. Each bar chart shows the percentages of the responses for each EU Member State, the average for the EU-28 and the responses for Iceland, Switzerland and Norway.</p><p>;</p><p>The questions cover the aspects below. <strong>Specifically this indicator relates to</strong>:</p><ul><li>Sickness absence analysed</li><li>Health and safety discussed</li><li>Action plan to prevent stress</li><li>Procedure against bullying</li><li>Procedures to deal with threats</li><li>Measure in the past 3 years</li><li>Use of personal protective equipment</li><li><strong>Information about risks</strong></li></ul>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "The percentages of responses to this question in ESENER 2014 and the EWCS are displayed in a bar chart. Each bar has different colours and shows the percentages of the specific responses for each EU Member State, the average for the EU-28 and the responses for Iceland, Switzerland and Norway.");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p><strong>ESENER 2014 Survey &nbsp;</strong></p><p>European Working Conditions Survey (EWCS, 2015)&nbsp;</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -11203,7 +10378,38 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<ul><li>Activity sector: <strong>All</strong></li></ul>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "No");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "null");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentages");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "Bar chart, all countries plus EU 28 Average, percentages of all answers");
+INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
+
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Influence - Eurofound EWCS Data");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="MENTAL_RISKS" AND t.name="osha_dvt_barometer");
+SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
+SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
+SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "The percentages of responses to this question of the ESENER 2014 Survey and EWCS is displayed in a bar chart. Each bar has different colours and shows the percentages of the specific responses for each EU country, the average for EU 28 and the responses for Iceland, Switzerland and Norway.");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p>ESENER 2014 Survey &nbsp;</p><p><strong>European Working Conditions Survey (EWCS, 2015)&nbsp;</strong></p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to the ESENER 2014 Survey Question below:</p><p>Please tell me for each of the following risks whether or not it is present in the establishment? Employees’ lack of influence over their work pace or work processes</p><p>Answer options:</p><ol><li>Yes</li><li>No</li></ol><p><strong>Responses are displayed to the EWCS Question below:</strong></p><p>“Can you influence decisions that are important for your work?”</p><p>Answer options:</p><ol><li>Always or most of the time</li><li>Sometimes</li><li>Rarely or never</li></ol>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>ESENER:</p><p><a href=\"https://osha.europa.eu/en/surveys-and-statistics-osh/esener\">https://osha.europa.eu/en/surveys-and-statistics-osh/esener</a></p><p><strong>EWCS:</strong></p><p><strong><a href=\"https://www.eurofound.europa.eu/data/european-working-conditions-survey\">https://www.eurofound.europa.eu/data/european-working-conditions-survey</a></strong></p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2014 for ESENER 2014 Survey and 2015 for EWCS");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2014 for ESENER 2014 Survey and 2015 for EWCS");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The intended coverage for ESENER 2014 Survey is: 28 EU countries plus, Iceland, Norway and Switzerland. All data for the coverage is available.</p><p><strong>The intended coverage for EWCS is: 28 EU countries plus, Norway and Switzerland. All data for the coverage is available.</strong></p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<ul><li>Activity sector: <strong>All</strong></li></ul>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "null");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentages");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -11234,7 +10440,38 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<ul><li>Activity sector: <strong>All</strong></li></ul>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "No");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "null");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentages");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "Bar chart, all countries plus EU 28 Average, percentages of all answers");
+INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
+
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Job insecurity - Eurofound EWCS Data");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="MENTAL_RISKS" AND t.name="osha_dvt_barometer");
+SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
+SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
+SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "The percentages of responses to this question in ESENER 2014 and the EWCS are displayed in a bar chart. Each bar has different colours and shows the percentages of the specific responses for each EU Member State, the average for the EU-28 and the responses for Iceland, Switzerland and Norway.");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p>ESENER 2014 Survey &nbsp;</p><p><strong>European Working Conditions Survey (EWCS, 2015)&nbsp;</strong></p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to the ESENER 2014 Survey Question below:</p><p>&nbsp;“Please tell me for each of the following risks whether or not it is present in the establishment?” <br /> The diagram shows the response to the following answer option: <br /> <strong>“</strong>Job insecurity<strong>.”</strong></p><p>Answer options:&nbsp;</p><ol><li>Yes</li><li>No</li></ol><p><strong>Responses are displayed to the EWCS Question below:</strong></p><p>“I might lose my job in the next 6 months”</p><p>Answer options: </p><ol><li>Agree</li><li>Neither agree nor disagree</li><li>Disagree</li></ol>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>ESENER:</p><p><a href=\"https://osha.europa.eu/en/surveys-and-statistics-osh/esener\">https://osha.europa.eu/en/surveys-and-statistics-osh/esener</a></p><p><strong>EWCS:</strong></p><p><strong><a href=\"https://www.eurofound.europa.eu/data/european-working-conditions-survey\">https://www.eurofound.europa.eu/data/european-working-conditions-survey</a></strong></p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2014 for ESENER 2014 Survey and 2015 for EWCS");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2014 for ESENER 2014 Survey and 2015 for EWCS");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The intended coverage for ESENER 2014 Survey is: 28 EU countries plus, Iceland, Norway and Switzerland. All data for the coverage is available.</p><p><strong>The intended coverage for EWCS is: 28 EU countries plus, Norway and Switzerland. All data for the coverage is available.</strong></p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<ul><li>Activity sector: <strong>All</strong></li></ul>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "null");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentages");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -11265,7 +10502,38 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<ul><li>Activity sector: <strong>All</strong></li></ul>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "No");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "null");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentages");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "Bar chart, all countries plus EU 28 Average, percentages of all answers");
+INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
+
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Difficult clients - Eurofound EWCS Data");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="MENTAL_RISKS" AND t.name="osha_dvt_barometer");
+SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
+SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
+SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "The percentages of responses to this question in ESENER 2014 and the EWCS are displayed in a bar chart. Each bar has different colours and shows the percentages of the specific responses for each EU Member State, the average for the EU-28 and the responses for Iceland, Switzerland and Norway.");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p>ESENER 2014 Survey &nbsp;</p><p><strong>European Working Conditions Survey (EWCS, 2015)&nbsp;</strong></p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to this ESENER 2014 Survey Question below:</p><p>“Please tell me for each of the following risks whether or not it is present in the establishment?” <br /> The diagram shows the response to the following answer option: <strong>“</strong>Having to deal with difficult customers, patients, pupils etc.”</p><p>Answer options:</p><ol><li>Yes</li><li>No</li></ol><p><strong>Responses are displayed to the EWCS Question below:</strong></p><p>“Does your work involve handling angry clients?”</p><p>Answer options:</p><ol><li>(Almost) all of the time</li><li>Between ¼ and ¾ of the time</li><li>(Almost ) never</li></ol>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>ESENER:</p><p><a href=\"https://osha.europa.eu/en/surveys-and-statistics-osh/esener\">https://osha.europa.eu/en/surveys-and-statistics-osh/esener</a></p><p><strong>EWCS:</strong></p><p><strong><a href=\"https://www.eurofound.europa.eu/data/european-working-conditions-survey\">https://www.eurofound.europa.eu/data/european-working-conditions-survey</a></strong></p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2014 for ESENER 2014 Survey and 2015 for EWCS");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2014 for ESENER 2014 Survey and 2015 for EWCS");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The intended coverage for ESENER 2014 Survey is: 28 EU countries plus, Iceland, Norway and Switzerland. All data for the coverage is available.</p><p><strong>The intended coverage for EWCS is: 28 EU countries plus, Norway and Switzerland. All data for the coverage is available.</strong></p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<ul><li>Activity sector: <strong>All</strong></li></ul>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "null");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentages");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -11296,7 +10564,38 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<ul><li>Activity sector: <strong>All</strong></li></ul>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "No");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "null");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentages");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "Bar chart, all countries plus EU 28 Average, percentages of all answers");
+INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
+
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Working hours - Eurofound EWCS Data");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="MENTAL_RISKS" AND t.name="osha_dvt_barometer");
+SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
+SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
+SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "The percentages of responses to this question in ESENER 2014 and the EWCS are displayed in a bar chart. Each bar has different colours and shows the percentages of the specific responses for each EU Member State, the average for the EU-28 and the responses for Iceland, Switzerland and Norway.");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p>ESENER 2014 Survey &nbsp;</p><p><strong>European Working Conditions Survey (EWCS, 2015)&nbsp;</strong></p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to this ESENER 2014 Survey Question below:</p><p>Please tell me for each of the following risks whether or not it is present in the establishment?” <br /> The diagram shows the response to the following answer option: <br /> “Long or irregular working hours.”</p><p>Answer options: </p><ol><li>Yes</li><li>No</li></ol><p><strong>Responses are displayed to the EWCS Question below:</strong></p><p>“How many times a month do you work more than 10 hours a day?”</p><p>Answer options:&nbsp;</p><ol><li>Never</li><li>Once or more</li></ol>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>ESENER:</p><p><a href=\"https://osha.europa.eu/en/surveys-and-statistics-osh/esener\">https://osha.europa.eu/en/surveys-and-statistics-osh/esener</a></p><p><strong>EWCS:</strong></p><p><strong><a href=\"https://www.eurofound.europa.eu/data/european-working-conditions-survey\">https://www.eurofound.europa.eu/data/european-working-conditions-survey</a></strong></p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2014 for ESENER 2014 Survey and 2015 for EWCS");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2014 for ESENER 2014 Survey and 2015 for EWCS");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The intended coverage for ESENER 2014 Survey is: 28 EU countries plus, Iceland, Norway and Switzerland. All data for the coverage is available.</p><p><strong>The intended coverage for EWCS is: 28 EU countries plus, Norway and Switzerland. All data for the coverage is available.</strong></p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<ul><li>Activity sector: <strong>All</strong></li></ul>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "null");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentages");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -11327,11 +10626,563 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<ul><li>Activity sector: <strong>All</strong></li></ul>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "No");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "null");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentages");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "Bar chart, all countries plus EU 28 Average, percentages of all answers");
+INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
+
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Discrimination - Eurofound EWCS Data");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="MENTAL_RISKS" AND t.name="osha_dvt_barometer");
+SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
+SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
+SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "The percentages of responses to this question in ESENER 2014 and the EWCS are displayed in a bar chart. Each bar has different colours and shows the percentages of the specific responses for each EU Member State, the average for the EU-28 and the responses for Iceland, Switzerland and Norway.");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p>ESENER 2014 Survey &nbsp;</p><p><strong>European Working Conditions Survey (EWCS, 2015)&nbsp;</strong></p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to this ESENER 2014 Survey Question below:</p><p>Please tell me for each of the following risks whether or not it is present in the establishment?” <br /> The diagram shows the response to the following answer option: <br /> “Discrimination, for example due to gender, age or ethnicity.”</p><p>Answer options:&nbsp;</p><ol><li>Yes</li><li>No</li></ol><p><strong>Responses are displayed to the EWCS Question:&nbsp;</strong></p><p>“Have you been subjected to discrimination at work in the last 12 months?”</p><p>Answer options:&nbsp;</p><ol><li>Yes</li><li>No</li></ol>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>ESENER:</p><p><a href=\"https://osha.europa.eu/en/surveys-and-statistics-osh/esener\">https://osha.europa.eu/en/surveys-and-statistics-osh/esener</a></p><p><strong>EWCS:</strong></p><p><strong><a href=\"https://www.eurofound.europa.eu/data/european-working-conditions-survey\">https://www.eurofound.europa.eu/data/european-working-conditions-survey</a></strong></p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2014 for ESENER 2014 Survey and 2015 for EWCS");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2014 for ESENER 2014 Survey and 2015 for EWCS");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The intended coverage for ESENER 2014 Survey is: 28 EU countries plus, Iceland, Norway and Switzerland. All data for the coverage is available.</p><p><strong>The intended coverage for EWCS is: 28 EU countries plus, Norway and Switzerland. All data for the coverage is available.</strong></p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<ul><li>Activity sector: <strong>All</strong></li></ul>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "null");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentages");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "Bar chart, all countries plus EU 28 Average, percentages of all answers");
+INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
+
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Exposure to vibrations");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer");
+SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
+SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
+SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "The percentages of responses to four questions on physical risks in the EWCS are displayed in a spider diagram. It is possible to compare two selected countries; the EU average is always displayed.");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "European Working Conditions Survey (EWCS, 2015)");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to the EWCS Questions below. <strong>Specifically this indicator relates to</strong>:<br /> <strong>Are you exposed to vibrations from tools or machinery?</strong></p><p>Are you exposed to low temperatures?</p><p>Are you exposed to high temperatures?</p><p>Are you exposed to loud noise?</p><p>Answer options:</p><ol><li>At least ¼ of the time</li><li>Less than ¼ of the time</li></ol>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>EWCS:</p><p><a href=\"https://www.eurofound.europa.eu/data/european-working-conditions-survey\">https://www.eurofound.europa.eu/data/european-working-conditions-survey</a></p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2015");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2015");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The <strong>intended coverage</strong> is: 28 EU countries plus Norway and Switzerland. All data for the coverage is available.</p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<ul><li>Activity sector: <strong>All</strong></li></ul>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "null");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentages");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "Spider diagram, all countries plus EU 28 Average, percentages for answers ‘At least ¼ of the time’ ");
+INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
+
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Exposure to loud noise");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer");
+SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
+SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
+SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "The percentages of responses to four questions on physical risks in the EWCS are displayed in a spider diagram. It is possible to compare two selected countries; the EU average is always displayed.");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "European Working Conditions Survey (EWCS, 2015)");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to the EWCS Questions below. <strong>Specifically this indicator relates to</strong>:<br /> Are you exposed to vibrations from tools or machinery?</p><p>Are you exposed to low temperatures?</p><p>Are you exposed to high temperatures?</p><p><strong>Are you exposed to loud noise?</strong></p><p>Answer options:</p><ol><li>At least ¼ of the time</li><li>Less than ¼ of the time</li></ol>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>EWCS:</p><p><a href=\"https://www.eurofound.europa.eu/data/european-working-conditions-survey\">https://www.eurofound.europa.eu/data/european-working-conditions-survey</a></p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2015");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2015");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The <strong>intended coverage</strong> is: 28 EU countries plus Norway and Switzerland. All data for the coverage is available.</p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<ul><li>Activity sector: <strong>All</strong></li></ul>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "null");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentages");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "Spider diagram, all countries plus EU 28 Average, percentages for answers ‘At least ¼ of the time’ ");
+INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
+
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Exposure to temperatures");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer");
+SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
+SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
+SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "The percentages of responses to four questions on physical risks in the EWCS are displayed in a spider diagram. It is possible to compare two selected countries; the EU average is always displayed.");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "European Working Conditions Survey (EWCS, 2015)");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to the EWCS Questions below. <strong>Specifically this indicator relates to</strong>:<br /> Are you exposed to vibrations from tools or machinery?</p><p>Are you exposed to low temperatures?</p><p><strong>Are you exposed to high temperatures?</strong></p><p>Are you exposed to loud noise?</p><p>Answer options:</p><ol><li>At least ¼ of the time</li><li>Less than ¼ of the time</li></ol>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>EWCS:</p><p><a href=\"https://www.eurofound.europa.eu/data/european-working-conditions-survey\">https://www.eurofound.europa.eu/data/european-working-conditions-survey</a></p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2015");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2015");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The <strong>intended coverage</strong> is: 28 EU countries plus Norway and Switzerland. All data for the coverage is available.</p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<ul><li>Activity sector: <strong>All</strong></li></ul>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "null");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentages");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "Spider diagram, all countries plus EU 28 Average, percentages for answers ‘At least ¼ of the time’ ");
+INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
+
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Exposure to low temperatures");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer");
+SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
+SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
+SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "The percentages of responses to four questions on physical risks in the EWCS are displayed in a spider diagram. It is possible to compare two selected countries; the EU average is always displayed.");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "European Working Conditions Survey (EWCS, 2015)");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to the EWCS Questions below. <strong>Specifically this indicator relates to</strong>:<br /> Are you exposed to vibrations from tools or machinery?</p><p><strong>Are you exposed to low temperatures?</strong></p><p>Are you exposed to high temperatures?</p><p>Are you exposed to loud noise?</p><p>Answer options:</p><ol><li>At least ¼ of the time</li><li>Less than ¼ of the time</li></ol>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>EWCS:</p><p><a href=\"https://www.eurofound.europa.eu/data/european-working-conditions-survey\">https://www.eurofound.europa.eu/data/european-working-conditions-survey</a></p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2015");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2015");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The <strong>intended coverage</strong> is: 28 EU countries plus Norway and Switzerland. All data for the coverage is available.</p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<ul><li>Activity sector: <strong>All</strong></li></ul>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "null");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentages");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "Spider diagram, all countries plus EU 28 Average, percentages for answers ‘At least ¼ of the time’ ");
+INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
+
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Exposure to breathing in smoke, fumes, powder or dust");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer");
+SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
+SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
+SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "The percentages of responses to this question in the EWCS are displayed in a bar chart. Each bar has two different colours and shows the percentages of the two possible responses for each EU Member State, the average for the EU-28 and the responses for Switzerland and Norway.");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "European Working Conditions Survey (EWCS, 2015)");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to the EWCS Question below: <br /> “Are you exposed to breathing in smoke, fumes, powder or dust?”</p><p>Answer options:</p><ol><li>At least ¼ of the time</li><li>Less than ¼ of the time</li></ol>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>EWCS:</p><p><a href=\"https://www.eurofound.europa.eu/data/european-working-conditions-survey\">https://www.eurofound.europa.eu/data/european-working-conditions-survey</a></p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2015");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2015");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The <strong>intended coverage</strong> is: 28 EU countries plus Norway and Switzerland. All data for the coverage is available.</p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<ul><li>Activity sector: <strong>All</strong></li></ul>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "null");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentages");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "Bar chart, all countries plus EU 28 Average, percentages for answers ‘At least ¼ of the time’ and ‘Less than ¼ of the time’");
+INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
+
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Exposure to breathing in vapours");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer");
+SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
+SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
+SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "The percentages of responses to this question in the EWCS are displayed in a bar chart. Each bar has two different colours and shows the percentages of the two possible responses for each EU Member State, the average for the EU-28 and the responses for Switzerland and Norway.");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "European Working Conditions Survey (EWCS, 2015)");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to the EWCS Question: <br /> “Are you exposed to breathing in vapours?”</p><p>Answer options:</p><ol><li>At least ¼ of the time</li><li>Less than ¼ of the time</li></ol>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>EWCS:</p><p><a href=\"https://www.eurofound.europa.eu/data/european-working-conditions-survey\">https://www.eurofound.europa.eu/data/european-working-conditions-survey</a></p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2015");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2015");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The <strong>intended coverage</strong> is: 28 EU countries plus Norway and Switzerland. All data for the coverage is available.</p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<ul><li>Activity sector: <strong>All</strong></li></ul>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "null");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentages");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "Bar chart, all countries plus EU 28 Average, percentages for answers ‘At least ¼ of the time’ and ‘Less than ¼ of the time’");
+INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
+
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Exposure to chemical products or substances");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer");
+SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
+SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
+SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "The percentages of responses to this question in the EWCS are displayed in a bar chart. Each bar has two different colours and shows the percentages of the two possible responses for each EU Member State, the average for the EU-28 and the responses for Switzerland and Norway.");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "European Working Conditions Survey (EWCS, 2015)");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to the EWCS Question: <br /> “Are you exposed to chemical products or substances?”</p><p>Answer options:</p><ol><li>At least ¼ of the time</li><li>Less than ¼ of the time</li></ol>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>EWCS:</p><p><a href=\"https://www.eurofound.europa.eu/data/european-working-conditions-survey\">https://www.eurofound.europa.eu/data/european-working-conditions-survey</a></p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2015");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2015");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The <strong>intended coverage</strong> is: 28 EU countries plus Norway and Switzerland. All data for the coverage is available.</p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<ul><li>Activity sector: <strong>All</strong></li></ul>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "null");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentages");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "Bar chart, all countries plus EU 28 Average, percentages for answers ‘At least ¼ of the time’ and ‘Less than ¼ of the time’");
+INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
+
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Exposure to infections materials");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer");
+SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
+SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
+SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "The percentages of responses to this question in the EWCS are displayed in a bar chart. Each bar has two different colours and shows the percentages of the two possible responses for each EU Member State, the average for the EU-28 and the responses for Switzerland and Norway.");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "European Working Conditions Survey (EWCS, 2015)");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to the EWCS Question: <br />&ldquo;Are you exposed to materials which can be infectious?&rdquo;</p>
+<p>Answer options:</p>
+<ol>
+<li>At least &frac14; of the time</li>
+<li>Less than &frac14; of the time</li>
+</ol>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>EWCS:</p><p><a href=\"https://www.eurofound.europa.eu/data/european-working-conditions-survey\">https://www.eurofound.europa.eu/data/european-working-conditions-survey</a></p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2015");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2015");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The <strong>intended coverage</strong> is: 28 EU countries plus Norway and Switzerland. All data for the coverage is available.</p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<ul><li>Activity sector: <strong>All</strong></li></ul>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "null");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentages");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "Bar chart, all countries plus EU 28 Average, percentages for answers ‘At least ¼ of the time’ and ‘Less than ¼ of the time’");
+INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
+
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Q200_1");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer");
+SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
+SET @datasetId = (SELECT id FROM dataset WHERE source="ESENER" AND date_from="2014-01-01");
+SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p>The percentages of responses to five questions on physical risks in the EWCS and three questions on physical risks in ESENER 2014 are displayed in a spider diagram. It is possible to compare two selected countries; the EU average is always displayed. The questions cover the aspects below. <strong>Specifically this indicator relates to:</strong></p><ul><li><strong>Work involving tiring or painful positions</strong></li><li><strong>Work involving sitting</strong></li><li>Work involving carrying or moving heavy loads</li><li>Work involving repetitive hand or arm movements</li><li>Work involving lifting or moving people</li></ul>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p><strong>ESENER 2014 Survey &nbsp;</strong></p><p>European Working Conditions Survey (EWCS, 2015)&nbsp;</p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to the ESENER 2014 Survey Questions below.<strong>Specifically this indicator relates to</strong>:</p><p><strong>Depending on the type of work, there are different types of risks and hazards. Please tell me for each of the following risk factors whether it is present or not in your establishment, regardless of whether it is currently under control and regardless of the number of employees it affects:</strong></p><p><strong>“Tiring or painful positions, including sitting for long periods”</strong></p><p>“Lifting or moving people or heavy loads”</p><p>“Repetitive hand or arm movements”</p><p>&nbsp;Answer options:&nbsp;</p><ol><li>Yes</li><li>No</li></ol><p>&nbsp;Responses are displayed to the EWCS Questions below.<strong>&nbsp;</strong></p><p>“Does your work involve tiring or painful positions?”</p><p>“Does your work involve sitting?”</p><p>“Does your work involve Carrying or moving heavy loads?”</p><p>“Does your work involve Repetitive hand or arm movements?”</p><p>“Does your work involve lifting or moving people?”</p><p>&nbsp;Answer options:</p><ol><li>At least ¼ of the time</li><li>Less than ¼ of the time</li></ol>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p><strong>ESENER:</strong></p><p><strong><a href=\"https://osha.europa.eu/en/surveys-and-statistics-osh/esener\">https://osha.europa.eu/en/surveys-and-statistics-osh/esener</a></strong></p><p>EWCS:</p><p><a href=\"https://www.eurofound.europa.eu/data/european-working-conditions-survey\">https://www.eurofound.europa.eu/data/european-working-conditions-survey</a></p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2014 for ESENER 2014 Survey and 2015 for EWCS");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2014 for ESENER 2014 Survey and 2015 for EWCS");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p><strong>The intended coverage for ESENER 2014 Survey is: 28 EU countries plus, Iceland, Norway and Switzerland. All data for the coverage is available.</strong></p><p>The intended coverage for EWCS is: 28 EU countries plus, Norway and Switzerland. All data for the coverage is available.</p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<ul><li>Activity sector: <strong>All</strong></li></ul>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "null");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentages");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "<p><strong>Spider diagram, all countries plus EU 28 Average, percentage for answers ‘Yes’ in ESENER</strong></p><p>Spider diagram, all countries plus EU 28 Average, percentage for answers ‘At least ¼ of the time’ in EWCS</p>");
+INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
+
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Tiring or painful positions - Eurofound EWCS Data");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer");
+SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
+SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
+SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p>The percentages of responses to five questions on physical risks in the EWCS and three questions on physical risks in ESENER 2014 are displayed in a spider diagram. It is possible to compare two selected countries; the EU average is always displayed. The questions cover the aspects below. <strong>Specifically this indicator relates to:</strong></p><ul><li><strong>Work involving tiring or painful positions</strong></li><li>Work involving sitting</li><li>Work involving carrying or moving heavy loads</li><li>Work involving repetitive hand or arm movements</li><li>Work involving lifting or moving people</li></ul>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p>ESENER 2014 Survey &nbsp;</p><p><strong>European Working Conditions Survey (EWCS, 2015)&nbsp;</strong></p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to the ESENER 2014 Survey Questions below. </p><p>Depending on the type of work, there are different types of risks and hazards. Please tell me for each of the following risk factors whether it is present or not in your establishment, regardless of whether it is currently under control and regardless of the number of employees it affects:</p><p>“Tiring or painful positions, including sitting for long periods”</p><p>“Lifting or moving people or heavy loads”</p><p>“Repetitive hand or arm movements”</p><p>&nbsp;Answer options:&nbsp;</p><ol><li>Yes</li><li>No</li></ol><p>&nbsp;Responses are displayed to the EWCS Questions below.<strong> Specifically this indicator relates to</strong>:</p><p><strong>“Does your work involve tiring or painful positions?”</strong></p><p>“Does your work involve sitting?”</p><p>“Does your work involve Carrying or moving heavy loads?”</p><p>“Does your work involve Repetitive hand or arm movements?”</p><p>“Does your work involve lifting or moving people?”</p><p>&nbsp;Answer options:</p><ol><li>At least ¼ of the time</li><li>Less than ¼ of the time</li></ol>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>ESENER:</p><p><a href=\"https://osha.europa.eu/en/surveys-and-statistics-osh/esener\">https://osha.europa.eu/en/surveys-and-statistics-osh/esener</a></p><p><strong>EWCS:</strong></p><p><strong><a href=\"https://www.eurofound.europa.eu/data/european-working-conditions-survey\">https://www.eurofound.europa.eu/data/european-working-conditions-survey</a></strong></p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2014 for ESENER 2014 Survey and 2015 for EWCS");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2014 for ESENER 2014 Survey and 2015 for EWCS");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The intended coverage for ESENER 2014 Survey is: 28 EU countries plus, Iceland, Norway and Switzerland. All data for the coverage is available.</p><p><strong>The intended coverage for EWCS is: 28 EU countries plus, Norway and Switzerland. All data for the coverage is available.</strong></p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<ul><li>Activity sector: <strong>All</strong></li></ul>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "null");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentages");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "<p>Spider diagram, all countries plus EU 28 Average, percentage for answers ‘Yes’ in ESENER</p><p><strong>Spider diagram, all countries plus EU 28 Average, percentage for answers ‘At least ¼ of the time’ in EWCS</strong></p>");
+INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
+
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Does your work involve sitting? - Eurofound EWCS Data");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer");
+SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
+SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
+SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p>The percentages of responses to five questions on physical risks in the EWCS and three questions on physical risks in ESENER 2014 are displayed in a spider diagram. It is possible to compare two selected countries; the EU average is always displayed. The questions cover the aspects below. <strong>Specifically this indicator relates to:</strong></p><ul><li>Work involving tiring or painful positions</li><li><strong>Work involving sitting</strong></li><li>Work involving carrying or moving heavy loads</li><li>Work involving repetitive hand or arm movements</li><li>Work involving lifting or moving people</li></ul>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p>ESENER 2014 Survey &nbsp;</p><p><strong>European Working Conditions Survey (EWCS, 2015)&nbsp;</strong></p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to the ESENER 2014 Survey Questions below.</p><p>Depending on the type of work, there are different types of risks and hazards. Please tell me for each of the following risk factors whether it is present or not in your establishment, regardless of whether it is currently under control and regardless of the number of employees it affects:</p><p>“Tiring or painful positions, including sitting for long periods”</p><p>“Lifting or moving people or heavy loads”</p><p>“Repetitive hand or arm movements”</p><p>&nbsp;Answer options:&nbsp;</p><ol><li>Yes</li><li>No</li></ol><p>&nbsp;Responses are displayed to the EWCS Questions below.<strong> Specifically this indicator relates to</strong>:</p><p>“Does your work involve tiring or painful positions?”</p><p><strong>“Does your work involve sitting?”</strong></p><p>“Does your work involve Carrying or moving heavy loads?”</p><p>“Does your work involve Repetitive hand or arm movements?”</p><p>“Does your work involve lifting or moving people?”</p><p>&nbsp;Answer options:</p><ol><li>At least ¼ of the time</li><li>Less than ¼ of the time</li></ol>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>ESENER:</p><p><a href=\"https://osha.europa.eu/en/surveys-and-statistics-osh/esener\">https://osha.europa.eu/en/surveys-and-statistics-osh/esener</a></p><p><strong>EWCS:</strong></p><p><strong><a href=\"https://www.eurofound.europa.eu/data/european-working-conditions-survey\">https://www.eurofound.europa.eu/data/european-working-conditions-survey</a></strong></p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2014 for ESENER 2014 Survey and 2015 for EWCS");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2014 for ESENER 2014 Survey and 2015 for EWCS");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The intended coverage for ESENER 2014 Survey is: 28 EU countries plus, Iceland, Norway and Switzerland. All data for the coverage is available.</p><p><strong>The intended coverage for EWCS is: 28 EU countries plus, Norway and Switzerland. All data for the coverage is available.</strong></p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<ul><li>Activity sector: <strong>All</strong></li></ul>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "null");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentages");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "<p>Spider diagram, all countries plus EU 28 Average, percentage for answers ‘Yes’ in ESENER</p><p><strong>Spider diagram, all countries plus EU 28 Average, percentage for answers ‘At least ¼ of the time’ in EWCS</strong></p>");
+INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
+
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Q200_2");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer");
+SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
+SET @datasetId = (SELECT id FROM dataset WHERE source="ESENER" AND date_from="2014-01-01");
+SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p>The percentages of responses to five questions on physical risks in the EWCS and three questions on physical risks in ESENER 2014 are displayed in a spider diagram. It is possible to compare two selected countries; the EU average is always displayed. The questions cover the aspects below. <strong>Specifically this indicator relates to:</strong></p><ul><li>Work involving tiring or painful positions</li><li>Work involving sitting</li><li><strong>Work involving carrying or moving heavy loads</strong></li><li>Work involving repetitive hand or arm movements</li><li><strong>Work involving lifting or moving people</strong></li></ul>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p><strong>ESENER 2014 Survey &nbsp;</strong></p><p>European Working Conditions Survey (EWCS, 2015)&nbsp;</p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to the ESENER 2014 Survey Questions below. <strong>Specifically this indicator relates to</strong>:</p>
+<p><strong>Depending on the type of work, there are different types of risks and hazards. Please tell me for each of the following risk factors whether it is present or not in your establishment, regardless of whether it is currently under control and regardless of the number of employees it affects:</strong></p>
+<p>&ldquo;Tiring or painful positions, including sitting for long periods&rdquo;</p>
+<p><strong>&ldquo;Lifting or moving people or heavy loads&rdquo;</strong></p>
+<p>&ldquo;Repetitive hand or arm movements&rdquo;</p>
+<p>&nbsp;Answer options:&nbsp;</p>
+<ol>
+<li>Yes</li>
+<li>No</li>
+</ol>
+<p>&nbsp;Responses are displayed to the EWCS Questions below.<strong>&nbsp;</strong></p>
+<p>&ldquo;Does your work involve tiring or painful positions?&rdquo;</p>
+<p>&ldquo;Does your work involve sitting?&rdquo;</p>
+<p>&ldquo;Does your work involve Carrying or moving heavy loads?&rdquo;</p>
+<p>&ldquo;Does your work involve Repetitive hand or arm movements?&rdquo;</p>
+<p>&ldquo;Does your work involve lifting or moving people?&rdquo;</p>
+<p>&nbsp;Answer options:</p>
+<ol>
+<li>At least &frac14; of the time</li>
+<li>Less than &frac14; of the time</li>
+</ol>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p><strong>ESENER:</strong></p><p><strong><a href=\"https://osha.europa.eu/en/surveys-and-statistics-osh/esener\">https://osha.europa.eu/en/surveys-and-statistics-osh/esener</a></strong></p><p>EWCS:</p><p><a href=\"https://www.eurofound.europa.eu/data/european-working-conditions-survey\">https://www.eurofound.europa.eu/data/european-working-conditions-survey</a></p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2014 for ESENER 2014 Survey and 2015 for EWCS");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2014 for ESENER 2014 Survey and 2015 for EWCS");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p><strong>The intended coverage for ESENER 2014 Survey is: 28 EU countries plus, Iceland, Norway and Switzerland. All data for the coverage is available.</strong></p><p>The intended coverage for EWCS is: 28 EU countries plus, Norway and Switzerland. All data for the coverage is available.</p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<ul><li>Activity sector: <strong>All</strong></li></ul>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "null");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentages");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "<p><strong>Spider diagram, all countries plus EU 28 Average, percentage for answers ‘Yes’ in ESENER</strong></p><p>Spider diagram, all countries plus EU 28 Average, percentage for answers ‘At least ¼ of the time’ in EWCS</p>");
+INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
+
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Lifting or moving people - Eurofound EWCS Data");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer");
+SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
+SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
+SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p>The percentages of responses to five questions on physical risks in the EWCS and three questions on physical risks in ESENER 2014 are displayed in a spider diagram. It is possible to compare two selected countries; the EU average is always displayed. The questions cover the aspects below. <strong>Specifically this indicator relates to:</strong></p><ul><li>Work involving tiring or painful positions</li><li>Work involving sitting</li><li>Work involving carrying or moving heavy loads</li><li>Work involving repetitive hand or arm movements</li><li><strong>Work involving lifting or moving people</strong></li></ul>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p>ESENER 2014 Survey &nbsp;</p><p><strong>European Working Conditions Survey (EWCS, 2015)&nbsp;</strong></p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to the ESENER 2014 Survey Questions below.</p><p>Depending on the type of work, there are different types of risks and hazards. Please tell me for each of the following risk factors whether it is present or not in your establishment, regardless of whether it is currently under control and regardless of the number of employees it affects:</p><p>“Tiring or painful positions, including sitting for long periods”</p><p>“Lifting or moving people or heavy loads”</p><p>“Repetitive hand or arm movements”</p><p>&nbsp;Answer options:&nbsp;</p><ol><li>Yes</li><li>No</li></ol><p>&nbsp;Responses are displayed to the EWCS Questions below.<strong> Specifically this indicator relates to</strong>:</p><p>“Does your work involve tiring or painful positions?”</p><p>“Does your work involve sitting?”</p><p>“Does your work involve Carrying or moving heavy loads?”</p><p>“Does your work involve Repetitive hand or arm movements?”</p><p><strong>“Does your work involve lifting or moving people?”</strong></p><p>&nbsp;Answer options:</p><ol><li>At least ¼ of the time</li><li>Less than ¼ of the time</li></ol>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>ESENER:</p><p><a href=\"https://osha.europa.eu/en/surveys-and-statistics-osh/esener\">https://osha.europa.eu/en/surveys-and-statistics-osh/esener</a></p><p><strong>EWCS:</strong></p><p><strong><a href=\"https://www.eurofound.europa.eu/data/european-working-conditions-survey\">https://www.eurofound.europa.eu/data/european-working-conditions-survey</a></strong></p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2014 for ESENER 2014 Survey and 2015 for EWCS");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2014 for ESENER 2014 Survey and 2015 for EWCS");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The intended coverage for ESENER 2014 Survey is: 28 EU countries plus, Iceland, Norway and Switzerland. All data for the coverage is available.</p><p><strong>The intended coverage for EWCS is: 28 EU countries plus, Norway and Switzerland. All data for the coverage is available.</strong></p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<ul><li>Activity sector: <strong>All</strong></li></ul>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "null");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentages");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "<p>Spider diagram, all countries plus EU 28 Average, percentage for answers ‘Yes’ in ESENER</p><p><strong>Spider diagram, all countries plus EU 28 Average, percentage for answers ‘At least ¼ of the time’ in EWCS</strong></p>");
+INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
+
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Carrying or moving heavy loads - Eurofound EWCS Data");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer");
+SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
+SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
+SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p>The percentages of responses to five questions on physical risks in the EWCS and three questions on physical risks in ESENER 2014 are displayed in a spider diagram. It is possible to compare two selected countries; the EU average is always displayed. The questions cover the aspects below. <strong>Specifically this indicator relates to:</strong></p><ul><li>Work involving tiring or painful positions</li><li>Work involving sitting</li><li><strong>Work involving carrying or moving heavy loads</strong></li><li>Work involving repetitive hand or arm movements</li><li>Work involving lifting or moving people</li></ul>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p>ESENER 2014 Survey &nbsp;</p><p><strong>European Working Conditions Survey (EWCS, 2015)&nbsp;</strong></p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to the ESENER 2014 Survey Questions below.</p><p>Depending on the type of work, there are different types of risks and hazards. Please tell me for each of the following risk factors whether it is present or not in your establishment, regardless of whether it is currently under control and regardless of the number of employees it affects:</p><p>“Tiring or painful positions, including sitting for long periods”</p><p>“Lifting or moving people or heavy loads”</p><p>“Repetitive hand or arm movements”</p><p>&nbsp;Answer options:&nbsp;</p><ol><li>Yes</li><li>No</li></ol><p>&nbsp;Responses are displayed to the EWCS Questions below.<strong> Specifically this indicator relates to</strong>:</p><p>“Does your work involve tiring or painful positions?”</p><p>“Does your work involve sitting?”</p><p><strong>“Does your work involve Carrying or moving heavy loads?”</strong></p><p>“Does your work involve Repetitive hand or arm movements?”</p><p>“Does your work involve lifting or moving people?”</p><p>&nbsp;Answer options:</p><ol><li>At least ¼ of the time</li><li>Less than ¼ of the time</li></ol>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>ESENER:</p><p><a href=\"https://osha.europa.eu/en/surveys-and-statistics-osh/esener\">https://osha.europa.eu/en/surveys-and-statistics-osh/esener</a></p><p><strong>EWCS:</strong></p><p><strong><a href=\"https://www.eurofound.europa.eu/data/european-working-conditions-survey\">https://www.eurofound.europa.eu/data/european-working-conditions-survey</a></strong></p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2014 for ESENER 2014 Survey and 2015 for EWCS");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2014 for ESENER 2014 Survey and 2015 for EWCS");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The intended coverage for ESENER 2014 Survey is: 28 EU countries plus, Iceland, Norway and Switzerland. All data for the coverage is available.</p><p><strong>The intended coverage for EWCS is: 28 EU countries plus, Norway and Switzerland. All data for the coverage is available.</strong></p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<ul><li>Activity sector: <strong>All</strong></li></ul>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "null");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentages");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "<p>Spider diagram, all countries plus EU 28 Average, percentage for answers ‘Yes’ in ESENER</p><p><strong>Spider diagram, all countries plus EU 28 Average, percentage for answers ‘At least ¼ of the time’ in EWCS</strong></p>");
+INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
+
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Q200_4");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer");
+SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
+SET @datasetId = (SELECT id FROM dataset WHERE source="ESENER" AND date_from="2014-01-01");
+SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p>The percentages of responses to five questions on physical risks in the EWCS and three questions on physical risks in ESENER 2014 are displayed in a spider diagram. It is possible to compare two selected countries; the EU average is always displayed. The questions cover the aspects below. <strong>Specifically this indicator relates to:</strong></p><ul><li>Work involving tiring or painful positions</li><li>Work involving sitting</li><li>Work involving carrying or moving heavy loads</li><li><strong>Work involving repetitive hand or arm movements</strong></li><li>Work involving lifting or moving people</li></ul>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p><strong>ESENER 2014 Survey &nbsp;</strong></p><p>European Working Conditions Survey (EWCS, 2015)&nbsp;</p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to the ESENER 2014 Survey Questions below.<strong>Specifically this indicator relates to</strong>:</p><p><strong>Depending on the type of work, there are different types of risks and hazards. Please tell me for each of the following risk factors whether it is present or not in your establishment, regardless of whether it is currently under control and regardless of the number of employees it affects:</strong></p><p>“Tiring or painful positions, including sitting for long periods”</p><p>“Lifting or moving people or heavy loads”</p><p><strong>“Repetitive hand or arm movements”</strong></p><p>&nbsp;Answer options:&nbsp;</p><ol><li>Yes</li><li>No</li></ol><p>&nbsp;Responses are displayed to the EWCS Questions below.<strong>&nbsp;</strong></p><p>“Does your work involve tiring or painful positions?”</p><p>“Does your work involve sitting?”</p><p>“Does your work involve Carrying or moving heavy loads?”</p><p>“Does your work involve Repetitive hand or arm movements?”</p><p>“Does your work involve lifting or moving people?”</p><p>&nbsp;Answer options:</p><ol><li>At least ¼ of the time</li><li>Less than ¼ of the time</li></ol>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p><strong>ESENER:</strong></p><p><strong><a href=\"https://osha.europa.eu/en/surveys-and-statistics-osh/esener\">https://osha.europa.eu/en/surveys-and-statistics-osh/esener</a></strong></p><p>EWCS:</p><p><a href=\"https://www.eurofound.europa.eu/data/european-working-conditions-survey\">https://www.eurofound.europa.eu/data/european-working-conditions-survey</a></p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2014 for ESENER 2014 Survey and 2015 for EWCS");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2014 for ESENER 2014 Survey and 2015 for EWCS");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p><strong>The intended coverage for ESENER 2014 Survey is: 28 EU countries plus, Iceland, Norway and Switzerland. All data for the coverage is available.</strong></p><p>The intended coverage for EWCS is: 28 EU countries plus, Norway and Switzerland. All data for the coverage is available.</p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<ul><li>Activity sector: <strong>All</strong></li></ul>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "null");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentages");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "<p><strong>Spider diagram, all countries plus EU 28 Average, percentage for answers ‘Yes’ in ESENER</strong></p><p>Spider diagram, all countries plus EU 28 Average, percentage for answers ‘At least ¼ of the time’ in EWCS</p>");
+INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
+
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Repetitive hand or arm movements - Eurofound EWCS Data");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer");
+SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
+SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
+SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p>The percentages of responses to five questions on physical risks in the EWCS and three questions on physical risks in ESENER 2014 are displayed in a spider diagram. It is possible to compare two selected countries; the EU average is always displayed. The questions cover the aspects below. <strong>Specifically this indicator relates to:</strong></p><ul><li>Work involving tiring or painful positions</li><li>Work involving sitting</li><li>Work involving carrying or moving heavy loads</li><li><strong>Work involving repetitive hand or arm movements</strong></li><li>Work involving lifting or moving people</li></ul>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p>ESENER 2014 Survey &nbsp;</p><p><strong>European Working Conditions Survey (EWCS, 2015)&nbsp;</strong></p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to the ESENER 2014 Survey Questions below.</p><p>Depending on the type of work, there are different types of risks and hazards. Please tell me for each of the following risk factors whether it is present or not in your establishment, regardless of whether it is currently under control and regardless of the number of employees it affects:</p><p>“Tiring or painful positions, including sitting for long periods”</p><p>“Lifting or moving people or heavy loads”</p><p>“Repetitive hand or arm movements”</p><p>&nbsp;Answer options:&nbsp;</p><ol><li>Yes</li><li>No</li></ol><p>&nbsp;Responses are displayed to the EWCS Questions below.<strong> Specifically this indicator relates to</strong>:</p><p>“Does your work involve tiring or painful positions?”</p><p>“Does your work involve sitting?”</p><p>“Does your work involve Carrying or moving heavy loads?”</p><p><strong>“Does your work involve Repetitive hand or arm movements?”</strong></p><p>“Does your work involve lifting or moving people?”</p><p>&nbsp;Answer options:</p><ol><li>At least ¼ of the time</li><li>Less than ¼ of the time</li></ol>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>ESENER:</p><p><a href=\"https://osha.europa.eu/en/surveys-and-statistics-osh/esener\">https://osha.europa.eu/en/surveys-and-statistics-osh/esener</a></p><p><strong>EWCS:</strong></p><p><strong><a href=\"https://www.eurofound.europa.eu/data/european-working-conditions-survey\">https://www.eurofound.europa.eu/data/european-working-conditions-survey</a></strong></p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2014 for ESENER 2014 Survey and 2015 for EWCS");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2014 for ESENER 2014 Survey and 2015 for EWCS");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The intended coverage for ESENER 2014 Survey is: 28 EU countries plus, Iceland, Norway and Switzerland. All data for the coverage is available.</p><p><strong>The intended coverage for EWCS is: 28 EU countries plus, Norway and Switzerland. All data for the coverage is available.</strong></p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<ul><li>Activity sector: <strong>All</strong></li></ul>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "null");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentages");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "<p>Spider diagram, all countries plus EU 28 Average, percentage for answers ‘Yes’ in ESENER</p><p><strong>Spider diagram, all countries plus EU 28 Average, percentage for answers ‘At least ¼ of the time’ in EWCS</strong></p>");
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Q250");
@@ -11354,13 +11205,13 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2014");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "The intended coverage is: 28 EU countries plus Iceland, Norway and Switzerland. All data for the coverage is available.");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The <strong>intended coverage</strong> is: 28 EU countries plus Iceland, Norway and Switzerland. All data for the coverage is available.</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<ul><li>Activity sector: <strong>All</strong></li><li>For the detailed visualisation of sectors: <strong>Six sector groups</strong></li><li>For the detailed visualisation of sizes: <strong>Four size groups</strong></li></ul><p>&nbsp;</p><p>&nbsp;</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "No");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "No. Missing responses are not taken into account in the calculation of the percentages.");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "No. Missing responses are not taken into account in the calculation of the percentages.");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentages");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "Bar chart, all countries plus EU 28 Average, percentages of “Yes” answers, split into six sector groups or four size groups possible");
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
@@ -11385,11 +11236,13 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2014");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "The intended coverage is: 28 EU countries plus Iceland, Norway and Switzerland. All data for the coverage is available.");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The <strong>intended coverage</strong> is: 28 EU countries plus Iceland, Norway and Switzerland. All data for the coverage is available.</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<ul><li>Activity sector: <strong>All</strong></li><li>For the detailed visualisation of sectors: <strong>Six sector groups</strong></li><li>For the detailed visualisation of sizes: <strong>Four size groups</strong></li></ul><p>&nbsp;</p><p>&nbsp;</p>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<ul>
+<li>Activity sector: <strong>All</strong></li>
+</ul>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "No");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "null");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentages");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -11408,7 +11261,14 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "ESENER 2014 Survey");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to the ESENER 2014 Survey Question:</p><p>“Are the health and safety representatives provided with any training during work time?”</p><p>Answer options:</p><p>Yes</p><p>Yes but only some of them&nbsp;</p><p>No</p>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to the ESENER 2014 Survey Question:</p>
+<p>&ldquo;Are the health and safety representatives provided with any training during work time?&rdquo;</p>
+<p>Answer options:</p>
+<ol>
+<li>Yes</li>
+<li>Yes but only some of them&nbsp;</li>
+<li>No</li>
+</ol>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>ESENER:</p><p><a href=\"https://osha.europa.eu/en/surveys-and-statistics-osh/esener\">https://osha.europa.eu/en/surveys-and-statistics-osh/esener</a></p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -11416,11 +11276,13 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2014");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "The intended coverage is: 28 EU countries plus Iceland, Norway and Switzerland. All data for the coverage is available.");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The <strong>intended coverage</strong> is: 28 EU countries plus Iceland, Norway and Switzerland. All data for the coverage is available.</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<ul><li>Activity sector: <strong>All</strong></li><li>For the detailed visualisation of sectors: <strong>Six sector groups</strong></li><li>For the detailed visualisation of sizes: <strong>Four size groups</strong></li></ul><p>&nbsp;</p><p>&nbsp;</p>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<ul>
+<li>Activity sector: <strong>All</strong></li>
+</ul>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "No");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "null");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentages");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -11447,176 +11309,15 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2014");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "The intended coverage is: 28 EU countries plus Iceland, Norway and Switzerland. All data for the coverage is available.");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The <strong>intended coverage</strong> is: 28 EU countries plus Iceland, Norway and Switzerland. All data for the coverage is available.</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<ul><li>Activity Sector: <strong>All</strong></li><li>For the detailed visualisation of sectors: <strong>Six sector groups</strong></li><li>For the detailed visualisation of sizes: <strong>Four size groups</strong></li></ul>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "No");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "null");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentages");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "Bar chart, all countries plus EU 28 Average, percentages of “Yes” answers, split into six sector groups or four size groups possible");
-INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
-
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Q358");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="WORKER_INVOLVEMENT" AND t.name="osha_dvt_barometer");
-SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="ESENER" AND date_from="2014-01-01");
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p>The percentages of responses to five questions on worker involvement in ESENER 2014 and three questions on worker involvement in the EWCS are displayed in a spider diagram. It is possible to compare two selected countries; the EU average is always displayed.</p><p><strong>Specifically this indicator relates to: </strong></p><ul><li>Role in the design and set-up of measures to address psychosocial risks</li><li>Trade union, works council or similar committee representing employees</li><li><strong>Health and safety issues regularly discussed in staff or team meetings</strong></li><li>Health and safety delegate or committee</li><li>Health and safety discussion</li></ul>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p><strong>ESENER 2014 Survey &nbsp;</strong></p><p>European Working Conditions Survey (EWCS, 2015)&nbsp;</p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to the ESENER 2014 Survey Questions below. <strong>Specifically this indicator relates to: </strong></p><ul><li>Did the employees have a role in the design and set-up of measures to address psychosocial risks?</li><li>Does your organisation have a trade union, works council or a similar committee representing employees?</li><li><strong>Are health and safety issues regularly discussed in staff or team meetings</strong></li><li>Does your organisation have a health and safety delegate or committee?</li><li>How often controversies on health and safety arise? Is this often, sometimes or practically never the case?</li></ul><p>Answer options:</p><ol><li>Yes; No</li><li>Yes; No</li><li><strong>Yes, No; In some departments only</strong></li><li>Yes, No</li><li>Often; Sometimes; Practically never</li></ol><p>Responses are displayed to the EWCS Questions below.<strong>&nbsp;</strong></p><p>“Does your organisation have …?:</p><ul><li>a trade union, works council or a similar committee representing employees?</li><li>a health and safety delegate or committee?</li><li>a regular meeting in which employees can express their views about what is happening in the organisation?”</li></ul><p>Answer options:</p><ol><li>Yes</li><li>No</li></ol>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p><strong>ESENER:</strong></p><p><strong><a href=\"https://osha.europa.eu/en/surveys-and-statistics-osh/esener\">https://osha.europa.eu/en/surveys-and-statistics-osh/esener</a></strong></p><p>EWCS:</p><p><a href=\"https://www.eurofound.europa.eu/data/european-working-conditions-survey\">https://www.eurofound.europa.eu/data/european-working-conditions-survey</a></p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2014 for ESENER 2014 Survey and 2015 for EWCS");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2014 for ESENER 2014 Survey and 2015 for EWCS");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p><strong>The intended coverage for ESENER 2014 Survey is: 28 EU countries plus, Iceland, Norway and Switzerland. All data for the coverage is available.</strong></p><p>The intended coverage for EWCS is: 28 EU countries plus, Norway and Switzerland. All data for the coverage is available.</p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<ul><li>Activity Sector: <strong>All</strong></li><li>For the detailed visualisation of sectors: <strong>Six sector groups</strong></li><li>For the detailed visualisation of sizes: <strong>Four size groups</strong></li></ul>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "Answers to ESENER Q1, Q2 and Q4: No calculation, only percentage of “Yes” Answers taken
-Answer to ESENER Q3: Addition of responses ‘Yes’ and ‘In some departments only’
-Answer to ESENER Q5: Addition of responses ‘Often’ and ‘Sometimes’
-No calculations for EWCS");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentages");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "<p><strong>Spider diagram, all countries plus EU 28 Average, percentages of “Yes” answers for Q1, Q2, and Q4, for Q3 and Q5 see ‘Calculations’ in ESENER</strong></p><p>Spider diagram, all countries plus EU 28 Average, percentage for answers ‘Yes’ in EUROF");
-INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
-
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Q351");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="WORKER_INVOLVEMENT" AND t.name="osha_dvt_barometer");
-SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="ESENER" AND date_from="2014-01-01");
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p>The percentages of responses to five questions on worker involvement in ESENER 2014 and three questions on worker involvement in the EWCS are displayed in a spider diagram. It is possible to compare two selected countries; the EU average is always displayed.</p><p><strong>Specifically this indicator relates to: </strong></p><ul><li>Role in the design and set-up of measures to address psychosocial risks</li><li>Trade union, works council or similar committee representing employees</li><li>Health and safety issues regularly discussed in staff or team meetings</li><li>Health and safety delegate or committee</li><li><strong>Health and safety discussion</strong></li></ul>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p><strong>ESENER 2014 Survey &nbsp;</strong></p><p>European Working Conditions Survey (EWCS, 2015)&nbsp;</p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to the ESENER 2014 Survey Questions below. <strong>Specifically this indicator relates to: </strong></p><ul><li>Did the employees have a role in the design and set-up of measures to address psychosocial risks?</li><li>Does your organisation have a trade union, works council or a similar committee representing employees?</li><li>Are health and safety issues regularly discussed in staff or team meetings</li><li>Does your organisation have a health and safety delegate or committee?</li><li><strong>How often controversies on health and safety arise? Is this often, sometimes or practically never the case?</strong></li></ul><p>Answer options:</p><ol><li>Yes; No</li><li>Yes; No</li><li>Yes, No; In some departments only</li><li>Yes, No</li><li><strong>Often; Sometimes; Practically never</strong></li></ol><p>Responses are displayed to the EWCS Questions below.<strong>&nbsp;</strong></p><p>“Does your organisation have …?:</p><ul><li>a trade union, works council or a similar committee representing employees?</li><li>a health and safety delegate or committee?</li><li>a regular meeting in which employees can express their views about what is happening in the organisation?”</li></ul><p>Answer options:</p><ol><li>Yes</li><li>No</li></ol>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p><strong>ESENER:</strong></p><p><strong><a href=\"https://osha.europa.eu/en/surveys-and-statistics-osh/esener\">https://osha.europa.eu/en/surveys-and-statistics-osh/esener</a></strong></p><p>EWCS:</p><p><a href=\"https://www.eurofound.europa.eu/data/european-working-conditions-survey\">https://www.eurofound.europa.eu/data/european-working-conditions-survey</a></p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2014 for ESENER 2014 Survey and 2015 for EWCS");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2014 for ESENER 2014 Survey and 2015 for EWCS");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p><strong>The intended coverage for ESENER 2014 Survey is: 28 EU countries plus, Iceland, Norway and Switzerland. All data for the coverage is available.</strong></p><p>The intended coverage for EWCS is: 28 EU countries plus, Norway and Switzerland. All data for the coverage is available.</p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<ul><li>Activity Sector: <strong>All</strong></li><li>For the detailed visualisation of sectors: <strong>Six sector groups</strong></li><li>For the detailed visualisation of sizes: <strong>Four size groups</strong></li></ul>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "Answers to ESENER Q1, Q2 and Q4: No calculation, only percentage of “Yes” Answers taken
-Answer to ESENER Q3: Addition of responses ‘Yes’ and ‘In some departments only’
-Answer to ESENER Q5: Addition of responses ‘Often’ and ‘Sometimes’
-No calculations for EWCS");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentages");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "<p><strong>Spider diagram, all countries plus EU 28 Average, percentages of “Yes” answers for Q1, Q2, and Q4, for Q3 and Q5 see ‘Calculations’ in ESENER</strong></p><p>Spider diagram, all countries plus EU 28 Average, percentage for answers ‘Yes’ in EUROF");
-INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
-
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Q165");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="ENFORCEMENT_CAPACITY" AND t.name="osha_dvt_barometer");
-SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="ESENER" AND date_from="2014-01-01");
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "The percentages of responses to this question in ESENER 2014 are displayed in a bar chart. Each bar has two different colours and shows the percentages of the two possible responses for each EU Member State the average for the EU-28 and the responses for Iceland, Switzerland and Norway.");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "ESENER 2014 Survey");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to the ESENER 2014 Survey Question:</p><p>“Have you been visited by the Labour Inspection in the last three years?”</p><p>Answer options: </p><ol><li>Yes</li><li>No</li></ol>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>ESENER:</p><p><a href=\"https://osha.europa.eu/en/surveys-and-statistics-osh/esener\">https://osha.europa.eu/en/surveys-and-statistics-osh/esener</a></p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2014");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2014");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "The intended coverage is: 28 EU countries plus Iceland, Norway and Switzerland. All data for the coverage is available.");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<ul><li>Activity sector: <strong>All</strong></li><li>For the detailed visualisation of sectors: <strong>Six sector groups</strong></li><li>For the detailed visualisation of sizes: <strong>Four size groups</strong></li></ul><p>&nbsp;</p><p>&nbsp;</p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "No");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentages");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "Boxes with EU and country data, all countries plus EU 28 Average plus Iceland, Norway and Switzerland, percentages of “Yes” answers, two countries can be selected");
-INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
-
-SET @indicatorId = (SELECT id FROM indicator WHERE name="GDP per capita in relation to EU28 average EURO");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="ECONOMIC_SECTOR_PROFILE" AND t.name="osha_dvt_barometer");
-SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="EUROSTAT" AND date_from="2017-01-01");
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "The indicator ‘Economic and sector profile’ provides basic background data on the economic structures of the countries. The GDP per capita is a major indicator of the economic overall wealth of a society, which also influences the status of OSH.");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "EUROSTAT");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "Main GDP aggregates per capita");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>EUROSTAT:</p><p><a href=\"http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=nama_10_pc&amp;lang=en\">http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=nama_10_pc&amp;lang=en</a></p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2017");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "03/06/2019 for PPS and 15/01/2019 for Euro ");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "The intended coverage is: 28 EU countries plus Iceland, Norway and Switzerland. All data for the coverage is available.");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<p>The following <strong>filter options</strong> were applied by EU-OSHA in the EUROSTAT-table:</p><ul><li>Gross domestic product at market prices</li><li>Percentage of EU28 total per capita (based on million purchasing power standards), current prices/<s");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "EUROSTAT provides the calculation of percentages by its filtering options, those values are taken as base for the calculation. EU-OSHA calculated the percentages in relation to EU 28 average, EU 28 average = 100.");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentages (in relation to EU 28 average, EU 28 average = 100)");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "The percentages are visualised as drawing of a person for EU and two selected countries, changing its sizes depending on the percentage calculated, EU = always 100. Split to select between the unit of measures.");
-INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
-
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Income per capita EURO");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="ECONOMIC_SECTOR_PROFILE" AND t.name="osha_dvt_barometer");
-SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="EUROSTAT" AND date_from="2010-01-01" AND date_to="2017-12-31");
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "The indicator ‘Economic and sector profile’ provides basic background data on the economic structures of the countries. Income per capita is an indicator of the economic situation of the individuals in a society.");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "EUROSTAT");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "Mean and median income by age and sex – EU SILC survey");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>EUROSTAT:</p><p><a href=\"http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=ilc_di03&amp;lang=en\">http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=ilc_di03&amp;lang=en</a></p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2010 - 2017");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "22/05/2019 for PPS and 26/04/2019 for Euro");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "The intended coverage is: 28 EU countries plus Iceland, Norway and Switzerland. All data for the coverage is available.");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<p>The following <strong>filter options</strong> were applied by EU-OSHA in the EUROSTAT-table:</p><ul><li>Median equivalised net income</li><li>Age class: Total</li><li>Sex: Total</li><li>Purchasing power standard (PPS)/<strong>Euro</strong></li></ul>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "EU-OSHA visualises the trend between 2010 and 2017 as trend line between the start and the end of the reference period");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Euro; percentages");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "The percentages are visualised as line diagram (total EU 28 Average plus two countries of choice). Split to select between the unit of measure.");
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Q305");
@@ -11641,16 +11342,16 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p><strong>The intended coverage for ESENER 2014 Survey is: 28 EU countries plus, Iceland, Norway and Switzerland. All data for the coverage is available.</strong></p><p>The intended coverage for EWCS is: 28 EU countries plus, Norway and Switzerland. All data for the coverage is available.</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<ul><li>Activity Sector: <strong>All</strong></li><li>For the detailed visualisation of sectors: <strong>Six sector groups</strong></li><li>For the detailed visualisation of sizes: <strong>Four size groups</strong></li></ul>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<ul>
+<li>Activity Sector: <strong>All</strong></li>
+</ul>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "Answers to ESENER Q1, Q2 and Q4: No calculation, only percentage of “Yes” Answers taken
-Answer to ESENER Q3: Addition of responses ‘Yes’ and ‘In some departments only’
-Answer to ESENER Q5: Addition of responses ‘Often’ and ‘Sometimes’
-No calculations for EWCS");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "<p><strong>Answers to ESENER Q1, Q2 and Q4: No calculation, only percentage of “Yes” Answers taken</strong></p><p>Answer to ESENER Q3: Addition of responses ‘Yes’ and ‘In some departments only’</p><p>Answer to ESENER Q5: Addition of responses ‘Often’ and ‘Sometimes’</p><p>No calculations for EUROFOUND</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentages");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "Bar chart, all countries plus EU 28 Average, percentages of “Yes” answers, split into six sector groups or four size groups possible");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "<p><strong>Spider diagram, all countries plus EU 28 Average, percentages of &ldquo;Yes&rdquo; answers for Q1, Q2, and Q4, for Q3 and Q5 see &lsquo;Calculations&rsquo; in ESENER</strong></p>
+<p>Spider diagram, all countries plus EU 28 Average, percentage for answers &lsquo;Yes&rsquo; in EWCS</p>");
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Q166_2");
@@ -11675,16 +11376,113 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p><strong>The intended coverage for ESENER 2014 Survey is: 28 EU countries plus, Iceland, Norway and Switzerland. All data for the coverage is available.</strong></p><p>The intended coverage for EWCS is: 28 EU countries plus, Norway and Switzerland. All data for the coverage is available.</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<ul><li>Activity Sector: <strong>All</strong></li><li>For the detailed visualisation of sectors: <strong>Six sector groups</strong></li><li>For the detailed visualisation of sizes: <strong>Four size groups</strong></li></ul>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<ul>
+<li>Activity Sector: <strong>All</strong></li>
+</ul>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "Answers to ESENER Q1, Q2 and Q4: No calculation, only percentage of “Yes” Answers taken
-Answer to ESENER Q3: Addition of responses ‘Yes’ and ‘In some departments only’
-Answer to ESENER Q5: Addition of responses ‘Often’ and ‘Sometimes’
-No calculations for EWCS");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "<p><strong>Answers to ESENER Q1, Q2 and Q4: No calculation, only percentage of “Yes” Answers taken</strong></p><p>Answer to ESENER Q3: Addition of responses ‘Yes’ and ‘In some departments only’</p><p>Answer to ESENER Q5: Addition of responses ‘Often’ and ‘Sometimes’</p><p>No calculations for EUROFOUND</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentages");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "<p><strong>Spider diagram, all countries plus EU 28 Average, percentages of “Yes” answers for Q1, Q2, and Q4, for Q3 and Q5 see ‘Calculations’ in ESENER</strong></p><p>Spider diagram, all countries plus EU 28 Average, percentage for answers ‘Yes’ in EUROF");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "<p><strong>Spider diagram, all countries plus EU 28 Average, percentages of &ldquo;Yes&rdquo; answers for Q1, Q2, and Q4, for Q3 and Q5 see &lsquo;Calculations&rsquo; in ESENER</strong></p>
+<p>Spider diagram, all countries plus EU 28 Average, percentage for answers &lsquo;Yes&rsquo; in EWCS</p>");
+INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
+
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Does your organisation have a trade union, works council or a similar committee representing employees? - Eurofound EWCS Data");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="WORKER_INVOLVEMENT" AND t.name="osha_dvt_barometer");
+SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
+SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
+SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p>The percentages of responses to five questions on worker involvement in ESENER 2014 and three questions on worker involvement in the EWCS are displayed in a spider diagram. It is possible to compare two selected countries; the EU average is always displayed.</p><p><strong>Specifically this indicator relates to: </strong></p><ul><li>Role in the design and set-up of measures to address psychosocial risks</li><li><strong>Trade union, works council or similar committee representing employees</strong></li><li>Health and safety issues regularly discussed in staff or team meetings</li><li>Health and safety delegate or committee</li><li>Health and safety discussion</li></ul>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p>ESENER 2014 Survey &nbsp;</p><p><strong>European Working Conditions Survey (EWCS, 2015)&nbsp;</strong></p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to the ESENER 2014 Survey Questions below.</p><ul><li>Did the employees have a role in the design and set-up of measures to address psychosocial risks?</li><li>Does your organisation have a trade union, works council or a similar committee representing employees?</li><li>Are health and safety issues regularly discussed in staff or team meetings</li><li>Does your organisation have a health and safety delegate or committee?</li><li>How often controversies on health and safety arise? Is this often, sometimes or practically never the case?</li></ul><p>Answer options:</p><ol><li>Yes; No</li><li>Yes; No</li><li>Yes, No; In some departments only</li><li>Yes, No</li><li>Often; Sometimes; Practically never</li></ol><p>Responses are displayed to the EWCS Questions below.<strong>&nbsp;<strong>Specifically this indicator relates to:</strong></strong></p><p>“Does your organisation have …?:</p><ul><li><strong>a trade union, works council or a similar committee representing employees?</strong></li><li>a health and safety delegate or committee?</li><li>a regular meeting in which employees can express their views about what is happening in the organisation?”</li></ul><p>Answer options:</p><ol><li>Yes</li><li>No</li></ol>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>ESENER:</p><p><a href=\"https://osha.europa.eu/en/surveys-and-statistics-osh/esener\">https://osha.europa.eu/en/surveys-and-statistics-osh/esener</a></p><p><strong>EWCS:</strong></p><p><strong><a href=\"https://www.eurofound.europa.eu/data/european-working-conditions-survey\">https://www.eurofound.europa.eu/data/european-working-conditions-survey</a></strong></p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2014 for ESENER 2014 Survey and 2015 for EWCS");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2014 for ESENER 2014 Survey and 2015 for EWCS");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The intended coverage for ESENER 2014 Survey is: 28 EU countries plus, Iceland, Norway and Switzerland. All data for the coverage is available.</p><p><strong>The intended coverage for EWCS is: 28 EU countries plus, Norway and Switzerland. All data for the coverage is available.</strong></p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<ul><li>Activity sector: <strong>All</strong></li></ul>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "<p>Answers to ESENER Q1, Q2 and Q4: No calculation, only percentage of “Yes” Answers taken</p><p>Answer to ESENER Q3: Addition of responses ‘Yes’ and ‘In some departments only’</p><p>Answer to ESENER Q5: Addition of responses ‘Often’ and ‘Sometimes’</p><p><strong>No calculations for EUROFOUND</strong></p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentages");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "<p>Spider diagram, all countries plus EU 28 Average, percentages of “Yes” answers for Q1, Q2, and Q4, for Q3 and Q5 see ‘Calculations’ in ESENER</p><p><strong>Spider diagram, all countries plus EU 28 Average, percentage for answers ‘Yes’ in EWCS</str");
+INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
+
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Q358");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="WORKER_INVOLVEMENT" AND t.name="osha_dvt_barometer");
+SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
+SET @datasetId = (SELECT id FROM dataset WHERE source="ESENER" AND date_from="2014-01-01");
+SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p>The percentages of responses to five questions on worker involvement in ESENER 2014 and three questions on worker involvement in the EWCS are displayed in a spider diagram. It is possible to compare two selected countries; the EU average is always displayed.</p><p><strong>Specifically this indicator relates to: </strong></p><ul><li>Role in the design and set-up of measures to address psychosocial risks</li><li>Trade union, works council or similar committee representing employees</li><li><strong>Health and safety issues regularly discussed in staff or team meetings</strong></li><li>Health and safety delegate or committee</li><li>Health and safety discussion</li></ul>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p><strong>ESENER 2014 Survey &nbsp;</strong></p><p>European Working Conditions Survey (EWCS, 2015)&nbsp;</p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to the ESENER 2014 Survey Questions below. <strong>Specifically this indicator relates to: </strong></p><ul><li>Did the employees have a role in the design and set-up of measures to address psychosocial risks?</li><li>Does your organisation have a trade union, works council or a similar committee representing employees?</li><li><strong>Are health and safety issues regularly discussed in staff or team meetings</strong></li><li>Does your organisation have a health and safety delegate or committee?</li><li>How often controversies on health and safety arise? Is this often, sometimes or practically never the case?</li></ul><p>Answer options:</p><ol><li>Yes; No</li><li>Yes; No</li><li><strong>Yes, No; In some departments only</strong></li><li>Yes, No</li><li>Often; Sometimes; Practically never</li></ol><p>Responses are displayed to the EWCS Questions below.<strong>&nbsp;</strong></p><p>“Does your organisation have …?:</p><ul><li>a trade union, works council or a similar committee representing employees?</li><li>a health and safety delegate or committee?</li><li>a regular meeting in which employees can express their views about what is happening in the organisation?”</li></ul><p>Answer options:</p><ol><li>Yes</li><li>No</li></ol>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p><strong>ESENER:</strong></p><p><strong><a href=\"https://osha.europa.eu/en/surveys-and-statistics-osh/esener\">https://osha.europa.eu/en/surveys-and-statistics-osh/esener</a></strong></p><p>EWCS:</p><p><a href=\"https://www.eurofound.europa.eu/data/european-working-conditions-survey\">https://www.eurofound.europa.eu/data/european-working-conditions-survey</a></p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2014 for ESENER 2014 Survey and 2015 for EWCS");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2014 for ESENER 2014 Survey and 2015 for EWCS");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p><strong>The intended coverage for ESENER 2014 Survey is: 28 EU countries plus, Iceland, Norway and Switzerland. All data for the coverage is available.</strong></p><p>The intended coverage for EWCS is: 28 EU countries plus, Norway and Switzerland. All data for the coverage is available.</p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<ul>
+<li>Activity Sector: <strong>All</strong></li>
+</ul>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "<p>Answers to ESENER Q1, Q2 and Q4: No calculation, only percentage of “Yes” Answers taken</p><p><strong>Answer to ESENER Q3: Addition of responses ‘Yes’ and ‘In some departments only’</strong></p><p>Answer to ESENER Q5: Addition of responses ‘Often’ and ‘Sometimes’</p><p>No calculations for EUROFOUND</p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentages");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "<p><strong>Spider diagram, all countries plus EU 28 Average, percentages of &ldquo;Yes&rdquo; answers for Q1, Q2, and Q4, for Q3 and Q5 see &lsquo;Calculations&rsquo; in ESENER</strong></p>
+<p>Spider diagram, all countries plus EU 28 Average, percentage for answers &lsquo;Yes&rsquo; in EWCS</p>");
+INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
+
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Does your organisation have a regular meeting in which employees can express their views about what is happening in the organisation?");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="WORKER_INVOLVEMENT" AND t.name="osha_dvt_barometer");
+SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
+SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
+SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p>The percentages of responses to five questions on worker involvement in ESENER 2014 and three questions on worker involvement in the EWCS are displayed in a spider diagram. It is possible to compare two selected countries; the EU average is always displayed.</p><p><strong>Specifically this indicator relates to: </strong></p><ul><li>Role in the design and set-up of measures to address psychosocial risks</li><li>Trade union, works council or similar committee representing employees</li><li><strong>Health and safety issues regularly discussed in staff or team meetings</strong></li><li>Health and safety delegate or committee</li><li>Health and safety discussion</li></ul>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p>ESENER 2014 Survey &nbsp;</p><p><strong>European Working Conditions Survey (EWCS, 2015)&nbsp;</strong></p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to the ESENER 2014 Survey Questions below.</p><ul><li>Did the employees have a role in the design and set-up of measures to address psychosocial risks?</li><li>Does your organisation have a trade union, works council or a similar committee representing employees?</li><li>Are health and safety issues regularly discussed in staff or team meetings</li><li>Does your organisation have a health and safety delegate or committee?</li><li>How often controversies on health and safety arise? Is this often, sometimes or practically never the case?</li></ul><p>Answer options:</p><ol><li>Yes; No</li><li>Yes; No</li><li>Yes, No; In some departments only</li><li>Yes, No</li><li>Often; Sometimes; Practically never</li></ol><p>Responses are displayed to the EWCS Questions below.<strong>&nbsp;<strong>Specifically this indicator relates to:</strong></strong></p><p>“Does your organisation have …?:</p><ul><li>a trade union, works council or a similar committee representing employees?</li><li>a health and safety delegate or committee?</li><li><strong>a regular meeting in which employees can express their views about what is happening in the organisation?”</strong></li></ul><p>Answer options:</p><ol><li>Yes</li><li>No</li></ol>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>ESENER:</p><p><a href=\"https://osha.europa.eu/en/surveys-and-statistics-osh/esener\">https://osha.europa.eu/en/surveys-and-statistics-osh/esener</a></p><p><strong>EWCS:</strong></p><p><strong><a href=\"https://www.eurofound.europa.eu/data/european-working-conditions-survey\">https://www.eurofound.europa.eu/data/european-working-conditions-survey</a></strong></p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2014 for ESENER 2014 Survey and 2015 for EWCS");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2014 for ESENER 2014 Survey and 2015 for EWCS
+ ");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The intended coverage for ESENER 2014 Survey is: 28 EU countries plus, Iceland, Norway and Switzerland. All data for the coverage is available.</p><p><strong>The intended coverage for EWCS is: 28 EU countries plus, Norway and Switzerland. All data for the coverage is available.</strong></p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<ul><li>Activity sector: <strong>All</strong></li></ul>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "<p>Answers to ESENER Q1, Q2 and Q4: No calculation, only percentage of “Yes” Answers taken</p><p>Answer to ESENER Q3: Addition of responses ‘Yes’ and ‘In some departments only’</p><p>Answer to ESENER Q5: Addition of responses ‘Often’ and ‘Sometimes’</p><p><strong>No calculations for EUROFOUND</strong></p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentages");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "<p>Spider diagram, all countries plus EU 28 Average, percentages of “Yes” answers for Q1, Q2, and Q4, for Q3 and Q5 see ‘Calculations’ in ESENER</p><p><strong>Spider diagram, all countries plus EU 28 Average, percentage for answers ‘Yes’ in EUROFOUND</strong></p>");
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Q166_3");
@@ -11709,14 +11507,327 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p><strong>The intended coverage for ESENER 2014 Survey is: 28 EU countries plus, Iceland, Norway and Switzerland. All data for the coverage is available.</strong></p><p>The intended coverage for EWCS is: 28 EU countries plus, Norway and Switzerland. All data for the coverage is available.</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<ul><li>Activity Sector: <strong>All</strong></li><li>For the detailed visualisation of sectors: <strong>Six sector groups</strong></li><li>For the detailed visualisation of sizes: <strong>Four size groups</strong></li></ul>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<ul>
+<li>Activity Sector: <strong>All</strong></li>
+</ul>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "Answers to ESENER Q1, Q2 and Q4: No calculation, only percentage of “Yes” Answers taken
-Answer to ESENER Q3: Addition of responses ‘Yes’ and ‘In some departments only’
-Answer to ESENER Q5: Addition of responses ‘Often’ and ‘Sometimes’
-No calculations for EWCS");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "<p><strong>Answers to ESENER Q1, Q2 and Q4: No calculation, only percentage of “Yes” Answers taken</strong></p><p>Answer to ESENER Q3: Addition of responses ‘Yes’ and ‘In some departments only’</p><p>Answer to ESENER Q5: Addition of responses ‘Often’ and ‘Sometimes’</p><p>No calculations for EUROFOUND</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentages");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "<p><strong>Spider diagram, all countries plus EU 28 Average, percentages of “Yes” answers for Q1, Q2, and Q4, for Q3 and Q5 see ‘Calculations’ in ESENER</strong></p><p>Spider diagram, all countries plus EU 28 Average, percentage for answers ‘Yes’ in EUROF");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "<p><strong>Spider diagram, all countries plus EU 28 Average, percentages of &ldquo;Yes&rdquo; answers for Q1, Q2, and Q4, for Q3 and Q5 see &lsquo;Calculations&rsquo; in ESENER</strong></p>
+<p>Spider diagram, all countries plus EU 28 Average, percentage for answers &lsquo;Yes&rsquo; in EWCS</p>");
+INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
+
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Does your organisation have a health and safety delegate or committee? - Eurofound EWCS Data");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="WORKER_INVOLVEMENT" AND t.name="osha_dvt_barometer");
+SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
+SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
+SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p>The percentages of responses to five questions on worker involvement in ESENER 2014 and three questions on worker involvement in the EWCS are displayed in a spider diagram. It is possible to compare two selected countries; the EU average is always displayed.</p><p><strong>Specifically this indicator relates to: </strong></p><ul><li>Role in the design and set-up of measures to address psychosocial risks</li><li>Trade union, works council or similar committee representing employees</li><li>Health and safety issues regularly discussed in staff or team meetings</li><li><strong>Health and safety delegate or committee</strong></li><li>Health and safety discussion</li></ul>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p>ESENER 2014 Survey &nbsp;</p><p><strong>European Working Conditions Survey (EWCS, 2015)&nbsp;</strong></p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to the ESENER 2014 Survey Questions below.</p><ul><li>Did the employees have a role in the design and set-up of measures to address psychosocial risks?</li><li>Does your organisation have a trade union, works council or a similar committee representing employees?</li><li>Are health and safety issues regularly discussed in staff or team meetings</li><li>Does your organisation have a health and safety delegate or committee?</li><li>How often controversies on health and safety arise? Is this often, sometimes or practically never the case?</li></ul><p>Answer options:</p><ol><li>Yes; No</li><li>Yes; No</li><li>Yes, No; In some departments only</li><li>Yes, No</li><li>Often; Sometimes; Practically never</li></ol><p>Responses are displayed to the EWCS Questions below.<strong>&nbsp;<strong>Specifically this indicator relates to:</strong></strong></p><p>“Does your organisation have …?:</p><ul><li>a trade union, works council or a similar committee representing employees?</li><li><strong>a health and safety delegate or committee?</strong></li><li>a regular meeting in which employees can express their views about what is happening in the organisation?”</li></ul><p>Answer options:</p><ol><li>Yes</li><li>No</li></ol>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>ESENER:</p><p><a href=\"https://osha.europa.eu/en/surveys-and-statistics-osh/esener\">https://osha.europa.eu/en/surveys-and-statistics-osh/esener</a></p><p><strong>EWCS:</strong></p><p><strong><a href=\"https://www.eurofound.europa.eu/data/european-working-conditions-survey\">https://www.eurofound.europa.eu/data/european-working-conditions-survey</a></strong></p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2014 for ESENER 2014 Survey and 2015 for EWCS");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2014 for ESENER 2014 Survey and 2015 for EWCS");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The intended coverage for ESENER 2014 Survey is: 28 EU countries plus, Iceland, Norway and Switzerland. All data for the coverage is available.</p><p><strong>The intended coverage for EWCS is: 28 EU countries plus, Norway and Switzerland. All data for the coverage is available.</strong></p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<ul><li>Activity sector: <strong>All</strong></li></ul>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "<p>Answers to ESENER Q1, Q2 and Q4: No calculation, only percentage of “Yes” Answers taken</p><p>Answer to ESENER Q3: Addition of responses ‘Yes’ and ‘In some departments only’</p><p>Answer to ESENER Q5: Addition of responses ‘Often’ and ‘Sometimes’</p><p><strong>No calculations for EUROFOUND</strong></p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentages");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "<p>Spider diagram, all countries plus EU 28 Average, percentages of “Yes” answers for Q1, Q2, and Q4, for Q3 and Q5 see ‘Calculations’ in ESENER</p><p><strong>Spider diagram, all countries plus EU 28 Average, percentage for answers ‘Yes’ in EWCS</str");
+INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
+
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Q351");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="WORKER_INVOLVEMENT" AND t.name="osha_dvt_barometer");
+SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
+SET @datasetId = (SELECT id FROM dataset WHERE source="ESENER" AND date_from="2014-01-01");
+SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p>The percentages of responses to five questions on worker involvement in ESENER 2014 and three questions on worker involvement in the EWCS are displayed in a spider diagram. It is possible to compare two selected countries; the EU average is always displayed.</p><p><strong>Specifically this indicator relates to: </strong></p><ul><li>Role in the design and set-up of measures to address psychosocial risks</li><li>Trade union, works council or similar committee representing employees</li><li>Health and safety issues regularly discussed in staff or team meetings</li><li>Health and safety delegate or committee</li><li><strong>Health and safety discussion</strong></li></ul>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p><strong>ESENER 2014 Survey &nbsp;</strong></p><p>European Working Conditions Survey (EWCS, 2015)&nbsp;</p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to the ESENER 2014 Survey Questions below. <strong>Specifically this indicator relates to: </strong></p><ul><li>Did the employees have a role in the design and set-up of measures to address psychosocial risks?</li><li>Does your organisation have a trade union, works council or a similar committee representing employees?</li><li>Are health and safety issues regularly discussed in staff or team meetings</li><li>Does your organisation have a health and safety delegate or committee?</li><li><strong>How often controversies on health and safety arise? Is this often, sometimes or practically never the case?</strong></li></ul><p>Answer options:</p><ol><li>Yes; No</li><li>Yes; No</li><li>Yes, No; In some departments only</li><li>Yes, No</li><li><strong>Often; Sometimes; Practically never</strong></li></ol><p>Responses are displayed to the EWCS Questions below.<strong>&nbsp;</strong></p><p>“Does your organisation have …?:</p><ul><li>a trade union, works council or a similar committee representing employees?</li><li>a health and safety delegate or committee?</li><li>a regular meeting in which employees can express their views about what is happening in the organisation?”</li></ul><p>Answer options:</p><ol><li>Yes</li><li>No</li></ol>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p><strong>ESENER:</strong></p><p><strong><a href=\"https://osha.europa.eu/en/surveys-and-statistics-osh/esener\">https://osha.europa.eu/en/surveys-and-statistics-osh/esener</a></strong></p><p>EWCS:</p><p><a href=\"https://www.eurofound.europa.eu/data/european-working-conditions-survey\">https://www.eurofound.europa.eu/data/european-working-conditions-survey</a></p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2014 for ESENER 2014 Survey and 2015 for EWCS");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2014 for ESENER 2014 Survey and 2015 for EWCS");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p><strong>The intended coverage for ESENER 2014 Survey is: 28 EU countries plus, Iceland, Norway and Switzerland. All data for the coverage is available.</strong></p><p>The intended coverage for EWCS is: 28 EU countries plus, Norway and Switzerland. All data for the coverage is available.</p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<ul>
+<li>Activity Sector: <strong>All</strong></li>
+</ul>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "<p>Answers to ESENER Q1, Q2 and Q4: No calculation, only percentage of “Yes” Answers taken</p><p>Answer to ESENER Q3: Addition of responses ‘Yes’ and ‘In some departments only’</p><p><strong>Answer to ESENER Q5: Addition of responses ‘Often’ and ‘Sometimes’</strong></p><p>No calculations for EUROFOUND</p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentages");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "<p><strong>Spider diagram, all countries plus EU 28 Average, percentages of &ldquo;Yes&rdquo; answers for Q1, Q2, and Q4, for Q3 and Q5 see &lsquo;Calculations&rsquo; in ESENER</strong></p>
+<p>Spider diagram, all countries plus EU 28 Average, percentage for answers &lsquo;Yes&rsquo; in EWCS</p>");
+INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
+
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Q165");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="ENFORCEMENT_CAPACITY" AND t.name="osha_dvt_barometer");
+SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
+SET @datasetId = (SELECT id FROM dataset WHERE source="ESENER" AND date_from="2014-01-01");
+SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "The percentages of responses to this question in ESENER 2014 are displayed in a bar chart. Each bar has two different colours and shows the percentages of the two possible responses for each EU Member State the average for the EU-28 and the responses for Iceland, Switzerland and Norway.");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "ESENER 2014 Survey");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to the ESENER 2014 Survey Question:</p><p>“Have you been visited by the Labour Inspection in the last three years?”</p><p>Answer options: </p><ol><li>Yes</li><li>No</li></ol>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>ESENER:</p><p><a href=\"https://osha.europa.eu/en/surveys-and-statistics-osh/esener\">https://osha.europa.eu/en/surveys-and-statistics-osh/esener</a></p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2014");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2014");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The <strong>intended coverage</strong> is: 28 EU countries plus Iceland, Norway and Switzerland. All data for the coverage is available.</p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<ul><li>Activity sector: <strong>All</strong></li><li>For the detailed visualisation of sectors: <strong>Six sector groups</strong></li><li>For the detailed visualisation of sizes: <strong>Four size groups</strong></li></ul><p>&nbsp;</p><p>&nbsp;</p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "null");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentages");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "Boxes with EU and country data, all countries plus EU 28 Average plus Iceland, Norway and Switzerland, percentages of “Yes” answers, two countries can be selected");
+INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
+
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Authority");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="ENFORCEMENT_CAPACITY" AND t.name="osha_dvt_barometer");
+SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
+SET @datasetId = (SELECT id FROM dataset WHERE source="SLIC Reports (DG EMPL)" AND date_from="2016-01-01" AND date_to="2017-12-31");
+SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p>It is possible to select two of the 28 Member States in order to perform a comparison between those two Member States, related to four structural characteristics.</p><p>This part is based on the non-confidential parts of the SLIC evaluation of Member States. It is structured according to this scheme.</p><p><strong>Specifically this indicator relates to</strong>:</p><ul><li><strong>Authority</strong></li><li>Scope of the labour inspection</li><li>Inspectors’ powers</li><li>Strategy/plan</li></ul>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p>The source for OSH-authorities and OSH-institutions is a preparatory report for DG Employment from 2018. Most of the data have been compiled in 2016 or 2017.<br />(Kooperationsstelle Hamburg IFE / EUROGIP: Development and design of a structural model for the construction and implementation of an EU OSH Information System, Final Report, March 2018, Service contract No VC/2016/0055).</p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "null");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "null");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2010/2017");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2018");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "Currently 17 Member States (Austria, Bulgaria, Cyprus, Estonia, Finland, Greece, Hungary, Latvia, Lithuania, Poland and Portugal) aiming to reach all 28.  ");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "null");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "null");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "null");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "Text based, country selection options");
+INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
+
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Scope of the Labor Inspection");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="ENFORCEMENT_CAPACITY" AND t.name="osha_dvt_barometer");
+SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
+SET @datasetId = (SELECT id FROM dataset WHERE source="SLIC Reports (DG EMPL)" AND date_from="2016-01-01" AND date_to="2017-12-31");
+SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p>It is possible to select two of the 28 Member States in order to perform a comparison between those two Member States, related to four structural characteristics.</p><p>This part is based on the non-confidential parts of the SLIC evaluation of Member States. It is structured according to this scheme.</p><p><strong>Specifically this indicator relates to</strong>:</p><ul><li>Authority</li><li><strong>Scope of the labour inspection</strong></li><li>Inspectors’ powers</li><li>Strategy/plan</li></ul>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p>The source for OSH-authorities and OSH-institutions is a preparatory report for DG Employment from 2018. Most of the data have been compiled in 2016 or 2017.<br />(Kooperationsstelle Hamburg IFE / EUROGIP: Development and design of a structural model for the construction and implementation of an EU OSH Information System, Final Report, March 2018, Service contract No VC/2016/0055).</p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "null");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "null");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2010/2017");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2018");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "Currently 17 Member States (Austria, Bulgaria, Cyprus, Estonia, Finland, Greece, Hungary, Latvia, Lithuania, Poland and Portugal) aiming to reach all 28.  ");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "null");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "null");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "null");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "Text based, country selection options");
+INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
+
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Inspector powers");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="ENFORCEMENT_CAPACITY" AND t.name="osha_dvt_barometer");
+SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
+SET @datasetId = (SELECT id FROM dataset WHERE source="SLIC Reports (DG EMPL)" AND date_from="2016-01-01" AND date_to="2017-12-31");
+SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p>It is possible to select two of the 28 Member States in order to perform a comparison between those two Member States, related to four structural characteristics.</p><p>This part is based on the non-confidential parts of the SLIC evaluation of Member States. It is structured according to this scheme.</p><p><strong>Specifically this indicator relates to</strong>:</p><ul><li>Authority</li><li>Scope of the labour inspection</li><li><strong>Inspectors’ powers</strong></li><li>Strategy/plan</li></ul>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p>The source for OSH-authorities and OSH-institutions is a preparatory report for DG Employment from 2018. Most of the data have been compiled in 2016 or 2017.<br />(Kooperationsstelle Hamburg IFE / EUROGIP: Development and design of a structural model for the construction and implementation of an EU OSH Information System, Final Report, March 2018, Service contract No VC/2016/0055).</p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "null");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "null");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2010/2017");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2018");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "Currently 17 Member States (Austria, Bulgaria, Cyprus, Estonia, Finland, Greece, Hungary, Latvia, Lithuania, Poland and Portugal) aiming to reach all 28.  ");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "null");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "null");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "null");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "Text based, country selection options");
+INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
+
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Strategy/Plan");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="ENFORCEMENT_CAPACITY" AND t.name="osha_dvt_barometer");
+SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
+SET @datasetId = (SELECT id FROM dataset WHERE source="SLIC Reports (DG EMPL)" AND date_from="2016-01-01" AND date_to="2017-12-31");
+SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p>It is possible to select two of the 28 Member States in order to perform a comparison between those two Member States, related to four structural characteristics.</p><p>This part is based on the non-confidential parts of the SLIC evaluation of Member States. It is structured according to this scheme.</p><p><strong>Specifically this indicator relates to</strong>:</p><ul><li>Authority</li><li>Scope of the labour inspection</li><li>Inspectors’ powers</li><li><strong>Strategy/plan</strong></li></ul>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p>The source for OSH-authorities and OSH-institutions is a preparatory report for DG Employment from 2018. Most of the data have been compiled in 2016 or 2017.<br />(Kooperationsstelle Hamburg IFE / EUROGIP: Development and design of a structural model for the construction and implementation of an EU OSH Information System, Final Report, March 2018, Service contract No VC/2016/0055).</p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "null");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "null");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2010/2017");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2018");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "Currently 17 Member States (Austria, Bulgaria, Cyprus, Estonia, Finland, Greece, Hungary, Latvia, Lithuania, Poland and Portugal) aiming to reach all 28.  ");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "null");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "null");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "null");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "Text based, country selection options");
+INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
+
+SET @indicatorId = (SELECT id FROM indicator WHERE name="OSH statistics");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="OSH_STATISTICS" AND t.name="osha_dvt_barometer");
+SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
+SET @datasetId = (SELECT id FROM dataset WHERE source="DG EMPL" AND date_from="2016-01-01" AND date_to="2017-12-31");
+SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "This indicator provides an overview of the availability of the most important OSH statistics, surveys and OSH research institutions in the different Member States and the EU.");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p>The source for OSH Statistics, surveys and research is a preparatory report for DG Employment from 2018. Most of the data have been compiled in 2016 or 2017.<br />(Kooperationsstelle Hamburg IFE / EUROGIP: Development and design of a structural model for the construction and implementation of an EU OSH Information System, Final Report, March 2018, Service contract No VC/2016/0055).</p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>It is possible to select one of the 28 countries and one of the categories.</p><p><strong>Specifically for this indicator:</strong></p><ul><li><strong>Statistics </strong></li><li>Surveys</li><li>Research</li></ul><p>The system providers as response per dataset:</p><ul><li>Name of the OSH statistic source, survey or institution</li><li>Type of item (surveys, OSH statistic, etc.),</li><li>Data holder,</li><li>Link to the source.</li></ul>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "null");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2016/2017");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2018");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The <strong>intended coverage</strong> is: 28 EU countries plus Iceland, Norway and Switzerland. All data for the coverage is available.</p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "null");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "null");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "null");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "Text boxes for all 28 countries, selection of countries and one of the three categories");
+INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
+
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Surveys on Working conditions");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="OSH_STATISTICS" AND t.name="osha_dvt_barometer");
+SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
+SET @datasetId = (SELECT id FROM dataset WHERE source="DG EMPL" AND date_from="2016-01-01" AND date_to="2017-12-31");
+SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "This indicator provides an overview of the availability of the most important OSH statistics, surveys and OSH research institutions in the different Member States and the EU.");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p>The source for OSH Statistics, surveys and research is a preparatory report for DG Employment from 2018. Most of the data have been compiled in 2016 or 2017.<br />(Kooperationsstelle Hamburg IFE / EUROGIP: Development and design of a structural model for the construction and implementation of an EU OSH Information System, Final Report, March 2018, Service contract No VC/2016/0055).</p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>It is possible to select one of the 28 countries and one of the categories.</p><p><strong>Specifically for this indicator:</strong></p><ul><li>Statistics</li><li><strong>Surveys</strong></li><li>Research</li></ul><p>The system providers as response per dataset:</p><ul><li>Name of the OSH statistic source, survey or institution</li><li>Type of item (surveys, OSH statistic, etc.),</li><li>Data holder,</li><li>Link to the source.</li></ul>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "null");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2016/2017");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2018");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The <strong>intended coverage</strong> is: 28 EU countries plus Iceland, Norway and Switzerland. All data for the coverage is available.</p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "null");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "null");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "null");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "Text boxes for all 28 countries, selection of countries and one of the three categories");
+INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
+
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Research institutes");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="OSH_STATISTICS" AND t.name="osha_dvt_barometer");
+SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
+SET @datasetId = (SELECT id FROM dataset WHERE source="DG EMPL" AND date_from="2016-01-01" AND date_to="2017-12-31");
+SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "This indicator provides an overview of the availability of the most important OSH statistics, surveys and OSH research institutions in the different Member States and the EU.");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p>The source for OSH Statistics, surveys and research is a preparatory report for DG Employment from 2018. Most of the data have been compiled in 2016 or 2017.<br />(Kooperationsstelle Hamburg IFE / EUROGIP: Development and design of a structural model for the construction and implementation of an EU OSH Information System, Final Report, March 2018, Service contract No VC/2016/0055).</p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>It is possible to select one of the 28 countries and one of the categories.</p><p><strong>Specifically for this indicator:</strong></p><ul><li>Statistics</li><li>Surveys</li><li><strong>Research</strong></li></ul><p>The system providers as response per dataset:</p><ul><li>Name of the OSH statistic source, survey or institution</li><li>Type of item (surveys, OSH statistic, etc.),</li><li>Data holder,</li><li>Link to the source.</li></ul>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "null");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2016/2017");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2018");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The <strong>intended coverage</strong> is: 28 EU countries plus Iceland, Norway and Switzerland. All data for the coverage is available.</p>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "null");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "null");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "null");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "Text boxes for all 28 countries, selection of countries and one of the three categories");
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12);
