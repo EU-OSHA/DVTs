@@ -231,7 +231,7 @@
             <dvt-bar-chart
               data-ng-cloak
               query="getIncomePerCapitaData" cda="{{::cdaGenericInformation }}"
-              width="330" height="370" type="lines" listen-to="['pSplit']"
+              width="330" height="370" type="lines" listen-to="['pSplit', 'pDataset']"
               orientation="vertical" axis-fixed-min="10000"
               axis-fixed-max="20000" step="{{step.chart6}}"
               params="[['pIndicator','pSplit2'],['pCountry1', pCountry1],['pCountry2', pCountry2],['pDataset', 'pDataset']]"
@@ -248,8 +248,9 @@
               base-axis-label-text-baseline="top"
               leaf-content-overflow='visible'
               legend="true"
-              datasource-and-dates="[datasetEurostatBetweenDates,36]"
+              datasource-and-dates="[pDataset, pSplit2]"
             ></dvt-bar-chart>
+            <!-- DATASETS 17 - 36 y 3 - 279 -->
           </div>
           <!-- INCOME PER CAPITA EURO -->
           <!--<div class="chart--block" ng-show="pSplit == 'euro'">

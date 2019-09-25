@@ -46,7 +46,7 @@ define(function (require) {
 							scope.pSplit2 = value;
 
 							if(scope.pSplit2 == '36'){
-								scope.pDataset = 3;
+								scope.pDataset = 17;
 							}else{
 								scope.pDataset = 17;
 							}
