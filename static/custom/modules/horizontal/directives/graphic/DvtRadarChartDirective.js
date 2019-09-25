@@ -529,7 +529,6 @@ define(function (require) {
 								var i = opts.labels.length;
 								while (i--) {
 									var textObject = label(cx, cy, 150, startAngle + angle * i);
-									$log.warn(r);
 									var fulltext = opts.labels[i];
 									var text = paper.text(textObject.x, textObject.y, fulltext).attr(textObject.attr);
 									fulltext = fulltext.replace("-", "- ").replace("/", "/ ");
@@ -656,7 +655,7 @@ define(function (require) {
 								// values
 								if (!!opts.drawValues) {
 									var i = secondIndicatorValues.length;
-									$log.warn(secondIndicatorValues);
+									//$log.warn(secondIndicatorValues);
 									while (i--) {
 										/*if(opts.drawAllValues || opts.indicators[i]==country1 || opts.indicators[i] == country2 || opts.indicators[i] == "EU28") {
 											var textObject = labelvalue(cx, cy, r, startAngle + angle * i, secondIndicatorValues[i], opts.max);
@@ -680,7 +679,7 @@ define(function (require) {
 								//circles on path
 								if (!!opts.drawPathCircles) {
 									var i = thirdIndicatorValues.length;
-									$log.warn(thirdIndicatorValues);
+									//$log.warn(thirdIndicatorValues);
 									while (i--) {
 										circle(cx, cy, r, startAngle + angle * i, thirdIndicatorValues[i], opts.max, opts.labels[i], opts.indicators[2], theme);
 									}

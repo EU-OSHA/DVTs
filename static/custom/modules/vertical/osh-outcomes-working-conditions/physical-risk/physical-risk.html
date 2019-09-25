@@ -220,10 +220,10 @@
           <div class="select-filter-chart">
             <select ng-model="pFilter" ng-change="changeSplit()">
               <option data-ng-bind="i18nLiterals.L20645" value="esener"></option>
-              <option data-ng-bind="i18nLiterals.L20646" value="eurofound"></option>
+              <option data-ng-bind="i18nLiterals.L20646" value="ewcs"></option>
             </select>
           </div>
-          <div class="chart--block" ng-hide="pFilter != 'eurofound'">
+          <div class="chart--block" ng-hide="pFilter != 'ewcs'">
             <dvt-radar-chart
               data-ng-cloak
               promises="stories[1].promises.story1"
