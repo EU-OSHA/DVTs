@@ -174,7 +174,72 @@ define(function (require) {
                 });
             }
 
+            $scope.indicatorIcons = function(subsection){
+                switch(subsection) {
+                // GENERIC INFORMATION  
+                  case 'osh_authorities':
+                    return 'forum-icon';
+                    break;
+                  case 'economic_sector_profile':
+                    return 'economic-chart-icon';
+                    break;
+                  case 'workforce_profile':
+                    return 'people-group-icon';
+                    break;
 
+                // STEERING OF OSH 
+                  case 'regulation':
+                    return 'regulation-icon';
+                    break;
+                  case 'STRUCTURE_STRATEGY':
+                    return 'national-icon';
+                    break;
+                  case 'response_strategy':
+                    return 'national-icon';
+                    break;
+                  case 'social_dialogue':
+                    return 'dialogue-icon';
+                    break;
+
+                // OSH OUTCOMES AND WORKING CONDITIONS
+                  case 'workacc':
+                    return 'work-accidents-icon';
+                    break;
+                  case 'health_perception':
+                    return 'health-icon';
+                    break;
+                  case 'osh_culture_health_awareness':
+                    return 'culture-icon';
+                    break;
+                  case 'OVERALL_OPINION':
+                    return 'overall-opinion-icon';
+                    break;
+                  case 'mental_risks':
+                    return 'mental-risk-icon';
+                    break;
+                  case 'physical_risks':
+                    return 'physical-risk-icon';
+                    break;
+                  case 'prevention_in_companies':
+                    return 'prevention-icon';
+                    break;
+                  case 'worker_involvement':
+                    return 'workers-icon';
+                    break;
+
+                // OSH INFRASTRUCTURE
+                  case 'enforcement_capacity':
+                    return 'enforcement-icon';
+                    break;
+                  case 'osh_statistics':
+                    return 'statistics-icon';
+                    break;
+
+                  default:
+                    // code block
+
+                }    
+            }
 
 
             // Open indicators list like a select element
@@ -190,14 +255,6 @@ define(function (require) {
                           //var parentTag = e.target.offsetParent.nextSibling.parentNode.className;          
                         var parentTag = e.currentTarget;
                          angular.element('.indicators--submenu--wrapper').toggleClass('open-list');
-
-                       /* var nodeName = parentTag.nodeName;
-                        if( nodeName == 'LI' ) {
-                            angular.element('.indicators--submenu--wrapper').toggleClass('open-list');
-                        }else if( nodeName == 'UL' ){
-                            angular.element('.indicators--submenu--wrapper').toggleClass('open-list'); 
-                        }  
-*/
                     }
                 }
 
