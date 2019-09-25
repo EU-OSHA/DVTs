@@ -165,7 +165,7 @@
             <dvt-bar-chart
               data-ng-cloak
               query="getGDPData" cda="{{::cdaGenericInformation }}"
-              height="360"
+              height="370"
               orientation="vertical" listen-to="['pSplit']"
               axis-fixed-max="260" step="{{step.chart5}}"
               params="[['pIndicator','pSplit'],['pCountry1', pCountry1],['pCountry2', pCountry2],['pDataset', datasetEurostat]]"
@@ -179,7 +179,7 @@
               values-mask="{value}"
               ortho-axis-visible="false"
               ortho-axis-grid="false"
-              hoverable="false"
+              hoverable="false" base-axis-size="15"
               multiple-label-colors="true"
               leaf-content-overflow='visible'
               dimensions="stories[4].dimensions"

@@ -129,7 +129,7 @@ define(function (require) {
               percent: "#%"
             }
           }
-        },
+        }
       },
       // 5 - INCOME PER CAPITA
       {
