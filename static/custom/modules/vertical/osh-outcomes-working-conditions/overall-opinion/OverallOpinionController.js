@@ -42,7 +42,7 @@ define(function (require) {
 
     //$scope.chartWidth = angular.element('.card--block--chart .chart--block')[1].clientWidth;
 
-    var resolution = window.width;
+    var resolution = window.resolution;
 
     $scope.angle = resolution > 768 ? 1 : 0;
     $scope.horizontalHeight = resolution > 768 ? 470 : 770;
@@ -129,7 +129,7 @@ define(function (require) {
         dimensions: {
           value: {
             format: {
-              number: "0.#",
+              number: "0.0#",
               percent: "#%"
             }
           }
@@ -145,7 +145,7 @@ define(function (require) {
         dimensions: {
           value: {
             format: {
-              number: "0.#",
+              number: "0.0#",
               percent: "#%"
             }
           }

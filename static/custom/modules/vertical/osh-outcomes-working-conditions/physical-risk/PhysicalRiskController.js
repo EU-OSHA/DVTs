@@ -64,7 +64,7 @@ define(function (require) {
     $scope.pCountry2 = $stateParams.pCountry2;
     $scope.pFilter = $stateParams.pFilter;
 
-    var resolution = window.width;
+    var resolution = window.resolution;
 
     $scope.angle = resolution > 768 ? 1 : 0;
     $scope.horizontalHeight = resolution > 768 ? 470 : 770;

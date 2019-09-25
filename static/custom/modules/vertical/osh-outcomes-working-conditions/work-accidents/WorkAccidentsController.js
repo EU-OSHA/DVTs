@@ -46,7 +46,7 @@ define(function (require) {
     $scope.pCountry2 = ($stateParams.pCountry2 != null)?$stateParams.pCountry2:'BE';
     $scope.pIndicator = $stateParams.pIndicator;
 
-    var resolution = window.width;
+    var resolution = window.resolution;
 
     $scope.orientation = resolution > 768 ? "vertical" : "horizontal";
     $scope.axisSize = resolution > 768 ? 150 : (resolution > 480 ? 160 : 120);

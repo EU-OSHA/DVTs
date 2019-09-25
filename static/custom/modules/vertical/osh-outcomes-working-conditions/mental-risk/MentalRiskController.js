@@ -38,7 +38,7 @@ define(function (require) {
 
     //$scope.chartWidth = angular.element('.card--block--chart .chart--block')[1].clientWidth;
 
-    var resolution = window.width;
+    var resolution = window.resolution;
 
     $scope.orientation = resolution > 768 ? "vertical" : "horizontal";
     $scope.axisSize = resolution > 768 ? 150 : 120;

@@ -34,7 +34,7 @@ define(function (require) {
     $scope.selectedCountries = [];
     $scope.deleteCountryTags = [];
 
-    var resolution = screen.width;
+    var resolution = window.resolution;
 
     /*$(window).on("resize",function(e){
       resolution = screen.width;      
@@ -49,8 +49,8 @@ define(function (require) {
     });*/
 
     $(window).on("resize",function(e){
-      if(screen.width != resolution){
-        resolution = screen.width;
+      if(window.outerWidth != resolution){
+        resolution = window.resolution;
         if(resolution >=768 && resolution <=1024){
           $scope.pageSize = 16;      
         } else {
@@ -59,9 +59,6 @@ define(function (require) {
         $scope.elementsEnd=$scope.pageSize;    
         $scope.$apply();
         updateText();
-        //$log.warn('Resolucion ha cambiado');
-      }else{
-        //$log.warn('Resolucion no ha cambiado');
       }
     });
 
