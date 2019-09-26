@@ -173,7 +173,7 @@
 	} 
 	.economic--sector--profile{
 		.card--grid{
-			display: block;
+			display: block !important;
 			justify-content: unset;
 			flex-wrap: initial;
 			.card--block--chart {
@@ -194,6 +194,7 @@
 					}
 				  svg{				    
 				    zoom: 0.75 !important;
+				    width: 100% !important;
 				  }
 				}
 			}
