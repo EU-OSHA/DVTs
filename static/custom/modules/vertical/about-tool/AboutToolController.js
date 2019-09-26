@@ -175,6 +175,7 @@ define(function (require) {
             }
 
             $scope.indicatorIcons = function(subsection){
+                subsection = subsection.toLowerCase();
                 switch(subsection) {
                 // GENERIC INFORMATION  
                   case 'osh_authorities':
@@ -191,7 +192,7 @@ define(function (require) {
                   case 'regulation':
                     return 'regulation-icon';
                     break;
-                  case 'STRUCTURE_STRATEGY':
+                  case 'structure_strategy':
                     return 'national-icon';
                     break;
                   case 'response_strategy':
@@ -211,7 +212,7 @@ define(function (require) {
                   case 'osh_culture_health_awareness':
                     return 'culture-icon';
                     break;
-                  case 'OVERALL_OPINION':
+                  case 'overall_opinion':
                     return 'overall-opinion-icon';
                     break;
                   case 'mental_risks':
