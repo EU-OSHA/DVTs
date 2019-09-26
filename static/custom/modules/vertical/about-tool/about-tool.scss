@@ -71,20 +71,21 @@
       a{
         padding: 2rem 1rem;
         display: inline-block;
-        font-family:'Oswald-light';
+        font-family:'Oswald';
         font-size: 2.2rem;
         color: $aquamarine;
+        color: $gray-light;
         &:hover{
           color: $orange;
         }
       }
       &.active{
         a, a:visited, a:focus{
-          color: $orange;
+          color: $aquamarine;
           border-bottom: 0;
         }
         a:hover{          
-          color: $aquamarine;
+          color: $orange;
           border-bottom: 0;
         }           
       }
@@ -95,7 +96,7 @@
     justify-content: center;
     margin: 4rem auto 4rem;
     label{
-      padding: 1.8rem 1rem;
+      padding: 2.1rem 1rem;
       color: $gray;
       font-weight: normal;
     }
