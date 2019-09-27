@@ -748,6 +748,7 @@
     }
   }
   .carousel--card{
+    margin-top: auto;
     h4{
       text-align: left;
       font-family: 'OpenSans-bold';
@@ -766,7 +767,7 @@
         width: 81%;
         padding: 0;
         margin: 0px auto;
-        min-height: 13rem;
+        min-height: 20rem;
         .carousel--text--block a{
           display: flex;
           flex-direction: row;
@@ -792,7 +793,7 @@
         }
       }
       .carousel-indicators{
-        bottom: 0;
+        bottom: 5rem;
         margin-bottom: 0;
         li{
           background: $orange;
