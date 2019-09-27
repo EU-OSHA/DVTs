@@ -137,7 +137,7 @@
                 "id":"mental-risk",
                 "name":"L20710",
                 "database_name":"MENTAL_RISKS",
-                "firstIndicatorId": "83"
+                "firstIndicatorId": "113"
             },
             {
                 "id":"physical-risk",
@@ -161,7 +161,7 @@
                 "tabindex":"16",
                 "accesskey":"",
                 "database_name":"WORKER_INVOLVEMENT",
-                "firstIndicatorId": "75"
+                "firstIndicatorId": "123"
             }
         ]
 
