@@ -707,6 +707,7 @@ and (max-width : 1024px)  {
 				}
 			}
 			.carousel-indicators{
+				bottom: 0 !important;
 			}
 			.carousel-control{
 			}
@@ -1268,7 +1269,9 @@ and (max-width :767px)  {
       }
     }
   }
-
+	.carousel--card .carousel--card--block .carousel-indicators {
+	  bottom: 0;
+	}
 	footer{
 		.footer-elements{
 			text-align: center;
