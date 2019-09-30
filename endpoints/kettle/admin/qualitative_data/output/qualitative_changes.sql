@@ -2821,7 +2821,7 @@ INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="WORKFORCE_PROFILE" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+615, null, @sectionId, "TOOLTIP");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+615, "EN", 1, "Median age:");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+615, "EN", 1, "Median age of population:");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="WORKFORCE_PROFILE" AND tool_id=@toolId);
@@ -3366,7 +3366,41 @@ INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="METHODOLOGY" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+737, null, @sectionId, "KEY_MESSAGE");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+737, "EN", 1, "<p>The <strong>development and provision of the OSH BAROMETER — Status of Occupational Safety and Health in Europe</strong> is a long-term activity of the European Commission’s Directorate-General for Employment, Social Affairs and Inclusion (<strong>DG Employment, Social Affairs and Inclusion</strong>) and the European Agency for Safety and Health at Work (<strong>EU-OSHA</strong>). It aims to provide up-to-date online information for all interested parties and stakeholders about the status of OSH in the European Union.</p><p>&nbsp;</p><p>The overall objective of this activity is to design and develop a reliable and stable information system on OSH in Europe, based on data from the relevant national and European data providers. From 2016 to 2018, two contractors of DG Employment, Social Affairs and Inclusion (Kooperationsstelle Hamburg IFE and Eurogip) developed the structure of the system, collected data for a selected number of indicators and assessed their reliability.</p><p>&nbsp;</p><p>EU-OSHA will contribute to the establishment and maintenance of the <strong>OSH BAROMETER</strong> by designing and running the data visualisation tool, ensuring data quality in cooperation with key data providers and stakeholders, and feeding in the quantitative and qualitative data in close collaboration with EU institutions and Member State Contact Points. As part of its activity <strong>‘EU OSH INFO System’</strong>,EU-OSHA will publish an analytical report, based on the collected data, every 3 years.</p><p>&nbsp;</p><p>The <strong>OSH BAROMETER </strong>uses the following data sources:</p><ul><li>Eurostat: data on economy, sectors, population, and employment</li><li>Eurostat: Labour Force Survey (LFS), particularly the ad hoc module from 2013: ‘Accidents at work and other work-related health problems’</li><li>Eurostat: European Union Survey on Income and Living Conditions (EU-SILC)</li><li>Eurofound: European Working Conditions Survey (EWCS)</li><li>EU-OSHA: European Survey of Enterprises’ New and Emerging Risks (ESENER) 2014</li><li>European Commission, DG Employment, Social Affairs and Inclusion: several reports and studies</li><li>Senior Labour Inspectors Committee (SLIC): non-confidential country evaluations</li><li>National contact points in Member States: national data and descriptions</li><li>EU-OSHA focal points/EU-OSHA: descriptions of the national OSH Systems in OSHwiki</li><li>comprehensive reports from national or European sources</li></ul><p>&nbsp;</p><p>This methodology contains a compilation of all references and data sources that were used to provide texts, diagrams and tables, and in some cases additional explanations.</p><p>&nbsp;</p><p>In most cases we provide the following data:</p><ul><li>the indicator and diagram/table/description title</li><li>a short description of the data evaluation and visualisation approach</li><li>exact source with name and link</li><li>the period of reference (year/period) and the last update</li><li>the coverage of Member States and other countries</li><li>filter options or selection criteria of the source</li><li>the measuring unit</li><li>any calculation that EU-OSHA performed based on the original data</li><li>visualisation basics</li><li>other useful explanations and additional comments.</li></ul>");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+737, "EN", 1, "<p>The <strong>development and provision of the OSH BAROMETER — Status of Occupational Safety and Health in Europe</strong> is a long-term activity of the European Commission’s Directorate-General for Employment, Social Affairs and Inclusion (<strong>DG Employment, Social Affairs and Inclusion</strong>) and the European Agency for Safety and Health at Work (<strong>EU-OSHA</strong>). It aims to provide up-to-date online information for all interested parties and stakeholders about the status of OSH in the European Union.</p>
+<p>&nbsp;</p>
+<p>The overall objective of this activity is to design and develop a reliable and stable information system on OSH in Europe, based on data from the relevant national and European data providers. From 2016 to 2018, two contractors of DG Employment, Social Affairs and Inclusion (Kooperationsstelle Hamburg IFE and Eurogip) developed the structure of the system, collected data for a selected number of indicators and assessed their reliability.</p>
+<p>&nbsp;</p>
+<p>EU-OSHA will contribute to the establishment and maintenance of the <strong>OSH BAROMETER</strong> by designing and running the data visualisation tool, ensuring data quality in cooperation with key data providers and stakeholders, and feeding in the quantitative and qualitative data in close collaboration with EU institutions and Member State Contact Points. As part of its activity <strong>‘EU OSH INFO System’</strong>, EU-OSHA will publish an analytical report, based on the collected data, every 3 years.</p>
+<p>&nbsp;</p>
+<p>The <strong>OSH BAROMETER&nbsp;</strong>uses the following data sources:</p>
+<ul>
+  <li>Eurostat: data on economy, sectors, population, and employment</li>
+  <li>Eurostat: Labour Force Survey (LFS), particularly the ad hoc module from 2013: ‘Accidents at work and other work-related health problems’</li>
+  <li>Eurostat: European Union Survey on Income and Living Conditions (EU-SILC)</li>
+  <li>Eurofound: European Working Conditions Survey (EWCS)</li>
+  <li>EU-OSHA: European Survey of Enterprises’ New and Emerging Risks (ESENER) 2014</li>
+  <li>European Commission, DG Employment, Social Affairs and Inclusion: several reports and studies</li>
+  <li>Senior Labour Inspectors Committee (SLIC): non-confidential country evaluations</li>
+  <li>National contact points in Member States: national data and descriptions</li>
+  <li>EU-OSHA focal points/EU-OSHA: descriptions of the national OSH Systems in OSHwiki</li>
+  <li>comprehensive reports from national or European sources</li>
+</ul>
+<p>&nbsp;</p>
+<p>This methodology contains a compilation of all references and data sources that were used to provide texts, diagrams and tables, and in some cases additional explanations.</p>
+<p>&nbsp;</p>
+<p>In most cases we provide the following data:</p>
+<ul>
+  <li>the indicator and diagram/table/description title</li>
+  <li>a short description of the data evaluation and visualisation approach</li>
+  <li>exact source with name and link</li>
+  <li>the period of reference (year/period) and the last update</li>
+  <li>the coverage of Member States and other countries</li>
+  <li>filter options or selection criteria of the source</li>
+  <li>the measuring unit</li>
+  <li>any calculation that EU-OSHA performed based on the original data</li>
+  <li>visualisation basics</li>
+  <li>other useful explanations and additional comments</li>
+</ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="PREVENTION" AND tool_id=@toolId);
@@ -3396,7 +3430,7 @@ INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="ECONOMIC_AND_SECTOR_PROFILE" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+743, null, @sectionId, "FILTER_LITERAL");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+743, "EN", 1, "Purchasing Power Standards");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+743, "EN", 1, "Purchasing Power Standards (PPS)");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
@@ -8592,8 +8626,8 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<p>The following <strong>filter options</strong> were applied by EU-OSHA in the Eurostat-table:</p>
 <ul>
-<li>Gross domestic product at market prices</li>
-<li>Percentage of EU28 total per capita (based on million purchasing power standards), current prices/Percentage of EU28 total per capita (based on million euro), current prices</li>
+  <li>Gross domestic product at market prices</li>
+  <li><strong>Percentage of EU28 total per capita (based on million purchasing power standards), current prices</strong>/Percentage of EU28 total per capita (based on million euro), current prices</li>
 </ul>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "<p>Eurostat provides the calculation of percentages by its filtering options, those values are taken as base for the calculation.</p><p>EU-OSHA calculated the percentages in relation to EU 28 average, EU 28 average = 100.&nbsp;</p>");
@@ -11371,7 +11405,11 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The <strong>intended coverage</strong> is: 28 EU countries plus Iceland, Norway and Switzerland. All data for the coverage is available.</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<ul><li>Activity sector: <strong>All</strong></li><li>For the detailed visualisation of sectors: <strong>Six sector groups</strong></li><li>For the detailed visualisation of sizes: <strong>Four size groups</strong></li></ul><p>&nbsp;</p><p>&nbsp;</p>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<ul>
+  <li>Activity sector: <strong>All</strong></li>
+  <li>For the detailed visualisation of sectors: <strong>Six sector groups</strong></li>
+  <li>For the detailed visualisation of sizes: <strong>Four size groups</strong></li>
+</ul>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "No. Missing responses are not taken into account in the calculation of the percentages.");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -11471,7 +11509,29 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "ESENER 2014 Survey");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to the question:</p><p>“Did the employees have a role in the design and set-up of measures to address psychosocial risks?”</p><p>&nbsp;Answer options:&nbsp;</p><ol><li>Yes</li><li>No</li></ol><p>&nbsp;Split of the six sector groups (total is always displayed):</p><ul><li>Manufacturing</li><li>Construction, waste management, water and electricity supply</li><li>Trade, transport, food/accommodation and recreation activities</li><li>IT, Finance, Real Estate and other technical scientific or personal&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; service activities&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li><li>Public administration</li><li>Education, human health and social work activities</li></ul><p>Split of the four company sizes (total is always displayed):</p><ul><li>5 to 9 employees</li><li>10 to 49 employees</li><li>50 to 249 employees</li><li>250 or more employees</li></ul>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to the question:</p>
+<p>“Did the employees have a role in the design and set-up of measures to address psychosocial risks?”</p>
+<p>&nbsp;Answer options:&nbsp;</p>
+<ol>
+  <li>Yes</li>
+  <li>No</li>
+</ol>
+<p>&nbsp;Split of the six sector groups (total is always displayed):</p>
+<ul>
+  <li>Manufacturing</li>
+  <li>Construction, waste management, water and electricity supply</li>
+  <li>Trade, transport, food/accommodation and recreation activities</li>
+  <li>IT, Finance, Real Estate and other technical scientific or personal service activities &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</li>
+  <li>Public administration</li>
+  <li>Education, human health and social work activities</li>
+</ul>
+<p>Split of the four company sizes (total is always displayed):</p>
+<ul>
+  <li>5 to 9 employees</li>
+  <li>10 to 49 employees</li>
+  <li>50 to 249 employees</li>
+  <li>250 or more employees</li>
+</ul>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>ESENER:</p><p><a href=\"https://osha.europa.eu/en/surveys-and-statistics-osh/esener\">https://osha.europa.eu/en/surveys-and-statistics-osh/esener</a></p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -11504,7 +11564,34 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p><strong>ESENER 2014 Survey &nbsp;</strong></p><p>European Working Conditions Survey (EWCS, 2015)&nbsp;</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to the ESENER 2014 Survey Questions below. <strong>Specifically this indicator relates to: </strong></p><ul><li><strong>Did the employees have a role in the design and set-up of measures to address psychosocial risks? </strong></li><li>Does your organisation have a trade union, works council or a similar committee representing employees?</li><li>Are health and safety issues regularly discussed in staff or team meetings</li><li>Does your organisation have a health and safety delegate or committee?</li><li>How often controversies on health and safety arise? Is this often, sometimes or practically never the case?</li></ul><p>Answer options:</p><ol><li><strong>Yes; No</strong></li><li>Yes; No</li><li>Yes, No; In some departments only</li><li>Yes, No</li><li>Often; Sometimes; Practically never</li></ol><p>Responses are displayed to the EWCS Questions below.<strong>&nbsp;</strong></p><p>“Does your organisation have …?:</p><ul><li>a trade union, works council or a similar committee representing employees?</li><li>a health and safety delegate or committee?</li><li>a regular meeting in which employees can express their views about what is happening in the organisation?”</li></ul><p>Answer options: </p><ol><li>Yes</li><li>No</li></ol>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to the ESENER 2014 Survey Questions below. <strong>Specifically this indicator relates to:&nbsp;</strong></p>
+<ul>
+  <li><strong>Did the employees have a role in the design and set-up of measures to address psychosocial risks?&nbsp;</strong></li>
+  <li>Does your organisation have a trade union, works council or a similar committee representing employees?</li>
+  <li>Are health and safety issues regularly discussed in staff or team meetings?</li>
+  <li>Does your organisation have a health and safety delegate or committee?</li>
+  <li>How often controversies on health and safety arise? Is this often, sometimes or practically never the case?</li>
+</ul>
+<p>Answer options:</p>
+<ol>
+  <li><strong>Yes; No</strong></li>
+  <li>Yes; No</li>
+  <li>Yes, No; In some departments only</li>
+  <li>Yes, No</li>
+  <li>Often; Sometimes; Practically never</li>
+</ol>
+<p>Responses are displayed to the EWCS Questions below.<strong>&nbsp;</strong></p>
+<p>“Does your organisation have …?:</p>
+<ul>
+  <li>a trade union, works council or a similar committee representing employees?</li>
+  <li>a health and safety delegate or committee?</li>
+  <li>a regular meeting in which employees can express their views about what is happening in the organisation?”</li>
+</ul>
+<p>Answer options:</p>
+<ol>
+  <li>Yes</li>
+  <li>No</li>
+</ol>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p><strong>ESENER:</strong></p><p><strong><a href=\"https://osha.europa.eu/en/surveys-and-statistics-osh/esener\">https://osha.europa.eu/en/surveys-and-statistics-osh/esener</a></strong></p><p>EWCS:</p><p><a href=\"https://www.eurofound.europa.eu/data/european-working-conditions-survey\">https://www.eurofound.europa.eu/data/european-working-conditions-survey</a></p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -11540,7 +11627,34 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p><strong>ESENER 2014 Survey &nbsp;</strong></p><p>European Working Conditions Survey (EWCS, 2015)&nbsp;</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to the ESENER 2014 Survey Questions below. <strong>Specifically this indicator relates to: </strong></p><ul><li>Did the employees have a role in the design and set-up of measures to address psychosocial risks?</li><li><strong>Does your organisation have a trade union, works council or a similar committee representing employees?</strong></li><li>Are health and safety issues regularly discussed in staff or team meetings</li><li>Does your organisation have a health and safety delegate or committee?</li><li>How often controversies on health and safety arise? Is this often, sometimes or practically never the case?</li></ul><p>Answer options:</p><ol><li>Yes; No</li><li><strong>Yes; No</strong></li><li>Yes, No; In some departments only</li><li>Yes, No</li><li>Often; Sometimes; Practically never</li></ol><p>Responses are displayed to the EWCS Questions below.<strong>&nbsp;</strong></p><p>“Does your organisation have …?:</p><ul><li>a trade union, works council or a similar committee representing employees?</li><li>a health and safety delegate or committee?</li><li>a regular meeting in which employees can express their views about what is happening in the organisation?”</li></ul><p>Answer options:</p><ol><li>Yes</li><li>No</li></ol>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to the ESENER 2014 Survey Questions below. <strong>Specifically this indicator relates to:&nbsp;</strong></p>
+<ul>
+  <li>Did the employees have a role in the design and set-up of measures to address psychosocial risks?</li>
+  <li><strong>Does your organisation have a trade union, works council or a similar committee representing employees?</strong></li>
+  <li>Are health and safety issues regularly discussed in staff or team meetings?</li>
+  <li>Does your organisation have a health and safety delegate or committee?</li>
+  <li>How often controversies on health and safety arise? Is this often, sometimes or practically never the case?</li>
+</ul>
+<p>Answer options:</p>
+<ol>
+  <li>Yes; No</li>
+  <li><strong>Yes; No</strong></li>
+  <li>Yes, No; In some departments only</li>
+  <li>Yes, No</li>
+  <li>Often; Sometimes; Practically never</li>
+</ol>
+<p>Responses are displayed to the EWCS Questions below.<strong>&nbsp;</strong></p>
+<p>“Does your organisation have …?:</p>
+<ul>
+  <li>a trade union, works council or a similar committee representing employees?</li>
+  <li>a health and safety delegate or committee?</li>
+  <li>a regular meeting in which employees can express their views about what is happening in the organisation?”</li>
+</ul>
+<p>Answer options:</p>
+<ol>
+  <li>Yes</li>
+  <li>No</li>
+</ol>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p><strong>ESENER:</strong></p><p><strong><a href=\"https://osha.europa.eu/en/surveys-and-statistics-osh/esener\">https://osha.europa.eu/en/surveys-and-statistics-osh/esener</a></strong></p><p>EWCS:</p><p><a href=\"https://www.eurofound.europa.eu/data/european-working-conditions-survey\">https://www.eurofound.europa.eu/data/european-working-conditions-survey</a></p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -11609,7 +11723,34 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p><strong>ESENER 2014 Survey &nbsp;</strong></p><p>European Working Conditions Survey (EWCS, 2015)&nbsp;</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to the ESENER 2014 Survey Questions below. <strong>Specifically this indicator relates to: </strong></p><ul><li>Did the employees have a role in the design and set-up of measures to address psychosocial risks?</li><li>Does your organisation have a trade union, works council or a similar committee representing employees?</li><li><strong>Are health and safety issues regularly discussed in staff or team meetings</strong></li><li>Does your organisation have a health and safety delegate or committee?</li><li>How often controversies on health and safety arise? Is this often, sometimes or practically never the case?</li></ul><p>Answer options:</p><ol><li>Yes; No</li><li>Yes; No</li><li><strong>Yes, No; In some departments only</strong></li><li>Yes, No</li><li>Often; Sometimes; Practically never</li></ol><p>Responses are displayed to the EWCS Questions below.<strong>&nbsp;</strong></p><p>“Does your organisation have …?:</p><ul><li>a trade union, works council or a similar committee representing employees?</li><li>a health and safety delegate or committee?</li><li>a regular meeting in which employees can express their views about what is happening in the organisation?”</li></ul><p>Answer options:</p><ol><li>Yes</li><li>No</li></ol>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to the ESENER 2014 Survey Questions below. <strong>Specifically this indicator relates to:&nbsp;</strong></p>
+<ul>
+  <li>Did the employees have a role in the design and set-up of measures to address psychosocial risks?</li>
+  <li>Does your organisation have a trade union, works council or a similar committee representing employees?</li>
+  <li><strong>Are health and safety issues regularly discussed in staff or team meetings?</strong></li>
+  <li>Does your organisation have a health and safety delegate or committee?</li>
+  <li>How often controversies on health and safety arise? Is this often, sometimes or practically never the case?</li>
+</ul>
+<p>Answer options:</p>
+<ol>
+  <li>Yes; No</li>
+  <li>Yes; No</li>
+  <li><strong>Yes, No; In some departments only</strong></li>
+  <li>Yes, No</li>
+  <li>Often; Sometimes; Practically never</li>
+</ol>
+<p>Responses are displayed to the EWCS Questions below.<strong>&nbsp;</strong></p>
+<p>“Does your organisation have …?:</p>
+<ul>
+  <li>a trade union, works council or a similar committee representing employees?</li>
+  <li>a health and safety delegate or committee?</li>
+  <li>a regular meeting in which employees can express their views about what is happening in the organisation?”</li>
+</ul>
+<p>Answer options:</p>
+<ol>
+  <li>Yes</li>
+  <li>No</li>
+</ol>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p><strong>ESENER:</strong></p><p><strong><a href=\"https://osha.europa.eu/en/surveys-and-statistics-osh/esener\">https://osha.europa.eu/en/surveys-and-statistics-osh/esener</a></strong></p><p>EWCS:</p><p><a href=\"https://www.eurofound.europa.eu/data/european-working-conditions-survey\">https://www.eurofound.europa.eu/data/european-working-conditions-survey</a></p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -11645,7 +11786,34 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p>ESENER 2014 Survey &nbsp;</p><p><strong>European Working Conditions Survey (EWCS, 2015)&nbsp;</strong></p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to the ESENER 2014 Survey Questions below.</p><ul><li>Did the employees have a role in the design and set-up of measures to address psychosocial risks?</li><li>Does your organisation have a trade union, works council or a similar committee representing employees?</li><li>Are health and safety issues regularly discussed in staff or team meetings</li><li>Does your organisation have a health and safety delegate or committee?</li><li>How often controversies on health and safety arise? Is this often, sometimes or practically never the case?</li></ul><p>Answer options:</p><ol><li>Yes; No</li><li>Yes; No</li><li>Yes, No; In some departments only</li><li>Yes, No</li><li>Often; Sometimes; Practically never</li></ol><p>Responses are displayed to the EWCS Questions below.<strong>&nbsp;<strong>Specifically this indicator relates to:</strong></strong></p><p>“Does your organisation have …?:</p><ul><li>a trade union, works council or a similar committee representing employees?</li><li>a health and safety delegate or committee?</li><li><strong>a regular meeting in which employees can express their views about what is happening in the organisation?”</strong></li></ul><p>Answer options:</p><ol><li>Yes</li><li>No</li></ol>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to the ESENER 2014 Survey Questions below.</p>
+<ul>
+  <li>Did the employees have a role in the design and set-up of measures to address psychosocial risks?</li>
+  <li>Does your organisation have a trade union, works council or a similar committee representing employees?</li>
+  <li>Are health and safety issues regularly discussed in staff or team meetings?</li>
+  <li>Does your organisation have a health and safety delegate or committee?</li>
+  <li>How often controversies on health and safety arise? Is this often, sometimes or practically never the case?</li>
+</ul>
+<p>Answer options:</p>
+<ol>
+  <li>Yes; No</li>
+  <li>Yes; No</li>
+  <li>Yes, No; In some departments only</li>
+  <li>Yes, No</li>
+  <li>Often; Sometimes; Practically never</li>
+</ol>
+<p>Responses are displayed to the EWCS Questions below.<strong>&nbsp;<strong>Specifically this indicator relates to:</strong></strong></p>
+<p>“Does your organisation have …?:</p>
+<ul>
+  <li>a trade union, works council or a similar committee representing employees?</li>
+  <li>a health and safety delegate or committee?</li>
+  <li><strong>a regular meeting in which employees can express their views about what is happening in the organisation?”</strong></li>
+</ul>
+<p>Answer options:</p>
+<ol>
+  <li>Yes</li>
+  <li>No</li>
+</ol>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>ESENER:</p><p><a href=\"https://osha.europa.eu/en/surveys-and-statistics-osh/esener\">https://osha.europa.eu/en/surveys-and-statistics-osh/esener</a></p><p><strong>EWCS:</strong></p><p><strong><a href=\"https://www.eurofound.europa.eu/data/european-working-conditions-survey\">https://www.eurofound.europa.eu/data/european-working-conditions-survey</a></strong></p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -11715,7 +11883,34 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p>ESENER 2014 Survey &nbsp;</p><p><strong>European Working Conditions Survey (EWCS, 2015)&nbsp;</strong></p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to the ESENER 2014 Survey Questions below.</p><ul><li>Did the employees have a role in the design and set-up of measures to address psychosocial risks?</li><li>Does your organisation have a trade union, works council or a similar committee representing employees?</li><li>Are health and safety issues regularly discussed in staff or team meetings</li><li>Does your organisation have a health and safety delegate or committee?</li><li>How often controversies on health and safety arise? Is this often, sometimes or practically never the case?</li></ul><p>Answer options:</p><ol><li>Yes; No</li><li>Yes; No</li><li>Yes, No; In some departments only</li><li>Yes, No</li><li>Often; Sometimes; Practically never</li></ol><p>Responses are displayed to the EWCS Questions below.<strong>&nbsp;<strong>Specifically this indicator relates to:</strong></strong></p><p>“Does your organisation have …?:</p><ul><li>a trade union, works council or a similar committee representing employees?</li><li><strong>a health and safety delegate or committee?</strong></li><li>a regular meeting in which employees can express their views about what is happening in the organisation?”</li></ul><p>Answer options:</p><ol><li>Yes</li><li>No</li></ol>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to the ESENER 2014 Survey Questions below.</p>
+<ul>
+  <li>Did the employees have a role in the design and set-up of measures to address psychosocial risks?</li>
+  <li>Does your organisation have a trade union, works council or a similar committee representing employees?</li>
+  <li>Are health and safety issues regularly discussed in staff or team meetings?</li>
+  <li>Does your organisation have a health and safety delegate or committee?</li>
+  <li>How often controversies on health and safety arise? Is this often, sometimes or practically never the case?</li>
+</ul>
+<p>Answer options:</p>
+<ol>
+  <li>Yes; No</li>
+  <li>Yes; No</li>
+  <li>Yes, No; In some departments only</li>
+  <li>Yes, No</li>
+  <li>Often; Sometimes; Practically never</li>
+</ol>
+<p>Responses are displayed to the EWCS Questions below.<strong>&nbsp;<strong>Specifically this indicator relates to:</strong></strong></p>
+<p>“Does your organisation have …?:</p>
+<ul>
+  <li>a trade union, works council or a similar committee representing employees?</li>
+  <li><strong>a health and safety delegate or committee?</strong></li>
+  <li>a regular meeting in which employees can express their views about what is happening in the organisation?”</li>
+</ul>
+<p>Answer options:</p>
+<ol>
+  <li>Yes</li>
+  <li>No</li>
+</ol>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>ESENER:</p><p><a href=\"https://osha.europa.eu/en/surveys-and-statistics-osh/esener\">https://osha.europa.eu/en/surveys-and-statistics-osh/esener</a></p><p><strong>EWCS:</strong></p><p><strong><a href=\"https://www.eurofound.europa.eu/data/european-working-conditions-survey\">https://www.eurofound.europa.eu/data/european-working-conditions-survey</a></strong></p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -11731,7 +11926,8 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentages");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "<p>Spider diagram, all countries plus EU 28 Average, percentages of “Yes” answers for Q1, Q2, and Q4, for Q3 and Q5 see ‘Calculations’ in ESENER</p><p><strong>Spider diagram, all countries plus EU 28 Average, percentage for answers ‘Yes’ in EWCS</str");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "<p>Spider diagram, all countries plus EU 28 Average, percentages of “Yes” answers for Q1, Q2, and Q4, for Q3 and Q5 see ‘Calculations’ in ESENER</p>
+<p><strong>Spider diagram, all countries plus EU 28 Average, percentage for answers ‘Yes’ in EWCS</strong></p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+13, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+13, "EN", 1, "Health and safety committee (EWCS)");
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
@@ -11748,7 +11944,34 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p><strong>ESENER 2014 Survey &nbsp;</strong></p><p>European Working Conditions Survey (EWCS, 2015)&nbsp;</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to the ESENER 2014 Survey Questions below. <strong>Specifically this indicator relates to: </strong></p><ul><li>Did the employees have a role in the design and set-up of measures to address psychosocial risks?</li><li>Does your organisation have a trade union, works council or a similar committee representing employees?</li><li>Are health and safety issues regularly discussed in staff or team meetings</li><li>Does your organisation have a health and safety delegate or committee?</li><li><strong>How often controversies on health and safety arise? Is this often, sometimes or practically never the case?</strong></li></ul><p>Answer options:</p><ol><li>Yes; No</li><li>Yes; No</li><li>Yes, No; In some departments only</li><li>Yes, No</li><li><strong>Often; Sometimes; Practically never</strong></li></ol><p>Responses are displayed to the EWCS Questions below.<strong>&nbsp;</strong></p><p>“Does your organisation have …?:</p><ul><li>a trade union, works council or a similar committee representing employees?</li><li>a health and safety delegate or committee?</li><li>a regular meeting in which employees can express their views about what is happening in the organisation?”</li></ul><p>Answer options:</p><ol><li>Yes</li><li>No</li></ol>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to the ESENER 2014 Survey Questions below. <strong>Specifically this indicator relates to:&nbsp;</strong></p>
+<ul>
+  <li>Did the employees have a role in the design and set-up of measures to address psychosocial risks?</li>
+  <li>Does your organisation have a trade union, works council or a similar committee representing employees?</li>
+  <li>Are health and safety issues regularly discussed in staff or team meetings?</li>
+  <li>Does your organisation have a health and safety delegate or committee?</li>
+  <li><strong>How often controversies on health and safety arise? Is this often, sometimes or practically never the case?</strong></li>
+</ul>
+<p>Answer options:</p>
+<ol>
+  <li>Yes; No</li>
+  <li>Yes; No</li>
+  <li>Yes, No; In some departments only</li>
+  <li>Yes, No</li>
+  <li><strong>Often; Sometimes; Practically never</strong></li>
+</ol>
+<p>Responses are displayed to the EWCS Questions below.<strong>&nbsp;</strong></p>
+<p>“Does your organisation have …?:</p>
+<ul>
+  <li>a trade union, works council or a similar committee representing employees?</li>
+  <li>a health and safety delegate or committee?</li>
+  <li>a regular meeting in which employees can express their views about what is happening in the organisation?”</li>
+</ul>
+<p>Answer options:</p>
+<ol>
+  <li>Yes</li>
+  <li>No</li>
+</ol>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p><strong>ESENER:</strong></p><p><strong><a href=\"https://osha.europa.eu/en/surveys-and-statistics-osh/esener\">https://osha.europa.eu/en/surveys-and-statistics-osh/esener</a></strong></p><p>EWCS:</p><p><a href=\"https://www.eurofound.europa.eu/data/european-working-conditions-survey\">https://www.eurofound.europa.eu/data/european-working-conditions-survey</a></p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -11794,7 +12017,11 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The <strong>intended coverage</strong> is: 28 EU countries plus Iceland, Norway and Switzerland. All data for the coverage is available.</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<ul><li>Activity sector: <strong>All</strong></li><li>For the detailed visualisation of sectors: <strong>Six sector groups</strong></li><li>For the detailed visualisation of sizes: <strong>Four size groups</strong></li></ul><p>&nbsp;</p><p>&nbsp;</p>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<ul>
+  <li>Activity sector: <strong>All</strong></li>
+  <li>For the detailed visualisation of sectors: <strong>Six sector groups</strong></li>
+  <li>For the detailed visualisation of sizes: <strong>Four size groups</strong></li>
+</ul>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "null");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
