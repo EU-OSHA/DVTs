@@ -73,8 +73,13 @@ define(function (require) {
                     for(var i=0;i<$scope.structure.length;i++){
                         if($scope.structure[i].id == $scope.pSection){
                             $scope.subsections = $scope.structure[i].levels;
+                            $log.warn($scope.subsections);
                             for(var j=0;j<$scope.subsections.length;j++){
-                                $scope.subsections[j].database_name = $scope.subsections[j].database_name.toLowerCase();
+                                $log.warn($scope.subsections[j].database_name);
+                                if($scope.subsections[j].database_name != undefined){
+                                    $scope.subsections[j].database_name = $scope.subsections[j].database_name.toLowerCase();
+                                }                                
+                                $log.warn($scope.subsections[j].database_name);
                                 if($scope.subsections[j].database_name == ""){
                                     $scope.subsections.splice(j, 1);
                                 }
@@ -118,7 +123,7 @@ define(function (require) {
                             additional_comments: elem[12]
                         };
                     });
-                $log.warn($scope.data);
+                //$log.warn($scope.data);
                 }).catch(function (err) {
                     throw err;
                 });
