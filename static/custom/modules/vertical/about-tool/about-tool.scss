@@ -1,4 +1,6 @@
 .about-tool{
+  display: flex;
+  margin-bottom: 4rem;
   h2{
     color: $aquamarine;
     font-size: 2.8rem;
@@ -67,6 +69,7 @@
     justify-content: space-evenly;
     border-top: 3px solid $orange;
     border-bottom: 3px solid $orange;
+    padding: 0;
     li{
       a{
         padding: 2rem 1rem;
@@ -75,6 +78,7 @@
         font-size: 2.2rem;
         color: $aquamarine;
         color: $gray-light;
+        text-align: center;
         &:hover{
           color: $orange;
         }

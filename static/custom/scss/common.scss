@@ -95,7 +95,7 @@
       color: $orange;
     }
     &.external{
-      &[target=_blank]{
+      &[target=_blank], &[target=_blank]{
         margin-right: 0.5em;
         word-wrap: break-word;
         &:after{
@@ -107,6 +107,31 @@
           display: inline-block;
           content: " ";
         }
+      }
+    }
+    &[target=_blank], &[target=_blank]{
+      margin-right: 0.5em;
+      word-wrap: break-word;
+      &:after{
+        background: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/external_link.png) transparent right 30% no-repeat;
+        margin-left:0em;
+        padding-right: 0;
+        width: 15px;
+        height: 15px;
+        display: inline-block;
+        content: " ";
+      }
+    }
+  }
+  .footer-elements, header{
+    a[target=_blank], a[target=_blank]{
+      margin-right: 0em;
+      &:after{
+        background: url(none);
+        margin-left:0em;
+        padding-right: 0;
+        width: 1px;
+        height: 1px;
       }
     }
   }
