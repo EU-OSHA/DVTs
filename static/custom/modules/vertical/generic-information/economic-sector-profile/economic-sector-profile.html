@@ -158,10 +158,10 @@
         -->
         <!-- GDP PER CAPITA IN RELATION TO EU28 AVERAGE -->
         <div class="card--block--chart">
-          <div class="select-filter-chart">
-          </div>
-          <selector chart="GDP" ng-model="dashboard.parameters.pSplit"></selector>
-          <div class="chart--block">
+          <div class="select-filter-chart-wrapper">
+            <selector chart="GDP" ng-model="dashboard.parameters.pSplit"></selector>
+          </div>          
+          <div class="chart--block  with-filter">
             <dvt-bar-chart
               data-ng-cloak
               query="getGDPData" cda="{{::cdaGenericInformation }}"
@@ -220,14 +220,14 @@
         </div>
         <!-- INCOME PER CAPITA -->
         <div class="card--block--chart">
-          <div class="select-filter-chart">
+          <div class="select-filter-chart-wrapper">
             <selector chart="IncomePerCapita" ng-model="dashboard.parameters.pSplit2"></selector>
             <!--<select ng-model="dashboard.parameters.pSplit" ng-change="changeType(dashboard.parameters.pSplit)">
               <option value="36">NORMAL</option>
               <option value="279">EURO</option>
             </select>-->
           </div>
-          <div class="chart--block">
+          <div class="chart--block with-filter">
             <dvt-bar-chart
               data-ng-cloak
               query="getIncomePerCapitaData" cda="{{::cdaGenericInformation }}"
