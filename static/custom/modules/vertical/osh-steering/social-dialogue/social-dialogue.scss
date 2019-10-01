@@ -1,6 +1,7 @@
 .download-report{
   text-align: left;
   padding: 0;
+  margin-right: 0em;
   a{
     color: #58585A;
     font-family: 'Oswald';
@@ -15,7 +16,14 @@
       background-size: cover;
       display: inline-block;
       margin-right: 0.2rem;
-    }               
+    }      
+    &:after{
+      background: url(none);
+      margin-left:0em;
+      padding-right: 0;
+      width: 1px;
+      height: 1px;
+    }             
   }          
 }
 .social-dialogue{
