@@ -94,9 +94,9 @@ define(function (require) {
                             var pCountry1 = $scope.parameters.parameters[1] ? $scope.parameters.parameters[1][1] : null;
                             var pCountry2 = $scope.parameters.parameters[2] ? $scope.parameters.parameters[2][1] : null;
 
-                            if(country.includes(pCountry1)){
+                            if(country.match(pCountry1)){
                                 return pCountry1;
-                            }else if(country.includes(pCountry2)){
+                            }else if(country.match(pCountry2)){
                                 return pCountry2;
                             }
                         }
@@ -156,9 +156,9 @@ define(function (require) {
                                     this.add(pv.Image)
                                       .url(function(scene) {
                                         var countryKey = scene.firstAtoms.category;
-                                        if(countryKey.label.includes($stateParams.pCountry1)){
+                                        if(countryKey.label.match($stateParams.pCountry1)){
                                             return configService.getImagesPath()+'man_orange.svg'
-                                        }else if(countryKey.label.includes($stateParams.pCountry2)){
+                                        }else if(countryKey.label.match($stateParams.pCountry2)){
                                             return configService.getImagesPath()+'man.svg'
                                         }else if(countryKey == 'EU28'){
                                             return configService.getImagesPath()+'man_blue.svg'
@@ -169,9 +169,9 @@ define(function (require) {
                                         /*SVG default width:68*150:height proportion W = H*0.45333333333 */
                                         this.root.sign.chart.options.legendDot_fillStyle = function(scene){
                                             var countryKey = scene.firstAtoms.category;
-                                            if(countryKey.label.includes($stateParams.pCountry1)){
+                                            if(countryKey.label.match($stateParams.pCountry1)){
                                                 return dvtUtils.getColorCountry(1);
-                                            }else if(countryKey.label.includes($stateParams.pCountry2)){
+                                            }else if(countryKey.label.match($stateParams.pCountry2)){
                                                 return dvtUtils.getColorCountry(2);
                                             }else if(countryKey == 'EU28'){
                                                 return dvtUtils.getEUColor();
@@ -198,15 +198,15 @@ define(function (require) {
                                         var barWidth = panelWidth/4;
                                         var countryKey = scene.firstAtoms.category;
                                         if(panelWidth != 300){ //Default panel value
-                                            if(countryKey.label.includes($stateParams.pCountry1)){
-                                                if(!scene.nextSibling.firstAtoms.category.label.includes($stateParams.pCountry2)){
+                                            if(countryKey.label.match($stateParams.pCountry1)){
+                                                if(!scene.nextSibling.firstAtoms.category.label.match($stateParams.pCountry2)){
                                                     //return panelWidth/2 - (barWidth + this.width()/2) + 10; //5 is the panel margin
                                                     return panelWidth/2 - this.width()/2 - barWidth - 5;
                                                 }else{
                                                     //return (barWidth - this.width())/2 + 5; //5 is the panel margin
                                                     return panelWidth/2 - this.width()/2 - panelWidth/3;
                                                 }
-                                            }else if(countryKey.label.includes($stateParams.pCountry2)){
+                                            }else if(countryKey.label.match($stateParams.pCountry2)){
                                                 var sibling = scene.previousSibling;
                                                 if(sibling == null){
                                                     return panelWidth/2 - (barWidth + this.width()/2) - 5;
@@ -216,7 +216,7 @@ define(function (require) {
                                                 }
                                             }else if(countryKey == 'EU28'){
                                                 var firstSibling = scene.previousSibling.previousSibling;
-                                                if(!scene.previousSibling.firstAtoms.category.label.includes($stateParams.pCountry2) || firstSibling == null){
+                                                if(!scene.previousSibling.firstAtoms.category.label.match($stateParams.pCountry2) || firstSibling == null){
                                                     return panelWidth - (barWidth + this.width()/2) - 10;
                                                 }else{
                                                     //return panelWidth/1.5 + (barWidth - this.width())/2 - 5;
