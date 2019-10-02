@@ -39,8 +39,12 @@ define(function (require) {
 
         if($cookies.get("piwikX")=="activate" || $cookies.get("piwikX")==undefined){
             check.checked=true;
+            $scope.textBox = i18n.youMayChooseNot;
+            $scope.textCheck = i18n.textCheck1;
         }else{
             check.checked=false;
+            $scope.textBox = i18n.optOutComplete;
+            $scope.textCheck = i18n.textCheck2;
         }
 
         /* como se ponga on load
@@ -61,21 +65,21 @@ define(function (require) {
             // this will set the expiration to 12 months
                 exp = new Date(now.getFullYear() + 1, now.getMonth(), now.getDate());
             if (check.checked == true) {
-                $log.warn('Entra en $scope.valueCheck == 1');
+                //$log.warn('Entra en $scope.valueCheck == 1');
                 configService.tooglePiwik(true);
                 //$scope.valueCheck = 2;
-                $scope.textBox = i18n.optOutComplete;
-                $scope.textCheck = i18n.textCheck2;
+                $scope.textBox = i18n.youMayChooseNot;
+                $scope.textCheck = i18n.textCheck1;
                 $cookies.remove('piwikX');
                 $cookies.put('piwikX', 'activate', {
                     expires: exp
                 });
             } else {
-                $log.warn('Entra en else');
+                //$log.warn('Entra en else');
                 configService.tooglePiwik(false);
                 //$scope.valueCheck = 1;
-                $scope.textBox = i18n.youMayChooseNot;
-                $scope.textCheck = i18n.textCheck1;
+                $scope.textBox = i18n.optOutComplete;
+                $scope.textCheck = i18n.textCheck2;
                 $cookies.remove('piwikX');
                 $cookies.put('piwikX', 'desactivate', {
                     expires: exp
