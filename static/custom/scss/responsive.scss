@@ -980,6 +980,7 @@ and (max-width :767px)  {
 
   .workforce--page{
     #filter3{
+    	min-height: auto;
     	&.affix-top{
 				padding: 1rem 4rem 1rem 0;
 				position: relative;
@@ -1000,6 +1001,12 @@ and (max-width :767px)  {
       	top: 9rem;
       }
     }
+		.filter--indicator--block{
+			padding: 0 3rem;
+			.indicators--group{
+				padding: 0;
+			}
+		}
   }
 	.survey--map--block-mobile{
 		.matrix--elements--wrapper{
@@ -1016,6 +1023,13 @@ and (max-width :767px)  {
 		  		}
 		  	}
 		  }
+		}
+	}
+	.economic--sector--profile{
+		.card--grid{
+			.card--block--chart{
+				margin: 1rem 0px 2rem !important;
+			}
 		}
 	}
 }
