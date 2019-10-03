@@ -37,14 +37,16 @@ define(function (require) {
 
         var check=angular.element('#box1 > p:nth-child(2) > input[type=checkbox]')[0];
 
-        if($cookies.get("piwikX")=="activate" || $cookies.get("piwikX")==undefined){
-            check.checked=true;
-            $scope.textBox = i18n.youMayChooseNot;
-            $scope.textCheck = i18n.textCheck1;
-        }else{
-            check.checked=false;
-            $scope.textBox = i18n.optOutComplete;
-            $scope.textCheck = i18n.textCheck2;
+        if(check != undefined){
+            if($cookies.get("piwikX")=="activate" || $cookies.get("piwikX")==undefined){
+                check.checked=true;
+                $scope.textBox = i18n.youMayChooseNot;
+                $scope.textCheck = i18n.textCheck1;
+            }else{
+                check.checked=false;
+                $scope.textBox = i18n.optOutComplete;
+                $scope.textCheck = i18n.textCheck2;
+            }
         }
 
         /* como se ponga on load
