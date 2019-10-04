@@ -130,6 +130,11 @@ define(function (require) {
                             if($scope.parameters.chartTitle == 'Health at risk'){
                                 $scope.parameters.baseAxisSize = 90;
                             }
+
+                            if($scope.parameters.chartTitle == 'Risk Assessment' 
+                                || $scope.parameters.chartTitle == 'Employees participation in prevention'){
+                                $scope.parameters.baseAxisSize = 90;
+                            }
                         }
 
                         /* ESTABLISH MAX COMMON PARAMETERS  */
