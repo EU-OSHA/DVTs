@@ -214,3 +214,11 @@ and (max-width : 1024px){
     }
   }
 }
+
+@media only screen 
+and (max-width : 767px){
+  .selected--tags-wrapper{
+    padding: 1rem 2.2rem 0;
+  }
+}
+
