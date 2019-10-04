@@ -43,5 +43,7 @@
   "ForAnyF":"<p>For any further information regarding the handling of their personal data, data subjects can address their request to EU-OSHA Data Protection Officer at: <a href='mailto:dpo@osha.europa.eu'>dpo@osha.europa.eu</a>.</p>",
   "Recourse": "Recourse to the EDPS",
   "DataSub":"<p>Data subjects are entitled to make recourse to the European Data Protection Supervisor: <a class='external' target='_blank' href='http://www.edps.europa.eu/'>http://www.edps.europa.eu</a>, should they consider that the processing operations do not comply with Regulation (EC) No. 45/2001.</p>",
+  "Processing": "Date when processing starts",
+  "DateAccess":"<p>Date of access to the website.</p><p><i>Privacy statement last updated: 6/20/2019 4:21:38 PM</i></p>",
   "siteMap":"Site Map"
 }
