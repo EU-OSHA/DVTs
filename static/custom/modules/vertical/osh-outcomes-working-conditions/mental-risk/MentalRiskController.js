@@ -241,6 +241,7 @@ define(function (require) {
       }
 
       $scope.changeDataset = function(indicator, dataset){
+        $('.card--block--chart--wrapper').css('visibility','hidden');
         if ($state.current.name !== undefined) {
           $state.go($state.current.name, {
             pIndicator: indicator,

@@ -60,7 +60,7 @@
               <option data-ng-bind="i18nLiterals.L20647" value="establishment-size"></option>
             </select>
           </div>
-          <div class="chart--block" ng-show="pSplit == 'establishment-size'">
+          <div class="chart--block chart-establishment-size" ng-show="pSplit == 'establishment-size'">
             <dvt-bar-chart
               data-ng-cloak
               query="getEstablishmentSizeData" cda="{{::cdaOSHOutcomes }}"
@@ -84,7 +84,7 @@
               datasource-and-dates="[datasetESENER,120]"
             ></dvt-bar-chart>
           </div>
-          <div class="chart--block" ng-show="pSplit == 'sector'">
+          <div class="chart--block chart-sector" ng-show="pSplit == 'sector'">
             <dvt-bar-chart
               data-ng-cloak
               query="getSectorActivityData" cda="{{::cdaOSHOutcomes }}"
@@ -241,7 +241,7 @@
               <option data-ng-bind="i18nLiterals.L20647" value="establishment-size"></option>              
             </select>
           </div>
-          <div class="chart--block" ng-hide="pSplit != 'establishment-size'">
+          <div class="chart--block chart-sector" ng-hide="pSplit != 'establishment-size'">
             <dvt-bar-chart
               data-ng-cloak
               query="getEstablishmentSizeData" cda="{{::cdaOSHOutcomes }}"
@@ -265,7 +265,7 @@
               datasource-and-dates="[datasetESENER,123]"
             ></dvt-bar-chart>
           </div>
-          <div class="chart--block" ng-hide="pSplit != 'sector'">
+          <div class="chart--block  chart-establishment-size" ng-hide="pSplit != 'sector'">
             <dvt-bar-chart
               data-ng-cloak
               query="getSectorActivityData" cda="{{::cdaOSHOutcomes }}"
