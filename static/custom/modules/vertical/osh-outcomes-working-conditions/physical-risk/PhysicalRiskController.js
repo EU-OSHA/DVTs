@@ -334,6 +334,7 @@ define(function (require) {
       }
 
       $scope.changeSplit = function(){
+        $('.card--block--chart--wrapper').css('visibility','hidden');
         if ($state.current.name !== undefined) {
           $state.transitionTo('physical-risk-risks-involved-with-work', {
             pIndicator: $scope.pIndicator,

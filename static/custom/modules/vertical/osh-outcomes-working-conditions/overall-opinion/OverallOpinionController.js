@@ -169,7 +169,7 @@ define(function (require) {
         }
     };
 
-    console.log( 'column--item -->' + angular.element('.column--item').length );
+    //console.log( 'column--item -->' + angular.element('.column--item').length );
 
     // Show/hide the Countries Filter List
     angular.element('div.countries-filters').css( "display",'none' );
@@ -272,6 +272,8 @@ define(function (require) {
       }
 
       $scope.countryChange = function () {
+        $('.card--block--chart--wrapper').css('visibility','hidden');
+
         if ($state.current.name !== undefined) {
           $scope.dashboard.parameters = {
             "pCountry1": $scope.pCountry1,

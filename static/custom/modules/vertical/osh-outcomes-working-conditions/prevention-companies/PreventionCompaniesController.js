@@ -255,6 +255,8 @@ define(function (require) {
       }
 
       $scope.countryChange = function () {
+       $('.card--block--chart--wrapper').css('visibility','hidden');
+
         if ($state.current.name !== undefined) {
           $scope.dashboard.parameters = {
             "pCountry1": $scope.pCountry1,
@@ -267,6 +269,7 @@ define(function (require) {
             pSplit: $scope.pSplit
           }, {reload: true});
         }
+        
       };
   }
 

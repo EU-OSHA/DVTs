@@ -131,6 +131,7 @@ define(function (require) {
     /******************************END DATA LOAD***********************************/
 
       $scope.changeSplit = function(){
+        $('.card--block--chart').css('visibility','hidden');
         if ($state.current.name !== undefined) {
           $state.transitionTo('worker-involvement', {
             pCountry1: $scope.pCountry1, 
