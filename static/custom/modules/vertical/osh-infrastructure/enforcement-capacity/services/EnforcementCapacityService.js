@@ -17,9 +17,9 @@ define (function (require) {
                             if(!scene.firstAtoms.value.label.match('%')){
                                 scene.firstAtoms.value.label = scene.firstAtoms.value.label + '%';
                             }
-                            if (subIndicatorKey == pCountry1) {
+                            if (subIndicatorKey.label.match(pCountry1)) {
                                 return dvtUtils.getColorCountry(1);
-                            } else if(subIndicatorKey == pCountry2){
+                            } else if(subIndicatorKey.label.match(pCountry2)){
                                 return dvtUtils.getColorCountry(2);
                             } else if(subIndicatorKey == 'EU28'){
                                 return dvtUtils.getColorCountry();
@@ -32,9 +32,9 @@ define (function (require) {
                             if(!scene.firstAtoms.value.label.match('%')){
                                 scene.firstAtoms.value.label = scene.firstAtoms.value.label + '%';
                             }
-                            if (subIndicatorKey == pCountry1) {
+                            if (subIndicatorKey.label.match(pCountry1)) {
                                 return dvtUtils.getColorCountry(1);
-                            } else if(subIndicatorKey == pCountry2){
+                            } else if(subIndicatorKey.label.match(pCountry2)){
                                 return dvtUtils.getColorCountry(2);
                             } else if(subIndicatorKey == 'EU28'){
                                 return dvtUtils.getColorCountry();
