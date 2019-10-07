@@ -46,7 +46,6 @@ define(function (require) {
     $scope.elementsEnd=$scope.pageSize;
 
     $scope.pCountry = $stateParams.pCountry;
-    $log.warn($scope.pCountry);
     $scope.pInstitution = $stateParams.pInstitution;
 
     // Pagination Text
@@ -88,7 +87,23 @@ define(function (require) {
     $scope.trimtext = function(pVal, pNumCharacters){
       var shortText = pVal;
       var finalHtml = '';
-      if(shortText != null && shortText != 'null'){
+      var text = 0;
+      var newMaxCharacter = pNumCharacters;
+
+      if(shortText != null){
+        var firstSplit =  shortText.substring(0, newMaxCharacter);
+
+        if(firstSplit.match('<a')){
+          newMaxCharacter += 150;
+        }
+
+        if (shortText.length > pNumCharacters) {
+
+          shortText = $.trim(shortText).substring(0, newMaxCharacter).split(" ").slice(0, -1).join(" ") + "<span class='dots'>...</span>";
+        }
+        return $sce.trustAsHtml(shortText);
+      }
+      /*if(shortText != null && shortText != 'null'){
         if(shortText.match('<p>')){
           var minimized_elements = $compile(pVal)($scope);
           for(var i = 0; i < minimized_elements.length; i++){
@@ -106,17 +121,15 @@ define(function (require) {
               finalHtml += newHtml;
             }
           }
+          $log.warn(finalHtml);
           return $sce.trustAsHtml(finalHtml);
-          /*if (shortText.length > pNumCharacters) {
-            shortText = $.trim(pVal).substring(0, pNumCharacters).split(" ").slice(0, -1).join(" ") + $scope.longText(pVal, pNumCharacters) + "<span class='see-more'>...</span>";
-          }*/
         }else{
           if (shortText.length > pNumCharacters) {
             shortText = $.trim(pVal).substring(0, pNumCharacters).split(" ").slice(0, -1).join(" ") + $scope.longText(pVal, pNumCharacters) + "<span class='see-more'>...</span>";
           }
           return $sce.trustAsHtml(shortText);
         }
-      }
+      }*/
       
     }
 
@@ -126,16 +139,13 @@ define(function (require) {
     }
 
     $scope.toggleText = function($event) {
-
-      //$log.warn(angular.element($event.target).parent().parent());
       if ($(this).is(':visible')) {
-
-      angular.element(' samp', angular.element($event.target).parent().parent()).toggleClass('visible-inline');
-      angular.element(' .text-part', angular.element($event.target).parent().parent()).toggleClass('visible');
-
+        angular.element('div.complete-text', angular.element($event.target).parent().parent()).toggle();
+        angular.element('div.partial-text', angular.element($event.target).parent().parent()).toggle();
       }
+
       //Para ocultar los puntos suspensivos del recorte
-      angular.element(' span.see-more', angular.element($event.target).parent().parent()).toggle();
+      angular.element(' span.dots', angular.element($event.target).parent().parent()).toggle();
       //Para cambiar del boton see more al boton see less
       angular.element(' a', angular.element($event.target).parent()).toggle();
     }
