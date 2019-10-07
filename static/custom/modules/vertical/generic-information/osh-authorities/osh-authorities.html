@@ -90,7 +90,11 @@
 
             <div data-ng-bind-html="i18nLiterals['L'+matrix.name_authority]"></div>
             <div data-ng-bind-html="i18nLiterals['L'+matrix.link_authority]"></div>
-            <div data-ng-bind-html="trimtext(i18nLiterals['L'+matrix.detail_authority], 300)"></div>
+            <!--<div data-ng-bind-html="trimtext(i18nLiterals['L'+matrix.detail_authority], 300)"></div>-->
+
+            <div class="partial-text" data-ng-bind-html="trimtext(i18nLiterals['L'+matrix.detail_authority], 300)"></div>
+            <div class="complete-text" data-ng-bind-html="i18nLiterals['L'+matrix.detail_authority]"></div>
+
             <p data-ng-if="i18nLiterals['L'+matrix.detail_authority].length > 300" class="see--more--wrapper"> 
               <a ng-click='toggleText($event)' data-ng-bind="i18nLiterals.L480" class="see-more main-color"></a>
               <a ng-click='toggleText($event)' data-ng-bind="i18nLiterals.L481" class="see-less main-color" style="display:none"></a>
