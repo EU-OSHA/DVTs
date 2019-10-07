@@ -146,9 +146,37 @@ div.partial-text{
 				}
 			}
 		}
-		.country--profile--page .submenu--block .submenu--items--wrapper li {
-		  padding:1.5rem 1rem;
+	}
+
+	.regulation-page, .country--profile--page{
+		.submenu--block{
+			.submenu--items--wrapper{
+				max-height: 8rem;
+				margin: 0;
+				li{
+					a{
+						margin: 0 3rem 0 0 !important;
+					}
+					&:after{
+						right: 0.5rem !important;
+					}
+					&.active{
+						&:after{
+							right: 0.5rem !important;
+						}
+					}
+				}
+				&.open-list{
+					li{
+						a{
+							margin: 0 3rem 0 0 !important;
+						}
+					}
+				}
+			}
 		}
 	}
 
 }
+
+
