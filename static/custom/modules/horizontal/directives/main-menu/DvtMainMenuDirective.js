@@ -23,6 +23,10 @@
         $('body').removeClass('minor');
         $('body').addClass('plus');
     }
+    function gotoTop() {
+        $('html,body').animate({ 'scrollTop': 0 }, 'slow');
+        return false;
+    };
 
 
 define(function (require) {
@@ -74,6 +78,7 @@ define(function (require) {
                         } else {
                             angular.element("body").removeClass('section-fixed');
                         }
+
                     }
   
                     if( resolution < 768 ){
@@ -99,9 +104,17 @@ define(function (require) {
                                     if( prevScrollpos <= angular.element('.advice--icon--block').offset().top + angular.element('.advice--icon--block')[0].clientHeight){
                                         angular.element(".compare--block.regulation-page").removeClass('show-header');
                                     }
-                                }
+                                }                                
                             }
-
+                            var gotopVisible = $(window).height() + $(window).height()/2;
+                            if( currentScrollPos > gotopVisible )
+                            {
+                                $('.go-to').css('display','block');
+                            }
+                            else
+                            {
+                                $('.go-to').css('display','none');
+                            }
                         } 
                     }
                     

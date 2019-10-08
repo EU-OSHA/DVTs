@@ -90,24 +90,33 @@
 /*** END FOOTEER **/
 
 .go-to{
-  padding: 0px;
   display: none;
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
+  position: relative;
   z-index: 9000;
-  width: 40px !important;
-  height:40px;
-  border-radius: 30px;
-  background:#666;
+  bottom: 0;
+  right: 0;
+  margin: 0;
   a{
-    color: #900;
-    &:hover{
-      color:#ccc;
-    }
-    i:before{
+    padding: 0px;
+    display: block;
+    width: 4rem !important;
+    height:4rem;
+    background:$aquamarine;
+    color:$white;
+    line-height: 1rem;
+    &:before{
       content: "\f106";
-      font-size: 2.6rem;
+      font-family: FontAwesome;
+      font-size: 3rem;
+      color: #FFF;
+      text-align: center;
+      display: block;
+      position: relative;
+      top: 1.2rem;    
+    }
+    &:hover{
+      //color:$black;
+      //background:$orange;
     }
   }
 }
