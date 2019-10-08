@@ -470,21 +470,16 @@ define(function (require) {
 
     /******************************END FILTERS************************************/
 
-
-        
-        
-        var resolution = screen.width;
-        if(resolution > 768){
-          var Xelement = 420;
-        }else{
-          var Xelement = 690;
-        }
-
-        $('.highlited--data--section').affix({
-              offset: {
-                top: Xelement
-              }
-        });       
+    if(screen.width > 768){
+      var Xelement = 420;
+    }else{
+      var Xelement = 690;
+    }
+    $('.highlited--data--section').affix({
+      offset: {
+        top: Xelement
+      }
+    });     
 
   }
 

@@ -475,6 +475,17 @@ define(function (require) {
       }
 
     /******************************END FILTERS************************************/
+    
+    if(screen.width > 768){
+      var Xelement = 420;
+    }else{
+      var Xelement = 690;
+    }
+    $('.highlited--data--section').affix({
+      offset: {
+        top: Xelement
+      }
+    });  
 
   }
 
