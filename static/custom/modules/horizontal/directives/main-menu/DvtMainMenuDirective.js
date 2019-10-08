@@ -68,8 +68,10 @@ define(function (require) {
                     });
 
                     $window.onscroll = function() {
+                        //console.log(angular.element('.highlited--data--section'));
                         if( angular.element('.highlited--data--section')[0] != undefined ){  
-                            var dataAffix = angular.element('.highlited--data--section')[0].dataset.offsetTop;
+                            var dataAffix = angular.element('.highlited--data--section')[0].offsetTop;
+
                             if( dataAffix < $window.pageYOffset){
                                 angular.element("body").addClass('section-fixed');
                             }else{
