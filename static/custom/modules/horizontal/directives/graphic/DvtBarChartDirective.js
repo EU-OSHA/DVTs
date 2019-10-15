@@ -419,6 +419,7 @@ define(function (require) {
                         legendLabel_visible: true,
                         legendDot_strokeStyle: attributes.legendDotStrokeStyle,
                         legendShape: 'square',
+                        legendSize: attributes.legendSize,
                         legendAlign: attributes.legendAlign || 'center',
                         legendOverflow: attributes.legendOverflow || 'clip',
                         legendItemSize: attributes.legendItemSize,
