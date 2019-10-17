@@ -24,10 +24,11 @@ define(function (require) {
                 .controller(ctrlName, function ($scope, $modalInstance, $log, $state, $stateParams, parameters, dvtUtils, configService, $rootScope) {
                     /* GET FUNCTIONAL LEGEND */
 
-                    var resolution = screen.width;
+                    var resolution = window.resolution;
 
                     $(window).on("resize",function(e){
-                      resolution = screen.width;
+                        resolution = window.resolution;
+                        //resolution = screen.width;
                     });
 
                     /*ESTABLISH NEEDED DASH PARAMS FOR RENDER COMPONENTS */
@@ -240,14 +241,16 @@ define(function (require) {
 
                             if($scope.parameters.chartDefinition.dataAccessId == 'getCompanySizeData'){
                                 $scope.parameters.chartDefinition.legendItemSize = 300;
+                                $scope.parameters.chartDefinition.legendSize = 150;
 
                                 if(resolution <= 325){
                                     //$log.warn('resolution <= 325');
-                                    $scope.parameters.chartDefinition.legendItemSize = 100;
+                                    $scope.parameters.chartDefinition.legendItemSize = 300;
                                 }
 
                                 if(resolution <= 380 && resolution > 325){
                                     //$log.warn('resolution < 425');
+                                    $log.warn('resolution < 425');
                                     $scope.parameters.chartDefinition.legendItemSize = 320;
                                 }
                                 

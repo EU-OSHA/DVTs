@@ -23,6 +23,10 @@
         $('body').removeClass('minor');
         $('body').addClass('plus');
     }
+    function gotoTop() {
+        $('html,body').animate({ 'scrollTop': 0 }, 'slow');
+        return false;
+    };
 
 
 define(function (require) {
@@ -64,8 +68,10 @@ define(function (require) {
                     });
 
                     $window.onscroll = function() {
+                        //console.log(angular.element('.highlited--data--section'));
                         if( angular.element('.highlited--data--section')[0] != undefined ){  
-                            var dataAffix = angular.element('.highlited--data--section')[0].dataset.offsetTop;
+                            var dataAffix = angular.element('.highlited--data--section')[0].offsetTop;
+
                             if( dataAffix < $window.pageYOffset){
                                 angular.element("body").addClass('section-fixed');
                             }else{
@@ -74,6 +80,7 @@ define(function (require) {
                         } else {
                             angular.element("body").removeClass('section-fixed');
                         }
+
                     }
   
                     if( resolution < 768 ){
@@ -99,9 +106,17 @@ define(function (require) {
                                     if( prevScrollpos <= angular.element('.advice--icon--block').offset().top + angular.element('.advice--icon--block')[0].clientHeight){
                                         angular.element(".compare--block.regulation-page").removeClass('show-header');
                                     }
-                                }
+                                }                                
                             }
-
+                            var gotopVisible = $(window).height() + $(window).height()/2;
+                            if( currentScrollPos > gotopVisible )
+                            {
+                                $('.go-to').css('display','block');
+                            }
+                            else
+                            {
+                                $('.go-to').css('display','none');
+                            }
                         } 
                     }
                     

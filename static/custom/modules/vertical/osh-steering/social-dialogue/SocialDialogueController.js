@@ -470,6 +470,18 @@ define(function (require) {
 
     /******************************END FILTERS************************************/
 
+    if(screen.width > 767){
+      var Xelement = 420;
+      $('.highlited--data--section').affix({
+        offset: {
+          top: Xelement
+        }
+      });  
+    }else{
+      var Xelement = 690;
+    }
+   
+
   }
 
   controller.$inject = ['$scope', '$stateParams', '$state', 'configService', '$log', '$document','dataService', '$window', '$sce', '$compile', '$timeout'];
