@@ -143,6 +143,9 @@ define(function (require) {
                       }
                     });
 
+                    // add accesskey to google translate link
+                    $('.goog-te-menu-value').attr('accesskey','L');
+
 
                     // when click banner link to Home
                     $scope.goto = function (pState) {
