@@ -25,7 +25,6 @@
     }
     function gotoTop() {
         $('html,body').animate({ 'scrollTop': 0 }, 'slow');
-        return false;
     };
 
 
@@ -83,7 +82,7 @@ define(function (require) {
 
                     }
   
-                    if( resolution < 768 ){
+                    //if( resolution < 768 ){
                         $window.onscroll = function() {
                             var currentScrollPos = $window.pageYOffset;
                             // currentScrollPos should be greater than 90 to solved a iphone 6 issue
@@ -118,7 +117,7 @@ define(function (require) {
                                 $('.go-to').css('display','none');
                             }
                         } 
-                    }
+                    //}
                     
                     //hide print icon in mobile
                     if(configService.isMobile()) {

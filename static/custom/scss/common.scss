@@ -28,6 +28,7 @@
     .ilo-header #containerMenu{
       position: relative;
     }
+
     /*
     #google_translate_element_wrapper{
       top: 4rem;
@@ -152,6 +153,39 @@
       display: block;
       margin: 2rem 2rem 1rem;
       color: red;
+    }
+  }
+  .hide-header{
+    position: fixed;
+    top: -15rem !important;
+    -webkit-transition: all 0.8s;
+    transition: all 0.8s;
+    &.affix{
+      top: -25rem;
+      background: $white;
+      width: 100%;
+    }
+    &.affix-top{
+      top: -25rem;
+      background: $white;
+      width: 100%;
+    }
+  }
+  .show-header{
+    position: fixed;
+    top:0rem;
+    -webkit-transition: all 0.8s; 
+    transition: all 0.8s;
+    &.affix{
+      top:9rem;
+      background: $white;
+      width: 100%;
+    }
+    &.affix-top{
+      top:0rem;
+      position: relative;
+      background: $white;
+      width: 100%;
     }
   }
 /** END GENERAL TAGS  **/
@@ -1843,4 +1877,11 @@ and (max-width :380px) {
   dvt-radar-chart svg{
     height:630px !important
   }
+}
+
+@-ms-viewport{
+width:auto!important;
+}
+body{
+  -ms-overflow-style: scrollbar;
 }

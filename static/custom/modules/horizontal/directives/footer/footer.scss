@@ -91,10 +91,10 @@
 
 .go-to{
   display: none;
-  position: relative;
+  position: absolute;
   z-index: 9000;
-  bottom: 0;
-  right: 0;
+  bottom: 1rem;
+  right: 1rem;
   margin: 0;
   a{
     padding: 0px;
