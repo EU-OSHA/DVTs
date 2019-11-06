@@ -245,6 +245,9 @@ define(function (require) {
           $scope.elementsEnd=$scope.amatrix.length;
         }
         updateText();
+
+        //Scroll to top
+        $document.scrollTo(0, 0, 0);
       };
 
       /**
@@ -270,6 +273,9 @@ define(function (require) {
             $scope.pageStart = $scope.elementsStart;
         }
         updateText();
+
+        //Scroll to top
+        $document.scrollTo(0, 0, 0);
       };
 
       /**
@@ -300,8 +306,6 @@ define(function (require) {
 
         updateText();
       };
-
-      $document.scrollTo(0, 0, 0);
 
     /*******************************END PAGINATION*********************************/
 
