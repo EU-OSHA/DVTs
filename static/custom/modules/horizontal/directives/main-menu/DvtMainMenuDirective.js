@@ -82,32 +82,33 @@ define(function (require) {
 
                     }
   
-                    //if( resolution < 768 ){
-                        $window.onscroll = function() {
-                            var currentScrollPos = $window.pageYOffset;
-                            // currentScrollPos should be greater than 90 to solved a iphone 6 issue
-                            if( currentScrollPos > 90 ){
-                                if (prevScrollpos > currentScrollPos) {
-                                    angular.element(".bar-header").addClass('show-header');
-                                    angular.element(".affix").addClass('show-header');
-                                    angular.element(".affix").removeClass('hide-header');
-                                    angular.element(".bar-header").removeClass('hide-header');
-                                } else {
-                                    angular.element(".bar-header").addClass('hide-header');
-                                    angular.element(".affix").addClass('hide-header');
-                                    angular.element(".affix").removeClass('show-header');
-                                    angular.element(".bar-header").removeClass('show-header');
-                                }
-
-                                prevScrollpos = currentScrollPos;
-
-                                if( angular.element('.advice--block-not-home').length > 0 ){
-                                    if( prevScrollpos <= angular.element('.advice--icon--block').offset().top + angular.element('.advice--icon--block')[0].clientHeight){
-                                        angular.element(".compare--block.regulation-page").removeClass('show-header');
-                                    }
-                                }                                
+                    
+                    $window.onscroll = function() {
+                        var currentScrollPos = $window.pageYOffset;
+                        // currentScrollPos should be greater than 90 to solved a iphone 6 issue
+                        if( currentScrollPos > 90 ){
+                            if (prevScrollpos > currentScrollPos) {
+                                angular.element(".bar-header").addClass('show-header');
+                                angular.element(".affix").addClass('show-header');
+                                angular.element(".affix").removeClass('hide-header');
+                                angular.element(".bar-header").removeClass('hide-header');
+                            } else {
+                                angular.element(".bar-header").addClass('hide-header');
+                                angular.element(".affix").addClass('hide-header');
+                                angular.element(".affix").removeClass('show-header');
+                                angular.element(".bar-header").removeClass('show-header');
                             }
-                            var gotopVisible = $(window).height() + $(window).height()/2;
+
+                            prevScrollpos = currentScrollPos;
+
+                            if( angular.element('.advice--block-not-home').length > 0 ){
+                                if( prevScrollpos <= angular.element('.advice--icon--block').offset().top + angular.element('.advice--icon--block')[0].clientHeight){
+                                    angular.element(".compare--block.regulation-page").removeClass('show-header');
+                                }
+                            }                                
+                        }
+                        var gotopVisible = $(window).height() + $(window).height()/2;
+                        if( resolution <= 768 ){
                             if( currentScrollPos > gotopVisible )
                             {
                                 $('.go-to').css('display','block');
@@ -116,8 +117,11 @@ define(function (require) {
                             {
                                 $('.go-to').css('display','none');
                             }
-                        } 
-                    //}
+                        } else {
+                            $('.go-to').css('display','none');
+                        }
+                    } 
+                    
                     
                     //hide print icon in mobile
                     if(configService.isMobile()) {

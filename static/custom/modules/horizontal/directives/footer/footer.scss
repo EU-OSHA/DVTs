@@ -76,6 +76,10 @@
     }
     .footer-social-network{
       margin:0;
+      display: flex;
+      justify-content: flex-end;
+      margin-right: 0rem;
+      width: auto;
       li{
         a{
           color: $white;
@@ -91,19 +95,24 @@
 
 .go-to{
   display: none;
-  position: absolute;
-  z-index: 9000;
-  bottom: 1rem;
-  right: 1rem;
   margin: 0;
+  background: #F0F0F0;
+  text-align: right;
+  background: $gray-lighter;
+  position: fixed;
+  bottom: 3px;
+  right: 3px;
+  z-index: 999999;
   a{
     padding: 0px;
-    display: block;
+    display:block;
     width: 4rem !important;
     height:4rem;
     background:$aquamarine;
     color:$white;
     line-height: 1rem;
+    right: 0px;
+    position: relative;
     &:before{
       content: "\f106";
       font-family: FontAwesome;
@@ -112,7 +121,7 @@
       text-align: center;
       display: block;
       position: relative;
-      top: 1.2rem;    
+      top: 1.3rem;    
     }
     &:hover{
       //color:$black;
