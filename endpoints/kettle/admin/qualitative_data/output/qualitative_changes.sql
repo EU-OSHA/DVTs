@@ -406,7 +406,7 @@ INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+102, null, @sectionId, "STRATEGY_BASIC INFO");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+102, "EN", 1, "Danish document: <a target=\"_blank\" href=\" http://bm.dk/~/media/BEM/Files/Dokumenter/Pressemeddelelser/2011/Aftaletekst.ashx \"><strong>En strategi for arbejdsmiljøindsatsen frem til 2020</strong></a><br/>English document:<a target=\"_blank\" href=\"http://engelsk.arbejdstilsynet.dk/~/media/AT/at/12-English/Rapporter/2020%20engelskpdf.pdf\"><strong>A strategy for working environment efforts up to 2020</strong></a><br/><a target=\"_blank\" href=\"http://www.ftf.dk/fileadmin/Bruger_filbibliotek/Uddannelse_og_ledelse/Uddannelse/Aftaletekst_arbejdsmiljoe_pdf.pdf\">En styrket arbejdsmiljøindsats – Alle har ret til et sikkert og sundt arbejdsmiljø </a>(Agreement between the Danish government, Denmarks’s Liberal Party, the Danish People’s Party and the Conservative People’s Party).<br/>Former strategies: <ol><li> Action Programme for a Clean Working Environment 2005 (1996)</li><li> New National Action Plan and the prioritisation of the overall WE-Efforts in Denmark up to 2010</li></ol>");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+102, "EN", 1, "Danish document: <a target=\"_blank\" href=\" http://bm.dk/~/media/BEM/Files/Dokumenter/Pressemeddelelser/2011/Aftaletekst.ashx \"><strong>En strategi for arbejdsmiljøindsatsen frem til 2020</strong></a><br/>English document:<a target=\"_blank\" href=\"https://amid.dk/media/2953/strategy-working-environment-efforts-2020.pdf\"><strong>A strategy for working environment efforts up to 2020</strong></a><br/><a target=\"_blank\" href=\"http://www.ftf.dk/fileadmin/Bruger_filbibliotek/Uddannelse_og_ledelse/Uddannelse/Aftaletekst_arbejdsmiljoe_pdf.pdf\">En styrket arbejdsmiljøindsats – Alle har ret til et sikkert og sundt arbejdsmiljø </a>(Agreement between the Danish government, Denmarks’s Liberal Party, the Danish People’s Party and the Conservative People’s Party).<br/>Former strategies: <ol><li> Action Programme for a Clean Working Environment 2005 (1996)</li><li> New National Action Plan and the prioritisation of the overall WE-Efforts in Denmark up to 2010</li></ol>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
@@ -1726,7 +1726,7 @@ INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+379, null, @sectionId, "SECTION_TITLE");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+379, "EN", 1, "Response of National strategies to EU Challenges");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+379, "EN", 1, "response of national strategies to EU challenges");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
@@ -1736,7 +1736,7 @@ INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+382, null, @sectionId, "SECTION_MESSAGE");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+382, "EN", 1, "<p>You can see whether and how a national OSH strategy of a Member States respond to the challenges of the <a href=\"http://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:52014DC0332\" target=\"_blank\"><strong>EU Strategic framework</strong></a>. These three EU challenges are:</p><ul><li><strong>Improve implementation of existing health and safety rules</strong>, in particular by enhancing the capacity of micro and small enterprises to put in place effective and efficient risk prevention strategies</li><li><strong>To improve the prevention of work-related diseases</strong> by tackling new and emerging risks without neglecting existing risks</li><li>To take account of <strong>the ageing of the EU's workforce</strong>.</li></ul>");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+382, "EN", 1, "<p>You can see if and how a national OSH strategy of a Member State responds to the challenges of the EU strategic framework. These three EU challenges are:</p><ul><li><strong>	Improve implementation of existing health and safety rules, in particular by enhancing the capacity of micro-enterprises and small businesses to put in place effective and efficient risk prevention strategies</li><li><strong>•	To improve the prevention of work-related diseases by tackling new and emerging risks without neglecting existing risks</li><li•	To take account of the ageing of the EU’s workfoe.</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="DOWNLOAD" AND tool_id=@toolId);
@@ -1746,7 +1746,7 @@ INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+400, null, @sectionId, "STRATEGY_BASIC INFO");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+400, "EN", 1, "<p>Bulgarian document: <a href=\"https://www.mlsp.government.bg/ckfinder/userfiles/files/dokumenti/strategii/NPBZR1820.doc\" target=\"_blank\">Национална програма за безопасност и здраве при работа 2018-2020 </a><br />English document: <a href=\"https://www.mlsp.government.bg/ckfinder/userfiles/files/TPOOUT/EN_TPOOUT%3DNORMATIVE%20DOCUMENTS/NPBZR1820EN.pdf\" target=\"_blank\">National Programme for Occupational Safety and Health, 2018-2020 (NP OSH 2018-2020) </a><br />Former strategies:<br /><a href=\"http://ncphp.government.bg/index.php?option=com_content&amp;view=article&amp;id=265&amp;catid=127&amp;Itemid=527&amp;lang=bg\">Национална програма по безопасност и здраве при работа (НПБЗР) 2016-2018 </a><br /><a href=\"http://www.strategy.bg/StrategicDocuments/View.aspx?lang=bg-BG&amp;Id=457\">Стратегия за безопасност и здраве при работа 2008 - 2012 г. </a><br /><a href=\"http://www.strategy.bg/strategicdocuments/View.aspx?lang=bg-BG&amp;Id=901\">Национална програма по безопасност и здраве при работа 2014 година</a> <br /><a href=\"http://www.strategy.bg/StrategicDocuments/View.aspx?lang=bg-BG&amp;Id=859\">Национална програма по безопасност и здраве при работа - 2013 г.</a></p>");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+400, "EN", 1, "<p>Bulgarian document: <a href=\"https://www.mlsp.government.bg/ckfinder/userfiles/files/dokumenti/strategii/NPBZR1820.doc\" target=\"_blank\">Национална програма за безопасност и здраве при работа 2018-2020 </a><br />English document: <a href=\"https://www.mlsp.government.bg/ckfinder/userfiles/files/TPOOUT/EN_TPOOUT%3DNORMATIVE%20DOCUMENTS/NPBZR1820EN.pdf\" target=\"_blank\">National Programme for Occupational Safety and Health, 2018-2020 (NP OSH 2018-2020) </a><br />Former strategies:<br /><a href=\"http://ncphp.government.bg/index.php?option=com_content&amp;view=article&amp;id=265&amp;catid=127&amp;Itemid=527&amp;lang=bg\"target=\"_blank\">Национална програма по безопасност и здраве при работа (НПБЗР) 2016-2018 </a><br /><a href=\"http://www.strategy.bg/StrategicDocuments/View.aspx?lang=bg-BG&amp;Id=457\"target=\"_blank\">Стратегия за безопасност и здраве при работа 2008 - 2012 г. </a><br /><a href=\"http://www.strategy.bg/strategicdocuments/View.aspx?lang=bg-BG&amp;Id=901\"target=\"_blank\">Национална програма по безопасност и здраве при работа 2014 година</a> <br /><a href=\"http://www.strategy.bg/StrategicDocuments/View.aspx?lang=bg-BG&amp;Id=859\"target=\"_blank\">Национална програма по безопасност и здраве при работа - 2013 г.</a></p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
@@ -1756,7 +1756,7 @@ INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+402, null, @sectionId, "STRATEGY_BASIC INFO");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+402, "EN", 1, "<p><a href=\"http://www.pisrs.si/Pis.web/pregledPredpisa?id=RESO26\" target=\"_blank\">Resolucija o Nacionalnem programu varnosti in zdravja pri delu (ReNPVZD)</a></p><p>English version: Resolution on the National programme for safety and health at work, Official Gazette of the Republic of Slovenia, 23/18</p><p>Former versions: <a href=\"https://www.uradni-list.si/glasilo-uradni-list-rs/vsebina?urlid=2003126&amp;stevilka=5394\">Resolution on national programme for safety and health at work, Official Gazette of the Republic of Slovenia, 2003. </a></p>");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+402, "EN", 1, "<p><a href=\"http://www.pisrs.si/Pis.web/pregledPredpisa?id=RESO26\" target=\"_blank\">Resolucija o Nacionalnem programu varnosti in zdravja pri delu (ReNPVZD)</a></p><p>English version: Resolution on the National programme for safety and health at work, Official Gazette of the Republic of Slovenia, 23/18</p><p>Former versions: <a href=\"https://www.uradni-list.si/glasilo-uradni-list-rs/vsebina?urlid=2003126&amp;stevilka=5394\" target=\"_blank\">Resolution on national programme for safety and health at work, Official Gazette of the Republic of Slovenia, 2003. </a></p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
@@ -2591,27 +2591,27 @@ INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="OSH_CULTURE" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+569, null, @sectionId, "CHART FOOTER");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+569, "EN", 1, "The diagram displays the responses of the ESENER 2014 Survey to the question: “Are sickness absences routinely analysed with a view to improving the working conditions?”");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+569, "EN", 1, "The diagram displays the responses in the ESENER 2014 Survey to the question: “Are sickness absences routinely analysed with a view to improving the working conditions?”");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="OSH_CULTURE" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+570, null, @sectionId, "CHART FOOTER");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+570, "EN", 1, "The diagram presents the responses of the ESENER 2014 Survey to the question: “How often is health and safety discussed between employee representatives and the management? Do such discussions take place regularly, only when particular health and safety issues arise or not at all?”");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+570, "EN", 1, "The diagram presents the responses in the ESENER 2014 Survey to the question: “How often is health and safety discussed between employee representatives and the management? Do such discussions take place regularly, only when particular health and safety issues arise or not at all?”");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="OSH_CULTURE" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+571, null, @sectionId, "CHART FOOTER");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+571, "EN", 1, "The diagram presents the responses of the ESENER 2014 Survey to the question: “Does your establishment have an action plan to prevent work-related stress?”");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+571, "EN", 1, "The diagram presents the responses in the ESENER 2014 Survey to the question: “Does your establishment have an action plan to prevent work-related stress?”");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="OSH_CULTURE" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+572, null, @sectionId, "CHART FOOTER");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+572, "EN", 1, "The diagram presents the responses of the ESENER 2014 Survey to the question: “Is there a procedure in place to deal with possible cases of bullying or harassment?”");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+572, "EN", 1, "The diagram presents the responses in the ESENER 2014 Survey to the question: “Is there a procedure in place to deal with possible cases of bullying or harassment?”");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="OSH_CULTURE" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+573, null, @sectionId, "CHART FOOTER");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+573, "EN", 1, "The diagram presents the responses of the ESENER 2014 Survey to the question: “Is there a procedure to deal with possible cases of threats, abuse or assaults by clients, patients pupils or members in public?”");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+573, "EN", 1, "The diagram presents the responses in the ESENER 2014 Survey to the question: “Is there a procedure to deal with possible cases of threats, abuse or assaults by clients, patients pupils or members in public?”");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="OSH_CULTURE" AND tool_id=@toolId);
@@ -2621,12 +2621,12 @@ INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="OSH_CULTURE" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+575, null, @sectionId, "CHART FOOTER");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+575, "EN", 1, "The diagram presents the responses of the European Working Conditions Survey 2015 (EWCS) to the question : “Does your job ever require that you wear personal protective equipment and do you use it?”");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+575, "EN", 1, "The diagram presents the responses in the European Working Conditions Survey 2015 (EWCS) to the question : “Does your job ever require that you wear personal protective equipment and do you use it?”");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="OSH_CULTURE" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+576, null, @sectionId, "CHART FOOTER");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+576, "EN", 1, "The diagram presents the responses of the European Working Conditions Survey 2015 (EWCS) to the question: “How well informed are you about health and safety risks related to your job?”");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+576, "EN", 1, "The diagram presents the responses in the European Working Conditions Survey 2015 (EWCS) to the question: “How well informed are you about health and safety risks related to your job?”");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="WORKING_CONDITIONS" AND tool_id=@toolId);
@@ -2636,7 +2636,7 @@ INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="WORKING_CONDITIONS" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+578, null, @sectionId, "MENTAL_RISKS_HEADER");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+578, "EN", 1, "This topic displays data from surveys on certain important aspects of mental risks like time pressure, poor communication or cooperation, employees´ lack of influence, job insecurity, difficult customers or clients, long or irregular working hours and discrimination");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+578, "EN", 1, "This topic displays data from surveys on certain important aspects of mental risks such as time pressure, poor communication or cooperation, employees´ lack of influence, job insecurity, difficult customers or clients, long or irregular working hours and discrimination");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="WORKING_CONDITIONS" AND tool_id=@toolId);
@@ -2646,27 +2646,27 @@ INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="OVERALL_OP" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+580, null, @sectionId, "CHART FOOTER");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+580, "EN", 1, "The diagram presents the responses of the European Working Conditions Survey 2015 (EWCS) to the question: “How satisfied are you with working conditions in your main paid job?”");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+580, "EN", 1, "The diagram presents the responses in the European Working Conditions Survey 2015 (EWCS) to the question: “How satisfied are you with working conditions in your main paid job?”");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="OVERALL_OP" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+581, null, @sectionId, "CHART FOOTER");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+581, "EN", 1, "The diagram presents the responses of the European Working Conditions Survey 2015 (EWCS) - per Member State and Gender- to the question: “Do you think your health or safety is at risk because of your work?”");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+581, "EN", 1, "The diagram presents the responses in the European Working Conditions Survey 2015 (EWCS) - by Member State and gender- to the question: “Do you think your health or safety is at risk because of your work?”");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="OVERALL_OP" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+582, null, @sectionId, "CHART FOOTER");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+582, "EN", 1, "The diagram presents the responses of the European Working Conditions Survey 2015 (EWCS) - per Member State and Sector - to the question : “Do you think your health or safety is at risk because of your work?”");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+582, "EN", 1, "The diagram presents the responses in the European Working Conditions Survey 2015 (EWCS) - by Member State and sector - to the question : “Do you think your health or safety is at risk because of your work?”");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="OVERALL_OP" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+583, null, @sectionId, "CHART FOOTER");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+583, "EN", 1, "The diagram presents the responses of the European Working Conditions Survey 2015 (EWCS) - per Member State and Age - to the question : “Do you think your health or safety is at risk because of your work?”");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+583, "EN", 1, "The diagram presents the responses in the European Working Conditions Survey 2015 (EWCS) - by Member State and age - to the question : “Do you think your health or safety is at risk because of your work?”");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="MENTAL_RISKS" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+584, null, @sectionId, "CHART FOOTER");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+584, "EN", 1, "The diagram presents the responses of the European Working Conditions Survey 2015 (EWCS) to the question: “Does your job involve working to tight deadlines?”");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+584, "EN", 1, "The diagram presents the responses in the European Working Conditions Survey 2015 (EWCS) to the question: “Does your job involve working to tight deadlines?”");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="MENTAL_RISKS" AND tool_id=@toolId);
@@ -2676,7 +2676,7 @@ INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="MENTAL_RISKS" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+586, null, @sectionId, "CHART FOOTER");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+586, "EN", 1, "The diagram presents a composite indicator “Level of fairness, cooperation and trust” that is based on responses to a number of questions of the European Working Conditions Survey 2015 (EWCS).");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+586, "EN", 1, "The diagram presents a composite indicator “Level of fairness, cooperation and trust” based on responses to a number of questions in the European Working Conditions Survey 2015 (EWCS).");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="MENTAL_RISKS" AND tool_id=@toolId);
@@ -2686,7 +2686,7 @@ INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="MENTAL_RISKS" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+588, null, @sectionId, "CHART FOOTER");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+588, "EN", 1, "The diagram presents the responses of the European Working Conditions Survey 2015 (EWCS) to the question: “Can you influence decisions that are important for your work?”");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+588, "EN", 1, "The diagram presents the responses in the European Working Conditions Survey 2015 (EWCS) to the question: “Can you influence decisions that are important for your work?”");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="MENTAL_RISKS" AND tool_id=@toolId);
@@ -2696,7 +2696,7 @@ INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="MENTAL_RISKS" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+590, null, @sectionId, "CHART FOOTER");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+590, "EN", 1, "The diagram presents the responses of the European Working Conditions Survey 2015 (EWCS) to the question: “I might lose my job in the next 6 months”");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+590, "EN", 1, "The diagram presents the responses in the European Working Conditions Survey 2015 (EWCS) to the question: “I might lose my job in the next 6 months”");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="MENTAL_RISKS" AND tool_id=@toolId);
@@ -2706,7 +2706,7 @@ INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="MENTAL_RISKS" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+592, null, @sectionId, "CHART FOOTER");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+592, "EN", 1, "The diagram presents the responses of the European Working Conditions Survey 2015 (EWCS) to the question: “Does your work involve handling angry clients?”");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+592, "EN", 1, "The diagram presents the responses in the European Working Conditions Survey 2015 (EWCS) to the question: “Does your work involve handling angry clients?”");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="MENTAL_RISKS" AND tool_id=@toolId);
@@ -2716,7 +2716,7 @@ INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="MENTAL_RISKS" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+594, null, @sectionId, "CHART FOOTER");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+594, "EN", 1, "The diagram presents the responses of the European Working Conditions Survey 2015 (EWCS) to the question: “How many times a month do you work more than 10 hours a day?”");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+594, "EN", 1, "The diagram presents the responses in the European Working Conditions Survey 2015 (EWCS) to the question: “How many times a month do you work more than 10 hours a day?”");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="MENTAL_RISKS" AND tool_id=@toolId);
@@ -2726,47 +2726,47 @@ INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="MENTAL_RISKS" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+596, null, @sectionId, "CHART FOOTER");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+596, "EN", 1, "The diagram presents the responses of the European Working Conditions Survey 2015 (EWCS) to the question: “Have you been subjected to discrimination at work in the last 12 months?”");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+596, "EN", 1, "The diagram presents the responses in the European Working Conditions Survey 2015 (EWCS) to the question: “Have you been subjected to discrimination at work in the last 12 months?”");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="MENTAL_RISKS" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+597, null, @sectionId, "CHART FOOTER");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+597, "EN", 1, "The diagram presents the responses of the ESENER 2014 Survey to the question: “Have you been subjected to discrimination at work in the last 12 months?”");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+597, "EN", 1, "The diagram presents the responses in the ESENER 2014 Survey to the question: “Have you been subjected to discrimination at work in the last 12 months?”");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="PHYSICAL_RISKS" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+598, null, @sectionId, "CHART FOOTER");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+598, "EN", 1, "The diagram presents the responses of the European Working Conditions Survey 2015 (EWCS) to the question: “Are you exposed to breathing in smoke, fumes, powder or dust?”");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+598, "EN", 1, "The diagram presents the responses in the European Working Conditions Survey 2015 (EWCS) to the question: “Are you exposed to breathing in smoke, fumes, powder or dust?”");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="PHYSICAL_RISKS" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+599, null, @sectionId, "CHART FOOTER");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+599, "EN", 1, "The diagram presents the responses of the European Working Conditions Survey 2015 (EWCS) to the question: “Are you exposed to breathing in vapours?”");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+599, "EN", 1, "The diagram presents the responses in the European Working Conditions Survey 2015 (EWCS) to the question: “Are you exposed to breathing in vapours?”");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="PHYSICAL_RISKS" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+600, null, @sectionId, "CHART FOOTER");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+600, "EN", 1, "The diagram presents the responses of the European Working Conditions Survey 2015 (EWCS) to the question: “Are you exposed to chemical products or substances?”");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+600, "EN", 1, "The diagram presents the responses in the European Working Conditions Survey 2015 (EWCS) to the question: “Are you exposed to chemical products or substances?”");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="PHYSICAL_RISKS" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+601, null, @sectionId, "CHART FOOTER");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+601, "EN", 1, "The diagram presents the responses of the European Working Conditions Survey 2015 (EWCS) to the question: “Are you exposed to materials which can be infectious?”");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+601, "EN", 1, "The diagram presents the responses in the European Working Conditions Survey 2015 (EWCS) to the question: “Are you exposed to materials which can be infectious?”");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="PREVENTION" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+602, null, @sectionId, "CHART FOOTER");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+602, "EN", 1, "The diagram presents the responses of the ESENER 2014 Survey - per Member State and Company size - to the question : “Does your establishment regularly carry out workplace risk assessments?”");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+602, "EN", 1, "The diagram presents the responses in the ESENER 2014 Survey - by Member State and company size - to the question : “Does your establishment regularly carry out workplace risk assessments?”");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="PREVENTION" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+603, null, @sectionId, "CHART FOOTER");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+603, "EN", 1, "The diagram displays the responses of the ESENER 2014 Survey - per Member State and Sector - to the question : “Does your establishment regularly carry out workplace risk assessments?”");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+603, "EN", 1, "The diagram displays the responses in the ESENER 2014 Survey - by Member State and sector - to the question : “Does your establishment regularly carry out workplace risk assessments?”");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="PREVENTION" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+604, null, @sectionId, "CHART FOOTER");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+604, "EN", 1, "The diagram displays the responses of the ESENER 2014 Survey to the question: “Are workplace risk assessments mainly conducted by internal staff or are they contracted to external service providers?”");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+604, "EN", 1, "The diagram displays the responses in the ESENER 2014 Survey to the question: “Are workplace risk assessments mainly conducted by internal staff or are they contracted to external service providers?”");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="PREVENTION" AND tool_id=@toolId);
@@ -2776,17 +2776,17 @@ INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="PREVENTION" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+606, null, @sectionId, "CHART FOOTER");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+606, "EN", 1, "<p>The diagram displays the responses of the ESENER 2014 Survey to the question: “Are the health and safety representatives provided with any training during work time?”. Additional information to this indicator can be obtained in ESENER 2014 Survey in the section OSH Management – Lack of information or adequate tools to deal with the risk effectively</p>");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+606, "EN", 1, "<p>The diagram displays the responses in the ESENER 2014 Survey to the question: “Are the health and safety representatives provided with any training during work time?”. additional information about this indicator can be obtained in ESENER 2014 Survey in the section OSH Management – Lack of information or adequate tools to deal with the risk effectively</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="PREVENTION" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+607, null, @sectionId, "CHART FOOTER");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+607, "EN", 1, "The diagram displays the responses of the ESENER 2014 Survey - per Member State and Company size - to the question : “Did the employees have a role in the design and set-up of measures to address psychosocial risks?”");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+607, "EN", 1, "The diagram displays the responses in the ESENER 2014 Survey - by Member State and company size - to the question : “Did the employees have a role in the design and set-up of measures to address psychosocial risks?”");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="PREVENTION" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+608, null, @sectionId, "CHART FOOTER");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+608, "EN", 1, "The diagram displays the responses of the ESENER 2014 Survey - per Member State and Sector - to the question : “Did the employees have a role in the design and set-up of measures to address psychosocial risks?”");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+608, "EN", 1, "The diagram displays the responses in the ESENER 2014 Survey - by Member State and sector - to the question : “Did the employees have a role in the design and set-up of measures to address psychosocial risks?”");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="CROSS_SECTION" AND tool_id=@toolId);
@@ -3046,7 +3046,7 @@ INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="OSH_CULTURE" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+668, null, @sectionId, "ESENER_LITERAL");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+668, "EN", 1, "Measures in the past 3 years");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+668, "EN", 1, "Measures to reduce work pressure");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="MENTAL_RISKS" AND tool_id=@toolId);
@@ -3186,12 +3186,12 @@ INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="CROSS_SECTION" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+699, null, @sectionId, "BOX_MESSAGE");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+699, "EN", 1, "Source: ESENER 2014 Survey and Senior Labour Inspectors' Committee.");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+699, "EN", 1, "Sources: ESENER 2014 Survey and Senior Labour Inspectors' Committee.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="CROSS_SECTION" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+700, null, @sectionId, "BOX_MESSAGE");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+700, "EN", 1, "Source: ESENER 2014 Survey and European Working Conditions Survey 2015 (EWCS).");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+700, "EN", 1, "Sources: ESENER 2014 Survey and European Working Conditions Survey 2015 (EWCS).");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="CROSS_SECTION" AND tool_id=@toolId);
@@ -3271,7 +3271,7 @@ INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="WORKING_CONDITIONS" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+718, null, @sectionId, "BOX_MESSAGE");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+718, "EN", 1, "Percentages might not total 100% due to rounding");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+718, "EN", 1, "Percentages might not total 100% because of rounding");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="METHODOLOGY" AND tool_id=@toolId);
@@ -3530,12 +3530,12 @@ INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2020, null, @sectionId, "BANNER");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2020, "EN", 1, "OSH BAROMETER Data Visualisation tool");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2020, "EN", 1, "OSH BAROMETER data visualisation tool");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2021, null, @sectionId, "KEY_MESSAGE");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2021, "EN", 1, "The system has been built up in close collaboration with the data providers on European and Member States");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2021, "EN", 1, "	The system has been built up in close collaboration with the European and Member State data providers");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
@@ -3545,12 +3545,12 @@ INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2024, null, @sectionId, "BANNER");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2024, "EN", 1, "Status of Occupational Safety and Health in the European Union");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2024, "EN", 1, "	Status of Occupational Safety and Health in the European Unio");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2025, null, @sectionId, "BOX_MESSAGE");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2025, "EN", 1, "This indicator is an overview on OSH authorities and relevant OSH institutions in the different Member States and at EU level.");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2025, "EN", 1, "This indicator is an overview of OSH authorities and relevant OSH institutions in the different Member States and at EU level.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
@@ -3560,17 +3560,17 @@ INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2028, null, @sectionId, "BOX_MESSAGE");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2028, "EN", 1, "The indicator ‘Economic and sector profile’ displays relevant data on the economy and sectoral structure of the EU and its Member States, e.g., percentages of company size, and employment per sector and information on the Gross Domestic Product.");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2028, "EN", 1, "The indicator ‘Economic and sector profile’ displays relevant data on the economy and sectoral structure of the EU and its Member States, e.g. percentages of company size, employment per sector and information on gross domestic product.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2030, null, @sectionId, "BOX_MESSAGE");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2030, "EN", 1, "This indicator includes few key data on ageing workers and the workforce  – median age, employment rate of different age groups, total and by sex.");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2030, "EN", 1, "This indicator includes a few key data on ageing workers and the workforce: median age, employment rate of different age groups, total and sex.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2033, null, @sectionId, "BOX_MESSAGE");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2033, "EN", 1, "The regulation indicator provides an overview on the implementation of regulations. It displays the results of the large evaluation of the EU OSH Acquis that was finished in 2015.");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2033, "EN", 1, "The regulation indicator provides an overview of the implementation of regulations. It displays the results of the large-scale evaluation of the EU OSH acquis that was finished in 2015.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
@@ -3590,12 +3590,12 @@ INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2038, null, @sectionId, "BOX_MESSAGE");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2038, "EN", 1, "National strategies are well-known as a policy instrument to enhance the effectiveness of an OSH System through a collaborative and smart use of resources. They include approaches such as priority setting, prior action defining and action plans. You will find here a short harmonised description of current national strategies based on the full mapping report of EU OSHA on national strategies (Dec 2017) plus later updates as received from Member States.");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2038, "EN", 1, "National strategies are well known as a policy instrument to enhance the effectiveness of an OSH system through the collaborative and smart use of resources. They include approaches such as priority setting, prior action defining and action plans. You will find here a short harmonised description of current national strategies based on the full mapping report of EU-OSHA on national strategies (December 2017) plus later updates as received from Member States.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2041, null, @sectionId, "BOX_MESSAGE");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2041, "EN", 1, "This indicator consist of text based descriptions of the social dialogue plus quantitative data, e.g. responses to ESENER 2014 Survey questions.");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2041, "EN", 1, "This indicator consists of text-based descriptions of the social dialogue plus quantitative data, e.g. responses to ESENER 2014 questions.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
@@ -3610,22 +3610,22 @@ INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2050, null, @sectionId, "BOX_MESSAGE");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2050, "EN", 1, "This indicator consists of two data sets: trends on non-fatal work accidents from 2010, and fatal work accidents (EUROSTAT data).");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2050, "EN", 1, "This indicator consists of two data sets: trends in non-fatal work accidents from 2010, and fatal work accidents (Eurostat data).");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2052, null, @sectionId, "BOX_MESSAGE");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2052, "EN", 1, "This indicator contains six datasets based on responses in the European Working Conditions Survey (EWCS) 2015 from Eurofound  and the Labour Force Survey 2013 from Eurostat. This survey has every 8 years ad hoc module on OSH related questions. All data are from the latest OSH ad hoc module.");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2052, "EN", 1, "This indicator contains six data sets based on responses in the European Working Conditions Survey (EWCS) 2015 from Eurofound and the Labour Force Survey 2013 from Eurostat. Every 8 years this survey has an ad hoc module on OSH-related questions. All data are from the latest OSH ad hoc module.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2054, null, @sectionId, "BOX_MESSAGE");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2054, "EN", 1, "The next indicator provides data on typical aspects of OSH culture and health awareness like sickness absences analysis, existence of prevention plans, or the implementation of measures for better safety and health.");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2054, "EN", 1, "This indicator provides data on typical aspects of OSH culture and health awareness such as sickness absence analysis, existence of prevention plans, or the implementation of measures for better safety and health.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2056, null, @sectionId, "BOX_MESSAGE");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2056, "EN", 1, "This indicator includes a variety of data and data sources. You will find data on aspects like workers’ overall perception, physical risks and mental risks (stress, harassment, violence etc.)");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2056, "EN", 1, "This indicator includes a variety of data and data sources. You will find data on aspects such as workers’ overall perception, physical risks and mental risks (stress, harassment, violence, etc.).");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
@@ -3635,17 +3635,17 @@ INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2060, null, @sectionId, "BOX_MESSAGE");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2060, "EN", 1, "In this section mainly quantitative data are displayed that show how workers are represented at company level and how they are involved in the prevention policy of the companies.");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2060, "EN", 1, "This section displays mainly quantitative data that show how workers are represented at company level and how they are involved in the prevention policy of the companies.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2063, null, @sectionId, "BOX_MESSAGE");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2063, "EN", 1, "This indicator mainly contains the non-confidential parts of Senior Labour Inspectors Committee Reports about the enforcement in Member States.");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2063, "EN", 1, "This indicator mainly contains the non-confidential parts of Senior Labour Inspectors Committee reports about enforcement in Member States");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2065, null, @sectionId, "BOX_MESSAGE");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2065, "EN", 1, "Here you find a comprehensive overview on availability of OSH statistics and surveys on working conditions and research capacities in the different Member States and the EU.");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2065, "EN", 1, "Here you will find a comprehensive overview of availability of OSH statistics and surveys on working conditions and research capacities in the different Member States and the EU.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
@@ -3854,7 +3854,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "See more in its <a target=\"_blank\" href=\"https://www.mlsp.government.bg/index.php?lang=_eng\">website</a> and in <a target=\"_blank\" href=\"https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Bulgaria\">OSHwiki</a>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p>The MLSP is part of the Bulgarian Council of Ministers (the executive state body). It is in charge of developing, coordinating and implementing the policy on labour, professional qualifications, income and living standards, industrial relations, health and safety at work, social security and social assistance.<br />According to the Health and Safety at Work Law, the tasks of the MLSP in the field of health and safety at work are:<br />1. to analyse, together with the Ministry of Health, the status, trends and problems in providing healthy and safe working conditions and propose measures for their improvement;<br />2. to issue, by itself or with other ministries, regulations on the provision of health and safety, organise and coordinate the development of legislation in this area, and establish rules to ensure safe and healthy working conditions;<br />3. to carry out integrated control, through the General Labour Inspectorate Executive Agency, of legislative compliance and fulfilment of obligations to ensure healthy and safe working conditions in all sectors and activities, regardless of the form of ownership;<br />4. to establish the terms and requirements for training, measurements and consultation in the field of safety at work.</p>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p>The MLSP is part of the Bulgarian Council of Ministers (the executive state body). It is in charge of developing, coordinating and implementing the policy on labour, professional qualifications, income and living standards, industrial relations, health and safety at work, social security and social assistance.<br />According to the Health and Safety at Work Law, the tasks of the MLSP in the field of health and safety at work are:</p><ol><li>to analyse, together with the Ministry of Health, the status, trends and problems in providing healthy and safe working conditions and propose measures for their improvement;</li><li>to issue, by itself or with other ministries, regulations on the provision of health and safety, organise and coordinate the development of legislation in this area, and establish rules to ensure safe and healthy working conditions;</li><li>to carry out integrated control, through the General Labour Inspectorate Executive Agency, of legislative compliance and fulfilment of obligations to ensure healthy and safe working conditions in all sectors and activities, regardless of the form of ownership;</li><li>to establish the terms and requirements for training, measurements and consultation in the field of safety at work.</li></ol>");
 INSERT INTO matrix_page(page, nuts_id, check_1, check_2, check_3, check_4, text_1_literal_id, text_2_literal_id, text_3_literal_id)  VALUES ("MATRIX_AUTHORITY", @nutsId, 1, 0, 0, 0, @maxId+1, @maxId+2, @maxId+3);
 
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -4102,7 +4102,7 @@ SET @nutsId = (SELECT id FROM nuts WHERE country_code="DK");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "Danish Working Environment Authority (DWEA) (Arbejdstilsynet)");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "See more in its <a target=\"_blank\" href=\"http://engelsk.arbejdstilsynet.dk/en  \">website</a> and in <a target=\"_blank\" href=\"https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Denmark \">OSHwiki</a>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "See more in its <a target=\"_blank\" href=\"https://amid.dk/  \">website</a> and in <a target=\"_blank\" href=\"https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Denmark \">OSHwiki</a>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p>The DWEA is an agency that works under the auspices of the Ministry of Employment at national and regional levels, contributing to the creation of safe working conditions. It has supervision and enforcement rights, which are commonly assigned to labour inspectorates in other countries. Its three main activities are carrying out inspections in companies, drawing up occupational safety and health (OSH) rules and providing OSH information.<br />The DWEA has the authority to penalise companies that do not comply with the working environment rules. It can also issue administrative fines for clear violations of the Working Environment Act, and, in cases involving extreme danger, it may also order companies to suspend work.<br />The DWEA is managed by an administrative board made up of the Director-General, two deputy directors and three inspection directors. Its headquarters and two of its four centres are located in Copenhagen. The regional inspection centres have approximately 100 employees each.<br />The Working Environment Authority is responsible for the inspection of OSH conditions in companies. This includes verifying that a written evaluation, specific to that particular workplace, has been carried out. This is equivalent to a risk assessment, which is outlined in the terminology of the EU OSH directives.<br />If a company’s working environment and the health and safety policies are in order, there is no reason for a new inspection in the near future. However, if problems are found, the company will be visited within a period of 12 to 18 months.</p>");
 INSERT INTO matrix_page(page, nuts_id, check_1, check_2, check_3, check_4, text_1_literal_id, text_2_literal_id, text_3_literal_id)  VALUES ("MATRIX_AUTHORITY", @nutsId, 1, 0, 0, 0, @maxId+1, @maxId+2, @maxId+3);
@@ -5670,7 +5670,12 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "See more in its <a target=\"blank\" href=\"http://www.amat.es/\">website</a> and in <a target=\"_blank\" href=\"https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Spain\">OSHwiki</a>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p>The Spanish worker compensation system can be characterised as a hybrid private and public system. Occupational accident insurance and compensation and rehabilitation for workers suffering from occupational diseases are usually organised by MATEPSS. The legal basis for this is the Royal Legislative Decree 1/1994 on the General Law on Social Security (see section VI, Article 67 ff).<br />MATEPSS is established as an association of private companies suoervised by the MITRAMISS.. MATEPSS is obliged to cooperate with the authorities in charge of the public social security system. Companies can choose to join MATEPSS; otherwise, worker compensation is guaranteed by the public insurance institute INSS. Companies in some sectors, such as mining, fishing and agriculture, are excluded from joining MATEPSS . In these cases also the public system guarantees worker compensation. In Approximately 1.5 million companies are members of MATEPSS, representing ca. 13.5 million workers (2015) http://www.amat.es/cifras_y_datos.3php . Employers must bear all the costs of legal requirements for the protection of employees. The insurance system is financed by employer contributions, and it can vary between 0.81 % and 16.2 % of the payroll, depending on the risk class of the company (the average contribution is roughly 2 % of the payroll).<br />Currently, MATEPSS is formed of 20 private insurance companies. All of them are members of the Association of Work Accident Insurance Companies (AMAT — Associación de Mutuas de Accidentes de Trabajohttp://www.amat.es/ ), which is a non-profit organisation that was established in 1986. AMAT is the interest group for insurance bodies. It represents the common positions of the MATEPSS insurance companies and their member companies in negotiations within the social security system.</p>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p>The Spanish worker compensation system can be characterised as a hybrid private and public system. Occupational accident insurance and compensation and rehabilitation for workers suffering from occupational diseases are usually organised by MATEPSS. The legal basis for this is the Royal Legislative Decree 1/1994 on the General Law on Social Security (see section VI, Article 67 ff).
+  <br>MATEPSS is established as an association of private companies supervised by the MITRAMISS.. MATEPSS is obliged to cooperate with the authorities in charge of the public social security system. Companies can choose to join MATEPSS; otherwise, worker compensation is guaranteed by the public insurance institute INSS. Companies in some sectors, such as mining, fishing and agriculture, are excluded from joining MATEPSS . In these cases also the public system guarantees worker compensation. In Approximately 1.5 million companies are members of MATEPSS, representing ca. 13.5 million workers (2015) 
+  <a href=\"http://www.amat.es/cifras_y_datos.3php\" rel=\"noopener noreferrer\" target=\"_blank\">http://www.amat.es/cifras_y_datos.3php</a> . Employers must bear all the costs of legal requirements for the protection of employees. The insurance system is financed by employer contributions, and it can vary between 0.81 % and 16.2 % of the payroll, depending on the risk class of the company (the average contribution is roughly 2 % of the payroll).
+  <br>Currently, MATEPSS is formed of 20 private insurance companies. All of them are members of the Association of Work Accident Insurance Companies (AMAT — Associación de Mutuas de Accidentes de Trabajo 
+  <a href=\"http://www.amat.es/\" rel=\"noopener noreferrer\" target=\"_blank\">http://www.amat.es/</a> ), which is a non-profit organisation that was established in 1986. AMAT is the interest group for insurance bodies. It represents the common positions of the MATEPSS insurance companies and their member companies in negotiations within the social security system.
+</p>");
 INSERT INTO matrix_page(page, nuts_id, check_1, check_2, check_3, check_4, text_1_literal_id, text_2_literal_id, text_3_literal_id)  VALUES ("MATRIX_AUTHORITY", @nutsId, 0, 1, 0, 0, @maxId+1, @maxId+2, @maxId+3);
 
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -5918,7 +5923,12 @@ Schätzung der gesamtwirtschaftlichen
 Kosten mit dem Schwerpunkt auf 
 physischen Belastungen");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, NULL, "MATRIX_STATISTICS_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p><strong>Data holder:</strong></p><p><a href=\"https://media.arbeiterkammer.at/wien/PDF/studien/Arbeitsbedingte_Erkrankungen.pdf\" target=\"_blank\">Österr. Institut für Wirtschaftsforschung (WIFO)</a></p><p><strong>Functionalities:</strong></p><ul><li>Monitoring work related illness</li></ul>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p><strong>Data holder:</strong></p>
+<p>Österr. Institut für Wirtschaftsforschung (WIFO)</p>
+<p><strong>Functionalities:</strong></p>
+<ul>
+  <li>Monitoring work related illness</li>
+</ul>");
 INSERT INTO matrix_page(page, nuts_id, check_1, check_2, check_3, check_4, text_1_literal_id, text_2_literal_id, text_3_literal_id) VALUES ("MATRIX_STATISTICS", @nutsId, 1, 0, 0, false, @maxId+1, @maxId+2, null);
 
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -6668,7 +6678,7 @@ SET @nutsId = (SELECT id FROM nuts WHERE country_code="PT");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, NULL, "MATRIX_STATISTICS_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "Acidentes de Trabalho - Coleção Estatísticas");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, NULL, "MATRIX_STATISTICS_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p><strong>Data holder<a>:</a></strong></p><p><a href=\"http://www.gep.msess.gov.pt/estatistica/estatisticanp/sst/at.php\" target=\"_blank\">GEP - Gabinete de Estratégia e Planeamento do Ministério do Trabalho, Solidariedade e Segurança Social.</a></p><p><a><strong style=\"color: #000000;\">Functionalities:</strong></a></p><ul><li>Monitoring of work accidents - (Data available from 2000 (inc.) to 2013 (inc.))</li></ul>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p><strong>Data holder<a>:</a></strong></p><p><a href=\"http://www.gep.mtsss.gov.pt/estatistica\" target=\"_blank\">GEP - Gabinete de Estratégia e Planeamento do Ministério do Trabalho, Solidariedade e Segurança Social.</a></p><p><a><strong style=\"color: #000000;\">Functionalities:</strong></a></p><ul><li>Monitoring of work accidents - (Data available from 2000 (inc.) to 2013 (inc.))</li></ul>");
 INSERT INTO matrix_page(page, nuts_id, check_1, check_2, check_3, check_4, text_1_literal_id, text_2_literal_id, text_3_literal_id) VALUES ("MATRIX_STATISTICS", @nutsId, 1, 0, 0, false, @maxId+1, @maxId+2, null);
 
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -6684,7 +6694,7 @@ SET @nutsId = (SELECT id FROM nuts WHERE country_code="PT");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, NULL, "MATRIX_STATISTICS_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "Segurança e Saúde - Coleção Estatísticas");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, NULL, "MATRIX_STATISTICS_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p><strong>Data holder<a>:</a></strong></p><p><a href=\"http://www.gep.msess.gov.pt/estatistica/condicoes/sst2013pub.pdf\" target=\"_blank\">GEP - Gabinete de Estratégia e Planeamento do Ministério do Trabalho, Solidariedade e Segurança Social.</a></p><p><a><strong style=\"color: #000000;\">Functionalities:</strong></a></p><ul><li>Monitoring of work accidents - (Data available from 2010 (inc.) to 2013 (inc.))</li></ul>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p><strong>Data holder<a>:</a></strong></p><p><a href=\"http://www.gep.mtsss.gov.pt/estatistica\" target=\"_blank\">GEP - Gabinete de Estratégia e Planeamento do Ministério do Trabalho, Solidariedade e Segurança Social.</a></p><p><a><strong style=\"color: #000000;\">Functionalities:</strong></a></p><ul><li>Monitoring of work accidents - (Data available from 2010 (inc.) to 2013 (inc.))</li></ul>");
 INSERT INTO matrix_page(page, nuts_id, check_1, check_2, check_3, check_4, text_1_literal_id, text_2_literal_id, text_3_literal_id) VALUES ("MATRIX_STATISTICS", @nutsId, 1, 0, 0, false, @maxId+1, @maxId+2, null);
 
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -7361,7 +7371,7 @@ SET @nutsId = (SELECT id FROM nuts WHERE country_code="DK");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, NULL, "MATRIX_STATISTICS_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "Danish Working Environment Research Fund");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, NULL, "MATRIX_STATISTICS_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p><a href=\"http://engelsk.arbejdstilsynet.dk/en/research/arbejdsmiljoforskningsfonden%20\">Link&nbsp;</a>to the institute</p><p><strong>Short abstract</strong></p><p>The objective of the Danish Working Environment Research Fund is to strengthen Danish working environment research through the adoption of a research strategy and allocation of funds, based on the prioritised themes laid out in the research strategy. Presently, these themes are:</p><ul><li>work accidents;</li><li>psychological working environment;</li><li>musculoskeletal disorders;</li><li>OSH instruments.</li></ul><p>The fund supports research and development in OSH, with the purpose of preventing and reducing issues in the working environment that lead to mental and physical health problems and early retirement from the labour market. The fund also supports reviews of occupational diseases on the basis of specific calls for applications. From 2003 to 2016, the fund approved research grants for 284 projects amounting to DKK&nbsp;758.7&nbsp;million. The Danish Working Environment Research Fund invites applications twice a year, with deadlines around 1&nbsp;March and 1&nbsp;September.</p><p>See more in&nbsp;<a href=\"https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Denmark%20\" target=\"_blank\">OSHWiki</a></p>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p><a href=\"https://amid.dk/en/about-us/research-fund/%20\">Link&nbsp;</a>to the institute</p><p><strong>Short abstract</strong></p><p>The objective of the Danish Working Environment Research Fund is to strengthen Danish working environment research through the adoption of a research strategy and allocation of funds, based on the prioritised themes laid out in the research strategy. Presently, these themes are:</p><ul><li>work accidents;</li><li>psychological working environment;</li><li>musculoskeletal disorders;</li><li>OSH instruments.</li></ul><p>The fund supports research and development in OSH, with the purpose of preventing and reducing issues in the working environment that lead to mental and physical health problems and early retirement from the labour market. The fund also supports reviews of occupational diseases on the basis of specific calls for applications. From 2003 to 2016, the fund approved research grants for 284 projects amounting to DKK&nbsp;758.7&nbsp;million. The Danish Working Environment Research Fund invites applications twice a year, with deadlines around 1&nbsp;March and 1&nbsp;September.</p><p>See more in&nbsp;<a href=\"https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Denmark%20\" target=\"_blank\">OSHWiki</a></p>");
 INSERT INTO matrix_page(page, nuts_id, check_1, check_2, check_3, check_4, text_1_literal_id, text_2_literal_id, text_3_literal_id) VALUES ("MATRIX_STATISTICS", @nutsId, 0, 0, 1, false, @maxId+1, @maxId+2, null);
 
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -8135,7 +8145,7 @@ INSERT INTO strategies_page(page, nuts_id, text_1_literal_id, text_2_literal_id,
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="AT");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, NULL, "STRATEGY_ENFOR_CAPACITY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "<p>Sozialministerium</p><p>Zentral-Arbeitsinspektorat</p><p>See more in <a ui-sref=\"osh-authorities({pCountry: 'AT', pInstitution: 'osh-authority'})\">OSH Authorities</a> in the Labour Inspection section or in the <a href=\"http://www.arbeitsinspektion.gv.at/inspektorat/\">website</a></p>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "<p>Sozialministerium</p><p>Zentral-Arbeitsinspektorat</p><p>See more in <a ui-sref=\"osh-authorities({pCountry: 'AT', pInstitution: 'osh-authority'})\">OSH Authorities</a> in the Labour Inspection section or in the <a href=\"http://www.arbeitsinspektion.gv.at/inspektorat/\" target=\"_blank\">website</a></p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, NULL, "STRATEGY_ENFOR_CAPACITY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p>Being responsible for more than 80 % of the employees the Labour inspectorate is the biggest inspection body for occupational safety and health in Austria. It is a federal agency with the head-quarter being part of the Federal Ministry of Labour, Social Affairs and Consumer Protection (other inspection bodies are part of the provincial governments or regional authorities). It is the fundamental aim of the Austrian labour inspectorate to reach uniform enforcement all over the country.</p><p>Goals and targets for the Austrian labour inspectorate are defined within the organisation.</p><p>The minister is informed on national action plans. The number of labour inspectors is determined by a governmental establishment plan.</p><p>Austrian Labour inspectorate is responsible for:</p><ul><li>Occupational safety and health</li><li>Working time and rest periods</li><li>Driving time, rest periods and breaks</li><li>Maternity protection</li><li>Young workers and children</li></ul><p>Labour inspectors inspect all sectors and companies with the exception of:</p><ul><li>Companies that are the responsibility of the inspectorate for agriculture and forestry</li><li>Educational institutions</li><li>Legally recognised churches and religious communities</li><li>Pprivate households</li><li>Civil servants of federal states and municipalities</li></ul><p>The nine regional labour inspectorates for agriculture and forestry do not belong to the Austrian labour inspectorate but are independent bodies. Cooperation happens via the national occupational safety and health strategy. The safety and health of civil servants of federal states and municipalities is monitored by special units within these bodies.</p><p>The Austrian labour inspectorate does not impose penalties itself. Labour inspectors have to file a charge at the responsible administrative penalty authority which carries out the proceedings.</p><p>Labour inspectors have a special legal standing in industrial licensing procedures where they can stipulate terms under which a site has to be run.</p><p>The Austrian labour inspectorate works together with social insurance organisations, mostly the Austrian Workers´ Compensation Board who has safety experts that consult companies and make measurements (chemical substances, noise, dust, etc.).</p><p>Labour inspectorate, social partners, social insurance and various stakes holders form an advisory body that discusses fundamental questions of occupational safety and health at work. To prepare the discussions special technical committees can be established, e.g. for dangerous chemical substances.</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, NULL, "STRATEGY_ENFOR_CAPACITY_TEXT");
@@ -8185,7 +8195,20 @@ SET @nutsId = (SELECT id FROM nuts WHERE country_code="FI");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, NULL, "STRATEGY_ENFOR_CAPACITY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "<p>Ministry of Social Affairs and Health, Occupational Safety and Health Department</p><p><a href=\"http://www.tyosuojelu.fi/web/en/home\" target=\"_blank\">Regional OSH administration</a>&nbsp;</p><p>Ministry of Social Affairs and Health</p><p>See more in <a ui-sref=\"osh-authorities({pCountry: 'FI', pInstitution: 'osh-authority'})\">OSH Authorities</a> in the Labour Inspection section or in the <a href=\"http://stm.fi/en/occupational-safety-and-health\" target=\"_blank\">website</a></p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, NULL, "STRATEGY_ENFOR_CAPACITY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p>The Ministry of Social Affairs and Health is responsible for, among other things, developing income security and social and health services, improving the population’s living and working conditions by preventive social policies, and monitoring the implementation of legislation. The Ministry also coordinates social policies with other ministries. The administration and guidance concerning occupational safety and health is the duty of the OSH Department. The Department is in charge of the following:</p><ul><li>preparing national policies and strategies for OSH</li><li>preparing OSH legislation and instructions for applying the legislation</li><li>developing the working environment and the functioning of working organisations</li><li>directing the OSH Divisions and the allocation of resources</li><li>improving the means and conditions for OSH inspection</li><li>conducting market surveillance on the machinery and personal protective equipment used at work</li><li>co-ordinating research and the distribution of knowledge on OSH</li></ul><p>The OSH Department is divided into three units: Legislation Unit, Field Operations Unit and Policy Unit. There are some 65 employees in the Department.</p><p>The OSH Divisions serve as authorities for the practical enforcement of occupational safety and health. The Divisions enforce that regulations concerning working conditions and employment are being followed in workplaces and give employers and employees instructions and advice on how to apply the regulations.</p><p>The OSH Act applies to work carried out under the terms of an employment contract and to work carried out in an employment relationship in the public sector or in comparable service relation subject to public law. With few exceptions, the responsibility for enforcing the Act lies with the OSH Administration. The legislation places no specific obligations on self-employed persons, except at construction sites and shared workplaces.</p><p>&nbsp;</p><p>The resources for the Ministry of Social Affairs and Health and the OSH Divisions are decided upon each year by the Parliament. The resources for the OSH Department are yearly allocated by the Ministry. The allocation of resources for the OSH Divisions is decided upon in the yearly negotiations between the OSH Department and each Division. The resources are also discussed in the tripartite Advisory Committee on Occupational Safety and Health.</p>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p>The Ministry of Social Affairs and Health is responsible for, among other things, developing income security and social and health services, improving the population’s living and working conditions by preventive social policies, and monitoring the implementation of legislation. The Ministry also coordinates social policies with other ministries. The administration and guidance concerning occupational safety and health is the duty of the OSH Department. The Department is in charge of the following:</p>
+<ul>
+  <li>preparing national policies and strategies for OSH</li>
+  <li>preparing OSH legislation and instructions for applying the legislation</li>
+  <li>developing the working environment and the functioning of working organisations</li>
+  <li>directing the OSH Divisions and the allocation of resources</li>
+  <li>improving the means and conditions for OSH inspection</li>
+  <li>conducting market surveillance on the machinery and personal protective equipment used at work</li>
+  <li>co-ordinating research and the distribution of knowledge on OSH</li>
+</ul>
+<p>The OSH Department is divided into three units: Legislation Unit, Field Operations Unit and Policy Unit. There are some 65 employees in the Department.</p>
+<p>The OSH Divisions serve as authorities for the practical enforcement of occupational safety and health. The Divisions enforce that regulations concerning working conditions and employment are being followed in workplaces and give employers and employees instructions and advice on how to apply the regulations.</p>
+<p>The OSH Act applies to work carried out under the terms of an employment contract and to work carried out in an employment relationship in the public sector or in comparable service relation subject to public law. With few exceptions, the responsibility for enforcing the Act lies with the OSH Administration. The legislation places no specific obligations on self-employed persons, except at construction sites and shared workplaces.</p>
+<p>The resources for the Ministry of Social Affairs and Health and the OSH Divisions are decided upon each year by the Parliament. The resources for the OSH Department are yearly allocated by the Ministry. The allocation of resources for the OSH Divisions is decided upon in the yearly negotiations between the OSH Department and each Division. The resources are also discussed in the tripartite Advisory Committee on Occupational Safety and Health.</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, NULL, "STRATEGY_ENFOR_CAPACITY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p>The OSH Divisions have the right to carry out health and safety inspections at workplaces and in other places where supervision is necessary, and they have the right, when necessary, to use experts for performing investigations at the inspection site.</p><p>A special cause shall exist in order to carry out an inspection at place of a residence for the purpose of supervising that the relevant regulations are followed when a person works in his or her home.</p><p>Inspectors have the right to carry out an inspection without informing the employer or the employer’s representative, or the employees or their representative, in advance about the coming inspection. After coming to the workplace, the inspector must, however, report to the persons mentioned above unless there is a special reason to carry out an inspection or investigation without informing them about it. If an inspection or investigation has been carried out without informing the appropriate persons about it in advance, then the persons mentioned must, however, be informed about it before the inspector or investigator leaves the workplace.</p><p>According to Enforcement Act inspectors have the right, to such an extent as is necessary for enforcement purposes, to:have access to any place where work is performed or, for a good cause, is expected to be performed, to any other premises where employers are, according to an act to be enforced by occupational safety and health authorities, obliged to provide for employees’ use, and to any place where products to be placed on the market or supplied for use are manufactured, stored or displayed;</p><ul><li>receive from employers any inspection documents which they, according to provisions to be enforced by occupational safety and health authorities, shall draw up or keep, and to receive any other analyses of matters which employers, according to provisions to be enforced by occupational safety and health authorities, shall keep or have in their possession in some other manner than in writing;</li><li>discuss with a person working in a place referred to in paragraph 1, or with any other person otherwise occupied there, in private or in the presence of witnesses, and receive from this person information necessary for performing their duties and the documents required of the person by provisions to be enforced by OSH Authorities;</li><li>eceive from employers a description of any other analyses, besides those referred to in paragraph 2, made by the employer that are related to the work, the work environment and the work community and which affect the employees’ safety and health, as well as a description of any other essential plans that affect the structures of the workplace, the work and production methods and the employees’ safety and health;</li><li>receive from employers for inspection an agreement on the provision of occupational health care concluded between the employer and an occupational health care service provider or the employer’s description of occupational health careservices it has provided, as well as an occupational health care action plan, workplace analysis and any other description of occupational health care activities necessary for enforcement purposes;</li><li>take samples, after informing the employer of the matter, of raw materials or other materials used at the workplace, or of products manufactured or used at theworkplace, for separate analysis or investigation; the current price must be paid for a sample, unless its value is insignificant;</li><li>carry out hygiene measurements at the workplace and, by permission of the employer or for a cause justified by enforcement purposes, take photographs there;</li><li>receive from employers other information necessary for enforcement purposes and copies of the documents mentioned in this section.</li></ul><p>In addition, some of the legislation supervised by the OSH Divisions, for example the Working Hours Act and Road Traffic Act, include separate statutes on documents that must be provided for an inspector.</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, NULL, "STRATEGY_ENFOR_CAPACITY_TEXT");
@@ -8519,7 +8542,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2016");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "20/12/18");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "20/12/2018");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The <strong>intended coverage</strong> is: 28 EU countries plus Iceland, Norway and Switzerland. Currently, not all data for Cyprus, Greece, Ireland, Iceland, Switzerland and Norway is available.</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -8685,7 +8708,12 @@ SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "The indicator ‘Economic and sector profile’ provides basic background data on the economic structures of the countries. Income per capita is an indicator of the economic situation of the individuals in a society.");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "The indicator ‘Economic and sector profile’ provides basic background data on the economic structures of the countries. The GDP per capita is a major indicator of the economic overall wealth of a society, which also influences the status of OSH. 
+The GDP per capita is displayed in Euro or as so-called Purchasing Power Standard PPS. In the first case the 
+Eurostat explains these two categories as follows: 
+“Current price figures are typically expressed in (millions of) national currency and euro. They can be directly observed but include inflation effects.” 
+“PPS are fictive 'currency' units that remove differences in purchasing power, i.e. different price levels between countries.”
+By using PPS the statistical offices take into account that goods and services are in general cheaper in countries with lower GDP per capita, and higher in countries with higher GDP per capita.");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "Eurostat");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -8718,7 +8746,12 @@ SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "The indicator ‘Economic and sector profile’ provides basic background data on the economic structures of the countries. Income per capita is an indicator of the economic situation of the individuals in a society.");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "The indicator ‘Economic and sector profile’ provides basic background data on the economic structures of the countries. The GDP per capita is a major indicator of the economic overall wealth of a society, which also influences the status of OSH. 
+The GDP per capita is displayed in Euro or as so-called Purchasing Power Standard PPS. In the first case the 
+Eurostat explains these two categories as follows: 
+“Current price figures are typically expressed in (millions of) national currency and euro. They can be directly observed but include inflation effects.” 
+“PPS are fictive 'currency' units that remove differences in purchasing power, i.e. different price levels between countries.”
+By using PPS the statistical offices take into account that goods and services are in general cheaper in countries with lower GDP per capita, and higher in countries with higher GDP per capita.");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "Eurostat");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -8771,7 +8804,15 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Age");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "<p>Visualisation of all five values in a European map, per country in a mouse over. <strong>Specifically for this indicator</strong>:</p><ul><li><strong>Median Age</strong></li><li>Employment rate (55-64)</li><li>Employment rate (Female)</li><li>Employment rate (Male)</li><li>Employment rate (Total)</li></ul>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "<p>Visualisation of all five values in a European map, per country in a mouse over. <strong>Specifically for this indicator</strong>:</p>
+<ul>
+  <li><strong>Median Age</strong></li>
+  <li>Employment rate (55-64)</li>
+  <li>Employment rate (Female)</li>
+  <li>Employment rate (Male)</li>
+  <li>Employment rate (Total)</li>
+  <li>Unemployment rate</li>
+</ul>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+13, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+13, "EN", 1, "Median age of population");
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
@@ -8822,7 +8863,15 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Employment rate percentages total and per sex and selected age classes");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "<p>Visualisation of all five values in a European map, per country in a mouse over. <strong>Specifically for this indicator</strong>:</p><ul><li>Median Age</li><li><strong>Employment rate (55-64)</strong></li><li>Employment rate (Female)</li><li>Employment rate (Male)</li><li>Employment rate (Total)</li></ul>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "<p>Visualisation of all five values in a European map, per country in a mouse over. <strong>Specifically for this indicator</strong>:</p>
+<ul>
+  <li>Median Age</li>
+  <li><strong>Employment rate (55-64)</strong></li>
+  <li>Employment rate (Female)</li>
+  <li>Employment rate (Male)</li>
+  <li>Employment rate (Total)</li>
+  <li>Unemployment rate</li>
+</ul>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+13, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+13, "EN", 1, "Ageing workers");
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
@@ -8873,7 +8922,15 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Employment rate percentages total and per sex and selected age classes");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "<p>Visualisation of all five values in a European map, per country in a mouse over. <strong>Specifically for this indicator</strong>:</p><ul><li>Median Age</li><li>Employment rate (55-64)</li><li><strong>Employment rate (Female)</strong></li><li><strong>Employment rate (Male)</strong></li><li><strong>Employment rate (Total)</strong></li></ul>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "<p>Visualisation of all five values in a European map, per country in a mouse over. <strong>Specifically for this indicator</strong>:</p>
+<ul>
+  <li>Median Age</li>
+  <li>Employment rate (55-64)</li>
+  <li><strong>Employment rate (Female)</strong></li>
+  <li><strong>Employment rate (Male)</strong></li>
+  <li><strong>Employment rate (Total)</strong></li>
+  <li>Unemployment rate</li>
+</ul>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+13, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+13, "EN", 1, "Female, male and total employment rates");
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
@@ -8886,7 +8943,7 @@ SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "<p>Eurostat provides the calculation of percentages by its filtering options; those values were taken as base for the visualisation</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "The indicator ‘Economic and sector profile’ provides basic background data on the economic structures of the countries. The unemployment rate can significantly influence the acceptance of OSH.");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "The indicator ‘Workforce profile’  provides basic background data on the composition of the workforce of the countries. The unemployment rate can significantly influence the acceptance of OSH.");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "Eurostat");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -8896,7 +8953,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2017");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "10/01/19");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "10/01/2019");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The<strong> intended coverage</strong> is: 28 EU countries plus Iceland, Norway and Switzerland. Currently, not all data for Switzerland is available.</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -8906,7 +8963,15 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "<p>Percentage of active population. &lsquo;Active population&rsquo; is defined by Eurostat as follows: <em>&ldquo;The labour force or workforce or economically active population, also shortened to active population, includes both employed (employees and self-employed) and unemployed people, but not the economically inactive, such as pre-school children, school children, students and pensioners.&rdquo;</em></p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "The percentages are visualised as bar chart (total EU 28 Average plus two countries of choice)");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "<p>Visualisation of all five values in a European map, per country in a mouse over. <strong>Specifically for this indicator</strong>:</p>
+<ul>
+  <li>Median Age</li>
+  <li>Employment rate (55-64)</li>
+  <li>Employment rate (Female)</li>
+  <li>Employment rate (Male)</li>
+  <li>Employment rate (Total)</li>
+  <li><strong>Unemployment rate</strong></li>
+</ul>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+13, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+13, "EN", 1, "Unemployment rate");
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
@@ -9694,7 +9759,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "Trendline, two countries plus EU 28 Average");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+13, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+13, "EN", 1, "Non-fatal work accidents");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+13, "EN", 1, "Non-fatal accidents at work");
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Fatal work accidents");
@@ -9740,7 +9805,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "Bar chart for all countries plus EU ");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+13, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+13, "EN", 1, "Fatal work accidents");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+13, "EN", 1, "Fatal accidents at work");
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Satisfaction with working conditions");
@@ -9914,7 +9979,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "All six responses in a box, country wise");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+13, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+13, "EN", 1, "Sick at working");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+13, "EN", 1, "Sick but at work");
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Be able to do current job until 60 years old");
@@ -10211,7 +10276,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "Bar chart, all countries plus EU 28 Average");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+13, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+13, "EN", 1, "Measures in the past 3 years");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+13, "EN", 1, "Measures to reduce work pressure");
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Use of personal protective equipment");
@@ -11281,7 +11346,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "<p>Spider diagram, all countries plus EU 28 Average, percentage for answers ‘Yes’ in ESENER</p><p><strong>Spider diagram, all countries plus EU 28 Average, percentage for answers ‘At least ¼ of the time’ in EWCS</strong></p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+13, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+13, "EN", 1, "Lifting or moving people or heavy loads I (EWCS)");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+13, "EN", 1, "Lifting or moving people I (EWCS)");
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Carrying or moving heavy loads - Eurofound EWCS Data");
@@ -11314,7 +11379,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "<p>Spider diagram, all countries plus EU 28 Average, percentage for answers ‘Yes’ in ESENER</p><p><strong>Spider diagram, all countries plus EU 28 Average, percentage for answers ‘At least ¼ of the time’ in EWCS</strong></p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+13, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+13, "EN", 1, "Lifting or moving people or heavy loads II (EWCS)");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+13, "EN", 1, "Lifting or moving heavy loads II (EWCS)");
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Q200_4");
