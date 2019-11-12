@@ -19,7 +19,7 @@
 94-http://www.mpsv.cz/en/
 95-http://www.mpsv.cz/files/clanky/5599/narodni_politika_CR.pdf
 102-http://bm.dk/~/media/BEM/Files/Dokumenter/Pressemeddelelser/2011/Aftaletekst.ashx 
-102-http://engelsk.arbejdstilsynet.dk/~/media/AT/at/12-English/Rapporter/2020%20engelskpdf.pdf
+102-https://amid.dk/media/2953/strategy-working-environment-efforts-2020.pdf
 102-http://www.ftf.dk/fileadmin/Bruger_filbibliotek/Uddannelse_og_ledelse/Uddannelse/Aftaletekst_arbejdsmiljoe_pdf.pdf
 108-https://arbejdstilsynet.dk/da/om%20arbejdstilsynet/strategier-evalueringer-og-rapporter
 110-https://www.sm.ee/et/heaolu-arengukava-2016-2023
@@ -120,7 +120,6 @@
 241-http://www.hse.gov.uk/strategy/supporting-small-employers.htm
 241-http://www.hse.gov.uk/strategy/keeping-pace-with-change.htm
 241-http://www.hse.gov.uk/strategy/sharing-our-success.htm
-382-http://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:52014DC0332
 400-https://www.mlsp.government.bg/ckfinder/userfiles/files/dokumenti/strategii/NPBZR1820.doc
 400-https://www.mlsp.government.bg/ckfinder/userfiles/files/TPOOUT/EN_TPOOUT%3DNORMATIVE%20DOCUMENTS/NPBZR1820EN.pdf
 400-http://ncphp.government.bg/index.php?option=com_content&amp;view=article&amp;id=265&amp;catid=127&amp;Itemid=527&amp;lang=bg
@@ -219,7 +218,7 @@
 2225-https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Czech_Republic
 2228-http://www.unmz.cz/
 2228-https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Czech_Republic
-2231-http://engelsk.arbejdstilsynet.dk/en  
+2231-https://amid.dk/  
 2231-https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Denmark 
 2234-https://www.aes.dk/
 2234-https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Denmark 
@@ -524,6 +523,8 @@
 2696-https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Spain
 2699-http://www.amat.es/
 2699-https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Spain
+2700-http://www.amat.es/cifras_y_datos.3php
+2700-http://www.amat.es/
 2702-http://www.meyss.es/itss/web/index.html
 2702-https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Spain
 2705-http://www.mitramiss.gob.es/
@@ -571,7 +572,6 @@
 2765-https://www.eurofound.europa.eu/country/eu-level
 2768-https://www.sozialversicherung.at/cdscontent/?contentid=10007.683681&viewmode=content
 2770-auva.at
-2772-https://media.arbeiterkammer.at/wien/PDF/studien/Arbeitsbedingte_Erkrankungen.pdf
 2774-http://ec.europa.eu/eurostat/statistics-explained/index.php/EU_labour_force_survey_-_ad_hoc_modules
 2776-https://hisia.wiv-isp.be/SitePages/Data.aspx
 2778-http://www.fao.fgov.be/nl/professional/privesector/statistieken/statistisch-jaarverslag
@@ -657,9 +657,9 @@
 2950-http://stat.gov.pl/download/gfx/portalinformacyjny/pl/defaultaktualnosci/5476/4/8/1/wypadki_przy_pracy_w_2014.pdf
 2952-http://www.krus.gov.pl/fileadmin/moje_dokumenty/obrazki/broszury_prewencja/2015/Wypadki_przy_pracy_2015_vp4.pdf
 2956-http://stat.gov.pl/download/gfx/portalinformacyjny/pl/defaultaktualnosci/5476/2/2/7/pw_wypadki_przy_pracy_i_problemy_zdrow_zwiazane_z_praca.pdf
-2958-http://www.gep.msess.gov.pt/estatistica/estatisticanp/sst/at.php
+2958-http://www.gep.mtsss.gov.pt/estatistica
 2960-https://www.sns.gov.pt/entidades-de-saude/administracao-central-do-sistema-de-saude/
-2962-http://www.gep.msess.gov.pt/estatistica/condicoes/sst2013pub.pdf
+2962-http://www.gep.mtsss.gov.pt/estatistica
 2966-https://www.ine.pt/xportal/xmain?xpid=INE&amp;xpgid=ine_publicacoes&amp;PUBLICACOESpub_boui=210767753&amp;PUBLICACOESmodo=2
 2968-http://www.inspectiamuncii.ro
 2970-http://www.insp.gov.ro/cnmrmc/rapoarte
@@ -719,7 +719,7 @@
 3126-https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Czech_Republic%20
 3128-http://www.arbejdsmiljoforskning.dk/da
 3128-https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Denmark%20
-3130-http://engelsk.arbejdstilsynet.dk/en/research/arbejdsmiljoforskningsfonden%20
+3130-https://amid.dk/en/about-us/research-fund/%20
 3130-https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Denmark%20
 3132-http://www.tai.ee/en/
 3132-https://oshwiki.eu/wiki/OSH_system_at_national_level_–_Estonia%20
