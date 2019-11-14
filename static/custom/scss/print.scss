@@ -182,6 +182,24 @@
 		  	page-break-inside: avoid  !important;
 		  	page-break-after: avoid  !important;
 		  	display: block !important;
+		  	.select-filter-chart-wrapper{
+					width: auto !important;
+					top: 0rem !important;
+					position: relative !important;
+					.select-filter-chart{
+						select{
+							width: auto !important;
+					    text-align-last: left !important;
+					    text-align: left !important;
+						}
+						&:after{
+							content:none !important;
+						}
+					} 
+		  	}
+		  	.with-filter{
+		  		top: 0 !important;
+		  	}
 				.title--card {
 					min-height: auto !important;
 				}
