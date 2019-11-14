@@ -140,14 +140,41 @@ define(function (require) {
 
     $scope.toggleText = function($event) {
       if ($(this).is(':visible')) {
-        angular.element('div.complete-text', angular.element($event.target).parent().parent()).toggle();
-        angular.element('div.partial-text', angular.element($event.target).parent().parent()).toggle();
+
+        if($event.target.nodeName == "A"){
+          angular.element('div.complete-text', angular.element($event.target).parent().parent()).toggle();
+          angular.element('div.partial-text', angular.element($event.target).parent().parent()).toggle();
+
+          //Para ocultar los puntos suspensivos del recorte
+          angular.element(' span.dots', angular.element($event.target).parent().parent()).toggle();
+          //Para cambiar del boton see more al boton see less
+          angular.element(' a', angular.element($event.target).parent()).toggle();
+
+        } 
+        else if($event.target.nodeName == "FONT")
+        {
+          angular.element('div.complete-text', angular.element($event.target).parent().parent().parent().parent()).toggle();
+          angular.element('div.partial-text', angular.element($event.target).parent().parent().parent().parent()).toggle();
+
+          //Para ocultar los puntos suspensivos del recorte
+          angular.element(' span.dots', angular.element($event.target).parent().parent().parent().parent()).toggle();
+          //Para cambiar del boton see more al boton see less
+          angular.element(' a', angular.element($event.target).parent().parent().parent()).toggle();
+
+        }
+        else if($event.target.nodeName == "I")
+        {
+          angular.element('div.complete-text', angular.element($event.target).parent().parent().parent()).toggle();
+          angular.element('div.partial-text', angular.element($event.target).parent().parent().parent()).toggle();
+
+          //Para ocultar los puntos suspensivos del recorte
+          angular.element(' span.dots', angular.element($event.target).parent().parent().parent()).toggle();
+          //Para cambiar del boton see more al boton see less
+          angular.element(' a', angular.element($event.target).parent().parent()).toggle();
+        }
+
       }
 
-      //Para ocultar los puntos suspensivos del recorte
-      angular.element(' span.dots', angular.element($event.target).parent().parent()).toggle();
-      //Para cambiar del boton see more al boton see less
-      angular.element(' a', angular.element($event.target).parent()).toggle();
     }
 
     // Show/hide the Countries Filter List
