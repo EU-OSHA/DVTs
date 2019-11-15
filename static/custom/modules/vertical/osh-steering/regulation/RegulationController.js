@@ -88,7 +88,7 @@ define(function (require) {
       var text = 0;
       var newMaxCharacter = pNumCharacters;
 
-      $log.warn(shortText.length);
+      //$log.warn(shortText.length);
 
       if(shortText != null){
         var firstSplit =  shortText.substring(0, newMaxCharacter);
