@@ -34,7 +34,8 @@ define(function (require) {
     $rootScope.pSplit = $scope.pSplit;
     $scope.pSplit2 = $stateParams.pSplit2;
     $rootScope.pSplit2 = $scope.pSplit2;
-    $rootScope.pDataset = $scope.datasetEurostatBetweenDates;
+    $scope.pDataset = '17';
+    $rootScope.pDataset = $scope.pDataset;
 
     //$scope.dashboard = {};
     $scope.dashboard = {
@@ -42,12 +43,10 @@ define(function (require) {
             "pCountry1": $scope.pCountry1,
             "pCountry2": $scope.pCountry2,
             "pSplit": $scope.pSplit,
-            "pSplit2": $scope.pSplit2,
-            "pDataset": $scope.datasetEurostatBetweenDates
+            "pSplit2": $rootScope.pSplit2,
+            "pDataset": $rootScope.pDataset
         }
     };
-
-    $log.warn($scope.dashboard.parameters);
 
     $scope.stories = [
       //0 - Company size
@@ -129,7 +128,7 @@ define(function (require) {
               percent: "#%"
             }
           }
-        },
+        }
       },
       // 5 - INCOME PER CAPITA
       {
@@ -210,20 +209,6 @@ define(function (require) {
           });
         }
       };
-
-      $scope.changeType = function(pSplit){
-        $log.warn(pSplit);
-        $log.warn(this);
-        //ngModel.$setViewValue($scope.dashboard.parameters.pSplit, 'change');
-        //$scope.dashboard.fireChange('pSplit', pSplit);        
-
-        //$scope.dashboard.parameters.pSplit = pSplit;
-        /*$state.go($state.current.name, {
-          pCountry1: $scope.pCountry1,
-          pCountry2: $scope.pCountry2,
-          pSplit: $scope.pSplit
-        },{reload:true});*/
-      }
 
     /******************************END FILTERS************************************/
   }

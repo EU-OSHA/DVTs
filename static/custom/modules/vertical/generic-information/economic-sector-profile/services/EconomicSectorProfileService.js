@@ -95,9 +95,9 @@ define (function (require) {
 
                             if (countryKey == 'EU28') {
                                 return dvtUtils.getEUColor();
-                            } else if(countryKey.includes(pCountry1)){
+                            } else if(countryKey.match(pCountry1)){
                             	return dvtUtils.getColorCountry(1);
-                            } else if(countryKey.includes(pCountry2)) {
+                            } else if(countryKey.match(pCountry2)) {
                             	return dvtUtils.getColorCountry(2);
                             }
                             return dvtUtils.getChartLightGrayColor();
@@ -106,9 +106,9 @@ define (function (require) {
                             var countryKey = scene.firstAtoms.category.label;
                             if (countryKey == 'EU28') {
                                 return dvtUtils.getEUColor();
-                            } else if(countryKey.includes(pCountry1)){
+                            } else if(countryKey.match(pCountry1)){
                                 return dvtUtils.getColorCountry(1);
-                            } else if(countryKey.includes(pCountry2)) {
+                            } else if(countryKey.match(pCountry2)) {
                                 return dvtUtils.getColorCountry(2);
                             }
                             return dvtUtils.getChartLightGrayColor();
@@ -192,10 +192,10 @@ define (function (require) {
                             this.add(pv.Image)
 				              .url(function(scene) {
 				              	var countryKey = scene.firstAtoms.category;
-				              	if(countryKey.label.includes(pCountry1)){
+				              	if(countryKey.label.match(pCountry1)){
                   					//return 'http://localhost:8080/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/man_orange.svg';
                                     return configService.getImagesPath()+'man_orange.svg';
-				              	}else if(countryKey.label.includes(pCountry2)){
+				              	}else if(countryKey.label.match(pCountry2)){
 				              		return configService.getImagesPath()+'man.svg'
 				              	}else if(countryKey == 'EU28'){
 				              		return configService.getImagesPath()+'man_blue.svg'
@@ -208,8 +208,8 @@ define (function (require) {
 				              	var panelHeight = this.root.height();
 				              	var valueKey = scene.firstAtoms.value;
                                 var resul = valueKey * (panelHeight - this.bottom()) / axisFixedMax;
-                                if(resul >= panelHeight){
-                                    this.root.sign.chart.options.axisFixedMax = 350;
+                                if(valueKey >= 220){
+                                    this.root.sign.chart.options.axisFixedMax = 420;
                                 }
 				              	return resul;
 				              })
@@ -225,13 +225,13 @@ define (function (require) {
 				              	var barWidth = panelWidth/3.5;
 				              	var countryKey = scene.firstAtoms.category;
 				              	if(panelWidth != 300){ //Default panel value
-									if(countryKey.label.includes(pCountry1)){
-                                        if(!scene.nextSibling.firstAtoms.category.label.includes(pCountry2)){
+									if(countryKey.label.match(pCountry1)){
+                                        if(!scene.nextSibling.firstAtoms.category.label.match(pCountry2)){
                                             return panelWidth/2 - (barWidth + this.width()/2) + 5; //5 is the panel margin
                                         }else{
                                             return (barWidth - this.width())/2 +5; //5 is the panel margin
                                         }
-					              	}else if(countryKey.label.includes(pCountry2)){
+					              	}else if(countryKey.label.match(pCountry2)){
                                         var sibling = scene.previousSibling;
                                         if(sibling == null){
                                             return panelWidth/2 - (barWidth + this.width()/2) + 5;
@@ -240,7 +240,7 @@ define (function (require) {
                                         }
 					              	}else if(countryKey == 'EU28'){
                                         var firstSibling = scene.previousSibling.previousSibling;
-                                        if(!scene.previousSibling.firstAtoms.category.label.includes(pCountry2) || firstSibling == null){
+                                        if(!scene.previousSibling.firstAtoms.category.label.match(pCountry2) || firstSibling == null){
                                             return panelWidth/2 + (this.width())/1.5;
                                         }else{
                                             return panelWidth/1.5 + (barWidth - this.width())/2 - 5;
@@ -284,9 +284,9 @@ define (function (require) {
 
                             if (countryKey == 'EU28') {
                                 return dvtUtils.getEUColor();
-                            } else if(countryKey.label.includes(pCountry1)){
+                            } else if(countryKey.label.match(pCountry1)){
                                 return dvtUtils.getColorCountry(1);
-                            } else if(countryKey.label.includes(pCountry2)) {
+                            } else if(countryKey.label.match(pCountry2)) {
                                 return dvtUtils.getColorCountry(2);
                             }
 
@@ -306,9 +306,9 @@ define (function (require) {
 
                             if (countryKey == 'EU28') {
                                 return dvtUtils.getEUColor();
-                            } else if(countryKey.label.includes(pCountry1)){
+                            } else if(countryKey.label.match(pCountry1)){
                                 return dvtUtils.getColorCountry(1);
-                            } else if(countryKey.label.includes(pCountry2)) {
+                            } else if(countryKey.label.match(pCountry2)) {
                                 return dvtUtils.getColorCountry(2);
                             }
 
@@ -328,9 +328,9 @@ define (function (require) {
 
                             if (countryKey == 'EU28') {
                                 return dvtUtils.getEUColor();
-                            } else if(countryKey.label.includes(pCountry1)){
+                            } else if(countryKey.label.match(pCountry1)){
                                 return dvtUtils.getColorCountry(1);
-                            } else if(countryKey.label.includes(pCountry2)){
+                            } else if(countryKey.label.match(pCountry2)){
                                 return dvtUtils.getColorCountry(2);
                             }
 
@@ -340,9 +340,9 @@ define (function (require) {
                         	var countryKey = scene.firstAtoms.series;
                             if (countryKey == 'EU28') {
                                 return dvtUtils.getEUColor();
-                            } else if(countryKey.label.includes(pCountry1)){
+                            } else if(countryKey.label.match(pCountry1)){
                             	return dvtUtils.getColorCountry(1);
-                            } else if(countryKey.label.includes(pCountry2)){
+                            } else if(countryKey.label.match(pCountry2)){
                             	return dvtUtils.getColorCountry(2);
                             }
                             return dvtUtils.getChartLightGrayColor();
@@ -352,9 +352,9 @@ define (function (require) {
 
                             if (countryKey == 'EU28') {
                                 return 5;
-                            } else if(countryKey.label.includes(pCountry1)){
+                            } else if(countryKey.label.match(pCountry1)){
                                 return 8;
-                            } else if(countryKey.label.includes(pCountry2)){
+                            } else if(countryKey.label.match(pCountry2)){
                                 return 9;
                             }
                         },
@@ -406,14 +406,14 @@ define (function (require) {
                                     }
 
                                     return baseline;
-                                } else if(countryKey.label.includes(pCountry1)){
+                                } else if(countryKey.label.match(pCountry1)){
                                     if(difference1 && countryYear == '2010'){
                                         return 'top';
                                     }else if(difference2 && countryYear == '2017'){
                                         return 'top';
                                     }
                                     return 'bottom';
-                                } else if(countryKey.label.includes(pCountry2)){
+                                } else if(countryKey.label.match(pCountry2)){
                                     if(difference5 && countryYear == '2010'){
                                         return 'top';
                                     }else if(difference6 && countryYear == '2017'){
@@ -427,11 +427,11 @@ define (function (require) {
                             //If one country selected has data
                             }else if(resultset.length == 4){
 
-                                if(countryKey.label.includes(pCountry1)){
+                                if(countryKey.label.match(pCountry1)){
                                     this.sign.chart.options.colors = [dvtUtils.getColorCountry(1), dvtUtils.getEUColor()];
                                 }
 
-                                if(countryKey.label.includes(pCountry2)){
+                                if(countryKey.label.match(pCountry2)){
                                     this.sign.chart.options.colors = [dvtUtils.getColorCountry(2), dvtUtils.getEUColor()];
                                 }
 

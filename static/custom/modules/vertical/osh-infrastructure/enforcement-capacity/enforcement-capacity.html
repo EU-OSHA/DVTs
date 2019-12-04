@@ -6,7 +6,7 @@
           <h1 class="main-color left-text" data-ng-bind="i18nLiterals.L22017"></h1>
           <p data-ng-bind="i18nLiterals.L22063"></p>
           <p data-ng-bind-html="i18nLiterals.L20699"></p>
-          <span data-ng-bind="i18nLiterals.L20704"></span> <span><a data-ng-bind="i18nLiterals.L20705" ui-sref="about-tool-detail-page({pSection: 'osh-infrastructure', pSubsection: 'enforcement_capacity', pIndicator: 76})"></a></span>
+          <span data-ng-bind="i18nLiterals.L20704"></span> <span><a data-ng-bind="i18nLiterals.L20705" ui-sref="about-tool-detail-page({pSection: 'osh-infrastructure', pSubsection: 'enforcement_capacity', pIndicator: 126})"></a></span>
         </div>
         <div class="icon--advice enforcement-icon hide-mobile col-sm-4 col-md-4"></div>
       </div>
@@ -65,7 +65,7 @@
                 orientation="horizontal" axis-fixed-min="0"
                 axis-fixed-max="100" step="{{step}}" id="1"
                 params="[['pIndicator', 126], ['pCountry1', pCountry1], ['pCountry2', pCountry2], ['pDataset', datasetESENER], ['pAnswer', 1]]"
-                color-role="series" colors="[stories[0].color1, stories[0].color2, stories[0].color3]"
+                color-role="c" colors="[stories[0].color3, stories[0].color2, stories[0].color1]"
                 chart-title="{{i18nLiterals.L20693}} (Yes)" 
                 axis-label-font="14px 'OpenSans-bold'"
                 plots="stories[0].plots"
@@ -76,9 +76,9 @@
                 label-text-align="stories[0].labelTextAlign"
                 dimensions="stories[0].dimensions"
                 leaf-content-overflow='visible'
-                legend="false" legend-align="center"
+                legend="true" legend-align="center"
                 datasource-and-dates="[datasetESENER,126]"
-                base-axis-size="50"
+                base-axis-size="50" custom-label="true"
                 ></dvt-bar-chart>
               </div>
             </div>
@@ -103,7 +103,7 @@
                 orientation="horizontal" axis-fixed-min="0"
                 axis-fixed-max="100" step="{{step}}" id="1"
                 params="[['pIndicator', 126], ['pCountry1', pCountry1], ['pCountry2', pCountry2], ['pDataset', datasetESENER], ['pAnswer', 2]]"
-                color-role="series" colors="[stories[0].color1, stories[0].color2, stories[0].color3]"
+                color-role="c" colors="[stories[0].color3, stories[0].color2, stories[0].color1]"
                 chart-title="{{i18nLiterals.L20693}} (No)" 
                 axis-label-font="14px 'OpenSans-bold'"
                 plots="stories[0].plots"
@@ -114,9 +114,9 @@
                 multiple-label-colors="true"
                 label-text-align="stories[0].labelTextAlign"
                 dimensions="stories[0].dimensions"
-                legend="false" legend-align="center"
+                legend="true" legend-align="center"
                 datasource-and-dates="[datasetESENER,126]"
-                base-axis-size="50"
+                base-axis-size="50" custom-label="true"
                 ></dvt-bar-chart>
               </div>
             </div>
@@ -153,7 +153,7 @@
         <div id="secondColumn" class="columm--item--content">
           <div data-ng-if="country2Data.authority == null" data-ng-bind="i18nLiterals.L20706"></div>
           <div data-ng-if="country2Data.authority == null" data-ng-bind="i18nLiterals.L20740"></div>
-          <div class="partial-text" data-ng-bind-html="compileText(i18nLiterals['L'+country2Data.authority], 2)"></div>
+          <div class="partial-text" data-ng-bind-html="compileText(country2Data.authority, 2)"></div>
           <!--<div class="partial-text" data-ng-bind-html="trimText(i18nLiterals['L'+country2Data.authority], maxCharacters)"></div>-->
           <!--<div class="complete-text" data-ng-bind-html="i18nLiterals['L'+country2Data.authority]"></div>-->
           <p class="see-more" data-ng-if="i18nLiterals['L'+country2Data.authority].length > 316">

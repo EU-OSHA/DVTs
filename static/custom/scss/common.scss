@@ -17,7 +17,7 @@
     padding-top: 130px;
     overflow: auto;
     &.section-fixed{
-      padding-top:32rem;
+      padding-top:30rem;
     }
     &.ovh{
       overflow: hidden;
@@ -28,6 +28,7 @@
     .ilo-header #containerMenu{
       position: relative;
     }
+
     /*
     #google_translate_element_wrapper{
       top: 4rem;
@@ -68,6 +69,9 @@
   h2{
     font-size: 3.6rem;
   }
+  h3{
+    font-size: 2.6rem;
+  }
   h4{
     font-family:$font-body-bold;
     font-size: 2.6rem;
@@ -92,18 +96,44 @@
       color: $orange;
     }
     &.external{
-      &[target=_blank]{
-        margin-right: 0.5em;
-        word-wrap: break-word;
-        &:after{
-          background: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/external_link.png) transparent right 30% no-repeat;
-          margin-left:0em;
-          padding-right: 0;
-          width: 15px;
-          height: 15px;
-          display: inline-block;
-          content: " ";
-        }
+      margin-right: 0.5em;
+      word-wrap: break-word;
+      &:after{
+        background: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/external_link.png) transparent right 30% no-repeat;
+        margin-left:0em;
+        padding-right: 0;
+        width: 15px;
+        height: 15px;
+        display: inline-block;
+        content: " ";
+      }
+    }
+    &[target="_blank"], &[target="blank"]{
+      margin-right: 0.5em;
+      word-wrap: break-word;
+      &:after{
+        background: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/external_link.png) transparent right 30% no-repeat;
+        margin-left:0em;
+        padding-right: 0;
+        width: 15px;
+        height: 15px;
+        display: inline-block;
+        content: " ";
+      }
+    }
+
+  }
+  .footer-elements, header{
+    a.external, 
+    a[target="_blank"], 
+    a[target="blank"]{
+      margin-right: 0em;
+      &:after{
+        background: none;
+        margin-left:0em;
+        padding-right: 0;
+        width: 1px;
+        height: 1px;
       }
     }
   }
@@ -121,8 +151,41 @@
       font-weight: normal;
       font-style: italic;
       display: block;
-      margin: 2rem 2rem 0;
+      margin: 2rem 2rem 1rem;
       color: red;
+    }
+  }
+  .hide-header{
+    position: fixed;
+    top: -15rem !important;
+    -webkit-transition: all 0.8s;
+    transition: all 0.8s;
+    &.affix{
+      top: -25rem;
+      background: $white;
+      width: 100%;
+    }
+    &.affix-top{
+      top: -25rem;
+      background: $white;
+      width: 100%;
+    }
+  }
+  .show-header{
+    position: fixed;
+    top:0rem;
+    -webkit-transition: all 0.8s; 
+    transition: all 0.8s;
+    &.affix{
+      top:9rem;
+      background: $white;
+      width: 100%;
+    }
+    &.affix-top{
+      top:0rem;
+      position: relative;
+      background: $white;
+      width: 100%;
     }
   }
 /** END GENERAL TAGS  **/
@@ -721,7 +784,8 @@
         justify-content: flex-end;
         a{          
           font-family: "Oswald", sans-serif;
-          font-size: 1.8rem;
+          //font-size: 1.8rem;
+          font-size: 2.2rem;
           color: $gray-light;
           font-weight: normal;
           padding:0;
@@ -744,6 +808,7 @@
     }
   }
   .carousel--card{
+    margin-top: auto;
     h4{
       text-align: left;
       font-family: 'OpenSans-bold';
@@ -762,7 +827,7 @@
         width: 81%;
         padding: 0;
         margin: 0px auto;
-        min-height: 13rem;
+        min-height: 20rem;
         .carousel--text--block a{
           display: flex;
           flex-direction: row;
@@ -788,7 +853,7 @@
         }
       }
       .carousel-indicators{
-        bottom: 0;
+        bottom: 5rem;
         margin-bottom: 0;
         li{
           background: $orange;
@@ -1812,4 +1877,11 @@ and (max-width :380px) {
   dvt-radar-chart svg{
     height:630px !important
   }
+}
+
+@-ms-viewport{
+width:auto!important;
+}
+body{
+  -ms-overflow-style: scrollbar;
 }

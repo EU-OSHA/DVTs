@@ -11,7 +11,7 @@
     flex-basis:30%;
     //align-self: flex-end;
     > label{
-      min-height: 50px;
+      min-height:5rem;
       &:empty{
         display:none;
       }
@@ -25,9 +25,9 @@
       overflow: hidden;
       width: 100%;
       .option-title{
-        padding: 1rem;
+        padding: 0.8rem;
         margin: 0;
-        font-size: 1.4rem;
+        font-size: 1.6rem;
         cursor:pointer;
         color:$aquamarine;
         position: relative;
@@ -49,7 +49,7 @@
         list-style-type: none;
         padding: 1rem;
         margin: 0;
-        font-size: 1.4rem;
+        font-size: 1.6rem;
         font-weight: normal;
         max-height: 20rem;
         overflow-y: auto;
@@ -66,10 +66,10 @@
         li{
           display: flex;
           align-items: center;
-          margin-bottom: 0.5rem;
+          margin-bottom: 0.8rem;
           label{
             font-weight: normal;
-            padding-left: 0.5rem;
+            padding-left: 0.8rem;
             margin-bottom: 0;
             max-width: 90%;
           }
@@ -101,8 +101,8 @@
     top: 0px;
     //align-self: flex-end;
     #search-input{
-      padding: 1rem 4rem 1rem 1rem;
-      font-size: 1.4rem;
+      padding: 0.8rem 4rem 1rem 1rem;
+      font-size: 1.6rem;
       margin: 0;
       border: 1px solid $aquamarine;
       background: $white;

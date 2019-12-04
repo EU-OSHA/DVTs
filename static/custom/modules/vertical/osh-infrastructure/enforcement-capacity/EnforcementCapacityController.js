@@ -238,13 +238,13 @@ define(function (require) {
           $scope.country2Data = {
             country_code: elem[0],
             country_name: elem[1],
-            authority: elem[2],
+            authority: (i18nLiterals['L'+elem[2]]),
             scope: elem[3],
             inspector: elem[4],
             strategy: elem[5]
           };
         });
-        $log.warn($scope.country2Data);
+        //$log.warn($scope.country2Data);
       }).catch(function (err) {
           throw err;
       });
@@ -293,7 +293,7 @@ define(function (require) {
         }
       }
 
-      angular.element('body').mouseup(function(e){
+      $('body').on('click touchstart', function(e) {
         var container = angular.element('.submenu--items--wrapper');
         if (!container.is(e.target) && container.has(e.target).length === 0){
           angular.element('.submenu--items--wrapper').removeClass('open-list'); 

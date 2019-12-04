@@ -40,7 +40,7 @@ define(function (require) {
     $scope.indicators = [];
     $scope.relatedLiterals = [20679, 20680, 20681, 20682];
 
-    var resolution = screen.width;
+    var resolution = window.resolution;
 
     $scope.orientation = resolution > 768 ? "vertical" : "horizontal";
     $scope.axisSize = resolution > 768 ? 150 : 110;
@@ -55,13 +55,19 @@ define(function (require) {
     $scope.axisSizeRA = resolution > 768 ? 60 : 90;
     $scope.axisWordBreak = resolution > 768 ? 1 : '';
 
-    $(window).on("resize",function(e){
+    /*$(window).on("resize",function(e){
       if(screen.width != resolution){
         resolution = screen.width;
-        //$log.warn('Resolucion ha cambiado');
         $state.reload();
-      }else{
-        //$log.warn('Resolucion no ha cambiado');
+      }
+    });*/
+
+    $(window).on("resize",function(e){
+      if( window.outerWidth != resolution){
+        resolution = window.resolution;
+        //$log.warn('Resolucion ha cambiado');
+        //$log.warn(window);
+        $state.reload();
       }
     });
 
@@ -223,7 +229,7 @@ define(function (require) {
         }
       }
 
-      angular.element('body').mouseup(function(e){
+      $('body').on('click touchstart', function(e) {
         var container = angular.element('.submenu--items--wrapper');
         if (!container.is(e.target) && container.has(e.target).length === 0){
           angular.element('.submenu--items--wrapper').removeClass('open-list'); 
@@ -249,6 +255,8 @@ define(function (require) {
       }
 
       $scope.countryChange = function () {
+       $('.card--block--chart--wrapper').css('visibility','hidden');
+
         if ($state.current.name !== undefined) {
           $scope.dashboard.parameters = {
             "pCountry1": $scope.pCountry1,
@@ -261,6 +269,7 @@ define(function (require) {
             pSplit: $scope.pSplit
           }, {reload: true});
         }
+        
       };
   }
 

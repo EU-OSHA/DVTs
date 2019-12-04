@@ -50,8 +50,8 @@ define(function () {
              * @description
              * Gets the data of an especific indicator
              */
-            getMethodologyData: function(pIndicator){
-                var url = configService.getGenericInformationDataPath() + "&dataAccessId=getMethodologyData" + "&parampIndicator=" + pIndicator;
+            getMethodologyData: function(pIndicator, pSubsection){
+                var url = configService.getGenericInformationDataPath() + "&dataAccessId=getMethodologyData" + "&parampIndicator=" + pIndicator + "&parampSubsection=" + pSubsection;
                 $log.debug('getMethodologyData url:' + url);
 
                 return promise(url);

@@ -7,38 +7,41 @@
 	</DataSources>
 
 	<!-- GET INDICATORS FOR METHODOLOGY -->
-	<DataAccess access="public" connection="dvt_conn" id="getMethodologyIndicators" type="sql">
-	    <Cache duration="3600" enabled="true" />
-	    <Columns />
-	   	<Parameters>
-	    	<Parameter default="OSH_AUTHORITIES" name="pSubsection" type="String"/>
-	    </Parameters>
-	    <Query>
-		    SELECT indicator_id as Id, i.literal_id as Literal, t.text as Name
-			FROM methodology m, section s, indicator i, translation t
-			WHERE m.section_id = s.id
-			AND s.name = ${pSubsection}
-			AND i.id = m.indicator_id
-			AND i.literal_id = t.literal_id
-			AND t.language = 'EN';
-	    </Query>
-	</DataAccess>
+    <DataAccess access="public" connection="dvt_conn" id="getMethodologyIndicators" type="sql">
+        <Cache duration="3600" enabled="true" />
+        <Columns />
+           <Parameters>
+            <Parameter default="OSH_AUTHORITIES" name="pSubsection" type="String"/>
+        </Parameters>
+        <Query>
+            SELECT indicator_id as Id, m.indicator_name_displayed_literal_id as Literal, t.text as Name
+            FROM methodology m, section s, indicator i, translation t
+            WHERE m.section_id = s.id
+            AND s.name = ${pSubsection}
+            AND i.id = m.indicator_id
+            AND m.indicator_name_displayed_literal_id = t.literal_id
+            AND t.language = 'EN'
+            ORDER BY m.id;
+        </Query>
+    </DataAccess>
 
-	<!-- GET DATA OF AN INDICATOR FOR METHODOLOGY -->
-	<DataAccess access="public" connection="dvt_conn" id="getMethodologyData" type="sql">
-	    <Cache duration="3600" enabled="true" />
-	    <Columns />
-	   	<Parameters>
-	    	<Parameter default="27" name="pIndicator" type="Numeric"/>
-	    </Parameters>
-	    <Query>
-			SELECT i.literal_id as diagram, m.description_literal_id as description, d.source as datasource, m.specific_table_literal_id as specific_table,	m.url_literal_id as url, m.filtering_options_literal_id as options_applied, m.reference_year_literal_id as reference_year, m.last_update_literal_id as last_update, m.coverage_literal_id as coverage, m.unit_measure_literal_id as unit_measure, m.calculations_literal_id as calculations, m.visualisation_literal_id as visualisation, m.additional_comments_literal_id as additional_comments
-			FROM methodology m, dataset d, indicator i
-			WHERE m.indicator_id = ${pIndicator}
-			AND m.indicator_id = i.id
-			AND m.dataset_id = d.id
-	    </Query>
-	</DataAccess>
+    <!-- GET DATA OF AN INDICATOR FOR METHODOLOGY -->
+    <DataAccess access="public" connection="dvt_conn" id="getMethodologyData" type="sql">
+        <Cache duration="3600" enabled="true" />
+        <Columns />
+           <Parameters>
+            <Parameter default="27" name="pIndicator" type="Numeric"/>
+            <Parameter default="OSH_AUTHORITIES" name="pSubsection" type="String"/>
+        </Parameters>
+        <Query>
+            SELECT m.indicator_name_displayed_literal_id as diagram, m.description_literal_id as description, m.source_methodology_literal_id as datasource, m.specific_table_literal_id as specific_table, m.url_literal_id as url, m.filtering_options_literal_id as options_applied, m.reference_year_literal_id as reference_year, m.last_update_literal_id as last_update, m.coverage_literal_id as coverage, m.unit_measure_literal_id as unit_measure, m.calculations_literal_id as calculations, m.visualisation_literal_id as visualisation, m.additional_comments_literal_id as additional_comments
+            FROM methodology m, dataset d, section s
+            WHERE m.indicator_id = ${pIndicator}
+            AND s.name = ${pSubsection}
+            AND m.section_id = s.id
+            AND m.dataset_id = d.id
+        </Query>
+    </DataAccess>
 
 	<!-- GET DATASOURCE AND DATES -->
 	<DataAccess access="public" connection="dvt_conn" id="getDatasourceAndDates" type="sql">
@@ -163,33 +166,83 @@
 	    	<Parameter default="15" name="pDataset" type="String"/>
 	    </Parameters>
 	    <Query>
-			SELECT (ROUND(v.value*100)) as joint_consultative, ( ROUND(v2.value*100)) as trade_union, 
-			(ROUND(v3.value*100)) as health_representative, (ROUND(v4.value*100)) as health_committee
-			FROM nuts n, profile p, profile p2, profile p3, profile p4, value v, value v2, value v3, value v4, dataset d
+			select q1.joint_consultative, q2.trade_union, q3.health_representative, q4.health_committee from 
+			(SELECT DISTINCT(n.literal_id) as country_name, n.country_code as country_code, (ROUND(v.value*100)) as joint_consultative
+			FROM nuts n, profile p, value v, dataset d, split_activity_sector sas, split_answer a, translation t, translation t1
 			WHERE
+			/* COMMON */
+			d.id = 15
+			AND sas.literal_id=t.literal_id
+			AND a.literal_id=t1.literal_id
+			AND t.LANGUAGE="EN" AND t.TEXT="All"
+			AND t1.LANGUAGE="EN" AND t1.TEXT="Yes"
 			/* JOIN CONSULTATIVE */
-			n.id = p.nuts_id
+			AND n.id = p.nuts_id
+			AND n.country_code = 'EU28'
 			AND v.indicator_id = 100
 			AND v.profile_id = p.id
 			AND d.id = v.dataset_id
-			/* TRADE UNION */
-			AND n.id = p2.nuts_id
-			AND v2.indicator_id = 101
-			AND v2.profile_id = p2.id
-			AND d.id = v2.dataset_id
-			/* HEALTH REPRESENTATIVE */
-			AND n.id = p3.nuts_id
-			AND v3.indicator_id = 102
-			AND v3.profile_id = p3.id
-			AND d.id = v3.dataset_id
-			/* HEALTH COMMITTEE */
-			AND n.id = p4.nuts_id
-			AND v4.indicator_id = 103
-			AND v4.profile_id = p4.id
-			AND d.id = v4.dataset_id
+			AND (p.activity_sector_id=sas.id OR v.value IS NULL)
+			AND p.answer_id=a.id) as q1, 
+			(SELECT DISTINCT(n.literal_id) as country_name, n.country_code as country_code, (ROUND(v.value*100)) as trade_union
+			FROM nuts n, profile p, value v, dataset d, split_activity_sector sas, split_answer a, translation t, translation t1
+			WHERE
 			/* COMMON */
-			AND d.id = ${pDataset}
-			AND n.country_code = 'EU28';
+			d.id = 15
+			AND sas.literal_id=t.literal_id
+			AND a.literal_id=t1.literal_id
+			AND t.LANGUAGE="EN" AND t.TEXT="All"
+			AND t1.LANGUAGE="EN" AND t1.TEXT="Yes"
+			/* JOIN CONSULTATIVE */
+			AND n.id = p.nuts_id
+			AND n.country_code = 'EU28'
+			AND v.indicator_id = 101
+			AND v.profile_id = p.id
+			AND d.id = v.dataset_id
+			AND (p.activity_sector_id=sas.id OR v.value IS NULL)
+			AND p.answer_id=a.id) as q2, 
+			(SELECT DISTINCT(n.literal_id) as country_name, n.country_code as country_code, (ROUND(v.value*100)) as health_representative
+			FROM nuts n, profile p, value v, dataset d, split_activity_sector sas, split_answer a, translation t, translation t1
+			WHERE
+			/* COMMON */
+			d.id = 15
+			AND sas.literal_id=t.literal_id
+			AND a.literal_id=t1.literal_id
+			AND t.LANGUAGE="EN" AND t.TEXT="All"
+			AND t1.LANGUAGE="EN" AND t1.TEXT="Yes"
+			/* JOIN CONSULTATIVE */
+			AND n.id = p.nuts_id
+			AND n.country_code = 'EU28'
+			AND v.indicator_id = 102
+			AND v.profile_id = p.id
+			AND d.id = v.dataset_id
+			AND (p.activity_sector_id=sas.id OR v.value IS NULL)
+			AND p.answer_id=a.id) as q3, 
+			(SELECT DISTINCT(n.literal_id) as country_name, n.country_code as country_code, (ROUND(v.value*100)) as health_committee
+			FROM nuts n, profile p, value v, dataset d, split_activity_sector sas, split_answer a, translation t, translation t1
+			WHERE
+			/* COMMON */
+			d.id = 15
+			AND sas.literal_id=t.literal_id
+			AND a.literal_id=t1.literal_id
+			AND t.LANGUAGE="EN" AND t.TEXT="All"
+			AND t1.LANGUAGE="EN" AND t1.TEXT="Yes"
+			/* JOIN CONSULTATIVE */
+			AND n.id = p.nuts_id
+			AND n.country_code = 'EU28'
+			AND v.indicator_id = 103
+			AND v.profile_id = p.id
+			AND d.id = v.dataset_id
+			AND (p.activity_sector_id=sas.id OR v.value IS NULL)
+			AND p.answer_id=a.id) as q4 
+			where 
+			q1.country_name = q2.country_name
+			AND q2.country_name = q3.country_name
+			AND q3.country_name = q4.country_name
+			AND q1.country_code = q2.country_code
+			AND q2.country_code = q3.country_code
+			AND q4.country_code = q4.country_code
+			ORDER BY q1.country_name ASC;
 	    </Query>
 	</DataAccess>
 
@@ -388,7 +441,7 @@
 	      AND d.id = ${pDataset} AND d.id = v.dataset_id 
 	      AND t.language = 'EN'
 	      AND t.literal_id = sas.literal_id
-	      AND sas.id IN (1, 2, 3, 4, 5, 6, 7)
+	      AND sas.id IN (1, 2, 3, 4, 18, 6, 7)
 	      AND n.country_code IN (${pCountry1}, ${pCountry2}, 'EU28') AND i.id = ${pIndicator}
 	      ORDER BY FIELD(n.country_code, ${pCountry1}, ${pCountry2}, 'EU28') DESC
 	    </Query>

@@ -60,8 +60,7 @@
                 "name":"L22007",
                 "sref":"national-strategies",
                 "tabindex":"8",
-                "accesskey":"",
-                "database_name":""
+                "accesskey":""
             },
             {
                 "id":"structure-strategy",
@@ -117,15 +116,14 @@
                 "tabindex":"13",
                 "accesskey":"",
                 "database_name":"OSH_CULTURE_HEALTH_AWARENESS",
-                "firstIndicatorId": "63"
+                "firstIndicatorId": "104"
             },
             {
                 "id":"working-conditions",
                 "name":"L22013",
                 "sref":"working-conditions",
                 "tabindex":"14",
-                "accesskey":"",
-                "database_name":""
+                "accesskey":""
             },
             {
                 "id":"overall-opinion",
@@ -137,7 +135,7 @@
                 "id":"mental-risk",
                 "name":"L20710",
                 "database_name":"MENTAL_RISKS",
-                "firstIndicatorId": "83"
+                "firstIndicatorId": "113"
             },
             {
                 "id":"physical-risk",
@@ -161,7 +159,7 @@
                 "tabindex":"16",
                 "accesskey":"",
                 "database_name":"WORKER_INVOLVEMENT",
-                "firstIndicatorId": "75"
+                "firstIndicatorId": "123"
             }
         ]
 
@@ -179,7 +177,7 @@
                 "tabindex":"18",
                 "accesskey":"4",
                 "database_name":"ENFORCEMENT_CAPACITY",
-                "firstIndicatorId": "76"
+                "firstIndicatorId": "126"
             },
             {
                 "id":"osh-statistics",

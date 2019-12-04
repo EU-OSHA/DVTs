@@ -121,6 +121,7 @@ define (function (require) {
                         name: "main",
                         dataPart: "0",
                         barSizeMax: 30,
+                        barSizeRatio: 0.8,
                         label_textMargin: 7,
                         label_textBaseline: 'bottom',
                         valuesAnchor: 'top',

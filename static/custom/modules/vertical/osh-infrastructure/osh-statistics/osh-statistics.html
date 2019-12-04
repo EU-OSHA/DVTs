@@ -71,13 +71,13 @@
           </div>
 
           <div class="matrix--content--elements">
-            <h3 class="" ng-if="::matrix.osh_statistics==1">OSH Statistics</h3>
-            <h3 class="" ng-if="::matrix.surveys==1">Surveys</h3>
-            <h3 class="" ng-if="::matrix.research_institutes==1">Research Institutes</h3>
+            <h3 class="" ng-if="::matrix.osh_statistics==1" data-ng-bind="i18nLiterals.L20714"></h3>
+            <h3 class="" ng-if="::matrix.surveys==1" data-ng-bind="i18nLiterals.L20715"></h3>
+            <h3 class="" ng-if="::matrix.research_institutes==1" data-ng-bind="i18nLiterals.L20716"></h3>
 
             <div data-ng-bind-html="i18nLiterals['L'+matrix.name_institution]"></div>
             <div class="partial-text" data-ng-bind-html="trimText(i18nLiterals['L'+matrix.detail_institution], 300)"></div>
-            <div class="complete-text" data-ng-bind-html="i18nLiterals['L'+matrix.detail_institution]"></div>
+            <div class="complete-text" data-ng-bind-html="trimText(i18nLiterals['L'+matrix.detail_institution], 1)"></div>
             <p data-ng-if="i18nLiterals['L'+matrix.detail_institution].length > newMaxCharacter" class="see--more--wrapper"> 
               <a ng-click='toggleText($event)' data-ng-bind="i18nLiterals.L480" class="see-more main-color"></a>
               <a ng-click='toggleText($event)' data-ng-bind="i18nLiterals.L481" class="see-less main-color" style="display:none"></a>

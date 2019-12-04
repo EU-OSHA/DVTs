@@ -104,7 +104,7 @@
             <dvt-bar-chart
               data-ng-cloak
               query="getEmploymentRateData" cda="{{::cdaGenericInformation }}"
-              width="330" height="360" axis-percent="1"
+              width="330" height="380" axis-percent="1"
               orientation="horizontal" axis-fixed-min="50"
               axis-fixed-max="100" step="{{step.chart3}}" 
               params="[['pIndicator','33'],['pCountry1', pCountry1],['pCountry2', pCountry2],['pDataset', datasetEurostat]]"
@@ -158,14 +158,14 @@
         -->
         <!-- GDP PER CAPITA IN RELATION TO EU28 AVERAGE -->
         <div class="card--block--chart">
-          <div class="select-filter-chart">
-          </div>
-          <selector chart="GDP" ng-model="dashboard.parameters.pSplit"></selector>
-          <div class="chart--block">
+          <div class="select-filter-chart-wrapper">
+            <selector chart="GDP" ng-model="dashboard.parameters.pSplit"></selector>
+          </div>          
+          <div class="chart--block  with-filter">
             <dvt-bar-chart
               data-ng-cloak
               query="getGDPData" cda="{{::cdaGenericInformation }}"
-              height="360"
+              height="370"
               orientation="vertical" listen-to="['pSplit']"
               axis-fixed-max="260" step="{{step.chart5}}"
               params="[['pIndicator','pSplit'],['pCountry1', pCountry1],['pCountry2', pCountry2],['pDataset', datasetEurostat]]"
@@ -179,7 +179,7 @@
               values-mask="{value}"
               ortho-axis-visible="false"
               ortho-axis-grid="false"
-              hoverable="false"
+              hoverable="false" base-axis-size="15"
               multiple-label-colors="true"
               leaf-content-overflow='visible'
               dimensions="stories[4].dimensions"
@@ -220,18 +220,18 @@
         </div>
         <!-- INCOME PER CAPITA -->
         <div class="card--block--chart">
-          <div class="select-filter-chart">
+          <div class="select-filter-chart-wrapper">
             <selector chart="IncomePerCapita" ng-model="dashboard.parameters.pSplit2"></selector>
             <!--<select ng-model="dashboard.parameters.pSplit" ng-change="changeType(dashboard.parameters.pSplit)">
               <option value="36">NORMAL</option>
               <option value="279">EURO</option>
             </select>-->
           </div>
-          <div class="chart--block">
+          <div class="chart--block with-filter">
             <dvt-bar-chart
               data-ng-cloak
               query="getIncomePerCapitaData" cda="{{::cdaGenericInformation }}"
-              width="330" height="370" type="lines" listen-to="['pSplit']"
+              width="330" height="370" type="lines" listen-to="['pSplit', 'pDataset']"
               orientation="vertical" axis-fixed-min="10000"
               axis-fixed-max="20000" step="{{step.chart6}}"
               params="[['pIndicator','pSplit2'],['pCountry1', pCountry1],['pCountry2', pCountry2],['pDataset', 'pDataset']]"
@@ -248,8 +248,9 @@
               base-axis-label-text-baseline="top"
               leaf-content-overflow='visible'
               legend="true"
-              datasource-and-dates="[datasetEurostatBetweenDates,36]"
+              datasource-and-dates="[pDataset, pSplit2]"
             ></dvt-bar-chart>
+            <!-- DATASETS 17 - 36 y 3 - 279 -->
           </div>
           <!-- INCOME PER CAPITA EURO -->
           <!--<div class="chart--block" ng-show="pSplit == 'euro'">

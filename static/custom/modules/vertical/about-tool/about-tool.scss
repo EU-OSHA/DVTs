@@ -1,4 +1,6 @@
 .about-tool{
+  display: flex;
+  margin-bottom: 4rem;
   h2{
     color: $aquamarine;
     font-size: 2.8rem;
@@ -67,24 +69,27 @@
     justify-content: space-evenly;
     border-top: 3px solid $orange;
     border-bottom: 3px solid $orange;
+    padding: 0;
     li{
       a{
         padding: 2rem 1rem;
         display: inline-block;
-        font-family:'Oswald-light';
+        font-family:'Oswald';
         font-size: 2.2rem;
         color: $aquamarine;
+        color: $gray-light;
+        text-align: center;
         &:hover{
           color: $orange;
         }
       }
       &.active{
-        a:visited, a:focus{
-          color: $orange;
+        a, a:visited, a:focus{
+          color: $aquamarine;
           border-bottom: 0;
         }
         a:hover{          
-          color: $aquamarine;
+          color: $orange;
           border-bottom: 0;
         }           
       }
@@ -95,7 +100,7 @@
     justify-content: center;
     margin: 4rem auto 4rem;
     label{
-      padding: 1.8rem 1rem;
+      padding: 2.1rem 1rem;
       color: $gray;
       font-weight: normal;
     }
@@ -265,9 +270,22 @@
       background: none;
       padding-left: 0;
     }
-    .indicators--submenu--wrapper:after{
-      right:0rem;
-      top: 1rem;
+    .indicators--submenu--wrapper{
+      height: 10rem;
+      max-height: 10rem;        
+      &.open-list{
+        height: auto;
+        max-height: 70rem;
+      }
+      li{
+        a{
+          padding: 2rem 3rem 2rem 0.5rem;
+        }
+      }
+      &:after{
+        right:0rem;
+        top: 1rem;
+      }
     }
   }
 }
@@ -276,7 +294,10 @@
     .indicators--list--wrapper{
       .indicators-item{
         width: 100%;
-        height: 20rem;
+        height: 17rem;
+        &:last-child{
+          margin-bottom:8rem;
+        }
       }
     }
   }

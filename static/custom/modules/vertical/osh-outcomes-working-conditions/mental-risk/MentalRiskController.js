@@ -38,7 +38,7 @@ define(function (require) {
 
     //$scope.chartWidth = angular.element('.card--block--chart .chart--block')[1].clientWidth;
 
-    var resolution = screen.width;
+    var resolution = window.resolution;
 
     $scope.orientation = resolution > 768 ? "vertical" : "horizontal";
     $scope.axisSize = resolution > 768 ? 150 : 120;
@@ -62,13 +62,19 @@ define(function (require) {
       $state.reload();
     });*/
 
-    $(window).on("resize",function(e){
+    /*$(window).on("resize",function(e){
       if(screen.width != resolution){
         resolution = screen.width;
-        //$log.warn('Resolucion ha cambiado');
         $state.reload();
-      }else{
-        //$log.warn('Resolucion no ha cambiado');
+      }
+    });*/
+
+    $(window).on("resize",function(e){
+      if( window.outerWidth != resolution){
+        resolution = window.resolution;
+        //$log.warn('Resolucion ha cambiado');
+        //$log.warn(window);
+        $state.reload();
       }
     });
 
@@ -216,7 +222,7 @@ define(function (require) {
         }
       }
 
-      angular.element('body').mouseup(function(e){
+      $('body').on('click touchstart', function(e) {
         var container = angular.element('.submenu--items--wrapper');
         if (!container.is(e.target) && container.has(e.target).length === 0){
           angular.element('.submenu--items--wrapper').removeClass('open-list'); 
@@ -235,6 +241,7 @@ define(function (require) {
       }
 
       $scope.changeDataset = function(indicator, dataset){
+        $('.card--block--chart--wrapper').css('visibility','hidden');
         if ($state.current.name !== undefined) {
           $state.go($state.current.name, {
             pIndicator: indicator,

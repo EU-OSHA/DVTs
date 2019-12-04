@@ -23,6 +23,9 @@
         $('body').removeClass('minor');
         $('body').addClass('plus');
     }
+    function gotoTop() {
+        $('html,body').animate({ 'scrollTop': 0 }, 'slow');
+    };
 
 
 define(function (require) {
@@ -64,8 +67,10 @@ define(function (require) {
                     });
 
                     $window.onscroll = function() {
+                        //console.log(angular.element('.highlited--data--section'));
                         if( angular.element('.highlited--data--section')[0] != undefined ){  
-                            var dataAffix = angular.element('.highlited--data--section')[0].dataset.offsetTop;
+                            var dataAffix = angular.element('.highlited--data--section')[0].offsetTop;
+
                             if( dataAffix < $window.pageYOffset){
                                 angular.element("body").addClass('section-fixed');
                             }else{
@@ -74,36 +79,49 @@ define(function (require) {
                         } else {
                             angular.element("body").removeClass('section-fixed');
                         }
+
                     }
-  
-                    if( resolution < 768 ){
-                        $window.onscroll = function() {
-                            var currentScrollPos = $window.pageYOffset;
-                            // currentScrollPos should be greater than 90 to solved a iphone 6 issue
-                            if( currentScrollPos > 90 ){
-                                if (prevScrollpos > currentScrollPos) {
-                                    angular.element(".bar-header").addClass('show-header');
-                                    angular.element(".affix").addClass('show-header');
-                                    angular.element(".affix").removeClass('hide-header');
-                                    angular.element(".bar-header").removeClass('hide-header');
-                                } else {
-                                    angular.element(".bar-header").addClass('hide-header');
-                                    angular.element(".affix").addClass('hide-header');
-                                    angular.element(".affix").removeClass('show-header');
-                                    angular.element(".bar-header").removeClass('show-header');
-                                }
-
-                                prevScrollpos = currentScrollPos;
-
-                                if( angular.element('.advice--block-not-home').length > 0 ){
-                                    if( prevScrollpos <= angular.element('.advice--icon--block').offset().top + angular.element('.advice--icon--block')[0].clientHeight){
-                                        angular.element(".compare--block.regulation-page").removeClass('show-header');
-                                    }
-                                }
+                     
+                    
+                    $window.onscroll = function() {
+                        var currentScrollPos = $window.pageYOffset;
+                        // currentScrollPos should be greater than 90 to solved a iphone 6 issue
+                        if( currentScrollPos > 90 ){
+                            if (prevScrollpos > currentScrollPos) {
+                                angular.element(".bar-header").addClass('show-header');
+                                angular.element(".affix").addClass('show-header');
+                                angular.element(".affix").removeClass('hide-header');
+                                angular.element(".bar-header").removeClass('hide-header');
+                            } else {
+                                angular.element(".bar-header").addClass('hide-header');
+                                angular.element(".affix").addClass('hide-header');
+                                angular.element(".affix").removeClass('show-header');
+                                angular.element(".bar-header").removeClass('show-header');
                             }
 
-                        } 
-                    }
+                            prevScrollpos = currentScrollPos;
+
+                            if( angular.element('.advice--block-not-home').length > 0 ){
+                                if( prevScrollpos <= angular.element('.advice--icon--block').offset().top + angular.element('.advice--icon--block')[0].clientHeight){
+                                    angular.element(".compare--block.regulation-page").removeClass('show-header');
+                                }
+                            }                                
+                        }
+                        var gotopVisible = $(window).height() + $(window).height()/2;
+                        if( resolution <= 768 ){
+                            if( currentScrollPos > gotopVisible )
+                            {
+                                $('.go-to').css('display','block');
+                            }
+                            else
+                            {
+                                $('.go-to').css('display','none');
+                            }
+                        } else {
+                            $('.go-to').css('display','none');
+                        }
+                    } 
+                    
                     
                     //hide print icon in mobile
                     if(configService.isMobile()) {
@@ -127,6 +145,9 @@ define(function (require) {
                         angular.element('.filter--dropdown--wrapper').removeClass('viewOptions'); 
                       }
                     });
+
+                    // add accesskey to google translate link
+                    $('.goog-te-menu-value').attr('accesskey','L');
 
 
                     // when click banner link to Home
@@ -155,10 +176,11 @@ define(function (require) {
                         }
                         return (path === lPath[1]
                             || (lPath[1] == "" && path == "home")
-                            || (lPath[1] == "site-map" && path == "home")
-                            || (lPath[1] == "accessibility" && path == "home")
-                            || (lPath[1] == "privacy-notice" && path == "home")
-                            || (lPath[1] == "legal-notice" && path == "home") ) ? 'main-menu-selected' : '';
+                            //|| (lPath[1] == "site-map" && path == "home")
+                            //|| (lPath[1] == "accessibility" && path == "home")
+                            //|| (lPath[1] == "privacy-notice" && path == "home")
+                            //|| (lPath[1] == "legal-notice" && path == "home")
+                            || (lPath[1] == "about-tool-detail-page"  && path == "about-tool") ) ? 'main-menu-selected' : '';
 
                         //return (path === lPath[1] || (lPath[1] == "" && path == "home")) ? 'main-menu-selected' : '';
                     };
@@ -192,6 +214,13 @@ define(function (require) {
                             var path = $location.path();
                             $log.debug(path);
                             $log.warn($state.current.name);
+
+
+                            // hide tooltip of european map page 
+                            if($state.current.name != 'workforce-profile'){
+                                $('.dvt-map-tooltip').remove();
+                            }
+
 
                             var cadena = "";
                             
@@ -229,6 +258,7 @@ define(function (require) {
                         collapse.removeClass("exposed");
                         navMainMenu.removeClass('exposed');
                         buttonToggle.removeClass('exposed');
+                        angular.element(".bar-header").removeClass('hide-header');
                     });
 
                     $rootScope.$on('$stateNotFound', function(event, unfoundState, fromState, fromParams) {

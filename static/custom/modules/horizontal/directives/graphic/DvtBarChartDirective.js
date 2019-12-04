@@ -419,6 +419,7 @@ define(function (require) {
                         legendLabel_visible: true,
                         legendDot_strokeStyle: attributes.legendDotStrokeStyle,
                         legendShape: 'square',
+                        legendSize: attributes.legendSize,
                         legendAlign: attributes.legendAlign || 'center',
                         legendOverflow: attributes.legendOverflow || 'clip',
                         legendItemSize: attributes.legendItemSize,
@@ -450,7 +451,7 @@ define(function (require) {
                         xAxis_fillStyle: '#f0f0f0',
                         panel_fillStyle: attributes.panelColor || '',
                         axisLabelWordBreak: attributes.axisLabelWordBreak || 0,
-                        //customTooltip: attributes.customTooltip || 0,
+                        customTooltip: attributes.customTooltip || 0,
                         datasourceAndDates: scope.datasourceAndDates || []
                     }
 
@@ -463,9 +464,9 @@ define(function (require) {
                         var pCountry2 = definition.parameters[2] ? definition.parameters[2][1] : null;
 
 
-                        if(country.includes(pCountry1)){
+                        if(country.match(pCountry1)){
                             return pCountry1;
-                        }else if(country.includes(pCountry2)){
+                        }else if(country.match(pCountry2)){
                             return pCountry2;
                         }
                     }
@@ -479,9 +480,9 @@ define(function (require) {
 
                         if(country == 'EU28'){
                             return dvtUtils.getEUColor();
-                        }else if(country.includes(pCountry1)){
+                        }else if(country.match(pCountry1)){
                             return dvtUtils.getColorCountry(1)
-                        }else if(country.includes(pCountry2)){
+                        }else if(country.match(pCountry2)){
                             return dvtUtils.getColorCountry(2)
                         }
                     }
@@ -518,23 +519,13 @@ define(function (require) {
                     }
                 }*/
 
-                if(definition.chartDefinition.axisLabelWordBreak == '1'){
-                    definition.chartDefinition.baseAxisTooltipFormat = function(scene){
-                        var atoms = scene.firstAtoms;
-                        var key = atoms.category.key;
-                        if(i18n['L'+key] != undefined){
-                            key = i18n['L'+key];
-                        }
-                        if(key.length > 25){
-                            return key;
-                        }                        
-                    }
-
+                if(definition.chartDefinition.customTooltip == '1'){
                     definition.chartDefinition.tooltipFormat = function(scene){
-                        //$log.warn(scene);
                         // Atoms of the first datum
                         var atoms = scene.firstAtoms;
                         var key = atoms.category.key;
+
+                        var dimension = scene.firstAtoms.category.dimension.type.label;
 
                         if(i18n['L'+key] != undefined){
                             key = i18n['L'+key];
@@ -545,7 +536,7 @@ define(function (require) {
                                         '<tbody>'+
                                             '<tr class="ccc-tt-dim ccc-tt-dimValueType-Any ccc-tt-dimDiscrete">'+
                                                 '<td class="ccc-tt-dimLabel">'+
-                                                    '<span>Sector</span>'+
+                                                    '<span>'+dimension+'</span>'+
                                                 '</td>'+
                                                 '<td class="ccc-tt-dimRoles">'+
                                                     '<span class="ccc-tt-role ccc-tt-role-color">'+
@@ -595,6 +586,20 @@ define(function (require) {
                                  "<b>Value</b>: " + atoms.value.label   + 
                                "</div>";*/
                     }
+                }
+
+                if(definition.chartDefinition.axisLabelWordBreak == '1'){
+                    definition.chartDefinition.baseAxisTooltipFormat = function(scene){
+                        var atoms = scene.firstAtoms;
+                        var key = atoms.category.key;
+                        
+                        if(i18n['L'+key] != undefined){
+                            key = i18n['L'+key];
+                        }
+                        if(key.length > 25){
+                            return key;
+                        }                        
+                    }
 
                     definition.chartDefinition.baseAxisLabel_call = function(){
                         var panel = this.sign.panel;
@@ -625,17 +630,19 @@ define(function (require) {
                                     scope.fullText = value;
                                 }
                                 
-                                if(scope.fullText.length > 25){ 
+                                if(scope.fullText.length > 21){ 
                                     //var separator = scope.fullText.indexOf(' ', scope.fullText.length/2);
-                                    var separator = scope.fullText.indexOf(' ', 10);
+                                    var separator = scope.fullText.indexOf(' ', 7);
                                     scene.firstAtoms.category.label = scope.fullText.substring(0, separator);
                                     scope.substring = scope.fullText.substring(separator+1);
 
-                                    if(scope.substring.length < 25){
+                                    //$log.warn(scope.substring.length);
+
+                                    if(scope.substring.length <= 12){
                                         return scope.substring;
                                     }else{
-                                        var separator2 = scope.substring.indexOf(' ', 10);
-                                        scope.substring2 = scope.substring.substring(0, separator2);
+                                        var separator2 = scope.substring.indexOf(' ', 7);
+                                        scope.substring2 = scope.substring.substring(0, 12);
                                         return scope.substring2 + '...';
                                     }
                                     
@@ -643,8 +650,15 @@ define(function (require) {
                                     if(scope.fullText == value){
                                         return ' ';
                                     }
-                                    var index = value.indexOf(' ', 15);
-                                    return value.substring(index+1);
+                                    var index = value.indexOf(' ', 7);
+                                    //$log.warn(value.substring(index+1));
+                                    var x = value.substring(index+1);
+                                    //$log.warn(x.substring(0,10));
+                                    if(value.substring(index+1).length <= 15){
+                                        return value.substring(index+1);
+                                    }else{
+                                        return  x.substring(0,10)+'...';
+                                    }
                                 }
                             });
 
@@ -1064,9 +1078,9 @@ define(function (require) {
                         definition.chartDefinition.baseAxisLabel_textStyle= function (){
                             if(this.scene.vars.tick.label == 'EU28'){
                                 return dvtUtils.getEUColor();
-                            }else if(this.scene.vars.tick.label.includes(pCountry1)){
+                            }else if(this.scene.vars.tick.label.match(pCountry1)){
                                 return dvtUtils.getColorCountry(1);
-                            }else if(this.scene.vars.tick.label.includes(pCountry2)){
+                            }else if(this.scene.vars.tick.label.match(pCountry2)){
                                 return dvtUtils.getColorCountry(2);
                             }
                             return 'gray';

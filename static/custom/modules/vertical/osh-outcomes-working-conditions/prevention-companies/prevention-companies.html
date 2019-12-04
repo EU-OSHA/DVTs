@@ -60,7 +60,7 @@
               <option data-ng-bind="i18nLiterals.L20647" value="establishment-size"></option>
             </select>
           </div>
-          <div class="chart--block" ng-show="pSplit == 'establishment-size'">
+          <div class="chart--block chart-establishment-size" ng-show="pSplit == 'establishment-size'">
             <dvt-bar-chart
               data-ng-cloak
               query="getEstablishmentSizeData" cda="{{::cdaOSHOutcomes }}"
@@ -75,16 +75,16 @@
               plots="riskAssesmentPlots"
               values-visible="true"
               values-mask="{value}"
-              values-font="12px 'OpenSans'"
+              values-font="12px 'OpenSans-bold'"
               multiple-label-colors="false"
               leaf-content-overflow='visible'
               dimensions="stories[0].dimensions"
               legend="true" base-axis-size="{{axisSizeRA}}"
-              label-text-align="alignment"
+              label-text-align="alignment" custom-tooltip="1"
               datasource-and-dates="[datasetESENER,120]"
             ></dvt-bar-chart>
           </div>
-          <div class="chart--block" ng-show="pSplit == 'sector'">
+          <div class="chart--block chart-sector" ng-show="pSplit == 'sector'">
             <dvt-bar-chart
               data-ng-cloak
               query="getSectorActivityData" cda="{{::cdaOSHOutcomes }}"
@@ -99,12 +99,12 @@
               plots="riskAssesmentPlots"
               values-visible="true"
               values-mask="{value}"
-              values-font="12px 'OpenSans'"
+              values-font="12px 'OpenSans-bold'"
               multiple-label-colors="false"
               leaf-content-overflow='visible'
               dimensions="stories[0].dimensions"
               legend="true" base-axis-size="{{axisSizeRA}}"
-              label-text-align="alignment"
+              label-text-align="alignment" custom-tooltip="1"
               axis-label-word-break="{{axisWordBreak}}"
               datasource-and-dates="[datasetESENER,120]"
             ></dvt-bar-chart>
@@ -241,7 +241,7 @@
               <option data-ng-bind="i18nLiterals.L20647" value="establishment-size"></option>              
             </select>
           </div>
-          <div class="chart--block" ng-hide="pSplit != 'establishment-size'">
+          <div class="chart--block chart-sector" ng-hide="pSplit != 'establishment-size'">
             <dvt-bar-chart
               data-ng-cloak
               query="getEstablishmentSizeData" cda="{{::cdaOSHOutcomes }}"
@@ -256,16 +256,16 @@
               plots="riskAssesmentPlots"
               values-visible="true"
               values-mask="{value}"
-              values-font="12px 'OpenSans'"
+              values-font="12px 'OpenSans-bold'"
               multiple-label-colors="false"
               leaf-content-overflow='visible'
               dimensions="stories[0].dimensions"
               legend="true" base-axis-size="{{axisSizeRA}}"
-              label-text-align="alignment"
+              label-text-align="alignment" custom-tooltip="1"
               datasource-and-dates="[datasetESENER,123]"
             ></dvt-bar-chart>
           </div>
-          <div class="chart--block" ng-hide="pSplit != 'sector'">
+          <div class="chart--block  chart-establishment-size" ng-hide="pSplit != 'sector'">
             <dvt-bar-chart
               data-ng-cloak
               query="getSectorActivityData" cda="{{::cdaOSHOutcomes }}"
@@ -280,12 +280,12 @@
               plots="riskAssesmentPlots"
               values-visible="true" axis-label-word-break="{{axisWordBreak}}"
               values-mask="{value}"
-              values-font="12px 'OpenSans'"
+              values-font="12px 'OpenSans-bold'"
               multiple-label-colors="false"
               leaf-content-overflow='visible'
               dimensions="stories[0].dimensions"
               legend="true" base-axis-size="{{axisSizeRA}}"
-              label-text-align="alignment"
+              label-text-align="alignment" custom-tooltip="1"
               datasource-and-dates="[datasetESENER,123]"
             ></dvt-bar-chart>
           </div>          

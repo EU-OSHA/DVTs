@@ -46,7 +46,7 @@ define(function (require) {
     $scope.pCountry2 = ($stateParams.pCountry2 != null)?$stateParams.pCountry2:'BE';
     $scope.pIndicator = $stateParams.pIndicator;
 
-    var resolution = screen.width;
+    var resolution = window.resolution;
 
     $scope.orientation = resolution > 768 ? "vertical" : "horizontal";
     $scope.axisSize = resolution > 768 ? 150 : (resolution > 480 ? 160 : 120);
@@ -62,13 +62,19 @@ define(function (require) {
       }
     });*/
 
-    $(window).on("resize",function(e){
+    /*$(window).on("resize",function(e){
       if(screen.width != resolution){
         resolution = screen.width;
-        //$log.warn('Resolucion ha cambiado');
         $state.reload();
-      }else{
-        //$log.warn('Resolucion no ha cambiado');
+      }
+    });*/
+
+    $(window).on("resize",function(e){
+      if( window.outerWidth != resolution){
+        resolution = window.resolution;
+        //$log.warn('Resolucion ha cambiado');
+        //$log.warn(window);
+        $state.reload();
       }
     });
 
@@ -257,7 +263,7 @@ define(function (require) {
         }
       }
 
-      angular.element('body').mouseup(function(e){
+      $('body').on('click touchstart', function(e) {
         var container = angular.element('.submenu--items--wrapper');
         if (!container.is(e.target) && container.has(e.target).length === 0){
           angular.element('.submenu--items--wrapper').removeClass('open-list'); 

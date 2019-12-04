@@ -36,7 +36,7 @@
           <div class="select-filter-chart">
             <select ng-model="pSplit" data-ng-change="changeDataset(pIndicator, pSplit)">
               <option data-ng-bind="i18nLiterals.L20645" value="esener"></option>
-              <option data-ng-bind="i18nLiterals.L20646" value="eurofound"></option>
+              <option data-ng-bind="i18nLiterals.L20646" value="ewcs"></option>
             </select>
           </div>
           <div class="chart--block" ng-hide="pSplit != 'esener'">
@@ -62,7 +62,7 @@
               datasource-and-dates="[datasetESENER,113]"
             ></dvt-bar-chart>
           </div>
-          <div class="chart--block" ng-hide="pSplit != 'eurofound'">
+          <div class="chart--block" ng-hide="pSplit != 'ewcs'">
             <dvt-bar-chart
               data-ng-cloak
               query="{{timePressureQuery}}" cda="{{::cdaOSHOutcomes }}"
@@ -87,7 +87,7 @@
         </div>
         <div class="chart-legend">
           <p ng-show="pSplit == 'esener'" data-ng-bind="i18nLiterals.L20585" ></p>
-          <p ng-show="pSplit == 'eurofound'" data-ng-bind="i18nLiterals.L20584" ></p>
+          <p ng-show="pSplit == 'ewcs'" data-ng-bind="i18nLiterals.L20584" ></p>
         </div>
       </div>
     </div>
@@ -100,7 +100,7 @@
           <div class="select-filter-chart">
             <select ng-model="pSplit" data-ng-change="changeDataset(pIndicator, pSplit)">
               <option data-ng-bind="i18nLiterals.L20645" value="esener"></option>
-              <option data-ng-bind="i18nLiterals.L20646" value="eurofound"></option>
+              <option data-ng-bind="i18nLiterals.L20646" value="ewcs"></option>
             </select>
           </div>
           <div class="chart--block" ng-hide="pSplit != 'esener'">
@@ -126,7 +126,7 @@
             datasource-and-dates="[datasetESENER,114]"
             ></dvt-bar-chart>
           </div>
-          <div class="chart--block" ng-hide="pSplit != 'eurofound'">
+          <div class="chart--block" ng-hide="pSplit != 'ewcs'">
             <dvt-bar-chart
               data-ng-cloak
               query="{{poorCommunicationQuery}}" cda="{{::cdaOSHOutcomes }}"
@@ -154,7 +154,7 @@
         <!-- Dynamic chart legend depending on split selected -->
         <div class="chart-legend">
           <p ng-show="pSplit == 'esener'" data-ng-bind="i18nLiterals.L20587"></p>
-          <p ng-show="pSplit == 'eurofound'" data-ng-bind="i18nLiterals.L20586"></p>
+          <p ng-show="pSplit == 'ewcs'" data-ng-bind="i18nLiterals.L20586"></p>
         </div>
       </div>
     </div>
@@ -170,7 +170,7 @@
           <div class="select-filter-chart">
             <select ng-model="pSplit" data-ng-change="changeDataset(pIndicator, pSplit)">
               <option data-ng-bind="i18nLiterals.L20645" value="esener"></option>
-              <option data-ng-bind="i18nLiterals.L20646" value="eurofound"></option>
+              <option data-ng-bind="i18nLiterals.L20646" value="ewcs"></option>
             </select>
           </div>
           <div class="chart--block" ng-hide="pSplit != 'esener'">
@@ -197,7 +197,7 @@
             datasource-and-dates="[datasetESENER,115]"
             ></dvt-bar-chart>
           </div>
-          <div class="chart--block" ng-hide="pSplit != 'eurofound'">
+          <div class="chart--block" ng-hide="pSplit != 'ewcs'">
             <dvt-bar-chart
               data-ng-cloak
               query="{{influenceQuery}}" cda="{{::cdaOSHOutcomes }}"
@@ -225,7 +225,7 @@
         <!-- Dynamic chart legend depending on split selected -->
         <div class="chart-legend">
           <p ng-show="pSplit == 'esener'" data-ng-bind="i18nLiterals.L20589"></p>
-          <p ng-show="pSplit == 'eurofound'" data-ng-bind="i18nLiterals.L20588"></p>
+          <p ng-show="pSplit == 'ewcs'" data-ng-bind="i18nLiterals.L20588"></p>
         </div>
       </div>
     </div>
@@ -241,7 +241,7 @@
           <div class="select-filter-chart">
             <select ng-model="pSplit" data-ng-change="changeDataset(pIndicator, pSplit)">
               <option data-ng-bind="i18nLiterals.L20645" value="esener"></option>
-              <option data-ng-bind="i18nLiterals.L20646" value="eurofound"></option>
+              <option data-ng-bind="i18nLiterals.L20646" value="ewcs"></option>
             </select>
           </div>
           <div class="chart--block" ng-hide="pSplit != 'esener'">
@@ -268,7 +268,7 @@
             datasource-and-dates="[datasetESENER,116]"
             ></dvt-bar-chart>
           </div>
-          <div class="chart--block" ng-hide="pSplit != 'eurofound'">
+          <div class="chart--block" ng-hide="pSplit != 'ewcs'">
             <dvt-bar-chart
               data-ng-cloak
               query="{{jobInsecurity}}" cda="{{::cdaOSHOutcomes }}"
@@ -296,7 +296,7 @@
         <!-- Dynamic chart legend depending on split selected -->
         <div class="chart-legend">
           <p ng-show="pSplit == 'esener'" data-ng-bind="i18nLiterals.L20591"></p>
-          <p ng-show="pSplit == 'eurofound'" data-ng-bind="i18nLiterals.L20590"></p>
+          <p ng-show="pSplit == 'ewcs'" data-ng-bind="i18nLiterals.L20590"></p>
         </div>
       </div>
     </div>
@@ -312,7 +312,7 @@
           <div class="select-filter-chart">
             <select ng-model="pSplit" data-ng-change="changeDataset(pIndicator, pSplit)">
               <option data-ng-bind="i18nLiterals.L20645" value="esener"></option>
-              <option data-ng-bind="i18nLiterals.L20646" value="eurofound"></option>
+              <option data-ng-bind="i18nLiterals.L20646" value="ewcs"></option>
             </select>
           </div>
           <div class="chart--block" ng-hide="pSplit != 'esener'">
@@ -339,7 +339,7 @@
             datasource-and-dates="[datasetESENER,117]"
             ></dvt-bar-chart>
           </div>
-          <div class="chart--block" ng-hide="pSplit != 'eurofound'">
+          <div class="chart--block" ng-hide="pSplit != 'ewcs'">
             <dvt-bar-chart
               data-ng-cloak
               query="{{timePressureQuery}}" cda="{{::cdaOSHOutcomes }}"
@@ -367,7 +367,7 @@
         <!-- Dynamic chart legend depending on split selected -->
         <div class="chart-legend">
           <p ng-show="pSplit == 'esener'" data-ng-bind="i18nLiterals.L20593"></p>
-          <p ng-show="pSplit == 'eurofound'" data-ng-bind="i18nLiterals.L20592"></p>
+          <p ng-show="pSplit == 'ewcs'" data-ng-bind="i18nLiterals.L20592"></p>
         </div>
       </div>
     </div>
@@ -380,7 +380,7 @@
           <div class="select-filter-chart">
             <select ng-model="pSplit" data-ng-change="changeDataset(pIndicator, pSplit)">
               <option data-ng-bind="i18nLiterals.L20645" value="esener"></option>
-              <option data-ng-bind="i18nLiterals.L20646" value="eurofound"></option>
+              <option data-ng-bind="i18nLiterals.L20646" value="ewcs"></option>
             </select>
           </div>
           <div class="chart--block" ng-hide="pSplit != 'esener'">
@@ -407,7 +407,7 @@
             datasource-and-dates="[datasetESENER,118]"
             ></dvt-bar-chart>
           </div>
-          <div class="chart--block" ng-hide="pSplit != 'eurofound'">
+          <div class="chart--block" ng-hide="pSplit != 'ewcs'">
             <dvt-bar-chart
               data-ng-cloak
               query="{{eurofoundQuery}}" cda="{{::cdaOSHOutcomes }}"
@@ -435,7 +435,7 @@
         <!-- Dynamic chart legend depending on split selected -->
         <div class="chart-legend">
           <p ng-show="pSplit == 'esener'" data-ng-bind="i18nLiterals.L20595"></p>
-          <p ng-show="pSplit == 'eurofound'" data-ng-bind="i18nLiterals.L20594"></p>
+          <p ng-show="pSplit == 'ewcs'" data-ng-bind="i18nLiterals.L20594"></p>
         </div>
       </div>
     </div>
@@ -448,7 +448,7 @@
           <div class="select-filter-chart">
             <select ng-model="pSplit" data-ng-change="changeDataset(pIndicator, pSplit)">
               <option data-ng-bind="i18nLiterals.L20645" value="esener"></option>
-              <option data-ng-bind="i18nLiterals.L20646" value="eurofound"></option>
+              <option data-ng-bind="i18nLiterals.L20646" value="ewcs"></option>
             </select>
           </div>
           <div class="chart--block" ng-hide="pSplit != 'esener'">
@@ -475,7 +475,7 @@
             datasource-and-dates="[datasetESENER,119]"
             ></dvt-bar-chart>
           </div>
-          <div class="chart--block" ng-hide="pSplit != 'eurofound'">
+          <div class="chart--block" ng-hide="pSplit != 'ewcs'">
             <dvt-bar-chart
               data-ng-cloak
               query="{{discriminationQuery}}" cda="{{::cdaOSHOutcomes }}"
@@ -503,7 +503,7 @@
         <!-- Dynamic chart legend depending on split selected -->
         <div class="chart-legend">
           <p ng-show="pSplit == 'esener'" data-ng-bind="i18nLiterals.L20597"></p>
-          <p ng-show="pSplit == 'eurofound'" data-ng-bind="i18nLiterals.L20596"></p>
+          <p ng-show="pSplit == 'ewcs'" data-ng-bind="i18nLiterals.L20596"></p>
         </div>
       </div>
     </div>

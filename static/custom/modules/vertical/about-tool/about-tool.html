@@ -19,12 +19,15 @@
 
 		<!-- SECTION MENU -->
 		<ul class="indicators--list--wrapper">
-			<li class="indicators-item" data-ng-repeat="section in sections" data-ng-class="{'active':(section.id == pSection)}"><a ui-sref="about-tool-detail-page({pSection: section.id, pSubsection: section.firstSubsection, pIndicator: section.firstIndicatorId})" href data-ng-bind="i18nLiterals[section.name]" data-ng-click="changeSection(section.id)"></a></li>
+			<li class="indicators-item" data-ng-repeat="section in sections" data-ng-class="{'active':(section.id == pSection)}">
+				<a ui-sref="about-tool-detail-page({pSection: section.id, pSubsection: section.firstSubsection, pIndicator: section.firstIndicatorId})" href data-ng-bind="i18nLiterals[section.name]" data-ng-click="changeSection(section.id)"></a>
+			</li>
 		</ul>
 
-		<!-- SUBSECTION MENU -->		
-		<ul class="indicators--submenu--wrapper" id="indicatorsSubmenu" data-ng-click ="openIndicatorsList($event)" >
-			<li data-ng-class="{'active':(pSubsection == subsection.database_name)}" data-ng-repeat="subsection in subsections" data-ng-click ="openIndicatorsList($event)" class="submenu--item">
+		<!-- SUBSECTION MENU -->	
+			
+		<ul class="indicators--submenu--wrapper" id="indicatorsSubmenu" data-ng-click ="openIndicatorsList($event)">
+			<li data-ng-class="{'active':(pSubsection == subsection.database_name),'multiline':(i18nLiterals[subsection.name].length > 20 )}" data-ng-repeat="subsection in subsections" class="submenu--item">
         		<a ui-sref="about-tool-detail-page({pSection: pSection, pSubsection: subsection.database_name, pIndicator: subsection.firstIndicatorId})" href data-ng-bind="i18nLiterals[subsection.name]"></a>
         	</li>
 		</ul>
@@ -40,7 +43,7 @@
 		</form>
 
 
-		<section class="methodology--grid--wrapper forum-icon">
+		<section class="methodology--grid--wrapper" data-ng-class="indicatorIcons(pSubsection)">
 			<!-- Diagram -->
 			<h3 data-ng-bind="i18nLiterals.L20720" data-ng-if="i18nLiterals['L'+data.diagram] != 'null'"></h3>
 			<p data-ng-bind-html="i18nLiterals['L'+data.diagram]" data-ng-if="i18nLiterals['L'+data.diagram] != 'null'"></p>
@@ -49,7 +52,7 @@
 			<p data-ng-bind-html="i18nLiterals['L'+data.description]" data-ng-if="i18nLiterals['L'+data.description] != 'null'"></p>
 			<!-- Datasource -->
 			<h3 data-ng-bind="i18nLiterals.L20722" data-ng-if="data.datasource != 'null'"></h3>
-			<p data-ng-if="data.datasource != 'null'">{{data.datasource}}</p>
+			<p data-ng-if="i18nLiterals['L'+data.datasource] != 'null'" data-ng-bind-html="i18nLiterals['L'+data.datasource]"></p>
 			<!-- Specific table / Question -->
 			<h3 data-ng-bind="i18nLiterals.L20723" data-ng-if="i18nLiterals['L'+data.specific_table] != 'null'"></h3>
 			<p data-ng-bind-html="i18nLiterals['L'+data.specific_table]" data-ng-if="i18nLiterals['L'+data.specific_table] != 'null'"></p>

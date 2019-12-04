@@ -61,7 +61,7 @@ define(function (require) {
     $scope.step = 20;
 
     $scope.axisMax = ($scope.pSplit == 'esener')?100:80;
-    $scope.height = ($scope.pSplit == 'esener')?420:450;
+    $scope.height = ($scope.pSplit == 'esener')?450:470;
     $scope.story = ($scope.pSplit == 'esener')?$scope.stories[0].promises.story1:$scope.stories[1].promises.story2;
 
     $scope.dashboard = {};
@@ -131,6 +131,7 @@ define(function (require) {
     /******************************END DATA LOAD***********************************/
 
       $scope.changeSplit = function(){
+        $('.card--block--chart').css('visibility','hidden');
         if ($state.current.name !== undefined) {
           $state.transitionTo('worker-involvement', {
             pCountry1: $scope.pCountry1, 

@@ -42,7 +42,7 @@ define(function (require) {
 
     //$scope.chartWidth = angular.element('.card--block--chart .chart--block')[1].clientWidth;
 
-    var resolution = screen.width;
+    var resolution = window.resolution;
 
     $scope.angle = resolution > 768 ? 1 : 0;
     $scope.horizontalHeight = resolution > 768 ? 470 : 770;
@@ -61,13 +61,19 @@ define(function (require) {
       $state.reload();
     });*/
 
-    $(window).on("resize",function(e){
+    /*$(window).on("resize",function(e){
       if(screen.width != resolution){
         resolution = screen.width;
-        //$log.warn('Resolucion ha cambiado');
         $state.reload();
-      }else{
-        //$log.warn('Resolucion no ha cambiado');
+      }
+    });*/
+
+    $(window).on("resize",function(e){
+      if( window.outerWidth != resolution){
+        resolution = window.resolution;
+        //$log.warn('Resolucion ha cambiado');
+        //$log.warn(window);
+        $state.reload();
       }
     });
 
@@ -139,7 +145,7 @@ define(function (require) {
         dimensions: {
           value: {
             format: {
-              number: "0.#",
+              number: "0.0#",
               percent: "#%"
             }
           }
@@ -163,7 +169,7 @@ define(function (require) {
         }
     };
 
-    console.log( 'column--item -->' + angular.element('.column--item').length );
+    //console.log( 'column--item -->' + angular.element('.column--item').length );
 
     // Show/hide the Countries Filter List
     angular.element('div.countries-filters').css( "display",'none' );
@@ -236,7 +242,7 @@ define(function (require) {
         }
       }
 
-      angular.element('body').mouseup(function(e){
+      $('body').on('click touchstart', function(e) {
         var container = angular.element('.submenu--items--wrapper');
         if (!container.is(e.target) && container.has(e.target).length === 0){
           angular.element('.submenu--items--wrapper').removeClass('open-list'); 
@@ -266,6 +272,8 @@ define(function (require) {
       }
 
       $scope.countryChange = function () {
+        $('.card--block--chart--wrapper').css('visibility','hidden');
+
         if ($state.current.name !== undefined) {
           $scope.dashboard.parameters = {
             "pCountry1": $scope.pCountry1,

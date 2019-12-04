@@ -40,7 +40,7 @@
           <div class="select-filter-chart">
             <select ng-model="pSplit" ng-change="changeSplit()">
               <option data-ng-bind="i18nLiterals.L20645" value="esener"></option>
-              <option data-ng-bind="i18nLiterals.L20646" value="eurofound"></option>
+              <option data-ng-bind="i18nLiterals.L20646" value="ewcs"></option>
             </select>
           </div>
           <div class="chart--block">
@@ -55,7 +55,7 @@
               datasource-and-dates="datasourcesAndDates">>
             </dvt-radar-chart>
             <button data-ng-if="pSplit == 'esener'" class="btn-default btn-main-color" data-ng-click="exportData(stories[0].promises.story1, i18nLiterals.L22015, 1)">Export data</button>
-            <button data-ng-if="pSplit == 'eurofound'" class="btn-default btn-main-color" data-ng-click="exportData(stories[1].promises.story2, i18nLiterals.L22015, 2)">Export data</button>
+            <button data-ng-if="pSplit == 'ewcs'" class="btn-default btn-main-color" data-ng-click="exportData(stories[1].promises.story2, i18nLiterals.L22015, 2)">Export data</button>
         </div>
       </div>
     </div>

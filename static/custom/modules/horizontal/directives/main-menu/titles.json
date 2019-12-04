@@ -1,23 +1,49 @@
 {
-  "home": null,
+  "home": "Home - OSH Barometer | Data Visualisation",
 
   "_SECCTION-ABOUT-TOOL": null,
-  "about-tool": "L22022",
+  "about-tool": "Methodology - OSH Barometer | Data Visualisation",
 
   "_SECCTION-FOOTER-PAGES": null,
-  "site-map": "L294",
-  "accessibility": "L296",
-  "privacy-policy":"L297",
-  "legal-notice":"L298",
+  "site-map": "Site map - OSH Barometer | Data Visualisation",
+  "accessibility": "Accessibility - OSH Barometer | Data Visualisation",
+  "privacy-policy":"Privacy notice - OSH Barometer | Data Visualisation",
+  "legal-notice":"Legal notice - OSH Barometer | Data Visualisation",
 
-  "search": "L395",
+  "search": "Search results - OSH Barometer | Data Visualisation",
 
   "shareThis": "Share this on: ",
-  "default-title":"L62",
+  "default-title":"OSH Barometer | Data Visualisation",
   "pages-title":"L62",
 
-  "404": "L63",
+  "404": "Not found - OSH Barometer | Data Visualisation",
 
   "_SECCTION-GENERIC-INFORMATION": null,
-  "osh-authorities": "L396"
+  "osh-authorities": "OSH authorities - OSH Barometer | Data Visualisation",
+  "economic-sector-profile":"Economic and sector profile - OSH Barometer | Data Visualisation",
+  "workforce-profile": "Workforce profile - OSH Barometer | Data Visualisation",
+
+  "_SECCTION-OSH-STEERING": null,
+  "regulation":"Regulation - OSH Barometer | Data Visualisation",
+  "national-strategies":"National strategies - OSH Barometer | Data Visualisation",
+  "country-profile":"National strategies - OSH Barometer | Data Visualisation",
+  "EU-challenges-response":"National strategies - OSH Barometer | Data Visualisation",
+  "social-dialogue":"Social dialogue - OSH Barometer | Data Visualisation",
+
+  "_SECCTION-OSH-OUTCOMES": null,
+  "work-accidents":"Work accidents - OSH Barometer | Data Visualisation",
+  "health-perception-of-workers":"Health perception of the workers - OSH Barometer | Data Visualisation",
+  "osh-culture":"OSH culture and health awareness - OSH Barometer | Data Visualisation",
+  "overall-opinion":"Overall opinion - OSH Barometer | Data Visualisation",
+  "mental-risk":"Mental risk - OSH Barometer | Data Visualisation",
+  "physical-risk-vibrations-loud-noise-and-temperature":"Physical risk - OSH Barometer | Data Visualisation",
+  "physical-risk-exposure-to-dangerous-substances":"Physical risk - OSH Barometer | Data Visualisation",
+  "physical-risk-risks-involved-with-work":"Physical risk - OSH Barometer | Data Visualisation",
+  "prevention-companies":"Prevention in companies - OSH Barometer | Data Visualisation",
+  "worker-involvement":"Worker involvement - OSH Barometer | Data Visualisation",
+
+
+  "_SECCTION-OSH-INFRASTRUCTURE":null,
+  "enforcement-capacity":"Enforcement capacity - OSH Barometer | Data Visualisation",
+  "osh-statistics":"OSH statistics, surveys and research - OSH Barometer | Data Visualisation"
 }
