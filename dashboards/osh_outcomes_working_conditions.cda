@@ -38,7 +38,8 @@
 	    <Columns />
 	    <Parameters>
 	    	<Parameter default="3" name="pDataset" type="Numeric"/>
-	    	<Parameter default="AT" name="pCountry" type="String" />
+	    	<Parameter default="AT" name="pCountry1" type="String" />
+	    	<Parameter default="BE" name="pCountry2" type="String" />
 	    </Parameters>
 	    <Query>
 	      	SELECT IF(n.name REGEXP 'European Union', n.country_code, CONCAT("(", n.country_code, ") ", n.name)) as Country, p.year as Year, ROUND(v.value*100, 1) as Value
@@ -47,8 +48,8 @@
 			AND v.profile_id = p.id
 			AND v.indicator_id = 53
 			AND v.dataset_id = ${pDataset}
-			AND n.country_code IN (${pCountry}, 'EU28')
-			ORDER BY FIELD(n.country_code, ${pCountry}, 'EU28'), p.year ASC
+			AND n.country_code IN (${pCountry1}, ${pCountry2}, 'EU28')
+			ORDER BY FIELD(n.country_code, ${pCountry1}, ${pCountry2}, 'EU28'), p.year ASC
 	    </Query>
 	</DataAccess>
 

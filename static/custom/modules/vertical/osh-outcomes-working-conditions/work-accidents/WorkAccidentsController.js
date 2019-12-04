@@ -100,7 +100,8 @@ define(function (require) {
       //0 - Non-fatal work accidents first chart
       {
         color1: dvtUtils.getColorCountry(1),
-        color2: dvtUtils.getEUColor(),
+        color2: dvtUtils.getColorCountry(2),
+        color3: dvtUtils.getEUColor(),
         plots: WorkAccidentsService.getNonFatalAccidentsMainPlots($scope.pCountry1),
         dimensions: {
           value: {
