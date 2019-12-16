@@ -10,6 +10,28 @@ define (function (require) {
                         name: "main",
                         dataPart: "0",
                         barSizeMax: 15,
+                        bar_fillStyle: function(scene){
+                            var split = scene.firstAtoms.series.label;
+                            var country = scene.firstAtoms.category.label;
+
+                            if (split == "At least 1/4 of the time")
+                            {
+                                if (country == "EU28")
+                                {
+                                    return dvtUtils.getEUColor();
+                                }
+                                return dvtUtils.getColorCountry(1);    
+                            }
+                            else if (split == "Less than 1/4 of the time")
+                            {
+                                if (country == "EU28")
+                                {
+                                    return dvtUtils.getEUColor(2);
+                                }
+                                return dvtUtils.getColorCountry(22);    
+                            }
+                            
+                        },                        
                         bar_call: function(){
                             var resolution = screen.width;
 

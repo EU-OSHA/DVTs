@@ -48,6 +48,7 @@ define(function (require) {
       {
         color2: dvtUtils.getColorCountry(22),
         plots: OshCultureService.getGeneralOSHCulturePlot(),
+        plotsEU: OshCultureService.getEUOSHCulturePlot(),
         dimensions: {
           value: {
             format: {

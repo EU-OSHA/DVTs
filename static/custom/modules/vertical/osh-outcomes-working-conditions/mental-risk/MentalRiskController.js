@@ -133,6 +133,7 @@ define(function (require) {
         color2: dvtUtils.getColorCountry(22),
         color3: resolution > 768 ? dvtUtils.getColorCountry(1) : dvtUtils.getAccidentsColors(4),
         plots: MentalRiskService.getEurofoundMentalRiskPlot(),
+        plotsEU: MentalRiskService.getEUEurofoundMentalRiskPlot(),
         dimensions: {
           value: {
             format: {
