@@ -12,7 +12,8 @@ define (function (require) {
                         barSizeMax: 50,
                         barSizeRatio: 0.6,
                         label_textStyle: function(scene){
-                            var subIndicatorKey = scene.firstAtoms.category;
+                            var subIndicatorKey = scene.firstAtoms.series;
+
 
                             if(!scene.firstAtoms.value.label.match('%')){
                                 scene.firstAtoms.value.label = scene.firstAtoms.value.label + '%';
@@ -26,28 +27,14 @@ define (function (require) {
                             }
                             return dvtUtils.getChartLightGrayColor();
                         },
-                        bar_fillStyle: function(scene){
-                            var subIndicatorKey = scene.firstAtoms.category;
-
-                            if(!scene.firstAtoms.value.label.match('%')){
-                                scene.firstAtoms.value.label = scene.firstAtoms.value.label + '%';
-                            }
-                            if (subIndicatorKey.label.match(pCountry1)) {
-                                return dvtUtils.getColorCountry(1);
-                            } else if(subIndicatorKey.label.match(pCountry2)){
-                                return dvtUtils.getColorCountry(2);
-                            } else if(subIndicatorKey == 'EU28'){
-                                return dvtUtils.getColorCountry();
-                            }
-                            return dvtUtils.getChartLightGrayColor();
-                        },
-                        valuesOverflow: 'show',
-                        label_textMargin: 2,
-                        valuesAnchor: 'right',
+                        label_textMargin: 7,
+                        label_textBaseline: 'bottom',
+                        valuesAnchor: 'top',
                         valuesOptimizeLegibility: true,
                         visualRoles:{
                             series: 'series',
                             category:'category',
+                            value: 'value'
                         }
                     }
                 ];
