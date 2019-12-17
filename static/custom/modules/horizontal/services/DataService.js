@@ -620,6 +620,20 @@ define(function () {
                     return promise(url);
                 },
 
+                /**
+                 * @ngdoc method
+                 * @name dvt.configModule.DataService#getStrategiesCountryFilter
+                 * @methodOf dvt.configModule.DataService
+                 * @description
+                 * Get country data filtered by first letter
+                 */
+                getStrategiesCountryFilter: function(pCountries){
+                    var block1 = pCountries.length <= 0 ? ".*" : "^"+pCountries.join("|^");
+                    var url = configService.getSteeringOshDataPath() + "&dataAccessId=getStrategiesCountryFilter" + "&paramcountries="+block1;
+                    $log.debug('getStrategiesCountryFilter url:' + url);
+                    return promise(url);
+                },
+
             /*************************** END NATIONAL STRATEGIES ******************************/
 
             /******************************** SOCIAL DIALOGUE **********************************/

@@ -16,30 +16,28 @@
       <ul class="filter--letter--list">
         <!-- FILTER BY LETTER -->
         <li data-ng-repeat="letter in alphabet" class="filter-letter-item">
-          <a href data-ng-click="goToAnchor(letter)" data-ng-bind="letter"></a>
+          <a href data-ng-click="addLetter(letter)" data-ng-bind="letter" data-ng-class="{'active': countryFilter.indexOf(letter)!=-1}"></a>
         </li>
+        <li><button data-ng-click="resetFilter()" data-ng-bind="i18nLiterals.L20628"></button></li>
       </ul>
   </section>
   <div class="line background-main-light"></div>
-  <section class="alphabetic--card--section">
-    <div class="alphabetic--card--block container">
-      <div data-ng-repeat="letter in alphabet" id="section{{letter}}" class="alphabetic--card--items">
-        <div class="text-left"><h2 data-ng-bind="letter"></h2></div>
-        <div class="alphabetic-card-item" data-ng-repeat="country in countryByLetter(letter)">
-          <p class="nopadding additional-img text-center">
-            <img class="flags--wrapper" ng-src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/flag/{{::country.country_code.toLowerCase()}}.png">
+  <section class="national--card--section">
+    <div class="national--card--block container">
+      <div data-ng-repeat="country in countries" class="col-xs-12  col-sm-6 col-md-4 col-lg-3 national--card--item">
+        <div class="col-xs-12 resources-item">
+          <p class="col-xs-12 nopadding additional-img text-center">
+            <img  class="flags--wrapper" ng-src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/flag/{{::country.country_code.toLowerCase()}}.png">
           </p>
-          <h3 class="text-center" data-ng-bind="i18nLiterals['L'+country.country]"></h3>          
+          <h2 class="text-center" data-ng-bind="i18nLiterals['L'+country.country]"></h2>
           <p class="btn--block-full left-text">
             <a ui-sref="country-profile({pIndicator: 'basic-information', pCountry1:country.country_code, pCountry2: 0})" class="btn-default btn-main-color btn-full" title="{{i18nLiterals.L20626}}" data-ng-bind="i18nLiterals.L20626"></a>
           </p>
           <p class="btn--block-full left-text">
             <a ui-sref="EU-challenges-response({pCountry:country.country_code})" class="btn-default btn-main-color btn-full" title="{{i18nLiterals.L20625}}" data-ng-bind="i18nLiterals.L20625"></a>
           </p>
-     
         </div>
       </div>
     </div>
   </section>
-
 </dvt-dashboard>

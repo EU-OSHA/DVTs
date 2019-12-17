@@ -418,5 +418,23 @@
 			ORDER BY n.literal_id ASC;
 	    </Query>-->
 	</DataAccess>
+
+	<!-- STEERING OF OSH || get national strategies countries applying filters -->
+	<DataAccess access="public" connection="dvt_conn" id="getStrategiesCountryFilter" type="sql">
+		<Cache duration="3600" enabled="true" />
+		<Columns />
+		<Parameters>
+			<Parameter default=".*" name="countries" type="String"/>
+		</Parameters>
+		<Query>
+			SELECT DISTINCT (n.literal_id) AS country, n.country_code AS country_code
+			FROM strategies_page sp
+			INNER JOIN nuts n
+			ON n.id=sp.nuts_id
+			WHERE sp.page="STRATEGY"
+			AND n.name REGEXP ${countries}
+			ORDER BY country ASC
+		</Query>
+	</DataAccess>
    
 </CDADescriptor>

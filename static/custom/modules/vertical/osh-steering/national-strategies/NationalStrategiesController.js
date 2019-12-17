@@ -111,6 +111,31 @@ define(function (require) {
     /******************************************************************************|
     |                                 FILTERS                                      |
     |******************************************************************************/
+      $scope.resetFilter = function() 
+      {
+        $scope.countryFilter = [];
+        searchCountries($scope.countryFilter);
+      }
+
+      $scope.addLetter = function (pLetter)
+      {
+        $scope.countryFilter.push(pLetter);
+        searchCountries($scope.countryFilter);
+      }
+
+      var searchCountries = function (pFilters)
+      {
+        dataService.getStrategiesCountryFilter($scope.countryFilter)
+          .then(function (pData)
+          {
+            $scope.countries = dataService.dataMapper(pData);
+          }).catch(function(err)
+          {
+            throw err;
+          })
+      }
+
+
       $scope.goToAnchor = function(letter){
         var newHash = 'section' + letter;
         //if ($location.hash() !== newHash) {

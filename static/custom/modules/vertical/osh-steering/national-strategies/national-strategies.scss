@@ -17,9 +17,9 @@
 }
 
 .alphabetic--card--section{
-		background: #EFEFEF;
+	background: #EFEFEF;
 	.alphabetic--card--block{
-	  .alphabetic--card--items{
+	  	.alphabetic--card--items{
 			display: flex;
 			justify-content: flex-start;
 			flex-wrap: wrap;
@@ -34,17 +34,44 @@
 					padding: 1rem 0;
 				}
 			}
-	  	.alphabetic-card-item{
+		  	.alphabetic-card-item{
 				border-radius: 46px 0;
 				padding: 3rem 2%;
 				margin: 1rem;
 				background: #FFF;
 				width: 23%;	
-			img{
+				img{
+					outline: 1px solid #CCC;
+				}
+		  	}
+	  	}
+	}
+}
+
+.national--card--section
+{
+	background: #EFEFEF;
+	.national--card--block
+	{
+		display: flex;
+		justify-content: flex-start;
+		flex-wrap: wrap;
+		.national--card--item
+		{
+			border-radius: 46px 0;
+			padding: 3rem 2%;
+			margin: 1rem;
+			background: #FFF;
+			width: 23%;	
+			h2 
+			{
+				font-size: 2.6rem;
+			}
+			img
+			{
 				outline: 1px solid #CCC;
 			}
-	  	}
-	  }
+		}
 	}
 }
 
