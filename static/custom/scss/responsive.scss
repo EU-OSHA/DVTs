@@ -43,6 +43,84 @@
     }
   }
 }
+@media only screen 
+and (min-width : 1024px) 
+and (max-width : 1200px)  {
+
+	/** WIDTH CARDS  **/
+	.md-w1{
+		.card--block{
+			width:100%;
+			margin: 0 1% 3rem;
+		}
+		.card--block--rounded{
+			width:100%;
+			margin: 0 1% 3rem;
+		}
+		.card--block--chart{
+			width:100%;
+			margin: 0 1% 3rem;
+		}
+	}
+	.md-w2{
+		.card--block{
+			width:50%;
+			margin: 0 1% 3rem;
+		}
+		.card--block--rounded{
+			width:48%;
+			margin: 0 1% 3rem;
+		}
+		.card--block--chart{
+			width:47%;
+			margin: 0 1% 3rem;
+		}
+	}
+	.md-w3{
+		.card--block{
+			width: 33.333%;
+			margin: 0 1% 3rem;		
+		}
+		.card--block--rounded{
+			width:31%;
+			margin: 0 1% 3rem;
+		}
+		.card--block--chart{
+			width:31%;
+			margin: 0 1% 3rem;
+		}
+	}
+	.md-w4{
+		.card--block{
+			width:25%;
+			margin: 0 1% 3rem;
+		}	
+		.card--block--rounded{
+			width:23%;
+			margin: 0 1% 3rem;
+		}
+		.card--block--chart{
+			width:23%;
+			margin: 0 1% 3rem;
+		}
+	}
+	.md-w5{
+		.card--block{
+			width:20%;
+			margin: 0 1% 3rem;		
+		}
+		.card--block--rounded{
+			width:18%;
+			margin: 0 1% 3rem;
+		}
+		.card--block--chart{
+			width:18%;
+		  margin: 0 1% 3rem;
+		}
+	}
+	/** END WIDTH CARDS  **/ 
+
+}
 
 @media (max-width: 1080px) {
   .bar-main-menu{
@@ -604,71 +682,71 @@ and (max-width : 1024px)  {
 	.xs-w1{
 		.card--block{
 			width:100%;
-			margin: 0 1% 3rem;
+			margin: 0 1% 3rem !important;
 		}
 		.card--block--rounded{
 			width:100%;
-			margin: 0 1% 3rem;
+			margin: 0 1% 3rem !important;
 		}
 		.card--block--chart{
 			width:100%;
-			margin: 0 1% 3rem;
+			margin: 0 1% 3rem !important;
 		}
 	}
 	.xs-w2{
 		.card--block{
 			width:50%;
-			margin: 0 1% 3rem;
+			margin: 0 1% 3rem !important;
 		}
 		.card--block--rounded{
 			width:48%;
-			margin: 0 1% 3rem;
+			margin: 0 1% 3rem !important;
 		}
 		.card--block--chart{
 			width:47%;
-			margin: 0 1% 3rem;
+			margin: 0 1% 3rem !important;
 		}
 	}
 	.xs-w3{
 		.card--block{
 			width: 33.333%;
-			margin: 0 1% 3rem;		
+			margin: 0 1% 3rem !important;		
 		}
 		.card--block--rounded{
 			width:31%;
-			margin: 0 1% 3rem;
+			margin: 0 1% 3rem !important;
 		}
 		.card--block--chart{
 			width:31%;
-			margin: 0 1% 3rem;
+			margin: 0 1% 3rem !important;
 		}
 	}
 	.xs-w4{
 		.card--block{
 			width:25%;
-			margin: 0 1% 3rem;
+			margin: 0 1% 3rem !important;
 		}	
 		.card--block--rounded{
 			width:23%;
-			margin: 0 1% 3rem;
+			margin: 0 1% 3rem !important;
 		}
 		.card--block--chart{
 			width:23%;
-			margin: 0 1% 3rem;
+			margin: 0 1% 3rem !important;
 		}
 	}
 	.xs-w5{
 		.card--block{
 			width:20%;
-			margin: 0 1% 3rem;		
+			margin: 0 1% 3rem !important;		
 		}
 		.card--block--rounded{
 			width:18%;
-			margin: 0 1% 3rem;
+			margin: 0 1% 3rem !important;
 		}
 		.card--block--chart{
 			width:18%;
-		  margin: 0 1% 3rem;
+		  margin: 0 1% 3rem !important;
 		}
 	}
 	/** END WIDTH CARDS  **/ 
@@ -797,7 +875,6 @@ and (orientation : portrait) {
 			}
 		}
 	}
-
 }
 
 

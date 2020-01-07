@@ -11,6 +11,31 @@
 			  font-weight: bold;
 			  font-family: "Oswald", sans-serif;
 			  color: $aquamarine;
+			  padding: 0.5rem 1rem;
+			  &.active{
+			  	background: $orange;
+			  	color: $white;
+			  	border-radius: 4px;
+			  }
+			}
+		}
+		.btn-reset{
+			position: relative;
+			padding:0.5rem 3.5rem 0.5rem 1.5rem;
+			display: flex;
+			&:after{
+				content: "\f0e2";
+		    font-weight: normal;
+		    font-family: FontAwesome;
+		    text-rendering: auto;
+		    -webkit-font-smoothing: antialiased;
+		    -moz-osx-font-smoothing: grayscale;
+		    font-size: 2rem;
+		    position: absolute;
+		    top: 0;
+		    right: 0;
+		    padding: 0.2rem 1rem 0.5rem 0.5rem;
+		    color: #FFF;
 			}
 		}
 	}
@@ -51,26 +76,21 @@
 .national--card--section
 {
 	background: #EFEFEF;
-	.national--card--block
+	padding: 3rem 0;
+	.card--grid {
+	  justify-content: flex-start;
+	}
+	.national--card--item
 	{
-		display: flex;
-		justify-content: flex-start;
-		flex-wrap: wrap;
-		.national--card--item
+		margin: 1rem;
+		background: #FFF;
+		h2 
 		{
-			border-radius: 46px 0;
-			padding: 3rem 2%;
-			margin: 1rem;
-			background: #FFF;
-			width: 23%;	
-			h2 
-			{
-				font-size: 2.6rem;
-			}
-			img
-			{
-				outline: 1px solid #CCC;
-			}
+			font-size: 2.6rem;
+		}
+		img
+		{
+			outline: 1px solid #CCC;
 		}
 	}
 }
@@ -135,6 +155,18 @@ and (max-width :767px) {
 				a{
 					display: block;
 				}
+			}
+		}
+	}
+	.reset-item{
+		width: 100%;
+		margin: 2rem 1rem 0;
+		.btn-reset{
+			padding: 1.5rem !important;
+			display: block !important;
+			text-align: center !important;
+			&:after{
+				padding: 1rem !important;
 			}
 		}
 	}
