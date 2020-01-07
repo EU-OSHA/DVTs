@@ -970,6 +970,9 @@ define(function (require) {
 						case "exportData":
 							exportService.exportDataAction(scope, dashboard);
 							break;
+						case "exportRadarChartData":
+							exportService.exportRadarData(scope.promises, scope.chartTitle, scope.id);
+							break;
 						default:
 							break;
 					}
