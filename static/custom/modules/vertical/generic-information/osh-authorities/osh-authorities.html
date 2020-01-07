@@ -16,13 +16,22 @@
     <!-- FILTERS -->
     <!-- SEARCH FILTER -->
     <form class="row block--filter--wrapper">
-      <!-- SEARCH FILTER -->
-      <div class="filter-text">
-        <input data-ng-keypress="clickEnter($event)" ng-focus="closeSelect($event)" id="search-input" type="text" ng-attr-placeholder="{{i18nLiterals.L378}}" data-ng-model="searchText" tabindex="7" />
-        <button data-ng-click="clickEnter($event)"  id="policy-search" ng-attr-type="button">
-          <i class="fa fa-search" aria-hidden="true"></i>
-        </button>
-      </div>
+      <!-- COUNTRY FILTER -->
+      <div id="filter2"class="filter--dropdown--wrapper" tabindex="9">
+        <!--<label class="main-color  dropdwon-open"></label>-->
+        <div class="filter--dropdown--list">
+          <p class="option-title" data-ng-bind="i18nLiterals.L20630" ng-click="openSelect($event)"></p>
+          <ul class="filter--dropdown--options">
+            <li data-ng-repeat='country in countries'>
+              <input id='country-filter-{{::country.country}}' ng-checked="!!country.param && country.param ==country.country_code"
+                data-ng-click="toggleCountryClick($event, $index)" type="checkbox" ng-attr-value="{{::country}}" tabindex="-1" />
+              <label data-ng-if="country.country_code != 'EU28'" for="country-filter-{{::country.country}}" data-ng-bind="('(')+(country.country_code)+(') ')+(i18nLiterals['L'+country.country])"></label>
+              <label data-ng-if="country.country_code == 'EU28'" for="country-filter-{{::country.country}}" data-ng-bind="i18nLiterals['L'+country.country]"></label>
+            </li>
+          </ul>
+          <!--<p class="btn--block-filter"><a class="btn-main-color btn-full" ng-click="confirmCountrySelection($event);closeSelect($event)" data-ng-bind="i18nLiterals.L20636"></a></p>-->
+        </div>
+      </div>  
       <!-- INSTITUTION TYPE FILTER -->
       <div id="filter1" class="filter--dropdown--wrapper" tabindex="8" >
         <!--<label class="main-color dropdwon-open"></label>-->
@@ -48,23 +57,14 @@
           </ul>
           <!--<p class="btn--block-filter"><a class="btn-main-color btn-full" ng-click="confirmInstitutionSelection($event);closeSelect($event)" data-ng-bind="i18nLiterals.L20636"></a></p>-->
         </div>
+      </div> 
+      <!-- SEARCH FILTER -->
+      <div class="filter-text">
+        <input data-ng-keypress="clickEnter($event)" ng-focus="closeSelect($event)" id="search-input" type="text" ng-attr-placeholder="{{i18nLiterals.L378}}" data-ng-model="searchText" tabindex="7" />
+        <button data-ng-click="clickEnter($event)"  id="policy-search" ng-attr-type="button">
+          <i class="fa fa-search" aria-hidden="true"></i>
+        </button>
       </div>
-      <!-- COUNTRY FILTER -->
-      <div id="filter2"class="filter--dropdown--wrapper" tabindex="9">
-        <!--<label class="main-color  dropdwon-open"></label>-->
-        <div class="filter--dropdown--list">
-          <p class="option-title" data-ng-bind="i18nLiterals.L20630" ng-click="openSelect($event)"></p>
-          <ul class="filter--dropdown--options">
-            <li data-ng-repeat='country in countries'>
-              <input id='country-filter-{{::country.country}}' ng-checked="!!country.param && country.param ==country.country_code"
-                data-ng-click="toggleCountryClick($event, $index)" type="checkbox" ng-attr-value="{{::country}}" tabindex="-1" />
-              <label data-ng-if="country.country_code != 'EU28'" for="country-filter-{{::country.country}}" data-ng-bind="('(')+(country.country_code)+(') ')+(i18nLiterals['L'+country.country])"></label>
-              <label data-ng-if="country.country_code == 'EU28'" for="country-filter-{{::country.country}}" data-ng-bind="i18nLiterals['L'+country.country]"></label>
-            </li>
-          </ul>
-          <!--<p class="btn--block-filter"><a class="btn-main-color btn-full" ng-click="confirmCountrySelection($event);closeSelect($event)" data-ng-bind="i18nLiterals.L20636"></a></p>-->
-        </div>
-      </div>  
     </form>
 
 
