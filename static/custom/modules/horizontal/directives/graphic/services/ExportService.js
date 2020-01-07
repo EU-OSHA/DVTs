@@ -215,6 +215,9 @@ define(function(require){
             $log.warn(promises);
             var list = [];
 
+            console.log("DVT DEV");
+            console.log("RADAR CHART DATA");
+
             Promise.all([promises[0], promises[1], promises[2]]).then(function(res)
             {
                 var row = {};

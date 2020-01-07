@@ -32,13 +32,13 @@ define(function (require) {
                 + '<li>'
                     + '<a data-ng-click="open(items[0].action)" class="{{items[0].class}}" title="{{items[0].text}}" role="button"><label class="sr-only" data-ng-bind="items[0].text"></label></a>'
                 + '</li>'
-                /*+  '<li class="dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><a href=""><label class="sr-only">Download</label></a></li>'                  
+                +  '<li class="dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><a href=""><label class="sr-only">Download</label></a></li>'                  
                     + '<ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">'
 
-                        //+ '<li><a data-ng-click="open(items[2].action)" role="button" data-ng-bind="items[2].text"></a></li>'
-                        + '<li><a data-ng-click="open(items[3].action)" role="button" data-ng-bind="items[3].text"></a></li>'
+                        + '<li><a data-ng-click="open(items[1].action)" role="button">Export data</a></li>'
+                        /*+ '<li><a data-ng-click="open(items[3].action)" role="button" data-ng-bind="items[3].text"></a></li>'*/
                         
-                    + '</ul>'*/
+                    + '</ul>'
             + '</ul>'
 
             + '<h2 ng-if="(!!chartTitle && !isMaximized && !titleH3) || (isMaximized && !longTitle)" data-ng-bind-html="chartTitle" class="title--card ng-binding">Company size</h2>'
@@ -852,14 +852,14 @@ define(function (require) {
                             scope.contextuals.push(item);
                         });
                     } else if (!configService.isMobile())  {
-                        [['Download raw data', 'exportData', 'download-button']].forEach(function (item) {
+                        [['Download raw data', 'exportRadarChartData', 'download-button']].forEach(function (item) {
                             scope.contextuals.push(item);
                         });
                         [['Export image', 'exportImage', 'download-button']].forEach(function (item) {
                             scope.contextuals.push(item);
                         });
                     } else {
-                        [['Download raw data', 'exportData', 'download-button']].forEach(function (item) {
+                        [['Download raw data', 'exportRadarChartData', 'download-button']].forEach(function (item) {
                             scope.contextuals.push(item);
                         });
                         [['Export image', 'exportImage', 'download-button']].forEach(function (item) {
