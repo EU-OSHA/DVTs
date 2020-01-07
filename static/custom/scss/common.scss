@@ -1872,6 +1872,85 @@
     }
   }
 }
+
+
+
+/****  TIPSY ****/
+  .tipsy{
+    font-size: 1.4rem !important;
+    opacity: 0.95 !important;
+    &.tipsy-n {
+      .tipsy-arrow{
+        border-left-color:$aquamarine !important;
+      }
+    }
+    &.tipsy-nw {
+      .tipsy-arrow{
+        border-bottom-color:$aquamarine !important;
+      }
+    }
+    &.tipsy-ne{
+      .tipsy-arrow{
+        border-bottom-color:$aquamarine !important;
+      }
+    }
+    &.tipsy-s{
+      .tipsy-arrow{
+        border-top-color:$aquamarine !important;
+      }
+    }
+    &.tipsy-sw{
+      .tipsy-arrow{
+        border-top-color:$aquamarine !important;
+      }
+    }
+    &.tipsy-se{
+      .tipsy-arrow{
+        border-top-color: $aquamarine !important;
+      }
+    }
+    &.tipsy-e{
+      .tipsy-arrow{
+        border-left-color: $aquamarine !important;
+      }
+    }
+    &.tipsy-w{
+      .tipsy-arrow{
+        border-right-color: $aquamarine !important;
+      }
+    }
+    .tipsy-inner{
+      background-color: $white !important;
+      border: 2px solid $aquamarine !important;
+      color: $gray !important;
+      max-width: 25rem;
+      padding: 0.8rem 1.2rem !important;
+      -webkit-box-shadow: 0px 0px 6px 0px rgba(65, 65, 65, 0.45);
+      box-shadow: 0px 0px 6px 0px rgba(65, 65, 65, 0.45);
+      .ccc-tt{
+        .ccc-tt-dimValueType-Any{
+
+        }
+        .ccc-tt-dimValueType-Number{
+
+        }
+      }
+      .ccc-tt-ds{
+        .ccc-tt-dimLabel{
+          font-weight: 600;
+          color: $gray;
+          padding-right: 0.3em;
+          white-space: nowrap;
+        }
+      }
+    }
+  }
+
+
+
+
+/****  END TIPSY ****/
+
 @media only screen 
 and (min-width :300px)
 and (max-width :380px) {
