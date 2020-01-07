@@ -1028,26 +1028,29 @@
           display: flex;
           justify-content: flex-end;
           position: relative;
-          top:0rem;
+          top:-0.7rem;
           right: -2rem;
           > li{
             > a{
               width: 3.5rem;
-              height: 2.7rem;
+              height: 3.5rem;
               display: block;
               color: $gray-base;
             }
             &:nth-child(1) a:after{
               content:"\f00e";
               font-family: FontAwesome;
+              font-size: 2.4rem;
             }
             &:nth-child(2) a:after{
               content: "\f019";
               font-family: FontAwesome;
+              font-size: 2.4rem;
             }
             &:nth-child(3) a:after{
               content: "\f107";
               font-family: FontAwesome;
+              font-size: 2.4rem;
             }
           }
         }
