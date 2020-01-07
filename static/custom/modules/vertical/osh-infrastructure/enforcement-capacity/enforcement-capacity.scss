@@ -1,3 +1,46 @@
 .enforcement-capacity .card--grid .card--block--chart {
     width: 100%;
 }
+
+.enforcement-capacity{
+	.card--grid{
+		.card--block--chart{
+			position: relative;
+			.main-title--card{
+				font-size: 2.8rem;
+				min-height: initial;
+				padding:1rem 1rem 1rem 2rem;
+				margin: 0;
+			}
+			.title--card{
+				font-size: 2.2rem;
+				min-height: initial;
+				padding:0 0 4rem 2rem;
+				margin: 0;
+				color:$gray;
+			}
+			.chart--block{
+				.chart--submenu {
+					position: absolute;
+			    top: 1.4rem;
+			    right: 0rem;
+				}
+			}
+		}
+	}
+}
+
+@media only screen 
+and (max-width :767px) {
+
+	.enforcement-capacity{
+		.card--grid{
+			.card--block--chart{
+				.main-title--card{
+					padding:4rem 1rem 1rem 2rem;
+				}
+			}
+		}
+	}
+
+}

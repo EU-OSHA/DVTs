@@ -48,46 +48,39 @@
 
   <section class="container section--page full-tablet">
     <!-- % of establishment inspected -->
-    <div class="column--grid--block" id="tab1" data-ng-show="pIndicator == 'establishments-inspected'">
-      <div class="column--item first no-full">
+    <div class="card--grid xxs-w1 xs-w1 w1" id="tab1" data-ng-show="pIndicator == 'establishments-inspected'">
         <!--<div class="">
           <img  class="flags--wrapper" ng-src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/flag/{{::pCountry1.toLowerCase()}}.png">
-        </div>-->
-        <h2 data-ng-bind="i18nLiterals.L20692"></h2>
-        <div class="columm--item--content">
-          <div class="card--grid center-text">     
-            <div class="card--block--chart" >
-              <div class="chart--block">
-                <dvt-bar-chart
-                data-ng-cloak
-                query="getEstablishmentsInspectedData" cda="{{::cda }}"
-                width="330" height="330" axis-percent="1"
-                orientation="vertical" axis-fixed-min="0"
-                axis-fixed-max="100" step="{{step}}" id="1"
-                params="[['pIndicator', 126], ['pCountry1', pCountry1], ['pCountry2', pCountry2], ['pDataset', datasetESENER], ['pAnswer', 1]]"
-                color-role="series" colors="[stories[0].color1, stories[0].color2, stories[0].color3]"
-                chart-title="{{i18nLiterals.L20693}} (Yes)" 
-                axis-label-font="12px 'OpenSans-bold'"
-                base-axis-label-text-baseline="top"
-                plots="stories[0].plots"
-                values-visible="true"
-                values-mask="{value}"
-                values-font="12px 'OpenSans-bold'"
-                multiple-label-colors="false"
-                leaf-content-overflow='visible'                
-                dimensions="stories[0].dimensions"
-                legend="true" base-axis-size="50"                
-                label-text-align="alignment"
-                datasource-and-dates="[datasetESENER,126]"
-                custom-label="true" legend-align="center"
-                ></dvt-bar-chart>
-              </div>
+        </div>-->            
+          <div class="card--block--chart" >
+            <h2 data-ng-bind="i18nLiterals.L20692" class="main-title--card"></h2> 
+            <div class="chart--block">
+              <dvt-bar-chart
+              data-ng-cloak
+              query="getEstablishmentsInspectedData" cda="{{::cda }}"
+              width="330" height="330" axis-percent="1"
+              orientation="vertical" axis-fixed-min="0"
+              axis-fixed-max="100" step="{{step}}" id="1"
+              params="[['pIndicator', 126], ['pCountry1', pCountry1], ['pCountry2', pCountry2], ['pDataset', datasetESENER], ['pAnswer', 1]]"
+              color-role="series" colors="[stories[0].color1, stories[0].color2, stories[0].color3]"
+              chart-title="{{i18nLiterals.L20693}} (Yes)" 
+              axis-label-font="12px 'OpenSans-bold'"
+              base-axis-label-text-baseline="top"
+              plots="stories[0].plots"
+              values-visible="true"
+              values-mask="{value}"
+              values-font="12px 'OpenSans-bold'"
+              multiple-label-colors="false"
+              leaf-content-overflow='visible'                
+              dimensions="stories[0].dimensions"
+              legend="true" base-axis-size="50"                
+              label-text-align="alignment"
+              datasource-and-dates="[datasetESENER,126]"
+              custom-label="true" legend-align="center"
+              ></dvt-bar-chart>
             </div>
           </div>
-        </div>
-      </div>
-
-      
+ 
     </div>
 
     <!-- Authority -->
