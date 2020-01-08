@@ -157,6 +157,14 @@
       }
     }
     .matrix--content--elements{
+      h3{
+        margin-bottom: 0.6rem; 
+      }
+      .institution-name{
+        font-family:$font-body-bold;
+        font-size: 1.6rem;
+        margin-bottom: 0.6rem;
+      }
       samp{
         font-family: "OpenSans";
         font-size:$font-size-body;
@@ -172,11 +180,12 @@
     }
   }
 }
-
+    
 
 .see--more--wrapper{
   text-align: right;
   font-size: 1.4rem;
+  float: right;
   .see-more{
     position: relative;
     cursor: pointer;
