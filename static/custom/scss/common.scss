@@ -1410,12 +1410,97 @@
     }
   }
 
-
-
-
-
 /** END ELEMENTS  **/
 
+/** METHODOLOGY  **/
+
+
+@mixin header3($color,$size,$px) {
+  color:$color;
+  font-size: $size;
+  padding: 0rem 0 1rem 0;
+  margin: 1rem 0 1rem 0rem;
+  position: relative;
+  cursor: pointer;
+  border-bottom: $px solid;
+  font-family: "Oswald", sans-serif !important;
+}
+
+.section--methodology{
+  h2.accordion-title{
+    color: $aquamarine;
+    font-size: 2.8rem;
+    position: relative;
+    border-bottom: 1px solid $aquamarine;
+    padding-bottom: 1.2rem;
+    margin-bottom: 1.6rem;
+    cursor: pointer;
+    &:after{
+      content: "\f107";
+      display: inline-block;
+      font-family: FontAwesome;
+      font-size: 3rem;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      position: absolute;
+      right: 0rem;
+      top: 0;
+    }
+    &.active{
+      color:$aquamarine;
+      &:after{
+         content: "\f106";
+      }
+    }
+  }
+  h3{
+    @include header3($aquamarine,2.6rem,1px);
+  }
+  h3.accordion-title{
+    @include header3($gray,2.6rem,1px);
+    &:after{
+      content: "\f067";
+      display: inline-block;
+      font-family: FontAwesome;
+      font-size: 2rem;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      position: absolute;
+      right:0;
+      top:0;
+    }
+    &.active{
+      //color:$aquamarine;
+      &:after{
+        content: "\f068";
+      }
+    }
+  }
+  h4{
+    @include header3($aquamarine,2.4rem,1px);
+  }
+  .accordion-content{
+    font-size: 1.4rem;
+    padding: 0rem 0;
+    margin: 0rem 0 0 2rem;
+    max-height: 1px;
+    -webkit-transition: max-height 1.2s; 
+    transition: max-height 1.2s;
+    overflow: hidden;
+    height: 0;
+    &.active{
+      max-height: 100rem;
+      height: auto;
+      -webkit-transition: max-height 1.2s; 
+      transition: max-height 1.2s;
+    }
+    .btn-main-color{
+      display: inline-block;
+    }
+  }
+}
 
 
 

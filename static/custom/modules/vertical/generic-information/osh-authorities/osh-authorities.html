@@ -152,4 +152,54 @@
       </div>
     </div>
   </section>
+
+  <section class="container section--page section--methodology">
+    <h2 class="accordion-title" ng-click="accordion($event)">Detailed information and Methology</h2>
+    <div class="accordion-content">
+        <!-- Diagram -->
+        <h3 data-ng-bind="i18nLiterals.L20720" data-ng-if="i18nLiterals['L'+data.diagram] != 'null'"></h3>
+        <p data-ng-bind-html="i18nLiterals['L'+data.diagram]" data-ng-if="i18nLiterals['L'+data.diagram] != 'null'"></p>
+        <!-- Description -->
+        <h3 data-ng-bind="i18nLiterals.L20721" data-ng-if="i18nLiterals['L'+data.description] != 'null'"></h3>
+        <p data-ng-bind-html="i18nLiterals['L'+data.description]" data-ng-if="i18nLiterals['L'+data.description] != 'null'"></p>
+        <!-- Datasource -->
+        <h3 data-ng-bind="i18nLiterals.L20722" data-ng-if="data.datasource != 'null'"></h4>
+        <p data-ng-if="i18nLiterals['L'+data.datasource] != 'null'" data-ng-bind-html="i18nLiterals['L'+data.datasource]"></p>
+        <!-- Specific table / Question -->
+        <h3 data-ng-bind="i18nLiterals.L20723" data-ng-if="i18nLiterals['L'+data.specific_table] != 'null'"></h3>
+        <p data-ng-bind-html="i18nLiterals['L'+data.specific_table]" data-ng-if="i18nLiterals['L'+data.specific_table] != 'null'"></p>
+        <!-- URL / Source file -->
+        <h3 data-ng-bind="i18nLiterals.L20724" data-ng-if="i18nLiterals['L'+data.url] != 'null'"></h3>
+        <p data-ng-bind-html="i18nLiterals['L'+data.url]" data-ng-if="i18nLiterals['L'+data.url] != 'null'"></p>
+        <!-- Filtering options applied -->
+        <h3 data-ng-bind="i18nLiterals.L20728" data-ng-if="i18nLiterals['L'+data.options_applied] != 'null'"></h3>
+        <p data-ng-bind-html="i18nLiterals['L'+data.options_applied]" data-ng-if="i18nLiterals['L'+data.options_applied] != 'null'"></p>
+        <!-- Reference year / period -->
+        <h3 data-ng-bind="i18nLiterals.L20725" data-ng-if="i18nLiterals['L'+data.reference_year] != 'null'"></h3>
+        <p data-ng-bind-html="i18nLiterals['L'+data.reference_year]" data-ng-if="i18nLiterals['L'+data.reference_year] != 'null'"></p>
+        <!-- Last update -->
+        <h3 data-ng-bind="i18nLiterals.L20726" data-ng-if="i18nLiterals['L'+data.last_update] != 'null'"></h3>
+        <p data-ng-bind-html="i18nLiterals['L'+data.last_update]" data-ng-if="i18nLiterals['L'+data.last_update] != 'null'"></p>
+        <!-- Coverage -->
+        <h3 data-ng-bind="i18nLiterals.L20727" data-ng-if="i18nLiterals['L'+data.coverage] != 'null'"></h3>
+        <p data-ng-bind-html="i18nLiterals['L'+data.coverage]" data-ng-if="i18nLiterals['L'+data.coverage] != 'null'"></p>
+        <!-- Unit of measure -->
+        <h3 data-ng-bind="i18nLiterals.L20730" data-ng-if="i18nLiterals['L'+data.unit_measure] != 'null'"></h3>
+        <p data-ng-bind-html="i18nLiterals['L'+data.unit_measure]" data-ng-if="i18nLiterals['L'+data.unit_measure] != 'null'"></p>
+        <!-- Calculations on the data source -->
+        <h3 data-ng-bind="i18nLiterals.L20729" data-ng-if="i18nLiterals['L'+data.calculations] != 'null'"></h3>
+        <p data-ng-bind-html="i18nLiterals['L'+data.calculations]" data-ng-if="i18nLiterals['L'+data.calculations] != 'null'"></p>
+        <!-- Visualisation -->
+        <h3 data-ng-bind="i18nLiterals.L20731" data-ng-if="i18nLiterals['L'+data.visualisation] != 'null'"></h3>
+        <p data-ng-bind-html="i18nLiterals['L'+data.visualisation]" data-ng-if="i18nLiterals['L'+data.visualisation] != 'null'"></p>
+        <!-- Additional comments -->
+        <h3 data-ng-bind="i18nLiterals.L20732" data-ng-if="i18nLiterals['L'+data.additional_comments] != 'null'"></h3>
+        <p data-ng-bind-html="i18nLiterals['L'+data.additional_comments]" data-ng-if="i18nLiterals['L'+data.additional_comments] != 'null'"></p>
+
+        <p class="btn--wrapper text-center">
+          <a ui-sref="about-tool-detail-page" class="btn-default btn-main-color text-center" data-ng-bind="i18nLiterals.L20736"></a>
+        </p>
+    </div>    
+  </section>
+
 </dvt-dashboard>

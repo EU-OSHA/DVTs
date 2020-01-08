@@ -665,6 +665,22 @@ define(function (require) {
       angular.element('div#modalChart .modal-title').html($scope.i18nLiterals['L'+matrix.country_name]+' infrastructure');
     }
 
+    $scope.accordion = function($event) {        
+      var currentTarget = angular.element($event.currentTarget);
+      var contentTarget = angular.element($event.currentTarget.nextElementSibling); 
+      var elemActive = $event.currentTarget.nextElementSibling.className.indexOf('active');
+
+      if( elemActive > 0 ){
+        contentTarget.removeClass('active');
+        currentTarget.removeClass('active');
+      }else{
+        //angular.element('.accordion-content').removeClass('active');
+        //angular.element('.accordion-title').removeClass('active');
+        contentTarget.addClass('active');
+        currentTarget.addClass('active');
+      }          
+    }
+
     angular.element('div#modalChart').click(function(text,$index, matrix ) {
       angular.element('div#modalChart').modal('hide');
     }).children().click(function(e){
@@ -681,6 +697,8 @@ define(function (require) {
       }
     });
   }
+
+
 
   controller.$inject = ['$scope', '$stateParams', '$state', 'configService', '$log', '$document','dataService', '$window', '$sce', '$compile', '$timeout'];
   return controller;
