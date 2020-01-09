@@ -819,13 +819,13 @@ and (orientation : landscape) {
 		.compare--list{
   		justify-content: space-between;
   		li{
-  			width: auto;
+  			width: 50%;
   			label{
-  				width: 35%;
+  				width:40%;
   				letter-spacing: 0px;
   			}
   			select{
-  				width: 63%;
+  				width: 60%;
   			}
   		}
 		}
@@ -853,10 +853,12 @@ and (orientation : portrait) {
 		.compare--list{
 		  width: 90%;
 		  margin: 1rem auto;
+		  flex-direction: column;
 			li{
+				width: 100%;
 				label{
 					width: 100%;
-					text-align: left;
+					text-align: right;
 				}
 				select{
 					text-align: left;
@@ -880,7 +882,7 @@ and (orientation : portrait) {
 
 @media only screen 
 and (min-width : 768px) 
-and (max-width : 860px) {
+and (max-width : 900px) {
 	.workforce--page{
 		.survey--map--block-mobile{
 			.matrix--elements--wrapper{
@@ -893,6 +895,28 @@ and (max-width : 860px) {
 			}
 		}		
 	}
+  .compare--block{
+    .compare--list{
+      li{
+      	width:100%;
+        label{ 
+        	width:auto;        
+          &:after{
+          }
+        }
+        select{
+        	width:58%;
+        	flex: 1;
+          font-size: 2rem;
+          option{
+            font-size: 1.4rem; 
+            &:checked{            
+            }
+          }
+        }
+      }
+    }
+  }		
 }
 
 
@@ -1223,7 +1247,7 @@ and (max-width :767px)  {
           }
         }
         select{
-        	width:auto;
+        	width:60%;
           font-size: 2rem;
           option{
             font-size: 1.4rem; 
@@ -1436,6 +1460,10 @@ and (max-width :520px) {
       	text-align: center;
       	width: 100%;
       	margin: 1rem auto;
+      	flex-direction: column;
+      	&:after{
+      		top: 4.2rem;
+      	}
         label{
         	width:100%;
         	text-align: center;

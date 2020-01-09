@@ -616,6 +616,7 @@
       li{
         width: 50%;
         position: relative;
+        display: flex;
         &:after{
           content: "\f107";
           font-family: FontAwesome;
@@ -633,7 +634,7 @@
           text-transform: uppercase;
           font-weight: normal;
           letter-spacing: 2px;
-          width: 40%;
+          width: 42%;
           text-align: right;
           &:after{
             content: "\f105";
@@ -652,7 +653,7 @@
         select{
           font-family: 'OpenSans-bold';
           text-transform: uppercase;
-          font-size: 2.6rem;
+          font-size: 2.3rem;
           border: 1px solid #FFF;
           padding: 0.2rem 0.5rem;
           -webkit-appearance: none;
