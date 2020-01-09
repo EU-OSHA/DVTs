@@ -43,6 +43,23 @@
         </Query>
     </DataAccess>
 
+    <!-- GET METHODOLOGY DATA FOR A SECTION -->
+    <DataAccess access="public" connection="dvt_conn" id="getMethodologySectionData" type="sql">
+        <Cache duration="3600" enabled="true" />
+        <Columns />
+           <Parameters>
+            <Parameter default="OSH_AUTHORITIES" name="pSubsection" type="String"/>
+        </Parameters>
+        <Query>
+            SELECT m.indicator_id, i.literal_id, m.indicator_name_displayed_literal_id as diagram, m.description_literal_id as description, m.source_methodology_literal_id as datasource, m.specific_table_literal_id as specific_table, m.url_literal_id as url, m.filtering_options_literal_id as options_applied, m.reference_year_literal_id as reference_year, m.last_update_literal_id as last_update, m.coverage_literal_id as coverage, m.unit_measure_literal_id as unit_measure, m.calculations_literal_id as calculations, m.visualisation_literal_id as visualisation, m.additional_comments_literal_id as additional_comments
+            FROM methodology m, dataset d, section s, indicator i
+            WHERE s.name = ${pSubsection}
+            AND m.section_id = s.id
+            AND m.dataset_id = d.id
+            AND m.indicator_id = i.id
+        </Query>
+    </DataAccess>
+
 	<!-- GET DATASOURCE AND DATES -->
 	<DataAccess access="public" connection="dvt_conn" id="getDatasourceAndDates" type="sql">
 	    <Cache duration="3600" enabled="true" />

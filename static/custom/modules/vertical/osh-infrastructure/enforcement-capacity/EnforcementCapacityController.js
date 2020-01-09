@@ -41,6 +41,17 @@ define(function (require) {
     $scope.pCountry2 = ($stateParams.pCountry2 != null)?$stateParams.pCountry2:'0';
     $scope.pIndicator = $stateParams.pIndicator;
 
+    // Define value to send to the methodology
+    $scope.indicatorParam = $scope.pIndicator;
+    if ($scope.pIndicator == "establishments-inspected")
+    {
+      $scope.indicatorParam = "%-of-establishments-inspected";
+    }
+    else if ($scope.pIndicator == "strategy-plan")
+    {
+      $scope.indicatorParam = "strategy/plan";
+    }
+
     $scope.maxCharacters = 200;
     $scope.step = 20;
     $scope.already = false;

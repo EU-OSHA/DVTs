@@ -57,6 +57,20 @@ define(function () {
                 return promise(url);
             },
 
+            /**
+             * @ngdoc method
+             * @name dvt.configModule.DataService#getMethodologyData
+             * @methodOf dvt.configModule.DataService
+             * @description
+             * Gets the data of all the indicators in a section
+             */
+            getMethodologySectionData: function(pSubsection){
+                var url = configService.getGenericInformationDataPath() + "&dataAccessId=getMethodologySectionData" + "&parampSubsection=" + pSubsection;
+                $log.debug('getMethodologyData url:' + url);
+
+                return promise(url);
+            },
+
             /************************************* HOME ***********************************/
 
                 getStrategiesCountries: function(){

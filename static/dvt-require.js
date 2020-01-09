@@ -128,6 +128,8 @@
     requirePaths['dvt/directives/breadcrumb-items'] = horizontalModules + '/directives/main-menu/breadcrumb' + suffix + '.json';
     requirePaths['dvt/directives/title-items'] = horizontalModules + '/directives/main-menu/titles' + suffix + '.json';
 
+    requirePaths['dvt/directives/methodology'] = horizontalModules + '/directives/methodology/DvtMethodologyDirective' + suffix;
+
 
     /* CUSTOM CHARTS */
     requirePaths['dvt/directives/barchart'] = horizontalModules + '/directives/graphic/DvtBarChartDirective' + suffix;
