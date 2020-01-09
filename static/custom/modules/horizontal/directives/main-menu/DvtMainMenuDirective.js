@@ -108,7 +108,7 @@ define(function (require) {
                             }                                
                         }
                         var gotopVisible = $(window).height() + $(window).height()/2;
-                        if( resolution <= 768 ){
+                        if( resolution <= 1024 ){
                             if( currentScrollPos > gotopVisible )
                             {
                                 $('.go-to').css('display','block');
