@@ -22,7 +22,9 @@ define(function (require) {
 			transclude: true,
 			replace: true,
 			scope: {
+				father: "@father",
 				section: "@section",
+				pIndicatorID: "@indicatorid",
 				pIndicator: "@indicator",
 				pSubIndicator: "@subindicator"
 			},

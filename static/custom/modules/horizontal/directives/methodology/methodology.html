@@ -89,11 +89,10 @@
 			<!-- Additional comments -->
 			<h3 data-ng-bind="i18nLiterals.L20732" data-ng-if="i18nLiterals['L'+indicator.additional_comments] != 'null'"></h3>
 			<p data-ng-bind-html="i18nLiterals['L'+indicator.additional_comments]" data-ng-if="i18nLiterals['L'+indicator.additional_comments] != 'null'"></p>
-
-			<p class="btn--wrapper text-center">
-				<a ui-sref="about-tool-detail-page" class="btn-default btn-main-color text-center" data-ng-bind="i18nLiterals.L20736"></a>
-			</p>
 		</div>
-	</div> 
-	 
+	</div>
+
+	<p class="btn--wrapper text-center">
+		<a ui-sref="about-tool-detail-page({pSection: father, pSubsection: section.toLowerCase(), pIndicator: pIndicatorID})" class="btn-default btn-main-color text-center" data-ng-bind="i18nLiterals.L20736"></a>
+	</p>
 </section>
