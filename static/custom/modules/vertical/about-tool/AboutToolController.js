@@ -82,6 +82,7 @@ define(function (require) {
                                 $log.warn($scope.subsections[j].database_name);
                                 if($scope.subsections[j].database_name == "" || $scope.subsections[j].database_name == undefined){
                                     $scope.subsections.splice(j, 1);
+                                    j = j-1;
                                 }
                             }
                             break;
