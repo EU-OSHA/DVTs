@@ -815,7 +815,7 @@ and (orientation : landscape) {
 	.compare--block--form{
 		margin: 0;
 		width: 100%;
-		padding: 0;
+		//padding: 0;
 		.compare--list{
   		justify-content: space-between;
   		li{
@@ -857,12 +857,12 @@ and (orientation : portrait) {
 			li{
 				width: 100%;
 				label{
-					width: 100%;
+					width: 32% !important;
 					text-align: right;
 				}
 				select{
 					text-align: left;
-					width: 100%;
+					//width: 100%;
 					position: relative;
 					left: -0.5rem;
 				}

@@ -1428,6 +1428,9 @@
 }
 
 .section--methodology{
+  @media screen and (max-width: 767px) {
+    padding-top: 0 !important;
+  }
   h2.accordion-title{
     color: $aquamarine;
     font-size: 2.8rem;
@@ -1478,6 +1481,10 @@
         content: "\f068";
       }
     }
+    @media screen and (max-width: 767px) {
+      font-size: 2.2rem;
+      padding: 0rem 2rem 1rem 0;
+    }
   }
   h4{
     @include header3($aquamarine,2.4rem,1px);
@@ -1486,16 +1493,30 @@
     font-size: 1.4rem;
     padding: 0rem 0;
     margin: 0rem 0 0 2rem;
-    max-height: 1px;
-    -webkit-transition: max-height 1.2s; 
-    transition: max-height 1.2s;
+    max-height: 0rem;
+    -webkit-transition: max-height 2.2s; 
+    transition: max-height 2.2s;
     overflow: hidden;
-    height: 0;
+   // height: 0;
+    @media screen and (max-width: 767px) {
+      margin: 0rem;
+      .accordion-content{
+        margin: 0rem 0 0 1rem;
+      }
+    }    
     &.active{
-      max-height: 100rem;
+      max-height: 1000000000rem;
       height: auto;
-      -webkit-transition: max-height 1.2s; 
-      transition: max-height 1.2s;
+      -webkit-transition: max-height 4.2s; 
+      transition: max-height 4.2s;
+    }
+    .accordion-content{
+      &.active{
+        max-height: 1000rem;
+        height: auto;
+        -webkit-transition: max-height 2.2s; 
+        transition: max-height 2.2s;
+      }
     }
     .btn-main-color{
       display: inline-block;
