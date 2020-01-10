@@ -1522,6 +1522,7 @@
      // transition: max-height 4.2s;
     }
     .accordion-content{
+      margin: 0rem 0 0rem 2rem;
       &.active{
         max-height: 1000rem;
         height: auto;
