@@ -76,7 +76,7 @@
         <div ng-if="amatrix.length <= 0">
             <span data-ng-bind="i18nLiterals.L20706"></span>
         </div>
-        <div data-ng-repeat="matrix in amatrix | limitTo:pageSize:elementsStart" class="matrix--element">
+        <div data-ng-repeat="matrix in amatrix | limitTo:pageSize:elementsStart" class="matrix--element clearfix">
           <div class="matrix--header--elements">
             <img  class="flags--wrapper" ng-src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/flag/{{::matrix.country_code.toLowerCase()}}.png">
             <h2 class="country ng-binding title-section main-color" data-ng-bind="i18nLiterals['L'+matrix.country_name]"></h2>
