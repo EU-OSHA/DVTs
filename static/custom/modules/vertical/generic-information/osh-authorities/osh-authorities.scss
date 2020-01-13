@@ -136,14 +136,14 @@
   }
 }  
 
-
 .matrix--elements--wrapper{
   margin-top:2rem; 
   .matrix--element{
     background:$gray-lighter;
     border-radius: 50px 0 50px 0;
     padding: 2rem 5rem; 
-    margin-bottom: 2rem;
+    margin: 0 1.5rem 1.5rem 2rem;
+    min-height: auto;
     .matrix--header--elements{
       display: flex;
       flex-direction: row;
@@ -176,37 +176,6 @@
         &:hover{
           color:$orange;
         }
-      }
-    }
-  }
-}
-
-.selected--tags-wrapper{
-  min-height: 0px;
-  margin-top: 0rem;
-  &:empty{
-    display:none;
-  } 
-  .selected-tag {
-    background: $aquamarine;
-    font-size: 1.4rem;
-    margin: 0.8rem 0rem 0.6rem 0.6rem;
-    padding: 2px 18px 2px 5px;
-    display: inline-block;
-    border-radius: 4px;
-    color:$white;
-    position: relative;
-    &:after{
-      content: "\f00d";
-      font-family: 'FontAwesome';
-      position: absolute;
-      top: 0;
-      right: 4px;
-      font-size: 1rem;
-      cursor: pointer;
-      &:hover{
-        opacity:0.6;
-        color: $orange;
       }
     }
   }

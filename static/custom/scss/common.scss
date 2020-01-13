@@ -516,6 +516,39 @@
       }
     }
   /** END WIDTH CARDS  **/
+  
+  /** TAGS */
+    .selected--tags-wrapper{
+      min-height: 0px;
+      margin-top: 0rem;
+      &:empty{
+        display:none;
+      } 
+      .selected-tag {
+        background: $aquamarine;
+        font-size: 1.4rem;
+        margin: 0.8rem 0rem 0.6rem 0.6rem;
+        padding: 2px 18px 2px 5px;
+        display: inline-block;
+        border-radius: 4px;
+        color:$white;
+        position: relative;
+        &:after{
+          content: "\f00d";
+          font-family: 'FontAwesome';
+          position: absolute;
+          top: 0;
+          right: 4px;
+          font-size: 1rem;
+          cursor: pointer;
+          &:hover{
+            opacity:0.6;
+            color: $orange;
+          }
+        }
+      }
+    }
+  /** END TAGS */
 
 /** END CUSTOM CLASS  **/
 
@@ -1576,7 +1609,7 @@
     overflow: hidden;
    // height: 0;
     @media screen and (max-width: 767px) {
-      margin: 0rem;
+      margin: 0rem 0 4rem 0rem;
       .accordion-content{
         margin: 0rem 0 0 1rem;
       }
