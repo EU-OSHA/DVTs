@@ -1726,7 +1726,7 @@ INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+379, null, @sectionId, "SECTION_TITLE");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+379, "EN", 1, "response of national strategies to EU challenges");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+379, "EN", 1, "Response of national strategies to EU challenges");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
@@ -3545,7 +3545,7 @@ INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2024, null, @sectionId, "BANNER");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2024, "EN", 1, "	Status of Occupational Safety and Health in the European Unio");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2024, "EN", 1, "Status of Occupational Safety and Health in the European Union");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
@@ -3666,6 +3666,16 @@ SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2100, null, @sectionId, "BUTTON");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2100, "EN", 1, "See Enforcement capacity");
+
+SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
+SET @sectionId = (SELECT id FROM section WHERE name="METHODOLOGY" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2101, null, @sectionId, "BUTTON");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2101, "EN", 1, "Detailed information and Methodology");
+
+SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
+SET @sectionId = (SELECT id FROM section WHERE name="METHODOLOGY" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2102, null, @sectionId, "BUTTON");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2102, "EN", 1, "Discover all the Methodology");
 
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="AT");
