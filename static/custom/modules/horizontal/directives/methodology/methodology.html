@@ -1,5 +1,5 @@
 <section class="container section--page section--methodology">
-	<h2 class="accordion-title" ng-click="accordion($event)">Detailed information and Methology</h2>
+	<h2 class="accordion-title" ng-click="accordion($event)" data-ng-bind="i18nLiterals.L22101"></h2>
 
 	<div class="accordion-content" data-ng-if="methodologyType==0 || methodologyType==2">
 		<div data-ng-repeat="indicator in indicators" data-ng-if="methodologyType==0 || (methodologyType==2 && group.indexOf(indicator.anchor_name)>-1)">
@@ -93,6 +93,6 @@
 	</div>
 
 	<p class="btn--wrapper text-center">
-		<a ui-sref="about-tool-detail-page({pSection: father, pSubsection: section.toLowerCase(), pIndicator: pIndicatorID})" class="btn-default btn-main-color text-center" data-ng-bind="i18nLiterals.L20736"></a>
+		<a ui-sref="about-tool-detail-page({pSection: father, pSubsection: section.toLowerCase(), pIndicator: pIndicatorID})" class="btn-default btn-main-color text-center" data-ng-bind="i18nLiterals.L22102"></a>
 	</p>
 </section>
