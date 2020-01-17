@@ -305,7 +305,7 @@
 	        OR (mp.check_2= IF('Compensation and insurance body' REGEXP ${term}, 1, 0) AND mp.check_1= 0 AND mp.check_3= 0 AND mp.check_4= 0)
 	        OR (mp.check_3= IF('Prevention institute' REGEXP ${term}, 1, 0) AND mp.check_1= 0 AND mp.check_2= 0 AND mp.check_4= 0)
 	        OR (mp.check_4= IF('Standardisation body' REGEXP ${term}, 1, 0) AND mp.check_1= 0 AND mp.check_2= 0 AND mp.check_3= 0)))
-	      ORDER BY FIELD(n.country_code, 'EU28') DESC, country_name ASC, osh_authority DESC, compensation DESC, prevention DESC, standardisation DESC, id ASC;
+	      ORDER BY FIELD(n.country_code, 'EU28') DESC, country_name ASC, osh_authority DESC, compensation DESC, prevention DESC, standardisation DESC, CASE WHEN country_code IN ("PL") THEN FIELD(mp.id, 164) END DESC, id ASC;
 	    </Query>
 	</DataAccess>
 
@@ -332,7 +332,7 @@
 		      OR mp.check_2=${institution2}
 		      OR mp.check_3=${institution3}
 		      OR mp.check_4=${institution4})
-	      ORDER BY FIELD(n.country_code, 'EU28') DESC, country_name ASC, osh_authority DESC, compensation DESC, prevention DESC, standardisation DESC, id ASC;
+	      ORDER BY FIELD(n.country_code, 'EU28') DESC, country_name ASC, osh_authority DESC, compensation DESC, prevention DESC, standardisation DESC, CASE WHEN country_code IN ("PL") THEN FIELD(mp.id, 164) END DESC, id ASC;
 	    </Query>
 	</DataAccess>
 
