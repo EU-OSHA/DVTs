@@ -360,6 +360,21 @@ define(function (require) {
       $scope.exportData = function(promises, title, id){
         exportService.exportRadarData(promises, title, id);
       }
+
+      $scope.datasetMethodology = function()
+      {
+        if ($scope.pIndicator == "risks-involve-with-work")
+        {
+          if ($scope.pFilter == "esener")
+          {
+            return $scope.datasetESENER;
+          }
+          else
+          {
+            return $scope.datasetEurofound;
+          }
+        }
+      }
   }
 
 controller.$inject = ['$scope', '$stateParams', '$state', 'configService', '$log', '$document','dataService', '$window', '$sce', '$compile', '$timeout', 'dvtUtils', 'PhysicalRiskService', 'exportService'];
