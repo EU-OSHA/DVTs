@@ -2,7 +2,7 @@
 	<h2 class="accordion-title" ng-click="accordion($event)" data-ng-bind="i18nLiterals.L22101"></h2>
 
 	<div class="accordion-content" data-ng-if="methodologyType==0 || methodologyType==2">
-		<div data-ng-repeat="indicator in indicators" data-ng-if="methodologyType==0 || (methodologyType==2 && group.indexOf(indicator.anchor_name)>-1 && (pDatasetID==undefined || indicator.dataset_id==pDatasetID))">
+		<div data-ng-repeat="indicator in indicators" data-ng-if="methodologyType==0 || (methodologyType==2 && group.indexOf(indicator.anchor_name)>-1 && (pDatasetID==undefined || indicator.dataset_id==pDatasetID || pDatasetID==''))">
 			<h3 class="accordion-title" ng-click="accordion($event)" data-ng-bind="i18nLiterals['L'+indicator.diagram]"></h3>
 			<div  class="accordion-content">
 				<!-- Diagram -->
@@ -50,7 +50,7 @@
 
 	<div class="accordion-content" data-ng-if="methodologyType==1">
 
-		<div data-ng-repeat="indicator in indicators" data-ng-if="(pIndicator==undefined || indicator.anchor_text==pIndicator || indicator.anchor_name==pIndicator || (pIndicator=='exposure-to-dangerous-substances' && indicator.anchor_name==pSubIndicator)) && (pDatasetID==undefined || indicator.dataset_id==pDatasetID || pIndicator=='exposure-to-dangerous-substances')">
+		<div data-ng-repeat="indicator in indicators" data-ng-if="(pIndicator==undefined || indicator.anchor_text==pIndicator || indicator.anchor_name==pIndicator || (pIndicator=='exposure-to-dangerous-substances' && indicator.anchor_name==pSubIndicator)) && (pDatasetID==undefined || indicator.dataset_id==pDatasetID || pDatasetID=='')">
 			<!-- Diagram -->
 			<h3 data-ng-bind="i18nLiterals.L20720" data-ng-if="i18nLiterals['L'+indicator.diagram] != 'null'"></h3>
 			<p data-ng-bind-html="i18nLiterals['L'+indicator.diagram]" data-ng-if="i18nLiterals['L'+indicator.diagram] != 'null'"></p>
