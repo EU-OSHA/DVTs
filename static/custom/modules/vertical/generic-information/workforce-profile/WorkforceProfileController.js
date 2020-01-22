@@ -159,6 +159,30 @@ define(function (require) {
         }
     }
 
+    $scope.selectedCountry = "";
+
+    // This will be launched when clicking on a country that has data on the map
+    $scope.countryClick = function()
+    {
+      $scope.selectedCountry = this.id;      
+
+      if (angular.element("path.active").length > 0)
+      {
+        angular.element("path.active").attr("class","");
+      }
+      this.node.classList.add("active");
+
+      $scope.$apply();
+    }
+
+    $scope.clearCountry = function()
+    {
+      $scope.selectedCountry = "";
+      angular.element("path.active").attr("class","");
+
+      $scope.$apply();
+    }
+
     $scope.getMinMaxValues = function()
     {
       var data;
