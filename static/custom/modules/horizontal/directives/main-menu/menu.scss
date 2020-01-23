@@ -20,100 +20,138 @@
       background: #FFF;
       box-shadow: 0 0px 2px #ccc;
         .header--top{
-            display: flex;
-            flex-direction: row;
-            justify-content: space-around;
-            .eu.osha-logo{
-                justify-items: self-start;
-                margin: 0;
-                padding: 0 1.5rem;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-around;
+          .osh-barometer-legend{
+            background: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/economic-chart.png) 0 2rem no-repeat;
+            background-size: 5rem 5rem;
+            padding-left: 6rem;
+            margin-right: 1.6rem;
+            .main-title{
+              .title{
+                font-weight: 600;
+                font-size:2.4rem;
+                text-transform: uppercase; 
+                width: auto;
+                display: block;
+                /*
+                padding-top: 2rem;
+                margin-top: 2rem;
+                padding-left:1.5rem;
+                margin-bottom: 1rem;
+                line-height:3.6rem;
+                */
+                color: $aquamarine;                
+                width: 100%;
+                font-family: "Oswald", sans-serif;                
+              }
+              .lead-title{
+                font-family: Oswald-Light,sans-serif;
+                text-transform: capitalize;
+                color: $aquamarine;
+                font-size: 2rem;
+                display: block;
+                margin-top: 0.4rem;
+                /*
+                padding-top: 0rem;
+                padding-left:1.5rem;
+                */
+              }
             }
-            .menu-tools-top{
-              padding: 1.5rem 1.5rem 0;
-              text-align: right;
-              justify-items: self-end;
-              margin: auto;
-              flex-grow: 2;
+
+          }
+          .eu.osha-logo{
+              justify-items: self-start;
+              margin: 0;
+              padding: 0 1.5rem;
+          }
+          .menu-tools-top{
+            padding: 1.5rem 1.5rem 0;
+            text-align: right;
+            justify-items: self-end;
+            margin: auto;
+            flex-grow: 2;
             li{
                 vertical-align: middle;
                   padding-left: 3rem;
                   padding-right: 0;
             }
             .menu-tools-top--items{
-                .zoom--text{
-                  padding-bottom: 5px;
-                  span {
-                    display: inline-block;
-                    vertical-align: sub;
-                    a{
-                      display: block;
-                      font-weight: bold;
-                      cursor: pointer;
+              .zoom--text{
+                padding-bottom: 5px;
+                span {
+                  display: inline-block;
+                  vertical-align: sub;
+                  a{
+                    display: block;
+                    font-weight: bold;
+                    cursor: pointer;
+                    text-decoration: none;
+                    color:$gray-icon;
+                    &:hover{
                       text-decoration: none;
-                      color:$gray-icon;
-                      &:hover{
-                        text-decoration: none;
-                      }
                     }
-                    &.a_small a{
-                      font-size:1em;
-                    }
-                    &.a_medium a{
-                      font-size: 1.5em;
-                    }
-                    &.a_big a{
-                      font-size:2em;
-                    }
-                  }         
-                }
-                .search--block{
-                        .search--form{
-                            .form-group {
-                              width: 40rem;
-                              margin: 0;
-                              background-color: $white;
-                              border:2px solid $gray-icon;
-                            }
-                            input.form-control {
-                              padding-right: 20px;
-                              border: 0 none;
-                              background: transparent;
-                              box-shadow: none;
-                              display:block;
-                            }
-                            .form-group:hover,
-                            .form-group.hover {
-                              //width: 100%;
-                              //border-radius: 4px 25px 25px 4px;
-                            }
-                            span.form-control-feedback {
-                              position: absolute;
-                              top: -1px;
-                              right: -2px;
-                              z-index: 2;
-                              display: block;
-                              width: 34px;
-                              height: 34px;
-                              line-height: 34px;
-                              text-align: center;
-                              color:$gray-base;
-                              left: initial;
-                              font-size: 14px;
-                            }
-                        }       
-                }
-                .print--block{
-                    a{
+                  }
+                  &.a_small a{
+                    font-size:1em;
+                  }
+                  &.a_medium a{
+                    font-size: 1.5em;
+                  }
+                  &.a_big a{
+                    font-size:2em;
+                  }
+                }         
+              }
+              .search--block{
+                .search--form{
+                  .form-group {
+                    width: 40rem;
+                    margin: 0;
+                    background-color: $white;
+                    border:2px solid $gray-icon;
+                  }
+                  input.form-control {
+                    padding-right: 20px;
+                    border: 0 none;
+                    background: transparent;
+                    box-shadow: none;
+                    display:block;
+                  }
+                  .form-group:hover,
+                  .form-group.hover {
+                    //width: 100%;
+                    //border-radius: 4px 25px 25px 4px;
+                  }
+                  span.form-control-feedback {
+                    position: absolute;
+                    top: -1px;
+                    right: -2px;
+                    z-index: 2;
+                    display: block;
+                    width: 34px;
+                    height: 34px;
+                    line-height: 34px;
+                    text-align: center;
+                    color:$gray-base;
+                    left: initial;
+                    font-size: 14px;
+                  }
+                }       
+              }
+              .print--block{
+                a{
                   cursor: pointer;
                   text-decoration: none;
                   color: $gray-icon;
                   font-size: 2.5rem;
-                        &:before{
-                        }
-                    }
+                  &:before{
+                  }
                 }
+              }
             }
-            }
+          }
         }
         .bar-main-menu{
             display: flex;
@@ -216,7 +254,7 @@
                       
                   } 
               }
-              .main-menu-selected{
+              > .main-menu-selected{
                 box-shadow: 0 6px 0 0px $orange;
                 > a{
                     color: $aquamarine !important;
@@ -224,7 +262,7 @@
               }
               > li:last-child{
                 position: relative;
-                top: 1px;
+                top: 0px;
               }
             };
             .navbar-toggle .icon-bar {

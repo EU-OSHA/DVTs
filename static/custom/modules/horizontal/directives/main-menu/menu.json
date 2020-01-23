@@ -193,8 +193,22 @@
     {
         "id": "about-tool",
         "name":"L22019",
-        "sref": "about-tool",
-        "accesskey": "5",
-        "tabindex":"20"
+        "target": "about-tool",        
+        "tabindex":"20",
+        "levels":[
+            {
+                "id":"about-tool",
+                "name":"L20735",
+                "sref":"about-tool",
+                "accesskey": "5",
+                "tabindex":"21"
+            },
+            {
+                "id":"about-tool-detail-page",
+                "name":"L20705",
+                "sref":"about-tool-detail-page",
+                "tabindex":"22"
+            }
+        ]
     }
 ]

@@ -11,7 +11,7 @@
 define(function (require) {
     'use strict';
 
-    function controller(configService, dvtUtils, $scope, $stateParams, $state, $document, $log, dataService) {
+    function controller(configService, dvtUtils, $scope, $stateParams, $state, $document, $log, dataService, $window) {
 
         // Literals / i18n
         var i18n = configService.getLiterals();
@@ -123,11 +123,14 @@ define(function (require) {
               });
             }
         }
-
         $scope.status = 'ready';
+
     }
 
-    controller.$inject = ['configService', 'dvtUtils', '$scope', '$stateParams', '$state','$document', '$log', 'dataService'];
+
+
+
+    controller.$inject = ['configService', 'dvtUtils', '$scope', '$stateParams', '$state','$document', '$log', 'dataService','$window'];
     return controller;
 });
 
