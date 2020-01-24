@@ -5,14 +5,24 @@
       margin: 1rem;
       position: relative;
       .select-filter-chart-wrapper{
-        width: 83%;
-        top: 0rem;
+        width: 77%;
+        top: 0.8rem;
+        left: 0;
         position: relative;
         z-index: 2;
+        @media screen and (max-width:1199px) {
+          width: 71%;
+        }
+        @media screen and (max-width:990px) {
+          width: 79%;
+        }
+        @media screen and (max-width:768px) {
+          width: calc(100% - 8rem);
+        }
       }
       .select-filter-chart{
         position: relative;
-        top: 0.2rem;
+        top: 0rem;
         /*
         position: absolute;
         right: 9rem;
@@ -25,23 +35,23 @@
           content: "\f0c9";
           font-family: FontAwesome;
           font-weight: normal;
-          font-size: 2rem;
+          font-size: 2.2rem;
           font-weight: bold;
           //color: $aquamarine;
           right: 0;
-          top: 0rem;
+          top:-1px;
           height: auto;
-          padding: 1rem;
+          padding: 0rem;
           position: absolute;
           pointer-events: none;
         }
         select{
           width: 100%;
           margin: 0;
-          padding: 1rem 3.5rem 1rem 0;
-          border-radius: 4px;
+          padding: 0 2.2rem 0 0;
+          border-radius: 0;
           border: 0px solid #529FA2;
-          border-radius: 2rem 0 0;
+          border-radius: 0rem 0 0;
           color: #529FA2;
           background: transparent;
           -webkit-appearance: none;
