@@ -552,6 +552,10 @@ define(function (require) {
       $scope.deleteTag = function($event){
         var element = angular.element($event.currentTarget);
         var countryName = element[0].id.slice(7,9);
+        if (element[0].id.indexOf("country") > -1)
+        {
+          countryName = element[0].id.replace("country","");
+        }
         var countryCode = element[0].innerHTML.slice(1,3);
 
         if(countryCode == 'U2'){
@@ -559,8 +563,7 @@ define(function (require) {
           countryName = 264;
         }
 
-        //buscar en el value del input correspondiente al id de literal
-        
+        //buscar en el value del input correspondiente al id de literal        
         var quitChecked;
         if($event.target.id.indexOf('country') != -1){
           $scope.searchParams.countries.splice($scope.searchParams.countries.indexOf(countryCode), 1);
