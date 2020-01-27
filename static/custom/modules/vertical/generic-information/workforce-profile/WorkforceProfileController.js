@@ -451,6 +451,16 @@ define(function (require) {
         });
       }
 
+      $(window).scroll(function(){
+        var element = $( ".survey--map--block" );
+        var offset = element.offset();       
+        if($(this).scrollTop()>=offset.top){
+          $( ".survey--map--block" ).addClass('fixed');
+        } else {
+          $( ".survey--map--block" ).removeClass('fixed');
+        }
+        
+  });
 
 
     $scope.status = 'ready';

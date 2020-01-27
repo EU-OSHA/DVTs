@@ -14,43 +14,94 @@
 	.map--block{
 		position: relative;
 	}
-	.map--eu--legend{
-		background: rgba(255,255,255,0.6);
-		width: 28rem;
-		padding: 2rem;
-		position: absolute;
-		top:5rem;;
-		border: 1px solid $aquamarine;
-		border-radius: 3rem 0;
-		right:0%;
-		text-align: left;
-	  ul{
-			list-style-type: none;
-			padding: 0;
-	  }
-	  .matrix--header--elements{
+	&.fixed{
+		padding-top: 26.4rem;
+		.sticky--wraper{
+			position: fixed;
+			width: 100%;
+			z-index: 10;
+			top: 0;
+		}
+	}
+  .help-text{
+    text-align: center;
+    width: 100%;
+		background: #FFF;
+    padding: 4rem;
+    border-bottom: 2px solid $gray;
+    margin: 0;
+    .exclamation{
+	    color: #FFF;
+	    display: inline-block;
+	    vertical-align: middle;
+	    font-size: 3.6rem;
+	    background: #f6a400;
+	    border-radius: 6rem;
+	    width: 4rem;
+	    height: 4rem;
+	    margin-left: 1.5rem;
+	    &:before{
+		    width: 0;
+		    height: 0;
+		    border-top: 5px solid transparent;
+		    border-bottom: 5px solid transparent;
+		    border-right: 10px solid $orange;
+		    content: '';
+		    font-size: 0px;
+		    left: -18px;
+		    top: -18px;
+		    position: relative;
+	    }
+	    &:after{
+	    	content:"!";
+	    	position: relative;
+	    	top: -0.7rem;
+	    	left: -0.4rem;
+	    }
+    }
+  }
+	.map--legend--block{
+    background: $white;
+    width: 100%;
+    padding: 1rem 2rem;
+    position: relative;
+    top: 0;
+    border-radius:0;
+    right: 0%;
+    text-align: left;
+    display: flex;
+    .matrix--header--elements{
 			display: flex;
 			flex-wrap: wrap;
+			flex-direction: column;
 			img{
-				height: 2.5rem;
+
 			}
 			.title-section{
-				font-family: 'Oswald';
-				font-size: 2.5rem;
-				margin: 0rem 1rem;
+				font-family: 'Oswald-bold';				
+				font-size: 1.6rem;
+				margin: 0.5rem 1rem;
+				text-align: center;
 			}
-	  }
+    }
 	  .matrix--elements--data{
-			display: flex;
-			flex-wrap: wrap;
 			list-style-type: none;
-			padding: 0;
+			display: flex;
+			flex-wrap: nowrap;
+			padding: 0 2rem;
 			margin: 1rem 0 0;
+			flex: 1 1 auto;
 	  	li{
 	  		width: 100%;
 	  		padding: 0;
+	  		display: flex;
+		    flex-direction: column;
+		    flex-wrap: wrap;
+		    text-align: center;
+		    > div{
+		    	margin-top: auto;
+		    }
 	  		label{							
-					color: $gray;
 					font-size: 1.6rem;
 					display: inline-block;
 					padding: 0;
@@ -58,18 +109,83 @@
 					font-family: 'Oswald';
 	  		}
 	  		.data{
-	  			color: $aquamarine;
 					display: inline-block;
 				  font-family: 'Oswald-bold';
-				  font-size: 1.6rem;
+				  font-size: 2.4rem;
 	  		}
 	  		.data-text{
-	  			color: $aquamarine;
 					font-family: 'Oswald';
 					display: inline-block;
-					font-size: 1.6rem;
+					font-size: 2.4rem;
 	  		}
 	  	}
 	  }
+	}
+	.map--eu--legend{
+    border-bottom: 2px solid $eu;
+	  .matrix--header--elements{
+			img{
+			}
+			.title-section{
+				color: $eu;
+			}
+	  }
+	  .matrix--elements--data{
+	  	li{
+	  		label{							
+					color: $gray;
+					font-size: 1.6rem;
+	  		}
+	  		.data{
+	  			color: $eu;
+	  		}
+	  		.data-text{
+	  			color: $eu;
+	  		}
+	  	}
+	  }
+	}
+	.map--countries--legend{
+		border-bottom: 2px solid $gray;
+		position: relative;
+	  .matrix--header--elements{
+			display: flex;
+			flex-wrap: wrap;
+			flex-direction: column;
+			img{
+				//height: 2.5rem;
+			}
+			.title-section{
+				color: $aquamarine;
+			}
+	  }
+	  .matrix--elements--data{
+	  	li{
+	  		label{							
+					color: $gray;
+					font-size: 1.6rem;
+	  		}
+	  		.data{
+	  			color: $aquamarine;
+	  		}
+	  		.data-text{
+	  			color: $aquamarine;
+	  		}
+	  	}
+	  }
+	  .close-legend{
+	    content: "X";
+	    width: 3.2rem;
+	    font-size:1.6rem;
+	    display: inline-block;
+	    text-align: right;
+	    margin-right: 1rem;
+	    position: absolute;
+	    right: 1rem;
+	    cursor: pointer;
+	  }
+	}
+	path.active{
+		fill: $orange;
 	}
 }
