@@ -93,7 +93,7 @@
 			flex: 1 1 auto;
 	  	li{
 	  		width: 100%;
-	  		padding: 0;
+	  		padding: 0 2rem;
 	  		display: flex;
 		    flex-direction: column;
 		    flex-wrap: wrap;
@@ -187,5 +187,8 @@
 	}
 	path.active{
 		fill: $orange;
+	}
+	path:hover{
+		opacity: 0.9;
 	}
 }

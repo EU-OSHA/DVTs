@@ -40,8 +40,8 @@ define(function (require) {
 							contentTarget.removeClass('active');
 							currentTarget.removeClass('active');
 						}else{
-							//angular.element('.accordion-content').removeClass('active');
-							//angular.element('.accordion-title').removeClass('active');
+							angular.element('.accordion-content .accordion-content').removeClass('active');
+							angular.element('.accordion-content .accordion-title').removeClass('active');
 							contentTarget.addClass('active');
 							currentTarget.addClass('active');
 						}          
