@@ -43,8 +43,8 @@ define(function (require) {
             {
                 id: 'osh-steering', 
                 name: 'L22005',
-                firstSubsection: 'regulation',
-                firstIndicatorId: '40'
+                firstSubsection: 'structure_strategy',
+                firstIndicatorId: '46'
             },
             {
                 id: 'osh-outcomes-working-conditions', 
