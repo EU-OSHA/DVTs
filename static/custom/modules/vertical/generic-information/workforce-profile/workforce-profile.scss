@@ -23,13 +23,19 @@
 			top: 0;
 		}
 	}
+	.legend--block{
+		background:$white;
+		border-bottom: 2px solid $gray;
+		&.eu{
+			border-bottom: 2px solid $eu;
+		}
+	}
   .help-text{
     text-align: center;
-    width: 100%;
+    //width: 100%;
 		background: #FFF;
-    padding: 4rem;
-    border-bottom: 2px solid $gray;
-    margin: 0;
+    padding: 3.6rem;
+    margin: 0 auto;
     .exclamation{
 	    color: #FFF;
 	    display: inline-block;
@@ -62,7 +68,7 @@
   }
 	.map--legend--block{
     background: $white;
-    width: 100%;
+    //width: 100%;
     padding: 1rem 2rem;
     position: relative;
     top: 0;
@@ -74,8 +80,12 @@
 			display: flex;
 			flex-wrap: wrap;
 			flex-direction: column;
+			width: 12rem;
 			img{
-
+				border: 1px solid #B1B3B4;
+				width: 7rem;
+				text-align: center;
+				margin: auto;
 			}
 			.title-section{
 				font-family: 'Oswald-bold';				
@@ -121,8 +131,7 @@
 	  	}
 	  }
 	}
-	.map--eu--legend{
-    border-bottom: 2px solid $eu;
+	.map--eu--legend{    
 	  .matrix--header--elements{
 			img{
 			}
@@ -145,8 +154,7 @@
 	  	}
 	  }
 	}
-	.map--countries--legend{
-		border-bottom: 2px solid $gray;
+	.map--countries--legend{		
 		position: relative;
 	  .matrix--header--elements{
 			display: flex;
@@ -174,15 +182,18 @@
 	  	}
 	  }
 	  .close-legend{
-	    content: "X";
-	    width: 3.2rem;
-	    font-size:1.6rem;
-	    display: inline-block;
-	    text-align: right;
-	    margin-right: 1rem;
+	    border: 0;
 	    position: absolute;
-	    right: 1rem;
+	    right: 0;
+	    top: 35%;
+	    padding: 0.5rem;
+	    background:$gray-lighter;
+	    border-radius: 0.4rem;
 	    cursor: pointer;
+	    &:hover{
+	    	color:$white;
+	    	background: $aquamarine;
+	    }
 	  }
 	}
 	path.active{
