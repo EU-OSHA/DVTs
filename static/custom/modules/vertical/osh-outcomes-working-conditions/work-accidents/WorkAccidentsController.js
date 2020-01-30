@@ -96,6 +96,36 @@ define(function (require) {
       return dataset.datum.atoms.category.value
     }
 
+    $scope.getMin = function f(cdaData) {
+      var minTrunc = 0;
+
+      for (var i = 0; i < cdaData.resultset.length; i++)
+      {
+        var value = cdaData.resultset[i][2];
+        if (minTrunc == 0)
+        {
+          minTrunc = Math.trunc(value/20);
+        }
+        else if (Math.trunc(value/20) < minTrunc)
+        {
+          minTrunc = Math.trunc(value/20);
+        }
+      }
+
+      // The CCC chart options object
+      var options = this.chartDefinition;
+
+      // Don't force _0_ to be added to the domain
+      options.orthoAxisOriginIsZero = false;
+
+      // Whatever are the real domain bounds, 
+      // show this extent in the ortho axis.
+      // You _can_ set these to any values calculated from _cdaData_.
+      options.orthoAxisFixedMin = minTrunc*20 < 60 ? minTrunc*20 : 60;
+
+      return cdaData;
+    }
+
     $scope.stories = [
       //0 - Non-fatal work accidents first chart
       {

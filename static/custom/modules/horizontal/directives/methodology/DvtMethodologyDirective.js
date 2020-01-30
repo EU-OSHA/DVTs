@@ -26,7 +26,8 @@ define(function (require) {
 				section: "@section",
 				pIndicatorID: "@indicatorid",
 				pIndicator: "@indicator",
-				pSubIndicator: "@subindicator"
+				pSubIndicator: "@subindicator",
+				pDatasetID: "@datasetid"
 			},
 			controller: ['$rootScope', '$scope', '$state', '$window' , 'configService', '$http', '$log','dataService', '$compile', '$sce',
 				function ($rootScope, $scope, $state, $window, configService, $http, $log, dataService, $compile, $sce) {
@@ -39,8 +40,8 @@ define(function (require) {
 							contentTarget.removeClass('active');
 							currentTarget.removeClass('active');
 						}else{
-							//angular.element('.accordion-content').removeClass('active');
-							//angular.element('.accordion-title').removeClass('active');
+							angular.element('.accordion-content .accordion-content').removeClass('active');
+							angular.element('.accordion-content .accordion-title').removeClass('active');
 							contentTarget.addClass('active');
 							currentTarget.addClass('active');
 						}          
@@ -52,7 +53,7 @@ define(function (require) {
 
 					$scope.methodologyType = 0;
 
-					if ($scope.section == "PHYSICAL_RISKS")
+					if ($scope.section == "PHYSICAL_RISKS" && $scope.pIndicator != "exposure-to-dangerous-substances")
 					{
 						$scope.methodologyType = 2;
 						$scope.group = [];
@@ -60,15 +61,11 @@ define(function (require) {
 						{
 							$scope.group = ["vibrations","loud-noise","high-temperatures","low-temperatures"];
 						}
-						else if ($scope.pIndicator == "exposure-to-dangerous-substances")
-						{
-							$scope.group = [$scope.pSubIndicator];
-						}
 						else if ($scope.pIndicator == "risks-involve-with-work")
 						{
-							$scope.group = ["tiring-or-painful-positions-(esener)","tiring-or-painful-positions-i-(ewcs)","tiring-or-painful-positions-ii-(ewcs)",
-								"lifting-or-moving-people-or-heavy-loads-(esener)","lifting-or-moving-people-i-(ewcs)","lifting-or-moving-heavy-loads-ii-(ewcs)",
-								"repetitive-hand-or-arm-movements-(esener)","repetitive-hand-or-arm-movements-(ewcs)"];
+							$scope.group = ["tiring-or-painful-positions","tiring-or-painful-positions-i","tiring-or-painful-positions-ii",
+								"lifting-or-moving-people-or-heavy-loads","lifting-or-moving-people-i","lifting-or-moving-heavy-loads-ii",
+								"repetitive-hand-or-arm-movements","repetitive-hand-or-arm-movements"];
 						}
 
 					}
@@ -82,25 +79,25 @@ define(function (require) {
 					// Get the indicators for the current section
 					dataService.getMethodologySectionData($scope.section).then(function (data) {
                     	data.data.resultset.map(function (elem) {
-
                       		$scope.indicators.push({
 	                        	id: elem[0],
-	                        	text: elem[1],
-	                        	anchor_text: i18n_literals['L'+elem[1]].toLowerCase().replace(/ /g, '-').replace(/,/g, ''),
-	                        	diagram: elem[2],
-	                            anchor_name: i18n_literals['L'+elem[2]].toLowerCase().replace(/ /g, '-').replace(/,/g, ''),
-	                            description: elem[3],
-	                            datasource: elem[4],
-	                            specific_table: elem[5],
-	                            url: elem[6],
-	                            options_applied: elem[7],
-	                            reference_year: elem[8],
-	                            last_update: elem[9],
-	                            coverage: elem[10],
-	                            unit_measure: elem[11],
-	                            calculations: elem[12],
-	                            visualisation: elem[13],
-	                            additional_comments: elem[14]
+	                        	dataset_id: elem[1],
+	                        	text: elem[2],
+	                        	anchor_text: i18n_literals['L'+elem[2]].toLowerCase().replace(/ /g, '-').replace(/,/g, ''),
+	                        	diagram: elem[3],
+	                            anchor_name: i18n_literals['L'+elem[3]].toLowerCase().replace(" (esener)","").replace(" (ewcs)","").replace(/ /g, '-').replace(/,/g, ''),
+	                            description: elem[4],
+	                            datasource: elem[5],
+	                            specific_table: elem[6],
+	                            url: elem[7],
+	                            options_applied: elem[8],
+	                            reference_year: elem[9],
+	                            last_update: elem[10],
+	                            coverage: elem[11],
+	                            unit_measure: elem[12],
+	                            calculations: elem[13],
+	                            visualisation: elem[14],
+	                            additional_comments: elem[15]
 	                      	});
                     	});
 

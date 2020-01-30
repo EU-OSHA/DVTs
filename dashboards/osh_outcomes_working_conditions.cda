@@ -601,7 +601,7 @@
             AND t.language = 'EN'
             AND d.id = v.dataset_id
             AND d.id = ${pDataset}
-            ORDER BY Answer DESC, FIELD('EU28', n.country_code) DESC, FIELD(n.country_code, 'CH', 'IS', 'NO'), n.country_code ASC, Value DESC;
+            ORDER BY Answer ASC, FIELD('EU28', n.country_code) DESC, FIELD(n.country_code, 'CH', 'IS', 'NO'), n.country_code ASC, Value DESC;
         </Query>
     </DataAccess>
 
@@ -823,7 +823,7 @@
             AND t.language = 'EN'
             AND d.id = v.dataset_id
             AND d.id = ${pDataset}
-            ORDER BY Answer DESC, FIELD('EU28', n.country_code) DESC, FIELD(n.country_code, 'CH', 'IS', 'NO'), n.country_code ASC, Value DESC;
+            ORDER BY Answer ASC, FIELD('EU28', n.country_code) DESC, FIELD(n.country_code, 'CH', 'IS', 'NO'), n.country_code ASC, Value DESC;
         </Query>
     </DataAccess>
 

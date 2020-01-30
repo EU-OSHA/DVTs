@@ -119,7 +119,14 @@ define(function (require) {
 
       $scope.addLetter = function (pLetter)
       {
-        $scope.countryFilter.push(pLetter);
+        if ($scope.countryFilter.indexOf(pLetter) == -1)
+        {
+          $scope.countryFilter.push(pLetter);  
+        }
+        else
+        {
+          $scope.countryFilter.splice($scope.countryFilter.indexOf(pLetter), 1)
+        }        
         searchCountries($scope.countryFilter);
       }
 

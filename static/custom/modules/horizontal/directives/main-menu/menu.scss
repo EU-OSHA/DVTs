@@ -239,7 +239,7 @@
                       min-width: 100% !important;
                       width: auto !important;
                       font-style: 1.4rem;
-                      top:100%;
+                      top:100%;                      
                       border-top: 6px solid transparent;
                       li{
                           a{
@@ -263,6 +263,10 @@
               > li:last-child{
                 position: relative;
                 top: 0px;
+                .dropdown-menu{
+                  left: -87%;
+                  text-align: right;
+                }
               }
             };
             .navbar-toggle .icon-bar {

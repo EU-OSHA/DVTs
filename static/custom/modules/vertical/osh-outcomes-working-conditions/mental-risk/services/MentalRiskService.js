@@ -345,13 +345,13 @@ define (function (require) {
                                 scene.firstAtoms.value.label = scene.firstAtoms.value.label + '%';
                             }
 
-                            if (split == 'Yes' || split == "Never"){
+                            if (split == 'Yes' || split == "Once or more"){
                                 if (country == "EU28")
                                 {
                                     return dvtUtils.getEUColor();
                                 }
                                 return dvtUtils.getColorCountry(1);
-                            } else if(split == 'No' || split == "Once or more"){
+                            } else if(split == 'No' || split == "Never"){
                                 if (country == "EU28")
                                 {
                                     return dvtUtils.getEUColor(2);

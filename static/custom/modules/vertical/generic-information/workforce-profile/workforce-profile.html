@@ -56,136 +56,180 @@
 
 <section class="container-full nopadding">
   <section class="survey--map--block">
-    <div class="map--block center-text container">
-      <div class="map--eu--legend">
-        <div class="matrix--header--elements">
-          <img  class="flags--wrapper" src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/flag/eu28.png">
-          <h2 class="country ng-binding title-section main-color">EU28</h2>
+    <div class="sticky--wraper">
+      <div class="legend--block eu">
+        <div class="map--legend--block map--eu--legend container">
+          <div class="matrix--header--elements">
+            <img  class="flags--wrapper" src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/flag/eu28.png">
+            <h2 class="country ng-binding title-section main-color">EU28</h2>
+          </div>
+          <ul class="matrix--elements--data">
+            <li>
+              <label data-ng-bind="i18nLiterals['L20615']"></label>
+              <div>                
+                <span class="data" data-ng-bind="data.medianAge['EU28'].value"></span>
+                <span class="data-text" data-ng-bind="i18nLiterals['L20620']"></span>
+              </div>          
+            </li>
+            <li>
+              <label data-ng-bind="i18nLiterals['L20616']"></label>
+              <div>
+                <span class="data" data-ng-bind="data.ageingWorkers['EU28'].value"> %</span>
+                <span class="data-text">&percnt;</span>
+              </div>
+            </li>
+            <li>  
+              <label data-ng-bind="i18nLiterals['L20619']"></label>
+              <div>
+                <span class="data" data-ng-bind="data.femaleEmployment['EU28'].value"></span>
+                <span class="data-text">&percnt;</span>
+              </div>
+            </li>
+            <li>  
+              <label data-ng-bind="i18nLiterals['L20618']"></label>
+              <div>
+                <span class="data" data-ng-bind="data.maleEmployment['EU28'].value"></span>
+                <span class="data-text">&percnt;</span>
+              </div>
+            </li>
+            <li>
+              <label data-ng-bind="i18nLiterals['L20617']"></label>
+              <div>
+                <span class="data" data-ng-bind="data.totalEmployment['EU28'].value"></span>
+                <span class="data-text">&percnt;</span>
+              </div>
+            </li>
+            <li>
+              <label data-ng-bind="i18nLiterals['L291']"></label>
+              <div>
+                <span class="data" data-ng-bind="data.unemploymentRate['EU28'].value"></span>
+                <span class="data-text">&percnt;</span>
+              </div>
+            </li>
+          </ul>
         </div>
-        <ul class="matrix--elements--data">
-          <li>
-            <label data-ng-bind="i18nLiterals['L20615']"></label>                
-            <span class="data" data-ng-bind="data.medianAge['EU28'].value"></span>
-            <span class="data-text" data-ng-bind="i18nLiterals['L20620']"></span>          
-          </li>
-          <li>
-            <label data-ng-bind="i18nLiterals['L20616']"></label>
-            <span class="data" data-ng-bind="data.ageingWorkers['EU28'].value"> %</span>
-            <span class="data-text">&percnt;</span>
-          </li>
-          <li>  
-            <label data-ng-bind="i18nLiterals['L20619']"></label>
-            <span class="data" data-ng-bind="data.femaleEmployment['EU28'].value"></span>
-            <span class="data-text">&percnt;</span>
-          </li>
-          <li>  
-            <label data-ng-bind="i18nLiterals['L20618']"></label>
-            <span class="data" data-ng-bind="data.maleEmployment['EU28'].value"></span>
-            <span class="data-text">&percnt;</span>
-          </li>
-          <li>
-            <label data-ng-bind="i18nLiterals['L20617']"></label>
-            <span class="data" data-ng-bind="data.totalEmployment['EU28'].value"></span>
-            <span class="data-text">&percnt;</span>
-          </li>
-          <li>
-            <label data-ng-bind="i18nLiterals['L291']"></label>
-            <span class="data" data-ng-bind="data.unemploymentRate['EU28'].value"></span>
-            <span class="data-text">&percnt;</span>
-          </li>
-        </ul>
-      </div>    
+      </div>
+      <div class="legend--block">
+        <p class="help-text container" data-ng-if="selectedCountry==''"><strong>Click on a country to compare</strong> the data <span class="exclamation" aria-hidden="true"></span></p>
+        <div class="map--legend--block map--countries--legend container" data-ng-if="selectedCountry!=''">      
+          <div class="matrix--header--elements">
+            <img data-ng-if="selectedCountry!=''" class="flags--wrapper" src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/flag/{{selectedCountry}}.png">
+            <h2 class="country ng-binding title-section main-color">{{i18nLiterals[selectedCountryName]}}</h2>
+          </div>
+          <ul class="matrix--elements--data">
+            <li>
+              <label data-ng-bind="i18nLiterals['L20615']"></label>
+              <div>                
+                <span class="data" data-ng-bind="data.medianAge[selectedCountry].value"></span>
+                <span class="data-text" data-ng-bind="i18nLiterals['L20620']"></span>  
+              </div>        
+            </li>
+            <li>
+              <label data-ng-bind="i18nLiterals['L20616']"></label>
+              <div>
+                <span class="data" data-ng-bind="data.ageingWorkers[selectedCountry].value"> %</span>
+                <span class="data-text">&percnt;</span>
+              </div>
+            </li>
+            <li>  
+              <label data-ng-bind="i18nLiterals['L20619']"></label>
+              <div>
+                <span class="data" data-ng-bind="data.femaleEmployment[selectedCountry].value"></span>
+                <span class="data-text">&percnt;</span>
+              </div>
+            </li>
+            <li>  
+              <label data-ng-bind="i18nLiterals['L20618']"></label>
+              <div>
+                <span class="data" data-ng-bind="data.maleEmployment[selectedCountry].value"></span>
+                <span class="data-text">&percnt;</span>
+              </div>
+            </li>
+            <li>
+              <label data-ng-bind="i18nLiterals['L20617']"></label>
+              <div>
+                <span class="data" data-ng-bind="data.totalEmployment[selectedCountry].value"></span>
+                <span class="data-text">&percnt;</span>
+              </div>
+            </li>
+            <li>
+              <label data-ng-bind="i18nLiterals['L291']"></label>
+              <div>
+                <span class="data" data-ng-bind="data.unemploymentRate[selectedCountry].value"></span>
+                <span class="data-text">&percnt;</span>
+              </div>
+            </li>
+          </ul>
+          <span class="close-legend" data-ng-click="clearCountry()"><i class="fa fa-times" aria-hidden="true"></i></span>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="map--block center-text container"> 
       <!-- CONTENT -->
       <dvt-map ng-cloak
         country-key="EU" promise="dataPromises"
         country="EU" use-viewbox="true" x="0" y="0"
-        css-class="dvt--map--block" is-colored="1" hover="true"
+        css-class="dvt--map--block" is-colored="1" hover="false"
         group-list="groupList"
         group-color="groupColor"
-        data="data">
+        data="data"
+        clickable="1"
+        click-action="countryClick">
       </dvt-map> 
-    </div>    
-    <!--<div class="map--gauss--block container " data-ng-repeat="value in minMaxValues" >-->
-    <div class="map--gauss--block container">
-      <dvt-bar-chart
-        data-ng-cloak
-        query="getGaussChartValues" cda="{{::cdaGenericInformation }}"
-        width="200" height="200" type="lines"
-        orientation="vertical" axis-fixed-min="0"
-        listen-to="[minMaxValues.min_value, minMaxValues.max_value, minMaxValues.range_value]"
-        axis-fixed-max="20" step="{{step.chart1}}"
-        params="[['pDataset', datasetEurostat], ['pIndicator',pIndicator], ['pSubIndicator',pSubIndicator], 
-        ['pMinValue', minMaxValues.min_value], ['pMaxValue', minMaxValues.max_value], ['pRange', minMaxValues.range_value]]"
-        color-role="category" colors="[stories[0].color1]" id="5"
-        axis-label-font="14px 'OpenSans-bold'"
-        plots="stories[0].plots"
-        values-visible="false"
-        values-font="14px 'OpenSans-bold'"
-        hoverable="false"
-        ortho-axis-grid="false"
-        ortho-axis-visible="false"
-        dimensions="stories[0].dimensions"
-        multiple-label-colors="true"
-        base-axis-label-text-baseline="top"
-        axis-color="true"
-        panel-color="transparent"
-        legend="false"
-        is-maximized="true"
-        tooltip-enabled="false"
-        clickable="false" 
-        base-axis-size="25"
-      ></dvt-bar-chart> 
     </div>
 
 
   </section>
-    <section class="survey--map--block-mobile">
-      <div class="selected--tags-wrapper"></div>
-      <div class="matrix--elements--wrapper">
-        <div class="matrix--element" data-ng-repeat="country in matrix">
-          <div class="matrix--header--elements">
-            <img  class="flags--wrapper" ng-src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/flag/{{::country.country_code.toLowerCase()}}.png">
-            <h2 class="country ng-binding title-section main-color" data-ng-bind="i18nLiterals['L'+data.medianAge[country.country_code].country_name]"></h2>
-          </div>
-          <div class="matrix--content--elements"></div>
-            <ul class="matrix--elements--data">
-              <li>
-                <label data-ng-bind="i18nLiterals['L20615']"></label>
-                <span class="data" data-ng-bind="data.medianAge[country.country_code].value"></span>
-                <span class="data-text" data-ng-bind="i18nLiterals['L20620']"></span>
-              </li>
-              <li>
-                <label data-ng-bind="i18nLiterals['L20616']"></label>
-                <span class="data" data-ng-bind="data.ageingWorkers[country.country_code].value"> %</span>
-                <span class="data-text">&percnt;</span>
-              </li>
-              <li>
-                <label data-ng-bind="i18nLiterals['L20617']"></label>
-                <span class="data" data-ng-bind="data.totalEmployment[country.country_code].value"></span>
-                <span class="data-text">&percnt;</span>
-              </li>
-              <li>                
-                <label data-ng-bind="i18nLiterals['L20618']"></label>
-                <span class="data" data-ng-bind="data.maleEmployment[country.country_code].value"></span>
-                <span class="data-text">&percnt;</span>
-              </li>
-              <li>                
-                <label data-ng-bind="i18nLiterals['L20619']"></label>
-                <span class="data" data-ng-bind="data.femaleEmployment[country.country_code].value"></span>
-                <span class="data-text">&percnt;</span>
-              </li>
-              <li>                
-                <label data-ng-bind="i18nLiterals['L291']"></label>
-                <span data-ng-if="data.unemploymentRate[country.country_code].value != undefined" class="data" data-ng-bind="data.unemploymentRate[country.country_code].value"></span>
-                <span data-ng-if="data.unemploymentRate[country.country_code].value == undefined" class="data">- </span>
-                <span class="data-text">&percnt;</span>
-
-              </li>
-            </ul>
+  <section class="survey--map--block-mobile">
+    <div class="selected--tags-wrapper"></div>
+    <div class="matrix--elements--wrapper">
+      <div class="matrix--element" data-ng-repeat="country in matrix">
+        <div class="matrix--header--elements">
+          <img  class="flags--wrapper" ng-src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/flag/{{::country.country_code.toLowerCase()}}.png">
+          <h2 class="country ng-binding title-section main-color" data-ng-bind="i18nLiterals['L'+data.medianAge[country.country_code].country_name]"></h2>
         </div>
-      </div>      
-    </section>
-    <!-- END CONTENT -->
+        <div class="matrix--content--elements"></div>
+          <ul class="matrix--elements--data">
+            <li>
+              <label data-ng-bind="i18nLiterals['L20615']"></label>
+              <span class="data" data-ng-bind="data.medianAge[country.country_code].value"></span>
+              <span class="data-text" data-ng-bind="i18nLiterals['L20620']"></span>
+            </li>
+            <li>
+              <label data-ng-bind="i18nLiterals['L20616']"></label>
+              <span class="data" data-ng-bind="data.ageingWorkers[country.country_code].value"> %</span>
+              <span class="data-text">&percnt;</span>
+            </li>
+            <li>
+              <label data-ng-bind="i18nLiterals['L20617']"></label>
+              <span class="data" data-ng-bind="data.totalEmployment[country.country_code].value"></span>
+              <span class="data-text">&percnt;</span>
+            </li>
+            <li>                
+              <label data-ng-bind="i18nLiterals['L20618']"></label>
+              <span class="data" data-ng-bind="data.maleEmployment[country.country_code].value"></span>
+              <span class="data-text">&percnt;</span>
+            </li>
+            <li>                
+              <label data-ng-bind="i18nLiterals['L20619']"></label>
+              <span class="data" data-ng-bind="data.femaleEmployment[country.country_code].value"></span>
+              <span class="data-text">&percnt;</span>
+            </li>
+            <li>                
+              <label data-ng-bind="i18nLiterals['L291']"></label>
+              <span data-ng-if="data.unemploymentRate[country.country_code].value != undefined" class="data" data-ng-bind="data.unemploymentRate[country.country_code].value"></span>
+              <span data-ng-if="data.unemploymentRate[country.country_code].value == undefined" class="data">- </span>
+              <span class="data-text">&percnt;</span>
+
+            </li>
+          </ul>
+      </div>
+    </div>      
+  </section>
+  <!-- END CONTENT -->
 </section>
 
 <dvt-methodology father="generic-information" section="WORKFORCE_PROFILE" indicatorid="37"></dvt-methodology>

@@ -51,12 +51,13 @@
             <Parameter default="OSH_AUTHORITIES" name="pSubsection" type="String"/>
         </Parameters>
         <Query>
-            SELECT m.indicator_id, i.literal_id, m.indicator_name_displayed_literal_id as diagram, m.description_literal_id as description, m.source_methodology_literal_id as datasource, m.specific_table_literal_id as specific_table, m.url_literal_id as url, m.filtering_options_literal_id as options_applied, m.reference_year_literal_id as reference_year, m.last_update_literal_id as last_update, m.coverage_literal_id as coverage, m.unit_measure_literal_id as unit_measure, m.calculations_literal_id as calculations, m.visualisation_literal_id as visualisation, m.additional_comments_literal_id as additional_comments
+            SELECT m.indicator_id, m.dataset_id, i.literal_id, m.indicator_name_displayed_literal_id as diagram, m.description_literal_id as description, m.source_methodology_literal_id as datasource, m.specific_table_literal_id as specific_table, m.url_literal_id as url, m.filtering_options_literal_id as options_applied, m.reference_year_literal_id as reference_year, m.last_update_literal_id as last_update, m.coverage_literal_id as coverage, m.unit_measure_literal_id as unit_measure, m.calculations_literal_id as calculations, m.visualisation_literal_id as visualisation, m.additional_comments_literal_id as additional_comments
             FROM methodology m, dataset d, section s, indicator i
             WHERE s.name = ${pSubsection}
             AND m.section_id = s.id
             AND m.dataset_id = d.id
             AND m.indicator_id = i.id
+            ORDER BY m.id
         </Query>
     </DataAccess>
 
@@ -304,7 +305,7 @@
 	        OR (mp.check_2= IF('Compensation and insurance body' REGEXP ${term}, 1, 0) AND mp.check_1= 0 AND mp.check_3= 0 AND mp.check_4= 0)
 	        OR (mp.check_3= IF('Prevention institute' REGEXP ${term}, 1, 0) AND mp.check_1= 0 AND mp.check_2= 0 AND mp.check_4= 0)
 	        OR (mp.check_4= IF('Standardisation body' REGEXP ${term}, 1, 0) AND mp.check_1= 0 AND mp.check_2= 0 AND mp.check_3= 0)))
-	      ORDER BY FIELD(n.country_code, 'EU28') DESC, country_name ASC, osh_authority DESC, compensation DESC, prevention DESC, standardisation DESC, id ASC;
+	      ORDER BY FIELD(n.country_code, 'EU28') DESC, country_name ASC, osh_authority DESC, compensation DESC, prevention DESC, standardisation DESC, CASE WHEN country_code IN ("PL") THEN FIELD(mp.id, 164) END DESC, id ASC;
 	    </Query>
 	</DataAccess>
 
@@ -331,7 +332,7 @@
 		      OR mp.check_2=${institution2}
 		      OR mp.check_3=${institution3}
 		      OR mp.check_4=${institution4})
-	      ORDER BY FIELD(n.country_code, 'EU28') DESC, country_name ASC, osh_authority DESC, compensation DESC, prevention DESC, standardisation DESC, id ASC;
+	      ORDER BY FIELD(n.country_code, 'EU28') DESC, country_name ASC, osh_authority DESC, compensation DESC, prevention DESC, standardisation DESC, CASE WHEN country_code IN ("PL") THEN FIELD(mp.id, 164) END DESC, id ASC;
 	    </Query>
 	</DataAccess>
 

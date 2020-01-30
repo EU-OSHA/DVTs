@@ -337,7 +337,7 @@ define(function (require) {
             var countryMap = this.setFinish();
 
             /* mouseover control */
-            if (!!attributes.hover && true)
+            if (!!attributes.hover && attributes.hover=="true")
                countryMap.hover(over,out);
 
             var colorAux = "";

@@ -552,6 +552,10 @@ define(function (require) {
       $scope.deleteTag = function($event){
         var element = angular.element($event.currentTarget);
         var countryName = element[0].id.slice(7,9);
+        if (element[0].id.indexOf("country") > -1)
+        {
+          countryName = element[0].id.replace("country","");
+        }
         var countryCode = element[0].innerHTML.slice(1,3);
 
         if(countryCode == 'U2'){
@@ -559,8 +563,7 @@ define(function (require) {
           countryName = 264;
         }
 
-        //buscar en el value del input correspondiente al id de literal
-        
+        //buscar en el value del input correspondiente al id de literal        
         var quitChecked;
         if($event.target.id.indexOf('country') != -1){
           $scope.searchParams.countries.splice($scope.searchParams.countries.indexOf(countryCode), 1);
@@ -665,21 +668,6 @@ define(function (require) {
       angular.element('div#modalChart .modal-title').html($scope.i18nLiterals['L'+matrix.country_name]+' infrastructure');
     }
 
-    $scope.accordion = function($event) {        
-      var currentTarget = angular.element($event.currentTarget);
-      var contentTarget = angular.element($event.currentTarget.nextElementSibling); 
-      var elemActive = $event.currentTarget.nextElementSibling.className.indexOf('active');
-
-      if( elemActive > 0 ){
-        contentTarget.removeClass('active');
-        currentTarget.removeClass('active');
-      }else{
-        //angular.element('.accordion-content').removeClass('active');
-        //angular.element('.accordion-title').removeClass('active');
-        contentTarget.addClass('active');
-        currentTarget.addClass('active');
-      }          
-    }
 
     angular.element('div#modalChart').click(function(text,$index, matrix ) {
       angular.element('div#modalChart').modal('hide');
