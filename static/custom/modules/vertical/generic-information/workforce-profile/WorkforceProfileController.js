@@ -164,7 +164,8 @@ define(function (require) {
     // This will be launched when clicking on a country that has data on the map
     $scope.countryClick = function()
     {
-      $scope.selectedCountry = this.id;      
+      $scope.selectedCountry = this.id;
+      $scope.selectedCountryName = "L" + $scope.countries.find(o => o.country_code===$scope.selectedCountry).country_name;
 
       if (angular.element("path.active").length > 0)
       {
@@ -451,6 +452,16 @@ define(function (require) {
         });
       }
 
+      $(window).scroll(function(){
+        var element = $( ".survey--map--block" );
+        var offset = element.offset();       
+        if($(this).scrollTop()>=offset.top){
+          $( ".survey--map--block" ).addClass('fixed');
+        } else {
+          $( ".survey--map--block" ).removeClass('fixed');
+        }
+        
+  });
 
 
     $scope.status = 'ready';

@@ -3529,8 +3529,8 @@ INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2020, null, @sectionId, "BANNER");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2020, "EN", 1, "OSH BAROMETER data visualisation tool");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2020, null, @sectionId, "TITLE");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2020, "EN", 1, "OSH BAROMETER");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
@@ -3676,6 +3676,93 @@ SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="METHODOLOGY" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2102, null, @sectionId, "BUTTON");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2102, "EN", 1, "Discover all the Methodology");
+
+SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
+SET @sectionId = (SELECT id FROM section WHERE name="WORKFORCE PROFILE" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2103, null, @sectionId, "BOX_MESSAGE");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2103, "EN", 1, "Click on a country to compare the data");
+
+SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
+SET @sectionId = (SELECT id FROM section WHERE name="WORKFORCE PROFILE" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2104, null, @sectionId, "LEGEND");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2104, "EN", 1, "Non EU countries");
+
+SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
+SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2105, null, @sectionId, "TITLE");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2105, "EN", 1, "Regulation (Coming soon)");
+
+SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
+SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2106, null, @sectionId, "INTRO_TEXT");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2106, "EN", 1, "<p>Coming with the next substantial update - The section (or part) on ‘Regulation’ needs a thorough revision due to recent major changes in the Occupational Safety and Health legislation in several Member States.</p>
+<p>The regulation indicator will provide an overview of the implementation of regulations. It will display the results of the large-scale evaluation of the EU OSH acquis that was finished in 2015.</p>");
+
+SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
+SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2107, null, @sectionId, "SUBTITLE");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2107, "EN", 1, "Data visualisation tool");
+
+SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
+SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2108, null, @sectionId, "INTRO_TEXT");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2108, "EN", 1, "The OSH BAROMETER is an EU-wide public information system on the most important facts and figures of Occupational Safety and Health. The system provides visualised information for important OSH indicators at Eu and national level; it is based on statistics, surveys and public data.");
+
+SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
+SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2109, null, @sectionId, "KEY_MESSAGE");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2109, "EN", 1, "The OSH BAROMETER is a reliable public information system on facts and figures of OSH in the EU.");
+
+SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
+SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2110, null, @sectionId, "BUTTON");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2110, "EN", 1, "Discover the tool");
+
+SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
+SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2111, null, @sectionId, "TITLE");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2111, "EN", 1, "Select your preferences");
+
+SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
+SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2112, null, @sectionId, "EXPLANATORY_TEXT");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2112, "EN", 1, "<p>The countries selected will always be shown first be kept while navigating through the tool.</p>
+<p>You can change the country selection on every page. To change your preferences please return to this page. </p>");
+
+SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
+SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2113, null, @sectionId, "PREFERENCE_BUTTON");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2113, "EN", 1, "Country of interest");
+
+SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
+SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2114, null, @sectionId, "TITLE");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2114, "EN", 1, "METHODOLOGY");
+
+SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
+SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2115, null, @sectionId, "SUBTITLE");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2115, "EN", 1, "EU-OSHA ensures the highest possible transparency and data quality");
+
+SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
+SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2116, null, @sectionId, "INTRO_TEXT");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2116, "EN", 1, "This methodology informs about our approach, the sources and selection of data, calculation methods and it contains all references and data sources that were used to provide texts, diagrams and tables.");
+
+SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
+SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2117, null, @sectionId, "BUTTON");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2117, "EN", 1, "Discover the methodology");
+
+SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
+SET @sectionId = (SELECT id FROM section WHERE name="CHARTS" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2118, null, @sectionId, "REMARK_MESSAGE");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2118, "EN", 1, "Click on each value on the legend to hide/show it on the chart");
+
+SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
+SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2119, null, @sectionId, "TITLE");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2119, "EN", 1, "Discover some of our charts");
 
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="AT");
@@ -4172,7 +4259,8 @@ SET @nutsId = (SELECT id FROM nuts WHERE country_code="EE");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "Labour Inspectorate (Tööinspektsioon)");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "See more in its <a target=\"_blank\" href=\"http://www.ti.ee/index.php?page=3& 
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "See more in its <a target=\"_blank\" href=\"http://www.ti.ee/index.php?page=3& 
+
 \">website</a> and in <a target=\"_blank\" href=\"https://oshwiki.eu/wiki/OSH_system_at_national_level_–_Estonia\">OSHwiki</a>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p>The Labour Inspectorateis a government agency operating under the jurisdiction of the Ministry of Social Affairs. Its main functions are:</p><ul type=\"square\"><li>to arrange for state supervision in the working environment with respect to compliance with the requirements of legislation regulating OSH and labour relations and ensure enforcement by the state on the basis of and to the extent prescribed by the law;</li><li>to supervise safe use of personal protective equipment (PPE)in the working environment and ensure the effectiveness of PPE at sites of manufacture and sale;</li><li>to supervise investigations into occupational accidents and diseases and to supervise the implementation of measures for the prevention of occupational accidents and diseases;</li><li>to investigate fatal occupational accidents and diseases, and, if necessary, conduct an analysis of the causes of serious occupational accidents and diseases;</li><li>to collect statistics on accidents at work and conduct a subsequent analysis;</li><li>to supervise the use of genetically modified micro-organisms in closed environments to the extent prescribed by the law;</li><li>to make decisions, as required by the law, on issuing or withholding approval;</li><li>to carry out administrative proceedings and approve administrative acts and rules;</li><li>to carry out extrajudicial proceedings on misdemeanours to the extent prescribed by law;</li><li>to initiate criminal proceedings and carry out urgent investigative actions;</li><li>to address and resolve enquiries from individuals on working environment issues;</li><li>to resolve individual labour disputes pursuant to the procedures prescribed by law.</li></ul>");
@@ -4845,7 +4933,8 @@ SET @nutsId = (SELECT id FROM nuts WHERE country_code="LV");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "Ministry of Welfare");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "See more in its <a target=\"_blank\" href=\"http://www.lm.gov.lv/ 
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "See more in its <a target=\"_blank\" href=\"http://www.lm.gov.lv/ 
+
 \">website</a> and in <a target=\"_blank\" href=\"https://oshwiki.eu/wiki/OSH_systems_at_national_level_-_Latvia\">OSHwiki</a>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p>The State Labour Inspectorate is the principal control and supervisory institution in the field of OSH, operating under the supervision of the Ministry of Welfare (i.e. it is the direct management authority). The legal status, function, tasks and operational procedure of the State Labour Inspectorate is defined in the State Labour Inspectorate Law adopted on 19 June 2008. The State Labour Inspectorate is the only governmental institution that carries out the implementation of the policy in the field of labour laws and OSH legislation. The State Labour Inspectorate carries out various activities to ensure that the Latvian population are socially and legally protected, and are able to work in a safe working environment.<br />The State Labour Inspectorate has set following mission: to monitor the implementation of labour laws and OSH legislation in Latvia to establish and maintain a safe, healthy working environment and proper labour laws, thereby reducing the number of victims of occupational accidents at work.<br />The State Labour Inspectorate has the following main functions:</p><ul><li>to supervise and monitor the requirements of the regulatory enactments regarding labour laws and OSH legislation;</li><li>to monitor how employers and employees mutually fulfil the obligations set by employment contracts and collective labour agreements;</li><li>to provide free consultations to employers and employees on labour laws and OSH legislation.</li></ul>");
@@ -4896,7 +4985,8 @@ SET @nutsId = (SELECT id FROM nuts WHERE country_code="LT");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "Ministry of Social Security and Labour (Socialinės apsaugos ir darbo ministerija)");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "See more in its <a target=\"_blank\" href=\"http://www.socmin.lt/
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "See more in its <a target=\"_blank\" href=\"http://www.socmin.lt/
+
 \">website</a> and in <a target=\"_blank\" href=\"https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Lithuania \">OSHwiki</a>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "The Ministry of Social Security and Labour and the Ministry of Health (Sveikatos apsaugos ministerija) implement state policy in the field of occupational safety and health (OSH), in accordance with the Constitution of the Republic of Lithuania, the Labour Code, the laws, resolutions of the government and other regulations. The Minister of Social Security and Labour — either by itself or with another minister or other ministers — approves the OSH regulations, establishing the procedure for their entry into force and application. The Health Minister approves healthcare regulations (hygiene norms), which establish the number of factors of the working environment that are not harmful to workers’ health.");
@@ -4917,7 +5007,8 @@ SET @nutsId = (SELECT id FROM nuts WHERE country_code="LT");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "State Labour Inspectorate");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "See more in its <a target=\"_blank\" href=\"http://www.vdi.lt/
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "See more in its <a target=\"_blank\" href=\"http://www.vdi.lt/
+
 \">website</a> and in <a target=\"_blank\" href=\"https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Lithuania \">OSHwiki</a>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p>The remit of the State Labour Inspectorate under the Ministry of Social Security and Labour includes the prevention of accidents at work, occupational diseases and violations of OSH requirements of standard acts of the labour law. It also covers the control of compliance with the Labour Code of the Republic of Lithuania, laws and other standard acts regulating OSH, as well as labour relations in enterprises, institutions, organisations or other organisational structures, irrespective of their form of ownership, type, nature of activity, and, also in these cases, when an employer is a natural person.</p><p>&nbsp;</p><p>The State Labour Inspectorate consists of the administration and territorial divisions. The administration consists of the Chief State Labour Inspector and his deputies, as well as divisions and services that coordinate and organise activities of the State Labour Inspectorate. The number and subordination of these divisions and services as well as territorial divisions is established by the approval of the structure of the State Labour Inspectorate. Sectors uniting specialists of certain activities may be established within the structural subdivisions.</p>");
@@ -8984,258 +9075,6 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 </ul>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+13, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+13, "EN", 1, "Unemployment rate");
-INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
-
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Secondary legislation");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="REGULATION" AND t.name="osha_dvt_barometer");
-SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="DG EMPL" AND date_from="2014-01-01");
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p>The data are displayed as text for each Member State. It is possible to select two of the 28 in order to perform a comparison between those two Member States. It is also possible to select two of the 28 Member States and one of six specific categories of Member State secondary legislation. <strong>Specifically this indicator relates to</strong>:</p>
-<ul>
-<li><strong>Secondary legislation</strong></li>
-<li>Derogations</li>
-<li>Transitional period</li>
-<li>Risk assessment compliance</li>
-<li>Exemptions</li>
-<li>SME-specific regulation</li>
-</ul>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p>The source for the indicator &lsquo;Regulation&rsquo; is a preparatory report for DG Employment from 2018 (Kooperationsstelle Hamburg IFE / EUROGIP: Development and design of a structural model for the construction and implementation of an EU OSH Information System, Final Report, March 2018, Service contract No VC/2016/0055).</p>
-<p>All data in this preparatory report related to the indicator &lsquo;regulation&rsquo; are based on the DG Employment, Social Affairs and Inclusion report on the &lsquo;Evaluation of the Practical Implementation of the EU Occupational Safety and Health (OSH) Directives in EU Member States&rsquo; from 2015</p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>DG EMPLOYMENT, SOCIAL AFFAIRS AND INCLUSION: Evaluation of the Practical Implementation of the EU Occupational Safety and Health (OSH) Directives in EU Member States, 2015</p><p><a href=\"https://ec.europa.eu/social/BlobServlet?langId=en&amp;docId=16895&amp;\">https://ec.europa.eu/social/BlobServlet?langId=en&amp;docId=16895&amp;</a></p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2014 or earlier");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "No update until 2019");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The <strong>intended coverage</strong> is: 28 EU countries. All data for the coverage is available.</p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "Text based, selection options");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+13, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+13, "EN", 1, "Secondary legislation");
-INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
-
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Derogations");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="REGULATION" AND t.name="osha_dvt_barometer");
-SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="DG EMPL" AND date_from="2014-01-01");
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p>The data are displayed as text for each Member State. It is possible to select two of the 28 in order to perform a comparison between those two Member States. It is also possible to select two of the 28 Member States and one of six specific categories of Member State secondary legislation. <strong>Specifically this indicator relates to</strong>:</p>
-<ul>
-<li>Secondary legislation</li>
-<li><strong>Derogations</strong></li>
-<li>Transitional period</li>
-<li>Risk assessment compliance</li>
-<li>Exemptions</li>
-<li>SME-specific regulation</li>
-</ul>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p>The source for the indicator &lsquo;Regulation&rsquo; is a preparatory report for DG Employment from 2018 (Kooperationsstelle Hamburg IFE / EUROGIP: Development and design of a structural model for the construction and implementation of an EU OSH Information System, Final Report, March 2018, Service contract No VC/2016/0055).</p>
-<p>All data in this preparatory report related to the indicator &lsquo;regulation&rsquo; are based on the DG Employment, Social Affairs and Inclusion report on the &lsquo;Evaluation of the Practical Implementation of the EU Occupational Safety and Health (OSH) Directives in EU Member States&rsquo; from 2015</p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>DG EMPLOYMENT, SOCIAL AFFAIRS AND INCLUSION: Evaluation of the Practical Implementation of the EU Occupational Safety and Health (OSH) Directives in EU Member States, 2015</p><p><a href=\"https://ec.europa.eu/social/BlobServlet?langId=en&amp;docId=16895&amp;\">https://ec.europa.eu/social/BlobServlet?langId=en&amp;docId=16895&amp;</a></p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2014 or earlier");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "No update until 2019");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The <strong>intended coverage</strong> is: 28 EU countries. All data for the coverage is available.</p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "Text based, selection options");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+13, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+13, "EN", 1, "Derogations");
-INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
-
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Transitional period");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="REGULATION" AND t.name="osha_dvt_barometer");
-SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="DG EMPL" AND date_from="2014-01-01");
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p>The data are displayed as text for each Member State. It is possible to select two of the 28 in order to perform a comparison between those two Member States. It is also possible to select two of the 28 Member States and one of six specific categories of Member State secondary legislation. <strong>Specifically this indicator relates to</strong>:</p>
-<ul>
-<li>Secondary legislation</li>
-<li>Derogations</li>
-<li><strong>Transitional period</strong></li>
-<li>Risk assessment compliance</li>
-<li>Exemptions</li>
-<li>SME-specific regulation</li>
-</ul>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p>The source for the indicator &lsquo;Regulation&rsquo; is a preparatory report for DG Employment from 2018 (Kooperationsstelle Hamburg IFE / EUROGIP: Development and design of a structural model for the construction and implementation of an EU OSH Information System, Final Report, March 2018, Service contract No VC/2016/0055).</p>
-<p>All data in this preparatory report related to the indicator &lsquo;regulation&rsquo; are based on the DG Employment, Social Affairs and Inclusion report on the &lsquo;Evaluation of the Practical Implementation of the EU Occupational Safety and Health (OSH) Directives in EU Member States&rsquo; from 2015</p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>DG EMPLOYMENT, SOCIAL AFFAIRS AND INCLUSION: Evaluation of the Practical Implementation of the EU Occupational Safety and Health (OSH) Directives in EU Member States, 2015</p><p><a href=\"https://ec.europa.eu/social/BlobServlet?langId=en&amp;docId=16895&amp;\">https://ec.europa.eu/social/BlobServlet?langId=en&amp;docId=16895&amp;</a></p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2014 or earlier");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "No update until 2019");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The <strong>intended coverage</strong> is: 28 EU countries. All data for the coverage is available.</p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "Text based, selection options");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+13, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+13, "EN", 1, "Transitional period");
-INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
-
-SET @indicatorId = (SELECT id FROM indicator WHERE name="RA compliance");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="REGULATION" AND t.name="osha_dvt_barometer");
-SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="DG EMPL" AND date_from="2014-01-01");
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p>The data are displayed as text for each Member State. It is possible to select two of the 28 in order to perform a comparison between those two Member States. It is also possible to select two of the 28 Member States and one of six specific categories of Member State secondary legislation. <strong>Specifically this indicator relates to</strong>:</p>
-<ul>
-<li>Secondary legislation</li>
-<li>Derogations</li>
-<li>Transitional period</li>
-<li><strong>Risk assessment compliance</strong></li>
-<li>Exemptions</li>
-<li>SME-specific regulation</li>
-</ul>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p>The source for the indicator &lsquo;Regulation&rsquo; is a preparatory report for DG Employment from 2018 (Kooperationsstelle Hamburg IFE / EUROGIP: Development and design of a structural model for the construction and implementation of an EU OSH Information System, Final Report, March 2018, Service contract No VC/2016/0055).</p>
-<p>All data in this preparatory report related to the indicator &lsquo;regulation&rsquo; are based on the DG Employment, Social Affairs and Inclusion report on the &lsquo;Evaluation of the Practical Implementation of the EU Occupational Safety and Health (OSH) Directives in EU Member States&rsquo; from 2015</p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>DG EMPLOYMENT, SOCIAL AFFAIRS AND INCLUSION: Evaluation of the Practical Implementation of the EU Occupational Safety and Health (OSH) Directives in EU Member States, 2015</p><p><a href=\"https://ec.europa.eu/social/BlobServlet?langId=en&amp;docId=16895&amp;\">https://ec.europa.eu/social/BlobServlet?langId=en&amp;docId=16895&amp;</a></p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2014 or earlier");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "No update until 2019");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The <strong>intended coverage</strong> is: 28 EU countries. All data for the coverage is available.</p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "Text based, selection options");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+13, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+13, "EN", 1, "Risk assessment compliance");
-INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
-
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Exemptions");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="REGULATION" AND t.name="osha_dvt_barometer");
-SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="DG EMPL" AND date_from="2014-01-01");
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p>The data are displayed as text for each Member State. It is possible to select two of the 28 in order to perform a comparison between those two Member States. It is also possible to select two of the 28 Member States and one of six specific categories of Member State secondary legislation. <strong>Specifically this indicator relates to</strong>:</p>
-<ul>
-<li>Secondary legislation</li>
-<li>Derogations</li>
-<li>Transitional period</li>
-<li>Risk assessment compliance</li>
-<li><strong>Exemptions</strong></li>
-<li>SME-specific regulation</li>
-</ul>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p>The source for the indicator &lsquo;Regulation&rsquo; is a preparatory report for DG Employment from 2018 (Kooperationsstelle Hamburg IFE / EUROGIP: Development and design of a structural model for the construction and implementation of an EU OSH Information System, Final Report, March 2018, Service contract No VC/2016/0055).</p>
-<p>All data in this preparatory report related to the indicator &lsquo;regulation&rsquo; are based on the DG Employment, Social Affairs and Inclusion report on the &lsquo;Evaluation of the Practical Implementation of the EU Occupational Safety and Health (OSH) Directives in EU Member States&rsquo; from 2015</p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>DG EMPLOYMENT, SOCIAL AFFAIRS AND INCLUSION: Evaluation of the Practical Implementation of the EU Occupational Safety and Health (OSH) Directives in EU Member States, 2015</p><p><a href=\"https://ec.europa.eu/social/BlobServlet?langId=en&amp;docId=16895&amp;\">https://ec.europa.eu/social/BlobServlet?langId=en&amp;docId=16895&amp;</a></p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2014 or earlier");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "No update until 2019");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The <strong>intended coverage</strong> is: 28 EU countries. All data for the coverage is available.</p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "Text based, selection options");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+13, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+13, "EN", 1, "Exemptions");
-INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
-
-SET @indicatorId = (SELECT id FROM indicator WHERE name="SME Specific regulation");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="REGULATION" AND t.name="osha_dvt_barometer");
-SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="DG EMPL" AND date_from="2014-01-01");
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p>The data are displayed as text for each Member State. It is possible to select two of the 28 in order to perform a comparison between those two Member States. It is also possible to select two of the 28 Member States and one of six specific categories of Member State secondary legislation. <strong>Specifically this indicator relates to</strong>:</p>
-<ul>
-<li>Secondary legislation</li>
-<li>Derogations</li>
-<li>Transitional period</li>
-<li>Risk assessment compliance</li>
-<li>Exemptions</li>
-<li><strong>SME-specific regulation</strong></li>
-</ul>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p>The source for the indicator &lsquo;Regulation&rsquo; is a preparatory report for DG Employment from 2018 (Kooperationsstelle Hamburg IFE / EUROGIP: Development and design of a structural model for the construction and implementation of an EU OSH Information System, Final Report, March 2018, Service contract No VC/2016/0055).</p>
-<p>All data in this preparatory report related to the indicator &lsquo;regulation&rsquo; are based on the DG Employment, Social Affairs and Inclusion report on the &lsquo;Evaluation of the Practical Implementation of the EU Occupational Safety and Health (OSH) Directives in EU Member States&rsquo; from 2015</p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>DG EMPLOYMENT, SOCIAL AFFAIRS AND INCLUSION: Evaluation of the Practical Implementation of the EU Occupational Safety and Health (OSH) Directives in EU Member States, 2015</p><p><a href=\"https://ec.europa.eu/social/BlobServlet?langId=en&amp;docId=16895&amp;\">https://ec.europa.eu/social/BlobServlet?langId=en&amp;docId=16895&amp;</a></p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2014 or earlier");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "No update until 2019");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The <strong>intended coverage</strong> is: 28 EU countries. All data for the coverage is available.</p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "Text based, selection options");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+13, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+13, "EN", 1, "SME Specific regulation");
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Basic information");

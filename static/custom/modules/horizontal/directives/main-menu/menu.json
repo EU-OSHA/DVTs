@@ -52,7 +52,7 @@
                 "sref":"regulation",
                 "accesskey":"2",
                 "tabindex":"7",
-                "database_name":"REGULATION",
+                "database_name":"",
                 "firstIndicatorId": "40"
             },
             {
@@ -193,8 +193,22 @@
     {
         "id": "about-tool",
         "name":"L22019",
-        "sref": "about-tool",
-        "accesskey": "5",
-        "tabindex":"20"
+        "target":"about-tool",
+        "levels":[
+            {
+                "id":"introduction",
+                "name":"L20719",
+                "sref":"about-tool",
+                "accesskey": "5",
+                "tabindex":"20"
+            },
+            {
+                "id":"detail-information",
+                "name":"L22101",
+                "sref":"about-tool-detail-page",
+                "tabindex":"19",
+                "accesskey":"21"
+            }
+        ]
     }
 ]

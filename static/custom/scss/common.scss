@@ -572,7 +572,7 @@
   .breadcrumbs--social--network{
     position: relative;
 
-    padding: 0.5rem 2rem; 
+    padding: 1.5rem 2rem; 
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -1613,12 +1613,15 @@
       .accordion-content{
         margin: 0rem 0 0 1rem;
       }
-    }    
+    }        
     &.active{
       max-height: 1000000000rem;
       height: auto;
      // -webkit-transition: max-height 4.2s; 
      // transition: max-height 4.2s;
+    }
+    .text-center{
+      margin: 1rem 0;
     }
     .accordion-content{
       margin: 0rem 0 0rem 2rem;
