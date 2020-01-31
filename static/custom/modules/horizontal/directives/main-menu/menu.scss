@@ -24,14 +24,15 @@
           flex-direction: row;
           justify-content: space-around;
           .osh-barometer-legend{
-            background: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/economic-chart.png) 0 2rem no-repeat;
+            background: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/icono-barometer.svg) 0 2rem no-repeat;
             background-size: 5rem 5rem;
             padding-left: 6rem;
-            margin-right: 1.6rem;
+            margin-left: 1rem;
+            margin-right: 1rem;
             .main-title{
               .title{
                 font-weight: 600;
-                font-size:2.4rem;
+                font-size:2.2rem;
                 text-transform: uppercase; 
                 width: auto;
                 display: block;
@@ -47,10 +48,10 @@
                 font-family: "Oswald", sans-serif;                
               }
               .lead-title{
-                font-family: Oswald-Light,sans-serif;
+                font-family: Oswald,sans-serif;
                 text-transform: capitalize;
                 color: $aquamarine;
-                font-size: 2rem;
+                font-size: 1.65rem;
                 display: block;
                 margin-top: 0.4rem;
                 /*

@@ -143,6 +143,35 @@
       }
     }
   }
+  .exclamation{
+    color: #FFF;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 3.6rem;
+    background: #f6a400;
+    border-radius: 6rem;
+    width: 4rem;
+    height: 4rem;
+    margin-left: 1.5rem;
+    &:before{
+      width: 0;
+      height: 0;
+      border-top: 5px solid transparent;
+      border-bottom: 5px solid transparent;
+      border-right: 10px solid $orange;
+      content: '';
+      font-size: 0px;
+      left: -8px;
+      top: -18px;
+      position: relative;
+    }
+    &:after{
+      content:"!";
+      position: relative;
+      top: -0.7rem;
+      left: 0.6rem;
+    }
+  }
 
 /** END GENERAL TAGS  **/
 
@@ -1218,6 +1247,10 @@
       .column--item{
         padding: 0 5rem;
         width: 50%;
+        &.eu-background{
+          background: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/home-map.png) center top no-repeat;
+          background-size: contain;
+        }
         h2{
           font-size: 2.4rem;
         }

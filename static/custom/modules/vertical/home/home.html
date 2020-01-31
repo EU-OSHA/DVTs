@@ -1,7 +1,7 @@
 <!-- home.html -->
 <dvt-dashboard promises="promises" parameters="dashboard.parameters" class="home">
 
-	<section class="advice-home container-fluid section--page">
+	<section class="advice-home container-fluid section--page eu-background">
     <div class="container column--grid--block">
     	<div class="column--item">
         <h2 class="title--section second-color uppercase">About us</h2>
@@ -12,7 +12,7 @@
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc congue nec magna et ullamcorper. Nulla facilisi. Etiam lacinia libero vitae mi cursus tempus. Sed ullamcorper auctor est et fringilla. In hac habitasse platea dictumst. Praesent non pulvinar turpis. Fusce tempor magna at neque ornare, eget rutrum lectus commodo.</p>
         <p class="btn--block-full left-text"><a data-ui-sref="about-tool" class="btn-default btn-main-color">Discover the tool</a></p>
       </div>
-      <div class="column--item valign">
+      <div class="column--item valign eu-background">
       	<p class="lead-title">We show you more than <strong>1000 data</strong> in more than <strong>40 different graphs.</strong></p>
       </div>
     </div>
@@ -68,7 +68,6 @@
 				<a class="right carousel-control" href="#carousel-tilenav" ng-non-bindable data-slide="next"><i class="fa fa-arrow-left" aria-hidden="true"></i></i></a>
 			</div>
 		</div>
-
 		<div class="carousel carousel-showmanymoveone slide" id="carousel-tilenav" data-interval="false">
          <div class="carousel-inner">
             <div class="item active">
@@ -229,11 +228,36 @@
 						</div>
          </div>
     </div>
-
 	</section>
 
-<!--
 
+	<section class=" section--page background-gray">
+        <p class="help-text container">New data <strong>from 2019 from ESENER</strong> uploaded into OSH Barometer. <span class="exclamation" aria-hidden="true"></span></p>
+	</section>
+
+	<section class="section--page section--our--methodology">
+		<div class="agencies--logos--block">
+			<ul>
+				<li><a href="https://ec.europa.eu/eurostat/" title="visit the  web" target="_blank"><img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/eurostat-logo.png"></a></li>
+				<li><a href="https://www.eurofound.europa.eu/" title="visit the  web" target="_blank"><img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/eurofound-logo.png"></a></li>
+				<li><a href="" title="visit the  web" target="_blank"><img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/logo.png"></a></li>
+				<li><a href="https://osha.europa.eu/es/blog/how-is-osh-actually-managed-in-european-workplaces" title="visit the  web" target="_blank"><img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/esener-logo.png"></a></li>
+			</ul>
+		</div>
+		<div class="content-methodology">
+			<h2>Our methodology</h2>
+			<h3>EU-OSHA ensures data quality</h3>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin non varius metus. Morbi sed lacus egestas eros venenatis imperdiet. Pellentesque a lacinia magna. Sed sit amet dapibus lectus. Etiam nec ligula non eros pharetra accumsan. Morbi non mauris quis nisl lobortis pulvinar. Cras tempus, eros ut blandit aliquam, mi leo lobortis dui, eget facilisis orci urna at leo.</p>
+			<p class="btn--wrapper">
+				<a ui-sref="about-tool-detail-page({pSection: father, pSubsection: section.toLowerCase(), pIndicator: pIndicatorID})" class="btn-default btn-main-color text-center">Discover the methodology</a>
+			</p>
+		</div>
+	</section>
+
+
+
+
+<!--
 	<section class="container section--page">
 	    <h2 class="title-section second-color" data-ng-bind="i18n.L22001"></h2>
 	    <section class="card--grid xxs-w1 w3 center-text">
@@ -257,7 +281,6 @@
 	        </div>
 	    </section>
 	</section>
-
 
 	<section class="container-fluid background-gray section--page home--steering--section ">
 	    <div class="container">
@@ -368,7 +391,6 @@
 	    </div>
 	</section>
 
-
 	<section class="container section--page">
 	    <h2 class="title-section second-color" data-ng-bind="i18n.L22009"></h2>
 	    <section class="card--grid xxs-w1 w3 center-text">
@@ -411,7 +433,6 @@
 	        </div>
 	    </section>
 	</section>
-
 
 	<section class="container-fluid background-gray section--page osh--infrastructure--section">
 	    <div class="container">
@@ -460,7 +481,6 @@
 	        </section>
 	    </div>
 	</section>
-
 -->
 
 <script>
