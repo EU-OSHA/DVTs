@@ -11,25 +11,45 @@ define (function (require) {
                         dataPart: "0",
                         barSizeMax: 50,
                         barSizeRatio: 0.6,
-                        label_textStyle: function(scene){
-                            var subIndicatorKey = scene.firstAtoms.series;
+                        bar_fillStyle: function (scene) {
+                            var answer = scene.firstAtoms.series.value;
+                            var country = scene.firstAtoms.category.value.indexOf("(")==-1?scene.firstAtoms.category.value.indexOf("("):scene.firstAtoms.category.value.substring(1,3);
 
-
-                            if(!scene.firstAtoms.value.label.match('%')){
-                                scene.firstAtoms.value.label = scene.firstAtoms.value.label + '%';
+                            if (answer == "Yes")
+                            {
+                                if (country==pCountry1)
+                                {
+                                    return dvtUtils.getColorCountry(1);    
+                                }
+                                else if (country==pCountry2)
+                                {
+                                    return dvtUtils.getColorCountry(2);
+                                }
+                                else
+                                {
+                                    return dvtUtils.getEUColor();        
+                                }                                
                             }
-                            if (subIndicatorKey.label.match(pCountry1)) {
-                                return dvtUtils.getColorCountry(1);
-                            } else if(subIndicatorKey.label.match(pCountry2)){
-                                return dvtUtils.getColorCountry(2);
-                            } else if(subIndicatorKey == 'EU28'){
-                                return dvtUtils.getColorCountry();
+                            else if (answer == "No")
+                            {
+                                if (country==pCountry1)
+                                {
+                                    return dvtUtils.getColorCountry(12);    
+                                }
+                                else if (country==pCountry2)
+                                {
+                                    return dvtUtils.getColorCountry(22);
+                                }
+                                else
+                                {
+                                    return dvtUtils.getEUColor(2);        
+                                }   
                             }
                             return dvtUtils.getChartLightGrayColor();
                         },
                         label_textMargin: 7,
                         label_textBaseline: 'bottom',
-                        valuesAnchor: 'top',
+                        valuesAnchor: 'middle',
                         valuesOptimizeLegibility: true,
                         visualRoles:{
                             series: 'series',
