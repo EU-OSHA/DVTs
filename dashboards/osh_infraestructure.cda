@@ -72,7 +72,7 @@
 	      <Parameter default="1" name="pAnswer" type="Numeric"/>
 	    </Parameters>
 	    <Query>
-	    	SELECT IF(n.name REGEXP 'European Union', n.country_code, CONCAT("(", n.country_code, ") ", n.name)) as Country, t.text as Answer, v.value*100 as Value
+	    	SELECT t.text as Answer, IF(n.name REGEXP 'European Union', n.country_code, CONCAT("(", n.country_code, ") ", n.name)) as Country,  v.value*100 as Value
 			FROM nuts n, profile p, value v, dataset d, translation t, split_answer sa
 			WHERE n.id = p.nuts_id
 			AND n.country_code IN (${pCountry1}, ${pCountry2}, 'EU28')
@@ -85,7 +85,7 @@
 			AND t.language = 'EN'
 			AND d.id = v.dataset_id
 			AND d.id = ${pDataset}
-			ORDER BY FIELD(sa.id, 1,2), FIELD (n.country_code, ${pCountry1}, ${pCountry2}, 'EU28');
+			ORDER BY FIELD(sa.id, 2,1), FIELD (n.country_code, ${pCountry1}, ${pCountry2}, 'EU28');
 	    </Query>
 	</DataAccess>
 
