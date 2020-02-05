@@ -288,7 +288,7 @@ define(function (require) {
         }
       });
 
-
+      // footer at te bottom side for coming soon status
       if( $('.coming-soon').length > 0 ){
         var h = Number( $('header').height() + 244 + 130  ) ;
         var w = $(window).height();
