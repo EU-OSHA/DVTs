@@ -178,6 +178,10 @@ define(function (require) {
       {
         angular.element("path.active").attr("class","");
       }
+      if (this.node.tagName == "text" || this.node.tagName == "tspan")
+      {
+        this.node.previousElementSibling.classList.add("active");
+      }
       this.node.classList.add("active");
 
       $scope.$apply();
