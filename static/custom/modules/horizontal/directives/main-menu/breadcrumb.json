@@ -11,7 +11,7 @@
 
     "_SECCTION-ABOUT-TOOL": null,
     "about-tool": "<a ui-sref='home'>Home</a><i class='fa fa-angle-right' aria-hidden='true'></i><span class=''>About the system</span><i class='fa fa-angle-right' aria-hidden='true'></i><span class=''>General information</span>",
-    "about-tool-detail-page":"<a ui-sref='home'>Home</a><i class='fa fa-angle-right' aria-hidden='true'></i><span class=''>About the system</span><i class='fa fa-angle-right' aria-hidden='true'></i><span class=''>Detail information and methodology</span>",
+    "about-tool-detail-page":"<a ui-sref='home'>Home</a><i class='fa fa-angle-right' aria-hidden='true'></i><span class=''>About the system</span><i class='fa fa-angle-right' aria-hidden='true'></i><span class=''>Detailed information and methodology</span>",
 
     "_SECCTION-FOOTER-PAGES": null,
     "site-map": "<a ui-sref='home'>Home</a><i class='fa fa-angle-right' aria-hidden='true'></i></i><span class=''>Site map</span>",
