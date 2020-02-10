@@ -165,7 +165,7 @@ define(function (require) {
     $scope.countryClick = function()
     {
       $scope.selectedCountry = this.id;
-
+      
       for (var i = 0; i < $scope.countries.length; i++)
       {
         if ($scope.countries[i].country_code == $scope.selectedCountry)
