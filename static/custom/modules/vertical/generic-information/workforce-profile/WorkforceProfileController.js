@@ -165,7 +165,13 @@ define(function (require) {
     $scope.countryClick = function()
     {
       $scope.selectedCountry = this.id;
-      $scope.selectedCountryName = "L" + $scope.countries.find(o => o.country_code===$scope.selectedCountry).country_name;
+      for (var i = 0; i < $scope.countries.length; i++)
+      {
+        if ($scope.countries[i].country_code == $scope.selectedCountry)
+        {
+          $scope.selectedCountryName = "L" + $scope.countries[i].country_name;
+        }
+      }
 
       if (angular.element("path.active").length > 0)
       {
