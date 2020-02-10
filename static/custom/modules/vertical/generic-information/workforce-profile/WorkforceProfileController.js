@@ -30,6 +30,38 @@ define(function (require) {
     $scope.selectedIndicator = $stateParams.pIndicator;
     $scope.selectedSubIndicator = $stateParams.pSubIndicator;
 
+    $scope.selectedIndicatorLiteral = "";
+    switch ($scope.selectedIndicator)
+    {
+      case "median-age":
+        $scope.selectedIndicatorLiteral = i18nLiterals.L294;
+      break;
+      case "employment-rate":
+        switch($scope.selectedSubIndicator)
+        {
+          case "ageing-workers":
+            $scope.selectedIndicatorLiteral = i18nLiterals.L20621 + " - " + i18nLiterals.L295;
+          break;
+          case "Female":
+            $scope.selectedIndicatorLiteral = i18nLiterals.L20621 + " - " + i18nLiterals.L444;
+          break;
+          case "Male":
+            $scope.selectedIndicatorLiteral = i18nLiterals.L20621 + " - " + i18nLiterals.L443;
+          break;
+          case "Total":
+            $scope.selectedIndicatorLiteral = i18nLiterals.L20621 + " - " + i18nLiterals.L442;
+          break;
+          default:
+            $scope.selectedIndicatorLiteral = i18nLiterals.L20621 + " - " + i18nLiterals.L295;
+        }
+      break;
+      case "unemployment-rate":
+        $scope.selectedIndicatorLiteral = i18nLiterals.L291;
+      break;
+      default:
+        $scope.selectedIndicatorLiteral = i18nLiterals.L294;
+    }
+
     $scope.genders = [];
     /*$scope.minMaxValues = {
       minValue: 0,
@@ -209,7 +241,7 @@ define(function (require) {
         data = $scope.data.maleEmployment;
       } else if($scope.selectedIndicator == 'employment-rate' && $scope.selectedSubIndicator == 'Female'){
         data = $scope.data.femaleEmployment;
-      } else if($scope.selectedIndicator == 'unemployment-rate' && $scope.selectedSubIndicator == 'ageing-workers'){
+      } else if($scope.selectedIndicator == 'unemployment-rate'){
         data = $scope.data.unemploymentRate;
       }
 
@@ -233,6 +265,8 @@ define(function (require) {
 
         var range = (maxValue - minValue) / 4;
         $scope.minMaxValues = {min_value: minValue,max_value: maxValue,range_value: range}; 
+
+        $scope.steps = [minValue, minValue+range, minValue+(2*range), minValue+(3*range), maxValue];
       }
       else
       {
