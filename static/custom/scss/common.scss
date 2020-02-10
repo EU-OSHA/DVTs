@@ -99,7 +99,7 @@
       margin-right: 0.5em;
       word-wrap: break-word;
       &:after{
-        background: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/external_link.png) transparent right 30% no-repeat;
+        background: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/external_link.png) transparent right 30% no-repeat;
         margin-left:0em;
         padding-right: 0;
         width: 15px;
@@ -115,7 +115,7 @@
       margin-right: 0.5em;
       word-wrap: break-word;
       &:after{
-        background: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/external_link.png) transparent right 30% no-repeat;
+        background: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/external_link.png) transparent right 30% no-repeat;
         margin-left:0em;
         padding-right: 0;
         width: 15px;
@@ -1244,9 +1244,12 @@
           width: 70%;
           text-align: center;
           margin: auto;
+          overflow: hidden;
           svg{
             //overflow: visible !important;
-            z-index: 100000 !important;
+            //z-index: 100000 !important;
+            top: -1px;
+            position: relative;
             text{
               font: 0.9rem 'OpenSans-bold' !important;
               opacity: 1;
