@@ -319,6 +319,12 @@
 					border-radius: 0;
 					page-break-inside: avoid  !important;
 					page-break-after: avoid  !important;
+					&.no-print{
+						display: none;
+					}
+					&.active{
+						display: block;
+					}
 					.matrix--header--elements{
 						.flags--wrapper{
 							width: 1.5cm;
