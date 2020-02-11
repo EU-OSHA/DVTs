@@ -168,6 +168,11 @@
 
 
     <div class="map--block center-text container"> 
+      <h2 data-ng-bind="selectedIndicatorLiteral"></h2>
+      <p class="non-eu" data-ng-bind="i18nLiterals.L22104"></p>
+      <ul class="data-degraded">
+        <li data-ng-repeat="step in steps" data-ng-bind="step | number:2"></li>
+      </ul>
       <!-- CONTENT -->
       <dvt-map ng-cloak
         country-key="EU" promise="dataPromises"
@@ -180,13 +185,13 @@
         click-action="countryClick">
       </dvt-map> 
     </div>
-
-
   </section>
+
+
   <section class="survey--map--block-mobile">
     <div class="selected--tags-wrapper"></div>
     <div class="matrix--elements--wrapper">
-      <div class="matrix--element" data-ng-repeat="country in matrix">
+      <div class="matrix--element {{::country.country_code.toLowerCase()}}" data-ng-repeat="country in matrix">
         <div class="matrix--header--elements">
           <img  class="flags--wrapper" ng-src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/flag/{{::country.country_code.toLowerCase()}}.png">
           <h2 class="country ng-binding title-section main-color" data-ng-bind="i18nLiterals['L'+data.medianAge[country.country_code].country_name]"></h2>

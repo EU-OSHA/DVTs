@@ -30,6 +30,38 @@ define(function (require) {
     $scope.selectedIndicator = $stateParams.pIndicator;
     $scope.selectedSubIndicator = $stateParams.pSubIndicator;
 
+    $scope.selectedIndicatorLiteral = "";
+    switch ($scope.selectedIndicator)
+    {
+      case "median-age":
+        $scope.selectedIndicatorLiteral = i18nLiterals.L294;
+      break;
+      case "employment-rate":
+        switch($scope.selectedSubIndicator)
+        {
+          case "ageing-workers":
+            $scope.selectedIndicatorLiteral = i18nLiterals.L20621 + " - " + i18nLiterals.L295;
+          break;
+          case "Female":
+            $scope.selectedIndicatorLiteral = i18nLiterals.L20621 + " - " + i18nLiterals.L444;
+          break;
+          case "Male":
+            $scope.selectedIndicatorLiteral = i18nLiterals.L20621 + " - " + i18nLiterals.L443;
+          break;
+          case "Total":
+            $scope.selectedIndicatorLiteral = i18nLiterals.L20621 + " - " + i18nLiterals.L442;
+          break;
+          default:
+            $scope.selectedIndicatorLiteral = i18nLiterals.L20621 + " - " + i18nLiterals.L295;
+        }
+      break;
+      case "unemployment-rate":
+        $scope.selectedIndicatorLiteral = i18nLiterals.L291;
+      break;
+      default:
+        $scope.selectedIndicatorLiteral = i18nLiterals.L294;
+    }
+
     $scope.genders = [];
     /*$scope.minMaxValues = {
       minValue: 0,
@@ -165,21 +197,40 @@ define(function (require) {
     $scope.countryClick = function()
     {
       $scope.selectedCountry = this.id;
-      $scope.selectedCountryName = "L" + $scope.countries.find(o => o.country_code===$scope.selectedCountry).country_name;
+      for (var i = 0; i < $scope.countries.length; i++)
+      {
+        if ($scope.countries[i].country_code == $scope.selectedCountry)
+        {
+          $scope.selectedCountryName = "L" + $scope.countries[i].country_name;
+        }
+      }
 
       if (angular.element("path.active").length > 0)
       {
+        angular.element('.survey--map--block-mobile .matrix--elements--wrapper .matrix--element').removeClass('active');
         angular.element("path.active").attr("class","");
       }
+      if (this.node.tagName == "text" || this.node.tagName == "tspan")
+      {
+        this.node.previousElementSibling.classList.add("active");        
+      }
       this.node.classList.add("active");
+
+      angular.element('.survey--map--block-mobile .matrix--elements--wrapper .matrix--element' ).addClass('no-print');
+      angular.element('.survey--map--block-mobile .matrix--elements--wrapper .eu28' ).removeClass('no-print');    
+      angular.element('.survey--map--block-mobile .matrix--elements--wrapper .'+$scope.selectedCountry.toLowerCase() ).addClass('active').removeClass('no-print');
 
       $scope.$apply();
     }
 
     $scope.clearCountry = function()
     {
+      
+      angular.element('.survey--map--block-mobile .matrix--elements--wrapper .'+$scope.selectedCountry.toLowerCase() ).removeClass('active');
+      angular.element('.survey--map--block-mobile .matrix--elements--wrapper .matrix--element' ).removeClass('no-print');
+
       $scope.selectedCountry = "";
-      angular.element("path.active").attr("class","");
+      angular.element("path.active").attr("class","");      
 
       $scope.$apply();
     }
@@ -198,7 +249,7 @@ define(function (require) {
         data = $scope.data.maleEmployment;
       } else if($scope.selectedIndicator == 'employment-rate' && $scope.selectedSubIndicator == 'Female'){
         data = $scope.data.femaleEmployment;
-      } else if($scope.selectedIndicator == 'unemployment-rate' && $scope.selectedSubIndicator == 'ageing-workers'){
+      } else if($scope.selectedIndicator == 'unemployment-rate'){
         data = $scope.data.unemploymentRate;
       }
 
@@ -222,6 +273,8 @@ define(function (require) {
 
         var range = (maxValue - minValue) / 4;
         $scope.minMaxValues = {min_value: minValue,max_value: maxValue,range_value: range}; 
+
+        $scope.steps = [minValue, minValue+range, minValue+(2*range), minValue+(3*range), maxValue];
       }
       else
       {

@@ -13,6 +13,45 @@
 	position: relative;
 	.map--block{
 		position: relative;
+		h2{
+	    font-family: "OpenSans-bold", sans-serif;
+	    margin-top: 2rem;
+	    margin-bottom: 2rem;
+	    color: $aquamarine;
+	    text-transform: uppercase;
+	    font-size: 1.8rem;
+	    font-size: 1.6rem;
+		}
+		.data-degraded{
+	    position: absolute;
+	    z-index: 9;
+	    padding: 0 0 0 3rem;
+	    right: 11rem;
+	    top: 6rem;
+	    min-height: 27.5rem;
+	    list-style-type: none;
+	    width: 10rem;
+	    text-align: left;
+	    background: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/background-degraded.png) no-repeat left top;
+	    display: flex;
+	    flex-direction: column;
+	    justify-content: space-between;
+	    li{
+		    font-size: 1.4rem;
+		    font-family: Opensans-bold;
+	    }
+		}
+		.non-eu{
+	    position: absolute;
+	    z-index: 9;
+	    left: 25rem;
+	    top: 6rem;
+	    background: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/stripes.png) no-repeat left top;
+			background-size: 2rem 2rem;
+			padding: 0 0 0 2.5rem;
+	    font-size: 1.4rem;
+	    font-family: Opensans-bold;
+		}
 	}
 	&.fixed{
 		padding-top: 26.4rem;
@@ -102,12 +141,15 @@
 			margin: 1rem 0 0;
 			flex: 1 1 auto;
 	  	li{
-	  		width: 100%;
-	  		padding: 0 2rem;
+	  		//width: 100%;
+	  		padding: 0 3rem;
 	  		display: flex;
 		    flex-direction: column;
 		    flex-wrap: wrap;
 		    text-align: center;
+		    @media only screen and (max-width: 1200px) {
+  				padding: 0 2rem;
+				}
 		    > div{
 		    	margin-top: auto;
 		    }
@@ -201,5 +243,8 @@
 	}
 	path:hover{
 		opacity: 0.9;
+	}
+	tspan:hover{
+		cursor: pointer;
 	}
 }

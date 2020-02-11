@@ -326,7 +326,7 @@ define(function (require) {
 
                 /*shape click event control*/
                 //if (attributes.clickable &&attributes.clickable == "1" && noEU.indexOf(path.id) < 0) {
-                if (attributes.clickable &&attributes.clickable == "1" && noDataCountries.indexOf(path.id) < 0) {
+                if (attributes.clickable && attributes.clickable == "1" && noDataCountries.indexOf(path.id) < 0) {
                     path.click(clicked);
                     path.attr({
                         cursor: "pointer"

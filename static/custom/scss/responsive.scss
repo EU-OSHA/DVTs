@@ -900,8 +900,11 @@ and (max-width : 900px) {
 			.matrix--elements--wrapper{
 			  .matrix--elements--data{
 			  	li{
-			  		width: 25% !important;
+			  		width: 33% !important;
 			  		padding: 1rem !important;
+			  		label{
+			  			min-height: initial;
+			  		}
 			  	}
 			  }
 			}
