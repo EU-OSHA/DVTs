@@ -389,6 +389,9 @@ and (max-width : 1200px)  {
 									position: relative;
 								  box-shadow: none;
 								  border: 0;
+								  left: 0;
+    right: initial;
+    text-align: left;
 								  li{
 								  	padding: 0.5rem 0;
 								  	a{
