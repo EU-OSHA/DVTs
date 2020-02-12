@@ -208,23 +208,30 @@ define(function (require) {
 
       if (angular.element("path.active").length > 0)
       {
+        angular.element('.survey--map--block-mobile .matrix--elements--wrapper .matrix--element').removeClass('active');
         angular.element("path.active").attr("class","");
       }
       if (this.node.tagName == "text" || this.node.tagName == "tspan")
       {
-        this.node.previousElementSibling.classList.add("active");
+        this.node.previousElementSibling.classList.add("active");        
       }
       this.node.classList.add("active");
+
+      angular.element('.survey--map--block-mobile .matrix--elements--wrapper .matrix--element' ).addClass('no-print');
+      angular.element('.survey--map--block-mobile .matrix--elements--wrapper .eu28' ).removeClass('no-print');    
+      angular.element('.survey--map--block-mobile .matrix--elements--wrapper .'+$scope.selectedCountry.toLowerCase() ).addClass('active').removeClass('no-print');
 
       $scope.$apply();
     }
 
     $scope.clearCountry = function()
     {
+      
+      angular.element('.survey--map--block-mobile .matrix--elements--wrapper .'+$scope.selectedCountry.toLowerCase() ).removeClass('active');
+      angular.element('.survey--map--block-mobile .matrix--elements--wrapper .matrix--element' ).removeClass('no-print');
+
       $scope.selectedCountry = "";
       angular.element("path.active").attr("class","");
-
-      $scope.$apply();
     }
 
     $scope.getMinMaxValues = function()
