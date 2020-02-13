@@ -600,7 +600,7 @@
 	      AND d.id = ${pDataset} AND d.id = v.dataset_id
 	      AND n.literal_id REGEXP ${countries}
 	      AND v.indicator_id IN (37, 38, 39)
-	      ORDER BY country_name ASC
+	      ORDER BY FIELD (countryKey, 'EU28') DESC, country_name ASC
 	    </Query>
 	</DataAccess>
 
