@@ -138,6 +138,16 @@ define(function (require) {
                       }
                     });
                     */
+                    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+                        $('body').addClass('mobile-device');
+                        $('.print--block').addClass('hide');
+                        $('.zoom--text').addClass('hide');
+                    } else {
+                        $('body').removeClass('mobile-device');
+                        $('.print--block').removeClass('hide');
+                        $('.zoom--text').removeClass('hide');
+                    }
+                   
                     $('body').on('click touchstart', function(e) {
                       var container = angular.element('.filter--dropdown--wrapper');
                       //console.log('movil -------------------------' + e.target);
