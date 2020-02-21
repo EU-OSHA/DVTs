@@ -235,6 +235,9 @@ SET @indicatorId = (SELECT id FROM indicator WHERE name="Income per capita EURO"
 SET @datasetId = (SELECT id FROM dataset WHERE source="Eurostat" AND date_from="2010-01-01" AND date_to="2017-12-31");
 INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20088, @indicatorId, @datasetId);
 
+SET @toolID = (SELECT id FROM tool WHERE name = "osha_dvt_barometer");
+INSERT INTO section (name, tool_id) VALUES ("CHARTS", @toolID);
+
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+70, null, @sectionId, "STRATEGY_BASIC INFO");
@@ -3764,6 +3767,31 @@ SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@tool
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2119, null, @sectionId, "TITLE");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2119, "EN", 1, "Discover some of our charts");
 
+SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
+SET @sectionId = (SELECT id FROM section WHERE name="METHODOLOGY" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2121, null, @sectionId, "MENU");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2121, "EN", 1, "Methodology");
+
+SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
+SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2122, null, @sectionId, "SECTION_TITLE");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2122, "EN", 1, "ABOUT US");
+
+SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
+SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2124, null, @sectionId, "PROMOTION_RIBBON");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2124, "EN", 1, "");
+
+SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
+SET @sectionId = (SELECT id FROM section WHERE name="WORKFORCE_PROFILE" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2125, null, @sectionId, "TOOLTIP");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2125, "EN", 1, "Unemployment rate:");
+
+SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
+SET @sectionId = (SELECT id FROM section WHERE name="METHODOLOGY" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2120, null, @sectionId, "MENU");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2120, "EN", 1, "General information");
+
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="AT");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
@@ -4259,8 +4287,7 @@ SET @nutsId = (SELECT id FROM nuts WHERE country_code="EE");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "Labour Inspectorate (Tööinspektsioon)");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "See more in its <a target=\"_blank\" href=\"http://www.ti.ee/index.php?page=3& 
-
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "See more in its <a target=\"_blank\" href=\"http://www.ti.ee/index.php?page=3& 
 \">website</a> and in <a target=\"_blank\" href=\"https://oshwiki.eu/wiki/OSH_system_at_national_level_–_Estonia\">OSHwiki</a>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p>The Labour Inspectorateis a government agency operating under the jurisdiction of the Ministry of Social Affairs. Its main functions are:</p><ul type=\"square\"><li>to arrange for state supervision in the working environment with respect to compliance with the requirements of legislation regulating OSH and labour relations and ensure enforcement by the state on the basis of and to the extent prescribed by the law;</li><li>to supervise safe use of personal protective equipment (PPE)in the working environment and ensure the effectiveness of PPE at sites of manufacture and sale;</li><li>to supervise investigations into occupational accidents and diseases and to supervise the implementation of measures for the prevention of occupational accidents and diseases;</li><li>to investigate fatal occupational accidents and diseases, and, if necessary, conduct an analysis of the causes of serious occupational accidents and diseases;</li><li>to collect statistics on accidents at work and conduct a subsequent analysis;</li><li>to supervise the use of genetically modified micro-organisms in closed environments to the extent prescribed by the law;</li><li>to make decisions, as required by the law, on issuing or withholding approval;</li><li>to carry out administrative proceedings and approve administrative acts and rules;</li><li>to carry out extrajudicial proceedings on misdemeanours to the extent prescribed by law;</li><li>to initiate criminal proceedings and carry out urgent investigative actions;</li><li>to address and resolve enquiries from individuals on working environment issues;</li><li>to resolve individual labour disputes pursuant to the procedures prescribed by law.</li></ul>");
@@ -4933,8 +4960,7 @@ SET @nutsId = (SELECT id FROM nuts WHERE country_code="LV");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "Ministry of Welfare");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "See more in its <a target=\"_blank\" href=\"http://www.lm.gov.lv/ 
-
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "See more in its <a target=\"_blank\" href=\"http://www.lm.gov.lv/ 
 \">website</a> and in <a target=\"_blank\" href=\"https://oshwiki.eu/wiki/OSH_systems_at_national_level_-_Latvia\">OSHwiki</a>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p>The State Labour Inspectorate is the principal control and supervisory institution in the field of OSH, operating under the supervision of the Ministry of Welfare (i.e. it is the direct management authority). The legal status, function, tasks and operational procedure of the State Labour Inspectorate is defined in the State Labour Inspectorate Law adopted on 19 June 2008. The State Labour Inspectorate is the only governmental institution that carries out the implementation of the policy in the field of labour laws and OSH legislation. The State Labour Inspectorate carries out various activities to ensure that the Latvian population are socially and legally protected, and are able to work in a safe working environment.<br />The State Labour Inspectorate has set following mission: to monitor the implementation of labour laws and OSH legislation in Latvia to establish and maintain a safe, healthy working environment and proper labour laws, thereby reducing the number of victims of occupational accidents at work.<br />The State Labour Inspectorate has the following main functions:</p><ul><li>to supervise and monitor the requirements of the regulatory enactments regarding labour laws and OSH legislation;</li><li>to monitor how employers and employees mutually fulfil the obligations set by employment contracts and collective labour agreements;</li><li>to provide free consultations to employers and employees on labour laws and OSH legislation.</li></ul>");
@@ -4985,8 +5011,7 @@ SET @nutsId = (SELECT id FROM nuts WHERE country_code="LT");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "Ministry of Social Security and Labour (Socialinės apsaugos ir darbo ministerija)");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "See more in its <a target=\"_blank\" href=\"http://www.socmin.lt/
-
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "See more in its <a target=\"_blank\" href=\"http://www.socmin.lt/
 \">website</a> and in <a target=\"_blank\" href=\"https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Lithuania \">OSHwiki</a>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "The Ministry of Social Security and Labour and the Ministry of Health (Sveikatos apsaugos ministerija) implement state policy in the field of occupational safety and health (OSH), in accordance with the Constitution of the Republic of Lithuania, the Labour Code, the laws, resolutions of the government and other regulations. The Minister of Social Security and Labour — either by itself or with another minister or other ministers — approves the OSH regulations, establishing the procedure for their entry into force and application. The Health Minister approves healthcare regulations (hygiene norms), which establish the number of factors of the working environment that are not harmful to workers’ health.");
@@ -5007,8 +5032,7 @@ SET @nutsId = (SELECT id FROM nuts WHERE country_code="LT");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "State Labour Inspectorate");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "See more in its <a target=\"_blank\" href=\"http://www.vdi.lt/
-
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "See more in its <a target=\"_blank\" href=\"http://www.vdi.lt/
 \">website</a> and in <a target=\"_blank\" href=\"https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Lithuania \">OSHwiki</a>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p>The remit of the State Labour Inspectorate under the Ministry of Social Security and Labour includes the prevention of accidents at work, occupational diseases and violations of OSH requirements of standard acts of the labour law. It also covers the control of compliance with the Labour Code of the Republic of Lithuania, laws and other standard acts regulating OSH, as well as labour relations in enterprises, institutions, organisations or other organisational structures, irrespective of their form of ownership, type, nature of activity, and, also in these cases, when an employer is a natural person.</p><p>&nbsp;</p><p>The State Labour Inspectorate consists of the administration and territorial divisions. The administration consists of the Chief State Labour Inspector and his deputies, as well as divisions and services that coordinate and organise activities of the State Labour Inspectorate. The number and subordination of these divisions and services as well as territorial divisions is established by the approval of the structure of the State Labour Inspectorate. Sectors uniting specialists of certain activities may be established within the structural subdivisions.</p>");
