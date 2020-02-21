@@ -19,7 +19,7 @@
 	</section>
 
 	<section class="preferences-home container-fluid section--page">
-    <div class="container preferences--block">
+    <div class="container preferences--lock">
     	<h2 class="title-section main-color text-center">Save your <strong>preferences</strong></h2>
     	<form>    		
     		<select>
@@ -54,7 +54,8 @@
 					<option>(SK) Slovakia</option>
 					<option>(UK) United Kingdom</option>
 				</select>
-				<label class="country-lock"><i class="fa fa-lock" aria-hidden="true"></i></label>
+				<label class="country-unlock" ng-click="saveCountry($event)"><i class="fa" aria-hidden="true"></i></label>
+				<!--<label class="country-lock"  ng-click="saveCountry($event)"><i class="fa fa-lock" aria-hidden="true"></i></label>-->
     	</form>
     </div>
 	</section>

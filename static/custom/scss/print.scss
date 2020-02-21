@@ -19,6 +19,7 @@
 	#popUpMessage, 
 	.download-pdf, 
 	#cookiesConsent, 
+	#widthDisclaimer, 
 	.partial-text {
 	  display: none !important;
 	}
@@ -246,7 +247,7 @@
 		}
 		.compare--block{
 			.compare--list{
-				display: block;
+				justify-content: space-evenly  !important;
 				li{
 					width:auto;
 					display: inline-block;
@@ -548,18 +549,37 @@
 
 	.about-tool{
 		.indicators--list--wrapper{
+			flex-wrap: nowrap !important;
+			display: flex !important;
+			margin: 3rem 0 3rem !important;
 			.indicators-item{
+		    height: auto!important;
+		    margin-bottom: 0 !important;
+		    width: auto !important;
 				a{
-					height: auto;
-					position: relative;
-					font-size: 1.4rem;	
+					height: auto !important;
+					font-size: 2.2rem !important;
+					position: relative !important;
+					padding: 1rem !important;
+			    font-family: 'Oswald-light' !important;
+			    font-weight: normal !important;
 				}
-				&.active{
-					font-weight: bold;
+				&.active{					
+					a{
+						font-family: 'Oswald' !important;
+						font-weight: bold !important;
+					}
 				}
 			}
 		}
+		.indicators--submenu--wrapper{
+	    height: auto !important;
+	    max-height: initial !important;
+			&:after {
+		    content: "";
+			}
+		}
 	}  
-
+	
 }
 

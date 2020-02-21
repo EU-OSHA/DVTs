@@ -230,9 +230,7 @@ define(function (require) {
       angular.element('.survey--map--block-mobile .matrix--elements--wrapper .matrix--element' ).removeClass('no-print');
 
       $scope.selectedCountry = "";
-      angular.element("path.active").attr("class","");      
-
-      $scope.$apply();
+      angular.element("path.active").attr("class","");
     }
 
     $scope.getMinMaxValues = function()
