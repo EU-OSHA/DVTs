@@ -154,6 +154,7 @@
       height: 4rem;
       background-image: none;
       padding: 0.5rem;
+      text-shadow:none !important;
       &.left{        
         background: $aquamarine;
         color: $white;
@@ -165,6 +166,9 @@
         color: $aquamarine;
         margin-right: 0;
         opacity: 1;
+      }
+      &:hover{
+        background: $orange;
       }
     }
   }

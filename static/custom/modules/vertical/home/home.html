@@ -65,12 +65,13 @@
 		<div class="container discover--charts--section">
 			<h2 class="title-section main-color"><strong>Discover</strong> some of our charts</h2>
 			<div class="carousel-control-group">
-				<a class="left carousel-control" href="#carousel-tilenav" ng-non-bindable data-slide="prev"><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
-				<a class="right carousel-control" href="#carousel-tilenav" ng-non-bindable data-slide="next"><i class="fa fa-arrow-left" aria-hidden="true"></i></i></a>
+				<a class="left carousel-control" href="#carousel-tilenav" ng-non-bindable data-slide="prev"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+				<a class="right carousel-control" href="#carousel-tilenav" ng-non-bindable data-slide="next"><i class="fa fa-angle-left" aria-hidden="true"></i></i></a>
 			</div>
 		</div>
 		<div class="carousel carousel-showmanymoveone slide" id="carousel-tilenav" data-interval="false">
          <div class="carousel-inner">
+         	<!--
             <div class="item active">
                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
 	               	<div class="content">
@@ -81,7 +82,8 @@
 				          <p class="btn--card--carousel"><a ui-sref="osh-authorities" class="btn-default btn-main-color btn-full" data-ng-bind-html="i18n.L22026"></a></p>
                </div>
             </div>
-            <div class="item">
+          -->
+            <div class="item active">
                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
 	               	<div class="content">
 										<a class="icon--card economic-chart-icon" ui-sref="economic-sector-profile"></a>
@@ -101,6 +103,7 @@
 			            <p class="btn--card--carousel"><a ui-sref="workforce-profile" class="btn-default btn-main-color btn-full" data-ng-bind-html="i18n.L22026"></a></p>
                </div>
             </div>
+            <!--
             <div class="item">
                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
 	               	<div class="content">
@@ -114,6 +117,7 @@
                   </p>
                </div>
             </div>
+          -->
             <div class="item">
                <div class="col-xs-12 col-sm-6  col-md-4 col-lg-2">
 	               	<div class="content">
@@ -127,6 +131,7 @@
                   </p>
                </div>
             </div>
+            <!--
             <div class="item">
                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
 	               	<div class="content">
@@ -137,6 +142,7 @@
 	  	            <p class="btn--card--carousel"><a ui-sref="social-dialogue" class="btn-default btn-main-color btn-full" data-ng-bind="i18n.L22047"></a></p>
                </div>
             </div>
+          -->
             <div class="item">
                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
 	               	<div class="content">
@@ -147,6 +153,7 @@
 			            <p class="btn--card--carousel"><a ui-sref="work-accidents" class="btn-default btn-main-color btn-full" data-ng-bind-html="i18n.L22026"></a></p>
                </div>
             </div>
+            <!--
             <div class="item">
                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
 	               	<div class="content">
@@ -157,6 +164,8 @@
 			            <p class="btn--card--carousel"><a ui-sref="health-perception-of-workers" class="btn-default btn-main-color btn-full" data-ng-bind-html="i18n.L22026"></a></p>
                </div>
             </div>
+          -->
+          <!--
             <div class="item">
                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
 	               	<div class="content">
@@ -167,6 +176,7 @@
 			            <p class="btn--card--carousel"><a ui-sref="osh-culture" class="btn-default btn-main-color btn-full" data-ng-bind-html="i18n.L22026"></a></p>
                </div>
             </div>
+          -->
             <div class="item">
                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
 	               	<div class="content">
@@ -177,6 +187,7 @@
 			            <p class="btn--card--carousel"><a ui-sref="working-conditions" class="btn-default btn-main-color btn-full" data-ng-bind-html="i18n.L22026"></a></p>
                </div>
             </div>
+          <!--
             <div class="item">
                <div class="col-xs-12 col-sm-6  col-md-4 col-lg-2">
 	               	<div class="content">
@@ -189,6 +200,8 @@
 			            </p>
                </div>
             </div>
+          -->
+          <!--
             <div class="item">
                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
 	               	<div class="content">
@@ -201,6 +214,8 @@
 			          	</p>
                </div>
             </div>
+          -->
+          <!--
 						<div class="item">
 							<div class="col-xs-12 col-sm-6  col-md-4 col-lg-2">
 								<div class="content">
@@ -214,6 +229,7 @@
                 </p>
 							</div>
 						</div>
+					-->
 						<div class="item">
 							<div class="col-xs-12 col-sm-6  col-md-4 col-lg-2">
 								<div class="content">
@@ -488,10 +504,10 @@
 (function(){
   $(document).ready(function() {
 
-  	numItems = 6;
+  	var numItems = 6;
 		createCarousel(numItems);
 
-			$(window).on("load resize scroll",function(e){
+			$(window).on("resize scroll",function(e){
 			  var screenWidth = screen.width;
 			  console.log('screen width: ' + screenWidth)
 	   
@@ -511,7 +527,9 @@
 			});
 
 			function createCarousel(items){
+				
 				$('.carousel-showmanymoveone .item').each(function(){
+
 					var itemToClone = $(this);	
 					$('>div.cloned',this).remove();					
 
