@@ -223,14 +223,6 @@
                     color: $aquamarine !important;
                 }
               }
-              > li:last-child{
-                position: relative;
-                top: 0px;
-                .dropdown-menu{
-                  left: -87%;
-                  text-align: right;
-                }
-              }
             };
             .navbar-toggle .icon-bar {
             color: #666;

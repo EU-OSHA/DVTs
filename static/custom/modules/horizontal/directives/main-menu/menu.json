@@ -197,14 +197,14 @@
         "levels":[
             {
                 "id":"introduction",
-                "name":"L20735",
+                "name":"L22120",
                 "sref":"about-tool",
                 "accesskey": "5",
                 "tabindex":"20"
             },
             {
                 "id":"detail-information",
-                "name":"L22101",
+                "name":"L22121",
                 "sref":"about-tool-detail-page",
                 "tabindex":"19",
                 "accesskey":"21"
