@@ -25,10 +25,38 @@
 			    top: 2.1rem;
 			    right: 1.4rem;
 				}
+				.chart--wrapper{
+					width:50rem;
+					margin: auto;
+				  @media screen and (max-width: 768px) {
+				    width: 100%;
+						margin: auto;
+				  }
+				}
 			}
 		}
 	}
 }
+.dvt-modal{
+	div[query="getEstablishmentsInspectedData"]{
+		.chart--wrapper{
+			background: #f0f0f0;
+			padding: 2rem 0;
+			> div{
+				width: 50rem !important;
+				margin: auto;
+			  @media screen and (max-width: 768px) {
+			    width: 100%  !important;
+					margin: auto;
+			  }
+				&.legend-text-block{
+					width: 100% !important;
+				}
+			}
+		} 
+	}
+}
+
 
 @media only screen 
 and (max-width :767px) {

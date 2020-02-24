@@ -9,7 +9,7 @@ define (function (require) {
                     {
                         name: "main",
                         dataPart: "0",
-                        barSizeMax: 50,
+                        barSizeMax: 80,
                         barSizeRatio: 0.6,
                         bar_fillStyle: function (scene) {
                             var answer = scene.firstAtoms.series.value;
