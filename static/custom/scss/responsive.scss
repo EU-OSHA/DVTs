@@ -181,7 +181,19 @@
 	  width: 96%;
 	}
 }
-
+@media only screen 
+and (min-width : 1200px) 
+and (max-width : 1440px) {
+	.carousel-showmanymoveone{
+		.carousel-inner{
+			.item{
+				.col-lg-2{
+					//width: 25% !important;
+				}
+			}
+		}
+	}
+}
 
 @media (max-width: 1480px) {
   /**** COKKIES DIWSCLAIMER ****/

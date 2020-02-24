@@ -101,20 +101,24 @@
       }
     }
   /** END WIDTH CARDS  **/
-
 	.bar-header{
 		display: block;
 		position: relative !important;
+    height: auto;
+    margin-top: 2rem;
 		&.hide-header{
 			top: 0rem !important;
 		}
 		.header--top{
-			display: block;
+			display: flex;
 			.eu-osha-logo{
 				img{
 					width: 5cm !important;
 					height: auto !important;
 				}
+			}
+			.osh-barometer-legend{
+				padding-left: 0rem;
 			}
 		}
 	}
@@ -135,7 +139,7 @@
 		}
 	}
 	.breadcrumbs--social--network{
-		padding-left: 0 !important;
+		padding-left: 0rem;
 	}
 	.advice--block{
 		top: 0;
@@ -215,7 +219,8 @@
 						display: block !important;
 					}
 				  svg{				    
-				    zoom: 0.75 !important;
+				    //zoom: 0.75 !important;
+				    width: 21cm !important;
 				    width: 100% !important;
 				  }
 				}
@@ -303,6 +308,68 @@
 	  margin-right: 1rem !important;
   }
 
+	.home{
+		.column--grid--block{
+			display: block;
+			.column--item{
+				width: 100%;
+				padding: 0;
+			}
+		}
+		.btn--block-full {
+		  padding: 1.4rem 0rem;
+		  display: none;
+		}
+		.carousel-control-group{
+			display: none;
+		}
+		.carousel-showmanymoveone{
+			.carousel-inner{
+				padding: 0;
+				> .item{
+					display: none;
+					&.active{
+						display: block;
+					}
+					> div{
+						display: flex;
+						border: 0;
+						min-height: initial;
+						.content{
+							padding: 1rem;
+						}
+						.btn--card--carousel{
+							display: none;
+						}
+					}
+				}
+			}			
+		}
+		.help-text .exclamation {
+	    display: none;
+		}
+		.section--our--methodology{
+			.agencies--logos--block{
+				width: 40%;
+				padding-top: 0;
+				ul{
+					width: 100%;
+					padding: 0;
+					li{
+						margin: 1rem;
+						text-align: center;
+						a{
+							padding: 0;
+						}
+					}
+				}
+			}
+			.content-methodology{
+				width: 60%;
+				padding-right: 0;
+			}
+		} 
+	}
 	.workforce--page{
 		.filter--indicator--block{
 			display: none;
@@ -579,7 +646,17 @@
 		    content: "";
 			}
 		}
-	}  
+	}
+	.section--methodology{
+		h3.accordion-title:after{
+			display:none;
+		}
+		.accordion-content{
+			display: block;
+			max-height: fit-content;
+			overflow: visible;
+		}
+	}
 	
 }
 

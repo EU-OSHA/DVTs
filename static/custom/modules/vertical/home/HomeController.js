@@ -124,10 +124,7 @@ define(function (require) {
             }
         }
 
-        $scope.saveCountry = function(e){
-          //var element = angular.element( document.querySelector( 'e.currentTarget' ).addClass('country-lock') );
-          //console.log(angular.element( document.querySelector( 'e.currentTarget' ) ));
-          
+        $scope.saveCountry = function(e){         
           console.log($(e.currentTarget));
           $(e.currentTarget).toggleClass('country-unlock').toggleClass('country-lock');
         }
