@@ -11,7 +11,7 @@
 define(function (require) {
     'use strict';
 
-    function controller(configService, dvtUtils, $scope, $stateParams, $state, $document, $log, dataService, $window) {
+    function controller(configService, dvtUtils, $scope, $stateParams, $state, $document, $log, dataService, $window, $rootScope, $cookies) {
 
         // Literals / i18n
         var i18n = configService.getLiterals();
@@ -34,6 +34,30 @@ define(function (require) {
         $scope.strategyCountrySelected = "0";
         $scope.enforcementCountrySelected = "0";
         $scope.statisticsCountrySelected = "0";
+
+
+        $scope.pCountry1 = $rootScope.defaultCountry.code != undefined ? $rootScope.defaultCountry.code : "AT";
+
+        if ($cookies.get("selectedCountry") != undefined)
+        {
+          angular.element("label.country-unlock").toggleClass('country-unlock').toggleClass('country-lock');
+        }
+
+        $scope.changeCountry = function()
+        {
+          angular.element("label.country-lock").toggleClass('country-unlock').toggleClass('country-lock');
+        }
+
+        $scope.saveCountry = function(e){
+          $(e.currentTarget).toggleClass('country-unlock').toggleClass('country-lock');
+
+          $rootScope.defaultCountry = {
+            code : $scope.pCountry1,
+            isCookie : 1
+          }
+
+          $cookies.put('selectedCountry', $scope.pCountry1);
+        }
 
         $scope.EUData = {};
 
@@ -124,11 +148,6 @@ define(function (require) {
             }
         }
 
-        $scope.saveCountry = function(e){         
-          console.log($(e.currentTarget));
-          $(e.currentTarget).toggleClass('country-unlock').toggleClass('country-lock');
-        }
-
         $scope.status = 'ready';
 
     }
@@ -136,7 +155,7 @@ define(function (require) {
 
 
 
-    controller.$inject = ['configService', 'dvtUtils', '$scope', '$stateParams', '$state','$document', '$log', 'dataService','$window'];
+    controller.$inject = ['configService', 'dvtUtils', '$scope', '$stateParams', '$state','$document', '$log', 'dataService','$window', '$rootScope', '$cookies'];
     return controller;
 });
 

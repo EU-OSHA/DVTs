@@ -15,7 +15,7 @@ define(function (require) {
   'use strict';
 
 
-  function controller($scope, $stateParams, $state, configService, $log, $document,dataService, $window, $sce, $compile, $timeout, dvtUtils, OverallOpinionService) {
+  function controller($scope, $stateParams, $state, configService, $log, $document,dataService, $window, $sce, $compile, $timeout, dvtUtils, OverallOpinionService, $rootScope) {
 
 
     // CDA
@@ -78,8 +78,30 @@ define(function (require) {
     });
 
     // Country parameters
-    $scope.pCountry1 = ($stateParams.pCountry1 != null)?$stateParams.pCountry1:'AT';
-    $scope.pCountry2 = ($stateParams.pCountry2 != null)?$stateParams.pCountry2:'BE';
+    if ($stateParams.pCountry1 != null)
+    {
+      $scope.pCountry1 = $stateParams.pCountry1;
+    }
+    else if ($rootScope.defaultCountry != undefined)
+    {
+      $scope.pCountry1 = $rootScope.defaultCountry.code;
+    }
+    else
+    {
+      $scope.pCountry1 = "AT";
+    }
+    if ($stateParams.pCountry2 != null)
+    {
+      $scope.pCountry2 = $stateParams.pCountry2;
+    }
+    else if ($rootScope.defaultCountry2 != undefined)
+    {
+      $scope.pCountry2 = $rootScope.defaultCountry2.code;
+    }
+    else
+    {
+      $scope.pCountry2 = 0;
+    }
     $scope.pIndicator = $stateParams.pIndicator;
     $scope.pSplit = ($stateParams.pSplit != null)?$stateParams.pSplit:'sector';
 
@@ -121,7 +143,7 @@ define(function (require) {
       },
       // 1- Health at risk by sector and age
       {
-        color1: dvtUtils.getColorCountry(2),
+        color1: $scope.pCountry2=="0"?dvtUtils.getEUColor():dvtUtils.getColorCountry(2),
         color2: dvtUtils.getColorCountry(1),
         color3: dvtUtils.getEUColor(),
         plotsVertical: OverallOpinionService.getHealthAtRiskSectorPlotVertical($scope.pCountry1, $scope.pCountry2),
@@ -254,10 +276,11 @@ define(function (require) {
         //$scope.openIndicatorsList(e);
         if ($state.current.name !== undefined) {
           if(indicator == 'health-at-risk'){
+
             $state.go($state.current.name, {
               pIndicator: indicator,
-              pCountry1: 'AT',
-              pCountry2: 'BE',
+              pCountry1: $rootScope.defaultCountry.code != undefined ? $rootScope.defaultCountry.code: 'AT',
+              pCountry2: $rootScope.defaultCountry2 != undefined ? $rootScope.defaultCountry2.code: 0,
               pSplit: 'sector'
             });
           }else{
@@ -275,6 +298,19 @@ define(function (require) {
         $('.card--block--chart--wrapper').css('visibility','hidden');
 
         if ($state.current.name !== undefined) {
+          if (!$rootScope.defaultCountry.isCookie)
+          {
+            $rootScope.defaultCountry.code = $scope.pCountry1;
+          }
+
+          if ($scope.pCountry2 != "0")
+          {
+            $rootScope.defaultCountry2 = {
+              code: $scope.pCountry2,
+              isCookie: 0
+            }
+          }
+
           $scope.dashboard.parameters = {
             "pCountry1": $scope.pCountry1,
             "pCountry2": $scope.pCountry2
@@ -291,7 +327,7 @@ define(function (require) {
 
   }
 
-controller.$inject = ['$scope', '$stateParams', '$state', 'configService', '$log', '$document','dataService', '$window', '$sce', '$compile', '$timeout', 'dvtUtils', 'OverallOpinionService'];
+controller.$inject = ['$scope', '$stateParams', '$state', 'configService', '$log', '$document','dataService', '$window', '$sce', '$compile', '$timeout', 'dvtUtils', 'OverallOpinionService', '$rootScope'];
   return controller;
 
 

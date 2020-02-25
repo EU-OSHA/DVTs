@@ -146,7 +146,7 @@
             {
                 "id":"prevention-companies",
                 "name":"L22014",
-                "sref":"prevention-companies({pIndicator: 'risk-assessment', pCountry1:'AT', pCountry2: 'BE', pSplit: 'sector'})",
+                "sref":"prevention-companies({pIndicator: 'risk-assessment', pSplit: 'sector'})",
                 "tabindex":"15",
                 "accesskey":"",
                 "database_name":"PREVENTION_IN_COMPANIES",
@@ -173,7 +173,7 @@
             {
                 "id":"enforcement-capacity",
                 "name":"L22017",
-                "sref":"enforcement-capacity({pIndicator: 'establishments-inspected', pCountry1:'AT', pCountry2: 'BE'})",
+                "sref":"enforcement-capacity({pIndicator: 'establishments-inspected'})",
                 "tabindex":"18",
                 "accesskey":"4",
                 "database_name":"ENFORCEMENT_CAPACITY",

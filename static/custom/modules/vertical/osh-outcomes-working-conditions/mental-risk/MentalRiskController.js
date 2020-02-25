@@ -15,7 +15,7 @@ define(function (require) {
   'use strict';
 
 
-  function controller($scope, $stateParams, $state, configService, $log, $document,dataService, $window, $sce, $compile, $timeout, dvtUtils, MentalRiskService) {
+  function controller($scope, $stateParams, $state, configService, $log, $document,dataService, $window, $sce, $compile, $timeout, dvtUtils, MentalRiskService, $rootScope) {
 
 
     // CDA
@@ -57,18 +57,6 @@ define(function (require) {
     $scope.color3 = resolution > 768 ? dvtUtils.getAccidentsColors(4) : dvtUtils.getColorCountry(1);
     $scope.color4 = resolution > 768 ? dvtUtils.getColorCountry(1) : dvtUtils.getAccidentsColors(4);
 
-    /*$(window).on("resize",function(e){
-      resolution = screen.width;
-      $state.reload();
-    });*/
-
-    /*$(window).on("resize",function(e){
-      if(screen.width != resolution){
-        resolution = screen.width;
-        $state.reload();
-      }
-    });*/
-
     $(window).on("resize",function(e){
       if( window.outerWidth != resolution){
         resolution = window.resolution;
@@ -79,6 +67,23 @@ define(function (require) {
     });
 
     $scope.pIndicator = $stateParams.pIndicator;
+
+    if ($rootScope.defaultCountry != undefined)
+    {
+      $scope.pCountry1 = $rootScope.defaultCountry.code;
+    }
+    else
+    {
+      $scope.pCountry1 = "AT";
+    }
+    if ($rootScope.defaultCountry2 != undefined)
+    {
+      $scope.pCountry2 = $rootScope.defaultCountry2.code;
+    }
+    else
+    {
+      $scope.pCountry2 = 0;
+    }
 
     $scope.dashboard = {};
     $scope.dashboard = {
@@ -252,7 +257,7 @@ define(function (require) {
       }
   }
 
-controller.$inject = ['$scope', '$stateParams', '$state', 'configService', '$log', '$document','dataService', '$window', '$sce', '$compile', '$timeout', 'dvtUtils', 'MentalRiskService'];
+controller.$inject = ['$scope', '$stateParams', '$state', 'configService', '$log', '$document','dataService', '$window', '$sce', '$compile', '$timeout', 'dvtUtils', 'MentalRiskService', '$rootScope'];
   return controller;
 
 

@@ -348,6 +348,7 @@ define(function (require) {
 											(title == "EU") ?!theme?colorEU:lightColorEU:
 												!!theme ? theme.pathCircleStroke || opts.pathCircleStroke: opts.pathCircleStroke);
 
+
 								var rad = $r.rad(angle);
 								var p = {
 									x: cx + r / max * value * Math.cos(rad),
@@ -669,10 +670,10 @@ define(function (require) {
 							//third indicator
 							if(!!thirdIndicatorValues){
 								var theme = {
-									pathStroke: opts.indicators[2]=="EU28" ? dvtUtils.getEUColor() : dvtUtils.getColorCountry(2),
+									pathStroke: opts.indicators[2]=="EU28" || (opts.indicators[2] == undefined && opts.indicators[1]=="EU28") ? dvtUtils.getEUColor() : dvtUtils.getColorCountry(2),
 									pathFill:'none',
 									pathStrokeWidth: 3,
-									pathCircleStroke: opts.indicators[2]=="EU28" ? dvtUtils.getEUColor() : dvtUtils.getColorCountry(2)
+									pathCircleStroke: opts.indicators[2]=="EU28" || (opts.indicators[2] == undefined && opts.indicators[1]=="EU28") ? dvtUtils.getEUColor() : dvtUtils.getColorCountry(2)
 								};
 
 								path(cx, cy, r, startAngle, thirdIndicatorValues, opts.max, theme);

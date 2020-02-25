@@ -26,8 +26,8 @@ define(function (require) {
             squash: 'establishments-inspected'
           },
           pCountry1: {
-            value: 'AT',
-            squash: 'AT'
+            value: null,
+            squash: true
           },
           pCountry2: {
             value: null,

@@ -15,7 +15,7 @@ define(function (require) {
   'use strict';
 
 
-  function controller($scope, $stateParams, $state, configService, $log, $document,dataService, $window, $sce, $compile, $timeout, dvtUtils, WorkAccidentsService) {
+  function controller($scope, $stateParams, $state, configService, $log, $document,dataService, $window, $sce, $compile, $timeout, dvtUtils, WorkAccidentsService, $rootScope) {
 
 
     // CDA
@@ -42,8 +42,30 @@ define(function (require) {
     $scope.country2Data = {};
 
     // Country parameters
-    $scope.pCountry1 = ($stateParams.pCountry1 != null)?$stateParams.pCountry1:'AT';
-    $scope.pCountry2 = ($stateParams.pCountry2 != null)?$stateParams.pCountry2:'BE';
+    if ($stateParams.pCountry1 != null)
+    {
+      $scope.pCountry1 = $stateParams.pCountry1;
+    }
+    else if ($rootScope.defaultCountry.code != undefined)
+    {
+      $scope.pCountry1 = $rootScope.defaultCountry.code;
+    }
+    else
+    {
+      $scope.pCountry1 = "AT";
+    }
+    if ($rootScope.defaultCountry2 != undefined)
+    {
+      $scope.pCountry2 = $rootScope.defaultCountry2.code;
+    }
+    else if ($stateParams.pCountry2 != null)
+    {
+      $scope.pCountry2 = $stateParams.pCountry2;
+    }
+    else
+    {
+      $scope.pCountry2 = "0";
+    }
     $scope.pIndicator = $stateParams.pIndicator;
 
     var resolution = window.resolution;
@@ -130,7 +152,7 @@ define(function (require) {
       //0 - Non-fatal work accidents first chart
       {
         color1: dvtUtils.getColorCountry(1),
-        color2: dvtUtils.getColorCountry(2),
+        color2: $scope.pCountry2 == "0"?dvtUtils.getEUColor(): dvtUtils.getColorCountry(2),
         color3: dvtUtils.getEUColor(),
         plots: WorkAccidentsService.getNonFatalAccidentsMainPlots($scope.pCountry1),
         dimensions: {
@@ -246,6 +268,19 @@ define(function (require) {
     |******************************************************************************/
       $scope.countryChange = function () {
         if ($state.current.name !== undefined) {
+          if (!$rootScope.defaultCountry.isCookie)
+          {
+            $rootScope.defaultCountry.code = $scope.pCountry1;
+          }
+
+          if ($scope.pCountry2 != "0")
+          {
+            $rootScope.defaultCountry2 = {
+              code: $scope.pCountry2,
+              isCookie: 0
+            }
+          }
+          
           $scope.dashboard.parameters = {
             "pCountry1": $scope.pCountry1,
             "pCountry2": $scope.pCountry2
@@ -315,7 +350,7 @@ define(function (require) {
 
   }
 
-controller.$inject = ['$scope', '$stateParams', '$state', 'configService', '$log', '$document','dataService', '$window', '$sce', '$compile', '$timeout', 'dvtUtils', 'WorkAccidentsService'];
+controller.$inject = ['$scope', '$stateParams', '$state', 'configService', '$log', '$document','dataService', '$window', '$sce', '$compile', '$timeout', 'dvtUtils', 'WorkAccidentsService','$rootScope'];
   return controller;
 
 
