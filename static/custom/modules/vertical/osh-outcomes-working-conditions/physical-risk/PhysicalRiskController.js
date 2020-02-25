@@ -12,7 +12,7 @@ define(function (require) {
   'use strict';
 
 
-  function controller($scope, $stateParams, $state, configService, $log, $document,dataService, $window, $sce, $compile, $timeout, dvtUtils, PhysicalRiskService, exportService) {
+  function controller($scope, $stateParams, $state, configService, $log, $document,dataService, $window, $sce, $compile, $timeout, dvtUtils, PhysicalRiskService, exportService, $rootScope) {
 
 
     // CDA
@@ -305,6 +305,19 @@ define(function (require) {
         //$scope.openIndicatorsList(e);
         if ($state.current.name !== undefined) {
 
+          if (!$rootScope.defaultCountry.isCookie)
+          {
+            $rootScope.defaultCountry.code = $scope.pCountry1;
+          }
+
+          if ($scope.pCountry2 != "0")
+          {
+            $rootScope.defaultCountry2 = {
+              code: $scope.pCountry2,
+              isCookie: 0
+            }
+          }
+
           if(indicator == 'exposure-to-dangerous-substances'){
             $state.go('physical-risk-exposure-to-dangerous-substances', {
               pIndicator: indicator,
@@ -377,7 +390,7 @@ define(function (require) {
       }
   }
 
-controller.$inject = ['$scope', '$stateParams', '$state', 'configService', '$log', '$document','dataService', '$window', '$sce', '$compile', '$timeout', 'dvtUtils', 'PhysicalRiskService', 'exportService'];
+controller.$inject = ['$scope', '$stateParams', '$state', 'configService', '$log', '$document','dataService', '$window', '$sce', '$compile', '$timeout', 'dvtUtils', 'PhysicalRiskService', 'exportService', '$rootScope'];
   return controller;
 
 

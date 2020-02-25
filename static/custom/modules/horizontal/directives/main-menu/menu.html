@@ -1,6 +1,12 @@
 <header>
     <section class="bar-header container-fluid">
         <div class="header--top">
+            <div class="osh-barometer-legend">
+                <h1 class="main-title">
+                    <span class="title">OSH BAROMETER</span>
+                    <span class="lead-title">Data Visualisation Tool</span>
+                </h1>
+            </div>
             <div class="eu-osha-logo">
                 <a href="https://osha.europa.eu" role="link" title="{{i18n_literals.L363}}" tabindex="0">
                     <picture>
@@ -61,13 +67,13 @@
                         <a ng-if='level0.levels && level0.target' class="dropdown-toggle" data-toggle="dropdown" role="button"
                            aria-haspopup="true" target="_self" aria-expanded="false" tabindex="{{level0.tabindex}}">
                             <span data-ng-bind-html="i18n_literals[level0.name]"></span>
-                            <i class="fa fa-caret-down" aria-hidden="true"></i>
+                            <i class="fa fa-angle-down" aria-hidden="true"></i>
                         </a>
                         <a ng-if='level0.levels && level0.sref' ui-sref= '{{ level0.sref}}'
                            class="dropdown-toggle {{level0.class}}"
                            data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" tabindex="{{level0.tabindex}}">
                             <span data-ng-bind-html="i18n_literals[level0.name]"></span>
-                            <i class="fa fa-caret-down" aria-hidden="true"></i>
+                            <i class="fa fa-angle-down" aria-hidden="true"></i>
                         </a>
                         <a ng-if='!level0.levels && level0.sref' ui-sref='{{ level0.sref}}' accesskey="{{level0.accesskey}}" tabindex="{{level0.tabindex}}">
                             <span ng-if="level0.id == 'home'" data-ng-bind-html="level0.name"></span>
@@ -103,7 +109,7 @@
           <p class="lead-title" data-ng-bind="i18n_literals.L22024"></p>
       </div>
     </section>
--->
+    -->
     <section class="breadcrumbs--social--network">
         <div class="breadcrumbs">
             <p class="path" data-ng-bind-html="breadCrumb" id="breadCrumbs"></p>

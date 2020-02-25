@@ -143,12 +143,77 @@
       }
     }
   }
+  .exclamation{
+    color: #FFF;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 3.6rem;
+    background: #f6a400;
+    border-radius: 6rem;
+    width: 4rem;
+    height: 4rem;
+    margin-left: 1.5rem;
+    &:before{
+      width: 0;
+      height: 0;
+      border-top: 5px solid transparent;
+      border-bottom: 5px solid transparent;
+      border-right: 10px solid $orange;
+      content: '';
+      font-size: 0px;
+      left: -8px;
+      top: -18px;
+      position: relative;
+    }
+    &:after{
+      content:"!";
+      position: relative;
+      top: -0.7rem;
+      left: 0.6rem;
+    }
+  }
+
+/** END GENERAL TAGS  **/
+
+
+/** CUSTOM CLASS  **/
+  .outleft{
+    position: absolute;
+    top: -9999px;
+    left:-9999px;
+  }
+  .nopadding{
+    padding: 0;
+  }
+  .tablet-show{
+    display: none;
+  }
+  .vertical-nopadding{
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .horizontal-nopadding{
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .visible-inline{
+    display: inline !important;
+  }
+  .visible{
+    display: block !important;
+  }
   .affix {
     position: fixed;
     top: 132px;
     width: 100%;
     background: #FFF;
     z-index:1000;
+  }
+  .main-color{
+    color: $aquamarine;
+  }
+  .second-color{
+    color: $orange;
   }
   .note{
     p{
@@ -194,36 +259,13 @@
       width: 100%;
     }
   }
-/** END GENERAL TAGS  **/
+  .valign{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
 
-/** CUSTOM CLASS  **/
-
-  .outleft{
-    position: absolute;
-    top: -9999px;
-    left:-9999px;
-  }
-  .nopadding{
-    padding: 0;
-  }
-  .tablet-show{
-    display: none;
-  }
-  .vertical-nopadding{
-    padding-top: 0;
-    padding-bottom: 0;
-  }
-  .horizontal-nopadding{
-    padding-top: 0;
-    padding-bottom: 0;
-  }
-  .visible-inline{
-    display: inline !important;
-  }
-  .visible{
-    display: block !important;
-  }
   /** ALIGN CLASS  **/
     .center--block{
       margin: auto;
@@ -243,10 +285,61 @@
     .btn--block{
        padding: 1.4rem 2rem;
     }
+    .btn--card--carousel{
+      padding: 0;
+      margin-top: auto;
+      margin-bottom: 0;
+      border-radius: 0;
+      a{
+        font-weight: bold;
+        position: relative;
+        white-space: normal;
+        border-radius: 0 0 1rem 1rem;
+        &:after{
+          font-weight:normal;
+          content: "\f105";
+          font-family: FontAwesome;
+          text-rendering: auto;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+          font-size: 2.6rem;
+          position: absolute;
+          top: 0;
+          right: 0;
+          padding: 0.6rem 2rem;
+          color: $white;
+        }
+      }
+    }
     .btn--block-full{
       padding: 1.4rem 0rem;
       a{
         font-weight: bold;
+        position: relative;
+        white-space: normal;
+        &:after{
+          font-weight:normal;
+          content: "\f105";
+          font-family: FontAwesome;
+          text-rendering: auto;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+          font-size: 2.6rem;
+          position: absolute;
+          top: 0;
+          right: 0;
+          padding: 0.6rem 2rem;
+          color: $white;
+        }
+      }
+      &.btn-alone{
+        margin-top: 5rem;
+      }
+    }
+    .btn--block-arrow{
+      padding: 1.4rem 0rem;
+      a{
+        font-family: 'Opensans-bold';
         position: relative;
         white-space: normal;
         &:after{
@@ -453,6 +546,9 @@
     }
     .background-main-light{
       background: $aquamarine-light;
+    }
+    .background-main-lighter{
+      background: $aquamarine-lighter;
     }
     .background-gray{
       background: $gray-lighter;
@@ -1176,6 +1272,10 @@
       .column--item{
         padding: 0 5rem;
         width: 50%;
+        &.eu-background{
+          background: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/home-map.png) center top no-repeat;
+          background-size: contain;
+        }
         h2{
           font-size: 2.4rem;
         }
@@ -1467,7 +1567,6 @@
       }
     }
 
-
   /** LEGAL NOTICE  **/
     .legal--notice--block{
     margin: 0rem auto 5rem;
@@ -1516,106 +1615,89 @@
 /** END ELEMENTS  **/
 
 /** METHODOLOGY  **/
-
-
-@mixin header3($color,$size,$px) {
-  color:$color;
-  font-size: $size;
-  padding: 0rem 0 1rem 0;
-  margin: 1rem 0 1rem 0rem;
-  position: relative;
-  border-bottom: $px solid;
-  font-family: "Oswald", sans-serif !important;
-}
-
-.section--methodology{
-  @media screen and (max-width: 767px) {
-    padding-top: 0 !important;
-  }
-  h2.accordion-title{
-    color: $aquamarine;
-    font-size: 2.8rem;
+  @mixin header3($color,$size,$px) {
+    color:$color;
+    font-size: $size;
+    padding: 0rem 0 1rem 0;
+    margin: 1rem 0 1rem 0rem;
     position: relative;
-    border-bottom: 1px solid $aquamarine;
-    padding-bottom: 1.2rem;
-    margin-bottom: 1.6rem;
-    cursor: pointer;
-    &:after{
-      content: "\f107";
-      display: inline-block;
-      font-family: FontAwesome;
-      font-size: 3rem;
-      text-rendering: auto;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      position: absolute;
-      right: 0rem;
-      top: 0;
-    }
-    &.active{
-      color:$aquamarine;
-      &:after{
-         content: "\f106";
-      }
-    }
-    &:hover{
-      opacity:0.6;
-      -webkit-transition: max-height 0.6s; 
-      transition: max-height 0.6s;
-      cursor: pointer;
-    }
+    border-bottom: $px solid;
+    font-family: "Oswald", sans-serif !important;
   }
-  h3{
-    @include header3($aquamarine,2.6rem,1px);
-  }
-  h3.accordion-title{
-    @include header3($gray,2.6rem,1px);
-    &:after{
-      content: "\f067";
-      display: inline-block;
-      font-family: FontAwesome;
-      font-size: 2rem;
-      text-rendering: auto;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      position: absolute;
-      right:0;
-      top:0;
-    }
-    &.active{
-      //color:$aquamarine;
-      &:after{
-        content: "\f068";
-      }
-    }
-    &:hover{
-      opacity:0.6;
-      -webkit-transition: max-height 0.6s; 
-      transition: max-height 0.6s;
-      cursor: pointer;
-    }
+
+  .section--methodology{
     @media screen and (max-width: 767px) {
-      font-size: 2.2rem;
-      padding: 0rem 2rem 1rem 0;
+      padding-top: 0 !important;
     }
-  }
-  h4{
-    @include header3($aquamarine,2.4rem,1px);
-  }
-  .accordion-content{
-    font-size: 1.4rem;
-    padding: 0rem 0;
-    margin: 0rem 0 4rem 2rem;
-    max-height: 0rem;
-    //-webkit-transition: max-height 2.2s; 
-    //transition: max-height 2.2s;
-    overflow: hidden;
-   // height: 0;
-    @media screen and (max-width: 767px) {
-      margin: 0rem 0 4rem 0rem;
-      .accordion-content{
-        margin: 0rem 0 0 1rem;
+    h2.accordion-title{
+      color: $aquamarine;
+      font-size: 2.8rem;
+      position: relative;
+      border-bottom: 1px solid $aquamarine;
+      padding-bottom: 1.2rem;
+      margin-bottom: 1.6rem;
+      cursor: pointer;
+      &:after{
+        content: "\f107";
+        display: inline-block;
+        font-family: FontAwesome;
+        font-size: 3rem;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        position: absolute;
+        right: 0rem;
+        top: 0;
       }
+      &.active{
+        color:$aquamarine;
+        &:after{
+           content: "\f106";
+        }
+      }
+      &:hover{
+        opacity:0.6;
+        -webkit-transition: max-height 0.6s; 
+        transition: max-height 0.6s;
+        cursor: pointer;
+      }
+    }
+    h3{
+      @include header3($aquamarine,2.6rem,1px);
+    }
+    h3.accordion-title{
+      @include header3($gray,2.6rem,1px);
+      &:after{
+        content: "\f067";
+        display: inline-block;
+        font-family: FontAwesome;
+        font-size: 2rem;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        position: absolute;
+        right:0;
+        top:0;
+      }
+      &.active{
+        //color:$aquamarine;
+        &:after{
+          content: "\f068";
+        }
+      }
+      &:hover{
+        opacity:0.6;
+        -webkit-transition: max-height 0.6s; 
+        transition: max-height 0.6s;
+        cursor: pointer;
+      }
+      @media screen and (max-width: 767px) {
+        font-size: 2.2rem;
+        padding: 0rem 2rem 1rem 0;
+      }
+    }
+    h4{
+      @include header3($aquamarine,2.4rem,1px);
     }        
     &.active{
       max-height: 1000000000rem;
@@ -1627,21 +1709,41 @@
       margin: 1rem 0;
     }
     .accordion-content{
-      margin: 0rem 0 0rem 2rem;
+      font-size: 1.4rem;
+      padding: 0rem 0;
+      margin: 0rem 0 4rem 2rem;
+      max-height: 0rem;
+      //-webkit-transition: max-height 2.2s; 
+      //transition: max-height 2.2s;
+      overflow: hidden;
+     // height: 0;
+      @media screen and (max-width: 767px) {
+        margin: 0rem 0 4rem 0rem;
+        .accordion-content{
+          margin: 0rem 0 0 1rem;
+        }
+      }    
       &.active{
-        max-height: 1000rem;
+        max-height: 1000000000rem;
         height: auto;
-        -webkit-transition: max-height 2.2s; 
-        transition: max-height 2.2s;
+       // -webkit-transition: max-height 4.2s; 
+       // transition: max-height 4.2s;
+      }
+      .accordion-content{
+        margin: 0rem 0 0rem 2rem;
+        &.active{
+          max-height: 1000rem;
+          height: auto;
+          -webkit-transition: max-height 2.2s; 
+          transition: max-height 2.2s;
+        }
+      }
+      .btn-main-color{
+        display: inline-block;
       }
     }
-    .btn-main-color{
-      display: inline-block;
-    }
   }
-}
-
-
+/** END METHODOLOGY  **/
 
 
 
@@ -1673,7 +1775,6 @@
   position: relative;
   top: -3px;
 }
-
 
 /****** GENERAL CHARTS *****/
 
@@ -1957,7 +2058,6 @@
   }
 /**** END MODAL WINDOW ****/
 
-
 /** pop up */
   #popUpMessage{
     background: rgba(0,0,0,0.6);
@@ -2169,10 +2269,6 @@
       }
     }
   }
-
-
-
-
 /****  END TIPSY ****/
 
 @media only screen 

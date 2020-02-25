@@ -1,14 +1,266 @@
 <!-- home.html -->
 <dvt-dashboard promises="promises" parameters="dashboard.parameters" class="home">
 
-	<section class="advice--block advice-home background-main-light container-fluid section--page">
-	    <div class="container">
-	        <p class="title--section main-color" data-ng-bind="i18n.L22021"></p>
-	        <p class="btn--block center-text"><a data-ui-sref="about-tool" class="btn-default btn-main-color" data-ng-bind="i18n.L22022"></a></p>
-	    </p>
+	<section class="advice-home container-fluid section--page eu-background">
+    <div class="container column--grid--block">
+    	<div class="column--item">
+        <h2 class="title--section second-color uppercase">About us</h2>
+        <p class="main-title">
+        	<span class="title">OSH barometer</span>
+        	<span class="subtitle">Data visualisation tool</span>
+        </p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc congue nec magna et ullamcorper. Nulla facilisi. Etiam lacinia libero vitae mi cursus tempus. Sed ullamcorper auctor est et fringilla. In hac habitasse platea dictumst. Praesent non pulvinar turpis. Fusce tempor magna at neque ornare, eget rutrum lectus commodo.</p>
+        <p class="btn--block-full left-text"><a data-ui-sref="about-tool" class="btn-default btn-main-color">Discover the tool</a></p>
+      </div>
+      <div class="column--item valign eu-background">
+      	<p class="lead-title">We show you more than <strong>1000 data</strong> in more than <strong>40 different graphs.</strong></p>
+      </div>
+    </div>
+	</section>
+
+	<section class="preferences-home container-fluid section--page">
+    <div class="container preferences--lock">
+    	<h2 class="title-section main-color text-center">Save your <strong>preferences</strong></h2>
+    	<form>    		
+    		<select data-ng-model="pCountry1" data-ng-change="changeCountry()">
+    		 	<option value="AT">(AT) Austria</option>
+				<option value="BG">(BG) Bulgaria</option>
+				<option value="CH">(CH) Switzerland</option>
+				<option value="CY">(CY) Cyprus</option>
+				<option value="CZ">(CZ) Czech Republic</option>
+				<option value="DE">(DE) Germany</option>
+				<option value="DK">(DK) Denmark</option>
+				<option value="EE">(EE) Estonia</option>
+				<option value="EL">(EL) Greece</option>
+				<option value="ES">(ES) Spain</option>
+				<option value="FI">(FI) Finland</option>
+				<option value="FR">(FR) France</option>
+				<option value="HR">(HR) Croatia</option>
+				<option value="HU">(HU) Hungary</option>
+				<option value="IE">(IE) Ireland</option>
+				<option value="IS">(IS) Iceland</option>
+				<option value="IT">(IT) Italy</option>
+				<option value="LT">(LT) Lithuania</option>
+				<option value="LU">(LU) Luxembourg</option>
+				<option value="LV">(LV) Latvia</option>
+				<option value="MT">(MT) Malta</option>
+				<option value="NL">(NL) Netherlands</option>
+				<option value="NO">(NO) Norway</option>
+				<option value="PL">(PL) Poland</option>
+				<option value="PT">(PT) Portugal</option>
+				<option value="RO">(RO) Romania</option>
+				<option value="SE">(SE) Sweden</option>
+				<option value="SI">(SI) Slovenia</option>
+				<option value="SK">(SK) Slovakia</option>
+				<option value="UK">(UK) United Kingdom</option>
+			</select>
+			<label class="country-unlock" ng-click="saveCountry($event)"><i class="fa" aria-hidden="true"></i></label>
+			<!--<label class="country-lock"  ng-click="saveCountry($event)"><i class="fa fa-lock" aria-hidden="true"></i></label>-->
+    	</form>
+    </div>
 	</section>
 
 
+	<section class=" section--page background-main-lighter">
+		<div class="container discover--charts--section">
+			<h2 class="title-section main-color"><strong>Discover</strong> some of our charts</h2>
+			<div class="carousel-control-group">
+				<a class="left carousel-control" href="#carousel-tilenav" ng-non-bindable data-slide="prev"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+				<a class="right carousel-control" href="#carousel-tilenav" ng-non-bindable data-slide="next"><i class="fa fa-angle-left" aria-hidden="true"></i></i></a>
+			</div>
+		</div>
+		<div class="carousel carousel-showmanymoveone slide" id="carousel-tilenav" data-interval="false">
+         	<div class="carousel-inner">
+	            <div class="item active">
+	               <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
+		               	<div class="content">
+							<a class="icon--card economic-chart-icon" ui-sref="economic-sector-profile ({pCountry1:pCountry1})"></a>
+							<h3 class="title--card"><a ui-sref="osh-authorities ({pCountry:pCountry1})" data-ng-bind="i18n.L22003"></a></h3>
+							<p class="content-text" data-ng-bind="i18n.L22028"></p>
+						</div>
+						<p class="btn--card--carousel"><a ui-sref="economic-sector-profile ({pCountry1:pCountry1})" class="btn-default btn-main-color btn-full" data-ng-bind-html="i18n.L22026"></a></p>
+	               </div>
+	            </div>
+	            <div class="item">
+	               <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
+		               	<div class="content">
+				            <a class="icon--card people-group-icon" ui-sref="workforce-profile"></a>
+				            <h3 class="title--card"><a ui-sref="workforce-profile"  data-ng-bind="i18n.L22004"></a></h3>
+				            <p class="content-text" data-ng-bind="i18n.L22030"></p>
+				          </div>
+			            <p class="btn--card--carousel"><a ui-sref="workforce-profile" class="btn-default btn-main-color btn-full" data-ng-bind-html="i18n.L22026"></a></p>
+	               </div>
+	            </div>
+	            <div class="item">
+	               <div class="col-xs-12 col-sm-6  col-md-4 col-lg-2">
+		               	<div class="content">
+			                <a class="icon--card national-icon" ui-sref="national-strategies"></a>
+			                <h3 class="title--card"><a ui-sref="national-strategies" data-ng-bind="i18n.L22007"></a></h3>
+			                <p class="content-text" data-ng-bind="i18n.L22038"></p>
+			            </div>
+		                <p class="btn--card--carousel">
+		                  	<a ng-if="strategyCountrySelected != '0'" ui-sref="country-profile({pIndicator: 'basic-information', pCountry1: strategyCountrySelected, pCountry2: 0})" class="btn-default btn-main-color btn-full" data-ng-bind="i18n.L20626"></a>
+		                  	<a ng-if="strategyCountrySelected == '0'" ui-sref="national-strategies" class="btn-default btn-main-color btn-full" data-ng-bind="i18n.L22026"></a>
+		                </p>
+	               </div>
+	            </div>
+	            <div class="item">
+	               <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
+		               	<div class="content">
+				            <a class="icon--card work-accidents-icon" ui-sref="work-accidents ({pCountry1:pCountry1})"></a>
+				            <h3 class="title--card"><a ui-sref="work-accidents ({pCountry1:pCountry1}) ({pCountry1:pCountry1})" data-ng-bind="i18n.L22010"></a></h3>
+				            <p class="content-text" data-ng-bind="i18n.L22050"></p>
+					    </div>
+			            <p class="btn--card--carousel"><a ui-sref="work-accidents ({pCountry1:pCountry1})" class="btn-default btn-main-color btn-full" data-ng-bind-html="i18n.L22026"></a></p>
+	               </div>
+	            </div>
+	            <div class="item">
+	               <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
+		               	<div class="content">
+				            <a class="icon--card working-conditons-icon" ui-sref="working-conditions"></a>
+				            <h3 class="title--card"><a ui-sref="working-conditions" data-ng-bind="i18n.L22013"></a></h3>
+				            <p class="content-text" data-ng-bind="i18n.L22026"></p>
+			          	</div>
+			            <p class="btn--card--carousel"><a ui-sref="working-conditions" class="btn-default btn-main-color btn-full" data-ng-bind-html="i18n.L22026"></a></p>
+	               </div>
+	            </div>
+				<div class="item">
+					<div class="col-xs-12 col-sm-6  col-md-4 col-lg-2">
+						<div class="content">
+				            <a class="icon--card statistics-icon" ui-sref="osh-statistics"></a>
+			              	<h3 class="title--card"><a ui-sref="osh-statistics" data-ng-bind="i18n.L22018"></a></h3>
+			              	<p class="content-text" data-ng-bind="i18n.L22065"></p>
+			            </div>
+	                  	<p class="btn--card--carousel">
+	              			<a ng-if="statisticsCountrySelected != '0'" ui-sref="osh-statistics({pCountry: statisticsCountrySelected})" class="btn-default btn-main-color btn-full" data-ng-bind="i18n.L22026"></a>
+	                  		<a ng-if="statisticsCountrySelected == '0'" ui-sref="osh-statistics" class="btn-default btn-main-color btn-full" data-ng-bind="i18n.L22026"></a>
+	                  	</p>
+					</div>
+				</div>
+         	<!--
+	            <div class="item">
+	               <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
+		               	<div class="content">
+						          <a class="icon--card forum-icon" ui-sref="osh-authorities"></a>
+						          <h3 class="title--card"><a ui-sref="osh-authorities" data-ng-bind="i18n.L22002"></a></h3>
+						          <p class="content-text" data-ng-bind="i18n.L22025"></p>
+						        </div>
+					          <p class="btn--card--carousel"><a ui-sref="osh-authorities" class="btn-default btn-main-color btn-full" data-ng-bind-html="i18n.L22026"></a></p>
+	               </div>
+	            </div>
+	            <div class="item">
+	               <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
+		               	<div class="content">
+			                <a class="icon--card regulation-icon" ui-sref="regulation"></a>
+			                <h3 class="title--card"><a ui-sref="regulation" data-ng-bind="i18n.L22006"></a></h3>
+			                <p class="content-text" data-ng-bind="i18n.L22033"></p>
+			              </div>
+	                  <p class="btn--card--carousel">
+	                  	<a ng-if="regulationCountrySelected == '0'" ui-sref="regulation" class="btn-default btn-main-color btn-full" data-ng-bind="i18n.L22036"></a>
+	                  	<a ng-if="regulationCountrySelected != '0'" ng-click="goTo()" class="btn-default btn-main-color btn-full" data-ng-bind="i18n.L22036"></a>
+	                  </p>
+	               </div>
+	            </div>
+	            <div class="item">
+	               <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
+		               	<div class="content">
+			                <a class="icon--card dialogue-icon" ui-sref="social-dialogue"></a>
+			                <h3 class="title--card"><a ui-sref="social-dialogue" data-ng-bind="i18n.L22008"></a></h3>
+			                <p class="content-text" data-ng-bind="i18n.L22041"></p>
+			              </div>
+		  	            <p class="btn--card--carousel"><a ui-sref="social-dialogue" class="btn-default btn-main-color btn-full" data-ng-bind="i18n.L22047"></a></p>
+	               </div>
+	            </div>
+	            <div class="item">
+	               <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
+		               	<div class="content">
+					            <a class="icon--card health-icon"ui-sref="health-perception-of-workers"></a>
+					            <h3 class="title--card"><a ui-sref="health-perception-of-workers" data-ng-bind="i18n.L22011"></a></h3>
+					            <p class="content-text" data-ng-bind="i18n.L22052"></p>
+					          </div>
+				            <p class="btn--card--carousel"><a ui-sref="health-perception-of-workers" class="btn-default btn-main-color btn-full" data-ng-bind-html="i18n.L22026"></a></p>
+	               </div>
+	            </div>
+	            <div class="item">
+	               <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
+		               	<div class="content">
+					            <a class="icon--card culture-icon" ui-sref="osh-culture"></a>
+					            <h3 class="title--card"><a ui-sref="osh-culture" data-ng-bind="i18n.L22012"></a></h3>
+					            <p class="content-text" data-ng-bind="i18n.L22054"></p>
+					          </div>
+				            <p class="btn--card--carousel"><a ui-sref="osh-culture" class="btn-default btn-main-color btn-full" data-ng-bind-html="i18n.L22026"></a></p>
+	               </div>
+	            </div>
+	            <div class="item">
+	               <div class="col-xs-12 col-sm-6  col-md-4 col-lg-2">
+		               	<div class="content">
+					            <a class="icon--card prevention-icon" ui-sref="prevention-companies({pIndicator: 'risk-assessment', pCountry1:'AT', pCountry2: 'BE', pSplit: 'sector'})"></a>
+					            <h3 class="title--card"><a ui-sref="prevention-companies({pIndicator: 'risk-assessment', pCountry1:'AT', pCountry2: 'BE', pSplit: 'sector'})" data-ng-bind="i18n.L22014"></a></h3>
+					            <p class="content-text" data-ng-bind="i18n.L22058"></p>
+					          </div>
+				            <p class="btn--card--carousel">
+				            	<a ui-sref="prevention-companies({pIndicator: 'risk-assessment', pCountry1:'AT', pCountry2: 'BE', pSplit: 'sector'})" class="btn-default btn-main-color btn-full" data-ng-bind-html="i18n.L22026"></a>
+				            </p>
+	               </div>
+	            </div>
+	            <div class="item">
+	               <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
+		               	<div class="content">
+					            <a class="icon--card workers-icon" ui-sref="worker-involvement"></a>
+					            <h3 class="title--card"><a ui-sref="worker-involvement" data-ng-bind="i18n.L22015"></a></h3>
+					            <p class="content-text" data-ng-bind="i18n.L22060"></p>
+					          </div>
+				            <p class="btn--card--carousel">
+				            	<a ui-sref="worker-involvement" class="btn-default btn-main-color btn-full" data-ng-bind-html="i18n.L22026"></a>
+				          	</p>
+	               </div>
+	            </div>
+							<div class="item">
+								<div class="col-xs-12 col-sm-6  col-md-4 col-lg-2">
+									<div class="content">
+				            <a class="icon--card enforcement-icon" ui-sref="enforcement-capacity({pIndicator: 'establishments-inspected', pCountry1: 'AT', pCountry2: 'BE'})"></a>
+				            <h3 class="title--card"><a ui-sref="enforcement-capacity({pIndicator: 'establishments-inspected', pCountry1: 'AT', pCountry2: 'BE'})" data-ng-bind="i18n.L22017"></a></h3>
+				            <p class="content-text" data-ng-bind="i18n.L22063"></p>
+				          </div>
+	                <p class="btn--card--carousel">
+	                	<a ng-if="enforcementCountrySelected != '0'" ui-sref="enforcement-capacity({pIndicator: 'establishments-inspected', pCountry1: enforcementCountrySelected})" class="btn-default btn-main-color btn-full" data-ng-bind="i18n.L22100"></a>
+	                	<a ng-if="enforcementCountrySelected == '0'" ui-sref="enforcement-capacity({pIndicator: 'establishments-inspected', pCountry1: 'AT', pCountry2: 'BE'})" class="btn-default btn-main-color btn-full" data-ng-bind="i18n.L22100"></a>
+	                </p>
+								</div>
+							</div>
+						-->
+	     	</div>
+	    </div>
+	</section>
+
+
+	<section class=" section--page background-gray">
+        <p class="help-text container">New data <strong>from 2019 from ESENER</strong> uploaded into OSH Barometer. <span class="exclamation" aria-hidden="true"></span></p>
+	</section>
+
+	<section class="section--page section--our--methodology">
+		<div class="agencies--logos--block">
+			<ul>
+				<li><a href="https://ec.europa.eu/eurostat/" title="visit the  web" target="_blank"><img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/eurostat-logo.png"></a></li>
+				<li><a href="https://www.eurofound.europa.eu/" title="visit the  web" target="_blank"><img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/eurofound-logo.png"></a></li>
+				<li><a href="" title="visit the  web" target="_blank"><img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/logo.png"></a></li>
+				<li><a href="https://osha.europa.eu/es/blog/how-is-osh-actually-managed-in-european-workplaces" title="visit the  web" target="_blank"><img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/esener-logo.png"></a></li>
+			</ul>
+		</div>
+		<div class="content-methodology">
+			<h2>Our methodology</h2>
+			<h3>EU-OSHA ensures data quality</h3>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin non varius metus. Morbi sed lacus egestas eros venenatis imperdiet. Pellentesque a lacinia magna. Sed sit amet dapibus lectus. Etiam nec ligula non eros pharetra accumsan. Morbi non mauris quis nisl lobortis pulvinar. Cras tempus, eros ut blandit aliquam, mi leo lobortis dui, eget facilisis orci urna at leo.</p>
+			<p class="btn--wrapper btn--block-arrow">
+				<a ui-sref="about-tool-detail-page({pSection: father, pSubsection: section.toLowerCase(), pIndicator: pIndicatorID})" class="btn-default btn-main-color text-center">Discover the methodology</a>
+			</p>
+		</div>
+	</section>
+
+
+
+
+<!--
 	<section class="container section--page">
 	    <h2 class="title-section second-color" data-ng-bind="i18n.L22001"></h2>
 	    <section class="card--grid xxs-w1 w3 center-text">
@@ -32,7 +284,6 @@
 	        </div>
 	    </section>
 	</section>
-
 
 	<section class="container-fluid background-gray section--page home--steering--section ">
 	    <div class="container">
@@ -98,7 +349,6 @@
 	                            <p class="carousel--text--block">
 	                                <a href="javascript:">
 	                                <span class="number-text second-color" data-ng-bind="(EUData.joint_consultative) + ('%')"></span>
-	                                <!--<span class="number-symbol">%</span>-->
 	                                <span class="text-area left-text main-color" data-ng-bind="i18n.L20659"></span>
 	                                </a>
 	                            </p>
@@ -107,7 +357,6 @@
 	                            <p class="carousel--text--block">
 	                                <a href="javascript:">
 	                                <span class="number-text second-color" data-ng-bind="(EUData.trade_union) + ('%')"></span>
-	                                <!--<span class="number-symbol">%</span>-->
 	                                <span class="text-area left-text main-color" data-ng-bind="i18n.L20660"></span>
 	                                </a>
 	                            </p>
@@ -116,7 +365,6 @@
 	                            <p class="carousel--text--block">
 	                                <a href="javascript:">
 	                                <span class="number-text second-color" data-ng-bind="(EUData.health_representative) + ('%')"></span>
-	                                <!--<span class="number-symbol">%</span>-->
 	                                <span class="text-area left-text main-color" data-ng-bind="i18n.L20661"></span>
 	                                </a>
 	                            </p>
@@ -125,7 +373,6 @@
 	                            <p class="carousel--text--block">
 	                                <a href="javascript:">
 	                                <span class="number-text second-color" data-ng-bind="(EUData.health_committee) + ('%')"></span>
-	                                <!--<span class="number-symbol">%</span>-->
 	                                <span class="text-area left-text main-color" data-ng-bind="i18n.L20662"></span>
 	                                </a>
 	                            </p>
@@ -146,7 +393,6 @@
 	        </section>
 	    </div>
 	</section>
-
 
 	<section class="container section--page">
 	    <h2 class="title-section second-color" data-ng-bind="i18n.L22009"></h2>
@@ -191,7 +437,6 @@
 	    </section>
 	</section>
 
-
 	<section class="container-fluid background-gray section--page osh--infrastructure--section">
 	    <div class="container">
 	        <h2 class="title-section main-color" data-ng-bind="i18n.L22016"></h2>
@@ -200,7 +445,6 @@
 	                <a class="icon--card enforcement-icon" ui-sref="enforcement-capacity({pIndicator: 'establishments-inspected', pCountry1: 'AT', pCountry2: 'BE'})"></a>
 	                <h3 class="title--card second-color"><a ui-sref="enforcement-capacity({pIndicator: 'establishments-inspected', pCountry1: 'AT', pCountry2: 'BE'})" data-ng-bind="i18n.L22017"></a></h3>
 	                <p data-ng-bind="i18n.L22063"></p>
-	                <!--<p class="left-text"><a href="#" class="btn--card main-color" data-ng-bind-html="i18n.L22026"></a></p>-->
 	                <div class="btn-group-card left-text">
 	                    <form>
 	                        <label data-ng-bind-html="i18n.L22034"></label>
@@ -221,7 +465,6 @@
 	                <a class="icon--card statistics-icon" ui-sref="osh-statistics"></a>
 	                <h3 class="title--card second-color"><a ui-sref="osh-statistics" data-ng-bind="i18n.L22018"></a></h3>
 	                <p data-ng-bind="i18n.L22065"></p>
-	                <!--<p class="left-text"><a href="#" class="btn--card main-color" data-ng-bind-html="i18n.L22066"></a></p>-->
 	                <div class="btn-group-card left-text">
 	                    <form>
 	                        <label data-ng-bind-html="i18n.L22034"></label>
@@ -241,4 +484,60 @@
 	        </section>
 	    </div>
 	</section>
+-->
+
+<script>
+(function(){
+  $(document).ready(function() {
+
+  	var numItems = 6;
+		createCarousel(numItems);
+
+			$(window).on("resize scroll",function(e){
+			  var screenWidth = screen.width;
+			  //console.log('screen width: ' + screenWidth + 'numItems----------------->' +  numItems)
+	   
+	      if( screenWidth >= 1440){
+					numItems = 6;
+	      }
+	      else if( screenWidth >= 1200 && screenWidth < 1440 ){
+	      	numItems = 6;
+	      }
+	      else if( screenWidth >= 992 && screenWidth < 1200  ){
+	      	numItems = 3;
+	      }
+	      else if(  screenWidth >= 768 && screenWidth < 992 ){
+					numItems = 2;
+	      }
+	      else if( screenWidth < 768 && screenWidth > 420){
+	      	numItems = 1;
+	      } else {
+	      	numItems = 1;
+	      }
+	      createCarousel(numItems);
+			});
+
+			function createCarousel(items){
+				
+				$('.carousel-showmanymoveone .item').each(function(){
+
+					var itemToClone = $(this);	
+					$('>div.cloned',this).remove();					
+
+				  for (var i=1;i<items;i++) {				  	
+				    itemToClone = itemToClone.next();
+				    // wrap around if at end of item collection
+				    if (!itemToClone.length) {
+				      itemToClone = $(this).siblings(':first');	        
+				    }
+				    // grab item, clone, add marker class, add to collection
+			    	itemToClone.children(':first-child').clone().addClass("cloned").addClass("cloneditem-"+(i)).appendTo($(this));	    
+				  }
+				});
+			}
+
+    });
+}());
+</script>
+
 </dvt-dashboard>

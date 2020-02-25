@@ -277,8 +277,8 @@ define(function (require) {
             squash: true
           },
           pSplit: {
-            value: null,
-            squash: true
+            value: 'sector',
+            squash: 'sector'
           }
         },
         views: {
@@ -321,12 +321,12 @@ define(function (require) {
         url: "/osh-outcomes-working-conditions/worker-involvement/:pCountry1/:pCountry2/:pSplit",
         params: {
           pCountry1: {
-            value: 'AT',
-            squash: 'AT'
+            value: null,
+            squash: true
           },
           pCountry2: {
-            value: 'BE',
-            squash: 'BE'
+            value: null,
+            squash: true
           },
           pSplit: {
             value: 'esener',

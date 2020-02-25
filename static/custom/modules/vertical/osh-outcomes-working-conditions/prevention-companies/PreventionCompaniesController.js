@@ -15,7 +15,7 @@ define(function (require) {
   'use strict';
 
 
-  function controller($scope, $stateParams, $state, configService, $log, $document,dataService, $window, $sce, $compile, $timeout, dvtUtils, PreventionCompaniesService) {
+  function controller($scope, $stateParams, $state, configService, $log, $document,dataService, $window, $sce, $compile, $timeout, dvtUtils, PreventionCompaniesService, $rootScope) {
 
 
     // CDA
@@ -29,8 +29,31 @@ define(function (require) {
     $scope.datasetEurofound = $scope.datasetList.Eurofound;
     $scope.datasetESENER = $scope.datasetList.ESENER;
 
-    $scope.pCountry1 = ($stateParams.pCountry1 != null)?$stateParams.pCountry1:'AT';
-    $scope.pCountry2 = ($stateParams.pCountry2 != null)?$stateParams.pCountry2:'BE';
+    if ($stateParams.pCountry1 != null)
+    {
+      $scope.pCountry1 = $stateParams.pCountry1;
+    }
+    else if ($rootScope.defaultCountry.code != undefined)
+    {
+      $scope.pCountry1 = $rootScope.defaultCountry.code;
+    }
+    else
+    {
+      $scope.pCountry1 = "AT";
+    }
+    console.log($scope.pCountry1);
+    if ($stateParams.pCountry2 != null)
+    {
+      $scope.pCountry2 = $stateParams.pCountry2;
+    }
+    else if ($rootScope.defaultCountry2 != undefined)
+    {
+      $scope.pCountry2 = $rootScope.defaultCountry2.code;
+    }
+    else
+    {
+      $scope.pCountry2 = "0";
+    }
     $scope.pSplit = ($stateParams.pSplit != null)?$stateParams.pSplit:'sector';
     $log.warn($scope.pSplit);
 
@@ -98,7 +121,7 @@ define(function (require) {
       //0 - Time pressure
       {
         color1: dvtUtils.getColorCountry(1),
-        color2: dvtUtils.getColorCountry(2),
+        color2: $scope.pCountry2=="0"?dvtUtils.getEUColor():dvtUtils.getColorCountry(2),
         color3: dvtUtils.getEUColor(),
         plotsVertical: PreventionCompaniesService.getRiskAssessmentSplitVertical($scope.pCountry1, $scope.pCountry2),
         plotsHorizontal: PreventionCompaniesService.getRiskAssessmentSplitHorizontal($scope.pCountry1, $scope.pCountry2),
@@ -258,6 +281,19 @@ define(function (require) {
        $('.card--block--chart--wrapper').css('visibility','hidden');
 
         if ($state.current.name !== undefined) {
+          if (!$rootScope.defaultCountry.isCookie)
+          {
+            $rootScope.defaultCountry.code = $scope.pCountry1;
+          }
+
+          if ($scope.pCountry2 != "0")
+          {
+            $rootScope.defaultCountry2 = {
+              code: $scope.pCountry2,
+              isCookie: 0
+            }
+          }
+
           $scope.dashboard.parameters = {
             "pCountry1": $scope.pCountry1,
             "pCountry2": $scope.pCountry2
@@ -273,7 +309,7 @@ define(function (require) {
       };
   }
 
-controller.$inject = ['$scope', '$stateParams', '$state', 'configService', '$log', '$document','dataService', '$window', '$sce', '$compile', '$timeout', 'dvtUtils', 'PreventionCompaniesService'];
+controller.$inject = ['$scope', '$stateParams', '$state', 'configService', '$log', '$document','dataService', '$window', '$sce', '$compile', '$timeout', 'dvtUtils', 'PreventionCompaniesService', '$rootScope'];
   return controller;
 
 

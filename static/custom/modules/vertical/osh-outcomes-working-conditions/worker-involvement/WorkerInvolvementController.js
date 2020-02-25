@@ -12,7 +12,7 @@ define(function (require) {
   'use strict';
 
 
-  function controller($scope, $stateParams, $state, configService, $log, $document,dataService, $window, $sce, $compile, $timeout, dvtUtils, exportService) {
+  function controller($scope, $stateParams, $state, configService, $log, $document,dataService, $window, $sce, $compile, $timeout, dvtUtils, exportService, $rootScope) {
 
 
     // CDA
@@ -29,8 +29,30 @@ define(function (require) {
     $scope.countriesDataFor = [];
     $scope.countriesCompareWith = [];
   
-    $scope.pCountry1 = ($stateParams.pCountry1 != null)?$stateParams.pCountry1:'AT';
-    $scope.pCountry2 = ($stateParams.pCountry2 != null)?$stateParams.pCountry2:'BE';
+    if ($stateParams.pCountry1 != null)
+    {
+      $scope.pCountry1 = $stateParams.pCountry1;
+    }
+    else if ($rootScope.defaultCountry.code != undefined)
+    {
+      $scope.pCountry1 = $rootScope.defaultCountry.code;
+    }
+    else
+    {
+      $scope.pCountry1 = "AT";
+    }
+    if ($stateParams.pCountry2 != null)
+    {
+      $scope.pCountry2 = $stateParams.pCountry2;
+    }
+    else if ($rootScope.defaultCountry2 != undefined)
+    {
+      $scope.pCountry2 = $rootScope.defaultCountry2.code;
+    }
+    else
+    {
+      $scope.pCountry2 = "0";
+    }
     $scope.pSplit = ($stateParams.pSplit != null)?$stateParams.pSplit:'esener';
     $scope.datasourcesAndDates = $scope.pSplit == 'esener'?[$scope.datasetESENER,123]:[$scope.datasetEurofound,95];
 
@@ -143,6 +165,19 @@ define(function (require) {
 
       $scope.countryChange = function(){
         if ($state.current.name !== undefined) {
+          if (!$rootScope.defaultCountry.isCookie)
+          {
+            $rootScope.defaultCountry.code = $scope.pCountry1;
+          }
+
+          if ($scope.pCountry2 != "0")
+          {
+            $rootScope.defaultCountry2 = {
+              code: $scope.pCountry2,
+              isCookie: 0
+            }
+          }
+
           $state.transitionTo('worker-involvement', {
             pCountry1: $scope.pCountry1, 
             pCountry2: $scope.pCountry2,
@@ -156,7 +191,7 @@ define(function (require) {
       }
   }
 
-controller.$inject = ['$scope', '$stateParams', '$state', 'configService', '$log', '$document','dataService', '$window', '$sce', '$compile', '$timeout', 'dvtUtils', 'exportService'];
+controller.$inject = ['$scope', '$stateParams', '$state', 'configService', '$log', '$document','dataService', '$window', '$sce', '$compile', '$timeout', 'dvtUtils', 'exportService', '$rootScope'];
   return controller;
 
 

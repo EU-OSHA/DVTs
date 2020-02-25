@@ -28,8 +28,32 @@ define(function (require) {
     $scope.i18nLiterals = i18nLiterals;
 
     // Country parameters
-    $scope.pCountry1 = $stateParams.pCountry1;
-    $scope.pCountry2 = $stateParams.pCountry2;
+    if ($rootScope.defaultCountry.code != undefined)
+    {
+      $scope.pCountry1 = $rootScope.defaultCountry.code;
+    }
+    else if ($stateParams.pCountry1 != null)
+    {
+      $scope.pCountry1 = $stateParams.pCountry1;
+    }
+    else
+    {
+      $scope.pCountry1 = $stateParams.pCountry1;
+    }
+
+    if ($rootScope.defaultCountry2 != undefined)
+    {
+      $scope.pCountry2 = $rootScope.defaultCountry2.code;
+    }
+    else if ($stateParams.pCountry2 != null)
+    {
+      $scope.pCountry2 = $stateParams.pCountry2;
+    }
+    else
+    {
+      $scope.pCountry2 = "0";
+    }
+
     $scope.pSplit = $stateParams.pSplit;
     $rootScope.pSplit = $scope.pSplit;
     $scope.pSplit2 = $stateParams.pSplit2;
@@ -201,6 +225,20 @@ define(function (require) {
     |******************************************************************************/
       $scope.countryChange = function () {
         if ($state.current.name !== undefined) {
+
+          if (!$rootScope.defaultCountry.isCookie)
+          {
+            $rootScope.defaultCountry.code = $scope.pCountry1;
+          }
+
+          if ($scope.pCountry2 != "0")
+          {
+            $rootScope.defaultCountry2 = {
+              code: $scope.pCountry2,
+              isCookie: 0
+            }
+          }
+
           //$state.transitionTo('economic-sector-profile', {pCountry1: $scope.pCountry1, pCountry2: $scope.pCountry2,}, {notify: false});
           $state.go($state.current.name, {
             pCountry1: $scope.pCountry1,

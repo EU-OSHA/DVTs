@@ -45,12 +45,12 @@ define(function (require) {
           url: "/generic-information/economic-sector-profile/:pCountry1/:pCountry2",
           params: {
             pCountry1: {
-              value: "AT",
-              squash: "AT"
+              value: null,
+              squash: true
             },
             pCountry2: {
-              value: "BE",
-              squash: "BE"
+              value: null,
+              squash: true
             },
             pSplit: {
               value: '35',

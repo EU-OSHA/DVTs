@@ -13,7 +13,7 @@ define(function (require) {
   'use strict';
 
 
-  function controller($scope, $stateParams, $state, configService, $log, $document,dataService, $window, $sce, $compile, $timeout) {
+  function controller($scope, $stateParams, $state, configService, $log, $document,dataService, $window, $sce, $compile, $timeout, $rootScope) {
 
     var i18n = require('json!vertical/osh-authorities/i18n');
     var i18nLiterals = configService.getLiterals();
@@ -24,7 +24,14 @@ define(function (require) {
     $scope.i18nSearch = i18nSearch;
     $scope.i18nSearchPlaceholder = i18nSearch['authorities-search-placeholder'];
 
-    $scope.pCountry = $stateParams.pCountry;
+    if ($rootScope.defaultCountry.code != undefined)
+    {
+      $scope.pCountry = $rootScope.defaultCountry.code;
+    }
+    else
+    {
+      $scope.pCountry = $stateParams.pCountry;
+    }
 
     $scope.countries = [];
     $scope.amatrix = [];
@@ -577,7 +584,6 @@ define(function (require) {
       $scope.deleteTag = function($event){
         var element = angular.element($event.currentTarget);
         var countryId = parseInt(element[0].id.slice(7,10));
-
         var quitChecked;
         if($event.target.id.indexOf('country') != -1){
           //$log.warn($scope.searchParams.countries.indexOf(countryId));
@@ -647,7 +653,7 @@ define(function (require) {
 
   }
 
-  controller.$inject = ['$scope', '$stateParams', '$state', 'configService', '$log', '$document','dataService', '$window', '$sce', '$compile', '$timeout'];
+  controller.$inject = ['$scope', '$stateParams', '$state', 'configService', '$log', '$document','dataService', '$window', '$sce', '$compile', '$timeout', '$rootScope'];
   return controller;
 
 

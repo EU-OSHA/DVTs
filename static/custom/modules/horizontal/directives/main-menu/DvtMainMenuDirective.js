@@ -47,8 +47,8 @@ define(function (require) {
             transclude: true,
             replace: true,
             scope: {},
-            controller: ['$rootScope', '$scope', '$state', '$window' , 'configService', '$http', '$log','dataService', '$compile', '$sce',
-                function ($rootScope, $scope, $state, $window, configService, $http, $log, dataService, $compile, $sce) {
+            controller: ['$rootScope', '$scope', '$state', '$window' , 'configService', '$http', '$log','dataService', '$compile', '$sce','$cookies',
+                function ($rootScope, $scope, $state, $window, configService, $http, $log, dataService, $compile, $sce,$cookies) {
 
 
                     // Load google translate element
@@ -323,6 +323,23 @@ define(function (require) {
                         formSearch.toggleClass('exposed');
                     });
 
+                    if ($rootScope.defaultCountry == undefined)
+                    {
+                        if ($cookies.get("selectedCountry") != undefined)
+                        {
+                            $rootScope.defaultCountry = {
+                                code : $cookies.get("selectedCountry"),
+                                isCookie : true
+                            }
+                        }
+                        else
+                        {
+                            $rootScope.defaultCountry = {
+                                code : "AT",
+                                isCookie : false
+                            }    
+                        }                        
+                    }
             }],
             templateUrl: configService.getHorizontalDirectiveTplPath("main-menu", "menu")
         }
