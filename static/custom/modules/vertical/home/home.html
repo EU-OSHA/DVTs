@@ -23,6 +23,7 @@
     	<h2 class="title-section main-color text-center" data-ng-bind="i18n.L22111"></h2>
     	<form>    		
     		<select data-ng-model="pCountry1" data-ng-change="changeCountry()">
+    			<option value="0" disabled data-ng-bind="i18n.L22113"></option>
     		 	<option value="AT">(AT) Austria</option>
 				<option value="BG">(BG) Bulgaria</option>
 				<option value="CH">(CH) Switzerland</option>
@@ -108,7 +109,7 @@
 	               <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
 		               	<div class="content">
 				            <a class="icon--card work-accidents-icon" ui-sref="work-accidents ({pCountry1:pCountry1})"></a>
-				            <h3 class="title--card"><a ui-sref="work-accidents ({pCountry1:pCountry1}) ({pCountry1:pCountry1})" data-ng-bind="i18n.L22010"></a></h3>
+				            <h3 class="title--card"><a ui-sref="work-accidents ({pCountry1:pCountry1})" data-ng-bind="i18n.L22010"></a></h3>
 				            <p class="content-text" data-ng-bind="i18n.L22050"></p>
 					    </div>
 			            <p class="btn--card--carousel"><a ui-sref="work-accidents ({pCountry1:pCountry1})" class="btn-default btn-main-color btn-full" data-ng-bind-html="i18n.L22026"></a></p>
