@@ -21,10 +21,11 @@
 	<section class="preferences-home container-fluid section--page">
     <div class="container preferences--lock">
     	<h2 class="title-section main-color text-center" data-ng-bind="i18n.L22111"></h2>
+    	<div class="preferences-text" data-ng-bind-html="i18n.L22112"></div>
     	<form>    		
     		<select data-ng-model="pCountry1" data-ng-change="changeCountry()">
-    			<option value="0" disabled data-ng-bind="i18n.L22113"></option>
-    		 	<option value="AT">(AT) Austria</option>
+    		<option value="0" disabled data-ng-bind="i18n.L22113"></option>
+    		<option value="AT">(AT) Austria</option>
 				<option value="BG">(BG) Bulgaria</option>
 				<option value="CH">(CH) Switzerland</option>
 				<option value="CY">(CY) Cyprus</option>
@@ -66,177 +67,177 @@
 		<div class="container discover--charts--section">
 			<h2 class="title-section main-color" data-ng-bind="i18n.L22119"></h2>
 			<div class="carousel-control-group">
-				<a class="left carousel-control" href="#carousel-tilenav" ng-non-bindable data-slide="prev"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
-				<a class="right carousel-control" href="#carousel-tilenav" ng-non-bindable data-slide="next"><i class="fa fa-angle-left" aria-hidden="true"></i></i></a>
+				<a class="left carousel-control" href="#carousel-tilenav" ng-non-bindable data-slide="next"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+				<a class="right carousel-control" href="#carousel-tilenav" ng-non-bindable data-slide="prev"><i class="fa fa-angle-left" aria-hidden="true"></i></i></a>
 			</div>
 		</div>
 		<div class="carousel carousel-showmanymoveone slide" id="carousel-tilenav" data-interval="false">
-         	<div class="carousel-inner">
-	            <div class="item active">
-	               <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
-		               	<div class="content">
+     	<div class="carousel-inner">
+        <div class="item active">
+          <div class="col-xs-12 col-sm-6 col-md-4 col-ml-3 col-lg-2">
+          	<div class="content">
 							<a class="icon--card economic-chart-icon" ui-sref="economic-sector-profile ({pCountry1:pCountry1})"></a>
 							<h3 class="title--card"><a ui-sref="osh-authorities ({pCountry:pCountry1})" data-ng-bind="i18n.L22003"></a></h3>
 							<p class="content-text" data-ng-bind="i18n.L22028"></p>
 						</div>
 						<p class="btn--card--carousel"><a ui-sref="economic-sector-profile ({pCountry1:pCountry1})" class="btn-default btn-main-color btn-full" data-ng-bind-html="i18n.L22026"></a></p>
-	               </div>
-	            </div>
-	            <div class="item">
-	               <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
-		               	<div class="content">
-				            <a class="icon--card people-group-icon" ui-sref="workforce-profile"></a>
-				            <h3 class="title--card"><a ui-sref="workforce-profile"  data-ng-bind="i18n.L22004"></a></h3>
-				            <p class="content-text" data-ng-bind="i18n.L22030"></p>
-				          </div>
-			            <p class="btn--card--carousel"><a ui-sref="workforce-profile" class="btn-default btn-main-color btn-full" data-ng-bind-html="i18n.L22026"></a></p>
-	               </div>
-	            </div>
-	            <div class="item">
-	               <div class="col-xs-12 col-sm-6  col-md-4 col-lg-2">
-		               	<div class="content">
-			                <a class="icon--card national-icon" ui-sref="national-strategies"></a>
-			                <h3 class="title--card"><a ui-sref="national-strategies" data-ng-bind="i18n.L22007"></a></h3>
-			                <p class="content-text" data-ng-bind="i18n.L22038"></p>
-			            </div>
-		                <p class="btn--card--carousel">
-		                  	<a ng-if="strategyCountrySelected != '0'" ui-sref="country-profile({pIndicator: 'basic-information', pCountry1: strategyCountrySelected, pCountry2: 0})" class="btn-default btn-main-color btn-full" data-ng-bind="i18n.L20626"></a>
-		                  	<a ng-if="strategyCountrySelected == '0'" ui-sref="national-strategies" class="btn-default btn-main-color btn-full" data-ng-bind="i18n.L22026"></a>
-		                </p>
-	               </div>
-	            </div>
-	            <div class="item">
-	               <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
-		               	<div class="content">
-				            <a class="icon--card work-accidents-icon" ui-sref="work-accidents ({pCountry1:pCountry1})"></a>
-				            <h3 class="title--card"><a ui-sref="work-accidents ({pCountry1:pCountry1})" data-ng-bind="i18n.L22010"></a></h3>
-				            <p class="content-text" data-ng-bind="i18n.L22050"></p>
-					    </div>
-			            <p class="btn--card--carousel"><a ui-sref="work-accidents ({pCountry1:pCountry1})" class="btn-default btn-main-color btn-full" data-ng-bind-html="i18n.L22026"></a></p>
-	               </div>
-	            </div>
-	            <div class="item">
-	               <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
-		               	<div class="content">
-				            <a class="icon--card working-conditons-icon" ui-sref="working-conditions"></a>
-				            <h3 class="title--card"><a ui-sref="working-conditions" data-ng-bind="i18n.L22013"></a></h3>
-				            <p class="content-text" data-ng-bind="i18n.L22026"></p>
-			          	</div>
-			            <p class="btn--card--carousel"><a ui-sref="working-conditions" class="btn-default btn-main-color btn-full" data-ng-bind-html="i18n.L22026"></a></p>
-	               </div>
-	            </div>
+        </div>
+        </div>
+        <div class="item">
+           <div class="col-xs-12 col-sm-6 col-md-4 col-ml-3 col-lg-2">
+             	<div class="content">
+	            <a class="icon--card people-group-icon" ui-sref="workforce-profile"></a>
+	            <h3 class="title--card"><a ui-sref="workforce-profile"  data-ng-bind="i18n.L22004"></a></h3>
+	            <p class="content-text" data-ng-bind="i18n.L22030"></p>
+	          </div>
+            <p class="btn--card--carousel"><a ui-sref="workforce-profile" class="btn-default btn-main-color btn-full" data-ng-bind-html="i18n.L22026"></a></p>
+           </div>
+        </div>
+        <div class="item">
+           <div class="col-xs-12 col-sm-6  col-md-4 col-lg-2">
+             	<div class="content">
+                <a class="icon--card national-icon" ui-sref="national-strategies"></a>
+                <h3 class="title--card"><a ui-sref="national-strategies" data-ng-bind="i18n.L22007"></a></h3>
+                <p class="content-text" data-ng-bind="i18n.L22038"></p>
+            	</div>
+              <p class="btn--card--carousel">
+                	<a ng-if="strategyCountrySelected != '0'" ui-sref="country-profile({pIndicator: 'basic-information', pCountry1: strategyCountrySelected, pCountry2: 0})" class="btn-default btn-main-color btn-full" data-ng-bind="i18n.L20626"></a>
+                	<a ng-if="strategyCountrySelected == '0'" ui-sref="national-strategies" class="btn-default btn-main-color btn-full" data-ng-bind="i18n.L22026"></a>
+              </p>
+           </div>
+        </div>
+        <div class="item">
+           <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
+             	<div class="content">
+	            <a class="icon--card work-accidents-icon" ui-sref="work-accidents ({pCountry1:pCountry1})"></a>
+	            <h3 class="title--card"><a ui-sref="work-accidents ({pCountry1:pCountry1})" data-ng-bind="i18n.L22010"></a></h3>
+	            <p class="content-text" data-ng-bind="i18n.L22050"></p>
+		    		</div>
+            <p class="btn--card--carousel"><a ui-sref="work-accidents ({pCountry1:pCountry1})" class="btn-default btn-main-color btn-full" data-ng-bind-html="i18n.L22026"></a></p>
+           </div>
+        </div>
+        <div class="item">
+           <div class="col-xs-12 col-sm-6 col-md-4 col-ml-3 col-lg-2">
+             	<div class="content">
+	            <a class="icon--card working-conditons-icon" ui-sref="working-conditions"></a>
+	            <h3 class="title--card"><a ui-sref="working-conditions" data-ng-bind="i18n.L22013"></a></h3>
+	            <p class="content-text" data-ng-bind="i18n.L22026"></p>
+          	</div>
+            <p class="btn--card--carousel"><a ui-sref="working-conditions" class="btn-default btn-main-color btn-full" data-ng-bind-html="i18n.L22026"></a></p>
+           </div>
+        </div>
 				<div class="item">
-					<div class="col-xs-12 col-sm-6  col-md-4 col-lg-2">
+					<div class="col-xs-12 col-sm-6 col-md-4 col-ml-3 col-lg-2">
 						<div class="content">
-				            <a class="icon--card statistics-icon" ui-sref="osh-statistics"></a>
-			              	<h3 class="title--card"><a ui-sref="osh-statistics" data-ng-bind="i18n.L22018"></a></h3>
-			              	<p class="content-text" data-ng-bind="i18n.L22065"></p>
-			            </div>
-	                  	<p class="btn--card--carousel">
-	              			<a ng-if="statisticsCountrySelected != '0'" ui-sref="osh-statistics({pCountry: statisticsCountrySelected})" class="btn-default btn-main-color btn-full" data-ng-bind="i18n.L22026"></a>
-	                  		<a ng-if="statisticsCountrySelected == '0'" ui-sref="osh-statistics" class="btn-default btn-main-color btn-full" data-ng-bind="i18n.L22026"></a>
-	                  	</p>
+	            <a class="icon--card statistics-icon" ui-sref="osh-statistics"></a>
+            	<h3 class="title--card"><a ui-sref="osh-statistics" data-ng-bind="i18n.L22018"></a></h3>
+            	<p class="content-text" data-ng-bind="i18n.L22065"></p>
+            </div>
+          	<p class="btn--card--carousel">
+	      			<a ng-if="statisticsCountrySelected != '0'" ui-sref="osh-statistics({pCountry: statisticsCountrySelected})" class="btn-default btn-main-color btn-full" data-ng-bind="i18n.L22026"></a>
+          		<a ng-if="statisticsCountrySelected == '0'" ui-sref="osh-statistics" class="btn-default btn-main-color btn-full" data-ng-bind="i18n.L22026"></a>
+          	</p>
 					</div>
 				</div>
-         	<!--
-	            <div class="item">
-	               <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
-		               	<div class="content">
-						          <a class="icon--card forum-icon" ui-sref="osh-authorities"></a>
-						          <h3 class="title--card"><a ui-sref="osh-authorities" data-ng-bind="i18n.L22002"></a></h3>
-						          <p class="content-text" data-ng-bind="i18n.L22025"></p>
-						        </div>
-					          <p class="btn--card--carousel"><a ui-sref="osh-authorities" class="btn-default btn-main-color btn-full" data-ng-bind-html="i18n.L22026"></a></p>
-	               </div>
-	            </div>
-	            <div class="item">
-	               <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
-		               	<div class="content">
-			                <a class="icon--card regulation-icon" ui-sref="regulation"></a>
-			                <h3 class="title--card"><a ui-sref="regulation" data-ng-bind="i18n.L22006"></a></h3>
-			                <p class="content-text" data-ng-bind="i18n.L22033"></p>
-			              </div>
-	                  <p class="btn--card--carousel">
-	                  	<a ng-if="regulationCountrySelected == '0'" ui-sref="regulation" class="btn-default btn-main-color btn-full" data-ng-bind="i18n.L22036"></a>
-	                  	<a ng-if="regulationCountrySelected != '0'" ng-click="goTo()" class="btn-default btn-main-color btn-full" data-ng-bind="i18n.L22036"></a>
-	                  </p>
-	               </div>
-	            </div>
-	            <div class="item">
-	               <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
-		               	<div class="content">
-			                <a class="icon--card dialogue-icon" ui-sref="social-dialogue"></a>
-			                <h3 class="title--card"><a ui-sref="social-dialogue" data-ng-bind="i18n.L22008"></a></h3>
-			                <p class="content-text" data-ng-bind="i18n.L22041"></p>
-			              </div>
-		  	            <p class="btn--card--carousel"><a ui-sref="social-dialogue" class="btn-default btn-main-color btn-full" data-ng-bind="i18n.L22047"></a></p>
-	               </div>
-	            </div>
-	            <div class="item">
-	               <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
-		               	<div class="content">
-					            <a class="icon--card health-icon"ui-sref="health-perception-of-workers"></a>
-					            <h3 class="title--card"><a ui-sref="health-perception-of-workers" data-ng-bind="i18n.L22011"></a></h3>
-					            <p class="content-text" data-ng-bind="i18n.L22052"></p>
-					          </div>
-				            <p class="btn--card--carousel"><a ui-sref="health-perception-of-workers" class="btn-default btn-main-color btn-full" data-ng-bind-html="i18n.L22026"></a></p>
-	               </div>
-	            </div>
-	            <div class="item">
-	               <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
-		               	<div class="content">
-					            <a class="icon--card culture-icon" ui-sref="osh-culture"></a>
-					            <h3 class="title--card"><a ui-sref="osh-culture" data-ng-bind="i18n.L22012"></a></h3>
-					            <p class="content-text" data-ng-bind="i18n.L22054"></p>
-					          </div>
-				            <p class="btn--card--carousel"><a ui-sref="osh-culture" class="btn-default btn-main-color btn-full" data-ng-bind-html="i18n.L22026"></a></p>
-	               </div>
-	            </div>
-	            <div class="item">
-	               <div class="col-xs-12 col-sm-6  col-md-4 col-lg-2">
-		               	<div class="content">
-					            <a class="icon--card prevention-icon" ui-sref="prevention-companies({pIndicator: 'risk-assessment', pCountry1:'AT', pCountry2: 'BE', pSplit: 'sector'})"></a>
-					            <h3 class="title--card"><a ui-sref="prevention-companies({pIndicator: 'risk-assessment', pCountry1:'AT', pCountry2: 'BE', pSplit: 'sector'})" data-ng-bind="i18n.L22014"></a></h3>
-					            <p class="content-text" data-ng-bind="i18n.L22058"></p>
-					          </div>
-				            <p class="btn--card--carousel">
-				            	<a ui-sref="prevention-companies({pIndicator: 'risk-assessment', pCountry1:'AT', pCountry2: 'BE', pSplit: 'sector'})" class="btn-default btn-main-color btn-full" data-ng-bind-html="i18n.L22026"></a>
-				            </p>
-	               </div>
-	            </div>
-	            <div class="item">
-	               <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
-		               	<div class="content">
-					            <a class="icon--card workers-icon" ui-sref="worker-involvement"></a>
-					            <h3 class="title--card"><a ui-sref="worker-involvement" data-ng-bind="i18n.L22015"></a></h3>
-					            <p class="content-text" data-ng-bind="i18n.L22060"></p>
-					          </div>
-				            <p class="btn--card--carousel">
-				            	<a ui-sref="worker-involvement" class="btn-default btn-main-color btn-full" data-ng-bind-html="i18n.L22026"></a>
-				          	</p>
-	               </div>
-	            </div>
-							<div class="item">
-								<div class="col-xs-12 col-sm-6  col-md-4 col-lg-2">
-									<div class="content">
-				            <a class="icon--card enforcement-icon" ui-sref="enforcement-capacity({pIndicator: 'establishments-inspected', pCountry1: 'AT', pCountry2: 'BE'})"></a>
-				            <h3 class="title--card"><a ui-sref="enforcement-capacity({pIndicator: 'establishments-inspected', pCountry1: 'AT', pCountry2: 'BE'})" data-ng-bind="i18n.L22017"></a></h3>
-				            <p class="content-text" data-ng-bind="i18n.L22063"></p>
+       	<!--
+            <div class="item">
+               <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
+	               	<div class="content">
+					          <a class="icon--card forum-icon" ui-sref="osh-authorities"></a>
+					          <h3 class="title--card"><a ui-sref="osh-authorities" data-ng-bind="i18n.L22002"></a></h3>
+					          <p class="content-text" data-ng-bind="i18n.L22025"></p>
+					        </div>
+				          <p class="btn--card--carousel"><a ui-sref="osh-authorities" class="btn-default btn-main-color btn-full" data-ng-bind-html="i18n.L22026"></a></p>
+               </div>
+            </div>
+            <div class="item">
+               <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
+	               	<div class="content">
+		                <a class="icon--card regulation-icon" ui-sref="regulation"></a>
+		                <h3 class="title--card"><a ui-sref="regulation" data-ng-bind="i18n.L22006"></a></h3>
+		                <p class="content-text" data-ng-bind="i18n.L22033"></p>
+		              </div>
+                  <p class="btn--card--carousel">
+                  	<a ng-if="regulationCountrySelected == '0'" ui-sref="regulation" class="btn-default btn-main-color btn-full" data-ng-bind="i18n.L22036"></a>
+                  	<a ng-if="regulationCountrySelected != '0'" ng-click="goTo()" class="btn-default btn-main-color btn-full" data-ng-bind="i18n.L22036"></a>
+                  </p>
+               </div>
+            </div>
+            <div class="item">
+               <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
+	               	<div class="content">
+		                <a class="icon--card dialogue-icon" ui-sref="social-dialogue"></a>
+		                <h3 class="title--card"><a ui-sref="social-dialogue" data-ng-bind="i18n.L22008"></a></h3>
+		                <p class="content-text" data-ng-bind="i18n.L22041"></p>
+		              </div>
+	  	            <p class="btn--card--carousel"><a ui-sref="social-dialogue" class="btn-default btn-main-color btn-full" data-ng-bind="i18n.L22047"></a></p>
+               </div>
+            </div>
+            <div class="item">
+               <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
+	               	<div class="content">
+				            <a class="icon--card health-icon"ui-sref="health-perception-of-workers"></a>
+				            <h3 class="title--card"><a ui-sref="health-perception-of-workers" data-ng-bind="i18n.L22011"></a></h3>
+				            <p class="content-text" data-ng-bind="i18n.L22052"></p>
 				          </div>
-	                <p class="btn--card--carousel">
-	                	<a ng-if="enforcementCountrySelected != '0'" ui-sref="enforcement-capacity({pIndicator: 'establishments-inspected', pCountry1: enforcementCountrySelected})" class="btn-default btn-main-color btn-full" data-ng-bind="i18n.L22100"></a>
-	                	<a ng-if="enforcementCountrySelected == '0'" ui-sref="enforcement-capacity({pIndicator: 'establishments-inspected', pCountry1: 'AT', pCountry2: 'BE'})" class="btn-default btn-main-color btn-full" data-ng-bind="i18n.L22100"></a>
-	                </p>
-								</div>
+			            <p class="btn--card--carousel"><a ui-sref="health-perception-of-workers" class="btn-default btn-main-color btn-full" data-ng-bind-html="i18n.L22026"></a></p>
+               </div>
+            </div>
+            <div class="item">
+               <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
+	               	<div class="content">
+				            <a class="icon--card culture-icon" ui-sref="osh-culture"></a>
+				            <h3 class="title--card"><a ui-sref="osh-culture" data-ng-bind="i18n.L22012"></a></h3>
+				            <p class="content-text" data-ng-bind="i18n.L22054"></p>
+				          </div>
+			            <p class="btn--card--carousel"><a ui-sref="osh-culture" class="btn-default btn-main-color btn-full" data-ng-bind-html="i18n.L22026"></a></p>
+               </div>
+            </div>
+            <div class="item">
+               <div class="col-xs-12 col-sm-6  col-md-4 col-lg-2">
+	               	<div class="content">
+				            <a class="icon--card prevention-icon" ui-sref="prevention-companies({pIndicator: 'risk-assessment', pCountry1:'AT', pCountry2: 'BE', pSplit: 'sector'})"></a>
+				            <h3 class="title--card"><a ui-sref="prevention-companies({pIndicator: 'risk-assessment', pCountry1:'AT', pCountry2: 'BE', pSplit: 'sector'})" data-ng-bind="i18n.L22014"></a></h3>
+				            <p class="content-text" data-ng-bind="i18n.L22058"></p>
+				          </div>
+			            <p class="btn--card--carousel">
+			            	<a ui-sref="prevention-companies({pIndicator: 'risk-assessment', pCountry1:'AT', pCountry2: 'BE', pSplit: 'sector'})" class="btn-default btn-main-color btn-full" data-ng-bind-html="i18n.L22026"></a>
+			            </p>
+               </div>
+            </div>
+            <div class="item">
+               <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
+	               	<div class="content">
+				            <a class="icon--card workers-icon" ui-sref="worker-involvement"></a>
+				            <h3 class="title--card"><a ui-sref="worker-involvement" data-ng-bind="i18n.L22015"></a></h3>
+				            <p class="content-text" data-ng-bind="i18n.L22060"></p>
+				          </div>
+			            <p class="btn--card--carousel">
+			            	<a ui-sref="worker-involvement" class="btn-default btn-main-color btn-full" data-ng-bind-html="i18n.L22026"></a>
+			          	</p>
+               </div>
+            </div>
+						<div class="item">
+							<div class="col-xs-12 col-sm-6  col-md-4 col-lg-2">
+								<div class="content">
+			            <a class="icon--card enforcement-icon" ui-sref="enforcement-capacity({pIndicator: 'establishments-inspected', pCountry1: 'AT', pCountry2: 'BE'})"></a>
+			            <h3 class="title--card"><a ui-sref="enforcement-capacity({pIndicator: 'establishments-inspected', pCountry1: 'AT', pCountry2: 'BE'})" data-ng-bind="i18n.L22017"></a></h3>
+			            <p class="content-text" data-ng-bind="i18n.L22063"></p>
+			          </div>
+                <p class="btn--card--carousel">
+                	<a ng-if="enforcementCountrySelected != '0'" ui-sref="enforcement-capacity({pIndicator: 'establishments-inspected', pCountry1: enforcementCountrySelected})" class="btn-default btn-main-color btn-full" data-ng-bind="i18n.L22100"></a>
+                	<a ng-if="enforcementCountrySelected == '0'" ui-sref="enforcement-capacity({pIndicator: 'establishments-inspected', pCountry1: 'AT', pCountry2: 'BE'})" class="btn-default btn-main-color btn-full" data-ng-bind="i18n.L22100"></a>
+                </p>
 							</div>
-						-->
-	     	</div>
-	    </div>
+						</div>
+					-->
+     	</div>
+    </div>
 	</section>
 
 
 	<section class=" section--page background-gray" data-ng-if="i18n.L22124 != ''">
-        <p class="help-text container" data-ng-bind="i18n.L22124"></p>
+    <p class="help-text container" data-ng-bind="i18n.L22124"></p>
 	</section>
 
 	<section class="section--page section--our--methodology">
@@ -490,54 +491,65 @@
 <script>
 (function(){
   $(document).ready(function() {
+		var screenWidth = screen.width;
+		createCarousel(screenWidth);
 
-  	var numItems = 6;
-		createCarousel(numItems);
+		$(window).on("resize scroll",function(e){
+		  var screenWidth = screen.width;
+      createCarousel(screenWidth);
+		});
 
-			$(window).on("resize scroll",function(e){
-			  var screenWidth = screen.width;
-			  //console.log('screen width: ' + screenWidth + 'numItems----------------->' +  numItems)
-	   
-	      if( screenWidth >= 1440){
-					numItems = 6;
-	      }
-	      else if( screenWidth >= 1200 && screenWidth < 1440 ){
-	      	numItems = 6;
-	      }
-	      else if( screenWidth >= 992 && screenWidth < 1200  ){
-	      	numItems = 3;
-	      }
-	      else if(  screenWidth >= 768 && screenWidth < 992 ){
-					numItems = 2;
-	      }
-	      else if( screenWidth < 768 && screenWidth > 420){
-	      	numItems = 1;
-	      } else {
-	      	numItems = 1;
-	      }
-	      createCarousel(numItems);
+		function hideControls(items){
+      if(items == 6){
+      	$('.carousel-control-group').addClass('hide');
+      } else {
+      	$('.carousel-control-group').removeClass('hide');
+      }
+		}
+
+
+		function createCarousel(screenWidth){
+      
+      if( screenWidth >= 1919){
+				numItems = 6;
+      }
+      else if( screenWidth >= 1600 && screenWidth < 1919 ){
+      	numItems =5;
+      }
+      else if( screenWidth >= 1200 && screenWidth < 1600 ){
+      	numItems =4;
+      }
+      else if( screenWidth >= 992 && screenWidth < 1200  ){
+      	numItems = 3;
+      }
+      else if(  screenWidth >= 768 && screenWidth < 992 ){
+				numItems = 2;
+      }
+      else if( screenWidth < 768 && screenWidth > 420){
+      	numItems = 1;
+      } else {
+      	numItems = 1;
+      }
+      hideControls(numItems);
+
+			$('.carousel-showmanymoveone .item').each(function(){
+
+				var itemToClone = $(this);	
+				$('>div.cloned',this).remove();					
+
+			  for (var i=1;i<numItems;i++) {				  	
+			    itemToClone = itemToClone.next();
+			    // wrap around if at end of item collection
+			    if (!itemToClone.length) {
+			      itemToClone = $(this).siblings(':first');	        
+			    }
+			    // grab item, clone, add marker class, add to collection
+		    	itemToClone.children(':first-child').clone().addClass("cloned").addClass("cloneditem-"+(i)).appendTo($(this));	    
+			  }
 			});
+		}
 
-			function createCarousel(items){
-				
-				$('.carousel-showmanymoveone .item').each(function(){
-
-					var itemToClone = $(this);	
-					$('>div.cloned',this).remove();					
-
-				  for (var i=1;i<items;i++) {				  	
-				    itemToClone = itemToClone.next();
-				    // wrap around if at end of item collection
-				    if (!itemToClone.length) {
-				      itemToClone = $(this).siblings(':first');	        
-				    }
-				    // grab item, clone, add marker class, add to collection
-			    	itemToClone.children(':first-child').clone().addClass("cloned").addClass("cloneditem-"+(i)).appendTo($(this));	    
-				  }
-				});
-			}
-
-    });
+  });
 }());
 </script>
 

@@ -99,8 +99,20 @@
   }
 }
 .preferences-home{
+  .title-section {
+    margin: 0rem 0 1rem;
+  }
+  .preferences-text{
+    margin: 0rem auto 2rem;
+    text-align: center;
+  }
   form{
     text-align: center;
+    @media screen and (max-width: 420px){
+      display: flex;
+      flex-direction: column;
+    }
+
     select{
       padding: 2.6rem 4rem 2rem;
       border: 1px solid $gray-lighter;
@@ -118,6 +130,9 @@
       border-radius: 5rem;
       transition: all 0.6s;
       cursor: pointer;
+      @media screen and (max-width: 420px){
+        margin: 2rem 0 0;
+      }
       .fa{
         font-size: 3rem;
         padding: 0 0.4rem;
@@ -134,6 +149,9 @@
       border-radius: 0rem;
       transition: all 0.6s;
       cursor: pointer;
+      @media screen and (max-width: 420px){
+        margin: 2rem 0 0;
+      } 
       .fa{
         font-size: 3rem;
         &:before{
@@ -146,9 +164,23 @@
 .discover--charts--section{
   display: flex;
   justify-content: space-evenly;
+  @media screen and (max-width:767px){
+    flex-direction: column;
+    .title-section {
+      text-align: center;
+    }
+  }
   .carousel-control-group{
     position: relative;
     min-height: 4rem;
+    @media screen and (max-width:767px){
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: center;
+      a{
+        position: relative;
+      }
+    }
     .carousel-control{
       width: 4rem;
       height: 4rem;
@@ -191,7 +223,7 @@
     .item{
       > div{
         display: flex;
-        min-height: 35rem;
+        min-height: 36rem;
         flex-direction: column;
         background-color:$white;
         padding: 0; 
@@ -233,30 +265,72 @@
 .section--our--methodology{
   display: flex;
   flex-direction: row;
+  @media screen and (max-width: 768px){
+    flex-direction: column-reverse;
+  }
   > div{
     width: 50%;
+    @media screen and (min-width: 768px) and (max-width: 1365px){
+      width:40%;
+    }
+    @media screen and (max-width: 768px){
+      width:100%;
+    }
   }
   .agencies--logos--block{
     background: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/background-agencies.svg) 0 2rem no-repeat;
     background-size: contain;
     background-position: 100%;
     padding-top: 4rem;
+    @media screen and (max-width: 768px){
+      padding-top: 0rem;
+    }
     ul{
       list-style: none;
       display: flex;
-      width: 90%;
+      width: 100%;
       flex-wrap: wrap;
       flex-direction: row;
       justify-content: flex-end;
+      padding: 0 4rem 0 2rem;
+      @media screen and (max-width: 768px){
+        padding: 0rem;
+        justify-content: center;
+      }
+      @media screen and (max-width: 420px){
+        padding: 0rem;
+        justify-content: center;
+        display: block;
+      }
       li{
         background: #FFF;
         border-radius: 4rem;
         overflow: hidden;
         box-shadow: 2px 2px 8px $gray-light;
-        margin: 1rem 3rem;
+        margin: 1rem 2rem;
         text-align: center;
+        @media screen and (min-width: 1024px) and (max-width: 1366px){
+          margin: 1rem 1rem;
+        }
+        @media screen and (max-width: 768px){
+          margin: 1rem;
+          width: 40%;
+          border-radius: 0;
+          box-shadow:none;
+          background: transparent;
+        }
+        @media screen and (max-width: 420px){
+          width: 100%;
+          margin:0;
+          a{
+            padding: 0.8rem !important;
+            img{
+              width: auto  !important;
+            }
+          }
+        }
         &:last-child{
-          margin-right:0;
+         // margin-right:0;
         }
         &:hover{
           box-shadow: 1px 1px 2px $gray-light;
@@ -282,6 +356,13 @@
   }
   .content-methodology{
     width:30%;
+    @media screen and (min-width: 768px) and (max-width: 1365px){
+      width:60%;
+      padding-right: 2rem;
+    }
+    @media screen and (max-width: 768px){
+      width:100%;
+    }
     h2{
       color: $orange;
       font-family: "OpenSans";
@@ -304,6 +385,16 @@
 }
 
 
+@media only screen and (min-width:1200px) and (max-width:1600px) {
+  .col-ml-3{
+     width: 25%;
+   }
+}
+@media only screen and (min-width:1600px) and (max-width:1919px) {
+  .col-ml-3{
+     width: 20%;
+   }
+} 
 
 
 /* Medium Devices, Desktops */
@@ -359,11 +450,11 @@ all and (min-width: 768px) and (-webkit-transform-3d) {
 @media all and (min-width: 992px) {
    .carousel-showmanymoveone .carousel-inner > .active.left,
    .carousel-showmanymoveone .carousel-inner > .prev {
-      left: -16.6%;
+      left: -33.3%;
    }
    .carousel-showmanymoveone .carousel-inner > .active.right,
    .carousel-showmanymoveone .carousel-inner > .next {
-      left: 16.6%;
+      left: 33.3%;
    }
    .carousel-showmanymoveone .carousel-inner > .left,
    .carousel-showmanymoveone .carousel-inner > .prev.right,
@@ -380,14 +471,14 @@ all and (min-width: 768px) and (-webkit-transform-3d) {
 all and (min-width: 992px) and (-webkit-transform-3d) {
    .carousel-showmanymoveone .carousel-inner > .item.active.right,
    .carousel-showmanymoveone .carousel-inner > .item.next {
-      -webkit-transform: translate3d(16.6%, 0, 0);
-      transform: translate3d(16.6%, 0, 0);
+      -webkit-transform: translate3d(33.3%, 0, 0);
+      transform: translate3d(33.3%, 0, 0);
       left: 0;
    }
    .carousel-showmanymoveone .carousel-inner > .item.active.left,
    .carousel-showmanymoveone .carousel-inner > .item.prev {
-      -webkit-transform: translate3d(-16.6%, 0, 0);
-      transform: translate3d(-16.6%, 0, 0);
+      -webkit-transform: translate3d(-33.3%, 0, 0);
+      transform: translate3d(-33.3%, 0, 0);
       left: 0;
    }
    .carousel-showmanymoveone .carousel-inner > .item.left,
@@ -400,9 +491,89 @@ all and (min-width: 992px) and (-webkit-transform-3d) {
 }
 
 
+@media all and (min-width: 1200px) {
+   .carousel-showmanymoveone .carousel-inner > .active.left,
+   .carousel-showmanymoveone .carousel-inner > .prev {
+      left: -25%;
+   }
+   .carousel-showmanymoveone .carousel-inner > .active.right,
+   .carousel-showmanymoveone .carousel-inner > .next {
+      left: 25%;
+   }
+   .carousel-showmanymoveone .carousel-inner > .left,
+   .carousel-showmanymoveone .carousel-inner > .prev.right,
+   .carousel-showmanymoveone .carousel-inner > .active {
+      left: 0;
+   }
+   .carousel-showmanymoveone .carousel-inner .cloneditem-2,
+   .carousel-showmanymoveone .carousel-inner .cloneditem-3 {
+      display: block;
+   }
+}
+@media all and (min-width: 1200px) and (transform-3d),
+all and (min-width: 1200px) and (-webkit-transform-3d) {
+   .carousel-showmanymoveone .carousel-inner > .item.active.right,
+   .carousel-showmanymoveone .carousel-inner > .item.next {
+      -webkit-transform: translate3d(25%, 0, 0);
+      transform: translate3d(25%, 0, 0);
+      left: 0;
+   }
+   .carousel-showmanymoveone .carousel-inner > .item.active.left,
+   .carousel-showmanymoveone .carousel-inner > .item.prev {
+      -webkit-transform: translate3d(-25%, 0, 0);
+      transform: translate3d(-25%, 0, 0);
+      left: 0;
+   }
+   .carousel-showmanymoveone .carousel-inner > .item.left,
+   .carousel-showmanymoveone .carousel-inner > .item.prev.right,
+   .carousel-showmanymoveone .carousel-inner > .item.active {
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+      left: 0;
+   }
+}
 
-
-
+@media all and (min-width: 1600px) {
+   .carousel-showmanymoveone .carousel-inner > .active.left,
+   .carousel-showmanymoveone .carousel-inner > .prev {
+      left: -20%;
+   }
+   .carousel-showmanymoveone .carousel-inner > .active.right,
+   .carousel-showmanymoveone .carousel-inner > .next {
+      left: 20%;
+   }
+   .carousel-showmanymoveone .carousel-inner > .left,
+   .carousel-showmanymoveone .carousel-inner > .prev.right,
+   .carousel-showmanymoveone .carousel-inner > .active {
+      left: 0;
+   }
+   .carousel-showmanymoveone .carousel-inner .cloneditem-2,
+   .carousel-showmanymoveone .carousel-inner .cloneditem-3 {
+      display: block;
+   }
+}
+@media all and (min-width: 1600) and (transform-3d),
+all and (min-width: 1600px) and (-webkit-transform-3d) {
+   .carousel-showmanymoveone .carousel-inner > .item.active.right,
+   .carousel-showmanymoveone .carousel-inner > .item.next {
+      -webkit-transform: translate3d(20%, 0, 0);
+      transform: translate3d(20%, 0, 0);
+      left: 0;
+   }
+   .carousel-showmanymoveone .carousel-inner > .item.active.left,
+   .carousel-showmanymoveone .carousel-inner > .item.prev {
+      -webkit-transform: translate3d(-20%, 0, 0);
+      transform: translate3d(-20%, 0, 0);
+      left: 0;
+   }
+   .carousel-showmanymoveone .carousel-inner > .item.left,
+   .carousel-showmanymoveone .carousel-inner > .item.prev.right,
+   .carousel-showmanymoveone .carousel-inner > .item.active {
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+      left: 0;
+   }
+}
 
 @media only screen 
 and (min-width : 768px) 
