@@ -390,7 +390,7 @@ and (max-width : 1200px)  {
 	  display: flex;
 	  justify-content: flex-end;
 	  flex-direction: row;
-	    height: 90px;
+	  height: 90px;
 		.bar-main-menu {
 	    .navbar-header {
 	        float: none;
@@ -441,7 +441,8 @@ and (max-width : 1200px)  {
 			.eu-osha-logo{
 				width: auto;
 				img{
-					  height: 90px;
+				  height: 70px;
+				  margin-top: 1rem;
 				}
 			}
 			.menu-tools-top{
@@ -508,6 +509,7 @@ and (max-width : 1200px)  {
 		      	padding: 0 2rem 0 0;
 						top: -3px;
 						position: relative;
+						display: none;
 		      }
 		    }
 			}
@@ -1430,7 +1432,6 @@ and (max-width :767px)  {
     	width: 100%;
     }
   }
-
 	.bar-header{
 		position: fixed;
     background: $white;
@@ -1443,6 +1444,7 @@ and (max-width :767px)  {
 			}
 			.menu-tools-top{
 				padding: 3.5rem 0 0;
+				display: block;
 				.menu-tools-top--items {
 					.search--block{
 						.search--form{
@@ -1464,22 +1466,32 @@ and (max-width :767px)  {
   		z-index: 1000;
   		background:$white;
 			.navbar-toggle{
-				margin: 2.7rem 1rem 0 1rem;
+				margin: 1rem 1rem 0 1rem;
 			}
 			&.exposed .collapse.exposed {
 			  display: block !important;
 			  background: #FFF;
-			  height: 95vh !important;
+			  height: auto !important;
 			  width: 100vw;
 			  top: 9rem;
-			  left: initial;
-			  right: 0vw;
+			  left: 0;
+			  right:initial;
 			  transition: all 1.6s;
 			  position: absolute;
 			  border-top: 1px solid #F0F0F0;
+			  border-bottom: 4px solid $aquamarine;
+			  .navbar-nav{
+					height: auto;
+				}
 			}
   	}
 	}
+	.advice-home{
+		.lead-title {
+		  padding: 2rem 0;
+		}
+	}
+
 	/** pop up */
   #popUpMessage{
     .popUpMessage--text--block{
@@ -1667,7 +1679,27 @@ and (max-width :767px)  {
 
 @media only screen 
 and (max-width :620px) {
-  
+	.bar-header{
+		.header--top{
+			.menu-tools-top{
+				display: none;
+			}
+			.osh-barometer-legend{
+				background-size: 3rem 6rem;
+				padding-left: 3.5rem;
+				.main-title{
+					margin-top: 4rem;
+					margin-bottom: 0;
+					.title{
+						font-size: 1rem;
+					}
+					.lead-title{
+						font-size: 1rem;
+					}
+				}
+			}
+		}
+	}
   #popUpMessage{
     .popUpMessage--text--block{
 		  width: 90vw;
@@ -1686,7 +1718,6 @@ and (max-width :620px) {
       }
     }
   }
-
   /**** COKKIES DIWSCLAIMER ****/
   #cookiesConsent {
     .text {

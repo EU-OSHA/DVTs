@@ -262,7 +262,7 @@ define(function (require) {
       });
 
       $stateProvider.state('prevention-companies', {
-        url: "/osh-outcomes-working-conditions/prevention-companies/:pIndicator/:pCountry1/:pCountry2/:pSplit",
+        url: "/osh-outcomes-working-conditions/prevention-companies/:pIndicator/:pSplit/:pCountry1/:pCountry2",
         params: {
           pIndicator: {
             value: 'risk-assessment',
@@ -318,7 +318,7 @@ define(function (require) {
       });
 
       $stateProvider.state('worker-involvement', {
-        url: "/osh-outcomes-working-conditions/worker-involvement/:pCountry1/:pCountry2/:pSplit",
+        url: "/osh-outcomes-working-conditions/worker-involvement/:pSplit/:pCountry1/:pCountry2",
         params: {
           pCountry1: {
             value: null,

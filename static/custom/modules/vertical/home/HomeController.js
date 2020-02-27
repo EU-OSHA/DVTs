@@ -35,8 +35,7 @@ define(function (require) {
         $scope.enforcementCountrySelected = "0";
         $scope.statisticsCountrySelected = "0";
 
-
-        $scope.pCountry1 = $rootScope.defaultCountry.code != undefined ? $rootScope.defaultCountry.code : "AT";
+        $scope.pCountry1 = $rootScope.defaultCountry != undefined && $rootScope.defaultCountry.isCookie ? $rootScope.defaultCountry.code : "0";
 
         if ($cookies.get("selectedCountry") != undefined)
         {
