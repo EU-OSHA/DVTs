@@ -165,8 +165,6 @@ define(function (require) {
         }
     };
 
-    console.log( 'column--item -->' + angular.element('.column--item').length );
-
     // Show/hide the Countries Filter List
     angular.element('div.countries-filters').css( "display",'none' );
     angular.element('#filter2 h2').addClass('showChallenges');
@@ -183,12 +181,17 @@ define(function (require) {
 
       if($scope.pIndicator == 'vibrations-loud-noise-and-temperature'){
         dataService.getVibrationCountries().then(function (data) {
+          var countryHasData = false;
           data.data.resultset.map(function (elem) {
             if(elem[1] != $scope.pCountry2){
               $scope.countriesDataFor.push({
                 country: elem[0],
                 country_code: elem[1]
               });
+            }
+            if (elem[1] == $scope.pCountry1)
+            {
+              countryHasData = true;
             }
 
             if(elem[1] != $scope.pCountry1){
@@ -198,6 +201,11 @@ define(function (require) {
               });
             }
           });
+          if (countryHasData == false)
+          {
+            $scope.pCountry1 = "AT";
+            $scope.changeIndicator(null, $scope.pIndicator, $scope.pSubIndicator);
+          }
         }).catch(function (err) {
           throw err;
         });
@@ -206,12 +214,17 @@ define(function (require) {
       if($scope.pIndicator == 'risks-involve-with-work'){
         if($scope.pSubIndicator == 'ewcs'){
           dataService.getEurofoundRisksCountries($scope.datasetEurofound).then(function (data) {
+            var countryHasData = false;
             data.data.resultset.map(function (elem) {
               if(elem[1] != $scope.pCountry2){
                 $scope.countriesDataFor.push({
                   country: elem[0],
                   country_code: elem[1]
                 });
+              }
+              if (elem[1] == $scope.pCountry1)
+              {
+                countryHasData = true;
               }
 
               if(elem[1] != $scope.pCountry1){
@@ -221,17 +234,27 @@ define(function (require) {
                 });
               }
             });
+            if (countryHasData == false)
+            {
+              $scope.pCountry1 = "AT";
+              $scope.changeIndicator(null, $scope.pIndicator, $scope.pSubIndicator);
+            }
           }).catch(function (err) {
             throw err;
           });
         }else{
           dataService.getESENERRisksCountries($scope.datasetESENER).then(function (data) {
+            var countryHasData = false;
             data.data.resultset.map(function (elem) {
               if(elem[1] != $scope.pCountry2){
                 $scope.countriesDataFor.push({
                   country: elem[0],
                   country_code: elem[1]
                 });
+              }
+              if (elem[1] == $scope.pCountry1)
+              {
+                countryHasData = true;
               }
 
               if(elem[1] != $scope.pCountry1){
@@ -241,6 +264,11 @@ define(function (require) {
                 });
               }
             });
+            if (countryHasData == false)
+            {
+              $scope.pCountry1 = "AT";
+              $scope.changeIndicator(null, $scope.pIndicator, $scope.pSubIndicator);
+            }
           }).catch(function (err) {
             throw err;
           });
@@ -287,8 +315,7 @@ define(function (require) {
               angular.element('.level1').removeClass('open-list');
             } else {
               angular.element('.level2').removeClass('open-list');
-            }
-            
+            }            
           }
         }
       }
@@ -358,17 +385,6 @@ define(function (require) {
           }, {reload: true});
         }
       }
-
-      /*$scope.countryChange = function(){
-        if ($state.current.name !== undefined) {
-          $state.transitionTo('physical-risk', {
-            pIndicator: $scope.pIndicator,
-            pSubIndicator: ($scope.pIndicator=='vibrations-loud-noise-and-temperature')?null:$scope.pSubIndicator,
-            pCountry1: $scope.pCountry1, 
-            pCountry2: $scope.pCountry2
-          }, {reload: true});
-        }
-      }*/
 
       $scope.exportData = function(promises, title, id){
         exportService.exportRadarData(promises, title, id);

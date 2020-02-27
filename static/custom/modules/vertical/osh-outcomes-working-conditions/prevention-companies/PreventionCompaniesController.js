@@ -94,9 +94,6 @@ define(function (require) {
       }
     });
 
-    $scope.countriesDataFor = [];
-    $scope.countriesCompareWith = [];
-
     $scope.pIndicator = $stateParams.pIndicator;
 
     $scope.dashboard = {};

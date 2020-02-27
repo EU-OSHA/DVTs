@@ -221,12 +221,18 @@ define(function (require) {
     |                                DATA LOAD                                     |
     |******************************************************************************/
       dataService.getNonFatalAccidentsCountries().then(function (data) {
+        var countryHasData = false;
         data.data.resultset.map(function (elem) {
           if(elem[1] != $scope.pCountry2){
               $scope.countriesDataFor.push({
               country: elem[0],
               country_code: elem[1]
             });
+          }
+          if (elem[1] == $scope.pCountry1)
+          {
+            console.log("FOUND");
+            countryHasData = true;
           }
 
           if(elem[1] != $scope.pCountry1){
@@ -236,6 +242,11 @@ define(function (require) {
             });
           }
         });
+        if (countryHasData == false)
+        {
+          $scope.pCountry1="AT";
+          $scope.countryChange();
+        }
       }).catch(function (err) {
           throw err;
       });
