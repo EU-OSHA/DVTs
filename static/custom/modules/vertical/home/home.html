@@ -56,7 +56,7 @@
 				<option value="SK">(SK) Slovakia</option>
 				<option value="UK">(UK) United Kingdom</option>
 			</select>
-			<label class="country-unlock" ng-click="saveCountry($event)"><i class="fa" aria-hidden="true"></i></label>
+			<label class="country-unlock" data-ng-class="{disabled: pCountry1=='0'}" ng-click="pCountry1=='0' || saveCountry($event)" data-ng-disabled="true"><i class="fa" aria-hidden="true"></i></label>
 			<!--<label class="country-lock"  ng-click="saveCountry($event)"><i class="fa fa-lock" aria-hidden="true"></i></label>-->
     	</form>
     </div>
@@ -78,7 +78,7 @@
           	<div class="content">
 							<a class="icon--card economic-chart-icon" ui-sref="economic-sector-profile ({pCountry1:pCountry1})"></a>
 							<h3 class="title--card"><a ui-sref="economic-sector-profile ({pCountry:pCountry1})" data-ng-bind="i18n.L22003"></a></h3>
-							<p class="content-text" data-ng-bind="i18n.L22028"></p>
+							<p class="content-text" data-ng-bind="ellipsis(i18n.L22028)"></p>
 						</div>
 						<p class="btn--card--carousel"><a ui-sref="economic-sector-profile ({pCountry1:pCountry1})" class="btn-default btn-main-color btn-full" data-ng-bind-html="i18n.L22026"></a></p>
         </div>
@@ -88,17 +88,17 @@
              	<div class="content">
 	            <a class="icon--card people-group-icon" ui-sref="workforce-profile"></a>
 	            <h3 class="title--card"><a ui-sref="workforce-profile"  data-ng-bind="i18n.L22004"></a></h3>
-	            <p class="content-text" data-ng-bind="i18n.L22030"></p>
+	            <p class="content-text" data-ng-bind="ellipsis(i18n.L22030)"></p>
 	          </div>
             <p class="btn--card--carousel"><a ui-sref="workforce-profile" class="btn-default btn-main-color btn-full" data-ng-bind-html="i18n.L22026"></a></p>
            </div>
         </div>
         <div class="item">
-           <div class="col-xs-12 col-sm-6  col-md-4 col-lg-2">
+           <div class="col-xs-12 col-sm-6 col-md-4 col-ml-3 col-lg-2">
              	<div class="content">
                 <a class="icon--card national-icon" ui-sref="national-strategies"></a>
                 <h3 class="title--card"><a ui-sref="national-strategies" data-ng-bind="i18n.L22007"></a></h3>
-                <p class="content-text" data-ng-bind="i18n.L22038"></p>
+                <p class="content-text" data-ng-bind="ellipsis(i18n.L22038)"></p>
             	</div>
               <p class="btn--card--carousel">
                 	<a ng-if="strategyCountrySelected != '0'" ui-sref="country-profile({pIndicator: 'basic-information', pCountry1: strategyCountrySelected, pCountry2: 0})" class="btn-default btn-main-color btn-full" data-ng-bind="i18n.L20626"></a>
@@ -107,11 +107,11 @@
            </div>
         </div>
         <div class="item">
-           <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
+           <div class="col-xs-12 col-sm-6 col-md-4 col-ml-3 col-lg-2">
              	<div class="content">
 	            <a class="icon--card work-accidents-icon" ui-sref="work-accidents ({pCountry1:pCountry1})"></a>
 	            <h3 class="title--card"><a ui-sref="work-accidents ({pCountry1:pCountry1})" data-ng-bind="i18n.L22010"></a></h3>
-	            <p class="content-text" data-ng-bind="i18n.L22050"></p>
+	            <p class="content-text" data-ng-bind="ellipsis(i18n.L22050)"></p>
 		    		</div>
             <p class="btn--card--carousel"><a ui-sref="work-accidents ({pCountry1:pCountry1})" class="btn-default btn-main-color btn-full" data-ng-bind-html="i18n.L22026"></a></p>
            </div>
@@ -121,7 +121,7 @@
              	<div class="content">
 	            <a class="icon--card working-conditons-icon" ui-sref="working-conditions"></a>
 	            <h3 class="title--card"><a ui-sref="working-conditions" data-ng-bind="i18n.L22013"></a></h3>
-	            <p class="content-text" data-ng-bind="i18n.L22026"></p>
+	            <p class="content-text" data-ng-bind="ellipsis(i18n.L22054)"></p>
           	</div>
             <p class="btn--card--carousel"><a ui-sref="working-conditions" class="btn-default btn-main-color btn-full" data-ng-bind-html="i18n.L22026"></a></p>
            </div>
@@ -131,7 +131,7 @@
 						<div class="content">
 	            <a class="icon--card statistics-icon" ui-sref="osh-statistics"></a>
             	<h3 class="title--card"><a ui-sref="osh-statistics" data-ng-bind="i18n.L22018"></a></h3>
-            	<p class="content-text" data-ng-bind="i18n.L22065"></p>
+            	<p class="content-text" data-ng-bind="ellipsis(i18n.L22065)"></p>
             </div>
           	<p class="btn--card--carousel">
 	      			<a ng-if="statisticsCountrySelected != '0'" ui-sref="osh-statistics({pCountry: statisticsCountrySelected})" class="btn-default btn-main-color btn-full" data-ng-bind="i18n.L22026"></a>
@@ -487,7 +487,6 @@
 	    </div>
 	</section>
 -->
-
 <script>
 (function(){
   $(document).ready(function() {
@@ -506,7 +505,6 @@
       	$('.carousel-control-group').removeClass('hide');
       }
 		}
-
 
 		function createCarousel(screenWidth){
       
@@ -548,6 +546,26 @@
 			  }
 			});
 		}
+
+
+		$(".carousel").on("touchstart", function(event){
+			if( numItems != 6){
+		    var xClick = event.originalEvent.touches[0].pageX;
+		    $(this).one("touchmove", function(event){
+		        var xMove = event.originalEvent.touches[0].pageX;
+		        if( Math.floor(xClick - xMove) > 5 ){
+		            $(this).carousel('next');
+		        }
+		        else if( Math.floor(xClick - xMove) < -5 ){
+		            $(this).carousel('prev');
+		        }
+		    });
+		    $(".carousel").on("touchend", function(){
+		            $(this).off("touchmove");
+		    });
+			}
+		});
+
 
   });
 }());

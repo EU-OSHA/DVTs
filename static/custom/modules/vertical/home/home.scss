@@ -158,7 +158,11 @@
           content: "\f09c";
         }
       }
-    }     
+    }
+    .country-unlock.disabled{
+      background:$gray-light;
+      cursor: auto;
+    }
   }
 }
 .discover--charts--section{
@@ -242,15 +246,6 @@
             line-height: 1.2em;
             /* max-height = line-height (1.2) * lines max number (3) */
             max-height: 3.6em; 
-            text-align: justify;
-            margin-right: -1em;
-            padding-right: 1em;
-            &:before {
-              content: '...';
-              position: absolute;
-              right: 0;
-              bottom: 0;
-            }
           }
         }
       }
