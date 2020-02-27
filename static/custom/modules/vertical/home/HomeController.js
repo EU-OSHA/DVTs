@@ -48,14 +48,27 @@ define(function (require) {
         }
 
         $scope.saveCountry = function(e){
-          $(e.currentTarget).toggleClass('country-unlock').toggleClass('country-lock');
-
-          $rootScope.defaultCountry = {
-            code : $scope.pCountry1,
-            isCookie : 1
+          var removed = false;
+          if ($cookies.get("selectedCountry") != undefined)
+          {
+            $cookies.remove("selectedCountry");
+            removed = true;
           }
 
-          $cookies.put('selectedCountry', $scope.pCountry1);
+          $(e.currentTarget).toggleClass('country-unlock').toggleClass('country-lock');
+
+          if (removed == false)
+          {
+            $rootScope.defaultCountry = {
+              code : $scope.pCountry1,
+              isCookie : 1
+            }
+
+            if ($cookies.get('angular-consent.global'))
+            {
+              $cookies.put('selectedCountry', $scope.pCountry1);  
+            }
+          }          
         }
 
         $scope.EUData = {};

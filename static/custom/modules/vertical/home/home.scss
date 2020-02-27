@@ -158,7 +158,11 @@
           content: "\f09c";
         }
       }
-    }     
+    }
+    .country-unlock.disabled{
+      background:$orange-light;
+      cursor: auto;
+    }
   }
 }
 .discover--charts--section{
