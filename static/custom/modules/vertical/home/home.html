@@ -94,7 +94,7 @@
            </div>
         </div>
         <div class="item">
-           <div class="col-xs-12 col-sm-6  col-md-4 col-lg-2">
+           <div class="col-xs-12 col-sm-6 col-md-4 col-ml-3 col-lg-2">
              	<div class="content">
                 <a class="icon--card national-icon" ui-sref="national-strategies"></a>
                 <h3 class="title--card"><a ui-sref="national-strategies" data-ng-bind="i18n.L22007"></a></h3>
@@ -107,7 +107,7 @@
            </div>
         </div>
         <div class="item">
-           <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
+           <div class="col-xs-12 col-sm-6 col-md-4 col-ml-3 col-lg-2">
              	<div class="content">
 	            <a class="icon--card work-accidents-icon" ui-sref="work-accidents ({pCountry1:pCountry1})"></a>
 	            <h3 class="title--card"><a ui-sref="work-accidents ({pCountry1:pCountry1})" data-ng-bind="i18n.L22010"></a></h3>
@@ -487,7 +487,6 @@
 	    </div>
 	</section>
 -->
-
 <script>
 (function(){
   $(document).ready(function() {
@@ -506,7 +505,6 @@
       	$('.carousel-control-group').removeClass('hide');
       }
 		}
-
 
 		function createCarousel(screenWidth){
       
@@ -549,6 +547,27 @@
 			});
 		}
 
+  });
+}());
+
+
+(function(){
+  $(document).ready(function() {
+		$(".carousel").on("touchstart", function(event){
+		    var xClick = event.originalEvent.touches[0].pageX;
+		    $(this).one("touchmove", function(event){
+		        var xMove = event.originalEvent.touches[0].pageX;
+		        if( Math.floor(xClick - xMove) > 5 ){
+		            $(this).carousel('next');
+		        }
+		        else if( Math.floor(xClick - xMove) < -5 ){
+		            $(this).carousel('prev');
+		        }
+		    });
+		    $(".carousel").on("touchend", function(){
+		            $(this).off("touchmove");
+		    });
+		});
   });
 }());
 </script>
