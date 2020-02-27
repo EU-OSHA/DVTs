@@ -547,13 +547,9 @@
 			});
 		}
 
-  });
-}());
 
-
-(function(){
-  $(document).ready(function() {
 		$(".carousel").on("touchstart", function(event){
+			if( numItems != 6){
 		    var xClick = event.originalEvent.touches[0].pageX;
 		    $(this).one("touchmove", function(event){
 		        var xMove = event.originalEvent.touches[0].pageX;
@@ -567,7 +563,10 @@
 		    $(".carousel").on("touchend", function(){
 		            $(this).off("touchmove");
 		    });
+			}
 		});
+
+
   });
 }());
 </script>
