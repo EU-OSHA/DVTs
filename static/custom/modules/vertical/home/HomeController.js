@@ -71,6 +71,20 @@ define(function (require) {
           }          
         }
 
+        $scope.ellipsis = function(pText)
+        {
+          var maxLength = 100;
+          if (pText.length > maxLength)
+          {
+            var remaining = pText.substring(maxLength);
+            if (remaining.indexOf(" ") > -1)
+            {
+              return pText.substring(0, maxLength+remaining.indexOf(" ")) + "...";
+            }
+          }
+          return pText;
+        }
+
         $scope.EUData = {};
 
         /******************************************************************************|
