@@ -118,6 +118,9 @@
       border: 1px solid $gray-lighter;
       font-style: italic;
       color: $gray;
+      &.disabled{
+        color: $gray-light;
+      }
       option{
 
       }
