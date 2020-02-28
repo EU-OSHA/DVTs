@@ -36,10 +36,13 @@ define(function (require) {
         $scope.statisticsCountrySelected = "0";
 
         $scope.pCountry1 = $rootScope.defaultCountry != undefined && $rootScope.defaultCountry.isCookie ? $rootScope.defaultCountry.code : "0";
+        $scope.selectDisabled = false;
 
         if ($cookies.get("selectedCountry") != undefined)
         {
           angular.element("label.country-unlock").toggleClass('country-unlock').toggleClass('country-lock');
+          $scope.selectDisabled = true;
+          angular.element("div.preferences--lock select").toggleClass('disabled');
         }
 
         $scope.changeCountry = function()
@@ -53,9 +56,14 @@ define(function (require) {
           {
             $cookies.remove("selectedCountry");
             removed = true;
+
+            $rootScope.defaultCountry="";
+            $scope.pCountry1 = "0";
           }
 
           $(e.currentTarget).toggleClass('country-unlock').toggleClass('country-lock');
+          angular.element("div.preferences--lock select").toggleClass('disabled');
+          $scope.selectDisabled = !$scope.selectDisabled;
 
           if (removed == false)
           {
