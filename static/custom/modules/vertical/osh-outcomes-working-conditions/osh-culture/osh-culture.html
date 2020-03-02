@@ -28,40 +28,6 @@
     <div class="note">
       <p data-ng-bind="i18nLiterals.L20718"></p>
     </div>
-    <!-- Sickness absences analysed -->
-    <div class="" id="tab1" data-ng-show="pIndicator == 'sickness-absences-analysed'">
-      <div class="card--grid xxs-w1 xs-w1 w1 center-text">
-        <div class="card--block--chart">
-          <div class="chart--block">
-            <dvt-bar-chart
-              data-ng-cloak
-              query="{{query}}" cda="{{::cdaOSHOutcomes }}"
-              width="330" height="{{horizontalHeight}}" axis-percent="1"
-              orientation="{{orientation}}" axis-fixed-min="0"
-              axis-fixed-max="100" step="{{step}}"
-              params="[['pDataset', datasetESENER], ['pIndicator', 104]]"
-              color-role="series" colors="[color1, color2]"
-              chart-title="{{i18nLiterals.L20663}}" id="1"
-              axis-label-font="14px 'OpenSans-bold'"
-              plots="stories[0].plotsEU"
-              values-visible="false"
-              values-font="14px 'OpenSans-bold'"
-              multiple-label-colors="false"
-              base-axis-label-text-baseline=""
-              leaf-content-overflow='visible'
-              dimensions="stories[0].dimensions"
-              legend="true"
-              angle="{{angle}}" stacked="1"
-              base-axis-size="{{axisSize}}"
-              datasource-and-dates="[datasetESENER,104]"
-            ></dvt-bar-chart>
-          </div>
-        </div>
-        <div class="chart-legend">
-          <p data-ng-bind="i18nLiterals.L20569"></p>
-        </div>
-      </div>
-    </div>
 
     <!-- Health and safety discussed -->
     <div class="" id="tab2" data-ng-show="pIndicator == 'health-and-safety-discussed'">
@@ -74,7 +40,7 @@
               width="330" height="{{horizontalHeight}}" axis-percent="1"
               orientation="{{orientation}}" axis-fixed-min="0"
               axis-fixed-max="100" step="{{step}}"
-              params="[['pDataset', datasetESENER], ['pIndicator', 105]]"
+              params="[['pDataset', datasetESENER], ['pIndicator', 358]]"
               color-role="series" colors="[color3, stories[0].color2, color4]"
               chart-title="{{i18nLiterals.L20664}}" id="2"
               axis-label-font="14px 'OpenSans-bold'"
@@ -89,7 +55,7 @@
               angle="{{angle}}" stacked="1"
               legend-align="center"
               base-axis-size="{{axisSize}}"
-              datasource-and-dates="[datasetESENER,105]"
+              datasource-and-dates="[datasetESENER,358]"
             ></dvt-bar-chart>
           </div>
         </div>
@@ -110,7 +76,7 @@
               width="330" height="{{horizontalHeight}}" axis-percent="1"
               orientation="{{orientation}}" axis-fixed-min="0"
               axis-fixed-max="100" step="{{step}}"
-              params="[['pDataset', datasetESENER], ['pIndicator', 106]]"
+              params="[['pDataset', datasetESENER], ['pIndicator', 328]]"
               color-role="series" colors="[color1, color2]"
               chart-title="{{i18nLiterals.L20665}}" id="3"
               axis-label-font="14px 'OpenSans-bold'"
@@ -124,7 +90,7 @@
               legend="true"
               angle="{{angle}}" stacked="1"
               base-axis-size="{{axisSize}}"
-              datasource-and-dates="[datasetESENER,106]"
+              datasource-and-dates="[datasetESENER,328]"
             ></dvt-bar-chart>
           </div>
         </div>
@@ -145,7 +111,7 @@
               width="330" height="{{horizontalHeight}}" axis-percent="1"
               orientation="{{orientation}}" axis-fixed-min="0"
               axis-fixed-max="100" step="{{step}}"
-              params="[['pDataset', datasetESENER], ['pIndicator', 107]]"
+              params="[['pDataset', datasetESENER], ['pIndicator', 329]]"
               color-role="series" colors="[color1, color2]"
               chart-title="{{i18nLiterals.L20666}}" id="4"
               axis-label-font="14px 'OpenSans-bold'"
@@ -159,7 +125,7 @@
               legend="true"
               angle="{{angle}}" stacked="1"
               base-axis-size="{{axisSize}}"
-              datasource-and-dates="[datasetESENER,107]"
+              datasource-and-dates="[datasetESENER,329]"
             ></dvt-bar-chart>
           </div>
         </div>
@@ -180,7 +146,7 @@
               width="330" height="{{horizontalHeight}}" axis-percent="1"
               orientation="{{orientation}}" axis-fixed-min="0"
               axis-fixed-max="100" step="{{step}}"
-              params="[['pDataset', datasetESENER], ['pIndicator', 108]]"
+              params="[['pDataset', datasetESENER], ['pIndicator', 330]]"
               color-role="series" colors="[color1, color2]"
               chart-title="{{i18nLiterals.L20667}}" id="5"
               axis-label-font="14px 'OpenSans-bold'"
@@ -194,7 +160,7 @@
               legend="true"
               angle="{{angle}}" stacked="1"
               base-axis-size="{{axisSize}}"
-              datasource-and-dates="[datasetESENER,108]"
+              datasource-and-dates="[datasetESENER,330]"
             ></dvt-bar-chart>
           </div>
         </div>
@@ -215,7 +181,7 @@
               width="330" height="{{horizontalHeight}}" axis-percent="1"
               orientation="{{orientation}}" axis-fixed-min="0"
               axis-fixed-max="100" step="{{step}}"
-              params="[['pDataset', datasetESENER], ['pIndicator', 109]]"
+              params="[['pDataset', datasetESENER], ['pIndicator', 331]]"
               color-role="series" colors="[color1, color2]"
               chart-title="{{i18nLiterals.L20668}}" id="6"
               axis-label-font="14px 'OpenSans-bold'"
@@ -228,7 +194,7 @@
               legend="true"
               angle="{{angle}}"
               base-axis-size="{{axisSize}}"
-              datasource-and-dates="[datasetESENER,109]"
+              datasource-and-dates="[datasetESENER,331]"
             ></dvt-bar-chart>
           </div>
         </div>

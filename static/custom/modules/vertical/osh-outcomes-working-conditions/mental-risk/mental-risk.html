@@ -46,7 +46,7 @@
               width="330" height="{{horizontalHeight}}" axis-percent="1"
               orientation="{{orientation}}" axis-fixed-min="0"
               axis-fixed-max="100" step="{{step.chart1}}"
-              params="[['pDataset', datasetESENER], ['pIndicator', 113]]"
+              params="[['pDataset', datasetESENER], ['pIndicator', 323]]"
               color-role="series" colors="[color1, color2]"
               chart-title="{{i18nLiterals.L340}}" id="1"
               axis-label-font="14px 'OpenSans-bold'"
@@ -59,7 +59,7 @@
               legend="true"
               angle="{{angle}}" stacked="1"
               base-axis-size="{{axisSize}}"
-              datasource-and-dates="[datasetESENER,113]"
+              datasource-and-dates="[datasetESENER,323]"
             ></dvt-bar-chart>
           </div>
           <div class="chart--block" ng-hide="pSplit != 'ewcs'">
@@ -110,7 +110,7 @@
             width="330" height="{{horizontalHeight}}" axis-percent="1"
             orientation="{{orientation}}" axis-fixed-min="0"
             axis-fixed-max="100" step="{{step.chart2}}"
-            params="[['pDataset', datasetESENER], ['pIndicator', 114]]"
+            params="[['pDataset', datasetESENER], ['pIndicator', 324]]"
             color-role="series" colors="[color1, color2]"
             chart-title="{{i18nLiterals.L341}}" id="3"
             axis-label-font="14px 'OpenSans-bold'"
@@ -123,7 +123,7 @@
             legend="true" stacked="1" angle="{{angle}}"
             legend-align="center"
             base-axis-size="{{axisSize}}"
-            datasource-and-dates="[datasetESENER,114]"
+            datasource-and-dates="[datasetESENER,324]"
             ></dvt-bar-chart>
           </div>
           <div class="chart--block" ng-hide="pSplit != 'ewcs'">
@@ -166,38 +166,7 @@
       </div>
       <div class="card--grid xxs-w1 xs-w1 w1 center-text">
         <div class="card--block--chart">
-          <!-- ESENER AND EUROFOUND filter -->
-          <div class="select-filter-chart">
-            <select ng-model="pSplit" data-ng-change="changeDataset(pIndicator, pSplit)">
-              <option data-ng-bind="i18nLiterals.L20645" value="esener"></option>
-              <option data-ng-bind="i18nLiterals.L20646" value="ewcs"></option>
-            </select>
-          </div>
-          <div class="chart--block" ng-hide="pSplit != 'esener'">
-            <dvt-bar-chart
-            data-ng-cloak
-            query="{{query}}" cda="{{::cdaOSHOutcomes }}"
-            width="330" height="{{horizontalHeight}}" axis-percent="1"
-            orientation="{{orientation}}" axis-fixed-min="0"
-            axis-fixed-max="100" step="{{step.chart2}}"
-            params="[['pDataset', datasetESENER], ['pIndicator', 115]]"
-            color-role="series" colors="[color1, color2]"
-            chart-title="{{i18nLiterals.L342}}" id="5"
-            axis-label-font="14px 'OpenSans-bold'"
-            plots="stories[0].plots"
-            values-overflow="show"
-            values-mask="{value}%"
-            values-font="14px 'OpenSans-bold'"
-            multiple-label-colors="false"
-            leaf-content-overflow='visible'
-            dimensions="stories[0].dimensions"
-            legend="true" stacked="1" angle="{{angle}}"
-            legend-align="center"
-            base-axis-size="{{axisSize}}"
-            datasource-and-dates="[datasetESENER,115]"
-            ></dvt-bar-chart>
-          </div>
-          <div class="chart--block" ng-hide="pSplit != 'ewcs'">
+          <div class="chart--block">
             <dvt-bar-chart
               data-ng-cloak
               query="{{influenceQuery}}" cda="{{::cdaOSHOutcomes }}"
@@ -251,7 +220,7 @@
             width="330" height="{{horizontalHeight}}" axis-percent="1"
             orientation="{{orientation}}" axis-fixed-min="0"
             axis-fixed-max="100" step="{{step.chart2}}"
-            params="[['pDataset', datasetESENER], ['pIndicator', 116]]"
+            params="[['pDataset', datasetESENER], ['pIndicator', 325]]"
             color-role="series" colors="[color1, color2]"
             chart-title="{{i18nLiterals.L343}}" id="7"
             axis-label-font="14px 'OpenSans-bold'"
@@ -265,7 +234,7 @@
             legend="true" stacked="1" angle="{{angle}}"
             legend-align="center"
             base-axis-size="{{axisSize}}"
-            datasource-and-dates="[datasetESENER,116]"
+            datasource-and-dates="[datasetESENER,325]"
             ></dvt-bar-chart>
           </div>
           <div class="chart--block" ng-hide="pSplit != 'ewcs'">
@@ -322,7 +291,7 @@
             width="330" height="{{horizontalHeight}}" axis-percent="1"
             orientation="{{orientation}}" axis-fixed-min="0"
             axis-fixed-max="100" step="{{step.chart2}}"
-            params="[['pDataset', datasetESENER], ['pIndicator', 117]]"
+            params="[['pDataset', datasetESENER], ['pIndicator', 326]]"
             color-role="series" colors="[color1, color2]"
             chart-title="{{i18nLiterals.L344}}" id="9"
             axis-label-font="14px 'OpenSans-bold'"
@@ -336,7 +305,7 @@
             legend="true" stacked="1" angle="{{angle}}"
             legend-align="center"
             base-axis-size="{{axisSize}}"
-            datasource-and-dates="[datasetESENER,117]"
+            datasource-and-dates="[datasetESENER,326]"
             ></dvt-bar-chart>
           </div>
           <div class="chart--block" ng-hide="pSplit != 'ewcs'">
@@ -390,7 +359,7 @@
             width="330" height="{{horizontalHeight}}" axis-percent="1"
             orientation="{{orientation}}" axis-fixed-min="0"
             axis-fixed-max="100" step="{{step.chart2}}"
-            params="[['pDataset', datasetESENER], ['pIndicator', 118]]"
+            params="[['pDataset', datasetESENER], ['pIndicator', 327]]"
             color-role="series" colors="[color1, color2]"
             chart-title="{{i18nLiterals.L345}}" id="11"
             axis-label-font="14px 'OpenSans-bold'"
@@ -404,7 +373,7 @@
             legend="true" stacked="1" angle="{{angle}}"
             legend-align="center"
             base-axis-size="{{axisSize}}"
-            datasource-and-dates="[datasetESENER,118]"
+            datasource-and-dates="[datasetESENER,327]"
             ></dvt-bar-chart>
           </div>
           <div class="chart--block" ng-hide="pSplit != 'ewcs'">
@@ -444,38 +413,7 @@
     <div class="" id="tab7" data-ng-show="pIndicator == 'discrimination'">
       <div class="card--grid xxs-w1 xs-w1 w1 center-text">        
         <div class="card--block--chart">
-          <!-- ESENER AND EUROFOUND filter -->
-          <div class="select-filter-chart">
-            <select ng-model="pSplit" data-ng-change="changeDataset(pIndicator, pSplit)">
-              <option data-ng-bind="i18nLiterals.L20645" value="esener"></option>
-              <option data-ng-bind="i18nLiterals.L20646" value="ewcs"></option>
-            </select>
-          </div>
-          <div class="chart--block" ng-hide="pSplit != 'esener'">
-            <dvt-bar-chart
-            data-ng-cloak
-            query="{{query}}" cda="{{::cdaOSHOutcomes }}"
-            width="330" height="{{horizontalHeight}}" axis-percent="1"
-            orientation="{{orientation}}" axis-fixed-min="0"
-            axis-fixed-max="100" step="{{step.chart2}}"
-            params="[['pDataset', datasetESENER], ['pIndicator', 119]]"
-            color-role="series" colors="[color1, color2]"
-            chart-title="{{i18nLiterals.L346}}" id="13"
-            axis-label-font="14px 'OpenSans-bold'"
-            plots="stories[0].plots"
-            values-overflow="show"
-            values-mask="{value}%"
-            values-font="14px 'OpenSans-bold'"
-            multiple-label-colors="false"
-            leaf-content-overflow='visible'
-            dimensions="stories[0].dimensions"
-            legend="true" stacked="1" angle="{{angle}}"
-            legend-align="center"
-            base-axis-size="{{axisSize}}"
-            datasource-and-dates="[datasetESENER,119]"
-            ></dvt-bar-chart>
-          </div>
-          <div class="chart--block" ng-hide="pSplit != 'ewcs'">
+          <div class="chart--block">
             <dvt-bar-chart
               data-ng-cloak
               query="{{discriminationQuery}}" cda="{{::cdaOSHOutcomes }}"

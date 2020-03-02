@@ -146,7 +146,7 @@ define (function (require) {
                                 }
                             }*/
 
-                            if (countryKey == 'EU28') {
+                            if (countryKey == 'EU28' || countryKey == 'EU27_2020') {
                                 return dvtUtils.getEUColor();
                             } else if(countryKey.value.match(pCountry1)){
                                 return dvtUtils.getColorCountry(1);
