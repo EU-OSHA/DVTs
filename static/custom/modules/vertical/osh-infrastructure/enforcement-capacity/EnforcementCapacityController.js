@@ -37,25 +37,25 @@ define(function (require) {
     $scope.country2Data = {};
 
     // Country parameters
-    if ($rootScope.defaultCountry != undefined)
-    {
-      $scope.pCountry1 = $rootScope.defaultCountry.code;
-    }
-    else if ($stateParams.pCountry1 != null)
+    if ($stateParams.pCountry1 != null)
     {
       $scope.pCountry1 = $stateParams.pCountry1;
+    }
+    else if ($rootScope.defaultCountry != undefined)
+    {
+      $scope.pCountry1 = $rootScope.defaultCountry.code;
     }
     else
     {
       $scope.pCountry1 = "AT";
     }
-    if ($rootScope.defaultCountry2 != undefined)
-    {
-      $scope.pCountry2 = $rootScope.defaultCountry2.code;
-    }
-    else if ($stateParams.pCountry2 != null)
+    if ($stateParams.pCountry2 != null)
     {
       $scope.pCountry2 = $stateParams.pCountry2;
+    }    
+    else if ($rootScope.defaultCountry2 != undefined)
+    {
+      $scope.pCountry2 = $rootScope.defaultCountry2.code;
     }
     else
     {
