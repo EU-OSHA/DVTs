@@ -65,17 +65,17 @@
 	    <Cache duration="3600" enabled="true"/>
 	    <Columns/>
 	    <Parameters>
-	      <Parameter default="126" name="pIndicator" type="Numeric"/>
+	      <Parameter default="285" name="pIndicator" type="Numeric"/>
 	      <Parameter default="AT" name="pCountry1" type="String" />
 	      <Parameter default="BE" name="pCountry2" type="String" />
-	      <Parameter default="15" name="pDataset" type="Numeric" />
+	      <Parameter default="19" name="pDataset" type="Numeric" />
 	      <Parameter default="1" name="pAnswer" type="Numeric"/>
 	    </Parameters>
 	    <Query>
 	    	SELECT t.text as Answer, IF(n.name REGEXP 'European Union', n.country_code, CONCAT("(", n.country_code, ") ", n.name)) as Country,  v.value*100 as Value
 			FROM nuts n, profile p, value v, dataset d, translation t, split_answer sa
 			WHERE n.id = p.nuts_id
-			AND n.country_code IN (${pCountry1}, ${pCountry2}, 'EU28')
+			AND n.country_code IN (${pCountry1}, ${pCountry2}, 'EU27_2020')
 			AND v.indicator_id = ${pIndicator}
 			AND v.profile_id = p.id
 			AND p.answer_id = sa.id
@@ -85,7 +85,7 @@
 			AND t.language = 'EN'
 			AND d.id = v.dataset_id
 			AND d.id = ${pDataset}
-			ORDER BY FIELD(sa.id, 2,1), FIELD (n.country_code, ${pCountry1}, ${pCountry2}, 'EU28');
+			ORDER BY FIELD(sa.id, 2,1), FIELD (n.country_code, ${pCountry1}, ${pCountry2}, 'EU27_2020');
 	    </Query>
 	</DataAccess>
 

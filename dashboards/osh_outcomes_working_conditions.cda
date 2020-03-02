@@ -242,8 +242,8 @@
 	    <Query>
 			SELECT id, literal_id 
 			FROM indicator
-			WHERE id IN (104, 105, 106, 107, 108, 109, 63, 64)
-			ORDER BY FIELD(id, 104, 105, 106, 107, 108, 109, 63, 64)
+			WHERE id IN (358, 328, 329, 330, 331, 63, 64)
+			ORDER BY FIELD(id, 358, 328, 329, 330, 331, 63, 64)
 	    </Query>
 	</DataAccess>
 
@@ -256,7 +256,7 @@
 	    	<Parameter default="64" name="pIndicator" type="Numeric"/>
 	    </Parameters>
 	    <Query>
-            SELECT t.text as Answer, IF(n.name = 'European Union', n.country_code, IF(n.name = 'Macedonia, The former Yugoslav Rep. of', CONCAT('Macedonia', " (", n.country_code, ")"), CONCAT(n.name, " (", n.country_code, ")"))) as Country, v.value*100 as Value
+            SELECT t.text as Answer, IF(n.name = 'European Union' || n.name='EU27_2020', n.country_code, IF(n.name = 'Macedonia, The former Yugoslav Rep. of', CONCAT('Macedonia', " (", n.country_code, ")"), CONCAT(n.name, " (", n.country_code, ")"))) as Country, v.value*100 as Value
 			FROM nuts n, profile p, value v, dataset d, translation t, split_answer sa
 			WHERE n.id = p.nuts_id
 			AND n.country_code NOT IN('AL', 'ME', 'MK', 'RS', 'TR')
@@ -268,7 +268,7 @@
 			AND t.language = 'EN'
 			AND d.id = v.dataset_id
 			AND d.id = ${pDataset}
-			ORDER BY Answer ASC, FIELD('EU28', n.country_code) DESC, FIELD(n.country_code, 'CH', 'IS', 'NO'), n.country_code ASC, Value DESC;
+			ORDER BY Answer ASC, FIELD('EU27_2020', 'EU28', n.country_code) DESC, FIELD(n.country_code, 'CH', 'IS', 'NO', 'UK'), n.country_code ASC, Value DESC;
 	    </Query>
 	</DataAccess>
 
@@ -281,7 +281,7 @@
 	    	<Parameter default="64" name="pIndicator" type="Numeric"/>
 	    </Parameters>
 	    <Query>
-            SELECT t.text as Answer, IF(n.name = 'European Union', n.country_code, IF(n.name = 'Macedonia, The former Yugoslav Rep. of', CONCAT('Macedonia', " (", n.country_code, ")"), CONCAT(n.name, " (", n.country_code, ")"))) as Country, v.value*100 as Value
+            SELECT t.text as Answer, IF(n.name = 'European Union' || n.name = 'EU27_2020', n.country_code, IF(n.name = 'Macedonia, The former Yugoslav Rep. of', CONCAT('Macedonia', " (", n.country_code, ")"), CONCAT(n.name, " (", n.country_code, ")"))) as Country, v.value*100 as Value
 			FROM nuts n, profile p, value v, dataset d, translation t, split_answer sa
 			WHERE n.id = p.nuts_id
 			AND n.country_code NOT IN('AL', 'ME', 'MK', 'RS', 'TR')
@@ -293,7 +293,7 @@
 			AND t.language = 'EN'
 			AND d.id = v.dataset_id
 			AND d.id = ${pDataset}
-			ORDER BY Answer DESC, FIELD('EU28',n.country_code) ASC, FIELD(n.country_code,'CH', 'IS', 'NO') DESC, n.country_code DESC;
+			ORDER BY Answer DESC, FIELD('EU27_2020', EU28',n.country_code) ASC, FIELD(n.country_code,'CH', 'IS', 'NO', 'UK') DESC, n.country_code DESC;
 	    </Query>
 	</DataAccess>
 
@@ -541,7 +541,7 @@
             <Parameter default="64" name="pIndicator" type="Numeric"/>
         </Parameters>
         <Query>
-            SELECT t.text as Answer, IF(n.name = 'European Union', n.country_code, IF(n.name = 'Macedonia, The former Yugoslav Rep. of', CONCAT('Macedonia', " (", n.country_code, ")"), CONCAT(n.name, " (", n.country_code, ")"))) as Country, v.value*100 as Value
+            SELECT t.text as Answer, IF(n.name = 'European Union' || n.name='EU27_2020', n.country_code, IF(n.name = 'Macedonia, The former Yugoslav Rep. of', CONCAT('Macedonia', " (", n.country_code, ")"), CONCAT(n.name, " (", n.country_code, ")"))) as Country, v.value*100 as Value
             FROM nuts n, profile p, value v, dataset d, translation t, split_answer sa
             WHERE n.id = p.nuts_id
             AND n.country_code NOT IN('AL', 'ME', 'MK', 'RS', 'TR')
@@ -553,7 +553,7 @@
             AND t.language = 'EN'
             AND d.id = v.dataset_id
             AND d.id = ${pDataset}
-            ORDER BY Answer ASC, FIELD('EU28', n.country_code) DESC, FIELD(n.country_code, 'CH', 'IS', 'NO'), n.country_code ASC, Value DESC;
+            ORDER BY Answer ASC, FIELD('EU27_2020', 'EU28', n.country_code) DESC, FIELD(n.country_code, 'CH', 'IS', 'NO', 'UK'), n.country_code ASC, Value DESC;
         </Query>
     </DataAccess>
 
@@ -566,7 +566,7 @@
             <Parameter default="64" name="pIndicator" type="Numeric"/>
         </Parameters>
         <Query>
-            SELECT t.text as Answer, IF(n.name = 'European Union', n.country_code, IF(n.name = 'Macedonia, The former Yugoslav Rep. of', CONCAT('Macedonia', " (", n.country_code, ")"), CONCAT(n.name, " (", n.country_code, ")"))) as Country, v.value*100 as Value
+            SELECT t.text as Answer, IF(n.name = 'European Union' || n.name='EU27_2020', n.country_code, IF(n.name = 'Macedonia, The former Yugoslav Rep. of', CONCAT('Macedonia', " (", n.country_code, ")"), CONCAT(n.name, " (", n.country_code, ")"))) as Country, v.value*100 as Value
             FROM nuts n, profile p, value v, dataset d, translation t, split_answer sa
             WHERE n.id = p.nuts_id
             AND n.country_code NOT IN('AL', 'ME', 'MK', 'RS', 'TR')
@@ -578,7 +578,7 @@
             AND t.language = 'EN'
             AND d.id = v.dataset_id
             AND d.id = ${pDataset}
-            ORDER BY Answer DESC, FIELD('EU28',n.country_code) ASC, FIELD(n.country_code,'CH', 'IS', 'NO') DESC, n.country_code DESC;
+            ORDER BY Answer DESC, FIELD('EU28','EU27_2020',n.country_code) ASC, FIELD(n.country_code,'CH', 'IS', 'NO', 'UK') DESC, n.country_code DESC;
         </Query>
     </DataAccess>
 
@@ -1035,7 +1035,7 @@
             SELECT DISTINCT(t.text) as Indicator, ROUND(v.value*100,1) as Value, n.country_code as Country
 			FROM nuts n, profile p, value v, dataset d, indicator i, translation t
 			WHERE n.id = p.nuts_id
-			AND v.indicator_id IN (110, 111, 112)
+			AND v.indicator_id IN (293, 291, 292)
 			AND i.id = v.indicator_id
 			AND i.literal_id = t.literal_id
 			AND t.language = 'EN'
@@ -1044,7 +1044,7 @@
 			AND p.answer_id = 1
 			AND d.id = v.dataset_id
 			AND d.id = ${pDataset}
-			AND n.country_code = 'EU28';
+			AND n.country_code = 'EU27_2020';
         </Query>
    	</DataAccess>
 
@@ -1083,7 +1083,7 @@
             AND v.profile_id = p.id
             AND d.id = v.dataset_id
             AND d.id = ${pDataset}
-            AND v.indicator_id IN (110, 111, 112)
+            AND v.indicator_id IN (293, 291, 292)
             AND n.country_code NOT IN ('EU28')
             ORDER BY n.country_code ASC;
         </Query>
@@ -1102,7 +1102,7 @@
             SELECT DISTINCT(t.text) as Indicator, ROUND(v.value*100,1) as Value, IF(n.name REGEXP 'European Union', n.country_code, CONCAT("(", n.country_code, ") ", n.name)) as Country
 			FROM nuts n, profile p, value v, dataset d, indicator i, translation t
 			WHERE n.id = p.nuts_id
-			AND v.indicator_id IN (110, 111, 112)
+			AND v.indicator_id IN (293, 291, 292)
 			AND i.id = v.indicator_id
 			AND i.literal_id = t.literal_id
 			AND t.language = 'EN'
@@ -1142,8 +1142,8 @@
 			AND v.profile_id = p.id
 			AND d.id = v.dataset_id
             AND d.id = ${pDataset}
-			AND v.indicator_id IN (120,121,122,123)
-			AND n.country_code NOT IN ('EU28')
+			AND v.indicator_id IN (304, 305, 360, 353)
+			AND n.country_code NOT IN ('EU27_2020')
 			ORDER BY n.country_code ASC;
         </Query>
    	</DataAccess>
@@ -1170,8 +1170,8 @@
 			AND scs.literal_id = t.literal_id
 			AND t.language = 'EN'
 			AND v.dataset_id = ${pDataset}
-			AND n.country_code IN (${pCountry1}, ${pCountry2}, 'EU28')
-			ORDER BY FIELD(scs.id, 7, 8, 9, 10, 6), FIELD(n.country_code, ${pCountry1}, ${pCountry2}, 'EU28')
+			AND n.country_code IN (${pCountry1}, ${pCountry2}, 'EU28', 'EU27_2020')
+			ORDER BY FIELD(scs.id, 7, 8, 9, 10, 6), FIELD(n.country_code, ${pCountry1}, ${pCountry2}, 'EU28', 'EU27_2020')
 	    </Query>
 	</DataAccess>
 
@@ -1186,7 +1186,7 @@
 	    	<Parameter default="BE" name="pCountry2" type="String"/>
 	    </Parameters>
 	    <Query>
-			SELECT IF(n.name REGEXP 'European Union', n.country_code, CONCAT("(", n.country_code, ") ", n.name)) as Country, sas.literal_id as Sector, v.value*100 as Value
+			SELECT IF(n.name REGEXP 'European Union' || n.name='EU27_2020', n.country_code, CONCAT("(", n.country_code, ") ", n.name)) as Country, sas.literal_id as Sector, v.value*100 as Value
 			FROM nuts n, profile p, value v, split_activity_sector sas
 			WHERE n.id = p.nuts_id
 			AND v.indicator_id = ${pIndicator}
@@ -1195,8 +1195,8 @@
 			AND p.answer_id = 1
 			AND sas.id IN (2,3,4,5,6,7,8)
 			AND v.dataset_id = ${pDataset}
-			AND n.country_code IN (${pCountry1}, ${pCountry2}, 'EU28')
-			ORDER BY FIELD(sas.id, 2, 3, 4, 5, 6, 7, 8), FIELD(n.country_code, ${pCountry1}, ${pCountry2}, 'EU28')
+			AND n.country_code IN (${pCountry1}, ${pCountry2}, 'EU28', 'EU27_2020')
+			ORDER BY FIELD(sas.id, 2, 3, 4, 5, 6, 7, 8), FIELD(n.country_code, ${pCountry1}, ${pCountry2}, 'EU28', 'EU27_2020')
 	    </Query>
 	</DataAccess>
 
@@ -1209,7 +1209,7 @@
             <Parameter default="64" name="pIndicator" type="Numeric"/>
         </Parameters>
         <Query>
-            SELECT t.text as Answer, IF(n.name = 'European Union', n.country_code, CONCAT(n.name, " (", n.country_code, ")")) as Country, v.value*100 as Value
+            SELECT t.text as Answer, IF(n.name = 'European Union' || n.name='EU27_2020', n.country_code, CONCAT(n.name, " (", n.country_code, ")")) as Country, v.value*100 as Value
             FROM nuts n, profile p, value v, dataset d, translation t, split_answer sa
             WHERE n.id = p.nuts_id
             AND n.country_code NOT IN('AL', 'ME', 'MK', 'RS', 'TR')            
@@ -1221,7 +1221,7 @@
             AND t.language = 'EN'
             AND d.id = v.dataset_id
             AND d.id = ${pDataset}
-            ORDER BY FIELD(sa.id, 30,29,28) , FIELD('EU28', n.country_code) DESC, FIELD(n.country_code, 'CH', 'IS', 'NO'), n.country_code ASC, Value DESC;
+            ORDER BY FIELD(sa.id, 30,29,28) , FIELD('EU27_2020', 'EU28', n.country_code) DESC, FIELD(n.country_code, 'CH', 'IS', 'NO', 'UK'), n.country_code ASC, Value DESC;
 		</Query>
     </DataAccess>
 
@@ -1234,7 +1234,7 @@
             <Parameter default="64" name="pIndicator" type="Numeric"/>
         </Parameters>
         <Query>
-            SELECT t.text as Answer, IF(n.name = 'European Union', n.country_code, CONCAT(n.name, " (", n.country_code, ")")) as Country, v.value*100 as Value
+            SELECT t.text as Answer, IF(n.name = 'European Union' || n.name='EU27_2020', n.country_code, CONCAT(n.name, " (", n.country_code, ")")) as Country, v.value*100 as Value
             FROM nuts n, profile p, value v, dataset d, translation t, split_answer sa
             WHERE n.id = p.nuts_id
             AND n.country_code NOT IN('AL', 'ME', 'MK', 'RS', 'TR')
@@ -1246,7 +1246,7 @@
             AND t.language = 'EN'
             AND d.id = v.dataset_id
             AND d.id = ${pDataset}
-            ORDER BY FIELD(sa.id, 28,29,30) , FIELD('EU28', n.country_code) ASC, FIELD(n.country_code, 'CH', 'IS', 'NO')DESC, n.country_code DESC, Value DESC;
+            ORDER BY FIELD(sa.id, 28,29,30) , FIELD('EU27_2020', 'EU28', n.country_code) ASC, FIELD(n.country_code, 'CH', 'IS', 'NO', 'UK')DESC, n.country_code DESC, Value DESC;
 		</Query>
     </DataAccess>
 
@@ -1259,7 +1259,7 @@
             <Parameter default="64" name="pIndicator" type="Numeric"/>
         </Parameters>
         <Query>
-            SELECT t.text as Answer, IF(n.name = 'European Union', n.country_code, CONCAT(n.name, " (", n.country_code, ")")) as Country, v.value*100 as Value
+            SELECT t.text as Answer, IF(n.name = 'European Union' || n.name='EU27_2020', n.country_code, CONCAT(n.name, " (", n.country_code, ")")) as Country, v.value*100 as Value
             FROM nuts n, profile p, value v, dataset d, translation t, split_answer sa
             WHERE n.id = p.nuts_id
             AND n.country_code NOT IN('AL', 'ME', 'MK', 'RS', 'TR')
@@ -1271,7 +1271,7 @@
             AND t.language = 'EN'
             AND d.id = v.dataset_id
             AND d.id = ${pDataset}
-            ORDER BY FIELD(sa.id,2,71,1) , FIELD('EU28', n.country_code) DESC, FIELD(n.country_code, 'CH', 'IS', 'NO'), n.country_code ASC;
+            ORDER BY FIELD(sa.id,2,71,1) , FIELD('EU27_2020','EU28', n.country_code) DESC, FIELD(n.country_code, 'CH', 'IS', 'NO','UK'), n.country_code ASC;
 		</Query>
     </DataAccess>
 
@@ -1284,7 +1284,7 @@
             <Parameter default="64" name="pIndicator" type="Numeric"/>
         </Parameters>
         <Query>
-            SELECT t.text as Answer, IF(n.name = 'European Union', n.country_code, CONCAT(n.name, " (", n.country_code, ")")) as Country, v.value*100 as Value
+            SELECT t.text as Answer, IF(n.name = 'European Union' || n.name='EU27_2020', n.country_code, CONCAT(n.name, " (", n.country_code, ")")) as Country, v.value*100 as Value
             FROM nuts n, profile p, value v, dataset d, translation t, split_answer sa
             WHERE n.id = p.nuts_id
             AND n.country_code NOT IN('AL', 'ME', 'MK', 'RS', 'TR')
@@ -1296,7 +1296,7 @@
             AND t.language = 'EN'
             AND d.id = v.dataset_id
             AND d.id = ${pDataset}
-            ORDER BY FIELD(sa.id, 1,71,2), FIELD('EU28', n.country_code) ASC, FIELD(n.country_code, 'CH', 'IS', 'NO')DESC, n.country_code DESC;
+            ORDER BY FIELD(sa.id, 1,71,2), FIELD('EU27_2020','EU28', n.country_code) ASC, FIELD(n.country_code, 'CH', 'IS', 'NO','UK')DESC, n.country_code DESC;
 		</Query>
     </DataAccess>
 
@@ -1335,8 +1335,8 @@
 			AND v.profile_id = p.id
 			AND d.id = v.dataset_id
             AND d.id = ${pDataset}
-			AND v.indicator_id IN (101,102,123,124,125)
-			AND n.country_code NOT IN ('EU28')
+			AND v.indicator_id IN (355,357,353,361,359)
+			AND n.country_code NOT IN ('EU27_2020')
 			ORDER BY n.country_code ASC;
         </Query>
    	</DataAccess>
