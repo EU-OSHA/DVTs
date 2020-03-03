@@ -1685,11 +1685,19 @@ and (max-width :620px) {
 				display: none;
 			}
 			.osh-barometer-legend{
-				background-size: 3rem 6rem;
-				padding-left: 3.5rem;
 				.main-title{
-					margin-top: 4rem;
+					margin-top:0 !important ;
 					margin-bottom: 0;
+					a{
+				    background: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/icono-barometer.svg) 0 2.4rem no-repeat;
+				    background-size: 4.5rem 4.5rem;
+				    padding-left: 6rem;
+				    margin-left: 1rem;
+				    margin-right: 1rem;
+				    display: block;
+				    min-height: 9rem;
+				    padding-top: 3.4rem;
+					}
 					.title{
 						font-size: 1rem;
 					}
@@ -1798,7 +1806,23 @@ and (max-width :520px) {
 
 @media only screen 
 and (max-width :420px){
+	.osh-barometer-legend{
+		.main-title{
+			margin-top:0 !important ;
+			margin-bottom: 0;
+			a{
+		    padding-left: 5rem !important;
+		    margin-left: 0.5rem !important;
+		    margin-right: 0.5rem !important;
+			}
+			.title{
 
+			}
+			.lead-title{
+
+			}
+		}
+	}
 	form.compare--block--form {
 	  text-align: left;
 	}	
