@@ -239,9 +239,10 @@ define(function (require) {
       $scope.changeIndicator = function(e,indicator) {
         //$scope.openIndicatorsList(e);
         if ($state.current.name !== undefined) {
+          var dataset = indicator=="influence" || indicator == "discrimination" ? "ewcs" : "esener";
           $state.go($state.current.name, {
             pIndicator: indicator,
-            pDataset: 'esener'
+            pDataset: dataset
           });
         }
       }

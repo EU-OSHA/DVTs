@@ -96,6 +96,9 @@
     color: $aquamarine;
     font-size: 2.8rem;
     padding: 0 4rem 0 0;
+    @media screen and (max-width: 768px){
+      padding: 4rem 0 0 0;
+    }
   }
 }
 .preferences-home{
@@ -238,17 +241,20 @@
         border-radius: 2rem;
         .content{
           padding: 2rem;
+          display: flex;
+          flex-direction: column;
           .title--card{
+            //min-height: 6rem;
             a{
               color: #666;
             }  
           }
           .content-text{
-            overflow: hidden;
             position: relative; 
             line-height: 1.2em;
             /* max-height = line-height (1.2) * lines max number (3) */
             max-height: 3.6em; 
+            margin-top: auto;
           }
         }
       }
@@ -360,6 +366,7 @@
     }
     @media screen and (max-width: 768px){
       width:100%;
+      padding:0 2rem;
     }
     h2{
       color: $orange;
@@ -367,6 +374,9 @@
       text-transform: uppercase;
       font-size: 1.8rem;
       margin: 1rem 0;
+      @media screen and (max-width: 768px){
+        padding:0rem;
+      }
     }
     h3{
       font-family:"Oswald-light";
