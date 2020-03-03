@@ -23,9 +23,9 @@
     	<h2 class="title-section main-color text-center" data-ng-bind="i18n.L22111"></h2>
     	<div class="preferences-text" data-ng-bind-html="i18n.L22112"></div>
     	<form>    		
-    		<select data-ng-model="pCountry1" data-ng-change="changeCountry()">
-    		<option value="0" disabled data-ng-bind="i18n.L22113"></option>
-    		<option value="AT">(AT) Austria</option>
+    		<select data-ng-model="pCountry1" data-ng-change="changeCountry()" data-ng-disabled="selectDisabled">
+    			<option value="0" disabled data-ng-bind="i18n.L22113"></option>
+				<option value="AT">(AT) Austria</option>
 				<option value="BG">(BG) Bulgaria</option>
 				<option value="CH">(CH) Switzerland</option>
 				<option value="CY">(CY) Cyprus</option>
@@ -76,11 +76,11 @@
         <div class="item active">
           <div class="col-xs-12 col-sm-6 col-md-4 col-ml-3 col-lg-2">
           	<div class="content">
-							<a class="icon--card economic-chart-icon" ui-sref="economic-sector-profile ({pCountry1:pCountry1})"></a>
+							<a class="icon--card economic-chart-icon" ui-sref="economic-sector-profile ({pCountry:pCountry1})"></a>
 							<h3 class="title--card"><a ui-sref="economic-sector-profile ({pCountry:pCountry1})" data-ng-bind="i18n.L22003"></a></h3>
 							<p class="content-text" data-ng-bind="ellipsis(i18n.L22028)"></p>
 						</div>
-						<p class="btn--card--carousel"><a ui-sref="economic-sector-profile ({pCountry1:pCountry1})" class="btn-default btn-main-color btn-full" data-ng-bind-html="i18n.L22026"></a></p>
+						<p class="btn--card--carousel"><a ui-sref="economic-sector-profile ({pCountry:pCountry1})" class="btn-default btn-main-color btn-full" data-ng-bind-html="i18n.L22026"></a></p>
         </div>
         </div>
         <div class="item">

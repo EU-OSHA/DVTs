@@ -377,11 +377,11 @@ define(function (require) {
 								//var color = opts.indicators[indicator] == "EU28" ? dvtUtils.getEUColor() : dvtUtils.getColorCountry(1);
 								var color = dvtUtils.getEUColor();
 								if(indicator == 0){
-									color = opts.indicators[indicator]=="EU28" ? dvtUtils.getEUColor() : dvtUtils.getColorCountry(1);
+									color = opts.indicators[indicator]=="EU28" || opts.indicators[indicator]=="EU27_2020" ? dvtUtils.getEUColor() : dvtUtils.getColorCountry(1);
 								}else if(indicator == 1){
-									color = opts.indicators[indicator]=="EU28" ? dvtUtils.getEUColor() : dvtUtils.getColorCountry(2);
+									color = opts.indicators[indicator]=="EU28" || opts.indicators[indicator]=="EU27_2020" ? dvtUtils.getEUColor() : dvtUtils.getColorCountry(2);
 								}else if(indicator == 2 && opts.indicators[2] != undefined){
-									color = opts.indicators[indicator]=="EU28" ? dvtUtils.getEUColor() : dvtUtils.getColorCountry(2);
+									color = opts.indicators[indicator]=="EU28" || opts.indicators[indicator]=="EU27_2020" ? dvtUtils.getEUColor() : dvtUtils.getColorCountry(2);
 								}
 								paper.circle( x,y,opts.pathCircleOuterRadius).attr({
 									fill: color,
@@ -442,7 +442,7 @@ define(function (require) {
                                 x = shape(x,y,0);
                                 paper.text(x, y, opts.indicators[0])
                                     .attr({
-                                        "fill": opts.indicators[0]=="EU28" ? dvtUtils.getEUColor() : dvtUtils.getColorCountry(1),
+                                        "fill": opts.indicators[0]=="EU28" || opts.indicators[0]=="EU27_2020" ? dvtUtils.getEUColor() : dvtUtils.getColorCountry(1),
                                         "text-anchor": "start",
                                         "font-size": "14px",
                                         "font-family": "OpenSans",
@@ -454,7 +454,7 @@ define(function (require) {
                                 x = shape(x+10,y,1);
                                 paper.text(x, y, opts.indicators[1])
                                     .attr({
-                                        "fill": opts.indicators[1]=="EU28" ? dvtUtils.getEUColor() : dvtUtils.getColorCountry(2),
+                                        "fill": opts.indicators[1]=="EU28" || opts.indicators[1]=="EU27_2020" ? dvtUtils.getEUColor() : dvtUtils.getColorCountry(2),
                                         "text-anchor": "start",
                                         "font-size": "14px",
                                         "font-family": "OpenSans",
@@ -468,7 +468,7 @@ define(function (require) {
                                     x = shape(x+10,y,2);
                                     paper.text(x, y, opts.indicators[2])
                                         .attr({
-                                            "fill": opts.indicators[2]=="EU28" ? dvtUtils.getEUColor() : dvtUtils.getColorCountry(2),
+                                            "fill": opts.indicators[2]=="EU28" || opts.indicators[2]=="EU27_2020" ? dvtUtils.getEUColor() : dvtUtils.getColorCountry(2),
                                             "text-anchor": "start",
                                             "font-size": "14px",
                                             "font-family": "OpenSans",
@@ -638,10 +638,10 @@ define(function (require) {
 							//second indicator
 							if(!!secondIndicatorValues){
 								var theme = {
-									pathStroke: opts.indicators[1]=="EU28" ? dvtUtils.getEUColor() : dvtUtils.getColorCountry(2),
+									pathStroke: opts.indicators[1]=="EU28" || opts.indicators[1]=="EU27_2020"? dvtUtils.getEUColor() : dvtUtils.getColorCountry(2),
 									pathFill:'none',
 									pathStrokeWidth: 3,
-									pathCircleStroke: opts.indicators[1]=="EU28" ? dvtUtils.getEUColor() : dvtUtils.getColorCountry(2)
+									pathCircleStroke: opts.indicators[1]=="EU28" || opts.indicators[1]=="EU27_2020"? dvtUtils.getEUColor() : dvtUtils.getColorCountry(2)
 								};
 
 								path(cx, cy, r, startAngle, secondIndicatorValues, opts.max, theme);
@@ -670,10 +670,10 @@ define(function (require) {
 							//third indicator
 							if(!!thirdIndicatorValues){
 								var theme = {
-									pathStroke: opts.indicators[2]=="EU28" || (opts.indicators[2] == undefined && opts.indicators[1]=="EU28") ? dvtUtils.getEUColor() : dvtUtils.getColorCountry(2),
+									pathStroke: opts.indicators[2]=="EU28" || opts.indicators[2]=="EU27_2020" || (opts.indicators[2] == undefined && (opts.indicators[1]=="EU28" || opts.indicators[1]=="EU27_2020")) ? dvtUtils.getEUColor() : dvtUtils.getColorCountry(2),
 									pathFill:'none',
 									pathStrokeWidth: 3,
-									pathCircleStroke: opts.indicators[2]=="EU28" || (opts.indicators[2] == undefined && opts.indicators[1]=="EU28") ? dvtUtils.getEUColor() : dvtUtils.getColorCountry(2)
+									pathCircleStroke: opts.indicators[2]=="EU28" || opts.indicators[2]=="EU27_2020" || (opts.indicators[2] == undefined && (opts.indicators[1]=="EU28" || opts.indicators[1]=="EU27_2020")) ? dvtUtils.getEUColor() : dvtUtils.getColorCountry(2)
 								};
 
 								path(cx, cy, r, startAngle, thirdIndicatorValues, opts.max, theme);
@@ -786,11 +786,11 @@ define(function (require) {
 									drawMesh: true, //to draw mesh or not
 									max: attributes.axisFixedMax || 100, //maximum value, if not present, calculated from maximum value of data array
 									pathFill: 'none', //color of data path fill 'rgba(120, 120, 120, .3)'
-									pathStroke: indicatorNames[0]=="EU28" ? dvtUtils.getEUColor() : dvtUtils.getColorCountry(1), //color of data path stroke (area) 'rgba(120, 120, 120, .5)'
+									pathStroke: indicatorNames[0]=="EU28" || indicatorNames[0]=="EU27_2020"? dvtUtils.getEUColor() : dvtUtils.getColorCountry(1), //color of data path stroke (area) 'rgba(120, 120, 120, .5)'
 									pathStrokeWidth: 3, //data path stroke width
 									pathCircleOuterRadius: 1.5, //data path circle outer radius
 									pathCircleInnerRadius: 0, // data path circle inner radius
-									pathCircleStroke: indicatorNames[0]=="EU28" ? dvtUtils.getEUColor() : dvtUtils.getColorCountry(1), //
+									pathCircleStroke: indicatorNames[0]=="EU28" || indicatorNames[0]=="EU27_2020"? dvtUtils.getEUColor() : dvtUtils.getColorCountry(1), //
 									drawPathCircles: true, //whether to draw the circles on the data path
 									showTechnicalLegend: true, //whether to draw the technical legend on the chart
 									indicators: indicatorNames //names for technical legend

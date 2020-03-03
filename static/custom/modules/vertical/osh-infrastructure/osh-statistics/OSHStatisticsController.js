@@ -348,13 +348,17 @@ define(function (require) {
       });
       
       dataService.getMatrixStatisticsCountries().then(function (data) {
-
+        var countryHasData = false;
         data.data.resultset.map(function (elem) {
           var param = (!!$stateParams.filter) ? $stateParams.filter : undefined;
           $scope.countries.push({
               country: elem[0],
               country_code: elem[1]
           });
+          if (elem[1] == $scope.pCountry)
+          {
+            countryHasData = true;
+          }
           if(elem[1] == $scope.pCountry){
             var tags = angular.element('div.selected--tags-wrapper');
             var html = '<span class="selected-tag" id="country'+elem[1]+'" data-ng-click="deleteTag($event)">'+'('+elem[1]+') '+$scope.i18nLiterals['L'+elem[0]] + '</span>';
@@ -362,6 +366,18 @@ define(function (require) {
             $scope.searchParams.countries.push(elem[1].toString());
           }
         });
+
+        if (countryHasData == false)
+        {
+          var index = $scope.searchParams.countries.indexOf($scope.pCountry);
+          $scope.searchParams.countries.splice(index, 1);
+          $scope.pCountry = "AT";
+          $scope.searchParams.countries.push("39");
+          var html = '<span class="selected-tag" id="country'+$scope.pCountry+'" data-ng-click="deleteTag($event)">' + '('+$scope.pCountry+') ' + $scope.i18nLiterals['L39'] +'</span>';        
+          var tags = angular.element('div.selected--tags-wrapper');
+          tags.append($compile(html)($scope));
+          search(null, 'countries');
+        }
 
         //$log.warn($scope.countries);
       }).catch(function (err) {

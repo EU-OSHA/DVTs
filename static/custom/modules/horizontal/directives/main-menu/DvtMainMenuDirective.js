@@ -334,10 +334,27 @@ define(function (require) {
                         }
                         else
                         {
+                            if (navigator.geolocation)
+                            {
+                                navigator.geolocation.getCurrentPosition(function(position){
+                                    $http.get('http://ip-api.com/json').success(function(coordinates) {
+                                        var availableCountries = ["AT","BG","CH","CY","CZ","DE","DK","EE","EL","ES","FI","FR","HR","HU","IE","IS","IT","LT","LU","LV","MT","NL","NO","PL","PT","RO","SE","SI","SK","UK"];
+                                        if (availableCountries.indexOf(coordinates.countryCode) > -1)
+                                        {
+                                            $rootScope.defaultCountry = {
+                                                code : coordinates.countryCode,
+                                                isCookie : false
+                                            }
+                                            var currentState = $state.current.name;
+                                            $state.reload();;
+                                        }                                        
+                                    });
+                                });  
+                            }
                             $rootScope.defaultCountry = {
-                                code : "AT",
-                                isCookie : false
-                            }    
+                                code: "AT",
+                                isCookie: false
+                            }
                         }                        
                     }
             }],

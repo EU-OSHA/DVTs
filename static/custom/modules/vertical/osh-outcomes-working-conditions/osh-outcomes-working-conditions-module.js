@@ -65,8 +65,8 @@ define(function (require) {
         url: "/osh-outcomes-working-conditions/osh-culture/:pIndicator",
         params: {
           pIndicator: {
-            value: 'sickness-absences-analysed',
-            squash: 'sickness-absences-analysed'
+            value: 'health-and-safety-discussed',
+            squash: 'health-and-safety-discussed'
           }
         },
         views: {

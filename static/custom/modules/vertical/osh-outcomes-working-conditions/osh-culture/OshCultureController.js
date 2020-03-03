@@ -33,7 +33,7 @@ define(function (require) {
     $scope.countriesCompareWith = [];
 
     $scope.indicators = [];
-    $scope.relatedLiterals = [20663, 20664, 20665, 20666, 20667, 20668, 320, 321];
+    $scope.relatedLiterals = [20664, 20665, 20666, 20667, 20668, 320, 321];
 
     $scope.country1Data = {};
     $scope.country2Data = {};
