@@ -182,6 +182,7 @@ define(function (require) {
       if($scope.pIndicator == 'vibrations-loud-noise-and-temperature'){
         dataService.getVibrationCountries().then(function (data) {
           var countryHasData = false;
+          var country2HasData = false;
           data.data.resultset.map(function (elem) {
             if(elem[1] != $scope.pCountry2){
               $scope.countriesDataFor.push({
@@ -200,10 +201,21 @@ define(function (require) {
                 country_code: elem[1]
               });
             }
+            if (elem[1] == $scope.pCountry2)
+            {
+              country2HasData = true;
+            }
           });
-          if (countryHasData == false)
+          if (countryHasData == false || country2HasData == false)
           {
-            $scope.pCountry1 = "AT";
+            if (countryHasData == false)
+            {
+              $scope.pCountry1 = "AT";
+            }
+            if (country2HasData == false)
+            {
+              $scope.pCountry2 = "BE";
+            }
             $scope.changeIndicator(null, $scope.pIndicator, $scope.pSubIndicator);
           }
         }).catch(function (err) {
@@ -215,6 +227,7 @@ define(function (require) {
         if($scope.pSubIndicator == 'ewcs'){
           dataService.getEurofoundRisksCountries($scope.datasetEurofound).then(function (data) {
             var countryHasData = false;
+            var country2HasData = false;
             data.data.resultset.map(function (elem) {
               if(elem[1] != $scope.pCountry2){
                 $scope.countriesDataFor.push({
@@ -233,10 +246,21 @@ define(function (require) {
                   country_code: elem[1]
                 });
               }
+              if (elem[1] == $scope.pCountry2)
+              {
+                country2HasData = true;
+              }
             });
-            if (countryHasData == false)
+            if (countryHasData == false || country2HasData == false)
             {
-              $scope.pCountry1 = "AT";
+              if (countryHasData == false)
+              {
+                $scope.pCountry1 = "AT";
+              }
+              if (country2HasData == false)
+              {
+                $scope.pCountry2 = "BE";
+              }
               $scope.changeIndicator(null, $scope.pIndicator, $scope.pSubIndicator);
             }
           }).catch(function (err) {
@@ -245,6 +269,7 @@ define(function (require) {
         }else{
           dataService.getESENERRisksCountries($scope.datasetESENER).then(function (data) {
             var countryHasData = false;
+            var country2HasData = false;
             data.data.resultset.map(function (elem) {
               if(elem[1] != $scope.pCountry2){
                 $scope.countriesDataFor.push({
@@ -263,10 +288,21 @@ define(function (require) {
                   country_code: elem[1]
                 });
               }
+              if (elem[1] == $scope.pCountry2)
+              {
+                country2HasData = true;
+              }
             });
-            if (countryHasData == false)
+            if (countryHasData == false || country2HasData == false)
             {
-              $scope.pCountry1 = "AT";
+              if (countryHasData == false)
+              {
+                $scope.pCountry1 = "AT";
+              }
+              if (country2HasData == false)
+              {
+                $scope.pCountry2 = "BE";
+              }
               $scope.changeIndicator(null, $scope.pIndicator, $scope.pSubIndicator);
             }
           }).catch(function (err) {

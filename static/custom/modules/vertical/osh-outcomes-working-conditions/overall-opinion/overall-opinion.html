@@ -73,14 +73,14 @@
           <!-- 1st country -->        
           <li>
             <label data-ng-bind="i18nLiterals.L20609" for="datafor"></label>
-            <select id="datafor" class="" ng-model="pCountry1" ng-selected="pCountry1" ng-change="countryChange()">
+            <select id="datafor" class="" ng-model="pCountry1" ng-selected="pCountry1" ng-change="countryChange(true)">
               <option data-ng-repeat='country in countriesDataFor' data-ng-bind="('(')+(country.country_code)+(') ')+(i18nLiterals['L'+country.country])" value="{{::country.country_code}}"></option>
             </select>
           </li>
           <!-- 2nd country -->
           <li>
             <label data-ng-bind="i18nLiterals.L20610" for="comparewith"></label>
-            <select id="comparewith" class="" ng-model="pCountry2" ng-selected="pCountry2" ng-change="countryChange()">
+            <select id="comparewith" class="" ng-model="pCountry2" ng-selected="pCountry2" ng-change="countryChange(true)">
               <option data-ng-if="pCountry2 == 0" data-ng-bind="i18nLiterals.L20630" value="0"></option>
               <option data-ng-repeat='country in countriesCompareWith' data-ng-bind="('(')+(country.country_code)+(') ')+(i18nLiterals['L'+country.country])" value="{{::country.country_code}}" ></option>
             </select>
@@ -93,7 +93,7 @@
         <div class="card--block--chart" >
           <!-- Sector, gender or age filter -->
           <div class="select-filter-chart">
-            <select ng-model="pSplit" ng-change="countryChange()">
+            <select ng-model="pSplit" ng-change="countryChange(true)">
               <option data-ng-bind="i18nLiterals.L20648" value="sector"></option>
               <option data-ng-bind="i18nLiterals.L20649" value="gender"></option>
               <option data-ng-bind="i18nLiterals.L20650" value="age"></option>

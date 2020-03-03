@@ -230,7 +230,7 @@ define(function (require) {
         if (countryHasData == false)
         {
           $scope.pCountry1 = "AT";
-          $scope.countryChange();
+          $scope.countryChange(false);
         }
       }).catch(function (err) {
         throw err;
@@ -304,11 +304,11 @@ define(function (require) {
         }
       }
 
-      $scope.countryChange = function () {
+      $scope.countryChange = function (pChangeRoot) {
         $('.card--block--chart--wrapper').css('visibility','hidden');
 
         if ($state.current.name !== undefined) {
-          if (!$rootScope.defaultCountry.isCookie)
+          if (!$rootScope.defaultCountry.isCookie && pChangeRoot)
           {
             $rootScope.defaultCountry.code = $scope.pCountry1;
           }
