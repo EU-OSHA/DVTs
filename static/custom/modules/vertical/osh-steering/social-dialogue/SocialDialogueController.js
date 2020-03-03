@@ -259,7 +259,7 @@ define(function (require) {
         $log.debug('getSocialDialogueData');
         data.data.resultset.map(function (elem) {
           var param = (!!$stateParams.filter) ? $stateParams.filter : undefined;
-          if(elem[1] == 'EU28'){
+          if(elem[1] == 'EU27_2020'){
             $scope.EUData = {
               country_name: elem[0],
               country_code: elem[1],

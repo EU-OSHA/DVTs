@@ -214,9 +214,9 @@ define(function (require) {
             }
             if (country2HasData == false)
             {
-              $scope.pCountry2 = "BE";
+              $scope.pCountry2 = $scope.countriesCompareWith[0].country_code;
             }
-            $scope.changeIndicator(null, $scope.pIndicator, $scope.pSubIndicator);
+            $scope.changeIndicator(null, $scope.pIndicator, $scope.pSubIndicator, false);
           }
         }).catch(function (err) {
           throw err;
@@ -259,9 +259,9 @@ define(function (require) {
               }
               if (country2HasData == false)
               {
-                $scope.pCountry2 = "BE";
+                $scope.pCountry2 = $scope.pCountry2 = $scope.countriesCompareWith[0].country_code;
               }
-              $scope.changeIndicator(null, $scope.pIndicator, $scope.pSubIndicator);
+              $scope.changeIndicator(null, $scope.pIndicator, $scope.pSubIndicator, false);
             }
           }).catch(function (err) {
             throw err;
@@ -301,9 +301,9 @@ define(function (require) {
               }
               if (country2HasData == false)
               {
-                $scope.pCountry2 = "BE";
+                $scope.pCountry2 = $scope.pCountry2 = $scope.countriesCompareWith[0].country_code;
               }
-              $scope.changeIndicator(null, $scope.pIndicator, $scope.pSubIndicator);
+              $scope.changeIndicator(null, $scope.pIndicator, $scope.pSubIndicator, false);
             }
           }).catch(function (err) {
             throw err;
@@ -364,22 +364,25 @@ define(function (require) {
       });
 
 
-      $scope.changeIndicator = function(e,indicator, subIndicator) {
+      $scope.changeIndicator = function(e,indicator, subIndicator, pChangeRoot) {
         //$scope.openIndicatorsList(e);
         if ($state.current.name !== undefined) {
 
-          if (!$rootScope.defaultCountry.isCookie)
+          if (pChangeRoot)
           {
-            $rootScope.defaultCountry.code = $scope.pCountry1;
-          }
-
-          if ($scope.pCountry2 != "0")
-          {
-            $rootScope.defaultCountry2 = {
-              code: $scope.pCountry2,
-              isCookie: 0
+            if (!$rootScope.defaultCountry.isCookie)
+            {
+              $rootScope.defaultCountry.code = $scope.pCountry1;
             }
-          }
+
+            if ($scope.pCountry2 != "0")
+            {
+              $rootScope.defaultCountry2 = {
+                code: $scope.pCountry2,
+                isCookie: 0
+              }
+            }  
+          }          
 
           if(indicator == 'exposure-to-dangerous-substances'){
             $state.go('physical-risk-exposure-to-dangerous-substances', {

@@ -42,14 +42,14 @@
           <!-- 1st country -->        
           <li>
             <label data-ng-bind="i18nLiterals.L20609" for="datafor-vibrations"></label>
-            <select id="datafor-vibrations" class="" ng-model="pCountry1" ng-selected="pCountry1" ng-change="changeIndicator($event, pIndicator, 'smoke-powder-or-dust')">
+            <select id="datafor-vibrations" class="" ng-model="pCountry1" ng-selected="pCountry1" ng-change="changeIndicator($event, pIndicator, 'smoke-powder-or-dust', true)">
               <option data-ng-repeat='country in countriesDataFor' data-ng-bind="('(')+(country.country_code)+(') ')+(i18nLiterals['L'+country.country])" value="{{::country.country_code}}"></option>
             </select>
           </li>
           <!-- 2nd country -->
           <li>
             <label data-ng-bind="i18nLiterals.L20610" for="comparewith-vibrations"></label>
-            <select id="comparewith-vibrations" class="" ng-model="pCountry2" ng-selected="pCountry2" ng-change="changeIndicator($event, pIndicator, 'smoke-powder-or-dust')">
+            <select id="comparewith-vibrations" class="" ng-model="pCountry2" ng-selected="pCountry2" ng-change="changeIndicator($event, pIndicator, 'smoke-powder-or-dust', true)">
               <option data-ng-if="pCountry2 == 0" data-ng-bind="i18nLiterals.L20630" value="0"></option>
               <option data-ng-repeat='country in countriesCompareWith' data-ng-bind="('(')+(country.country_code)+(') ')+(i18nLiterals['L'+country.country])" value="{{::country.country_code}}" ></option>
             </select>
@@ -200,14 +200,14 @@
           <!-- 1st country -->        
           <li>
             <label data-ng-bind="i18nLiterals.L20609" for="datafor-risks"></label>
-            <select id="datafor-risks" class="" ng-model="pCountry1" ng-selected="pCountry1" ng-change="changeIndicator($event, pIndicator, 'smoke-powder-or-dust')">
+            <select id="datafor-risks" class="" ng-model="pCountry1" ng-selected="pCountry1" ng-change="changeIndicator($event, pIndicator, 'smoke-powder-or-dust', true)">
               <option data-ng-repeat='country in countriesDataFor' data-ng-bind="('(')+(country.country_code)+(') ')+(i18nLiterals['L'+country.country])" value="{{::country.country_code}}"></option>
             </select>
           </li>
           <!-- 2nd country -->
           <li>
             <label data-ng-bind="i18nLiterals.L20610" for="comparewith-risks"></label>
-            <select id="comparewith-risks" class="" ng-model="pCountry2" ng-selected="pCountry2" ng-change="changeIndicator($event, pIndicator, 'smoke-powder-or-dust')">
+            <select id="comparewith-risks" class="" ng-model="pCountry2" ng-selected="pCountry2" ng-change="changeIndicator($event, pIndicator, 'smoke-powder-or-dust', true)">
               <option data-ng-if="pCountry2 == 0" data-ng-bind="i18nLiterals.L20630" value="0"></option>
               <option data-ng-repeat='country in countriesCompareWith' data-ng-bind="('(')+(country.country_code)+(') ')+(i18nLiterals['L'+country.country])" value="{{::country.country_code}}" ></option>
             </select>
