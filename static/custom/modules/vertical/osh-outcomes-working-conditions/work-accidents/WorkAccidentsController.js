@@ -220,49 +220,53 @@ define(function (require) {
     /******************************************************************************|
     |                                DATA LOAD                                     |
     |******************************************************************************/
-      dataService.getNonFatalAccidentsCountries().then(function (data) {
-        var countryHasData = false;
-        var country2HasData = false;
-        data.data.resultset.map(function (elem) {
-          if(elem[1] != $scope.pCountry2){
-              $scope.countriesDataFor.push({
-              country: elem[0],
-              country_code: elem[1]
-            });
-          }
-          if (elem[1] == $scope.pCountry1)
-          {
-            countryHasData = true;
-          }
+      if ($scope.pIndicator == "non-fatal-work-accidents")
+      {
+        dataService.getNonFatalAccidentsCountries().then(function (data) {
+          var countryHasData = false;
+          var country2HasData = false;
+          data.data.resultset.map(function (elem) {
+            if(elem[1] != $scope.pCountry2){
+                $scope.countriesDataFor.push({
+                country: elem[0],
+                country_code: elem[1]
+              });
+            }
+            if (elem[1] == $scope.pCountry1)
+            {
+              countryHasData = true;
+            }
 
-          if(elem[1] != $scope.pCountry1){
-            $scope.countriesCompareWith.push({
-              country: elem[0],
-              country_code: elem[1]
-            });
-          }
-          if (elem[1] == $scope.pCountry2)
+            if(elem[1] != $scope.pCountry1){
+              $scope.countriesCompareWith.push({
+                country: elem[0],
+                country_code: elem[1]
+              });
+            }
+            if (elem[1] == $scope.pCountry2)
+            {
+              country2HasData = true;
+            }
+          });
+          if (countryHasData==false || country2HasData==false)
           {
-            country2HasData = true;
+            if (countryHasData == false)
+            {
+              $scope.pCountry1="AT";
+              
+            }
+            if (country2HasData == false)
+            {
+              $scope.pCountry2 = $scope.countriesCompareWith[0].country_code;
+            }
+            $scope.countryChange(false); 
           }
-        });
-        if (countryHasData==false || country2HasData==false)
-        {
-          if (countryHasData == false)
-          {
-            $scope.pCountry1="AT";
-            
-          }
-          if (country2HasData == false)
-          {
-            $scope.pCountry2 = $scope.countriesCompareWith[0].country_code;
-          }
-          $scope.countryChange(false); 
-        }
-        
-      }).catch(function (err) {
-          throw err;
-      });
+          
+        }).catch(function (err) {
+            throw err;
+        });  
+      }
+      
 
       dataService.getWorkAccidentsIndicators().then(function (data) {
         data.data.resultset.map(function (elem) {
@@ -363,11 +367,14 @@ define(function (require) {
 
       $scope.changeIndicator = function(e,indicator) {
         //$scope.openIndicatorsList(e);
+        console.log("INDICATOR CHANGE");
+        console.log(indicator);
+        console.log($state.current.name);
         if ($state.current.name !== undefined) {
           $state.go($state.current.name, {
             pIndicator: indicator,
-            pCountry1: null,
-            pCountry2: null
+            pCountry1: "",
+            pCountry2: ""
           });
         }
       }
