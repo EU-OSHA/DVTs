@@ -126,13 +126,13 @@ define (function (require) {
                             }
 
                             if (split == 'Yes'){
-                                if (country == "EU28")
+                                if (country == "EU28" || country == "EU27_2020")
                                 {
                                     return dvtUtils.getEUColor();
                                 }
                                 return dvtUtils.getColorCountry(1);
                             } else if(split == 'No'){
-                                if (country == "EU28")
+                                if (country == "EU28" || country == "EU27_2020")
                                 {
                                     return dvtUtils.getEUColor(2);
                                 }

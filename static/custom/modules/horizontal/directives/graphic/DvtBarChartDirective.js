@@ -466,7 +466,7 @@ define(function (require) {
 
                         if(country.match(pCountry1)){
                             return pCountry1;
-                        }else if(country.match(pCountry2)){
+                        }else if(country.match(pCountry2) && pCountry2!="0"){
                             return pCountry2;
                         }
                     }

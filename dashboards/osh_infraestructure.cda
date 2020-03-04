@@ -72,7 +72,7 @@
 	      <Parameter default="1" name="pAnswer" type="Numeric"/>
 	    </Parameters>
 	    <Query>
-	    	SELECT t.text as Answer, IF(n.name REGEXP 'European Union', n.country_code, CONCAT("(", n.country_code, ") ", n.name)) as Country,  v.value*100 as Value
+	    	SELECT t.text as Answer, IF(n.name REGEXP 'European Union' || n.name='EU27_2020', n.country_code, CONCAT("(", n.country_code, ") ", n.name)) as Country,  v.value*100 as Value
 			FROM nuts n, profile p, value v, dataset d, translation t, split_answer sa
 			WHERE n.id = p.nuts_id
 			AND n.country_code IN (${pCountry1}, ${pCountry2}, 'EU27_2020')

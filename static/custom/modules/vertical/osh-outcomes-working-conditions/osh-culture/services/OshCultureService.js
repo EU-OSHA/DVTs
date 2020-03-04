@@ -348,7 +348,7 @@ define (function (require) {
                         bar_fillStyle: function(scene){
                             var subIndicatorKey = scene.firstAtoms;
 
-                            if (subIndicatorKey.category.label=="EU28")
+                            if (subIndicatorKey.category.label=="EU28" || subIndicatorKey.category.label=="EU27_2020")
                             {
                                 if (subIndicatorKey.series.label=="Yes")
                                 {

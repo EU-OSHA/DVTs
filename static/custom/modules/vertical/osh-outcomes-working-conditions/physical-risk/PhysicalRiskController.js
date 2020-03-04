@@ -182,7 +182,7 @@ define(function (require) {
       if($scope.pIndicator == 'vibrations-loud-noise-and-temperature'){
         dataService.getVibrationCountries().then(function (data) {
           var countryHasData = false;
-          var country2HasData = false;
+          var country2HasData = $scope.pCountry2 == "0"? true: false;
           data.data.resultset.map(function (elem) {
             if(elem[1] != $scope.pCountry2){
               $scope.countriesDataFor.push({
@@ -210,7 +210,7 @@ define(function (require) {
           {
             if (countryHasData == false)
             {
-              $scope.pCountry1 = "AT";
+              $scope.pCountry1 = $scope.countriesDataFor[0].country_code;
             }
             if (country2HasData == false)
             {
@@ -227,7 +227,7 @@ define(function (require) {
         if($scope.pSubIndicator == 'ewcs'){
           dataService.getEurofoundRisksCountries($scope.datasetEurofound).then(function (data) {
             var countryHasData = false;
-            var country2HasData = false;
+            var country2HasData = $scope.pCountry2 == "0"? true: false;
             data.data.resultset.map(function (elem) {
               if(elem[1] != $scope.pCountry2){
                 $scope.countriesDataFor.push({
@@ -269,7 +269,7 @@ define(function (require) {
         }else{
           dataService.getESENERRisksCountries($scope.datasetESENER).then(function (data) {
             var countryHasData = false;
-            var country2HasData = false;
+            var country2HasData = $scope.pCountry2 == "0"? true: false;
             data.data.resultset.map(function (elem) {
               if(elem[1] != $scope.pCountry2){
                 $scope.countriesDataFor.push({
