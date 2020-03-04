@@ -72,6 +72,11 @@ define(function (require) {
               isCookie : 1
             }
 
+            if ($rootScope.defaultCountry2 != undefined && $rootScope.defaultCountry2.code==$scope.pCountry1)
+            {
+              delete $rootScope.defaultCountry2;
+            }
+
             if ($cookies.get('angular-consent.global'))
             {
               $cookies.put('selectedCountry', $scope.pCountry1);  
