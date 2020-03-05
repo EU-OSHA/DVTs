@@ -252,7 +252,7 @@ define(function (require) {
           {
             if (countryHasData == false)
             {
-              $scope.pCountry1="AT";
+              $scope.pCountry1=$scope.countriesDataFor[0].country_code;
               
             }
             if (country2HasData == false)
