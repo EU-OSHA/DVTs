@@ -54,13 +54,13 @@ define(function (require) {
     {
       $scope.pCountry1 = "AT";
     }
-    if ($rootScope.defaultCountry2 != undefined)
-    {
-      $scope.pCountry2 = $rootScope.defaultCountry2.code;
-    }
-    else if ($stateParams.pCountry2 != null)
+    if ($stateParams.pCountry2 != null)
     {
       $scope.pCountry2 = $stateParams.pCountry2;
+    }
+    else if ($rootScope.defaultCountry2 != undefined)
+    {
+      $scope.pCountry2 = $rootScope.defaultCountry2.code;
     }
     else
     {
@@ -301,7 +301,7 @@ define(function (require) {
             $rootScope.defaultCountry.code = $scope.pCountry1;
           }
 
-          if ($scope.pCountry2 != "0")
+          if ($scope.pCountry2 != "0" && pChangeRoot)
           {
             $rootScope.defaultCountry2 = {
               code: $scope.pCountry2,
