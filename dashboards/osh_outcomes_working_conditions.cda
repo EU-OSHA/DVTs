@@ -268,7 +268,7 @@
 			AND t.language = 'EN'
 			AND d.id = v.dataset_id
 			AND d.id = ${pDataset}
-			ORDER BY Answer ASC, FIELD('EU27_2020', 'EU28', n.country_code) DESC, FIELD(n.country_code, 'CH', 'IS', 'NO', 'UK'), n.country_code ASC, Value DESC;
+			ORDER BY CASE WHEN ${pIndicator}=358 THEN FIELD(Answer, 'Practically never', 'Occasionally', 'Regularly') ELSE (Answer) END  ASC, FIELD('EU27_2020', 'EU28', n.country_code) DESC, FIELD(n.country_code, 'CH', 'IS', 'NO', 'UK'), n.country_code ASC, Value DESC;
 	    </Query>
 	</DataAccess>
 
@@ -293,7 +293,7 @@
 			AND t.language = 'EN'
 			AND d.id = v.dataset_id
 			AND d.id = ${pDataset}
-			ORDER BY Answer DESC, FIELD('EU27_2020', EU28',n.country_code) ASC, FIELD(n.country_code,'CH', 'IS', 'NO', 'UK') DESC, n.country_code DESC;
+			ORDER BY CASE WHEN ${pIndicator}=358 THEN FIELD(Answer, 'Practically never', 'Occasionally', 'Regularly') ELSE (Answer) END DESC, FIELD('EU27_2020', 'EU28',n.country_code) ASC, FIELD(n.country_code,'CH', 'IS', 'NO', 'UK') DESC, n.country_code DESC;
 	    </Query>
 	</DataAccess>
 
