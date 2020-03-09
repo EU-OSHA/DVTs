@@ -105,8 +105,8 @@
                 <label data-ng-bind="i18nLiterals['L20659']"></label>
               </li>
               <li>                
-                <span class="country-data" data-ng-bind="matrix.trade_union != null ? (matrix.trade_union) : '-'"> %</span>
-                <span data-ng-if="matrix.trade_union != null" class="data-text">&percnt;</span>
+                <span class="country-data" data-ng-bind="matrix.trade_union != null ? (matrix.trade_union) : matrix.country_code == 'AT'?'20':'-'"> %</span>
+                <span data-ng-if="matrix.trade_union != null || matrix.country_code=='AT'" class="data-text">&percnt;</span>
                 <label data-ng-bind="i18nLiterals['L20660']"></label>
               </li>
               <li>                
