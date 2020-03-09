@@ -108,14 +108,10 @@
     </attributes>
   </connection>
   <order>
-  <hop> <from>Modified Java Script Value 2</from><to>Insert Value</to><enabled>Y</enabled> </hop>
   <hop> <from>Modified Java Script Value 3</from><to>Write SQL Sentences 3</to><enabled>Y</enabled> </hop>
   <hop> <from>Value exists&#x3f;</from><to>Modified Java Script Value 2</to><enabled>Y</enabled> </hop>
   <hop> <from>Value exists&#x3f;</from><to>Modified Java Script Value 3</to><enabled>Y</enabled> </hop>
-  <hop> <from>Modified Java Script Value 3</from><to>Update Value  </to><enabled>Y</enabled> </hop>
   <hop> <from>Normalize Rows</from><to>Get Profile Count</to><enabled>Y</enabled> </hop>
-  <hop> <from>Profile Exists&#x3f;</from><to>Add Profile</to><enabled>Y</enabled> </hop>
-  <hop> <from>Add Profile</from><to>Modified Java Script Value</to><enabled>Y</enabled> </hop>
   <hop> <from>Modified Java Script Value</from><to>Write SQL Sentences</to><enabled>Y</enabled> </hop>
   <hop> <from>Get Profile Count</from><to>Check if value null</to><enabled>Y</enabled> </hop>
   <hop> <from>Modified Java Script Value 2</from><to>Write SQL Sentences 2</to><enabled>Y</enabled> </hop>
@@ -126,41 +122,8 @@
   <hop> <from>Modified Java Script Value 4</from><to>Blocking Step</to><enabled>Y</enabled> </hop>
   <hop> <from>Income per Capita In</from><to>Normalize Rows</to><enabled>Y</enabled> </hop>
   <hop> <from>Blocking Step</from><to>Get Value Count</to><enabled>Y</enabled> </hop>
+  <hop> <from>Profile Exists&#x3f;</from><to>Modified Java Script Value</to><enabled>Y</enabled> </hop>
   </order>
-  <step>
-    <name>Add Profile</name>
-    <type>ExecSQL</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <connection>osha_dvt</connection>
-    <execute_each_row>Y</execute_each_row>
-    <single_statement>N</single_statement>
-    <replace_variables>Y</replace_variables>
-    <quoteString>N</quoteString>
-    <sql>SET &#x40;nutsId &#x3d; &#x28;SELECT id FROM nuts WHERE country_code&#x3d;&#x22;&#x3f;&#x22;&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;INSERT INTO profile &#x28;nuts_id, year&#x29;&#xd;&#xa;VALUE &#x28;&#x40;nutsId, &#x3f;&#x29;&#x3b;</sql>
-    <set_params>N</set_params>
-    <insert_field/>
-    <update_field/>
-    <delete_field/>
-    <read_field/>
-    <arguments>
-       <argument><name>Country</name></argument>
-       <argument><name>yearValue</name></argument>
-    </arguments>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>528</xloc>
-      <yloc>144</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
   <step>
     <name>Blocking Step</name>
     <type>BlockingStep</type>
@@ -265,7 +228,7 @@
     <single_statement>N</single_statement>
     <replace_variables>Y</replace_variables>
     <quoteString>N</quoteString>
-    <sql>SET &#x40;profileID &#x3d; &#x28;SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id&#x3d;n.id WHERE p.year&#x3d;&#x3f; AND n.country_code&#x3d;&#x22;&#x3f;&#x22; AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL&#x29;&#x3b;&#xd;&#xa;SET &#x40;indicatorID &#x3d; &#x28;SELECT id FROM indicator WHERE name&#x3d;&#x22;Income per capita&#x22;&#x29;&#x3b;&#xd;&#xa;SET &#x40;datasetID &#x3d; &#x28;SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id&#x3d;&#x40;indicatorID&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;SELECT &#x2a; &#xd;&#xa;FROM value&#xd;&#xa;WHERE profile_id&#x3d;&#x40;profileID&#xd;&#xa;AND indicator_id&#x3d;&#x40;indicatorID&#xd;&#xa;AND dataset_id&#x3d;&#x40;datasetID&#x3b;</sql>
+    <sql>SET &#x40;profileID &#x3d; &#x28;SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id&#x3d;n.id WHERE p.year&#x3d;&#x3f; AND n.country_code&#x3d;&#x22;&#x3f;&#x22; AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL&#x29;&#x3b;&#xd;&#xa;SET &#x40;indicatorID &#x3d; &#x28;SELECT id FROM indicator WHERE name&#x3d;&#x22;Income per capita&#x22;&#x29;&#x3b;&#xd;&#xa;SET &#x40;datasetID &#x3d; &#x28;SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id&#x3d;d.id WHERE indicator_id&#x3d;&#x40;indicatorID AND d.date_from&#x3d;&#x22;2010-01-01&#x22; AND d.date_to&#x3d;&#x22;2018-12-31&#x22;&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;SELECT &#x2a; &#xd;&#xa;FROM value&#xd;&#xa;WHERE profile_id&#x3d;&#x40;profileID&#xd;&#xa;AND indicator_id&#x3d;&#x40;indicatorID&#xd;&#xa;AND dataset_id&#x3d;&#x40;datasetID&#x3b;</sql>
     <set_params>N</set_params>
     <insert_field/>
     <update_field/>
@@ -321,7 +284,7 @@
         <length>-1</length>
         <precision>-1</precision>
         <currency/>
-        <decimal>.</decimal>
+        <decimal/>
         <group/>
         <trim_type>none</trim_type>
         <repeat>N</repeat>
@@ -334,7 +297,7 @@
         <length>-1</length>
         <precision>-1</precision>
         <currency/>
-        <decimal>.</decimal>
+        <decimal/>
         <group/>
         <trim_type>none</trim_type>
         <repeat>N</repeat>
@@ -347,20 +310,20 @@
         <length>-1</length>
         <precision>-1</precision>
         <currency/>
-        <decimal>.</decimal>
+        <decimal/>
         <group/>
         <trim_type>none</trim_type>
         <repeat>N</repeat>
       </field>
       <field>
-        <name>2017</name>
-        <attribut>2017</attribut>
+        <name>2018</name>
+        <attribut>2018</attribut>
         <type>Number</type>
         <format/>
         <length>-1</length>
         <precision>-1</precision>
         <currency/>
-        <decimal>.</decimal>
+        <decimal/>
         <group/>
         <trim_type>none</trim_type>
         <repeat>N</repeat>
@@ -379,41 +342,6 @@
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>64</xloc>
       <yloc>32</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Insert Value</name>
-    <type>ExecSQL</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <connection>osha_dvt</connection>
-    <execute_each_row>Y</execute_each_row>
-    <single_statement>N</single_statement>
-    <replace_variables>N</replace_variables>
-    <quoteString>N</quoteString>
-    <sql>SET &#x40;profileID &#x3d; &#x28;SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id&#x3d;n.id WHERE  p.year&#x3d;&#x3f; AND n.country_code&#x3d;&#x22;&#x3f;&#x22; AND p.age_group_id IS NULL AND p.answer_id IS NULL AND p.company_size_id IS NULL AND p.currency_id IS NULL AND p.gender_id IS NULL AND p.illness_id IS NULL AND p.subindicator_id IS NULL&#x29;&#x3b;&#xd;&#xa;SET &#x40;indicatorID &#x3d; &#x28;SELECT id FROM indicator WHERE name&#x3d;&#x22;Income per capita&#x22;&#x29;&#x3b;&#xd;&#xa;SET &#x40;datasetID &#x3d; &#x28;SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id&#x3d;&#x40;indicatorID&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;INSERT INTO value &#x28;dataset_id, indicator_id, profile_id, value&#x29;&#xd;&#xa;VALUES &#x28;&#x40;datasetID, &#x40;indicatorID, &#x40;profileID, &#x3f;&#x29;&#x3b;</sql>
-    <set_params>N</set_params>
-    <insert_field/>
-    <update_field/>
-    <delete_field/>
-    <read_field/>
-    <arguments>
-       <argument><name>yearValue</name></argument>
-       <argument><name>Country</name></argument>
-       <argument><name>newValue</name></argument>
-    </arguments>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>960</xloc>
-      <yloc>256</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -442,7 +370,7 @@
         <replace>N</replace>
       </field>    </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>672</xloc>
+      <xloc>528</xloc>
       <yloc>144</yloc>
       <draw>Y</draw>
       </GUI>
@@ -463,7 +391,7 @@
     <optimizationLevel>9</optimizationLevel>
     <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
         <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>var queries2 &#x3d; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x27;SET &#x40;profileID &#x3d; &#x28;SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id&#x3d;n.id &#x27;&#xd;&#xa;				&#x2b; &#x27;WHERE p.year&#x3d;&#x22;&#x27; &#x2b; yearValue &#x2b; &#x27;&#x22; AND n.country_code&#x3d;&#x22;&#x27; &#x2b; Country &#x2b; &#x27;&#x22; &#x27;&#xd;&#xa;				&#x2b; &#x27;AND p.age_group_id IS NULL AND p.answer_id IS NULL AND p.company_size_id IS NULL &#x27;&#xd;&#xa;				&#x2b; &#x27;AND p.currency_id IS NULL AND p.gender_id IS NULL AND p.illness_id IS NULL &#x27;&#xd;&#xa;				&#x2b; &#x27;AND p.subindicator_id IS NULL&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x27;SET &#x40;indicatorID &#x3d; &#x28;SELECT id FROM indicator WHERE name&#x3d;&#x22;Income per capita&#x22;&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x27;SET &#x40;datasetID &#x3d; &#x28;SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id&#x3d;&#x40;indicatorID&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x27;INSERT INTO value &#x28;dataset_id, indicator_id, profile_id, value&#x29;&#x27;&#xd;&#xa;			&#x2b; &#x27;VALUES &#x28;&#x40;datasetID, &#x40;indicatorID, &#x40;profileID, &#x27; &#x2b; newValue &#x2b; &#x27;&#x29;&#x3b;&#x27;&#xd;&#xa;&#xd;&#xa;</jsScript_script>
+        <jsScript_script>var queries2 &#x3d; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x27;SET &#x40;profileID &#x3d; &#x28;SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id&#x3d;n.id &#x27;&#xd;&#xa;				&#x2b; &#x27;WHERE p.year&#x3d;&#x22;&#x27; &#x2b; yearValue &#x2b; &#x27;&#x22; AND n.country_code&#x3d;&#x22;&#x27; &#x2b; Country &#x2b; &#x27;&#x22; &#x27;&#xd;&#xa;				&#x2b; &#x27;AND p.age_group_id IS NULL AND p.answer_id IS NULL AND p.company_size_id IS NULL &#x27;&#xd;&#xa;				&#x2b; &#x27;AND p.currency_id IS NULL AND p.gender_id IS NULL AND p.illness_id IS NULL &#x27;&#xd;&#xa;				&#x2b; &#x27;AND p.subindicator_id IS NULL&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x27;SET &#x40;indicatorID &#x3d; &#x28;SELECT id FROM indicator WHERE name&#x3d;&#x22;Income per capita&#x22;&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x27;SET &#x40;datasetID &#x3d; &#x28;SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id&#x3d;d.id WHERE indicator_id&#x3d;&#x40;indicatorID AND d.date_from&#x3d;&#x22;2010-01-01&#x22; AND d.date_to&#x3d;&#x22;2018-12-31&#x22;&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x27;INSERT INTO value &#x28;dataset_id, indicator_id, profile_id, value&#x29;&#x27;&#xd;&#xa;			&#x2b; &#x27;VALUES &#x28;&#x40;datasetID, &#x40;indicatorID, &#x40;profileID, &#x27; &#x2b; newValue &#x2b; &#x27;&#x29;&#x3b;&#x27;&#xd;&#xa;&#xd;&#xa;</jsScript_script>
       </jsScript>    </jsScripts>    <fields>      <field>        <name>queries2</name>
         <rename>queries2</rename>
         <type>String</type>
@@ -493,7 +421,7 @@
     <optimizationLevel>9</optimizationLevel>
     <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
         <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>var queries2 &#x3d; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x27;SET &#x40;profileID &#x3d; &#x28;SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id&#x3d;n.id &#x27;&#xd;&#xa;				&#x2b; &#x27;WHERE p.year&#x3d;&#x27; &#x2b; yearValue &#x2b; &#x27; AND n.country_code&#x3d;&#x22;&#x27; &#x2b; Country &#x2b; &#x27;&#x22; &#x27;&#xd;&#xa;				&#x2b; &#x27;AND p.age_group_id IS NULL AND p.answer_id IS NULL AND p.company_size_id IS NULL &#x27;&#xd;&#xa;				&#x2b; &#x27;AND p.currency_id IS NULL AND p.gender_id IS NULL AND p.illness_id IS NULL &#x27;&#xd;&#xa;				&#x2b; &#x27;AND p.subindicator_id IS NULL&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x27;SET &#x40;indicatorID &#x3d; &#x28;SELECT id FROM indicator WHERE name&#x3d;&#x22;Income per capita&#x22;&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x27;SET &#x40;datasetID &#x3d; &#x28;SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id&#x3d;&#x40;indicatorID&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x27;UPDATE value SET value &#x3d; &#x27; &#x2b; newValue &#x2b; &#x27; WHERE profile_id&#x3d;&#x40;profileID &#x27;&#xd;&#xa;			&#x2b; &#x27;AND indicator_id&#x3d;&#x40;indicatorID AND dataset_id&#x3d;&#x40;datasetID&#x3b;&#x27;&#x3b;&#xd;&#xa;&#xd;&#xa;</jsScript_script>
+        <jsScript_script>var queries2 &#x3d; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x27;SET &#x40;profileID &#x3d; &#x28;SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id&#x3d;n.id &#x27;&#xd;&#xa;				&#x2b; &#x27;WHERE p.year&#x3d;&#x27; &#x2b; yearValue &#x2b; &#x27; AND n.country_code&#x3d;&#x22;&#x27; &#x2b; Country &#x2b; &#x27;&#x22; &#x27;&#xd;&#xa;				&#x2b; &#x27;AND p.age_group_id IS NULL AND p.answer_id IS NULL AND p.company_size_id IS NULL &#x27;&#xd;&#xa;				&#x2b; &#x27;AND p.currency_id IS NULL AND p.gender_id IS NULL AND p.illness_id IS NULL &#x27;&#xd;&#xa;				&#x2b; &#x27;AND p.subindicator_id IS NULL&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x27;SET &#x40;indicatorID &#x3d; &#x28;SELECT id FROM indicator WHERE name&#x3d;&#x22;Income per capita&#x22;&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x27;SET &#x40;datasetID &#x3d; &#x28;SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id&#x3d;d.id WHERE indicator_id&#x3d;&#x40;indicatorID AND d.date_from&#x3d;&#x22;2010-01-01&#x22; AND d.date_to&#x3d;&#x22;2018-12-31&#x22;&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;queries2 &#x3d; queries2 &#x2b; &#x27;UPDATE value SET value &#x3d; &#x27; &#x2b; newValue &#x2b; &#x27; WHERE profile_id&#x3d;&#x40;profileID &#x27;&#xd;&#xa;			&#x2b; &#x27;AND indicator_id&#x3d;&#x40;indicatorID AND dataset_id&#x3d;&#x40;datasetID&#x3b;&#x27;&#x3b;&#xd;&#xa;&#xd;&#xa;</jsScript_script>
       </jsScript>    </jsScripts>    <fields>      <field>        <name>queries2</name>
         <rename>queries2</rename>
         <type>String</type>
@@ -553,8 +481,8 @@
     <fields>      <field>        <name>2010</name>
         <value>2010</value>
         <norm>Value</norm>
-        </field>      <field>        <name>2017</name>
-        <value>2017</value>
+        </field>      <field>        <name>2018</name>
+        <value>2018</value>
         <norm>Value</norm>
         </field>      </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
@@ -576,7 +504,7 @@
            <schema_name/>
            </partitioning>
 <send_true_to>Modified Java Script Value 4</send_true_to>
-<send_false_to>Add Profile</send_false_to>
+<send_false_to>Modified Java Script Value</send_false_to>
     <compare>
 <condition>
  <negated>N</negated>
@@ -589,41 +517,6 @@
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>528</xloc>
       <yloc>32</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Update Value  </name>
-    <type>ExecSQL</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <connection>osha_dvt</connection>
-    <execute_each_row>Y</execute_each_row>
-    <single_statement>N</single_statement>
-    <replace_variables>Y</replace_variables>
-    <quoteString>N</quoteString>
-    <sql>SET &#x40;profileID &#x3d; &#x28;SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id&#x3d;n.id WHERE p.year&#x3d;&#x3f; AND n.country_code&#x3d;&#x22;&#x3f;&#x22; AND p.age_group_id IS NULL AND p.answer_id IS NULL AND p.company_size_id IS NULL AND p.currency_id IS NULL AND p.gender_id IS NULL AND p.illness_id IS NULL AND p.subindicator_id IS NULL&#x29;&#x3b;&#xd;&#xa;SET &#x40;indicatorID &#x3d; &#x28;SELECT id FROM indicator WHERE name&#x3d;&#x22;Income per capita&#x22;&#x29;&#x3b;&#xd;&#xa;SET &#x40;datasetID &#x3d; &#x28;SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id&#x3d;&#x40;indicatorID&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;UPDATE value&#xd;&#xa;SET value &#x3d; &#x3f;&#xd;&#xa;WHERE profile_id&#x3d;&#x40;profileID&#xd;&#xa;AND indicator_id&#x3d;&#x40;indicatorID&#xd;&#xa;AND dataset_id&#x3d;&#x40;datasetID&#x3b;</sql>
-    <set_params>N</set_params>
-    <insert_field/>
-    <update_field/>
-    <delete_field/>
-    <read_field/>
-    <arguments>
-       <argument><name>yearValue</name></argument>
-       <argument><name>Country</name></argument>
-       <argument><name>newValue</name></argument>
-    </arguments>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>1344</xloc>
-      <yloc>144</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -843,7 +736,7 @@
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>1232</xloc>
+      <xloc>1280</xloc>
       <yloc>144</yloc>
       <draw>Y</draw>
       </GUI>
