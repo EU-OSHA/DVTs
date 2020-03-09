@@ -22,6 +22,8 @@ define(function (require) {
     $scope.datasetList = configService.getDatasets();
     $scope.datasetEurostat = $scope.datasetList.EUROSTAT;
     $scope.datasetEurostatBetweenDates = $scope.datasetList.EUROSTATBetweenDates;
+    $scope.datasetEurostat2018 = $scope.datasetList.EUROSTAT2018;
+    $scope.datasetEurostat2019 = $scope.datasetList.EUROSTAT2019;
 
     // Literals
     var i18nLiterals = configService.getLiterals();
@@ -58,7 +60,7 @@ define(function (require) {
     $rootScope.pSplit = $scope.pSplit;
     $scope.pSplit2 = $stateParams.pSplit2;
     $rootScope.pSplit2 = $scope.pSplit2;
-    $scope.pDataset = '17';
+    $scope.pDataset = '20';
     $rootScope.pDataset = $scope.pDataset;
 
     //$scope.dashboard = {};

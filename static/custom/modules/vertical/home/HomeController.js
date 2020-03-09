@@ -38,7 +38,7 @@ define(function (require) {
         $scope.pCountry1 = $rootScope.defaultCountry != undefined && $rootScope.defaultCountry.isCookie ? $rootScope.defaultCountry.code : "0";
         $scope.selectDisabled = false;
 
-        if ($cookies.get("selectedCountry") != undefined)
+        if ($cookies.get("selectedCountry") != undefined || $scope.pCountry1 != "0")
         {
           angular.element("label.country-unlock").toggleClass('country-unlock').toggleClass('country-lock');
           $scope.selectDisabled = true;

@@ -20,7 +20,8 @@ define(function (require) {
 
     // Datasets
     $scope.datasetList = configService.getDatasets();
-    $scope.datasetEurostat = $scope.datasetList.EUROSTAT;
+    $scope.datasetEurostat = $scope.datasetList.EUROSTAT2018;
+    $scope.datasetEurostat2019 = $scope.datasetList.EUROSTAT2019;
     $scope.datasetEurostatBetweenDates = $scope.datasetList.EUROSTATBetweenDates;
 
     // Literals
@@ -90,7 +91,7 @@ define(function (require) {
 
     $scope.dataPromises = [
       mapProvider.getEuropeShape(),
-      dataService.getMedianAgeData($scope.datasetEurostat),
+      dataService.getMedianAgeData($scope.datasetEurostat2019),
       dataService.getAgeingWorkersData($scope.datasetEurostat),
       dataService.getTotalEmploymentData($scope.datasetEurostat),
       dataService.getMaleEmploymentData($scope.datasetEurostat),

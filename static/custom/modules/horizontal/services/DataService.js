@@ -488,7 +488,7 @@ define(function () {
                  * Get uneployment rate data
                  */
                 getUnemploymentData: function (pDataset) {
-                    var url = configService.getGenericInformationDataPath() + "&dataAccessId=getUnemploymentData" + "&pDataset=" + pDataset;
+                    var url = configService.getGenericInformationDataPath() + "&dataAccessId=getUnemploymentData" + "&parampDataset=" + pDataset;
                     $log.debug('getUnemploymentData url:' + url);
                     return promise(url);
                 },
