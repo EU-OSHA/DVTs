@@ -224,7 +224,7 @@ define(function (require) {
       {
         dataService.getNonFatalAccidentsCountries().then(function (data) {
           var countryHasData = false;
-          var country2HasData = false;
+          var country2HasData = $scope.pCountry2=="0" && $rootScope.defaultCountry2 == undefined? true: false;
           data.data.resultset.map(function (elem) {
             if(elem[1] != $scope.pCountry2){
                 $scope.countriesDataFor.push({
