@@ -525,10 +525,10 @@
 	    <Cache duration="3600" enabled="true" />
 	    <Columns />
 	    <Query>
-			SELECT id, literal_id 
+			SELECT id, literal_id
 			FROM indicator
-			WHERE id IN (83, 84, 85, 86, 87, 88, 89)
-			ORDER BY FIELD(id, 83, 84, 85, 86, 87, 88, 89)
+			WHERE id IN (83, 84, 85, 325, 87, 88, 89)
+			ORDER BY FIELD(id, 83, 84, 85, 325, 87, 88, 89)
 	    </Query>
 	</DataAccess>
 
