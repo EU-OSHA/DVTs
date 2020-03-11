@@ -63,7 +63,7 @@ define(function (require) {
           story1: [
             dataService.getCountryWorkerInvolvementESENERData($scope.datasetESENER, $scope.pCountry1), 
             dataService.getCountryWorkerInvolvementESENERData($scope.datasetESENER, $scope.pCountry2),
-            dataService.getCountryWorkerInvolvementESENERData($scope.datasetESENER, 'EU27_2020')
+            dataService.getCountryWorkerInvolvementESENERData($scope.datasetESENER, 'EU28')
             //dataService.getEU28WorkerInvolvementESENERData($scope.datasetESENER)           
           ]
         }
