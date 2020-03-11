@@ -28,9 +28,9 @@
         },
         {
           "id": 4,
-          "title": "Czech Republic",
+          "title": "Czechia",
           "image": "/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-infosystem/static/custom/img/additional-resources/img/CzechRepublic_thumb.png",
-          "alt": "Czech Republic",
+          "alt": "Czechia",
           "openLink": "/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-infosystem/static/custom/img/additional-resources/img/CzechRepublic.jpg",
           "downloadLink": "/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-infosystem/static/custom/img/additional-resources/pdf/National-Strategies-Mapping_2017_Czech-Rep.pdf"
         },
