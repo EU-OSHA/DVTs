@@ -1084,8 +1084,8 @@
             AND v.profile_id = p.id
             AND d.id = v.dataset_id
             AND d.id = ${pDataset}
-            AND v.indicator_id IN (293, 291, 292)
-            AND n.country_code NOT IN ('EU28')
+            AND v.indicator_id IN (293, 291, 292, 364)
+            AND n.country_code NOT IN ('EU28', 'EU27_2020')
             ORDER BY n.country_code ASC;
         </Query>
     </DataAccess>
