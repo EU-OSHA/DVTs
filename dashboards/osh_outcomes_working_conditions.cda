@@ -1100,7 +1100,7 @@
             <Parameter default="AT" name="pCountry" type="String"/>
         </Parameters>
         <Query>
-            SELECT DISTINCT(t.text) as Indicator, ROUND(v.value*100,1) as Value, IF(n.name REGEXP 'European Union', n.country_code, CONCAT("(", n.country_code, ") ", n.name)) as Country
+            SELECT t.text as Indicator, ROUND(v.value*100,1) as Value, IF(n.name REGEXP 'European Union', n.country_code, CONCAT("(", n.country_code, ") ", n.name)) as Country
 			FROM nuts n, profile p, value v, dataset d, indicator i, translation t
 			WHERE n.id = p.nuts_id
 			AND v.indicator_id IN (293, 291, 364, 292)
