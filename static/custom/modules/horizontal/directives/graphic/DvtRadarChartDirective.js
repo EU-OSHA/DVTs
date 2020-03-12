@@ -676,13 +676,26 @@ define(function (require) {
 									pathCircleStroke: opts.indicators[2]=="EU28" || opts.indicators[2]=="EU27_2020" || (opts.indicators[2] == undefined && (opts.indicators[1]=="EU28" || opts.indicators[1]=="EU27_2020")) ? dvtUtils.getEUColor() : dvtUtils.getColorCountry(2)
 								};
 
+								// Check if second indicator has values or not
+								var indicator = "undefined";
+								if (secondIndicatorValues.length > 0)
+								{
+									// Second indicator has values
+									indicator = opts.indicators[2];
+								}
+								else
+								{
+									// Second indicator does not have values
+									indicator = opts.indicators[1];
+								}
+
 								path(cx, cy, r, startAngle, thirdIndicatorValues, opts.max, theme);
 								//circles on path
 								if (!!opts.drawPathCircles) {
 									var i = thirdIndicatorValues.length;
 									//$log.warn(thirdIndicatorValues);
 									while (i--) {
-										circle(cx, cy, r, startAngle + angle * i, thirdIndicatorValues[i], opts.max, opts.labels[i], opts.indicators[2], theme);
+										circle(cx, cy, r, startAngle + angle * i, thirdIndicatorValues[i], opts.max, opts.labels[i], indicator, theme);
 									}
 								}
 
