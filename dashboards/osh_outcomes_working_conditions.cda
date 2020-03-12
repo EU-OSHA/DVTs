@@ -1351,28 +1351,27 @@
         </Parameters>
         <Query>
         	(SELECT t.text as Indicator, SUM(IF(v.value*100 IS NULL, 0, ROUND(v.value*100, 1))) as Value,
-				IF(n.name="European Union", n.country_code, CONCAT(n.name," (", n.country_code,")")) as Country
+				IF(n.name="European Union" || n.name="EU27_2020", n.country_code, CONCAT(n.name," (", n.country_code,")")) as Country
 				FROM nuts n, profile p, value v, dataset d, indicator i, translation t, split_answer sa
 				WHERE n.id = p.nuts_id
-				AND v.indicator_id IN (101, 102, 123)
+				AND v.indicator_id IN (355, 357, 353)
 				AND i.id = v.indicator_id
-				AND t.literal_id = IF(v.indicator_id = 101, 20684, IF(v.indicator_id = 102, 20685, 20686))
+				AND t.literal_id = IF(v.indicator_id = 355, 20684, IF(v.indicator_id = 357, 20685, 20686))
 				AND t.language = 'EN'
 				AND v.profile_id = p.id
 				AND p.answer_id = sa.id
-				AND p.company_size_id IS NULL
-				AND p.activity_sector_id IS NULL
+				AND p.activity_sector_id=14
 				AND sa.id = 1
 				AND d.id = v.dataset_id
-				AND d.id = 15
+				AND d.id = 19
 				AND n.country_code = ${pCountry}
 				GROUP BY Indicator, Country
 			)UNION(
 				SELECT t.text as Indicator, SUM(ROUND(v.value*100,1)) as Value,
-				IF(n.name="European Union", n.country_code, CONCAT(n.name," (", n.country_code,")")) as Country
+				IF(n.name="European Union" || n.name="EU27_2020", n.country_code, CONCAT(n.name," (", n.country_code,")")) as Country
 				FROM nuts n, profile p, value v, dataset d, indicator i, translation t, split_answer sa
 				WHERE n.id = p.nuts_id
-				AND v.indicator_id = 124
+				AND v.indicator_id = 361
 				AND i.id = v.indicator_id
 				AND t.literal_id = 20687
 				AND t.language = 'EN'
@@ -1381,15 +1380,15 @@
 				AND p.activity_sector_id = 14
 				AND sa.id IN (1, 35)
 				AND d.id = v.dataset_id
-				AND d.id = 15
+				AND d.id = 19
 				AND n.country_code = ${pCountry}
 				Group by Indicator, Country
 			)UNION(
 				SELECT t.text as Indicator, SUM(ROUND(v.value*100,1)) as Value,
-				IF(n.name="European Union", n.country_code, CONCAT(n.name," (", n.country_code,")")) as Country
+				IF(n.name="European Union" || n.name="EU27_2020", n.country_code, CONCAT(n.name," (", n.country_code,")")) as Country
 				FROM nuts n, profile p, value v, dataset d, indicator i, translation t, split_answer sa
 				WHERE n.id = p.nuts_id
-				AND v.indicator_id = 125
+				AND v.indicator_id = 359
 				AND i.id = v.indicator_id
 				AND t.literal_id = 20688
 				AND t.language = 'EN'
@@ -1398,7 +1397,7 @@
 				AND p.activity_sector_id = 14
 				AND sa.id IN (34,20)
 				AND d.id = v.dataset_id
-				AND d.id = 15
+				AND d.id = 19
 				AND n.country_code = ${pCountry}
 				Group by Indicator, Country
 			);
