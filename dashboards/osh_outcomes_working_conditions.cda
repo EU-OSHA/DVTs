@@ -1035,7 +1035,7 @@
             SELECT DISTINCT(t.text) as Indicator, ROUND(v.value*100,1) as Value, n.country_code as Country
 			FROM nuts n, profile p, value v, dataset d, indicator i, translation t
 			WHERE n.id = p.nuts_id
-			AND v.indicator_id IN (293, 291, 292)
+			AND v.indicator_id IN (293, 291, 364, 292)
 			AND i.id = v.indicator_id
 			AND i.literal_id = t.literal_id
 			AND t.language = 'EN'
@@ -1044,7 +1044,8 @@
 			AND p.answer_id = 1
 			AND d.id = v.dataset_id
 			AND d.id = ${pDataset}
-			AND n.country_code = 'EU27_2020';
+			AND n.country_code = 'EU27_2020'
+			ORDER BY FIELD (i.id, 293, 291, 292, 364) ASC;
         </Query>
    	</DataAccess>
 
@@ -1102,7 +1103,7 @@
             SELECT DISTINCT(t.text) as Indicator, ROUND(v.value*100,1) as Value, IF(n.name REGEXP 'European Union', n.country_code, CONCAT("(", n.country_code, ") ", n.name)) as Country
 			FROM nuts n, profile p, value v, dataset d, indicator i, translation t
 			WHERE n.id = p.nuts_id
-			AND v.indicator_id IN (293, 291, 292)
+			AND v.indicator_id IN (293, 291, 364, 292)
 			AND i.id = v.indicator_id
 			AND i.literal_id = t.literal_id
 			AND t.language = 'EN'
@@ -1111,7 +1112,8 @@
 			AND p.answer_id = 1
 			AND d.id = v.dataset_id
 			AND d.id = ${pDataset}
-			AND n.country_code = ${pCountry};
+			AND n.country_code = ${pCountry}
+			ORDER BY FIELD (i.id, 293, 291, 292, 364) ASC;
         </Query>
    	</DataAccess>
 
