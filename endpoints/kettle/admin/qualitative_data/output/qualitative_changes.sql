@@ -1,9 +1,5 @@
 -- The tool is already created
 
-SET @datasetId = (SELECT id FROM dataset  WHERE source="Eurostat" AND date_from="2010-01-01" AND date_to="2017-12-31");
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Fatal work accidents");
-INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
-
 INSERT INTO chart (id, section_id)  VALUES(20010,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="ECONOMIC_SECTOR_PROFILE" AND t.name="osha_dvt_barometer"	) );
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Employment per sector");
 SET @datasetId = (SELECT id FROM dataset WHERE source="Eurostat" AND date_from="2017-01-01");
@@ -238,9 +234,6 @@ INSERT INTO chart (id, section_id)  VALUES(20088,	(	SELECT s.id  FROM section s 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Income per capita EURO");
 SET @datasetId = (SELECT id FROM dataset WHERE source="Eurostat" AND date_from="2010-01-01" AND date_to="2017-12-31");
 INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20088, @indicatorId, @datasetId);
-
-SET @toolID = (SELECT id FROM tool WHERE name = "osha_dvt_barometer");
-INSERT INTO section (name, tool_id) VALUES ("MENTAL_RISK", @toolID);
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
@@ -3148,7 +3141,7 @@ INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="WORKER_INVOLVEMENT" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+687, null, @sectionId, "ESENER_LITERAL");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+687, "EN", 1, "Are health and safety issues regularly discussed in staff or team meetings? (Yes and in some departments)");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+687, "EN", 1, "Are health and safety issues regularly discussed in staff or team meetings? (Regularly and Occasionally)");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="WORKER_INVOLVEMENT" AND tool_id=@toolId);
