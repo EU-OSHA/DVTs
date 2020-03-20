@@ -5595,66 +5595,6 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO matrix_page(page, nuts_id, check_1, check_2, check_3, check_4, text_1_literal_id, text_2_literal_id, text_3_literal_id)  VALUES ("MATRIX_AUTHORITY", @nutsId, 0, 1, 0, 0, @maxId+1, @maxId+2, @maxId+3);
 
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="PL");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "State Mining Authority (WUG — Wyższy Urząd Górniczy)");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "See more in its <a target=\"blank\" href=\"http://www.wug.gov.pl/ \">website</a> and in <a target=\"blank\" href=\"https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Poland\">OSHwiki</a>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p>WUG was established by the Geological and Mining Law Act and is presided over by the President of the State Mining Authority, who is subordinate to the Minister of Energy Minister Energii. The main responsibility of the State Mining Authority is to monitor and supervise work-related safety and health; fire protection; mine rescue; the management of mineral deposits in the extraction process; environmental protection, including damage prevention; and the construction and closure of mining plants, including land reclamation and the rehabilitation of post-mining areas.</p><p>&nbsp;</p><p>The mission of the State Mining Authority is:</p><ul><li>to improve work safety in mines;</li><li>to protect miners’ health;</li><li>to ensure efficient and sustainable management of mineral deposits;</li><li>to reduce the negative impact of the extractive industry on the environment.</li></ul>");
-INSERT INTO matrix_page(page, nuts_id, check_1, check_2, check_3, check_4, text_1_literal_id, text_2_literal_id, text_3_literal_id)  VALUES ("MATRIX_AUTHORITY", @nutsId, 1, 0, 0, 0, @maxId+1, @maxId+2, @maxId+3);
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="PL");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "Office of Technical Inspection (UDT — Urząd Dozoru Technicznego)");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "See more in its <a target=\"blank\" href=\"https://www.udt.gov.pl/ \">website</a> and in <a target=\"blank\" href=\"https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Poland\">OSHwiki</a>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "The UDT is a Polish inspection body established to ensure the safety of technical devices and installations. The office’s main goal is to assess conformity of technical equipment with the relevant regulations and specifications in the product design, manufacturing and service process. Its duties also include technical safety and failure analysis as well as the dissemination of information on technical safety and related issues. The UDT is a non-profit organisation, independent at both financial and operational levels.");
-INSERT INTO matrix_page(page, nuts_id, check_1, check_2, check_3, check_4, text_1_literal_id, text_2_literal_id, text_3_literal_id)  VALUES ("MATRIX_AUTHORITY", @nutsId, 1, 0, 0, 0, @maxId+1, @maxId+2, @maxId+3);
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="PL");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "State Sanitary Inspection Authority (PIS — Państwowa Inspekcja Sanitarna)");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "See more in its <a target=\"blank\" href=\"https://gis.gov.pl/en/ \">website</a> and in <a target=\"blank\" href=\"https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Poland\">OSHwiki</a>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p>PIS is subordinate to the Ministry of Health and is presided over by the Chief Sanitary Inspector. It is the primary institution that is responsible for public health protection. It focuses particularly on infectious disease control, food and nutrition safety, environmental hygiene, health promotion and other public health-related issues. PIS realises its goals through the following steps:</p><ul><li>conducting a sustained and preventive sanitary supervision;</li><li>preparing epidemiological analyses, studies and assessments;</li><li>overseeing working conditions in various workplaces, focusing on harmful factors such as dust, noise, vibration, chemical agents and their levels;</li><li>supervising environmental hygiene and food safety,</li><li>promoting public health, proper hygiene habits and disease prevention methods.</li></ul>");
-INSERT INTO matrix_page(page, nuts_id, check_1, check_2, check_3, check_4, text_1_literal_id, text_2_literal_id, text_3_literal_id)  VALUES ("MATRIX_AUTHORITY", @nutsId, 1, 0, 0, 0, @maxId+1, @maxId+2, @maxId+3);
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="PL");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "National Labour Inspectorate (PIP — Państwowa Inspekcja Pracy)");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "See more in its <a target=\"blank\" href=\"https://www.pip.gov.pl/en\">website</a> and in <a target=\"blank\" href=\"https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Poland\">OSHwiki</a>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p>PIP is subordinate to the lower chamber of the Polish Parliament (Sejm) and is supervised by the Labour Protection Council, whose role is to evaluate the inspectorate’s programmes, tasks and activities, and analyse labour protection issues at the national level. PIP is formed of both the Chief Labour Inspectorate and the district labour inspectorates, and is presided over by the Chief Labour Inspector. A district labour inspectorate covers one or more provinces. Subdistrict offices may be established within the structure of district labour inspectorates.</p><p>The main responsibilities of PIP include:</p><ul><li>supervising and inspecting enterprises’ compliance with labour laws;</li><li>carrying out the OSH regulations compliance audit of refurbished and modernised workplaces, machinery, technical devices and other technologies;</li><li>inspecting legal employment and other paid work (including the employment of foreign workers);</li><li>carrying out the OSH standards compliance audit of personal protective equipment merchandise that has been sold, as governed by separate regulations;</li><li>undertaking steps to reduce health-related work hazards;</li><li>cooperating with environmental protection agencies on the auditing of regulations aimed at countering industry environmental hazards;</li><li>reviewing drafts of labour law acts.</li></ul>");
-INSERT INTO matrix_page(page, nuts_id, check_1, check_2, check_3, check_4, text_1_literal_id, text_2_literal_id, text_3_literal_id)  VALUES ("MATRIX_AUTHORITY", @nutsId, 1, 0, 0, 0, @maxId+1, @maxId+2, @maxId+3);
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="PL");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "Labour Protection Council of the Sejm of the Republic of Poland (ROP — Rada Ochrony Pracy)");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "See more in its <a target=\"blank\" href=\"http://rop.sejm.gov.pl/\">website</a> and in <a target=\"blank\" href=\"https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Poland\">OSHwiki</a>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "ROP is an institution of the lower chamber of the Polish Parliament (Sejm) that oversees general working conditions in Poland and the National Labour Inspectorate’s operations. Its main responsibilities include assessing the National Labour Inspectorate’s activities, reviewing drafts of legal acts of labour protection and analysing labour protection issues at the national level.");
-INSERT INTO matrix_page(page, nuts_id, check_1, check_2, check_3, check_4, text_1_literal_id, text_2_literal_id, text_3_literal_id)  VALUES ("MATRIX_AUTHORITY", @nutsId, 1, 0, 0, 0, @maxId+1, @maxId+2, @maxId+3);
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="PL");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "Ministry of Family, Labour and Social Policy");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "See more in its <a target=\"blank\" href=\"https://www.mpips.gov.pl/en/\">website</a> and in <a target=\"blank\" href=\"https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Poland\">OSHwiki</a>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p>The Ministry of Family, Labour and Social Policy plays a key role in the labour protection system in Poland. The ministry is the main body responsible for the development and implementation of the national occupational safety and health (OSH) strategy and policies.</p><p>&nbsp;</p><p>The institutions overseeing the compliance of enterprises with OSH regulations include the National Labour Inspectorate (<em>Państwowa Inspekcja Pracy</em>), the State Sanitary Inspection Authority (<em>Państwowa Inspekcja Sanitarna</em>), the Office of Technical Inspection (<em>Urząd Dozoru Technicznego</em>) and the State Mining Authority (<em>Wyższy Urząd Górniczy</em>).</p>");
-INSERT INTO matrix_page(page, nuts_id, check_1, check_2, check_3, check_4, text_1_literal_id, text_2_literal_id, text_3_literal_id)  VALUES ("MATRIX_AUTHORITY", @nutsId, 1, 0, 0, 0, @maxId+1, @maxId+2, @maxId+3);
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="PT");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "Portuguese Quality Institute (IPQ — Instituto Portugues da Qualidade)");
@@ -6316,6 +6256,66 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 </ul>
 <p>influencing the rural healthcare policy.</p>");
 INSERT INTO matrix_page(page, nuts_id, check_1, check_2, check_3, check_4, text_1_literal_id, text_2_literal_id, text_3_literal_id)  VALUES ("MATRIX_AUTHORITY", @nutsId, 0, 0, 1, 0, @maxId+1, @maxId+2, @maxId+3);
+
+SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="PL");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "Ministry of Family, Labour and Social Policy");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "See more in its <a target=\"blank\" href=\"https://www.mpips.gov.pl/en/\">website</a> and in <a target=\"blank\" href=\"https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Poland\">OSHwiki</a>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p>The Ministry of Family, Labour and Social Policy plays a key role in the labour protection system in Poland. The ministry is the main body responsible for the development and implementation of the national occupational safety and health (OSH) strategy and policies.</p><p>&nbsp;</p><p>The institutions overseeing the compliance of enterprises with OSH regulations include the National Labour Inspectorate (<em>Państwowa Inspekcja Pracy</em>), the State Sanitary Inspection Authority (<em>Państwowa Inspekcja Sanitarna</em>), the Office of Technical Inspection (<em>Urząd Dozoru Technicznego</em>) and the State Mining Authority (<em>Wyższy Urząd Górniczy</em>).</p>");
+INSERT INTO matrix_page(page, nuts_id, check_1, check_2, check_3, check_4, text_1_literal_id, text_2_literal_id, text_3_literal_id)  VALUES ("MATRIX_AUTHORITY", @nutsId, 1, 0, 0, 0, @maxId+1, @maxId+2, @maxId+3);
+
+SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="PL");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "Labour Protection Council of the Sejm of the Republic of Poland (ROP — Rada Ochrony Pracy)");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "See more in its <a target=\"blank\" href=\"http://rop.sejm.gov.pl/\">website</a> and in <a target=\"blank\" href=\"https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Poland\">OSHwiki</a>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "ROP is an institution of the lower chamber of the Polish Parliament (Sejm) that oversees general working conditions in Poland and the National Labour Inspectorate’s operations. Its main responsibilities include assessing the National Labour Inspectorate’s activities, reviewing drafts of legal acts of labour protection and analysing labour protection issues at the national level.");
+INSERT INTO matrix_page(page, nuts_id, check_1, check_2, check_3, check_4, text_1_literal_id, text_2_literal_id, text_3_literal_id)  VALUES ("MATRIX_AUTHORITY", @nutsId, 1, 0, 0, 0, @maxId+1, @maxId+2, @maxId+3);
+
+SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="PL");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "National Labour Inspectorate (PIP — Państwowa Inspekcja Pracy)");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "See more in its <a target=\"blank\" href=\"https://www.pip.gov.pl/en\">website</a> and in <a target=\"blank\" href=\"https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Poland\">OSHwiki</a>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p>PIP is subordinate to the lower chamber of the Polish Parliament (Sejm) and is supervised by the Labour Protection Council, whose role is to evaluate the inspectorate’s programmes, tasks and activities, and analyse labour protection issues at the national level. PIP is formed of both the Chief Labour Inspectorate and the district labour inspectorates, and is presided over by the Chief Labour Inspector. A district labour inspectorate covers one or more provinces. Subdistrict offices may be established within the structure of district labour inspectorates.</p><p>The main responsibilities of PIP include:</p><ul><li>supervising and inspecting enterprises’ compliance with labour laws;</li><li>carrying out the OSH regulations compliance audit of refurbished and modernised workplaces, machinery, technical devices and other technologies;</li><li>inspecting legal employment and other paid work (including the employment of foreign workers);</li><li>carrying out the OSH standards compliance audit of personal protective equipment merchandise that has been sold, as governed by separate regulations;</li><li>undertaking steps to reduce health-related work hazards;</li><li>cooperating with environmental protection agencies on the auditing of regulations aimed at countering industry environmental hazards;</li><li>reviewing drafts of labour law acts.</li></ul>");
+INSERT INTO matrix_page(page, nuts_id, check_1, check_2, check_3, check_4, text_1_literal_id, text_2_literal_id, text_3_literal_id)  VALUES ("MATRIX_AUTHORITY", @nutsId, 1, 0, 0, 0, @maxId+1, @maxId+2, @maxId+3);
+
+SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="PL");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "State Sanitary Inspection Authority (PIS — Państwowa Inspekcja Sanitarna)");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "See more in its <a target=\"blank\" href=\"https://gis.gov.pl/en/ \">website</a> and in <a target=\"blank\" href=\"https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Poland\">OSHwiki</a>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p>PIS is subordinate to the Ministry of Health and is presided over by the Chief Sanitary Inspector. It is the primary institution that is responsible for public health protection. It focuses particularly on infectious disease control, food and nutrition safety, environmental hygiene, health promotion and other public health-related issues. PIS realises its goals through the following steps:</p><ul><li>conducting a sustained and preventive sanitary supervision;</li><li>preparing epidemiological analyses, studies and assessments;</li><li>overseeing working conditions in various workplaces, focusing on harmful factors such as dust, noise, vibration, chemical agents and their levels;</li><li>supervising environmental hygiene and food safety,</li><li>promoting public health, proper hygiene habits and disease prevention methods.</li></ul>");
+INSERT INTO matrix_page(page, nuts_id, check_1, check_2, check_3, check_4, text_1_literal_id, text_2_literal_id, text_3_literal_id)  VALUES ("MATRIX_AUTHORITY", @nutsId, 1, 0, 0, 0, @maxId+1, @maxId+2, @maxId+3);
+
+SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="PL");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "Office of Technical Inspection (UDT — Urząd Dozoru Technicznego)");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "See more in its <a target=\"blank\" href=\"https://www.udt.gov.pl/ \">website</a> and in <a target=\"blank\" href=\"https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Poland\">OSHwiki</a>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "The UDT is a Polish inspection body established to ensure the safety of technical devices and installations. The office’s main goal is to assess conformity of technical equipment with the relevant regulations and specifications in the product design, manufacturing and service process. Its duties also include technical safety and failure analysis as well as the dissemination of information on technical safety and related issues. The UDT is a non-profit organisation, independent at both financial and operational levels.");
+INSERT INTO matrix_page(page, nuts_id, check_1, check_2, check_3, check_4, text_1_literal_id, text_2_literal_id, text_3_literal_id)  VALUES ("MATRIX_AUTHORITY", @nutsId, 1, 0, 0, 0, @maxId+1, @maxId+2, @maxId+3);
+
+SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="PL");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "State Mining Authority (WUG — Wyższy Urząd Górniczy)");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "See more in its <a target=\"blank\" href=\"http://www.wug.gov.pl/ \">website</a> and in <a target=\"blank\" href=\"https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Poland\">OSHwiki</a>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p>WUG was established by the Geological and Mining Law Act and is presided over by the President of the State Mining Authority, who is subordinate to the Minister of Energy Minister Energii. The main responsibility of the State Mining Authority is to monitor and supervise work-related safety and health; fire protection; mine rescue; the management of mineral deposits in the extraction process; environmental protection, including damage prevention; and the construction and closure of mining plants, including land reclamation and the rehabilitation of post-mining areas.</p><p>&nbsp;</p><p>The mission of the State Mining Authority is:</p><ul><li>to improve work safety in mines;</li><li>to protect miners’ health;</li><li>to ensure efficient and sustainable management of mineral deposits;</li><li>to reduce the negative impact of the extractive industry on the environment.</li></ul>");
+INSERT INTO matrix_page(page, nuts_id, check_1, check_2, check_3, check_4, text_1_literal_id, text_2_literal_id, text_3_literal_id)  VALUES ("MATRIX_AUTHORITY", @nutsId, 1, 0, 0, 0, @maxId+1, @maxId+2, @maxId+3);
 
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="AT");
