@@ -60,6 +60,13 @@ define(function (require) {
             $rootScope.defaultCountry="";
             $scope.pCountry1 = "0";
           }
+          else if ($rootScope.defaultCountry != undefined && $rootScope.defaultCountry != "" && e.currentTarget.classList.value.indexOf("country-lock") != -1)
+          {
+            removed = true;
+            
+            $rootScope.defaultCountry="";
+            $scope.pCountry1 = "0";
+          }
 
           $(e.currentTarget).toggleClass('country-unlock').toggleClass('country-lock');
           angular.element("div.preferences--lock select").toggleClass('disabled');
