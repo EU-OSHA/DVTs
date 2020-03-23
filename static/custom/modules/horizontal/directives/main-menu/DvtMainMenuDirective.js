@@ -323,6 +323,9 @@ define(function (require) {
                         formSearch.toggleClass('exposed');
                     });
 
+                    console.log("DVT DEV");
+                    console.log($rootScope.defaultCountry);
+
                     if ($rootScope.defaultCountry == undefined)
                     {
                         if ($cookies.get("selectedCountry") != undefined)
@@ -334,7 +337,7 @@ define(function (require) {
                         }
                         else
                         {
-                            /*if (navigator.geolocation)
+                            if (navigator.geolocation)
                             {
                                 navigator.geolocation.getCurrentPosition(function(position){
                                     $http.get('http://ip-api.com/json').success(function(coordinates) {
@@ -350,7 +353,7 @@ define(function (require) {
                                         }                                        
                                     });
                                 });  
-                            }*/
+                            }
                             $rootScope.defaultCountry = {
                                 code: "AT",
                                 isCookie: false
