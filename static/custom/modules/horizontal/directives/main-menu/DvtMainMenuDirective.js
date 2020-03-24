@@ -323,9 +323,6 @@ define(function (require) {
                         formSearch.toggleClass('exposed');
                     });
 
-                    console.log("DVT DEV");
-                    console.log($rootScope.defaultCountry);
-
                     if ($rootScope.defaultCountry == undefined)
                     {
                         if ($cookies.get("selectedCountry") != undefined)

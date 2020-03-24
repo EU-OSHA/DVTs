@@ -144,7 +144,7 @@ define(function (require) {
       // 4 - GDP PER CAPITA IN RELATION TO EU28 AVERAGE
       {
         color1: dvtUtils.getColorCountry(1),
-        color2: dvtUtils.getColorCountry(2),
+        color2: $scope.pCountry2=="0"?dvtUtils.getEUColor():dvtUtils.getColorCountry(2),
         color3: dvtUtils.getEUColor(),
         plots: EconomicSectorProfileService.getGPDMainPlots($scope.pCountry1, $scope.pCountry2),
         dimensions: {
