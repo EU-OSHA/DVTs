@@ -159,7 +159,7 @@ define(function (require) {
       },
       // 2 - Health at risk by gender
       {
-        color1: dvtUtils.getColorCountry(2),
+        color1: $scope.pCountry2=="0"?dvtUtils.getEUColor():dvtUtils.getColorCountry(2),
         color2: dvtUtils.getColorCountry(1),
         color3: dvtUtils.getEUColor(),
         plotsVertical: OverallOpinionService.getHealthAtRiskGenderPlotVertical($scope.pCountry1, $scope.pCountry2),
