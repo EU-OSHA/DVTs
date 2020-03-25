@@ -1161,7 +1161,7 @@
 	    	<Parameter default="BE" name="pCountry2" type="String"/>
 	    </Parameters>
 	    <Query>
-			SELECT IF(n.name REGEXP 'European Union', n.country_code, CONCAT("(", n.country_code, ") ", n.name)) as Country, t.text as Size, v.value*100 as Value
+			SELECT IF(n.name REGEXP 'European Union' || n.name='EU27_2020', n.country_code, CONCAT("(", n.country_code, ") ", n.name)) as Country, t.text as Size, v.value*100 as Value
 			FROM nuts n, profile p, value v, translation t, split_company_size scs
 			WHERE n.id = p.nuts_id
 			AND v.indicator_id = ${pIndicator}
