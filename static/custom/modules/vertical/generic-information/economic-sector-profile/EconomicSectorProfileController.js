@@ -113,7 +113,7 @@ define(function (require) {
       // 2 - Employment rate
       {
         color1: dvtUtils.getColorCountry(1),
-        color2: dvtUtils.getColorCountry(2),
+        color2: $scope.pCountry2=="0"?dvtUtils.getColorCountry(1):dvtUtils.getColorCountry(2),
         color3: dvtUtils.getEUColor(),
         plots: EconomicSectorProfileService.getEmploymentRateMainPlots($scope.pCountry1, $scope.pCountry2),
         labelTextAlign: 'left',
