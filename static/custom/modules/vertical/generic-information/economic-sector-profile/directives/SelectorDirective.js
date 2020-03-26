@@ -29,7 +29,7 @@ define(function (require) {
 				scope.chart = attributes.chart;
 				scope.pSplit = $stateParams.pSplit;
 				scope.pSplit2 = $stateParams.pSplit2;
-				scope.pDataset = 3;
+				scope.pDataset = 20;
 
 				scope.changeType = function(pChangedFilter, value)
 				{
@@ -46,9 +46,9 @@ define(function (require) {
 							scope.pSplit2 = value;
 
 							if(scope.pSplit2 == '36'){
-								scope.pDataset = 17;
+								scope.pDataset = 20;
 							}else{
-								scope.pDataset = 17;
+								scope.pDataset = 20;
 							}
 
 							dashboard.dashboard.parameters.pSplit2 = scope.pSplit2;
