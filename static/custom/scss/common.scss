@@ -326,9 +326,9 @@
           -moz-osx-font-smoothing: grayscale;
           font-size: 2.6rem;
           position: absolute;
-          top: 0;
-          right: 0;
-          padding: 0.6rem 2rem;
+          top: 0rem !important;
+          right: 0rem !important;
+          padding: 0.6rem 1rem;
           color: $white;
         }
       }
