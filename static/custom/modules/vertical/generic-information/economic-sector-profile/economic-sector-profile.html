@@ -34,6 +34,29 @@
       </form>
   </div>
 
+  <div class="compare--block container">
+      <!-- FILTERS -->
+      <form class="compare--block--form">
+        <ul class="compare--list">
+          <!-- 1ST COUNTRY FILTER -->
+          <li>
+            <label data-ng-bind="i18nLiterals.L20609"></label>
+            <dvt-select data-ng-cloak ng-model="pCountry1" parameter="pCountry1" params="[['pCountry', pCountry2]]"
+              listen-to="['pCountry2']" query="getAvailableEconomicSectorCountries" cda="{{::cdaGenericInformation }}" placeholder="0" data-ng-change="countryChange()" class="filter--questions--wrapper">
+            </dvt-select>  
+          </li>
+          <!-- 2ND COUNTRY FILTER -->
+          <li>
+            <label data-ng-bind="i18nLiterals.L20610"></label>
+            <dvt-select data-ng-cloak ng-model="pCountry2" parameter="pCountry2" params="[['pCountry', pCountry1]]"
+              listen-to="['pCountry1']" query="getAvailableEconomicSectorCountries" cda="{{::cdaGenericInformation }}" 
+              placeholder="{{pCountry2=='0'?1:0}}" data-ng-change="countryChange()" class="filter--questions--wrapper">
+            </dvt-select> 
+          </li>
+        </ul>
+      </form>
+  </div>
+
   <div class="line background-main-light"></div>
 
   <section class="container section--page">

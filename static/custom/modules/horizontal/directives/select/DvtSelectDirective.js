@@ -16,6 +16,8 @@ define(function (require) {
     var SelectComponent = require('cdf/components/SelectComponent');
     var configService = require('horizontal/config/configService');
 
+    var i18nLiterals = configService.getLiterals();
+
     var sequence = 1;
     function nextId() {
         return sequence++;
@@ -33,13 +35,14 @@ define(function (require) {
                 params: '=',
                 listenTo: '='
             },
-            template: '<div class="dropdown"><div class="input-group"><span class="input-group-addon glyphicon glyphicon-stop" aria-hidden="false"></span> <span ng-attr-id="{{id}}" /></div></div>',
+            template: '<div class="dropdown"><div class="input-group"><span class="input-group-addon glyphicon glyphicon-stop" aria-hidden="false"></span> <span ng-attr-id="{{id}}" data-ng-class="{{placeholder==\'1\'?\'placeholder\':\'\'}}" /></div></div>',
             //templateUrl: configService.getHorizontalDirectiveTplPath('select', 'select'),
             link: function (scope, element, attributes, controllers) {
                 var ngModel = controllers[0];
                 var dashboard = controllers[1];
 
                 scope.id = "dvt_select_" + nextId();
+                scope.placeholder = attributes.placeholder;
 
                 var definition = {
                     name: scope.id,
@@ -68,8 +71,8 @@ define(function (require) {
 
                     },
                     postFetch: function(data){
-                        if (attributes.invalidateDefaultSelection){
-                            data.resultset.unshift(['','Select a country to compare']);
+                        if (attributes.placeholder == "1"){
+                            data.resultset.unshift(['0',i18nLiterals.L20630]);
                             data.queryInfo.totalRows++;
                         }
                     }

@@ -162,16 +162,20 @@
 	<!-- HOME || ALL AVAILABLE COUNTRIES FOR ECONOMIC AND SECTOR PROFILES INDICATORS -->
 	<DataAccess access="public" connection="dvt_conn" id="getAvailableEconomicSectorCountries" type="sql">
 	    <Cache duration="3600" enabled="true" />
+	    <Parameters>
+	    	<Parameter default="AT" name="pCountry" type="String"/>
+	    </Parameters>
 	    <Columns />
 	    <Query>
-	      SELECT DISTINCT(n.literal_id) as country_name, n.country_code as country_code
+	      SELECT DISTINCT(n.country_code) as country_code, CONCAT ("(",n.country_code, ") ", t.text) as country_name
 	      FROM nuts n
-	      INNER JOIN profile p
-	      ON n.id = p.nuts_id
-	      INNER JOIN value v
-	      ON v.profile_id = p.id
+	      INNER JOIN profile p ON n.id = p.nuts_id
+	      INNER JOIN value v ON v.profile_id = p.id
+	      INNER JOIN translation t ON n.literal_id=t.literal_id
 	      WHERE v.indicator_id IN (31, 36, 37, 38, 39, 40)
 	      AND n.country_code NOT IN ('EU28')
+	      AND n.country_code NOT IN (${pCountry})
+	      AND t.language="EN"
 	      ORDER BY country_code ASC;
 	    </Query>
 	</DataAccess>
