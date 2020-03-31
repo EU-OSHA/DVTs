@@ -45,11 +45,11 @@
 			  right:0rem;
 			}
 			.select-filter-chart{
-				position: absolute;
-				right: 9rem;
-				top: 0;
-			  width: 20%;
-			  z-index: 10;
+		    position: absolute;
+		    right: 9.7rem;
+		    top: 0.9rem;
+		    width: 25%;
+		    z-index: 10;
 				&:after{
 					content: "\f107";
 					font-family: FontAwesome;
@@ -57,16 +57,17 @@
 					font-size: 2rem;
 					color: $aquamarine;
 					right: 0;
-					top: 1rem;
+					right: 0;
+    			top: 1.3rem;
 					height: auto;
-					padding: 1rem;
+					padding:0 1rem;
 					position: absolute;
 					pointer-events: none;
 				}
 				select{
 					width: 100%;
 				  margin: 1rem 0;
-				  padding: 1rem 2rem;
+				  padding: 0.5rem 1rem;
 				  border-radius: 4px;
 				  border: 1px solid $aquamarine;
 				  color: $aquamarine;
@@ -213,15 +214,16 @@ dvt-radar-chart[datasource-and-dates="datasourcesAndDates"]{
 		}	
 		.card--block--chart{ 
 			.chart--submenu {
-				top: 4rem !important;
-				right: -1rem;
+				//top: -4.2rem !important;
 			}
 			.select-filter-chart{
+				/*
 			  position: relative !important;
 			  right: 0 !important;
 			  top: 0 !important;
-			  width: 100% !important;
+			  width: 90% !important;
 			  z-index: 10;	
+			  */
 			}
 		}	
 	}
@@ -246,14 +248,20 @@ dvt-radar-chart[datasource-and-dates="datasourcesAndDates"]{
 		.card--grid{
 			.card--block--chart{ 
 		    margin: 0rem;
-				.select-filter-chart{
+				h2{
+					padding: 1rem 0;
 				}
-			}			
+				.select-filter-chart{
+					width: 35%;
+				}
+			}		
 		}
 		.card--block--chart{ 
 			.chart--submenu {
+				/*
 				top: 1rem !important;
 				right: -1rem;
+				*/
 			}
 		}	
 	}
@@ -275,10 +283,13 @@ dvt-radar-chart[datasource-and-dates="datasourcesAndDates"]{
 			padding: 2rem 0rem;
 		}
 		.card--block--chart{ 
+			h2{
+				padding: 1.5rem 0;
+			}
 	    border-radius: 0;
 			.select-filter-chart{
+				width: 55% !important;
 			}
 		}	
 	}
-
 }
