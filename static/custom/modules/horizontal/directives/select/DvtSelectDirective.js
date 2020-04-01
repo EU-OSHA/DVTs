@@ -35,7 +35,8 @@ define(function (require) {
                 params: '=',
                 listenTo: '='
             },
-            template: '<div class="dropdown"><div class="input-group"><span class="input-group-addon glyphicon glyphicon-stop" aria-hidden="false"></span> <span ng-attr-id="{{id}}" data-ng-class="{{placeholder==\'1\'?\'placeholder\':\'\'}}" /></div></div>',
+            template: '<div ng-attr-id="{{id}}" />',
+            // template: '<div ng-attr-id="{{id}}" data-ng-class="{{placeholder==\'1\'?\'placeholder\':\'\'}}" />',
             //templateUrl: configService.getHorizontalDirectiveTplPath('select', 'select'),
             link: function (scope, element, attributes, controllers) {
                 var ngModel = controllers[0];
@@ -66,7 +67,7 @@ define(function (require) {
                         var divs = document.querySelectorAll('div.select2-container');
                         [].forEach.call(divs, function (div) {
                             // do whatever
-                            div.classList.add('btn', 'btn-default', 'dropdown-toggle', 'col-xs-12');
+                            //div.classList.add('btn', 'btn-default', 'dropdown-toggle', 'col-xs-12');
                         });
 
                     },

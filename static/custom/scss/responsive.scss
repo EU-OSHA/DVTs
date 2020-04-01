@@ -920,8 +920,7 @@ and (orientation : landscape) {
 
 	.compare--block--form{
 		margin: 0;
-		width: 100%;
-		//padding: 0;
+		width: 100%;		
 		.compare--list{
   		justify-content: space-between;
   		li{
@@ -930,7 +929,7 @@ and (orientation : landscape) {
   				width:40%;
   				letter-spacing: 0px;
   			}
-  			select{
+  			select, dvt-select{
   				width: 60%;
   			}
   		}
@@ -1132,7 +1131,7 @@ and (orientation : portrait) {
 					width: 32% !important;
 					text-align: right;
 				}
-				select{
+				select, dvt-select{
 					text-align: left;
 					//width: 100%;
 					position: relative;
@@ -1183,7 +1182,7 @@ and (max-width : 900px) {
           &:after{
           }
         }
-        select{
+        select, dvt-select{
         	width:58%;
         	flex: 1;
           font-size: 2rem;
@@ -1508,6 +1507,7 @@ and (max-width :767px)  {
 
 	form.compare--block--form{
 		text-align: center;
+		padding:1rem 0;
 	}
   .compare--block{
     .compare--list{
@@ -1518,13 +1518,13 @@ and (max-width :767px)  {
 			margin: 0;
 			width:100%;
       li{
-      	width:100%;
+      	width:100%;      	
         label{ 
         	width:40%;        
           &:after{
           }
         }
-        select{
+        select, dvt-select{
         	width:60%;
           font-size: 2rem;
           option{
@@ -1779,7 +1779,7 @@ and (max-width :520px) {
           	content: '';
           }
         }
-        select{
+        select, dvt-select{
 				  font-size: 1.8rem;
 				  display: inline-block;
 				  width: 100%;

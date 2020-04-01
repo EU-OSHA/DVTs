@@ -1,0 +1,22 @@
+.select2-container{
+	width: 100%;
+	a.select2-choice{
+    border: 0 !important;
+    display: block;
+    width: 100%;
+    background: #FFF;
+    .select2-arrow{
+			display: none;
+    }
+    .select2-search-choice-close{
+    	display: none;
+    }
+	}
+}
+.select2-container-active{
+	a{
+		box-shadow: none !important;
+		border: 0 !important;
+	}
+}
+
