@@ -57,6 +57,7 @@
 				<option value="UK">(UK) United Kingdom</option>
 			</select>
 			<label class="country-unlock" data-ng-class="{disabled: pCountry1=='0'}" ng-click="pCountry1=='0' || saveCountry($event)" data-ng-disabled="true"><i class="fa" aria-hidden="true"></i></label>
+			<span data-ng-bind="i18n.L22186" data-ng-show="pCountry1!='0'"></span>
 			<!--<label class="country-lock"  ng-click="saveCountry($event)"><i class="fa fa-lock" aria-hidden="true"></i></label>-->
     	</form>
     </div>
