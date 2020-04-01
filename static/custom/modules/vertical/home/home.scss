@@ -169,6 +169,12 @@
       background:$gray-light;
       cursor: auto;
     }
+    .country-selected{
+      display: block;
+      margin: 1rem 0;
+      font-weight: bold;
+      color: $aquamarine;
+    }
   }
 }
 .discover--charts--section{
