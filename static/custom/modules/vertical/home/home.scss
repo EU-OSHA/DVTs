@@ -110,71 +110,89 @@
     text-align: center;
   }
   form{
-    text-align: center;
-    @media screen and (max-width: 420px){
+    display: flex;
+    flex-direction: row;
+    width: 768px;
+    margin: auto;
+    @media screen and (max-width: 768px){
       display: flex;
       flex-direction: column;
+      width:100%;
     }
+    .country-selected-wrapper{
+      width: 76%;
+      text-align: right;
+      @media screen and (max-width: 768px){
+        width: 100%;
+        text-align: center;
+      }
+      select{
+        padding: 2.6rem 4rem 2rem;
+        border: 1px solid $gray-lighter;
+        font-style: italic;
+        color: $gray;
+        &.disabled{
+          color: $gray-light;
+        }
+        option{
 
-    select{
-      padding: 2.6rem 4rem 2rem;
-      border: 1px solid $gray-lighter;
-      font-style: italic;
-      color: $gray;
-      &.disabled{
-        color: $gray-light;
-      }
-      option{
-
-      }
-    }
-    .country-lock{
-      padding: 1rem;
-      margin: 1rem 2rem;
-      background:$aquamarine;
-      color: $white;
-      border-radius: 5rem;
-      transition: all 0.6s;
-      cursor: pointer;
-      @media screen and (max-width: 420px){
-        margin: 2rem 0 0;
-      }
-      .fa{
-        font-size: 3rem;
-        padding: 0 0.4rem;
-        &:before{
-          content: "\f023";
         }
       }
-    }
-    .country-unlock{
-      padding: 2rem 3rem;
-      margin: 0;
-      background:$orange;
-      color: $white;
-      border-radius: 0rem;
-      transition: all 0.6s;
-      cursor: pointer;
-      @media screen and (max-width: 420px){
-        margin: 2rem 0 0;
-      } 
-      .fa{
-        font-size: 3rem;
-        &:before{
-          content: "\f09c";
+      .country-lock{
+        padding: 1rem;
+        margin: 1rem 2rem;
+        background:$aquamarine;
+        color: $white;
+        border-radius: 5rem;
+        transition: all 0.6s;
+        cursor: pointer;
+        @media screen and (max-width: 420px){
+          margin: 2rem 0 0;
+        }
+        .fa{
+          font-size: 3rem;
+          padding: 0 0.4rem;
+          &:before{
+            content: "\f023";
+          }
         }
       }
-    }
-    .country-unlock.disabled{
-      background:$gray-light;
-      cursor: auto;
+      .country-unlock{
+        padding: 2rem 3rem;
+        margin: 0;
+        background:$orange;
+        color: $white;
+        border-radius: 0rem;
+        transition: all 0.6s;
+        cursor: pointer;
+        @media screen and (max-width: 420px){
+          margin: 2rem 0 0;
+        } 
+        .fa{
+          font-size: 3rem;
+          &:before{
+            content: "\f09c";
+          }
+        }
+      }
+      .country-unlock.disabled{
+        background:$gray-light;
+        cursor: auto;
+      }
     }
     .country-selected{
+      width: 24%;
+      text-align: left;
       display: block;
       margin: 1rem 0;
       font-weight: bold;
       color: $aquamarine;
-    }
+      padding: 1.4rem 0 0;
+      @media screen and (max-width: 768px){
+        width: 100%;
+        text-align: center;
+      }
+    }      
   }
 }
 .discover--charts--section{
