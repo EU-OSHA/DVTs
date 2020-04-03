@@ -21,7 +21,7 @@
 102-http://bm.dk/~/media/BEM/Files/Dokumenter/Pressemeddelelser/2011/Aftaletekst.ashx 
 102-https://amid.dk/media/2953/strategy-working-environment-efforts-2020.pdf
 102-http://www.ftf.dk/fileadmin/Bruger_filbibliotek/Uddannelse_og_ledelse/Uddannelse/Aftaletekst_arbejdsmiljoe_pdf.pdf
-108-https://arbejdstilsynet.dk/da/om%20arbejdstilsynet/strategier-evalueringer-og-rapporter
+108-https://at.dk/om-os/formaal-strategi-organisation/om-strategi-for-arbejdsmiljoeindsatsen-frem-til-2020/
 110-https://www.sm.ee/et/heaolu-arengukava-2016-2023
 110-https://www.sm.ee/sites/default/files/content-editors/eesmargid_ja_tegevused/Sotsiaalse_turvalisuse_kaasatuse_ja_vordsete_voimaluste_arengukava_2016_2023/wdp.pdf
 110-https://www.sm.ee/sites/default/files/content-editors/eesmargid_ja_tegevused/Tervis/2012_rta_pohitekst_ok_5.pdf 
@@ -30,8 +30,8 @@
 118-http://urn.fi/URN:ISBN:978-952-00-3175-6
 118-http://urn.fi/URN:ISBN:978-952-00-3175-6
 118-http://urn.fi/URN:ISBN:978-952-00-3136-7
-118-http://www.tyoelama2020.fi/files/104/Strategy_2020.pdf 
-118-http://www.tyoelama2020.fi/files/104/Strategy_2020.pdf
+118-http://julkaisut.valtioneuvosto.fi/handle/10024/74003
+118-http://julkaisut.valtioneuvosto.fi/handle/10024/74003
 118-http://urn.fi/URN:ISBN:978-952-00-3145-9
 118-http://urn.fi/URN:ISBN:978-952-00-3145-9
 120-http://www.ilo.org/safework/areasofwork/national-occupational-safety-and-health-systems-and-programmes/WCMS_179869/lang--en/index.htm 
@@ -49,11 +49,11 @@
 130-http://travail-emploi.gouv.fr/ministere/acteurs/instances-rattachees/article/coct-conseil-d-orientation-des-conditions-de-travail
 133-http://travail-emploi.gouv.fr/sante-au-travail/plans-de-sante-au-travail/article/plan-de-sante-au-travail-2016-2020-pst-3
 134-http://www.gda-portal.de/de/Startseite.html
-134-http://www.gda-portal.de/de/pdf/en-Flyer-Goals.pdf?__blob=publicationFile&amp;v=3
+134-http://www.gda-portal.de/DE/Downloads/pdf/Faltblatt-Ziele.html;v=3
 134-http://www.gda-portal.de/en/Downloads/Downloads.html
 134-http://www.gda-portal.de/en/Homepage.html
 135-http://www.gda-portal.de/de/pdf/GDA-Fachkonzept-gesamt.pdf?__blob=publicationFile&v=2
-136-http://www.gda-portal.de/de/pdf/en-Flyer-Goals.pdf?__blob=publicationFile&v=3
+136-http://www.gda-portal.de/DE/Downloads/pdf/Faltblatt-Ziele.html
 137-www.gdabewegt.de
 137-http://www.gda-portal.de/en/SupportCompanies/SupportCompanies.html
 140-http://www.gda-portal.de/de/Evaluation/Evaluation2013-18.html
@@ -109,7 +109,7 @@
 228-http://www.insht.es/InshtWeb/Contenidos/Instituto/Comision/GruposTrabajo/ficheros/Balance%20FINAL%20EESST.pdf 
 230-http://www.regeringen.se/contentassets/414e55ccaf03458fb6716bc7fedc24c9/en-arbetsmiljostrategi-for-det-moderna-arbetslivet-skr.-20151680
 230-http://www.government.se/legal-documents/2016/05/skr.-20151680/
-231-https://www.av.se/globalassets/filer/om-oss/vart-uppdrag/redovisning-av-uppdraget-att-ta-fram-en-lagesbeskrivning-pa-arbetsmiljoomradet-.pdf?hl=l%C3%A4gesbeskrivning%20inom%20arbetsmilj%C3%B6omr%C3%A5det%20f%C3%B6r%20perioden%202010%E2%80%932015
+231-https://www.regeringen.se/regeringsuppdrag/2015/02/a2015409arm/
 231-https://www.av.se/arbetsmiljoarbete-och-inspektioner/kunskapssammanstallningar/
 233-https://www.av.se/globalassets/filer/nyheter/hallbart-arbetsliv-i-sverige-2020-konferensdokumentation.pdf
 238-http://www.hse.gov.uk/strategy/assets/docs/hse-helping-great-britain-work-well-strategy-2016.pdf
@@ -134,13 +134,13 @@
 605-https://osha.europa.eu/en/surveys-and-statistics-osh/esener/2014?locale=EN&amp;dataSource=esener04&amp;media=png&amp;width=740&amp;question=Q252_1&amp;plot=heatMap&amp;countryGroup=linear&amp;subset=Sectorgrp&amp;subsetValue=All&amp;answer=1--Yes
 605-https://oshwiki.eu/wiki/ESENER-2_Methodology
 2081-https://en.wikipedia.org/wiki/Google_Translate
-2188-https://www.sozialministerium.at/siteEN/ 
+2188-https://www.sozialministerium.at/en.html
 2188-https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Austria 
-2191-https://www.sozialministerium.at/siteEN/Labour_Disabilities/Occupational_Safety_and_Health/Labour_Inspectorate/
+2191-https://www.sozialministerium.at/en/Topics/Social-Affairs/People-with-Disabilities/The-participation-in-employment-of-people-with-disabilities.html
 2191-https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Austria
 2194-https://www.auva.at/
 2194-https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Austria 
-2197-http://bva.at/portal27/bvaportal/content?content-id=10007.676561&viewmode=content 
+2197-https://www.sozialversicherung.at/cdscontent/?contentid=10007.821628&portal=svportal
 2197-https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Austria 
 2200-https://www.vaeb.at
 2200-https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Austria 
@@ -335,7 +335,7 @@
 2491-https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Hungary
 2494-https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Hungary
 2497-https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Hungary
-2500-Hungarian Standards Institution (Magyar Szabványügyi Testület – MSZT)
+2500-http://www.mszt.hu/web/guest/about-us
 2500-https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Hungary
 2503-http://www.hsa.ie
 2503-https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Ireland
@@ -643,7 +643,7 @@
 3004-http://nso.gov.mt/en/News_Releases/View_by_Unit/Unit_C2/Labour_Market_Statistics/Pages/Accidents-at-Work.aspx
 3006-http://www.monitorarbeid.tno.nl/databronnen/nea
 3008-http://www.monitorarbeid.tno.nl/databronnen/zea
-3010-https://www.veiligheid.nl/veilig-werken/home
+3010-https://www.veiligheid.nl/organisatie/over-ons
 3012-http://www.rivm.nl/Onderwerpen/L/Leefstijlmonitor
 3014-http://www.rivm.nl/Onderwerpen/L/Leefstijlmonitor
 3016-http://www.beroepsziekten.nl
@@ -715,7 +715,7 @@
 3198-https://amid.dk/en/about-us/research-fund/%20
 3198-https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Denmark%20
 3200-http://www.tai.ee/en/
-3200-https://oshwiki.eu/wiki/OSH_system_at_national_level_–_Estonia%20
+3200-https://oshwiki.eu/wiki/OSH_system_at_national_level_%E2%80%93_Estonia
 3202-http://www.ut.ee/en
 3202-https://oshwiki.eu/wiki/OSH_system_at_national_level_–_Estonia
 3204-http://www.ttu.ee/
@@ -735,7 +735,7 @@
 3216-https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Germany%20
 3218-https://www.lia.nrw.de
 3218-https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Germany%20
-3220-http://www.elinyae.gr/el/index.jsp
+3220-http://www.elinyae.gr
 3220-https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Greece%20
 3222-https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Hungary
 3224-http://www.wrc-research.ie/
@@ -744,7 +744,7 @@
 3226-https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Italy
 3228-http://www.rsu.lv/ddvvi
 3228-https://oshwiki.eu/wiki/OSH_systems_at_national_level_-_Latvia
-3230-https://www.lu.lv/studijas/fakultates/fakultates/kimijas-fakultate/
+3230-https://www.lu.lv/en/about-us/structure/institutes/ul-institute-of-chemical-physics/
 3230-https://oshwiki.eu/wiki/OSH_systems_at_national_level_-_Latvia
 3232-http://dcai.rtu.lv/
 3232-https://oshwiki.eu/wiki/OSH_systems_at_national_level_-_Latvia
