@@ -220,52 +220,7 @@ define(function (require) {
     /******************************************************************************|
     |                                DATA LOAD                                     |
     |******************************************************************************/
-      if ($scope.pIndicator == "non-fatal-work-accidents")
-      {
-        dataService.getNonFatalAccidentsCountries().then(function (data) {
-          var countryHasData = false;
-          var country2HasData = $scope.pCountry2=="0" && $rootScope.defaultCountry2 == undefined? true: false;
-          data.data.resultset.map(function (elem) {
-            if(elem[1] != $scope.pCountry2){
-                $scope.countriesDataFor.push({
-                country: elem[0],
-                country_code: elem[1]
-              });
-            }
-            if (elem[1] == $scope.pCountry1)
-            {
-              countryHasData = true;
-            }
-
-            if(elem[1] != $scope.pCountry1){
-              $scope.countriesCompareWith.push({
-                country: elem[0],
-                country_code: elem[1]
-              });
-            }
-            if (elem[1] == $scope.pCountry2)
-            {
-              country2HasData = true;
-            }
-          });
-          if (countryHasData==false || country2HasData==false)
-          {
-            if (countryHasData == false)
-            {
-              $scope.pCountry1=$scope.countriesDataFor[0].country_code;
-              
-            }
-            if (country2HasData == false)
-            {
-              $scope.pCountry2 = $scope.countriesCompareWith[0].country_code;
-            }
-            $scope.countryChange(false); 
-          }
-          
-        }).catch(function (err) {
-            throw err;
-        });  
-      }
+      
       
 
       dataService.getWorkAccidentsIndicators().then(function (data) {

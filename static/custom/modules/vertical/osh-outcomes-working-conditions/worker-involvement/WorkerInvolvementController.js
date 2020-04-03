@@ -55,6 +55,8 @@ define(function (require) {
     }
     $scope.pSplit = ($stateParams.pSplit != null)?$stateParams.pSplit:'esener';
     $scope.datasourcesAndDates = $scope.pSplit == 'esener'?[$scope.datasetESENER,123]:[$scope.datasetEurofound,95];
+    $scope.queryCountrySelect = $scope.pSplit == 'esener'?'getWorkerInvolvementESENERCountries':'getWorkerInvolvementEurofoundCountries';
+    $scope.datasetCountrySelect = $scope.pSplit == 'esener'?$scope.datasetESENER:$scope.datasetEurofound;
 
     $scope.stories = [
       //0 - Worker Involvement ESENER
@@ -103,54 +105,6 @@ define(function (require) {
     var maxModeCriteriaText =  function(dataset) {
       return dataset.datum.atoms.category.value
     }
-
-    /******************************************************************************|
-    |                                DATA LOAD                                     |
-    |******************************************************************************/
-
-      if($scope.pSplit == 'esener'){
-        dataService.getWorkerInvolvementESENERCountries($scope.datasetESENER).then(function (data) {
-          data.data.resultset.map(function (elem) {
-            if(elem[1] != $scope.pCountry2){
-              $scope.countriesDataFor.push({
-                country: elem[0],
-                country_code: elem[1]
-              });
-            }
-
-            if(elem[1] != $scope.pCountry1){
-              $scope.countriesCompareWith.push({
-                country: elem[0],
-                country_code: elem[1]
-              });
-            }
-          });
-        }).catch(function (err) {
-          throw err;
-        });
-      }else{
-        dataService.getWorkerInvolvementEurofoundCountries($scope.datasetEurofound).then(function (data) {
-          data.data.resultset.map(function (elem) {
-            if(elem[1] != $scope.pCountry2){
-              $scope.countriesDataFor.push({
-                country: elem[0],
-                country_code: elem[1]
-              });
-            }
-
-            if(elem[1] != $scope.pCountry1){
-              $scope.countriesCompareWith.push({
-                country: elem[0],
-                country_code: elem[1]
-              });
-            }
-          });
-        }).catch(function (err) {
-          throw err;
-        });
-      }
-
-    /******************************END DATA LOAD***********************************/
 
       $scope.changeSplit = function(){
         $('.card--block--chart').css('visibility','hidden');

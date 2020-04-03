@@ -20,6 +20,7 @@ define(function (require) {
 
     // CDA
     $scope.cda =  configService.getBarometerCda();
+    $scope.cdaGenericInformation = configService.getGenericInformationCda();
 
     var i18n = require('json!vertical/osh-authorities/i18n');
     var i18nLiterals = configService.getLiterals();
@@ -39,33 +40,14 @@ define(function (require) {
     $scope.pCountry2 = $stateParams.pCountry2;
     $scope.pIndicator = $stateParams.pIndicator;
 
-    $scope.maxCharacters = 200;
-
-
-    // Read more
-    /*$scope.trimtext = function(pVal, pNumCharacters){
-      var shortText = pVal;
-      if (shortText.length > pNumCharacters) {
-        shortText = $.trim(pVal).substring(0, pNumCharacters).split(" ").slice(0, -1).join(" ") + $scope.longText(pVal, pNumCharacters) + "<span class='see-more'>...</span>";
-      }
-      return shortText;
-    };
-
-    $scope.longText = function(pVal, pNumCharacters) {
-      var longText = "<samp style='display:none'> " + pVal.split(" ").slice($.trim(pVal).substring(0, pNumCharacters).split(" ").slice(0, -1).length).join(" ") + '</samp>';
-      return longText;
-    };
-
-    $scope.toggleText = function($event) {
-      $log.warn("entra en toggleText");
-      angular.element(' samp', angular.element($event.target).parent().parent()).slideToggle('medium', function() {
-        if ($(this).is(':visible')) {
-          $(this).css('display','inline');
+    $scope.dashboard = {
+        parameters: {
+            "pCountry1": $scope.pCountry1,
+            "pCountry2": $scope.pCountry2
         }
-      });
-      angular.element(' span.see-more', angular.element($event.target).parent().parent()).slideToggle();
-      angular.element('p a', angular.element($event.target).parent()).toggle();
-    };*/
+    };
+
+    $scope.maxCharacters = 200;
 
     // Read more
     $scope.trimText = function(pVal, pNumCharacters){
@@ -91,26 +73,15 @@ define(function (require) {
             newMaxCharacter = newMaxCharacter + link.length;
             indexStart = shortText.indexOf('<a', indexEnd);
             indexEnd = shortText.indexOf('>', indexStart);
-            //$log.warn(link);
-            //$log.warn(link.length);
           }
         }
-        
-        /*if(index != 0 || index != -1){
-          shortText = '<p>'+ shortText +'</p>';
-          $log.warn(shortText);
-        }*/
+
         if (shortText.length > newMaxCharacter ) {
           shortText = $.trim(shortText).substring(0, pNumCharacters).split(" ").slice(0, -1).join(" ") + "<span class='dots'>...</span>";
         }
         return $sce.trustAsHtml(shortText);
       }
     }
-
-    /*$scope.longText = function(pVal, pNumCharacters) {
-      var longText = "<samp style='display:none'> " + pVal.split(" ").slice($.trim(pVal).substring(0, pNumCharacters).split(" ").slice(0, -1).length).join(" ") + '</samp>';
-      return longText;
-    }*/
 
     $scope.toggleText = function($event) {
 
@@ -156,26 +127,6 @@ define(function (require) {
     /******************************************************************************|
     |                                DATA LOAD                                     |
     |******************************************************************************/
-      dataService.getStrategiesCountries().then(function (data) {
-        data.data.resultset.map(function (elem) {
-          var param = (!!$stateParams.filter) ? $stateParams.filter : undefined;
-          if(elem[1] != $scope.pCountry2){
-              $scope.countriesDataFor.push({
-              country: elem[0],
-              country_code: elem[1]
-            });
-          }
-
-          if(elem[1] != $scope.pCountry1){
-            $scope.countriesCompareWith.push({
-              country: elem[0],
-              country_code: elem[1]
-            });
-          }
-        });
-      }).catch(function (err) {
-          throw err;
-      });
 
       dataService.getStrategiesIndicators().then(function (data) {
         data.data.resultset.map(function (elem) {
@@ -186,7 +137,6 @@ define(function (require) {
             text: elem[1]
           });
         });
-        //$log.warn($scope.indicators);
       }).catch(function (err) {
           throw err;
       });
@@ -206,7 +156,6 @@ define(function (require) {
             text8: elem[9]
           };
         });
-        //$log.warn($scope.country1Data);
       }).catch(function (err) {
           throw err;
       });
@@ -226,7 +175,6 @@ define(function (require) {
             text8: elem[9]
           };
         });
-        //$log.warn($scope.country2Data);
       }).catch(function (err) {
           throw err;
       });
@@ -236,16 +184,15 @@ define(function (require) {
     /******************************************************************************|
     |                                 FILTERS                                      |
     |******************************************************************************/
-      $scope.countryChange = function () {
-        if ($state.current.name !== undefined) {
-          //$state.transitionTo('economic-sector-profile', {pCountry1: $scope.pCountry1, pCountry2: $scope.pCountry2,}, {notify: false});
-          $state.go($state.current.name, {
-            pCountry1: $scope.pCountry1,
-            pCountry2: $scope.pCountry2,
-            pIndicator: $scope.pIndicator
-          });
-        }
-      };
+    $scope.countryChange = function () {
+      if ($state.current.name !== undefined) {
+        $state.go($state.current.name, {
+          pCountry1: $scope.pCountry1,
+          pCountry2: $scope.pCountry2,
+          pIndicator: $scope.pIndicator
+        });
+      }
+    };
 
     /******************************END FILTERS************************************/
 
