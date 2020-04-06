@@ -56,7 +56,7 @@ define(function (require) {
                 id: 'osh-infrastructure', 
                 name: 'L22016',
                 firstSubsection: 'enforcement_capacity',
-                firstIndicatorId: '126'
+                firstIndicatorId: '285'
         }];
 
         //Lists

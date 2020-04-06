@@ -81,7 +81,7 @@
                 "tabindex":"9",
                 "accesskey":"",
                 "database_name":"SOCIAL_DIALOGUE",
-                "firstIndicatorId": "100"
+                "firstIndicatorId": "354"
             }
         ]
     },
@@ -135,7 +135,7 @@
                 "id":"mental-risk",
                 "name":"L20710",
                 "database_name":"MENTAL_RISKS",
-                "firstIndicatorId": "113"
+                "firstIndicatorId": "323"
             },
             {
                 "id":"physical-risk",
@@ -150,7 +150,7 @@
                 "tabindex":"15",
                 "accesskey":"",
                 "database_name":"PREVENTION_IN_COMPANIES",
-                "firstIndicatorId": "120"
+                "firstIndicatorId": "304"
             },
             {
                 "id":"worker-involvement",
@@ -159,7 +159,7 @@
                 "tabindex":"16",
                 "accesskey":"",
                 "database_name":"WORKER_INVOLVEMENT",
-                "firstIndicatorId": "123"
+                "firstIndicatorId": "353"
             }
         ]
 
@@ -177,7 +177,7 @@
                 "tabindex":"18",
                 "accesskey":"4",
                 "database_name":"ENFORCEMENT_CAPACITY",
-                "firstIndicatorId": "126"
+                "firstIndicatorId": "285"
             },
             {
                 "id":"osh-statistics",
