@@ -101,10 +101,13 @@ define(function (require) {
 	                      	});
                     	});
 
+
                     	if ($scope.indicators.length == 1)
                     	{
                     		$scope.methodologyType = 1;
                     	}
+
+                    	
 	                }).catch(function (err) {
 	                    throw err;
 	                });
