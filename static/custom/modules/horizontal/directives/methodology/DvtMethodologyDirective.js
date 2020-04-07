@@ -102,8 +102,8 @@ define(function (require) {
 
 	                      	console.log("DVT TEST");
 	                      	console.log(elem);
-	                      	console.log(i18n_literals['L'+elem[5]);
-	                      	console.log($scope.i18nLiterals['L'+elem[5]);
+	                      	console.log(i18n_literals['L'+elem[5]]);
+	                      	console.log($scope.i18nLiterals['L'+elem[5]]);
                     	});
 
 
