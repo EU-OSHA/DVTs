@@ -99,6 +99,11 @@ define(function (require) {
 	                            visualisation: elem[14],
 	                            additional_comments: elem[15]
 	                      	});
+
+	                      	console.log("DVT TEST");
+	                      	console.log(elem);
+	                      	console.log(i18n_literals['L'+elem[5]);
+	                      	console.log($scope.i18nLiterals['L'+elem[5]);
                     	});
 
 
