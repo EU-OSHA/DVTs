@@ -2631,12 +2631,12 @@ INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="WORKING_CONDITIONS" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+577, null, @sectionId, "OVERALL_OP_HEADER");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+577, "EN", 1, "This topic displays data on the workers´ overall general assessment of risks and their overall satisfaction with working conditions");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+577, "EN", 1, "This topic displays data on the workers´ overall general assessment of risks and their overall satisfaction with working conditions. Note: Percentages might not total 100% because of rounding.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="WORKING_CONDITIONS" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+578, null, @sectionId, "MENTAL_RISKS_HEADER");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+578, "EN", 1, "This topic displays data from surveys on certain important aspects of mental risks such as time pressure, poor communication or cooperation, employees´ lack of influence, job insecurity, difficult customers or clients, long or irregular working hours and discrimination");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+578, "EN", 1, "This topic displays data from surveys on certain important aspects of mental risks such as time pressure, poor communication or cooperation, employees´ lack of influence, job insecurity, difficult customers or clients, long or irregular working hours and discrimination. Note: Percentages might not total 100% because of rounding.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="WORKING_CONDITIONS" AND tool_id=@toolId);
@@ -2771,7 +2771,7 @@ INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="PREVENTION" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+605, null, @sectionId, "CHART FOOTER");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+605, "EN", 1, "<p>Responses to Evaluated aspects can be found in <a href=\"https://osha.europa.eu/en/surveys-and-statistics-osh/esener/2014?locale=EN&amp;dataSource=esener04&amp;media=png&amp;width=740&amp;question=Q252_1&amp;plot=heatMap&amp;countryGroup=linear&amp;subset=Sectorgrp&amp;subsetValue=All&amp;answer=1--Yes\" target=\"_blank\">ESENER 2019 Survey</a> in the section OSH Management – Aspects evaluated in the workplace risk assessment. For further information please, check the <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology\">ESENER methodology.</a></p>");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+605, "EN", 1, "<p>Responses to Evaluated aspects can be found in <a href=\"https://osha.europa.eu/en/surveys-and-statistics-osh/esener/2014?locale=EN&amp;dataSource=esener04&amp;media=png&amp;width=740&amp;question=Q252_1&amp;plot=heatMap&amp;countryGroup=linear&amp;subset=Sectorgrp&amp;subsetValue=All&amp;answer=1--Yes\" target=\"_blank\">ESENER 2019 Survey</a> in the section OSH Management – Aspects evaluated in the workplace risk assessment. For further information please, check the <a target=\"blank\" href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology\">ESENER methodology.</a></p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="PREVENTION" AND tool_id=@toolId);
@@ -3249,11 +3249,6 @@ INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+712, null, @
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+712, "EN", 1, "Explore also following topics:");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="ECONOMIC_AND_SECTOR_PROFILE" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+713, null, @sectionId, "LITERAL");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+713, "EN", 1, "Note: Not all data is available for every country");
-
-SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="OSH_STATISTICS" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+714, null, @sectionId, "FILTER_LITERAL");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+714, "EN", 1, "OSH statistics");
@@ -3267,11 +3262,6 @@ SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="OSH_STATISTICS" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+716, null, @sectionId, "FILTER_LITERAL");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+716, "EN", 1, "Research Institutes");
-
-SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="WORKING_CONDITIONS" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+718, null, @sectionId, "BOX_MESSAGE");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+718, "EN", 1, "Note: Percentages might not total 100% because of rounding");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="METHODOLOGY" AND tool_id=@toolId);
@@ -3560,7 +3550,7 @@ INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2028, null, @sectionId, "BOX_MESSAGE");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2028, "EN", 1, "The indicator ‘Economic and sector profile’ displays relevant data on the economy and sectoral structure of the EU and its Member States, e.g. percentages of company size, employment per sector and information on gross domestic product.");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2028, "EN", 1, "<p>The indicator &lsquo;Economic and sector profile&rsquo; displays relevant data on the economy and sectoral structure of the EU and its Member States, e.g. percentages of company size, employment per sector and information on gross domestic product. Note: Not all data is available for every country.</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
@@ -3620,7 +3610,7 @@ INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2054, null, @sectionId, "BOX_MESSAGE");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2054, "EN", 1, "This indicator provides data on typical aspects of OSH culture and health awareness such as sickness absence analysis, existence of prevention plans, or the implementation of measures for better safety and health.");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2054, "EN", 1, "This indicator provides data on typical aspects of OSH culture and health awareness such as sickness absence analysis, existence of prevention plans, or the implementation of measures for better safety and health. Note: Percentages might not total 100% because of rounding.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
@@ -5988,7 +5978,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "See more in its <a target=\"blank\" href=\"https://www.forsakringskassan.se \">website</a> and in <a target=\"_blank\" href=\"https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Sweden \">OSHwiki</a>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p>If sickness (not related to work) occurs, the Swedish Social Insurance Agency pays a compensation to the employee. Detailed rules can be found here: <a href=\"https://www.forsakringskassan.se/privatpers/sjuk\">https://www.forsakringskassan.se/privatpers/sjuk</a></p>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p>If sickness (not related to work) occurs, the Swedish Social Insurance Agency pays a compensation to the employee. Detailed rules can be found here: <a target=\"blank\" href=\"https://www.forsakringskassan.se/privatpers/sjuk\">https://www.forsakringskassan.se/privatpers/sjuk</a></p>");
 INSERT INTO matrix_page(page, nuts_id, check_1, check_2, check_3, check_4, text_1_literal_id, text_2_literal_id, text_3_literal_id)  VALUES ("MATRIX_AUTHORITY", @nutsId, 0, 1, 0, 0, @maxId+1, @maxId+2, @maxId+3);
 
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -6375,7 +6365,7 @@ SET @nutsId = (SELECT id FROM nuts WHERE country_code="BE");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, NULL, "MATRIX_STATISTICS_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "Statistical Annual report Fund for occupational diseases (2014)");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, NULL, "MATRIX_STATISTICS_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p><strong>Data holder:</strong></p><p><a href=\"https://www.fedris.be/nl/publicaties\">Fund for occupational diseases&nbsp;</a></p><p><strong>Functionalities:</strong></p><ul><li><span style=\"text-indent: -18pt; font-size: 7.5pt; font-family: 'Lucida Sans Unicode', sans-serif;\">Monitoring of occupational diseases&nbsp;- (2010-2014</span><span style=\"font-family: 'Lucida Sans Unicode', sans-serif;\"><span style=\"font-size: 10px;\">)</span></span></li></ul><p>&nbsp;</p>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p><strong>Data holder:</strong></p><p><a target=\"blank\"  href=\"https://www.fedris.be/nl/publicaties\">Fund for occupational diseases&nbsp;</a></p><p><strong>Functionalities:</strong></p><ul><li><span style=\"text-indent: -18pt; font-size: 7.5pt; font-family: 'Lucida Sans Unicode', sans-serif;\">Monitoring of occupational diseases&nbsp;- (2010-2014</span><span style=\"font-family: 'Lucida Sans Unicode', sans-serif;\"><span style=\"font-size: 10px;\">)</span></span></li></ul><p>&nbsp;</p>");
 INSERT INTO matrix_page(page, nuts_id, check_1, check_2, check_3, check_4, text_1_literal_id, text_2_literal_id, text_3_literal_id) VALUES ("MATRIX_STATISTICS", @nutsId, 1, 0, 0, false, @maxId+1, @maxId+2, null);
 
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -6660,7 +6650,7 @@ SET @nutsId = (SELECT id FROM nuts WHERE country_code="FR");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, NULL, "MATRIX_STATISTICS_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "Institut de veille sanitaire (INVS)");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, NULL, "MATRIX_STATISTICS_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p><strong>Data holder:</strong></p><p><a href=\"http://www.invs.sante.fr/Dossiers-thematiques/Travail-et-sante/Maladies-a-caractere-professionnel/Qu-est-ce-qu-une-maladie-a-caractere-professionnel\">Institut de veille sanitaire (INVS)</a></p><p><strong>Functionalities:</strong></p><ul><li>Monitoring of work-related illness - (2009-2010-2011-2012-2013-2014-2015-2016)</li></ul>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p><strong>Data holder:</strong></p><p><a target=\"_blank\" href=\"http://www.invs.sante.fr/Dossiers-thematiques/Travail-et-sante/Maladies-a-caractere-professionnel/Qu-est-ce-qu-une-maladie-a-caractere-professionnel\">Institut de veille sanitaire (INVS)</a></p><p><strong>Functionalities:</strong></p><ul><li>Monitoring of work-related illness - (2009-2010-2011-2012-2013-2014-2015-2016)</li></ul>");
 INSERT INTO matrix_page(page, nuts_id, check_1, check_2, check_3, check_4, text_1_literal_id, text_2_literal_id, text_3_literal_id) VALUES ("MATRIX_STATISTICS", @nutsId, 1, 0, 0, false, @maxId+1, @maxId+2, null);
 
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -6710,7 +6700,7 @@ SET @nutsId = (SELECT id FROM nuts WHERE country_code="UK");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, NULL, "MATRIX_STATISTICS_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "Labour Force Survey LFS 'workplace injury' survey");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, NULL, "MATRIX_STATISTICS_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p><strong>Data holder:</strong></p><p><a href=\"http://www.hse.gov.uk/statistics/lfs/\">Office for National Statistics</a></p><p><strong>Functionalities:</strong></p><ul><li>Monitoring of work accidents - (first included in the LFS in 1990, with a limited question set included annually since 1993/1994)</li></ul>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p><strong>Data holder:</strong></p><p><a target=\"_blank\" href=\"http://www.hse.gov.uk/statistics/lfs/\">Office for National Statistics</a></p><p><strong>Functionalities:</strong></p><ul><li>Monitoring of work accidents - (first included in the LFS in 1990, with a limited question set included annually since 1993/1994)</li></ul>");
 INSERT INTO matrix_page(page, nuts_id, check_1, check_2, check_3, check_4, text_1_literal_id, text_2_literal_id, text_3_literal_id) VALUES ("MATRIX_STATISTICS", @nutsId, 1, 0, 0, false, @maxId+1, @maxId+2, null);
 
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -7724,7 +7714,7 @@ SET @nutsId = (SELECT id FROM nuts WHERE country_code="DK");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, NULL, "MATRIX_STATISTICS_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "Danish Working Environment Research Fund");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, NULL, "MATRIX_STATISTICS_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p><a href=\"https://amid.dk/en/about-us/research-fund/%20\">Link&nbsp;</a>to the institute</p><p><strong>Short abstract</strong></p><p>The objective of the Danish Working Environment Research Fund is to strengthen Danish working environment research through the adoption of a research strategy and allocation of funds, based on the prioritised themes laid out in the research strategy. Presently, these themes are:</p><ul><li>work accidents;</li><li>psychological working environment;</li><li>musculoskeletal disorders;</li><li>OSH instruments.</li></ul><p>The fund supports research and development in OSH, with the purpose of preventing and reducing issues in the working environment that lead to mental and physical health problems and early retirement from the labour market. The fund also supports reviews of occupational diseases on the basis of specific calls for applications. From 2003 to 2016, the fund approved research grants for 284 projects amounting to DKK&nbsp;758.7&nbsp;million. The Danish Working Environment Research Fund invites applications twice a year, with deadlines around 1&nbsp;March and 1&nbsp;September.</p><p>See more in&nbsp;<a href=\"https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Denmark%20\" target=\"_blank\">OSHWiki</a></p>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p><a target=\"_blank\" href=\"https://amid.dk/en/about-us/research-fund/%20\">Link&nbsp;</a>to the institute</p><p><strong>Short abstract</strong></p><p>The objective of the Danish Working Environment Research Fund is to strengthen Danish working environment research through the adoption of a research strategy and allocation of funds, based on the prioritised themes laid out in the research strategy. Presently, these themes are:</p><ul><li>work accidents;</li><li>psychological working environment;</li><li>musculoskeletal disorders;</li><li>OSH instruments.</li></ul><p>The fund supports research and development in OSH, with the purpose of preventing and reducing issues in the working environment that lead to mental and physical health problems and early retirement from the labour market. The fund also supports reviews of occupational diseases on the basis of specific calls for applications. From 2003 to 2016, the fund approved research grants for 284 projects amounting to DKK&nbsp;758.7&nbsp;million. The Danish Working Environment Research Fund invites applications twice a year, with deadlines around 1&nbsp;March and 1&nbsp;September.</p><p>See more in&nbsp;<a href=\"https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Denmark%20\" target=\"_blank\">OSHWiki</a></p>");
 INSERT INTO matrix_page(page, nuts_id, check_1, check_2, check_3, check_4, text_1_literal_id, text_2_literal_id, text_3_literal_id) VALUES ("MATRIX_STATISTICS", @nutsId, 0, 0, 1, false, @maxId+1, @maxId+2, null);
 
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -9671,7 +9661,7 @@ SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.t
 SET @datasetId = (SELECT id FROM dataset WHERE source="ESENER" AND date_from="2019-01-01");
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "<p>A description of the social dialogue in each country, downloadable as a PDF file, is available too. The source of the descriptions of social dialogue is a preparatory report for DG Employment, Social Affairs and Inclusion from 2018. Most of the data were compiled in 2016 or 2017.<br /> (Kooperationsstelle Hamburg IFE/EUROGIP: Development and design of a structural model for the construction and implementation of an EU OSH Information System, Final Report, March 2018, Service contract No VC/2016/0055)</p><p>The description was prepared by the contractor based on literature, particularly from Eurofound <br /> <a href=\"https://www.eurofound.europa.eu/topic/social-dialogue\">https://www.eurofound.europa.eu/topic/social-dialogue</a> <br /> and EU-OSHA’s OSHwiki information offer<br /> <a href=\"https://oshwiki.eu/wiki/Category:OSH_systems_at_national_level\">https://oshwiki.eu/wiki/Category:OSH_systems_at_national_level</a></p>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "<p>A description of the social dialogue in each country, downloadable as a PDF file, is available too. The source of the descriptions of social dialogue is a preparatory report for DG Employment, Social Affairs and Inclusion from 2018. Most of the data were compiled in 2016 or 2017.<br /> (Kooperationsstelle Hamburg IFE/EUROGIP: Development and design of a structural model for the construction and implementation of an EU OSH Information System, Final Report, March 2018, Service contract No VC/2016/0055)</p><p>The description was prepared by the contractor based on literature, particularly from Eurofound <br /> <a target=\"_blank\" href=\"https://www.eurofound.europa.eu/topic/social-dialogue\">https://www.eurofound.europa.eu/topic/social-dialogue</a> <br /> and EU-OSHA’s OSHwiki information offer<br /> <a target=\"_blank\" href=\"https://oshwiki.eu/wiki/Category:OSH_systems_at_national_level\">https://oshwiki.eu/wiki/Category:OSH_systems_at_national_level</a></p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p>The percentages of positive responses to four questions in ESENER 2019 are displayed for each Member State in a box as percentages. <strong>This indicator asks specifically about the existence of:</strong></p>
 <ul>
@@ -9727,10 +9717,10 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 </p>
 <p>The description was prepared by the contractor based on literature, particularly from Eurofound
   <br>
-  <a href=\"https://www.eurofound.europa.eu/topic/social-dialogue\">https://www.eurofound.europa.eu/topic/social-dialogue</a>
+  <a target=\"_blank\" href=\"https://www.eurofound.europa.eu/topic/social-dialogue\">https://www.eurofound.europa.eu/topic/social-dialogue</a>
   <br>and EU-OSHA’s OSHwiki information offer
   <br>
-  <a href=\"https://oshwiki.eu/wiki/Category:OSH_systems_at_national_level\">https://oshwiki.eu/wiki/Category:OSH_systems_at_national_level</a>
+  <a target=\"_blank\" href=\"https://oshwiki.eu/wiki/Category:OSH_systems_at_national_level\">https://oshwiki.eu/wiki/Category:OSH_systems_at_national_level</a>
 </p>
 <p>The figure for Trade union representation of Austria is not based on ESENER data but on information provided by the National Contact Point of the Member State.</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -9783,7 +9773,7 @@ SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.t
 SET @datasetId = (SELECT id FROM dataset WHERE source="ESENER" AND date_from="2019-01-01");
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "<p>A description of the social dialogue in each country, downloadable as a PDF file, is available too. The source of the descriptions of social dialogue is a preparatory report for DG Employment, Social Affairs and Inclusion from 2018. Most of the data were compiled in 2016 or 2017.<br /> (Kooperationsstelle Hamburg IFE/EUROGIP: Development and design of a structural model for the construction and implementation of an EU OSH Information System, Final Report, March 2018, Service contract No VC/2016/0055)</p><p>The description was prepared by the contractor based on literature, particularly from Eurofound <br /> <a href=\"https://www.eurofound.europa.eu/topic/social-dialogue\">https://www.eurofound.europa.eu/topic/social-dialogue</a> <br /> and EU-OSHA’s OSHwiki information offer<br /> <a href=\"https://oshwiki.eu/wiki/Category:OSH_systems_at_national_level\">https://oshwiki.eu/wiki/Category:OSH_systems_at_national_level</a></p>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "<p>A description of the social dialogue in each country, downloadable as a PDF file, is available too. The source of the descriptions of social dialogue is a preparatory report for DG Employment, Social Affairs and Inclusion from 2018. Most of the data were compiled in 2016 or 2017.<br /> (Kooperationsstelle Hamburg IFE/EUROGIP: Development and design of a structural model for the construction and implementation of an EU OSH Information System, Final Report, March 2018, Service contract No VC/2016/0055)</p><p>The description was prepared by the contractor based on literature, particularly from Eurofound <br /> <a target=\"_blank\" href=\"https://www.eurofound.europa.eu/topic/social-dialogue\">https://www.eurofound.europa.eu/topic/social-dialogue</a> <br /> and EU-OSHA’s OSHwiki information offer<br /> <a target=\"_blank\" href=\"https://oshwiki.eu/wiki/Category:OSH_systems_at_national_level\">https://oshwiki.eu/wiki/Category:OSH_systems_at_national_level</a></p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p>The percentages of positive responses to four questions in ESENER 2019 are displayed for each Member State in a box as percentages. <strong>This indicator asks specifically about the existence of:</strong></p>
 <ul>
@@ -9834,7 +9824,7 @@ SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.t
 SET @datasetId = (SELECT id FROM dataset WHERE source="ESENER" AND date_from="2019-01-01");
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "<p>A description of the social dialogue in each country, downloadable as a PDF file, is available too. The source of the descriptions of social dialogue is a preparatory report for DG Employment, Social Affairs and Inclusion from 2018. Most of the data were compiled in 2016 or 2017.<br /> (Kooperationsstelle Hamburg IFE/EUROGIP: Development and design of a structural model for the construction and implementation of an EU OSH Information System, Final Report, March 2018, Service contract No VC/2016/0055)</p><p>The description was prepared by the contractor based on literature, particularly from Eurofound <br /> <a href=\"https://www.eurofound.europa.eu/topic/social-dialogue\">https://www.eurofound.europa.eu/topic/social-dialogue</a> <br /> and EU-OSHA’s OSHwiki information offer<br /> <a href=\"https://oshwiki.eu/wiki/Category:OSH_systems_at_national_level\">https://oshwiki.eu/wiki/Category:OSH_systems_at_national_level</a></p>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "<p>A description of the social dialogue in each country, downloadable as a PDF file, is available too. The source of the descriptions of social dialogue is a preparatory report for DG Employment, Social Affairs and Inclusion from 2018. Most of the data were compiled in 2016 or 2017.<br /> (Kooperationsstelle Hamburg IFE/EUROGIP: Development and design of a structural model for the construction and implementation of an EU OSH Information System, Final Report, March 2018, Service contract No VC/2016/0055)</p><p>The description was prepared by the contractor based on literature, particularly from Eurofound <br /> <a target=\"_blank\" href=\"https://www.eurofound.europa.eu/topic/social-dialogue\">https://www.eurofound.europa.eu/topic/social-dialogue</a> <br /> and EU-OSHA’s OSHwiki information offer<br /> <a target=\"_blank\" href=\"https://oshwiki.eu/wiki/Category:OSH_systems_at_national_level\">https://oshwiki.eu/wiki/Category:OSH_systems_at_national_level</a></p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p>The percentages of positive responses to four questions in ESENER 2019 are displayed for each Member State in a box as percentages. <strong>This indicator asks specifically about the existence of:</strong></p>
 <ul>
