@@ -36,7 +36,7 @@ define(function (require) {
                 return ["TR", "UA", "BY", "AL", "MK", "BA", "RS", "MD"];
             },
             nonEUCountry: function (country) {
-                if(country == 'IS' || country == 'NO' || country == 'CH'){ //Island, Norway and Switzerland
+                if(country == 'IS' || country == 'NO' || country == 'CH' || country == "UK"){ //Island, Norway, Switzerland and United Kingdom
                     return true;
                 }
                 return false;

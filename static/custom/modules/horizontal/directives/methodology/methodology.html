@@ -13,7 +13,7 @@
 				<p data-ng-bind-html="i18nLiterals['L'+indicator.description]" data-ng-if="i18nLiterals['L'+indicator.description] != 'null'"></p>
 				<!-- Datasource -->
 				<h4 data-ng-bind="i18nLiterals.L20722" data-ng-if="indicator.datasource != 'null'"></h4>
-				<p data-ng-if="i18nLiterals['L'+indicator.datasource] != 'null'" data-ng-bind-html="i18nLiterals['L'+indicator.datasource]"></p>
+				<p data-ng-bind-html="i18nLiterals['L'+indicator.datasource]" data-ng-if="i18nLiterals['L'+indicator.datasource] != 'null'"></p>
 				<!-- Specific table / Question -->
 				<h4 data-ng-bind="i18nLiterals.L20723" data-ng-if="i18nLiterals['L'+indicator.specific_table] != 'null'"></h4>
 				<p data-ng-bind-html="i18nLiterals['L'+indicator.specific_table]" data-ng-if="i18nLiterals['L'+indicator.specific_table] != 'null'"></p>
@@ -61,8 +61,8 @@
 			<h3 data-ng-bind="i18nLiterals.L20721" data-ng-if="i18nLiterals['L'+indicator.description] != 'null'"></h3>
 			<p data-ng-bind-html="i18nLiterals['L'+indicator.description]" data-ng-if="i18nLiterals['L'+indicator.description] != 'null'"></p>
 			<!-- Datasource -->
-			<h3 data-ng-bind="i18nLiterals.L20722" data-ng-if="indicator.datasource != 'null'"></h4>
-			<p data-ng-if="i18nLiterals['L'+indicator.datasource] != 'null'" data-ng-bind-html="i18nLiterals['L'+indicator.datasource]"></p>
+			<h3 data-ng-bind="i18nLiterals.L20722" data-ng-if="indicator.datasource != 'null'"></h3>
+			<p data-ng-bind-html="i18nLiterals['L'+indicator.datasource]" data-ng-if="i18nLiterals['L'+indicator.datasource] != 'null'"></p>
 			<!-- Specific table / Question -->
 			<h3 data-ng-bind="i18nLiterals.L20723" data-ng-if="i18nLiterals['L'+indicator.specific_table] != 'null'"></h3>
 			<p data-ng-bind-html="i18nLiterals['L'+indicator.specific_table]" data-ng-if="i18nLiterals['L'+indicator.specific_table] != 'null'"></p>
