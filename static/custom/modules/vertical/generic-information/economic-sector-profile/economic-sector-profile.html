@@ -4,7 +4,7 @@
     <div class="container horizontal-nopadding">        
       <div class="left-text col-md-8 col-sm-8 col-xs-12  nopadding">
           <h1 class="main-color left-text" data-ng-bind="i18nLiterals.L22003"></h1>
-          <p data-ng-bind="i18nLiterals.L22028"></p>
+          <p data-ng-bind-html="i18nLiterals.L22028"></p>
           <span data-ng-bind="(i18nLiterals.L20696)+(' ')+(i18nLiterals.L20704)"></span> <span><a data-ng-bind="i18nLiterals.L20705" ui-sref="about-tool-detail-page({pSection: 'generic-information', pSubsection: 'economic_sector_profile', pIndicator: 31})"></a></span>
       </div>
       <div class="icon--advice economic-chart-icon hide-mobile col-sm-4 col-md-4"></div>
@@ -37,9 +37,6 @@
   <div class="line background-main-light"></div>
 
   <section class="container section--page">
-    <div class="note">
-      <p data-ng-bind="i18nLiterals.L20713"></p>
-    </div>
     <div class="card--grid xxs-w1 xs-w2 w3 center-text">
       <!-- CONTENT -->
         <!-- COMPANY SIZE -->
