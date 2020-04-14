@@ -154,7 +154,6 @@
 			AND v.indicator_id = 126 AND n.literal_id=t.literal_id)
 			AND t.language="EN"
 			AND n.country_code NOT IN ('EU28', 'EU27_2020', 'AL', 'ME', 'MK', 'RS', 'TR', ${pCountry})
-			ORDER BY country_code ASC
 			)UNION(	      
 			SELECT DISTINCT(n.country_code) as country_code, CONCAT ("(",n.country_code, ") ", t.text) as country_name
 			FROM strategies_page sp
@@ -163,8 +162,7 @@
 			WHERE sp.page = 'STRATEGY_ENFOR_CAPACITY'
 			AND t.language="EN"
 			AND n.country_code NOT IN ('EU28', 'EU27_2020', 'AL', 'ME', 'MK', 'RS', 'TR', ${pCountry})
-			ORDER BY country_code ASC
-			)
+			) ORDER BY country_code ASC
 	    </Query>
 	</DataAccess>
 
