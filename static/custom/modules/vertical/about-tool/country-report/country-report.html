@@ -1,0 +1,25 @@
+<dvt-dashboard promises="promises" parameters="dashboard.parameters" class="full-country-report">
+
+  <section data-ng-if="state.current.name != 'home'" id="not-home-cover" class="advice--icon--block advice--block-not-home background-main-light container-fluid section--page">
+    <div class="container horizontal-nopadding">        
+      <div class="left-text col-md-8 col-sm-8 col-xs-12  nopadding">
+          <h1 class="main-color left-text" data-ng-bind="i18nLiterals.L22003"></h1>
+          <p data-ng-bind="i18nLiterals.L22028"></p>
+          <span data-ng-bind="(i18nLiterals.L20696)+(' ')+(i18nLiterals.L20704)"></span> <span><a data-ng-bind="i18nLiterals.L20705" ui-sref="about-tool-detail-page({pSection: 'generic-information', pSubsection: 'economic_sector_profile', pIndicator: 31})"></a></span>
+      </div>
+      <div class="icon--advice economic-chart-icon hide-mobile col-sm-4 col-md-4"></div>
+    </div>
+  </section>
+  <div class="compare--block container">
+      <!-- FILTERS -->
+      <form class="compare--block--form">
+        <label for="report-country" data-ng-bind="i18nLiterals.L20610"></label>
+        <dvt-select id="report-country" data-ng-cloak ng-model="pCountry2" parameter="pCountry2" params="[['pCountry', pCountry1]]"
+          listen-to="['pCountry1']" query="getAvailableEconomicSectorCountries" cda="{{::cdaGenericInformation }}" 
+          placeholder="{{pCountry2=='0'?1:0}}" data-ng-change="countryChange()">
+        </dvt-select> 
+      </form>
+  </div>
+
+  <div class="line background-main-light"></div>
+</dvt-dashboard>

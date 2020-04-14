@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CDADescriptor>
+   <DataSources>
+      <Connection id="dvt_conn" type="sql.jndi">
+         <Jndi>jdbcEuOshaBarometer</Jndi>
+      </Connection>
+   </DataSources>
+
+	<!-- STEERING OF OSH || get regulations indicators for select -->
+	<DataAccess access="public" connection="dvt_conn" id="getRegulationIndicators" type="sql">
+	    <Cache duration="3600" enabled="true" />
+	    <Columns />
+	    <Parameters>
+	      <Parameter default="41" name="pIndicator" type="Numeric" />
+	    </Parameters>
+	    <Query>
+	      SELECT id, literal_id 
+	      FROM indicator 
+	      WHERE id IN (40, 41, 42, 43, 44, 45)
+	    </Query>
+	</DataAccess>   
+</CDADescriptor>

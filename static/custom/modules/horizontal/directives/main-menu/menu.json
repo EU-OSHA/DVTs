@@ -208,6 +208,13 @@
                 "sref":"about-tool-detail-page",
                 "tabindex":"19",
                 "accesskey":"21"
+            },
+            {
+                "id":"full-country-report",
+                "name":"L22121",
+                "sref":"full-country-report",
+                "tabindex":"19",
+                "accesskey":"21"
             }
         ]
     }

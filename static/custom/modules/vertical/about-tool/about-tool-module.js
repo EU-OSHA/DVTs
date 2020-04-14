@@ -65,7 +65,23 @@ define(function (require) {
             }
         });
 
+        $stateProvider.state('full-country-report', {
+            url: "/full-country-report",
+            views: {
+                "content-main": {
+                    templateUrl: configService.getVerticalTplPath("about-tool/country-report", "country-report"),
+                    controller: 'CountryReportController',
+                    resolve: configService.dynamicallyRegisterController($controllerProvider, 'vertical/about-tool/CountryReportController', 'country-report', 'CountryReportController')
+                }
+            },
+            metaTags: {
+                title: i18n.L22019 +  " - " + i18n.L22020 + " - " + i18n.L363,
+                description: i18n.L22019,
+            }
+        });
+
     });
 
+    module.factory('CountryReportService', require('vertical/about-tool/services/CountryReportService'));
     return module;
 });
