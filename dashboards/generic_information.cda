@@ -92,6 +92,25 @@
 	    </Query>
 	</DataAccess>
 
+	<!-- HOME || ALL AVAILABLE COUNTRIES FOR NATIONAL STRATEGIES -->
+	<DataAccess access="public" connection="dvt_conn" id="getStrategiesCountriesSelect" type="sql">
+	    <Cache duration="3600" enabled="true" />
+	    <Columns />
+	    <Parameters>
+	    	<Parameter default="AT" name="pCountry" type="String"/>
+	    </Parameters>
+	    <Query>
+	      SELECT DISTINCT (n.country_code)  AS country_code, CONCAT ("(",n.country_code, ") ", t.text) AS country
+	      FROM strategies_page sp
+	      INNER JOIN nuts n ON sp.nuts_id=n.id
+	      INNER JOIN translation t ON n.literal_id=t.literal_id
+	      WHERE sp.page = 'STRATEGY'
+	      AND t.language="EN"
+	      AND n.country_code NOT IN (${pCountry})
+	      ORDER BY country_code ASC
+	    </Query>
+	</DataAccess>
+
 	<!-- HOME || ALL AVAILABLE COUNTRIES FOR REGULATIONS -->
 	<DataAccess access="public" connection="dvt_conn" id="getRegulationsCountries" type="sql">
 	    <Cache duration="3600" enabled="true" />
@@ -124,22 +143,26 @@
 	<DataAccess access="public" connection="dvt_conn" id="getEnforcementCapacityCountries" type="sql">
 	    <Cache duration="3600" enabled="true" />
 	    <Columns />
+	    <Parameters>
+	    	<Parameter default="AT" name="pCountry" type="String"/>
+	    </Parameters>
 	    <Query>
 			(
-			SELECT DISTINCT (n.literal_id) AS country, n.country_code AS country_code
-			FROM nuts n, profile p, value v
-			WHERE (n.id = p.nuts_id
-			AND p.id = v.profile_id
-			AND v.indicator_id = 126)
-			AND n.country_code NOT IN ('EU28', 'EU27_2020', 'AL', 'ME', 'MK', 'RS', 'TR')
+			SELECT DISTINCT(n.country_code) as country_code, CONCAT ("(",n.country_code, ") ", t.text) as country_name
+			FROM nuts n, profile p, value v, translation t
+			WHERE (n.id = p.nuts_id AND p.id = v.profile_id
+			AND v.indicator_id = 126 AND n.literal_id=t.literal_id)
+			AND t.language="EN"
+			AND n.country_code NOT IN ('EU28', 'EU27_2020', 'AL', 'ME', 'MK', 'RS', 'TR', ${pCountry})
 			ORDER BY country_code ASC
 			)UNION(	      
-			SELECT DISTINCT (n.literal_id) AS country, n.country_code AS country_code
+			SELECT DISTINCT(n.country_code) as country_code, CONCAT ("(",n.country_code, ") ", t.text) as country_name
 			FROM strategies_page sp
-			INNER JOIN nuts n
-			ON n.id = sp.nuts_id
+			INNER JOIN nuts n ON n.id = sp.nuts_id
+			INNER JOIN translation t ON n.literal_id=t.literal_id
 			WHERE sp.page = 'STRATEGY_ENFOR_CAPACITY'
-			AND n.country_code NOT IN ('EU28', 'EU27_2020', 'AL', 'ME', 'MK', 'RS', 'TR')
+			AND t.language="EN"
+			AND n.country_code NOT IN ('EU28', 'EU27_2020', 'AL', 'ME', 'MK', 'RS', 'TR', ${pCountry})
 			ORDER BY country_code ASC
 			)
 	    </Query>
@@ -162,16 +185,20 @@
 	<!-- HOME || ALL AVAILABLE COUNTRIES FOR ECONOMIC AND SECTOR PROFILES INDICATORS -->
 	<DataAccess access="public" connection="dvt_conn" id="getAvailableEconomicSectorCountries" type="sql">
 	    <Cache duration="3600" enabled="true" />
+	    <Parameters>
+	    	<Parameter default="AT" name="pCountry" type="String"/>
+	    </Parameters>
 	    <Columns />
 	    <Query>
-	      SELECT DISTINCT(n.literal_id) as country_name, n.country_code as country_code
+	      SELECT DISTINCT(n.country_code) as country_code, CONCAT ("(",n.country_code, ") ", t.text) as country_name
 	      FROM nuts n
-	      INNER JOIN profile p
-	      ON n.id = p.nuts_id
-	      INNER JOIN value v
-	      ON v.profile_id = p.id
+	      INNER JOIN profile p ON n.id = p.nuts_id
+	      INNER JOIN value v ON v.profile_id = p.id
+	      INNER JOIN translation t ON n.literal_id=t.literal_id
 	      WHERE v.indicator_id IN (31, 36, 37, 38, 39, 40)
 	      AND n.country_code NOT IN ('EU28')
+	      AND n.country_code NOT IN (${pCountry})
+	      AND t.language="EN"
 	      ORDER BY country_code ASC;
 	    </Query>
 	</DataAccess>

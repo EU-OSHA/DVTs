@@ -25,24 +25,24 @@
     <div class="line background-main-light"></div>
     <!-- FILTERS -->
     <form class="compare--block--form container">
-      <ul class="compare--list">
-        <!-- 1ST COUNTRY FILTER -->        
-        <li>
-          <label data-ng-bind="i18nLiterals.L20609" for="datafor"></label>
-          <select id="datafor" class="" ng-model="pCountry1" ng-selected="pCountry1" ng-change="countryChange()">
-            <option data-ng-repeat='country in countriesDataFor' data-ng-bind="('(')+(country.country_code)+(') ')+(i18nLiterals['L'+country.country])" value="{{::country.country_code}}"></option>
-          </select>
-        </li>
-        <!-- 2ND COUNTRY FILTER -->
-        <li>
-          <label data-ng-bind="i18nLiterals.L20610" for="comparewith"></label>
-          <select id="comparewith" class="" ng-model="pCountry2" ng-selected="pCountry2" ng-change="countryChange()">
-            <option data-ng-if="pCountry2 == '0'" data-ng-bind="i18nLiterals.L20630" value="0" ></option>
-            <option data-ng-repeat='country in countriesCompareWith' data-ng-bind="('(')+(country.country_code)+(') ')+(i18nLiterals['L'+country.country])" value="{{::country.country_code}}" ></option>
-          </select>
-        </li>        
-      </ul>
-    </form>
+        <ul class="compare--list">
+          <!-- 1ST COUNTRY FILTER -->
+          <li>
+            <label for="datafor" data-ng-bind="i18nLiterals.L20609"></label>
+            <dvt-select id="datafor" data-ng-cloak ng-model="pCountry1" parameter="pCountry1" params="[['pCountry', pCountry2]]"
+              listen-to="['pCountry2']" query="getEnforcementCapacityCountries" cda="{{::cdaGenericInformation }}" placeholder="0" data-ng-change="countryChange()">
+            </dvt-select>  
+          </li>
+          <!-- 2ND COUNTRY FILTER -->
+          <li>
+            <label for="comparewith" data-ng-bind="i18nLiterals.L20610"></label>
+            <dvt-select id="comparewith" data-ng-cloak ng-model="pCountry2" parameter="pCountry2" params="[['pCountry', pCountry1]]"
+              listen-to="['pCountry1']" query="getEnforcementCapacityCountries" cda="{{::cdaGenericInformation }}" 
+              placeholder="{{pCountry2=='0'?1:0}}" data-ng-change="countryChange()">
+            </dvt-select> 
+          </li>
+        </ul>
+      </form>
     <div class="line background-main-light"></div>
   </div>
 

@@ -10,13 +10,19 @@
 	<DataAccess access="public" connection="dvt_conn" id="getNonFatalAccidentsCountries" type="sql">
 	    <Cache duration="3600" enabled="true" />
 	    <Columns />
+	    <Parameters>
+	    	<Parameter default="AT" name="pCountry" type="String" />
+	    </Parameters>
 	    <Query>
-	      	SELECT DISTINCT(n.literal_id), n.country_code
-	      	FROM nuts n, profile p, value v
+	      	SELECT DISTINCT(n.country_code), CONCAT ("(",n.country_code, ") ", t.text) as country_name
+			FROM nuts n, profile p, value v, translation t
 			where n.id = p.nuts_id
 			AND v.profile_id = p.id
 			AND v.indicator_id = 53
 			AND n.country_code NOT IN ('EU28')
+			AND n.country_code NOT IN (${pCountry})
+			AND n.literal_id=t.literal_id
+			AND t.language="EN"
 			ORDER BY n.country_code ASC;
 	    </Query>
 	</DataAccess>
@@ -433,13 +439,19 @@
 	<DataAccess access="public" connection="dvt_conn" id="getHealthAtRiskCountries" type="sql">
 	    <Cache duration="3600" enabled="true" />
 	    <Columns />
+	    <Parameters>
+	    	<Parameter default="AT" name="pCountry" type="String"/>
+	    </Parameters>
 	    <Query>
-			SELECT DISTINCT(n.literal_id), n.country_code
-	      	FROM nuts n, profile p, value v
+			SELECT DISTINCT(n.country_code) as country_code, CONCAT ("(",n.country_code, ") ", t.text) as country_name
+	      	FROM nuts n, profile p, value v, translation t
 			where n.id = p.nuts_id
+			AND n.literal_id=t.literal_id
 			AND v.profile_id = p.id
 			AND v.indicator_id = 66
 			AND n.country_code NOT IN ('EU28')
+			AND n.country_code NOT IN (${pCountry})
+			AND t.language="EN"
 			ORDER BY n.country_code ASC;
 	    </Query>
 	</DataAccess>
@@ -856,16 +868,20 @@
         <Columns />
         <Parameters>
             <Parameter default="10" name="pDataset" type="Numeric"/>
+            <Parameter default="AT" name="pCountry" type="String"/>
         </Parameters>
         <Query>
-            SELECT DISTINCT(n.literal_id), n.country_code
-	      	FROM nuts n, profile p, value v, dataset d
+            SELECT DISTINCT(n.country_code) as country_code, CONCAT ("(",n.country_code, ") ", t.text) as country_name
+	      	FROM nuts n, profile p, value v, dataset d, translation t
 			where n.id = p.nuts_id
 			AND v.profile_id = p.id
 			AND d.id = v.dataset_id
+			AND n.literal_id=t.literal_id
             AND d.id = ${pDataset}
 			AND v.indicator_id IN (70, 69, 68, 67)
+			AND t.language="EN"
 			AND n.country_code NOT IN ('EU28')
+			AND n.country_code NOT IN (${pCountry})
 			ORDER BY n.country_code ASC;
         </Query>
    	</DataAccess>
@@ -1055,16 +1071,20 @@
         <Columns />
         <Parameters>
             <Parameter default="10" name="pDataset" type="Numeric"/>
+            <Parameter default="AT" name="pCountry" type="String"/>
         </Parameters>
         <Query>
-            SELECT DISTINCT(n.literal_id), n.country_code
-              FROM nuts n, profile p, value v, dataset d
+            SELECT DISTINCT(n.country_code) as country_code, CONCAT ("(",n.country_code, ") ", t.text) as country_name
+              FROM nuts n, profile p, value v, dataset d, translation t
             where n.id = p.nuts_id
             AND v.profile_id = p.id
             AND d.id = v.dataset_id
+            AND n.literal_id=t.literal_id
             AND d.id = ${pDataset}
             AND v.indicator_id IN (90, 93, 92, 94, 91)
+            AND t.language="EN"
             AND n.country_code NOT IN ('EU28')
+            AND n.country_code NOT IN (${pCountry})
             ORDER BY n.country_code ASC;
         </Query>
     </DataAccess>
@@ -1075,17 +1095,21 @@
         <Columns />
         <Parameters>
             <Parameter default="10" name="pDataset" type="Numeric"/>
+            <Parameter default="AT" name="pCountry" type="String"/>
         </Parameters>
         <Query>
-            SELECT DISTINCT(n.literal_id), n.country_code
-              FROM nuts n, profile p, value v, dataset d
+            SELECT DISTINCT(n.country_code) as country_code, CONCAT ("(",n.country_code, ") ", t.text) as country_name
+              FROM nuts n, profile p, value v, dataset d, translation t
             where n.id = p.nuts_id
             AND n.country_code NOT IN('AL', 'ME', 'MK', 'RS', 'TR')
             AND v.profile_id = p.id
             AND d.id = v.dataset_id
+            AND n.literal_id=t.literal_id
             AND d.id = ${pDataset}
+            AND t.language="EN"
             AND v.indicator_id IN (293, 291, 292, 364)
             AND n.country_code NOT IN ('EU28', 'EU27_2020')
+            AND n.country_code NOT IN (${pCountry})
             ORDER BY n.country_code ASC;
         </Query>
     </DataAccess>
@@ -1135,17 +1159,20 @@
         <Columns />
         <Parameters>
             <Parameter default="10" name="pDataset" type="Numeric"/>
+            <Parameter default="AT" name="pCountry" type="String"/>
         </Parameters>
         <Query>
-            SELECT DISTINCT(n.literal_id), n.country_code
-	      	FROM nuts n, profile p, value v, dataset d
+            SELECT DISTINCT(n.country_code) as country_code, CONCAT ("(",n.country_code, ") ", t.text) as country_name
+	      	FROM nuts n, profile p, value v, dataset d, translation t
 			where n.id = p.nuts_id
 			AND n.country_code NOT IN('AL', 'ME', 'MK', 'RS', 'TR')
 			AND v.profile_id = p.id
 			AND d.id = v.dataset_id
+			AND n.literal_id=t.literal_id
             AND d.id = ${pDataset}
 			AND v.indicator_id IN (304, 305, 360, 353)
-			AND n.country_code NOT IN ('EU27_2020')
+			AND t.language="EN"
+			AND n.country_code NOT IN ('EU27_2020', ${pCountry})
 			ORDER BY n.country_code ASC;
         </Query>
    	</DataAccess>
@@ -1308,16 +1335,19 @@
         <Columns />
         <Parameters>
             <Parameter default="10" name="pDataset" type="Numeric"/>
+            <Parameter default="AT" name="pCountry" type="String"/>
         </Parameters>
         <Query>
-            SELECT DISTINCT(n.literal_id), n.country_code
-	      	FROM nuts n, profile p, value v, dataset d
+            SELECT DISTINCT(n.country_code) as country_code, CONCAT ("(",n.country_code, ") ", t.text) as country_name
+	      	FROM nuts n, profile p, value v, dataset d, translation t
 			where n.id = p.nuts_id
 			AND v.profile_id = p.id
 			AND d.id = v.dataset_id
+			AND n.literal_id=t.literal_id
             AND d.id = ${pDataset}
 			AND v.indicator_id IN (75,95,96)
-			AND n.country_code NOT IN ('EU28')
+			AND t.language="EN"
+			AND n.country_code NOT IN ('EU28', ${pCountry})
 			ORDER BY n.country_code ASC;
         </Query>
    	</DataAccess>
@@ -1328,17 +1358,20 @@
         <Columns />
         <Parameters>
             <Parameter default="10" name="pDataset" type="Numeric"/>
+            <Parameter default="AT" name="pCountry" type="String"/>
         </Parameters>
         <Query>
-            SELECT DISTINCT(n.literal_id), n.country_code
-	      	FROM nuts n, profile p, value v, dataset d
+            SELECT DISTINCT(n.country_code) as country_code, CONCAT ("(",n.country_code, ") ", t.text) as country_name
+	      	FROM nuts n, profile p, value v, dataset d, translation t
 			where n.id = p.nuts_id
 			AND n.country_code NOT IN('AL', 'ME', 'MK', 'RS', 'TR')
 			AND v.profile_id = p.id
 			AND d.id = v.dataset_id
+			AND n.literal_id=t.literal_id
             AND d.id = ${pDataset}
+            AND t.language="EN"
 			AND v.indicator_id IN (355,357,353,361,359)
-			AND n.country_code NOT IN ('EU27_2020')
+			AND n.country_code NOT IN ('EU27_2020', ${pCountry})
 			ORDER BY n.country_code ASC;
         </Query>
    	</DataAccess>

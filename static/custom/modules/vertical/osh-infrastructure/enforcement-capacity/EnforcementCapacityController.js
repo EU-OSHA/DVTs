@@ -20,6 +20,7 @@ define(function (require) {
 
     // CDA
     $scope.cda =  configService.getOshInfraestructureCda();
+    $scope.cdaGenericInformation = configService.getGenericInformationCda();
 
     var i18nLiterals = configService.getLiterals();
     $scope.i18nLiterals = i18nLiterals;
@@ -73,6 +74,13 @@ define(function (require) {
     {
       $scope.indicatorParam = "strategy/plan";
     }
+
+    $scope.dashboard = {
+      parameters: {
+          "pCountry1": $scope.pCountry1,
+          "pCountry2": $scope.pCountry2
+      }
+    };
 
     $scope.maxCharacters = 200;
     $scope.step = 20;
@@ -175,63 +183,6 @@ define(function (require) {
     /******************************************************************************|
     |                                DATA LOAD                                     |
     |******************************************************************************/
-      dataService.getEnforcementCapacityCountries().then(function (data) {
-        var countryHasData = false;
-        data.data.resultset.map(function (elem) {
-          var param = (!!$stateParams.filter) ? $stateParams.filter : undefined;
-          if(elem[1] != $scope.pCountry2){
-              $scope.countriesDataFor.push({
-              country: elem[0],
-              country_code: elem[1]
-            });
-          }
-          if (elem[1] == $scope.pCountry1)
-          {
-            countryHasData = true;
-          }
-
-          if(elem[1] != $scope.pCountry1){
-            $scope.countriesCompareWith.push({
-              country: elem[0],
-              country_code: elem[1]
-            });
-          }
-        });
-        if (countryHasData == false)
-        {
-          $scope.pCountry1 = "AT";
-          $scope.countryChange();
-        }
-        $scope.countriesDataFor.sort(function(a, b){
-          var codeA = a.country_code;
-          var codeB = b.country_code;
-          if (codeA < codeB) {
-            return -1;
-          }
-          if (codeA > codeB) {
-            return 1;
-          }
-
-          //  be equal
-          return 0;
-        });
-        $scope.countriesCompareWith.sort(function(a, b){
-          var codeA = a.country_code;
-          var codeB = b.country_code;
-          if (codeA < codeB) {
-            return -1;
-          }
-          if (codeA > codeB) {
-            return 1;
-          }
-
-          //  be equal
-          return 0;
-        });
-      }).catch(function (err) {
-          throw err;
-      });
-
       dataService.getEnforcementCapacityIndicators().then(function (data) {
         data.data.resultset.map(function (elem) {
           var param = (!!$stateParams.filter) ? $stateParams.filter : undefined;

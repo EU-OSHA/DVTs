@@ -74,6 +74,9 @@ define(function (require) {
     $scope.color1 = resolution > 768 ? dvtUtils.getColorCountry(22) : dvtUtils.getColorCountry(1);
     $scope.color2 = resolution > 768 ? dvtUtils.getColorCountry(1) : dvtUtils.getColorCountry(22);
 
+    $scope.selectCountryQuery = $scope.pSubIndicator=='ewcs'?"getEurofoundRisksCountries":"getESENERRisksCountries";
+    $scope.selectCountryDataset = $scope.pSubIndicator=='ewcs'?$scope.datasetEurofound:$scope.datasetESENER;
+
     /*$(window).on("resize",function(e){
       resolution = screen.width;
       $state.reload();
@@ -174,144 +177,6 @@ define(function (require) {
             angular.element('div.countries-filters').slideToggle( "slow" );
         }
     }
-
-    /******************************************************************************|
-    |                                DATA LOAD                                     |
-    |******************************************************************************/
-
-      if($scope.pIndicator == 'vibrations-loud-noise-and-temperature'){
-        dataService.getVibrationCountries().then(function (data) {
-          var countryHasData = false;
-          var country2HasData = $scope.pCountry2 == "0"? true: false;
-          data.data.resultset.map(function (elem) {
-            if(elem[1] != $scope.pCountry2){
-              $scope.countriesDataFor.push({
-                country: elem[0],
-                country_code: elem[1]
-              });
-            }
-            if (elem[1] == $scope.pCountry1)
-            {
-              countryHasData = true;
-            }
-
-            if(elem[1] != $scope.pCountry1){
-              $scope.countriesCompareWith.push({
-                country: elem[0],
-                country_code: elem[1]
-              });
-            }
-            if (elem[1] == $scope.pCountry2)
-            {
-              country2HasData = true;
-            }
-          });
-          if (countryHasData == false || country2HasData == false)
-          {
-            if (countryHasData == false)
-            {
-              $scope.pCountry1 = $scope.countriesDataFor[0].country_code;
-            }
-            if (country2HasData == false)
-            {
-              $scope.pCountry2 = $scope.countriesCompareWith[0].country_code;
-            }
-            $scope.changeIndicator(null, $scope.pIndicator, $scope.pSubIndicator, false);
-          }
-        }).catch(function (err) {
-          throw err;
-        });
-      }
-
-      if($scope.pIndicator == 'risks-involve-with-work'){
-        if($scope.pSubIndicator == 'ewcs'){
-          dataService.getEurofoundRisksCountries($scope.datasetEurofound).then(function (data) {
-            var countryHasData = false;
-            var country2HasData = $scope.pCountry2 == "0"? true: false;
-            data.data.resultset.map(function (elem) {
-              if(elem[1] != $scope.pCountry2){
-                $scope.countriesDataFor.push({
-                  country: elem[0],
-                  country_code: elem[1]
-                });
-              }
-              if (elem[1] == $scope.pCountry1)
-              {
-                countryHasData = true;
-              }
-
-              if(elem[1] != $scope.pCountry1){
-                $scope.countriesCompareWith.push({
-                  country: elem[0],
-                  country_code: elem[1]
-                });
-              }
-              if (elem[1] == $scope.pCountry2)
-              {
-                country2HasData = true;
-              }
-            });
-            if (countryHasData == false || country2HasData == false)
-            {
-              if (countryHasData == false)
-              {
-                $scope.pCountry1 = "AT";
-              }
-              if (country2HasData == false)
-              {
-                $scope.pCountry2 = $scope.pCountry2 = $scope.countriesCompareWith[0].country_code;
-              }
-              $scope.changeIndicator(null, $scope.pIndicator, $scope.pSubIndicator, false);
-            }
-          }).catch(function (err) {
-            throw err;
-          });
-        }else{
-          dataService.getESENERRisksCountries($scope.datasetESENER).then(function (data) {
-            var countryHasData = false;
-            var country2HasData = $scope.pCountry2 == "0"? true: false;
-            data.data.resultset.map(function (elem) {
-              if(elem[1] != $scope.pCountry2){
-                $scope.countriesDataFor.push({
-                  country: elem[0],
-                  country_code: elem[1]
-                });
-              }
-              if (elem[1] == $scope.pCountry1)
-              {
-                countryHasData = true;
-              }
-
-              if(elem[1] != $scope.pCountry1){
-                $scope.countriesCompareWith.push({
-                  country: elem[0],
-                  country_code: elem[1]
-                });
-              }
-              if (elem[1] == $scope.pCountry2)
-              {
-                country2HasData = true;
-              }
-            });
-            if (countryHasData == false || country2HasData == false)
-            {
-              if (countryHasData == false)
-              {
-                $scope.pCountry1 = "AT";
-              }
-              if (country2HasData == false)
-              {
-                $scope.pCountry2 = $scope.pCountry2 = $scope.countriesCompareWith[0].country_code;
-              }
-              $scope.changeIndicator(null, $scope.pIndicator, $scope.pSubIndicator, false);
-            }
-          }).catch(function (err) {
-            throw err;
-          });
-        }
-      }
-
-    /******************************END DATA LOAD***********************************/
 
     /******************************************************************************|
     |                                 FILTERS                                      |
