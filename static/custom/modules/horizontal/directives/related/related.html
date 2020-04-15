@@ -1,0 +1,8 @@
+<div>
+	<p data-ng-bind="i18nLiterals.L20712"></p>
+	<div data-ng-repeat="item in items">
+		<p><span>Title: </span><span data-ng-bind="i18nLiterals[item.title]"></span></p>
+		<p><span>Text: </span><span data-ng-bind="i18nLiterals[item.text]"></span></p>
+		<p><span>Link: </span><span data-ui-sref="{{item.link}}">GO TO</span></p>
+	</div>
+</div>

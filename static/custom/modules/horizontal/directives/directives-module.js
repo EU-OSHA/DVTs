@@ -37,6 +37,7 @@ define(function (require) {
     module.directive('dvtFooter', require('dvt/directives/footer'));
     module.directive('dvtSearch', require('dvt/directives/search'));
     module.directive('dvtMethodology', require('dvt/directives/methodology'));
+    module.directive('dvtRelated', require('dvt/directives/related'));
 
     CookiesController.generateController('directives', 'CookiesController');
     MaximizeController.generateController('directives', 'MaximizeController');
