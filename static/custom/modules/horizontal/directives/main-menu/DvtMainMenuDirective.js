@@ -346,7 +346,7 @@ define(function (require) {
                                                 isCookie : false
                                             }
                                             var currentState = $state.current.name;
-                                            $state.reload();;
+                                            $state.reload();
                                         }                                        
                                     });
                                 });  
