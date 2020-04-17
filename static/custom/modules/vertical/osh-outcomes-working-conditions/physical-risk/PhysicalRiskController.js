@@ -109,6 +109,14 @@ define(function (require) {
         }
     };
 
+    $scope.relatedItems = {
+      "exposure-to-dangerous-substances":[{
+            title: "L320",
+            text: "L22054",
+            link: "osh-culture({pIndicator:'use-of-personal-protective-equipment'})"
+          }]
+    };
+
     // Conditional criteria
     var normalModeCriteriaText = function (dataset) {
       return dataset.datum.atoms.category2.value != -1?

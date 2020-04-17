@@ -108,6 +108,31 @@ define(function (require) {
         }
     };
 
+    $scope.relatedItems = {
+      "non-fatal-work-accidents":[{
+            title: "L20669",
+            text: "L20578",
+            link: "mental-risk"
+          },{
+            title: "L20711",
+            text: "L20579",
+            link: "physical-risk-vibrations-loud-noise-and-temperature"
+          },{
+            title: "L20692",
+            text: "L22063",
+            link: "enforcement-capacity"
+          }],
+      "fatal-work-accidents":[{
+            title: "L20672",
+            text: "L20578",
+            link: "mental-risk({pIndicator:'fear-of-job-loss'})"
+          },{
+            title: "L20692",
+            text: "L22063",
+            link: "enforcement-capacity"
+          }]
+    };
+
     // Conditional criteria
     var normalModeCriteriaText = function (dataset) {
       return dataset.datum.atoms.category2.value != -1?

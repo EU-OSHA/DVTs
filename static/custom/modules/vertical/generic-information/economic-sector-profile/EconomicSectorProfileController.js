@@ -184,13 +184,13 @@ define(function (require) {
 
     $scope.relatedItems = [
     {
-      title: "L1",
-      text: "L2",
+      title: "L22004",
+      text: "L22030",
       link: "workforce-profile"
     },{
-      title: "L4",
-      text: "L5",
-      link: "workforce-profile"
+      title: "L22014",
+      text: "L22058",
+      link: "prevention-companies"
     }];
 
     $scope.countriesDataFor = [];

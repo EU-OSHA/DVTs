@@ -443,23 +443,6 @@
   </section>
 
   <!-- FOOTER -->
-  <section class="container-fluid background-gray section--page explore-section">
-    <div class="container">
-      <section class="card--grid xxs-w1 w3 center-text">
-        <h2 class="title-section second-color"><span  data-ng-bind="i18nLiterals.L20712"></span></h2>
-        <div class="card--block--rounded">
-          <a class="icon--card overall-opinion-icon" ui-sref="overall-opinion"></a>
-          <h3 class="title--card main-color"><a data-ng-bind="i18nLiterals.L20709" ui-sref="overall-opinion"></a></h3>
-          <p class="btn--card--block"><a ui-sref="overall-opinion" class="btn--card main-color" data-ng-bind-html="i18nLiterals.L480"></a></p>
-        </div>
-        <div class="card--block--rounded">
-          <a class="icon--card physical-risk-icon" ui-sref="physical-risk-vibrations-loud-noise-and-temperature({pIndicator: 'vibrations-loud-noise-and-temperature', pCountry1:pCountry1, pCountry2: pCountry2})"></a>
-          <h3 class="title--card main-color"><a ui-sref="physical-risk-vibrations-loud-noise-and-temperature({pIndicator: 'vibrations-loud-noise-and-temperature', pCountry1:pCountry1, pCountry2: pCountry2})" data-ng-bind="i18nLiterals.L20711"></a></h3>
-          <p class="btn--card--block"><a ui-sref="physical-risk-vibrations-loud-noise-and-temperature({pIndicator: 'vibrations-loud-noise-and-temperature', pCountry1:pCountry1, pCountry2: pCountry2})" class="btn--card main-color" data-ng-bind-html="i18nLiterals.L480">
-          </a></p>
-        </div>
-      </section>
-    </div>
-  </section>
   <dvt-methodology father="osh-outcomes-working-conditions" section="MENTAL_RISKS" indicator="{{pIndicator}}" indicatorid="113" datasetid="{{pSplit=='esener'?datasetESENER:datasetEurofound}}"></dvt-methodology>
+  <dvt-related data-ng-if="relatedItems[pIndicator]" items="relatedItems[pIndicator]"></dvt-related>
 </dvt-dashboard>

@@ -93,6 +93,76 @@ define(function (require) {
         }
     };
 
+    $scope.relatedItems = {
+      "time-pressure":[{
+            title: "L20674",
+            text: "L20578",
+            link: "mental-risk({pIndicator:'working-hours', pSplit:'"+$scope.pSplit+"'})"
+          }],
+      "poor-communication":[{
+            title: "L20682",
+            text: "L22058",
+            link: "prevention-companies({pIndicator:'training-in-osh'})"
+          },{
+            title: "L22015",
+            text: "L22060",
+            link: "worker-involvement({pSplit:'"+$scope.pSplit+"'})"
+          }],
+      "influence":[{
+            title: "L22015",
+            text:"L22060",
+            link: "worker-involvement({pSplit:'ewcs'})"
+          },{
+            title: "L65",
+            text:"L20577",
+            link: "overall-opinion"
+          }],
+      "fear-of-job-loss":[{
+            title: "L22008",
+            text:"L22041",
+            link: "social-dialogue"
+          },{
+            title: "L322",
+            text:"L20577",
+            link: "overall-opinion"
+          }],
+      "difficult-clients":[{
+            title: "L20667",
+            text:"L22054",
+            link: "osh-culture({pIndicator:'procedures-to-deal-with-threats'})"
+          },{
+            title: "L20709",
+            text:"L20577",
+            link: "overall-opinion"
+          }],
+      "working-hours":[{
+            title: "L20666",
+            text:"L22054",
+            link: "osh-culture({pIndicator:'procedure-against-bullying'})"
+          },{
+            title: "L20667",
+            text:"L22054",
+            link: "osh-culture({pIndicator:'procedures-to-deal-with-threats'})"
+          },{
+            title: "L22003",
+            text:"L22028",
+            link: "economic-sector-profile"
+          }],
+      "discrimination":[{
+            title: "L20666",
+            text:"L22054",
+            link: "osh-culture({pIndicator:'procedure-against-bullying'})"
+          },{
+            title: "L20667",
+            text:"L22054",
+            link: "osh-culture({pIndicator:'procedures-to-deal-with-threats'})"
+          },{
+            title: "L22004",
+            text:"L22030",
+            link: "workforce-profile"
+          }]
+    };
+
     // Conditional criteria
     var normalModeCriteriaText = function (dataset) {
       return dataset.datum.atoms.category2.value != -1?

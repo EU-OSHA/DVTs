@@ -104,6 +104,50 @@ define(function (require) {
         }
     };
 
+    $scope.relatedItems = {
+      "risk-assessment":[{
+            title: "L20692",
+            text: "L22063",
+            link: "enforcement-capacity"
+          },{
+            title: "L20681",
+            text: "L22058",
+            link: "prevention-companies"
+          }],
+      "internal-or-external-ra":[{
+            title: "L20692",
+            text: "L22063",
+            link: "enforcement-capacity"
+          },{
+            title: "L20681",
+            text: "L22058",
+            link: "prevention-companies"
+          }],
+      "evaluated-aspects-in-risk-assessments":[{
+            title: "L20692",
+            text: "L22063",
+            link: "enforcement-capacity"
+          }],
+      "training-in-osh":[{
+            title: "L22012",
+            text:"L22054",
+            link: "osh-culture"
+          },{
+            title: "L22008",
+            text:"L22041",
+            link: "social-dialogue"
+          }],
+      "employees-participation-in-prevention":[{
+            title: "L22015",
+            text:"L22060",
+            link: "worker-involvement"
+          },{
+            title: "L22011",
+            text:"L22052",
+            link: "health-preception-of-workers"
+          }]
+    };
+
     // Conditional criteria
     var normalModeCriteriaText = function (dataset) {
       return dataset.datum.atoms.category2.value != -1?

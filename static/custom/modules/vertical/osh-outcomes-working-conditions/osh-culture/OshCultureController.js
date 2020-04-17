@@ -85,6 +85,72 @@ define(function (require) {
       }
     ];
 
+    $scope.relatedItems = {
+      "health-and-safety-discussed":[{
+            title: "L20679",
+            text: "L22058",
+            link: "prevention-companies"
+          },{
+            title: "L22015",
+            text: "L22060",
+            link: "worker-involvement"
+          }],
+      "action-plan-to-prevent-stress":[{
+            title: "L64",
+            text: "L22060",
+            link: "osh-culture({pIndicator:'information-about-risks'})"
+          },{
+            title: "L20681",
+            text: "L22058",
+            link: "prevention-companies"
+          }],
+      "procedure-against-bullying":[{
+            title: "L20675",
+            text: "L20578",
+            link: "mental-risk({pIndicator:'discrimination'})"
+          },{
+            title: "L65",
+            text: "L20577",
+            link: "overall-opinion"
+          }],
+      "procedures-to-deal-with-threats":[{
+            title: "L20675",
+            text: "L20578",
+            link: "mental-risk({pIndicator:'discrimination'})"
+          },{
+            title: "L20673",
+            text: "L22578",
+            link: "mental-risk({pIndicator:'difficult-clients'})"
+          }],
+      "measures-to-reduce-work-pressure":[{
+            title: "L20669",
+            text: "L20578",
+            link: "mental-risk"
+          },{
+            title: "L20674",
+            text: "L22578",
+            link: "mental-risk({pIndicator:'working-hours'})"
+          }],
+      "use-of-personal-protective-equipment":[{
+            title: "L20656",
+            text: "L20579",
+            link: "physical-risk-risks-involved-with-work"
+          },{
+            title: "L20664",
+            text: "L22054",
+            link: "osh-culture"
+          }],
+      "information-about-risks":[{
+            title: "L20679",
+            text: "L22058",
+            link: "prevention-companies"
+          },{
+            title: "L22015",
+            text: "L22060",
+            link: "worker-involvement"
+          }]
+    };
+
     $scope.step = 20;
 
     var resolution = window.resolution;

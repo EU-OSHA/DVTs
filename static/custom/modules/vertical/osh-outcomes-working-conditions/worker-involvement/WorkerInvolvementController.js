@@ -96,6 +96,16 @@ define(function (require) {
         }
     };
 
+    $scope.relatedItems = [{
+            title: "L22008",
+            text: "L22041",
+            link: "social-dialogue"
+          },{
+            title: "L20683",
+            text: "L22058",
+            link: "prevention-companies({pIndicator:'employees-participation-in-prevention'})"
+          }];
+
     // Conditional criteria
     var normalModeCriteriaText = function (dataset) {
       return dataset.datum.atoms.category2.value != -1?
