@@ -2329,3 +2329,10 @@ width:auto!important;
 body{
   -ms-overflow-style: scrollbar;
 }
+
+div[query='getSectorActivityData'], 
+div[query='getEstablishmentSizeData']{
+  svg{
+    overflow: visible !important;
+  }
+}
