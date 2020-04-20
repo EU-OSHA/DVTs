@@ -317,6 +317,7 @@
         font-weight: bold;
         position: relative;
         white-space: normal;
+        display: inline-block;
         &:after{
           font-weight:normal;
           content: "\f105";
