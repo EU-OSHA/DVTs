@@ -345,6 +345,7 @@ define(function (require) {
                                                 code : coordinates.countryCode,
                                                 isCookie : false
                                             }
+                                            $rootScope.defaultCountryDefaultValue = coordinates.countryCode;
                                             var currentState = $state.current.name;
                                             $state.reload();
                                         }                                        
@@ -355,6 +356,7 @@ define(function (require) {
                                 code: "AT",
                                 isCookie: false
                             }
+                            $rootScope.defaultCountryDefaultValue = "AT";
                         }                        
                     }
             }],
