@@ -60,7 +60,7 @@ define(function (require) {
             $rootScope.defaultCountry="";
             $scope.pCountry1 = "0";
           }
-          else if ($rootScope.defaultCountry != undefined && $rootScope.defaultCountry != "" && e.currentTarget.classList.value.indexOf("country-lock") != -1)
+          else if ($rootScope.defaultCountry != undefined && $rootScope.defaultCountry != "" && e.currentTarget.classList[0].indexOf("country-lock") != -1)
           {
             removed = true;
             
