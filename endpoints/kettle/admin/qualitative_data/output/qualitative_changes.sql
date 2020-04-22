@@ -2571,7 +2571,7 @@ INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="WORKACC" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+565, null, @sectionId, "CHART FOOTER");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+565, "EN", 1, "The diagram shows the development of non-fatal work accidents 2010 to the latest available year. 2010 is the baseline and equal to 100 %. Despite the efforts of EUROSTAT and its ESAW-System to achieve harmonisation, there are major concerns about the comparability of data.");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+565, "EN", 1, "The diagram shows the development of non-fatal work accidents between 2010 until the latest available year. The year 2010 has been set as baseline (2010 = 100). The country lines and the EU-line (dark blue) show the trend as percentage of the value of this base year.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="WORKACC" AND tool_id=@toolId);
@@ -4054,6 +4054,11 @@ SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2186, null, @sectionId, "MESSAGE");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2186, "EN", 1, "Country selected!");
+
+SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
+SET @sectionId = (SELECT id FROM section WHERE name="PHYSICAL_RISK" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2187, null, @sectionId, "ESENER_LITERAL_QUESTION");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2187, "EN", 1, "Sitting");
 
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="AT");
