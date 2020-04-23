@@ -31,10 +31,6 @@ define(function (require) {
 					var i18n_literals = configService.getLiterals();
 					$scope.i18nLiterals = i18n_literals;
 
-					console.log("DVT DEV");
-					console.log($scope.items);
-					console.log($scope.items.length);
-
 					$scope.indicators = [];
 			}],
 			templateUrl: configService.getHorizontalDirectiveTplPath("related", "related")

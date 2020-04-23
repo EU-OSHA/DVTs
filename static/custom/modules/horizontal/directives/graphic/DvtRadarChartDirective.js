@@ -528,8 +528,11 @@ define(function (require) {
 							//labels
 							if (!!opts.drawLabels) {
 								var i = opts.labels.length;
+								var titles = new Object();
 								while (i--) {
-									var textObject = label(cx, cy, 150, startAngle + angle * i);
+									var textObject = label(cx, cy, 210, startAngle + angle * i);
+									textObject.attr.title=opts.labels[i];
+									titles[opts.labels[i]] = opts.titles[i];
 									var fulltext = opts.labels[i];
 									var text = paper.text(textObject.x, textObject.y, fulltext).attr(textObject.attr);
 									fulltext = fulltext.replace("-", "- ").replace("/", "/ ");
@@ -555,25 +558,21 @@ define(function (require) {
 										text.attr("cursor", "context-menu");
 										text.attr("font-family", "OpenSans");
 										text.id = fulltext;
-										//text.click(clicked);
-										/*text.hover(
-											function () {
-												$log.debug("hello....." + this.id);
-												this.c = this.c || this.attr("fill");
-												this.s = this.s || this.attr("font-size");
-												this.stop().animate({
-													fill: dvtUtils.getColorCountry(1),
-													"font-size": 20
-												}, 200);
+										// text.click(function(){});
+										text.hover(
+											function () 
+											{
+												// Add the title to the label if it doesn't exist
+												if (this["node"].innerHTML.indexOf("<title>") == -1)
+												{
+													this["node"].innerHTML = this["node"].innerHTML + "<title>"+titles[this.id]+"</title>";	
+												}											
 											},
-											function () {
-												$log.debug("bye....." + this.id);
-												$log.debug(this);
-												this.stop().animate({
-													fill: this.c,
-													"font-size": this.s
-												}, 350);
-											});*/
+											function () 
+											{
+												
+											}
+										);
 										var tempText = "";
 										for (var i1 = 0; i1 < wordsCount; ++i1) 
                                         {
@@ -723,6 +722,7 @@ define(function (require) {
 							.then(function (dataset) {
 								var firstIndicatorValues = [],
 									firstIndicatorLabels = [],
+									firstIndicatorTitles = [],
 									secondIndicatorValues = [],
 									thirdIndicatorValues = [],
 									indicatorNames = [];
@@ -735,6 +735,11 @@ define(function (require) {
 									// add indicator name for technical legend
 									if (indicatorNames.indexOf(element[2])<0){
 										indicatorNames.push(element[2])
+									}
+									// Add title to show when hovering on the text
+									if (element[3])
+									{
+										firstIndicatorTitles.push(element[3]);
 									}
 								});
 
@@ -783,6 +788,7 @@ define(function (require) {
 								{
 									meshSize: attributes.meshSize || 20,//the space between adjacent meshes,
 									labels: firstIndicatorLabels,
+									titles: firstIndicatorTitles,
 									labelFontSize: 14, //huge font
 									labelColor: "black", // labels font color
 									drawLabels: attributes.drawLabels || true, //to draw labels or not

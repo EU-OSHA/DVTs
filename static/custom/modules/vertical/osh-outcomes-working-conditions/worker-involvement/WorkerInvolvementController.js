@@ -85,7 +85,7 @@ define(function (require) {
     $scope.step = 20;
 
     $scope.axisMax = ($scope.pSplit == 'esener')?100:80;
-    $scope.height = ($scope.pSplit == 'esener')?450:470;
+    $scope.height = ($scope.pSplit == 'esener')?510:530;
     $scope.story = ($scope.pSplit == 'esener')?$scope.stories[0].promises.story1:$scope.stories[1].promises.story2;
 
     $scope.dashboard = {};
