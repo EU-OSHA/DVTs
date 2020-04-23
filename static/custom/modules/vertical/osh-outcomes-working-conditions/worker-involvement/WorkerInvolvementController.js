@@ -39,7 +39,7 @@ define(function (require) {
     }
     else
     {
-      $scope.pCountry1 = "AT";
+      $scope.pCountry1 = $rootScope.defaultCountryDefaultValue;
     }
     if ($stateParams.pCountry2 != null)
     {
