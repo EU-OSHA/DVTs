@@ -89,65 +89,79 @@ define(function (require) {
       "health-and-safety-discussed":[{
             title: "L20679",
             text: "L22058",
-            link: "prevention-companies"
+            link: "prevention-companies",
+            icon: "prevention"
           },{
             title: "L22015",
             text: "L22060",
-            link: "worker-involvement"
+            link: "worker-involvement",
+            icon: "workers"
           }],
       "action-plan-to-prevent-stress":[{
             title: "L64",
             text: "L22060",
-            link: "osh-culture({pIndicator:'information-about-risks'})"
+            link: "osh-culture({pIndicator:'information-about-risks'})",
+            icon: "culture"
           },{
             title: "L20681",
             text: "L22058",
-            link: "prevention-companies"
+            link: "prevention-companies",
+            icon: "prevention"
           }],
       "procedure-against-bullying":[{
             title: "L20675",
             text: "L20578",
-            link: "mental-risk({pIndicator:'discrimination'})"
+            link: "mental-risk({pIndicator:'discrimination'})",
+            icon: "mental-risk"
           },{
             title: "L65",
             text: "L20577",
-            link: "overall-opinion"
+            link: "overall-opinion",
+            icon: "overall-opinion"
           }],
       "procedures-to-deal-with-threats":[{
             title: "L20675",
             text: "L20578",
-            link: "mental-risk({pIndicator:'discrimination'})"
+            link: "mental-risk({pIndicator:'discrimination'})",
+            icon: "mental-risk"
           },{
             title: "L20673",
             text: "L22578",
-            link: "mental-risk({pIndicator:'difficult-clients'})"
+            link: "mental-risk({pIndicator:'difficult-clients'})",
+            icon: "mental-risk"
           }],
       "measures-to-reduce-work-pressure":[{
             title: "L20669",
             text: "L20578",
-            link: "mental-risk"
+            link: "mental-risk",
+            icon: "mental-risk"
           },{
             title: "L20674",
             text: "L22578",
-            link: "mental-risk({pIndicator:'working-hours'})"
+            link: "mental-risk({pIndicator:'working-hours'})",
+            icon: "mental-risk"
           }],
       "use-of-personal-protective-equipment":[{
             title: "L20656",
             text: "L20579",
-            link: "physical-risk-risks-involved-with-work"
+            link: "physical-risk-risks-involved-with-work",
+            icon: "physical-risk"
           },{
             title: "L20664",
             text: "L22054",
-            link: "osh-culture"
+            link: "osh-culture",
+            icon: "culture"
           }],
       "information-about-risks":[{
             title: "L20679",
             text: "L22058",
-            link: "prevention-companies"
+            link: "prevention-companies",
+            icon: "prevention"
           },{
             title: "L22015",
             text: "L22060",
-            link: "worker-involvement"
+            link: "worker-involvement",
+            icon: "workers"
           }]
     };
 

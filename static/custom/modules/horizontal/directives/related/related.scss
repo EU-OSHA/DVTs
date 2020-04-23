@@ -1,0 +1,51 @@
+.section--related--content{
+	background: $aquamarine-light;
+	.related--content--wrapper{
+		h2{
+			color: $aquamarine;
+			text-align: center;
+			font-size: 3.6rem;
+			margin-bottom: 5rem; 
+		}
+		.related-content-items{
+			display: flex;
+	    justify-content: center;
+	    flex-direction: row;
+			.related-content-item{
+				display: flex;
+				flex-direction: row;
+				padding-right: 2rem;
+    		border-right: 2px solid $aquamarine;
+    		margin-right: 2rem;
+    		&:last-child{
+					border:0px;
+    		}
+				.icon-related-item{
+					border-radius: 60rem;
+  				width: 16rem;
+  				height: 16rem;
+  				background-color: $white;
+					background-size: 60%;
+					background-position: 50% 45%;
+				}
+				.content-related-item{
+					width: 20rem;
+    			padding-left: 2rem;
+					.title-related-item{
+    				font-family: "OpenSans-bold";
+    				font-size: 2.2rem;
+    				margin-top: 0;
+					}
+					.title-related-item{
+
+					}
+					.button-related-item{
+						a{
+							width: auto !important;
+						}
+					}
+				}
+			}
+		}
+	}
+}

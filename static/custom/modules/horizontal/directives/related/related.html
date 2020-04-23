@@ -1,8 +1,15 @@
-<div>
-	<p data-ng-bind="i18nLiterals.L20712"></p>
-	<div data-ng-repeat="item in items">
-		<p><span>Title: </span><span data-ng-bind="i18nLiterals[item.title]"></span></p>
-		<p><span>Text: </span><span data-ng-bind="i18nLiterals[item.text]"></span></p>
-		<p><span>Link: </span><span data-ui-sref="{{item.link}}">GO TO</span></p>
+<section class="container-full section--page section--related--content">
+	<div class="container related--content--wrapper">
+		<h2 class="title-related-content" data-ng-bind="i18nLiterals.L20712"></h2>
+		<div class="related-content-items">
+			<div class="related-content-item" data-ng-repeat="item in items">
+				<div class="icon-related-item hide-mobile" data-ng-class="indicatorIcons(item)"></div>
+				<div class="content-related-item">
+					<h3 class="title-related-item" data-ng-bind="i18nLiterals[item.title]"></h3>
+					<p class="text-related-item" data-ng-bind="i18nLiterals[item.text]"></p>
+					<p class="button-related-item btn--block-full left-text"><a class="btn-default btn-main-color" data-ui-sref="{{item.link}}">See more</a></p>
+				</div>
+			</div>
+		</div>
 	</div>
 </div>

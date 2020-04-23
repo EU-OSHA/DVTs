@@ -125,18 +125,21 @@ define(function (require) {
       "background":[{
             title: "L22002",
             text: "L22025",
-            link: "osh-authorities"
+            link: "osh-authorities",
+            icon: "forum"
           }],
       "actors-and-stakeholders":[{
             title: "L22008",
             text: "L22041",
-            link: "social-dialogue"
+            link: "social-dialogue",
+            icon: "dialogue"
           }],
       "relationship-to-eu-strategic-framework":
       [{
             title: "L22002",
             text: "L22025",
-            link: "osh-authorities"
+            link: "osh-authorities",
+            icon: "authorities"
           }]
     };
     console.log("DVT DEV");

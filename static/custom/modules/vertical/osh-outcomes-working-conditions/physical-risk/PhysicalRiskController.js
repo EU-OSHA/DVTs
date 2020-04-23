@@ -113,7 +113,8 @@ define(function (require) {
       "exposure-to-dangerous-substances":[{
             title: "L320",
             text: "L22054",
-            link: "osh-culture({pIndicator:'use-of-personal-protective-equipment'})"
+            link: "osh-culture({pIndicator:'use-of-personal-protective-equipment'})",
+            icon: "culture"
           }]
     };
 

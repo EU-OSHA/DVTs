@@ -108,43 +108,52 @@ define(function (require) {
       "risk-assessment":[{
             title: "L20692",
             text: "L22063",
-            link: "enforcement-capacity"
+            link: "enforcement-capacity",
+            icon: "enforcement"
           },{
             title: "L20681",
             text: "L22058",
-            link: "prevention-companies"
+            link: "prevention-companies",
+            icon: "prevention"
           }],
       "internal-or-external-ra":[{
             title: "L20692",
             text: "L22063",
-            link: "enforcement-capacity"
+            link: "enforcement-capacity",
+            icon: "enforcement"
           },{
             title: "L20681",
             text: "L22058",
-            link: "prevention-companies"
+            link: "prevention-companies",
+            icon: "prevention"
           }],
       "evaluated-aspects-in-risk-assessments":[{
             title: "L20692",
             text: "L22063",
-            link: "enforcement-capacity"
+            link: "enforcement-capacity",
+            icon: "enforcement"
           }],
       "training-in-osh":[{
             title: "L22012",
             text:"L22054",
-            link: "osh-culture"
+            link: "osh-culture",
+            icon: "culture"
           },{
             title: "L22008",
             text:"L22041",
-            link: "social-dialogue"
+            link: "social-dialogue",
+            icon: "dialogue"
           }],
       "employees-participation-in-prevention":[{
             title: "L22015",
             text:"L22060",
-            link: "worker-involvement"
+            link: "worker-involvement",
+            icon: "workers"
           },{
             title: "L22011",
             text:"L22052",
-            link: "health-preception-of-workers"
+            link: "health-preception-of-workers",
+            icon: "enforcement"
           }]
     };
 

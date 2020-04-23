@@ -186,11 +186,13 @@ define(function (require) {
     {
       title: "L22004",
       text: "L22030",
-      link: "workforce-profile"
+      link: "workforce-profile",
+      icon: "people-group"
     },{
       title: "L22014",
       text: "L22058",
-      link: "prevention-companies"
+      link: "prevention-companies",
+      icon: "prevention"
     }];
 
     $scope.countriesDataFor = [];

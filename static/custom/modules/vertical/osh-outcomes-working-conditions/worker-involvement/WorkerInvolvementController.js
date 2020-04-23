@@ -99,11 +99,13 @@ define(function (require) {
     $scope.relatedItems = [{
             title: "L22008",
             text: "L22041",
-            link: "social-dialogue"
+            link: "social-dialogue",
+            icon: "dialogue"
           },{
             title: "L20683",
             text: "L22058",
-            link: "prevention-companies({pIndicator:'employees-participation-in-prevention'})"
+            link: "prevention-companies({pIndicator:'employees-participation-in-prevention'})",
+            icon: "prevention"
           }];
 
     // Conditional criteria

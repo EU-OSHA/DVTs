@@ -117,24 +117,29 @@ define(function (require) {
       "job-satisfaction":[{
             title: "L22011",
             text: "L22052",
-            link: "health-perception-of-workers"
+            link: "health-perception-of-workers",
+            icon: "health"
           },{
             title: "L20672",
             text: "L20578",
-            link: "mental-risk({pIndicator:'fear-of-job-loss', pSplit:'esener'})"
+            link: "mental-risk({pIndicator:'fear-of-job-loss', pSplit:'esener'})",
+            icon: "mental-risk"
           }],
       "health-at-risk":[{
             title: "L22011",
             text: "L22052",
-            link: "health-perception-of-workers"
+            link: "health-perception-of-workers",
+            icon: "health"
           },{
             title: "L22008",
             text: "L22041",
-            link: "social-dialogue"
+            link: "social-dialogue",
+            icon: "dialogue"
           },{
             title: "L20679",
             text: "L22058",
-            link: "prevention-companies"
+            link: "prevention-companies",
+            icon: "prevention"
           }]
     };
 

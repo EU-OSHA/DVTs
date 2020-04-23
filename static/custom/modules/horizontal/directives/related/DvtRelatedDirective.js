@@ -32,6 +32,9 @@ define(function (require) {
 					$scope.i18nLiterals = i18n_literals;
 
 					$scope.indicators = [];
+					$scope.indicatorIcons = function(item){
+						return(item.icon+'-icon');
+					}
 			}],
 			templateUrl: configService.getHorizontalDirectiveTplPath("related", "related")
 		}
