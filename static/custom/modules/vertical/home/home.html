@@ -497,11 +497,25 @@
 <script>
 (function(){
   $(document).ready(function() {
-		var screenWidth = screen.width;
+		
+
+		function getWidth(){
+		if (typeof window.innerWidth != 'undefined') {
+			  return window.innerWidth;
+			}
+		else if (typeof document.documentElement != 'undefined' && typeof document.documentElement.clientWidth != 'undefined' && document.documentElement.clientWidth != 0) {
+			   return document.documentElement.clientWidth;
+			}
+		else {
+			   return document.getElementsByTagName('body')[0].clientWidth;
+			}
+		}
+
+		var screenWidth = getWidth();
 		createCarousel(screenWidth);
 
 		$(window).on("resize scroll",function(e){
-		  var screenWidth = screen.width;
+		  var screenWidth = getWidth();		  
       createCarousel(screenWidth);
 		});
 
@@ -514,7 +528,7 @@
 		}
 
 		function createCarousel(screenWidth){
-      
+
       if( screenWidth >= 1919){
 				numItems = 6;
       }

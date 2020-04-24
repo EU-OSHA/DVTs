@@ -74,7 +74,7 @@ define(function (require) {
     }
     else
     {
-      $scope.pCountry1 = "AT";
+      $scope.pCountry1 = $rootScope.defaultCountryDefaultValue;
     }
     if ($rootScope.defaultCountry2 != undefined)
     {

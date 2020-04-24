@@ -197,7 +197,7 @@
 }
 .discover--charts--section{
   display: flex;
-  justify-content: space-evenly;
+  justify-content:space-around;
   @media screen and (max-width:767px){
     flex-direction: column;
     .title-section {
@@ -267,8 +267,12 @@
           padding: 2rem;
           display: flex;
           flex-direction: column;
+          min-height: 30rem;
           .title--card{
-            //min-height: 6rem;
+            min-height: 5.6rem;
+            @media screen and (max-width: 768px){
+              min-height: auto;
+            }
             a{
               color: #666;
             }  
@@ -277,8 +281,8 @@
             position: relative; 
             line-height: 1.2em;
             /* max-height = line-height (1.2) * lines max number (3) */
-            max-height: 3.6em; 
-            margin-top: auto;
+            //max-height: 3.6em; 
+            //margin-top: auto;
           }
         }
       }
@@ -613,7 +617,7 @@ and (max-width : 950px){
   .home{
     .btn--block-full{
       .btn-default{
-        min-height:7.2rem;
+        //min-height:7.2rem;
       }
     }
   }
