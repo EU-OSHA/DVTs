@@ -93,6 +93,91 @@ define(function (require) {
         }
     };
 
+    $scope.relatedItems = {
+      "time-pressure":[{
+            title: "L20674",
+            text: "L20578",
+            link: "mental-risk({pIndicator:'working-hours', pSplit:'"+$scope.pSplit+"'})",
+            icon: "mental-risk"
+          }],
+      "poor-communication":[{
+            title: "L20682",
+            text: "L22058",
+            link: "prevention-companies({pIndicator:'training-in-osh'})",
+            icon: "prevention"
+          },{
+            title: "L22015",
+            text: "L22060",
+            link: "worker-involvement({pSplit:'"+$scope.pSplit+"'})",
+            icon: "workers"
+          }],
+      "influence":[{
+            title: "L22015",
+            text:"L22060",
+            link: "worker-involvement({pSplit:'ewcs'})",
+            icon: "workers"
+          },{
+            title: "L65",
+            text:"L20577",
+            link: "overall-opinion",
+            icon: "overall-opinion"
+          }],
+      "fear-of-job-loss":[{
+            title: "L22008",
+            text:"L22041",
+            link: "social-dialogue",
+            icon: "mental-risk"
+          },{
+            title: "L322",
+            text:"L20577",
+            link: "overall-opinion",
+            icon: "overall-opinion"
+          }],
+      "difficult-clients":[{
+            title: "L20667",
+            text:"L22054",
+            link: "osh-culture({pIndicator:'procedures-to-deal-with-threats'})",
+            icon: "culture"
+          },{
+            title: "L20709",
+            text:"L20577",
+            link: "overall-opinion",
+            icon: "overall-opinion"
+          }],
+      "working-hours":[{
+            title: "L20666",
+            text:"L22054",
+            link: "osh-culture({pIndicator:'procedure-against-bullying'})",
+            icon: "culture"
+          },{
+            title: "L20667",
+            text:"L22054",
+            link: "osh-culture({pIndicator:'procedures-to-deal-with-threats'})",
+            icon: "culture"
+          },{
+            title: "L22003",
+            text:"L22028",
+            link: "economic-sector-profile",
+            icon: "economic-chart"
+          }],
+      "discrimination":[{
+            title: "L20666",
+            text:"L22054",
+            link: "osh-culture({pIndicator:'procedure-against-bullying'})",
+            icon: "culture"
+          },{
+            title: "L20667",
+            text:"L22054",
+            link: "osh-culture({pIndicator:'procedures-to-deal-with-threats'})",
+            icon: "culture"
+          },{
+            title: "L22004",
+            text:"L22030",
+            link: "workforce-profile",
+            icon: "people-group"
+          }]
+    };
+
     // Conditional criteria
     var normalModeCriteriaText = function (dataset) {
       return dataset.datum.atoms.category2.value != -1?

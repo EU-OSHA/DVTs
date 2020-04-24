@@ -117,11 +117,34 @@ define(function (require) {
           angular.element(' span.dots', angular.element($event.target).parent().parent().parent()).toggle();
           //Para cambiar del boton see more al boton see less
           angular.element(' a', angular.element($event.target).parent().parent()).toggle();
-        }
-        
-       
+        }       
       }
     }
+
+    $scope.relatedItems = {
+      "background":[{
+            title: "L22002",
+            text: "L22025",
+            link: "osh-authorities",
+            icon: "forum"
+          }],
+      "actors-and-stakeholders":[{
+            title: "L22008",
+            text: "L22041",
+            link: "social-dialogue",
+            icon: "dialogue"
+          }],
+      "relationship-to-eu-strategic-framework":
+      [{
+            title: "L22002",
+            text: "L22025",
+            link: "osh-authorities",
+            icon: "authorities"
+          }]
+    };
+    console.log("DVT DEV");
+    console.log($scope.relatedItems);
+    console.log($scope.relatedItems[$scope.pIndicator]);
 
 
     /******************************************************************************|

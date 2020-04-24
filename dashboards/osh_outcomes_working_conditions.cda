@@ -894,16 +894,21 @@
             <Parameter default="10" name="pDataset" type="Numeric"/>
         </Parameters>
         <Query>
-            SELECT t.text as Indicator, ROUND(v.value*100,1) as Value, n.country_code as Country
-			FROM nuts n, profile p, value v, dataset d, indicator i, translation t
+            SELECT t.text as Indicator, ROUND(v.value*100,1) as Value, n.country_code as Country, t1.text AS Title
+			FROM nuts n, profile p, value v, dataset d, translation t, indicator i, translation t1
 			WHERE n.id = p.nuts_id
 			AND v.indicator_id IN (70, 69, 68, 67)
-			AND i.id = v.indicator_id
-			AND i.literal_id = t.literal_id
 			AND v.profile_id = p.id
 			AND d.id = v.dataset_id
 			AND d.id = ${pDataset}
-			AND n.country_code = 'EU28';
+			AND v.indicator_id=i.id
+			AND i.literal_id=t1.literal_id
+			AND n.country_code = 'EU28'
+			AND CASE WHEN v.indicator_id=67 THEN t.literal_id=22153
+			ELSE CASE WHEN v.indicator_id=68 THEN t.literal_id=22155
+			ELSE CASE WHEN v.indicator_id=69 THEN t.literal_id=22156
+			ELSE t.literal_id=22154 END END END
+			ORDER BY v.indicator_id ASC;
         </Query>
    	</DataAccess>
 
@@ -916,16 +921,21 @@
             <Parameter default="AT" name="pCountry" type="String"/>
         </Parameters>
         <Query>
-            SELECT t.text as Indicator, ROUND(v.value*100,1) as Value, IF(n.name REGEXP 'European Union', n.country_code, CONCAT("(", n.country_code, ") ", n.name)) as Country
-			FROM nuts n, profile p, value v, dataset d, indicator i, translation t
+            SELECT t.text as Indicator, ROUND(v.value*100,1) as Value, IF(n.name REGEXP 'European Union', n.country_code, CONCAT("(", n.country_code, ") ", n.name)) as Country, t1.text AS Title
+			FROM nuts n, profile p, value v, dataset d, translation t, indicator i, translation t1
 			WHERE n.id = p.nuts_id
 			AND v.indicator_id IN (70, 69, 68, 67)
-			AND i.id = v.indicator_id
-			AND i.literal_id = t.literal_id
 			AND v.profile_id = p.id
 			AND d.id = v.dataset_id
 			AND d.id = ${pDataset}
-			AND n.country_code = ${pCountry};
+			AND v.indicator_id=i.id
+			AND i.literal_id=t1.literal_id
+			AND n.country_code = ${pCountry}
+			AND CASE WHEN v.indicator_id=67 THEN t.literal_id=22153
+			ELSE CASE WHEN v.indicator_id=68 THEN t.literal_id=22155
+			ELSE CASE WHEN v.indicator_id=69 THEN t.literal_id=22156
+			ELSE t.literal_id=22154 END END END
+			ORDER BY v.indicator_id ASC;
         </Query>
    	</DataAccess>
 
@@ -938,16 +948,21 @@
             <Parameter default="AT" name="pCountry" type="String"/>
         </Parameters>
         <Query>
-            SELECT t.text as Indicator, ROUND(v.value*100,1) as Value, IF(n.name REGEXP 'European Union', n.country_code, CONCAT("(", n.country_code, ") ", n.name)) as Country
-			FROM nuts n, profile p, value v, dataset d, indicator i, translation t
+            SELECT t.text as Indicator, ROUND(v.value*100,1) as Value, IF(n.name REGEXP 'European Union', n.country_code, CONCAT("(", n.country_code, ") ", n.name)) as Country, t1.text AS Title
+			FROM nuts n, profile p, value v, dataset d, translation t, indicator i, translation t1
 			WHERE n.id = p.nuts_id
 			AND v.indicator_id IN (70, 69, 68, 67)
-			AND i.id = v.indicator_id
-			AND i.literal_id = t.literal_id
 			AND v.profile_id = p.id
 			AND d.id = v.dataset_id
 			AND d.id = ${pDataset}
-			AND n.country_code = ${pCountry};
+			AND v.indicator_id=i.id
+			AND i.literal_id=t1.literal_id
+			AND n.country_code = ${pCountry}
+			AND CASE WHEN v.indicator_id=67 THEN t.literal_id=22153
+			ELSE CASE WHEN v.indicator_id=68 THEN t.literal_id=22155
+			ELSE CASE WHEN v.indicator_id=69 THEN t.literal_id=22156
+			ELSE t.literal_id=22154 END END END
+			ORDER BY v.indicator_id ASC;
         </Query>
    	</DataAccess>
 
@@ -1005,16 +1020,22 @@
             <Parameter default="10" name="pDataset" type="Numeric"/>
         </Parameters>
         <Query>
-            SELECT t.text as Indicator, ROUND(v.value*100,1) as Value, n.country_code as Country
-			FROM nuts n, profile p, value v, dataset d, indicator i, translation t
+            SELECT t.text as Indicator, ROUND(v.value*100,1) as Value, n.country_code as Country, t1.text AS Title
+			FROM nuts n, profile p, value v, dataset d, translation t, indicator i, translation t1
 			WHERE n.id = p.nuts_id
 			AND v.indicator_id IN (90, 93, 92, 94, 91)
-			AND i.id = v.indicator_id
-			AND i.literal_id = t.literal_id
 			AND v.profile_id = p.id
 			AND d.id = v.dataset_id
 			AND d.id = ${pDataset}
-			AND n.country_code = 'EU28';
+			AND v.indicator_id=i.id
+			AND i.literal_id=t1.literal_id
+			AND n.country_code = 'EU28'
+			AND CASE WHEN v.indicator_id=90 THEN t.literal_id=22161
+			ELSE CASE WHEN v.indicator_id=91 THEN t.literal_id=22163
+			ELSE CASE WHEN v.indicator_id=92 THEN t.literal_id=22165
+			ELSE CASE WHEN v.indicator_id=93 THEN t.literal_id=22164
+			ELSE t.literal_id=22162 END END END END
+			ORDER BY v.indicator_id ASC;
         </Query>
    	</DataAccess>
 
@@ -1027,16 +1048,22 @@
             <Parameter default="AT" name="pCountry" type="String"/>
         </Parameters>
         <Query>
-            SELECT t.text as Indicator, ROUND(v.value*100,1) as Value, IF(n.name REGEXP 'European Union', n.country_code, CONCAT("(", n.country_code, ") ", n.name)) as Country
-			FROM nuts n, profile p, value v, dataset d, indicator i, translation t
+            SELECT t.text as Indicator, ROUND(v.value*100,1) as Value, IF(n.name REGEXP 'European Union', n.country_code, CONCAT("(", n.country_code, ") ", n.name)) as Country, t1.text AS Title
+			FROM nuts n, profile p, value v, dataset d, translation t, indicator i, translation t1
 			WHERE n.id = p.nuts_id
 			AND v.indicator_id IN (90, 93, 92, 94, 91)
-			AND i.id = v.indicator_id
-			AND i.literal_id = t.literal_id
 			AND v.profile_id = p.id
 			AND d.id = v.dataset_id
 			AND d.id = ${pDataset}
-			AND n.country_code = ${pCountry};
+			AND v.indicator_id=i.id
+			AND i.literal_id=t1.literal_id
+			AND n.country_code = ${pCountry}
+			AND CASE WHEN v.indicator_id=90 THEN t.literal_id=22161
+			ELSE CASE WHEN v.indicator_id=91 THEN t.literal_id=22163
+			ELSE CASE WHEN v.indicator_id=92 THEN t.literal_id=22165
+			ELSE CASE WHEN v.indicator_id=93 THEN t.literal_id=22164
+			ELSE t.literal_id=22162 END END END END
+			ORDER BY v.indicator_id ASC;
         </Query>
    	</DataAccess>
 
@@ -1048,20 +1075,57 @@
             <Parameter default="10" name="pDataset" type="Numeric"/>
         </Parameters>
         <Query>
-            SELECT t.text as Indicator, ROUND(v.value*100,1) as Value, n.country_code as Country
-			FROM nuts n, profile p, value v, dataset d, indicator i, translation t
+            SELECT t.text as Indicator, ROUND(v.value*100,1) as Value, n.country_code as Country, t1.text as Title
+			FROM nuts n, profile p, value v, dataset d, translation t, indicator i, translation t1
 			WHERE n.id = p.nuts_id
 			AND v.indicator_id IN (293, 291, 364, 292)
-			AND i.id = v.indicator_id
-			AND i.literal_id = t.literal_id
 			AND t.language = 'EN'
 			AND v.profile_id = p.id
 			AND p.activity_sector_id = 14
 			AND p.answer_id = 1
 			AND d.id = v.dataset_id
 			AND d.id = ${pDataset}
+			AND v.indicator_id=i.id
+			AND i.literal_id=t1.literal_id
+			AND t1.language="EN"
 			AND n.country_code = 'EU27_2020'
-			ORDER BY FIELD (i.id, 293, 291, 292, 364) ASC;
+			AND CASE WHEN v.indicator_id=293 THEN t.literal_id=22157
+			ELSE CASE WHEN v.indicator_id=291 THEN t.literal_id=22159
+			ELSE CASE WHEN v.indicator_id=292 THEN t.literal_id=22158
+			ELSE t.literal_id=22187 END END END
+			ORDER BY FIELD (v.indicator_id, 293, 291, 292, 364) ASC;
+        </Query>
+   	</DataAccess>
+
+
+   	<!-- PHYSICAL RISK || ALL ESENER RISK INVOLVED WITH WORK DATA -->
+    <DataAccess access="public" connection="dvt_conn" id="getCountryRisksInvolvedESENERData" type="sql">
+        <Cache duration="3600" enabled="true" />
+        <Columns />
+        <Parameters>
+            <Parameter default="10" name="pDataset" type="Numeric"/>
+            <Parameter default="AT" name="pCountry" type="String"/>
+        </Parameters>
+        <Query>
+            SELECT t.text as Indicator, ROUND(v.value*100,1) as Value, IF(n.name REGEXP 'European Union', n.country_code, CONCAT("(", n.country_code, ") ", n.name)) as Country, t1.text as Title
+			FROM nuts n, profile p, value v, dataset d, translation t, indicator i, translation t1
+			WHERE n.id = p.nuts_id
+			AND v.indicator_id IN (293, 291, 364, 292)
+			AND t.language = 'EN'
+			AND v.profile_id = p.id
+			AND p.activity_sector_id = 14
+			AND p.answer_id = 1
+			AND d.id = v.dataset_id
+			AND d.id = ${pDataset}
+			AND v.indicator_id=i.id
+			AND i.literal_id=t1.literal_id
+			AND t1.language="EN"
+			AND n.country_code = ${pCountry}
+			AND CASE WHEN v.indicator_id=293 THEN t.literal_id=22157
+			ELSE CASE WHEN v.indicator_id=291 THEN t.literal_id=22159
+			ELSE CASE WHEN v.indicator_id=292 THEN t.literal_id=22158
+			ELSE t.literal_id=22187 END END END
+			ORDER BY FIELD (v.indicator_id, 293, 291, 292, 364) ASC;
         </Query>
    	</DataAccess>
 
@@ -1113,33 +1177,6 @@
             ORDER BY n.country_code ASC;
         </Query>
     </DataAccess>
-
-
-   	<!-- PHYSICAL RISK || ALL ESENER RISK INVOLVED WITH WORK DATA -->
-    <DataAccess access="public" connection="dvt_conn" id="getCountryRisksInvolvedESENERData" type="sql">
-        <Cache duration="3600" enabled="true" />
-        <Columns />
-        <Parameters>
-            <Parameter default="10" name="pDataset" type="Numeric"/>
-            <Parameter default="AT" name="pCountry" type="String"/>
-        </Parameters>
-        <Query>
-            SELECT t.text as Indicator, ROUND(v.value*100,1) as Value, IF(n.name REGEXP 'European Union', n.country_code, CONCAT("(", n.country_code, ") ", n.name)) as Country
-			FROM nuts n, profile p, value v, dataset d, indicator i, translation t
-			WHERE n.id = p.nuts_id
-			AND v.indicator_id IN (293, 291, 364, 292)
-			AND i.id = v.indicator_id
-			AND i.literal_id = t.literal_id
-			AND t.language = 'EN'
-			AND v.profile_id = p.id
-			AND p.activity_sector_id = 14
-			AND p.answer_id = 1
-			AND d.id = v.dataset_id
-			AND d.id = ${pDataset}
-			AND n.country_code = ${pCountry}
-			ORDER BY FIELD (i.id, 293, 291, 292, 364) ASC;
-        </Query>
-   	</DataAccess>
 
    	<!-- PREVENTION COMPANIES || ALL INDICATORS IN PREVENTION COMPANIES -->
 	<DataAccess access="public" connection="dvt_conn" id="getPreventionCompaniesIndicators" type="sql">
@@ -1385,14 +1422,17 @@
             <Parameter default="AT" name="pCountry" type="String"/>
         </Parameters>
         <Query>
-        	(SELECT t.text as Indicator, SUM(IF(v.value*100 IS NULL, 0, ROUND(v.value*100, 1))) as Value,
-				IF(n.name="European Union" || n.name="EU27_2020", n.country_code, CONCAT(n.name," (", n.country_code,")")) as Country
-				FROM nuts n, profile p, value v, dataset d, indicator i, translation t, split_answer sa
+        	SELECT a.* FROM (
+        		SELECT t.text as Indicator, SUM(IF(v.value*100 IS NULL, 0, ROUND(v.value*100, 1))) as value,
+				IF(n.name="European Union" || n.name="EU27_2020", n.country_code, CONCAT(n.name," (", n.country_code,")")) as Country,
+				t1.text as Title
+				FROM nuts n, profile p, value v, dataset d, indicator i, translation t, split_answer sa, translation t1
 				WHERE n.id = p.nuts_id
 				AND v.indicator_id IN (355, 357, 353)
 				AND i.id = v.indicator_id
-				AND t.literal_id = IF(v.indicator_id = 355, 20684, IF(v.indicator_id = 357, 20685, 20686))
-				AND t.language = 'EN'
+				AND t.literal_id = IF(v.indicator_id = 355, 22173, IF(v.indicator_id = 357, 22172, 22171))
+				AND t1.literal_id = IF(v.indicator_id = 355, 20684, IF(v.indicator_id = 357, 20685, 20686)) 
+				AND t.language = 'EN' AND t1.language="EN"
 				AND v.profile_id = p.id
 				AND p.answer_id = sa.id
 				AND p.activity_sector_id=14
@@ -1400,16 +1440,21 @@
 				AND d.id = v.dataset_id
 				AND d.id = 19
 				AND n.country_code = ${pCountry}
-				GROUP BY Indicator, Country
-			)UNION(
+				GROUP BY indicator, v.indicator_id, Country
+				ORDER BY FIELD(v.indicator_id, 353, 357, 355)
+			) a
+			UNION ALL
+			SELECT b.* FROM (
 				SELECT t.text as Indicator, SUM(ROUND(v.value*100,1)) as Value,
-				IF(n.name="European Union" || n.name="EU27_2020", n.country_code, CONCAT(n.name," (", n.country_code,")")) as Country
-				FROM nuts n, profile p, value v, dataset d, indicator i, translation t, split_answer sa
+				IF(n.name="European Union" || n.name="EU27_2020", n.country_code, CONCAT(n.name," (", n.country_code,")")) as Country,
+				t1.text as Title
+				FROM nuts n, profile p, value v, dataset d, indicator i, translation t, split_answer sa, translation t1
 				WHERE n.id = p.nuts_id
 				AND v.indicator_id = 361
 				AND i.id = v.indicator_id
-				AND t.literal_id = 20687
-				AND t.language = 'EN'
+				AND t.literal_id = 22174
+				AND t1.literal_id = 20687
+				AND t.language = 'EN' AND t1.language="EN"
 				AND v.profile_id = p.id
 				AND p.answer_id = sa.id
 				AND p.activity_sector_id = 14
@@ -1417,15 +1462,19 @@
 				AND d.id = v.dataset_id
 				AND d.id = 19
 				AND n.country_code = ${pCountry}
-				Group by Indicator, Country
-			)UNION(
+				Group BY indicator, v.indicator_id, Country
+			) b
+			UNION ALL
+			SELECT c.* FROM(
 				SELECT t.text as Indicator, SUM(ROUND(v.value*100,1)) as Value,
-				IF(n.name="European Union" || n.name="EU27_2020", n.country_code, CONCAT(n.name," (", n.country_code,")")) as Country
-				FROM nuts n, profile p, value v, dataset d, indicator i, translation t, split_answer sa
+				IF(n.name="European Union" || n.name="EU27_2020", n.country_code, CONCAT(n.name," (", n.country_code,")")) as Country,
+				t1.text as Title
+				FROM nuts n, profile p, value v, dataset d, indicator i, translation t, split_answer sa, translation t1
 				WHERE n.id = p.nuts_id
 				AND v.indicator_id = 359
 				AND i.id = v.indicator_id
-				AND t.literal_id = 20688
+				AND t.literal_id = 22175
+				AND t1.literal_id = 20688
 				AND t.language = 'EN'
 				AND v.profile_id = p.id
 				AND p.answer_id = sa.id
@@ -1434,8 +1483,8 @@
 				AND d.id = v.dataset_id
 				AND d.id = 19
 				AND n.country_code = ${pCountry}
-				Group by Indicator, Country
-			);
+				Group BY indicator, v.indicator_id, Country
+			) c;
         </Query>
    	</DataAccess>
 
@@ -1447,13 +1496,14 @@
             <Parameter default="10" name="pDataset" type="Numeric"/>
         </Parameters>
         <Query>
-			(SELECT t.text as Indicator, ROUND(v.value*100,1) as Value, n.country_code as Country
-			FROM nuts n, profile p, value v, dataset d, indicator i, translation t, split_answer sa
+			(SELECT t.text as Indicator, ROUND(v.value*100,1) as Value, n.country_code as Country, t1.text as Title
+			FROM nuts n, profile p, value v, dataset d, indicator i, translation t, split_answer sa, translation t1
 			WHERE n.id = p.nuts_id
 			AND v.indicator_id IN (101, 102, 123)
 			AND i.id = v.indicator_id
-			AND t.literal_id = IF(v.indicator_id = 101, 20684, IF(v.indicator_id = 102, 20685, 20686))
-			AND t.language = 'EN'
+			AND t1.literal_id = IF(v.indicator_id = 101, 22173, IF(v.indicator_id = 102, 22172, 22171))
+			AND t1.literal_id = IF(v.indicator_id = 101, 20684, IF(v.indicator_id = 102, 20685, 20686))
+			AND t.language = 'EN' ADN t1.language="EN"
 			AND v.profile_id = p.id
 			AND p.answer_id = sa.id
 			AND p.company_size_id IS NULL 
@@ -1463,13 +1513,14 @@
 			AND d.id = 15
 			AND n.country_code = 'EU28'
 			)UNION(
-			SELECT t.text as Indicator, SUM(ROUND(v.value*100,1)) as Value, n.country_code as Country
-			FROM nuts n, profile p, value v, dataset d, indicator i, translation t, split_answer sa
+			SELECT t.text as Indicator, SUM(ROUND(v.value*100,1)) as Value, n.country_code as Country, t1.text as Title
+			FROM nuts n, profile p, value v, dataset d, indicator i, translation t, split_answer sa, translation t1
 			WHERE n.id = p.nuts_id
 			AND v.indicator_id = 124
 			AND i.id = v.indicator_id
-			AND t.literal_id = 20687
-			AND t.language = 'EN'
+			AND t.literal_id = 22174
+			AND t1.literal_id = 20687 
+			AND t.language = 'EN' AND t1.language="EN"
 			AND v.profile_id = p.id
 			AND p.answer_id = sa.id
 			AND p.activity_sector_id = 14
@@ -1479,13 +1530,14 @@
 			AND n.country_code = 'EU28'
 			Group by Indicator
 			)UNION(
-			SELECT t.text as Indicator, SUM(ROUND(v.value*100,1)) as Value, n.country_code as Country
-			FROM nuts n, profile p, value v, dataset d, indicator i, translation t, split_answer sa
+			SELECT t.text as Indicator, SUM(ROUND(v.value*100,1)) as Value, n.country_code as Country, t1.text as Title
+			FROM nuts n, profile p, value v, dataset d, indicator i, translation t, split_answer sa, translation t1
 			WHERE n.id = p.nuts_id
 			AND v.indicator_id = 125
 			AND i.id = v.indicator_id
-			AND t.literal_id = 20688
-			AND t.language = 'EN'
+			AND t.literal_id=22175
+			AND t1.literal_id = 20688
+			AND t.language = 'EN' AND t.language="EN"
 			AND v.profile_id = p.id
 			AND p.answer_id = sa.id
 			AND p.activity_sector_id = 14
@@ -1507,16 +1559,21 @@
             <Parameter default="AT" name="pCountry" type="String"/>
         </Parameters>
         <Query>
-            SELECT t.text as Indicator, ROUND(v.value*100,1) as Value, IF(n.name = 'European Union', n.country_code, CONCAT("(", n.country_code, ") ", n.name)) as Country
-			FROM nuts n, profile p, value v, dataset d, indicator i, translation t
+            SELECT t.text as Indicator, ROUND(v.value*100,1) as Value, IF(n.name = 'European Union', n.country_code, CONCAT("(", n.country_code, ") ", n.name)) as Country, t1.text AS Title
+			FROM nuts n, profile p, value v, dataset d, translation t, indicator i, translation t1
 			WHERE n.id = p.nuts_id
 			AND v.indicator_id IN (95,96,75)
-			AND i.id = v.indicator_id
-			AND i.literal_id = t.literal_id
 			AND v.profile_id = p.id
 			AND d.id = v.dataset_id
+			AND v.indicator_id=i.id
+			AND i.literal_id=t1.literal_id
+			AND t1.language="EN"
 			AND d.id = ${pDataset}
-			AND n.country_code = ${pCountry};
+			AND n.country_code = ${pCountry}
+			AND CASE WHEN v.indicator_id=75 THEN t.literal_id=22176
+			ELSE CASE WHEN v.indicator_id=95 THEN t.literal_id=22177
+			ELSE t.literal_id=22178 END END
+			ORDER BY v.indicator_id ASC;
         </Query>
    	</DataAccess>
 
@@ -1528,16 +1585,21 @@
             <Parameter default="10" name="pDataset" type="Numeric"/>
         </Parameters>
         <Query>
-            SELECT t.text as Indicator, ROUND(v.value*100,1) as Value, n.country_code as Country
-			FROM nuts n, profile p, value v, dataset d, indicator i, translation t
+            SELECT t.text as Indicator, ROUND(v.value*100,1) as Value, n.country_code as Country, t1.text AS Title
+			FROM nuts n, profile p, value v, dataset d, translation t, indicator i, translation t1
 			WHERE n.id = p.nuts_id
 			AND v.indicator_id IN (95,96,75)
-			AND i.id = v.indicator_id
-			AND i.literal_id = t.literal_id
 			AND v.profile_id = p.id
 			AND d.id = v.dataset_id
+			AND v.indicator_id=i.id
+			AND i.literal_id=t1.literal_id
+			AND t1.language="EN"
 			AND d.id = ${pDataset}
-			AND n.country_code = 'EU28';
+			AND n.country_code = 'EU28'
+			AND CASE WHEN v.indicator_id=75 THEN t.literal_id=22176
+			ELSE CASE WHEN v.indicator_id=95 THEN t.literal_id=22177
+			ELSE t.literal_id=22178 END END
+			ORDER BY v.indicator_id ASC;
         </Query>
    	</DataAccess>
 </CDADescriptor>
