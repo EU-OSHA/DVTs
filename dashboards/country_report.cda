@@ -18,5 +18,186 @@
 	      FROM indicator 
 	      WHERE id IN (40, 41, 42, 43, 44, 45)
 	    </Query>
-	</DataAccess>   
+	</DataAccess>
+
+	<!-- Countries for the select -->
+	<DataAccess access="public" connection="dvt_conn" id="getCountryReportCountries" type="sql">
+	    <Cache duration="3600" enabled="true" />
+	    <Columns />
+	    <Parameters>
+	    </Parameters>
+	    <Query>
+	      SELECT DISTINCT(n.country_code) as country_code, CONCAT ("(",n.country_code, ") ", t.text) as country_name
+	      FROM nuts n
+	      INNER JOIN profile p ON n.id = p.nuts_id
+	      INNER JOIN value v ON v.profile_id = p.id
+	      INNER JOIN translation t ON n.literal_id=t.literal_id
+	      WHERE v.indicator_id IN (31, 36, 37, 38, 39, 40)
+	      AND n.country_code NOT IN ('EU28')
+	      AND t.language="EN"
+	      ORDER BY country_code ASC;
+	    </Query>
+	</DataAccess>
+
+	<!-- Load data for Matrix Page -->
+	<DataAccess access="public" connection="dvt_conn" id="getCountryReportMatrixPageData" type="sql">
+	    <Cache duration="3600" enabled="true" />
+	    <Columns />
+	    <Parameters>
+	      <Parameter default="AT" name="pCountry" type="String" />
+	      <Parameter default="MATRIX_AUTHORITY" name="pPageType" type="String" />
+	    </Parameters>
+	    <Query>
+	      SELECT mp.id AS id, n.literal_id AS country_name, n.country_code as country_code, mp.check_1, mp.check_2, 
+	      mp.check_3, mp.check_4, mp.text_1_literal_id, mp.text_2_literal_id, mp.text_3_literal_id
+	      FROM matrix_page mp
+	      INNER JOIN nuts n
+	      ON n.id = mp.nuts_id
+	      WHERE mp.page = ${pPageType}
+	      AND n.country_code=${pCountry}
+	      ORDER BY id ASC;
+	    </Query>
+	</DataAccess>
+
+	<!-- Load data for chart by company size -->
+	<DataAccess access="public" connection="dvt_conn" id="getCountryReportCompanySizeData" type="sql">
+	    <Cache duration="3600" enabled="true" />
+	    <Columns />
+	    <Parameters>
+	      <Parameter default="6" name="pDataset" type="Numeric" />
+	      <Parameter default="1" name="pIndicator" type="Numeric" />
+	      <Parameter default="AT" name="pCountry1" type="String" />
+	      <Parameter default="EU28" name="pCountry2" type="String" />
+	    </Parameters>
+	    <Query>
+	      SELECT t.text as Size, n.country_code as Country, ROUND((v.value*100),1) as Value
+	      FROM nuts n, profile p, indicator i, value v, split_company_size scs, dataset d, translation t
+	      WHERE n.id = p.nuts_id
+	      AND p.company_size_id = scs.id
+	      AND i.id = v.indicator_id
+	      AND v.profile_id = p.id
+	      AND d.id = ${pDataset} AND d.id = v.dataset_id
+	      AND t.literal_id = scs.literal_id
+	      AND n.country_code IN (${pCountry1}, ${pCountry2}) 
+		  AND i.id = ${pIndicator}
+	      ORDER BY FIELD(n.country_code, ${pCountry1}, ${pCountry2}) DESC
+	    </Query>
+	</DataAccess>
+
+	<!-- Load data for chart by activity sector -->
+	<DataAccess access="public" connection="dvt_conn" id="getCountryReportActivitySectorData" type="sql">
+	    <Cache duration="3600" enabled="true" />
+	    <Columns />
+	    <Parameters>
+	      <Parameter default="6" name="pDataset" type="Numeric" />
+	      <Parameter default="1" name="pIndicator" type="Numeric" />
+	      <Parameter default="AT" name="pCountry1" type="String" />
+	      <Parameter default="EU28" name="pCountry2" type="String" />
+	    </Parameters>
+	    <Query>
+	      SELECT t.text as Sector, n.country_code as Country, (v.value*100) as Value
+	      FROM nuts n, profile p, indicator i, value v, split_activity_sector sas, dataset d, translation t
+	      WHERE n.id = p.nuts_id 
+	      AND p.activity_sector_id = sas.id 
+	      AND i.id = v.indicator_id 
+	      AND v.profile_id = p.id
+	      AND d.id = ${pDataset} AND d.id = v.dataset_id 
+	      AND t.language = 'EN'
+	      AND t.literal_id = sas.literal_id
+	      AND sas.id IN (1, 2, 3, 4, 18, 6, 7)
+	      AND n.country_code IN (${pCountry1}, ${pCountry2}) AND i.id = ${pIndicator}
+	      ORDER BY FIELD(n.country_code, ${pCountry1}, ${pCountry2}) DESC
+	    </Query>
+	</DataAccess>
+
+	<!-- Load data for chart without split filter -->
+	<DataAccess access="public" connection="dvt_conn" id="getCountryReportYearData" type="sql">
+	    <Cache duration="3600" enabled="true" />
+	    <Columns />
+	    <Parameters>
+	      <Parameter default="6" name="pDataset" type="Numeric" />
+	      <Parameter default="1" name="pIndicator" type="Numeric" />
+	      <Parameter default="AT" name="pCountry1" type="String" />
+	      <Parameter default="EU28" name="pCountry2" type="String" />
+	    </Parameters>
+	    <Query>
+	      SELECT IF(n.name REGEXP 'European Union', n.country_code, CONCAT("(", n.country_code, ") ", n.name)) as Country, p.year as Year, v.value as Income
+	      FROM nuts n, profile p, indicator i, value v, dataset d
+	      WHERE n.id = p.nuts_id
+	      AND i.id = v.indicator_id
+	      AND v.profile_id = p.id
+	      AND d.id = ${pDataset} AND d.id = v.dataset_id
+	      AND n.country_code IN (${pCountry1}, ${pCountry2}) AND i.id = ${pIndicator}
+	      ORDER BY FIELD(n.country_code, ${pCountry1}, ${pCountry2}) ASC, p.year ASC
+	    </Query>
+	</DataAccess>
+
+	<!-- Load data for chart without split filter -->
+	<DataAccess access="public" connection="dvt_conn" id="getCountryReportData" type="sql">
+	    <Cache duration="3600" enabled="true" />
+	    <Columns />
+	    <Parameters>
+	      <Parameter default="6" name="pDataset" type="Numeric" />
+	      <Parameter default="1" name="pIndicator" type="Numeric" />
+	      <Parameter default="AT" name="pCountry1" type="String" />
+	      <Parameter default="EU28" name="pCountry2" type="String" />
+	    </Parameters>
+	    <Query>
+	      SELECT IF(n.name REGEXP 'European Union', n.country_code, CONCAT("(", n.country_code, ") ", n.name)) as Country, (v.value*100) as Value
+	      FROM nuts n, profile p, indicator i, value v, dataset d
+	      WHERE n.id = p.nuts_id
+	      AND i.id = v.indicator_id
+	      AND v.profile_id = p.id
+	      AND d.id = ${pDataset} AND d.id = v.dataset_id
+	      AND n.country_code IN (${pCountry1}, ${pCountry2}) AND i.id = ${pIndicator}
+	      ORDER BY FIELD(n.country_code, ${pCountry1}, ${pCountry2}) DESC
+	    </Query>
+	</DataAccess>
+
+	<!-- Load data for chart without split filter -->
+	<DataAccess access="public" connection="dvt_conn" id="getCountryReportDataAsc" type="sql">
+	    <Cache duration="3600" enabled="true" />
+	    <Columns />
+	    <Parameters>
+	      <Parameter default="6" name="pDataset" type="Numeric" />
+	      <Parameter default="1" name="pIndicator" type="Numeric" />
+	      <Parameter default="AT" name="pCountry1" type="String" />
+	      <Parameter default="EU28" name="pCountry2" type="String" />
+	    </Parameters>
+	    <Query>
+	      SELECT IF(n.name REGEXP 'European Union', n.country_code, CONCAT("(", n.country_code, ") ", n.name)) as Country, (v.value*100) as Value
+	      FROM nuts n, profile p, indicator i, value v, dataset d
+	      WHERE n.id = p.nuts_id
+	      AND i.id = v.indicator_id
+	      AND v.profile_id = p.id
+	      AND d.id = ${pDataset} AND d.id = v.dataset_id
+	      AND n.country_code IN (${pCountry1}, ${pCountry2}) AND i.id = ${pIndicator}
+	      ORDER BY FIELD(n.country_code, ${pCountry1}, ${pCountry2}) ASC
+	    </Query>
+	</DataAccess>
+
+	<!-- Load data for workforce profile -->
+	<DataAccess access="public" connection="dvt_conn" id="getCountryReportWorkforceProfileData" type="sql">
+	    <Cache duration="3600" enabled="true" />
+	    <Columns />
+	    <Parameters>
+	      <Parameter default="AT" name="pCountry1" type="String" />
+	      <Parameter default="EU28" name="pCountry2" type="String" />
+	    </Parameters>
+	    <Query>
+	      SELECT n.country_code as countryKey, v.indicator_id, p.gender_id, IF(v.indicator_id IN (37, 38), ROUND(value, 1), ROUND(value*100, 1)) as value
+		  FROM nuts n, profile p, value v, dataset d
+		  WHERE n.id = p.nuts_id 
+		  AND v.profile_id = p.id 
+		  AND d.id = v.dataset_id
+		  AND n.country_code IN (${pCountry1},${pCountry2})
+		  AND ((d.id = 21 AND v.indicator_id = 37)
+		  OR (d.id = 22 AND v.indicator_id = 38)
+		  OR (d.id = 22 AND v.indicator_id = 39 AND p.gender_id=1)
+		  OR (d.id = 22 AND v.indicator_id = 39 AND p.gender_id=2)
+		  OR (d.id = 22 AND v.indicator_id = 39 AND p.gender_id=3)
+		  OR (d.id = 22 AND v.indicator_id = 34))
+		  ORDER BY FIELD(n.country_code,${pCountry2},${pCountry1}) ASC, v.indicator_id ASC, p.gender_id ASC
+	    </Query>
+	</DataAccess>
 </CDADescriptor>

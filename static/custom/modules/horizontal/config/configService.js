@@ -397,6 +397,28 @@ define(function (require) {
             return  configuration.paths.data['cda-path'] + configuration.paths.data.cda.steeringOsh;
         },
 
+        /**
+         * @ngdoc method
+         * @name dvt.configModule.configService#getCountryReportDataPath
+         * @methodOf dvt.configModule.configService
+         * @description
+         * Get the full path for the Full Country Report section cda
+         */
+        getCountryReportDataPath:function() {
+            return dataPath + configuration.paths.data.cda.countryReport;
+        },
+
+        /**
+         * @ngdoc method
+         * @name dvt.configModule.configService#getCountryReportCda
+         * @methodOf dvt.configModule.configService
+         * @description
+         * Get the relative path for the Full Country Report section cda
+         */
+        getCountryReportCda:function() {
+            return  configuration.paths.data['cda-path'] + configuration.paths.data.cda.countryReport;
+        },
+
         // ----------------------------------
         //  literals - i18n
         // ----------------------------------

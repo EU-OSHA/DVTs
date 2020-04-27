@@ -1181,6 +1181,35 @@ define(function () {
 
             /*************************************** END OSH STATISTICS *****************************************/
 
+
+            /***************************************** FULL COUNTRY REPORT *****************************************/
+                /**
+                 * @ngdoc method
+                 * @name dvt.configModule.DataService#getCountryReportMatrixPageData
+                 * @methodOf dvt.configModule.DataService
+                 * @description
+                 * Get data for matrix pages on the full country report
+                 */
+                getCountryReportMatrixPageData: function (pPageType, pCountry) {
+                    var url = configService.getCountryReportDataPath() + "&dataAccessId=getCountryReportMatrixPageData" + "&parampPageType=" + pPageType + "&parampCountry=" + pCountry;
+                    $log.debug('getCountryReportMatrixPageData url:' + url);
+                    return promise(url);
+                },
+
+                /**
+                 * @ngdoc method
+                 * @name dvt.configModule.DataService#getCountryReportMatrixPageData
+                 * @methodOf dvt.configModule.DataService
+                 * @description
+                 * Get data for matrix pages on the full country report
+                 */
+                getCountryReportWorkforceProfileData: function (pCountry1, pCountry2) {
+                    var url = configService.getCountryReportDataPath() + "&dataAccessId=getCountryReportWorkforceProfileData" + "&parampCountry1=" + pCountry1 + "&parampCountry2=" + pCountry2;
+                    $log.debug('getCountryReportWorkforceProfileData url:' + url);
+                    return promise(url);
+                },
+            /*************************************** END FULL COUNTRY REPORT *****************************************/
+
             /**
              * @ngdoc method
              * @name dvt.configModule.DataService#getCountryStrategies
