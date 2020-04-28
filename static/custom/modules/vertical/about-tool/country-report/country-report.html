@@ -1,18 +1,24 @@
 <dvt-dashboard promises="promises" parameters="dashboard.parameters" class="full-country-report-page">
   <section class="cover-page">
-    <picture>
-      <img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/EU-OSHA-trans-en.png" alt="European Agency for Safety and Health at Work">
-      <img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/eu-flag.png" title="European Union flag">
-    </picture>
+    <div class="header-logo"></div>
     <div class="content-cover">
       <h1> OSH BAROMETER</h1>
       <h2>AUSTRIA</h2>
+        <!-- FILTERS -->
+        <form class="">
+          <label for="report-country">Select one country</label>
+          <dvt-select id="report-country" data-ng-cloak ng-model="pCountry" parameter="pCountry" params="[['pCountry', pCountry]]"
+          query="getCountryReportCountries" cda="{{::cda }}" 
+            data-ng-change="countryChange()">
+          </dvt-select> 
+        </form>
       <h3>Country Report</h3>
     </div>
     <div class="footer-pdf">
       <p>Santiago de Compostela 12, 5th floor - 48003 Bilbao × Spain<br>
         Tel. +34 944 358 400 × Fax +34 944 358 401 <br>
         information@osha.europa.eu - <a href="http://osha.europa.eu" target="_blank">http://osha.europa.eu</a>
+      </p>
     </div>
   </section>
 
@@ -32,55 +38,55 @@
     </div>
   </section>
 
-  <div class="compare--block content-page">
-      <!-- FILTERS -->
-      <form class="compare--block--form">
-        <label for="report-country" data-ng-bind="i18nLiterals.L20609"></label>
-        <dvt-select id="report-country" data-ng-cloak ng-model="pCountry" parameter="pCountry" params="[['pCountry', pCountry]]"
-        query="getCountryReportCountries" cda="{{::cda }}" 
-          data-ng-change="countryChange()">
-        </dvt-select> 
-      </form>
-  </div>
 
-  <section>
+  <section class="osh-authorities">
     <h2 data-ng-bind="i18nLiterals.L22001 + ' ' + i18nLiterals.L22002"></h2>
     <div class="content-page">
-
-      <div class="matrix--elements--wrapper">
-
         <div ng-if="amatrix.length <= 0">
-            <span data-ng-bind="i18nLiterals.L20706"></span>
+          <span data-ng-bind="i18nLiterals.L20706"></span>
         </div>
-        <div data-ng-repeat="matrix in authorities" class="matrix--element clearfix">
-          <div class="matrix--header--elements">
-            <img  class="flags--wrapper" ng-src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/flag/{{::matrix.country_code.toLowerCase()}}.png">
-            <h2 class="country ng-binding title-section main-color" data-ng-bind="i18nLiterals['L'+matrix.country_name]"></h2>
+        <div data-ng-repeat="matrix in authorities" class="clearfix">
+          <div  ng-if="::matrix.osh_authority==1">
+            <img  ng-if="$index== 0" class="flag" ng-src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/flag/{{::matrix.country_code.toLowerCase()}}.png">
+            <h2 class="country ng-binding title-section main-color" ng-if="::matrix.osh_authority==1 && $index== 0" data-ng-bind="i18nLiterals['L'+matrix.country_name]"></h2>
+            <h3 class="name-authorities" ng-if="$index== 0" data-ng-bind="i18nLiterals.L20614"></h3>
+            
+            <p class="institution-name" data-ng-bind-html="i18nLiterals['L'+matrix.name_authority]"></p>
+            <div data-ng-bind-html="i18nLiterals['L'+matrix.link_authority]"></div>
+            <div class="text" data-ng-bind-html="i18nLiterals['L'+matrix.detail_authority]"></div>
+            <!--
+            <div>
+              <p>
+                <a href="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/modules/vertical/generic-information/osh-authorities/pdf/OSH authorities - {{i18nLiterals['L'+matrix.country_name]}}.pdf" class="btn--card main-color" title="i18nLiterals.L20563" data-ng-bind-html="i18nLiterals.L20563" target="_blank"></a>
+              </p>
+            </div>
+            --> 
           </div>
 
-          <div class="matrix--content--elements">
+          <div class="matrix--content--elements" ng-if="::matrix.osh_authority!=1">
             <h3 class="" ng-if="::matrix.osh_authority==1" data-ng-bind="i18nLiterals.L20614"></h3>
             <h3 class="" ng-if="::matrix.compensation==1" data-ng-bind="i18nLiterals.L20611"></h3>
             <h3 class="" ng-if="::matrix.prevention==1" data-ng-bind="i18nLiterals.L20612"></h3>
             <h3 class="" ng-if="::matrix.standardisation==1" data-ng-bind="i18nLiterals.L20613"></h3>
-
             <p data-ng-bind-html="i18nLiterals['L'+matrix.name_authority]" class="institution-name"></p>
             <div data-ng-bind-html="i18nLiterals['L'+matrix.link_authority]"></div>
-
-            <div class="partial-text" data-ng-bind-html="i18nLiterals['L'+matrix.detail_authority]"></div>
-
+            <div class="text" data-ng-bind-html="i18nLiterals['L'+matrix.detail_authority]"></div>
+            <!--
             <div>
-              <p ><a href="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/modules/vertical/generic-information/osh-authorities/pdf/OSH authorities - {{i18nLiterals['L'+matrix.country_name]}}.pdf" class="btn--card main-color" title="i18nLiterals.L20563" data-ng-bind-html="i18nLiterals.L20563" target="_blank"></a></p>
-            </div>          
+              <p>
+                <a href="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/modules/vertical/generic-information/osh-authorities/pdf/OSH authorities - {{i18nLiterals['L'+matrix.country_name]}}.pdf" class="btn--card main-color" title="i18nLiterals.L20563" data-ng-bind-html="i18nLiterals.L20563" target="_blank"></a>
+              </p>
+            </div>
+            -->         
           </div>
         </div>
-      </div>
+
     </div>    
   </section>
 
 
-
   <section>
+    <div class="header-logo"></div>
     <h2 data-ng-bind="i18nLiteral.L22001 + ' ' + i18nLiterals.L22003"></h2>
     <div class="content-page">
       <div class="chart--block">

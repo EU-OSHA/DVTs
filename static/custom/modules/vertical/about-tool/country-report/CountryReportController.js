@@ -17,6 +17,7 @@ define(function (require) {
 	'use strict';
 	
 	function controller($scope, $window, $stateParams, $state, $log, dvtUtils, dataService, plotsProvider, $document, configService, $http, CountryReportService, $rootScope) {
+		
 		$scope.title ="About the Visualisation Tool";
 
 		$scope.cda = configService.getCountryReportCda();
@@ -167,6 +168,22 @@ define(function (require) {
 		/******************************END DATA LOAD***********************************/
 
 		$scope.status = 'ready';
+
+
+
+			var header = "<picture>";
+	      	header += '<img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/EU-OSHA-trans-en.png" alt="European Agency for Safety and Health at Work">';
+	      	header += '<img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/eu-flag.png" title="European Union flag">';
+	    		header += '</picture>';
+	    		$(".full-country-report-page section.cover-page .header-logo").append( $(header) );
+/*
+	    var footerPdf = '<p>Santiago de Compostela 12, 5th floor - 48003 Bilbao × Spain<br>';
+        	footerPdf += 'Tel. +34 944 358 400 × Fax +34 944 358 401 <br>';
+        	footerPdf += 'information@osha.europa.eu - <a href="http://osha.europa.eu" target="_blank">http://osha.europa.eu</a></p>';
+        	$(".full-country-report-page section .footer-pdf").append( $(footerPdf) );
+*/    		
+
+
 	}
 	
 	controller.$inject = ['$scope', '$window', '$stateParams', '$state', '$log', 'dvtUtils', 'dataService', 'plotsProvider', '$document', 'configService', '$http', 'CountryReportService', '$rootScope'];
