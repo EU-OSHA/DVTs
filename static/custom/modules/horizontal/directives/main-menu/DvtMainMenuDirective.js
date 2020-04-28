@@ -323,6 +323,15 @@ define(function (require) {
                         formSearch.toggleClass('exposed');
                     });
 
+                    $scope.getPageSetClass = function (){
+                        var path = document.location.href.split("/")
+                        var num = path.length;
+                        if( path[num-1] == 'full-country-report'){
+                            $('body').addClass('full-country-report');
+                            return path[num-1];
+                        }
+                    }
+
                     if ($rootScope.defaultCountry == undefined)
                     {
                         if ($cookies.get("selectedCountry") != undefined)

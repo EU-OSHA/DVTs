@@ -1,0 +1,77 @@
+@page {
+  size: A4;
+  margin: 30mm 25mm;
+}
+body.full-country-report{
+	padding: 0;
+	font-family: "Arial" !important;
+	h1, h2, h3, h4 {
+	  font-family: "Arial", sans-serif;
+	}
+	h1,h2{
+		font-size: 2.8rem;
+		font-weight: bold;
+		color: $eu;
+	}
+	h3{
+		font-size: 2.8rem;
+		color: $gray;
+	}
+}
+header.full-country-report{
+	display:none;
+}
+.full-country-report-page{
+	section{
+		position: relative;
+		top: 4cm;
+		margin: 0 auto;
+		padding: 0 0 40mm 0 !important;
+		width: 210mm;
+		min-height: 217mm;
+		border: 1px solid #000;
+		//page-break-inside: avoid;
+		page-break-after:always;
+		.title-page{
+			
+		}
+		.content-page{
+			margin: 0cm auto;
+		}
+	}
+	section.cover-page{
+		width: 210mm;
+		min-height: 217mm;
+		position: relative;
+		top: 4cm;
+		margin: 0 auto;
+		padding: 0 0 40mm 0 !important;
+		page-break-after:always;
+		position: relative;
+		picture{			
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;  
+			display: flex;
+			justify-content: space-between;
+			img{
+				height: 2cm !important;
+			}
+		}
+		.content-cover{
+			position: absolute;
+			top: 30%;
+			right: 30%;
+			width: 40%;
+			text-align: center;
+		}
+		.footer-pdf{
+			position: fixed;
+			bottom: 0cm;
+			left: 0;
+			font-size: 1rem;
+			background: #FFF !important;
+		}
+	}
+}
