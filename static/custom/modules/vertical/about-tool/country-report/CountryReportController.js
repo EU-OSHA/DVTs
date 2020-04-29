@@ -287,12 +287,7 @@ define(function (require) {
 	      	header += '<img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/eu-flag.png" title="European Union flag">';
 	    		header += '</picture>';
 	    		$(".full-country-report-page section.cover-page .header-logo").append( $(header) );
-/*
-	    var footerPdf = '<p>Santiago de Compostela 12, 5th floor - 48003 Bilbao × Spain<br>';
-        	footerPdf += 'Tel. +34 944 358 400 × Fax +34 944 358 401 <br>';
-        	footerPdf += 'information@osha.europa.eu - <a href="http://osha.europa.eu" target="_blank">http://osha.europa.eu</a></p>';
-        	$(".full-country-report-page section .footer-pdf").append( $(footerPdf) );
-*/    		
+		
 
 
 	}
