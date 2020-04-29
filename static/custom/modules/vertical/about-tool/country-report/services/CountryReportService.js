@@ -4,6 +4,48 @@ define (function (require) {
     var pv = require('cdf/lib/CCC/protovis');
     var CountryReportService = function (dvtUtils, $log) {
         return {
+            getChartAllCountriesPlots: function(pCountry) {
+                var dashboard = this.dashboard;
+    
+                return [
+                    {
+                        name: "main",
+                        dataPart: "0",
+                        line_lineWidth: 1.5,
+                        barSizeMax: 20,
+                        bar_fillStyle: function(scene){
+                            var countryKey = scene.firstAtoms.category.value;
+                            
+                            if(this.chart.options.dataAccessId == 'getLevelOfReportingData'){
+                                if(!scene.firstAtoms.value.label.match('%')){
+                                    scene.firstAtoms.value.label = scene.firstAtoms.value.label + '%';
+                                }
+                            }
+
+                            //$log.warn(countryKey);
+                            if (countryKey == 'EU28' || countryKey == "EU27_2020") {
+                                return dvtUtils.getEUColor();
+                            }
+                            if (countryKey.indexOf(pCountry) > -1)
+                            {
+                                return dvtUtils.getColorCountry(1);
+                            }
+                            return dvtUtils.getColorCountry(2);
+                        }, 
+                        label_textStyle: function(scene){
+                            var countryKey = scene.firstAtoms.series;
+                            if (countryKey == 'EU28') {
+                                return dvtUtils.getEUColor();
+                            }
+                            return dvtUtils.getChartLightGrayColor();
+                        },
+                        visualRoles:{
+                            series:'series',
+                            category:'category'
+                        }
+                    }
+                ];
+            },
         	getCompanySizeMainPlots: function(pCountry1) {
                 var dashboard = this.dashboard;	
                 return [

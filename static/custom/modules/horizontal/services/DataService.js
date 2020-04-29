@@ -1208,6 +1208,46 @@ define(function () {
                     $log.debug('getCountryReportWorkforceProfileData url:' + url);
                     return promise(url);
                 },
+
+                /**
+                 * @ngdoc method
+                 * @name dvt.configModule.DataService#getCountryReportStrategiesPageData
+                 * @methodOf dvt.configModule.DataService
+                 * @description
+                 * Get data for strategies pages on the full country report
+                 */
+                getCountryReportStrategiesPageData: function (pPageType, pCountry) {
+                    var url = configService.getCountryReportDataPath() + "&dataAccessId=getCountryReportStrategiesPageData" + "&parampPageType=" + pPageType + "&parampCountry=" + pCountry;
+                    $log.debug('getCountryReportStrategiesPageData url:' + url);
+                    return promise(url);
+                },
+
+                
+                /**
+                 * @ngdoc method
+                 * @name dvt.configModule.DataService#getCountryReportSocialDialogueData
+                 * @methodOf dvt.configModule.DataService
+                 * @description
+                 * Get data for social dialogue on the full country report
+                 */
+                getCountryReportSocialDialogueData: function (pCountry) {
+                    var url = configService.getCountryReportDataPath() + "&dataAccessId=getCountryReportSocialDialogueData" + "&parampCountry=" + pCountry;
+                    $log.debug('getCountryReportSocialDialogueData url:' + url);
+                    return promise(url);
+                },
+
+                /**
+                 * @ngdoc method
+                 * @name dvt.configModule.DataService#getCountryReportHealthPerceptionData
+                 * @methodOf dvt.configModule.DataService
+                 * @description
+                 * Get data for health perception of the workers on the full country report
+                 */
+                getCountryReportHealthPerceptionData: function (pCountry) {
+                    var url = configService.getCountryReportDataPath() + "&dataAccessId=getCountryReportHealthPerceptionData" + "&parampCountry=" + pCountry;
+                    $log.debug('getCountryReportHealthPerceptionData url:' + url);
+                    return promise(url);
+                },
             /*************************************** END FULL COUNTRY REPORT *****************************************/
 
             /**

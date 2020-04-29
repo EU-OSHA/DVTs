@@ -192,7 +192,7 @@
 			AND a.literal_id=t1.literal_id
 			AND t.LANGUAGE="EN" AND t.TEXT="All"
 			AND t1.LANGUAGE="EN" AND t1.TEXT="Yes"
-			/* JOIN CONSULTATIVE */
+			/* TRADE UNION */
 			AND n.id = p.nuts_id
 			AND n.country_code NOT IN('AL', 'ME', 'MK', 'RS', 'TR')
 			AND v.indicator_id = 355
@@ -209,7 +209,7 @@
 			AND a.literal_id=t1.literal_id
 			AND t.LANGUAGE="EN" AND t.TEXT="All"
 			AND t1.LANGUAGE="EN" AND t1.TEXT="Yes"
-			/* JOIN CONSULTATIVE */
+			/* HEALTH REPRESENTATIVE */
 			AND n.id = p.nuts_id
 			AND n.country_code NOT IN('AL', 'ME', 'MK', 'RS', 'TR')
 			AND v.indicator_id = 357
@@ -226,7 +226,7 @@
 			AND a.literal_id=t1.literal_id
 			AND t.LANGUAGE="EN" AND t.TEXT="All"
 			AND t1.LANGUAGE="EN" AND t1.TEXT="Yes"
-			/* JOIN CONSULTATIVE */
+			/* HEALTH COMMITEE */
 			AND n.id = p.nuts_id
 			AND n.country_code NOT IN('AL', 'ME', 'MK', 'RS', 'TR')
 			AND v.indicator_id = 356

@@ -59,6 +59,27 @@
 	    </Query>
 	</DataAccess>
 
+	<!-- Load data for Strategies Page -->
+	<DataAccess access="public" connection="dvt_conn" id="getCountryReportStrategiesPageData" type="sql">
+	    <Cache duration="3600" enabled="true" />
+	    <Columns />
+	    <Parameters>
+	      <Parameter default="AT" name="pCountry" type="String" />
+	      <Parameter default="STRATEGY" name="pPageType" type="String" />
+	    </Parameters>
+	    <Query>
+	      SELECT n.literal_id AS country_name, n.country_code as country_code, s.text_1_literal_id, s.text_2_literal_id,
+	      s.text_3_literal_id, s.text_4_literal_id, s.text_5_literal_id, s.text_6_literal_id, s.text_7_literal_id, s.text_8_literal_id,
+	      s.text_9_literal_id, s.text_10_literal_id, s.text_11_literal_id, s.text_12_literal_id, s.text_13_literal_id
+	      FROM strategies_page s
+	      INNER JOIN nuts n
+	      ON n.id = s.nuts_id
+	      WHERE s.page = ${pPageType}
+	      AND n.country_code=${pCountry}
+	      ORDER BY s.id ASC;
+	    </Query>
+	</DataAccess>
+
 	<!-- Load data for chart by company size -->
 	<DataAccess access="public" connection="dvt_conn" id="getCountryReportCompanySizeData" type="sql">
 	    <Cache duration="3600" enabled="true" />
@@ -118,10 +139,11 @@
 	      <Parameter default="6" name="pDataset" type="Numeric" />
 	      <Parameter default="1" name="pIndicator" type="Numeric" />
 	      <Parameter default="AT" name="pCountry1" type="String" />
-	      <Parameter default="EU28" name="pCountry2" type="String" />
+	      <Parameter default="EU28" name="pCountry2" type="String" />	      
+	      <Parameter default="1" name="pPercent" type="Numeric" />
 	    </Parameters>
 	    <Query>
-	      SELECT IF(n.name REGEXP 'European Union', n.country_code, CONCAT("(", n.country_code, ") ", n.name)) as Country, p.year as Year, v.value as Income
+	      SELECT IF(n.name REGEXP 'European Union', n.country_code, CONCAT("(", n.country_code, ") ", n.name)) as Country, p.year as Year, IF(${pPercent}=1, v.value*100, v.value) as Value
 	      FROM nuts n, profile p, indicator i, value v, dataset d
 	      WHERE n.id = p.nuts_id
 	      AND i.id = v.indicator_id
@@ -176,6 +198,27 @@
 	    </Query>
 	</DataAccess>
 
+	<!-- Load data for chart without split filter -->
+	<DataAccess access="public" connection="dvt_conn" id="getCountryReportAllCountriesData" type="sql">
+	    <Cache duration="3600" enabled="true" />
+	    <Columns />
+	    <Parameters>
+	      <Parameter default="6" name="pDataset" type="Numeric" />
+	      <Parameter default="1" name="pIndicator" type="Numeric" />
+	    </Parameters>
+	    <Query>
+	      SELECT t.text as Indicator, IF(n.name = 'European Union', n.country_code, CONCAT(n.name, " (", n.country_code, ")")) as Country, v.value as Value
+		  FROM nuts n, profile p, value v, indicator i, translation t
+		  WHERE n.id = p.nuts_id
+		  AND v.profile_id = p.id
+		  AND v.indicator_id=i.id
+		  AND t.literal_id=i.literal_id
+		  AND v.indicator_id = ${pIndicator}
+		  AND v.dataset_id = ${pDataset}
+		  ORDER BY Value ASC
+	    </Query>
+	</DataAccess>
+
 	<!-- Load data for workforce profile -->
 	<DataAccess access="public" connection="dvt_conn" id="getCountryReportWorkforceProfileData" type="sql">
 	    <Cache duration="3600" enabled="true" />
@@ -198,6 +241,143 @@
 		  OR (d.id = 22 AND v.indicator_id = 39 AND p.gender_id=3)
 		  OR (d.id = 22 AND v.indicator_id = 34))
 		  ORDER BY FIELD(n.country_code,${pCountry2},${pCountry1}) ASC, v.indicator_id ASC, p.gender_id ASC
+	    </Query>
+	</DataAccess>
+
+	<!-- Load data for social dialogue -->
+	<DataAccess access="public" connection="dvt_conn" id="getCountryReportSocialDialogueData" type="sql">
+	    <Cache duration="3600" enabled="true" />
+	    <Columns />
+	    <Parameters>
+	    	<Parameter default="AT" name="pCountry" type="String" />
+	    </Parameters>
+	    <Query>
+	    	select q1.country_name, q1.country_code, q1.joint_consultative, q2.trade_union, q3.health_representative, q4.health_committee from 
+			(SELECT DISTINCT(n.literal_id) as country_name, n.country_code as country_code, (ROUND(v.value*100)) as joint_consultative
+			FROM nuts n, profile p, value v, dataset d, split_activity_sector sas, split_answer a, translation t, translation t1
+			WHERE
+			/* COMMON */
+			d.id = 19
+			AND sas.literal_id=t.literal_id
+			AND a.literal_id=t1.literal_id
+			AND t.LANGUAGE="EN" AND t.TEXT="All"
+			AND t1.LANGUAGE="EN" AND t1.TEXT="Yes"
+			/* JOIN CONSULTATIVE */
+			AND n.id = p.nuts_id
+			AND n.country_code IN (${pCountry}, "EU27_2020")
+			AND v.indicator_id = 354
+			AND v.profile_id = p.id
+			AND d.id = v.dataset_id
+			AND p.activity_sector_id=sas.id
+			AND p.answer_id=a.id) as q1, 
+			(SELECT DISTINCT(n.literal_id) as country_name, n.country_code as country_code, (ROUND(v.value*100)) as trade_union
+			FROM nuts n, profile p, value v, dataset d, split_activity_sector sas, split_answer a, translation t, translation t1
+			WHERE
+			/* COMMON */
+			d.id = 19
+			AND sas.literal_id=t.literal_id
+			AND a.literal_id=t1.literal_id
+			AND t.LANGUAGE="EN" AND t.TEXT="All"
+			AND t1.LANGUAGE="EN" AND t1.TEXT="Yes"
+			/* TRADE UNION */
+			AND n.id = p.nuts_id
+			AND n.country_code IN (${pCountry}, "EU27_2020")
+			AND v.indicator_id = 355
+			AND v.profile_id = p.id
+			AND d.id = v.dataset_id
+			AND p.activity_sector_id=sas.id
+			AND p.answer_id=a.id) as q2, 
+			(SELECT DISTINCT(n.literal_id) as country_name, n.country_code as country_code, (ROUND(v.value*100)) as health_representative
+			FROM nuts n, profile p, value v, dataset d, split_activity_sector sas, split_answer a, translation t, translation t1
+			WHERE
+			/* COMMON */
+			d.id = 19
+			AND sas.literal_id=t.literal_id
+			AND a.literal_id=t1.literal_id
+			AND t.LANGUAGE="EN" AND t.TEXT="All"
+			AND t1.LANGUAGE="EN" AND t1.TEXT="Yes"
+			/* HEALTH REPRESENTATIVE */
+			AND n.id = p.nuts_id
+			AND n.country_code IN (${pCountry}, "EU27_2020")
+			AND v.indicator_id = 357
+			AND v.profile_id = p.id
+			AND d.id = v.dataset_id
+			AND p.activity_sector_id=sas.id
+			AND p.answer_id=a.id) as q3, 
+			(SELECT DISTINCT(n.literal_id) as country_name, n.country_code as country_code, (ROUND(v.value*100)) as health_committee
+			FROM nuts n, profile p, value v, dataset d, split_activity_sector sas, split_answer a, translation t, translation t1
+			WHERE
+			/* COMMON */
+			d.id = 19
+			AND sas.literal_id=t.literal_id
+			AND a.literal_id=t1.literal_id
+			AND t.LANGUAGE="EN" AND t.TEXT="All"
+			AND t1.LANGUAGE="EN" AND t1.TEXT="Yes"
+			/* HEALTH COMMITEE */
+			AND n.id = p.nuts_id
+			AND n.country_code IN (${pCountry}, "EU27_2020")
+			AND v.indicator_id = 356
+			AND v.profile_id = p.id
+			AND d.id = v.dataset_id
+			AND p.activity_sector_id=sas.id
+			AND p.answer_id=a.id) as q4 
+			where 
+			q1.country_name = q2.country_name
+			AND q2.country_name = q3.country_name
+			AND q3.country_name = q4.country_name
+			AND q1.country_code = q2.country_code
+			AND q2.country_code = q3.country_code
+			AND q4.country_code = q4.country_code
+			ORDER BY q1.country_name ASC;
+	    </Query>
+	</DataAccess>
+
+	<!-- get health perception of workers data -->
+	<DataAccess access="public" connection="dvt_conn" id="getCountryReportHealthPerceptionData" type="sql">
+	    <Cache duration="3600" enabled="true" />
+	    <Columns />
+	    <Parameters>
+	    	<Parameter default="AT" name="pCountry" type="String" />
+	    </Parameters>
+	    <Query>
+			SELECT DISTINCT(n.literal_id) as country_name, n.country_code as country_code, (ROUND(v.value*100)) as satisfaction_working, ( ROUND(v2.value*100)) as health_negative, 
+			(ROUND(v3.value*100)) as health_problem, (ROUND(v4.value*100)) as absence, (ROUND(v5.value*100)) as sick_at_work, (ROUND(v6.value*100)) as job_till_60
+			FROM nuts n, profile p, profile p2, profile p3, profile p4, profile p5, profile p6, value v, value v2, value v3, value v4, value v5, value v6, dataset d
+			WHERE
+			/* SATISFACTION WITH WORKING CONDITIONS */
+			n.id = p.nuts_id
+			AND v.indicator_id = 57
+			AND v.profile_id = p.id
+			AND d.id = v.dataset_id
+			/* HEALTH NEGATIVE AFFECTION */
+			AND n.id = p2.nuts_id
+			AND v2.indicator_id = 58
+			AND v2.profile_id = p2.id
+			AND d.id = v2.dataset_id
+			/* HEALTH PROBLEMS IN LAST 12 MONTHS */
+			AND n.id = p3.nuts_id
+			AND v3.indicator_id = 59
+			AND v3.profile_id = p3.id
+			AND v3.dataset_id = 11
+			/* MORE THAN 15 DAYS OF ABSENCE */
+			AND n.id = p4.nuts_id
+			AND v4.indicator_id = 60
+			AND v4.profile_id = p4.id
+			AND d.id = v4.dataset_id
+			/* SICK AT WORK */
+			AND n.id = p5.nuts_id
+			AND v5.indicator_id = 61
+			AND v5.profile_id = p5.id
+			AND d.id = v5.dataset_id
+			/* BE ABLE TO DO CURRENT JOB TIL 60 YEARS OLD */
+			AND n.id = p6.nuts_id
+			AND v6.indicator_id = 62
+			AND v6.profile_id = p6.id
+			AND d.id = v6.dataset_id
+			/* COMMON */
+			AND n.country_code IN (${pCountry}, "EU28")
+			AND d.id = 10
+			ORDER BY FIELD(n.country_code, "EU28", ${pCountry}) ASC;
 	    </Query>
 	</DataAccess>
 </CDADescriptor>
