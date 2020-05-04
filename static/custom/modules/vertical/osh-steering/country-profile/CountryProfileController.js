@@ -134,12 +134,18 @@ define(function (require) {
             link: "social-dialogue",
             icon: "dialogue"
           }],
+      "resources-and-timeframe":[{
+            title: "L22002",
+            text: "L22025",
+            link: "osh-authorities",
+            icon: "forum"
+          }],
       "relationship-to-eu-strategic-framework":
       [{
             title: "L22002",
             text: "L22025",
             link: "osh-authorities",
-            icon: "authorities"
+            icon: "forum"
           }]
     };
     console.log("DVT DEV");
