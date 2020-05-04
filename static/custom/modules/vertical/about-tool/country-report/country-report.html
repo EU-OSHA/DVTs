@@ -870,20 +870,175 @@
     </div>
   </div>
 
-  <h2>OSH outcomes and working conditions OSH culture and health awareness</h2>
-  Gráfico Health and safety discussed ESENER
+  <h2 data-ng-bind="i18nLiterals.L22009 + ' ' + i18nLiterals.L22012"></h2>
+  <div class="chart--block">
+    <dvt-bar-chart
+      data-ng-cloak
+      query="getCountryReportAllCountriesAnswersData" cda="{{::cda }}"
+      width="330" height="470"
+      orientation="vertical" axis-fixed-min="0"
+      axis-fixed-max="100" step="20"
+      params="[['pDataset', datasetList.ESENER], ['pIndicator', 358]]"
+      color-role="series" colors="[color5, color2, color8]"
+      chart-title="{{i18nLiterals.L20664}}" id="4"
+      axis-label-font="12px 'OpenSans-bold'"
+      plots="plots.allCountries"
+      color2-axis-legend-shape = "circle"
+      values-visible="false"
+      values-font="12px 'OpenSans-bold'"
+      base-axis-label-text-baseline=""
+      leaf-content-overflow='visible'
+      dimensions="dimensionsOneDecimal"
+      multiple-label-colors="false"
+      legend="true" stacked="1"
+      angle="1"
+      base-axis-size="150"
+      datasource-and-dates="[datasetEurostat2016,358]"
+    ></dvt-bar-chart>
+  </div>
   Tabla con datos gráfico anterior. Columnas->Country, Practically never, Ocasionally, Regularly
-  Gráfico plan to prevent stress (ESENER)
+  <div class="chart--block">
+    <dvt-bar-chart
+      data-ng-cloak
+      query="getCountryReportAllCountriesAnswersData" cda="{{::cda }}"
+      width="330" height="470"
+      orientation="vertical" axis-fixed-min="0"
+      axis-fixed-max="100" step="20"
+      params="[['pDataset', datasetList.ESENER], ['pIndicator', 328]]"
+      color-role="series" colors="[colo5, color2]"
+      chart-title="{{i18nLiterals.L20665}}" id="3"
+      axis-label-font="12px 'OpenSans-bold'"
+      plots="plots.allCountries"
+      values-visible="false"
+      values-font="12px 'OpenSans-bold'"
+      base-axis-label-text-baseline=""
+      leaf-content-overflow='visible'
+      dimensions="dimensionsOneDecimal"
+      legend="true"
+      angle="1" stacked="1"
+      base-axis-size="150"
+      datasource-and-dates="[datasetList.ESENER,328]"
+    ></dvt-bar-chart>
+  </div>
   Tabla con datos gráfico anterior. Columnas->Country, Yes, No
-  Gráfico Procedure against bullying
+  <div class="chart--block">
+    <dvt-bar-chart
+      data-ng-cloak
+      query="getCountryReportAllCountriesAnswersData" cda="{{::cda }}"
+      width="330" height="470"
+      orientation="vertical" axis-fixed-min="0"
+      axis-fixed-max="100" step="20"
+      params="[['pDataset', datasetList.ESENER], ['pIndicator', 329]]"
+      color-role="series" colors="[color5, color2]"
+      chart-title="{{i18nLiterals.L20666}}" id="4"
+      axis-label-font="12px 'OpenSans-bold'"
+      plots="plots.allCountries"
+      values-visible="false"
+      values-font="12px 'OpenSans-bold'"
+      base-axis-label-text-baseline=""
+      leaf-content-overflow='visible'
+      dimensions="dimensionsOneDecimal"
+      legend="true"
+      angle="1" stacked="1"
+      base-axis-size="150"
+      datasource-and-dates="[datasetList.ESENER,329]"
+    ></dvt-bar-chart>
+  </div>
   Tabla. Columnas->Country, Yes, No
-  Gráfico procedures to deal with threats
+  <div class="chart--block">
+    <dvt-bar-chart
+      data-ng-cloak
+      query="getCountryReportAllCountriesAnswersData" cda="{{::cda }}"
+      width="330" height="470"
+      orientation="vertical" axis-fixed-min="0"
+      axis-fixed-max="100" step="20"
+      params="[['pDataset', datasetList.ESENER], ['pIndicator', 330]]"
+      color-role="series" colors="[color5, color2]"
+      chart-title="{{i18nLiterals.L20667}}" id="5"
+      axis-label-font="12px 'OpenSans-bold'"
+      plots="plots.allCountries"
+      values-visible="false"
+      values-font="12px 'OpenSans-bold'"
+      base-axis-label-text-baseline=""
+      leaf-content-overflow='visible'
+      dimensions="dimensionsOneDecimal"
+      legend="true"
+      angle="1" stacked="1"
+      base-axis-size="150"
+      datasource-and-dates="[datasetList.ESENER,330]"
+    ></dvt-bar-chart>
+  </div>
   Tabla. Columnas->Country, Yes, No
-  Gráfico Measures to reduce work pressure (ESENER)
+  <div class="chart--block">
+    <dvt-bar-chart
+      data-ng-cloak
+      query="getCountryReportAllCountriesAnswersData" cda="{{::cda }}"
+      width="330" height="470"
+      orientation="vertical" axis-fixed-min="0"
+      axis-fixed-max="100" step="20"
+      params="[['pDataset', datasetList.ESENER], ['pIndicator', 331]]"
+      color-role="series" colors="[color5, color2]"
+      chart-title="{{i18nLiterals.L20668}}" id="6"
+      axis-label-font="12px 'OpenSans-bold'"
+      plots="plots.allCountries" stacked="1"
+      values-visible="false"
+      values-font="12px 'OpenSans-bold'"
+      leaf-content-overflow='visible'
+      dimensions="dimensionsOneDecimal"
+      legend="true"
+      angle="1"
+      base-axis-size="150"
+      datasource-and-dates="[datasetList.ESENER,331]"
+    ></dvt-bar-chart>
+  </div>
   Tabla. Columnas->Country, Yes, No
-  Gráfico Use of personal protective equipment (EWCS)
+  <div class="chart--block">
+    <dvt-bar-chart
+      data-ng-cloak
+      query="getCountryReportAllCountriesAnswersData" cda="{{::cda }}"
+      width="600" height="470"
+      orientation="vertical" axis-fixed-min="0"
+      axis-fixed-max="100" step="20"
+      params="[['pDataset', datasetList.Eurofound], ['pIndicator', 63]]"
+      color-role="series" colors="[color8, color2, color5]"
+      values-normalized="0" stacked="1"
+      chart-title="{{i18nLiterals.L320}}" id="7"
+      axis-label-font="12px 'OpenSans-bold'"
+      plots="plots.allCountries"
+      values-visible="false"
+      values-font="12px 'OpenSans-bold'"
+      dimensions="dimensionsOneDecimal"
+      legend="true"
+      angle="1"
+      base-axis-size="150"
+      datasource-and-dates="[datasetList.Eurofound,63]"
+    ></dvt-bar-chart>
+  </div>
   Tabla. Columnas->Country, "No, not required", "Yes, but not required", "Yes and always"
-  Gráfico information about risks (EWCS)
+  <div class="chart--block">
+    <dvt-bar-chart
+      data-ng-cloak
+      query="getCountryReportAllCountriesAnswersData" cda="{{::cda }}"
+      width="330" height="470" axis-percent="1"
+      orientation="vertical" axis-fixed-min="0"
+      axis-fixed-max="100" step="20"
+      params="[['pDataset', datasetList.Eurofound], ['pIndicator', 64]]"
+      color-role="series" colors="[color2, color5]"
+      values-normalized="0" stacked="1"
+      chart-title="{{i18nLiterals.L321}}" id="8"
+      axis-label-font="12px 'OpenSans-bold'"
+      plots="plots.allCountries"
+      values-visible="false"
+      values-font="12px 'OpenSans-bold'"
+      multiple-label-colors="false"
+      leaf-content-overflow='visible'
+      dimensions="dimensionsOneDecimal"
+      legend="true"
+      angle="1"
+      base-axis-size="150"
+      datasource-and-dates="[datasetList.Eurofound,64]"
+    ></dvt-bar-chart>
+  </div>
   Tabla. Columnas->Country, Yes, No
 
   <h2>OSH outcomes and working conditions Working conditions</h2>

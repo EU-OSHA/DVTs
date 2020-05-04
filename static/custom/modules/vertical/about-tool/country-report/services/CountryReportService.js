@@ -4,17 +4,88 @@ define (function (require) {
     var pv = require('cdf/lib/CCC/protovis');
     var CountryReportService = function (dvtUtils, $log) {
         return {
-            getChartAllCountriesPlots: function(pCountry) {
-                var dashboard = this.dashboard;
-    
+            getChartAllCountriesPlots: function(pCountry) {    
                 return [
                     {
                         name: "main",
                         dataPart: "0",
                         line_lineWidth: 1.5,
                         barSizeMax: 20,
+                        bar_call: function(){
+                            if(this.sign.chart.options.datasourceAndDates[1] == 358 ||
+                                this.sign.chart.options.datasourceAndDates[1] == 328 ||
+                                this.sign.chart.options.datasourceAndDates[1] == 329 ||
+                                this.sign.chart.options.datasourceAndDates[1] == 330 ||
+                                this.sign.chart.options.datasourceAndDates[1] == 331 ||
+                                this.sign.chart.options.datasourceAndDates[1] == 63 ||
+                                this.sign.chart.options.datasourceAndDates[1] == 64){
+                                //EU28 stroke separator vertical
+                                this.add(pv.Rule)
+                                    //Negative value in top line continues out of the chart
+                                    .top(0)
+                                    .bottom(0)
+                                    .height(null) // clear any inherited value
+                                    .width(null)  // clear any inherited value
+                                    .strokeStyle('black')
+                                    .lineWidth(3)
+                                    .left(function(scene){
+                                        //$log.warn(scene);
+                                        var baseScale = this.getContext().chart.axes.base.scale;
+                                        var countryKey = scene.firstAtoms.category;
+                                        var panelWidth = this.root.width();
+                                        //return panelWidth/40;               
+                                        return baseScale('Austria (AT)') - 16;
+                                    });
+
+                                //Non EU countries stroke separator vertical
+                                this.add(pv.Rule)
+                                    .top(0)
+                                    .bottom(0)
+                                    .height(null) // clear any inherited value
+                                    .width(null)  // clear any inherited value
+                                    .strokeStyle('black')
+                                    .lineWidth(3)
+                                    .left(function(scene){
+                                        var baseScale = this.getContext().chart.axes.base.scale;
+                                        var countryKey = scene.firstAtoms.category;
+                                        var panelWidth = this.root.width();         
+
+                                        if(!scene.firstAtoms.value.label.match('%')){
+                                            scene.firstAtoms.value.label = scene.firstAtoms.value.label + '%';
+                                        }
+
+                                        if(resolution < 960){
+                                            return baseScale('Switzerland (CH)') - 11;
+                                        }
+
+                                        return baseScale('Switzerland (CH)') - this.sign.panel.barWidth ; 
+                                    });
+                            }   
+                        },
                         bar_fillStyle: function(scene){
                             var countryKey = scene.firstAtoms.category.value;
+                            var split = scene.firstAtoms.series.value;
+
+                            var numberOfSplits = 1;
+
+                            var splits = [];
+
+                            if (this.chart.options.datasourceAndDates[1] == 358)
+                            {
+                                splits=["Regularly", "Occasionally", "Practically never"];
+                            } else if (this.chart.options.datasourceAndDates[1] == 328 || 
+                                this.chart.options.datasourceAndDates[1] == 329  || 
+                                this.chart.options.datasourceAndDates[1] == 330  || 
+                                this.chart.options.datasourceAndDates[1] == 331)
+                            {
+                                splits=["Yes", "No"];
+                            } else if (this.chart.options.datasourceAndDates[1] == 63)
+                            {
+                                splits=["Yes, and I always use it", "Yes, but I don't always use it", "No, not required"];
+                            } else if (this.chart.options.datasourceAndDates[1] == 64)
+                            {
+                                splits=["(very) Well informed", "Not very or not at all well informed"];
+                            }
                             
                             if(this.chart.options.dataAccessId == 'getLevelOfReportingData'){
                                 if(!scene.firstAtoms.value.label.match('%')){
@@ -22,15 +93,40 @@ define (function (require) {
                                 }
                             }
 
+                            var EUColours = [dvtUtils.getEUColor(), dvtUtils.getEUColor(2),dvtUtils.getAccidentsColors(4), dvtUtils.getChartLightGrayColor()];
+                            var countryColours = [dvtUtils.getColorCountry(1), dvtUtils.getColorCountry(12), dvtUtils.getAccidentsColors(4), dvtUtils.getChartLightGrayColor()];
+                            var defaultColours = [dvtUtils.getColorCountry(2),dvtUtils.getColorCountry(22),dvtUtils.getChartLightGrayColor(),dvtUtils.getAccidentsColors(4)];
+
                             //$log.warn(countryKey);
                             if (countryKey == 'EU28' || countryKey == "EU27_2020") {
-                                return dvtUtils.getEUColor();
+                                if (splits.length == 0)
+                                {
+                                    return dvtUtils.getEUColor();    
+                                }
+                                else
+                                {
+                                    return EUColours[splits.indexOf(split)];
+                                }                                
                             }
                             if (countryKey.indexOf(pCountry) > -1)
                             {
-                                return dvtUtils.getColorCountry(1);
+                                if (splits.length == 0)
+                                {
+                                    return dvtUtils.getColorCountry(1);
+                                }
+                                else
+                                {
+                                    return countryColours[splits.indexOf(split)];
+                                }
                             }
-                            return dvtUtils.getColorCountry(2);
+                            if (splits.length == 0)
+                            {
+                                return dvtUtils.getColorCountry(2);
+                            }
+                            else
+                            {
+                                return defaultColours[splits.indexOf(split)];
+                            }                            
                         }, 
                         label_textStyle: function(scene){
                             var countryKey = scene.firstAtoms.series;
