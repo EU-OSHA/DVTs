@@ -98,7 +98,7 @@ define(function (require) {
             icon: "workers"
           }],
       "action-plan-to-prevent-stress":[{
-            title: "L64",
+            title: "L321",
             text: "L22060",
             link: "osh-culture({pIndicator:'information-about-risks'})",
             icon: "culture"
@@ -114,7 +114,7 @@ define(function (require) {
             link: "mental-risk({pIndicator:'discrimination'})",
             icon: "mental-risk"
           },{
-            title: "L65",
+            title: "L322",
             text: "L20577",
             link: "overall-opinion",
             icon: "overall-opinion"

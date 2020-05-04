@@ -45,14 +45,15 @@ define(function (require) {
 		$scope.elementsStart=0;
 		$scope.elementsEnd=$scope.pageSize;
 
-		if ($rootScope.defaultCountry.code != undefined)
+		if ($stateParams.pCountry != undefined)
+		{
+			$scope.pCountry = $stateParams.pCountry;
+		}
+		else if ($rootScope.defaultCountry.code != undefined)
 		{
 			$scope.pCountry = $rootScope.defaultCountry.code;
 		}
-		else
-		{
-			$scope.pCountry = $stateParams.pCountry;
-		}		
+				
 		$scope.pInstitution = $stateParams.pInstitution;
 
 		/*if ($scope.pCountry != null)

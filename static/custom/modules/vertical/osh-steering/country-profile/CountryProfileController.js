@@ -135,22 +135,19 @@ define(function (require) {
             icon: "dialogue"
           }],
       "resources-and-timeframe":[{
-            title: "L22002",
-            text: "L22025",
-            link: "osh-authorities",
-            icon: "forum"
+            title: "L22017",
+            text: "L22063",
+            link: "enforcement-capacity",
+            icon: "enforcement"
           }],
       "relationship-to-eu-strategic-framework":
       [{
             title: "L22002",
             text: "L22025",
-            link: "osh-authorities",
+            link: "osh-authorities({pCountry:'EU28'})",
             icon: "forum"
           }]
     };
-    console.log("DVT DEV");
-    console.log($scope.relatedItems);
-    console.log($scope.relatedItems[$scope.pIndicator]);
 
 
     /******************************************************************************|
