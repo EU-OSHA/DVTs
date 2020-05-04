@@ -126,7 +126,7 @@ define(function (require) {
             icon: "mental-risk"
           },{
             title: "L20673",
-            text: "L22578",
+            text: "L20578",
             link: "mental-risk({pIndicator:'difficult-clients'})",
             icon: "mental-risk"
           }],
