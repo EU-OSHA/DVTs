@@ -117,7 +117,7 @@ define(function (require) {
             link: "worker-involvement({pSplit:'ewcs'})",
             icon: "workers"
           },{
-            title: "L65",
+            title: "L322",
             text:"L20577",
             link: "overall-opinion",
             icon: "overall-opinion"

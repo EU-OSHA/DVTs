@@ -35,6 +35,16 @@ define(function (require) {
 					$scope.indicatorIcons = function(item){
 						return(item.icon+'-icon');
 					}
+
+					// The text for the description of the related section
+					$scope.trim = function(pLiteral)
+					{
+						if (i18n_literals[pLiteral].length > 80)
+						{
+							return i18n_literals[pLiteral].substring(0, 80).split(" ").slice(0, -1).join(" ") + "<span class='dots'>...</span>";;
+						}
+						return i18n_literals[pLiteral];
+					}
 			}],
 			templateUrl: configService.getHorizontalDirectiveTplPath("related", "related")
 		}
