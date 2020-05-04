@@ -99,7 +99,7 @@ define(function (require) {
           }],
       "action-plan-to-prevent-stress":[{
             title: "L321",
-            text: "L22060",
+            text: "L22054",
             link: "osh-culture({pIndicator:'information-about-risks'})",
             icon: "culture"
           },{
