@@ -168,6 +168,7 @@ define(function (require) {
     $scope.step = 20;
 
     var resolution = window.resolution;
+    $scope.resolution = resolution;
 
     // Properties changing dynamically depending on resolution
     $scope.orientation = resolution > 768 ? "vertical" : "horizontal";
