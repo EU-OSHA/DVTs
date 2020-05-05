@@ -64,6 +64,7 @@ define(function (require) {
     $scope.relatedLiterals = [20679, 20680, 20681, 20682];
 
     var resolution = window.resolution;
+    $scope.resolution = resolution;
 
     $scope.orientation = resolution > 768 ? "vertical" : "horizontal";
     $scope.axisSize = resolution > 768 ? 150 : 110;
