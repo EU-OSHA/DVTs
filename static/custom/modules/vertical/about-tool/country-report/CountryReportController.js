@@ -286,8 +286,7 @@ define(function (require) {
 	      	header += '<img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/EU-OSHA-trans-en.png" alt="European Agency for Safety and Health at Work">';
 	      	header += '<img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/eu-flag.png" title="European Union flag">';
 	    		header += '</picture>';
-	    		$(".full-country-report-page section.cover-page .header-logo").append( $(header) );
-		
+	    		$(" .header-logo").append( $(header) );
 
 
 	}
