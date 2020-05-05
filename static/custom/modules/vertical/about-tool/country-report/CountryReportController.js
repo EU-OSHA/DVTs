@@ -63,6 +63,7 @@ define(function (require) {
         $scope.color5 = dvtUtils.getColorCountry(2);        
         $scope.color6 = dvtUtils.getColorCountry(12);
         $scope.color7 = dvtUtils.getColorCountry(4);
+        $scope.color8 = dvtUtils.getChartLightGrayColor();
         $scope.colorEU = dvtUtils.getEUColor();
 
         $scope.labelLeftAlign = "left";
