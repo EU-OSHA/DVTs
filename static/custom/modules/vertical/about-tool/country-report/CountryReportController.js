@@ -95,6 +95,24 @@ define(function (require) {
         	healthAtRisk: CountryReportService.getHealthAtRiskPlots($scope.pCountry)
         }
 
+        $scope.radarChartPromises = {
+        	vibrations: [
+	            dataService.getCountry1VibrationData($scope.datasetList.Eurofound, $scope.pCountry),
+	            null,
+	            dataService.getEU28VibrationData($scope.datasetList.Eurofound)           
+			],
+			risksInvolvedEurofound: [
+				dataService.getCountryRisksInvolvedEurofoundData($scope.datasetList.Eurofound, $scope.pCountry),
+				null,
+				dataService.getEU28RisksInvolvedEurofoundData($scope.datasetList.Eurofound)           
+			],
+			risksInvolvedESENER: [
+				dataService.getCountryRisksInvolvedESENERData($scope.datasetList.ESENER, $scope.pCountry),
+				null,
+            	dataService.getEU28RisksInvolvedESENERData($scope.datasetList.ESENER)
+			]
+        }
+
         $scope.getMin = function f(cdaData) {
 			var minTrunc = 0;
 

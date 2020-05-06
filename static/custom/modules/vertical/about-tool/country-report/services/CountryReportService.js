@@ -101,7 +101,16 @@ define (function (require) {
                             }else if (this.chart.options.datasourceAndDates[1] == 88)
                             {
                                 splits=["Once or more","Never"];
+                            }else if (this.chart.options.datasourceAndDates[1] == 71 || 
+                                this.chart.options.datasourceAndDates[1] == 72 || 
+                                this.chart.options.datasourceAndDates[1] == 73 || 
+                                this.chart.options.datasourceAndDates[1] == 74)
+                            {
+                                splits=["At least 1/4 of the time","Less than 1/4 of the time"];
                             }
+
+
+                            "At least 1/4 of the time","Less than 1/4 of the time"
                             
                             if(this.chart.options.dataAccessId == 'getLevelOfReportingData'){
                                 if(!scene.firstAtoms.value.label.match('%')){
