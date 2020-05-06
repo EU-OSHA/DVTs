@@ -214,7 +214,7 @@
           legend-align="center"
           legend-item-size="270"
           multiple-label-colors="true"
-          datasource-and-dates="[datasetEurostat2019,32]"
+          datasource-and-dates="[datasetList.EUROSTAT2019,32]"
         ></dvt-bar-chart>
 
         <table class="chart-data">
@@ -697,7 +697,7 @@
     <div class="box-rounded">
       <dvt-bar-chart
         data-ng-cloak
-        query="getCountryReportAllCountriesData" cda="{{::cda }}"
+        query="getCountryReportAllCountriesOrderValueData" cda="{{::cda }}"
         width="330" height="470"
         orientation="vertical" axis-fixed-min="0"
         axis-fixed-max="5" step="1"
@@ -1145,19 +1145,401 @@
       <span data-ng-bind="i18nLiterals.L20704"></span> 
       <span><a data-ng-bind="i18nLiterals.L20705" ui-sref="about-tool-detail-page({pSection: 'osh-outcomes-working-conditions', pSubsection: 'overall_opinion', pIndicator: 65})"></a></span>
     </div>
-    <h2>OSH outcomes and working conditions Working conditions</h2>
+
     <h3>Overall opinion</h3>
-    Gráfico Job satisfaction
+
+    <div class="box-rounded">
+      <dvt-bar-chart
+        data-ng-cloak
+        query="getCountryReportAllCountriesAnswersData" cda="{{::cda }}"
+        width="330" height="470" axis-percent="1"
+        orientation="vertical" axis-fixed-min="0"
+        axis-fixed-max="100" step="20"
+        params="[['pDataset', datasetList.Eurofound], ['pIndicator', 65]]"
+        color-role="series" colors="[color9, color8, color2, color5]"
+        chart-title="{{i18nLiterals.L322}}" id="1"
+        axis-label-font="12px 'OpenSans-bold'"
+        plots="plots.allCountries"
+        values-visible="false"
+        base-axis-label-text-baseline="middle"
+        values-font="12px 'OpenSans-bold'"
+        multiple-label-colors="false"
+        dimensions="dimensionsOneDecimal"
+        legend="true"
+        stacked="1" angle="1"
+        base-axis-size="150"
+        datasource-and-dates="[datasetList.Eurofound,65]"
+      ></dvt-bar-chart>
+    </div>
     Tabla
-    Gráfico Health at risk (Sector)
+
+    <div class="box-rounded">
+      <dvt-bar-chart
+      data-ng-cloak
+      query="getCountryReportActivitySectorCountryFirstData" cda="{{::cda }}"
+      width="330" height="470" axis-percent="1"
+      orientation="vertical" axis-fixed-min="0"
+      axis-fixed-max="40" step="20"
+      params="[['pDataset', datasetList.Eurofound], ['pIndicator', 66], ['pCountry1', pCountry], ['pCountry2', 'EU28']]"
+      color-role="series" colors="[color1, colorEU]"
+      chart-title="{{i18nLiterals.L323}} - {{i18nLiterals.L20648}}" id="2"
+      axis-label-font="12px 'OpenSans-bold'"
+      plots="plots.healthAtRisk"
+      values-visible="true"
+      label-text-align="center"
+      values-overflow="show"
+      values-mask="{value}"
+      dataset="Eurofound" custom-tooltip="1"
+      values-font="12px 'OpenSans-bold'"
+      multiple-label-colors="false"
+      leaf-content-overflow='visible'
+      dimensions="dimensionsNoDecimal"
+      base-axis-label-text-baseline="top"
+      legend="true" axis-label-word-break="1"
+      legend-align="center" base-axis-size="50"
+      datasource-and-dates="[datasetList.Eurofound,66]"
+      ></dvt-bar-chart>
+    </div>
     Tabla. Columnas->Sector, Country, Value, Country, Value
-    Gráfico Health at Risk (Gender)
+
+    <div class="box-rounded">
+      <dvt-bar-chart
+      data-ng-cloak
+      query="getCountryReportGenderCountryFirstData" cda="{{::cda }}"
+      width="330" height="470" axis-percent="1"
+      orientation="vertical" axis-fixed-min="0"
+      axis-fixed-max="40" step="20"
+      params="[['pDataset', datasetList.Eurofound], ['pIndicator', 66], ['pCountry1', pCountry], ['pCountry2', 'EU28']]"
+      color-role="series" colors="[color1, colorEU]"
+      chart-title="{{i18nLiterals.L323}} - {{i18nLiterals.L20650}}" id="2"
+      axis-label-font="12px 'OpenSans-bold'"
+      plots="plots.healthAtRisk"
+      values-visible="true"
+      label-text-align="center"
+      values-overflow="show"
+      values-mask="{value}"
+      dataset="Eurofound" custom-tooltip="1"
+      values-font="12px 'OpenSans-bold'"
+      multiple-label-colors="false"
+      leaf-content-overflow='visible'
+      dimensions="dimensionsNoDecimal"
+      base-axis-label-text-baseline="top"
+      legend="true" axis-label-word-break="1"
+      legend-align="center" base-axis-size="50"
+      datasource-and-dates="[datasetList.Eurofound,66]"
+      ></dvt-bar-chart>
+    </div>
     Tabla. Columnas->Gender, Country, Value, Country, Value
-    Gráfico Health at Risk (Age)
+
+    <div class="box-rounded">
+      <dvt-bar-chart
+      data-ng-cloak
+      query="getCountryReportAgeGroupCountryFirstData" cda="{{::cda }}"
+      width="330" height="470" axis-percent="1"
+      orientation="vertical" axis-fixed-min="0"
+      axis-fixed-max="40" step="20"
+      params="[['pDataset', datasetList.Eurofound], ['pIndicator', 66], ['pCountry1', pCountry], ['pCountry2', 'EU28']]"
+      color-role="series" colors="[color1, colorEU]"
+      chart-title="{{i18nLiterals.L323}} - {{i18nLiterals.L20649}}" id="2"
+      axis-label-font="12px 'OpenSans-bold'"
+      plots="plots.healthAtRisk"
+      values-visible="true"
+      label-text-align="center"
+      values-overflow="show"
+      values-mask="{value}"
+      dataset="Eurofound" custom-tooltip="1"
+      values-font="12px 'OpenSans-bold'"
+      multiple-label-colors="false"
+      leaf-content-overflow='visible'
+      dimensions="dimensionsNoDecimal"
+      base-axis-label-text-baseline="top"
+      legend="true" axis-label-word-break="1"
+      legend-align="center" base-axis-size="50"
+      datasource-and-dates="[datasetList.Eurofound,66]"
+      ></dvt-bar-chart>
+    </div>
     Tabla. Columnas->Age, Country, Value, Country, Value
   </section>
 
-
+  
+  <h3 data-ng-bind="i18nLiterals.L20710"></h3>
+  <div class="chart--block">
+    <dvt-bar-chart
+      data-ng-cloak
+      query="getCountryReportAllCountriesAnswersData" cda="{{::cda }}"
+      width="330" height="470" axis-percent="1"
+      orientation="vertical" axis-fixed-min="0"
+      axis-fixed-max="100" step="20"
+      params="[['pDataset', datasetList.ESENER], ['pIndicator', 323]]"
+      color-role="series" colors="[color2, color5]"
+      chart-title="{{i18nLiterals.L340}} - {{i18nLiterals.L20645}}" id="1"
+      axis-label-font="12px 'OpenSans-bold'"
+      plots="plots.allCountries"
+      values-visible="false"
+      base-axis-label-text-baseline="middle"
+      values-font="12px 'OpenSans-bold'"
+      multiple-label-colors="false"
+      dimensions="dimensionsOneDecimal"
+      legend="true"
+      stacked="1" angle="1"
+      base-axis-size="150"
+      datasource-and-dates="[datasetList.ESENER,323]"
+    ></dvt-bar-chart>
+  </div>
+  <div class="chart--block">
+    <dvt-bar-chart
+      data-ng-cloak
+      query="getCountryReportAllCountriesAnswersData" cda="{{::cda }}"
+      width="330" height="470" axis-percent="1"
+      orientation="vertical" axis-fixed-min="0"
+      axis-fixed-max="100" step="20"
+      params="[['pDataset', datasetList.Eurofound], ['pIndicator', 83]]"
+      color-role="series" colors="[color8, color2, color5]"
+      chart-title="{{i18nLiterals.L340}} - {{i18nLiterals.L20646}}" id="1"
+      axis-label-font="12px 'OpenSans-bold'"
+      plots="plots.allCountries"
+      values-visible="false"
+      base-axis-label-text-baseline="middle"
+      values-font="12px 'OpenSans-bold'"
+      multiple-label-colors="false"
+      dimensions="dimensionsOneDecimal"
+      legend="true"
+      stacked="1" angle="1"
+      base-axis-size="150"
+      datasource-and-dates="[datasetList.Eurofound,83]"
+    ></dvt-bar-chart>
+  </div>
+  <div class="chart--block">
+    <dvt-bar-chart
+      data-ng-cloak
+      query="getCountryReportAllCountriesAnswersData" cda="{{::cda }}"
+      width="330" height="470" axis-percent="1"
+      orientation="vertical" axis-fixed-min="0"
+      axis-fixed-max="100" step="20"
+      params="[['pDataset', datasetList.ESENER], ['pIndicator', 324]]"
+      color-role="series" colors="[color2, color5]"
+      chart-title="{{i18nLiterals.L341}} - {{i18nLiterals.L20645}}" id="1"
+      axis-label-font="12px 'OpenSans-bold'"
+      plots="plots.allCountries"
+      values-visible="false"
+      base-axis-label-text-baseline="middle"
+      values-font="12px 'OpenSans-bold'"
+      multiple-label-colors="false"
+      dimensions="dimensionsOneDecimal"
+      legend="true"
+      stacked="1" angle="1"
+      base-axis-size="150"
+      datasource-and-dates="[datasetList.ESENER,324]"
+    ></dvt-bar-chart>
+  </div>
+  <div class="chart--block">
+    <dvt-bar-chart
+      data-ng-cloak
+      query="getCountryReportAllCountriesOrderCountryData" cda="{{::cda }}"
+      width="330" height="470" axis-percent="1"
+      orientation="vertical" axis-fixed-min="60"
+      axis-fixed-max="100" step="20"
+      params="[['pDataset', datasetList.Eurofound], ['pIndicator', 84]]"
+      color-role="series" colors="[color5]"
+      chart-title="{{i18nLiterals.L341}} - {{i18nLiterals.L20646}}" id="1"
+      axis-label-font="12px 'OpenSans-bold'"
+      plots="plots.allCountries"
+      values-visible="false"
+      base-axis-label-text-baseline="middle"
+      values-font="12px 'OpenSans-bold'"
+      multiple-label-colors="false"
+      dimensions="dimensionsOneDecimal"
+      legend="true"
+      stacked="1" angle="1"
+      base-axis-size="150"
+      datasource-and-dates="[datasetList.Eurofound,84]"
+    ></dvt-bar-chart>
+  </div>
+  <div class="chart--block">
+    <dvt-bar-chart
+      data-ng-cloak
+      query="getCountryReportAllCountriesAnswersData" cda="{{::cda }}"
+      width="330" height="470" axis-percent="1"
+      orientation="vertical" axis-fixed-min="0"
+      axis-fixed-max="100" step="20"
+      params="[['pDataset', datasetList.Eurofound], ['pIndicator', 85]]"
+      color-role="series" colors="[color8, color2, color5]"
+      chart-title="{{i18nLiterals.L342}}" id="1"
+      axis-label-font="12px 'OpenSans-bold'"
+      plots="plots.allCountries"
+      values-visible="false"
+      base-axis-label-text-baseline="middle"
+      values-font="12px 'OpenSans-bold'"
+      multiple-label-colors="false"
+      dimensions="dimensionsOneDecimal"
+      legend="true"
+      stacked="1" angle="1"
+      base-axis-size="150"
+      datasource-and-dates="[datasetList.Eurofound,85]"
+    ></dvt-bar-chart>
+  </div>
+  <div class="chart--block">
+    <dvt-bar-chart
+      data-ng-cloak
+      query="getCountryReportAllCountriesAnswersData" cda="{{::cda }}"
+      width="330" height="470" axis-percent="1"
+      orientation="vertical" axis-fixed-min="0"
+      axis-fixed-max="100" step="20"
+      params="[['pDataset', datasetList.ESENER], ['pIndicator', 325]]"
+      color-role="series" colors="[color2, color5]"
+      chart-title="{{i18nLiterals.L740}} - {{i18nLiterals.L20645}}" id="1"
+      axis-label-font="12px 'OpenSans-bold'"
+      plots="plots.allCountries"
+      values-visible="false"
+      base-axis-label-text-baseline="middle"
+      values-font="12px 'OpenSans-bold'"
+      multiple-label-colors="false"
+      dimensions="dimensionsOneDecimal"
+      legend="true"
+      stacked="1" angle="1"
+      base-axis-size="150"
+      datasource-and-dates="[datasetList.ESENER,325]"
+    ></dvt-bar-chart>
+  </div>
+  <div class="chart--block">
+    <dvt-bar-chart
+      data-ng-cloak
+      query="getCountryReportAllCountriesAnswersData" cda="{{::cda }}"
+      width="330" height="470" axis-percent="1"
+      orientation="vertical" axis-fixed-min="0"
+      axis-fixed-max="100" step="20"
+      params="[['pDataset', datasetList.Eurofound], ['pIndicator', 86]]"
+      color-role="series" colors="[color8,color2, color5]"
+      chart-title="{{i18nLiterals.L740}} - {{i18nLiterals.L20646}}" id="1"
+      axis-label-font="12px 'OpenSans-bold'"
+      plots="plots.allCountries"
+      values-visible="false"
+      base-axis-label-text-baseline="middle"
+      values-font="12px 'OpenSans-bold'"
+      multiple-label-colors="false"
+      dimensions="dimensionsOneDecimal"
+      legend="true"
+      stacked="1" angle="1"
+      base-axis-size="150"
+      datasource-and-dates="[datasetList.Eurofound,86]"
+    ></dvt-bar-chart>
+  </div>
+  <div class="chart--block">
+    <dvt-bar-chart
+      data-ng-cloak
+      query="getCountryReportAllCountriesAnswersData" cda="{{::cda }}"
+      width="330" height="470" axis-percent="1"
+      orientation="vertical" axis-fixed-min="0"
+      axis-fixed-max="100" step="20"
+      params="[['pDataset', datasetList.ESENER], ['pIndicator', 326]]"
+      color-role="series" colors="[color2, color5]"
+      chart-title="{{i18nLiterals.L344}} - {{i18nLiterals.L20645}}" id="1"
+      axis-label-font="12px 'OpenSans-bold'"
+      plots="plots.allCountries"
+      values-visible="false"
+      base-axis-label-text-baseline="middle"
+      values-font="12px 'OpenSans-bold'"
+      multiple-label-colors="false"
+      dimensions="dimensionsOneDecimal"
+      legend="true"
+      stacked="1" angle="1"
+      base-axis-size="150"
+      datasource-and-dates="[datasetList.ESENER,326]"
+    ></dvt-bar-chart>
+  </div>
+  <div class="chart--block">
+    <dvt-bar-chart
+      data-ng-cloak
+      query="getCountryReportAllCountriesAnswersData" cda="{{::cda }}"
+      width="330" height="470" axis-percent="1"
+      orientation="vertical" axis-fixed-min="0"
+      axis-fixed-max="100" step="20"
+      params="[['pDataset', datasetList.Eurofound], ['pIndicator', 87]]"
+      color-role="series" colors="[color8,color2, color5]"
+      chart-title="{{i18nLiterals.L344}} - {{i18nLiterals.L20646}}" id="1"
+      axis-label-font="12px 'OpenSans-bold'"
+      plots="plots.allCountries"
+      values-visible="false"
+      base-axis-label-text-baseline="middle"
+      values-font="12px 'OpenSans-bold'"
+      multiple-label-colors="false"
+      dimensions="dimensionsOneDecimal"
+      legend="true"
+      stacked="1" angle="1"
+      base-axis-size="150"
+      datasource-and-dates="[datasetList.Eurofound,87]"
+    ></dvt-bar-chart>
+  </div>
+  <div class="chart--block">
+    <dvt-bar-chart
+      data-ng-cloak
+      query="getCountryReportAllCountriesAnswersData" cda="{{::cda }}"
+      width="330" height="470" axis-percent="1"
+      orientation="vertical" axis-fixed-min="0"
+      axis-fixed-max="100" step="20"
+      params="[['pDataset', datasetList.ESENER], ['pIndicator', 327]]"
+      color-role="series" colors="[color2, color5]"
+      chart-title="{{i18nLiterals.L345}} - {{i18nLiterals.L20645}}" id="1"
+      axis-label-font="12px 'OpenSans-bold'"
+      plots="plots.allCountries"
+      values-visible="false"
+      base-axis-label-text-baseline="middle"
+      values-font="12px 'OpenSans-bold'"
+      multiple-label-colors="false"
+      dimensions="dimensionsOneDecimal"
+      legend="true"
+      stacked="1" angle="1"
+      base-axis-size="150"
+      datasource-and-dates="[datasetList.ESENER,327]"
+    ></dvt-bar-chart>
+  </div>
+  <div class="chart--block">
+    <dvt-bar-chart
+      data-ng-cloak
+      query="getCountryReportAllCountriesAnswersData" cda="{{::cda }}"
+      width="330" height="470" axis-percent="1"
+      orientation="vertical" axis-fixed-min="0"
+      axis-fixed-max="100" step="20"
+      params="[['pDataset', datasetList.Eurofound], ['pIndicator', 88]]"
+      color-role="series" colors="[color2, color5]"
+      chart-title="{{i18nLiterals.L345}} - {{i18nLiterals.L20646}}" id="1"
+      axis-label-font="12px 'OpenSans-bold'"
+      plots="plots.allCountries"
+      values-visible="false"
+      base-axis-label-text-baseline="middle"
+      values-font="12px 'OpenSans-bold'"
+      multiple-label-colors="false"
+      dimensions="dimensionsOneDecimal"
+      legend="true"
+      stacked="1" angle="1"
+      base-axis-size="150"
+      datasource-and-dates="[datasetList.Eurofound,88]"
+    ></dvt-bar-chart>
+  </div>
+  <div class="chart--block">
+    <dvt-bar-chart
+      data-ng-cloak
+      query="getCountryReportAllCountriesAnswersData" cda="{{::cda }}"
+      width="330" height="470" axis-percent="1"
+      orientation="vertical" axis-fixed-min="0"
+      axis-fixed-max="100" step="20"
+      params="[['pDataset', datasetList.Eurofound], ['pIndicator', 89]]"
+      color-role="series" colors="[color2, color5]"
+      chart-title="{{i18nLiterals.L346}}" id="1"
+      axis-label-font="12px 'OpenSans-bold'"
+      plots="plots.allCountries"
+      values-visible="false"
+      base-axis-label-text-baseline="middle"
+      values-font="12px 'OpenSans-bold'"
+      multiple-label-colors="false"
+      dimensions="dimensionsOneDecimal"
+      legend="true"
+      stacked="1" angle="1"
+      base-axis-size="150"
+      datasource-and-dates="[datasetList.Eurofound,89]"
+    ></dvt-bar-chart>
+  </div>
+  
 
 
 
