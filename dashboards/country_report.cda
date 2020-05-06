@@ -6,20 +6,6 @@
       </Connection>
    </DataSources>
 
-	<!-- STEERING OF OSH || get regulations indicators for select -->
-	<DataAccess access="public" connection="dvt_conn" id="getRegulationIndicators" type="sql">
-	    <Cache duration="3600" enabled="true" />
-	    <Columns />
-	    <Parameters>
-	      <Parameter default="41" name="pIndicator" type="Numeric" />
-	    </Parameters>
-	    <Query>
-	      SELECT id, literal_id 
-	      FROM indicator 
-	      WHERE id IN (40, 41, 42, 43, 44, 45)
-	    </Query>
-	</DataAccess>
-
 	<!-- Countries for the select -->
 	<DataAccess access="public" connection="dvt_conn" id="getCountryReportCountries" type="sql">
 	    <Cache duration="3600" enabled="true" />
@@ -105,7 +91,7 @@
 	    </Query>
 	</DataAccess>
 
-	<!-- Load data for chart by activity sector -->
+	<!-- Load data for chart by activity sector with the sector first -->
 	<DataAccess access="public" connection="dvt_conn" id="getCountryReportActivitySectorData" type="sql">
 	    <Cache duration="3600" enabled="true" />
 	    <Columns />
@@ -125,9 +111,85 @@
 	      AND d.id = ${pDataset} AND d.id = v.dataset_id 
 	      AND t.language = 'EN'
 	      AND t.literal_id = sas.literal_id
-	      AND sas.id IN (1, 2, 3, 4, 18, 6, 7)
+	      AND CASE WHEN ${pDataset}=21 THEN (sas.id IN (1, 2, 3, 4, 18, 6, 7)) ELSE (sas.id IN (8,9,10,11,12,13)) END
 	      AND n.country_code IN (${pCountry1}, ${pCountry2}) AND i.id = ${pIndicator}
 	      ORDER BY FIELD(n.country_code, ${pCountry1}, ${pCountry2}) DESC
+	    </Query>
+	</DataAccess>
+
+	<!-- Load data for chart by activity sector with the country first -->
+	<DataAccess access="public" connection="dvt_conn" id="getCountryReportActivitySectorCountryFirstData" type="sql">
+	    <Cache duration="3600" enabled="true" />
+	    <Columns />
+	    <Parameters>
+	      <Parameter default="6" name="pDataset" type="Numeric" />
+	      <Parameter default="1" name="pIndicator" type="Numeric" />
+	      <Parameter default="AT" name="pCountry1" type="String" />
+	      <Parameter default="EU28" name="pCountry2" type="String" />
+	    </Parameters>
+	    <Query>
+	      SELECT n.country_code as Country, t.text as Sector, (v.value*100) as Value
+	      FROM nuts n, profile p, indicator i, value v, split_activity_sector sas, dataset d, translation t
+	      WHERE n.id = p.nuts_id 
+	      AND p.activity_sector_id = sas.id 
+	      AND i.id = v.indicator_id 
+	      AND v.profile_id = p.id
+	      AND d.id = ${pDataset} AND d.id = v.dataset_id 
+	      AND t.language = 'EN'
+	      AND t.literal_id = sas.literal_id
+	      AND CASE WHEN ${pDataset}=21 THEN (sas.id IN (1, 2, 3, 4, 18, 6, 7)) ELSE (sas.id IN (8,9,10,11,12,13)) END
+	      AND n.country_code IN (${pCountry1}, ${pCountry2}) AND i.id = ${pIndicator}
+	      ORDER BY FIELD(n.country_code, ${pCountry1}, ${pCountry2}) ASC
+	    </Query>
+	</DataAccess>
+
+	<!-- Load data for chart by gender with the country first -->
+	<DataAccess access="public" connection="dvt_conn" id="getCountryReportGenderCountryFirstData" type="sql">
+	    <Cache duration="3600" enabled="true" />
+	    <Columns />
+	    <Parameters>
+	      <Parameter default="6" name="pDataset" type="Numeric" />
+	      <Parameter default="1" name="pIndicator" type="Numeric" />
+	      <Parameter default="AT" name="pCountry1" type="String" />
+	      <Parameter default="EU28" name="pCountry2" type="String" />
+	    </Parameters>
+	    <Query>
+	      SELECT n.country_code as Country, t.text as Gender, (v.value*100) as Value
+	      FROM nuts n, profile p, indicator i, value v, split_gender g, dataset d, translation t
+	      WHERE n.id = p.nuts_id 
+	      AND p.gender_id = g.id 
+	      AND i.id = v.indicator_id 
+	      AND v.profile_id = p.id
+	      AND d.id = ${pDataset} AND d.id = v.dataset_id 
+	      AND t.language = 'EN'
+	      AND t.literal_id = g.literal_id
+	      AND n.country_code IN (${pCountry1}, ${pCountry2}) AND i.id = ${pIndicator}
+	      ORDER BY FIELD(n.country_code, ${pCountry1}, ${pCountry2}) ASC, t.text ASC
+	    </Query>
+	</DataAccess>
+
+	<!-- Load data for chart by age group with the country first -->
+	<DataAccess access="public" connection="dvt_conn" id="getCountryReportAgeGroupCountryFirstData" type="sql">
+	    <Cache duration="3600" enabled="true" />
+	    <Columns />
+	    <Parameters>
+	      <Parameter default="6" name="pDataset" type="Numeric" />
+	      <Parameter default="1" name="pIndicator" type="Numeric" />
+	      <Parameter default="AT" name="pCountry1" type="String" />
+	      <Parameter default="EU28" name="pCountry2" type="String" />
+	    </Parameters>
+	    <Query>
+	      SELECT n.country_code as Country, t.text as Age, (v.value*100) as Value
+	      FROM nuts n, profile p, indicator i, value v, split_age_group ag, dataset d, translation t
+	      WHERE n.id = p.nuts_id 
+	      AND p.age_group_id = ag.id 
+	      AND i.id = v.indicator_id 
+	      AND v.profile_id = p.id
+	      AND d.id = ${pDataset} AND d.id = v.dataset_id 
+	      AND t.language = 'EN'
+	      AND t.literal_id = ag.literal_id
+	      AND n.country_code IN (${pCountry1}, ${pCountry2}) AND i.id = ${pIndicator}
+	      ORDER BY FIELD(n.country_code, ${pCountry1}, ${pCountry2}) ASC
 	    </Query>
 	</DataAccess>
 
@@ -198,8 +260,8 @@
 	    </Query>
 	</DataAccess>
 
-	<!-- Load data for chart without split filter -->
-	<DataAccess access="public" connection="dvt_conn" id="getCountryReportAllCountriesData" type="sql">
+	<!-- Load data for chart without split filter order by value -->
+	<DataAccess access="public" connection="dvt_conn" id="getCountryReportAllCountriesOrderValueData" type="sql">
 	    <Cache duration="3600" enabled="true" />
 	    <Columns />
 	    <Parameters>
@@ -220,6 +282,28 @@
 	    </Query>
 	</DataAccess>
 
+	<!-- Load data for chart without split filter order by country -->
+	<DataAccess access="public" connection="dvt_conn" id="getCountryReportAllCountriesOrderCountryData" type="sql">
+	    <Cache duration="3600" enabled="true" />
+	    <Columns />
+	    <Parameters>
+	      <Parameter default="6" name="pDataset" type="Numeric" />
+	      <Parameter default="1" name="pIndicator" type="Numeric" />
+	    </Parameters>
+	    <Query>
+	      SELECT t.text as Indicator, IF(n.name = 'European Union', n.country_code, CONCAT(n.name, " (", n.country_code, ")")) as Country, v.value*100 as Value
+		  FROM nuts n, profile p, value v, indicator i, translation t
+		  WHERE n.id = p.nuts_id
+		  AND v.profile_id = p.id
+		  AND v.indicator_id=i.id
+		  AND t.literal_id=i.literal_id
+		  AND v.indicator_id = ${pIndicator}
+		  AND v.dataset_id = ${pDataset}
+		  AND t.language="EN"
+		  ORDER BY FIELD(n.country_code, 'EU27_2020', 'EU28') DESC, FIELD(n.country_code, 'CH', 'IS', 'NO', 'UK'), n.country_code ASC, Value DESC
+	    </Query>
+	</DataAccess>
+
 	<!-- Load data for chart divided by answer -->
 	<DataAccess access="public" connection="dvt_conn" id="getCountryReportAllCountriesAnswersData" type="sql">
 	    <Cache duration="3600" enabled="true" />
@@ -236,7 +320,7 @@
 		  AND v.indicator_id = ${pIndicator}
 		  AND v.profile_id = p.id
 		  AND p.answer_id = sa.id
-		  AND CASE WHEN (${pIndicator}!=63 AND ${pIndicator}!=64) THEN p.activity_sector_id = 14 ELSE p.answer_id = sa.id END
+		  AND CASE WHEN (${pIndicator} NOT IN (63,64,65,83,85,86,87,88,89)) THEN p.activity_sector_id = 14 ELSE p.answer_id = sa.id END
 		  AND sa.literal_id = t.literal_id
 		  AND t.language = 'EN'
 		  AND d.id = v.dataset_id
@@ -246,7 +330,13 @@
 		  ELSE CASE WHEN ${pIndicator}=328 THEN FIELD(Answer, 'No', 'Yes')
 		  ELSE CASE WHEN ${pIndicator}=63 THEN FIELD(Answer, "No, not required", "Yes, but I don't always use it", "Yes, and I always use it")
 		  ELSE CASE WHEN ${pIndicator}=64 THEN FIELD(Answer, "Not very or not at all well informed", "(very) Well informed")
-		  ELSE (Answer) END END END END ASC, FIELD(n.country_code, 'EU27_2020', 'EU28') DESC, FIELD(n.country_code, 'CH', 'IS', 'NO', 'UK'), n.country_code ASC, Value DESC;
+		  ELSE CASE WHEN ${pIndicator}=65 THEN FIELD(Answer, "Not at all satisfied","Not very satisfied","Satisfied","Very satisfied")
+		  ELSE CASE WHEN ${pIndicator} IN (83,87) THEN FIELD(Answer, "(Almost) never","Between 1/4 and 3/4 of the time","(Almost) all of the time")
+		  ELSE CASE WHEN ${pIndicator}=85 THEN FIELD(Answer,"Rarely or never","Sometimes","Always or most of the time")
+		  ELSE CASE WHEN ${pIndicator}=86 THEN FIELD(Answer,"Disagree","Neither agree nor disagree","Agree")
+		  ELSE CASE WHEN ${pIndicator}=88 THEN FIELD(Answer,"Never","Once or more")
+		  ELSE (Answer) END END END END END END END END END ASC, 
+		  FIELD(n.country_code, 'EU27_2020', 'EU28') DESC, FIELD(n.country_code, 'CH', 'IS', 'NO', 'UK'), n.country_code ASC, Value DESC;
 	    </Query>
 	</DataAccess>
 

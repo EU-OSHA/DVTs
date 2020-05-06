@@ -64,6 +64,7 @@ define(function (require) {
         $scope.color6 = dvtUtils.getColorCountry(12);
         $scope.color7 = dvtUtils.getColorCountry(4);
         $scope.color8 = dvtUtils.getChartLightGrayColor();
+        $scope.color9 = dvtUtils.getAccidentsColors(4);
         $scope.colorEU = dvtUtils.getEUColor();
 
         $scope.labelLeftAlign = "left";
@@ -90,7 +91,8 @@ define(function (require) {
         	changeLabels : CountryReportService.getCompanySizeMainPlots($scope.pCountry),
         	figures : CountryReportService.getGPDMainPlots($scope.pCountry),
         	year: CountryReportService.getIncomeMainPlots($scope.pCountry),
-        	allCountries : CountryReportService.getChartAllCountriesPlots($scope.pCountry)
+        	allCountries : CountryReportService.getChartAllCountriesPlots($scope.pCountry),
+        	healthAtRisk: CountryReportService.getHealthAtRiskPlots($scope.pCountry)
         }
 
         $scope.getMin = function f(cdaData) {

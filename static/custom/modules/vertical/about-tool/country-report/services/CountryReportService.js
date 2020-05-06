@@ -12,13 +12,7 @@ define (function (require) {
                         line_lineWidth: 1.5,
                         barSizeMax: 20,
                         bar_call: function(){
-                            if(this.sign.chart.options.datasourceAndDates[1] == 358 ||
-                                this.sign.chart.options.datasourceAndDates[1] == 328 ||
-                                this.sign.chart.options.datasourceAndDates[1] == 329 ||
-                                this.sign.chart.options.datasourceAndDates[1] == 330 ||
-                                this.sign.chart.options.datasourceAndDates[1] == 331 ||
-                                this.sign.chart.options.datasourceAndDates[1] == 63 ||
-                                this.sign.chart.options.datasourceAndDates[1] == 64){
+                            if(this.sign.chart.options.datasourceAndDates[1] !=54){
                                 //EU28 stroke separator vertical
                                 this.add(pv.Rule)
                                     //Negative value in top line continues out of the chart
@@ -76,7 +70,13 @@ define (function (require) {
                             } else if (this.chart.options.datasourceAndDates[1] == 328 || 
                                 this.chart.options.datasourceAndDates[1] == 329  || 
                                 this.chart.options.datasourceAndDates[1] == 330  || 
-                                this.chart.options.datasourceAndDates[1] == 331)
+                                this.chart.options.datasourceAndDates[1] == 331  || 
+                                this.chart.options.datasourceAndDates[1] == 323  || 
+                                this.chart.options.datasourceAndDates[1] == 324  || 
+                                this.chart.options.datasourceAndDates[1] == 325  || 
+                                this.chart.options.datasourceAndDates[1] == 326  || 
+                                this.chart.options.datasourceAndDates[1] == 327  || 
+                                this.chart.options.datasourceAndDates[1] == 89)
                             {
                                 splits=["Yes", "No"];
                             } else if (this.chart.options.datasourceAndDates[1] == 63)
@@ -85,6 +85,22 @@ define (function (require) {
                             } else if (this.chart.options.datasourceAndDates[1] == 64)
                             {
                                 splits=["(very) Well informed", "Not very or not at all well informed"];
+                            } else if (this.chart.options.datasourceAndDates[1] == 65)
+                            {
+                                splits=["Very satisfied","Satisfied","Not very satisfied","Not at all satisfied"];
+                            } else if (this.chart.options.datasourceAndDates[1] == 83  || 
+                                this.chart.options.datasourceAndDates[1] == 87)
+                            {
+                                splits=["(Almost) all of the time","Between 1/4 and 3/4 of the time","(Almost) never"];
+                            } else if (this.chart.options.datasourceAndDates[1] == 85)
+                            {
+                                splits=["Always or most of the time","Sometimes","Rarely or never"];
+                            }else if (this.chart.options.datasourceAndDates[1] == 86)
+                            {
+                                splits=["Agree","Neither agree nor disagree","Disagree"];
+                            }else if (this.chart.options.datasourceAndDates[1] == 88)
+                            {
+                                splits=["Once or more","Never"];
                             }
                             
                             if(this.chart.options.dataAccessId == 'getLevelOfReportingData'){
@@ -327,6 +343,41 @@ define (function (require) {
                         visualRoles:{
                             series:'series',
                             category:'category'
+                        }
+                    }
+                ];
+            },
+            getHealthAtRiskPlots: function(pCountry1){
+                return [
+                    {
+                        name: "main",
+                        dataPart: "0",
+                        barSizeMax: 35,
+                        label_textMargin: 7,
+                        label_textBaseline: 'bottom',
+                        valuesAnchor: 'top',
+                        valuesOptimizeLegibility: true,
+                        label_textStyle: function(scene){
+                            var countryKey = scene.firstAtoms.series;
+                            var valueKey = scene.firstAtoms.value;
+                            if(!scene.firstAtoms.value.label.match('%')){
+                                scene.firstAtoms.value.label = scene.firstAtoms.value.label + '%';
+                            }
+
+                            if(valueKey.value > parseInt(this.sign.chart.options.orthoAxisFixedMax)){
+                                this.sign.chart.options.orthoAxisFixedMax = valueKey.value;
+                            }
+                            //$log.warn(countryKey);
+                            if (countryKey == 'EU28') {
+                                return dvtUtils.getEUColor();
+                            } else if(countryKey.value.match(pCountry1)){
+                                return dvtUtils.getColorCountry(1);
+                            }
+                            return dvtUtils.getChartLightGrayColor();
+                        },
+                        visualRoles:{
+                            series: 'series',
+                            category:'category',
                         }
                     }
                 ];
