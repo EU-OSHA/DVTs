@@ -499,7 +499,6 @@
       <h2 class="country ng-binding title-section main-color" data-ng-bind="i18nLiterals['L'+nationalStrategy[0].country_name]"></h2>
     </header>
     <h4 data-ng-bind="i18nLiterals.L20378"></h4>
-
     <div class="box-rounded">
       <h5>Basic Info</h5>
       <div data-ng-bind-html="i18nLiterals['L'+nationalStrategy[0].basic_info]"></div>
@@ -532,103 +531,170 @@
       <h5>Relation to EU Strategic Framework</h5>
       <div data-ng-bind-html="i18nLiterals['L'+nationalStrategy[0].relation_strategic_framework]"></div>
     </div>
-
-
     <h4 data-ng-bind="i18nLiterals.L20379"></h4>
+    <p ng-if="challengesResponse.length <= 0" data-ng-bind="i18nLiterals.L20706"></p>
+    <div data-ng-repeat="matrix in challengesResponse" class="box-rounded">
+      <h5 class="" ng-if="::matrix.implementation_record==1" data-ng-bind="i18nLiterals.L20631"></h5>
+      <h5 class="" ng-if="::matrix.prevention_work==1" data-ng-bind="i18nLiterals.L20632"></h5>
+      <h5 class="" ng-if="::matrix.tackling_demographic==1" data-ng-bind="i18nLiterals.L20633"></h5>
 
-      <p ng-if="challengesResponse.length <= 0" data-ng-bind="i18nLiterals.L20706"></p>
-      <div data-ng-repeat="matrix in challengesResponse" class="box-rounded">
-        <h5 class="" ng-if="::matrix.implementation_record==1" data-ng-bind="i18nLiterals.L20631"></h5>
-        <h5 class="" ng-if="::matrix.prevention_work==1" data-ng-bind="i18nLiterals.L20632"></h5>
-        <h5 class="" ng-if="::matrix.tackling_demographic==1" data-ng-bind="i18nLiterals.L20633"></h5>
-
-        <div data-ng-bind-html="i18nLiterals['L'+matrix.objectives]"></div>
-        <div data-ng-bind-html="i18nLiterals['L'+matrix.groups_and_activities]"></div>
-        <div class="">
-          <a ui-sref="country-profile({pIndicator: 'basic-information', pCountry1:matrix.country_code, pCountry2: 0})" class="btn--card main-color" title="{{i18nLiterals.L20626}}" data-ng-bind-html="i18nLiterals.L20626"></a>
-        </div>
+      <div data-ng-bind-html="i18nLiterals['L'+matrix.objectives]"></div>
+      <div data-ng-bind-html="i18nLiterals['L'+matrix.groups_and_activities]"></div>
+      <div class="">
+        <a ui-sref="country-profile({pIndicator: 'basic-information', pCountry1:matrix.country_code, pCountry2: 0})" class="btn--card main-color" title="{{i18nLiterals.L20626}}" data-ng-bind-html="i18nLiterals.L20626"></a>
       </div>
-
+    </div>
   </section>
-
-
 
   <section class="social-dialogue">
-    <h2 data-ng-bind="i18nLiterals.L22005 + ' ' + i18nLiterals.L22008"></h2>
-    <div class="container">
-      <div class="card--grid xxs-w1 xs-w2 w3 center-text">
-        <div class="card--block--chart" data-ng-repeat="matrix in socialDialogue">
-          <div class="chart--block">
-            <header>
-              <div class="flags--wrapper" >
-                <img data-ng-if="matrix.country_code!='EU27_2020'" ng-src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/flag/{{::matrix.country_code.toLowerCase()}}.png">
-                <img data-ng-if="matrix.country_code=='EU27_2020'" ng-src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/flag/eu28.png">
-              </div>
-              <div class="country-wrapper">
-                <h2 class="country ng-binding title-section main-color" data-ng-bind="i18nLiterals['L'+matrix.country_name]"></h2>
-                <p ng-if="matrix.country_code == 'IS' || matrix.country_code == 'NO' || matrix.country_code == 'CH'"></p>
-              </div>
-            </header>
-            <ul class="highlited-data-list">
-              <li>                
-                <span class="country-data" data-ng-bind="matrix.joint_consultative != null ? (matrix.joint_consultative) : '-'"></span>
-                <span data-ng-if="matrix.joint_consultative != null" class="data-text">&percnt;</span>
-                <label data-ng-bind="i18nLiterals['L20659']"></label>
-              </li>
-              <li>                
-                <span class="country-data" data-ng-bind="matrix.trade_union != null ? (matrix.trade_union) : matrix.country_code == 'AT'?'20':'-'"> %</span>
-                <span data-ng-if="matrix.trade_union != null || matrix.country_code=='AT'" class="data-text">&percnt;</span>
-                <label data-ng-bind="i18nLiterals['L20660']"></label>
-              </li>
-              <li>                
-                <span class="country-data" data-ng-bind="matrix.health_representative != null ? (matrix.health_representative) : '-'"></span>
-                <span data-ng-if="matrix.health_representative != null" class="data-text">&percnt;</span>
-                <label data-ng-bind="i18nLiterals['L20661']"></label>
-              </li>
-              <li>                
-                <span class="country-data" data-ng-bind="matrix.health_committee != null ? (matrix.health_committee) : '-'"></span>
-                <span data-ng-if="matrix.health_committee != null" class="data-text">&percnt;</span>
-                <label data-ng-bind="i18nLiterals['L20662']"></label>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
+    <div class="title-page">
+      <h2 data-ng-bind="i18nLiterals.L22005"></h2>
+      <h3 data-ng-bind="i18nLiterals.L22008"></h3>
     </div>
+    <div class="intro-page">
+      <p data-ng-bind="i18nLiterals.L22041"></p>
+      <span data-ng-bind="i18nLiterals.L20704"></span> 
+      <span><a data-ng-bind="i18nLiterals.L20705" ui-sref="about-tool-detail-page({pSection: 'osh-steering', pSubsection: 'social_dialogue', pIndicator: 100})"></a></span>      
+    </div>
+    <div class="content-page">
+      <div class="box-rounded" data-ng-repeat="matrix in socialDialogue">
+        <header>        
+            <img class="flags" data-ng-if="matrix.country_code!='EU27_2020'" ng-src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/flag/{{::matrix.country_code.toLowerCase()}}.png">
+            <img class="flags" data-ng-if="matrix.country_code=='EU27_2020'" ng-src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/flag/eu28.png">
+            <h2 class="country ng-binding title-section main-color" data-ng-bind="i18nLiterals['L'+matrix.country_name]"></h2>
+        </header>
+        <ul>
+          <li>                
+            <span class="country-data" data-ng-bind="matrix.joint_consultative != null ? (matrix.joint_consultative) : '-'"></span>
+            <span data-ng-if="matrix.joint_consultative != null" class="data-text">&percnt;</span>
+            <label data-ng-bind="i18nLiterals['L20659']"></label>
+          </li>
+          <li>                
+            <span class="country-data" data-ng-bind="matrix.trade_union != null ? (matrix.trade_union) : matrix.country_code == 'AT'?'20':'-'"> %</span>
+            <span data-ng-if="matrix.trade_union != null || matrix.country_code=='AT'" class="data-text">&percnt;</span>
+            <label data-ng-bind="i18nLiterals['L20660']"></label>
+          </li>
+          <li>                
+            <span class="country-data" data-ng-bind="matrix.health_representative != null ? (matrix.health_representative) : '-'"></span>
+            <span data-ng-if="matrix.health_representative != null" class="data-text">&percnt;</span>
+            <label data-ng-bind="i18nLiterals['L20661']"></label>
+          </li>
+          <li>                
+            <span class="country-data" data-ng-bind="matrix.health_committee != null ? (matrix.health_committee) : '-'"></span>
+            <span data-ng-if="matrix.health_committee != null" class="data-text">&percnt;</span>
+            <label data-ng-bind="i18nLiterals['L20662']"></label>
+          </li>
+        </ul>
+      </div>
+    </div> 
   </section>
 
-
   <section class="work-accidents">
-    <h2 data-ng-bind="i18nLiterals.L22009 + ' ' + i18nLiterals.L22010"></h2>
-    <p data-ng-bind="i18nLiterals.L22050"></p>
-    <span data-ng-bind="i18nLiterals.L20704"></span> <span><a data-ng-bind="i18nLiterals.L20705" ui-sref="about-tool-detail-page({pSection: 'osh-outcomes-working-conditions', pSubsection: 'workacc', pIndicator: 53})"></a></span>
-    <div class="card--block--chart">
-      <div class="chart--block">
-        <dvt-bar-chart
-          data-ng-cloak ng-model="pCountry1"
-          query="getCountryReportYearData" cda="{{::cda }}"
-          axis-percent="1"
-          width="300" height="300" type="lines"
-          orientation="vertical" axis-fixed-min="0"
-          axis-fixed-max="120" step="20"
-          params="[['pDataset', datasetList.EUROSTAT2017BetweenDates],['pCountry1',pCountry],['pCountry2','EU28'],['pIndicator',53],['pPercent', 1]]"
-          color-role="series" colors="[color1, colorEU]"
-          chart-title="{{i18nLiterals.L310}}" id="1"
-          axis-label-font="12px 'OpenSans-bold'"
-          plots="plots.year"
-          values-visible="false"
-          post-fetch = "getMin"
-          values-font="12px 'OpenSans-bold'"
-          base-axis-label-text-baseline="top"
-          multiple-label-colors="false"
-          dimensions="dimensionsOneDecimal"
-          legend="true"
-          datasource-and-dates="[datasetEurostatBetweenDates,53]"
-        ></dvt-bar-chart>
-      </div>
+    <div class="title-page">
+      <h2 data-ng-bind="i18nLiterals.L22009"></h2>
+      <h3 data-ng-bind="i18nLiterals.L22010"></h3>
     </div>
-    Tabla datos gráfico anterior. Columnas->Country, Year, Value (%), Country, Year, Value(%)
-    <div class="chart--block">
+    <div class="intro-page">
+      <p data-ng-bind="i18nLiterals.L22050"></p>
+      <span data-ng-bind="i18nLiterals.L20704"></span> 
+      <span data-ng-bind="i18nLiterals.L20704"></span> 
+      <span><a data-ng-bind="i18nLiterals.L20705" ui-sref="about-tool-detail-page({pSection: 'osh-outcomes-working-conditions', pSubsection: 'workacc', pIndicator: 53})"></a></span>    
+    </div>
+    <div class="box-rounded">
+      <dvt-bar-chart
+        data-ng-cloak ng-model="pCountry1"
+        query="getCountryReportYearData" cda="{{::cda }}"
+        axis-percent="1"
+        width="300" height="300" type="lines"
+        orientation="vertical" axis-fixed-min="0"
+        axis-fixed-max="120" step="20"
+        params="[['pDataset', datasetList.EUROSTAT2017BetweenDates],['pCountry1',pCountry],['pCountry2','EU28'],['pIndicator',53],['pPercent', 1]]"
+        color-role="series" colors="[color1, colorEU]"
+        chart-title="{{i18nLiterals.L310}}" id="1"
+        axis-label-font="12px 'OpenSans-bold'"
+        plots="plots.year"
+        values-visible="false"
+        post-fetch = "getMin"
+        values-font="12px 'OpenSans-bold'"
+        base-axis-label-text-baseline="top"
+        multiple-label-colors="false"
+        dimensions="dimensionsOneDecimal"
+        legend="true"
+        datasource-and-dates="[datasetEurostatBetweenDates,53]"
+      ></dvt-bar-chart>
+      <p data-ng-bind="i18nLiterals.L20565"></p>
+      <table class="chart-data">
+        <thead>
+          <tr>
+            <th>Country</th>
+            <th>Year</th>
+            <th>Value (%)</th>
+            <th>Country</th>
+            <th>Year</th>
+            <th>Value (%)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>(AT) Austria</th>
+            <td>2010</td>
+            <td></td>
+            <td>EU28</td>
+            <td>2010</td>
+            <td></td>
+          </tr>
+          <tr>
+            <th>(AT) Austria</th>
+            <td>2011</td>
+            <td></td>
+            <td>EU28</td>
+            <td>2011</td>
+            <td></td>
+          </tr>
+          <tr>
+            <th>(AT) Austria</th>
+            <td>2012</td>
+            <td></td>
+            <td>EU28</td>
+            <td>2012</td>
+            <td></td>
+          </tr>
+          <tr>
+            <th>(AT) Austria</th>
+            <td>2013</td>
+            <td></td>
+            <td>EU28</td>
+            <td>2014</td>
+            <td></td>
+          </tr>
+          <tr>
+            <th>(AT) Austria</th>
+            <td>2014</td>
+            <td></td>
+            <td>EU28</td>
+            <td>2014</td>
+            <td></td>
+          </tr>
+          <tr>
+            <th>(AT) Austria</th>
+            <td>2015</td>
+            <td></td>
+            <td>EU28</td>
+            <td>2015</td>
+            <td></td>
+          </tr>
+          <tr>
+            <th>(AT) Austria</th>
+            <td>2016</td>
+            <td></td>
+            <td>EU28</td>
+            <td>2016</td>
+            <td></td>
+          </tr>
+         </tbody>
+      </table>
+    </div>
+    <div class="box-rounded">
       <dvt-bar-chart
         data-ng-cloak
         query="getCountryReportAllCountriesData" cda="{{::cda }}"
@@ -652,241 +718,446 @@
         base-axis-size="150"
         datasource-and-dates="[datasetEurostat2016,54]"
       ></dvt-bar-chart>
+      <p data-ng-bind-html="i18nLiterals.L20566"></p>
+      <table class="chart-data">
+        <thead>
+          <tr>
+            <th>Country</th>
+            <th>Value (accidents)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>(AT) Austria</th>
+            <td>3.6</td>
+          </tr>
+          <tr>
+            <td>EU28</td>
+            <td>1.9</td>
+          </tr>
+         </tbody>
+      </table>
     </div>
-   
-
-    Tabla datos gráfico anterior. Columnas->Country, Value (Accidents)
-    <h2 data-ng-bind="i18nLiterals.L22009 + ' ' + i18nLiterals.L22011"></h2>
-    <div class="card--block--chart" data-ng-repeat="matrix in healthPerception">
-      <div class="chart--block">
-        <header>
-          <div class="flags--wrapper" >
-            <img  ng-src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/flag/{{::matrix.country_code.toLowerCase()}}.png">
-          </div>
-          <div class="country-wrapper">
-            <h3 class="country ng-binding title-section main-color" data-ng-bind="i18nLiterals['L'+matrix.country_name]"></h2>
-          </div>
-        </header>
-        <ul class="highlited-data-list">
-          <li>
-            <span class="country-data" data-ng-bind="matrix.satisfaction_working != null ? (matrix.satisfaction_working) : '-'"></span>
-            <span data-ng-if="matrix.satisfaction_working != null" class="data-text">&percnt;</span>
-            <label data-ng-bind="i18nLiterals['L314']"></label>
-          </li>
-          <li>
-            <span class="country-data" data-ng-bind="matrix.health_negative != null ? (matrix.health_negative) : '-'"> %</span>
-            <span data-ng-if="matrix.health_negative != null" class="data-text">&percnt;</span>
-            <label data-ng-bind="i18nLiterals['L315']"></label>
-          </li>
-          <li>
-            <span class="country-data" data-ng-bind="matrix.health_problem != null ? (matrix.health_problem) : '-'"></span>
-            <span data-ng-if="matrix.health_problem != null" class="data-text">&percnt;</span>
-            <label data-ng-bind="i18nLiterals['L316']"></label>
-          </li>
-          <li>
-            <span class="country-data" data-ng-bind="matrix.absence != null ? (matrix.absence) : '-'"></span>
-            <span data-ng-if="matrix.absence != null" class="data-text">&percnt;</span>
-            <label data-ng-bind="i18nLiterals['L317']"></label>
-          </li>
-          <li>
-            <span class="country-data" data-ng-bind="matrix.sick_at_work != null ? (matrix.sick_at_work) : '-'"></span>
-            <span data-ng-if="matrix.sick_at_work != null" class="data-text">&percnt;</span>
-            <label data-ng-bind="i18nLiterals['L23819']"></label>
-          </li>
-          <li>
-            <span class="country-data" data-ng-bind="matrix.job_till_60 != null ? (matrix.job_till_60) : '-'"></span>
-            <span data-ng-if="matrix.job_till_60 != null" class="data-text">&percnt;</span>
-            <label data-ng-bind="i18nLiterals['L319']"></label>
-          </li>
-        </ul>
-      </div>
-    </div>    
-
   </section>
 
 
+  <section class="health-perception">
+    <div class="title-page">
+      <h2 data-ng-bind="i18nLiterals.L22009"></h2>
+      <h3 data-ng-bind="i18nLiterals.L22011"></h3>
+    </div>
+    <div class="intro-page">
+      <p data-ng-bind="i18nLiterals.L22052"></p>
+      <span data-ng-bind="i18nLiterals.L20704"></span> <span><a data-ng-bind="i18nLiterals.L20705" ui-sref="about-tool-detail-page({pSection: 'osh-outcomes-working-conditions', pSubsection: 'health_perception', pIndicator: 57})"></a></span>
+    </div>
+    <div class="content-page">
+      <div class="box-rounded" data-ng-repeat="matrix in healthPerception">
+        <header>
+          <img  class="flags" ng-src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/flag/{{::matrix.country_code.toLowerCase()}}.png">
+          <h2 class="country ng-binding title-section main-color" data-ng-bind="i18nLiterals['L'+matrix.country_name]"></h2>
+        </header>
+        <ul class="highlited-data-list">
+            <li>
+              <span class="country-data" data-ng-bind="matrix.satisfaction_working != null ? (matrix.satisfaction_working) : '-'"></span>
+              <span data-ng-if="matrix.satisfaction_working != null" class="data-text">&percnt;</span>
+              <label data-ng-bind="i18nLiterals['L314']"></label>
+            </li>
+            <li>
+              <span class="country-data" data-ng-bind="matrix.health_negative != null ? (matrix.health_negative) : '-'"> %</span>
+              <span data-ng-if="matrix.health_negative != null" class="data-text">&percnt;</span>
+              <label data-ng-bind="i18nLiterals['L315']"></label>
+            </li>
+            <li>
+              <span class="country-data" data-ng-bind="matrix.health_problem != null ? (matrix.health_problem) : '-'"></span>
+              <span data-ng-if="matrix.health_problem != null" class="data-text">&percnt;</span>
+              <label data-ng-bind="i18nLiterals['L316']"></label>
+            </li>
+            <li>
+              <span class="country-data" data-ng-bind="matrix.absence != null ? (matrix.absence) : '-'"></span>
+              <span data-ng-if="matrix.absence != null" class="data-text">&percnt;</span>
+              <label data-ng-bind="i18nLiterals['L317']"></label>
+            </li>
+            <li>
+              <span class="country-data" data-ng-bind="matrix.sick_at_work != null ? (matrix.sick_at_work) : '-'"></span>
+              <span data-ng-if="matrix.sick_at_work != null" class="data-text">&percnt;</span>
+              <label data-ng-bind="i18nLiterals['L23819']"></label>
+            </li>
+            <li>
+              <span class="country-data" data-ng-bind="matrix.job_till_60 != null ? (matrix.job_till_60) : '-'"></span>
+              <span data-ng-if="matrix.job_till_60 != null" class="data-text">&percnt;</span>
+              <label data-ng-bind="i18nLiterals['L319']"></label>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-  <h2 data-ng-bind="i18nLiterals.L22009 + ' ' + i18nLiterals.L22012"></h2>
-  <div class="chart--block">
-    <dvt-bar-chart
-      data-ng-cloak
-      query="getCountryReportAllCountriesAnswersData" cda="{{::cda }}"
-      width="330" height="470"
-      orientation="vertical" axis-fixed-min="0"
-      axis-fixed-max="100" step="20"
-      params="[['pDataset', datasetList.ESENER], ['pIndicator', 358]]"
-      color-role="series" colors="[color5, color2, color8]"
-      chart-title="{{i18nLiterals.L20664}}" id="4"
-      axis-label-font="12px 'OpenSans-bold'"
-      plots="plots.allCountries"
-      color2-axis-legend-shape = "circle"
-      values-visible="false"
-      values-font="12px 'OpenSans-bold'"
-      base-axis-label-text-baseline=""
-      leaf-content-overflow='visible'
-      dimensions="dimensionsOneDecimal"
-      multiple-label-colors="false"
-      legend="true" stacked="1"
-      angle="1"
-      base-axis-size="150"
-      datasource-and-dates="[datasetEurostat2016,358]"
-    ></dvt-bar-chart>
-  </div>
-  Tabla con datos gráfico anterior. Columnas->Country, Practically never, Ocasionally, Regularly
-  <div class="chart--block">
-    <dvt-bar-chart
-      data-ng-cloak
-      query="getCountryReportAllCountriesAnswersData" cda="{{::cda }}"
-      width="330" height="470"
-      orientation="vertical" axis-fixed-min="0"
-      axis-fixed-max="100" step="20"
-      params="[['pDataset', datasetList.ESENER], ['pIndicator', 328]]"
-      color-role="series" colors="[colo5, color2]"
-      chart-title="{{i18nLiterals.L20665}}" id="3"
-      axis-label-font="12px 'OpenSans-bold'"
-      plots="plots.allCountries"
-      values-visible="false"
-      values-font="12px 'OpenSans-bold'"
-      base-axis-label-text-baseline=""
-      leaf-content-overflow='visible'
-      dimensions="dimensionsOneDecimal"
-      legend="true"
-      angle="1" stacked="1"
-      base-axis-size="150"
-      datasource-and-dates="[datasetList.ESENER,328]"
-    ></dvt-bar-chart>
-  </div>
-  Tabla con datos gráfico anterior. Columnas->Country, Yes, No
-  <div class="chart--block">
-    <dvt-bar-chart
-      data-ng-cloak
-      query="getCountryReportAllCountriesAnswersData" cda="{{::cda }}"
-      width="330" height="470"
-      orientation="vertical" axis-fixed-min="0"
-      axis-fixed-max="100" step="20"
-      params="[['pDataset', datasetList.ESENER], ['pIndicator', 329]]"
-      color-role="series" colors="[color5, color2]"
-      chart-title="{{i18nLiterals.L20666}}" id="4"
-      axis-label-font="12px 'OpenSans-bold'"
-      plots="plots.allCountries"
-      values-visible="false"
-      values-font="12px 'OpenSans-bold'"
-      base-axis-label-text-baseline=""
-      leaf-content-overflow='visible'
-      dimensions="dimensionsOneDecimal"
-      legend="true"
-      angle="1" stacked="1"
-      base-axis-size="150"
-      datasource-and-dates="[datasetList.ESENER,329]"
-    ></dvt-bar-chart>
-  </div>
-  Tabla. Columnas->Country, Yes, No
-  <div class="chart--block">
-    <dvt-bar-chart
-      data-ng-cloak
-      query="getCountryReportAllCountriesAnswersData" cda="{{::cda }}"
-      width="330" height="470"
-      orientation="vertical" axis-fixed-min="0"
-      axis-fixed-max="100" step="20"
-      params="[['pDataset', datasetList.ESENER], ['pIndicator', 330]]"
-      color-role="series" colors="[color5, color2]"
-      chart-title="{{i18nLiterals.L20667}}" id="5"
-      axis-label-font="12px 'OpenSans-bold'"
-      plots="plots.allCountries"
-      values-visible="false"
-      values-font="12px 'OpenSans-bold'"
-      base-axis-label-text-baseline=""
-      leaf-content-overflow='visible'
-      dimensions="dimensionsOneDecimal"
-      legend="true"
-      angle="1" stacked="1"
-      base-axis-size="150"
-      datasource-and-dates="[datasetList.ESENER,330]"
-    ></dvt-bar-chart>
-  </div>
-  Tabla. Columnas->Country, Yes, No
-  <div class="chart--block">
-    <dvt-bar-chart
-      data-ng-cloak
-      query="getCountryReportAllCountriesAnswersData" cda="{{::cda }}"
-      width="330" height="470"
-      orientation="vertical" axis-fixed-min="0"
-      axis-fixed-max="100" step="20"
-      params="[['pDataset', datasetList.ESENER], ['pIndicator', 331]]"
-      color-role="series" colors="[color5, color2]"
-      chart-title="{{i18nLiterals.L20668}}" id="6"
-      axis-label-font="12px 'OpenSans-bold'"
-      plots="plots.allCountries" stacked="1"
-      values-visible="false"
-      values-font="12px 'OpenSans-bold'"
-      leaf-content-overflow='visible'
-      dimensions="dimensionsOneDecimal"
-      legend="true"
-      angle="1"
-      base-axis-size="150"
-      datasource-and-dates="[datasetList.ESENER,331]"
-    ></dvt-bar-chart>
-  </div>
-  Tabla. Columnas->Country, Yes, No
-  <div class="chart--block">
-    <dvt-bar-chart
-      data-ng-cloak
-      query="getCountryReportAllCountriesAnswersData" cda="{{::cda }}"
-      width="600" height="470"
-      orientation="vertical" axis-fixed-min="0"
-      axis-fixed-max="100" step="20"
-      params="[['pDataset', datasetList.Eurofound], ['pIndicator', 63]]"
-      color-role="series" colors="[color8, color2, color5]"
-      values-normalized="0" stacked="1"
-      chart-title="{{i18nLiterals.L320}}" id="7"
-      axis-label-font="12px 'OpenSans-bold'"
-      plots="plots.allCountries"
-      values-visible="false"
-      values-font="12px 'OpenSans-bold'"
-      dimensions="dimensionsOneDecimal"
-      legend="true"
-      angle="1"
-      base-axis-size="150"
-      datasource-and-dates="[datasetList.Eurofound,63]"
-    ></dvt-bar-chart>
-  </div>
-  Tabla. Columnas->Country, "No, not required", "Yes, but not required", "Yes and always"
-  <div class="chart--block">
-    <dvt-bar-chart
-      data-ng-cloak
-      query="getCountryReportAllCountriesAnswersData" cda="{{::cda }}"
-      width="330" height="470" axis-percent="1"
-      orientation="vertical" axis-fixed-min="0"
-      axis-fixed-max="100" step="20"
-      params="[['pDataset', datasetList.Eurofound], ['pIndicator', 64]]"
-      color-role="series" colors="[color2, color5]"
-      values-normalized="0" stacked="1"
-      chart-title="{{i18nLiterals.L321}}" id="8"
-      axis-label-font="12px 'OpenSans-bold'"
-      plots="plots.allCountries"
-      values-visible="false"
-      values-font="12px 'OpenSans-bold'"
-      multiple-label-colors="false"
-      leaf-content-overflow='visible'
-      dimensions="dimensionsOneDecimal"
-      legend="true"
-      angle="1"
-      base-axis-size="150"
-      datasource-and-dates="[datasetList.Eurofound,64]"
-    ></dvt-bar-chart>
-  </div>
-  Tabla. Columnas->Country, Yes, No
 
-  <h2>OSH outcomes and working conditions Working conditions</h2>
-  <h3>Overall opinion</h3>
-  Gráfico Job satisfaction
-  Tabla
-  Gráfico Health at risk (Sector)
-  Tabla. Columnas->Sector, Country, Value, Country, Value
-  Gráfico Health at Risk (Gender)
-  Tabla. Columnas->Gender, Country, Value, Country, Value
-  Gráfico Health at Risk (Age)
-  Tabla. Columnas->Age, Country, Value, Country, Value
+  <section class="osh-culture">
+    <div class="title-page">
+      <h2 data-ng-bind="i18nLiterals.L22009"></h2>
+      <h3 data-ng-bind="i18nLiterals.L22012"></h3>
+    </div>
+    <div class="intro-page">
+      <p data-ng-bind="i18nLiterals.L22054"></p>
+      <span data-ng-bind="i18nLiterals.L20700"></span> 
+      <span data-ng-bind="i18nLiterals.L20704"></span> <span><a data-ng-bind="i18nLiterals.L20705" ui-sref="about-tool-detail-page({pSection: 'osh-outcomes-working-conditions', pSubsection: 'osh_culture_health_awareness', pIndicator: 63})"></a></span>
+    </div>
+    <div class="box-rounded">
+      <dvt-bar-chart
+        data-ng-cloak
+        query="getCountryReportAllCountriesAnswersData" cda="{{::cda }}"
+        width="330" height="470"
+        orientation="vertical" axis-fixed-min="0"
+        axis-fixed-max="100" step="20"
+        params="[['pDataset', datasetList.ESENER], ['pIndicator', 358]]"
+        color-role="series" colors="[color5, color2, color8]"
+        chart-title="{{i18nLiterals.L20664}}" id="4"
+        axis-label-font="12px 'OpenSans-bold'"
+        plots="plots.allCountries"
+        color2-axis-legend-shape = "circle"
+        values-visible="false"
+        values-font="12px 'OpenSans-bold'"
+        base-axis-label-text-baseline=""
+        leaf-content-overflow='visible'
+        dimensions="dimensionsOneDecimal"
+        multiple-label-colors="false"
+        legend="true" stacked="1"
+        angle="1"
+        base-axis-size="150"
+        datasource-and-dates="[datasetEurostat2016,358]"
+      ></dvt-bar-chart>
+      <p data-ng-bind="i18nLiterals.L20570"></p>
+      <table class="chart-data">
+        <thead>
+          <tr>
+            <th>Country</th>
+            <th>Yes (%)</th>
+            <th>No (%)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>(AT) Austria</th>
+            <td>35.5</td>
+            <td>64.7</td>
+          </tr>
+          <tr>
+            <th>EU28</th>
+            <td>51.4</td>
+            <td>48.6</td>
+          </tr>
+         </tbody>
+      </table>      
+    </div>
+
+    <div class="box-rounded">
+      <dvt-bar-chart
+        data-ng-cloak
+        query="getCountryReportAllCountriesAnswersData" cda="{{::cda }}"
+        width="330" height="470"
+        orientation="vertical" axis-fixed-min="0"
+        axis-fixed-max="100" step="20"
+        params="[['pDataset', datasetList.ESENER], ['pIndicator', 328]]"
+        color-role="series" colors="[colo5, color2]"
+        chart-title="{{i18nLiterals.L20665}}" id="3"
+        axis-label-font="12px 'OpenSans-bold'"
+        plots="plots.allCountries"
+        values-visible="false"
+        values-font="12px 'OpenSans-bold'"
+        base-axis-label-text-baseline=""
+        leaf-content-overflow='visible'
+        dimensions="dimensionsOneDecimal"
+        legend="true"
+        angle="1" stacked="1"
+        base-axis-size="150"
+        datasource-and-dates="[datasetList.ESENER,328]"
+      ></dvt-bar-chart>
+      <p data-ng-bind="i18nLiterals.L20571"></p>
+      <table class="chart-data">
+        <thead>
+          <tr>
+            <th>Country</th>
+            <th>Not at all (%)</th>
+            <th>Particular issues (%)</th>
+            <th>Regularly (%)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>(AT) Austria</th>
+            <td>4.5</td>
+            <td>49.6</td>
+            <td>45.9</td>
+          </tr>
+          <tr>
+            <th>EU28</th>
+            <td>3.8</td>
+            <td>36.8</td>
+            <td>59.3</td>
+          </tr>
+         </tbody>
+      </table>  
+    </div>
+
+    <div class="box-rounded">
+      <dvt-bar-chart
+        data-ng-cloak
+        query="getCountryReportAllCountriesAnswersData" cda="{{::cda }}"
+        width="330" height="470"
+        orientation="vertical" axis-fixed-min="0"
+        axis-fixed-max="100" step="20"
+        params="[['pDataset', datasetList.ESENER], ['pIndicator', 329]]"
+        color-role="series" colors="[color5, color2]"
+        chart-title="{{i18nLiterals.L20666}}" id="4"
+        axis-label-font="12px 'OpenSans-bold'"
+        plots="plots.allCountries"
+        values-visible="false"
+        values-font="12px 'OpenSans-bold'"
+        base-axis-label-text-baseline=""
+        leaf-content-overflow='visible'
+        dimensions="dimensionsOneDecimal"
+        legend="true"
+        angle="1" stacked="1"
+        base-axis-size="150"
+        datasource-and-dates="[datasetList.ESENER,329]"
+      ></dvt-bar-chart> 
+      <p data-ng-bind="i18nLiterals.L20571"></p>
+      <table class="chart-data">
+        <thead>
+          <tr>
+            <th>Country</th>
+            <th>Yes (%)</th>
+            <th>No (%)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>(AT) Austria</th>
+            <td>35.5</td>
+            <td>64.7</td>
+          </tr>
+          <tr>
+            <th>EU28</th>
+            <td>51.4</td>
+            <td>48.6</td>
+          </tr>
+         </tbody>
+      </table>     
+    </div>
+
+    <div class="box-rounded">
+      <dvt-bar-chart
+        data-ng-cloak
+        query="getCountryReportAllCountriesAnswersData" cda="{{::cda }}"
+        width="330" height="470"
+        orientation="vertical" axis-fixed-min="0"
+        axis-fixed-max="100" step="20"
+        params="[['pDataset', datasetList.ESENER], ['pIndicator', 330]]"
+        color-role="series" colors="[color5, color2]"
+        chart-title="{{i18nLiterals.L20667}}" id="5"
+        axis-label-font="12px 'OpenSans-bold'"
+        plots="plots.allCountries"
+        values-visible="false"
+        values-font="12px 'OpenSans-bold'"
+        base-axis-label-text-baseline=""
+        leaf-content-overflow='visible'
+        dimensions="dimensionsOneDecimal"
+        legend="true"
+        angle="1" stacked="1"
+        base-axis-size="150"
+        datasource-and-dates="[datasetList.ESENER,330]"
+      ></dvt-bar-chart> 
+      <p data-ng-bind="i18nLiterals.L20572"></p>
+      <table class="chart-data">
+        <thead>
+          <tr>
+            <th>Country</th>
+            <th>Yes (%)</th>
+            <th>No (%)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>(AT) Austria</th>
+            <td>32.4</td>
+            <td>67.6</td>
+          </tr>
+          <tr>
+            <th>EU28</th>
+            <td>47.44</td>
+            <td>52.6</td>
+          </tr>
+         </tbody>
+      </table>      
+    </div>
+
+    <div class="box-rounded">
+      <dvt-bar-chart
+        data-ng-cloak
+        query="getCountryReportAllCountriesAnswersData" cda="{{::cda }}"
+        width="330" height="470"
+        orientation="vertical" axis-fixed-min="0"
+        axis-fixed-max="100" step="20"
+        params="[['pDataset', datasetList.ESENER], ['pIndicator', 331]]"
+        color-role="series" colors="[color5, color2]"
+        chart-title="{{i18nLiterals.L20668}}" id="6"
+        axis-label-font="12px 'OpenSans-bold'"
+        plots="plots.allCountries" stacked="1"
+        values-visible="false"
+        values-font="12px 'OpenSans-bold'"
+        leaf-content-overflow='visible'
+        dimensions="dimensionsOneDecimal"
+        legend="true"
+        angle="1"
+        base-axis-size="150"
+        datasource-and-dates="[datasetList.ESENER,331]"
+      ></dvt-bar-chart>
+      <p data-ng-bind="i18nLiterals.L20573"></p>
+      <table class="chart-data">
+        <thead>
+          <tr>
+            <th>Country</th>
+            <th>Yes (%)</th>
+            <th>No (%)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>(AT) Austria</th>
+            <td>32.4</td>
+            <td>67.6</td>
+          </tr>
+          <tr>
+            <th>EU28</th>
+            <td>47.44</td>
+            <td>52.6</td>
+          </tr>
+         </tbody>
+      </table>      
+    </div>
+
+    <div class="box-rounded">
+      <dvt-bar-chart
+        data-ng-cloak
+        query="getCountryReportAllCountriesAnswersData" cda="{{::cda }}"
+        width="600" height="470"
+        orientation="vertical" axis-fixed-min="0"
+        axis-fixed-max="100" step="20"
+        params="[['pDataset', datasetList.Eurofound], ['pIndicator', 63]]"
+        color-role="series" colors="[color8, color2, color5]"
+        values-normalized="0" stacked="1"
+        chart-title="{{i18nLiterals.L320}}" id="7"
+        axis-label-font="12px 'OpenSans-bold'"
+        plots="plots.allCountries"
+        values-visible="false"
+        values-font="12px 'OpenSans-bold'"
+        dimensions="dimensionsOneDecimal"
+        legend="true"
+        angle="1"
+        base-axis-size="150"
+        datasource-and-dates="[datasetList.Eurofound,63]"
+      ></dvt-bar-chart>
+      <p data-ng-bind="i18nLiterals.L20574"></p>
+      <table class="chart-data">
+        <thead>
+          <tr>
+            <th>Country</th>
+            <th>No, not required (%)</th>
+            <th>Yes, but not required (%)</th>
+            <th>es and always (%)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>(AT) Austria</th>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <th>EU28</th>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+         </tbody>
+      </table>      
+    </div>
+
+    <div class="box-rounded">
+      <dvt-bar-chart
+        data-ng-cloak
+        query="getCountryReportAllCountriesAnswersData" cda="{{::cda }}"
+        width="330" height="470" axis-percent="1"
+        orientation="vertical" axis-fixed-min="0"
+        axis-fixed-max="100" step="20"
+        params="[['pDataset', datasetList.Eurofound], ['pIndicator', 64]]"
+        color-role="series" colors="[color2, color5]"
+        values-normalized="0" stacked="1"
+        chart-title="{{i18nLiterals.L321}}" id="8"
+        axis-label-font="12px 'OpenSans-bold'"
+        plots="plots.allCountries"
+        values-visible="false"
+        values-font="12px 'OpenSans-bold'"
+        multiple-label-colors="false"
+        leaf-content-overflow='visible'
+        dimensions="dimensionsOneDecimal"
+        legend="true"
+        angle="1"
+        base-axis-size="150"
+        datasource-and-dates="[datasetList.Eurofound,64]"
+      ></dvt-bar-chart>
+      <p data-ng-bind="i18nLiterals.L20575"></p>
+      <table class="chart-data">
+        <thead>
+          <tr>
+            <th>Country</th>
+            <th>Yes (%)</th>
+            <th>No (%)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>(AT) Austria</th>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <th>EU28</th>
+            <td></td>
+            <td></td>
+          </tr>
+         </tbody>
+      </table>  
+    </div>
+  </section>
+
+
+  <section class="working-conditions">
+    <div class="title-page">
+      <h2 data-ng-bind="i18nLiterals.L22009"></h2>
+      <h3 data-ng-bind="i18nLiterals.L22013"></h3>
+    </div>
+    <div class="intro-page">
+      <p data-ng-bind="i18nLiterals.L22054"></p>
+      <span data-ng-bind="i18nLiterals.L20700"></span>
+      <span data-ng-bind="i18nLiterals.L20704"></span> 
+      <span><a data-ng-bind="i18nLiterals.L20705" ui-sref="about-tool-detail-page({pSection: 'osh-outcomes-working-conditions', pSubsection: 'overall_opinion', pIndicator: 65})"></a></span>
+    </div>
+    <h2>OSH outcomes and working conditions Working conditions</h2>
+    <h3>Overall opinion</h3>
+    Gráfico Job satisfaction
+    Tabla
+    Gráfico Health at risk (Sector)
+    Tabla. Columnas->Sector, Country, Value, Country, Value
+    Gráfico Health at Risk (Gender)
+    Tabla. Columnas->Gender, Country, Value, Country, Value
+    Gráfico Health at Risk (Age)
+    Tabla. Columnas->Age, Country, Value, Country, Value
+  </section>
+
+
 
 
 

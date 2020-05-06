@@ -40,7 +40,7 @@
 		position: fixed;
 		top: 0mm;
 		left: 0mm;
-		width: 200mm;
+		width: 210mm;
 		background: #FFF !important;
 		z-index: 100;
 		picture{			
@@ -48,7 +48,13 @@
 			justify-content: space-between;
 			//margin-bottom: 20mm;
 			img{
-				height: 15mm !important;
+				&.osha-logo{
+					height: 15mm !important;
+				}
+				&.european-flag{
+					height: 7.5mm !important;
+					margin-top: 3.25mm;
+				}				
 			}
 		}    	
   }
@@ -97,21 +103,21 @@
 			ul.index-list{
 				list-style-type: none;
 				padding: 0;
-				margin: 20mm 20mm;
+				margin: 10mm 20mm;
 				li.main-item {
 			    font-size: 2.6rem !important;			   
 			    display: flex;
 			    justify-content: space-between;
 			    margin-bottom:10mm;
 			    span{
-			    	width: 35%;
+			    	width: 36%;
 			    	color: $eu !important;
 			    	text-align: right;
 			    	display: block;
 			    	padding-right:10mm;
 			    }
 			    ul{
-			    	width: 65%;
+			    	width: 64%;
 						list-style-type: none;
 						margin: 0;
 						li{
@@ -153,7 +159,7 @@
 	    top: 0mm;
 	    margin: 10mm 10mm 10mm 10mm;
 	    padding: 0 0 0mm 0 !important;
-	    width: 180mm !important;
+	    width: 190mm !important;
 	    //min-height: 257mm !important;
 	   //page-break-after: always;
 			.title-page{
@@ -257,7 +263,7 @@
 				page-break-after: always !important;
 				svg{
 					height: 3cm !important;
-					width: 170mm !important;
+					width: 190mm !important;
 				}
 			}
 			&.indicator2{
@@ -336,6 +342,203 @@
 		    margin: 2rem 0;
 		    min-height: 20rem;
 			}
+		}
+		section.social-dialogue{
+			page-break-after: always !important;
+			header{
+				display: flex;
+				 padding: 4rem 4rem 2rem 4rem;
+				img{
+					height: 1cm;
+				}
+				h2{
+					padding: 0.125cm 0 0 0.25cm;
+					font-size: 2.2rem !important;
+				}
+			}
+			.intro-page{
+				margin: 0 0 5mm;
+			}
+			.content-page{
+				display: flex;
+					.box-rounded{
+						background: $aquamarine-lighter-trans !important;
+						page-break-inside: avoid !important;
+						border-radius: 6rem 0 6rem 0;
+				    margin: 0 2%;
+				    min-height: 20rem;
+				    width: 46%;
+				    ul{
+				    	list-style-type: none;
+				    	display: flex;
+							flex-wrap: wrap;
+							padding: 0;
+				    	li{
+								width: 50%;
+								text-align: center;						    
+				        padding: 0 1rem;
+				        &:nth-child(2n+1){
+									border-right: 1px solid $gray;
+				        }
+								span{
+									font-size: 2.8rem;
+									display: inline-block;
+									font-weight: bold;
+								}
+								label{
+									display: inline-block;
+									max-width: 100%;
+									margin-bottom: 5px;
+									font-weight: normal;
+									text-align: center;
+								}
+				    	}
+				    }
+					}
+			}		
+		}
+		section.work-accidents{
+			page-break-after: always !important;
+			.title-page{
+				flex-wrap: wrap;
+			}
+			.box-rounded{
+				background: $aquamarine-lighter-trans !important;
+				page-break-inside: avoid !important;
+				border-radius: 6rem 0 6rem 0;
+		    margin: 2rem 0;
+    		padding: 4rem;
+		  }
+		  .chart-data{
+		  	thead{
+		  		th{
+		  			text-align: center;
+		  		}
+			  	th:nth-child(1), th:nth-child(4){
+						width: 30mm;
+						text-align: right;
+			  	}		  		
+		  	}
+		  }
+		}
+		section.health-perception{
+			page-break-after: always !important;
+			.title-page{
+				flex-wrap: wrap;
+			}
+			header{
+				display: flex;
+				padding: 4rem 4rem 2rem 4rem;
+				img{
+					height: 1cm;
+				}
+				h2{
+					padding: 0.125cm 0 0 0.25cm;
+					font-size: 2.2rem !important;
+				}
+			}
+			.intro-page{
+				margin: 0 0 5mm;
+			}
+			.content-page{
+				display: flex;
+				.box-rounded{
+					background: $aquamarine-lighter-trans !important;
+					page-break-inside: avoid !important;
+					border-radius: 6rem 0 6rem 0;
+			    margin: 0 2%;
+			    min-height: 20rem;
+			    width: 46%;
+			    ul{
+			    	list-style-type: none;
+			    	display: flex;
+						flex-wrap: wrap;
+						padding: 0;
+			    	li{
+							width: 50%;
+							text-align: center;						    
+			        padding: 0 1rem;
+			        &:nth-child(2n+1){
+								border-right: 1px solid $gray;
+			        }
+							span{
+								font-size: 2.8rem;
+								display: inline-block;
+								font-weight: bold;
+							}
+							label{
+								display: inline-block;
+								max-width: 100%;
+								margin-bottom: 5px;
+								font-weight: normal;
+								text-align: center;
+							}
+			    	}
+			    }
+				}
+			}	
+		  .chart-data{
+		  	thead{
+		  		th{
+		  			text-align: center;
+		  		}
+			  	th:nth-child(1), th:nth-child(4){
+						width: 30mm;
+						text-align: right;
+			  	}		  		
+		  	}
+		  }		
+		}
+		section.osh-culture{
+			page-break-after: always !important;
+			.title-page{
+				flex-wrap: wrap;
+			}
+			.box-rounded{
+				background: $aquamarine-lighter-trans !important;
+				page-break-inside: avoid !important;
+				border-radius: 6rem 0 6rem 0;
+		    margin: 2rem 0;
+    		padding: 4rem;
+    		svg{
+    			zoom:1 !important;
+    		}
+		  }
+		  .chart-data{
+		  	thead{
+		  		th{
+		  			text-align: center;
+		  		}
+			  	th:nth-child(1), th:nth-child(4){
+						width: 30mm;
+						text-align: right;
+			  	}		  		
+		  	}
+		  }
+		}
+		section.working-conditions{
+			page-break-after: always !important;
+			.title-page{
+				flex-wrap: wrap;
+			}
+			.box-rounded{
+				background: $aquamarine-lighter-trans !important;
+				page-break-inside: avoid !important;
+				border-radius: 6rem 0 6rem 0;
+		    margin: 2rem 0;
+    		padding: 4rem;
+		  }
+		  .chart-data{
+		  	thead{
+		  		th{
+		  			text-align: center;
+		  		}
+			  	th:nth-child(1), th:nth-child(4){
+						width: 30mm;
+						text-align: right;
+			  	}		  		
+		  	}
+		  }
 		}
 	}
 }
