@@ -2,6 +2,7 @@
   <div class="header-logo"></div>
   <section class="cover-page">    
     <div class="content-cover">
+      <div class="icon-full-report"><img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/full-report-icon.png"></div>
       <h1> OSH BAROMETER</h1>
       <h2>AUSTRIA</h2>
         <!-- FILTERS -->
@@ -15,13 +16,52 @@
       <h3>Country Report</h3>
     </div>
   </section>
+  <div class="break-after"></div>
 
   <section class="index-page">
     <h1>Austria Country Report Index</h1>
     <p>This document contains the OSH Barometer Country Report Summary of Austria.</p>
     <div class="index">
+      <ul class="index-list">
+        <li class="main-item"><span>Introduction</span>
+            <ul>
+              <li>Generic information</li>
+            </ul>
+        </li>
+        <li class="main-item"><span>General information</span>
+            <ul>
+              <li>OSH Authorities</li>
+              <li>Economic and sector profile</li>
+              <li>Workforce profile</li>
+            </ul>
+        </li>
+        <li class="main-item"><span>Steering of OSH</span>
+            <ul>
+              <li>National strategies</li>
+              <li>Social Dialogue</li>
+            </ul>
+        </li>
+        <li class="main-item"><span>OSH outcomes and working conditions</span>
+          <ul>
+            <li>Work accidents</li>
+            <li>Health perception of the workers</li>
+            <li>OSH culture and health awareness</li>
+            <li>Working conditions </li>
+            <li>Prevention in companies</li>
+            <li>Worker involvement</li>
+          </ul>
+        </li>
+        <li class="main-item"><span>OSH infrastructure</span>
+          <ul>
+            <li>Enforcement capacity</li>
+            <li>OSH statistics, surveys and research</li>
+          </ul>
+        </li>
+      </ul>
+
     </div>
   </section>
+  <div class="break-after"></div>
 
   <section class="introduction-page">
     <div class="title-page">
@@ -31,6 +71,7 @@
     <div data-ng-bind-html="i18nLiterals.L20737" class="content-page about-tool-content">
     </div>
   </section>
+  <div class="break-after"></div>
 
 
   <section class="osh-authorities">
@@ -69,7 +110,6 @@
         </div>
     </div>    
   </section>
-
 
   <section class="economic-sector-profile indicator1">
     <div class="title-page">
@@ -421,68 +461,93 @@
 
 
   <section class="workforce-profile"> 
-    <h2 data-ng-bind="i18nLiterals.L22001 + ' ' + i18nLiterals.L22004"></h2>
+    <div class="title-page">
+      <h2 data-ng-bind="i18nLiterals.L22001"></h2>
+      <h3 data-ng-bind="i18nLiterals.L22004"></h3>
+    </div>
+    <div class="intro-page">
+      <p data-ng-bind="i18nLiterals.L22030"></p>
+      <span data-ng-bind="(i18nLiterals.L20696)+(' ')+(i18nLiterals.L20704)"></span>
+      <span><a data-ng-bind="i18nLiterals.L20705" ui-sref="about-tool-detail-page({pSection: 'generic-information', pSubsection: 'workforce_profile', pIndicator: 37})"></a></span>
+    </div>
     <table>
       <tr data-ng-repeat="profile in workforceProfile">
         <td><img  class="flags--wrapper" ng-src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/flag/{{::profile.country_code.toLowerCase()}}.png"><span data-ng-bind="profile.country_code"></span></td>
-        <td><span data-ng-bind="i18nLiterals.L20615"></span><span data-ng-bind="profile.medianAge"></span></td>
-        <td><span data-ng-bind="i18nLiterals.L20616"></span><span data-ng-bind="profile.ageingWorkers"></span></td>
-        <td><span data-ng-bind="i18nLiterals.L20619"></span><span data-ng-bind="profile.employmentRateTotal"></span></td>
-        <td><span data-ng-bind="i18nLiterals.L20618"></span><span data-ng-bind="profile.employmentRateMale"></span></td>
-        <td><span data-ng-bind="i18nLiterals.L20617"></span><span data-ng-bind="profile.employmentRateFemale"></span></td>
-        <td><span data-ng-bind="i18nLiterals.L22125"></span><span data-ng-bind="profile.unemploymentRate"></span></td>
+        <td><span data-ng-bind="i18nLiterals.L20615"></span><span data-ng-bind="profile.medianAge +' %'"  class="data"></span></td>
+        <td><span data-ng-bind="i18nLiterals.L20616"></span><span data-ng-bind="profile.ageingWorkers +' %'" class="data"></span></td>
+        <td><span data-ng-bind="i18nLiterals.L20619"></span><span data-ng-bind="profile.employmentRateTotal +' %'" class="data"></span></td>
+        <td><span data-ng-bind="i18nLiterals.L20618"></span><span data-ng-bind="profile.employmentRateMale +' %'" class="data"></span></td>
+        <td><span data-ng-bind="i18nLiterals.L20617"></span><span data-ng-bind="profile.employmentRateFemale +' %'" class="data"></span></td>
+        <td><span data-ng-bind="i18nLiterals.L22125"></span><span data-ng-bind="profile.unemploymentRate +' %'" class="data"></span></td>
       </tr>
     </table>
   </section>
 
 
   <section class="national-strategies"> 
-    <h2 data-ng-bind="i18nLiterals.L22005 + ' ' + i18nLiterals.L22007"></h2>
-    <img  class="flags--wrapper" ng-src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/flag/{{::pCountry.toLowerCase()}}.png"> <span data-ng-bind="i18nLiterals['L'+nationalStrategy[0].country_name]"></span>
-    <h3 data-ng-bind="i18nLiterals.L20378"></h3>
-    <h4>Basic Info</h4>
-    <div data-ng-bind-html="i18nLiterals['L'+nationalStrategy[0].basic_info]"></div>
-    <h4>Background</h4>
-    <div data-ng-bind-html="i18nLiterals['L'+nationalStrategy[0].background]"></div>
-    <h4>Characteristics and objectives</h4>
-    <div data-ng-bind-html="i18nLiterals['L'+nationalStrategy[0].characteristics_objectives]"></div>
-    <h4>Details and activity</h4>
-    <div data-ng-bind-html="i18nLiterals['L'+nationalStrategy[0].details_activity]"></div>
-    <h4>Actors and stakeholders</h4>
-    <div data-ng-bind-html="i18nLiterals['L'+nationalStrategy[0].actors_stakeholders]"></div>
-    <h4>Resources and timeframe</h4>
-    <div data-ng-bind-html="i18nLiterals['L'+nationalStrategy[0].resources_timeframe]"></div>
-    <h4>Evaluation</h4>
-    <div data-ng-bind-html="i18nLiterals['L'+nationalStrategy[0].evaluation]"></div>
-    <h4>Relation to EU Strategic Framework</h4>
-    <div data-ng-bind-html="i18nLiterals['L'+nationalStrategy[0].relation_strategic_framework]"></div>
-
-
-    <h3 data-ng-bind="i18nLiterals.L20379"></h3>
-    <div class="matrix--elements--wrapper">
-      <div ng-if="challengesResponse.length <= 0">
-        <span data-ng-bind="i18nLiterals.L20706"></span>
-      </div>
-      <div data-ng-repeat="matrix in challengesResponse" class="matrix--element">
-        <div class="matrix--header--elements">
-          <img  class="flags--wrapper" ng-src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/flag/{{::matrix.country_code.toLowerCase()}}.png">
-          <h2 class="country ng-binding title-section main-color" data-ng-bind="i18nLiterals['L'+matrix.country_name]"></h2>
-        </div>
-
-        <div class="matrix--content--elements">
-          <h3 class="" ng-if="::matrix.implementation_record==1" data-ng-bind="i18nLiterals.L20631"></h3>
-          <h3 class="" ng-if="::matrix.prevention_work==1" data-ng-bind="i18nLiterals.L20632"></h3>
-          <h3 class="" ng-if="::matrix.tackling_demographic==1" data-ng-bind="i18nLiterals.L20633"></h3>
-
-          <div data-ng-bind-html="i18nLiterals['L'+matrix.objectives]"></div>
-          <div data-ng-bind-html="i18nLiterals['L'+matrix.groups_and_activities]"></div>
-
-          <div class="">
-            <a ui-sref="country-profile({pIndicator: 'basic-information', pCountry1:matrix.country_code, pCountry2: 0})" class="btn--card main-color" title="{{i18nLiterals.L20626}}" data-ng-bind-html="i18nLiterals.L20626"></a>
-          </div>
-        </div>
-      </div>
+    <div class="title-page">
+      <h2 data-ng-bind="i18nLiterals.L22005"></h2>
+      <h3 data-ng-bind="i18nLiterals.L22007"></h3>
     </div>
+    <div class="intro-page">
+      <p data-ng-bind="i18nLiterals.L22038"></p>
+      <span data-ng-bind="i18nLiterals.L20704"></span> 
+      <span><a data-ng-bind="i18nLiterals.L20705" ui-sref="about-tool-detail-page({pSection: 'osh-steering', pSubsection: 'structure_strategy', pIndicator: 46})"></a></span>
+    </div>
+    <header>
+      <img  class="flags" ng-src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/flag/{{::pCountry.toLowerCase()}}.png">
+      <h2 class="country ng-binding title-section main-color" data-ng-bind="i18nLiterals['L'+nationalStrategy[0].country_name]"></h2>
+    </header>
+    <h4 data-ng-bind="i18nLiterals.L20378"></h4>
+
+    <div class="box-rounded">
+      <h5>Basic Info</h5>
+      <div data-ng-bind-html="i18nLiterals['L'+nationalStrategy[0].basic_info]"></div>
+    </div>
+    <div class="box-rounded">
+      <h5>Background</h5>
+      <div data-ng-bind-html="i18nLiterals['L'+nationalStrategy[0].background]"></div>
+    </div>
+    <div class="box-rounded">
+      <h5>Characteristics and objectives</h5>
+      <div data-ng-bind-html="i18nLiterals['L'+nationalStrategy[0].characteristics_objectives]"></div>
+    </div>
+    <div class="box-rounded">
+      <h5>Details and activity</h5>
+      <div data-ng-bind-html="i18nLiterals['L'+nationalStrategy[0].details_activity]"></div>
+    </div>
+    <div class="box-rounded">
+      <h5>Actors and stakeholders</h5>
+      <div data-ng-bind-html="i18nLiterals['L'+nationalStrategy[0].actors_stakeholders]"></div>
+    </div>
+    <div class="box-rounded">
+      <h5>Resources and timeframe</h5>
+      <div data-ng-bind-html="i18nLiterals['L'+nationalStrategy[0].resources_timeframe]"></div>
+    </div>
+    <div class="box-rounded">
+      <h5>Evaluation</h5>
+      <div data-ng-bind-html="i18nLiterals['L'+nationalStrategy[0].evaluation]"></div>
+    </div>
+    <div class="box-rounded">
+      <h5>Relation to EU Strategic Framework</h5>
+      <div data-ng-bind-html="i18nLiterals['L'+nationalStrategy[0].relation_strategic_framework]"></div>
+    </div>
+
+
+    <h4 data-ng-bind="i18nLiterals.L20379"></h4>
+
+      <p ng-if="challengesResponse.length <= 0" data-ng-bind="i18nLiterals.L20706"></p>
+      <div data-ng-repeat="matrix in challengesResponse" class="box-rounded">
+        <h5 class="" ng-if="::matrix.implementation_record==1" data-ng-bind="i18nLiterals.L20631"></h5>
+        <h5 class="" ng-if="::matrix.prevention_work==1" data-ng-bind="i18nLiterals.L20632"></h5>
+        <h5 class="" ng-if="::matrix.tackling_demographic==1" data-ng-bind="i18nLiterals.L20633"></h5>
+
+        <div data-ng-bind-html="i18nLiterals['L'+matrix.objectives]"></div>
+        <div data-ng-bind-html="i18nLiterals['L'+matrix.groups_and_activities]"></div>
+        <div class="">
+          <a ui-sref="country-profile({pIndicator: 'basic-information', pCountry1:matrix.country_code, pCountry2: 0})" class="btn--card main-color" title="{{i18nLiterals.L20626}}" data-ng-bind-html="i18nLiterals.L20626"></a>
+        </div>
+      </div>
 
   </section>
 
