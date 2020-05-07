@@ -167,7 +167,7 @@ define(function (require) {
       "use-of-personal-protective-equipment":[{
             title: "L20656",
             text: "L20579",
-            link: "physical-risk-risks-involved-with-work({pCountry1:'"+$scope.pCountry1+"',pCountry2:'"+$scope.pCountry2+"'})",
+            link: "physical-risk-risks-involved-with-work({pCountry1:'"+$scope.pCountry1+"',pCountry2:'"+$scope.pCountry2+"',pFilter:'ewcs'})",
             icon: "physical-risk"
           },{
             title: "L20664",
