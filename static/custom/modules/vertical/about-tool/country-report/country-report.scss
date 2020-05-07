@@ -23,7 +23,7 @@
 		width: 210mm;
 		border: 1px solid #ccc;
 		margin: 0 auto;
-		font-style: 14px;		
+		font-size: 14px;		
 		h1, h2, h3, h4 {
 		  font-family: "Arial", sans-serif;
 		}
@@ -227,6 +227,9 @@
 					font-weight: bold;
 					font-size: 3.2rem !important;
 	    		margin:0 !important;
+				}
+				&.wrap{
+					flex-wrap: wrap;
 				}
 			}
 			.content-page{
@@ -572,6 +575,33 @@
 		  }
 		}
 		section.working-conditions{
+			page-break-after: always !important;
+			.title-page{
+				flex-wrap: wrap;
+			}
+			.box-rounded{
+				background: $aquamarine-lighter-trans !important;
+				page-break-inside: avoid !important;
+				border-radius: 6rem 0 6rem 0;
+		    margin: 2rem 0;
+    		padding: 4rem;
+    		svg{
+    			zoom:1 !important;
+    		}
+		  }
+		  .chart-data{
+		  	thead{
+		  		th{
+		  			text-align: center;
+		  		}
+			  	th:nth-child(1), th:nth-child(4){
+						width: 30mm;
+						text-align: right;
+			  	}		  		
+		  	}
+		  }
+		}
+		section.prevention-in-companies{
 			page-break-after: always !important;
 			.title-page{
 				flex-wrap: wrap;
