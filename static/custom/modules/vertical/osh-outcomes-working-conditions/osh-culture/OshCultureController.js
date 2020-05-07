@@ -12,7 +12,7 @@ define(function (require) {
   'use strict';
 
 
-  function controller($scope, $stateParams, $state, configService, $log, $document,dataService, $window, $sce, $compile, $timeout, dvtUtils, OshCultureService) {
+  function controller($scope, $stateParams, $state, configService, $log, $document,dataService, $window, $sce, $compile, $timeout, dvtUtils, OshCultureService, $rootScope) {
     // CDA
     $scope.cdaOSHOutcomes = configService.getOshOutcomesWorkingConditionsCda();
     $scope.cdaGenericInformation = configService.getGenericInformationCda();
@@ -39,8 +39,31 @@ define(function (require) {
     $scope.country2Data = {};
 
     // Country parameters
-    $scope.pCountry1 = ($stateParams.pCountry1 != null)?$stateParams.pCountry1:'AT';
-    $scope.pCountry2 = ($stateParams.pCountry2 != null)?$stateParams.pCountry2:'BE';
+    if ($stateParams.pCountry1 != null)
+    {
+      $scope.pCountry1 = $stateParams.pCountry1;
+    }
+    else if ($rootScope.defaultCountry != undefined && $rootScope.defaultCountry.code != undefined)
+    {
+      $scope.pCountry1 = $rootScope.defaultCountry.code;
+    }
+    else
+    {
+      $scope.pCountry1 = $rootScope.defaultCountryDefaultValue;
+    }
+
+    if ($stateParams.pCountry2 != null)
+    {
+      $scope.pCountry2 = $stateParams.pCountry2;
+    }
+    else if ($rootScope.defaultCountry2 != undefined)
+    {
+      $scope.pCountry2 = $rootScope.defaultCountry2.code;
+    }
+    else
+    {
+      $scope.pCountry2 = "0";
+    }
     $scope.pIndicator = $stateParams.pIndicator;
 
     $scope.stories = [
@@ -144,7 +167,7 @@ define(function (require) {
       "use-of-personal-protective-equipment":[{
             title: "L20656",
             text: "L20579",
-            link: "physical-risk-risks-involved-with-work",
+            link: "physical-risk-risks-involved-with-work({pCountry1:'"+$scope.pCountry1+"',pCountry2:'"+$scope.pCountry2+"'})",
             icon: "physical-risk"
           },{
             title: "L20664",
@@ -318,7 +341,7 @@ define(function (require) {
 
   }
 
-controller.$inject = ['$scope', '$stateParams', '$state', 'configService', '$log', '$document','dataService', '$window', '$sce', '$compile', '$timeout', 'dvtUtils', 'OshCultureService'];
+controller.$inject = ['$scope', '$stateParams', '$state', 'configService', '$log', '$document','dataService', '$window', '$sce', '$compile', '$timeout', 'dvtUtils', 'OshCultureService','$rootScope'];
   return controller;
 
 
