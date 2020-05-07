@@ -36,6 +36,9 @@
 			font-size: 2.8rem;
 			color: $gray !important;
 		}
+		div[id^=dvt_bar_chart]{
+			zoom:1 !important;
+		}
 	}
 	header.full-country-report{
 		display:none;
@@ -579,6 +582,9 @@
 				border-radius: 6rem 0 6rem 0;
 		    margin: 2rem 0;
     		padding: 4rem;
+    		svg{
+    			zoom:1 !important;
+    		}
 		  }
 		  .chart-data{
 		  	thead{

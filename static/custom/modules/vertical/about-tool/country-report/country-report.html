@@ -73,7 +73,6 @@
   </section>
   <div class="break-after"></div>
 
-
   <section class="osh-authorities">
     <div class="title-page">
       <h2 data-ng-bind="i18nLiterals.L22001">Introduction</h2>
@@ -459,7 +458,6 @@
     </div>
   </section>
 
-
   <section class="workforce-profile"> 
     <div class="title-page">
       <h2 data-ng-bind="i18nLiterals.L22001"></h2>
@@ -482,7 +480,6 @@
       </tr>
     </table>
   </section>
-
 
   <section class="national-strategies"> 
     <div class="title-page">
@@ -740,7 +737,6 @@
     </div>
   </section>
 
-
   <section class="health-perception">
     <div class="title-page">
       <h2 data-ng-bind="i18nLiterals.L22009"></h2>
@@ -791,7 +787,6 @@
       </div>
     </div>
   </section>
-
 
   <section class="osh-culture">
     <div class="title-page">
@@ -1133,8 +1128,7 @@
     </div>
   </section>
 
-
-  <section class="working-conditions">
+  <section class="working-conditions overall-opinion">
     <div class="title-page">
       <h2 data-ng-bind="i18nLiterals.L22009"></h2>
       <h3 data-ng-bind="i18nLiterals.L22013"></h3>
@@ -1415,7 +1409,7 @@
     </div>
   </section>
 
-  <section class="working-conditions">
+  <section class="working-conditions mental-risk">
     <h3 data-ng-bind="i18nLiterals.L20710"></h3>
     <p data-ng-bind="i18nLiterals.L20578"></p>
     <span data-ng-bind="i18nLiterals.L20700"></span> 
@@ -1984,143 +1978,388 @@
   </section>
 
   
+  <section class="working-conditions physical-risk">
+    <div class="intro-page">
+      <h3 data-ng-bind="i18nLiterals.L20711"></h3>
+      <p data-ng-bind="i18nLiterals.L20579"></p>
+      <span data-ng-bind="i18nLiterals.L20700"></span> 
+      <span data-ng-bind="i18nLiterals.L20704"></span> 
+      <span><a data-ng-bind="i18nLiterals.L20705" ui-sref="about-tool-detail-page({pSection: 'osh-outcomes-working-conditions', pSubsection: 'physical_risks', pIndicator: 67})"></a></span>
+    </div>
+    <!-- Vibrations, loud noise and temperature -->
+    <div class="box-rounded">
+      <dvt-radar-chart
+        data-ng-cloak
+        promises="radarChartPromises.vibrations"
+        axis-fixed-max="40" step="10"
+        width="850" height="400"
+        status="vibrations-loud-noise"
+        chart-title="{{i18nLiterals.L20654}}"
+        id="1" radio="130" values-format="%"
+        mesh-size="30" draw-labels="true"
+        datasource-and-dates="[datasetList.Eurofound,70]"
+        country1="pCountry" country-2="">
+      </dvt-radar-chart>
+      <table class="chart-data">
+        <thead>
+          <tr>
+            <th>Indicator</th>
+            <th>Country (%)</th>
+            <th>Value (%)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>Are you exposed to vibrations from tools or machinery?</th>
+            <td>(AT) Austria</td>
+            <td></td>
+          </tr>
+          <tr>
+            <th>Are you exposed to loud noise?</th>
+            <td>(AT) Austria</td>
+            <td></td>
+          </tr>
+          <tr>
+            <th>Are you exposed to high temperatures?</th>
+            <td>(AT) Austria</td>
+            <td></td>
+          </tr>
+          <tr>
+            <th>Are you exposed to low temperatures?</th>
+            <td>(AT) Austria</td>
+            <td></td>
+          </tr>
+          <tr>
+            <th>Are you exposed to vibrations from tools or machinery?</th>
+            <td>EU28</td>
+            <td></td>
+          </tr>
+          <tr>
+            <th>Are you exposed to loud noise?</th>
+            <td>EU28</td>
+            <td></td>
+          </tr>
+          <tr>
+            <th>Are you exposed to high temperatures?</th>
+            <td>EU28</td>
+            <td></td>
+          </tr>
+          <tr>
+            <th>Are you exposed to low temperatures?</th>
+            <td>EU28</td>
+            <td></td>
+          </tr>
+         </tbody>
+      </table> 
+    </div>
 
-  <h3 data-ng-bind="i18nLiterals.L20711"></h3>
-  <div class="chart--block">
-    <dvt-radar-chart
-      data-ng-cloak
-      promises="radarChartPromises.vibrations"
-      axis-fixed-max="40" step="10"
-      width="850" height="400"
-      status="vibrations-loud-noise"
-      chart-title="{{i18nLiterals.L20654}}"
-      id="1" radio="130" values-format="%"
-      mesh-size="30" draw-labels="true"
-      datasource-and-dates="[datasetList.Eurofound,70]"
-      country1="pCountry" country-2="">
-    </dvt-radar-chart>
-  </div>
-  <h4 data-ng-bind="i18nLiterals.L20655"></h4>
-  <div class="box-rounded">
-    <dvt-bar-chart
-      data-ng-cloak
-      query="getCountryReportAllCountriesAnswersData" cda="{{::cda }}"
-      width="330" height="470" axis-percent="1"
-      orientation="vertical" axis-fixed-min="0"
-      axis-fixed-max="100" step="20"
-      params="[['pDataset', datasetList.Eurofound], ['pIndicator', 71]]"
-      color-role="series" colors="[color2, color5]"
-      chart-title="{{i18nLiterals.L328}}" id="1"
-      axis-label-font="12px 'OpenSans-bold'"
-      plots="plots.allCountries"
-      values-visible="false"
-      base-axis-label-text-baseline="middle"
-      values-font="12px 'OpenSans-bold'"
-      multiple-label-colors="false"
-      dimensions="dimensionsOneDecimal"
-      legend="true"
-      stacked="1" angle="1"
-      base-axis-size="150"
-      datasource-and-dates="[datasetList.Eurofound,71]"
-    ></dvt-bar-chart>
-  </div>
-  <div class="box-rounded">
-    <dvt-bar-chart
-      data-ng-cloak
-      query="getCountryReportAllCountriesAnswersData" cda="{{::cda }}"
-      width="330" height="470" axis-percent="1"
-      orientation="vertical" axis-fixed-min="0"
-      axis-fixed-max="100" step="20"
-      params="[['pDataset', datasetList.Eurofound], ['pIndicator', 72]]"
-      color-role="series" colors="[color2, color5]"
-      chart-title="{{i18nLiterals.L329}}" id="1"
-      axis-label-font="12px 'OpenSans-bold'"
-      plots="plots.allCountries"
-      values-visible="false"
-      base-axis-label-text-baseline="middle"
-      values-font="12px 'OpenSans-bold'"
-      multiple-label-colors="false"
-      dimensions="dimensionsOneDecimal"
-      legend="true"
-      stacked="1" angle="1"
-      base-axis-size="150"
-      datasource-and-dates="[datasetList.Eurofound,72]"
-    ></dvt-bar-chart>
-  </div>
-  <div class="box-rounded">
-    <dvt-bar-chart
-      data-ng-cloak
-      query="getCountryReportAllCountriesAnswersData" cda="{{::cda }}"
-      width="330" height="470" axis-percent="1"
-      orientation="vertical" axis-fixed-min="0"
-      axis-fixed-max="100" step="20"
-      params="[['pDataset', datasetList.Eurofound], ['pIndicator', 73]]"
-      color-role="series" colors="[color2, color5]"
-      chart-title="{{i18nLiterals.L330}}" id="1"
-      axis-label-font="12px 'OpenSans-bold'"
-      plots="plots.allCountries"
-      values-visible="false"
-      base-axis-label-text-baseline="middle"
-      values-font="12px 'OpenSans-bold'"
-      multiple-label-colors="false"
-      dimensions="dimensionsOneDecimal"
-      legend="true"
-      stacked="1" angle="1"
-      base-axis-size="150"
-      datasource-and-dates="[datasetList.Eurofound,73]"
-    ></dvt-bar-chart>
-  </div>
-  <div class="box-rounded">
-    <dvt-bar-chart
-      data-ng-cloak
-      query="getCountryReportAllCountriesAnswersData" cda="{{::cda }}"
-      width="330" height="470" axis-percent="1"
-      orientation="vertical" axis-fixed-min="0"
-      axis-fixed-max="100" step="20"
-      params="[['pDataset', datasetList.Eurofound], ['pIndicator', 74]]"
-      color-role="series" colors="[color2, color5]"
-      chart-title="{{i18nLiterals.L331}}" id="1"
-      axis-label-font="12px 'OpenSans-bold'"
-      plots="plots.allCountries"
-      values-visible="false"
-      base-axis-label-text-baseline="middle"
-      values-font="12px 'OpenSans-bold'"
-      multiple-label-colors="false"
-      dimensions="dimensionsOneDecimal"
-      legend="true"
-      stacked="1" angle="1"
-      base-axis-size="150"
-      datasource-and-dates="[datasetList.Eurofound,74]"
-    ></dvt-bar-chart>
-  </div>
-  <div class="box-rounded">
-    <dvt-radar-chart
-      data-ng-cloak
-      promises="radarChartPromises.risksInvolvedESENER"
-      axis-fixed-max="80" step="20"
-      width="850" height="400"
-      status="older-workers-employment"
-      chart-title="{{i18nLiterals.L20656}} - {{i18nLiterals.L20645}}"
-      id="7" radio="130" values-format="%"
-      mesh-size="30" draw-labels="true"
-      datasource-and-dates="[datasetList.ESENER,293]"
-      country1="pCountry" country-2="">
-    </dvt-radar-chart>
-  </div>
-  <div class="box-rounded">
-    <dvt-radar-chart
-      data-ng-cloak
-      promises="radarChartPromises.risksInvolvedEurofound"
-      axis-fixed-max="80" step="20"
-      width="850" height="400"
-      status="risk-involved-work"
-      chart-title="{{i18nLiterals.L20656}} - {{i18nLiterals.L20646}}"
-      id="6" radio="130" values-format="%"
-      mesh-size="30" draw-labels="true"
-      datasource-and-dates="[datasetList.Eurofound,90]"
-      country1="pCountry" country-2="'EU'">
-    </dvt-radar-chart>
-  </div>
+    <!-- Exposure to dangerous substances -->
+    <h4 data-ng-bind="i18nLiterals.L20655"></h4>
+
+    <!-- Smoke, powder or dust -->
+    <div class="box-rounded">
+      <dvt-bar-chart
+        data-ng-cloak
+        query="getCountryReportAllCountriesAnswersData" cda="{{::cda }}"
+        width="330" height="470" axis-percent="1"
+        orientation="vertical" axis-fixed-min="0"
+        axis-fixed-max="100" step="20"
+        params="[['pDataset', datasetList.Eurofound], ['pIndicator', 71]]"
+        color-role="series" colors="[color2, color5]"
+        chart-title="{{i18nLiterals.L328}}" id="1"
+        axis-label-font="12px 'OpenSans-bold'"
+        plots="plots.allCountries"
+        values-visible="false"
+        base-axis-label-text-baseline="middle"
+        values-font="12px 'OpenSans-bold'"
+        multiple-label-colors="false"
+        dimensions="dimensionsOneDecimal"
+        legend="true"
+        stacked="1" angle="1"
+        base-axis-size="150"
+        datasource-and-dates="[datasetList.Eurofound,71]"
+      ></dvt-bar-chart>
+      <p data-ng-bind="i18nLiterals.L20598"></p>
+      <table class="chart-data">
+        <thead>
+          <tr>
+            <th>Country</th>
+            <th>Lees than ¼ of the time (%)</th>
+            <th>At leas ¼ of the time (%)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>(AT) Austria</th>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <th>EU28</th>
+            <td></td>
+            <td></td>
+          </tr>
+         </tbody>
+      </table> 
+    </div>
+
+    <!-- Vapours -->
+    <div class="box-rounded">
+      <dvt-bar-chart
+        data-ng-cloak
+        query="getCountryReportAllCountriesAnswersData" cda="{{::cda }}"
+        width="330" height="470" axis-percent="1"
+        orientation="vertical" axis-fixed-min="0"
+        axis-fixed-max="100" step="20"
+        params="[['pDataset', datasetList.Eurofound], ['pIndicator', 72]]"
+        color-role="series" colors="[color2, color5]"
+        chart-title="{{i18nLiterals.L329}}" id="1"
+        axis-label-font="12px 'OpenSans-bold'"
+        plots="plots.allCountries"
+        values-visible="false"
+        base-axis-label-text-baseline="middle"
+        values-font="12px 'OpenSans-bold'"
+        multiple-label-colors="false"
+        dimensions="dimensionsOneDecimal"
+        legend="true"
+        stacked="1" angle="1"
+        base-axis-size="150"
+        datasource-and-dates="[datasetList.Eurofound,72]"
+      ></dvt-bar-chart>
+      <p data-ng-bind="i18nLiterals.L20599"></p>
+      <table class="chart-data">
+        <thead>
+          <tr>
+            <th>Country</th>
+            <th>Lees than ¼ of the time (%)</th>
+            <th>At leas ¼ of the time (%)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>(AT) Austria</th>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <th>EU28</th>
+            <td></td>
+            <td></td>
+          </tr>
+         </tbody>
+      </table> 
+    </div>
+
+    <!-- Chemical products -->
+    <div class="box-rounded">
+      <dvt-bar-chart
+        data-ng-cloak
+        query="getCountryReportAllCountriesAnswersData" cda="{{::cda }}"
+        width="330" height="470" axis-percent="1"
+        orientation="vertical" axis-fixed-min="0"
+        axis-fixed-max="100" step="20"
+        params="[['pDataset', datasetList.Eurofound], ['pIndicator', 73]]"
+        color-role="series" colors="[color2, color5]"
+        chart-title="{{i18nLiterals.L330}}" id="1"
+        axis-label-font="12px 'OpenSans-bold'"
+        plots="plots.allCountries"
+        values-visible="false"
+        base-axis-label-text-baseline="middle"
+        values-font="12px 'OpenSans-bold'"
+        multiple-label-colors="false"
+        dimensions="dimensionsOneDecimal"
+        legend="true"
+        stacked="1" angle="1"
+        base-axis-size="150"
+        datasource-and-dates="[datasetList.Eurofound,73]"
+      ></dvt-bar-chart>
+      <p data-ng-bind="i18nLiterals.L20600"></p>
+      <table class="chart-data">
+        <thead>
+          <tr>
+            <th>Country</th>
+            <th>Lees than ¼ of the time (%)</th>
+            <th>At leas ¼ of the time (%)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>(AT) Austria</th>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <th>EU28</th>
+            <td></td>
+            <td></td>
+          </tr>
+         </tbody>
+      </table> 
+    </div>
+
+    <!-- Infectious materials -->
+    <div class="box-rounded">
+      <dvt-bar-chart
+        data-ng-cloak
+        query="getCountryReportAllCountriesAnswersData" cda="{{::cda }}"
+        width="330" height="470" axis-percent="1"
+        orientation="vertical" axis-fixed-min="0"
+        axis-fixed-max="100" step="20"
+        params="[['pDataset', datasetList.Eurofound], ['pIndicator', 74]]"
+        color-role="series" colors="[color2, color5]"
+        chart-title="{{i18nLiterals.L331}}" id="1"
+        axis-label-font="12px 'OpenSans-bold'"
+        plots="plots.allCountries"
+        values-visible="false"
+        base-axis-label-text-baseline="middle"
+        values-font="12px 'OpenSans-bold'"
+        multiple-label-colors="false"
+        dimensions="dimensionsOneDecimal"
+        legend="true"
+        stacked="1" angle="1"
+        base-axis-size="150"
+        datasource-and-dates="[datasetList.Eurofound,74]"
+      ></dvt-bar-chart>
+      <p data-ng-bind="i18nLiterals.L20601"></p>
+      <table class="chart-data">
+        <thead>
+          <tr>
+            <th>Country</th>
+            <th>Lees than ¼ of the time (%)</th>
+            <th>At leas ¼ of the time (%)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>(AT) Austria</th>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <th>EU28</th>
+            <td></td>
+            <td></td>
+          </tr>
+         </tbody>
+      </table> 
+    </div>
+
+    <!-- Risks involved with work -->
+    <div class="box-rounded">
+      <dvt-radar-chart
+        data-ng-cloak
+        promises="radarChartPromises.risksInvolvedESENER"
+        axis-fixed-max="80" step="20"
+        width="850" height="400"
+        status="older-workers-employment"
+        chart-title="{{i18nLiterals.L20656}} - {{i18nLiterals.L20645}}"
+        id="7" radio="130" values-format="%"
+        mesh-size="30" draw-labels="true"
+        datasource-and-dates="[datasetList.ESENER,293]"
+        country1="pCountry" country-2="">
+      </dvt-radar-chart>
+      <table class="chart-data">
+        <thead>
+          <tr>
+            <th>Indicator</th>
+            <th>Country</th>
+            <th>Value (%)</th>
+            <th>Country</th>
+            <th>Value (%)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>Tiring or painful positions, including sitting for long periods</th>
+            <td>(AT) Austria</td>
+            <td></td>
+            <td>EU28</td>
+            <td></td>
+          </tr>
+          <tr>
+            <th>Lifting or moving people or heavy loads</th>
+            <td>(AT) Austria</td>
+            <td></td>
+            <td>EU28</td>
+            <td></td>
+          </tr>
+          <tr>
+            <th>Repetitive hand or arm movements</th>
+            <td>(AT) Austria</td>
+            <td></td>
+            <td>EU28</td>
+            <td></td>
+          </tr>
+         </tbody>
+      </table>
+    </div>
+    <div class="box-rounded">
+      <dvt-radar-chart
+        data-ng-cloak
+        promises="radarChartPromises.risksInvolvedEurofound"
+        axis-fixed-max="80" step="20"
+        width="850" height="400"
+        status="risk-involved-work"
+        chart-title="{{i18nLiterals.L20656}} - {{i18nLiterals.L20646}}"
+        id="6" radio="130" values-format="%"
+        mesh-size="30" draw-labels="true"
+        datasource-and-dates="[datasetList.Eurofound,90]"
+        country1="pCountry" country-2="'EU'">
+      </dvt-radar-chart>
+      <table class="chart-data">
+        <thead>
+          <tr>
+            <th>Indicator</th>
+            <th>Country</th>
+            <th>Value (%)</th>
+            <th>Country</th>
+            <th>Value (%)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>Does your work involve tiring or painful positions?</th>
+            <td>(AT) Austria</td>
+            <td></td>
+            <td>EU28</td>
+            <td></td>
+          </tr>
+          <tr>
+            <th>Does your work involve sitting?</th>
+            <td>(AT) Austria</td>
+            <td></td>
+            <td>EU28</td>
+            <td></td>
+          </tr>
+          <tr>
+            <th>Does your work involve carrying or moving heavy loads?</th>
+            <td>(AT) Austria</td>
+            <td></td>
+            <td>EU28</td>
+            <td></td>
+          </tr>
+          <tr>
+            <th>Does your work involve repetitive hand or arm movements?</th>
+            <td>(AT) Austria</td>
+            <td></td>
+            <td>EU28</td>
+            <td></td>
+          </tr>
+          <tr>
+            <th>Does your work involve lifting or moving people?</th>
+            <td>(AT) Austria</td>
+            <td></td>
+            <td>EU28</td>
+            <td></td>
+          </tr>
+         </tbody>
+      </table>
+    </div>
+  </section>
+  
+
+
+
 
   <section class="prevention-in-companies">
     <div class="title-page">
