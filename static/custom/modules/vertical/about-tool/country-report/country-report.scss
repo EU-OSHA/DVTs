@@ -19,7 +19,11 @@
 	}
 	body.full-country-report{	
 		font-family: "Arial" !important;
-		top: 20mm !important;		
+		top: 20mm !important;
+		width: 210mm;
+		border: 1px solid #ccc;
+		margin: 0 auto;
+		font-style: 14px;		
 		h1, h2, h3, h4 {
 		  font-family: "Arial", sans-serif;
 		}
@@ -82,8 +86,12 @@
 
 				}
 				th{
+					padding: 0 0.8rem;
+    			white-space: nowrap;
+    			text-align: center;
 					&:nth-child(1){
 						width: 65%;
+						text-align: right;
 					}
 				}		
 			}
@@ -91,12 +99,53 @@
 				th{
 					border-right:2px solid $gray-light;
 					padding: 0.8rem;
-					text-align: right;
+    			text-align: center;
+					&:nth-child(1){
+						width: 65%;
+						text-align: right;
+					}
 				}
 				td{
 					border-right:2px solid $gray-light;
 					padding: 0.8rem;
+					white-space: nowrap;
+    			text-align: center;
 				}
+			}
+			&.wrap{
+				thead{
+					th{
+						white-space: initial;
+					}
+				}
+			}
+			&.w95{
+			width: 95%;
+			margin: 5mm auto 10mm;
+			}
+			&.w85{
+			width: 85%;
+			margin: 5mm auto 10mm;
+			}
+			&.w75{
+			width: 75%;
+			margin: 5mm auto 10mm;
+			}
+			&.w60{
+			width: 60%;
+			margin: 5mm auto 10mm;
+			}
+			&.w50{
+				width: 50%;
+				margin: 5mm auto 10mm;
+			}
+			&.w40{
+				width: 40%;
+				margin: 5mm auto 10mm;
+			}
+			&.w25{
+				width: 50%;
+				margin: 5mm auto 10mm;
 			}
 		}
 		.index{
@@ -219,12 +268,12 @@
 			.content-page{
 				.osh-authorities-items{
 					position: relative;
-					margin-bottom: 4rem;
+					//margin-bottom: 4rem;
 					page-break-inside: avoid !important;
-					min-height: 20rem;
+					//min-height: 20rem;
 					//border:1px solid #FFF;
 					&:last-child{
-						page-break-before:always !important;
+						//page-break-before:always !important;
 					}
 					header{
 						display: flex;
@@ -252,8 +301,8 @@
 						page-break-inside: avoid !important;
 						border-radius: 6rem 0 6rem 0;
 				    padding: 1rem 3rem;
-				    margin: 0;
-				    min-height: 20rem;
+				    margin:2rem 0;
+				    //min-height: 20rem;
 					}
 				}
 			}
@@ -305,6 +354,9 @@
 							font-size: 2.2rem;
 							display: block;
 							font-weight: bold;
+							font-style: italic;
+							white-space: nowrap;
+					    margin-top: 1.2rem;
 						}
 					}
 				}
