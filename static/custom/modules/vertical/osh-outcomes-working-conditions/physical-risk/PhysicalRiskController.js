@@ -78,45 +78,28 @@ define(function (require) {
     $scope.selectCountryQuery = $scope.pSubIndicator=='ewcs'?"getEurofoundRisksCountries":"getESENERRisksCountries";
     $scope.selectCountryDataset = $scope.pSubIndicator=='ewcs'?$scope.datasetEurofound:$scope.datasetESENER;
 
-    /*$(window).on("resize",function(e){
-      resolution = screen.width;
-      $state.reload();
-    });*/
-
-    /*$(window).on("resize",function(e){
-      if(screen.width != resolution){
-        resolution = screen.width;
-        $state.reload();
-      }
-    });*/
-
     $(window).on("resize",function(e){
       if( window.outerWidth != resolution){
         resolution = window.resolution;
-        //$log.warn('Resolucion ha cambiado');
-        //$log.warn(window);
         $state.reload();
       }
     });
 
-    //$log.warn("Param pCountry1: "+$stateParams.pCountry1+", $scope pCountry1: "+$scope.pCountry1);
-    //$log.warn("Param pCountry2: "+$stateParams.pCountry2+", $scope pCountry2: "+$scope.pCountry2);
-
     $scope.dashboard = {};
     $scope.dashboard = {
-        parameters: {
-            "pCountry1": $scope.pCountry1,
-            "pCountry2": $scope.pCountry2
-        }
+      parameters: {
+          "pCountry1": $scope.pCountry1,
+          "pCountry2": $scope.pCountry2
+      }
     };
 
     $scope.relatedItems = {
       "exposure-to-dangerous-substances":[{
-            title: "L320",
-            text: "L22054",
-            link: "osh-culture({pIndicator:'use-of-personal-protective-equipment'})",
-            icon: "culture"
-          }]
+          title: "L320",
+          text: "L22054",
+          link: "osh-culture({pIndicator:'use-of-personal-protective-equipment'})",
+          icon: "culture"
+        }]
     };
 
     // Conditional criteria
@@ -188,136 +171,129 @@ define(function (require) {
         }
     }
 
-    /******************************************************************************|
-    |                                 FILTERS                                      |
-    |******************************************************************************/
+    // Open indicators list like a select element
 
+    $(window).on("resize",function(e){
+      resolution = $(window).width();
+    });
+      resolution = $(window).width();
 
-    /******************************END FILTERS************************************/
+    $scope.openIndicatorsList = function(e) {    
+      if( resolution < 990 ){
+        //var parentTag = e.target.offsetParent.nextSibling.parentNode.className;          
+        var parentNode = e.target.parentElement.nodeName;  
+     
+        if( parentNode == "LI"){
+          var parentTag = e.target.parentElement.parentElement.className;
+        } else {
+          var parentTag = e.target.parentElement.className;
+        }
 
-      // Open indicators list like a select element
+        if( parentTag.indexOf('open-list') < 0 ){
 
-      $(window).on("resize",function(e){
-        resolution = $(window).width();
-      });
-        resolution = $(window).width();
-
-      $scope.openIndicatorsList = function(e) {    
-        if( resolution < 990 ){
-          //var parentTag = e.target.offsetParent.nextSibling.parentNode.className;          
-          var parentNode = e.target.parentElement.nodeName;  
-       
-          if( parentNode == "LI"){
-            var parentTag = e.target.parentElement.parentElement.className;
+          if(parentTag.indexOf('level2') < 0){
+            angular.element('.level1').addClass('open-list');
           } else {
-            var parentTag = e.target.parentElement.className;
+            angular.element('.level2').addClass('open-list');
           }
 
-          if( parentTag.indexOf('open-list') < 0 ){
-
-            if(parentTag.indexOf('level2') < 0){
-              angular.element('.level1').addClass('open-list');
-            } else {
-              angular.element('.level2').addClass('open-list');
-            }
-
+        } else {
+          if(parentTag.indexOf('level2') < 0){
+            angular.element('.level1').removeClass('open-list');
           } else {
-            if(parentTag.indexOf('level2') < 0){
-              angular.element('.level1').removeClass('open-list');
-            } else {
-              angular.element('.level2').removeClass('open-list');
-            }            
-          }
+            angular.element('.level2').removeClass('open-list');
+          }            
         }
       }
+    }
 
-      $('body').on('click touchstart', function(e) {
-        var container = angular.element('.submenu--items--wrapper');
-        if (!container.is(e.target) && container.has(e.target).length === 0){
-          angular.element('.submenu--items--wrapper').removeClass('open-list'); 
-        }
-      });
+    $('body').on('click touchstart', function(e) {
+      var container = angular.element('.submenu--items--wrapper');
+      if (!container.is(e.target) && container.has(e.target).length === 0){
+        angular.element('.submenu--items--wrapper').removeClass('open-list'); 
+      }
+    });
 
 
-      $scope.changeIndicator = function(e,indicator, subIndicator, pChangeRoot) {
-        //$scope.openIndicatorsList(e);
-        if ($state.current.name !== undefined) {
+    $scope.changeIndicator = function(e,indicator, subIndicator, pChangeRoot) {
+      //$scope.openIndicatorsList(e);
+      if ($state.current.name !== undefined) {
 
-          if (pChangeRoot)
+        if (pChangeRoot)
+        {
+          if (!$rootScope.defaultCountry.isCookie)
           {
-            if (!$rootScope.defaultCountry.isCookie)
-            {
-              $rootScope.defaultCountry.code = $scope.pCountry1;
-            }
-
-            if ($scope.pCountry2 != "0")
-            {
-              $rootScope.defaultCountry2 = {
-                code: $scope.pCountry2,
-                isCookie: 0
-              }
-            }  
-          }          
-
-          if(indicator == 'exposure-to-dangerous-substances'){
-            $state.go('physical-risk-exposure-to-dangerous-substances', {
-              pIndicator: indicator,
-              pSubIndicator: subIndicator,
-              pFilter: $scope.pFilter,
-              pCountry1: $scope.pCountry1, 
-              pCountry2: $scope.pCountry2
-            });
-          }else if(indicator == 'vibrations-loud-noise-and-temperature'){
-            $state.go('physical-risk-vibrations-loud-noise-and-temperature', {
-              pIndicator: indicator,
-              pSubIndicator: subIndicator,
-              pFilter: $scope.pFilter,
-              pCountry1: $scope.pCountry1, 
-              pCountry2: $scope.pCountry2
-            });
-          }else{
-            $state.go('physical-risk-risks-involved-with-work', {
-              pIndicator: indicator,
-              pSubIndicator: subIndicator,
-              pFilter: $scope.pFilter,
-              pCountry1: $scope.pCountry1, 
-              pCountry2: $scope.pCountry2
-            });
+            $rootScope.defaultCountry.code = $scope.pCountry1;
           }
-        }
-      }
 
-      $scope.changeSplit = function(){
-        $('.card--block--chart--wrapper').css('visibility','hidden');
-        if ($state.current.name !== undefined) {
-          $state.transitionTo('physical-risk-risks-involved-with-work', {
-            pIndicator: $scope.pIndicator,
-            pSubIndicator: $scope.pSubIndicator,
+          if ($scope.pCountry2 != "0")
+          {
+            $rootScope.defaultCountry2 = {
+              code: $scope.pCountry2,
+              isCookie: 0
+            }
+          }  
+        }          
+
+        if(indicator == 'exposure-to-dangerous-substances'){
+          $state.go('physical-risk-exposure-to-dangerous-substances', {
+            pIndicator: indicator,
+            pSubIndicator: subIndicator,
             pFilter: $scope.pFilter,
             pCountry1: $scope.pCountry1, 
-            pCountry2: $scope.pCountry2,
-          }, {reload: true});
+            pCountry2: $scope.pCountry2
+          });
+        }else if(indicator == 'vibrations-loud-noise-and-temperature'){
+          $state.go('physical-risk-vibrations-loud-noise-and-temperature', {
+            pIndicator: indicator,
+            pSubIndicator: subIndicator,
+            pFilter: $scope.pFilter,
+            pCountry1: $scope.pCountry1, 
+            pCountry2: $scope.pCountry2
+          });
+        }else{
+          $state.go('physical-risk-risks-involved-with-work', {
+            pIndicator: indicator,
+            pSubIndicator: subIndicator,
+            pFilter: $scope.pFilter,
+            pCountry1: $scope.pCountry1, 
+            pCountry2: $scope.pCountry2
+          });
         }
       }
+    }
 
-      $scope.exportData = function(promises, title, id){
-        exportService.exportRadarData(promises, title, id);
+    $scope.changeSplit = function(){
+      $('.card--block--chart--wrapper').css('visibility','hidden');
+      if ($state.current.name !== undefined) {
+        $state.transitionTo('physical-risk-risks-involved-with-work', {
+          pIndicator: $scope.pIndicator,
+          pSubIndicator: $scope.pSubIndicator,
+          pFilter: $scope.pFilter,
+          pCountry1: $scope.pCountry1, 
+          pCountry2: $scope.pCountry2,
+        }, {reload: true});
       }
+    }
 
-      $scope.datasetMethodology = function()
+    $scope.exportData = function(promises, title, id){
+      exportService.exportRadarData(promises, title, id);
+    }
+
+    $scope.datasetMethodology = function()
+    {
+      if ($scope.pIndicator == "risks-involve-with-work")
       {
-        if ($scope.pIndicator == "risks-involve-with-work")
+        if ($scope.pFilter == "esener")
         {
-          if ($scope.pFilter == "esener")
-          {
-            return $scope.datasetESENER;
-          }
-          else
-          {
-            return $scope.datasetEurofound;
-          }
+          return $scope.datasetESENER;
+        }
+        else
+        {
+          return $scope.datasetEurofound;
         }
       }
+    }
   }
 
 controller.$inject = ['$scope', '$stateParams', '$state', 'configService', '$log', '$document','dataService', '$window', '$sce', '$compile', '$timeout', 'dvtUtils', 'PhysicalRiskService', 'exportService', '$rootScope'];
