@@ -302,13 +302,13 @@ define(function (require) {
 		$scope.status = 'ready';
 
 
-
+/*
 			var header = "<picture>";
 	      	header += '<img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/EU-OSHA-trans-en.png" class="osha-logo" alt="European Agency for Safety and Health at Work">';
 	      	header += '<img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/eu-flag.png" class="european-flag" title="European Union flag">';
 	    		header += '</picture>';
 	    		$(" .header-logo").append( $(header) );
-
+*/
 
 	}
 	

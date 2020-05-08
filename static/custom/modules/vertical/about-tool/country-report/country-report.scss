@@ -39,6 +39,9 @@
 		div[id^=dvt_bar_chart]{
 			zoom:1 !important;
 		}
+		.goog-te-spinner-pos, #fancybox-wrap, #goog-gt-tt{
+			display: none !important;
+		}
 	}
 	header.full-country-report{
 		display:none;
@@ -48,8 +51,15 @@
 		top: 0mm;
 		left: 0mm;
 		width: 210mm;
-		background: #FFF !important;
+		background: transparent !important;
 		z-index: 100;
+    height: 15mm;
+    background: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/EU-OSHA-trans-en.png) no-repeat,
+     url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/eu-flag.png) no-repeat !important;
+    background-position: left top, right 5mm!important;
+    background-repeat: no-repeat, repeat;
+    background-size: contain, 10mm !important;
+    overflow: visible;
 		picture{			
 			display: flex;
 			justify-content: space-between;
@@ -79,7 +89,7 @@
 		display: block !important; 
 		.chart-data{
 			width: 100%;
-			margin: 5mm 0mm 10mm;
+			margin: 5mm 0mm 0mm;
 			border-collapse: collapse;
 			font-size:12px;
 			color: $gray;
@@ -124,31 +134,31 @@
 			}
 			&.w95{
 			width: 95%;
-			margin: 5mm auto 10mm;
+			margin: 5mm auto 0mm;
 			}
 			&.w85{
 			width: 85%;
-			margin: 5mm auto 10mm;
+			margin: 5mm auto 0mm;
 			}
 			&.w75{
 			width: 75%;
-			margin: 5mm auto 10mm;
+			margin: 5mm auto 0mm;
 			}
 			&.w60{
 			width: 60%;
-			margin: 5mm auto 10mm;
+			margin: 5mm auto 0mm;
 			}
 			&.w50{
 				width: 50%;
-				margin: 5mm auto 10mm;
+				margin: 5mm auto 0mm;
 			}
 			&.w40{
 				width: 40%;
-				margin: 5mm auto 10mm;
+				margin: 5mm auto 0mm;
 			}
 			&.w25{
 				width: 50%;
-				margin: 5mm auto 10mm;
+				margin: 5mm auto 0mm;
 			}
 		}
 		.index{
@@ -209,7 +219,7 @@
 		section{
 			position: relative;
 	    top: 0mm;
-	    margin: 10mm 10mm 10mm 10mm;
+	    margin: 0mm 10mm 10mm 10mm;
 	    padding: 0 0 0mm 0 !important;
 	    width: 190mm !important;
 	    //min-height: 257mm !important;
@@ -235,6 +245,16 @@
 			.content-page{
 				margin: 0cm auto;
 			}
+			.box-rounded{
+				background: $aquamarine-lighter-trans !important;
+				page-break-inside: avoid !important;
+				border-radius: 6rem 0 6rem 0;
+		    padding: 1rem 3rem;
+		    margin:2rem 0;
+				p, ul, ol, li, div{
+					page-break-inside: avoid !important;
+				}
+			}
 		}
 		section.cover-page{
 			width: 210mm !important;
@@ -245,12 +265,13 @@
 			padding:0 !important;
 			page-break-after:always;
 			&:after{
-				content:'Santiago de Compostela 12, 5th floor - 48003 Bilbao × Spain \A Tel. +34 944 358 400 × Fax +34 944 358 401 information@osha.europa.eu - http://osha.europa.eu';
+				content:'Santiago de Compostela 12, 5th floor - 48003 Bilbao × Spain               Tel. +34 944 358 400 × Fax +34 944 358 401 information@osha.europa.eu - http://osha.europa.eu';
 				white-space: pre;
 				display: block;
 				position: fixed;
 				bottom: 0;
 				font-size: 10px;
+				text-align: center;
 			}
 			.content-cover{
 				position: absolute;
