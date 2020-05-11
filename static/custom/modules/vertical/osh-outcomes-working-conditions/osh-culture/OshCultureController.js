@@ -160,7 +160,7 @@ define(function (require) {
             icon: "mental-risk"
           },{
             title: "L20674",
-            text: "L22578",
+            text: "L20578",
             link: "mental-risk({pIndicator:'working-hours'})",
             icon: "mental-risk"
           }],
@@ -172,7 +172,7 @@ define(function (require) {
           },{
             title: "L20664",
             text: "L22054",
-            link: "osh-culture",
+            link: "osh-culture({pIndicator:'health-and-safety-discussed'})",
             icon: "culture"
           }],
       "information-about-risks":[{

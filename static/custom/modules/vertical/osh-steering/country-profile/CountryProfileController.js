@@ -125,7 +125,7 @@ define(function (require) {
       "background":[{
             title: "L22002",
             text: "L22025",
-            link: "osh-authorities",
+            link: "osh-authorities({pCountry:'"+$scope.pCountry1+"'})",
             icon: "forum"
           }],
       "actors-and-stakeholders":[{
@@ -137,7 +137,7 @@ define(function (require) {
       "resources-and-timeframe":[{
             title: "L22017",
             text: "L22063",
-            link: "enforcement-capacity",
+            link: "enforcement-capacity({pCountry1:'"+$scope.pCountry1+"',pCountry2:'"+$scope.pCountry2+"'})",
             icon: "enforcement"
           }],
       "relationship-to-eu-strategic-framework":

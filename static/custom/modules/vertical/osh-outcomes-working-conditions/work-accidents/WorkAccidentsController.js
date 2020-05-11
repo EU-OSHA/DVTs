@@ -117,7 +117,7 @@ define(function (require) {
           },{
             title: "L20711",
             text: "L20579",
-            link: "physical-risk-vibrations-loud-noise-and-temperature",
+            link: "physical-risk-vibrations-loud-noise-and-temperature({pCountry1:'"+$scope.pCountry1+"',pCountry2:'"+$scope.pCountry2+"'})",
             icon: "physical-risk"
           },{
             title: "L20692",
@@ -134,7 +134,7 @@ define(function (require) {
             title: "L20692",
             text: "L22063",
             link: "enforcement-capacity",
-            icon: "enforcement-capacity"
+            icon: "enforcement"
           }]
     };
 
