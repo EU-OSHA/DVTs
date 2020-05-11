@@ -114,7 +114,7 @@ define(function (require) {
           },{
             title: "L20681",
             text: "L22058",
-            link: "prevention-companies",
+            link: "prevention-companies({pIndicator:'evaluated-aspects-in-risk-assessments'})",
             icon: "prevention"
           }],
       "internal-or-external-ra":[{
@@ -125,7 +125,7 @@ define(function (require) {
           },{
             title: "L20681",
             text: "L22058",
-            link: "prevention-companies",
+            link: "prevention-companies({pIndicator:'evaluated-aspects-in-risk-assessments'})",
             icon: "prevention"
           }],
       "evaluated-aspects-in-risk-assessments":[{
@@ -153,7 +153,7 @@ define(function (require) {
           },{
             title: "L22011",
             text:"L22052",
-            link: "health-preception-of-workers",
+            link: "health-perception-of-workers",
             icon: "enforcement"
           }]
     };

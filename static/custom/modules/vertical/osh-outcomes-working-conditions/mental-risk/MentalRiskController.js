@@ -146,14 +146,9 @@ define(function (require) {
             icon: "overall-opinion"
           }],
       "working-hours":[{
-            title: "L20666",
+            title: "L20665",
             text:"L22054",
-            link: "osh-culture({pIndicator:'procedure-against-bullying'})",
-            icon: "culture"
-          },{
-            title: "L20667",
-            text:"L22054",
-            link: "osh-culture({pIndicator:'procedures-to-deal-with-threats'})",
+            link: "osh-culture({pIndicator:'action-plan-to-prevent-stress'})",
             icon: "culture"
           },{
             title: "L22003",
