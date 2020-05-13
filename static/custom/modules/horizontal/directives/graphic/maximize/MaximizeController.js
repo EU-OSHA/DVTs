@@ -31,12 +31,35 @@ define(function (require) {
                         //resolution = screen.width;
                     });
 
+                    // Country parameters
+                    var country1 = $rootScope.defaultCountryDefaultValue;
+                    var country2 = "0"
+                    if ($stateParams.pCountry1 != null)
+                    {
+                      country1 = $stateParams.pCountry1;
+                    }
+                    else if ($rootScope.defaultCountry != undefined && $rootScope.defaultCountry.code != undefined)
+                    {
+                      country1 = $rootScope.defaultCountry.code;
+                    }
+
+                    if ($stateParams.pCountry2 != null)
+                    {
+                      country2 = $stateParams.pCountry2;
+                    }
+                    else if ($rootScope.defaultCountry2 != undefined)
+                    {
+                      country2 = $rootScope.defaultCountry2.code;
+                    }
+
                     /*ESTABLISH NEEDED DASH PARAMS FOR RENDER COMPONENTS */
                     $scope.dashboard = {
                         parameters: {
                             "pSplit": $rootScope.pSplit,
                             "pSplit2": $rootScope.pSplit2,
-                            "pDataset": $rootScope.pDataset
+                            "pDataset": $rootScope.pDataset,
+                            "pCountry1": country1,
+                            "pCountry2": country2
                             /*"approach": $stateParams.pGroup,
                             "pCountry1": $stateParams.pCountry1,
                             "pCountry2": $stateParams.pCountry2,
@@ -162,9 +185,9 @@ define(function (require) {
                                     this.add(pv.Image)
                                       .url(function(scene) {
                                         var countryKey = scene.firstAtoms.category;
-                                        if(countryKey.label.match($stateParams.pCountry1)){
+                                        if(countryKey.label.match($stateParams.pCountry1) || countryKey.label.match($scope.dashboard.parameters.pCountry1)){
                                             return configService.getImagesPath()+'man_orange.svg'
-                                        }else if(countryKey.label.match($stateParams.pCountry2)){
+                                        }else if(countryKey.label.match($stateParams.pCountry2) || countryKey.label.match($scope.dashboard.parameters.pCountry2)){
                                             return configService.getImagesPath()+'man.svg'
                                         }else if(countryKey == 'EU28'){
                                             return configService.getImagesPath()+'man_blue.svg'
@@ -175,9 +198,9 @@ define(function (require) {
                                         /*SVG default width:68*150:height proportion W = H*0.45333333333 */
                                         this.root.sign.chart.options.legendDot_fillStyle = function(scene){
                                             var countryKey = scene.firstAtoms.category;
-                                            if(countryKey.label.match($stateParams.pCountry1)){
+                                            if(countryKey.label.match($stateParams.pCountry1) || countryKey.label.match($scope.dashboard.parameters.pCountry1)){
                                                 return dvtUtils.getColorCountry(1);
-                                            }else if(countryKey.label.match($stateParams.pCountry2)){
+                                            }else if(countryKey.label.match($stateParams.pCountry2) || countryKey.label.match($scope.dashboard.parameters.pCountry2)){
                                                 return dvtUtils.getColorCountry(2);
                                             }else if(countryKey == 'EU28'){
                                                 return dvtUtils.getEUColor();
@@ -204,7 +227,7 @@ define(function (require) {
                                         var barWidth = panelWidth/4;
                                         var countryKey = scene.firstAtoms.category;
                                         if(panelWidth != 300){ //Default panel value
-                                            if(countryKey.label.match($stateParams.pCountry1)){
+                                            if(countryKey.label.match($stateParams.pCountry1) || countryKey.label.match($scope.dashboard.parameters.pCountry1)){
                                                 if(!scene.nextSibling.firstAtoms.category.label.match($stateParams.pCountry2)){
                                                     //return panelWidth/2 - (barWidth + this.width()/2) + 10; //5 is the panel margin
                                                     return panelWidth/2 - this.width()/2 - barWidth - 5;
@@ -212,7 +235,7 @@ define(function (require) {
                                                     //return (barWidth - this.width())/2 + 5; //5 is the panel margin
                                                     return panelWidth/2 - this.width()/2 - panelWidth/3;
                                                 }
-                                            }else if(countryKey.label.match($stateParams.pCountry2)){
+                                            }else if(countryKey.label.match($stateParams.pCountry2) || countryKey.label.match($scope.dashboard.parameters.pCountry2)){
                                                 var sibling = scene.previousSibling;
                                                 if(sibling == null){
                                                     return panelWidth/2 - (barWidth + this.width()/2) - 5;
