@@ -235,7 +235,7 @@
 						li{
 					    font-size: 2.2rem !important;
 					    color: $gray !important;
-					    padding: 0.5rem 0;
+					    padding:0 0 0.5rem 0;
 			    	}
 			    }
 			    &:nth-child(1){
@@ -278,18 +278,19 @@
 				display: flex;
 				margin-bottom: 0mm;
 				h2{
-					font-size: 3.2rem !important;
+					font-size: 2.8rem !important;
 					padding: 0 2rem 0 0;
 					color: $gray !important;
+					margin-top: 0;
 				}
 				h3{
 					color: $eu !important;
 					font-weight: bold;
-					font-size: 3.2rem !important;
+					font-size: 2.8rem !important;
 	    		margin:0 !important;
 				}
 				&.wrap{
-					flex-wrap: wrap;
+					//flex-wrap: wrap;
 				}
 				&.multiline{
 					h2{
@@ -425,7 +426,7 @@
 						padding: 2rem 2rem 1rem;
 					  .card--block--chart--wrapper{
 						  h2{
-				  	    min-height: 10rem;
+				  	    min-height: 8rem;
 				  	    font-size: 1.8rem;
 						  }					  	
 					  }
@@ -717,11 +718,6 @@
 				flex-wrap: wrap;
 			}
 			.box-rounded{
-				background: $aquamarine-lighter-trans !important;
-				page-break-inside: avoid !important;
-				border-radius: 6rem 0 6rem 0;
-		    margin: 2rem 0;
-    		padding: 4rem;
     		svg{
     			zoom:1 !important;
     		}
@@ -739,45 +735,57 @@
 		  }
 		}
 		section.osh-statistics{
-		.content-page{
-			.osh-statistics-items{
-				position: relative;
-				page-break-inside: avoid !important;
-				&:last-child{
-					//page-break-before:always !important;
-				}
-				header{
-					display: flex;
-					img{
-						height: 1cm;
+			.content-page{
+				.osh-statistics-items{
+					position: relative;
+					page-break-inside: avoid !important;
+					&:last-child{
+						//page-break-before:always !important;
 					}
-					h2{
-						padding: 0.125cm 0 0 0.25cm;
+					header{
+						display: flex;
+						img{
+							height: 1cm;
+						}
+						h2{
+							padding: 0.125cm 0 0 0.25cm;
+							font-size: 2.2rem !important;
+						}
+					}
+					h3{
+						background: $gray-lighter !important;
+						color: $eu !important;
 						font-size: 2.2rem !important;
+		    		font-weight: bold;
+		    		padding: 1rem 1rem;
+		    		margin: 0;
 					}
-				}
-				h3{
-					background: $gray-lighter !important;
-					color: $eu !important;
-					font-size: 2.2rem !important;
-	    		font-weight: bold;
-	    		padding: 1rem 1rem;
-	    		margin: 0;
-				}
-				.institution-name{
-					margin: 2rem 0 1rem;
-				}
-				.box-rounded{
-			    padding: 1rem 3rem;
-			    margin:1rem 0;
+					.institution-name{
+						margin: 2rem 0 1rem;
+					}
+					.box-rounded{
+				    padding: 1rem 3rem;
+				    margin:1rem 0;
+					}
 				}
 			}
-		}
 		}
 	}
 }
 
 @media screen{
+	html.full-country-report{
+		margin: auto;
+		body.full-country-report{
+			.header-logo{
+				margin: auto;
+				left: initial;
+			}
+			.chart--submenu{
+				display: none !important;
+			}
+		}
+	}
 	.content-cover{
 		form{
 			display: block !important;
