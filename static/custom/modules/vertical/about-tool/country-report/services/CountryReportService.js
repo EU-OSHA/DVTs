@@ -107,10 +107,13 @@ define (function (require) {
                                 this.chart.options.datasourceAndDates[1] == 74)
                             {
                                 splits=["At least 1/4 of the time","Less than 1/4 of the time"];
-                            }
-
-
-                            "At least 1/4 of the time","Less than 1/4 of the time"
+                            }else if (this.chart.options.datasourceAndDates[1] == 305)
+                            {
+                                splits=["Conducted mainly by internal staff","Contracted mainly to external providers","Both about equally"];
+                            }else if (this.chart.options.datasourceAndDates[1] == 360)
+                            {
+                                splits=["Yes","Yes, but only some of them","No"];
+                            }                            
                             
                             if(this.chart.options.dataAccessId == 'getLevelOfReportingData'){
                                 if(!scene.firstAtoms.value.label.match('%')){
@@ -369,6 +372,9 @@ define (function (require) {
                         label_textStyle: function(scene){
                             var countryKey = scene.firstAtoms.series;
                             var valueKey = scene.firstAtoms.value;
+                            console.log("DVT DEV");
+                            console.log(scene.firstAtoms.value.label);
+                            console.log(scene.firstAtoms.value.label.match('%'));
                             if(!scene.firstAtoms.value.label.match('%')){
                                 scene.firstAtoms.value.label = scene.firstAtoms.value.label + '%';
                             }
@@ -377,7 +383,7 @@ define (function (require) {
                                 this.sign.chart.options.orthoAxisFixedMax = valueKey.value;
                             }
                             //$log.warn(countryKey);
-                            if (countryKey == 'EU28') {
+                            if (countryKey == 'EU28' || countryKey == 'EU27_2020') {
                                 return dvtUtils.getEUColor();
                             } else if(countryKey.value.match(pCountry1)){
                                 return dvtUtils.getColorCountry(1);

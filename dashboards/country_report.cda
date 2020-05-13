@@ -91,6 +91,33 @@
 	    </Query>
 	</DataAccess>
 
+	<!-- Load data for chart by company size -->
+	<DataAccess access="public" connection="dvt_conn" id="getCountryReportCompanySizeCountryFirstData" type="sql">
+	    <Cache duration="3600" enabled="true" />
+	    <Columns />
+	    <Parameters>
+	      <Parameter default="6" name="pDataset" type="Numeric" />
+	      <Parameter default="1" name="pIndicator" type="Numeric" />
+	      <Parameter default="AT" name="pCountry1" type="String" />
+	      <Parameter default="EU28" name="pCountry2" type="String" />
+	    </Parameters>
+	    <Query>
+	      SELECT IF(n.name REGEXP 'European Union' || n.name='EU27_2020', n.country_code, CONCAT("(", n.country_code, ") ", n.name)) as Country, t.text as Size, (v.value*100) as Value
+	      FROM nuts n, profile p, indicator i, value v, split_company_size scs, dataset d, translation t
+	      WHERE n.id = p.nuts_id
+	      AND p.company_size_id = scs.id
+	      AND i.id = v.indicator_id
+	      AND v.profile_id = p.id
+	      AND d.id = ${pDataset} AND d.id = v.dataset_id
+	      AND t.literal_id = scs.literal_id
+	      AND t.language="EN"
+	      AND p.answer_id=1
+	      AND n.country_code IN (${pCountry1}, ${pCountry2}) 
+		  AND i.id = ${pIndicator}
+	      ORDER BY FIELD(n.country_code, ${pCountry1}, ${pCountry2}) ASC, FIELD (scs.id, 7,8,14,10,11) ASC
+	    </Query>
+	</DataAccess>
+
 	<!-- Load data for chart by activity sector with the sector first -->
 	<DataAccess access="public" connection="dvt_conn" id="getCountryReportActivitySectorData" type="sql">
 	    <Cache duration="3600" enabled="true" />
@@ -128,7 +155,7 @@
 	      <Parameter default="EU28" name="pCountry2" type="String" />
 	    </Parameters>
 	    <Query>
-	      SELECT n.country_code as Country, t.text as Sector, (v.value*100) as Value
+	      SELECT IF(n.name REGEXP 'European Union' || n.name='EU27_2020', n.country_code, CONCAT("(", n.country_code, ") ", n.name)) as Country, t.text as Sector, (v.value*100) as Value
 	      FROM nuts n, profile p, indicator i, value v, split_activity_sector sas, dataset d, translation t
 	      WHERE n.id = p.nuts_id 
 	      AND p.activity_sector_id = sas.id 
@@ -137,9 +164,10 @@
 	      AND d.id = ${pDataset} AND d.id = v.dataset_id 
 	      AND t.language = 'EN'
 	      AND t.literal_id = sas.literal_id
-	      AND CASE WHEN ${pDataset}=21 THEN (sas.id IN (1, 2, 3, 4, 18, 6, 7)) ELSE (sas.id IN (8,9,10,11,12,13)) END
+	      AND CASE WHEN ${pIndicator} IN (304,353) THEN p.answer_id=1 ELSE p.answer_id IS NULL END
+	      AND CASE WHEN ${pIndicator} IN (304,353) THEN (sas.id IN (2, 3, 4, 18, 6, 7,14)) ELSE CASE WHEN ${pDataset}=21 THEN (sas.id IN (1, 2, 3, 4, 18, 6, 7)) ELSE (sas.id IN (8,9,10,11,12,13)) END END
 	      AND n.country_code IN (${pCountry1}, ${pCountry2}) AND i.id = ${pIndicator}
-	      ORDER BY FIELD(n.country_code, ${pCountry1}, ${pCountry2}) ASC
+	      ORDER BY FIELD(n.country_code, ${pCountry1}, ${pCountry2}) ASC, FIELD (sas.id, 1, 2, 3, 4, 6, 7,18,14)
 	    </Query>
 	</DataAccess>
 
@@ -154,7 +182,7 @@
 	      <Parameter default="EU28" name="pCountry2" type="String" />
 	    </Parameters>
 	    <Query>
-	      SELECT n.country_code as Country, t.text as Gender, (v.value*100) as Value
+	      SELECT IF(n.name REGEXP 'European Union' || n.name='EU27_2020', n.country_code, CONCAT("(", n.country_code, ") ", n.name)) as Country, t.text as Gender, (v.value*100) as Value
 	      FROM nuts n, profile p, indicator i, value v, split_gender g, dataset d, translation t
 	      WHERE n.id = p.nuts_id 
 	      AND p.gender_id = g.id 
@@ -179,7 +207,7 @@
 	      <Parameter default="EU28" name="pCountry2" type="String" />
 	    </Parameters>
 	    <Query>
-	      SELECT n.country_code as Country, t.text as Age, (v.value*100) as Value
+	      SELECT IF(n.name REGEXP 'European Union' || n.name='EU27_2020', n.country_code, CONCAT("(", n.country_code, ") ", n.name)) as Country, t.text as Age, (v.value*100) as Value
 	      FROM nuts n, profile p, indicator i, value v, split_age_group ag, dataset d, translation t
 	      WHERE n.id = p.nuts_id 
 	      AND p.age_group_id = ag.id 
@@ -336,7 +364,9 @@
 		  ELSE CASE WHEN ${pIndicator}=86 THEN FIELD(Answer,"Disagree","Neither agree nor disagree","Agree")
 		  ELSE CASE WHEN ${pIndicator}=88 THEN FIELD(Answer,"Never","Once or more")
 		  ELSE CASE WHEN ${pIndicator} IN (71,72,73,74) THEN FIELD(Answer,"Less than 1/4 of the time","At least 1/4 of the time")
-		  ELSE (Answer) END END END END END END END END END END ASC, 
+		  ELSE CASE WHEN ${pIndicator}=305 THEN FIELD(Answer,"Both about equally","Contracted mainly to external providers", "Conducted mainly by internal staff")
+		  ELSE CASE WHEN ${pIndicator}=360 THEN FIELD(Answer,"No","Yes, but only some of them","Yes")		  
+		  ELSE (Answer) END END END END END END END END END END END END ASC,
 		  FIELD(n.country_code, 'EU27_2020', 'EU28') DESC, FIELD(n.country_code, 'CH', 'IS', 'NO', 'UK'), n.country_code ASC, Value DESC;
 	    </Query>
 	</DataAccess>

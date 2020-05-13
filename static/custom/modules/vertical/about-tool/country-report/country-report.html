@@ -1417,7 +1417,7 @@
           </tr>
          </tbody>
       </table>
-    </div>
+    </div>    
   </section>
 
   <section class="working-conditions mental-risk">
@@ -2388,7 +2388,31 @@
     <!-- sector -->
     <div class="box-rounded risk">
       <h5 data-ng-bind="i18nLiterals.L20648"></h5>
-   
+      <dvt-bar-chart
+        data-ng-cloak
+        query="getCountryReportActivitySectorCountryFirstData" cda="{{::cda }}"
+        width="330" height="470" axis-percent="1"
+        orientation="vertical" axis-fixed-min="0"
+        axis-fixed-max="100" step="20"
+        params="[['pDataset', datasetList.ESENER], ['pIndicator', 304], ['pCountry1', pCountry], ['pCountry2', 'EU27_2020']]"
+        color-role="series" colors="[color1, colorEU]"
+        chart-title="{{i18nLiterals.L20679}} - {{i18nLiterals.L20648}}" id="2"
+        axis-label-font="12px 'OpenSans-bold'"
+        plots="plots.healthAtRisk"
+        values-visible="true"
+        label-text-align="center"
+        values-overflow="show"
+        values-mask="{value}"
+        dataset="ESENER" custom-tooltip="1"
+        values-font="12px 'OpenSans-bold'"
+        multiple-label-colors="false"
+        leaf-content-overflow='visible'
+        dimensions="dimensionsOneDecimal"
+        base-axis-label-text-baseline="top"
+        legend="true" axis-label-word-break="1"
+        legend-align="center" base-axis-size="50"
+        datasource-and-dates="[datasetList.ESENER,304]"
+      ></dvt-bar-chart>
       <p data-ng-bind="i18nLiterals.L20603" ></p>
       <table class="chart-data">
         <thead>
@@ -2451,7 +2475,31 @@
     <!-- Establishment size -->
     <div class="box-rounded">
       <h5 data-ng-bind="i18nLiterals.L20647"></h5>
-      
+      <dvt-bar-chart
+        data-ng-cloak
+        query="getCountryReportCompanySizeCountryFirstData" cda="{{::cda }}"
+        width="330" height="470" axis-percent="1"
+        orientation="vertical" axis-fixed-min="0"
+        axis-fixed-max="100" step="20"
+        params="[['pDataset', datasetList.ESENER], ['pIndicator', 304], ['pCountry1', pCountry], ['pCountry2', 'EU27_2020']]"
+        color-role="series" colors="[color1, colorEU]"
+        chart-title="{{i18nLiterals.L20679}} - {{i18nLiterals.L20647}}" id="2"
+        axis-label-font="12px 'OpenSans-bold'"
+        plots="plots.healthAtRisk"
+        values-visible="true"
+        label-text-align="center"
+        values-overflow="show"
+        values-mask="{value}"
+        dataset="ESENER" custom-tooltip="1"
+        values-font="12px 'OpenSans-bold'"
+        multiple-label-colors="false"
+        leaf-content-overflow='visible'
+        dimensions="dimensionsOneDecimal"
+        base-axis-label-text-baseline="top"
+        legend="true" axis-label-word-break="1"
+        legend-align="center" base-axis-size="50"
+        datasource-and-dates="[datasetList.ESENER,304]"
+      ></dvt-bar-chart>
       <p data-ng-bind="i18nLiterals.L20602" ></p>
       <table class="chart-data">
         <thead>
@@ -2499,7 +2547,27 @@
     <!-- Internal or external RA -->
     <div class="box-rounded">
       <h5>Internal or external RA - Literal</h5>
-      
+      <dvt-bar-chart
+        data-ng-cloak
+        query="getCountryReportAllCountriesAnswersData" cda="{{::cda }}"
+        width="330" height="470" axis-percent="1"
+        orientation="vertical" axis-fixed-min="0"
+        axis-fixed-max="100" step="20"
+        params="[['pDataset', datasetList.ESENER], ['pIndicator', 305]]"
+        color-role="series" colors="[color8, color2, color5]"
+        chart-title="{{i18nLiterals.L20680}}" id="1"
+        axis-label-font="12px 'OpenSans-bold'"
+        plots="plots.allCountries"
+        values-visible="false"
+        base-axis-label-text-baseline="middle"
+        values-font="12px 'OpenSans-bold'"
+        multiple-label-colors="false"
+        dimensions="dimensionsOneDecimal"
+        legend="true"
+        stacked="1" angle="1"
+        base-axis-size="150"
+        datasource-and-dates="[datasetList.ESENER,305]"
+      ></dvt-bar-chart>
       <p data-ng-bind="i18nLiterals.L20604" ></p>
       <table class="chart-data">
         <thead>
@@ -2539,7 +2607,27 @@
     <!-- Training in OSH -->
     <div class="box-rounded">
       <h5>Training in OSH - Literal</h5>
-      
+      <dvt-bar-chart
+        data-ng-cloak
+        query="getCountryReportAllCountriesAnswersData" cda="{{::cda }}"
+        width="330" height="470" axis-percent="1"
+        orientation="vertical" axis-fixed-min="0"
+        axis-fixed-max="100" step="20"
+        params="[['pDataset', datasetList.ESENER], ['pIndicator', 360]]"
+        color-role="series" colors="[color8, color2, color5]"
+        chart-title="{{i18nLiterals.L20682}}" id="1"
+        axis-label-font="12px 'OpenSans-bold'"
+        plots="plots.allCountries"
+        values-visible="false"
+        base-axis-label-text-baseline="middle"
+        values-font="12px 'OpenSans-bold'"
+        multiple-label-colors="false"
+        dimensions="dimensionsOneDecimal"
+        legend="true"
+        stacked="1" angle="1"
+        base-axis-size="150"
+        datasource-and-dates="[datasetList.ESENER,360]"
+      ></dvt-bar-chart>
       <div data-ng-bind-html="i18nLiterals.L20606" ></div>
       <table class="chart-data">
         <thead>
@@ -2573,7 +2661,31 @@
     <!-- sector -->
     <div class="box-rounded">
       <h5 data-ng-bind="i18nLiterals.L20648"></h5>
-
+      <dvt-bar-chart
+        data-ng-cloak
+        query="getCountryReportActivitySectorCountryFirstData" cda="{{::cda }}"
+        width="330" height="470" axis-percent="1"
+        orientation="vertical" axis-fixed-min="0"
+        axis-fixed-max="100" step="20"
+        params="[['pDataset', datasetList.ESENER], ['pIndicator', 353], ['pCountry1', pCountry], ['pCountry2', 'EU27_2020']]"
+        color-role="series" colors="[color1, colorEU]"
+        chart-title="{{i18nLiterals.L20683}} - {{i18nLiterals.L20648}}" id="2"
+        axis-label-font="12px 'OpenSans-bold'"
+        plots="plots.healthAtRisk"
+        values-visible="true"
+        label-text-align="center"
+        values-overflow="show"
+        values-mask="{value}"
+        dataset="ESENER" custom-tooltip="1"
+        values-font="12px 'OpenSans-bold'"
+        multiple-label-colors="false"
+        leaf-content-overflow='visible'
+        dimensions="dimensionsOneDecimal"
+        base-axis-label-text-baseline="top"
+        legend="true" axis-label-word-break="1"
+        legend-align="center" base-axis-size="50"
+        datasource-and-dates="[datasetList.ESENER,353]"
+      ></dvt-bar-chart>
       <p data-ng-bind="i18nLiterals.L20608" ></p>
       <table class="chart-data">
         <thead>
@@ -2635,7 +2747,31 @@
     <!-- Establishment size -->
     <div class="box-rounded">
       <h5 data-ng-bind="i18nLiterals.L20647"></h5>
-
+      <dvt-bar-chart
+        data-ng-cloak
+        query="getCountryReportCompanySizeCountryFirstData" cda="{{::cda }}"
+        width="330" height="470" axis-percent="1"
+        orientation="vertical" axis-fixed-min="0"
+        axis-fixed-max="100" step="20"
+        params="[['pDataset', datasetList.ESENER], ['pIndicator', 353], ['pCountry1', pCountry], ['pCountry2', 'EU27_2020']]"
+        color-role="series" colors="[color1, colorEU]"
+        chart-title="{{i18nLiterals.L20683}} - {{i18nLiterals.L20647}}" id="2"
+        axis-label-font="12px 'OpenSans-bold'"
+        plots="plots.healthAtRisk"
+        values-visible="true"
+        label-text-align="center"
+        values-overflow="show"
+        values-mask="{value}"
+        dataset="ESENER" custom-tooltip="1"
+        values-font="12px 'OpenSans-bold'"
+        multiple-label-colors="false"
+        leaf-content-overflow='visible'
+        dimensions="dimensionsOneDecimal"
+        base-axis-label-text-baseline="top"
+        legend="true" axis-label-word-break="1"
+        legend-align="center" base-axis-size="50"
+        datasource-and-dates="[datasetList.ESENER,353]"
+      ></dvt-bar-chart>
       <p data-ng-bind="i18nLiterals.L20607" ></p>
       <table class="chart-data">
         <thead>
