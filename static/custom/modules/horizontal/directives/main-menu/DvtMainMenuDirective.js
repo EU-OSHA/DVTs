@@ -327,6 +327,7 @@ define(function (require) {
                         var path = document.location.href.split("/")
                         var num = path.length;
                         if( path[num-1] == 'full-country-report'){
+                            $('html').addClass('full-country-report');
                             $('body').addClass('full-country-report');
                             return path[num-1];
                         }

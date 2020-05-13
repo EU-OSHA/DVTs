@@ -78,6 +78,11 @@
       <h2 data-ng-bind="i18nLiterals.L22001">Introduction</h2>
       <h3  data-ng-bind="i18nLiterals.L22002">General information</h3>
     </div>
+    <div class="intro-page">
+      <p data-ng-bind="i18nLiterals.L22025"></p>
+      <span data-ng-bind="i18nLiterals.L20704"></span>
+      <span ><a data-ng-bind="i18nLiterals.L20705" ui-sref="about-tool-detail-page({pSection: 'generic-information', pSubsection: 'osh_authorities', pIndicator: 27})"></a></span>
+    </div>
     <div class="content-page">
         <div ng-if="amatrix.length <= 0">
           <span data-ng-bind="i18nLiterals.L20706"></span>
@@ -114,26 +119,31 @@
     <div class="title-page">
       <h2  data-ng-bind="i18nLiterals.L20735">General information</h2>
       <h3 data-ng-bind="i18nLiteral.L22001 + ' ' + i18nLiterals.L22003"></h3>
-    </div>    
+    </div> 
+    <div class="intro-page">
+      <div data-ng-bind-html="i18nLiterals.L22028"></div>
+      <span data-ng-bind="(i18nLiterals.L20696)+(' ')+(i18nLiterals.L20704)"></span> 
+      <span><a data-ng-bind="i18nLiterals.L20705" ui-sref="about-tool-detail-page({pSection: 'generic-information', pSubsection: 'economic_sector_profile', pIndicator: 31})"></a></span>
+    </div> 
     <div class="content-page">
-      <div class="chart--block">
+      <div class="box-rounded">
         <dvt-bar-chart
           data-ng-cloak
           query="getCountryReportCompanySizeData" cda="{{::cda }}"
-          width="330" height="400"
+          width="330" height="185"
           orientation="horizontal" axis-percent="1"
           axis-fixed-max="100" step="20"
           params="[['pIndicator','31'],['pCountry1', pCountry],['pCountry2', 'EU28'],['pDataset', datasetList.EUROSTAT]]"
           color-role="series" colors="[color1, color2, color3, color4, color5]"
           chart-title="{{i18nLiterals.L288}}" id="1"
           base-axis-label-visible="true" css-class="company-size"
-          axis-label-font="12px 'OpenSans-bold'"
+          axis-label-font="10px 'OpenSans-bold'"
           base-axis-label-text-baseline="center"
           base-axis-band-size-ratio= "0.9"
           label-text-align="labelLeftAlign"
           values-visible="true"
           values-overflow="show"
-          values-font="14px 'OpenSans-bold'"
+          values-font="12px 'OpenSans-bold'"
           values-mask="{value}"
           dimensions="dimensionsOneDecimal"
           legend="true"
@@ -194,11 +204,11 @@
         </table>
       </div>
 
-      <div class="chart--block">
+      <div class="box-rounded">
         <dvt-bar-chart
           data-ng-cloak
           query="getCountryReportActivitySectorData" cda="{{::cda }}"
-          width="300" height="400"
+          width="300" height="185"
           orientation="horizontal" axis-percent="1"
           axis-fixed-max="100" step="{{step.chart2}}"
           params="[['pIndicator','32'],['pCountry1', pCountry],['pCountry2', 'EU28'],['pDataset', datasetList.EUROSTAT2019]]"
@@ -210,8 +220,8 @@
           base-axis-label-text-baseline="center"
           dimensions="dimensionsOneDecimal"
           legend="true"
-          legend-align="center"
-          legend-item-size="270"
+          legend-align="left"
+          legend-item-size="180"
           multiple-label-colors="true"
           datasource-and-dates="[datasetList.EUROSTAT2019,32]"
         ></dvt-bar-chart>
@@ -307,23 +317,23 @@
       <h3 data-ng-bind="i18nLiteral.L22001 + ' ' + i18nLiterals.L22003"></h3>
     </div> 
     <div class="content-page">
-      <div class="chart--block">
+      <div class="box-rounded">
         <dvt-bar-chart
           data-ng-cloak
           query="getCountryReportData" cda="{{::cda }}"
-          width="330" height="380" axis-percent="1"
+          width="208" height="208" axis-percent="1"
           orientation="horizontal" axis-fixed-min="50"
           axis-fixed-max="100" step="10" 
           params="[['pIndicator','33'],['pCountry1', pCountry1],['pCountry2', 'EU28'],['pDataset', datasetList.EUROSTAT2018]]"
           color-role="category" colors="[colorEU, color1]"
           chart-title="{{i18nLiterals.L290}}" id="3"
           base-axis-label-visible="true"
-          axis-label-font="12px 'OpenSans-bold'"
+          axis-label-font="10px 'Arial'"
           base-axis-label-text-baseline="center"
           base-axis-band-size-ratio= "0.5"
           values-visible="true"
           values-overflow="show"
-          values-font="14px 'OpenSans-bold'"
+          values-font="12px 'Aria'"
           values-mask="{value}"
           dimensions="dimensionsOneDecimal"
           label-text-align="labelLeftAlign"
@@ -351,11 +361,12 @@
         </table>
       </div>
 
-      <div class="chart--block">
+      <div class="box-rounded">
         <dvt-bar-chart
           data-ng-cloak
           query="getCountryReportDataAsc" cda="{{::cda }}"
-          height="370"
+          height="208" 
+          with="208"
           orientation="vertical"
           axis-fixed-max="260" step="{{step.chart5}}"
           params="[['pIndicator',35],['pCountry1', pCountry1],['pCountry2', 'EU28'],['pDataset', datasetList.EUROSTAT2018]]"
@@ -363,9 +374,9 @@
           chart-title="{{i18nLiterals.L292}}" id="5"
           plots="plots.figures"
           base-axis-position="top"
-          axis-label-font="12px 'OpenSans-bold'"
+          axis-label-font="10px 'Arial'"
           values-visible="true"
-          values-font="12px 'OpenSans-bold'"
+          values-font="12px 'Arial'"
           values-mask="{value}"
           ortho-axis-visible="false"
           ortho-axis-grid="false"
@@ -399,21 +410,21 @@
         </table>
       </div>
       
-      <div class="chart--block">
+      <div class="box-rounded">
         <dvt-bar-chart
           data-ng-cloak
           query="getCountryReportYearData" cda="{{::cda }}"
-          width="330" height="370" type="lines" listen-to="['pSplit', 'pDataset']"
+          width="208" height="208" type="lines" listen-to="['pSplit', 'pDataset']"
           orientation="vertical" axis-fixed-min="10000"
           axis-fixed-max="25000" step="5000"
           params="[['pIndicator',279],['pCountry1', pCountry1],['pCountry2', 'EU28'],['pDataset', datasetList.EUROSTAT2018BetweenDates]]"
           color-role="series" colors="[color1, colorEU]"
           chart-title="{{i18nLiterals.L293}}" id="6"
-          axis-label-font="12px 'OpenSans-bold'"
+          axis-label-font="10px 'Arial'"
           plots="plots.year"
           dimensions="stories[5].dimensions"
           values-visible="true"
-          values-font="14px 'OpenSans-bold'"
+          values-font="12px 'Arial'"
           values-mask="{value}"
           show-euro-mask="true"
           multiple-label-colors="false"
@@ -602,13 +613,13 @@
         data-ng-cloak ng-model="pCountry1"
         query="getCountryReportYearData" cda="{{::cda }}"
         axis-percent="1"
-        width="300" height="300" type="lines"
+        width="300" height="180" type="lines"
         orientation="vertical" axis-fixed-min="0"
         axis-fixed-max="120" step="20"
         params="[['pDataset', datasetList.EUROSTAT2017BetweenDates],['pCountry1',pCountry],['pCountry2','EU28'],['pIndicator',53],['pPercent', 1]]"
         color-role="series" colors="[color1, colorEU]"
         chart-title="{{i18nLiterals.L310}}" id="1"
-        axis-label-font="12px 'OpenSans-bold'"
+        axis-label-font="10px 'OpenSans-bold'"
         plots="plots.year"
         values-visible="false"
         post-fetch = "getMin"
@@ -695,24 +706,24 @@
       <dvt-bar-chart
         data-ng-cloak
         query="getCountryReportAllCountriesOrderValueData" cda="{{::cda }}"
-        width="330" height="470"
+        width="330" height="245"
         orientation="vertical" axis-fixed-min="0"
         axis-fixed-max="5" step="1"
         params="[['pDataset', datasetList.EUROSTAT2017BetweenDates], ['pIndicator', 54]]"
         color-role="series" colors="[color5]"
         chart-title="{{i18nLiterals.L20707}}" id="4"
-        axis-label-font="12px 'OpenSans-bold'"
+        axis-label-font="10px 'OpenSans-bold'"
         plots="plots.allCountries"
         color2-axis-legend-shape = "circle"
         values-visible="false"
-        values-font="12px 'OpenSans-bold'"
+        values-font="10px 'OpenSans-bold'"
         base-axis-label-text-baseline=""
         leaf-content-overflow='visible'
         dimensions="dimensionsOneDecimal"
         multiple-label-colors="false"
         legend="true"
         angle="1"
-        base-axis-size="150"
+        base-axis-size="95"
         datasource-and-dates="[datasetEurostat2016,54]"
       ></dvt-bar-chart>
       <p data-ng-bind-html="i18nLiterals.L20566"></p>
@@ -729,7 +740,7 @@
             <td>3.6</td>
           </tr>
           <tr>
-            <td>EU28</td>
+            <th>EU28</th>
             <td>1.9</td>
           </tr>
          </tbody>
@@ -808,67 +819,21 @@
         params="[['pDataset', datasetList.ESENER], ['pIndicator', 358]]"
         color-role="series" colors="[color5, color2, color8]"
         chart-title="{{i18nLiterals.L20664}}" id="4"
-        axis-label-font="12px 'OpenSans-bold'"
+        axis-label-font="10px 'OpenSans-bold'"
         plots="plots.allCountries"
         color2-axis-legend-shape = "circle"
         values-visible="false"
-        values-font="12px 'OpenSans-bold'"
+        values-font="10px 'OpenSans-bold'"
         base-axis-label-text-baseline=""
         leaf-content-overflow='visible'
         dimensions="dimensionsOneDecimal"
         multiple-label-colors="false"
         legend="true" stacked="1"
         angle="1"
-        base-axis-size="150"
+        base-axis-size="100"
         datasource-and-dates="[datasetEurostat2016,358]"
       ></dvt-bar-chart>
       <p data-ng-bind="i18nLiterals.L20570"></p>
-      <table class="w50 chart-data">
-        <thead>
-          <tr>
-            <th>Country</th>
-            <th>Yes (%)</th>
-            <th>No (%)</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th>(AT) Austria</th>
-            <td>35.5</td>
-            <td>64.7</td>
-          </tr>
-          <tr>
-            <th>EU28</th>
-            <td>51.4</td>
-            <td>48.6</td>
-          </tr>
-         </tbody>
-      </table>      
-    </div>
-
-    <div class="box-rounded">
-      <dvt-bar-chart
-        data-ng-cloak
-        query="getCountryReportAllCountriesAnswersData" cda="{{::cda }}"
-        width="330" height="270"
-        orientation="vertical" axis-fixed-min="0"
-        axis-fixed-max="100" step="20"
-        params="[['pDataset', datasetList.ESENER], ['pIndicator', 328]]"
-        color-role="series" colors="[colo5, color2]"
-        chart-title="{{i18nLiterals.L20665}}" id="3"
-        axis-label-font="12px 'OpenSans-bold'"
-        plots="plots.allCountries"
-        values-visible="false"
-        values-font="12px 'OpenSans-bold'"
-        base-axis-label-text-baseline=""
-        leaf-content-overflow='visible'
-        dimensions="dimensionsOneDecimal"
-        legend="true"
-        angle="1" stacked="1"
-        base-axis-size="150"
-        datasource-and-dates="[datasetList.ESENER,328]"
-      ></dvt-bar-chart>
-      <p data-ng-bind="i18nLiterals.L20571"></p>
       <table class="w75 chart-data">
         <thead>
           <tr>
@@ -892,7 +857,53 @@
             <td>59.3</td>
           </tr>
          </tbody>
-      </table>  
+      </table>
+    </div>
+
+    <div class="box-rounded">
+      <dvt-bar-chart
+        data-ng-cloak
+        query="getCountryReportAllCountriesAnswersData" cda="{{::cda }}"
+        width="330" height="270"
+        orientation="vertical" axis-fixed-min="0"
+        axis-fixed-max="100" step="20"
+        params="[['pDataset', datasetList.ESENER], ['pIndicator', 328]]"
+        color-role="series" colors="[colo5, color2]"
+        chart-title="{{i18nLiterals.L20665}}" id="3"
+        axis-label-font="10px 'OpenSans-bold'"
+        plots="plots.allCountries"
+        values-visible="false"
+        values-font="10px 'OpenSans-bold'"
+        base-axis-label-text-baseline=""
+        leaf-content-overflow='visible'
+        dimensions="dimensionsOneDecimal"
+        legend="true"
+        angle="1" stacked="1"
+        base-axis-size="100"
+        datasource-and-dates="[datasetList.ESENER,328]"
+      ></dvt-bar-chart>
+      <p data-ng-bind="i18nLiterals.L20571"></p>
+      <table class="w40 chart-data">
+        <thead>
+          <tr>
+            <th>Country</th>
+            <th>Yes (%)</th>
+            <th>No (%)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>(AT) Austria</th>
+            <td>35.5</td>
+            <td>64.7</td>
+          </tr>
+          <tr>
+            <th>EU28</th>
+            <td>51.4</td>
+            <td>48.6</td>
+          </tr>
+         </tbody>
+      </table> 
     </div>
 
     <div class="box-rounded">
@@ -905,20 +916,20 @@
         params="[['pDataset', datasetList.ESENER], ['pIndicator', 329]]"
         color-role="series" colors="[color5, color2]"
         chart-title="{{i18nLiterals.L20666}}" id="4"
-        axis-label-font="12px 'OpenSans-bold'"
+        axis-label-font="10px 'OpenSans-bold'"
         plots="plots.allCountries"
         values-visible="false"
-        values-font="12px 'OpenSans-bold'"
+        values-font="10px 'OpenSans-bold'"
         base-axis-label-text-baseline=""
         leaf-content-overflow='visible'
         dimensions="dimensionsOneDecimal"
         legend="true"
         angle="1" stacked="1"
-        base-axis-size="150"
+        base-axis-size="100"
         datasource-and-dates="[datasetList.ESENER,329]"
       ></dvt-bar-chart> 
       <p data-ng-bind="i18nLiterals.L20571"></p>
-      <table class="w50 chart-data">
+      <table class="w40 chart-data">
         <thead>
           <tr>
             <th>Country</th>
@@ -951,20 +962,20 @@
         params="[['pDataset', datasetList.ESENER], ['pIndicator', 330]]"
         color-role="series" colors="[color5, color2]"
         chart-title="{{i18nLiterals.L20667}}" id="5"
-        axis-label-font="12px 'OpenSans-bold'"
+        axis-label-font="10px 'OpenSans-bold'"
         plots="plots.allCountries"
         values-visible="false"
-        values-font="12px 'OpenSans-bold'"
+        values-font="10px 'OpenSans-bold'"
         base-axis-label-text-baseline=""
         leaf-content-overflow='visible'
         dimensions="dimensionsOneDecimal"
         legend="true"
         angle="1" stacked="1"
-        base-axis-size="150"
+        base-axis-size="100"
         datasource-and-dates="[datasetList.ESENER,330]"
       ></dvt-bar-chart> 
       <p data-ng-bind="i18nLiterals.L20572"></p>
-      <table class="w50 chart-data">
+      <table class="w40 chart-data">
         <thead>
           <tr>
             <th>Country</th>
@@ -997,19 +1008,19 @@
         params="[['pDataset', datasetList.ESENER], ['pIndicator', 331]]"
         color-role="series" colors="[color5, color2]"
         chart-title="{{i18nLiterals.L20668}}" id="6"
-        axis-label-font="12px 'OpenSans-bold'"
+        axis-label-font="10px 'OpenSans-bold'"
         plots="plots.allCountries" stacked="1"
         values-visible="false"
-        values-font="12px 'OpenSans-bold'"
+        values-font="10px 'OpenSans-bold'"
         leaf-content-overflow='visible'
         dimensions="dimensionsOneDecimal"
         legend="true"
         angle="1"
-        base-axis-size="150"
+        base-axis-size="100"
         datasource-and-dates="[datasetList.ESENER,331]"
       ></dvt-bar-chart>
       <p data-ng-bind="i18nLiterals.L20573"></p>
-      <table class="w50 chart-data">
+      <table class="w40 chart-data">
         <thead>
           <tr>
             <th>Country</th>
@@ -1043,14 +1054,14 @@
         color-role="series" colors="[color8, color2, color5]"
         values-normalized="0" stacked="1"
         chart-title="{{i18nLiterals.L320}}" id="7"
-        axis-label-font="12px 'OpenSans-bold'"
+        axis-label-font="10px 'OpenSans-bold'"
         plots="plots.allCountries"
         values-visible="false"
-        values-font="12px 'OpenSans-bold'"
+        values-font="10px 'OpenSans-bold'"
         dimensions="dimensionsOneDecimal"
         legend="true"
         angle="1"
-        base-axis-size="150"
+        base-axis-size="100"
         datasource-and-dates="[datasetList.Eurofound,63]"
       ></dvt-bar-chart>
       <p data-ng-bind="i18nLiterals.L20574"></p>
@@ -1091,20 +1102,20 @@
         color-role="series" colors="[color2, color5]"
         values-normalized="0" stacked="1"
         chart-title="{{i18nLiterals.L321}}" id="8"
-        axis-label-font="12px 'OpenSans-bold'"
+        axis-label-font="10px 'OpenSans-bold'"
         plots="plots.allCountries"
         values-visible="false"
-        values-font="12px 'OpenSans-bold'"
+        values-font="10px 'OpenSans-bold'"
         multiple-label-colors="false"
         leaf-content-overflow='visible'
         dimensions="dimensionsOneDecimal"
         legend="true"
         angle="1"
-        base-axis-size="150"
+        base-axis-size="100"
         datasource-and-dates="[datasetList.Eurofound,64]"
       ></dvt-bar-chart>
       <p data-ng-bind="i18nLiterals.L20575"></p>
-      <table class="w50 chart-data">
+      <table class="w40 chart-data">
         <thead>
           <tr>
             <th>Country</th>
@@ -1140,35 +1151,35 @@
       <span><a data-ng-bind="i18nLiterals.L20705" ui-sref="about-tool-detail-page({pSection: 'osh-outcomes-working-conditions', pSubsection: 'overall_opinion', pIndicator: 65})"></a></span>
     </div>
 
-    <h3 data-ng-bind="i18nLiterals.L20709"></h3>
+    <h4 data-ng-bind="i18nLiterals.L20709" class="header3"></h4>
     <p data-ng-bind="i18nLiterals.L20577"></p>
     <span data-ng-bind="i18nLiterals.L20701"></span> 
     <span data-ng-bind="i18nLiterals.L20704"></span> 
     <span><a data-ng-bind="i18nLiterals.L20705" ui-sref="about-tool-detail-page({pSection: 'osh-outcomes-working-conditions', pSubsection: 'overall_opinion', pIndicator: 65})"></a></span>
     <!-- Job satisfaction -->
-    <div class="box-rounded">
+    <div class="box-rounded overall">
       <dvt-bar-chart
         data-ng-cloak
         query="getCountryReportAllCountriesAnswersData" cda="{{::cda }}"
-        width="330" height="270" axis-percent="1"
+        width="330" height="250" axis-percent="1"
         orientation="vertical" axis-fixed-min="0"
         axis-fixed-max="100" step="20"
         params="[['pDataset', datasetList.Eurofound], ['pIndicator', 65]]"
         color-role="series" colors="[color9, color8, color2, color5]"
         chart-title="{{i18nLiterals.L322}}" id="1"
-        axis-label-font="12px 'OpenSans-bold'"
+        axis-label-font="10px 'OpenSans-bold'"
         plots="plots.allCountries"
         values-visible="false"
         base-axis-label-text-baseline="middle"
-        values-font="12px 'OpenSans-bold'"
+        values-font="10px 'OpenSans-bold'"
         multiple-label-colors="false"
         dimensions="dimensionsOneDecimal"
         legend="true"
         stacked="1" angle="1"
-        base-axis-size="150"
+        base-axis-size="100"
         datasource-and-dates="[datasetList.Eurofound,65]"
       ></dvt-bar-chart>
-      <table class="w50 wrap chart-data">
+      <table class="w85 wrap chart-data">
         <thead>
           <tr>
             <th>Country</th>
@@ -1194,24 +1205,24 @@
       </table>  
     </div>
     <!-- Sector -->
-    <div class="box-rounded">
+    <div class="box-rounded overall">
       <dvt-bar-chart
         data-ng-cloak
         query="getCountryReportActivitySectorCountryFirstData" cda="{{::cda }}"
-        width="330" height="270" axis-percent="1"
+        width="330" height="250" axis-percent="1"
         orientation="vertical" axis-fixed-min="0"
         axis-fixed-max="40" step="20"
         params="[['pDataset', datasetList.Eurofound], ['pIndicator', 66], ['pCountry1', pCountry], ['pCountry2', 'EU28']]"
         color-role="series" colors="[color1, colorEU]"
         chart-title="{{i18nLiterals.L323}} - {{i18nLiterals.L20648}}" id="2"
-        axis-label-font="12px 'OpenSans-bold'"
+        axis-label-font="10px 'OpenSans-bold'"
         plots="plots.healthAtRisk"
         values-visible="true"
         label-text-align="center"
         values-overflow="show"
         values-mask="{value}"
         dataset="Eurofound" custom-tooltip="1"
-        values-font="12px 'OpenSans-bold'"
+        values-font="10px 'OpenSans-bold'"
         multiple-label-colors="false"
         leaf-content-overflow='visible'
         dimensions="dimensionsNoDecimal"
@@ -1277,24 +1288,24 @@
       </table> 
     </div>    
     <!-- Gender -->
-    <div class="box-rounded">
+    <div class="box-rounded overall">
       <dvt-bar-chart
         data-ng-cloak
         query="getCountryReportAgeGroupCountryFirstData" cda="{{::cda }}"
-        width="330" height="270" axis-percent="1"
+        width="330" height="250" axis-percent="1"
         orientation="vertical" axis-fixed-min="0"
         axis-fixed-max="40" step="20"
         params="[['pDataset', datasetList.Eurofound], ['pIndicator', 66], ['pCountry1', pCountry], ['pCountry2', 'EU28']]"
         color-role="series" colors="[color1, colorEU]"
         chart-title="{{i18nLiterals.L323}} - {{i18nLiterals.L20649}}" id="2"
-        axis-label-font="12px 'OpenSans-bold'"
+        axis-label-font="10px 'OpenSans-bold'"
         plots="plots.healthAtRisk"
         values-visible="true"
         label-text-align="center"
         values-overflow="show"
         values-mask="{value}"
         dataset="Eurofound" custom-tooltip="1"
-        values-font="12px 'OpenSans-bold'"
+        values-font="10px 'OpenSans-bold'"
         multiple-label-colors="false"
         leaf-content-overflow='visible'
         dimensions="dimensionsNoDecimal"
@@ -1339,24 +1350,24 @@
       </table> 
     </div>
     <!-- Age -->
-    <div class="box-rounded">
+    <div class="box-rounded overall">
       <dvt-bar-chart
         data-ng-cloak
         query="getCountryReportGenderCountryFirstData" cda="{{::cda }}"
-        width="330" height="270" axis-percent="1"
+        width="330" height="250" axis-percent="1"
         orientation="vertical" axis-fixed-min="0"
         axis-fixed-max="40" step="20"
         params="[['pDataset', datasetList.Eurofound], ['pIndicator', 66], ['pCountry1', pCountry], ['pCountry2', 'EU28']]"
         color-role="series" colors="[color1, colorEU]"
         chart-title="{{i18nLiterals.L323}} - {{i18nLiterals.L20650}}" id="2"
-        axis-label-font="12px 'OpenSans-bold'"
+        axis-label-font="10px 'OpenSans-bold'"
         plots="plots.healthAtRisk"
         values-visible="true"
         label-text-align="center"
         values-overflow="show"
         values-mask="{value}"
         dataset="Eurofound" custom-tooltip="1"
-        values-font="12px 'OpenSans-bold'"
+        values-font="10px 'OpenSans-bold'"
         multiple-label-colors="false"
         leaf-content-overflow='visible'
         dimensions="dimensionsNoDecimal"
@@ -1410,14 +1421,14 @@
   </section>
 
   <section class="working-conditions mental-risk">
-    <h3 data-ng-bind="i18nLiterals.L20710"></h3>
+    <h4 data-ng-bind="i18nLiterals.L20710" class="header3"></h4>
     <p data-ng-bind="i18nLiterals.L20578"></p>
     <span data-ng-bind="i18nLiterals.L20700"></span> 
     <span data-ng-bind="i18nLiterals.L20704"></span> 
     <span><a data-ng-bind="i18nLiterals.L20705" ui-sref="about-tool-detail-page({pSection: 'osh-outcomes-working-conditions', pSubsection: 'mental_risks', pIndicator: 83})"></a></span>
 
     <!-- Time pressure -->
-    <div class="box-rounded">
+    <div class="box-rounded mental">
       <dvt-bar-chart
         data-ng-cloak
         query="getCountryReportAllCountriesAnswersData" cda="{{::cda }}"
@@ -1427,16 +1438,16 @@
         params="[['pDataset', datasetList.ESENER], ['pIndicator', 323]]"
         color-role="series" colors="[color2, color5]"
         chart-title="{{i18nLiterals.L340}} - {{i18nLiterals.L20645}}" id="1"
-        axis-label-font="12px 'OpenSans-bold'"
+        axis-label-font="10px 'OpenSans-bold'"
         plots="plots.allCountries"
         values-visible="false"
         base-axis-label-text-baseline="middle"
-        values-font="12px 'OpenSans-bold'"
+        values-font="10px 'OpenSans-bold'"
         multiple-label-colors="false"
         dimensions="dimensionsOneDecimal"
         legend="true"
         stacked="1" angle="1"
-        base-axis-size="150"
+        base-axis-size="100"
         datasource-and-dates="[datasetList.ESENER,323]">
         </dvt-bar-chart>
         <p data-ng-bind="i18nLiterals.L20585" ></p>
@@ -1462,7 +1473,7 @@
            </tbody>
         </table> 
     </div>
-    <div class="box-rounded">
+    <div class="box-rounded mental">
       <dvt-bar-chart
         data-ng-cloak
         query="getCountryReportAllCountriesAnswersData" cda="{{::cda }}"
@@ -1472,16 +1483,16 @@
         params="[['pDataset', datasetList.Eurofound], ['pIndicator', 83]]"
         color-role="series" colors="[color8, color2, color5]"
         chart-title="{{i18nLiterals.L340}} - {{i18nLiterals.L20646}}" id="1"
-        axis-label-font="12px 'OpenSans-bold'"
+        axis-label-font="10px 'OpenSans-bold'"
         plots="plots.allCountries"
         values-visible="false"
         base-axis-label-text-baseline="middle"
-        values-font="12px 'OpenSans-bold'"
+        values-font="10px 'OpenSans-bold'"
         multiple-label-colors="false"
         dimensions="dimensionsOneDecimal"
         legend="true"
         stacked="1" angle="1"
-        base-axis-size="150"
+        base-axis-size="100"
         datasource-and-dates="[datasetList.Eurofound,83]"
       ></dvt-bar-chart>
       <p data-ng-bind="i18nLiterals.L20584" ></p>
@@ -1512,7 +1523,7 @@
     </div>
 
     <!--Poor communication -->
-    <div class="box-rounded">
+    <div class="box-rounded mental">
       <dvt-bar-chart
         data-ng-cloak
         query="getCountryReportAllCountriesAnswersData" cda="{{::cda }}"
@@ -1522,16 +1533,16 @@
         params="[['pDataset', datasetList.ESENER], ['pIndicator', 324]]"
         color-role="series" colors="[color2, color5]"
         chart-title="{{i18nLiterals.L341}} - {{i18nLiterals.L20645}}" id="1"
-        axis-label-font="12px 'OpenSans-bold'"
+        axis-label-font="10px 'OpenSans-bold'"
         plots="plots.allCountries"
         values-visible="false"
         base-axis-label-text-baseline="middle"
-        values-font="12px 'OpenSans-bold'"
+        values-font="10px 'OpenSans-bold'"
         multiple-label-colors="false"
         dimensions="dimensionsOneDecimal"
         legend="true"
         stacked="1" angle="1"
-        base-axis-size="150"
+        base-axis-size="100"
         datasource-and-dates="[datasetList.ESENER,324]"
       ></dvt-bar-chart>
       <p data-ng-bind="i18nLiterals.L20587"></p>
@@ -1557,7 +1568,7 @@
          </tbody>
       </table> 
     </div>  
-    <div class="box-rounded">
+    <div class="box-rounded mental">
       <dvt-bar-chart
         data-ng-cloak
         query="getCountryReportAllCountriesOrderCountryData" cda="{{::cda }}"
@@ -1567,16 +1578,16 @@
         params="[['pDataset', datasetList.Eurofound], ['pIndicator', 84]]"
         color-role="series" colors="[color5]"
         chart-title="{{i18nLiterals.L341}} - {{i18nLiterals.L20646}}" id="1"
-        axis-label-font="12px 'OpenSans-bold'"
+        axis-label-font="10px 'OpenSans-bold'"
         plots="plots.allCountries"
         values-visible="false"
         base-axis-label-text-baseline="middle"
-        values-font="12px 'OpenSans-bold'"
+        values-font="10px 'OpenSans-bold'"
         multiple-label-colors="false"
         dimensions="dimensionsOneDecimal"
         legend="true"
         stacked="1" angle="1"
-        base-axis-size="150"
+        base-axis-size="100"
         datasource-and-dates="[datasetList.Eurofound,84]"
       ></dvt-bar-chart>
       <p data-ng-bind="i18nLiterals.L20586"></p>
@@ -1601,7 +1612,7 @@
     </div>
 
     <!-- Influence -->
-    <div class="box-rounded">
+    <div class="box-rounded mental">
       <dvt-bar-chart
         data-ng-cloak
         query="getCountryReportAllCountriesAnswersData" cda="{{::cda }}"
@@ -1611,16 +1622,16 @@
         params="[['pDataset', datasetList.Eurofound], ['pIndicator', 85]]"
         color-role="series" colors="[color8, color2, color5]"
         chart-title="{{i18nLiterals.L342}}" id="1"
-        axis-label-font="12px 'OpenSans-bold'"
+        axis-label-font="10px 'OpenSans-bold'"
         plots="plots.allCountries"
         values-visible="false"
         base-axis-label-text-baseline="middle"
-        values-font="12px 'OpenSans-bold'"
+        values-font="10px 'OpenSans-bold'"
         multiple-label-colors="false"
         dimensions="dimensionsOneDecimal"
         legend="true"
         stacked="1" angle="1"
-        base-axis-size="150"
+        base-axis-size="100"
         datasource-and-dates="[datasetList.Eurofound,85]"
       ></dvt-bar-chart>
       <p data-ng-bind="i18nLiterals.L20588"></p>
@@ -1648,7 +1659,7 @@
     </div>
 
     <!-- Job insecurity Fear of job loss --> 
-    <div class="box-rounded">
+    <div class="box-rounded mental">
       <dvt-bar-chart
         data-ng-cloak
         query="getCountryReportAllCountriesAnswersData" cda="{{::cda }}"
@@ -1658,16 +1669,16 @@
         params="[['pDataset', datasetList.ESENER], ['pIndicator', 325]]"
         color-role="series" colors="[color2, color5]"
         chart-title="{{i18nLiterals.L740}} - {{i18nLiterals.L20645}}" id="1"
-        axis-label-font="12px 'OpenSans-bold'"
+        axis-label-font="10px 'OpenSans-bold'"
         plots="plots.allCountries"
         values-visible="false"
         base-axis-label-text-baseline="middle"
-        values-font="12px 'OpenSans-bold'"
+        values-font="10px 'OpenSans-bold'"
         multiple-label-colors="false"
         dimensions="dimensionsOneDecimal"
         legend="true"
         stacked="1" angle="1"
-        base-axis-size="150"
+        base-axis-size="100"
         datasource-and-dates="[datasetList.ESENER,325]"
       ></dvt-bar-chart>
       <p data-ng-bind="i18nLiterals.L20591"></p>
@@ -1693,7 +1704,7 @@
          </tbody>
       </table> 
     </div>     
-    <div class="box-rounded">
+    <div class="box-rounded mental">
       <dvt-bar-chart
         data-ng-cloak
         query="getCountryReportAllCountriesAnswersData" cda="{{::cda }}"
@@ -1703,16 +1714,16 @@
         params="[['pDataset', datasetList.Eurofound], ['pIndicator', 86]]"
         color-role="series" colors="[color8,color2, color5]"
         chart-title="{{i18nLiterals.L740}} - {{i18nLiterals.L20646}}" id="1"
-        axis-label-font="12px 'OpenSans-bold'"
+        axis-label-font="10px 'OpenSans-bold'"
         plots="plots.allCountries"
         values-visible="false"
         base-axis-label-text-baseline="middle"
-        values-font="12px 'OpenSans-bold'"
+        values-font="10px 'OpenSans-bold'"
         multiple-label-colors="false"
         dimensions="dimensionsOneDecimal"
         legend="true"
         stacked="1" angle="1"
-        base-axis-size="150"
+        base-axis-size="100"
         datasource-and-dates="[datasetList.Eurofound,86]"
       ></dvt-bar-chart>
       <p data-ng-bind="i18nLiterals.L20590"></p>
@@ -1743,7 +1754,7 @@
     </div>
 
     <!-- Difficult clients --> 
-    <div class="box-rounded">
+    <div class="box-rounded mental">
       <dvt-bar-chart
         data-ng-cloak
         query="getCountryReportAllCountriesAnswersData" cda="{{::cda }}"
@@ -1753,16 +1764,16 @@
         params="[['pDataset', datasetList.ESENER], ['pIndicator', 326]]"
         color-role="series" colors="[color2, color5]"
         chart-title="{{i18nLiterals.L344}} - {{i18nLiterals.L20645}}" id="1"
-        axis-label-font="12px 'OpenSans-bold'"
+        axis-label-font="10px 'OpenSans-bold'"
         plots="plots.allCountries"
         values-visible="false"
         base-axis-label-text-baseline="middle"
-        values-font="12px 'OpenSans-bold'"
+        values-font="10px 'OpenSans-bold'"
         multiple-label-colors="false"
         dimensions="dimensionsOneDecimal"
         legend="true"
         stacked="1" angle="1"
-        base-axis-size="150"
+        base-axis-size="100"
         datasource-and-dates="[datasetList.ESENER,326]"
       ></dvt-bar-chart>
       <p data-ng-bind="i18nLiterals.L20593"></p>
@@ -1788,7 +1799,7 @@
          </tbody>
       </table>     
     </div>     
-    <div class="box-rounded">
+    <div class="box-rounded mental">
       <dvt-bar-chart
         data-ng-cloak
         query="getCountryReportAllCountriesAnswersData" cda="{{::cda }}"
@@ -1798,16 +1809,16 @@
         params="[['pDataset', datasetList.Eurofound], ['pIndicator', 87]]"
         color-role="series" colors="[color8,color2, color5]"
         chart-title="{{i18nLiterals.L344}} - {{i18nLiterals.L20646}}" id="1"
-        axis-label-font="12px 'OpenSans-bold'"
+        axis-label-font="10px 'OpenSans-bold'"
         plots="plots.allCountries"
         values-visible="false"
         base-axis-label-text-baseline="middle"
-        values-font="12px 'OpenSans-bold'"
+        values-font="10px 'OpenSans-bold'"
         multiple-label-colors="false"
         dimensions="dimensionsOneDecimal"
         legend="true"
         stacked="1" angle="1"
-        base-axis-size="150"
+        base-axis-size="100"
         datasource-and-dates="[datasetList.Eurofound,87]"
       ></dvt-bar-chart>
       <p data-ng-bind="i18nLiterals.L20592"></p>
@@ -1838,7 +1849,7 @@
     </div>
 
     <!-- Working hours --> 
-    <div class="box-rounded">
+    <div class="box-rounded mental">
       <dvt-bar-chart
         data-ng-cloak
         query="getCountryReportAllCountriesAnswersData" cda="{{::cda }}"
@@ -1848,16 +1859,16 @@
         params="[['pDataset', datasetList.ESENER], ['pIndicator', 327]]"
         color-role="series" colors="[color2, color5]"
         chart-title="{{i18nLiterals.L345}} - {{i18nLiterals.L20645}}" id="1"
-        axis-label-font="12px 'OpenSans-bold'"
+        axis-label-font="10px 'OpenSans-bold'"
         plots="plots.allCountries"
         values-visible="false"
         base-axis-label-text-baseline="middle"
-        values-font="12px 'OpenSans-bold'"
+        values-font="10px 'OpenSans-bold'"
         multiple-label-colors="false"
         dimensions="dimensionsOneDecimal"
         legend="true"
         stacked="1" angle="1"
-        base-axis-size="150"
+        base-axis-size="100"
         datasource-and-dates="[datasetList.ESENER,327]"
       ></dvt-bar-chart>
       <p data-ng-bind="i18nLiterals.L20595"></p>      
@@ -1883,7 +1894,7 @@
          </tbody>
       </table>  
     </div>     
-    <div class="box-rounded">
+    <div class="box-rounded mental">
       <dvt-bar-chart
         data-ng-cloak
         query="getCountryReportAllCountriesAnswersData" cda="{{::cda }}"
@@ -1893,16 +1904,16 @@
         params="[['pDataset', datasetList.Eurofound], ['pIndicator', 88]]"
         color-role="series" colors="[color2, color5]"
         chart-title="{{i18nLiterals.L345}} - {{i18nLiterals.L20646}}" id="1"
-        axis-label-font="12px 'OpenSans-bold'"
+        axis-label-font="10px 'OpenSans-bold'"
         plots="plots.allCountries"
         values-visible="false"
         base-axis-label-text-baseline="middle"
-        values-font="12px 'OpenSans-bold'"
+        values-font="10px 'OpenSans-bold'"
         multiple-label-colors="false"
         dimensions="dimensionsOneDecimal"
         legend="true"
         stacked="1" angle="1"
-        base-axis-size="150"
+        base-axis-size="100"
         datasource-and-dates="[datasetList.Eurofound,88]"
       ></dvt-bar-chart>
       <p data-ng-bind="i18nLiterals.L20594"></p>
@@ -1930,7 +1941,7 @@
     </div>
 
     <!-- Discrimination -->
-    <div class="box-rounded">
+    <div class="box-rounded mental">
       <dvt-bar-chart
         data-ng-cloak
         query="getCountryReportAllCountriesAnswersData" cda="{{::cda }}"
@@ -1940,16 +1951,16 @@
         params="[['pDataset', datasetList.Eurofound], ['pIndicator', 89]]"
         color-role="series" colors="[color2, color5]"
         chart-title="{{i18nLiterals.L346}}" id="1"
-        axis-label-font="12px 'OpenSans-bold'"
+        axis-label-font="10px 'OpenSans-bold'"
         plots="plots.allCountries"
         values-visible="false"
         base-axis-label-text-baseline="middle"
-        values-font="12px 'OpenSans-bold'"
+        values-font="10px 'OpenSans-bold'"
         multiple-label-colors="false"
         dimensions="dimensionsOneDecimal"
         legend="true"
         stacked="1" angle="1"
-        base-axis-size="150"
+        base-axis-size="100"
         datasource-and-dates="[datasetList.Eurofound,89]"
       ></dvt-bar-chart>
       <p data-ng-bind="i18nLiterals.L20596"></p>
@@ -1979,7 +1990,7 @@
   
   <section class="working-conditions physical-risk">
     <div class="intro-page">
-      <h3 data-ng-bind="i18nLiterals.L20711"></h3>
+      <h4 data-ng-bind="i18nLiterals.L20711" class="header3"></h4>
       <p data-ng-bind="i18nLiterals.L20579"></p>
       <span data-ng-bind="i18nLiterals.L20700"></span> 
       <span data-ng-bind="i18nLiterals.L20704"></span> 
@@ -1991,10 +2002,10 @@
         data-ng-cloak
         promises="radarChartPromises.vibrations"
         axis-fixed-max="40" step="10"
-        width="850" height="300"
+        width="600" height="390"
         status="vibrations-loud-noise"
         chart-title="{{i18nLiterals.L20654}}"
-        id="1" radio="130" values-format="%"
+        id="1" radio="140" values-format="%"
         mesh-size="30" draw-labels="true"
         datasource-and-dates="[datasetList.Eurofound,70]"
         country1="pCountry" country-2="">
@@ -2053,10 +2064,11 @@
     </div>
 
     <!-- Exposure to dangerous substances -->
-    <h4 data-ng-bind="i18nLiterals.L20655"></h4>
+    <div class="break-after"></div>
+    <h5 data-ng-bind="i18nLiterals.L20655" class="header4"></h5>
 
     <!-- Smoke, powder or dust -->
-    <div class="box-rounded">
+    <div class="box-rounded exposure">
       <dvt-bar-chart
         data-ng-cloak
         query="getCountryReportAllCountriesAnswersData" cda="{{::cda }}"
@@ -2066,16 +2078,16 @@
         params="[['pDataset', datasetList.Eurofound], ['pIndicator', 71]]"
         color-role="series" colors="[color2, color5]"
         chart-title="{{i18nLiterals.L328}}" id="1"
-        axis-label-font="12px 'OpenSans-bold'"
+        axis-label-font="10px 'OpenSans-bold'"
         plots="plots.allCountries"
         values-visible="false"
         base-axis-label-text-baseline="middle"
-        values-font="12px 'OpenSans-bold'"
+        values-font="10px 'OpenSans-bold'"
         multiple-label-colors="false"
         dimensions="dimensionsOneDecimal"
         legend="true"
         stacked="1" angle="1"
-        base-axis-size="150"
+        base-axis-size="100"
         datasource-and-dates="[datasetList.Eurofound,71]"
       ></dvt-bar-chart>
       <p data-ng-bind="i18nLiterals.L20598"></p>
@@ -2103,7 +2115,7 @@
     </div>
 
     <!-- Vapours -->
-    <div class="box-rounded">
+    <div class="box-rounded exposure">
       <dvt-bar-chart
         data-ng-cloak
         query="getCountryReportAllCountriesAnswersData" cda="{{::cda }}"
@@ -2113,16 +2125,16 @@
         params="[['pDataset', datasetList.Eurofound], ['pIndicator', 72]]"
         color-role="series" colors="[color2, color5]"
         chart-title="{{i18nLiterals.L329}}" id="1"
-        axis-label-font="12px 'OpenSans-bold'"
+        axis-label-font="10px 'OpenSans-bold'"
         plots="plots.allCountries"
         values-visible="false"
         base-axis-label-text-baseline="middle"
-        values-font="12px 'OpenSans-bold'"
+        values-font="10px 'OpenSans-bold'"
         multiple-label-colors="false"
         dimensions="dimensionsOneDecimal"
         legend="true"
         stacked="1" angle="1"
-        base-axis-size="150"
+        base-axis-size="100"
         datasource-and-dates="[datasetList.Eurofound,72]"
       ></dvt-bar-chart>
       <p data-ng-bind="i18nLiterals.L20599"></p>
@@ -2150,7 +2162,7 @@
     </div>
 
     <!-- Chemical products -->
-    <div class="box-rounded">
+    <div class="box-rounded exposure">
       <dvt-bar-chart
         data-ng-cloak
         query="getCountryReportAllCountriesAnswersData" cda="{{::cda }}"
@@ -2160,16 +2172,16 @@
         params="[['pDataset', datasetList.Eurofound], ['pIndicator', 73]]"
         color-role="series" colors="[color2, color5]"
         chart-title="{{i18nLiterals.L330}}" id="1"
-        axis-label-font="12px 'OpenSans-bold'"
+        axis-label-font="10px 'OpenSans-bold'"
         plots="plots.allCountries"
         values-visible="false"
         base-axis-label-text-baseline="middle"
-        values-font="12px 'OpenSans-bold'"
+        values-font="10px 'OpenSans-bold'"
         multiple-label-colors="false"
         dimensions="dimensionsOneDecimal"
         legend="true"
         stacked="1" angle="1"
-        base-axis-size="150"
+        base-axis-size="100"
         datasource-and-dates="[datasetList.Eurofound,73]"
       ></dvt-bar-chart>
       <p data-ng-bind="i18nLiterals.L20600"></p>
@@ -2197,7 +2209,7 @@
     </div>
 
     <!-- Infectious materials -->
-    <div class="box-rounded">
+    <div class="box-rounded exposure">
       <dvt-bar-chart
         data-ng-cloak
         query="getCountryReportAllCountriesAnswersData" cda="{{::cda }}"
@@ -2207,16 +2219,16 @@
         params="[['pDataset', datasetList.Eurofound], ['pIndicator', 74]]"
         color-role="series" colors="[color2, color5]"
         chart-title="{{i18nLiterals.L331}}" id="1"
-        axis-label-font="12px 'OpenSans-bold'"
+        axis-label-font="10px 'OpenSans-bold'"
         plots="plots.allCountries"
         values-visible="false"
         base-axis-label-text-baseline="middle"
-        values-font="12px 'OpenSans-bold'"
+        values-font="10px 'OpenSans-bold'"
         multiple-label-colors="false"
         dimensions="dimensionsOneDecimal"
         legend="true"
         stacked="1" angle="1"
-        base-axis-size="150"
+        base-axis-size="100"
         datasource-and-dates="[datasetList.Eurofound,74]"
       ></dvt-bar-chart>
       <p data-ng-bind="i18nLiterals.L20601"></p>
@@ -2244,15 +2256,15 @@
     </div>
 
     <!-- Risks involved with work -->
-    <div class="box-rounded">
+    <div class="box-rounded exposure">
       <dvt-radar-chart
         data-ng-cloak
         promises="radarChartPromises.risksInvolvedESENER"
         axis-fixed-max="80" step="20"
-        width="850" height="300"
+        width="600" height="400"
         status="older-workers-employment"
         chart-title="{{i18nLiterals.L20656}} - {{i18nLiterals.L20645}}"
-        id="7" radio="130" values-format="%"
+        id="7" radio="140" values-format="%"
         mesh-size="30" draw-labels="true"
         datasource-and-dates="[datasetList.ESENER,293]"
         country1="pCountry" country-2="">
@@ -2292,15 +2304,15 @@
          </tbody>
       </table>
     </div>
-    <div class="box-rounded">
+    <div class="box-rounded exposure">
       <dvt-radar-chart
         data-ng-cloak
         promises="radarChartPromises.risksInvolvedEurofound"
         axis-fixed-max="80" step="20"
-        width="850" height="300"
+        width="600" height="400"
         status="risk-involved-work"
         chart-title="{{i18nLiterals.L20656}} - {{i18nLiterals.L20646}}"
-        id="6" radio="130" values-format="%"
+        id="6" radio="120" values-format="%"
         mesh-size="30" draw-labels="true"
         datasource-and-dates="[datasetList.Eurofound,90]"
         country1="pCountry" country-2="'EU'">
@@ -2370,11 +2382,11 @@
 
     <!-- Risk Assessment -->
     <div class="box-rounded">
-      <h4>Risk Assessment - LITERAL</h4>
+      <h4 class="header3">Risk Assessment - LITERAL</h4>
     </div>
 
     <!-- sector -->
-    <div class="box-rounded">
+    <div class="box-rounded risk">
       <h5 data-ng-bind="i18nLiterals.L20648"></h5>
    
       <p data-ng-bind="i18nLiterals.L20603" ></p>
@@ -2851,28 +2863,10 @@
   </section>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <div class="footer-pdf">
-    <p>Santiago de Compostela 12, 5th floor - 48003 Bilbao × Spain<br>
-      Tel. +34 944 358 400 × Fax +34 944 358 401 <br>
-      information@osha.europa.eu - <a href="http://osha.europa.eu" target="_blank">http://osha.europa.eu</a>
-    </p>
-  </div>
+  <p class="footer-pdf">
+    <span>Santiago de Compostela 12, 5th floor - 48003 Bilbao × Spain</span>
+    <span>Tel. +34 944 358 400 × Fax +34 944 358 401 </span>
+    <span>information@osha.europa.eu - <a href="http://osha.europa.eu" target="_blank">http://osha.europa.eu</a></span>
+    <!--<span class="number-pag"></span>-->
+  </p>
 </dvt-dashboard>

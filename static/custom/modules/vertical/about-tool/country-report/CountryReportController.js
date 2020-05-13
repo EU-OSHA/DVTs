@@ -310,6 +310,7 @@ define(function (require) {
 	    		$(" .header-logo").append( $(header) );
 */
 
+
 	}
 	
 	controller.$inject = ['$scope', '$window', '$stateParams', '$state', '$log', 'dvtUtils', 'dataService', 'plotsProvider', '$document', 'configService', '$http', 'CountryReportService', '$rootScope'];

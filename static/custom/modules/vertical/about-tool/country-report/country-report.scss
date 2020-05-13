@@ -1,7 +1,7 @@
-@media print{
+@media print, screen{
 	@page {
 	  size: A4;
-	  margin: 10mm 10mm; 
+	  margin: 10mm 10mm;
 	}
 	.break-after{
 		page-break-after: always !important;
@@ -10,20 +10,26 @@
 		page-break-before: always !important;
 		height: 0 !important;
 	}
-	a[target="_blank"], a[target="blank"] {
-		margin: 0;
-		&:after, &:before{
-			content:'';
-			width: 0px;
-		}
+	html.full-country-report{
+		width: 210mm !important;
+		height: 297mm !important;
 	}
 	body.full-country-report{	
 		font-family: "Arial" !important;
-		top: 20mm !important;
-		width: 210mm;
-		border: 1px solid #ccc;
-		margin: 0 auto;
-		font-size: 14px;		
+    top: 20mm !important;
+    width: 210mm;    
+    margin: 0 auto;
+    font-size: 14px;
+    padding: 0;
+    overflow: initial;
+    background: none;
+		a[target="_blank"], a[target="blank"] {
+			margin: 0;
+			&:after, &:before{
+				content:'';
+				width: 0px;
+			}
+		}
 		h1, h2, h3, h4 {
 		  font-family: "Arial", sans-serif;
 		}
@@ -35,6 +41,20 @@
 		h3{
 			font-size: 2.8rem;
 			color: $gray !important;
+		}
+		.header3{
+	    background: #F0F0F0 !important;
+	    color: #003399 !important;
+	    font-size: 2.2rem !important;
+	    font-weight: bold;
+	    padding: 1rem 1rem;
+		}
+		.header4{
+			background: transparent !important;
+	    color: #003399 !important;
+	    font-size: 2.2rem !important;
+	    font-weight: bold;
+	    padding: 1rem 1rem;
 		}
 		div[id^=dvt_bar_chart]{
 			zoom:1 !important;
@@ -56,9 +76,9 @@
     height: 15mm;
     background: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/EU-OSHA-trans-en.png) no-repeat,
      url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/eu-flag.png) no-repeat !important;
-    background-position: left top, right 5mm!important;
+    background-position: left top, right 3mm!important;
     background-repeat: no-repeat, repeat;
-    background-size: contain, 10mm !important;
+    background-size: contain, 13mm !important;
     overflow: visible;
 		picture{			
 			display: flex;
@@ -76,14 +96,31 @@
 		}    	
   }
 	.footer-pdf{
-    position: fixed;
-    bottom: 0cm;
-    left: 0mm;
-    font-size: 1rem;
-    background: #FFF !important;
-    width: 100%;
+		position: fixed;
+    display: flex;
+    justify-content: space-between;
+    width: 210mm;
     z-index: 100;
-    display: none;
+    bottom: 0px;
+    font-size: 9px;
+    text-align: center;
+    margin: 0;
+    /*
+    .number-pag:after{ 
+	    content:"Page " counter(page);
+	    left: 0; 
+	    top: 100%;
+	    white-space: nowrap; 
+	    z-index: 200;
+    }
+    */
+    a{
+    }
+    a[target="_blank"]:before, a[target="blank"]:before, 
+    a[target="_blank"]:after, a[target="blank"]:after{
+    	content:"";
+    	display: none;
+    }
 	}
 	.full-country-report-page{
 		display: block !important; 
@@ -102,6 +139,7 @@
 					padding: 0 0.8rem;
     			white-space: nowrap;
     			text-align: center;
+    			font-style: italic;
 					&:nth-child(1){
 						width: 65%;
 						text-align: right;
@@ -111,8 +149,10 @@
 			tbody{
 				th{
 					border-right:2px solid $gray-light;
-					padding: 0.8rem;
+					padding:0.4rem 0.8rem;
     			text-align: center;
+    			font-style: italic;
+    			font-weight: normal !important;
 					&:nth-child(1){
 						width: 65%;
 						text-align: right;
@@ -120,7 +160,7 @@
 				}
 				td{
 					border-right:2px solid $gray-light;
-					padding: 0.8rem;
+					padding:0.4rem 0.8rem;
 					white-space: nowrap;
     			text-align: center;
 				}
@@ -162,10 +202,13 @@
 			}
 		}
 		.index{
+			background: $gray-lighter !important;
+			padding: 5mm 20mm 5mm;
+			margin-top: 5mm;
 			ul.index-list{
 				list-style-type: none;
 				padding: 0;
-				margin: 10mm 20mm;
+				margin:0;
 				li.main-item {
 			    font-size: 2.6rem !important;			   
 			    display: flex;
@@ -226,7 +269,7 @@
 	   //page-break-after: always;
 			.title-page{
 				display: flex;
-				margin-bottom: 5mm;
+				margin-bottom: 0mm;
 				h2{
 					font-size: 3.2rem !important;
 					padding: 0 2rem 0 0;
@@ -242,14 +285,17 @@
 					flex-wrap: wrap;
 				}
 			}
+			.intro-page{
+				margin-bottom: 5mm;
+			}
 			.content-page{
 				margin: 0cm auto;
 			}
 			.box-rounded{
 				background: $aquamarine-lighter-trans !important;
 				page-break-inside: avoid !important;
-				border-radius: 6rem 0 6rem 0;
-		    padding: 1rem 3rem;
+				border-radius:4rem 0 4rem 0;
+		    padding: 2rem 3rem 1rem;
 		    margin:2rem 0;
 				p, ul, ol, li, div{
 					page-break-inside: avoid !important;
@@ -264,6 +310,7 @@
 			margin: 0 !important;
 			padding:0 !important;
 			page-break-after:always;
+			/*
 			&:after{
 				content:'Santiago de Compostela 12, 5th floor - 48003 Bilbao × Spain               Tel. +34 944 358 400 × Fax +34 944 358 401 information@osha.europa.eu - http://osha.europa.eu';
 				white-space: pre;
@@ -273,21 +320,30 @@
 				font-size: 10px;
 				text-align: center;
 			}
+			*/
 			.content-cover{
 				position: absolute;
 				top: 30%;
 				right: 0%;
 				width: 100%;
 				text-align: center;
-						h1,h2,h3{
-						font-size: 4.8rem !important;
-						}
+				h1,h2,h3{
+				font-size: 4.8rem !important;
+				}
+				form{
+					display: none;
+				}
 			}
 		}
 		section.index-page{
 			h1{
 		    font-size: 3.2rem;
 		    margin-bottom: 5mm;
+			}
+		}
+		section.introduction-page{
+			.content-page{
+				width: 170mm !important;
 			}
 		}
 		section.osh-authorities{
@@ -337,17 +393,21 @@
 		section.economic-sector-profile{			
 			&.indicator1{
 				page-break-after: always !important;
+				.chart-data{
+			    margin: 2mm auto 0mm;
+				}
 				svg{
-					height: 3cm !important;
-					width: 190mm !important;
+					//height: 274mm !important;
+					width: 177mm !important;
 				}
 			}
 			&.indicator2{
 				.content-page{
 					display: flex;
 					justify-content: space-between;
-					.chart--block {
-					  width: 55mm;
+					.box-rounded {
+						width: 61mm;
+						padding: 2rem 2rem 1rem;
 					  .card--block--chart--wrapper{
 						  h2{
 				  	    min-height: 10rem;
@@ -355,8 +415,11 @@
 						  }					  	
 					  }
 					  svg{
-					  	width: 100% !important;
-					  	height: 5.48cm !important;
+					    width: 53mm !important;
+					    height: 55mm !important;
+					  }
+					  .chart-data{
+					    margin: 0mm 0mm 1mm;
 					  }
 					}			
 				}
@@ -364,9 +427,6 @@
 		}
 		section.workforce-profile{
 			page-break-after: always !important;
-			.intro-page{
-				margin: 0 0 5mm;
-			}
 			table{
 				tr{
 					border-bottom: 1px solid $gray-light;
@@ -414,19 +474,14 @@
 				font-weight: bold;
 			}
 			.box-rounded{
-				background: $aquamarine-lighter-trans !important;
-				page-break-inside: avoid !important;
-				border-radius: 6rem 0 6rem 0;
-		    padding: 1rem 3rem;
-		    margin: 2rem 0;
-		    min-height: 20rem;
+		    //min-height: 20rem;
 			}
 		}
 		section.social-dialogue{
 			page-break-after: always !important;
 			header{
 				display: flex;
-				 padding: 4rem 4rem 2rem 4rem;
+				padding: 1rem 4rem 1rem 4rem;
 				img{
 					height: 1cm;
 				}
@@ -481,14 +536,8 @@
 			.title-page{
 				flex-wrap: wrap;
 			}
-			.box-rounded{
-				background: $aquamarine-lighter-trans !important;
-				page-break-inside: avoid !important;
-				border-radius: 6rem 0 6rem 0;
-		    margin: 2rem 0;
-    		padding: 4rem;
-		  }
 		  .chart-data{
+  	    margin: 1mm auto 0mm;
 		  	thead{
 		  		th{
 		  			text-align: center;
@@ -507,7 +556,7 @@
 			}
 			header{
 				display: flex;
-				padding: 4rem 4rem 2rem 4rem;
+				padding: 1rem 4rem 1rem 4rem;
 				img{
 					height: 1cm;
 				}
@@ -536,9 +585,10 @@
 			    	li{
 							width: 50%;
 							text-align: center;						    
-			        padding: 0 1rem;
+			        padding: 0 0 0 1rem;
 			        &:nth-child(2n+1){
 								border-right: 1px solid $gray;
+								padding: 0 1rem 0 0;
 			        }
 							span{
 								font-size: 2.8rem;
@@ -601,24 +651,36 @@
 				flex-wrap: wrap;
 			}
 			.box-rounded{
-				background: $aquamarine-lighter-trans !important;
-				page-break-inside: avoid !important;
-				border-radius: 6rem 0 6rem 0;
-		    margin: 2rem 0;
-    		padding: 4rem;
     		svg{
     			zoom:1 !important;
+    		}
+    		div[id^='dvt_radarChart']{
+					svg{
+						text{
+							font-size: 12px !important
+						}
+					}
     		}
 		  }
 		  .chart-data{
 		  	thead{
 		  		th{
 		  			text-align: center;
+		  			white-space: nowrap;
 		  		}
 			  	th:nth-child(1), th:nth-child(4){
 						width: 30mm;
 						text-align: right;
 			  	}		  		
+		  	}
+		  }
+		  &.physical-risk, &.overall-opinion, &.mental-risk{
+		  	.exposure, .overall{
+					h2 {
+						font-size: 2.2rem !important;
+						margin: 1.5rem 0 1.5rem 0;
+						border-bottom: 2px solid;
+					}		  		
 		  	}
 		  }
 		}
@@ -652,4 +714,10 @@
 	}
 }
 
-
+@media screen{
+	.content-cover{
+		form{
+			display: block !important;
+		}
+	}
+}
