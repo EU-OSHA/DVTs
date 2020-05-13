@@ -51,6 +51,7 @@ define(function (require) {
 		$scope.challengesResponse=[];
 		$scope.socialDialogue=[];
 		$scope.healthPerception=[];
+		$scope.statistics=[];
 
 
 		/******************************************************************************|
@@ -297,19 +298,30 @@ define(function (require) {
 		}).catch(function (err) {
 			throw err;
 	  	});
+
+		// OSH Statistics
+		dataService.getCountryReportMatrixPageData("MATRIX_AUTHORITY", $scope.pCountry).then(function(data)
+		{
+			data.data.resultset.map(function (elem) {
+		  		$scope.statistics.push({
+			  		id: elem[0],
+			  		country_name: elem[1],
+			  		country_code: elem[2],
+			  		osh_statistics: elem[3],
+			  		compensation: elem[4],
+			  		prevention: elem[5],
+			  		standardisation: elem[6],
+			  		name_statistics: elem[7],
+			  		link_statistics: elem[8],
+			  		detail_statistics: elem[9]
+		  		});
+			});
+		}).catch(function (err) {
+			throw err;
+	  	});
 		/******************************END DATA LOAD***********************************/
 
 		$scope.status = 'ready';
-
-
-/*
-			var header = "<picture>";
-	      	header += '<img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/EU-OSHA-trans-en.png" class="osha-logo" alt="European Agency for Safety and Health at Work">';
-	      	header += '<img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/eu-flag.png" class="european-flag" title="European Union flag">';
-	    		header += '</picture>';
-	    		$(" .header-logo").append( $(header) );
-*/
-
 
 	}
 	
