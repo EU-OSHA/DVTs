@@ -63,8 +63,8 @@ define(function (require) {
 						}
 						else if ($scope.pIndicator == "risks-involve-with-work")
 						{
-							$scope.group = ["tiring-or-painful-positions","tiring-or-painful-positions-i","tiring-or-painful-positions-ii",
-								"lifting-or-moving-people-or-heavy-loads","lifting-or-moving-people-i","lifting-or-moving-heavy-loads-ii",
+							$scope.group = ["tiring-or-painful-positions","tiring-or-painful-positions-i","work-involving-sitting",
+								"lifting-or-moving-people-or-heavy-loads","lifting-or-moving-people","lifting-or-moving-heavy-loads",
 								"repetitive-hand-or-arm-movements","repetitive-hand-or-arm-movements"];
 						}
 
