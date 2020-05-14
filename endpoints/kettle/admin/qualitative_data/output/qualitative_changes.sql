@@ -235,9 +235,6 @@ SET @indicatorId = (SELECT id FROM indicator WHERE name="Income per capita EURO"
 SET @datasetId = (SELECT id FROM dataset WHERE source="Eurostat" AND date_from="2010-01-01" AND date_to="2017-12-31");
 INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20088, @indicatorId, @datasetId);
 
-SET @toolID = (SELECT id FROM tool WHERE name = "osha_dvt_barometer");
-INSERT INTO section (name, tool_id) VALUES ("COUNTRY_REPORT", @toolID);
-
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+70, null, @sectionId, "STRATEGY_BASIC INFO");
@@ -4307,6 +4304,16 @@ SET @sectionId = (SELECT id FROM section WHERE name="COUNTRY_REPORT" AND tool_id
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2192, null, @sectionId, "LITERAL");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2192, "EN", 1, "This document contains the OSH Barometer Country Report Summary of");
 
+SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
+SET @sectionId = (SELECT id FROM section WHERE name="COUNTRY_REPORT" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2193, null, @sectionId, "INTRO_TEXT");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2193, "EN", 1, "The OSH-Barometer provides also an offline version of its data as ‘Full country report’. You can download all texts, diagrams and statistical data of one country in a comprehensive report.");
+
+SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
+SET @sectionId = (SELECT id FROM section WHERE name="COUNTRY_REPORT" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2194, null, @sectionId, "PAGE_NAME");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2194, "EN", 1, "Full country report");
+
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="AT");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
@@ -5680,6 +5687,16 @@ INSERT INTO matrix_page(page, nuts_id, check_1, check_2, check_3, check_4, text_
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="MT");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "Occupational Health and Safety Authority (OHSA)");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "See more in its <a target=\"blank\" href=\"http://www.ohsa.org.mt/\">website</a> and in <a target=\"blank\" href=\"https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Malta\">OSHwiki</a>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "The OHSA is the main organisation in Malta for health and safety. It is part of the Ministry of Social Policy.");
+INSERT INTO matrix_page(page, nuts_id, check_1, check_2, check_3, check_4, text_1_literal_id, text_2_literal_id, text_3_literal_id)  VALUES ("MATRIX_AUTHORITY", @nutsId, 0, 0, 1, 0, @maxId+1, @maxId+2, @maxId+3);
+
+SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="MT");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "Maltese Social Security Division — Injury Benefit/Industrial Disease");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "See more in its <a target=\"blank\" href=\"http://socialsecurity.gov.mt/en/Pages/default.aspx\">website</a> and in <a target=\"blank\" href=\"https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Malta\">OSHwiki</a>");
@@ -6529,16 +6546,6 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p>WUG was established by the Geological and Mining Law Act and is presided over by the President of the State Mining Authority, who is subordinate to the Minister of Energy Minister Energii. The main responsibility of the State Mining Authority is to monitor and supervise work-related safety and health; fire protection; mine rescue; the management of mineral deposits in the extraction process; environmental protection, including damage prevention; and the construction and closure of mining plants, including land reclamation and the rehabilitation of post-mining areas.</p><p>&nbsp;</p><p>The mission of the State Mining Authority is:</p><ul><li>to improve work safety in mines;</li><li>to protect miners’ health;</li><li>to ensure efficient and sustainable management of mineral deposits;</li><li>to reduce the negative impact of the extractive industry on the environment.</li></ul>");
 INSERT INTO matrix_page(page, nuts_id, check_1, check_2, check_3, check_4, text_1_literal_id, text_2_literal_id, text_3_literal_id)  VALUES ("MATRIX_AUTHORITY", @nutsId, 1, 0, 0, 0, @maxId+1, @maxId+2, @maxId+3);
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="MT");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "Occupational Health and Safety Authority (OHSA)");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "See more in its <a target=\"blank\" href=\"http://www.ohsa.org.mt/\">website</a> and in <a target=\"blank\" href=\"https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Malta\">OSHwiki</a>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "The OHSA is the main organisation in Malta for health and safety. It is part of the Ministry of Social Policy.");
-INSERT INTO matrix_page(page, nuts_id, check_1, check_2, check_3, check_4, text_1_literal_id, text_2_literal_id, text_3_literal_id)  VALUES ("MATRIX_AUTHORITY", @nutsId, 0, 0, 1, 0, @maxId+1, @maxId+2, @maxId+3);
 
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="AT");
