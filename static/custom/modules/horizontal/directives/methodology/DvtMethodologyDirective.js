@@ -59,13 +59,13 @@ define(function (require) {
 						$scope.group = [];
 						if ($scope.pIndicator == "vibrations-loud-noise-and-temperature")
 						{
-							$scope.group = ["vibrations","loud-noise","high-temperatures","low-temperatures"];
+							// Array with the IDs of the indicators that will be painted in the methodology section
+							$scope.group = [67,68,69,70];
 						}
 						else if ($scope.pIndicator == "risks-involve-with-work")
 						{
-							$scope.group = ["tiring-or-painful-positions","tiring-or-painful-positions-i","work-involving-sitting",
-								"lifting-or-moving-people-or-heavy-loads","lifting-or-moving-people","lifting-or-moving-heavy-loads",
-								"repetitive-hand-or-arm-movements","repetitive-hand-or-arm-movements"];
+							// Array with the IDs of the indicators that will be painted in the methodology section
+							$scope.group = [386,90,91,291,94,92,292,93];
 						}
 
 					}
@@ -99,8 +99,12 @@ define(function (require) {
 	                            visualisation: elem[14],
 	                            additional_comments: elem[15]
 	                      	});
-                    	});
 
+
+	                    	console.log("DVT DEV");
+	                    	console.log(elem[0]);
+	                    	console.log(i18n_literals['L'+elem[3]].toLowerCase().replace(" (esener)","").replace(" (ewcs)","").replace(/ /g, '-').replace(/,/g, ''));
+                    	});
 
                     	if ($scope.indicators.length == 1)
                     	{
