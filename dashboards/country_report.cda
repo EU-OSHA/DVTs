@@ -155,19 +155,30 @@
 	      <Parameter default="EU28" name="pCountry2" type="String" />
 	    </Parameters>
 	    <Query>
-	      SELECT IF(n.name REGEXP 'European Union' || n.name='EU27_2020', n.country_code, CONCAT("(", n.country_code, ") ", n.name)) as Country, t.text as Sector, (v.value*100) as Value
-	      FROM nuts n, profile p, indicator i, value v, split_activity_sector sas, dataset d, translation t
-	      WHERE n.id = p.nuts_id 
-	      AND p.activity_sector_id = sas.id 
-	      AND i.id = v.indicator_id 
-	      AND v.profile_id = p.id
-	      AND d.id = ${pDataset} AND d.id = v.dataset_id 
-	      AND t.language = 'EN'
-	      AND t.literal_id = sas.literal_id
-	      AND CASE WHEN ${pIndicator} IN (304,353) THEN p.answer_id=1 ELSE p.answer_id IS NULL END
-	      AND CASE WHEN ${pIndicator} IN (304,353) THEN (sas.id IN (2, 3, 4, 18, 6, 7,14)) ELSE CASE WHEN ${pDataset}=21 THEN (sas.id IN (1, 2, 3, 4, 18, 6, 7)) ELSE (sas.id IN (8,9,10,11,12,13)) END END
-	      AND n.country_code IN (${pCountry1}, ${pCountry2}) AND i.id = ${pIndicator}
-	      ORDER BY FIELD(n.country_code, ${pCountry1}, ${pCountry2}) ASC, FIELD (sas.id, 1, 2, 3, 4, 6, 7,18,14)
+	    	SELECT IF(n.name REGEXP 'European Union' || n.name='EU27_2020', n.country_code, CONCAT("(", n.country_code, ") ", n.name)) as Country, sas.literal_id as Sector, (v.value*100) as Value
+			FROM nuts n, profile p, value v, split_activity_sector sas, dataset d
+			WHERE n.id = p.nuts_id 
+			AND p.activity_sector_id = sas.id 
+			AND v.indicator_id = ${pIndicator}
+			AND v.profile_id = p.id
+			AND d.id = ${pDataset} AND d.id = v.dataset_id
+			AND CASE WHEN ${pIndicator} IN (304,353) THEN p.answer_id=1 ELSE p.answer_id IS NULL END
+			AND CASE WHEN ${pIndicator} IN (304,353) THEN (sas.id IN (2, 3, 4, 18, 6, 7,14)) ELSE CASE WHEN ${pDataset}=21 THEN (sas.id IN (1, 2, 3, 4, 18, 6, 7)) ELSE (sas.id IN (8,9,10,11,12,13)) END END
+			AND n.country_code IN (${pCountry1}, ${pCountry2})
+			ORDER BY FIELD(n.country_code, ${pCountry1}, ${pCountry2}) ASC, FIELD (sas.id, 1, 2, 3, 4, 6, 7,18,14)
+			<!--SELECT IF(n.name REGEXP 'European Union' || n.name='EU27_2020', n.country_code, CONCAT("(", n.country_code, ") ", n.name)) as Country, t.text as Sector, (v.value*100) as Value
+			FROM nuts n, profile p, indicator i, value v, split_activity_sector sas, dataset d, translation t
+			WHERE n.id = p.nuts_id 
+			AND p.activity_sector_id = sas.id 
+			AND i.id = v.indicator_id 
+			AND v.profile_id = p.id
+			AND d.id = ${pDataset} AND d.id = v.dataset_id 
+			AND t.language = 'EN'
+			AND t.literal_id = sas.literal_id
+			AND CASE WHEN ${pIndicator} IN (304,353) THEN p.answer_id=1 ELSE p.answer_id IS NULL END
+			AND CASE WHEN ${pIndicator} IN (304,353) THEN (sas.id IN (2, 3, 4, 18, 6, 7,14)) ELSE CASE WHEN ${pDataset}=21 THEN (sas.id IN (1, 2, 3, 4, 18, 6, 7)) ELSE (sas.id IN (8,9,10,11,12,13)) END END
+			AND n.country_code IN (${pCountry1}, ${pCountry2}) AND i.id = ${pIndicator}
+			ORDER BY FIELD(n.country_code, ${pCountry1}, ${pCountry2}) ASC, FIELD (sas.id, 1, 2, 3, 4, 6, 7,18,14)-->
 	    </Query>
 	</DataAccess>
 
