@@ -21,14 +21,14 @@ define (function (require) {
                                     .height(null) // clear any inherited value
                                     .width(null)  // clear any inherited value
                                     .strokeStyle('black')
-                                    .lineWidth(3)
+                                    .lineWidth(2.5)
                                     .left(function(scene){
                                         //$log.warn(scene);
                                         var baseScale = this.getContext().chart.axes.base.scale;
                                         var countryKey = scene.firstAtoms.category;
                                         var panelWidth = this.root.width();
                                         //return panelWidth/40;               
-                                        return baseScale('Austria (AT)') - 16;
+                                        return baseScale('Austria (AT)') - 10;
                                     });
 
                                 //Non EU countries stroke separator vertical
@@ -38,11 +38,11 @@ define (function (require) {
                                     .height(null) // clear any inherited value
                                     .width(null)  // clear any inherited value
                                     .strokeStyle('black')
-                                    .lineWidth(3)
+                                    .lineWidth(2.5)
                                     .left(function(scene){
                                         var baseScale = this.getContext().chart.axes.base.scale;
                                         var countryKey = scene.firstAtoms.category;
-                                        var panelWidth = this.root.width();         
+                                        var panelWidth = this.root.width();        
 
                                         if(!scene.firstAtoms.value.label.match('%')){
                                             scene.firstAtoms.value.label = scene.firstAtoms.value.label + '%';
@@ -52,7 +52,7 @@ define (function (require) {
                                             return baseScale('Switzerland (CH)') - 11;
                                         }
 
-                                        return baseScale('Switzerland (CH)') - this.sign.panel.barWidth ; 
+                                        return baseScale('Switzerland (CH)') - this.sign.panel.barWidth/2 ; 
                                     });
                             }   
                         },
@@ -393,6 +393,53 @@ define (function (require) {
                         visualRoles:{
                             series: 'series',
                             category:'category',
+                        }
+                    }
+                ];
+            },
+            getGeneralOSHInfrastructurePlot: function(pCountry1) {
+                return [
+                    {
+                        name: "main",
+                        dataPart: "0",
+                        barSizeMax: 80,
+                        barSizeRatio: 0.6,
+                        bar_fillStyle: function (scene) {
+                            var answer = scene.firstAtoms.series.value;
+                            var country = scene.firstAtoms.category.value.indexOf("(")==-1?scene.firstAtoms.category.value.indexOf("("):scene.firstAtoms.category.value.substring(1,3);
+
+                            if (answer == "Yes")
+                            {
+                                if (country==pCountry1)
+                                {
+                                    return dvtUtils.getColorCountry(1);    
+                                }
+                                else
+                                {
+                                    return dvtUtils.getEUColor();        
+                                }                                
+                            }
+                            else if (answer == "No")
+                            {
+                                if (country==pCountry1)
+                                {
+                                    return dvtUtils.getColorCountry(12);    
+                                }
+                                else
+                                {
+                                    return dvtUtils.getEUColor(2);        
+                                }   
+                            }
+                            return dvtUtils.getChartLightGrayColor();
+                        },
+                        label_textMargin: 7,
+                        label_textBaseline: 'bottom',
+                        valuesAnchor: 'middle',
+                        valuesOptimizeLegibility: true,
+                        visualRoles:{
+                            series: 'series',
+                            category:'category',
+                            value: 'value'
                         }
                     }
                 ];

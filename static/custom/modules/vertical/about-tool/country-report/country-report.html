@@ -2832,8 +2832,19 @@
 
     <!-- ESENER -->
     <div class="box-rounded">
-      <h5 data-ng-bind="i18nLiterals.L20645"></h5>
-   
+      <!--<h5 data-ng-bind="i18nLiterals.L20645" class="header3"></h5>-->
+      <dvt-radar-chart
+        data-ng-cloak
+        promises="radarChartPromises.workerInvolvementESENER"
+        axis-fixed-max="80" step="20"
+        width="600" height="500"
+        status="worker-involvement-esener"
+        chart-title="{{i18nLiterals.L20645}}"
+        id="1" radio="130" values-format="%"
+        mesh-size="30" draw-labels="true"
+        datasource-and-dates="[datasetList.ESENER,293]"
+        country1="pCountry" country-2="">
+      </dvt-radar-chart>
       <table class="chart-data">
         <thead>
           <tr>
@@ -2884,10 +2895,21 @@
       </table>
     </div> 
 
-
-      <!-- EWCS -->
+    <!-- EWCS -->
     <div class="box-rounded">
-      <h5 data-ng-bind="i18nLiterals.L20646"></h5>
+      <!--<h5 data-ng-bind="i18nLiterals.L20646"></h5>-->
+      <dvt-radar-chart
+        data-ng-cloak
+        promises="radarChartPromises.workerInvolvementEurofound"
+        axis-fixed-max="80" step="20"
+        width="600" height="500"
+        status="worker-involvement-eurofound"
+        chart-title="{{i18nLiterals.L20646}}"
+        id="2" radio="130" values-format="%"
+        mesh-size="30" draw-labels="true"
+        datasource-and-dates="[datasetList.Eurofound,90]"
+        country1="pCountry" country2="">
+      </dvt-radar-chart>
    
       <table class="chart-data">
         <thead>
@@ -2943,7 +2965,29 @@
     
     <!-- % of establishments inspected -->
     <div class="box-rounded">
-      <h4 data-ng-bind="i18nLiterals.L20692"></h4> 
+      <h4 data-ng-bind="i18nLiterals.L20692" class="header3"></h4>
+      <dvt-bar-chart
+        data-ng-cloak
+        query="getEstablishmentsInspectedData" cda="{{::cda }}"
+        width="330" height="330" axis-percent="1"
+        orientation="vertical" axis-fixed-min="0" stacked="1"
+        axis-fixed-max="100" step="20" id="1"
+        params="[['pIndicator', 285], ['pCountry1', pCountry], ['pCountry2', 'EU28'], ['pDataset', datasetList.ESENER], ['pAnswer', 1]]"
+        color-role="category" colors="[color1, colorEU]"
+        chart-title="{{i18nLiterals.L20693}}" 
+        axis-label-font="12px 'OpenSans-bold'"
+        base-axis-label-text-baseline="top"
+        plots="plots.establishmentsInspected"
+        values-visible="true"
+        values-mask="{series}"
+        values-font="12px 'OpenSans-bold'"
+        multiple-label-colors="false"
+        leaf-content-overflow='visible'                
+        dimensions="dimensionsNoDecimal"
+        legend="true" base-axis-size="50"
+        datasource-and-dates="[datasetList.ESENER,285]"
+        custom-label="true" legend-align="center"
+      ></dvt-bar-chart> 
 
       <table class="w50 chart-data">
         <thead>
@@ -3007,34 +3051,33 @@
       <span><a data-ng-bind="i18nLiterals.L20705" ui-sref="about-tool-detail-page({pSection: 'osh-infrastructure', pSubsection: 'osh_statistics', pIndicator: 80})"></a></span>
     </div> 
     <div class="content-page">
-        <div ng-if="amatrix.length <= 0">
-          <span data-ng-bind="i18nLiterals.L20706"></span>
-        </div>
-        <div data-ng-repeat="matrix in statistics" class="clearfix osh-statistics-items">
-          <div  ng-if="::matrix.statistics==1">
-            <header>
-              <img  ng-if="$index== 0" class="flag" ng-src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/flag/{{::matrix.country_code.toLowerCase()}}.png">
-              <h2 class="country ng-binding title-section main-color" ng-if="::matrix.statistics==1 && $index== 0" data-ng-bind="i18nLiterals['L'+matrix.country_name]"></h2>
-            </header>
-            <h3 class="name-statistics" ng-if="$index== 0" data-ng-bind="i18nLiterals.L20614"></h3> 
-            <div class="box-rounded">                         
-              <p class="institution-name" data-ng-bind-html="i18nLiterals['L'+matrix.name_statistics]"></p>
-              <div data-ng-bind-html="i18nLiterals['L'+matrix.link_statistics]"></div>
-              <div class="text" data-ng-bind-html="i18nLiterals['L'+matrix.detail_statistics]"></div>
-            </div>
-          </div>
-          <div class="matrix--content--elements" ng-if="::matrix.statistics!=1">            
-            <h3 class="" ng-if="::matrix.statistics==1" data-ng-bind="i18nLiterals.L20614"></h3>
-            <h3 class="" ng-if="::matrix.compensation==1" data-ng-bind="i18nLiterals.L20611"></h3>
-            <h3 class="" ng-if="::matrix.prevention==1" data-ng-bind="i18nLiterals.L20612"></h3>
-            <h3 class="" ng-if="::matrix.standardisation==1" data-ng-bind="i18nLiterals.L20613"></h3>
-            <div class="box-rounded">
-              <p data-ng-bind-html="i18nLiterals['L'+matrix.name_statistics]" class="institution-name"></p>
-              <div data-ng-bind-html="i18nLiterals['L'+matrix.link_statistics]"></div>
-              <div class="text" data-ng-bind-html="i18nLiterals['L'+matrix.detail_statistics]"></div>
-            </div>     
+      <div ng-if="amatrix.length <= 0">
+        <span data-ng-bind="i18nLiterals.L20706"></span>
+      </div>
+      <div data-ng-repeat="matrix in statistics" class="clearfix osh-statistics-items">
+        <div ng-if="::matrix.osh_statistics==1">
+          <header>
+            <img  ng-if="$index== 0" class="flag" ng-src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/flag/{{::matrix.country_code.toLowerCase()}}.png">
+            <h2 class="country ng-binding title-section main-color" ng-if="::matrix.osh_statistics==1 && $index== 0" data-ng-bind="i18nLiterals['L'+matrix.country_name]"></h2>
+          </header>
+          <h3 class="name-osh_statistics" ng-if="$index== 0" data-ng-bind="i18nLiterals.L20614"></h3> 
+          <div class="box-rounded">                         
+            <p class="institution-name" data-ng-bind-html="i18nLiterals['L'+matrix.name_statistics]"></p>
+            <div data-ng-bind-html="i18nLiterals['L'+matrix.link_statistics]"></div>
+            <div class="text" data-ng-bind-html="i18nLiterals['L'+matrix.detail_statistics]"></div>
           </div>
         </div>
+        <div class="matrix--content--elements" ng-if="::matrix.osh_statistics!=1">
+          <!--<h3 class="" ng-if="::matrix.osh_statistics==1" data-ng-bind="i18nLiterals.L20714"></h3>-->
+          <h3 class="" ng-if="::matrix.surveys==1 && statistics[$index-1].surveys != 1" data-ng-bind="i18nLiterals.L20715"></h3>
+          <h3 class="" ng-if="::matrix.research_institutes==1 && statistics[$index-1].research_institutes!=1" data-ng-bind="i18nLiterals.L20716"></h3>
+          <div class="box-rounded">
+            <p data-ng-bind-html="i18nLiterals['L'+matrix.name_statistics]" class="institution-name"></p>
+            <div ng-if="matrix.link_statistics!=null" data-ng-bind-html="i18nLiterals['L'+matrix.link_statistics]"></div>
+            <div ng-if="matrix.detail_statistics!=null" class="text" data-ng-bind-html="i18nLiterals['L'+matrix.detail_statistics]"></div>
+          </div>     
+        </div>
+      </div>
     </div>  
   </section>
 

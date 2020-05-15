@@ -93,7 +93,8 @@ define(function (require) {
         	figures : CountryReportService.getGPDMainPlots($scope.pCountry),
         	year: CountryReportService.getIncomeMainPlots($scope.pCountry),
         	allCountries : CountryReportService.getChartAllCountriesPlots($scope.pCountry),
-        	healthAtRisk: CountryReportService.getHealthAtRiskPlots($scope.pCountry)
+        	healthAtRisk: CountryReportService.getHealthAtRiskPlots($scope.pCountry),
+        	establishmentsInspected: CountryReportService.getGeneralOSHInfrastructurePlot($scope.pCountry)
         }
 
         $scope.radarChartPromises = {
@@ -111,6 +112,16 @@ define(function (require) {
 				dataService.getCountryRisksInvolvedESENERData($scope.datasetList.ESENER, $scope.pCountry),
 				null,
             	dataService.getEU28RisksInvolvedESENERData($scope.datasetList.ESENER)
+			],
+			workerInvolvementESENER: [
+				dataService.getCountryWorkerInvolvementESENERData($scope.datasetList.ESENER, $scope.pCountry), 
+				null,
+				dataService.getCountryWorkerInvolvementESENERData($scope.datasetList.ESENER, 'EU27_2020')
+			],
+			workerInvolvementEurofound: [
+				dataService.getCountryWorkerInvolvementEurofoundData($scope.datasetList.Eurofound, $scope.pCountry), 
+				null,
+				dataService.getEU28WorkerInvolvementEurofoundData($scope.datasetList.Eurofound)
 			]
         }
 
@@ -300,11 +311,20 @@ define(function (require) {
 	  	});
 
 		// OSH Statistics
-		dataService.getCountryReportMatrixPageData("MATRIX_AUTHORITY", $scope.pCountry).then(function(data)
+		dataService.getCountryReportMatrixPageData("MATRIX_STATISTICS", $scope.pCountry).then(function(data)
 		{
 			data.data.resultset.map(function (elem) {
 		  		$scope.statistics.push({
-			  		id: elem[0],
+		  			id: elem[0],
+			  		country_name: elem[1],
+			  		country_code: elem[2],
+			  		osh_statistics: elem[3],
+			  		surveys: elem[4],
+			  		research_institutes: elem[5],
+			  		name_statistics: elem[7],
+			  		link_statistics: elem[8],
+			  		detail_statistics: elem[9]
+			  		/*id: elem[0],
 			  		country_name: elem[1],
 			  		country_code: elem[2],
 			  		osh_statistics: elem[3],
@@ -313,7 +333,16 @@ define(function (require) {
 			  		standardisation: elem[6],
 			  		name_statistics: elem[7],
 			  		link_statistics: elem[8],
-			  		detail_statistics: elem[9]
+			  		detail_statistics: elem[9]*/
+
+					/*country_id: elem[0],
+					country_name: elem[1],
+					country_code: elem[2],
+					osh_statistics: elem[3],
+					surveys: elem[4],
+					research_institutes: elem[5],
+					name_institution: elem[6],
+					detail_institution: elem[7]*/
 		  		});
 			});
 		}).catch(function (err) {
