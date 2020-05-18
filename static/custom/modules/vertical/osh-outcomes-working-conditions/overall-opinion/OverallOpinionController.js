@@ -123,7 +123,7 @@ define(function (require) {
           },{
             title: "L20672",
             text: "L20578",
-            link: "mental-risk({pIndicator:'fear-of-job-loss', pSplit:'esener'})",
+            link: "mental-risk({pIndicator:'fear-of-job-loss', pDataset:'ewcs'})",
             icon: "mental-risk"
           }],
       "health-at-risk":[{
