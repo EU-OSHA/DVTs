@@ -339,7 +339,8 @@ define(function (require) {
                         {
                             $rootScope.defaultCountry = {
                                 code : $cookies.get("selectedCountry"),
-                                isCookie : true
+                                isCookie : true,
+                                selectedByUser: true
                             }
                         }
                         else
@@ -353,7 +354,8 @@ define(function (require) {
                                         {
                                             $rootScope.defaultCountry = {
                                                 code : coordinates.countryCode,
-                                                isCookie : false
+                                                isCookie : false,
+                                                selectedByUser: true
                                             }
                                             var currentState = $state.current.name;
                                             $state.reload();;
@@ -363,7 +365,8 @@ define(function (require) {
                             }
                             $rootScope.defaultCountry = {
                                 code: "AT",
-                                isCookie: false
+                                isCookie: false,
+                                selectedByUser: false
                             }
                         }                        
                     }

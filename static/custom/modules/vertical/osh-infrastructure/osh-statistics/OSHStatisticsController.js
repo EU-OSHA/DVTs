@@ -24,7 +24,7 @@ define(function (require) {
     $scope.i18nSearch = i18nSearch;
     $scope.i18nSearchPlaceholder = i18nSearch['authorities-search-placeholder'];
 
-    if ($rootScope.defaultCountry.code != undefined)
+    if ($rootScope.defaultCountry.code != undefined && $rootScope.defaultCountry.selectedByUser == true)
     {
       $scope.pCountry = $rootScope.defaultCountry.code;
     }
@@ -54,7 +54,7 @@ define(function (require) {
     $scope.elementsStart=0;
     $scope.elementsEnd=$scope.pageSize;
 
-    var initialFilter = $scope.pCountry != 0 ? [$scope.pCountry] : [];
+    var initialFilter = $scope.pCountry != null ? [$scope.pCountry] : [];
 
     // Pagination Text
     $scope.paginationText = 'Displaying ' + ($scope.elementsStart+1)+'-'+$scope.elementsEnd + ' of ' + $scope.amatrix.length;
@@ -366,8 +366,7 @@ define(function (require) {
             $scope.searchParams.countries.push(elem[1].toString());
           }
         });
-
-        if (countryHasData == false)
+        if (countryHasData == false && $scope.pCountry != null)
         {
           var index = $scope.searchParams.countries.indexOf($scope.pCountry);
           $scope.searchParams.countries.splice(index, 1);

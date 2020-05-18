@@ -50,8 +50,7 @@ define(function (require) {
         url: "/osh-infrastructure/osh-statistics/:pCountry",
         params: {
           pCountry: {
-            value: '0',
-            squash: '0'
+            value: null
           }
         },
         views: {
