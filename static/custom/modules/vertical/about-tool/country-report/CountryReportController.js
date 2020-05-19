@@ -60,23 +60,26 @@ define(function (require) {
 		$scope.incomePerCapita=[];
 		$scope.nonFatalWorkAccidents=[];
 		$scope.estimationNonFatal=[];
-		$scope.healthAndSafety=[];
+		$scope.healthAndSafety={};
 		$scope.actionPlan=[];
 		$scope.procedureAgainstBullying=[];
 		$scope.procedureAgainstThreats=[];
 		$scope.measuresForWorkPressure=[];
-		$scope.useOfEquipment=[];
+		$scope.useOfEquipment={};
 		$scope.riskInformation=[];
+		$scope.jobSatisfaction={};
 		$scope.healthAtRiskSector=[];
 		$scope.healthAtRiskGender=[];
 		$scope.healthAtRiskAge=[];
 		$scope.timePressureESENER=[];
+		$scope.timePressureEWCS={};
 		$scope.poorCommunicationESENER=[];
 		$scope.poorCommunicationEWCS=[];
-		$scope.influence=[];
+		$scope.influence={};
 		$scope.fearJobLossESENER=[];
-		$scope.fearJobLossEWCS=[];
+		$scope.fearJobLossEWCS={};
 		$scope.difficultClientsESENER=[];
+		$scope.difficultClientsEWCS={};
 		$scope.workingHoursESENER=[];
 		$scope.workingHoursEWCS=[];
 		$scope.discrimination=[];
@@ -89,6 +92,8 @@ define(function (require) {
 		$scope.ergonomicRisksEWCS=[];
 		$scope.riskAssesmentSector=[];
 		$scope.riskAssesmentEstablishmentSize=[];
+		$scope.internalExternalRA={};
+		$scope.trainingInOSH={};
 		$scope.employeeParticipationSector=[];
 		$scope.employeeParticipationSize=[];
 		$scope.workerInvolvementESENER=[];
@@ -428,6 +433,8 @@ define(function (require) {
 						});
 					}
 				}
+		  	}).catch(function (err) {
+				throw err;
 		  	});
 
 		  	/* EMPLOYMENT RATE */
@@ -438,6 +445,8 @@ define(function (require) {
 				  		value: elem[1]
 			  		});
 		  		});
+		  	}).catch(function (err) {
+				throw err;
 		  	});
 
 		  	/* GDP PER CAPITA */
@@ -448,6 +457,8 @@ define(function (require) {
 				  		value: elem[1]
 			  		});
 		  		});
+		  	}).catch(function (err) {
+				throw err;
 		  	});
 
 		  	/* INCOME PER CAPITA */
@@ -459,6 +470,8 @@ define(function (require) {
 				  		value: elem[2]
 			  		});
 		  		});
+		  	}).catch(function (err) {
+				throw err;
 		  	});
 
 		  	/* NON FATAL WORK ACCIDENTS */
@@ -485,6 +498,8 @@ define(function (require) {
 						});
 					}
 				}
+		  	}).catch(function (err) {
+				throw err;
 		  	});
 
 		  	/* ESTIMATION OF NON FATAL ACCIDENTS */
@@ -497,19 +512,43 @@ define(function (require) {
 				  		});
 		  			}
 		  		});
+		  	}).catch(function (err) {
+				throw err;
 		  	});
 
 		  	/* HEALTH AND SAFETY DISCUSSED */
 		  	dataService.getCountryReportAllCountriesAnswersData($scope.datasetList.ESENER, 358).then(function(data){
-		  		data.data.resultset.map(function (elem) {
-		  			if(elem[1].match($scope.pCountry) || elem[1] == 'EU27_2020'){
-				  		$scope.healthAndSafety.push({
-				  			answer: elem[0],
-					  		country: elem[1],
-					  		value: Math.round(elem[2]*10)/10
-				  		});
-		  			}
-		  		});
+				$scope.healthAndSafety["EU27_2020"]={country: "EU27_2020", value1: 0, value2: 0, value3: 0};
+				$scope.healthAndSafety[$scope.pCountry]={country: $scope.pCountry, value1: 0, value2: 0, value3: 0};
+				data.data.resultset.map(function (elem) {
+					switch(elem[0])
+					{
+						case 'Practically never':
+							if(elem[1].match($scope.pCountry)){
+								$scope.healthAndSafety[$scope.pCountry].country = elem[1];
+								$scope.healthAndSafety[$scope.pCountry].value1 = Math.round(elem[2]*10)/10;
+							}else if(elem[1] == "EU27_2020"){
+								$scope.healthAndSafety["EU27_2020"].value1 = Math.round(elem[2]*10)/10;
+							}
+						break;
+						case 'Occasionally':
+							if(elem[1].match($scope.pCountry)){
+								$scope.healthAndSafety[$scope.pCountry].value2 = Math.round(elem[2]*10)/10;
+							}else if(elem[1] == "EU27_2020"){
+								$scope.healthAndSafety["EU27_2020"].value2 = Math.round(elem[2]*10)/10;
+							}
+						break;
+						case 'Regularly':
+							if(elem[1].match($scope.pCountry)){
+								$scope.healthAndSafety[$scope.pCountry].value3 = Math.round(elem[2]*10)/10;
+							}else if(elem[1] == "EU27_2020"){
+								$scope.healthAndSafety["EU27_2020"].value3 = Math.round(elem[2]*10)/10;
+							}
+						break;
+					}
+				});
+		  	}).catch(function (err) {
+				throw err;
 		  	});
 
 		  	/* ACTION PLAN TO PREVENT STRESS */
@@ -536,6 +575,8 @@ define(function (require) {
 						});
 					}
 				}
+		  	}).catch(function (err) {
+				throw err;
 		  	});
 
 		  	/* PROCEDURES AGAINST BULLYING */
@@ -561,6 +602,8 @@ define(function (require) {
 						});
 					}
 		  		}
+		  	}).catch(function (err) {
+				throw err;
 		  	});
 
 		  	/* PROCEDURES TO DEAL WITH THREATS */
@@ -587,6 +630,8 @@ define(function (require) {
 						});
 					}
 				}
+		  	}).catch(function (err) {
+				throw err;
 		  	});
 
 		  	/* MEASURES TO REDUCE WORK PRESSURE */
@@ -612,31 +657,47 @@ define(function (require) {
 						});
 					}
 				}
+		  	}).catch(function (err) {
+				throw err;
 		  	});
 
 		  	/* USE OF PERSONAL PROTECTIVE EQUIPMENT */
-		  	dataService.getCountryReportAllCountriesAnswersData($scope.datasetList.ESENER, 63).then(function(data){
-		  		$scope.data = [];
+		  	dataService.getCountryReportAllCountriesAnswersData($scope.datasetList.Eurofound, 63).then(function(data){
+		  		$scope.useOfEquipment["EU28"]={country: "EU28", value1: 0, value2: 0, value3: 0};
+				$scope.useOfEquipment[$scope.pCountry]={country: $scope.pCountry, value1: 0, value2: 0, value3: 0};
 		  		data.data.resultset.map(function (elem) {
-		  			if(elem[1].match($scope.pCountry) || elem[1] == 'EU27_2020'){
-				  		$scope.data.push({
-				  			answer: elem[0],
-					  		country: elem[1],
-					  		value: elem[2]
-				  		});
-		  			}
-		  		});
-
-				var listSize = $scope.data.length;
-				if(listSize%2 == 0){
-					for(var i=0; i<$scope.data.length/2;i++){
-						$scope.useOfEquipment.push({
-							country: $scope.data[i].country,
-					  		no: Math.round($scope.data[i].value*10)/10,
-					  		yes: Math.round($scope.data[listSize/2+i].value*10)/10
-						});
+		  			if(elem[1] == 'EU28' || elem[1].match($scope.pCountry)){
+						switch(elem[0])
+						{
+							case "No, not required":
+								if(elem[1].match($scope.pCountry)){
+									$scope.useOfEquipment[$scope.pCountry].country = elem[1];
+									$scope.useOfEquipment[$scope.pCountry].value1 = Math.round(elem[2]*10)/10;
+								}else if(elem[1] == "EU28"){
+									$scope.useOfEquipment["EU28"].value1 = Math.round(elem[2]*10)/10;
+								}
+							break;
+							case "Yes, but I don't always use it":
+								if(elem[1].match($scope.pCountry)){
+									$scope.useOfEquipment[$scope.pCountry].value2 = Math.round(elem[2]*10)/10;
+								}else if(elem[1] == "EU28"){
+									$scope.useOfEquipment["EU28"].value2 = Math.round(elem[2]*10)/10;
+								}
+							break;
+							case "Yes, and I always use it":
+								if(elem[1].match($scope.pCountry)){
+									$scope.useOfEquipment[$scope.pCountry].value3 = Math.round(elem[2]*10)/10;
+								}else if(elem[1] == "EU28"){
+									$scope.useOfEquipment["EU28"].value3 = Math.round(elem[2]*10)/10;
+								}
+							break;
+						}
 					}
-				}
+				});
+
+		  	}).catch(function (err) {
+		  		$log.error(err);
+				throw err;
 		  	});
 
 		  	/* INFORMATION ABOUT RISKS */
@@ -662,9 +723,54 @@ define(function (require) {
 						});
 					}
 				}
+		  	}).catch(function (err) {
+				throw err;
 		  	});
 
 		  	/* JOB SATISFACTION */
+		  	dataService.getCountryReportAllCountriesAnswersData($scope.datasetList.Eurofound, 65).then(function(data){
+		  		$scope.jobSatisfaction["EU28"]={country: "EU28", value1: 0, value2: 0, value3: 0, value4: 0};
+				$scope.jobSatisfaction[$scope.pCountry]={country: $scope.pCountry, value1: 0, value2: 0, value3: 0, value4: 0};
+		  		data.data.resultset.map(function (elem) {
+		  			if(elem[1] == 'EU28' || elem[1].match($scope.pCountry)){
+						switch(elem[0])
+						{
+							case "Not at all satisfied":
+								if(elem[1].match($scope.pCountry)){
+									$scope.jobSatisfaction[$scope.pCountry].country = elem[1];
+									$scope.jobSatisfaction[$scope.pCountry].value1 = Math.round(elem[2]*10)/10;
+								}else if(elem[1] == "EU28"){
+									$scope.jobSatisfaction["EU28"].value1 = Math.round(elem[2]*10)/10;
+								}
+							break;
+							case "Not very satisfied":
+								if(elem[1].match($scope.pCountry)){
+									$scope.jobSatisfaction[$scope.pCountry].value2 = Math.round(elem[2]*10)/10;
+								}else if(elem[1] == "EU28"){
+									$scope.jobSatisfaction["EU28"].value2 = Math.round(elem[2]*10)/10;
+								}
+							break;
+							case "Satisfied":
+								if(elem[1].match($scope.pCountry)){
+									$scope.jobSatisfaction[$scope.pCountry].value3 = Math.round(elem[2]*10)/10;
+								}else if(elem[1] == "EU28"){
+									$scope.jobSatisfaction["EU28"].value3 = Math.round(elem[2]*10)/10;
+								}
+							break;
+							case "Very satisfied":
+								if(elem[1].match($scope.pCountry)){
+									$scope.jobSatisfaction[$scope.pCountry].value3 = Math.round(elem[2]*10)/10;
+								}else if(elem[1] == "EU28"){
+									$scope.jobSatisfaction["EU28"].value3 = Math.round(elem[2]*10)/10;
+								}
+							break;
+						}
+					}
+				});
+		  	}).catch(function (err) {
+		  		$log.error(err);
+				throw err;
+		  	});
 
 		  	/* HEALTH AT RISK SECTOR */
 		  	dataService.getCountryReportActivitySectorCountryFirstData($scope.datasetList.Eurofound, 66, $scope.pCountry, "EU28").then(function(data)
@@ -782,6 +888,44 @@ define(function (require) {
 				throw err;
 		  	});
 
+			/* TIME PRESSURE EWCS*/
+		  	dataService.getCountryReportAllCountriesAnswersData($scope.datasetList.Eurofound, 83).then(function(data){
+		  		$scope.timePressureEWCS["EU28"]={country: "EU28", value1: 0, value2: 0, value3: 0};
+				$scope.timePressureEWCS[$scope.pCountry]={country: $scope.pCountry, value1: 0, value2: 0, value3: 0};
+		  		data.data.resultset.map(function (elem) {
+		  			if(elem[1] == 'EU28' || elem[1].match($scope.pCountry)){
+						switch(elem[0])
+						{
+							case "(Almost) never":
+								if(elem[1].match($scope.pCountry)){
+									$scope.timePressureEWCS[$scope.pCountry].country = elem[1];
+									$scope.timePressureEWCS[$scope.pCountry].value1 = Math.round(elem[2]*10)/10;
+								}else if(elem[1] == "EU28"){
+									$scope.timePressureEWCS["EU28"].value1 = Math.round(elem[2]*10)/10;
+								}
+							break;
+							case "Between 1/4 and 3/4 of the time":
+								if(elem[1].match($scope.pCountry)){
+									$scope.timePressureEWCS[$scope.pCountry].value2 = Math.round(elem[2]*10)/10;
+								}else if(elem[1] == "EU28"){
+									$scope.timePressureEWCS["EU28"].value2 = Math.round(elem[2]*10)/10;
+								}
+							break;
+							case "(Almost) all of the time":
+								if(elem[1].match($scope.pCountry)){
+									$scope.timePressureEWCS[$scope.pCountry].value3 = Math.round(elem[2]*10)/10;
+								}else if(elem[1] == "EU28"){
+									$scope.timePressureEWCS["EU28"].value3 = Math.round(elem[2]*10)/10;
+								}
+							break;
+						}
+					}
+				});
+		  	}).catch(function (err) {
+		  		$log.error(err);
+				throw err;
+		  	});
+
 		  	/* POOR COMMUNICATION ESENER */
 		  	dataService.getCountryReportAllCountriesAnswersData($scope.datasetList.ESENER, 324).then(function(data)
 			{
@@ -827,6 +971,44 @@ define(function (require) {
 				throw err;
 		  	});
 
+			/* INFLUENCE */
+		  	dataService.getCountryReportAllCountriesAnswersData($scope.datasetList.Eurofound, 85).then(function(data){
+		  		$scope.influence["EU28"]={country: "EU28", value1: 0, value2: 0, value3: 0};
+				$scope.influence[$scope.pCountry]={country: $scope.pCountry, value1: 0, value2: 0, value3: 0};
+		  		data.data.resultset.map(function (elem) {
+		  			if(elem[1] == 'EU28' || elem[1].match($scope.pCountry)){
+						switch(elem[0])
+						{
+							case "Rarely or never":
+								if(elem[1].match($scope.pCountry)){
+									$scope.influence[$scope.pCountry].country = elem[1];
+									$scope.influence[$scope.pCountry].value1 = Math.round(elem[2]*10)/10;
+								}else if(elem[1] == "EU28"){
+									$scope.influence["EU28"].value1 = Math.round(elem[2]*10)/10;
+								}
+							break;
+							case "Sometimes":
+								if(elem[1].match($scope.pCountry)){
+									$scope.influence[$scope.pCountry].value2 = Math.round(elem[2]*10)/10;
+								}else if(elem[1] == "EU28"){
+									$scope.influence["EU28"].value2 = Math.round(elem[2]*10)/10;
+								}
+							break;
+							case "Always or most of the time":
+								if(elem[1].match($scope.pCountry)){
+									$scope.influence[$scope.pCountry].value3 = Math.round(elem[2]*10)/10;
+								}else if(elem[1] == "EU28"){
+									$scope.influence["EU28"].value3 = Math.round(elem[2]*10)/10;
+								}
+							break;
+						}
+					}
+				});
+		  	}).catch(function (err) {
+		  		$log.error(err);
+				throw err;
+		  	});
+
 		  	/* FEAR OF JOB LOSS ESENER */
 		  	dataService.getCountryReportAllCountriesAnswersData($scope.datasetList.ESENER, 325).then(function(data)
 			{
@@ -855,6 +1037,44 @@ define(function (require) {
 				throw err;
 		  	});
 
+			/* FEAR OF JOB LOSS EWCS */
+		  	dataService.getCountryReportAllCountriesAnswersData($scope.datasetList.Eurofound, 86).then(function(data){
+		  		$scope.fearJobLossEWCS["EU28"]={country: "EU28", value1: 0, value2: 0, value3: 0};
+				$scope.fearJobLossEWCS[$scope.pCountry]={country: $scope.pCountry, value1: 0, value2: 0, value3: 0};
+		  		data.data.resultset.map(function (elem) {
+		  			if(elem[1] == 'EU28' || elem[1].match($scope.pCountry)){
+						switch(elem[0])
+						{
+							case "Disagree":
+								if(elem[1].match($scope.pCountry)){
+									$scope.fearJobLossEWCS[$scope.pCountry].country = elem[1];
+									$scope.fearJobLossEWCS[$scope.pCountry].value1 = Math.round(elem[2]*10)/10;
+								}else if(elem[1] == "EU28"){
+									$scope.fearJobLossEWCS["EU28"].value1 = Math.round(elem[2]*10)/10;
+								}
+							break;
+							case "Neither agree nor disagree":
+								if(elem[1].match($scope.pCountry)){
+									$scope.fearJobLossEWCS[$scope.pCountry].value2 = Math.round(elem[2]*10)/10;
+								}else if(elem[1] == "EU28"){
+									$scope.fearJobLossEWCS["EU28"].value2 = Math.round(elem[2]*10)/10;
+								}
+							break;
+							case "Agree":
+								if(elem[1].match($scope.pCountry)){
+									$scope.fearJobLossEWCS[$scope.pCountry].value3 = Math.round(elem[2]*10)/10;
+								}else if(elem[1] == "EU28"){
+									$scope.fearJobLossEWCS["EU28"].value3 = Math.round(elem[2]*10)/10;
+								}
+							break;
+						}
+					}
+				});
+		  	}).catch(function (err) {
+		  		$log.error(err);
+				throw err;
+		  	});
+
 		  	/* DIFFICULT CLIENTS ESENER */
 		  	dataService.getCountryReportAllCountriesAnswersData($scope.datasetList.ESENER, 326).then(function(data)
 			{
@@ -880,6 +1100,44 @@ define(function (require) {
 					}
 				}
 			}).catch(function (err) {
+				throw err;
+		  	});
+
+		  	/* DIFFICULT CLIENTS EWCS */
+		  	dataService.getCountryReportAllCountriesAnswersData($scope.datasetList.Eurofound, 87).then(function(data){
+		  		$scope.difficultClientsEWCS["EU28"]={country: "EU28", value1: 0, value2: 0, value3: 0};
+				$scope.difficultClientsEWCS[$scope.pCountry]={country: $scope.pCountry, value1: 0, value2: 0, value3: 0};
+		  		data.data.resultset.map(function (elem) {
+		  			if(elem[1] == 'EU28' || elem[1].match($scope.pCountry)){
+						switch(elem[0])
+						{
+							case "(Almost) never":
+								if(elem[1].match($scope.pCountry)){
+									$scope.difficultClientsEWCS[$scope.pCountry].country = elem[1];
+									$scope.difficultClientsEWCS[$scope.pCountry].value1 = Math.round(elem[2]*10)/10;
+								}else if(elem[1] == "EU28"){
+									$scope.difficultClientsEWCS["EU28"].value1 = Math.round(elem[2]*10)/10;
+								}
+							break;
+							case "Between 1/4 and 3/4 of the time":
+								if(elem[1].match($scope.pCountry)){
+									$scope.difficultClientsEWCS[$scope.pCountry].value2 = Math.round(elem[2]*10)/10;
+								}else if(elem[1] == "EU28"){
+									$scope.difficultClientsEWCS["EU28"].value2 = Math.round(elem[2]*10)/10;
+								}
+							break;
+							case "(Almost) all of the time":
+								if(elem[1].match($scope.pCountry)){
+									$scope.difficultClientsEWCS[$scope.pCountry].value3 = Math.round(elem[2]*10)/10;
+								}else if(elem[1] == "EU28"){
+									$scope.difficultClientsEWCS["EU28"].value3 = Math.round(elem[2]*10)/10;
+								}
+							break;
+						}
+					}
+				});
+		  	}).catch(function (err) {
+		  		$log.error(err);
 				throw err;
 		  	});
 
@@ -1220,6 +1478,82 @@ define(function (require) {
 				}
 
 			}).catch(function (err) {
+				throw err;
+		  	});
+
+		  	/* INTERNAL OR EXTERNAL RA */
+		  	dataService.getCountryReportAllCountriesAnswersData($scope.datasetList.ESENER, 305).then(function(data){
+		  		$scope.internalExternalRA["EU27_2020"]={country: "EU27_2020", value1: 0, value2: 0, value3: 0};
+				$scope.internalExternalRA[$scope.pCountry]={country: $scope.pCountry, value1: 0, value2: 0, value3: 0};
+		  		data.data.resultset.map(function (elem) {
+		  			if(elem[1] == 'EU27_2020' || elem[1].match($scope.pCountry)){
+						switch(elem[0])
+						{
+							case "Both about equally":
+								if(elem[1].match($scope.pCountry)){
+									$scope.internalExternalRA[$scope.pCountry].country = elem[1];
+									$scope.internalExternalRA[$scope.pCountry].value1 = Math.round(elem[2]*10)/10;
+								}else if(elem[1] == "EU27_2020"){
+									$scope.internalExternalRA["EU27_2020"].value1 = Math.round(elem[2]*10)/10;
+								}
+							break;
+							case "Contracted mainly to external providers":
+								if(elem[1].match($scope.pCountry)){
+									$scope.internalExternalRA[$scope.pCountry].value2 = Math.round(elem[2]*10)/10;
+								}else if(elem[1] == "EU27_2020"){
+									$scope.internalExternalRA["EU27_2020"].value2 = Math.round(elem[2]*10)/10;
+								}
+							break;
+							case "Conducted mainly by internal staff":
+								if(elem[1].match($scope.pCountry)){
+									$scope.internalExternalRA[$scope.pCountry].value3 = Math.round(elem[2]*10)/10;
+								}else if(elem[1] == "EU27_2020"){
+									$scope.internalExternalRA["EU27_2020"].value3 = Math.round(elem[2]*10)/10;
+								}
+							break;
+						}
+					}
+				});
+		  	}).catch(function (err) {
+		  		$log.error(err);
+				throw err;
+		  	});
+
+		  	/* TRAINING IN OSH */
+		  	dataService.getCountryReportAllCountriesAnswersData($scope.datasetList.ESENER, 360).then(function(data){
+		  		$scope.trainingInOSH["EU27_2020"]={country: "EU27_2020", value1: 0, value2: 0, value3: 0};
+				$scope.trainingInOSH[$scope.pCountry]={country: $scope.pCountry, value1: 0, value2: 0, value3: 0};
+		  		data.data.resultset.map(function (elem) {
+		  			if(elem[1] == 'EU27_2020' || elem[1].match($scope.pCountry)){
+						switch(elem[0])
+						{
+							case "No":
+								if(elem[1].match($scope.pCountry)){
+									$scope.trainingInOSH[$scope.pCountry].country = elem[1];
+									$scope.trainingInOSH[$scope.pCountry].value1 = Math.round(elem[2]*10)/10;
+								}else if(elem[1] == "EU27_2020"){
+									$scope.trainingInOSH["EU27_2020"].value1 = Math.round(elem[2]*10)/10;
+								}
+							break;
+							case "Yes, but only some of them":
+								if(elem[1].match($scope.pCountry)){
+									$scope.trainingInOSH[$scope.pCountry].value2 = Math.round(elem[2]*10)/10;
+								}else if(elem[1] == "EU27_2020"){
+									$scope.trainingInOSH["EU27_2020"].value2 = Math.round(elem[2]*10)/10;
+								}
+							break;
+							case "Yes":
+								if(elem[1].match($scope.pCountry)){
+									$scope.trainingInOSH[$scope.pCountry].value3 = Math.round(elem[2]*10)/10;
+								}else if(elem[1] == "EU27_2020"){
+									$scope.trainingInOSH["EU27_2020"].value3 = Math.round(elem[2]*10)/10;
+								}
+							break;
+						}
+					}
+				});
+		  	}).catch(function (err) {
+		  		$log.error(err);
 				throw err;
 		  	});
 
