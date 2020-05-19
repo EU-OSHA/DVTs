@@ -1394,75 +1394,6 @@
     <div class="box-rounded overall">
       <dvt-bar-chart
         data-ng-cloak
-        query="getCountryReportAgeGroupCountryFirstData" cda="{{::cda }}"
-        width="330" height="250" axis-percent="1"
-        orientation="vertical" axis-fixed-min="0"
-        axis-fixed-max="40" step="20"
-        params="[['pDataset', datasetList.Eurofound], ['pIndicator', 66], ['pCountry1', pCountry], ['pCountry2', 'EU28']]"
-        color-role="series" colors="[color1, colorEU]"
-        chart-title="{{i18nLiterals.L323}} - {{i18nLiterals.L20650}}" id="2"
-        axis-label-font="10px 'OpenSans-bold'"
-        plots="plots.healthAtRisk"
-        values-visible="true"
-        label-text-align="center"
-        values-overflow="show"
-        values-mask="{value}"
-        dataset="Eurofound" custom-tooltip="1"
-        values-font="10px 'OpenSans-bold'"
-        multiple-label-colors="false"
-        leaf-content-overflow='visible'
-        dimensions="dimensionsNoDecimal"
-        base-axis-label-text-baseline="top"
-        legend="true" axis-label-word-break="1"
-        legend-align="center" base-axis-size="50"
-        datasource-and-dates="[datasetList.Eurofound,66]"
-      ></dvt-bar-chart>      
-      <table class="w85 chart-data">
-        <thead>
-          <tr>
-            <th>Age</th>
-            <th>Country</th>
-            <th>Value (%)</th>
-            <th>Country</th>
-            <th>Value (%)</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr data-ng-repeat="row in healthAtRiskAge">
-            <th data-ng-bind="row.age"></th>
-            <td data-ng-bind="row.country"></td>
-            <td data-ng-bind="row.value"></td>
-            <td data-ng-bind="row.country2"></td>
-            <td data-ng-bind="row.value2"></td>
-          </tr>
-          <!--<tr>
-            <th>Female</th>
-            <td>(AT) Austria</td>
-            <td></td>
-            <td>EU28</td>
-            <td></td>
-          </tr>
-          <tr>
-            <th>Male</th>
-            <td>(AT) Austria</td>
-            <td></td>
-            <td>EU28</td>
-            <td></td>
-          </tr>
-          <tr>
-            <th>Total</th>
-            <td>(AT) Austria</td>
-            <td></td>
-            <td>EU28</td>
-            <td></td>
-          </tr>-->
-         </tbody>
-      </table> 
-    </div>
-    <!-- Age -->
-    <div class="box-rounded overall">
-      <dvt-bar-chart
-        data-ng-cloak
         query="getCountryReportGenderCountryFirstData" cda="{{::cda }}"
         width="330" height="250" axis-percent="1"
         orientation="vertical" axis-fixed-min="0"
@@ -1535,6 +1466,75 @@
          </tbody>
       </table>
     </div>    
+    <!-- Age -->
+    <div class="box-rounded overall">
+      <dvt-bar-chart
+        data-ng-cloak
+        query="getCountryReportAgeGroupCountryFirstData" cda="{{::cda }}"
+        width="330" height="250" axis-percent="1"
+        orientation="vertical" axis-fixed-min="0"
+        axis-fixed-max="40" step="20"
+        params="[['pDataset', datasetList.Eurofound], ['pIndicator', 66], ['pCountry1', pCountry], ['pCountry2', 'EU28']]"
+        color-role="series" colors="[color1, colorEU]"
+        chart-title="{{i18nLiterals.L323}} - {{i18nLiterals.L20650}}" id="2"
+        axis-label-font="10px 'OpenSans-bold'"
+        plots="plots.healthAtRisk"
+        values-visible="true"
+        label-text-align="center"
+        values-overflow="show"
+        values-mask="{value}"
+        dataset="Eurofound" custom-tooltip="1"
+        values-font="10px 'OpenSans-bold'"
+        multiple-label-colors="false"
+        leaf-content-overflow='visible'
+        dimensions="dimensionsNoDecimal"
+        base-axis-label-text-baseline="top"
+        legend="true" axis-label-word-break="1"
+        legend-align="center" base-axis-size="50"
+        datasource-and-dates="[datasetList.Eurofound,66]"
+      ></dvt-bar-chart>      
+      <table class="w85 chart-data">
+        <thead>
+          <tr>
+            <th>Age</th>
+            <th>Country</th>
+            <th>Value (%)</th>
+            <th>Country</th>
+            <th>Value (%)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr data-ng-repeat="row in healthAtRiskAge">
+            <th data-ng-bind="row.age"></th>
+            <td data-ng-bind="row.country"></td>
+            <td data-ng-bind="row.value"></td>
+            <td data-ng-bind="row.country2"></td>
+            <td data-ng-bind="row.value2"></td>
+          </tr>
+          <!--<tr>
+            <th>Female</th>
+            <td>(AT) Austria</td>
+            <td></td>
+            <td>EU28</td>
+            <td></td>
+          </tr>
+          <tr>
+            <th>Male</th>
+            <td>(AT) Austria</td>
+            <td></td>
+            <td>EU28</td>
+            <td></td>
+          </tr>
+          <tr>
+            <th>Total</th>
+            <td>(AT) Austria</td>
+            <td></td>
+            <td>EU28</td>
+            <td></td>
+          </tr>-->
+         </tbody>
+      </table> 
+    </div>
   </section>
 
   <section class="working-conditions mental-risk">
