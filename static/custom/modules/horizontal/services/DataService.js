@@ -1248,6 +1248,192 @@ define(function () {
                     $log.debug('getCountryReportHealthPerceptionData url:' + url);
                     return promise(url);
                 },
+
+                /**
+                 * @ngdoc method
+                 * @name dvt.configModule.DataService#getCountryReportCompanySizeData
+                 * @methodOf dvt.configModule.DataService
+                 * @description
+                 * Get data for Company size on the full country report
+                 */
+                getCountryReportCompanySizeData: function(pDataset, pIndicator, pCountry1, pCountry2){
+                    var url = configService.getCountryReportDataPath() + "&dataAccessId=getCountryReportCompanySizeData" + 
+                    "&parampDataset=" + pDataset + "&parampIndicator=" +pIndicator + "&parampCountry1=" + pCountry1 + "&parampCountry2=" + pCountry2;
+                    $log.debug('getCountryReportCompanySizeData url:' + url);
+                    return promise(url)
+                },
+
+                /**
+                 * @ngdoc method
+                 * @name dvt.configModule.DataService#getCountryReportActivitySectorData
+                 * @methodOf dvt.configModule.DataService
+                 * @description
+                 * Get data for Company size on the full country report
+                 */
+                getCountryReportActivitySectorData: function(pDataset, pIndicator, pCountry1, pCountry2){
+                    var url = configService.getCountryReportDataPath() + "&dataAccessId=getCountryReportActivitySectorData" + 
+                    "&parampDataset=" + pDataset + "&parampIndicator=" +pIndicator + "&parampCountry1=" + pCountry1 + "&parampCountry2=" + pCountry2;
+                    $log.debug('getCountryReportActivitySectorData url:' + url);
+                    return promise(url)
+                },
+
+                /**
+                 * @ngdoc method
+                 * @name dvt.configModule.DataService#getCountryReportData
+                 * @methodOf dvt.configModule.DataService
+                 * @description
+                 * Get data for Employment rate on the full country report
+                 */
+                getCountryReportData: function(pDataset, pIndicator, pCountry1, pCountry2){
+                    var url = configService.getCountryReportDataPath() + "&dataAccessId=getCountryReportData" + 
+                    "&parampDataset=" + pDataset + "&parampIndicator=" +pIndicator + "&parampCountry1=" + pCountry1 + "&parampCountry2=" + pCountry2;
+                    $log.debug('getCountryReportData url:' + url);
+                    return promise(url)
+                },
+
+
+                /**
+                 * @ngdoc method
+                 * @name dvt.configModule.DataService#getCountryReportDataAsc
+                 * @methodOf dvt.configModule.DataService
+                 * @description
+                 * Get data for GPD per capita on the full country report
+                 */
+                getCountryReportDataAsc: function(pDataset, pIndicator, pCountry1, pCountry2){
+                    var url = configService.getCountryReportDataPath() + "&dataAccessId=getCountryReportDataAsc" + 
+                    "&parampDataset=" + pDataset + "&parampIndicator=" +pIndicator + "&parampCountry1=" + pCountry1 + "&parampCountry2=" + pCountry2;
+                    $log.debug('getCountryReportDataAsc url:' + url);
+                    return promise(url)
+                },
+
+                /**
+                 * @ngdoc method
+                 * @name dvt.configModule.DataService#getCountryReportYearData
+                 * @methodOf dvt.configModule.DataService
+                 * @description
+                 * Get data for Income per capita and work accidents on the full country report
+                 */
+                getCountryReportYearData: function(pDataset, pIndicator, pCountry1, pCountry2, pPercent){
+                    var url = configService.getCountryReportDataPath() + "&dataAccessId=getCountryReportYearData" + 
+                    "&parampDataset=" + pDataset + "&parampIndicator=" +pIndicator + "&parampCountry1=" + pCountry1 + "&parampCountry2=" + pCountry2
+                    + "&parampPercent=" + pPercent;
+                    $log.debug('getCountryReportYearData url:' + url);
+                    return promise(url)
+                },
+
+                /**
+                 * @ngdoc method
+                 * @name dvt.configModule.DataService#getCountryReportAllCountriesOrderValueData
+                 * @methodOf dvt.configModule.DataService
+                 * @description
+                 * Get data for estimation of non fatal accidents on the full country report
+                 */
+                getCountryReportAllCountriesOrderValueData: function(pDataset, pIndicator){
+                    var url = configService.getCountryReportDataPath() + "&dataAccessId=getCountryReportAllCountriesOrderValueData" + 
+                    "&parampDataset=" + pDataset + "&parampIndicator=" +pIndicator;
+                    $log.debug('getCountryReportAllCountriesOrderValueData url:' + url);
+                    return promise(url)
+                },
+
+                /**
+                 * @ngdoc method
+                 * @name dvt.configModule.DataService#getCountryReportAllCountriesAnswersData
+                 * @methodOf dvt.configModule.DataService
+                 * @description
+                 * Get data for Health and safety discussed on the full country report
+                 */
+                getCountryReportAllCountriesAnswersData: function(pDataset, pIndicator){
+                    var url = configService.getCountryReportDataPath() + "&dataAccessId=getCountryReportAllCountriesAnswersData" + 
+                    "&parampDataset=" + pDataset + "&parampIndicator=" +pIndicator;
+                    $log.debug('getCountryReportAllCountriesAnswersData url:' + url);
+                    return promise(url)
+                },
+
+                /**
+                 * @ngdoc method
+                 * @name dvt.configModule.DataService#getCountryReportActivitySectorCountryFirstData
+                 * @methodOf dvt.configModule.DataService
+                 * @description
+                 * Get data for Health at risk by sector on the full country report
+                 */
+                getCountryReportActivitySectorCountryFirstData: function(pDataset, pIndicator, pCountry1, pCountry2){
+                    var url = configService.getCountryReportDataPath() + "&dataAccessId=getCountryReportActivitySectorCountryFirstData" + 
+                    "&parampDataset=" + pDataset + "&parampIndicator=" + pIndicator + "&parampCountry1=" + pCountry1 + "&parampCountry2=" + pCountry2;
+                    $log.debug('getCountryReportActivitySectorCountryFirstData url:' + url);
+                    return promise(url)
+                },
+
+                /**
+                 * @ngdoc method
+                 * @name dvt.configModule.DataService#getCountryReportAgeGroupCountryFirstData
+                 * @methodOf dvt.configModule.DataService
+                 * @description
+                 * Get data for Health at risk by age on the full country report
+                 */
+                getCountryReportAgeGroupCountryFirstData: function(pDataset, pIndicator, pCountry1, pCountry2){
+                    var url = configService.getCountryReportDataPath() + "&dataAccessId=getCountryReportAgeGroupCountryFirstData" + 
+                    "&parampDataset=" + pDataset + "&parampIndicator=" + pIndicator + "&parampCountry1=" + pCountry1 + "&parampCountry2=" + pCountry2;
+                    $log.debug('getCountryReportAgeGroupCountryFirstData url:' + url);
+                    return promise(url)
+                },
+
+                /**
+                 * @ngdoc method
+                 * @name dvt.configModule.DataService#getCountryReportGenderCountryFirstData
+                 * @methodOf dvt.configModule.DataService
+                 * @description
+                 * Get data for Health at risk by gender on the full country report
+                 */
+                getCountryReportGenderCountryFirstData: function(pDataset, pIndicator, pCountry1, pCountry2){
+                    var url = configService.getCountryReportDataPath() + "&dataAccessId=getCountryReportGenderCountryFirstData" + 
+                    "&parampDataset=" + pDataset + "&parampIndicator=" + pIndicator + "&parampCountry1=" + pCountry1 + "&parampCountry2=" + pCountry2;
+                    $log.debug('getCountryReportGenderCountryFirstData url:' + url);
+                    return promise(url)
+                },
+
+                /**
+                 * @ngdoc method
+                 * @name dvt.configModule.DataService#getCountryReportAllCountriesOrderCountryData
+                 * @methodOf dvt.configModule.DataService
+                 * @description
+                 * Get data for Health at risk by gender on the full country report
+                 */
+                getCountryReportAllCountriesOrderCountryData: function(pDataset, pIndicator){
+                    var url = configService.getCountryReportDataPath() + "&dataAccessId=getCountryReportAllCountriesOrderCountryData" + 
+                    "&parampDataset=" + pDataset + "&parampIndicator=" + pIndicator;
+                    $log.debug('getCountryReportAllCountriesOrderCountryData url:' + url);
+                    return promise(url)
+                },
+
+                /**
+                 * @ngdoc method
+                 * @name dvt.configModule.DataService#getCountryReportCompanySizeCountryFirstData
+                 * @methodOf dvt.configModule.DataService
+                 * @description
+                 * Get data for Health at risk by sector on the full country report
+                 */
+                getCountryReportCompanySizeCountryFirstData: function(pDataset, pIndicator, pCountry1, pCountry2){
+                    var url = configService.getCountryReportDataPath() + "&dataAccessId=getCountryReportCompanySizeCountryFirstData" + 
+                    "&parampDataset=" + pDataset + "&parampIndicator=" + pIndicator + "&parampCountry1=" + pCountry1 + "&parampCountry2=" + pCountry2;
+                    $log.debug('getCountryReportCompanySizeCountryFirstData url:' + url);
+                    return promise(url)
+                },
+
+
+                /**
+                 * @ngdoc method
+                 * @name dvt.configModule.DataService#getEstablishmentsInspectedData
+                 * @methodOf dvt.configModule.DataService
+                 * @description
+                 * Get data for Health at risk by sector on the full country report
+                 */
+                getEstablishmentsInspectedData: function(pIndicator, pCountry1, pCountry2, pDataset, pAnswer){
+                    var url = configService.getCountryReportDataPath() + "&dataAccessId=getEstablishmentsInspectedData" + 
+                    "&parampIndicator=" + pIndicator + "&parampCountry1=" + pCountry1 + "&parampCountry2=" + pCountry2 +
+                    "&parampDataset=" + pDataset + "&parampAnswer=" + pAnswer;
+                    $log.debug('getEstablishmentsInspectedData url:' + url);
+                    return promise(url)
+                },
             /*************************************** END FULL COUNTRY REPORT *****************************************/
 
             /**

@@ -101,15 +101,15 @@
             </div>
           </div>
           <div class="matrix--content--elements" ng-if="::matrix.osh_authority!=1">            
-            <h3 class="" ng-if="::matrix.osh_authority==1" data-ng-bind="i18nLiterals.L20614"></h3>
-            <h3 class="" ng-if="::matrix.compensation==1" data-ng-bind="i18nLiterals.L20611"></h3>
-            <h3 class="" ng-if="::matrix.prevention==1" data-ng-bind="i18nLiterals.L20612"></h3>
-            <h3 class="" ng-if="::matrix.standardisation==1" data-ng-bind="i18nLiterals.L20613"></h3>
+            <h3 class="" ng-if="::matrix.osh_authority==1 && authorities[$index-1].osh_authority != 1" data-ng-bind="i18nLiterals.L20614"></h3>
+            <h3 class="" ng-if="::matrix.compensation==1 && authorities[$index-1].compensation != 1" data-ng-bind="i18nLiterals.L20611"></h3>
+            <h3 class="" ng-if="::matrix.prevention==1 && authorities[$index-1].prevention != 1" data-ng-bind="i18nLiterals.L20612"></h3>
+            <h3 class="" ng-if="::matrix.standardisation==1 && authorities[$index-1].standardisation != 1" data-ng-bind="i18nLiterals.L20613"></h3>
             <div class="box-rounded">
               <p data-ng-bind-html="i18nLiterals['L'+matrix.name_authority]" class="institution-name"></p>
               <div data-ng-bind-html="i18nLiterals['L'+matrix.link_authority]"></div>
               <div class="text" data-ng-bind-html="i18nLiterals['L'+matrix.detail_authority]"></div>
-            </div>     
+            </div>
           </div>
         </div>
     </div>    
@@ -165,7 +165,14 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
+            <tr data-ng-repeat="row in companySize">
+              <th data-ng-bind="row.size"></th>
+              <td data-ng-bind="row.country2"></td>
+              <td data-ng-bind="row.value2"></td>
+              <td data-ng-bind="row.country"></td>
+              <td data-ng-bind="row.value"></td>
+            </tr>
+            <!--<tr>
               <th>From 0 to 9 persons employed</th>
               <td></td>
               <td></td>
@@ -199,7 +206,7 @@
               <td></td>
               <td></td>
               <td></td>
-            </tr>
+            </tr>-->
           </tbody>
         </table>
       </div>
@@ -237,7 +244,14 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
+            <tr data-ng-repeat="row in employmentPerSector">
+              <th data-ng-bind="row.size"></th>
+              <td data-ng-bind="row.country2"></td>
+              <td data-ng-bind="row.value2"></td>
+              <td data-ng-bind="row.country"></td>
+              <td data-ng-bind="row.value"></td>
+            </tr>
+            <!--<tr>
               <th>Agriculture, forestry and fishing</th>
               <td></td>
               <td></td>
@@ -304,7 +318,7 @@
               <td></td>
               <td></td>
             </tr>
-            </tr>
+            </tr>-->
           </tbody>
         </table>
       </div>
@@ -324,7 +338,7 @@
           width="208" height="208" axis-percent="1"
           orientation="horizontal" axis-fixed-min="50"
           axis-fixed-max="100" step="10" 
-          params="[['pIndicator','33'],['pCountry1', pCountry1],['pCountry2', 'EU28'],['pDataset', datasetList.EUROSTAT2018]]"
+          params="[['pIndicator','33'],['pCountry1', pCountry],['pCountry2', 'EU28'],['pDataset', datasetList.EUROSTAT2018]]"
           color-role="category" colors="[colorEU, color1]"
           chart-title="{{i18nLiterals.L290}}" id="3"
           base-axis-label-visible="true"
@@ -349,14 +363,18 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
+            <tr data-ng-repeat="row in employmentRate">
+              <th data-ng-bind="row.country"></th>
+              <td data-ng-bind="row.value"></td>
+            </tr>
+            <!--<tr>
               <th>(AT) Austria</th>
               <td></td>
             </tr>
             <tr>
               <th>EU27</th>
               <td></td>
-            </tr>
+            </tr>-->
            </tbody>
         </table>
       </div>
@@ -369,7 +387,7 @@
           with="208"
           orientation="vertical"
           axis-fixed-max="260" step="{{step.chart5}}"
-          params="[['pIndicator',35],['pCountry1', pCountry1],['pCountry2', 'EU28'],['pDataset', datasetList.EUROSTAT2018]]"
+          params="[['pIndicator',35],['pCountry1', pCountry],['pCountry2', 'EU28'],['pDataset', datasetList.EUROSTAT2018]]"
           color-role="category" colors="[color1, colorEU]"
           chart-title="{{i18nLiterals.L292}}" id="5"
           plots="plots.figures"
@@ -398,14 +416,18 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
+            <tr data-ng-repeat="row in gdpPerCapita">
+              <th data-ng-bind="row.country"></th>
+              <td data-ng-bind="row.value"></td>
+            </tr>
+            <!--<tr>
               <th>(AT) Austria</th>
               <td></td>
             </tr>
             <tr>
               <th>EU27</th>
               <td></td>
-            </tr>
+            </tr>-->
            </tbody>
         </table>
       </div>
@@ -417,15 +439,16 @@
           width="208" height="208" type="lines" listen-to="['pSplit', 'pDataset']"
           orientation="vertical" axis-fixed-min="10000"
           axis-fixed-max="25000" step="5000"
-          params="[['pIndicator',279],['pCountry1', pCountry1],['pCountry2', 'EU28'],['pDataset', datasetList.EUROSTAT2018BetweenDates]]"
+          params="[['pIndicator',279],['pCountry1', pCountry],['pCountry2', 'EU28'],['pDataset', datasetList.EUROSTAT2018BetweenDates], 
+          ['pPercent', 0]]"
           color-role="series" colors="[color1, colorEU]"
           chart-title="{{i18nLiterals.L293}}" id="6"
           axis-label-font="10px 'Arial'"
           plots="plots.year"
-          dimensions="stories[5].dimensions"
+          dimensions="dimensionsNoDecimal"
           values-visible="true"
           values-font="12px 'Arial'"
-          values-mask="{value}"
+          values-mask="{value} €"
           show-euro-mask="true"
           multiple-label-colors="false"
           base-axis-label-text-baseline="top"
@@ -443,7 +466,12 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
+            <tr data-ng-repeat="row in incomePerCapita">
+              <th data-ng-bind="row.country"></th>
+              <td data-ng-bind="row.year"></td>
+              <td data-ng-bind="row.value"></td>
+            </tr>
+            <!--<tr>
               <th>(AT) Austria</th>
               <td>2010</td>
               <td></td>
@@ -462,7 +490,7 @@
               <th>EU28</th>
               <td>2017</td>
               <td></td>
-            </tr>
+            </tr>-->
           </tbody>
         </table>
       </div>      
@@ -628,7 +656,7 @@
         multiple-label-colors="false"
         dimensions="dimensionsOneDecimal"
         legend="true"
-        datasource-and-dates="[datasetEurostatBetweenDates,53]"
+        datasource-and-dates="[datasetList.EUROSTAT2017BetweenDates,53]"
       ></dvt-bar-chart>
       <p data-ng-bind="i18nLiterals.L20565"></p>
       <table class="w75 chart-data">
@@ -643,7 +671,15 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
+          <tr data-ng-repeat="row in nonFatalWorkAccidents">
+            <th data-ng-bind="row.country"></th>
+            <td data-ng-bind="row.year"></td>
+            <td data-ng-bind="row.value"></td>
+            <td data-ng-bind="row.country2"></td>
+            <td data-ng-bind="row.year2"></td>
+            <td data-ng-bind="row.value2"></td>
+          </tr>
+          <!--<tr>
             <th>(AT) Austria</th>
             <td>2010</td>
             <td></td>
@@ -698,7 +734,7 @@
             <td>EU28</td>
             <td>2016</td>
             <td></td>
-          </tr>
+          </tr>-->
          </tbody>
       </table>
     </div>
@@ -724,7 +760,7 @@
         legend="true"
         angle="1"
         base-axis-size="95"
-        datasource-and-dates="[datasetEurostat2016,54]"
+        datasource-and-dates="[datasetList.EUROSTAT2017BetweenDates,54]"
       ></dvt-bar-chart>
       <p data-ng-bind-html="i18nLiterals.L20566"></p>
       <table class="w50 chart-data">
@@ -735,14 +771,18 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
+          <tr data-ng-repeat="row in estimationNonFatal">
+            <th data-ng-bind="row.country"></th>
+            <td data-ng-bind="row.value"></td>
+          </tr> 
+          <!--<tr>
             <th>(AT) Austria</th>
             <td>3.6</td>
           </tr>
           <tr>
             <th>EU28</th>
             <td>1.9</td>
-          </tr>
+          </tr>-->
          </tbody>
       </table>
     </div>
@@ -809,6 +849,7 @@
       <span data-ng-bind="i18nLiterals.L20700"></span> 
       <span data-ng-bind="i18nLiterals.L20704"></span> <span><a data-ng-bind="i18nLiterals.L20705" ui-sref="about-tool-detail-page({pSection: 'osh-outcomes-working-conditions', pSubsection: 'osh_culture_health_awareness', pIndicator: 63})"></a></span>
     </div>
+    <!-- Health and safety discussed -->
     <div class="box-rounded">
       <dvt-bar-chart
         data-ng-cloak
@@ -831,20 +872,27 @@
         legend="true" stacked="1"
         angle="1"
         base-axis-size="100"
-        datasource-and-dates="[datasetEurostat2016,358]"
+        datasource-and-dates="[datasetList.ESENER,358]"
       ></dvt-bar-chart>
       <p data-ng-bind="i18nLiterals.L20570"></p>
+      <!-- TODO -->
       <table class="w75 chart-data">
         <thead>
           <tr>
             <th>Country</th>
-            <th>Not at all (%)</th>
-            <th>Particular issues (%)</th>
+            <th>Practically never (%)</th>
+            <th>Occasionally (%)</th>
             <th>Regularly (%)</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
+          <tr data-ng-repeat="row in healthAndSafety">
+            <th data-ng-bind=""></th>
+            <td data-ng-bind=""></td>
+            <td data-ng-bind=""></td>
+            <td data-ng-bind=""></td>
+          </tr>
+          <!--<tr>
             <th>(AT) Austria</th>
             <td>4.5</td>
             <td>49.6</td>
@@ -855,12 +903,14 @@
             <td>3.8</td>
             <td>36.8</td>
             <td>59.3</td>
-          </tr>
+          </tr>-->
          </tbody>
       </table>
     </div>
     
     <div class="break-after"></div>
+
+    <!-- Action plan to prevent stress -->
     <div class="box-rounded">      
       <dvt-bar-chart
         data-ng-cloak
@@ -893,7 +943,12 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
+          <tr data-ng-repeat="row in actionPlan">
+            <th data-ng-bind="row.country"></th>
+            <td data-ng-bind="row.yes"></td>
+            <td data-ng-bind="row.no"></td>
+          </tr>
+          <!--<tr>
             <th>(AT) Austria</th>
             <td>35.5</td>
             <td>64.7</td>
@@ -902,11 +957,12 @@
             <th>EU28</th>
             <td>51.4</td>
             <td>48.6</td>
-          </tr>
+          </tr>-->
          </tbody>
       </table> 
     </div>
 
+    <!-- Procedure against bullying -->
     <div class="box-rounded">
       <dvt-bar-chart
         data-ng-cloak
@@ -939,7 +995,12 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
+          <tr data-ng-repeat="row in procedureAgainstBullying">
+            <th data-ng-bind="row.country"></th>
+            <td data-ng-bind="row.yes"></td>
+            <td data-ng-bind="row.no"></td>
+          </tr>
+          <!--<tr>
             <th>(AT) Austria</th>
             <td>35.5</td>
             <td>64.7</td>
@@ -948,11 +1009,12 @@
             <th>EU28</th>
             <td>51.4</td>
             <td>48.6</td>
-          </tr>
+          </tr>-->
          </tbody>
       </table>     
     </div>
 
+    <!-- Procedure to deal with threats -->
     <div class="box-rounded">
       <dvt-bar-chart
         data-ng-cloak
@@ -985,7 +1047,12 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
+          <tr data-ng-repeat="row in procedureAgainstThreats">
+            <th data-ng-bind="row.country"></th>
+            <td data-ng-bind="row.yes"></td>
+            <td data-ng-bind="row.no"></td>
+          </tr>
+          <!--<tr>
             <th>(AT) Austria</th>
             <td>32.4</td>
             <td>67.6</td>
@@ -994,11 +1061,12 @@
             <th>EU28</th>
             <td>47.44</td>
             <td>52.6</td>
-          </tr>
+          </tr>-->
          </tbody>
       </table>      
     </div>
 
+    <!-- Measures to reduce work pressure -->
     <div class="box-rounded">
       <dvt-bar-chart
         data-ng-cloak
@@ -1030,7 +1098,12 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
+          <tr data-ng-repeat="row in measuresForWorkPressure">
+            <th data-ng-bind="row.country"></th>
+            <td data-ng-bind="row.yes"></td>
+            <td data-ng-bind="row.no"></td>
+          </tr>
+          <!--<tr>
             <th>(AT) Austria</th>
             <td>32.4</td>
             <td>67.6</td>
@@ -1039,12 +1112,14 @@
             <th>EU28</th>
             <td>47.44</td>
             <td>52.6</td>
-          </tr>
+          </tr>-->
          </tbody>
       </table>      
     </div>
 
+    <!-- Use of personal protective equipment -->
     <div class="box-rounded">
+      <!-- TODO -->
       <dvt-bar-chart
         data-ng-cloak
         query="getCountryReportAllCountriesAnswersData" cda="{{::cda }}"
@@ -1072,11 +1147,17 @@
             <th>Country</th>
             <th>No, not required (%)</th>
             <th>Yes, but not required (%)</th>
-            <th>es and always (%)</th>
+            <th>Yes and always (%)</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
+          <tr data-ng-repeat="row in useOfEquipment">
+            <th data-ng-bind="row.country"></th>
+            <td data-ng-bind="row.no"></td>
+            <td data-ng-bind="row.optional"></td>
+            <td data-ng-bind="row.yes"></td>
+          </tr>
+          <!--<tr>
             <th>(AT) Austria</th>
             <td></td>
             <td></td>
@@ -1087,11 +1168,12 @@
             <td></td>
             <td></td>
             <td></td>
-          </tr>
+          </tr>-->
          </tbody>
       </table>      
     </div>
 
+    <!-- Information about risks -->
     <div class="box-rounded">
       <dvt-bar-chart
         data-ng-cloak
@@ -1125,7 +1207,12 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
+          <tr data-ng-repeat="row in riskInformation">
+            <th data-ng-bind="row.country"></th>
+            <td data-ng-bind="row.yes"></td>
+            <td data-ng-bind="row.no"></td>
+          </tr>
+          <!--<tr>
             <th>(AT) Austria</th>
             <td></td>
             <td></td>
@@ -1134,7 +1221,7 @@
             <th>EU28</th>
             <td></td>
             <td></td>
-          </tr>
+          </tr>-->
          </tbody>
       </table>  
     </div>
@@ -1159,6 +1246,7 @@
     <span><a data-ng-bind="i18nLiterals.L20705" ui-sref="about-tool-detail-page({pSection: 'osh-outcomes-working-conditions', pSubsection: 'overall_opinion', pIndicator: 65})"></a></span>
     <!-- Job satisfaction -->
     <div class="box-rounded overall">
+      <!-- TODO -->
       <dvt-bar-chart
         data-ng-cloak
         query="getCountryReportAllCountriesAnswersData" cda="{{::cda }}"
@@ -1190,7 +1278,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
+          <!--<tr>
             <th>(AT) Austria</th>
             <td></td>
             <td></td>
@@ -1201,7 +1289,7 @@
             <td></td>
             <td></td>
             <td></td>
-          </tr>
+          </tr>-->
          </tbody>
       </table>  
     </div>
@@ -1245,7 +1333,14 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
+          <tr data-ng-repeat="row in healthAtRiskSector">
+            <th data-ng-bind="i18nLiterals['L'+row.sector]"></th>
+            <td data-ng-bind="row.country"></td>
+            <td data-ng-bind="row.value"></td>
+            <td data-ng-bind="row.country2"></td>
+            <td data-ng-bind="row.value2"></td>
+          </tr>
+          <!--<tr>
             <th>Agriculture and industry</th>
             <td>(AT) Austria</td>
             <td></td>
@@ -1286,7 +1381,7 @@
             <td></td>
             <td>EU28</td>
             <td></td>
-          </tr>
+          </tr>-->
          </tbody>
       </table> 
     </div>    
@@ -1295,68 +1390,6 @@
       <dvt-bar-chart
         data-ng-cloak
         query="getCountryReportAgeGroupCountryFirstData" cda="{{::cda }}"
-        width="330" height="250" axis-percent="1"
-        orientation="vertical" axis-fixed-min="0"
-        axis-fixed-max="40" step="20"
-        params="[['pDataset', datasetList.Eurofound], ['pIndicator', 66], ['pCountry1', pCountry], ['pCountry2', 'EU28']]"
-        color-role="series" colors="[color1, colorEU]"
-        chart-title="{{i18nLiterals.L323}} - {{i18nLiterals.L20649}}" id="2"
-        axis-label-font="10px 'OpenSans-bold'"
-        plots="plots.healthAtRisk"
-        values-visible="true"
-        label-text-align="center"
-        values-overflow="show"
-        values-mask="{value}"
-        dataset="Eurofound" custom-tooltip="1"
-        values-font="10px 'OpenSans-bold'"
-        multiple-label-colors="false"
-        leaf-content-overflow='visible'
-        dimensions="dimensionsNoDecimal"
-        base-axis-label-text-baseline="top"
-        legend="true" axis-label-word-break="1"
-        legend-align="center" base-axis-size="50"
-        datasource-and-dates="[datasetList.Eurofound,66]"
-      ></dvt-bar-chart>      
-      <table class="w85 chart-data">
-        <thead>
-          <tr>
-            <th>Gender</th>
-            <th>Country</th>
-            <th>Value (%)</th>
-            <th>Country</th>
-            <th>Value (%)</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th>Female</th>
-            <td>(AT) Austria</td>
-            <td></td>
-            <td>EU28</td>
-            <td></td>
-          </tr>
-          <tr>
-            <th>Male</th>
-            <td>(AT) Austria</td>
-            <td></td>
-            <td>EU28</td>
-            <td></td>
-          </tr>
-          <tr>
-            <th>Total</th>
-            <td>(AT) Austria</td>
-            <td></td>
-            <td>EU28</td>
-            <td></td>
-          </tr>
-         </tbody>
-      </table> 
-    </div>
-    <!-- Age -->
-    <div class="box-rounded overall">
-      <dvt-bar-chart
-        data-ng-cloak
-        query="getCountryReportGenderCountryFirstData" cda="{{::cda }}"
         width="330" height="250" axis-percent="1"
         orientation="vertical" axis-fixed-min="0"
         axis-fixed-max="40" step="20"
@@ -1378,7 +1411,7 @@
         legend="true" axis-label-word-break="1"
         legend-align="center" base-axis-size="50"
         datasource-and-dates="[datasetList.Eurofound,66]"
-      ></dvt-bar-chart>
+      ></dvt-bar-chart>      
       <table class="w85 chart-data">
         <thead>
           <tr>
@@ -1390,7 +1423,83 @@
           </tr>
         </thead>
         <tbody>
+          <tr data-ng-repeat="row in healthAtRiskAge">
+            <th data-ng-bind="row.age"></th>
+            <td data-ng-bind="row.country"></td>
+            <td data-ng-bind="row.value"></td>
+            <td data-ng-bind="row.country2"></td>
+            <td data-ng-bind="row.value2"></td>
+          </tr>
+          <!--<tr>
+            <th>Female</th>
+            <td>(AT) Austria</td>
+            <td></td>
+            <td>EU28</td>
+            <td></td>
+          </tr>
           <tr>
+            <th>Male</th>
+            <td>(AT) Austria</td>
+            <td></td>
+            <td>EU28</td>
+            <td></td>
+          </tr>
+          <tr>
+            <th>Total</th>
+            <td>(AT) Austria</td>
+            <td></td>
+            <td>EU28</td>
+            <td></td>
+          </tr>-->
+         </tbody>
+      </table> 
+    </div>
+    <!-- Age -->
+    <div class="box-rounded overall">
+      <dvt-bar-chart
+        data-ng-cloak
+        query="getCountryReportGenderCountryFirstData" cda="{{::cda }}"
+        width="330" height="250" axis-percent="1"
+        orientation="vertical" axis-fixed-min="0"
+        axis-fixed-max="40" step="20"
+        params="[['pDataset', datasetList.Eurofound], ['pIndicator', 66], ['pCountry1', pCountry], ['pCountry2', 'EU28']]"
+        color-role="series" colors="[color1, colorEU]"
+        chart-title="{{i18nLiterals.L323}} - {{i18nLiterals.L20649}}" id="2"
+        axis-label-font="10px 'OpenSans-bold'"
+        plots="plots.healthAtRisk"
+        values-visible="true"
+        label-text-align="center"
+        values-overflow="show"
+        values-mask="{value}"
+        dataset="Eurofound" custom-tooltip="1"
+        values-font="10px 'OpenSans-bold'"
+        multiple-label-colors="false"
+        leaf-content-overflow='visible'
+        dimensions="dimensionsNoDecimal"
+        base-axis-label-text-baseline="top"
+        legend="true" axis-label-word-break="1"
+        legend-align="center" base-axis-size="50"
+        datasource-and-dates="[datasetList.Eurofound,66]"
+      ></dvt-bar-chart>
+      <table class="w85 chart-data">
+        <thead>
+          <tr>
+            <th>Gender</th>
+            <th>Country</th>
+            <th>Value (%)</th>
+            <th>Country</th>
+            <th>Value (%)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr data-ng-repeat="row in healthAtRiskGender">
+            <th data-ng-bind="row.gender"></th>
+            <td data-ng-bind="row.country"></td>
+            <td data-ng-bind="row.value"></td>
+            <td data-ng-bind="row.country2"></td>
+            <td data-ng-bind="row.value2"></td>
+          </tr>
+          <!--<tr>
             <th>Under 35</th>
             <td>(AT) Austria</td>
             <td></td>
@@ -1417,7 +1526,7 @@
             <td></td>
             <td>EU28</td>
             <td></td>
-          </tr>
+          </tr>-->
          </tbody>
       </table>
     </div>    
@@ -1463,7 +1572,12 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
+          <tr data-ng-repeat="row in timePressureESENER">
+            <th data-ng-bind="row.country"></th>
+            <td data-ng-bind="row.yes"></td>
+            <td data-ng-bind="row.no"></td>
+          </tr>
+          <!--<tr>
             <th>(AT) Austria</th>
             <td></td>
             <td></td>
@@ -1472,11 +1586,12 @@
             <th>EU28</th>
             <td></td>
             <td></td>
-          </tr>
+          </tr>-->
          </tbody>
       </table> 
     </div>
     <div class="box-rounded mental">
+      <!-- TODO -->
       <dvt-bar-chart
         data-ng-cloak
         query="getCountryReportAllCountriesAnswersData" cda="{{::cda }}"
@@ -1558,7 +1673,12 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
+          <tr data-ng-repeat="row in poorCommunicationESENER">
+            <th data-ng-bind="row.country"></th>
+            <td data-ng-bind="row.yes"></td>
+            <td data-ng-bind="row.no"></td>
+          </tr>
+          <!--<tr>
             <th>(AT) Austria</th>
             <td></td>
             <td></td>
@@ -1567,7 +1687,7 @@
             <th>EU28</th>
             <td></td>
             <td></td>
-          </tr>
+          </tr>-->
          </tbody>
       </table> 
     </div>  
@@ -1602,20 +1722,25 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
+          <tr data-ng-repeat="row in poorCommunicationEWCS">
+            <th data-ng-bind="row.country"></th>
+            <td data-ng-bind="row.value"></td>
+          </tr>
+          <!--<tr>
             <th>(AT) Austria</th>
             <td></td>
           </tr>
           <tr>
             <th>EU28</th>
             <td></td>
-          </tr>
+          </tr>-->
          </tbody>
       </table> 
     </div>
 
     <!-- Influence -->
     <div class="box-rounded mental">
+      <!-- TODO -->
       <dvt-bar-chart
         data-ng-cloak
         query="getCountryReportAllCountriesAnswersData" cda="{{::cda }}"
@@ -1642,12 +1767,19 @@
         <thead>
           <tr>
             <th>Country</th>
-            <th>Yes (%)</th>
-            <th>No (%)</th>
+            <th>Rarely or never (%)</th>
+            <th>Sometimes (%)</th>
+            <th>Always or most of the time (%)</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
+          <tr data-ng-repeat="row in influence">
+            <th data-ng-bind=""></th>
+            <td data-ng-bind=""></td>
+            <td data-ng-bind=""></td>
+            <td data-ng-bind=""></td>
+          </tr>
+          <!--<tr>
             <th>(AT) Austria</th>
             <td></td>
             <td></td>
@@ -1656,7 +1788,7 @@
             <th>EU28</th>
             <td></td>
             <td></td>
-          </tr>
+          </tr>-->
          </tbody>
       </table> 
     </div>
@@ -1695,7 +1827,12 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
+          <tr data-ng-repeat="row in fearJobLossESENER">
+            <th data-ng-bind="row.country"></th>
+            <td data-ng-bind="row.yes"></td>
+            <td data-ng-bind="row.no"></td>
+          </tr>
+          <!--<tr>
             <th>(AT) Austria</th>
             <td></td>
             <td></td>
@@ -1704,11 +1841,12 @@
             <th>EU28</th>
             <td></td>
             <td></td>
-          </tr>
+          </tr>-->
          </tbody>
       </table> 
     </div>     
     <div class="box-rounded mental">
+      <!-- TODO -->
       <dvt-bar-chart
         data-ng-cloak
         query="getCountryReportAllCountriesAnswersData" cda="{{::cda }}"
@@ -1790,7 +1928,12 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
+          <tr data-ng-repeat="row in difficultClientsESENER">
+            <th data-ng-bind="row.country"></th>
+            <td data-ng-bind="row.yes"></td>
+            <td data-ng-bind="row.no"></td>
+          </tr>
+          <!--<tr>
             <th>(AT) Austria</th>
             <td></td>
             <td></td>
@@ -1799,11 +1942,12 @@
             <th>EU28</th>
             <td></td>
             <td></td>
-          </tr>
+          </tr>-->
          </tbody>
       </table>     
     </div>     
     <div class="box-rounded mental">
+      <!-- TODO -->
       <dvt-bar-chart
         data-ng-cloak
         query="getCountryReportAllCountriesAnswersData" cda="{{::cda }}"
@@ -1885,7 +2029,12 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
+          <tr data-ng-repeat="row in workingHoursESENER">
+            <th data-ng-bind="row.country"></th>
+            <td data-ng-bind="row.yes"></td>
+            <td data-ng-bind="row.no"></td>
+          </tr>
+          <!--<tr>
             <th>(AT) Austria</th>
             <td></td>
             <td></td>
@@ -1894,7 +2043,7 @@
             <th>EU28</th>
             <td></td>
             <td></td>
-          </tr>
+          </tr>-->
          </tbody>
       </table>  
     </div>     
@@ -1930,7 +2079,12 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
+          <tr data-ng-repeat="row in workingHoursEWCS">
+            <th data-ng-bind="row.country"></th>
+            <td data-ng-bind="row.yes"></td>
+            <td data-ng-bind="row.no"></td>
+          </tr>
+          <!--<tr>
             <th>(AT) Austria</th>
             <td></td>
             <td></td>
@@ -1939,7 +2093,7 @@
             <th>EU28</th>
             <td></td>
             <td></td>
-          </tr>
+          </tr>-->
          </tbody>
       </table> 
     </div>
@@ -1977,7 +2131,12 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
+          <tr data-ng-repeat="row in discrimination">
+            <th data-ng-bind="row.country"></th>
+            <td data-ng-bind="row.yes"></td>
+            <td data-ng-bind="row.no"></td>
+          </tr>
+          <!--<tr>
             <th>(AT) Austria</th>
             <td></td>
             <td></td>
@@ -1986,7 +2145,7 @@
             <th>EU28</th>
             <td></td>
             <td></td>
-          </tr>
+          </tr>-->
          </tbody>
       </table> 
     </div>    
@@ -2018,12 +2177,17 @@
         <thead>
           <tr>
             <th>Indicator</th>
-            <th>Country (%)</th>
+            <th>Country</th>
             <th>Value (%)</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
+          <tr data-ng-repeat="row in vibrations">
+            <th data-ng-bind="row.indicator"></th>
+            <td data-ng-bind="row.country"></td>
+            <td data-ng-bind="row.value"></td>
+          </tr>
+          <!--<tr>
             <th>Are you exposed to vibrations from tools or machinery?</th>
             <td>(AT) Austria</td>
             <td></td>
@@ -2062,7 +2226,7 @@
             <th>Are you exposed to low temperatures?</th>
             <td>EU28</td>
             <td></td>
-          </tr>
+          </tr>-->
          </tbody>
       </table> 
     </div>
@@ -2100,11 +2264,16 @@
           <tr>
             <th>Country</th>
             <th>Lees than ¼ of the time (%)</th>
-            <th>At leas ¼ of the time (%)</th>
+            <th>At least ¼ of the time (%)</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
+          <tr data-ng-repeat="row in smokePowderDust">
+            <th data-ng-bind="row.country"></th>
+            <td data-ng-bind="row.lessthan"></td>
+            <td data-ng-bind="row.atleast"></td>
+          </tr>
+          <!--<tr>
             <th>(AT) Austria</th>
             <td></td>
             <td></td>
@@ -2113,7 +2282,7 @@
             <th>EU28</th>
             <td></td>
             <td></td>
-          </tr>
+          </tr>-->
          </tbody>
       </table> 
     </div>
@@ -2147,11 +2316,16 @@
           <tr>
             <th>Country</th>
             <th>Lees than ¼ of the time (%)</th>
-            <th>At leas ¼ of the time (%)</th>
+            <th>At least ¼ of the time (%)</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
+          <tr data-ng-repeat="row in vapours">
+            <th data-ng-bind="row.country"></th>
+            <td data-ng-bind="row.lessthan"></td>
+            <td data-ng-bind="row.atleast"></td>
+          </tr>
+          <!--<tr>
             <th>(AT) Austria</th>
             <td></td>
             <td></td>
@@ -2160,7 +2334,7 @@
             <th>EU28</th>
             <td></td>
             <td></td>
-          </tr>
+          </tr>-->
          </tbody>
       </table> 
     </div>
@@ -2198,7 +2372,12 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
+          <tr data-ng-repeat="row in chemicalProducts">
+            <th data-ng-bind="row.country"></th>
+            <td data-ng-bind="row.lessthan"></td>
+            <td data-ng-bind="row.atleast"></td>
+          </tr>
+          <!--<tr>
             <th>(AT) Austria</th>
             <td></td>
             <td></td>
@@ -2207,7 +2386,7 @@
             <th>EU28</th>
             <td></td>
             <td></td>
-          </tr>
+          </tr>-->
          </tbody>
       </table> 
     </div>
@@ -2245,7 +2424,12 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
+          <tr data-ng-repeat="row in infectiousMaterials">
+            <th data-ng-bind="row.country"></th>
+            <td data-ng-bind="row.lessthan"></td>
+            <td data-ng-bind="row.atleast"></td>
+          </tr>
+          <!--<tr>
             <th>(AT) Austria</th>
             <td></td>
             <td></td>
@@ -2254,7 +2438,7 @@
             <th>EU28</th>
             <td></td>
             <td></td>
-          </tr>
+          </tr>-->
          </tbody>
       </table> 
     </div>
@@ -2279,12 +2463,17 @@
             <th>Indicator</th>
             <th>Country</th>
             <th>Value (%)</th>
-            <th>Country</th>
-            <th>Value (%)</th>
+            <!--<th>Country</th>
+            <th>Value (%)</th>-->
           </tr>
         </thead>
         <tbody>
-          <tr>
+          <tr data-ng-repeat="row in ergonomicRisksESENER">
+            <th data-ng-bind="row.indicator"></th>
+            <td data-ng-bind="row.country"></td>
+            <td data-ng-bind="row.value"></td>
+          </tr>
+          <!--<tr>
             <th>Tiring or painful positions, including sitting for long periods</th>
             <td>(AT) Austria</td>
             <td></td>
@@ -2304,7 +2493,7 @@
             <td></td>
             <td>EU28</td>
             <td></td>
-          </tr>
+          </tr>-->
          </tbody>
       </table>
     </div>
@@ -2328,12 +2517,17 @@
             <th>Indicator</th>
             <th>Country</th>
             <th>Value (%)</th>
-            <th>Country</th>
-            <th>Value (%)</th>
+            <!--<th>Country</th>
+            <th>Value (%)</th>-->
           </tr>
         </thead>
         <tbody>
-          <tr>
+          <tr data-ng-repeat="row in ergonomicRisksEWCS">
+            <th data-ng-bind="row.indicator"></th>
+            <td data-ng-bind="row.country"></td>
+            <td data-ng-bind="row.value"></td>
+          </tr>
+          <!--<tr>
             <th>Does your work involve tiring or painful positions?</th>
             <td>(AT) Austria</td>
             <td></td>
@@ -2367,7 +2561,7 @@
             <td></td>
             <td>EU28</td>
             <td></td>
-          </tr>
+          </tr>-->
          </tbody>
       </table>
     </div>
@@ -2427,7 +2621,14 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
+          <tr data-ng-repeat="row in riskAssesmentSector">
+            <th data-ng-bind="row.indicator"></th>
+            <td data-ng-bind="row.country"></td>
+            <td data-ng-bind="row.value"></td>
+            <td data-ng-bind="row.country2"></td>
+            <td data-ng-bind="row.value2"></td>
+          </tr>
+          <!--<tr>
             <th>Manufacturing</th>
             <td>(AT) Austria</td>
             <td></td>
@@ -2468,7 +2669,7 @@
             <td></td>
             <td>EU28</td>
             <td></td>
-          </tr>
+          </tr>-->
          </tbody>
       </table>
     </div>    
@@ -2513,7 +2714,14 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
+          <tr data-ng-repeat="row in riskAssesmentEstablishmentSize">
+            <th data-ng-bind="row.indicator"></th>
+            <td data-ng-bind="row.country"></td>
+            <td data-ng-bind="row.value"></td>
+            <td data-ng-bind="row.country2"></td>
+            <td data-ng-bind="row.value2"></td>
+          </tr>
+          <!--<tr>
             <th>5 to 9 employees</th>
             <td>(AT) Austria</td>
             <td></td>
@@ -2540,13 +2748,14 @@
             <td></td>
             <td>EU28</td>
             <td></td>
-          </tr>
+          </tr>-->
          </tbody>
       </table>
     </div>
 
     <!-- Internal or external RA -->
     <div class="box-rounded">
+      <!-- TODO -->
       <dvt-bar-chart
         data-ng-cloak
         query="getCountryReportAllCountriesAnswersData" cda="{{::cda }}"
@@ -2606,6 +2815,7 @@
 
     <!-- Training in OSH -->
     <div class="box-rounded">
+      <!-- TODO -->
       <dvt-bar-chart
         data-ng-cloak
         query="getCountryReportAllCountriesAnswersData" cda="{{::cda }}"
@@ -2696,7 +2906,14 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
+          <tr data-ng-repeat="row in employeeParticipationSector">
+            <th data-ng-bind="i18nLiterals['L'+row.indicator]"></th>
+            <td data-ng-bind="row.country"></td>
+            <td data-ng-bind="row.value"></td>
+            <td data-ng-bind="row.country2"></td>
+            <td data-ng-bind="row.value2"></td>
+          </tr>
+          <!--<tr>
             <th>Manufacturing</th>
             <td>(AT) Austria</td>
             <td></td>
@@ -2737,7 +2954,7 @@
             <td></td>
             <td>EU28</td>
             <td></td>
-          </tr>
+          </tr>-->
          </tbody>
       </table>
     </div>    
@@ -2781,7 +2998,14 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
+          <tr data-ng-repeat="row in employeeParticipationSize">
+            <th data-ng-bind="row.indicator"></th>
+            <td data-ng-bind="row.country"></td>
+            <td data-ng-bind="row.value"></td>
+            <td data-ng-bind="row.country2"></td>
+            <td data-ng-bind="row.value2"></td>
+          </tr>
+          <!--<tr>
             <th>5 to 9 employees</th>
             <td>(AT) Austria</td>
             <td></td>
@@ -2808,7 +3032,7 @@
             <td></td>
             <td>EU28</td>
             <td></td>
-          </tr>
+          </tr>-->
          </tbody>
       </table>
     </div>
@@ -2851,13 +3075,18 @@
             <th>Sector</th>
             <th>Country</th>
             <th>Value (%)</th>
-            <th>Country</th>
-            <th>Value (%)</th>
+            <!--<th>Country</th>
+            <th>Value (%)</th>-->
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th>Did the employees have a role in the design and set-up of the measures to address psychosocial risks?</th>
+          <tr data-ng-repeat="row in workerInvolvementESENER">
+            <th data-ng-bind="row.indicator"></th>
+            <td data-ng-bind="row.country"></td>
+            <td data-ng-bind="row.value"></td>
+          </tr>
+          <!--<tr>
+            <th>Did the employees have a role in thedesign and set- up of the measures to address psychosocial risks?</th>
             <td>(AT) Austria</td>
             <td></td>
             <td>EU28</td>
@@ -2878,19 +3107,12 @@
             <td></td>
           </tr>
           <tr>
-            <th>Are health and safety issues regularly discussed in staff or team meetings? (Yes and in some departments)</th>
+            <th>How often controversies related to health and safety arise?(Sum of often and sometimes)</th>
             <td>(AT) Austria</td>
             <td></td>
             <td>EU28</td>
             <td></td>
-          </tr>
-          <tr>
-            <th>How often controversies related to health and safety arise? (Sum of often and sometimes)</th>
-            <td>(AT) Austria</td>
-            <td></td>
-            <td>EU28</td>
-            <td></td>
-          </tr>
+          </tr>-->
          </tbody>
       </table>
     </div> 
@@ -2917,12 +3139,17 @@
             <th>Sector</th>
             <th>Country</th>
             <th>Value (%)</th>
-            <th>Country</th>
-            <th>Value (%)</th>
+            <!--<th>Country</th>
+            <th>Value (%)</th>-->
           </tr>
         </thead>
         <tbody>
-          <tr>
+          <tr data-ng-repeat="row in workerInvolvementEWCS">
+            <th data-ng-bind="row.indicator"></th>
+            <td data-ng-bind="row.country"></td>
+            <td data-ng-bind="row.value"></td>
+          </tr>
+          <!--<tr>
             <th>Does your organisation have a regular meeting in which employees can express their views about what is happening in the organization?</th>
             <td>(AT) Austria</td>
             <td></td>
@@ -2942,7 +3169,7 @@
             <td></td>
             <td>EU28</td>
             <td></td>
-          </tr>
+          </tr>-->
          </tbody>
       </table>
     </div> 
@@ -2998,7 +3225,12 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
+          <tr data-ng-repeat="row in establishmentsInspected">
+            <th data-ng-bind="row.country"></th>
+            <td data-ng-bind="row.yes"></td>
+            <td data-ng-bind="row.no"></td>
+          </tr>
+          <!--<tr>
             <th>(AT) Austria</th>
             <td></td>
             <td></td>
@@ -3007,7 +3239,7 @@
             <th>EU28</th>
             <td></td>
             <td></td>
-          </tr>
+          </tr>-->
          </tbody>
       </table>
     </div>
