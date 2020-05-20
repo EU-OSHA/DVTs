@@ -30,7 +30,7 @@ define(function (require) {
 		$scope.datasetList = configService.getDatasets();
 
 		// Country parameters
-		if ($rootScope.defaultCountry.code != undefined)
+		/*if ($rootScope.defaultCountry.code != undefined)
 		{
 			$scope.pCountry = $rootScope.defaultCountry.code;
 			$scope.country_name = "";
@@ -39,7 +39,24 @@ define(function (require) {
 		{
 			$scope.pCountry = "AT";
 			$scope.country_name = "Austria";
-		}
+		}*/
+
+		// Country parameters
+	    if ($stateParams.pCountry != null)
+	    {
+	      $scope.pCountry = $stateParams.pCountry;
+	      $scope.country_name = "";
+	    }
+	    else if ($rootScope.defaultCountry.code != undefined)
+	    {
+	      $scope.pCountry = $rootScope.defaultCountry.code;
+	      $scope.country_name = "";
+	    }
+	    else
+	    {
+	      $scope.pCountry = "AT";
+	      $scope.country_name = "Austria";
+	    }
 
 		$scope.dashboard = {
 			parameters: {
@@ -216,6 +233,10 @@ define(function (require) {
 				{
 					$rootScope.defaultCountry.code = $scope.pCountry;
 				}
+
+				$state.transitionTo($state.current.name, {
+					pCountry:$scope.pCountry
+		      	}, {reload: true});
 			}
 		};
 
@@ -241,8 +262,6 @@ define(function (require) {
 			  		detail_authority: elem[9]
 		  		});
 			});
-
-			$log.warn($scope.authorities);
 
 			if($scope.authorities.length > 0){
 				$scope.country_name = $scope.authorities[0].country_name;
