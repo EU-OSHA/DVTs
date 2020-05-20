@@ -1434,6 +1434,33 @@ define(function () {
                     $log.debug('getEstablishmentsInspectedData url:' + url);
                     return promise(url)
                 },
+
+                /**
+                 * @ngdoc method
+                 * @name dvt.configModule.DataService#getCountryReportCountries
+                 * @methodOf dvt.configModule.DataService
+                 * @description
+                 * Get countries for the Country Report Home Page
+                 */
+                getCountryReportHomeCountries: function(){
+                    var url = configService.getCountryReportDataPath() + "&dataAccessId=getCountryReportHomeCountries";
+                    $log.debug('getEstablishmentsInspectedData url:' + url);
+                    return promise(url)
+                },
+
+                /**
+                 * @ngdoc method
+                 * @name dvt.configModule.DataService#getCountryReportCountries
+                 * @methodOf dvt.configModule.DataService
+                 * @description
+                 * Get countries for the Country Report Home Page
+                 */
+                getCountryReportHomeCountriesFilter: function(pCountries){
+                    var block1 = pCountries.length <= 0 ? ".*" : "^"+pCountries.join("|^");
+                    var url = configService.getCountryReportDataPath() + "&dataAccessId=getCountryReportHomeCountriesFilter" + "&paramcountries="+block1;
+                    $log.debug('getEstablishmentsInspectedData url:' + url);
+                    return promise(url)
+                },
             /*************************************** END FULL COUNTRY REPORT *****************************************/
 
             /**

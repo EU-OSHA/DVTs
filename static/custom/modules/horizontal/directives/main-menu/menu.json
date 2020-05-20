@@ -210,9 +210,9 @@
                 "accesskey":"21"
             },
             {
-                "id":"full-country-report",
-                "name":"L22121",
-                "sref":"full-country-report",
+                "id":"country-report",
+                "name":"L22189",
+                "sref":"country-report",
                 "tabindex":"19",
                 "accesskey":"21"
             }

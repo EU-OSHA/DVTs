@@ -25,6 +25,46 @@
 	    </Query>
 	</DataAccess>
 
+	<!-- Countries for the select -->
+	<DataAccess access="public" connection="dvt_conn" id="getCountryReportHomeCountries" type="sql">
+	    <Cache duration="3600" enabled="true" />
+	    <Columns />
+	    <Parameters>
+	    </Parameters>
+	    <Query>
+	      SELECT DISTINCT n.literal_id AS country, n.country_code AS country_code
+	      FROM nuts n
+	      INNER JOIN profile p ON n.id = p.nuts_id
+	      INNER JOIN value v ON v.profile_id = p.id
+	      INNER JOIN translation t ON n.literal_id=t.literal_id
+	      WHERE v.indicator_id IN (31, 36, 37, 38, 39, 40)
+	      AND n.country_code NOT IN ('EU28')
+	      AND t.language="EN"
+	      ORDER BY country_code ASC;
+	    </Query>
+	</DataAccess>
+
+	<!-- Countries for the select filtered -->
+	<DataAccess access="public" connection="dvt_conn" id="getCountryReportHomeCountriesFilter" type="sql">
+		<Cache duration="3600" enabled="true" />
+		<Columns />
+		<Parameters>
+			<Parameter default=".*" name="countries" type="String"/>
+		</Parameters>
+		<Query>
+			SELECT DISTINCT n.literal_id AS country, n.country_code AS country_code
+	      	FROM nuts n
+	      	INNER JOIN profile p ON n.id = p.nuts_id
+	      	INNER JOIN value v ON v.profile_id = p.id
+	      	INNER JOIN translation t ON n.literal_id=t.literal_id
+	      	WHERE v.indicator_id IN (31, 36, 37, 38, 39, 40)
+	      	AND n.country_code NOT IN ('EU28')
+	      	AND t.language="EN"
+			AND n.name REGEXP ${countries}
+			ORDER BY country ASC
+		</Query>
+	</DataAccess>
+
 	<!-- Load data for Matrix Page -->
 	<DataAccess access="public" connection="dvt_conn" id="getCountryReportMatrixPageData" type="sql">
 	    <Cache duration="3600" enabled="true" />
