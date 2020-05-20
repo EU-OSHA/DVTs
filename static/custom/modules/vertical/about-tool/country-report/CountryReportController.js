@@ -33,10 +33,12 @@ define(function (require) {
 		if ($rootScope.defaultCountry.code != undefined)
 		{
 			$scope.pCountry = $rootScope.defaultCountry.code;
+			$scope.country_name = "";
 		}
 		else
 		{
 			$scope.pCountry = "AT";
+			$scope.country_name = "Austria";
 		}
 
 		$scope.dashboard = {
@@ -239,6 +241,13 @@ define(function (require) {
 			  		detail_authority: elem[9]
 		  		});
 			});
+
+			$log.warn($scope.authorities);
+
+			if($scope.authorities.length > 0){
+				$scope.country_name = $scope.authorities[0].country_name;
+			}
+			
 		}).catch(function (err) {
 			throw err;
 	  	});

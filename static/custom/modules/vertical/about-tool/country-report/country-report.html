@@ -3,8 +3,8 @@
   <section class="cover-page">    
     <div class="content-cover">
       <div class="icon-full-report"><img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/full-report-icon.png"></div>
-      <h1> OSH BAROMETER</h1>
-      <h2>AUSTRIA</h2>
+      <h1 data-ng-bind="i18nLiterals.L22020"> OSH BAROMETER</h1>
+      <h2 data-ng-bind="i18nLiterals['L'+country_name]"></h2>
         <!-- FILTERS -->
         <form class="">
           <label for="report-country">Select one country</label>
@@ -19,42 +19,42 @@
   <div class="break-after"></div>
 
   <section class="index-page">
-    <h1>Austria Country Report Index</h1>
-    <p>This document contains the OSH Barometer Country Report Summary of Austria.</p>
+    <h1><span data-ng-bind="i18nLiterals['L'+country_name]"></span> Country Report Index</h1>
+    <p>This document contains the OSH Barometer Country Report Summary of <span data-ng-bind="i18nLiterals['L'+country_name]"></span></p>
     <div class="index">
       <ul class="index-list">
-        <li class="main-item"><span>Introduction</span>
+        <li class="main-item"><span data-ng-bind="i18nLiterals.L20719">Introduction</span>
             <ul>
-              <li>Generic information</li>
+              <li data-ng-bind="i18nLiterals.L22120">General information</li>
             </ul>
         </li>
-        <li class="main-item"><span>General information</span>
+        <li class="main-item"><span data-ng-bind="i18nLiterals.L22001">Generic information</span>
             <ul>
-              <li>OSH Authorities</li>
-              <li>Economic and sector profile</li>
-              <li>Workforce profile</li>
+              <li data-ng-bind="i18nLiterals.L22002">OSH Authorities</li>
+              <li data-ng-bind="i18nLiterals.L22003">Economic and sector profile</li>
+              <li data-ng-bind="i18nLiterals.L22004">Workforce profile</li>
             </ul>
         </li>
-        <li class="main-item"><span>Steering of OSH</span>
+        <li class="main-item"><span data-ng-bind="i18nLiterals.L22005">Steering of OSH</span>
             <ul>
-              <li>National strategies</li>
-              <li>Social Dialogue</li>
+              <li data-ng-bind="i18nLiterals.L22007">National strategies</li>
+              <li data-ng-bind="i18nLiterals.L22008">Social Dialogue</li>
             </ul>
         </li>
-        <li class="main-item"><span>OSH outcomes and working conditions</span>
+        <li class="main-item"><span data-ng-bind="i18nLiterals.L22009">OSH outcomes and working conditions</span>
           <ul>
-            <li>Work accidents</li>
-            <li>Health perception of the workers</li>
-            <li>OSH culture and health awareness</li>
-            <li>Working conditions </li>
-            <li>Prevention in companies</li>
-            <li>Worker involvement</li>
+            <li data-ng-bind="i18nLiterals.L22010">Work accidents</li>
+            <li data-ng-bind="i18nLiterals.L22011">Health perception of the workers</li>
+            <li data-ng-bind="i18nLiterals.L22012">OSH culture and health awareness</li>
+            <li data-ng-bind="i18nLiterals.L22013">Working conditions </li>
+            <li data-ng-bind="i18nLiterals.L22014">Prevention in companies</li>
+            <li data-ng-bind="i18nLiterals.L22015">Worker involvement</li>
           </ul>
         </li>
-        <li class="main-item"><span>OSH infrastructure</span>
+        <li class="main-item"><span data-ng-bind="i18nLiterals.L22016">OSH infrastructure</span>
           <ul>
-            <li>Enforcement capacity</li>
-            <li>OSH statistics, surveys and research</li>
+            <li data-ng-bind="i18nLiterals.L22017">Enforcement capacity</li>
+            <li data-ng-bind="i18nLiterals.L22018">OSH statistics, surveys and research</li>
           </ul>
         </li>
       </ul>
@@ -65,8 +65,8 @@
 
   <section class="introduction-page">
     <div class="title-page">
-      <h2>Introduction</h2>
-      <h3  data-ng-bind="i18nLiterals.L20735">General information</h3>
+      <h2 data-ng-bind="i18nLiterals.L20719">Introduction</h2>
+      <h3  data-ng-bind="i18nLiterals.L22120">General information</h3>
     </div>
     <div data-ng-bind-html="i18nLiterals.L20737" class="content-page about-tool-content">
     </div>
@@ -75,8 +75,8 @@
 
   <section class="osh-authorities">
     <div class="title-page">
-      <h2 data-ng-bind="i18nLiterals.L22001">Introduction</h2>
-      <h3  data-ng-bind="i18nLiterals.L22002">General information</h3>
+      <h2 data-ng-bind="i18nLiterals.L22001">Generic information</h2>
+      <h3  data-ng-bind="i18nLiterals.L22002">OSH Authorities</h3>
     </div>
     <div class="intro-page">
       <p data-ng-bind="i18nLiterals.L22025"></p>
@@ -88,19 +88,20 @@
           <span data-ng-bind="i18nLiterals.L20706"></span>
         </div>
         <div data-ng-repeat="matrix in authorities" class="clearfix osh-authorities-items">
-          <div  ng-if="::matrix.osh_authority==1">
+          <!--<div ng-if="::matrix.osh_authority==1">-->
+          <div ng-if="$index == 0">
             <header>
-              <img  ng-if="$index== 0" class="flag" ng-src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/flag/{{::matrix.country_code.toLowerCase()}}.png">
-              <h2 class="country ng-binding title-section main-color" ng-if="::matrix.osh_authority==1 && $index== 0" data-ng-bind="i18nLiterals['L'+matrix.country_name]"></h2>
+              <img class="flag" ng-src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/flag/{{::matrix.country_code.toLowerCase()}}.png">
+              <h2 class="country ng-binding title-section main-color" data-ng-bind="i18nLiterals['L'+matrix.country_name]"></h2>
             </header>
-            <h3 class="name-authorities" ng-if="$index== 0" data-ng-bind="i18nLiterals.L20614"></h3> 
+            <!-- <h3 class="name-authorities" ng-if="$index== 0" data-ng-bind="i18nLiterals.L20614"></h3> 
             <div class="box-rounded">                         
               <p class="institution-name" data-ng-bind-html="i18nLiterals['L'+matrix.name_authority]"></p>
               <div data-ng-bind-html="i18nLiterals['L'+matrix.link_authority]"></div>
               <div class="text" data-ng-bind-html="i18nLiterals['L'+matrix.detail_authority]"></div>
-            </div>
+            </div>-->
           </div>
-          <div class="matrix--content--elements" ng-if="::matrix.osh_authority!=1">            
+          <div class="matrix--content--elements">            
             <h3 class="" ng-if="::matrix.osh_authority==1 && authorities[$index-1].osh_authority != 1" data-ng-bind="i18nLiterals.L20614"></h3>
             <h3 class="" ng-if="::matrix.compensation==1 && authorities[$index-1].compensation != 1" data-ng-bind="i18nLiterals.L20611"></h3>
             <h3 class="" ng-if="::matrix.prevention==1 && authorities[$index-1].prevention != 1" data-ng-bind="i18nLiterals.L20612"></h3>
@@ -117,8 +118,8 @@
 
   <section class="economic-sector-profile indicator1">
     <div class="title-page">
-      <h2  data-ng-bind="i18nLiterals.L20735">General information</h2>
-      <h3 data-ng-bind="i18nLiteral.L22001 + ' ' + i18nLiterals.L22003"></h3>
+      <h2 data-ng-bind="i18nLiterals.L22001">Generic information</h2>
+      <h3 data-ng-bind="i18nLiterals.L22003"></h3>
     </div> 
     <div class="intro-page">
       <div data-ng-bind-html="i18nLiterals.L22028"></div>
@@ -326,10 +327,10 @@
   </section>
 
   <section class="economic-sector-profile indicator2"> 
-    <div class="title-page">
-      <h2  data-ng-bind="i18nLiterals.L20735">General information</h2>
+    <!--<div class="title-page">
+      <h2  data-ng-bind="i18nLiterals.L20735">Generic information</h2>
       <h3 data-ng-bind="i18nLiteral.L22001 + ' ' + i18nLiterals.L22003"></h3>
-    </div> 
+    </div> -->
     <div class="content-page">
       <div class="box-rounded">
         <dvt-bar-chart
@@ -679,62 +680,6 @@
             <td data-ng-bind="row.year2"></td>
             <td data-ng-bind="row.value2"></td>
           </tr>
-          <!--<tr>
-            <th>(AT) Austria</th>
-            <td>2010</td>
-            <td></td>
-            <td>EU28</td>
-            <td>2010</td>
-            <td></td>
-          </tr>
-          <tr>
-            <th>(AT) Austria</th>
-            <td>2011</td>
-            <td></td>
-            <td>EU28</td>
-            <td>2011</td>
-            <td></td>
-          </tr>
-          <tr>
-            <th>(AT) Austria</th>
-            <td>2012</td>
-            <td></td>
-            <td>EU28</td>
-            <td>2012</td>
-            <td></td>
-          </tr>
-          <tr>
-            <th>(AT) Austria</th>
-            <td>2013</td>
-            <td></td>
-            <td>EU28</td>
-            <td>2014</td>
-            <td></td>
-          </tr>
-          <tr>
-            <th>(AT) Austria</th>
-            <td>2014</td>
-            <td></td>
-            <td>EU28</td>
-            <td>2014</td>
-            <td></td>
-          </tr>
-          <tr>
-            <th>(AT) Austria</th>
-            <td>2015</td>
-            <td></td>
-            <td>EU28</td>
-            <td>2015</td>
-            <td></td>
-          </tr>
-          <tr>
-            <th>(AT) Austria</th>
-            <td>2016</td>
-            <td></td>
-            <td>EU28</td>
-            <td>2016</td>
-            <td></td>
-          </tr>-->
          </tbody>
       </table>
     </div>
@@ -774,15 +719,7 @@
           <tr data-ng-repeat="row in estimationNonFatal">
             <th data-ng-bind="row.country"></th>
             <td data-ng-bind="row.value"></td>
-          </tr> 
-          <!--<tr>
-            <th>(AT) Austria</th>
-            <td>3.6</td>
           </tr>
-          <tr>
-            <th>EU28</th>
-            <td>1.9</td>
-          </tr>-->
          </tbody>
       </table>
     </div>
@@ -891,18 +828,6 @@
             <td data-ng-bind="row.value2"></td>
             <td data-ng-bind="row.value3"></td>
           </tr>
-          <!--<tr>
-            <th>(AT) Austria</th>
-            <td>4.5</td>
-            <td>49.6</td>
-            <td>45.9</td>
-          </tr>
-          <tr>
-            <th>EU28</th>
-            <td>3.8</td>
-            <td>36.8</td>
-            <td>59.3</td>
-          </tr>-->
          </tbody>
       </table>
     </div>
@@ -947,16 +872,6 @@
             <td data-ng-bind="row.yes"></td>
             <td data-ng-bind="row.no"></td>
           </tr>
-          <!--<tr>
-            <th>(AT) Austria</th>
-            <td>35.5</td>
-            <td>64.7</td>
-          </tr>
-          <tr>
-            <th>EU28</th>
-            <td>51.4</td>
-            <td>48.6</td>
-          </tr>-->
          </tbody>
       </table> 
     </div>
@@ -999,16 +914,6 @@
             <td data-ng-bind="row.yes"></td>
             <td data-ng-bind="row.no"></td>
           </tr>
-          <!--<tr>
-            <th>(AT) Austria</th>
-            <td>35.5</td>
-            <td>64.7</td>
-          </tr>
-          <tr>
-            <th>EU28</th>
-            <td>51.4</td>
-            <td>48.6</td>
-          </tr>-->
          </tbody>
       </table>     
     </div>
@@ -1051,16 +956,6 @@
             <td data-ng-bind="row.yes"></td>
             <td data-ng-bind="row.no"></td>
           </tr>
-          <!--<tr>
-            <th>(AT) Austria</th>
-            <td>32.4</td>
-            <td>67.6</td>
-          </tr>
-          <tr>
-            <th>EU28</th>
-            <td>47.44</td>
-            <td>52.6</td>
-          </tr>-->
          </tbody>
       </table>      
     </div>
@@ -1102,16 +997,6 @@
             <td data-ng-bind="row.yes"></td>
             <td data-ng-bind="row.no"></td>
           </tr>
-          <!--<tr>
-            <th>(AT) Austria</th>
-            <td>32.4</td>
-            <td>67.6</td>
-          </tr>
-          <tr>
-            <th>EU28</th>
-            <td>47.44</td>
-            <td>52.6</td>
-          </tr>-->
          </tbody>
       </table>      
     </div>
@@ -1155,18 +1040,6 @@
             <td data-ng-bind="row.value2"></td>
             <td data-ng-bind="row.value3"></td>
           </tr>
-          <!--<tr>
-            <th>(AT) Austria</th>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <th>EU28</th>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>-->
          </tbody>
       </table>      
     </div>
@@ -1210,16 +1083,6 @@
             <td data-ng-bind="row.yes"></td>
             <td data-ng-bind="row.no"></td>
           </tr>
-          <!--<tr>
-            <th>(AT) Austria</th>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <th>EU28</th>
-            <td></td>
-            <td></td>
-          </tr>-->
          </tbody>
       </table>  
     </div>
@@ -1582,16 +1445,6 @@
             <td data-ng-bind="row.yes"></td>
             <td data-ng-bind="row.no"></td>
           </tr>
-          <!--<tr>
-            <th>(AT) Austria</th>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <th>EU28</th>
-            <td></td>
-            <td></td>
-          </tr>-->
          </tbody>
       </table> 
     </div>
@@ -1634,18 +1487,6 @@
             <td data-ng-bind="row.value2"></td>
             <td data-ng-bind="row.value3"></td>
           </tr>
-          <!--<tr>
-            <th>(AT) Austria</th>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <th>EU28</th>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>-->
          </tbody>
       </table> 
     </div>
@@ -1688,16 +1529,6 @@
             <td data-ng-bind="row.yes"></td>
             <td data-ng-bind="row.no"></td>
           </tr>
-          <!--<tr>
-            <th>(AT) Austria</th>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <th>EU28</th>
-            <td></td>
-            <td></td>
-          </tr>-->
          </tbody>
       </table> 
     </div>  
@@ -1736,14 +1567,6 @@
             <th data-ng-bind="row.country"></th>
             <td data-ng-bind="row.value"></td>
           </tr>
-          <!--<tr>
-            <th>(AT) Austria</th>
-            <td></td>
-          </tr>
-          <tr>
-            <th>EU28</th>
-            <td></td>
-          </tr>-->
          </tbody>
       </table> 
     </div>
@@ -1788,16 +1611,6 @@
             <td data-ng-bind="row.value2"></td>
             <td data-ng-bind="row.value3"></td>
           </tr>
-          <!--<tr>
-            <th>(AT) Austria</th>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <th>EU28</th>
-            <td></td>
-            <td></td>
-          </tr>-->
          </tbody>
       </table> 
     </div>
@@ -1841,16 +1654,6 @@
             <td data-ng-bind="row.yes"></td>
             <td data-ng-bind="row.no"></td>
           </tr>
-          <!--<tr>
-            <th>(AT) Austria</th>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <th>EU28</th>
-            <td></td>
-            <td></td>
-          </tr>-->
          </tbody>
       </table> 
     </div>     
@@ -1893,18 +1696,6 @@
             <td data-ng-bind="row.value2"></td>
             <td data-ng-bind="row.value3"></td>
           </tr>
-          <!--<tr>
-            <th>(AT) Austria</th>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <th>EU28</th>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>-->
          </tbody>
       </table> 
     </div>
@@ -1947,16 +1738,6 @@
             <td data-ng-bind="row.yes"></td>
             <td data-ng-bind="row.no"></td>
           </tr>
-          <!--<tr>
-            <th>(AT) Austria</th>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <th>EU28</th>
-            <td></td>
-            <td></td>
-          </tr>-->
          </tbody>
       </table>     
     </div>     
@@ -1999,18 +1780,6 @@
             <td data-ng-bind="row.value2"></td>
             <td data-ng-bind="row.value3"></td>
           </tr>
-          <!--<tr>
-            <th>(AT) Austria</th>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <th>EU28</th>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>-->
          </tbody>
       </table> 
     </div>
@@ -2053,16 +1822,6 @@
             <td data-ng-bind="row.yes"></td>
             <td data-ng-bind="row.no"></td>
           </tr>
-          <!--<tr>
-            <th>(AT) Austria</th>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <th>EU28</th>
-            <td></td>
-            <td></td>
-          </tr>-->
          </tbody>
       </table>  
     </div>     
@@ -2103,16 +1862,6 @@
             <td data-ng-bind="row.yes"></td>
             <td data-ng-bind="row.no"></td>
           </tr>
-          <!--<tr>
-            <th>(AT) Austria</th>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <th>EU28</th>
-            <td></td>
-            <td></td>
-          </tr>-->
          </tbody>
       </table> 
     </div>
@@ -2155,16 +1904,6 @@
             <td data-ng-bind="row.yes"></td>
             <td data-ng-bind="row.no"></td>
           </tr>
-          <!--<tr>
-            <th>(AT) Austria</th>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <th>EU28</th>
-            <td></td>
-            <td></td>
-          </tr>-->
          </tbody>
       </table> 
     </div>    
@@ -2206,46 +1945,6 @@
             <td data-ng-bind="row.country"></td>
             <td data-ng-bind="row.value"></td>
           </tr>
-          <!--<tr>
-            <th>Are you exposed to vibrations from tools or machinery?</th>
-            <td>(AT) Austria</td>
-            <td></td>
-          </tr>
-          <tr>
-            <th>Are you exposed to loud noise?</th>
-            <td>(AT) Austria</td>
-            <td></td>
-          </tr>
-          <tr>
-            <th>Are you exposed to high temperatures?</th>
-            <td>(AT) Austria</td>
-            <td></td>
-          </tr>
-          <tr>
-            <th>Are you exposed to low temperatures?</th>
-            <td>(AT) Austria</td>
-            <td></td>
-          </tr>
-          <tr>
-            <th>Are you exposed to vibrations from tools or machinery?</th>
-            <td>EU28</td>
-            <td></td>
-          </tr>
-          <tr>
-            <th>Are you exposed to loud noise?</th>
-            <td>EU28</td>
-            <td></td>
-          </tr>
-          <tr>
-            <th>Are you exposed to high temperatures?</th>
-            <td>EU28</td>
-            <td></td>
-          </tr>
-          <tr>
-            <th>Are you exposed to low temperatures?</th>
-            <td>EU28</td>
-            <td></td>
-          </tr>-->
          </tbody>
       </table> 
     </div>
@@ -2292,16 +1991,6 @@
             <td data-ng-bind="row.lessthan"></td>
             <td data-ng-bind="row.atleast"></td>
           </tr>
-          <!--<tr>
-            <th>(AT) Austria</th>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <th>EU28</th>
-            <td></td>
-            <td></td>
-          </tr>-->
          </tbody>
       </table> 
     </div>
@@ -2344,16 +2033,6 @@
             <td data-ng-bind="row.lessthan"></td>
             <td data-ng-bind="row.atleast"></td>
           </tr>
-          <!--<tr>
-            <th>(AT) Austria</th>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <th>EU28</th>
-            <td></td>
-            <td></td>
-          </tr>-->
          </tbody>
       </table> 
     </div>
@@ -2396,16 +2075,6 @@
             <td data-ng-bind="row.lessthan"></td>
             <td data-ng-bind="row.atleast"></td>
           </tr>
-          <!--<tr>
-            <th>(AT) Austria</th>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <th>EU28</th>
-            <td></td>
-            <td></td>
-          </tr>-->
          </tbody>
       </table> 
     </div>
@@ -2448,16 +2117,6 @@
             <td data-ng-bind="row.lessthan"></td>
             <td data-ng-bind="row.atleast"></td>
           </tr>
-          <!--<tr>
-            <th>(AT) Austria</th>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <th>EU28</th>
-            <td></td>
-            <td></td>
-          </tr>-->
          </tbody>
       </table> 
     </div>
@@ -2492,27 +2151,6 @@
             <td data-ng-bind="row.country"></td>
             <td data-ng-bind="row.value"></td>
           </tr>
-          <!--<tr>
-            <th>Tiring or painful positions, including sitting for long periods</th>
-            <td>(AT) Austria</td>
-            <td></td>
-            <td>EU28</td>
-            <td></td>
-          </tr>
-          <tr>
-            <th>Lifting or moving people or heavy loads</th>
-            <td>(AT) Austria</td>
-            <td></td>
-            <td>EU28</td>
-            <td></td>
-          </tr>
-          <tr>
-            <th>Repetitive hand or arm movements</th>
-            <td>(AT) Austria</td>
-            <td></td>
-            <td>EU28</td>
-            <td></td>
-          </tr>-->
          </tbody>
       </table>
     </div>
@@ -2546,41 +2184,6 @@
             <td data-ng-bind="row.country"></td>
             <td data-ng-bind="row.value"></td>
           </tr>
-          <!--<tr>
-            <th>Does your work involve tiring or painful positions?</th>
-            <td>(AT) Austria</td>
-            <td></td>
-            <td>EU28</td>
-            <td></td>
-          </tr>
-          <tr>
-            <th>Does your work involve sitting?</th>
-            <td>(AT) Austria</td>
-            <td></td>
-            <td>EU28</td>
-            <td></td>
-          </tr>
-          <tr>
-            <th>Does your work involve carrying or moving heavy loads?</th>
-            <td>(AT) Austria</td>
-            <td></td>
-            <td>EU28</td>
-            <td></td>
-          </tr>
-          <tr>
-            <th>Does your work involve repetitive hand or arm movements?</th>
-            <td>(AT) Austria</td>
-            <td></td>
-            <td>EU28</td>
-            <td></td>
-          </tr>
-          <tr>
-            <th>Does your work involve lifting or moving people?</th>
-            <td>(AT) Austria</td>
-            <td></td>
-            <td>EU28</td>
-            <td></td>
-          </tr>-->
          </tbody>
       </table>
     </div>
@@ -2599,7 +2202,7 @@
     </div> 
 
     <!-- Risk Assessment -->
-    <h4 class="header3">Risk Assessment - LITERAL</h4>
+    <!--<h4 class="header3">Risk Assessment - LITERAL</h4>-->
 
     <!-- sector -->
     <div class="box-rounded risk">
@@ -2647,48 +2250,6 @@
             <td data-ng-bind="row.country2"></td>
             <td data-ng-bind="row.value2"></td>
           </tr>
-          <!--<tr>
-            <th>Manufacturing</th>
-            <td>(AT) Austria</td>
-            <td></td>
-            <td>EU28</td>
-            <td></td>
-          </tr>
-          <tr>
-            <th>Construction, waste management, water and electricity supply</th>
-            <td>(AT) Austria</td>
-            <td></td>
-            <td>EU28</td>
-            <td></td>
-          </tr>
-          <tr>
-            <th>Trade, transport, food/ accommodation and recreation activities</th>
-            <td>(AT) Austria</td>
-            <td></td>
-            <td>EU28</td>
-            <td></td>
-          </tr>
-          <tr>
-            <th>Public administration</th>
-            <td>(AT) Austria</td>
-            <td></td>
-            <td>EU28</td>
-            <td></td>
-          </tr>
-          <tr>
-            <th>Education, human health and social work activities</th>
-            <td>(AT) Austria</td>
-            <td></td>
-            <td>EU28</td>
-            <td></td>
-          </tr>
-          <tr>
-            <th>Total</th>
-            <td>(AT) Austria</td>
-            <td></td>
-            <td>EU28</td>
-            <td></td>
-          </tr>-->
          </tbody>
       </table>
     </div>    
@@ -2812,18 +2373,6 @@
             <td data-ng-bind="row.value2"></td>
             <td data-ng-bind="row.value3"></td>
           </tr>
-          <!--<tr>
-            <th>(AT) Austria</th>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <th>EU28</th>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>-->
          </tbody>
       </table>
     </div>
@@ -2877,18 +2426,6 @@
             <td data-ng-bind="row.value2"></td>
             <td data-ng-bind="row.value3"></td>
           </tr>
-          <!--<tr>
-            <th>(AT) Austria</th>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <th>EU28</th>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>-->
          </tbody>
       </table>
     </div>
@@ -2942,48 +2479,6 @@
             <td data-ng-bind="row.country2"></td>
             <td data-ng-bind="row.value2"></td>
           </tr>
-          <!--<tr>
-            <th>Manufacturing</th>
-            <td>(AT) Austria</td>
-            <td></td>
-            <td>EU28</td>
-            <td></td>
-          </tr>
-          <tr>
-            <th>Construction, waste management, water and electricity supply</th>
-            <td>(AT) Austria</td>
-            <td></td>
-            <td>EU28</td>
-            <td></td>
-          </tr>
-          <tr>
-            <th>Trade, transport, food/ accommodation and recreation activities</th>
-            <td>(AT) Austria</td>
-            <td></td>
-            <td>EU28</td>
-            <td></td>
-          </tr>
-          <tr>
-            <th>Public administration</th>
-            <td>(AT) Austria</td>
-            <td></td>
-            <td>EU28</td>
-            <td></td>
-          </tr>
-          <tr>
-            <th>Education, human health and social work activities</th>
-            <td>(AT) Austria</td>
-            <td></td>
-            <td>EU28</td>
-            <td></td>
-          </tr>
-          <tr>
-            <th>Total</th>
-            <td>(AT) Austria</td>
-            <td></td>
-            <td>EU28</td>
-            <td></td>
-          </tr>-->
          </tbody>
       </table>
     </div>    
@@ -3034,34 +2529,6 @@
             <td data-ng-bind="row.country2"></td>
             <td data-ng-bind="row.value2"></td>
           </tr>
-          <!--<tr>
-            <th>5 to 9 employees</th>
-            <td>(AT) Austria</td>
-            <td></td>
-            <td>EU28</td>
-            <td></td>
-          </tr>
-          <tr>
-            <th>10 to 49 employees</th>
-            <td>(AT) Austria</td>
-            <td></td>
-            <td>EU28</td>
-            <td></td>
-          </tr>
-          <tr>
-            <th>50 to 250 employees</th>
-            <td>(AT) Austria</td>
-            <td></td>
-            <td>EU28</td>
-            <td></td>
-          </tr>
-          <tr>
-            <th>250 or more employees</th>
-            <td>(AT) Austria</td>
-            <td></td>
-            <td>EU28</td>
-            <td></td>
-          </tr>-->
          </tbody>
       </table>
     </div>
@@ -3085,7 +2552,6 @@
 
     <!-- ESENER -->
     <div class="box-rounded">
-      <!--<h5 data-ng-bind="i18nLiterals.L20645" class="header3"></h5>-->
       <dvt-radar-chart
         data-ng-cloak
         promises="radarChartPromises.workerInvolvementESENER"
@@ -3114,34 +2580,6 @@
             <td data-ng-bind="row.country"></td>
             <td data-ng-bind="row.value"></td>
           </tr>
-          <!--<tr>
-            <th>Did the employees have a role in thedesign and set- up of the measures to address psychosocial risks?</th>
-            <td>(AT) Austria</td>
-            <td></td>
-            <td>EU28</td>
-            <td></td>
-          </tr>
-          <tr>
-            <th>Does your organisation have a health and safety delegate or committee?</th>
-            <td>(AT) Austria</td>
-            <td></td>
-            <td>EU28</td>
-            <td></td>
-          </tr>
-          <tr>
-            <th>Does your organisation have a trade union, works council or a similar committee representing employees?</th>
-            <td>(AT) Austria</td>
-            <td></td>
-            <td>EU28</td>
-            <td></td>
-          </tr>
-          <tr>
-            <th>How often controversies related to health and safety arise?(Sum of often and sometimes)</th>
-            <td>(AT) Austria</td>
-            <td></td>
-            <td>EU28</td>
-            <td></td>
-          </tr>-->
          </tbody>
       </table>
     </div> 
@@ -3178,27 +2616,6 @@
             <td data-ng-bind="row.country"></td>
             <td data-ng-bind="row.value"></td>
           </tr>
-          <!--<tr>
-            <th>Does your organisation have a regular meeting in which employees can express their views about what is happening in the organization?</th>
-            <td>(AT) Austria</td>
-            <td></td>
-            <td>EU28</td>
-            <td></td>
-          </tr>
-          <tr>
-            <th>Does your organisation have a trade union, works council or a similar committee representing employees?</th>
-            <td>(AT) Austria</td>
-            <td></td>
-            <td>EU28</td>
-            <td></td>
-          </tr>
-          <tr>
-            <th>Does your organisation have a health and safety delegate or committee?</th>
-            <td>(AT) Austria</td>
-            <td></td>
-            <td>EU28</td>
-            <td></td>
-          </tr>-->
          </tbody>
       </table>
     </div> 
@@ -3259,16 +2676,6 @@
             <td data-ng-bind="row.yes"></td>
             <td data-ng-bind="row.no"></td>
           </tr>
-          <!--<tr>
-            <th>(AT) Austria</th>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <th>EU28</th>
-            <td></td>
-            <td></td>
-          </tr>-->
          </tbody>
       </table>
     </div>
@@ -3316,20 +2723,21 @@
         <span data-ng-bind="i18nLiterals.L20706"></span>
       </div>
       <div data-ng-repeat="matrix in statistics" class="clearfix osh-statistics-items">
-        <div ng-if="::matrix.osh_statistics==1">
+        <!--<div ng-if="::matrix.osh_statistics==1">-->
+        <div ng-if="$index == 0">
           <header>
-            <img  ng-if="$index== 0" class="flag" ng-src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/flag/{{::matrix.country_code.toLowerCase()}}.png">
-            <h2 class="country ng-binding title-section main-color" ng-if="::matrix.osh_statistics==1 && $index== 0" data-ng-bind="i18nLiterals['L'+matrix.country_name]"></h2>
+            <img class="flag" ng-src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/flag/{{::matrix.country_code.toLowerCase()}}.png">
+            <h2 class="country ng-binding title-section main-color" data-ng-bind="i18nLiterals['L'+matrix.country_name]"></h2>
           </header>
-          <h3 class="name-osh_statistics" ng-if="$index== 0" data-ng-bind="i18nLiterals.L20714"></h3> 
+          <!--<h3 class="name-osh_statistics" data-ng-bind="i18nLiterals.L20714"></h3> 
           <div class="box-rounded">                         
             <p class="institution-name" data-ng-bind-html="i18nLiterals['L'+matrix.name_statistics]"></p>
             <div data-ng-bind-html="i18nLiterals['L'+matrix.link_statistics]"></div>
             <div class="text" data-ng-bind-html="i18nLiterals['L'+matrix.detail_statistics]"></div>
-          </div>
+          </div>-->
         </div>
-        <div class="matrix--content--elements" ng-if="::matrix.osh_statistics!=1">
-          <h3 class="" ng-if="::matrix.osh_statistics==1" data-ng-bind="i18nLiterals.L20714"></h3>
+        <div class="matrix--content--elements">
+          <h3 class="" ng-if="::matrix.osh_statistics==1 && $index == 0 " data-ng-bind="i18nLiterals.L20714"></h3>
           <h3 class="" ng-if="::matrix.surveys==1 && statistics[$index-1].surveys != 1" data-ng-bind="i18nLiterals.L20715"></h3>
           <h3 class="" ng-if="::matrix.research_institutes==1 && statistics[$index-1].research_institutes!=1" data-ng-bind="i18nLiterals.L20716"></h3>
           <div class="box-rounded">

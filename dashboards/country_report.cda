@@ -41,7 +41,7 @@
 	      ON n.id = mp.nuts_id
 	      WHERE mp.page = ${pPageType}
 	      AND n.country_code=${pCountry}
-	      ORDER BY id ASC;
+	      ORDER BY check_1 DESC, check_2 DESC, check_3 DESC, check_4 DESC, id ASC;
 	    </Query>
 	</DataAccess>
 
