@@ -67,6 +67,10 @@ define(function (require) {
 
         $stateProvider.state('full-country-report', {
             url: "/full-country-report",
+            params: {
+                pCountry: null,
+                squash: true
+            },
             views: {
                 "content-main": {
                     templateUrl: configService.getVerticalTplPath("about-tool/country-report", "country-report"),
