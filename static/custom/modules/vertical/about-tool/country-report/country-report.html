@@ -130,7 +130,7 @@
         <dvt-bar-chart
           data-ng-cloak
           query="getCountryReportCompanySizeData" cda="{{::cda }}"
-          width="330" height="185"
+          width="330" height="200"
           orientation="horizontal" axis-percent="1"
           axis-fixed-max="100" step="20"
           params="[['pIndicator','31'],['pCountry1', pCountry],['pCountry2', 'EU28'],['pDataset', datasetList.EUROSTAT]]"
@@ -616,8 +616,8 @@
             <label data-ng-bind="i18nLiterals['L20661']"></label>
           </li>
           <li>                
-            <span class="country-data" data-ng-bind="matrix.health_committee != null ? (matrix.health_committee) : '-'"></span>
-            <span data-ng-if="matrix.health_committee != null" class="data-text">&percnt;</span>
+            <span class="country-data" data-ng-bind="matrix.health_committe != null ? (matrix.health_committe) : '-'"></span>
+            <span data-ng-if="matrix.health_committe != null" class="data-text">&percnt;</span>
             <label data-ng-bind="i18nLiterals['L20662']"></label>
           </li>
         </ul>
@@ -3321,7 +3321,7 @@
             <img  ng-if="$index== 0" class="flag" ng-src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/flag/{{::matrix.country_code.toLowerCase()}}.png">
             <h2 class="country ng-binding title-section main-color" ng-if="::matrix.osh_statistics==1 && $index== 0" data-ng-bind="i18nLiterals['L'+matrix.country_name]"></h2>
           </header>
-          <h3 class="name-osh_statistics" ng-if="$index== 0" data-ng-bind="i18nLiterals.L20614"></h3> 
+          <h3 class="name-osh_statistics" ng-if="$index== 0" data-ng-bind="i18nLiterals.L20714"></h3> 
           <div class="box-rounded">                         
             <p class="institution-name" data-ng-bind-html="i18nLiterals['L'+matrix.name_statistics]"></p>
             <div data-ng-bind-html="i18nLiterals['L'+matrix.link_statistics]"></div>
@@ -3329,7 +3329,7 @@
           </div>
         </div>
         <div class="matrix--content--elements" ng-if="::matrix.osh_statistics!=1">
-          <!--<h3 class="" ng-if="::matrix.osh_statistics==1" data-ng-bind="i18nLiterals.L20714"></h3>-->
+          <h3 class="" ng-if="::matrix.osh_statistics==1" data-ng-bind="i18nLiterals.L20714"></h3>
           <h3 class="" ng-if="::matrix.surveys==1 && statistics[$index-1].surveys != 1" data-ng-bind="i18nLiterals.L20715"></h3>
           <h3 class="" ng-if="::matrix.research_institutes==1 && statistics[$index-1].research_institutes!=1" data-ng-bind="i18nLiterals.L20716"></h3>
           <div class="box-rounded">
