@@ -139,7 +139,7 @@ define(function (require) {
           },{
             title: "L322",
             text: "L20577",
-            link: "overall-opinion",
+            link: "overall-opinion({pIndicator: 'job-satisfaction', pCountry1: 'AT', pCountry2: '0', pSlit:'sector'})",
             icon: "overall-opinion"
           }],
       "procedures-to-deal-with-threats":[{
