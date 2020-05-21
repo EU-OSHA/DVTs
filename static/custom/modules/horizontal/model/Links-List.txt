@@ -84,7 +84,7 @@
 163-http://www.salute.gov.it/imgs/C_17_pubblicazioni_2285_allegato.pdf 
 164-http://www.trovanorme.salute.gov.it/norme/renderNormsanPdf?anno=0&amp;codLeg=51787&amp;parte=1%20&amp;serie=
 166-https://likumi.lv/ta/id/279509-par-darba-aizsardzibas-politikas-pamatnostadnem-2016-2020-gadam
-166-http://www.lm.gov.lv/text/1860
+166-https://likumi.lv/ta/en/en/id/279509
 166-https://likumi.lv/ta/id/305885-par-darba-aizsardzibas-jomas-attistibas-planu-2019-2020-gadam
 166-https://likumi.lv/doc.php?id=279819
 166-https://likumi.lv/doc.php?id=174152

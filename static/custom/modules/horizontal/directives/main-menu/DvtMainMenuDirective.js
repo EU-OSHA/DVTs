@@ -337,15 +337,15 @@ define(function (require) {
                             if (navigator.geolocation)
                             {
                                 navigator.geolocation.getCurrentPosition(function(position){
-                                    $http.get('http://ip-api.com/json').success(function(coordinates) {
+                                    $http.get('https://iplist.cc/api/').success(function(coordinates) {
                                         var availableCountries = ["AT","BG","CH","CY","CZ","DE","DK","EE","EL","ES","FI","FR","HR","HU","IE","IS","IT","LT","LU","LV","MT","NL","NO","PL","PT","RO","SE","SI","SK","UK"];
-                                        if (availableCountries.indexOf(coordinates.countryCode) > -1)
+                                        if (availableCountries.indexOf(coordinates.countrycode) > -1)
                                         {
                                             $rootScope.defaultCountry = {
-                                                code : coordinates.countryCode,
+                                                code : coordinates.countrycode,
                                                 isCookie : false
                                             }
-                                            $rootScope.defaultCountryDefaultValue = coordinates.countryCode;
+                                            $rootScope.defaultCountryDefaultValue = coordinates.countrycode;
                                             var currentState = $state.current.name;
                                             $state.reload();
                                         }                                        

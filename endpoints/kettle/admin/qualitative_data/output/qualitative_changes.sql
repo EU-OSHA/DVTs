@@ -708,11 +708,11 @@ INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+153, null, @
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+153, "EN", 1, "<p><strong>Priorities</strong></p>
 <p>Five strategic priorities will direct the activity for the period 2019&ndash;2021:</p>
 <ol>
-    <li>Regulate: Increase focus on compliance through risk based inspection and enforcement</li>
-    <li>Promote: Support, educate and raise awareness to prevent accidents, injuries and ill health</li>
-    <li>Accredit: Grow the national accreditation service to enable and support enterprises and public services</li>
-    <li>Influence: Partner and collaborate in support of healthy, safe and productive lives and enterprises</li>
-    <li>How HSA works: Improve the way HSA work through people, processes &amp; technology</li>
+    <li><strong>Regulate</strong>: Increase focus on compliance through risk based inspection and enforcement</li>
+    <li><strong>Promote:</strong> Support, educate and raise awareness to prevent accidents, injuries and ill health</li>
+    <li><strong>Accredit</strong>: Grow the national accreditation service to enable and support enterprises and public services</li>
+    <li><strong>Influence</strong>: Partner and collaborate in support of healthy, safe and productive lives and enterprises</li>
+    <li><strong>How HSA works:</strong> Improve the way HSA work through people, processes &amp; technology</li>
 </ol>
 <p><strong>Goals</strong></p>
 <ol>
@@ -855,7 +855,7 @@ SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+166, null, @sectionId, "STRATEGY_BASIC INFO");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+166, "EN", 1, "<p>Original version: <a href=\"https://likumi.lv/ta/id/279509-par-darba-aizsardzibas-politikas-pamatnostadnem-2016-2020-gadam\" target=\"_blank\">Par Darba aizsardzības politikas pamatnostādnēm 2016-2020. gadam.</a></p>
-<p>Official translation: <a href=\"http://www.lm.gov.lv/text/1860\" target=\"_blank\">Labour Protection Policy Strategy for 2016-2020.</a></p>
+<p>Official translation: <a href=\"https://likumi.lv/ta/en/en/id/279509\" target=\"_blank\">Labour Protection Policy Strategy for 2016-2020.</a></p>
 <p><a href=\"https://likumi.lv/ta/id/305885-par-darba-aizsardzibas-jomas-attistibas-planu-2019-2020-gadam\" target=\"_blank\">Par Darba aizsardzības jomas attīstības plānu 2019.-2020. gadam</a> (Labour Protection Policy Plan for 2019-2020).</p>
 <p><a href=\"https://likumi.lv/doc.php?id=279819\" target=\"_blank\">Par Darba aizsardzības jomas attīstības plānu 2016.-2018. gadam</a> (Previous Labour Protection Policy Plan for 2016-2018).</p>
 <p>Former strategy:</p>
@@ -12417,7 +12417,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentages");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "<p>Spider diagram, all countries plus EU countries average, percentages of “Yes” answers for Q1, Q2, and Q4, for Q3 and Q5 see ‘Calculations’ in ESENER</p><p><strong>Spider diagram, all countries plus EU countries average, percentage for answers ‘Yes’ in EWCS</str");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "<p>Spider diagram, all countries plus EU countries average, percentages of “Yes” answers for Q1, Q2, and Q4, for Q3 and Q5 see ‘Calculations’ in ESENER</p><p><strong>Spider diagram, all countries plus EU countries average, percentage for answers ‘Yes’ in EWCS</strong>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+13, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+13, "EN", 1, "Trade union (EWCS)");
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
