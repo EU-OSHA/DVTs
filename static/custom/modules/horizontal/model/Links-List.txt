@@ -908,9 +908,9 @@
 3914-https://www.eurofound.europa.eu/data/european-working-conditions-survey
 3927-https://visualisation.osha.europa.eu/esener#!/en
 3927-https://www.eurofound.europa.eu/data/european-working-conditions-survey
-3940-https://visualisation.osha.europa.eu/esener#!/en
 3940-https://www.eurofound.europa.eu/data/european-working-conditions-survey
 3953-https://www.eurofound.europa.eu/data/european-working-conditions-survey
+3966-https://visualisation.osha.europa.eu/esener#!/en
 3966-https://www.eurofound.europa.eu/data/european-working-conditions-survey
 3979-https://visualisation.osha.europa.eu/esener#!/en
 3979-https://www.eurofound.europa.eu/data/european-working-conditions-survey
@@ -938,7 +938,6 @@
 4122-https://www.eurofound.europa.eu/data/european-working-conditions-survey
 4135-https://visualisation.osha.europa.eu/esener#!/en
 4135-https://www.eurofound.europa.eu/data/european-working-conditions-survey
-4148-https://visualisation.osha.europa.eu/esener#!/en
 4148-https://www.eurofound.europa.eu/data/european-working-conditions-survey
 4161-https://www.eurofound.europa.eu/data/european-working-conditions-survey
 4174-https://www.eurofound.europa.eu/data/european-working-conditions-survey
@@ -947,6 +946,7 @@
 4213-https://www.eurofound.europa.eu/data/european-working-conditions-survey
 4226-https://www.eurofound.europa.eu/data/european-working-conditions-survey
 4239-https://www.eurofound.europa.eu/data/european-working-conditions-survey
+4252-https://visualisation.osha.europa.eu/esener#!/en
 4252-https://www.eurofound.europa.eu/data/european-working-conditions-survey
 4265-https://visualisation.osha.europa.eu/esener#!/en
 4265-https://www.eurofound.europa.eu/data/european-working-conditions-survey
@@ -963,11 +963,11 @@
 4343-https://visualisation.osha.europa.eu/esener#!/en
 4343-https://www.eurofound.europa.eu/data/european-working-conditions-survey
 4356-https://visualisation.osha.europa.eu/esener#!/en
-4356-https://www.eurofound.europa.eu/data/european-working-conditions-survey
 4369-https://visualisation.osha.europa.eu/esener#!/en
 4382-https://visualisation.osha.europa.eu/esener#!/en
 4395-https://visualisation.osha.europa.eu/esener#!/en
 4408-https://visualisation.osha.europa.eu/esener#!/en
+4408-https://www.eurofound.europa.eu/data/european-working-conditions-survey
 4421-https://visualisation.osha.europa.eu/esener#!/en
 4421-https://www.eurofound.europa.eu/data/european-working-conditions-survey
 4434-https://visualisation.osha.europa.eu/esener#!/en
@@ -983,6 +983,4 @@
 4499-https://visualisation.osha.europa.eu/esener#!/en
 4499-https://www.eurofound.europa.eu/data/european-working-conditions-survey
 4512-https://visualisation.osha.europa.eu/esener#!/en
-4512-https://www.eurofound.europa.eu/data/european-working-conditions-survey
-4525-https://visualisation.osha.europa.eu/esener#!/en
 
