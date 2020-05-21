@@ -10431,50 +10431,6 @@ INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+13, NULL, @
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+13, "EN", 1, "Likelihood of staying in current job until 60 years old");
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
 
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Q160");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="OSH_CULTURE_HEALTH_AWARENESS" AND t.name="osha_dvt_barometer");
-SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="ESENER" AND date_from="2014-01-01");
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p>The percentages of positive responses to six questions in ESENER and positive responses to two questions in the EWCS are displayed in bar charts. Each bar chart shows the percentages of the responses for each EU Member State, the average for the EU countries and the responses for United Kingdom, Iceland, Switzerland and Norway.</p>
-<p>The questions cover the aspects below. <strong>Specifically this indicator relates to</strong>:</p>
-<ul>
-  <li><strong>Sickness absence analysed</strong></li>
-  <li>Health and safety discussed</li>
-  <li>Action plan to prevent stress</li>
-  <li>Procedure against bullying</li>
-  <li>Procedures to deal with threats</li>
-  <li>Measure in the past 3 years</li>
-  <li>Use of personal protective equipment</li>
-  <li>Information about risks</li>
-</ul>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p><strong>ESENER 2014 Survey</strong> <br />European Working Conditions Survey (EWCS, 2015)</p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to six ESENER 2014 Survey Questions below. <strong>Specifically this indicator relates to:</strong></p><ol><li><strong>Are sickness absences routinely analysed with a view to improving the working conditions?</strong></li><li>How often is health and safety discussed between employee representatives and the management? Do such discussions take place regularly, only when particular health and safety issues arise or not at all?</li><li>Does your establishment have an action plan to prevent work-related stress?</li><li>Is there a procedure in place to deal with possible cases of bullying or harassment?</li><li>Is there a procedure to deal with possible cases of threats, abuse or assaults by clients, patients pupils or members in public?</li><li>In the last 3 years, has your establishment used any of the following measures to prevent psychosocial risks? Reorganisation of work in order to reduce job demands and work pressure.</li></ol><p>Answer options: </p><ol><li><strong>Yes; No</strong></li><li>Yes; Only when particular issues arise; No</li><li>Yes; No</li><li>Yes; No</li><li>Yes; No</li><li>Yes; No</li></ol><p>Responses are displayed to two EWCS Questions below. <br /><br /></p><ol><li>Does your job ever require that you wear personal protective equipment and do you use it?</li><li>How well informed are you about health and safety risks related to your job?</li></ol><p>Answer options: </p><ol><li>No, not required; Yes, and I always use it; Yes, but I don’t always use it</li><li>Very well informed; Well informed; Not very well informed; Not at all well informed</li></ol>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p><strong>ESENER:</strong></p><p><strong><a href=\"https://visualisation.osha.europa.eu/esener#!/en\" target=\"_blank\">https://visualisation.osha.europa.eu/esener#!/en&nbsp;</a></strong></p><p>EWCS:</p><p><a href=\"https://www.eurofound.europa.eu/data/european-working-conditions-survey\" target=\"_blank\">https://www.eurofound.europa.eu/data/european-working-conditions-survey</a></p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2014 for ESENER 2014 Survey and 2015 for EWCS");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2014 for ESENER 2014 Survey and 2015 for EWCS");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p><strong>The intended coverage for ESENER 2014 Survey is: All EU countries plus, Iceland, Norway and Switzerland. All data for the coverage is available.</strong><br />The intended coverage for EWCS is: All EU countries plus, Norway and Switzerland. All data for the coverage is available.</p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<ul><li>Activity sector: <strong>All</strong></li></ul>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "<p><strong>For ESENER 2014 Survey questions:</strong><br /><strong>Question 1, 3, 4, 5 and 6: Displayed the percentage of “Yes” responses.</strong><br />Question 2: Displayed the percentage of all three possible responses<br />For EWCS questions:<br />Question 1: Displayed the percentage of all possible responses<br />Question 2: Displayed the percentage of the sum of the positive answers (“very well informed” and “well informed” and the percentage of the sum of the two negative answers (“not very well informed” and “not at all well informed”).</p>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentages");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "Bar chart, all countries plus EU countries average");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+13, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+13, "EN", 1, "Sickness absences analysed");
-INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
-
 SET @indicatorId = (SELECT id FROM indicator WHERE name="E3Q352");
 SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="OSH_CULTURE_HEALTH_AWARENESS" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
