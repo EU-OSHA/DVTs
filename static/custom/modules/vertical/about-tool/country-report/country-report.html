@@ -252,74 +252,6 @@
               <td data-ng-bind="row.country"></td>
               <td data-ng-bind="row.value"></td>
             </tr>
-            <!--<tr>
-              <th>Agriculture, forestry and fishing</th>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>  
-            </tr>
-            <tr>
-              <th>Manufacturing</th>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <th>Construction, waste management, water and electricity supply</th>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <th>Trade, transport, food/accommodation and recreation activities</th>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <th>IT, Finance, Real estate and other technical scientific or personal service activities</th>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            </tr>
-            <tr>
-              <th>Education, human health and social work activities</th>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            </tr>
-            <tr>
-              <th>Agriculture, forestry and fishing</th>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            </tr>
-            <tr>
-              <th>Manufacturing</th>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            </tr>
-            <tr>
-              <th>Construction, waste management, water and electricity supply</th>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            </tr>-->
           </tbody>
         </table>
       </div>
@@ -368,14 +300,6 @@
               <th data-ng-bind="row.country"></th>
               <td data-ng-bind="row.value"></td>
             </tr>
-            <!--<tr>
-              <th>(AT) Austria</th>
-              <td></td>
-            </tr>
-            <tr>
-              <th>EU27</th>
-              <td></td>
-            </tr>-->
            </tbody>
         </table>
       </div>
@@ -421,14 +345,6 @@
               <th data-ng-bind="row.country"></th>
               <td data-ng-bind="row.value"></td>
             </tr>
-            <!--<tr>
-              <th>(AT) Austria</th>
-              <td></td>
-            </tr>
-            <tr>
-              <th>EU27</th>
-              <td></td>
-            </tr>-->
            </tbody>
         </table>
       </div>
@@ -472,26 +388,6 @@
               <td data-ng-bind="row.year"></td>
               <td data-ng-bind="row.value"></td>
             </tr>
-            <!--<tr>
-              <th>(AT) Austria</th>
-              <td>2010</td>
-              <td></td>
-            </tr>
-            <tr>
-              <th>(AT) Austria</th>
-              <td>2017</td>
-              <td></td>
-            </tr>
-            <tr>
-              <th>EU28</th>
-              <td>2010</td>
-              <td></td>
-            </tr>
-            <tr>
-              <th>EU28</th>
-              <td>2017</td>
-              <td></td>
-            </tr>-->
           </tbody>
         </table>
       </div>      
@@ -583,7 +479,7 @@
     </div>
   </section>
 
-  <section class="social-dialogue">
+  <section class="social-dialogue {{pCountry}} ">
     <div class="title-page">
       <h2 data-ng-bind="i18nLiterals.L22005"></h2>
       <h3 data-ng-bind="i18nLiterals.L22008"></h3>
@@ -832,7 +728,7 @@
       </table>
     </div>
     
-    <div class="break-after"></div>
+   <!-- <div class="break-after"></div>-->
 
     <!-- Action plan to prevent stress -->
     <div class="box-rounded">      
@@ -1128,7 +1024,7 @@
         base-axis-size="100"
         datasource-and-dates="[datasetList.Eurofound,65]"
       ></dvt-bar-chart>
-      <table class="w85 wrap chart-data">
+      <table class="wrap chart-data">
         <thead>
           <tr>
             <th>Country</th>
@@ -1190,7 +1086,7 @@
         legend-align="center" base-axis-size="50"
         datasource-and-dates="[datasetList.Eurofound,66]"
       ></dvt-bar-chart>
-      <table class="w85 chart-data">
+      <table class="chart-data">
         <thead>
           <tr>
             <th>Sector</th>
@@ -1374,27 +1270,6 @@
             <td data-ng-bind="row.country2"></td>
             <td data-ng-bind="row.value2"></td>
           </tr>
-          <!--<tr>
-            <th>Female</th>
-            <td>(AT) Austria</td>
-            <td></td>
-            <td>EU28</td>
-            <td></td>
-          </tr>
-          <tr>
-            <th>Male</th>
-            <td>(AT) Austria</td>
-            <td></td>
-            <td>EU28</td>
-            <td></td>
-          </tr>
-          <tr>
-            <th>Total</th>
-            <td>(AT) Austria</td>
-            <td></td>
-            <td>EU28</td>
-            <td></td>
-          </tr>-->
          </tbody>
       </table> 
     </div>
@@ -1764,7 +1639,7 @@
         datasource-and-dates="[datasetList.Eurofound,87]"
       ></dvt-bar-chart>
       <p data-ng-bind="i18nLiterals.L20592"></p>
-      <table class="w50 chart-data">
+      <table class="w85 chart-data">
         <thead>
           <tr>
             <th>Country</th>
@@ -2209,7 +2084,7 @@
       <dvt-bar-chart
         data-ng-cloak
         query="getCountryReportActivitySectorCountryFirstData" cda="{{::cda }}"
-        width="330" height="250" axis-percent="1"
+        width="330" height="220" axis-percent="1"
         orientation="vertical" axis-fixed-min="0"
         axis-fixed-max="100" step="20"
         params="[['pDataset', datasetList.ESENER], ['pIndicator', 304], ['pCountry1', pCountry], ['pCountry2', 'EU27_2020']]"
@@ -2228,11 +2103,11 @@
         dimensions="dimensionsOneDecimal"
         base-axis-label-text-baseline="top"
         legend="true" axis-label-word-break="1"
-        legend-align="center" base-axis-size="50"
+        legend-align="center" base-axis-size="40"
         datasource-and-dates="[datasetList.ESENER,304]"
       ></dvt-bar-chart>
       <p data-ng-bind="i18nLiterals.L20603" ></p>
-      <table class="chart-data">
+      <table class="chart-data w60">
         <thead>
           <tr>
             <th>Sector</th>
@@ -2260,7 +2135,7 @@
       <dvt-bar-chart
         data-ng-cloak
         query="getCountryReportCompanySizeCountryFirstData" cda="{{::cda }}"
-        width="330" height="250" axis-percent="1"
+        width="330" height="220" axis-percent="1"
         orientation="vertical" axis-fixed-min="0"
         axis-fixed-max="100" step="20"
         params="[['pDataset', datasetList.ESENER], ['pIndicator', 304], ['pCountry1', pCountry], ['pCountry2', 'EU27_2020']]"
@@ -2338,7 +2213,7 @@
       <dvt-bar-chart
         data-ng-cloak
         query="getCountryReportAllCountriesAnswersData" cda="{{::cda }}"
-        width="330" height="250" axis-percent="1"
+        width="330" height="240" axis-percent="1"
         orientation="vertical" axis-fixed-min="0"
         axis-fixed-max="100" step="20"
         params="[['pDataset', datasetList.ESENER], ['pIndicator', 305]]"
@@ -2391,7 +2266,7 @@
       <dvt-bar-chart
         data-ng-cloak
         query="getCountryReportAllCountriesAnswersData" cda="{{::cda }}"
-        width="330" height="250" axis-percent="1"
+        width="330" height="240" axis-percent="1"
         orientation="vertical" axis-fixed-min="0"
         axis-fixed-max="100" step="20"
         params="[['pDataset', datasetList.ESENER], ['pIndicator', 360]]"
@@ -2431,14 +2306,12 @@
     </div>
 
     <!-- Employment participation in prevention -->
-    <h4 class="header3">Employment participation in prevention LITERAL</h4>
-
     <!-- sector -->
     <div class="box-rounded">
       <dvt-bar-chart
         data-ng-cloak
         query="getCountryReportActivitySectorCountryFirstData" cda="{{::cda }}"
-        width="330" height="250" axis-percent="1"
+        width="330" height="240" axis-percent="1"
         orientation="vertical" axis-fixed-min="0"
         axis-fixed-max="100" step="20"
         params="[['pDataset', datasetList.ESENER], ['pIndicator', 353], ['pCountry1', pCountry], ['pCountry2', 'EU27_2020']]"
@@ -2488,7 +2361,7 @@
       <dvt-bar-chart
         data-ng-cloak
         query="getCountryReportCompanySizeCountryFirstData" cda="{{::cda }}"
-        width="330" height="250" axis-percent="1"
+        width="330" height="240" axis-percent="1"
         orientation="vertical" axis-fixed-min="0"
         axis-fixed-max="100" step="20"
         params="[['pDataset', datasetList.ESENER], ['pIndicator', 353], ['pCountry1', pCountry], ['pCountry2', 'EU27_2020']]"
@@ -2511,7 +2384,7 @@
         datasource-and-dates="[datasetList.ESENER,353]"
       ></dvt-bar-chart>
       <p data-ng-bind="i18nLiterals.L20607" ></p>
-      <table class="chart-data">
+      <table class="chart-data w75">
         <thead>
           <tr>
             <th>Sector</th>
@@ -2555,8 +2428,8 @@
       <dvt-radar-chart
         data-ng-cloak
         promises="radarChartPromises.workerInvolvementESENER"
-        axis-fixed-max="80" step="20"
-        width="600" height="500"
+        axis-fixed-max="75" step="20"
+        width="600" height="400"
         status="worker-involvement-esener"
         chart-title="{{i18nLiterals.L20645}}"
         id="1" radio="130" values-format="%"
@@ -2586,12 +2459,11 @@
 
     <!-- EWCS -->
     <div class="box-rounded">
-      <!--<h5 data-ng-bind="i18nLiterals.L20646"></h5>-->
       <dvt-radar-chart
         data-ng-cloak
         promises="radarChartPromises.workerInvolvementEurofound"
         axis-fixed-max="80" step="20"
-        width="600" height="500"
+        width="600" height="400"
         status="worker-involvement-eurofound"
         chart-title="{{i18nLiterals.L20646}}"
         id="2" radio="130" values-format="%"
@@ -2638,26 +2510,26 @@
     
     <!-- % of establishments inspected -->
     <div class="box-rounded">
-      <h4 data-ng-bind="i18nLiterals.L20692" class="header3"></h4>
+      <h4 data-ng-bind="i18nLiterals.L20692" class="header4"></h4>
       <dvt-bar-chart
         data-ng-cloak
         query="getEstablishmentsInspectedData" cda="{{::cda }}"
-        width="330" height="330" axis-percent="1"
+        width="400" height="240" axis-percent="1"
         orientation="vertical" axis-fixed-min="0" stacked="1"
         axis-fixed-max="100" step="20" id="1"
         params="[['pIndicator', 285], ['pCountry1', pCountry], ['pCountry2', 'EU28'], ['pDataset', datasetList.ESENER], ['pAnswer', 1]]"
         color-role="category" colors="[color1, colorEU]"
         chart-title="{{i18nLiterals.L20693}}" 
-        axis-label-font="12px 'OpenSans-bold'"
+        axis-label-font="10px 'OpenSans-bold'"
         base-axis-label-text-baseline="top"
         plots="plots.establishmentsInspected"
         values-visible="true"
         values-mask="{series}"
-        values-font="12px 'OpenSans-bold'"
+        values-font="10px 'OpenSans-bold'"
         multiple-label-colors="false"
         leaf-content-overflow='visible'                
         dimensions="dimensionsNoDecimal"
-        legend="true" base-axis-size="50"
+        legend="true" base-axis-size="40"
         datasource-and-dates="[datasetList.ESENER,285]"
         custom-label="true" legend-align="center"
       ></dvt-bar-chart> 
@@ -2682,25 +2554,25 @@
 
     <!-- Authority -->
     <div class="box-rounded">
-      <h4 data-ng-bind="i18nLiterals.L333"></h4>
+      <h4 data-ng-bind="i18nLiterals.L333" class="header5"></h4>
       <div data-ng-bind-html="i18nLiterals.L23322"></div>
     </div> 
 
     <!-- Scope of the Labor Inspection -->
     <div class="box-rounded">
-      <h4 data-ng-bind="i18nLiterals.L334"></h4>
+      <h4 data-ng-bind="i18nLiterals.L334" class="header5"></h4>
       <div data-ng-bind-html="i18nLiterals.L23323"></div>
     </div> 
 
     <!-- Inspector powers -->
     <div class="box-rounded">
-      <h4 data-ng-bind="i18nLiterals.L335"></h4>
+      <h4 data-ng-bind="i18nLiterals.L335" class="header5"></h4>
       <div data-ng-bind-html="i18nLiterals.L23324"></div>
     </div> 
 
     <!-- Strategy/Plan -->
     <div class="box-rounded">
-      <h4 data-ng-bind="i18nLiterals.L336"></h4>
+      <h4 data-ng-bind="i18nLiterals.L336" class="header5"></h4>
       <div data-ng-bind-html="i18nLiterals.L23325"></div>
     </div> 
   </section>
@@ -2729,12 +2601,6 @@
             <img class="flag" ng-src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/flag/{{::matrix.country_code.toLowerCase()}}.png">
             <h2 class="country ng-binding title-section main-color" data-ng-bind="i18nLiterals['L'+matrix.country_name]"></h2>
           </header>
-          <!--<h3 class="name-osh_statistics" data-ng-bind="i18nLiterals.L20714"></h3> 
-          <div class="box-rounded">                         
-            <p class="institution-name" data-ng-bind-html="i18nLiterals['L'+matrix.name_statistics]"></p>
-            <div data-ng-bind-html="i18nLiterals['L'+matrix.link_statistics]"></div>
-            <div class="text" data-ng-bind-html="i18nLiterals['L'+matrix.detail_statistics]"></div>
-          </div>-->
         </div>
         <div class="matrix--content--elements">
           <h3 class="" ng-if="::matrix.osh_statistics==1 && $index == 0 " data-ng-bind="i18nLiterals.L20714"></h3>
