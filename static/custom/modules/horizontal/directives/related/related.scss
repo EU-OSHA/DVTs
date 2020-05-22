@@ -1,11 +1,12 @@
 .section--related--content{
 	background: $aquamarine-light;
+	padding: 2rem !important;
 	.related--content--wrapper{
 		h2{
 			color: $aquamarine;
 			text-align: center;
 			font-size: 3.6rem;
-			margin-bottom: 5rem; 
+			margin-bottom: 3rem; 
 		}
 		.related-content-items{
 			display: flex;
@@ -14,22 +15,23 @@
 			.related-content-item{
 				display: flex;
 				flex-direction: row;
-				padding-right: 2rem;
+				padding: 2rem;
     		border-right: 2px solid $aquamarine;
-    		margin-right: 2rem;
+    		//margin-right: 2rem;
     		&:last-child{
 					border:0px;
     		}
 				.icon-related-item{
 					border-radius: 60rem;
-  				width: 16rem;
-  				height: 16rem;
+  				width: 12rem;
+  				height: 12rem;
   				background-color: $white;
 					background-size: 60%;
 					background-position: 50% 45%;
 				}
 				.content-related-item{
-					width: 20rem;
+					width: 26rem;
+					flex:1;
     			padding-left: 2rem;
 					display: flex;
 					flex-direction: column;
@@ -53,6 +55,12 @@
 	}
 }
 
+@media only screen 
+and (max-width : 1450px) {
+	.section--related--content .related--content--wrapper .related-content-items .related-content-item .content-related-item{
+		width: 22rem;
+	}
+}
 
 @media only screen 
 and (min-width : 768px) 
@@ -87,6 +95,7 @@ and (orientation : landscape) {
 		}
 	}
 }
+
 @media only screen 
 and (min-width : 768px) 
 and (max-width :1280px) 
