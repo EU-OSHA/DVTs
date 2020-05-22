@@ -235,6 +235,9 @@
     requirePaths['vertical/about-tool/CountryReportController'] = verticalModules + '/about-tool/country-report/CountryReportController' + suffix;
     requirePaths['vertical/about-tool/services/CountryReportService'] = verticalModules + '/about-tool/country-report/services/CountryReportService' + suffix;
 
+    /* FULL COUNTRY REPORT HOME */
+    requirePaths['vertical/about-tool/CountryReportHomeController'] = verticalModules + '/about-tool/country-report-home/CountryReportHomeController' + suffix;
+
     /* FOOTER */
     requirePaths['vertical/footer-pages/footer-pages-module'] = verticalModules + '/footer-pages/footer-pages-module' + suffix;
     requirePaths['vertical/footer-pages/FooterPagesController'] = verticalModules + '/footer-pages/FooterPagesController' + suffix;
