@@ -131,7 +131,7 @@
         <dvt-bar-chart
           data-ng-cloak
           query="getCountryReportCompanySizeData" cda="{{::cda }}"
-          width="330" height="200"
+          width="330" height="250"
           orientation="horizontal" axis-percent="1"
           axis-fixed-max="100" step="20"
           params="[['pIndicator','31'],['pCountry1', pCountry],['pCountry2', 'EU28'],['pDataset', datasetList.EUROSTAT]]"
@@ -173,41 +173,6 @@
               <td data-ng-bind="row.country"></td>
               <td data-ng-bind="row.value"></td>
             </tr>
-            <!--<tr>
-              <th>From 0 to 9 persons employed</th>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>  
-            </tr>
-            <tr>
-              <th>From 10 to 19 persons employed</th>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <th>From 20 to 49 persons employed</th>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <th>From 50 to 249 persons employed</th>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <th>250 persons employed or more</th>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>-->
           </tbody>
         </table>
       </div>
@@ -286,7 +251,7 @@
           label-text-align="labelLeftAlign"
           multiple-label-colors="true"
           legend="true" custom-label="true"
-          datasource-and-dates="[datasetEurostat2018,33]"
+          datasource-and-dates="[datasetList.EUROSTAT2018,33]"
         ></dvt-bar-chart>
         <table class="chart-data">
           <thead>
@@ -356,7 +321,7 @@
           width="208" height="208" type="lines" listen-to="['pSplit', 'pDataset']"
           orientation="vertical" axis-fixed-min="10000"
           axis-fixed-max="25000" step="5000"
-          params="[['pIndicator',279],['pCountry1', pCountry],['pCountry2', 'EU28'],['pDataset', datasetList.EUROSTAT2018BetweenDates], 
+          params="[['pIndicator',36],['pCountry1', pCountry],['pCountry2', 'EU28'],['pDataset', datasetList.EUROSTAT2018BetweenDates], 
           ['pPercent', 0]]"
           color-role="series" colors="[color1, colorEU]"
           chart-title="{{i18nLiterals.L293}}" id="6"
@@ -409,9 +374,9 @@
         <td><img  class="flags" ng-src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/flag/{{::profile.country_code.toLowerCase()}}.png"><span data-ng-bind="profile.country_code" class="data"></span></td>
         <td><span data-ng-bind="i18nLiterals.L20615"></span><span data-ng-bind="profile.medianAge +' years'"  class="data"></span></td>
         <td><span data-ng-bind="i18nLiterals.L20616"></span><span data-ng-bind="profile.ageingWorkers +' %'" class="data"></span></td>
-        <td><span data-ng-bind="i18nLiterals.L20619"></span><span data-ng-bind="profile.employmentRateTotal +' %'" class="data"></span></td>
+        <td><span data-ng-bind="i18nLiterals.L20619"></span><span data-ng-bind="profile.employmentRateFemale +' %'" class="data"></span></td>
         <td><span data-ng-bind="i18nLiterals.L20618"></span><span data-ng-bind="profile.employmentRateMale +' %'" class="data"></span></td>
-        <td><span data-ng-bind="i18nLiterals.L20617"></span><span data-ng-bind="profile.employmentRateFemale +' %'" class="data"></span></td>
+        <td><span data-ng-bind="i18nLiterals.L20617"></span><span data-ng-bind="profile.employmentRateTotal +' %'" class="data"></span></td>
         <td><span data-ng-bind="i18nLiterals.L22125"></span><span data-ng-bind="profile.unemploymentRate +' %'" class="data"></span></td>
       </tr>
     </table>
@@ -433,35 +398,35 @@
     </header>
     <h4 data-ng-bind="i18nLiterals.L20378"></h4>
     <div class="box-rounded">
-      <h5 data-ng-bind="i18nLiterals.L23573">Basic Info</h5>
+      <h5 data-ng-bind="i18nLiterals.L20246">Basic Info</h5>
       <div data-ng-bind-html="i18nLiterals['L'+nationalStrategy[0].basic_info]"></div>
     </div>
     <div class="box-rounded">
-      <h5 data-ng-bind="i18nLiterals.L23586">Background</h5>
+      <h5 data-ng-bind="i18nLiterals.L20247">Background</h5>
       <div data-ng-bind-html="i18nLiterals['L'+nationalStrategy[0].background]"></div>
     </div>
     <div class="box-rounded">
-      <h5 data-ng-bind="i18nLiterals.L23599">Characteristics and objectives</h5>
+      <h5 data-ng-bind="i18nLiterals.L20248">Characteristics and objectives</h5>
       <div data-ng-bind-html="i18nLiterals['L'+nationalStrategy[0].characteristics_objectives]"></div>
     </div>
     <div class="box-rounded">
-      <h5 data-ng-bind="i18nLiterals.L23612">Details and activity</h5>
+      <h5 data-ng-bind="i18nLiterals.L20249">Details and activity</h5>
       <div data-ng-bind-html="i18nLiterals['L'+nationalStrategy[0].details_activity]"></div>
     </div>
     <div class="box-rounded">
-      <h5 data-ng-bind="i18nLiterals.L23625">Actors and stakeholders</h5>
+      <h5 data-ng-bind="i18nLiterals.L20250">Actors and stakeholders</h5>
       <div data-ng-bind-html="i18nLiterals['L'+nationalStrategy[0].actors_stakeholders]"></div>
     </div>
     <div class="box-rounded">
-      <h5 data-ng-bind="i18nLiterals.L23638">Resources and timeframe</h5>
+      <h5 data-ng-bind="i18nLiterals.L20251">Resources and timeframe</h5>
       <div data-ng-bind-html="i18nLiterals['L'+nationalStrategy[0].resources_timeframe]"></div>
     </div>
     <div class="box-rounded">
-      <h5 data-ng-bind="i18nLiterals.L23651">Evaluation</h5>
+      <h5 data-ng-bind="i18nLiterals.L20252">Evaluation</h5>
       <div data-ng-bind-html="i18nLiterals['L'+nationalStrategy[0].evaluation]"></div>
     </div>
     <div class="box-rounded">
-      <h5 data-ng-bind="i18nLiterals.L23664">Relation to EU Strategic Framework</h5>
+      <h5 data-ng-bind="i18nLiterals.L20253">Relation to EU Strategic Framework</h5>
       <div data-ng-bind-html="i18nLiterals['L'+nationalStrategy[0].relation_strategic_framework]"></div>
     </div>
     <h4 data-ng-bind="i18nLiterals.L20379"></h4>
@@ -588,7 +553,7 @@
         axis-fixed-max="5" step="1"
         params="[['pDataset', datasetList.EUROSTAT2017BetweenDates], ['pIndicator', 54]]"
         color-role="series" colors="[color5]"
-        chart-title="{{i18nLiterals.L20707}}" id="4"
+        chart-title="{{i18nLiterals.L311}}" id="4"
         axis-label-font="10px 'OpenSans-bold'"
         plots="plots.allCountries"
         color2-axis-legend-shape = "circle"
@@ -1104,48 +1069,6 @@
             <td data-ng-bind="row.country2"></td>
             <td data-ng-bind="row.value2"></td>
           </tr>
-          <!--<tr>
-            <th>Agriculture and industry</th>
-            <td>(AT) Austria</td>
-            <td></td>
-            <td>EU28</td>
-            <td></td>
-          </tr>
-          <tr>
-            <th>Commerce and hospitality</th>
-            <td>(AT) Austria</td>
-            <td></td>
-            <td>EU28</td>
-            <td></td>
-          </tr>
-          <tr>
-            <th>Construction and transport</th>
-            <td>(AT) Austria</td>
-            <td></td>
-            <td>EU28</td>
-            <td></td>
-          </tr>
-          <tr>
-            <th>Financial and other services</th>
-            <td>(AT) Austria</td>
-            <td></td>
-            <td>EU28</td>
-            <td></td>
-          </tr>
-          <tr>
-            <th>Public administration education and health</th>
-            <td>(AT) Austria</td>
-            <td></td>
-            <td>EU28</td>
-            <td></td>
-          </tr>
-          <tr>
-            <th>Total</th>
-            <td>(AT) Austria</td>
-            <td></td>
-            <td>EU28</td>
-            <td></td>
-          </tr>-->
          </tbody>
       </table> 
     </div>    
@@ -1194,34 +1117,6 @@
             <td data-ng-bind="row.country2"></td>
             <td data-ng-bind="row.value2"></td>
           </tr>
-          <!--<tr>
-            <th>Under 35</th>
-            <td>(AT) Austria</td>
-            <td></td>
-            <td>EU28</td>
-            <td></td>
-          </tr>
-          <tr>
-            <th>35 - 49</th>
-            <td>(AT) Austria</td>
-            <td></td>
-            <td>EU28</td>
-            <td></td>
-          </tr>
-          <tr>
-            <th>50 and over</th>
-            <td>(AT) Austria</td>
-            <td></td>
-            <td>EU28</td>
-            <td></td>
-          </tr>
-          <tr>
-            <th>Total</th>
-            <td>(AT) Austria</td>
-            <td></td>
-            <td>EU28</td>
-            <td></td>
-          </tr>-->
          </tbody>
       </table>
     </div>    
@@ -2107,7 +2002,7 @@
         datasource-and-dates="[datasetList.ESENER,304]"
       ></dvt-bar-chart>
       <p data-ng-bind="i18nLiterals.L20603" ></p>
-      <table class="chart-data w60">
+      <table class="chart-data">
         <thead>
           <tr>
             <th>Sector</th>
@@ -2119,7 +2014,7 @@
         </thead>
         <tbody>
           <tr data-ng-repeat="row in riskAssesmentSector">
-            <th data-ng-bind="row.indicator"></th>
+            <th data-ng-bind="i18nLiterals['L'+row.indicator]"></th>
             <td data-ng-bind="row.country"></td>
             <td data-ng-bind="row.value"></td>
             <td data-ng-bind="row.country2"></td>
@@ -2528,7 +2423,7 @@
         values-font="10px 'OpenSans-bold'"
         multiple-label-colors="false"
         leaf-content-overflow='visible'                
-        dimensions="dimensionsNoDecimal"
+        dimensions="dimensionsOneDecimal"
         legend="true" base-axis-size="40"
         datasource-and-dates="[datasetList.ESENER,285]"
         custom-label="true" legend-align="center"
