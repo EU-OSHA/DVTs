@@ -1457,8 +1457,8 @@ define(function (require) {
 				$scope.data = [];
 				data.data.resultset.map(function (elem) {
 			  		$scope.data.push({
-			  			indicator: elem[0],
-				  		country: elem[1],
+			  			indicator: elem[1],
+				  		country: elem[0],
 				  		value: elem[2]
 			  		});
 				});
@@ -1720,8 +1720,8 @@ define(function (require) {
 					for(var i=0; i<$scope.data.length/2;i++){
 						$scope.establishmentsInspected.push({
 							country: $scope.data[i].country,
-					  		no: Math.round($scope.data[i].value),
-					  		yes: Math.round($scope.data[listSize/2+i].value)
+					  		no: Math.round($scope.data[i].value*10)/10,
+					  		yes: Math.round($scope.data[listSize/2+i].value*10)/10
 						});
 					}
 				}

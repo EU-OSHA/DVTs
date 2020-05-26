@@ -205,7 +205,7 @@
 			AND CASE WHEN ${pIndicator} IN (304,353) THEN p.answer_id=1 ELSE p.answer_id IS NULL END
 			AND CASE WHEN ${pIndicator} IN (304,353) THEN (sas.id IN (2, 3, 4, 18, 6, 7,14)) ELSE CASE WHEN ${pDataset}=21 THEN (sas.id IN (1, 2, 3, 4, 18, 6, 7)) ELSE (sas.id IN (8,9,10,11,12,13)) END END
 			AND n.country_code IN (${pCountry1}, ${pCountry2})
-			ORDER BY FIELD(n.country_code, ${pCountry1}, ${pCountry2}) ASC, FIELD (sas.id, 1, 2, 3, 4, 6, 7,18,14)
+			ORDER BY FIELD(n.country_code, ${pCountry1}, ${pCountry2}) ASC, FIELD (sas.id, 1, 2, 3, 4, 6, 7, 18, 14, 9, 10, 11, 12, 13, 8)
 			<!--SELECT IF(n.name REGEXP 'European Union' || n.name='EU27_2020', n.country_code, CONCAT("(", n.country_code, ") ", n.name)) as Country, t.text as Sector, (v.value*100) as Value
 			FROM nuts n, profile p, indicator i, value v, split_activity_sector sas, dataset d, translation t
 			WHERE n.id = p.nuts_id 
