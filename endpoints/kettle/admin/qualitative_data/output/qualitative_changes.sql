@@ -1036,17 +1036,71 @@ INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+184, null, @sectionId, "STRATEGY_CHARACTERISTICS");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+184, "EN", 1, "<p><strong>Vision: Working with others to ensure healthier and safer workplaces in Malta.</strong><br />The development of a culture, which goes beyond the workplace, which adopts a holistic view of health and that values risk prevention. <br />Appropriate preventative measures will be in place in all workplaces in Malta to minimize the possibility and severity of occupational incidents and illness. The ultimate goal is zero preventable incidents that can affect health and safety.<br />Objective 1: Legislation, compliance and enforcement<br />Objective 2: Capacity Building<br />Objective 3: Communicating the benefits of OSH<br />Objective 4: Taking appropriate action against existing and emerging risks<br />Objective 5: Evaluating effectiveness of actions taken</p>");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+184, "EN", 1, "<p><a href=\"http://ohsa.org.mt/Portals/0/Docs/PoliciesProcedures/OHSA%20Strategic%20Plan%202014_%202020.pdf\" target=\"_blank\"><strong>Vision</strong></a><strong>: Working with others to ensure healthier and safer workplaces in Malta.</strong><br>The development of a culture, which goes beyond the workplace, which adopts a holistic view of health and that values risk prevention.<br>Appropriate preventative measures will be in place in all workplaces in Malta to minimize the possibility and severity of occupational incidents and illness. The ultimate goal is zero preventable incidents that can affect health and safety.<br>Objective 1: Legislation, compliance and enforcement<br>Objective 2: Capacity Building<br>Objective 3: Communicating the benefits of OSH<br>Objective 4: Taking appropriate action against existing and emerging risks<br>Objective 5: Evaluating effectiveness of actions taken</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+185, null, @sectionId, "STRATEGY_DETAILS");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+185, "EN", 1, "<p><strong>Objective 1: Legislation, compliance and enforcement </strong><br />Activities:</p><ul><li>Continuous development of an effective legislative framework, achieved through the meaningful consultation of all stakeholders;</li><li>Development of a consistent and transparent enforcement process model that ensures compliance with health and safety legislation; the support of duty holders, especially SMEs to help them achieve compliance, including by the dissemination of adequate information and guidance, and the provision of advice to all who require it;</li><li>Soliciting action and initiatives by all duty holders to decrease reliance on OHSA services, while ensuring the competence of services provided by ‘external competent persons’.</li></ul><p>Desired outcomes:</p><ul><li>Relevant, coherent, simple, effective, legislation and policies, fully aligned with EU directives and with the reality of today’s work in Malta.</li><li>Employers (duty holders) who understand the value and benefits of adequate health and safety levels, and who proactively act without the need of direct intervention from the OHSA through a process of self-regulation.</li><li>A clearly defined structure and system of penalties</li><li>Incentives for organisations which make a real effort to improve OHS in their workplaces, disincentives for those operating with uncontrolled risks or who repeatedly break the law.</li></ul><p><strong>Objective 2: Capacity Building </strong><br /> Activities:</p><ul><li>The development of the Authority’s human resources through recruitment and training, and the availability of information and tools to assist OHS Officers and other employees of the Authority.</li></ul><p>Desired situation:</p><ul><li>All workers are fully competent for the tasks assigned to them, including new and additional tasks arising as a result of EU Membership, legislative changes and changes in the world of work.</li></ul><p>In order for OHSA to be able to regulate and enforce OHS adequately, the OHS Authority needs to operate at full complement with all its employees being trained to a high degree of competence and proficiency.<br /><br /><strong> Objective 3: Communicating the benefits of OHS </strong></p><ul><li>Seeking partnerships with all stakeholders so as to develop a preventive culture that encourages holistic approaches towards healthy lifestyles; increasing the level of awareness regarding the benefits of adequate health and safety levels;</li><li>Disseminating information on the evaluation of risks and their control;</li><li>Promoting and carrying out training.</li></ul><p>Desired situation:</p><ul><li>Employers and employees recognise their responsibility and importance in achieving a safe environment for their workers, and feel proud of a positive contribution to OHS.</li><li>Trade unions distance themselves from attempts to use ohs as a bargaining chip and understand fully the benefits of OHS.</li><li>To have OHS representation in all workplaces to ensure the meaningful participation by all workers on matters that can affect their health and safety.</li></ul><p>To have established communication channels to workers, to be able to easily and efficiently build OHS awareness, as well as communicate changes in legislation and new developments in OHS.<br /><br /><strong> Objective 4: Taking appropriate action against existing and emerging risks </strong><br />Activities:</p><ul><li>Fostering and promoting action against both traditional risks and emerging ones, based on appropriate research;</li><li>Improving the quality of service provided by occupational health service providers, and improving the effectiveness of health surveillance.</li></ul><p>Desired situation:</p><ul><li>To have in place a system for the collection of comprehensive and accurate data on occupational accidents, injuries, ill-health, morbidity and fatal accidents</li><li>To have medical practitioners who are fully knowledgeable of their legal responsibilities, the association between ill-health and work conditions, and who are sensitised to the different health needs of different sectors of the worker population.</li><li>To have accurate detailed information about the state of play with regards to OHS in Malta and its effect on the economy.</li></ul><p>To ensure the full and equitable access to OHS preventive and protective services<br /><br /><strong> Objective 5: Evaluating effectiveness of actions taken</strong></p><ul><li>Actions will be assessed against KPIs determined or adopted by the authority, whilst ensuring the efficiency of all services provided.</li></ul>");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+185, "EN", 1, "<p><strong>Objective 1: Legislation, compliance and enforcement&nbsp;</strong><br>Activities:</p>
+<ul>
+    <li>Continuous development of an effective legislative framework, achieved through the meaningful consultation of all stakeholders;</li>
+    <li>Development of a consistent and transparent enforcement process model that ensures compliance with health and safety legislation; the support of duty holders, especially SMEs to help them achieve compliance, including by the dissemination of adequate information and guidance, and the provision of advice to all who require it;</li>
+    <li><a href=\"http://ohsa.org.mt/Portals/0/Docs/PoliciesProcedures/OHSA%20Strategic%20Plan%202014_%202020.pdf\" target=\"_blank\">Soliciting action and initiatives</a> by all duty holders to decrease reliance on OHSA services, while ensuring the competence of services provided by &lsquo;external competent persons&rsquo;.</li>
+</ul>
+<p>Desired outcomes:</p>
+<ul>
+    <li>Relevant, coherent, simple, effective, legislation and policies, fully aligned with EU directives and with the reality of today&rsquo;s work in Malta.</li>
+    <li>Employers (duty holders) who understand the value and benefits of adequate health and safety levels, and who proactively act without the need of direct intervention from the OHSA through a process of self-regulation.</li>
+    <li>A clearly defined structure and system of penalties</li>
+    <li>Incentives for organisations which make a real effort to improve OHS in their workplaces, disincentives for those operating with uncontrolled risks or who repeatedly break the law.</li>
+</ul>
+<p><strong>Objective 2: Capacity Building&nbsp;</strong><br>Activities:</p>
+<ul>
+    <li>The development of the Authority&rsquo;s human resources through recruitment and training, and the availability of information and tools to assist OHS Officers and other employees of the Authority.</li>
+</ul>
+<p>Desired situation:</p>
+<ul>
+    <li>All workers are fully competent for the tasks assigned to them, including new and additional tasks arising as a result of EU Membership, legislative changes and changes in the world of work.</li>
+</ul>
+<p>In order for OHSA to be able to regulate and enforce OHS adequately, the OHS Authority needs to operate at full complement with all its employees being trained to a high degree of competence and proficiency.<br><br><strong>&nbsp;Objective 3: Communicating the benefits of OHS&nbsp;</strong></p>
+<ul>
+    <li>Seeking partnerships with all stakeholders so as to develop a preventive culture that encourages holistic approaches towards healthy lifestyles; increasing the level of awareness regarding the benefits of adequate health and safety levels;</li>
+    <li>Disseminating information on the evaluation of risks and their control;</li>
+    <li>Promoting and carrying out training.</li>
+</ul>
+<p>Desired situation:</p>
+<ul>
+    <li>Employers and employees recognise their responsibility and importance in achieving a safe environment for their workers, and feel proud of a positive contribution to OHS.</li>
+    <li>Trade unions distance themselves from attempts to use ohs as a bargaining chip and understand fully the benefits of OHS.</li>
+    <li>To have OHS representation in all workplaces to ensure the meaningful participation by all workers on matters that can affect their health and safety.</li>
+    <li>To have established communication channels to workers, to be able to easily and efficiently build OHS awareness, as well as communicate changes in legislation and new developments in OHS.</li>
+</ul>
+<p><strong>Objective 4: Taking appropriate action against existing and emerging risks</strong><br>Activities:</p>
+<ul>
+    <li>Fostering and promoting action against both traditional risks and emerging ones, based on appropriate research;</li>
+    <li>Improving the quality of service provided by occupational health service providers, and improving the effectiveness of health surveillance.</li>
+</ul>
+<p>Desired situation:</p>
+<ul>
+    <li>To have in place a system for the collection of comprehensive and accurate data on occupational accidents, injuries, ill-health, morbidity and fatal accidents</li>
+    <li>To have medical practitioners who are fully knowledgeable of their legal responsibilities, the association between ill-health and work conditions, and who are sensitised to the different health needs of different sectors of the worker population.</li>
+    <li>To have accurate detailed information about the state of play with regards to OHS in Malta and its effect on the economy.</li>
+  <li>To ensure the full and equitable access to OHS preventive and protective services.</li>
+</ul>
+<p><strong>Objective 5: Evaluating effectiveness of actions taken</strong></p>
+<ul>
+    <li>Actions will be assessed against KPIs determined or adopted by the authority, whilst ensuring the efficiency of all services provided.</li>
+</ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+186, null, @sectionId, "STRATEGY_ACTORS");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+186, "EN", 1, "The main tripartite social dialogue institutions for OHS: The Malta for Economic and Social Development (MCESD) and the Occupational Health and Safety Authority.");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+186, "EN", 1, "<ul>
+    <li>The Employment Relations Board (ERB), the Malta Council for Economic and Social Development (MCESD) and the Occupational Health and Safety Authority (OHSA) are the three main tripartite social dialogue institutions that deal with working conditions. During the last years, these three bodies were instrumental in bringing significant changes at both enterprises, sectoral and national levels <a href=\"https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Malta#cite_note-thirtyfour-12\" target=\"_blank\">[12]</a>.</li>
+    <li>The ERB is a tripartite consultative body set up by government under the Employment and Industrial Relations Act, 2002 <a href=\"https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Malta#cite_note-thirtyfive-13\" target=\"_blank\">[13]</a>. The board comprises four representatives, four employees&rsquo; representatives and four members appointed by the government. The board has to be consulted before the publication of any employment-related legal notices. Hence, the social partners, through the ERB, have a direct effect on Maltese legislation <a href=\"https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Malta#cite_note-thirtyfour-12\" target=\"_blank\">[12]</a>.</li>
+    <li>The MCESD, established in 1988 and given legal status by an Act of Parliament (Act XV, Chapter 431) in 2001, is a legal consultative and advisory body to the government. The council provides a forum for consultation on economic and social development issues for social partners <a href=\"https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Malta#cite_note-thirtyfour-12\" target=\"_blank\">[12]</a>.</li>
+<li>OHSA is a tripartite body. Its board is composed of members representing the Government, employee and employer interests. such composition facilitates the participation of social partners. the involvement of social partners and other stakeholders in policy decisions regulating OHS is a key feature of social dialogue and it facilitates and ensures the efficient, effective design and implementation of policies and strategies on OHS. Social partners and other stakeholders are also involved in the organisation of OHS awareness activities which are regularly organised by OHSA.</li>
+</ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
@@ -11778,7 +11832,27 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p><strong>ESENER 2019 Survey &nbsp;</strong></p><p>European Working Conditions Survey (EWCS, 2015)&nbsp;</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to the ESENER 2019 Survey Questions below.<strong>Specifically this indicator relates to</strong>:</p><p><strong>Depending on the type of work, there are different types of risks and hazards. Please tell me for each of the following risk factors whether it is present or not in your establishment, regardless of whether it is currently under control and regardless of the number of employees it affects:</strong></p><p><strong>“Tiring or painful positions, including sitting for long periods”</strong></p><p>“Lifting or moving people or heavy loads”</p><p>“Repetitive hand or arm movements”</p><p>&nbsp;Answer options:&nbsp;</p><ol><li>Yes</li><li>No</li></ol><p>&nbsp;Responses are displayed to the EWCS Questions below.<strong>&nbsp;</strong></p><p>“Does your work involve tiring or painful positions?”</p><p>“Does your work involve sitting?”</p><p>“Does your work involve Carrying or moving heavy loads?”</p><p>“Does your work involve Repetitive hand or arm movements?”</p><p>“Does your work involve lifting or moving people?”</p><p>&nbsp;Answer options:</p><ol><li>At least ¼ of the time</li><li>Less than ¼ of the time</li></ol>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to the ESENER 2019 Survey Questions below.<strong>Specifically this indicator relates to</strong>:</p>
+<p><strong>Depending on the type of work, there are different types of risks and hazards. Please tell me for each of the following risk factors whether it is present or not in your establishment, regardless of whether it is currently under control and regardless of the number of employees it affects:</strong></p>
+<p><strong>Tiring or painful positions, including sitting for long periods</strong></p>
+<p>Lifting or moving people or heavy loads</p>
+<p>Repetitive hand or arm movements;</p>
+<p>Answer options:</p>
+<ol>
+    <li>Yes</li>
+    <li>No</li>
+</ol>
+<p>Responses are displayed to the EWCS Questions below. Specifically this indicator relates to:</p>
+<p>&ldquo;Does your work involve tiring or painful positions?&rdquo;</p>
+<p>Answer options: &#39;Almost all the time&#39;, &#39;Between 1/4 and 3/4 of the time&#39; and &#39;Almost never&#39;</p>
+<p>&ldquo;Does your work involve sitting?&rdquo;</p>
+<p>Answer options: &#39;Almost all the time&#39;, &#39;Between 1/4 and 3/4 of the time&#39; and &#39;Almost never&#39;</p>
+<p>&ldquo;Does your work involve Carrying or moving heavy loads?&rdquo;</p>
+<p>Answer options: 1. At least &frac14; of the time; 2. Less than &frac14; of the time</p>
+<p>&ldquo;Does your work involve Repetitive hand or arm movements?&rdquo;</p>
+<p>Answer options: &#39;Almost all the time&#39;, &#39;Between 1/4 and 3/4 of the time&#39; and &#39;Almost never&#39;</p>
+<p>&ldquo;Does your work involve lifting or moving people?&rdquo;</p>
+<p>&nbsp;Answer options: 1. At least &frac14; of the time, 2. Less than &frac14; of the time</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p><strong>ESENER:</strong></p><p><strong><a target=\"_blank\" href=\"https://visualisation.osha.europa.eu/esener#!/en\">https://visualisation.osha.europa.eu/esener#!/en</a></strong></p><p>EWCS:</p><p><a target=\"_blank\" href=\"https://www.eurofound.europa.eu/data/european-working-conditions-survey\">https://www.eurofound.europa.eu/data/european-working-conditions-survey</a></p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -11811,7 +11885,27 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p>ESENER 2019 Survey &nbsp;</p><p><strong>European Working Conditions Survey (EWCS, 2015)&nbsp;</strong></p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to the ESENER 2019 Survey Questions below. </p><p>Depending on the type of work, there are different types of risks and hazards. Please tell me for each of the following risk factors whether it is present or not in your establishment, regardless of whether it is currently under control and regardless of the number of employees it affects:</p><p>“Tiring or painful positions, including sitting for long periods”</p><p>“Lifting or moving people or heavy loads”</p><p>“Repetitive hand or arm movements”</p><p>&nbsp;Answer options:&nbsp;</p><ol><li>Yes</li><li>No</li></ol><p>&nbsp;Responses are displayed to the EWCS Questions below.<strong> Specifically this indicator relates to</strong>:</p><p><strong>“Does your work involve tiring or painful positions?”</strong></p><p>“Does your work involve sitting?”</p><p>“Does your work involve Carrying or moving heavy loads?”</p><p>“Does your work involve Repetitive hand or arm movements?”</p><p>“Does your work involve lifting or moving people?”</p><p>&nbsp;Answer options:</p><ol><li>At least ¼ of the time</li><li>Less than ¼ of the time</li></ol>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to the ESENER 2019 Survey Questions below.</p>
+<p>Depending on the type of work, there are different types of risks and hazards. Please tell me for each of the following risk factors whether it is present or not in your establishment, regardless of whether it is currently under control and regardless of the number of employees it affects:</p>
+<p>&ldquo;Tiring or painful positions, including sitting for long periods&rdquo;</p>
+<p>&ldquo;Lifting or moving people or heavy loads&rdquo;</p>
+<p>&ldquo;Repetitive hand or arm movements&rdquo;</p>
+<p>&nbsp;Answer options:&nbsp;</p>
+<ol>
+    <li>Yes</li>
+    <li>No</li>
+</ol>
+<p>&nbsp;Responses are displayed to the EWCS Questions below.<strong>&nbsp;Specifically this indicator relates to</strong>:</p>
+<p><strong>&ldquo;Does your work involve tiring or painful positions?&rdquo;</strong></p>
+<p><strong>Answer options: &#39;Almost all the time&#39;, &#39;Between 1/4 and 3/4 of the time&#39; and &#39;Almost never&#39;</strong></p>
+<p>&ldquo;Does your work involve sitting?&rdquo;</p>
+<p>Answer options: &#39;Almost all the time&#39;, &#39;Between 1/4 and 3/4 of the time&#39; and &#39;Almost never&#39;</p>
+<p>&ldquo;Does your work involve Carrying or moving heavy loads?&rdquo;</p>
+<p>Answer options: 1. At least &frac14; of the time; 2. Less than &frac14; of the time</p>
+<p>&ldquo;Does your work involve Repetitive hand or arm movements?&rdquo;</p>
+<p>Answer options: &#39;Almost all the time&#39;, &#39;Between 1/4 and 3/4 of the time&#39; and &#39;Almost never&#39;</p>
+<p>&ldquo;Does your work involve lifting or moving people?&rdquo;</p>
+<p>&nbsp;Answer options: 1. At least &frac14; of the time, 2. Less than &frac14; of the time</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>ESENER:</p><p><a target=\"_blank\" href=\"https://visualisation.osha.europa.eu/esener#!/en\">https://visualisation.osha.europa.eu/esener#!/en</a></p><p><strong>EWCS:</strong></p><p><strong><a target=\"_blank\" href=\"https://www.eurofound.europa.eu/data/european-working-conditions-survey\">https://www.eurofound.europa.eu/data/european-working-conditions-survey</a></strong></p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -11827,7 +11921,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentages");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "<p>Spider diagram, all countries plus EU countries average, percentage for answers ‘Yes’ in ESENER</p><p><strong>Spider diagram, all countries plus EU countries average, percentage for answers ‘At least ¼ of the time’ in EWCS</strong></p>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "<p>Spider diagram, all countries plus EU countries average, percentage for answers ‘Yes’ in ESENER</p><p><strong>Spider diagram, all countries plus EU countries average, sum of percentages for the two answers ‘'Almost all the time', and 'Between 1/4 and 3/4 of the time' in EWCS</strong></p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+13, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+13, "EN", 1, "Tiring or painful positions I (EWCS)");
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
@@ -11844,7 +11938,27 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p>ESENER 2019 Survey &nbsp;</p><p><strong>European Working Conditions Survey (EWCS, 2015)&nbsp;</strong></p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to the ESENER 2019 Survey Questions below.</p><p>Depending on the type of work, there are different types of risks and hazards. Please tell me for each of the following risk factors whether it is present or not in your establishment, regardless of whether it is currently under control and regardless of the number of employees it affects:</p><p>“Tiring or painful positions, including sitting for long periods”</p><p>“Lifting or moving people or heavy loads”</p><p>“Repetitive hand or arm movements”</p><p>&nbsp;Answer options:&nbsp;</p><ol><li>Yes</li><li>No</li></ol><p>&nbsp;Responses are displayed to the EWCS Questions below.<strong> Specifically this indicator relates to</strong>:</p><p>“Does your work involve tiring or painful positions?”</p><p><strong>“Does your work involve sitting?”</strong></p><p>“Does your work involve Carrying or moving heavy loads?”</p><p>“Does your work involve Repetitive hand or arm movements?”</p><p>“Does your work involve lifting or moving people?”</p><p>&nbsp;Answer options:</p><ol><li>At least ¼ of the time</li><li>Less than ¼ of the time</li></ol>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to the ESENER 2019 Survey Questions below.</p>
+<p>Depending on the type of work, there are different types of risks and hazards. Please tell me for each of the following risk factors whether it is present or not in your establishment, regardless of whether it is currently under control and regardless of the number of employees it affects:</p>
+<p>&ldquo;Tiring or painful positions, including sitting for long periods&rdquo;</p>
+<p>&ldquo;Lifting or moving people or heavy loads&rdquo;</p>
+<p>&ldquo;Repetitive hand or arm movements&rdquo;</p>
+<p>&nbsp;Answer options:&nbsp;</p>
+<ol>
+    <li>Yes</li>
+    <li>No</li>
+</ol>
+<p>&nbsp;Responses are displayed to the EWCS Questions below.<strong>&nbsp;Specifically this indicator relates to</strong>:</p>
+<p>&ldquo;Does your work involve tiring or painful positions?&rdquo;</p>
+<p>Answer options: &#39;Almost all the time&#39;, &#39;Between 1/4 and 3/4 of the time&#39; and &#39;Almost never&#39;</p>
+<p><strong>&ldquo;Does your work involve sitting?&rdquo;</strong></p>
+<p><strong>Answer options: &#39;Almost all the time&#39;, &#39;Between 1/4 and 3/4 of the time&#39; and &#39;Almost never&#39;</strong></p>
+<p>&ldquo;Does your work involve Carrying or moving heavy loads?&rdquo;</p>
+<p>Answer options: 1. At least &frac14; of the time; 2. Less than &frac14; of the time</p>
+<p>&ldquo;Does your work involve Repetitive hand or arm movements?&rdquo;</p>
+<p>Answer options: &#39;Almost all the time&#39;, &#39;Between 1/4 and 3/4 of the time&#39; and &#39;Almost never&#39;</p>
+<p>&ldquo;Does your work involve lifting or moving people?&rdquo;</p>
+<p>&nbsp;Answer options: 1. At least &frac14; of the time, 2. Less than &frac14; of the time</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>ESENER:</p><p><a target=\"_blank\" href=\"https://visualisation.osha.europa.eu/esener#!/en\">https://visualisation.osha.europa.eu/esener#!/en</a></p><p><strong>EWCS:</strong></p><p><strong><a target=\"_blank\" href=\"https://www.eurofound.europa.eu/data/european-working-conditions-survey\">https://www.eurofound.europa.eu/data/european-working-conditions-survey</a></strong></p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -11860,7 +11974,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentages");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "<p>Spider diagram, all countries plus EU countries average, percentage for answers ‘Yes’ in ESENER</p><p><strong>Spider diagram, all countries plus EU countries average, percentage for answers ‘At least ¼ of the time’ in EWCS</strong></p>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "<p>Spider diagram, all countries plus EU countries average, percentage for answers ‘Yes’ in ESENER</p><p><strong>Spider diagram, all countries plus EU countries average, sum of percentages for the two answers ‘'Almost all the time', and 'Between 1/4 and 3/4 of the time' in EWCS</strong></p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+13, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+13, "EN", 1, "Work involving sitting (EWCS)");
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
@@ -11884,20 +11998,20 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 <p>&ldquo;Repetitive hand or arm movements&rdquo;</p>
 <p>&nbsp;Answer options:&nbsp;</p>
 <ol>
-<li>Yes</li>
-<li>No</li>
+    <li>Yes</li>
+    <li>No</li>
 </ol>
-<p>&nbsp;Responses are displayed to the EWCS Questions below.<strong>&nbsp;</strong></p>
+<p>Responses are displayed to the EWCS Questions below. Specifically this indicator relates to:</p>
 <p>&ldquo;Does your work involve tiring or painful positions?&rdquo;</p>
+<p>Answer options: &#39;Almost all the time&#39;, &#39;Between 1/4 and 3/4 of the time&#39; and &#39;Almost never&#39;</p>
 <p>&ldquo;Does your work involve sitting?&rdquo;</p>
+<p>Answer options: &#39;Almost all the time&#39;, &#39;Between 1/4 and 3/4 of the time&#39; and &#39;Almost never&#39;</p>
 <p>&ldquo;Does your work involve Carrying or moving heavy loads?&rdquo;</p>
+<p>Answer options: 1. At least &frac14; of the time; 2. Less than &frac14; of the time</p>
 <p>&ldquo;Does your work involve Repetitive hand or arm movements?&rdquo;</p>
+<p>Answer options: &#39;Almost all the time&#39;, &#39;Between 1/4 and 3/4 of the time&#39; and &#39;Almost never&#39;</p>
 <p>&ldquo;Does your work involve lifting or moving people?&rdquo;</p>
-<p>&nbsp;Answer options:</p>
-<ol>
-<li>At least &frac14; of the time</li>
-<li>Less than &frac14; of the time</li>
-</ol>");
+<p>&nbsp;Answer options: 1. At least &frac14; of the time, 2. Less than &frac14; of the time</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p><strong>ESENER:</strong></p><p><strong><a target=\"_blank\" href=\"https://visualisation.osha.europa.eu/esener#!/en\">https://visualisation.osha.europa.eu/esener#!/en</a></strong></p><p>EWCS:</p><p><a target=\"_blank\" href=\"https://www.eurofound.europa.eu/data/european-working-conditions-survey\">https://www.eurofound.europa.eu/data/european-working-conditions-survey</a></p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -11930,7 +12044,27 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p>ESENER 2019 Survey &nbsp;</p><p><strong>European Working Conditions Survey (EWCS, 2015)&nbsp;</strong></p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to the ESENER 2019 Survey Questions below.</p><p>Depending on the type of work, there are different types of risks and hazards. Please tell me for each of the following risk factors whether it is present or not in your establishment, regardless of whether it is currently under control and regardless of the number of employees it affects:</p><p>“Tiring or painful positions, including sitting for long periods”</p><p>“Lifting or moving people or heavy loads”</p><p>“Repetitive hand or arm movements”</p><p>&nbsp;Answer options:&nbsp;</p><ol><li>Yes</li><li>No</li></ol><p>&nbsp;Responses are displayed to the EWCS Questions below.<strong> Specifically this indicator relates to</strong>:</p><p>“Does your work involve tiring or painful positions?”</p><p>“Does your work involve sitting?”</p><p>“Does your work involve Carrying or moving heavy loads?”</p><p>“Does your work involve Repetitive hand or arm movements?”</p><p><strong>“Does your work involve lifting or moving people?”</strong></p><p>&nbsp;Answer options:</p><ol><li>At least ¼ of the time</li><li>Less than ¼ of the time</li></ol>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to the ESENER 2019 Survey Questions below.</p>
+<p>Depending on the type of work, there are different types of risks and hazards. Please tell me for each of the following risk factors whether it is present or not in your establishment, regardless of whether it is currently under control and regardless of the number of employees it affects:</p>
+<p>&ldquo;Tiring or painful positions, including sitting for long periods&rdquo;</p>
+<p>&ldquo;Lifting or moving people or heavy loads&rdquo;</p>
+<p>&ldquo;Repetitive hand or arm movements&rdquo;</p>
+<p>&nbsp;Answer options:&nbsp;</p>
+<ol>
+    <li>Yes</li>
+    <li>No</li>
+</ol>
+<p>Responses are displayed to the EWCS Questions below.<strong>&nbsp;Specifically this indicator relates to</strong>:</p>
+<p>&ldquo;Does your work involve tiring or painful positions?&rdquo;</p>
+<p>Answer options: &#39;Almost all the time&#39;, &#39;Between 1/4 and 3/4 of the time&#39; and &#39;Almost never&#39;</p>
+<p>&ldquo;Does your work involve sitting?&rdquo;</p>
+<p>Answer options: &#39;Almost all the time&#39;, &#39;Between 1/4 and 3/4 of the time&#39; and &#39;Almost never&#39;</p>
+<p>&ldquo;Does your work involve Carrying or moving heavy loads?&rdquo;</p>
+<p>Answer options: 1. At least &frac14; of the time; 2. Less than &frac14; of the time</p>
+<p>&ldquo;Does your work involve Repetitive hand or arm movements?&rdquo;</p>
+<p>Answer options: &#39;Almost all the time&#39;, &#39;Between 1/4 and 3/4 of the time&#39; and &#39;Almost never&#39;</p>
+<p><strong>&ldquo;Does your work involve lifting or moving people?&rdquo;</strong></p>
+<p><strong>&nbsp;Answer options: 1. At least &frac14; of the time, 2. Less than &frac14; of the time</strong></p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>ESENER:</p><p><a target=\"_blank\" href=\"https://visualisation.osha.europa.eu/esener#!/en\">https://visualisation.osha.europa.eu/esener#!/en</a></p><p><strong>EWCS:</strong></p><p><strong><a target=\"_blank\" href=\"https://www.eurofound.europa.eu/data/european-working-conditions-survey\">https://www.eurofound.europa.eu/data/european-working-conditions-survey</a></strong></p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -11963,7 +12097,27 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p>ESENER 2019 Survey &nbsp;</p><p><strong>European Working Conditions Survey (EWCS, 2015)&nbsp;</strong></p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to the ESENER 2019 Survey Questions below.</p><p>Depending on the type of work, there are different types of risks and hazards. Please tell me for each of the following risk factors whether it is present or not in your establishment, regardless of whether it is currently under control and regardless of the number of employees it affects:</p><p>“Tiring or painful positions, including sitting for long periods”</p><p>“Lifting or moving people or heavy loads”</p><p>“Repetitive hand or arm movements”</p><p>&nbsp;Answer options:&nbsp;</p><ol><li>Yes</li><li>No</li></ol><p>&nbsp;Responses are displayed to the EWCS Questions below.<strong> Specifically this indicator relates to</strong>:</p><p>“Does your work involve tiring or painful positions?”</p><p>“Does your work involve sitting?”</p><p><strong>“Does your work involve Carrying or moving heavy loads?”</strong></p><p>“Does your work involve Repetitive hand or arm movements?”</p><p>“Does your work involve lifting or moving people?”</p><p>&nbsp;Answer options:</p><ol><li>At least ¼ of the time</li><li>Less than ¼ of the time</li></ol>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to the ESENER 2019 Survey Questions below.</p>
+<p>Depending on the type of work, there are different types of risks and hazards. Please tell me for each of the following risk factors whether it is present or not in your establishment, regardless of whether it is currently under control and regardless of the number of employees it affects:</p>
+<p>&ldquo;Tiring or painful positions, including sitting for long periods&rdquo;</p>
+<p>&ldquo;Lifting or moving people or heavy loads&rdquo;</p>
+<p>&ldquo;Repetitive hand or arm movements&rdquo;</p>
+<p>&nbsp;Answer options:&nbsp;</p>
+<ol>
+    <li>Yes</li>
+    <li>No</li>
+</ol>
+<p>&nbsp;Responses are displayed to the EWCS Questions below.<strong>&nbsp;Specifically this indicator relates to</strong>:</p>
+<p>&ldquo;Does your work involve tiring or painful positions?&rdquo;</p>
+<p>Answer options: &#39;Almost all the time&#39;, &#39;Between 1/4 and 3/4 of the time&#39; and &#39;Almost never&#39;</p>
+<p>&ldquo;Does your work involve sitting?&rdquo;</p>
+<p>Answer options: &#39;Almost all the time&#39;, &#39;Between 1/4 and 3/4 of the time&#39; and &#39;Almost never&#39;</p>
+<p><strong>&ldquo;Does your work involve Carrying or moving heavy loads?&rdquo;</strong></p>
+<p><strong>Answer options: 1. At least &frac14; of the time; 2. Less than &frac14; of the time</strong></p>
+<p>&ldquo;Does your work involve Repetitive hand or arm movements?&rdquo;</p>
+<p>Answer options: &#39;Almost all the time&#39;, &#39;Between 1/4 and 3/4 of the time&#39; and &#39;Almost never&#39;</p>
+<p>&ldquo;Does your work involve lifting or moving people?&rdquo;</p>
+<p>&nbsp;Answer options: 1. At least &frac14; of the time, 2. Less than &frac14; of the time</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>ESENER:</p><p><a target=\"_blank\" href=\"https://visualisation.osha.europa.eu/esener#!/en\">https://visualisation.osha.europa.eu/esener#!/en</a></p><p><strong>EWCS:</strong></p><p><strong><a target=\"_blank\" href=\"https://www.eurofound.europa.eu/data/european-working-conditions-survey\">https://www.eurofound.europa.eu/data/european-working-conditions-survey</a></strong></p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -11996,7 +12150,27 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p><strong>ESENER 2019 Survey &nbsp;</strong></p><p>European Working Conditions Survey (EWCS, 2015)&nbsp;</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to the ESENER 2019 Survey Questions below.<strong>Specifically this indicator relates to</strong>:</p><p><strong>Depending on the type of work, there are different types of risks and hazards. Please tell me for each of the following risk factors whether it is present or not in your establishment, regardless of whether it is currently under control and regardless of the number of employees it affects:</strong></p><p>“Tiring or painful positions, including sitting for long periods”</p><p>“Lifting or moving people or heavy loads”</p><p><strong>“Repetitive hand or arm movements”</strong></p><p>&nbsp;Answer options:&nbsp;</p><ol><li>Yes</li><li>No</li></ol><p>&nbsp;Responses are displayed to the EWCS Questions below.<strong>&nbsp;</strong></p><p>“Does your work involve tiring or painful positions?”</p><p>“Does your work involve sitting?”</p><p>“Does your work involve Carrying or moving heavy loads?”</p><p>“Does your work involve Repetitive hand or arm movements?”</p><p>“Does your work involve lifting or moving people?”</p><p>&nbsp;Answer options:</p><ol><li>At least ¼ of the time</li><li>Less than ¼ of the time</li></ol>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to the ESENER 2019 Survey Questions below.<strong>Specifically this indicator relates to</strong>:</p>
+<p><strong>Depending on the type of work, there are different types of risks and hazards. Please tell me for each of the following risk factors whether it is present or not in your establishment, regardless of whether it is currently under control and regardless of the number of employees it affects:</strong></p>
+<p>&ldquo;Tiring or painful positions, including sitting for long periods&rdquo;</p>
+<p>&ldquo;Lifting or moving people or heavy loads&rdquo;</p>
+<p><strong>&ldquo;Repetitive hand or arm movements&rdquo;</strong></p>
+<p>&nbsp;Answer options:&nbsp;</p>
+<ol>
+    <li>Yes</li>
+    <li>No</li>
+</ol>
+<p>&nbsp;Responses are displayed to the EWCS Questions below.<strong>&nbsp;</strong>Specifically this indicator relates to:</p>
+<p>&ldquo;Does your work involve tiring or painful positions?&rdquo;</p>
+<p>Answer options: &#39;Almost all the time&#39;, &#39;Between 1/4 and 3/4 of the time&#39; and &#39;Almost never&#39;</p>
+<p>&ldquo;Does your work involve sitting?&rdquo;</p>
+<p>Answer options: &#39;Almost all the time&#39;, &#39;Between 1/4 and 3/4 of the time&#39; and &#39;Almost never&#39;</p>
+<p>&ldquo;Does your work involve Carrying or moving heavy loads?&rdquo;</p>
+<p>Answer options: 1. At least &frac14; of the time; 2. Less than &frac14; of the time</p>
+<p>&ldquo;Does your work involve Repetitive hand or arm movements?&rdquo;</p>
+<p>Answer options: &#39;Almost all the time&#39;, &#39;Between 1/4 and 3/4 of the time&#39; and &#39;Almost never&#39;</p>
+<p>&ldquo;Does your work involve lifting or moving people?&rdquo;</p>
+<p>&nbsp;Answer options: 1. At least &frac14; of the time, 2. Less than &frac14; of the time</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p><strong>ESENER:</strong></p><p><strong><a target=\"_blank\" href=\"https://visualisation.osha.europa.eu/esener#!/en\">https://visualisation.osha.europa.eu/esener#!/en</a></strong></p><p>EWCS:</p><p><a target=\"_blank\" href=\"https://www.eurofound.europa.eu/data/european-working-conditions-survey\">https://www.eurofound.europa.eu/data/european-working-conditions-survey</a></p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -12029,7 +12203,27 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p>ESENER 2019 Survey &nbsp;</p><p><strong>European Working Conditions Survey (EWCS, 2015)&nbsp;</strong></p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to the ESENER 2019 Survey Questions below.</p><p>Depending on the type of work, there are different types of risks and hazards. Please tell me for each of the following risk factors whether it is present or not in your establishment, regardless of whether it is currently under control and regardless of the number of employees it affects:</p><p>“Tiring or painful positions, including sitting for long periods”</p><p>“Lifting or moving people or heavy loads”</p><p>“Repetitive hand or arm movements”</p><p>&nbsp;Answer options:&nbsp;</p><ol><li>Yes</li><li>No</li></ol><p>&nbsp;Responses are displayed to the EWCS Questions below.<strong> Specifically this indicator relates to</strong>:</p><p>“Does your work involve tiring or painful positions?”</p><p>“Does your work involve sitting?”</p><p>“Does your work involve Carrying or moving heavy loads?”</p><p><strong>“Does your work involve Repetitive hand or arm movements?”</strong></p><p>“Does your work involve lifting or moving people?”</p><p>&nbsp;Answer options:</p><ol><li>At least ¼ of the time</li><li>Less than ¼ of the time</li></ol>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to the ESENER 2019 Survey Questions below.</p>
+<p>Depending on the type of work, there are different types of risks and hazards. Please tell me for each of the following risk factors whether it is present or not in your establishment, regardless of whether it is currently under control and regardless of the number of employees it affects:</p>
+<p>&ldquo;Tiring or painful positions, including sitting for long periods&rdquo;</p>
+<p>&ldquo;Lifting or moving people or heavy loads&rdquo;</p>
+<p>&ldquo;Repetitive hand or arm movements&rdquo;</p>
+<p>&nbsp;Answer options:&nbsp;</p>
+<ol>
+    <li>Yes</li>
+    <li>No</li>
+</ol>
+<p>&nbsp;Responses are displayed to the EWCS Questions below.<strong>&nbsp;Specifically this indicator relates to</strong>:</p>
+<p>&ldquo;Does your work involve tiring or painful positions?&rdquo;</p>
+<p>Answer options: &#39;Almost all the time&#39;, &#39;Between 1/4 and 3/4 of the time&#39; and &#39;Almost never&#39;</p>
+<p>&ldquo;Does your work involve sitting?&rdquo;</p>
+<p>Answer options: &#39;Almost all the time&#39;, &#39;Between 1/4 and 3/4 of the time&#39; and &#39;Almost never&#39;</p>
+<p>&ldquo;Does your work involve Carrying or moving heavy loads?&rdquo;</p>
+<p>Answer options: 1. At least &frac14; of the time; 2. Less than &frac14; of the time</p>
+<p><strong>&ldquo;Does your work involve Repetitive hand or arm movements?&rdquo;</strong></p>
+<p><strong>Answer options: &#39;Almost all the time&#39;, &#39;Between 1/4 and 3/4 of the time&#39; and &#39;Almost never&#39;</strong></p>
+<p>&ldquo;Does your work involve lifting or moving people?&rdquo;</p>
+<p>&nbsp;Answer options: 1. At least &frac14; of the time, 2. Less than &frac14; of the time</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>ESENER:</p><p><a target=\"_blank\" href=\"https://visualisation.osha.europa.eu/esener#!/en\">https://visualisation.osha.europa.eu/esener#!/en</a></p><p><strong>EWCS:</strong></p><p><strong><a target=\"_blank\" href=\"https://www.eurofound.europa.eu/data/european-working-conditions-survey\">https://www.eurofound.europa.eu/data/european-working-conditions-survey</a></strong></p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -12045,7 +12239,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentages");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "<p>Spider diagram, all countries plus EU countries average, percentage for answers ‘Yes’ in ESENER</p><p><strong>Spider diagram, all countries plus EU countries average, percentage for answers ‘At least ¼ of the time’ in EWCS</strong></p>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "<p>Spider diagram, all countries plus EU countries average, percentage for answers ‘Yes’ in ESENER</p><p><strong>Spider diagram, all countries plus EU countries average, sum of percentages for the two answers ‘'Almost all the time', and 'Between 1/4 and 3/4 of the time' in EWCS</strong></p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+13, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+13, "EN", 1, "Repetitive hand or arm movements (EWCS)");
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
