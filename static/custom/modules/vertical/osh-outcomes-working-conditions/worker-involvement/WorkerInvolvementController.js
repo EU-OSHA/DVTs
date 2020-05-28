@@ -85,7 +85,7 @@ define(function (require) {
     $scope.step = 20;
 
     $scope.axisMax = ($scope.pSplit == 'esener')?100:80;
-    $scope.height = ($scope.pSplit == 'esener')?450:470;
+    $scope.height = ($scope.pSplit == 'esener')?510:530;
     $scope.story = ($scope.pSplit == 'esener')?$scope.stories[0].promises.story1:$scope.stories[1].promises.story2;
 
     $scope.dashboard = {};
@@ -95,6 +95,18 @@ define(function (require) {
             "pCountry2": $scope.pCountry2
         }
     };
+
+    $scope.relatedItems = [{
+            title: "L22008",
+            text: "L22041",
+            link: "social-dialogue",
+            icon: "dialogue"
+          },{
+            title: "L20683",
+            text: "L22058",
+            link: "prevention-companies({pIndicator:'employees-participation-in-prevention'})",
+            icon: "prevention"
+          }];
 
     // Conditional criteria
     var normalModeCriteriaText = function (dataset) {

@@ -64,6 +64,7 @@ define(function (require) {
     $scope.relatedLiterals = [20679, 20680, 20681, 20682];
 
     var resolution = window.resolution;
+    $scope.resolution = resolution;
 
     $scope.orientation = resolution > 768 ? "vertical" : "horizontal";
     $scope.axisSize = resolution > 768 ? 150 : 110;
@@ -102,6 +103,59 @@ define(function (require) {
             "pCountry1": $scope.pCountry1,
             "pCountry2": $scope.pCountry2
         }
+    };
+
+    $scope.relatedItems = {
+      "risk-assessment":[{
+            title: "L20692",
+            text: "L22063",
+            link: "enforcement-capacity",
+            icon: "enforcement"
+          },{
+            title: "L20681",
+            text: "L22058",
+            link: "prevention-companies({pIndicator:'evaluated-aspects-in-risk-assessments'})",
+            icon: "prevention"
+          }],
+      "internal-or-external-ra":[{
+            title: "L20692",
+            text: "L22063",
+            link: "enforcement-capacity",
+            icon: "enforcement"
+          },{
+            title: "L20681",
+            text: "L22058",
+            link: "prevention-companies({pIndicator:'evaluated-aspects-in-risk-assessments'})",
+            icon: "prevention"
+          }],
+      "evaluated-aspects-in-risk-assessments":[{
+            title: "L20692",
+            text: "L22063",
+            link: "enforcement-capacity",
+            icon: "enforcement"
+          }],
+      "training-in-osh":[{
+            title: "L22012",
+            text:"L22054",
+            link: "osh-culture",
+            icon: "culture"
+          },{
+            title: "L22008",
+            text:"L22041",
+            link: "social-dialogue",
+            icon: "dialogue"
+          }],
+      "employees-participation-in-prevention":[{
+            title: "L22015",
+            text:"L22060",
+            link: "worker-involvement",
+            icon: "workers"
+          },{
+            title: "L22011",
+            text:"L22052",
+            link: "health-perception-of-workers",
+            icon: "enforcement"
+          }]
     };
 
     // Conditional criteria

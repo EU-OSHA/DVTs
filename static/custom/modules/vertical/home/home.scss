@@ -294,6 +294,9 @@
 .carousel-showmanymoveone .cloneditem-3 {
    display: none;
 }
+.print{
+  display: none;
+}
 .section--our--methodology{
   display: flex;
   flex-direction: row;
@@ -650,71 +653,105 @@ and (orientation : portrait){
 
 /** ICONS */
   .forum-icon{
-    background: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/forum.png) center top no-repeat;
+    background-image: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/forum.png);
+    background-repeat: no-repeat;
+    background-position: center top;
     background-size: contain;
   }
   .economic-chart-icon{
-    background: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/economic-chart.png) center top no-repeat;
+    background-image: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/economic-chart.png);
+    background-repeat: no-repeat;
+    background-position: center top;
     background-size: contain;
   }
   .people-group-icon{
-    background: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/people-group.png) center top no-repeat;
+    background-image: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/people-group.png);
+    background-repeat: no-repeat;
+    background-position: center top;
     background-size: contain;
   }
   .culture-icon{
-    background: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/culture.png) center top no-repeat;
+    background-image: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/culture.png);
+    background-repeat: no-repeat;
+    background-position: center top;
     background-size: contain;
   }
   .dialogue-icon{
-    background: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/dialogue.png) center top no-repeat;
+    background-image: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/dialogue.png);
+    background-repeat: no-repeat;
+    background-position: center top;
     background-size: contain;
   }
   .enforcement-icon{
-    background: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/enforcement.png) center top no-repeat;
+    background-image: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/enforcement.png);
+    background-repeat: no-repeat;
+    background-position: center top;
     background-size: contain;
   }
   .health-icon{
-    background: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/health.png) center top no-repeat;
+    background-image: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/health.png);
+    background-repeat: no-repeat;
+    background-position: center top;
     background-size: contain;
   }
   .national-icon{
-    background: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/national.png) center top no-repeat;
+    background-image: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/national.png);
+    background-repeat: no-repeat;
+    background-position: center top;
     background-size: contain;
   }
   .prevention-icon{
-    background: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/prevention.png) center top no-repeat;
+    background-image: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/prevention.png);
+    background-repeat: no-repeat;
+    background-position: center top;
     background-size: contain;
   }
   .regulation-icon{
-    background: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/regulation.png) center top no-repeat;
+    background-image: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/regulation.png);
+    background-repeat: no-repeat;
+    background-position: center top;
     background-size: contain;
   }
   .statistics-icon{
-    background: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/statistics.png) center top no-repeat;
+    background-image: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/statistics.png);
+    background-repeat: no-repeat;
+    background-position: center top;
     background-size: contain;
   }
   .working-conditons-icon{
-    background: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/working-conditons.png) center top no-repeat;
+    background-image: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/working-conditons.png);
+    background-repeat: no-repeat;
+    background-position: center top;
     background-size: contain;
   }
   .overall-opinion-icon{
-    background: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/overall-opinion.png) center top no-repeat;
+    background-image: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/overall-opinion.png);
+    background-repeat: no-repeat;
+    background-position: center top;
     background-size: contain;
   }
   .work-accidents-icon{
-    background: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/work-accidents.png) center top no-repeat;
+    background-image: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/work-accidents.png);
+    background-repeat: no-repeat;
+    background-position: center top;
     background-size: contain;
   }
   .workers-icon{
-    background: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/workers.png) center top no-repeat;
+    background-image: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/workers.png);
+    background-repeat: no-repeat;
+    background-position: center top;
     background-size: contain;
   }
   .mental-risk-icon{
-    background: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/mental-risk.png) center top no-repeat;
+    background-image: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/mental-risk.png);
+    background-repeat: no-repeat;
+    background-position: center top;
     background-size: contain;
   }
   .physical-risk-icon{
-    background: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/physical-risk.png) center top no-repeat;
+    background-image: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/physical-risk.png);
+    background-repeat: no-repeat;
+    background-position: center top;
     background-size: contain;
   }
   .country-report-icon{

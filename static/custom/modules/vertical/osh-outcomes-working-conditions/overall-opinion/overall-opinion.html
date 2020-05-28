@@ -41,7 +41,7 @@
               axis-fixed-max="100" step="{{step}}"
               params="[['pDataset', datasetEurofound], ['pIndicator', 65]]"
               color-role="series" colors="[color1, color2, color3, color4]"
-              chart-title="{{i18nLiterals.L322}}" id="1"
+              chart-title="{{resolution > 768 ? i18nLiterals.L22134 : i18nLiterals.L322}}" id="1"
               axis-label-font="12px 'OpenSans-bold'"
               plots="stories[0].plots"
               values-visible="false"
@@ -105,7 +105,7 @@
             axis-fixed-max="40" step="{{step}}"
             params="[['pDataset', datasetEurofound], ['pIndicator', 66], ['pCountry1', pCountry1], ['pCountry2', pCountry2]]"
             color-role="series" colors="[stories[1].color2, stories[1].color1, stories[1].color3]"
-            chart-title="{{i18nLiterals.L323}}" long-title="{{i18nLiterals.L323}} - {{i18nLiterals.L20648}}" id="2"
+            chart-title="{{resolution > 768 ? i18nLiterals.L22135 : i18nLiterals.L323}}" long-title="{{resolution > 768 ? i18nLiterals.L22135 : i18nLiterals.L323}} - {{i18nLiterals.L20648}}" id="2"
             axis-label-font="12px 'OpenSans-bold'"
             plots="healthBySector"
             values-visible="true"
@@ -132,7 +132,7 @@
               axis-fixed-max="40" step="{{step}}"
               params="[['pDataset', datasetEurofound], ['pIndicator', 66], ['pCountry1', pCountry1], ['pCountry2', pCountry2]]"
               color-role="series" colors="[stories[1].color2, stories[1].color1, stories[1].color3]"
-              chart-title="{{i18nLiterals.L323}}" long-title="{{i18nLiterals.L323}} - {{i18nLiterals.L20650}}" id="3"
+              chart-title="{{resolution > 768 ? i18nLiterals.L22135 : i18nLiterals.L323}}" long-title="{{resolution > 768 ? i18nLiterals.L22135 : i18nLiterals.L323}} - {{i18nLiterals.L20650}}" id="3"
               axis-label-font="12px 'OpenSans-bold'"
               plots="healthBySector"
               label-text-align="alignment"
@@ -159,7 +159,7 @@
               axis-fixed-max="40" step="{{step}}"
               params="[['pDataset', datasetEurofound], ['pIndicator', 66], ['pCountry1', pCountry1], ['pCountry2', pCountry2]]"
               color-role="series" colors="[stories[2].color2, stories[2].color1, stories[2].color3]"
-              chart-title="{{i18nLiterals.L323}}" long-title="{{i18nLiterals.L323}} - {{i18nLiterals.L20649}}" id="4"
+              chart-title="{{resolution > 768 ? i18nLiterals.L22135 : i18nLiterals.L323}}" long-title="{{resolution > 768 ? i18nLiterals.L22135 : i18nLiterals.L323}} - {{i18nLiterals.L20649}}" id="4"
               axis-label-font="12px 'OpenSans-bold'"
               plots="healthByGender"
               label-text-align="alignment"
@@ -188,24 +188,6 @@
   </section>
 
   <!-- Footer -->
-  <section class="container-fluid background-gray section--page explore-section">
-    <div class="container">
-      <section class="card--grid xxs-w1 w3 center-text">
-        <h2 class="title-section second-color"><span  data-ng-bind="i18nLiterals.L20712"></span></h2>
-        <div class="card--block--rounded">
-          <a class="icon--card mental-risk-icon" ui-sref="mental-risk"></a>
-          <h3 class="title--card main-color"><a ui-sref="mental-risk" data-ng-bind="i18nLiterals.L20710"></a></h3>
-          <p class="btn--card--block"><a ui-sref="mental-risk" class="btn--card main-color" data-ng-bind-html="i18nLiterals.L480"></a></p>
-        </div>
-        <div class="card--block--rounded">
-          <a class="icon--card physical-risk-icon" ui-sref="physical-risk-vibrations-loud-noise-and-temperature({pIndicator: 'vibrations-loud-noise-and-temperature', pCountry1:pCountry1, pCountry2: 'BE'})"></a>
-          <h3 class="title--card main-color"><a ui-sref="physical-risk-vibrations-loud-noise-and-temperature({pIndicator: 'vibrations-loud-noise-and-temperature', pCountry1:pCountry1, pCountry2: 'BE'})" data-ng-bind="i18nLiterals.L20711"></a></h3>
-          <p class="btn--card--block"><a ui-sref="physical-risk-vibrations-loud-noise-and-temperature({pIndicator: 'vibrations-loud-noise-and-temperature', pCountry1:pCountry1, pCountry2: 'BE'})" class="btn--card main-color" data-ng-bind-html="i18nLiterals.L480">
-          </a></p>
-        </div>
-      </section>
-    </div>
-
-  </section>
   <dvt-methodology father="osh-outcomes-working-conditions" section="OVERALL_OPINION" indicator="{{pIndicator}}" indicatorid="65"></dvt-methodology>
+  <dvt-related data-ng-if="relatedItems[pIndicator]" items="relatedItems[pIndicator]"></dvt-related>
 </dvt-dashboard>

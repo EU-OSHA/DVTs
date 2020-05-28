@@ -82,6 +82,59 @@ define(function (require) {
       }
     };
 
+    $scope.relatedItems = {
+      "establishments-inspected":[{
+            title: "L310",
+            text: "L22050",
+            link: "work-accidents",
+            icon: "work-accidents"
+          },{
+            title: "L311",
+            text: "L22050",
+            link: "work-accidents({pIndicator:'fatal-work-accidents'})",
+            icon: "work-accidents"
+          },{
+            title: "L20679",
+            text: "L22058",
+            link: "prevention-companies",
+            icon: "prevention"
+          }],
+      "authority":[{
+            title: "L22002",
+            text: "L22025",
+            link: "osh-authorities",
+            icon: "forum"
+          }],
+      "scope-of-the-labor-inspection":[{
+            title: "L22002",
+            text:"L22025",
+            link: "osh-authorities",
+            icon: "forum"
+          },{
+            title: "L22018",
+            text:"L22065",
+            link: "osh-statistics",
+            icon: "statistics"
+          }],
+      "inspector-powers":[{
+            title: "L22002",
+            text:"L22025",
+            link: "osh-authorities",
+            icon: "forum"
+          },{
+            title: "L22007",
+            text:"L22038",
+            link: "national-strategies",
+            icon: "national"
+          }],
+      "strategy-plan":[{
+            title: "L22007",
+            text:"L22038",
+            link: "national-strategies",
+            icon: "national"
+          }]
+    };
+
     $scope.maxCharacters = 200;
     $scope.step = 20;
     $scope.already = false;

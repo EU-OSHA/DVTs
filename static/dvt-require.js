@@ -129,6 +129,7 @@
     requirePaths['dvt/directives/title-items'] = horizontalModules + '/directives/main-menu/titles' + suffix + '.json';
 
     requirePaths['dvt/directives/methodology'] = horizontalModules + '/directives/methodology/DvtMethodologyDirective' + suffix;
+    requirePaths['dvt/directives/related'] = horizontalModules + '/directives/related/DvtRelatedDirective' + suffix;
 
 
     /* CUSTOM CHARTS */

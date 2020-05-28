@@ -51,7 +51,7 @@
               axis-fixed-max="{{axisMax}}" step="20"
               width="850" height="{{height}}"
               chart-title="{{i18nLiterals.L22015}}"
-              id="1" radio="130" values-format="%"
+              id="1" radio="200" values-format="%"
               mesh-size="30" draw-labels="true"
               datasource-and-dates="datasourcesAndDates">>
             </dvt-radar-chart>
@@ -62,4 +62,5 @@
     </div>
   </section>
   <dvt-methodology father="osh-outcomes-working-conditions" section="WORKER_INVOLVEMENT" indicatorid="75" datasetid="{{pSplit=='esener'?datasetESENER:datasetEurofound}}"></dvt-methodology>
+  <dvt-related items="relatedItems"></dvt-related>
 </dvt-dashboard>

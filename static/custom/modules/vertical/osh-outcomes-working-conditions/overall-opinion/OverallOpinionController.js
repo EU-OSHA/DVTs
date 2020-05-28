@@ -43,6 +43,7 @@ define(function (require) {
     //$scope.chartWidth = angular.element('.card--block--chart .chart--block')[1].clientWidth;
 
     var resolution = window.resolution;
+    $scope.resolution = resolution;
 
     $scope.angle = resolution > 768 ? 1 : 0;
     $scope.horizontalHeight = resolution > 768 ? 470 : 770;
@@ -111,6 +112,36 @@ define(function (require) {
             "pCountry1": $scope.pCountry1,
             "pCountry2": $scope.pCountry2
         }
+    };
+
+    $scope.relatedItems = {
+      "job-satisfaction":[{
+            title: "L22011",
+            text: "L22052",
+            link: "health-perception-of-workers",
+            icon: "health"
+          },{
+            title: "L20672",
+            text: "L20578",
+            link: "mental-risk({pIndicator:'fear-of-job-loss', pDataset:'ewcs'})",
+            icon: "mental-risk"
+          }],
+      "health-at-risk":[{
+            title: "L22011",
+            text: "L22052",
+            link: "health-perception-of-workers",
+            icon: "health"
+          },{
+            title: "L22008",
+            text: "L22041",
+            link: "social-dialogue",
+            icon: "dialogue"
+          },{
+            title: "L20679",
+            text: "L22058",
+            link: "prevention-companies",
+            icon: "prevention"
+          }]
     };
 
     // Conditional criteria

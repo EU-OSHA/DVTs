@@ -117,11 +117,37 @@ define(function (require) {
           angular.element(' span.dots', angular.element($event.target).parent().parent().parent()).toggle();
           //Para cambiar del boton see more al boton see less
           angular.element(' a', angular.element($event.target).parent().parent()).toggle();
-        }
-        
-       
+        }       
       }
     }
+
+    $scope.relatedItems = {
+      "background":[{
+            title: "L22002",
+            text: "L22025",
+            link: "osh-authorities({pCountry:'"+$scope.pCountry1+"'})",
+            icon: "forum"
+          }],
+      "actors-and-stakeholders":[{
+            title: "L22008",
+            text: "L22041",
+            link: "social-dialogue",
+            icon: "dialogue"
+          }],
+      "resources-and-timeframe":[{
+            title: "L22017",
+            text: "L22063",
+            link: "enforcement-capacity({pCountry1:'"+$scope.pCountry1+"',pCountry2:'"+$scope.pCountry2+"'})",
+            icon: "enforcement"
+          }],
+      "relationship-to-eu-strategic-framework":
+      [{
+            title: "L22002",
+            text: "L22025",
+            link: "osh-authorities({pCountry:'EU28'})",
+            icon: "forum"
+          }]
+    };
 
 
     /******************************************************************************|

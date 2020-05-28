@@ -12,7 +12,7 @@ define(function (require) {
   'use strict';
 
 
-  function controller($scope, $stateParams, $state, configService, $log, $document,dataService, $window, $sce, $compile, $timeout, dvtUtils, OshCultureService) {
+  function controller($scope, $stateParams, $state, configService, $log, $document,dataService, $window, $sce, $compile, $timeout, dvtUtils, OshCultureService, $rootScope) {
     // CDA
     $scope.cdaOSHOutcomes = configService.getOshOutcomesWorkingConditionsCda();
     $scope.cdaGenericInformation = configService.getGenericInformationCda();
@@ -39,8 +39,31 @@ define(function (require) {
     $scope.country2Data = {};
 
     // Country parameters
-    $scope.pCountry1 = ($stateParams.pCountry1 != null)?$stateParams.pCountry1:'AT';
-    $scope.pCountry2 = ($stateParams.pCountry2 != null)?$stateParams.pCountry2:'BE';
+    if ($stateParams.pCountry1 != null)
+    {
+      $scope.pCountry1 = $stateParams.pCountry1;
+    }
+    else if ($rootScope.defaultCountry != undefined && $rootScope.defaultCountry.code != undefined)
+    {
+      $scope.pCountry1 = $rootScope.defaultCountry.code;
+    }
+    else
+    {
+      $scope.pCountry1 = $rootScope.defaultCountryDefaultValue;
+    }
+
+    if ($stateParams.pCountry2 != null)
+    {
+      $scope.pCountry2 = $stateParams.pCountry2;
+    }
+    else if ($rootScope.defaultCountry2 != undefined)
+    {
+      $scope.pCountry2 = $rootScope.defaultCountry2.code;
+    }
+    else
+    {
+      $scope.pCountry2 = "0";
+    }
     $scope.pIndicator = $stateParams.pIndicator;
 
     $scope.stories = [
@@ -85,9 +108,90 @@ define(function (require) {
       }
     ];
 
+    $scope.relatedItems = {
+      "health-and-safety-discussed":[{
+            title: "L20679",
+            text: "L22058",
+            link: "prevention-companies",
+            icon: "prevention"
+          },{
+            title: "L22015",
+            text: "L22060",
+            link: "worker-involvement",
+            icon: "workers"
+          }],
+      "action-plan-to-prevent-stress":[{
+            title: "L321",
+            text: "L22054",
+            link: "osh-culture({pIndicator:'information-about-risks'})",
+            icon: "culture"
+          },{
+            title: "L20681",
+            text: "L22058",
+            link: "prevention-companies",
+            icon: "prevention"
+          }],
+      "procedure-against-bullying":[{
+            title: "L20675",
+            text: "L20578",
+            link: "mental-risk({pIndicator:'discrimination'})",
+            icon: "mental-risk"
+          },{
+            title: "L322",
+            text: "L20577",
+            link: "overall-opinion({pIndicator: 'job-satisfaction', pCountry1: 'AT', pCountry2: '0', pSlit:'sector'})",
+            icon: "overall-opinion"
+          }],
+      "procedures-to-deal-with-threats":[{
+            title: "L20675",
+            text: "L20578",
+            link: "mental-risk({pIndicator:'discrimination'})",
+            icon: "mental-risk"
+          },{
+            title: "L20673",
+            text: "L20578",
+            link: "mental-risk({pIndicator:'difficult-clients'})",
+            icon: "mental-risk"
+          }],
+      "measures-to-reduce-work-pressure":[{
+            title: "L20669",
+            text: "L20578",
+            link: "mental-risk",
+            icon: "mental-risk"
+          },{
+            title: "L20674",
+            text: "L20578",
+            link: "mental-risk({pIndicator:'working-hours'})",
+            icon: "mental-risk"
+          }],
+      "use-of-personal-protective-equipment":[{
+            title: "L20656",
+            text: "L20579",
+            link: "physical-risk-risks-involved-with-work({pCountry1:'"+$scope.pCountry1+"',pCountry2:'"+$scope.pCountry2+"',pFilter:'ewcs'})",
+            icon: "physical-risk"
+          },{
+            title: "L20664",
+            text: "L22054",
+            link: "osh-culture({pIndicator:'health-and-safety-discussed'})",
+            icon: "culture"
+          }],
+      "information-about-risks":[{
+            title: "L20679",
+            text: "L22058",
+            link: "prevention-companies",
+            icon: "prevention"
+          },{
+            title: "L22015",
+            text: "L22060",
+            link: "worker-involvement",
+            icon: "workers"
+          }]
+    };
+
     $scope.step = 20;
 
     var resolution = window.resolution;
+    $scope.resolution = resolution;
 
     // Properties changing dynamically depending on resolution
     $scope.orientation = resolution > 768 ? "vertical" : "horizontal";
@@ -237,7 +341,7 @@ define(function (require) {
 
   }
 
-controller.$inject = ['$scope', '$stateParams', '$state', 'configService', '$log', '$document','dataService', '$window', '$sce', '$compile', '$timeout', 'dvtUtils', 'OshCultureService'];
+controller.$inject = ['$scope', '$stateParams', '$state', 'configService', '$log', '$document','dataService', '$window', '$sce', '$compile', '$timeout', 'dvtUtils', 'OshCultureService','$rootScope'];
   return controller;
 
 

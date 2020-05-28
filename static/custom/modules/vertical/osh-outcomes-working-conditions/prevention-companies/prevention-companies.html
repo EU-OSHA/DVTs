@@ -70,7 +70,7 @@
               axis-fixed-max="100" step="{{step.chart1}}"
               params="[['pDataset', datasetESENER], ['pIndicator', 304], ['pCountry1', pCountry1], ['pCountry2', pCountry2]]"
               color-role="series" colors="[stories[0].color1, stories[0].color2, stories[0].color3]"
-              chart-title="{{i18nLiterals.L20679}}" id="1"
+              chart-title="{{resolution > 768 ? i18nLiterals.L22147 : i18nLiterals.L20679}}" id="1"
               axis-label-font="12px 'OpenSans-bold'"
               base-axis-label-text-baseline="top"
               plots="riskAssesmentPlots"
@@ -94,7 +94,7 @@
               axis-fixed-max="100" step="{{step.chart1}}"
               params="[['pDataset', datasetESENER], ['pIndicator', 304], ['pCountry1', pCountry1], ['pCountry2', pCountry2]]"
               color-role="series" colors="[stories[0].color1, stories[0].color2, stories[0].color3]"
-              chart-title="{{i18nLiterals.L20679}}" id="2"
+              chart-title="{{resolution > 768 ? i18nLiterals.L22147 : i18nLiterals.L20679}}" id="2"
               axis-label-font="12px 'OpenSans-bold'"
               base-axis-label-text-baseline="top"
               plots="riskAssesmentPlots"
@@ -131,7 +131,7 @@
               axis-fixed-max="100" step="{{step.chart2}}"
               params="[['pDataset', datasetESENER], ['pIndicator', 305]]"
               color-role="series" colors="[color3, stories[1].color2, color4]"
-              chart-title="{{i18nLiterals.L20680}}" id="3"
+              chart-title="{{resolution > 768 ? i18nLiterals.L22148 : i18nLiterals.L20680}}" id="3"
               axis-label-font="12px 'OpenSans-bold'"
               plots="stories[1].plots"
               values-overflow="show"
@@ -185,7 +185,7 @@
             axis-fixed-max="100" step="{{step.chart2}}"
             params="[['pDataset', datasetESENER], ['pIndicator', 360]]"
             color-role="series" colors="[color3, stories[1].color2, color4]"
-            chart-title="{{i18nLiterals.L20682}}" id="5"
+            chart-title="{{resolution > 768 ? i18nLiterals.L22149 : i18nLiterals.L20682}}" id="5"
             axis-label-font="12px 'OpenSans-bold'"
             plots="stories[1].plots"
             values-overflow="show"
@@ -252,7 +252,7 @@
               axis-fixed-max="100" step="{{step.chart1}}"
               params="[['pDataset', datasetESENER], ['pIndicator', 353], ['pCountry1', pCountry1], ['pCountry2', pCountry2]]"
               color-role="series" colors="[stories[0].color1, stories[0].color2, stories[0].color3]"
-              chart-title="{{i18nLiterals.L20683}}" id="6"
+              chart-title="{{resolution > 768 ? i18nLiterals.L22150 : i18nLiterals.L20683}}" id="6"
               axis-label-font="12px 'OpenSans-bold'"
               base-axis-label-text-baseline="top"
               plots="riskAssesmentPlots"
@@ -276,7 +276,7 @@
               axis-fixed-max="100" step="{{step.chart1}}"
               params="[['pDataset', datasetESENER], ['pIndicator', 353], ['pCountry1', pCountry1], ['pCountry2', pCountry2]]"
               color-role="series" colors="[stories[0].color1, stories[0].color2, stories[0].color3]"
-              chart-title="{{i18nLiterals.L20683}}" id="7"
+              chart-title="{{resolution > 768 ? i18nLiterals.L22150 : i18nLiterals.L20683}}" id="7"
               axis-label-font="12px 'OpenSans-bold'"
               base-axis-label-text-baseline="top"
               plots="riskAssesmentPlots"
@@ -300,4 +300,5 @@
     </div>
   </section>
   <dvt-methodology father="osh-outcomes-working-conditions" section="PREVENTION_IN_COMPANIES" indicator="{{pIndicator}}" data-ng-if="pIndicator!='evaluated-aspects-in-risk-assessments'" indicatorid="304"></dvt-methodology>
+  <dvt-related data-ng-if="relatedItems[pIndicator]" items="relatedItems[pIndicator]"></dvt-related>
 </dvt-dashboard>

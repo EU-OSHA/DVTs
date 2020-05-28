@@ -34,7 +34,7 @@ define(function (require) {
     {
       $scope.pCountry1 = $stateParams.pCountry1;
     }
-    else if ($rootScope.defaultCountry.code != undefined)
+    else if ($rootScope.defaultCountry != undefined && $rootScope.defaultCountry.code != undefined)
     {
       $scope.pCountry1 = $rootScope.defaultCountry.code;
     }
@@ -181,6 +181,19 @@ define(function (require) {
         chart5: 100,
         chart6: 5000
     }
+
+    $scope.relatedItems = [
+    {
+      title: "L22004",
+      text: "L22030",
+      link: "workforce-profile",
+      icon: "people-group"
+    },{
+      title: "L22014",
+      text: "L22058",
+      link: "prevention-companies",
+      icon: "prevention"
+    }];
 
     $scope.countriesDataFor = [];
     $scope.countriesCompareWith = [];

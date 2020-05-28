@@ -71,7 +71,7 @@
 	</section>
 
 
-	<section class=" section--page background-main-lighter">
+	<section class=" section--page carrousel-items background-main-lighter">
 		<div class="container discover--charts--section">
 			<h2 class="title-section main-color" data-ng-bind="i18n.L22119"></h2>
 			<div class="carousel-control-group">
@@ -499,6 +499,11 @@
 (function(){
   $(document).ready(function() {
 		
+  	// for print all the items
+		$('.carrousel-items').append("<div class='print'></div>");
+		$('.carousel-inner').clone().appendTo( ".print");
+		$('.print .carousel-inner').removeClass();
+
 
 		function getWidth(){
 		if (typeof window.innerWidth != 'undefined') {
@@ -519,6 +524,7 @@
 		  var screenWidth = getWidth();		  
       createCarousel(screenWidth);
 		});
+
 
 		function hideControls(items){
       if(items == 6){

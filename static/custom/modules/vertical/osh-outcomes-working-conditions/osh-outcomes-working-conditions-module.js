@@ -192,8 +192,8 @@ define(function (require) {
         url: "/osh-outcomes-working-conditions/working-conditions/physical-risk-exposure-to-dangerous-substances/:pSubIndicator",
         params: {
           pIndicator: {
-            value: 'vibrations-loud-noise-and-temperature',
-            squash: 'vibrations-loud-noise-and-temperature'
+            value: 'exposure-to-dangerous-substances',
+            squash: 'exposure-to-dangerous-substances'
           },
           pSubIndicator: {
             value: 'smoke-powder-or-dust',
@@ -229,8 +229,8 @@ define(function (require) {
         url: "/osh-outcomes-working-conditions/working-conditions/physical-risk-risks-involved-with-work/:pFilter/:pCountry1/:pCountry2",
         params: {
           pIndicator: {
-            value: 'vibrations-loud-noise-and-temperature',
-            squash: 'vibrations-loud-noise-and-temperature'
+            value: 'risks-involve-with-work',
+            squash: 'risks-involve-with-work'
           },
           pSubIndicator: {
             value: 'smoke-powder-or-dust',
