@@ -27,6 +27,7 @@
 	    		<select data-ng-model="pCountry1" data-ng-change="changeCountry()" data-ng-disabled="selectDisabled">
 	    			<option value="0" disabled data-ng-bind="i18n.L22113"></option>
 						<option value="AT">(AT) Austria</option>
+						<option value="BE">(BE) Belgium</option>
 						<option value="BG">(BG) Bulgaria</option>
 						<option value="CH">(CH) Switzerland</option>
 						<option value="CY">(CY) Cyprus</option>
@@ -253,7 +254,7 @@
 				<li><a href="https://ec.europa.eu/eurostat/" title="visit the  web" target="_blank"><img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/eurostat-logo.png"></a></li>
 				<li><a href="https://www.eurofound.europa.eu/" title="visit the  web" target="_blank"><img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/eurofound-logo.png"></a></li>
 				<li><a href="https://osha.europa.eu/" title="visit the  web" target="_blank"><img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/logo.png"></a></li>
-				<li><a href="https://osha.europa.eu/en/facts-and-figures/esener" title="visit the  web" target="_blank"><img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/esener-logo.png"></a></li>
+				<li><a href="https://visualisation.osha.europa.eu/esener#!/en" title="visit the  web" target="_blank"><img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/esener-logo.png"></a></li>
 			</ul>
 		</div>
 		<div class="content-methodology">
@@ -497,11 +498,25 @@
 <script>
 (function(){
   $(document).ready(function() {
-		var screenWidth = screen.width;
+		
+
+		function getWidth(){
+		if (typeof window.innerWidth != 'undefined') {
+			  return window.innerWidth;
+			}
+		else if (typeof document.documentElement != 'undefined' && typeof document.documentElement.clientWidth != 'undefined' && document.documentElement.clientWidth != 0) {
+			   return document.documentElement.clientWidth;
+			}
+		else {
+			   return document.getElementsByTagName('body')[0].clientWidth;
+			}
+		}
+
+		var screenWidth = getWidth();
 		createCarousel(screenWidth);
 
 		$(window).on("resize scroll",function(e){
-		  var screenWidth = screen.width;
+		  var screenWidth = getWidth();		  
       createCarousel(screenWidth);
 		});
 
@@ -514,7 +529,7 @@
 		}
 
 		function createCarousel(screenWidth){
-      
+
       if( screenWidth >= 1919){
 				numItems = 6;
       }

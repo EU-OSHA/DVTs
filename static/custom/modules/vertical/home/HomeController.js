@@ -52,6 +52,7 @@ define(function (require) {
 
         $scope.saveCountry = function(e){
           var removed = false;
+          // Check if the current country is saved in the cookies
           if ($cookies.get("selectedCountry") != undefined)
           {
             $cookies.remove("selectedCountry");
@@ -60,8 +61,9 @@ define(function (require) {
             $rootScope.defaultCountry="";
             $scope.pCountry1 = "0";
           }
-          else if ($rootScope.defaultCountry != undefined && $rootScope.defaultCountry != "" && e.currentTarget.classList.value.indexOf("country-lock") != -1)
+          else if ($rootScope.defaultCountry != undefined && $rootScope.defaultCountry != "" && e.currentTarget.classList[0].indexOf("country-lock") != -1)
           {
+            // The country preference has been removed
             removed = true;
             
             $rootScope.defaultCountry="";

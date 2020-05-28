@@ -37,7 +37,7 @@ define(function (require) {
         });
 
         $stateProvider.state('about-tool-detail-page', {
-            url: "/about-tool-detail-page/:pSection/:pSubsection/:pIndicator",
+            url: "/about-the-system/methodology",
             params: {
                 pSection:{
                     value: 'generic-information',

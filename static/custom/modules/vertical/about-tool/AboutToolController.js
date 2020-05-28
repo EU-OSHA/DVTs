@@ -99,9 +99,6 @@ define(function (require) {
                         text: elem[1]
                       });
                     });
-                    //$log.warn($scope.indicators);
-                    //$scope.pIndicator = $scope.indicators[0].id;
-                    //$log.warn($scope.pIndicator);
                 }).catch(function (err) {
                     throw err;
                 });
@@ -124,7 +121,6 @@ define(function (require) {
                             additional_comments: elem[12]
                         };
                     });
-                //$log.warn($scope.data);
                 }).catch(function (err) {
                     throw err;
                 });
