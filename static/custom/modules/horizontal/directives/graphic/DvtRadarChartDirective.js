@@ -299,20 +299,37 @@ define(function (require) {
 			                        opacity:.5
 			                    },100);
 
-			                    var elementSVG = angular.element('body');
+								var elementSVG = angular.element('body');
 			                    angular.element(elementSVG).append('<div class="dvt-map-tooltip"></div>');
 			                    angular.element('.dvt-map-tooltip').append('<p class="country-name">'
 			                        +'<ul>'
 			                        +'<li class="data1"></li>'
+			                        +'<li class="data2"></li>'
+			                        +'<li class="data3"></li>'
 			                        +'</ul>'
 			                        +'</p>');
 
 			                    var question = this.attrs.title.substring(0, this.attrs.title.indexOf('-')-1);
 			                    var country = this.attrs.title.substring(this.attrs.title.indexOf('-')+1, this.attrs.title.indexOf(':'));
-			                    var value = this.attrs.title.substring(this.attrs.title.indexOf(':')+1)
+			                    var value = this.attrs.title.substring(this.attrs.title.indexOf(':')+1);
 
-			                    angular.element('.dvt-map-tooltip .country-name').text( country );
-			                    angular.element('.dvt-map-tooltip .data1').html( '<label>' + question + ' ' + value+ '</label>' );
+
+			                    // opts.indicators -> Countries
+			                    // opts.labels -> Short texts
+			                    // opts.titles -> Long texts
+		                    	var dataIndex = opts.labels.indexOf(question);
+
+			                    angular.element('.dvt-map-tooltip .country-name').text(opts.titles[dataIndex]);
+			                    angular.element('.dvt-map-tooltip .data1').html( '<label>' + opts.indicators[0] + ': ' + values[dataIndex] + ' %</label>' );
+			                    if (secondIndicatorValues.length > 0)
+			                    {
+			                    	// There is data for the second country
+			                    	angular.element('.dvt-map-tooltip .data2').html( '<label>' + opts.indicators[1] + ': ' + secondIndicatorValues[dataIndex] + ' %</label>' );
+			                    	angular.element('.dvt-map-tooltip .data3').html( '<label>' + opts.indicators[2] + ': ' + thirdIndicatorValues[dataIndex] + ' %</label>' );
+			                    }else 
+			                    {
+			                    	angular.element('.dvt-map-tooltip .data3').html( '<label>' + opts.indicators[1] + ': ' + thirdIndicatorValues[dataIndex] + ' %</label>' );	
+			                    }
 
 			                    var widthTooltip = angular.element('.dvt-map-tooltip').width();
 			                    var heightTooltip = angular.element('.dvt-map-tooltip').height();
@@ -369,7 +386,7 @@ define(function (require) {
 									title: title + " - " + indicator + ": " + value
 								});
 
-								//prueba.hover(over,out);
+								prueba.hover(over,out);
 							};							
 
 							// Paint the line near the legend label
@@ -763,6 +780,8 @@ define(function (require) {
 										}
 									});
 								}
+
+								scope.data = [indicatorNames, firstIndicatorTitles, firstIndicatorLabels, firstIndicatorValues, secondIndicatorValues, thirdIndicatorValues];
 
 								var paper = Raphael(scope.id, definition.width, definition.height);
 								paper.setViewBox(0,0,definition.width,definition.height);
