@@ -1,5 +1,23 @@
 <dvt-dashboard promises="promises" parameters="dashboard.parameters" class="full-country-report-page">
   <div class="header-logo"></div>
+  
+
+  <table class="full-content-report">
+
+    <thead>
+      <tr>
+        <td>
+          <div class="page-header-space"></div>
+        </td>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td>
+
+
+  
   <section class="cover-page">    
     <div class="content-cover">
       <div class="icon-full-report"><img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/full-report-icon.png"></div>
@@ -87,26 +105,20 @@
         <div ng-if="amatrix.length <= 0">
           <span data-ng-bind="i18nLiterals.L20706"></span>
         </div>
-        <div data-ng-repeat="matrix in authorities" class="clearfix osh-authorities-items">
+        <div data-ng-repeat="matrix in authorities" class="clearfix osh-authorities-items" ng-class="{'page-break-before' : (matrix.compensation==1) && ($index == 3) && pCountry == 'AT' }">
           <!--<div ng-if="::matrix.osh_authority==1">-->
           <div ng-if="$index == 0">
             <header>
               <img class="flag" ng-src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/flag/{{::matrix.country_code.toLowerCase()}}.png">
               <h2 class="country ng-binding title-section main-color" data-ng-bind="i18nLiterals['L'+matrix.country_name]"></h2>
             </header>
-            <!-- <h3 class="name-authorities" ng-if="$index== 0" data-ng-bind="i18nLiterals.L20614"></h3> 
-            <div class="box-rounded">                         
-              <p class="institution-name" data-ng-bind-html="i18nLiterals['L'+matrix.name_authority]"></p>
-              <div data-ng-bind-html="i18nLiterals['L'+matrix.link_authority]"></div>
-              <div class="text" data-ng-bind-html="i18nLiterals['L'+matrix.detail_authority]"></div>
-            </div>-->
           </div>
           <div class="matrix--content--elements">            
             <h3 class="" ng-if="::matrix.osh_authority==1 && authorities[$index-1].osh_authority != 1" data-ng-bind="i18nLiterals.L20614"></h3>
             <h3 class="" ng-if="::matrix.compensation==1 && authorities[$index-1].compensation != 1" data-ng-bind="i18nLiterals.L20611"></h3>
             <h3 class="" ng-if="::matrix.prevention==1 && authorities[$index-1].prevention != 1" data-ng-bind="i18nLiterals.L20612"></h3>
             <h3 class="" ng-if="::matrix.standardisation==1 && authorities[$index-1].standardisation != 1" data-ng-bind="i18nLiterals.L20613"></h3>
-            <div class="box-rounded">
+            <div class="box-rounded" ng-class="{'page-break-before' : (matrix.compensation==1) && ($index == 3) && pCountry == 'AT' }">
               <p data-ng-bind-html="i18nLiterals['L'+matrix.name_authority]" class="institution-name"></p>
               <div data-ng-bind-html="i18nLiterals['L'+matrix.link_authority]"></div>
               <div class="text" data-ng-bind-html="i18nLiterals['L'+matrix.detail_authority]"></div>
@@ -221,13 +233,8 @@
         </table>
       </div>
     </div>
-  </section>
-
-  <section class="economic-sector-profile indicator2"> 
-    <!--<div class="title-page">
-      <h2  data-ng-bind="i18nLiterals.L20735">Generic information</h2>
-      <h3 data-ng-bind="i18nLiteral.L22001 + ' ' + i18nLiterals.L22003"></h3>
-    </div> -->
+  
+  <div class="economic-sector-profile indicator2"> 
     <div class="content-page">
       <div class="box-rounded">
         <dvt-bar-chart
@@ -357,6 +364,7 @@
         </table>
       </div>      
     </div>
+  </div>
   </section>
 
   <section class="workforce-profile"> 
@@ -652,7 +660,7 @@
       <dvt-bar-chart
         data-ng-cloak
         query="getCountryReportAllCountriesAnswersData" cda="{{::cda }}"
-        width="330" height="270"
+        width="330" height="250"
         orientation="vertical" axis-fixed-min="0"
         axis-fixed-max="100" step="20"
         params="[['pDataset', datasetList.ESENER], ['pIndicator', 358]]"
@@ -700,7 +708,7 @@
       <dvt-bar-chart
         data-ng-cloak
         query="getCountryReportAllCountriesAnswersData" cda="{{::cda }}"
-        width="330" height="270"
+        width="330" height="250"
         orientation="vertical" axis-fixed-min="0"
         axis-fixed-max="100" step="20"
         params="[['pDataset', datasetList.ESENER], ['pIndicator', 328]]"
@@ -742,7 +750,7 @@
       <dvt-bar-chart
         data-ng-cloak
         query="getCountryReportAllCountriesAnswersData" cda="{{::cda }}"
-        width="330" height="270"
+        width="330" height="250"
         orientation="vertical" axis-fixed-min="0"
         axis-fixed-max="100" step="20"
         params="[['pDataset', datasetList.ESENER], ['pIndicator', 329]]"
@@ -784,7 +792,7 @@
       <dvt-bar-chart
         data-ng-cloak
         query="getCountryReportAllCountriesAnswersData" cda="{{::cda }}"
-        width="330" height="270"
+        width="330" height="250"
         orientation="vertical" axis-fixed-min="0"
         axis-fixed-max="100" step="20"
         params="[['pDataset', datasetList.ESENER], ['pIndicator', 330]]"
@@ -826,7 +834,7 @@
       <dvt-bar-chart
         data-ng-cloak
         query="getCountryReportAllCountriesAnswersData" cda="{{::cda }}"
-        width="330" height="270"
+        width="330" height="250"
         orientation="vertical" axis-fixed-min="0"
         axis-fixed-max="100" step="20"
         params="[['pDataset', datasetList.ESENER], ['pIndicator', 331]]"
@@ -867,7 +875,7 @@
       <dvt-bar-chart
         data-ng-cloak
         query="getCountryReportAllCountriesAnswersData" cda="{{::cda }}"
-        width="600" height="270"
+        width="330" height="250"
         orientation="vertical" axis-fixed-min="0"
         axis-fixed-max="100" step="20"
         params="[['pDataset', datasetList.Eurofound], ['pIndicator', 63]]"
@@ -910,7 +918,7 @@
       <dvt-bar-chart
         data-ng-cloak
         query="getCountryReportAllCountriesAnswersData" cda="{{::cda }}"
-        width="330" height="270" axis-percent="1"
+        width="330" height="250" axis-percent="1"
         orientation="vertical" axis-fixed-min="0"
         axis-fixed-max="100" step="20"
         params="[['pDataset', datasetList.Eurofound], ['pIndicator', 64]]"
@@ -1266,7 +1274,7 @@
       <dvt-bar-chart
         data-ng-cloak
         query="getCountryReportAllCountriesAnswersData" cda="{{::cda }}"
-        width="330" height="270" axis-percent="1"
+        width="330" height="250" axis-percent="1"
         orientation="vertical" axis-fixed-min="0"
         axis-fixed-max="100" step="20"
         params="[['pDataset', datasetList.ESENER], ['pIndicator', 324]]"
@@ -1306,7 +1314,7 @@
       <dvt-bar-chart
         data-ng-cloak
         query="getCountryReportAllCountriesOrderCountryData" cda="{{::cda }}"
-        width="330" height="270" axis-percent="1"
+        width="330" height="250" axis-percent="1"
         orientation="vertical" axis-fixed-min="60"
         axis-fixed-max="100" step="20"
         params="[['pDataset', datasetList.Eurofound], ['pIndicator', 84]]"
@@ -1346,7 +1354,7 @@
       <dvt-bar-chart
         data-ng-cloak
         query="getCountryReportAllCountriesAnswersData" cda="{{::cda }}"
-        width="330" height="270" axis-percent="1"
+        width="330" height="250" axis-percent="1"
         orientation="vertical" axis-fixed-min="0"
         axis-fixed-max="100" step="20"
         params="[['pDataset', datasetList.Eurofound], ['pIndicator', 85]]"
@@ -1391,7 +1399,7 @@
       <dvt-bar-chart
         data-ng-cloak
         query="getCountryReportAllCountriesAnswersData" cda="{{::cda }}"
-        width="330" height="270" axis-percent="1"
+        width="330" height="250" axis-percent="1"
         orientation="vertical" axis-fixed-min="0"
         axis-fixed-max="100" step="20"
         params="[['pDataset', datasetList.ESENER], ['pIndicator', 325]]"
@@ -1431,7 +1439,7 @@
       <dvt-bar-chart
         data-ng-cloak
         query="getCountryReportAllCountriesAnswersData" cda="{{::cda }}"
-        width="330" height="270" axis-percent="1"
+        width="330" height="250" axis-percent="1"
         orientation="vertical" axis-fixed-min="0"
         axis-fixed-max="100" step="20"
         params="[['pDataset', datasetList.Eurofound], ['pIndicator', 86]]"
@@ -1475,7 +1483,7 @@
       <dvt-bar-chart
         data-ng-cloak
         query="getCountryReportAllCountriesAnswersData" cda="{{::cda }}"
-        width="330" height="270" axis-percent="1"
+        width="330" height="250" axis-percent="1"
         orientation="vertical" axis-fixed-min="0"
         axis-fixed-max="100" step="20"
         params="[['pDataset', datasetList.ESENER], ['pIndicator', 326]]"
@@ -1515,7 +1523,7 @@
       <dvt-bar-chart
         data-ng-cloak
         query="getCountryReportAllCountriesAnswersData" cda="{{::cda }}"
-        width="330" height="270" axis-percent="1"
+        width="330" height="250" axis-percent="1"
         orientation="vertical" axis-fixed-min="0"
         axis-fixed-max="100" step="20"
         params="[['pDataset', datasetList.Eurofound], ['pIndicator', 87]]"
@@ -1559,7 +1567,7 @@
       <dvt-bar-chart
         data-ng-cloak
         query="getCountryReportAllCountriesAnswersData" cda="{{::cda }}"
-        width="330" height="270" axis-percent="1"
+        width="330" height="250" axis-percent="1"
         orientation="vertical" axis-fixed-min="0"
         axis-fixed-max="100" step="20"
         params="[['pDataset', datasetList.ESENER], ['pIndicator', 327]]"
@@ -1599,7 +1607,7 @@
       <dvt-bar-chart
         data-ng-cloak
         query="getCountryReportAllCountriesAnswersData" cda="{{::cda }}"
-        width="330" height="270" axis-percent="1"
+        width="330" height="250" axis-percent="1"
         orientation="vertical" axis-fixed-min="0"
         axis-fixed-max="100" step="20"
         params="[['pDataset', datasetList.Eurofound], ['pIndicator', 88]]"
@@ -1641,8 +1649,7 @@
       <dvt-bar-chart
         data-ng-cloak
         query="getCountryReportAllCountriesAnswersData" cda="{{::cda }}"
-        width="330" height="270" axis-percent="1"
-        orientation="vertical" axis-fixed-min="0"
+        width="330" height="250" axis-fixed-min="0"
         axis-fixed-max="100" step="20"
         params="[['pDataset', datasetList.Eurofound], ['pIndicator', 89]]"
         color-role="series" colors="[color2, color5]"
@@ -1728,7 +1735,7 @@
       <dvt-bar-chart
         data-ng-cloak
         query="getCountryReportAllCountriesAnswersData" cda="{{::cda }}"
-        width="330" height="270" axis-percent="1"
+        width="330" height="250" axis-percent="1"
         orientation="vertical" axis-fixed-min="0"
         axis-fixed-max="100" step="20"
         params="[['pDataset', datasetList.Eurofound], ['pIndicator', 71]]"
@@ -1770,7 +1777,7 @@
       <dvt-bar-chart
         data-ng-cloak
         query="getCountryReportAllCountriesAnswersData" cda="{{::cda }}"
-        width="330" height="270" axis-percent="1"
+        width="330" height="250" axis-percent="1"
         orientation="vertical" axis-fixed-min="0"
         axis-fixed-max="100" step="20"
         params="[['pDataset', datasetList.Eurofound], ['pIndicator', 72]]"
@@ -1812,7 +1819,7 @@
       <dvt-bar-chart
         data-ng-cloak
         query="getCountryReportAllCountriesAnswersData" cda="{{::cda }}"
-        width="330" height="270" axis-percent="1"
+        width="330" height="250" axis-percent="1"
         orientation="vertical" axis-fixed-min="0"
         axis-fixed-max="100" step="20"
         params="[['pDataset', datasetList.Eurofound], ['pIndicator', 73]]"
@@ -1854,7 +1861,7 @@
       <dvt-bar-chart
         data-ng-cloak
         query="getCountryReportAllCountriesAnswersData" cda="{{::cda }}"
-        width="330" height="270" axis-percent="1"
+        width="330" height="250" axis-percent="1"
         orientation="vertical" axis-fixed-min="0"
         axis-fixed-max="100" step="20"
         params="[['pDataset', datasetList.Eurofound], ['pIndicator', 74]]"
@@ -1972,8 +1979,6 @@
     </div> 
 
     <!-- Risk Assessment -->
-    <!--<h4 class="header3">Risk Assessment - LITERAL</h4>-->
-
     <!-- sector -->
     <div class="box-rounded risk">
       <dvt-bar-chart
@@ -1998,7 +2003,7 @@
         dimensions="dimensionsOneDecimal"
         base-axis-label-text-baseline="top"
         legend="true" axis-label-word-break="1"
-        legend-align="center" base-axis-size="40"
+        legend-align="center" base-axis-size="30"
         datasource-and-dates="[datasetList.ESENER,304]"
       ></dvt-bar-chart>
       <p data-ng-bind="i18nLiterals.L20603" ></p>
@@ -2024,13 +2029,12 @@
       </table>
     </div>    
 
-
     <!-- Establishment size -->
     <div class="box-rounded">
       <dvt-bar-chart
         data-ng-cloak
         query="getCountryReportCompanySizeCountryFirstData" cda="{{::cda }}"
-        width="330" height="220" axis-percent="1"
+        width="330" height="210" axis-percent="1"
         orientation="vertical" axis-fixed-min="0"
         axis-fixed-max="100" step="20"
         params="[['pDataset', datasetList.ESENER], ['pIndicator', 304], ['pCountry1', pCountry], ['pCountry2', 'EU27_2020']]"
@@ -2049,7 +2053,7 @@
         dimensions="dimensionsOneDecimal"
         base-axis-label-text-baseline="top"
         legend="true" axis-label-word-break="1"
-        legend-align="center" base-axis-size="40"
+        legend-align="center" base-axis-size="25"
         datasource-and-dates="[datasetList.ESENER,304]"
       ></dvt-bar-chart>
       <p data-ng-bind="i18nLiterals.L20602" ></p>
@@ -2409,7 +2413,7 @@
       <dvt-bar-chart
         data-ng-cloak
         query="getEstablishmentsInspectedData" cda="{{::cda }}"
-        width="400" height="240" axis-percent="1"
+        width="330" height="220" axis-percent="1"
         orientation="vertical" axis-fixed-min="0" stacked="1"
         axis-fixed-max="100" step="20" id="1"
         params="[['pIndicator', 285], ['pCountry1', pCountry], ['pCountry2', 'EU28'], ['pDataset', datasetList.ESENER], ['pAnswer', 1]]"
@@ -2501,7 +2505,7 @@
           <h3 class="" ng-if="::matrix.osh_statistics==1 && $index == 0 " data-ng-bind="i18nLiterals.L20714"></h3>
           <h3 class="" ng-if="::matrix.surveys==1 && statistics[$index-1].surveys != 1" data-ng-bind="i18nLiterals.L20715"></h3>
           <h3 class="" ng-if="::matrix.research_institutes==1 && statistics[$index-1].research_institutes!=1" data-ng-bind="i18nLiterals.L20716"></h3>
-          <div class="box-rounded">
+          <div class="box-rounded" ng-class="{'page-break-before' : (matrix.surveys==1) && pCountry == 'AT'  }">
             <p data-ng-bind-html="i18nLiterals['L'+matrix.name_statistics]" class="institution-name"></p>
             <div ng-if="matrix.link_statistics!=null" data-ng-bind-html="i18nLiterals['L'+matrix.link_statistics]"></div>
             <div ng-if="matrix.detail_statistics!=null" class="text" data-ng-bind-html="i18nLiterals['L'+matrix.detail_statistics]"></div>
@@ -2511,11 +2515,24 @@
     </div>  
   </section>
 
+        </td>
+      </tr>
+    </tbody>
+    
+    <tfoot>
+      <tr>
+        <td>
+          <div class="page-footer-space"></div>
+        </td>
+      </tr>
+    </tfoot>
 
-  <p class="footer-pdf">
-    <span>Santiago de Compostela 12, 5th floor - 48003 Bilbao × Spain</span>
-    <span>Tel. +34 944 358 400 × Fax +34 944 358 401 </span>
-    <span>information@osha.europa.eu - <a href="http://osha.europa.eu" target="_blank">http://osha.europa.eu</a></span>
-    <!--<span class="number-pag"></span>-->
-  </p>
+  </table>
+
+          <p class="footer-pdf">
+            <span>Santiago de Compostela 12, 5th floor - 48003 Bilbao × Spain</span>
+            <span>Tel. +34 944 358 400 × Fax +34 944 358 401 </span>
+            <span>information@osha.europa.eu - <a href="http://osha.europa.eu" target="_blank">http://osha.europa.eu</a></span>
+            <!--<span class="number-pag"></span>-->
+          </p>
 </dvt-dashboard>
