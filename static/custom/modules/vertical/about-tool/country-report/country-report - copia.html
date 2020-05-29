@@ -1,23 +1,5 @@
 <dvt-dashboard promises="promises" parameters="dashboard.parameters" class="full-country-report-page">
   <div class="header-logo"></div>
-  
-
-  <table class="full-content-report">
-
-    <thead>
-      <tr>
-        <td>
-          <div class="page-header-space"></div>
-        </td>
-      </tr>
-    </thead>
-
-    <tbody>
-      <tr>
-        <td>
-
-
-  
   <section class="cover-page">    
     <div class="content-cover">
       <div class="icon-full-report"><img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/full-report-icon.png"></div>
@@ -233,8 +215,13 @@
         </table>
       </div>
     </div>
-  
-  <div class="economic-sector-profile indicator2"> 
+  </section>
+
+  <section class="economic-sector-profile indicator2"> 
+    <!--<div class="title-page">
+      <h2  data-ng-bind="i18nLiterals.L20735">Generic information</h2>
+      <h3 data-ng-bind="i18nLiteral.L22001 + ' ' + i18nLiterals.L22003"></h3>
+    </div> -->
     <div class="content-page">
       <div class="box-rounded">
         <dvt-bar-chart
@@ -364,7 +351,6 @@
         </table>
       </div>      
     </div>
-  </div>
   </section>
 
   <section class="workforce-profile"> 
@@ -2515,24 +2501,11 @@
     </div>  
   </section>
 
-        </td>
-      </tr>
-    </tbody>
-    
-    <tfoot>
-      <tr>
-        <td>
-          <div class="page-footer-space"></div>
-        </td>
-      </tr>
-    </tfoot>
 
-  </table>
-
-          <p class="footer-pdf">
-            <span>Santiago de Compostela 12, 5th floor - 48003 Bilbao × Spain</span>
-            <span>Tel. +34 944 358 400 × Fax +34 944 358 401 </span>
-            <span>information@osha.europa.eu - <a href="http://osha.europa.eu" target="_blank">http://osha.europa.eu</a></span>
-            <!--<span class="number-pag"></span>-->
-          </p>
+  <p class="footer-pdf">
+    <span>Santiago de Compostela 12, 5th floor - 48003 Bilbao × Spain</span>
+    <span>Tel. +34 944 358 400 × Fax +34 944 358 401 </span>
+    <span>information@osha.europa.eu - <a href="http://osha.europa.eu" target="_blank">http://osha.europa.eu</a></span>
+    <!--<span class="number-pag"></span>-->
+  </p>
 </dvt-dashboard>
