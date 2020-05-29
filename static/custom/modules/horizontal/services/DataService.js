@@ -1461,6 +1461,20 @@ define(function () {
                     $log.debug('getEstablishmentsInspectedData url:' + url);
                     return promise(url)
                 },
+
+                /**
+                 * @ngdoc method
+                 * @name dvt.configModule.DataService#getEnforcementCapacityData
+                 * @methodOf dvt.configModule.DataService
+                 * @description
+                 * Get enforcement capacity data for country report
+                 */
+                getEnforcementCapacityData: function(pCountry){
+                    var url = configService.getCountryReportDataPath() + "&dataAccessId=getEnforcementCapacityData" + "&parampCountry="+pCountry;
+                    $log.debug('getEnforcementCapacityData url:' + url);
+                    return promise(url)
+                },
+
             /*************************************** END FULL COUNTRY REPORT *****************************************/
 
             /**
