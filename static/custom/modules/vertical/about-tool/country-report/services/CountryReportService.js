@@ -170,7 +170,7 @@ define (function (require) {
                     }
                 ];
             },
-        	getCompanySizeMainPlots: function(pCountry1) {
+        	getCompanySizeMainPlots: function(pCountry) {
                 var dashboard = this.dashboard;	
                 return [
                     {
@@ -178,23 +178,35 @@ define (function (require) {
                         dataPart: "0",
                         valuesOverflow: 'show',
                         label_textStyle: function(scene){
+                            
                         	var subIndicatorKey = scene.firstAtoms.series;
+                            var country = scene.firstAtoms.category;
 
                             if(!scene.firstAtoms.value.label.match('%')){
                                 scene.firstAtoms.value.label = scene.firstAtoms.value.label + '%';
                             }
 
-                            if (subIndicatorKey == 'From 0 to 9 persons employed') {
-                                return dvtUtils.getColorCountry(1);
-                            } else if(subIndicatorKey == 'From 10 to 19 persons employed'){
-                            	return dvtUtils.getColorCountry(22);
-                            } else if(subIndicatorKey == 'From 20 to 49 persons employed') {
-                            	return dvtUtils.getAccidentsColors(4);
-                            } else if(subIndicatorKey == 'From 50 to 249 persons employed') {
-                            	return dvtUtils.getColorCountry(3);
-                            } else if(subIndicatorKey == '250 persons employed or more') {
-                            	return dvtUtils.getColorCountry(2);
+                            if(subIndicatorKey != ""){
+                                if (subIndicatorKey == 'From 0 to 9 persons employed') {
+                                    return dvtUtils.getColorCountry(1);
+                                } else if(subIndicatorKey == 'From 10 to 19 persons employed'){
+                                    return dvtUtils.getColorCountry(22);
+                                } else if(subIndicatorKey == 'From 20 to 49 persons employed') {
+                                    return dvtUtils.getAccidentsColors(4);
+                                } else if(subIndicatorKey == 'From 50 to 249 persons employed') {
+                                    return dvtUtils.getColorCountry(3);
+                                } else if(subIndicatorKey == '250 persons employed or more') {
+                                    return dvtUtils.getColorCountry(2);
+                                }
+                            }else{
+                                debugger;
+                                if(country == "EU28"){
+                                    return dvtUtils.getEUColor();
+                                }else if(country.label.match(pCountry)){
+                                    return dvtUtils.getColorCountry(1); 
+                                }
                             }
+
                             return dvtUtils.getChartLightGrayColor();
                         },
                         label_textMargin: 2,
