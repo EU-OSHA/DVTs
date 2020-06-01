@@ -34,7 +34,6 @@
       <h3>Country Report</h3>
     </div>
   </section>
-  <div class="break-after"></div>
 
   <section class="index-page">
     <h1><span data-ng-bind="i18nLiterals['L'+country_name]"></span> Country Report Index</h1>
@@ -79,7 +78,6 @@
 
     </div>
   </section>
-  <div class="break-after"></div>
 
   <section class="introduction-page">
     <div class="title-page">
@@ -89,7 +87,6 @@
     <div data-ng-bind-html="i18nLiterals.L20737" class="content-page about-tool-content">
     </div>
   </section>
-  <div class="break-after"></div>
 
   <section class="osh-authorities">
     <div class="title-page">
@@ -233,8 +230,9 @@
         </table>
       </div>
     </div>
-  
-  <div class="economic-sector-profile indicator2"> 
+  </section>
+
+  <section class="economic-sector-profile indicator2"> 
     <div class="content-page">
       <div class="box-rounded">
         <dvt-bar-chart
@@ -385,7 +383,11 @@
         <td><span data-ng-bind="i18nLiterals.L20619"></span><span data-ng-bind="profile.employmentRateFemale +' %'" class="data"></span></td>
         <td><span data-ng-bind="i18nLiterals.L20618"></span><span data-ng-bind="profile.employmentRateMale +' %'" class="data"></span></td>
         <td><span data-ng-bind="i18nLiterals.L20617"></span><span data-ng-bind="profile.employmentRateTotal +' %'" class="data"></span></td>
-        <td><span data-ng-bind="i18nLiterals.L22125"></span><span data-ng-bind="profile.unemploymentRate +' %'" class="data"></span></td>
+        <td>
+          <span data-ng-bind="i18nLiterals.L22125"></span>
+          <span data-ng-if="profile.unemploymentRate != undefined" data-ng-bind="profile.unemploymentRate +' %'" class="data"></span>
+          <span data-ng-if="profile.unemploymentRate == undefined" data-ng-bind="'- %'" class="data"></span>
+        </td>
       </tr>
     </table>
   </section>
@@ -402,40 +404,49 @@
     </div>
     <header>
       <img  class="flags" ng-src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/flag/{{::pCountry.toLowerCase()}}.png">
-      <h2 class="country ng-binding title-section main-color" data-ng-bind="i18nLiterals['L'+nationalStrategy[0].country_name]"></h2>
+      <!--<h2 class="country ng-binding title-section main-color" data-ng-bind="i18nLiterals['L'+nationalStrategy[0].country_name]"></h2>-->
+      <h2 class="country ng-binding title-section main-color" data-ng-bind="i18nLiterals['L'+country_name]"></h2>
     </header>
     <h4 data-ng-bind="i18nLiterals.L20378"></h4>
     <div class="box-rounded">
       <h5 data-ng-bind="i18nLiterals.L20246">Basic Info</h5>
       <div data-ng-bind-html="i18nLiterals['L'+nationalStrategy[0].basic_info]"></div>
+      <div data-ng-if="nationalStrategy[0].basic_info == undefined" data-ng-bind="i18nLiterals.L20706"></div>
     </div>
     <div class="box-rounded">
       <h5 data-ng-bind="i18nLiterals.L20247">Background</h5>
       <div data-ng-bind-html="i18nLiterals['L'+nationalStrategy[0].background]"></div>
+      <div data-ng-if="nationalStrategy[0].background == undefined" data-ng-bind="i18nLiterals.L20706"></div>
     </div>
     <div class="box-rounded">
       <h5 data-ng-bind="i18nLiterals.L20248">Characteristics and objectives</h5>
       <div data-ng-bind-html="i18nLiterals['L'+nationalStrategy[0].characteristics_objectives]"></div>
+      <div data-ng-if="nationalStrategy[0].characteristics_objectives == undefined" data-ng-bind="i18nLiterals.L20706"></div>
     </div>
     <div class="box-rounded">
       <h5 data-ng-bind="i18nLiterals.L20249">Details and activity</h5>
       <div data-ng-bind-html="i18nLiterals['L'+nationalStrategy[0].details_activity]"></div>
+      <div data-ng-if="nationalStrategy[0].details_activity == undefined" data-ng-bind="i18nLiterals.L20706"></div>
     </div>
     <div class="box-rounded">
       <h5 data-ng-bind="i18nLiterals.L20250">Actors and stakeholders</h5>
       <div data-ng-bind-html="i18nLiterals['L'+nationalStrategy[0].actors_stakeholders]"></div>
+      <div data-ng-if="nationalStrategy[0].actors_stakeholders == undefined" data-ng-bind="i18nLiterals.L20706"></div>
     </div>
     <div class="box-rounded">
       <h5 data-ng-bind="i18nLiterals.L20251">Resources and timeframe</h5>
       <div data-ng-bind-html="i18nLiterals['L'+nationalStrategy[0].resources_timeframe]"></div>
+      <div data-ng-if="nationalStrategy[0].resources_timeframe == undefined" data-ng-bind="i18nLiterals.L20706"></div>
     </div>
     <div class="box-rounded">
       <h5 data-ng-bind="i18nLiterals.L20252">Evaluation</h5>
       <div data-ng-bind-html="i18nLiterals['L'+nationalStrategy[0].evaluation]"></div>
+      <div data-ng-if="nationalStrategy[0].evaluation == undefined" data-ng-bind="i18nLiterals.L20706"></div>
     </div>
     <div class="box-rounded">
       <h5 data-ng-bind="i18nLiterals.L20253">Relation to EU Strategic Framework</h5>
       <div data-ng-bind-html="i18nLiterals['L'+nationalStrategy[0].relation_strategic_framework]"></div>
+      <div data-ng-if="nationalStrategy[0].relation_strategic_framework == undefined" data-ng-bind="i18nLiterals.L20706"></div>
     </div>
     <h4 data-ng-bind="i18nLiterals.L20379"></h4>
     <p ng-if="challengesResponse.length <= 0" data-ng-bind="i18nLiterals.L20706"></p>
@@ -633,7 +644,7 @@
             <li>
               <span class="country-data" data-ng-bind="matrix.sick_at_work != null ? (matrix.sick_at_work) : '-'"></span>
               <span data-ng-if="matrix.sick_at_work != null" class="data-text">&percnt;</span>
-              <label data-ng-bind="i18nLiterals['L23819']"></label>
+              <label data-ng-bind="i18nLiterals['L318']"></label>
             </li>
             <li>
               <span class="country-data" data-ng-bind="matrix.job_till_60 != null ? (matrix.job_till_60) : '-'"></span>
@@ -2152,10 +2163,12 @@
     </div>
 
 
-    <!-- Internal or external RA -->
+    <!-- Evaluated aspects in risk assessments -->
     <div class="box-rounded">
-      <h5 data-ng-bind="i18nLiterals.L20681"></h5>
-      
+      <h2 data-ng-bind="i18nLiterals.L20681" class="header4"></h2>
+        <a href="https://osha.europa.eu/en/surveys-and-statistics-osh/esener/2014?locale=EN&dataSource=esener04&media=png&width=740&question=Q252_1&plot=heatMap&countryGroup=linear&subset=Sectorgrp&subsetValue=All&answer=1--Yes" target="_blank">
+          <img alt="European Agency for Safety and Health at Work" src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/EU-map.png">
+        </a>
       <div data-ng-bind-html="i18nLiterals.L20605" ></div>
     </div>
 
@@ -2453,27 +2466,31 @@
 
     <!-- Authority -->
     <div class="box-rounded">
-      <h4 data-ng-bind="i18nLiterals.L333" class="header5"></h4>
-      <div data-ng-bind-html="i18nLiterals.L23322"></div>
-    </div> 
+      <h4 data-ng-bind="i18nLiterals.L333" class="header4"></h4>
+      <div data-ng-if="enforcementCapacities.authority != null" data-ng-bind-html="i18nLiterals['L'+enforcementCapacities.authority]"></div>
+      <div data-ng-if="enforcementCapacities.authority == null" data-ng-bind="i18nLiterals.L20706"></div>
+    </div>
 
     <!-- Scope of the Labor Inspection -->
     <div class="box-rounded">
-      <h4 data-ng-bind="i18nLiterals.L334" class="header5"></h4>
-      <div data-ng-bind-html="i18nLiterals.L23323"></div>
-    </div> 
+      <h4 data-ng-bind="i18nLiterals.L334" class="header4"></h4>
+      <div data-ng-if="enforcementCapacities.scope != null" data-ng-bind-html="i18nLiterals['L'+enforcementCapacities.scope]"></div>
+      <div data-ng-if="enforcementCapacities.scope == null" data-ng-bind="i18nLiterals.L20706"></div>
+    </div>
 
     <!-- Inspector powers -->
     <div class="box-rounded">
-      <h4 data-ng-bind="i18nLiterals.L335" class="header5"></h4>
-      <div data-ng-bind-html="i18nLiterals.L23324"></div>
-    </div> 
+      <h4 data-ng-bind="i18nLiterals.L335" class="header4"></h4>
+      <div data-ng-if="enforcementCapacities.inspector != null" data-ng-bind-html="i18nLiterals['L'+enforcementCapacities.inspector]"></div>
+      <div data-ng-if="enforcementCapacities.inspector == null" data-ng-bind="i18nLiterals.L20706"></div>
+    </div>
 
     <!-- Strategy/Plan -->
     <div class="box-rounded">
-      <h4 data-ng-bind="i18nLiterals.L336" class="header5"></h4>
-      <div data-ng-bind-html="i18nLiterals.L23325"></div>
-    </div> 
+      <h4 data-ng-bind="i18nLiterals.L336" class="header4"></h4>
+      <div data-ng-if="enforcementCapacities.strategy != null" data-ng-bind-html="i18nLiterals['L'+enforcementCapacities.strategy]"></div>
+      <div data-ng-if="enforcementCapacities.strategy == null" data-ng-bind="i18nLiterals.L20706"></div>
+    </div>
   </section>
 
   <div class="break-after"></div>
@@ -2488,7 +2505,7 @@
       <p data-ng-bind-html="i18nLiterals.L22065"></p>
       <span data-ng-bind="i18nLiterals.L20704"></span> 
       <span><a data-ng-bind="i18nLiterals.L20705" ui-sref="about-tool-detail-page({pSection: 'osh-infrastructure', pSubsection: 'osh_statistics', pIndicator: 80})"></a></span>
-    </div> 
+    </div>
     <div class="content-page">
       <div ng-if="amatrix.length <= 0">
         <span data-ng-bind="i18nLiterals.L20706"></span>

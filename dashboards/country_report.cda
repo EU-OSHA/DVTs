@@ -611,4 +611,21 @@
 			ORDER BY FIELD(sa.id, 2,1), FIELD (n.country_code, ${pCountry1}, ${pCountry2}, 'EU27_2020');
 	    </Query>
 	</DataAccess>
+
+	<!-- GET ENFORCEMENT CAPACITY DATA -->
+	<DataAccess access="public" connection="dvt_conn" id="getEnforcementCapacityData" type="sql">
+	    <Cache duration="3600" enabled="true" />
+	    <Columns />
+	    <Parameters>
+	    	<Parameter default="AT" name="pCountry" type="String"/>
+	    </Parameters>
+	    <Query>
+			SELECT n.country_code as country_code, n.literal_id as country, sp.text_1_literal_id as authority, sp.text_2_literal_id as scope, 
+			sp.text_3_literal_id as inspector, sp.text_4_literal_id as strategy
+			FROM nuts n, strategies_page sp
+			WHERE n.id = sp.nuts_id
+			AND n.country_code = ${pCountry}
+			AND sp.page = 'STRATEGY_ENFOR_CAPACITY';
+	    </Query>
+	</DataAccess>
 </CDADescriptor>

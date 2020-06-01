@@ -55,7 +55,7 @@ define(function (require) {
 	    else
 	    {
 	      $scope.pCountry = "AT";
-	      $scope.country_name = "Austria";
+	      $scope.country_name = "39";
 	    }
 
 		$scope.dashboard = {
@@ -70,6 +70,7 @@ define(function (require) {
 		$scope.challengesResponse=[];
 		$scope.socialDialogue=[];
 		$scope.healthPerception=[];
+		$scope.enforcementCapacities = {};
 		$scope.statistics=[];
 
 		$scope.companySize=[];
@@ -266,6 +267,10 @@ define(function (require) {
 			if($scope.authorities.length > 0){
 				$scope.country_name = $scope.authorities[0].country_name;
 			}
+
+			if($scope.pCountry == "CH"){
+				$scope.country_name = "224";
+			}
 			
 		}).catch(function (err) {
 			throw err;
@@ -384,6 +389,20 @@ define(function (require) {
 			throw err;
 	  	});
 
+		//ENFORCEMENT CAPACITY
+		dataService.getEnforcementCapacityData($scope.pCountry).then(function (data) {
+	        data.data.resultset.map(function (elem) {
+	          $scope.enforcementCapacities = {
+	            authority: elem[2],
+	            scope: elem[3],
+	            inspector: elem[4],
+	            strategy: elem[5]
+	          };
+	        });
+		}).catch(function (err) {
+		  throw err;
+		});
+
 		// OSH Statistics
 		dataService.getCountryReportMatrixPageData("MATRIX_STATISTICS", $scope.pCountry).then(function(data)
 		{
@@ -490,7 +509,7 @@ define(function (require) {
 		  	});
 
 		  	/* INCOME PER CAPITA */
-		  	dataService.getCountryReportYearData($scope.datasetList.EUROSTAT2018BetweenDates, 279, $scope.pCountry, "EU28", 0).then(function(data){
+		  	dataService.getCountryReportYearData($scope.datasetList.EUROSTAT2018BetweenDates, 36, $scope.pCountry, "EU28", 0).then(function(data){
 		  		data.data.resultset.map(function (elem) {
 			  		$scope.incomePerCapita.push({
 				  		country: elem[0],
@@ -787,9 +806,9 @@ define(function (require) {
 							break;
 							case "Very satisfied":
 								if(elem[1].match($scope.pCountry)){
-									$scope.jobSatisfaction[$scope.pCountry].value3 = Math.round(elem[2]*10)/10;
+									$scope.jobSatisfaction[$scope.pCountry].value4 = Math.round(elem[2]*10)/10;
 								}else if(elem[1] == "EU28"){
-									$scope.jobSatisfaction["EU28"].value3 = Math.round(elem[2]*10)/10;
+									$scope.jobSatisfaction["EU28"].value4 = Math.round(elem[2]*10)/10;
 								}
 							break;
 						}
