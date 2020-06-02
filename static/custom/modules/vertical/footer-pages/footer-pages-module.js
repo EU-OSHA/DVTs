@@ -17,6 +17,9 @@ define(function (require) {
         // Literals / i18n
         var i18n = configService.getLiterals();
 
+        $urlRouterProvider.when('/about-tool','about-the-system');
+        $urlRouterProvider.when('/about-tool-detail-page','about-the-system/methodology')
+        $urlRouterProvider.when('/about-tool-detail-page/{path:.*}','about-the-system/methodology')
         $urlRouterProvider.otherwise("/404");
         $stateProvider.state('legal-notice', {
             url: "/legal-notice",
