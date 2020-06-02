@@ -1193,9 +1193,9 @@
   <section class="working-conditions mental-risk">
     <h4 data-ng-bind="i18nLiterals.L20710" class="header3"></h4>
     <p data-ng-bind="i18nLiterals.L20578"></p>
-    <span data-ng-bind="i18nLiterals.L20700"></span> 
+    <p><span data-ng-bind="i18nLiterals.L20700"></span> 
     <span data-ng-bind="i18nLiterals.L20704"></span> 
-    <span><a data-ng-bind="i18nLiterals.L20705" ui-sref="about-tool-detail-page({pSection: 'osh-outcomes-working-conditions', pSubsection: 'mental_risks', pIndicator: 83})"></a></span>
+    <span><a data-ng-bind="i18nLiterals.L20705" ui-sref="about-tool-detail-page({pSection: 'osh-outcomes-working-conditions', pSubsection: 'mental_risks', pIndicator: 83})"></a></span></p>
 
     <!-- Time pressure -->
     <div class="box-rounded mental">
@@ -1702,9 +1702,9 @@
     <div class="intro-page">
       <h4 data-ng-bind="i18nLiterals.L20711" class="header3"></h4>
       <p data-ng-bind="i18nLiterals.L20579"></p>
-      <span data-ng-bind="i18nLiterals.L20700"></span> 
+      <p><span data-ng-bind="i18nLiterals.L20700"></span> 
       <span data-ng-bind="i18nLiterals.L20704"></span> 
-      <span><a data-ng-bind="i18nLiterals.L20705" ui-sref="about-tool-detail-page({pSection: 'osh-outcomes-working-conditions', pSubsection: 'physical_risks', pIndicator: 67})"></a></span>
+      <span><a data-ng-bind="i18nLiterals.L20705" ui-sref="about-tool-detail-page({pSection: 'osh-outcomes-working-conditions', pSubsection: 'physical_risks', pIndicator: 67})"></a></span></p>
     </div>
     <!-- Vibrations, loud noise and temperature -->
     <div class="box-rounded">
@@ -1712,7 +1712,7 @@
         data-ng-cloak
         promises="radarChartPromises.vibrations"
         axis-fixed-max="40" step="20"
-        width="700" height="610"
+        width="700" height="550"
         status="vibrations-loud-noise"
         chart-title="{{i18nLiterals.L20654}}"
         id="1" radio="180" values-format="%"
@@ -2167,9 +2167,11 @@
     <!-- Evaluated aspects in risk assessments -->
     <div class="box-rounded">
       <h2 data-ng-bind="i18nLiterals.L20681" class="header4"></h2>
-        <a href="https://osha.europa.eu/en/surveys-and-statistics-osh/esener/2014?locale=EN&dataSource=esener04&media=png&width=740&question=Q252_1&plot=heatMap&countryGroup=linear&subset=Sectorgrp&subsetValue=All&answer=1--Yes" target="_blank">
-          <img alt="European Agency for Safety and Health at Work" src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/EU-map.png">
-        </a>
+        <p>
+            <a href="https://osha.europa.eu/en/surveys-and-statistics-osh/esener/2014?locale=EN&dataSource=esener04&media=png&width=740&question=Q252_1&plot=heatMap&countryGroup=linear&subset=Sectorgrp&subsetValue=All&answer=1--Yes" target="_blank">
+            <img alt="European Agency for Safety and Health at Work" src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/EU-map.png">
+          </a>
+        </p>
       <div data-ng-bind-html="i18nLiterals.L20605" ></div>
     </div>
 

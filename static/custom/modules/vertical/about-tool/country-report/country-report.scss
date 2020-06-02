@@ -9,6 +9,7 @@
     }
 	}
 	table.full-content-report{
+		page-break-after: always;
 	   thead {
 	   	display: table-header-group;
 	   } 
@@ -16,6 +17,11 @@
 	   	display: table-footer-group;
 	   }
 	   tbody {
+	   	tr{
+	   		td{
+ 			    page-break-inside: avoid;
+	   		}
+	   	}
 	   }	
 		.page-header-space {
 		  height:20mm;
@@ -30,11 +36,11 @@
 
 
 	.break-after{
-		page-break-after: always !important;
+		//page-break-after: always !important;
 		height: 0 !important;
 	}
 	.break-before{
-		page-break-before: always !important;
+		//page-break-before: always !important;
 		height: 0 !important;
 	}
 	.page-break-before, 
@@ -294,20 +300,41 @@
 				}
 			}
 		}
+		.introduction-page, 
+		.osh-authorities, 
+		.economic-sector-profile, 
+		.workforce-profile, 
+		.national-strategies, 
+		.social-dialogue, 
+		.work-accidents, 
+		.health-perception, 
+		.osh-culture, 
+		.working-conditions, 
+		.osh-statistics, 
+		.working-conditions, 
+		.prevention-in-companies, 
+		.osh-statistics, 
+		.enforcement-capacity{
+			//display: none;
+		}
+		.working-conditions{
+			//display: block;
+		}
 		section{
-			position: relative;
+			//position: relative;
 			//top: 0mm;
 	    margin: 10mm 10mm 10mm 10mm;
 	    padding: 0 0 0mm 0 !important;
 	    width: 190mm !important;
 			//min-height: 267mm;
-	    page-break-inside: avoid !important;
-	    page-break-after: always !important;
+	    //page-break-inside: avoid !important;
+	    //page-break-after: always !important;
 	    page-break-before: always !important;
 	    border: 1px solid #FFF;
     	.title-page{
 				display: flex;
 				margin-bottom: 0mm;
+				align-items: flex-start;
 				h2{
 					font-size: 2.8rem !important;
 					padding: 0 2rem 0 0;
@@ -391,7 +418,6 @@
 		section.index-page{
 			display: flex;
 			flex-direction: column;
-			page-break-inside: initial !important;
 			h1{
 		    font-size: 3.2rem;
 		    margin-bottom: 5mm;
@@ -403,7 +429,6 @@
 			}
 		}
 		section.osh-authorities{
-			page-break-after: always !important;
 			.content-page{
 				.osh-authorities-items{
 					position: relative;
@@ -447,10 +472,10 @@
 				}
 			}
 			&.indicator2{
-				page-break-after: initial !important;
 				.content-page{
 					display: flex;
 					justify-content: space-between;
+					padding-top: 30mm;
 					.box-rounded {
 						width: 61mm;
 						padding: 2rem 2rem 1rem;
@@ -472,8 +497,6 @@
 			}
 		}
 		section.workforce-profile{
-			page-break-after: always !important;
-			page-break-inside: initial !important;
 			page-break-before: initial !important;
 			table{
 				tr{
@@ -529,8 +552,6 @@
 			}
 		}
 		section.social-dialogue{
-			page-break-after: initial !important;
-			page-break-inside: initial !important;
 			header{
 				display: flex;
 				padding: 1rem 4rem 1rem 4rem;
@@ -581,9 +602,8 @@
 			}		
 		}
 		section.work-accidents{
-			page-break-after: always !important;
 			.title-page{
-				flex-wrap: wrap;
+				//flex-wrap: wrap;
 			}
 		  .chart-data{
   	    margin: 1mm auto 0mm;
@@ -599,9 +619,8 @@
 		  }
 		}
 		section.health-perception{
-			page-break-after: always !important;
 			.title-page{
-				flex-wrap: wrap;
+				//flex-wrap: wrap;
 			}
 			header{
 				display: flex;
@@ -665,9 +684,8 @@
 		  }		
 		}
 		section.osh-culture{
-			page-break-after: always !important;
 			.title-page{
-				flex-wrap: wrap;
+				//flex-wrap: wrap;
 			}
 			.box-rounded{
     		svg{
@@ -687,10 +705,8 @@
 		  }
 		}
 		section.working-conditions{
-			page-break-after: initial !important;
-			page-break-inside: initial !important;
 			.title-page{
-				flex-wrap: wrap;
+				//flex-wrap: wrap;
 			}
 		  .chart-data{
 		  	thead{
@@ -726,9 +742,8 @@
 		  }
 		}
 		section.prevention-in-companies{
-			page-break-after: always !important;
 			.title-page{
-				flex-wrap: wrap;
+				//flex-wrap: wrap;
 			}
 			.box-rounded{
     		svg{

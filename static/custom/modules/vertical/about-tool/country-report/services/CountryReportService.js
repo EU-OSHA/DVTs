@@ -199,7 +199,7 @@ define (function (require) {
                                     return dvtUtils.getColorCountry(2);
                                 }
                             }else{
-                                debugger;
+                                //debugger;
                                 if(country == "EU28"){
                                     return dvtUtils.getEUColor();
                                 }else if(country.label.match(pCountry)){
