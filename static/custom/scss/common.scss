@@ -319,6 +319,7 @@
         white-space: normal;
         display: inline-block;
         &:after{
+          background:none;
           font-weight:normal;
           content: "\f105";
           font-family: FontAwesome;
@@ -331,6 +332,16 @@
           right: 0rem !important;
           padding: 0.6rem 1rem;
           color: $white;
+        }        
+      }
+      &.download{
+        a{
+          &:after{
+            font-family: FontAwesome;
+            content: "\f019";
+            left: 80% !important;
+            right: initial !important;
+          }
         }
       }
       &.btn-alone{
