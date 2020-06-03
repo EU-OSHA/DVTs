@@ -99,11 +99,6 @@ define(function (require) {
 	                            visualisation: elem[14],
 	                            additional_comments: elem[15]
 	                      	});
-
-
-	                    	console.log("DVT DEV");
-	                    	console.log(elem[0]);
-	                    	console.log(i18n_literals['L'+elem[3]].toLowerCase().replace(" (esener)","").replace(" (ewcs)","").replace(/ /g, '-').replace(/,/g, ''));
                     	});
 
                     	if ($scope.indicators.length == 1)
