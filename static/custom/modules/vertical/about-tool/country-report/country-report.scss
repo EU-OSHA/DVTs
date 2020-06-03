@@ -12,14 +12,24 @@
 		page-break-after: always;
 	   thead {
 	   	display: table-header-group;
+	   	tr{
+	   		td{
+					height:20mm;
+	   		}
+	   	}
 	   } 
 	   tfoot {
 	   	display: table-footer-group;
+	   	tr{
+	   		td{
+	   			height:10mm;
+	   		}
+	   	}
 	   }
 	   tbody {
 	   	tr{
 	   		td{
- 			    page-break-inside: avoid;
+ 			    
 	   		}
 	   	}
 	   }	
@@ -320,17 +330,17 @@
 		.working-conditions{
 			//display: block;
 		}
+		.center{
+			text-align: center;
+		}
 		section{
 			//position: relative;
 			//top: 0mm;
 	    margin: 10mm 10mm 10mm 10mm;
 	    padding: 0 0 0mm 0 !important;
 	    width: 190mm !important;
-			//min-height: 267mm;
-	    //page-break-inside: avoid !important;
-	    //page-break-after: always !important;
+			min-height: 267mm;
 	    page-break-before: always !important;
-	    border: 1px solid #FFF;
     	.title-page{
 				display: flex;
 				margin-bottom: 0mm;
@@ -351,6 +361,9 @@
 					//flex-wrap: wrap;
 				}
 				&.multiline{
+					display: block !important;
+					padding-top: 30mm !important;
+					page-break-before: always !important;
 					h2{
 						margin:0 !important;
 					}
@@ -467,11 +480,11 @@
 			    margin: 2mm auto 0mm;
 				}
 				svg{
-					//height: 274mm !important;
 					width: 177mm !important;
 				}
 			}
 			&.indicator2{
+				min-height: initial !important;
 				.content-page{
 					display: flex;
 					justify-content: space-between;
@@ -498,6 +511,7 @@
 		}
 		section.workforce-profile{
 			page-break-before: initial !important;
+			min-height: initial !important;
 			table{
 				tr{
 					border-bottom: 1px solid $gray-light;
@@ -552,6 +566,7 @@
 			}
 		}
 		section.social-dialogue{
+			min-height: initial !important;
 			header{
 				display: flex;
 				padding: 1rem 4rem 1rem 4rem;
@@ -727,11 +742,19 @@
 		  	margin-bottom: 0;
 		  }
 		  &.mental-risk{
+		  	h4{
+					display: inline-block;
+					width: 100%;
+		  	}
 		  	.header3{
 		  		margin-top: 0;
 		  	}
 		  }
 		  &.physical-risk, &.overall-opinion, &.mental-risk{
+		  	h4{
+					display: inline-block;
+					width: 100%;
+		  	}
 		  	.exposure, .overall, .mental{
 					h2 {
 						font-size: 2.2rem !important;
