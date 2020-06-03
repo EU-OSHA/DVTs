@@ -2041,7 +2041,7 @@
       <dvt-bar-chart
         data-ng-cloak
         query="getCountryReportCompanySizeCountryFirstData" cda="{{::cda }}"
-        width="330" height="210" axis-percent="1"
+        width="330" height="220" axis-percent="1"
         orientation="vertical" axis-fixed-min="0"
         axis-fixed-max="100" step="20"
         params="[['pDataset', datasetList.ESENER], ['pIndicator', 304], ['pCountry1', pCountry], ['pCountry2', 'EU27_2020']]"
@@ -2119,7 +2119,7 @@
       <dvt-bar-chart
         data-ng-cloak
         query="getCountryReportAllCountriesAnswersData" cda="{{::cda }}"
-        width="330" height="240" axis-percent="1"
+        width="330" height="260" axis-percent="1"
         orientation="vertical" axis-fixed-min="0"
         axis-fixed-max="100" step="20"
         params="[['pDataset', datasetList.ESENER], ['pIndicator', 305]]"
@@ -2461,28 +2461,28 @@
     </div>
 
     <!-- Authority -->
-    <div class="box-rounded">
+    <div class="box-rounded content">
       <h4 data-ng-bind="i18nLiterals.L333" class="header4"></h4>
       <div data-ng-if="enforcementCapacities.authority != null" data-ng-bind-html="i18nLiterals['L'+enforcementCapacities.authority]"></div>
       <div data-ng-if="enforcementCapacities.authority == null" data-ng-bind="i18nLiterals.L20706"></div>
     </div>
 
     <!-- Scope of the Labor Inspection -->
-    <div class="box-rounded">
+    <div class="box-rounded content">
       <h4 data-ng-bind="i18nLiterals.L334" class="header4"></h4>
       <div data-ng-if="enforcementCapacities.scope != null" data-ng-bind-html="i18nLiterals['L'+enforcementCapacities.scope]"></div>
       <div data-ng-if="enforcementCapacities.scope == null" data-ng-bind="i18nLiterals.L20706"></div>
     </div>
 
     <!-- Inspector powers -->
-    <div class="box-rounded">
+    <div class="box-rounded content">
       <h4 data-ng-bind="i18nLiterals.L335" class="header4"></h4>
       <div data-ng-if="enforcementCapacities.inspector != null" data-ng-bind-html="i18nLiterals['L'+enforcementCapacities.inspector]"></div>
       <div data-ng-if="enforcementCapacities.inspector == null" data-ng-bind="i18nLiterals.L20706"></div>
     </div>
 
     <!-- Strategy/Plan -->
-    <div class="box-rounded">
+    <div class="box-rounded content">
       <h4 data-ng-bind="i18nLiterals.L336" class="header4"></h4>
       <div data-ng-if="enforcementCapacities.strategy != null" data-ng-bind-html="i18nLiterals['L'+enforcementCapacities.strategy]"></div>
       <div data-ng-if="enforcementCapacities.strategy == null" data-ng-bind="i18nLiterals.L20706"></div>
