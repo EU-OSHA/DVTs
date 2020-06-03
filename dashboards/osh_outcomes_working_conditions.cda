@@ -1440,7 +1440,7 @@
 				AND d.id = v.dataset_id
 				AND d.id = 19
 				AND n.country_code = ${pCountry}
-				GROUP BY indicator, v.indicator_id, Country
+				GROUP BY indicator, v.indicator_id, Country, t1.text
 				ORDER BY FIELD(v.indicator_id, 353, 357, 355)
 			) a
 			UNION ALL
@@ -1462,7 +1462,7 @@
 				AND d.id = v.dataset_id
 				AND d.id = 19
 				AND n.country_code = ${pCountry}
-				Group BY indicator, v.indicator_id, Country
+				Group BY indicator, v.indicator_id, Country, t1.text
 			) b
 			UNION ALL
 			SELECT c.* FROM(
@@ -1483,7 +1483,7 @@
 				AND d.id = v.dataset_id
 				AND d.id = 19
 				AND n.country_code = ${pCountry}
-				Group BY indicator, v.indicator_id, Country
+				Group BY indicator, v.indicator_id, Country, t1.text
 			) c;
         </Query>
    	</DataAccess>
