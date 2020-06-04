@@ -471,6 +471,12 @@
 						//font-weight: bold;
 						//margin: 2rem 0 1rem;
 					}
+					.box-rounded{
+						page-break-inside: initial !important;
+						> p:nth-child(1){
+							font-weight: bold;
+						}
+					}
 				}
 			}
 		}
@@ -563,10 +569,14 @@
 			}
 			.box-rounded{
 		    margin:1rem 0;
+		    page-break-inside: initial !important;
 			}
 		}
 		section.social-dialogue{
 			min-height: initial !important;
+			&.CY{
+			page-break-before: initial !important;
+			}
 			header{
 				display: flex;
 				padding: 1rem 4rem 1rem 4rem;
@@ -772,6 +782,13 @@
     		svg{
     			zoom:1 !important;
     		}
+    		&.risk{
+					svg{
+						text{
+							font: 8px OpenSans-bold !important;
+						}
+					}
+    		}
 		  }
 		  .chart-data{
 		  	thead{
@@ -817,6 +834,7 @@
 					.box-rounded{
 				    padding: 1rem 3rem;
 				    margin:1rem 0;
+				    page-break-inside: initial !important;
 					}
 				}
 			}
@@ -835,6 +853,9 @@
 			.header5{
 				color:$gray !important;
 				margin-bottom: 1rem;
+			}
+			.content{
+				page-break-inside: initial !important;
 			}
 		}
 	}

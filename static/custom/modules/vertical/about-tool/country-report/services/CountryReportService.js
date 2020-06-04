@@ -349,7 +349,7 @@ define (function (require) {
 
                                     if(difference3 && countryYear == '2010'){
                                         return 'bottom';
-                                    }else if(difference4 && countryYear == '2017'){
+                                    }else if(difference4 && countryYear == '2018'){
                                         return 'bottom';
                                     }
 
