@@ -47,11 +47,11 @@ define(function (require) {
 
 		if ($rootScope.defaultCountry.code != undefined && $rootScope.defaultCountry.selectedByUser == true)
 		{
-			$scope.pCountry = $stateParams.pCountry;
-		}
-		else if ($rootScope.defaultCountry.code != undefined)
-		{
 			$scope.pCountry = $rootScope.defaultCountry.code;
+		}
+		else
+		{
+			$scope.pCountry = $stateParams.pCountry;
 		}
 				
 		$scope.pInstitution = $stateParams.pInstitution;
@@ -374,6 +374,7 @@ define(function (require) {
 
 	  	dataService.getAllMatrixAuthorities($scope.searchParams.countries, $scope.searchParams.institutions).then(function (data) {
 			$log.debug('getAllMatrixAuthorities');
+
 
 			data.data.resultset.map(function (elem) {
 		  		var param = (!!$stateParams.filter) ? $stateParams.filter : undefined;
