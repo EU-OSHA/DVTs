@@ -2176,11 +2176,12 @@
 .dvt-map-tooltip{
   background:rgba(255,255,255,0.9);
   color: $gray;
-  padding: 2rem;
+  padding:1.5rem;
   border: 2px solid $aquamarine;
   border-radius: 6px;
   position: absolute;
   z-index: 1000000000;
+  max-width:35rem;
   &.botton:after {
     content: "";
     position: absolute;
@@ -2194,7 +2195,7 @@
   &.top:after {
     content: "";
     position: absolute;
-    bottom: -10%;
+    bottom:-2.5rem;;
     left: 50%;
     margin-left: -5px;
     border-width:1.2rem;
@@ -2202,9 +2203,8 @@
     border-color: $aquamarine transparent transparent transparent;
   }
   .country-name{
-    text-transform: uppercase;
     font-family:Oswald,sans-serif;
-    font-size: 2.2rem;
+    font-size: 1.8rem;
     text-align: left;
   }
   ul{
@@ -2212,13 +2212,16 @@
     padding:0;
     li{
       text-align: left;
-      font-size: 1.8rem;
+      //font-size: 1.8rem;
       label{
-        font-family: 'OpenSans-bold';
+        font-family: 'OpenSans';
         margin-right: 0.5rem;
         font-size: 1.4rem;
       }
     } 
+  }
+  p:empty{
+    display: none;
   }
 }
 
@@ -2241,6 +2244,20 @@
 }
 
 
+@media only screen 
+and (max-width :767px){
+.dvt-map-tooltip{
+  max-width:initial;
+  width: 100%;
+  left: 0 !important;
+  &.botton:after {
+    display: none;
+  }
+  &.top:after {
+    display: none;
+  }
+}
+}
 
 /****  TIPSY ****/
   .tipsy{
