@@ -1380,7 +1380,7 @@
 				AND v.profile_id = p.id
 				AND p.answer_id = sa.id
 				AND p.activity_sector_id = 14
-				AND sa.id IN (3, 38)
+				AND sa.id IN (97,98)
 				AND d.id = v.dataset_id
 				AND d.id = 19
 				AND n.country_code = ${pCountry}
