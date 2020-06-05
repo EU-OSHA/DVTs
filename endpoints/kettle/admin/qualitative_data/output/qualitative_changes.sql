@@ -1,5 +1,9 @@
 -- The tool is already created
 
+SET @datasetId = (SELECT id FROM dataset  WHERE source="Eurostat" AND date_from="2010-01-01" AND date_to="2014-12-31");
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Non-fatal work accidents");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
+
 INSERT INTO chart (id, section_id)  VALUES(20010,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="ECONOMIC_SECTOR_PROFILE" AND t.name="osha_dvt_barometer"	) );
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Employment per sector");
 SET @datasetId = (SELECT id FROM dataset WHERE source="Eurostat" AND date_from="2017-01-01");
@@ -42,7 +46,7 @@ INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20
 
 INSERT INTO chart (id, section_id)  VALUES(20022,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="WORK_ACCIDENTS" AND t.name="osha_dvt_barometer"	) );
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Non-fatal work accidents");
-SET @datasetId = (SELECT id FROM dataset WHERE source="Eurostat" AND date_from="2010-01-01" AND date_to="2016-12-31");
+SET @datasetId = (SELECT id FROM dataset WHERE source="Eurostat" AND date_from="2010-01-01" AND date_to="2014-12-31");
 INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20022, @indicatorId, @datasetId);
 
 INSERT INTO chart (id, section_id)  VALUES(20023,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="WORK_ACCIDENTS" AND t.name="osha_dvt_barometer"	) );
@@ -566,22 +570,90 @@ INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+134, null, @sectionId, "STRATEGY_BASIC INFO");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+134, "EN", 1, "<p>German version: <a href=\"http://www.gda-portal.de/de/Startseite.html\" target=\"_blank\"><strong>Gemeinsame Deutsche Arbeitsschutzstrategie (GDA)</strong></a><br />English version: <strong>Joint German Occupational Safety and Health Strategy 2013 - 2018</strong>. Currently short English descriptions are available in two flyers:</p><ul><li><a href=\"http://www.gda-portal.de/DE/Downloads/pdf/Faltblatt-Ziele.html;v=3\" target=\"_blank\">Joint German Occupational Safety and Health Strategy - Goals and core elements </a></li><li><a href=\"http://www.gda-portal.de/en/Downloads/Downloads.html\" target=\"_blank\">Joint German Occupational Safety and Health Strategy (GDA)&nbsp;Joint Safety and Health Objectives 2013 - 2018</a></li></ul><p>Former Strategies: <a href=\"http://www.gda-portal.de/en/Homepage.html\" target=\"_blank\"> <strong>Joint German Occupational Safety and Health Strategy 2008 -2012 </strong></a></p>");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+134, "EN", 1, "<p>German version: <a href=\"http://www.gda-portal.de/de/Startseite.html\" target=\"_blank\"><strong>Gemeinsame Deutsche Arbeitsschutzstrategie (GDA)</strong></a><br>English version:<a href=\"https://www.gda-portal.de/EN/Download/Download_node.html\" target=\"_blank\">&nbsp;<strong>Joint German Occupational Safety and Health Strategy</strong></a></p>
+<p>Since 2008 the development, evaluation and updating of the GDA have been enshrined by law.</p>
+<p>The GDA legally binds the German government, the federal states and the statutory accident insurance (= GDA actors) to continuously cooperate and to coordinate their prevention policies and activities in order to maintain, improve and promote workers&#39; safety and health through preventive and systematically implemented measures of occupational safety and health, supplemented by corporate health promotion measures.</p>
+<p>Former Strategies: <a href=\"http://www.gda-portal.de/en/Homepage.html\" target=\"_blank\">Joint German Occupational Safety and Health Strategy 2008 - 2012.</a> <a href=\"/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/modules/vertical/osh-steering/country-profile/pdf/National-Strategies-Mapping_2017_Germany.pdf\" target=\"_blank\">Joint German Occupational Safety and Health Strategy 2013 &ndash; 2018</a>.</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+135, null, @sectionId, "STRATEGY_BACKGROUND");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+135, "EN", 1, "Background report published<br/><a target=\"_blank\" href=\"http://www.gda-portal.de/de/pdf/GDA-Fachkonzept-gesamt.pdf?__blob=publicationFile&v=2\">Gemeinsame Deutsche Arbeitsschutzstrategie </a><br/>Fachkonzept und Arbeitsschutzziele 2008 – 2012<br/>As of: December, 12 2007.");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+135, "EN", 1, "A background report with the basic concept of the strategy and their goals was published in December, 17 2007:<br/><a target=\"_blank\" href=\"http://www.gda-portal.de/de/pdf/GDA-Fachkonzept-gesamt.pdf?__blob=publicationFile&v=2\">Gemeinsame Deutsche Arbeitsschutzstrategie </a><br/>Fachkonzept und Arbeitsschutzziele 2008 – 2012<br/>Stand: 12. Dezember 2007.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+136, null, @sectionId, "STRATEGY_CHARACTERISTICS");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+136, "EN", 1, "Quote:<br/>“The overarching goal of the <a target=\"_blank\" href=\"http://www.gda-portal.de/DE/Downloads/pdf/Faltblatt-Ziele.html\"> Joint German OSH Strategy </a>is to maintain, improve and promote the safety and health of workers by means of the efficient and systematic implementation of occupational safety and health – supplemented by workplace health promotion measures.<br/>The awareness of safety and health among employers and workers is also to be strengthened”.");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+136, "EN", 1, "<p>Quote:</p>
+<p>&ldquo;The overarching goal of the <a href=\"http://www.gda-portal.de/DE/Downloads/pdf/Faltblatt-Ziele.html\" target=\"_blank\">&nbsp;Joint German OSH Strategy&nbsp;</a>is to maintain, improve and promote the safety and health of workers by means of the efficient and systematic implementation of occupational safety and health &ndash; supplemented by workplace health promotion measures.</p>
+<p>The awareness of safety and health among employers and workers is also to be strengthened&rdquo;.</p>
+<p>For periods up to five years specific objectives are set and implemented through work programmes.</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+137, null, @sectionId, "STRATEGY_DETAILS");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+137, "EN", 1, "<p><strong>Priorities </strong><br />Quote from ‘Joint German Occupational Safety and Health Strategy (GDA) -Joint Safety and Health Objectives 2013 – 2018’:<br />“The Joint German OSH Strategy compromises five core elements which are:</p><ul><li>The development of joint objectives in the field of occupational safety and health</li><li>The elaboration of joint fields of action and work programmes and their implementation according to uniform principles</li><li>The evaluation of objectives, joint fields of action and work programmes</li><li>The improvement of the cooperation and coordination of the actions of the public occupational safety and health authorities and accident insurance funds</li><li>The establishment of a transparent, reasonable and user-friendly set of provisions and regulations”.</li></ul><p><strong>Activities/Work programmes</strong><br />Elaboration of joint fields of action and work programmes and their implementation according to uniform principles.<br /><strong>Work Programme \"Organisation\"</strong><br /> The work programme \"Organisation\" is implemented with a combination of information, advice and supervisory measures.<br />An interactive online tool ‘GDA-ORGA check’ offers companies a simple way of analysing and improving their own OSH organisation.<br /><span style=\"text-decoration: underline;\">Inspection and advice:</span> inspectors of the OSH authorities and accident insurers are carrying out coordinated company audits. They pay particular attention to the internal OSH organisation and risk assessment. The audits are based on the GDA guidelines on OSH organisation and the GDA guidelines on risk assessment and documentation.<br />Information events and seminars on workplace OSH organisation.<br />Services for introducing an OSH management system, for example as part of an inspection and consulting process.</p><p><strong>Work Programme \"Musculoskeletal disorders (MSDs)\"</strong></p><p><span style=\"text-decoration: underline;\">Information:</span> A <a href=\"www.gdabewegt.de\" target=\"_blank\"> cross-sectoral portal</a> brings together all the MSD prevention measures of the GDA bodies and social partners. It contains, for example, a database with details of more than 400 prevention measures categorised according to target groups.<br /><span style=\"text-decoration: underline;\">Inspections and advice:</span> Since autumn 2014, labour inspectorates and the accident insurance institutions have been visiting companies, providing them with information and recommendations on how to maintain the health of their employees. The main focus of the inspections is on sectors and occupational groups that are particularly frequently affected by MSDs. By 2017 some 16,000 companies will have been visited.<br />Customised training and seminars: Training courses for managers and multipliers enable specialists from the work programme to pass on their expertise in MSD prevention.<br /><span style=\"text-decoration: underline;\">Specialist events, exhibitions and congresses:</span> Such events offer people responsible for OSH in companies an opportunity to talk to experts about MSDs. The MSD portal offers information on events currently planned.<br /><span style=\"text-decoration: underline;\">Prevention culture and health skills:</span> The work programme focuses on two approaches for effectively reducing MSDs: the development of a prevention culture in companies – i.e. the design of optimised workplaces; and health skills – i.e. the promotion of appropriate behaviour on the part of employees. The work programme helps to ensure that</p><ul><li>More companies are equipped with ergonomically optimised workplaces, workstations and work procedures,</li><li>More companies operate a system of workplace health management,</li><li>Work organisation and management competence in companies are improved with a view to preventing MSDs,</li><li>More and improved risk assessments for physical and mental stress are carried out,</li><li>The number of preventive health checks is increased where there are high levels of strain on the musculoskeletal system.</li></ul><p>At the same time, more employees should benefit from company-supported MSD prevention measures in order to improve their health skills.<br /><strong>Work Programme \"Psyche\" </strong><br />Internet portal gda-psyche.de: Here employers and employees find can find relevant information on the subject of psychological strains at work. For example, under the heading \"Work and Psyche from A to Z\", it explains the various factors affecting the well-being of employees and what companies can change.<br /><span style=\"text-decoration: underline;\">Recommendations for implementing psychosocial risk assessment:</span> Since the end of 2013 the Safety and Health at Work Act explicitly calls for the consideration of psychological stress in risk assessments. In seven steps, a new brochure (see box on the right) explains the risk assessment of psychological strain, its methods and tools. Parameters are described within which the actual implementation of risk assessment is to move. The brochure is aimed particularly at companies and occupational safety actors (e.g. employers, works and staff councils, company physicians and specialists for occupational safety).<br /><span style=\"text-decoration: underline;\">Practical tools for the workplace:</span> The work programme collects examples of good practice for dealing with psychological stress in the workplace and makes them known to the public. Companies, workers and occupational safety and health experts receive practical support for the improvement of working conditions in everyday business.<br /><span style=\"text-decoration: underline;\">Qualification of inspectors:</span> Inspectors from occupational health and safety authorities and accident insurance institutions are trained to identify mental stress and to adequately advise companies. By the end of 2017, the entire inspection staff will have a basic knowledge about psychological stress.<br /><span style=\"text-decoration: underline;\">Inspections and advice:</span> Since the beginning of 2015, the inspection staff of the occupational safety and health authorities and accident insurers conducts coordinated inspections. The focus of the site inspections is the consideration of psychological stress in the risk assessment. The inspectors also advise businesses specifically on setting up working hours so as to promote health and on dealing with traumatic events in the workplace.<br /><strong> Activity Collaboration of institutions </strong><br />The German strategy addresses with all its core elements the collaboration of institutions (work programmes, cooperation on inspection activities, development of a coherent set of rules).<br />Federal states and public accident insurance institutions hand in hand: the Joint German Occupational Safety and Health Strategy (GDA) provides the framework. As part of the GDA, state occupational safety and health authorities and public accident insurance institutions have undertaken to adopt a work-sharing and coordinated approach in advising and supervising companies.<br />This approach aims at coordination, standardisation and transparency in consultancy.<br />Key tools of the joint consultancy and supervisory strategy are:</p><ul><li>Framework agreements on the interaction of the state occupational safety and health authorities and the public accident insurance institutions</li><li>Joint guidelines for coordinated, tactical supervisory action and equivalent implementation of occupational safety and health regulations</li><li>Promotion of data and information exchange between the federal states and the public accident insurance institutions on company inspections.</li></ul><p>Furthermore, the \"Occupational Safety and Health Forum\" was established under the German Strategy. Its task is to ensure early and active participation of the expert representatives of the umbrella organisations of the employers and workers, the professional and industrial associations, science, the health and pension insurance funds, institutions in the sector of safety and health at work as well as bodies which help to promote employability in the development and updating of the Joint German OSH Strategy.<br /><strong> Activity Optimisation of rules and regulations</strong><br />Statutory regulations are the basis for implementing and evaluating occupational safety and health measures.<br />One important requirement for the effective implementation of occupational safety and health regulations is that they are practicable, consistent and, above all, easily manageable by the users and self-explanatory. The German government, federal states and public accident insurance institutions set themselves the task under the Joint German Occupational Safety and Health Strategy of optimising the rules and regulations relating to safety and health at work. One important module is the guideline paper on the restructuring of the set of rules and regulations in occupational safety and health passed in August 2011. The guideline paper defines the relationship of state law to autonomous law of the public accident insurance institutions and describes the procedures with which the two areas of law are harmonised.<br /><strong>Activity Improvement of the cooperation and coordination of the actions of the public occupational safety and health authorities and accident insurance funds </strong><br />The occupational safety and health authorities and accident insurance institutions have undertaken to adopt a work-sharing and coordinated approach in advising and supervising companies. This approach aims at coordination, standardisation and transparency in consultancy. Activities are carried out accordingly to a <a href=\": http://www.gda-portal.de/en/SupportCompanies/SupportCompanies.html\" target=\"_blank\">programmatic approach</a>:<br />Key tools of the joint consultancy and supervisory strategy are:</p><ul><li>Framework agreements on the interaction of the state occupational safety and health authorities and the public accident insurance institutions</li><li>Joint guidelines for coordinated, tactical supervisory action and equivalent implementation of occupational safety and health regulations</li><li>Promotion of data and information exchange between the federal states and the public accident insurance institutions on company inspections</li></ul>");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+137, "EN", 1, "<p><strong>Priorities</strong><br>Quote:<br>&ldquo;The Joint German OSH Strategy compromises five core elements which are:</p>
+<ul>
+    <li>The development of joint objectives in the field of occupational safety and health</li>
+    <li>The elaboration of joint fields of action and work programmes and their implementation according to uniform principles</li>
+    <li>The evaluation of objectives, joint fields of action and work programmes</li>
+    <li>The improvement of the cooperation and coordination of the actions of the public occupational safety and health authorities and accident insurance funds</li>
+    <li>The establishment of a transparent, reasonable and user-friendly set of provisions and regulations&rdquo;.</li>
+</ul>
+<p>The strategic objective of the 3rd GDA - period 2019 &ndash; 2024 is:</p>
+<p>To make work safe and healthy: Prevention through risk assessment.</p>
+<p>To act together and systematically for</p>
+<ul>
+    <li>safe handling of carcinogens (carcinogenic substances)&nbsp;</li>
+    <li>good work organisation with regard to psychosocial strain (Psyche)</li>
+    <li>good work organisation with regard to musculoskeletal workload (MSL)</li>
+</ul>
+<p><strong>Activities/Work programmes</strong><br>Elaboration of joint fields of action and work programmes and their implementation according to uniform principles, currently in the 3rd period. A specific emphasis is given to inspections of companies according to the joint guidelines on risk assessment and OSH organisation. Furthermore, work programmes will focus on carcinogens, MSL and Psyche. For the implementation of all three work programmes a multi-component and multi-actor approach is applied. Activities comprise: inspection and consultancy, awareness-raising, information material and events, qualification, guidelines and (IT)-tools, best practice sharing etc. These activities are foremost carried out by the GDA-actors and social partners. In order to broaden the scope as well as to increase impact for all work programmes cooperation with relevant partners shall be established.&nbsp;</p>
+<p>Over the third period 50.000 companies &ndash; mainly SMEs &ndash; shall be supervised.</p>
+<p>Former GDA work programmes:&nbsp;</p>
+<ul>
+    <li><a href=\"http://www.gda-portal.de/EN/GDA/Work-Programmes/Work-Programmes_node.html\" target=\"_blank\">Work Programmes 2013 &ndash; 2018</a>&nbsp;</li>
+    <li><a href=\"http://www.gda-portal.de/DE/Downloads/pdf/Ergebnisse-AP-2008-2012.pdf?__blob=publicationFile&v=3\" target=\"_blank\">Work Programmes 2008 &ndash; 2012</a></li>
+</ul>
+<p><br><strong>Work Programme &quot;Musculoskeletal Loads (MSL)&quot;</strong><br>The work programme &quot;Musculoskeletal Loads&quot; (MSL) is implemented with a combination of information, advice and supervisory measures.</p>
+<p><strong>Information:</strong> Assistance and other risk assessment complement the core process, so that a broader impact can be achieved, beyond the (limited) number of site visits. In particular, with regard to the needs of SMEs, low-threshold access to the detection and assessment of types of stress at the level of coarse screening (checklist) or special screening (eg, key performance indicators) and examples of &quot;good practice&quot; for measures and impact assessments are essential. The assistance will thus create the conditions for the proper implementation of the entire process of risk assessment.</p>
+<p><strong>Inspections and advice:</strong> The core process in the third GDA period is regularly carried out by all GDA executives, above all as part of a system review of the occupational safety organization and risk assessment in companies with fewer than 250 employees. The work programme MSL provides for this inspection activity a technical data sheet or appropriate professional test items. On the other hand, the working programme MSL aims to integrate the issue of MSL sustainably as an integrated part of regular labour inspection action, with the focus on an appropriate risk assessment. Therefore, the working programme MSL would like to use the 3rd GDA period to further qualify and support the labour inspectorates for dealing with MSL in the context of the risk assessment.</p>
+<p><strong>Strengthening &quot;workplace health literacy&rdquo;:</strong> The MSL working programme takes up the results of the second GDA working programme on &ldquo;health literacy&rdquo; in the world of work and would like to cooperate with networks and partners from the social security institutions, the social partners and other institutions in order to implement measures of working conditions related prevention (situational prevention) aiming to complement behavioral prevention. The aim is, in particular, to strengthen the role of the management not only to establish appropriate working conditions related prevention (situational prevention), for example as part of the risk assessment, but also to influence the behavior of employees at the workplace so that measures of working conditions related prevention (situational prevention) at the workplace can be accepted and realised.&nbsp;</p>
+<p><strong>Measures of the partners:</strong>The work programme aims at networking with different networks and partners as part of the accompanying processes. Measures of the partners relate to:&nbsp;</p>
+<ul>
+    <li>The realisation of multiplier effects for tools and support of the GDA organisations, in order to improve the contact to the management and company multipliers (e.g. occupational safety experts or occupational physicians)&nbsp;</li>
+    <li>The contribution of own expertise and adequate supplementary offers (tools) for the target groups, eg for the strengthening of the organisational and individual health competence.</li>
+</ul>
+<p><strong>Work Programme &quot;Psyche&quot;</strong></p>
+<p><strong>Recommendations for implementing psychosocial risk assessment:</strong> Since the end of 2013 the Safety and Health at Work Act explicitly calls for the consideration of psychological stress in risk assessments. In seven steps, a new brochure (see box on the right) explains the risk assessment of psychological strain, its methods and tools. Parameters are described within which the actual implementation of risk assessment is to move. The brochure is aimed particularly at companies and occupational safety actors (e.g. employers, works and staff councils, company physicians and specialists for occupational safety).&nbsp;</p>
+<p><strong>Practical tools for the workplace:</strong> The work programme collects examples of good practice for dealing with psychological stress in the workplace and makes them known to the public. Companies, workers and occupational safety and health experts receive practical support for the improvement of working conditions in everyday business.&nbsp;</p>
+<p><strong>Qualification of inspectors:</strong> Inspectors from occupational health and safety authorities and accident insurance institutions are trained to identify mental stress and to adequately advise companies. By the end of the period, the entire inspection staff will have a basic knowledge about psychological stress.&nbsp;</p>
+<p><strong>Inspections and advice</strong><strong>:</strong> Since the beginning of 2015, the inspection staff of the occupational safety and health authorities and accident insurers conducts coordinated inspections. The focus of the site inspections is the consideration of psychological stress in the risk assessment. The inspectors also advise businesses specifically on setting up working hours so as to promote health and on dealing with traumatic events in the workplace.</p>
+<p><strong>Work Programme &quot;Carcinogenic substances&quot;&nbsp;</strong></p>
+<p><strong>Inspections and advice:&nbsp;</strong>As part of the core process of the working programme on &ldquo;Safe Handling of Carcinogenic Hazardous Substances&rdquo;, establishments where employees work with carcinogenic hazardous substances are to be visited by the labour inspectorates of the federal countries and the accident insurance institutions. The visit will be based on a single survey toolkit, the technical data sheet of the work programme.&nbsp;</p>
+<p>The core process shall be supported directly by the the accompanying process &quot;Hazardous Substance Check&quot;. The close connection of the Hazardous Substance Check as a directly supportive process of the core process should raise awareness of the particular dangers posed by carcinogenic hazardous substances in all relevant branches of industry and identify the need for action. The goal is to accelerate the use of this instrument by the companies. The results of the self-assessment carried out with the check can in particular, increase self-motivation to implement necessary changes.&nbsp;</p>
+<p><strong>Practical tools for the workplace:</strong> Within the framework of the working programme &quot;Safe Handling of Carcinogenic substances&quot;, exemplary solutions for operational practice shall also be found and presented. Good practice examples shall be collected and presented with the help of an online module.</p>
+<p><strong>&nbsp;Activity Collaboration of institutions&nbsp;</strong></p>
+<p>The German strategy addresses with all its core elements the collaboration of institutions (work programmes, cooperation on inspection activities, development of a coherent set of rules).&nbsp;</p>
+<p>Federal states and public accident insurance institutions hand in hand: the Joint German Occupational Safety and Health Strategy (GDA) provides the framework. As part of the GDA, state occupational safety and health authorities and public accident insurance institutions have undertaken to adopt a work-sharing and coordinated approach in advising and supervising companies.&nbsp;</p>
+<p>This approach aims at coordination, standardisation and transparency in consultancy.&nbsp;</p>
+<p>Key tools of the joint consultancy and supervisory strategy are:&nbsp;</p>
+<ul>
+    <li>Framework agreements on the interaction of the state occupational safety and health authorities and the public accident insurance institutions&nbsp;</li>
+    <li>Joint guidelines for coordinated, tactical supervisory action and equivalent implementation of occupational safety and health regulations&nbsp;</li>
+    <li>Promotion of data and information exchange between the federal states and the public accident insurance institutions on company inspections.&nbsp;</li>
+</ul>
+<p>Furthermore, the &bdquo;Occupational Safety and Health Forum&ldquo; was established under the German Strategy. Its task is to ensure early and active participation of the expert representatives of the umbrella organisations of the employers and workers, the professional and industrial associations, science, the health and pension insurance funds, institutions in the sector of safety and health at work as well as bodies which help to promote employability in the development and updating of the Joint German OSH Strategy.</p>
+<p><br><strong>&nbsp;Activity Optimisation of rules and regulations</strong><br><strong>Statutory regulations are the basis for implementing and evaluating occupational safety and health measures.</strong></p>
+<p>One important requirement for the effective implementation of occupational safety and health regulations is that they are practicable, consistent and, above all, easily manageable by the users and self-explanatory. The German government, federal states and public accident insurance institutions set themselves the task under the Joint German Occupational Safety and Health Strategy of optimising the rules and regulations relating to safety and health at work.&nbsp;</p>
+<p>One important module is the guideline paper on the restructuring of the set of rules and regulations in occupational safety and health passed in August 2011. The guideline paper defines the relationship of state law to autonomous law of the public accident insurance institutions and describes the procedures with which the two areas of law are harmonised.</p>
+<p><br><strong>Activity Improvement of the cooperation and coordination of the actions of the public occupational safety and health authorities and accident insurance funds&nbsp;</strong></p>
+<p><br>The occupational safety and health authorities and accident insurance institutions have undertaken to adopt a work-sharing and coordinated approach in advising and supervising companies. This approach aims at coordination, standardisation and transparency in consultancy. Activities are carried out accordingly to a <a href=\"%3A%20http%3A//www.gda-portal.de/en/SupportCompanies/SupportCompanies.html\" target=\"_blank\">programmatic approach</a>:</p>
+<p><br>Key tools of the joint consultancy and supervisory strategy are:</p>
+<ul>
+    <li>Framework agreements on the interaction of the state occupational safety and health authorities and the public accident insurance institutions</li>
+    <li>Joint guidelines for coordinated, tactical supervisory action and equivalent implementation of occupational safety and health regulations</li>
+    <li>Promotion of data and information exchange between the federal states and the public accident insurance institutions on company inspections</li>
+</ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
@@ -591,17 +663,24 @@ INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+139, null, @sectionId, "STRATEGY_RESOURCES");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+139, "EN", 1, "Years: 2013 – 2018<br/>In kind contribution from institutions and associations<br/>Financing of the secretariat of the GDA<br/>No detailed information published");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+139, "EN", 1, "<p>Since 2008 the devolpment, evaluation and updating of the GDA have been enshrined by law.</p>
+<p>Time frame of current work programme: 2019 &ndash; 2024.</p>
+<p>In kind contribution from institutions and associations.</p>
+<p>Financing of the secretariat of the GDA.</p>
+<p>No detailed information published.</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+140, null, @sectionId, "STRATEGY_EVALUATION");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+140, "EN", 1, "<strong>Evaluation is ongoing.</strong><br/>It is required that every strategy period \"the attainment of the objectives of the Joint German OSH Strategy would be quality-assured and evaluated\" and that the Joint German OSH Strategy in its entirety would be evaluated as regards interdisciplinary effects on the occupational safety and health system and safety and health at work. As the current strategy period is still ongoing (till 2018) there is no evaluation report available yet. However, the evaluation concept is published on the website. It provides information on the evaluation methods and instruments. In the period 2013 – 2018 the evaluation is based on the <a target=\"_blank\" href=\" http://www.gda-portal.de/de/Evaluation/Evaluation2013-18.html\"> model of process-oriented impact monitoring </a>.<br/>The former strategy was evaluated, the reports and special evaluations are <a target=\"_blank\" href=\"http://www.gda-portal.de/de/pdf/GDA-Dachevaluation_Abschlussbericht.pdf?__blob=publicationFile&v=2\">online</a> available.<br/>Ex ante indicators for the years of the strategy or 2012 to 2020<br/>In the evaluation concept effect-chains, including indicators for every chain link, are described for all strategy areas. As regards the three work-programmes (<a target=\"_blank\" href=\"https://www.gda-portal.de/de/Fuer-Betriebe/Organisation/Organisation.html;jsessionid=B627393888EA7F236CDB34456210651A.s2t2 \">Organisation</a>, <a target=\"_blank\" href=\"http://www.gda-portal.de/de/Arbeitsprogramme2013-2018/MSE.html\"> MSE</a>, <a target=\"_blank\" href=\" http://www.gda-portal.de/de/Arbeitsprogramme2013-2018/Psyche.html\">Psyche</a>) specific targets and indicators are described in the work plans (chapter: Monitoring).");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+140, "EN", 1, "<p><strong>Evaluation is ongoing.</strong></p>
+<p>It is required that every strategy period &quot;the attainment of the objectives of the Joint German OSH Strategy would be quality-assured and evaluated&quot; and that the Joint German OSH Strategy in its entirety would be evaluated as regards interdisciplinary effects on the occupational safety and health system and safety and health at work. Evaluation reports of the strategy periods <a href=\"http://www.gda-portal.de/DE/GDA/Evaluation/2008-2012/2008-2012_node.html\" target=\"_blank\">2007 - 2012</a> and <a href=\"http://%3A%20http%3A//www.gda-portal.de/DE/GDA/Evaluation/2013-2018/2013-2018_node.html\" target=\"_blank\">2013 &ndash; 2018</a> are available <a href=\"http://www.gda-portal.de/SharedDocs/Meldungen/DE/19-08-16-Dachevaluation.html\" target=\"_blank\">online</a>.</p>
+<p>Ex ante indicators for the years of the strategy or 2019 to 2024</p>
+<p>IIn the evaluation concept effect-chains, including indicators for every chain link, are described for all strategy areas. As regards the three work-programmes (Carcinogens, MSL, Psyche) specific targets and indicators are described in the work plans (chapter: Monitoring).</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+141, null, @sectionId, "STRATEGY_EU");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+141, "EN", 1, "<p>Work programme 1 ‘Organisation’ is closely related to challenge 1 of the EU-OSH Strategy (Improving the implementation record of Member States, in particular by enhancing the capacity of micro and small enterprises to put in place effective and efficient risk prevention measures).<br />Challenge 2: (Improving the prevention of work-related diseases by tackling existing, new and emerging risks): Since 2008, there exists a cross departmental strategy addressing research in the field of nanotechnology, including aspects of OSH. The <a href=\"http://www.baua.de/de/Themen-von-A-Z/Gefahrstoffe/Nanotechnologie/Forschungsstrategie_content.html;jsessionid=1DB001221583E582E39691DDC784CBD2.s2t2\" target=\"_blank\">strategy was updated in 2016</a>.<br />Challenge 3 (Tackling demographic change): Since 2012, there exists a cross departmental strategy addressing demographic change. For the strategy period 2012 – 2015 specific objectives and activities in the field of occupational health and safety were formulated in <a href=\"https://www.bundesregierung.de/Content/DE/StatischeSeiten/Breg/Demografiestrategie/Artikel/2015-08-21-zusammenfassung.html\" target=\"_blank\"> chapter II,Working motivated, qualified and healthy </a>. The strategy was <a href=\" http://www.bmi.bund.de/DE/Themen/Gesellschaft-Verfassung/Demografie/Demografiestrategie/demografiestrategie_node.html \" target=\"_blank\"> updated in 2015</a>.<br />Work programme 2 ‘Musculoskeletal disorders (MSDs)’ and <br />Work Programme 3 ‘Psyche’ have particularly strong relations to ergonomic risks and psychosocial issues (both mentioned on p 6 of the EU Strategic Framework).</p>");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+141, "EN", 1, "<p>In principle, the overarching target, core elements and the governance structure of the Joint German OSH Strategy (GDA) provide a well-established framework to ensure that Germany addresses the expectations respectively the challenges and key objectives of the EU Strategic Framework.</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
@@ -1514,12 +1593,15 @@ INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+270, null, @sectionId, "MATRIX_OB");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+270, "EN", 1, "<p><strong> Work Programme</strong>:</p><ul><li>Efficient and systematic implementation of occupational safety and health: Work programme ‘Organisation’.</li></ul>");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+270, "EN", 1, "<p><strong>Work Programme</strong>:</p>
+<ul>
+    <li>No specific work programme but several horizontal activities.</li>
+</ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+271, null, @sectionId, "MATRIX_DET");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+271, "EN", 1, "<p><strong>Activity</strong>:&nbsp;</p><ul><li>Iteractive tool for different company sizes.</li></ul>");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+271, "EN", 1, "<p><strong>Specific objectives and activities</strong>:</p><ul><li>Joint inspections of companies according to the joint guidelines on risk assessment and OSH organisation, collaboration between OSH Institutions and optimisation of rules and regulations.</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
@@ -1724,12 +1806,13 @@ INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+314, null, @sectionId, "MATRIX_OB");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+314, "EN", 1, "<p><strong> Work Programme</strong>:</p><ul><li>Efficient and systematic implementation of OSH WP \"Musculoskeletal disorders (MSDs)\" cross-departmental strategy addressing research in the field of nanotechnology, including aspects of OSH.</li></ul>");
-
-SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+315, null, @sectionId, "MATRIX_DET");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+315, "EN", 1, "<p><strong> Other work programmes</strong>:</p><ul><li>Efficient and systematic implementation of OSH. WP \"Psychosocial burden’.</li></ul>");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+314, "EN", 1, "<p><strong>Work Programme</strong>:</p>
+<p>Dedicated work programmes on three topics</p>
+<ul>
+    <li>Musculoskeletal Loads (MSL)</li>
+    <li>Psyche (psychosocial working conditions)</li>
+    <li>Carcinogenic substances.</li>
+</ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
@@ -1914,12 +1997,7 @@ INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+356, null, @sectionId, "MATRIX_OB");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+356, "EN", 1, "<p><strong>Activity</strong>:</p><ul><li>Cross departmental strategy addressing demographic change.</li></ul>");
-
-SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+357, null, @sectionId, "MATRIX_DET");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+357, "EN", 1, "<p><strong> Specific objectives and activities</strong></p><ul><li>In the field of occupational health and safety were formulated in chapter II: \"Working motivated, qualified and healthy”.</li></ul>");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+356, "EN", 1, "<p><strong>Activity</strong>:</p><ul><li>No specific work programme but an overarching objective.</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
@@ -3044,7 +3122,7 @@ INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="PREVENTION" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+605, null, @sectionId, "CHART FOOTER");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+605, "EN", 1, "<p>Responses to Evaluated aspects can be found in <a href=\"https://visualisation.osha.europa.eu/esener#!/en/survey/detailpage-european-map/2014/psychosocial-risks-and-their-management/en/Q252_1/activity-sector/14/11/1\" target=\"_blank\">ESENER 2014 Survey</a> in the section OSH Management – Aspects evaluated in the workplace risk assessment. For further information please, check the <a target=\"blank\" href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology\">ESENER methodology.</a></p>");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+605, "EN", 1, "<p>Responses to Evaluated aspects can be found in <a href=\"https://visualisation.osha.europa.eu/esener#!/en/survey/detailpage-european-map/2019/osh-management/en_1/E3Q252_1/activity-sector/14/11/1\" target=\"_blank\">ESENER 2019 Survey</a> in the section OSH Management – Aspects evaluated in the workplace risk assessment. For further information please, check the <a target=\"blank\" href=\"https://oshwiki.eu/wiki/ESENER-3_Methodology\">ESENER methodology.</a></p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="PREVENTION" AND tool_id=@toolId);
@@ -8629,7 +8707,7 @@ SET @nutsId = (SELECT id FROM nuts WHERE country_code="FR");
 INSERT INTO matrix_page(page, nuts_id, check_1, check_2, check_3, check_4, text_1_literal_id, text_2_literal_id, text_3_literal_id) VALUES ("MATRIX_STRATEGY", @nutsId, 0, 1, 0, false, 20312, 20313, null);
 
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="DE");
-INSERT INTO matrix_page(page, nuts_id, check_1, check_2, check_3, check_4, text_1_literal_id, text_2_literal_id, text_3_literal_id) VALUES ("MATRIX_STRATEGY", @nutsId, 0, 1, 0, false, 20314, 20315, null);
+INSERT INTO matrix_page(page, nuts_id, check_1, check_2, check_3, check_4, text_1_literal_id, text_2_literal_id, text_3_literal_id) VALUES ("MATRIX_STRATEGY", @nutsId, 0, 1, 0, false, 20314, null, null);
 
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="HU");
 INSERT INTO matrix_page(page, nuts_id, check_1, check_2, check_3, check_4, text_1_literal_id, text_2_literal_id, text_3_literal_id) VALUES ("MATRIX_STRATEGY", @nutsId, 0, 1, 0, false, 20316, 20317, null);
@@ -8692,7 +8770,7 @@ SET @nutsId = (SELECT id FROM nuts WHERE country_code="FR");
 INSERT INTO matrix_page(page, nuts_id, check_1, check_2, check_3, check_4, text_1_literal_id, text_2_literal_id, text_3_literal_id) VALUES ("MATRIX_STRATEGY", @nutsId, 0, 0, 1, false, 20354, null, null);
 
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="DE");
-INSERT INTO matrix_page(page, nuts_id, check_1, check_2, check_3, check_4, text_1_literal_id, text_2_literal_id, text_3_literal_id) VALUES ("MATRIX_STRATEGY", @nutsId, 0, 0, 1, false, 20356, 20357, null);
+INSERT INTO matrix_page(page, nuts_id, check_1, check_2, check_3, check_4, text_1_literal_id, text_2_literal_id, text_3_literal_id) VALUES ("MATRIX_STRATEGY", @nutsId, 0, 0, 1, false, 20356, null, null);
 
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="HU");
 INSERT INTO matrix_page(page, nuts_id, check_1, check_2, check_3, check_4, text_1_literal_id, text_2_literal_id, text_3_literal_id) VALUES ("MATRIX_STRATEGY", @nutsId, 0, 0, 1, false, 20358, 20359, null);
@@ -9231,7 +9309,7 @@ INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_l
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Company size");
 SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="ECONOMIC_SECTOR_PROFILE" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="Eurostat" AND date_from="2016-01-01");
+SET @datasetId = (SELECT id FROM dataset WHERE source="Eurostat" AND date_from="2016-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
@@ -9269,7 +9347,7 @@ INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_l
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Employment per sector");
 SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="ECONOMIC_SECTOR_PROFILE" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="Eurostat" AND date_from="2019-01-01");
+SET @datasetId = (SELECT id FROM dataset WHERE source="Eurostat" AND date_from="2019-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
@@ -9302,7 +9380,7 @@ INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_l
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Employment rate");
 SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="ECONOMIC_SECTOR_PROFILE" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="Eurostat" AND date_from="2018-01-01");
+SET @datasetId = (SELECT id FROM dataset WHERE source="Eurostat" AND date_from="2018-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "Eurostat provides percentages and explains: ‘The employment rate of the total population is calculated by dividing the number of person aged 20 to 64 in employment by the total population of the same age group.’");
@@ -9335,7 +9413,7 @@ INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_l
 SET @indicatorId = (SELECT id FROM indicator WHERE name="GDP per capita in relation to EU28 average");
 SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="ECONOMIC_SECTOR_PROFILE" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="Eurostat" AND date_from="2018-01-01");
+SET @datasetId = (SELECT id FROM dataset WHERE source="Eurostat" AND date_from="2018-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
@@ -9372,7 +9450,7 @@ INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_l
 SET @indicatorId = (SELECT id FROM indicator WHERE name="GDP per capita in relation to EU28 average EURO");
 SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="ECONOMIC_SECTOR_PROFILE" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="Eurostat" AND date_from="2018-01-01");
+SET @datasetId = (SELECT id FROM dataset WHERE source="Eurostat" AND date_from="2018-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
@@ -9486,7 +9564,7 @@ INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_l
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Median age of population");
 SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="WORKFORCE_PROFILE" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="Eurostat" AND date_from="2019-01-01");
+SET @datasetId = (SELECT id FROM dataset WHERE source="Eurostat" AND date_from="2019-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
@@ -9527,7 +9605,7 @@ INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_l
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Ageing workers (55 to 64) employment rate");
 SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="WORKFORCE_PROFILE" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="Eurostat" AND date_from="2018-01-01");
+SET @datasetId = (SELECT id FROM dataset WHERE source="Eurostat" AND date_from="2018-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
@@ -9586,7 +9664,7 @@ INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_l
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Total, male and female employment rate");
 SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="WORKFORCE_PROFILE" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="Eurostat" AND date_from="2018-01-01");
+SET @datasetId = (SELECT id FROM dataset WHERE source="Eurostat" AND date_from="2018-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
@@ -9645,7 +9723,7 @@ INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_l
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Unemployment rate");
 SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="WORKFORCE_PROFILE" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="Eurostat" AND date_from="2018-01-01");
+SET @datasetId = (SELECT id FROM dataset WHERE source="Eurostat" AND date_from="2018-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "<p>Eurostat provides the calculation of percentages by its filtering options; those values were taken as base for the visualisation</p>");
@@ -9686,7 +9764,7 @@ INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_l
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Basic information");
 SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="STRUCTURE_STRATEGY" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="National Strategies reports" AND date_from="2016-01-01" AND date_to="2019-12-31");
+SET @datasetId = (SELECT id FROM dataset WHERE source="National Strategies reports" AND date_from="2016-01-01" AND date_to="2020-12-31");
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
@@ -9699,9 +9777,9 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p><a target=\"_blank\" href=\"https://osha.europa.eu/en/safety-and-health-legislation/osh-strategies\">https://osha.europa.eu/en/safety-and-health-legislation/osh-strategies</a></p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2016/2017/2018/2019");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2016/2017/2018/2019/2020");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2019");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2020");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The <strong>intended coverage</strong> is: All EU countries. All data for the coverage is available.</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -9719,7 +9797,7 @@ INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_l
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Background");
 SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="STRUCTURE_STRATEGY" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="National Strategies reports" AND date_from="2016-01-01" AND date_to="2019-12-31");
+SET @datasetId = (SELECT id FROM dataset WHERE source="National Strategies reports" AND date_from="2016-01-01" AND date_to="2020-12-31");
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
@@ -9732,9 +9810,9 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p><a target=\"_blank\" href=\"https://osha.europa.eu/en/safety-and-health-legislation/osh-strategies\">https://osha.europa.eu/en/safety-and-health-legislation/osh-strategies</a></p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2016/2017/2018/2019");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2016/2017/2018/2019/2020");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2019");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2020");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The <strong>intended coverage</strong> is: All EU countries. All data for the coverage is available.</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -9752,7 +9830,7 @@ INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_l
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Characteristics and objectives");
 SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="STRUCTURE_STRATEGY" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="National Strategies reports" AND date_from="2016-01-01" AND date_to="2019-12-31");
+SET @datasetId = (SELECT id FROM dataset WHERE source="National Strategies reports" AND date_from="2016-01-01" AND date_to="2020-12-31");
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
@@ -9765,9 +9843,9 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p><a target=\"_blank\" href=\"https://osha.europa.eu/en/safety-and-health-legislation/osh-strategies\">https://osha.europa.eu/en/safety-and-health-legislation/osh-strategies</a></p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2016/2017/2018/2019");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2016/2017/2018/2019/2020");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2019");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2020");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The <strong>intended coverage</strong> is: All EU countries. All data for the coverage is available.</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -9785,7 +9863,7 @@ INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_l
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Details and activity");
 SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="STRUCTURE_STRATEGY" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="National Strategies reports" AND date_from="2016-01-01" AND date_to="2019-12-31");
+SET @datasetId = (SELECT id FROM dataset WHERE source="National Strategies reports" AND date_from="2016-01-01" AND date_to="2020-12-31");
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
@@ -9798,9 +9876,9 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p><a target=\"_blank\" href=\"https://osha.europa.eu/en/safety-and-health-legislation/osh-strategies\">https://osha.europa.eu/en/safety-and-health-legislation/osh-strategies</a></p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2016/2017/2018/2019");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2016/2017/2018/2019/2020");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2019");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2020");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The <strong>intended coverage</strong> is: All EU countries. All data for the coverage is available.</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -9818,7 +9896,7 @@ INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_l
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Actors and stakeholders");
 SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="STRUCTURE_STRATEGY" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="National Strategies reports" AND date_from="2016-01-01" AND date_to="2019-12-31");
+SET @datasetId = (SELECT id FROM dataset WHERE source="National Strategies reports" AND date_from="2016-01-01" AND date_to="2020-12-31");
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
@@ -9831,9 +9909,9 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p><a target=\"_blank\" href=\"https://osha.europa.eu/en/safety-and-health-legislation/osh-strategies\">https://osha.europa.eu/en/safety-and-health-legislation/osh-strategies</a></p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2016/2017/2018/2019");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2016/2017/2018/2019/2020");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2019");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2020");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The <strong>intended coverage</strong> is: All EU countries. All data for the coverage is available.</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -9851,7 +9929,7 @@ INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_l
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Resources and timeframe");
 SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="STRUCTURE_STRATEGY" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="National Strategies reports" AND date_from="2016-01-01" AND date_to="2019-12-31");
+SET @datasetId = (SELECT id FROM dataset WHERE source="National Strategies reports" AND date_from="2016-01-01" AND date_to="2020-12-31");
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
@@ -9864,9 +9942,9 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p><a target=\"_blank\" href=\"https://osha.europa.eu/en/safety-and-health-legislation/osh-strategies\">https://osha.europa.eu/en/safety-and-health-legislation/osh-strategies</a></p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2016/2017/2018/2019");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2016/2017/2018/2019/2020");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2019");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2020");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The <strong>intended coverage</strong> is: All EU countries. All data for the coverage is available.</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -9884,7 +9962,7 @@ INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_l
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Evaluation");
 SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="STRUCTURE_STRATEGY" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="National Strategies reports" AND date_from="2016-01-01" AND date_to="2019-12-31");
+SET @datasetId = (SELECT id FROM dataset WHERE source="National Strategies reports" AND date_from="2016-01-01" AND date_to="2020-12-31");
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
@@ -9897,9 +9975,9 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p><a target=\"_blank\" href=\"https://osha.europa.eu/en/safety-and-health-legislation/osh-strategies\">https://osha.europa.eu/en/safety-and-health-legislation/osh-strategies</a></p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2016/2017/2018/2019");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2016/2017/2018/2019/2020");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2019");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2020");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The <strong>intended coverage</strong> is: All EU countries. All data for the coverage is available.</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -9917,7 +9995,7 @@ INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_l
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Relationship to EU Strategic Framework");
 SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="STRUCTURE_STRATEGY" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="National Strategies reports" AND date_from="2016-01-01" AND date_to="2019-12-31");
+SET @datasetId = (SELECT id FROM dataset WHERE source="National Strategies reports" AND date_from="2016-01-01" AND date_to="2020-12-31");
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
@@ -9930,9 +10008,9 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p><a target=\"_blank\" href=\"https://osha.europa.eu/en/safety-and-health-legislation/osh-strategies\">https://osha.europa.eu/en/safety-and-health-legislation/osh-strategies</a></p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2016/2017/2018/2019");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2016/2017/2018/2019/2020");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2019");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2020");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The <strong>intended coverage</strong> is: All EU countries. All data for the coverage is available.</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -9950,7 +10028,7 @@ INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_l
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Response to EU Challenges");
 SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="RESPONSE_STRATEGY" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="National Strategies reports" AND date_from="2016-01-01" AND date_to="2019-12-31");
+SET @datasetId = (SELECT id FROM dataset WHERE source="National Strategies reports" AND date_from="2016-01-01" AND date_to="2020-12-31");
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
@@ -9963,9 +10041,9 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p><a target=\"_blank\" href=\"https://osha.europa.eu/en/safety-and-health-legislation/osh-strategies\">https://osha.europa.eu/en/safety-and-health-legislation/osh-strategies</a></p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2016/2017/2018/2019");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2016/2017/2018/2019/2020");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2019");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "2020");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The <strong>intended coverage</strong> is: All EU countries. All data for the coverage is available.</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -9983,7 +10061,7 @@ INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_l
 SET @indicatorId = (SELECT id FROM indicator WHERE name="E3Q350_1");
 SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="SOCIAL_DIALOGUE" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="ESENER" AND date_from="2019-01-01");
+SET @datasetId = (SELECT id FROM dataset WHERE source="ESENER" AND date_from="2019-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "<p>A description of the social dialogue in each country, downloadable as a PDF file, is available too. The source of the descriptions of social dialogue is a preparatory report for DG Employment, Social Affairs and Inclusion from 2018. Most of the data were compiled in 2016 or 2017.<br /> (Kooperationsstelle Hamburg IFE/EUROGIP: Development and design of a structural model for the construction and implementation of an EU OSH Information System, Final Report, March 2018, Service contract No VC/2016/0055)</p><p>The description was prepared by the contractor based on literature, particularly from Eurofound <br /> <a target=\"_blank\" href=\"https://www.eurofound.europa.eu/topic/social-dialogue\">https://www.eurofound.europa.eu/topic/social-dialogue</a> <br /> and EU-OSHA’s OSHwiki information offer<br /> <a target=\"_blank\" href=\"https://oshwiki.eu/wiki/Category:OSH_systems_at_national_level\">https://oshwiki.eu/wiki/Category:OSH_systems_at_national_level</a></p>");
@@ -10034,7 +10112,7 @@ INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_l
 SET @indicatorId = (SELECT id FROM indicator WHERE name="E3Q350_2");
 SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="SOCIAL_DIALOGUE" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="ESENER" AND date_from="2019-01-01");
+SET @datasetId = (SELECT id FROM dataset WHERE source="ESENER" AND date_from="2019-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "<p>A description of the social dialogue in each country, downloadable as a PDF file, is available too. The source of the descriptions of social dialogue is a preparatory report for DG Employment, Social Affairs and Inclusion from 2018. Most of the data were compiled in 2016 or 2017.
@@ -10095,7 +10173,7 @@ INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_l
 SET @indicatorId = (SELECT id FROM indicator WHERE name="E3Q350_4");
 SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="SOCIAL_DIALOGUE" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="ESENER" AND date_from="2019-01-01");
+SET @datasetId = (SELECT id FROM dataset WHERE source="ESENER" AND date_from="2019-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "<p>A description of the social dialogue in each country, downloadable as a PDF file, is available too. The source of the descriptions of social dialogue is a preparatory report for DG Employment, Social Affairs and Inclusion from 2018. Most of the data were compiled in 2016 or 2017.<br /> (Kooperationsstelle Hamburg IFE/EUROGIP: Development and design of a structural model for the construction and implementation of an EU OSH Information System, Final Report, March 2018, Service contract No VC/2016/0055)</p><p>The description was prepared by the contractor based on literature, particularly from Eurofound <br /> <a target=\"_blank\" href=\"https://www.eurofound.europa.eu/topic/social-dialogue\">https://www.eurofound.europa.eu/topic/social-dialogue</a> <br /> and EU-OSHA’s OSHwiki information offer<br /> <a target=\"_blank\" href=\"https://oshwiki.eu/wiki/Category:OSH_systems_at_national_level\">https://oshwiki.eu/wiki/Category:OSH_systems_at_national_level</a></p>");
@@ -10146,7 +10224,7 @@ INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_l
 SET @indicatorId = (SELECT id FROM indicator WHERE name="E3Q350_3");
 SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="SOCIAL_DIALOGUE" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="ESENER" AND date_from="2019-01-01");
+SET @datasetId = (SELECT id FROM dataset WHERE source="ESENER" AND date_from="2019-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "<p>A description of the social dialogue in each country, downloadable as a PDF file, is available too. The source of the descriptions of social dialogue is a preparatory report for DG Employment, Social Affairs and Inclusion from 2018. Most of the data were compiled in 2016 or 2017.<br /> (Kooperationsstelle Hamburg IFE/EUROGIP: Development and design of a structural model for the construction and implementation of an EU OSH Information System, Final Report, March 2018, Service contract No VC/2016/0055)</p><p>The description was prepared by the contractor based on literature, particularly from Eurofound <br /> <a target=\"_blank\" href=\"https://www.eurofound.europa.eu/topic/social-dialogue\">https://www.eurofound.europa.eu/topic/social-dialogue</a> <br /> and EU-OSHA’s OSHwiki information offer<br /> <a target=\"_blank\" href=\"https://oshwiki.eu/wiki/Category:OSH_systems_at_national_level\">https://oshwiki.eu/wiki/Category:OSH_systems_at_national_level</a></p>");
@@ -10281,7 +10359,7 @@ INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_l
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Satisfaction with working conditions");
 SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="HEALTH_PERCEPTION" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
+SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
@@ -10323,7 +10401,7 @@ INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_l
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Health affected by work");
 SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="HEALTH_PERCEPTION" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
+SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
@@ -10356,7 +10434,7 @@ INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_l
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Health problem in the last 12 months");
 SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="HEALTH_PERCEPTION" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="Eurostat" AND date_from="2013-01-01");
+SET @datasetId = (SELECT id FROM dataset WHERE source="Eurostat" AND date_from="2013-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
@@ -10389,7 +10467,7 @@ INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_l
 SET @indicatorId = (SELECT id FROM indicator WHERE name="More than 15 days of absence");
 SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="HEALTH_PERCEPTION" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
+SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
@@ -10422,7 +10500,7 @@ INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_l
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Sick at working");
 SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="HEALTH_PERCEPTION" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
+SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
@@ -10455,7 +10533,7 @@ INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_l
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Be able to do current job until 60 years old");
 SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="HEALTH_PERCEPTION" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
+SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
@@ -10488,7 +10566,7 @@ INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_l
 SET @indicatorId = (SELECT id FROM indicator WHERE name="E3Q352");
 SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="OSH_CULTURE_HEALTH_AWARENESS" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="ESENER" AND date_from="2019-01-01");
+SET @datasetId = (SELECT id FROM dataset WHERE source="ESENER" AND date_from="2019-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
@@ -10560,7 +10638,7 @@ INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_l
 SET @indicatorId = (SELECT id FROM indicator WHERE name="E3Q300");
 SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="OSH_CULTURE_HEALTH_AWARENESS" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="ESENER" AND date_from="2019-01-01");
+SET @datasetId = (SELECT id FROM dataset WHERE source="ESENER" AND date_from="2019-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
@@ -10632,7 +10710,7 @@ INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_l
 SET @indicatorId = (SELECT id FROM indicator WHERE name="E3Q301");
 SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="OSH_CULTURE_HEALTH_AWARENESS" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="ESENER" AND date_from="2019-01-01");
+SET @datasetId = (SELECT id FROM dataset WHERE source="ESENER" AND date_from="2019-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
@@ -10704,7 +10782,7 @@ INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_l
 SET @indicatorId = (SELECT id FROM indicator WHERE name="E3Q302");
 SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="OSH_CULTURE_HEALTH_AWARENESS" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="ESENER" AND date_from="2019-01-01");
+SET @datasetId = (SELECT id FROM dataset WHERE source="ESENER" AND date_from="2019-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
@@ -10776,7 +10854,7 @@ INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_l
 SET @indicatorId = (SELECT id FROM indicator WHERE name="E3Q304_1");
 SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="OSH_CULTURE_HEALTH_AWARENESS" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="ESENER" AND date_from="2019-01-01");
+SET @datasetId = (SELECT id FROM dataset WHERE source="ESENER" AND date_from="2019-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
@@ -10848,7 +10926,7 @@ INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_l
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Use of personal protective equipment");
 SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="OSH_CULTURE_HEALTH_AWARENESS" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
+SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
@@ -10920,7 +10998,7 @@ INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_l
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Information about risks");
 SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="OSH_CULTURE_HEALTH_AWARENESS" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
+SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
@@ -10992,7 +11070,7 @@ INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_l
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Job satisfaction");
 SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="OVERALL_OPINION" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
+SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
@@ -11025,7 +11103,7 @@ INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_l
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Health at risk");
 SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="OVERALL_OPINION" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
+SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
@@ -11058,7 +11136,7 @@ INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_l
 SET @indicatorId = (SELECT id FROM indicator WHERE name="E3Q201_1");
 SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="MENTAL_RISKS" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="ESENER" AND date_from="2019-01-01");
+SET @datasetId = (SELECT id FROM dataset WHERE source="ESENER" AND date_from="2019-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
@@ -11091,7 +11169,7 @@ INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_l
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Time pressure - Eurofound EWCS Data");
 SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="MENTAL_RISKS" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
+SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
@@ -11124,7 +11202,7 @@ INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_l
 SET @indicatorId = (SELECT id FROM indicator WHERE name="E3Q201_2");
 SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="MENTAL_RISKS" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="ESENER" AND date_from="2019-01-01");
+SET @datasetId = (SELECT id FROM dataset WHERE source="ESENER" AND date_from="2019-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
@@ -11157,7 +11235,7 @@ INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_l
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Poor communication - Eurofound EWCS Data");
 SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="MENTAL_RISKS" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
+SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
@@ -11190,7 +11268,7 @@ INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_l
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Q201_3");
 SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="MENTAL_RISKS" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="ESENER" AND date_from="2014-01-01");
+SET @datasetId = (SELECT id FROM dataset WHERE source="ESENER" AND date_from="2014-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
@@ -11223,7 +11301,7 @@ INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_l
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Influence - Eurofound EWCS Data");
 SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="MENTAL_RISKS" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
+SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
@@ -11256,7 +11334,7 @@ INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_l
 SET @indicatorId = (SELECT id FROM indicator WHERE name="E3Q201_3");
 SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="MENTAL_RISKS" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="ESENER" AND date_from="2019-01-01");
+SET @datasetId = (SELECT id FROM dataset WHERE source="ESENER" AND date_from="2019-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
@@ -11306,7 +11384,7 @@ INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_l
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Job insecurity - Eurofound EWCS Data");
 SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="MENTAL_RISKS" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
+SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
@@ -11356,7 +11434,7 @@ INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_l
 SET @indicatorId = (SELECT id FROM indicator WHERE name="E3Q201_4");
 SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="MENTAL_RISKS" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="ESENER" AND date_from="2019-01-01");
+SET @datasetId = (SELECT id FROM dataset WHERE source="ESENER" AND date_from="2019-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
@@ -11389,7 +11467,7 @@ INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_l
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Difficult clients - Eurofound EWCS Data");
 SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="MENTAL_RISKS" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
+SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
@@ -11422,7 +11500,7 @@ INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_l
 SET @indicatorId = (SELECT id FROM indicator WHERE name="E3Q201_5");
 SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="MENTAL_RISKS" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="ESENER" AND date_from="2019-01-01");
+SET @datasetId = (SELECT id FROM dataset WHERE source="ESENER" AND date_from="2019-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
@@ -11455,7 +11533,7 @@ INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_l
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Working hours - Eurofound EWCS Data");
 SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="MENTAL_RISKS" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
+SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
@@ -11488,7 +11566,7 @@ INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_l
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Q201_7");
 SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="MENTAL_RISKS" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="ESENER" AND date_from="2014-01-01");
+SET @datasetId = (SELECT id FROM dataset WHERE source="ESENER" AND date_from="2014-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
@@ -11521,7 +11599,7 @@ INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_l
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Discrimination - Eurofound EWCS Data");
 SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="MENTAL_RISKS" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
+SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
@@ -11554,7 +11632,7 @@ INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_l
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Exposure to vibrations");
 SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
+SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
@@ -11587,7 +11665,7 @@ INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_l
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Exposure to loud noise");
 SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
+SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
@@ -11620,7 +11698,7 @@ INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_l
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Exposure to temperatures");
 SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
+SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
@@ -11653,7 +11731,7 @@ INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_l
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Exposure to low temperatures");
 SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
+SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
@@ -11686,7 +11764,7 @@ INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_l
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Exposure to breathing in smoke, fumes, powder or dust");
 SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
+SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
@@ -11719,7 +11797,7 @@ INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_l
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Exposure to breathing in vapours");
 SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
+SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
@@ -11752,7 +11830,7 @@ INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_l
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Exposure to chemical products or substances");
 SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
+SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
@@ -11785,7 +11863,7 @@ INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_l
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Exposure to infections materials");
 SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
+SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
@@ -11823,7 +11901,7 @@ INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_l
 SET @indicatorId = (SELECT id FROM indicator WHERE name="E3Q200_34");
 SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="ESENER" AND date_from="2019-01-01");
+SET @datasetId = (SELECT id FROM dataset WHERE source="ESENER" AND date_from="2019-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
@@ -11876,7 +11954,7 @@ INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_l
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Tiring or painful positions - Eurofound EWCS Data");
 SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
+SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
@@ -11929,7 +12007,7 @@ INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_l
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Does your work involve sitting? - Eurofound EWCS Data");
 SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
+SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
@@ -11982,7 +12060,7 @@ INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_l
 SET @indicatorId = (SELECT id FROM indicator WHERE name="E3Q200_1");
 SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="ESENER" AND date_from="2019-01-01");
+SET @datasetId = (SELECT id FROM dataset WHERE source="ESENER" AND date_from="2019-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
@@ -12035,7 +12113,7 @@ INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_l
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Lifting or moving people - Eurofound EWCS Data");
 SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
+SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
@@ -12088,7 +12166,7 @@ INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_l
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Carrying or moving heavy loads - Eurofound EWCS Data");
 SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
+SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
@@ -12141,7 +12219,7 @@ INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_l
 SET @indicatorId = (SELECT id FROM indicator WHERE name="E3Q200_2");
 SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="ESENER" AND date_from="2019-01-01");
+SET @datasetId = (SELECT id FROM dataset WHERE source="ESENER" AND date_from="2019-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
@@ -12194,7 +12272,7 @@ INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_l
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Repetitive hand or arm movements - Eurofound EWCS Data");
 SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
+SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
@@ -12247,7 +12325,7 @@ INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_l
 SET @indicatorId = (SELECT id FROM indicator WHERE name="E3Q250");
 SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="PREVENTION_IN_COMPANIES" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="ESENER" AND date_from="2019-01-01");
+SET @datasetId = (SELECT id FROM dataset WHERE source="ESENER" AND date_from="2019-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
@@ -12284,7 +12362,7 @@ INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_l
 SET @indicatorId = (SELECT id FROM indicator WHERE name="E3Q251");
 SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="PREVENTION_IN_COMPANIES" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="ESENER" AND date_from="2019-01-01");
+SET @datasetId = (SELECT id FROM dataset WHERE source="ESENER" AND date_from="2019-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
@@ -12319,7 +12397,7 @@ INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_l
 SET @indicatorId = (SELECT id FROM indicator WHERE name="E3Q354");
 SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="PREVENTION_IN_COMPANIES" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="ESENER" AND date_from="2019-01-01");
+SET @datasetId = (SELECT id FROM dataset WHERE source="ESENER" AND date_from="2019-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
@@ -12361,7 +12439,7 @@ INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_l
 SET @indicatorId = (SELECT id FROM indicator WHERE name="E3Q306");
 SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="PREVENTION_IN_COMPANIES" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="ESENER" AND date_from="2019-01-01");
+SET @datasetId = (SELECT id FROM dataset WHERE source="ESENER" AND date_from="2019-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
@@ -12416,7 +12494,7 @@ INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_l
 SET @indicatorId = (SELECT id FROM indicator WHERE name="E3Q306");
 SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="WORKER_INVOLVEMENT" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="ESENER" AND date_from="2019-01-01");
+SET @datasetId = (SELECT id FROM dataset WHERE source="ESENER" AND date_from="2019-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
@@ -12479,7 +12557,7 @@ INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_l
 SET @indicatorId = (SELECT id FROM indicator WHERE name="E3Q350_2");
 SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="WORKER_INVOLVEMENT" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="ESENER" AND date_from="2019-01-01");
+SET @datasetId = (SELECT id FROM dataset WHERE source="ESENER" AND date_from="2019-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
@@ -12542,7 +12620,7 @@ INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_l
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Does your organisation have a trade union, works council or a similar committee representing employees? - Eurofound EWCS Data");
 SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="WORKER_INVOLVEMENT" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
+SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
@@ -12575,7 +12653,7 @@ INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_l
 SET @indicatorId = (SELECT id FROM indicator WHERE name="E3Q357");
 SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="WORKER_INVOLVEMENT" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="ESENER" AND date_from="2019-01-01");
+SET @datasetId = (SELECT id FROM dataset WHERE source="ESENER" AND date_from="2019-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
@@ -12638,7 +12716,7 @@ INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_l
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Does your organisation have a regular meeting in which employees can express their views about what is happening in the organisation?");
 SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="WORKER_INVOLVEMENT" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
+SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
@@ -12698,7 +12776,7 @@ INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_l
 SET @indicatorId = (SELECT id FROM indicator WHERE name="E3Q350_4");
 SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="WORKER_INVOLVEMENT" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="ESENER" AND date_from="2019-01-01");
+SET @datasetId = (SELECT id FROM dataset WHERE source="ESENER" AND date_from="2019-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
@@ -12734,7 +12812,7 @@ INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_l
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Does your organisation have a health and safety delegate or committee? - Eurofound EWCS Data");
 SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="WORKER_INVOLVEMENT" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
+SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
@@ -12795,7 +12873,7 @@ INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_l
 SET @indicatorId = (SELECT id FROM indicator WHERE name="E3Q353");
 SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="WORKER_INVOLVEMENT" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="ESENER" AND date_from="2019-01-01");
+SET @datasetId = (SELECT id FROM dataset WHERE source="ESENER" AND date_from="2019-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
@@ -12858,7 +12936,7 @@ INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_l
 SET @indicatorId = (SELECT id FROM indicator WHERE name="E3Q154");
 SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="ENFORCEMENT_CAPACITY" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
-SET @datasetId = (SELECT id FROM dataset WHERE source="ESENER" AND date_from="2019-01-01");
+SET @datasetId = (SELECT id FROM dataset WHERE source="ESENER" AND date_from="2019-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "null");
