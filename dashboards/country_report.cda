@@ -328,7 +328,7 @@
 	      <Parameter default="EU28" name="pCountry2" type="String" />
 	    </Parameters>
 	    <Query>
-	      SELECT IF(n.name REGEXP 'European Union', n.country_code, CONCAT("(", n.country_code, ") ", n.name)) as Country, (v.value*100) as Value
+	      SELECT IF(n.name REGEXP 'European Union', n.country_code, CONCAT("(", n.country_code, ") ", n.name)) as Country, ROUND((v.value*100),1)  as Value
 	      FROM nuts n, profile p, indicator i, value v, dataset d
 	      WHERE n.id = p.nuts_id
 	      AND i.id = v.indicator_id
