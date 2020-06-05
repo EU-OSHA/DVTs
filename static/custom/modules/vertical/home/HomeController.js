@@ -78,7 +78,8 @@ define(function (require) {
           {
             $rootScope.defaultCountry = {
               code : $scope.pCountry1,
-              isCookie : 1
+              isCookie : 1,
+              selectedByUser: true
             }
 
             if ($rootScope.defaultCountry2 != undefined && $rootScope.defaultCountry2.code==$scope.pCountry1)
