@@ -384,9 +384,6 @@ define (function (require) {
                         label_textStyle: function(scene){
                             var countryKey = scene.firstAtoms.series;
                             var valueKey = scene.firstAtoms.value;
-                            console.log("DVT DEV");
-                            console.log(scene.firstAtoms.value.label);
-                            console.log(scene.firstAtoms.value.label.match('%'));
                             if(!scene.firstAtoms.value.label.match('%')){
                                 scene.firstAtoms.value.label = scene.firstAtoms.value.label + '%';
                             }
