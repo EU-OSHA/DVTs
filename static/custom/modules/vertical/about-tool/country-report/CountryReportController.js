@@ -275,6 +275,10 @@ define(function (require) {
 			{
 				$scope.country_name = "117";
 			}
+			else if ($scope.pCountry == "NO")
+			{
+				$scope.country_name = "182";
+			}
 			
 		}).catch(function (err) {
 			throw err;
