@@ -618,7 +618,8 @@
 	.prevention-companies, 
 	.mental-risk, 
 	.physical-risk, 
-	.worker-involvement{
+	.worker-involvement, 
+	.work-accidents{
 		div[id^=dvt_bar_chart]{
 			zoom:0.9;
 		}
@@ -626,16 +627,26 @@
 			.compare--list{
 				display: block;
 				li{
-					width: auto;
-					display: inline-block;
+					width: 49%;
+					display: inline-flex;
 					font-size: 1.6rem !important;
 					label{
 						width: auto;
 						font-size: 1.4rem !important;
+						&:after{
+							padding: 1rem;
+						}
+					}
+					dvt-select{
+						border: 0 !important;
+						width: auto;
 					}
 					select{
 						width: auto;
 						font-size: 1.6rem !important;
+					}
+					&:after{
+						display: none;
 					}
 				}
 			}
@@ -653,6 +664,29 @@
 			svg{
 				zoom:0.8;
 			}
+		}
+	}
+	.worker-involvement, 
+	.overall-opinion, 
+	.mental-risk, 
+	.physical-risk, 
+	.osh-culture, 
+	.prevention-companies{
+		.card--grid{
+		 	.card--block--chart{
+		 		.select-filter-chart{
+			    right: initial  !important;
+			    top: -23px  !important;
+			    width: 88%  !important;
+			    select{
+			    	border:none  !important;
+			    	padding: 0 !important;
+			    }
+			    &:after{
+			    	display: none;
+			    }
+		 		}
+		 	}
 		}
 	}
 
