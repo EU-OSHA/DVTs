@@ -164,7 +164,7 @@ define(function (require) {
 							var defaultOpts = {
 								meshSize: 250,
 								labels: [],
-								labelFontSize: 14,
+								labelFontSize: 11,
 								labelColor: "black",
 								valueFontSize: 13,
 								drawLabels: true,
@@ -808,7 +808,7 @@ define(function (require) {
 									meshSize: attributes.meshSize || 20,//the space between adjacent meshes,
 									labels: firstIndicatorLabels,
 									titles: firstIndicatorTitles,
-									labelFontSize: 14, //huge font
+									labelFontSize: 11, //huge font
 									labelColor: "black", // labels font color
 									drawLabels: attributes.drawLabels || true, //to draw labels or not
 									valuesColor: dvtUtils.getSpiderValuesColor(),
