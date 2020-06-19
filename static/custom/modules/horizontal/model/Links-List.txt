@@ -709,6 +709,8 @@
 3192-https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Bulgaria
 3194-https://www.imi.hr/en/
 3194-https://oshwiki.eu/wiki/OSH_system_at_National_Level_-_Croatia%20
+3196-https://cerides.euc.ac.cy/
+3196-https://www.euc.ac.cy
 3196-https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Cyprus
 3198-http://www.vubp.cz/%20
 3198-https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Czech_Republic%20
