@@ -121,8 +121,8 @@ define (function (require) {
                                 }
                             }
 
-                            var EUColours = [dvtUtils.getEUColor(), dvtUtils.getEUColor(2),dvtUtils.getAccidentsColors(4), dvtUtils.getChartLightGrayColor()];
-                            var countryColours = [dvtUtils.getColorCountry(1), dvtUtils.getColorCountry(12), dvtUtils.getAccidentsColors(4), dvtUtils.getChartLightGrayColor()];
+                            var EUColours = [dvtUtils.getEUColor(), dvtUtils.getEUColor(2), dvtUtils.getChartLightGrayColor(),dvtUtils.getAccidentsColors(4)];
+                            var countryColours = [dvtUtils.getColorCountry(1), dvtUtils.getColorCountry(12), dvtUtils.getChartLightGrayColor(), dvtUtils.getAccidentsColors(4)];
                             var defaultColours = [dvtUtils.getColorCountry(2),dvtUtils.getColorCountry(22),dvtUtils.getChartLightGrayColor(),dvtUtils.getAccidentsColors(4)];
 
                             //$log.warn(countryKey);
