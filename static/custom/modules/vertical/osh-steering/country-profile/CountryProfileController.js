@@ -9,7 +9,7 @@
  * ############################################
  */
 
-var resolution = screen.width;
+var resolution = $(window).width();
 
 define(function (require) {
   'use strict';
@@ -225,14 +225,19 @@ define(function (require) {
       // Open indicators list like a select element
 
       $(window).on("resize",function(e){
-        resolution = screen.width;
+        resolution = $(window).width();
       });
 
-      $scope.openIndicatorsList = function(e) {       
+      $scope.openIndicatorsList = function(e) {   
 
-        var parentTag = e.target.offsetParent.nextSibling.parentNode.className;
+        if( resolution < 1090 ){
 
-        if( resolution < 990 ){
+          if( e.target.nodeName == "A"){
+            var parentTag = e.target.offsetParent.nextSibling.parentNode.className;
+          } else if( e.target.nodeName == "LI" ){
+            var parentTag = e.target.parentNode.className;
+          } 
+
           if( parentTag.indexOf('open-list') < 0 ){
             angular.element('.submenu--items--wrapper').addClass('open-list');
           } else {
