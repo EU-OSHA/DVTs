@@ -1,9 +1,5 @@
 -- The tool is already created
 
-SET @datasetId = (SELECT id FROM dataset  WHERE source="Eurostat" AND date_from="2010-01-01" AND date_to="2014-12-31");
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Non-fatal work accidents");
-INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
-
 INSERT INTO chart (id, section_id)  VALUES(20010,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="ECONOMIC_SECTOR_PROFILE" AND t.name="osha_dvt_barometer"	) );
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Employment per sector");
 SET @datasetId = (SELECT id FROM dataset WHERE source="Eurostat" AND date_from="2017-01-01");
@@ -8063,9 +8059,11 @@ INSERT INTO matrix_page(page, nuts_id, check_1, check_2, check_3, check_4, text_
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="CY");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, NULL, "MATRIX_STATISTICS_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "n/a");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "Centre for Risk and Decision Sciences (CERIDES)");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, NULL, "MATRIX_STATISTICS_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p><strong>Short abstract<br /></strong></p><p>In Cyprus, there is no particular research institute specialising in occupational safety and health (OSH). The eighth fundamental pillar of the strategy on safety and health at work for the period 2007-2012 deals with the encouragement of scientific progress and research. The strategy intends to promote collaboration between universities, institutes and services in Cyprus and abroad to face OSH risks. Assigning studies to suitable organisations is a means to this end.</p><p>See more in <a href=\"https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Cyprus\" target=\"_blank\">OSHWiki</a></p><p>&nbsp;</p>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p><a href=\"https://cerides.euc.ac.cy/\" target=\"_blank\">Link</a> to the institute</p>
+<p><strong>Short abstract<br></strong>The Centre for Risk and Decision Sciences (CERIDES) provides a holistic offer to the academic and business world. The Centre is based on the offering of educational (taught), research and consulting solutions. The Centre has emerged from the synergies that have been identified between the Centre for Risk, Safety and the Environment (CERISE) and the Decision Support and Systems Optimization (DSSO) Laboratory and operates under the auspices of European University Cyprus. It is the first cross-disciplinary, cross-School Center of Excellence of <a href=\"https://www.euc.ac.cy\" target=\"_blank\">European University Cyprus</a>.</p>
+<p>The areas of focus of the Centre of Excellence revolves around the development, use and evaluation of primarily quantitative and to a lesser degree qualitative methods in order to measure, assess, manage and communicate risk, and to analyse, design and implement decision-making mechanisms and systems.<br><br>See more in <a href=\"https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Cyprus\" target=\"_blank\">OSHWiki</a></p>");
 INSERT INTO matrix_page(page, nuts_id, check_1, check_2, check_3, check_4, text_1_literal_id, text_2_literal_id, text_3_literal_id) VALUES ("MATRIX_STATISTICS", @nutsId, 0, 0, 1, false, @maxId+1, @maxId+2, null);
 
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
