@@ -202,7 +202,7 @@
 			}
 			tbody{
 				tr:nth-child(2n+1){
-					background:#EBF3F3 !important;
+					//background:#EBF3F3 !important;
 				}
 				th{
 					border-right:2px solid $gray-light;
@@ -255,7 +255,7 @@
 		.index{
 			background: $gray-lighter !important;
 			padding: 5mm 20mm 5mm;
-			margin-top: 30mm;
+			margin-top: 5mm;
 			ul.index-list{
 				list-style-type: none;
 				padding: 0;
@@ -429,8 +429,6 @@
 			}
 		}
 		section.index-page{
-			display: flex;
-			flex-direction: column;
 			h1{
 		    font-size: 3.2rem;
 		    margin-bottom: 5mm;
@@ -769,7 +767,7 @@
 					h2 {
 						font-size: 2.2rem !important;
 						margin: 0rem 0 1.5rem 0;
-						border-bottom: 2px solid;
+						//border-bottom: 2px solid;
 					}		  		
 		  	}
 		  }
