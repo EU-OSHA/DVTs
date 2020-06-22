@@ -46,12 +46,10 @@
 
 
 	.break-after{
-		//page-break-after: always !important;
-		height: 0 !important;
+		page-break-after: always !important;
 	}
 	.break-before{
-		//page-break-before: always !important;
-		height: 0 !important;
+		page-break-before: always !important;
 	}
 	.page-break-before, 
 	.UK, .ES{
