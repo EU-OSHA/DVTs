@@ -567,8 +567,13 @@
 		    margin:1rem 0;
 		    page-break-inside: initial !important;
 			}
-			&.IT, &.NL{
+			&.IT, &.NL {
 				.box-rounded.evaluation{
+					page-break-inside: avoid !important;
+				}
+			}
+			&.CY{
+				.box-rounded.box2{
 					page-break-inside: avoid !important;
 				}
 			}
@@ -729,6 +734,11 @@
 			  	}		  		
 		  	}
 		  }
+		  &.RO{
+		  	.box-rounded{
+					padding: 2rem 3rem 1rem !important;
+		  	}
+		  }
 		}
 		section.working-conditions{
 			.title-page{
@@ -857,6 +867,13 @@
 			}
 			.content{
 				page-break-inside: initial !important;
+			}
+			&.CY{
+				.content{
+					&.inspectorpowers{
+					  page-break-before: always !important;
+					}
+				}
 			}
 		}
 	}

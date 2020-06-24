@@ -454,7 +454,7 @@
     </div>
     <h4 data-ng-bind="i18nLiterals.L20379"></h4>
     <p ng-if="challengesResponse.length <= 0" data-ng-bind="i18nLiterals.L20706"></p>
-    <div data-ng-repeat="matrix in challengesResponse" class="box-rounded">
+    <div data-ng-repeat="matrix in challengesResponse" class="box-rounded box{{$index}}">
       <h5 class="" ng-if="::matrix.implementation_record==1" data-ng-bind="i18nLiterals.L20631"></h5>
       <h5 class="" ng-if="::matrix.prevention_work==1" data-ng-bind="i18nLiterals.L20632"></h5>
       <h5 class="" ng-if="::matrix.tackling_demographic==1" data-ng-bind="i18nLiterals.L20633"></h5>
@@ -714,8 +714,7 @@
           </tr>
          </tbody>
       </table>
-    </div>
-    
+    </div>    
     <!-- Action plan to prevent stress -->
     <div class="box-rounded">      
       <dvt-bar-chart
@@ -799,7 +798,6 @@
          </tbody>
       </table>     
     </div>
-
     <!-- Procedure to deal with threats -->
     <div class="box-rounded">
       <dvt-bar-chart
@@ -882,7 +880,6 @@
          </tbody>
       </table>      
     </div>
-
     <!-- Use of personal protective equipment -->
     <div class="box-rounded">
       <dvt-bar-chart
@@ -2449,7 +2446,7 @@
     </div>
 
     <!-- Inspector powers -->
-    <div class="box-rounded content">
+    <div class="box-rounded content inspectorpowers">
       <h4 data-ng-bind="i18nLiterals.L335" class="header4"></h4>
       <div data-ng-if="enforcementCapacities.inspector != null" data-ng-bind-html="i18nLiterals['L'+enforcementCapacities.inspector]"></div>
       <div data-ng-if="enforcementCapacities.inspector == null" data-ng-bind="i18nLiterals.L20706"></div>
