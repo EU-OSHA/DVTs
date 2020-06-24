@@ -572,15 +572,29 @@
 					page-break-inside: avoid !important;
 				}
 			}
-			&.CY{
+			&.CY, &.BG{
 				.box-rounded.box2{
 					page-break-inside: avoid !important;
+				}
+			}
+			&.DE{
+				.box-rounded{
+					&.actors{
+						page-break-inside: avoid !important;
+					}
+				}
+			}
+			&.DK{
+				.box-rounded{
+					&.details{
+						page-break-inside: avoid !important;
+					}
 				}
 			}
 		}
 		section.social-dialogue{
 			min-height: initial !important;
-			&.CY{
+			&.CY, &.DE, &.CZ, &.DK, &.BG{
 			page-break-before: initial !important;
 			}
 			header{
@@ -868,7 +882,7 @@
 			.content{
 				page-break-inside: initial !important;
 			}
-			&.CY{
+			&.CY, &.LV, &.BG{
 				.content{
 					&.inspectorpowers{
 					  page-break-before: always !important;
