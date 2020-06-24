@@ -292,14 +292,23 @@ define (function (require) {
                 ];
             },
             getIncomeMainPlots: function(pCountry1) {
-
                 var dashboard = this.dashboard;
 	
                 return [
                     {
                         name: "main",
                         dataPart: "0",
-                        line_lineWidth: 1.5,
+                        line_lineWidth: function(scene){
+                            var countryValue = scene.firstAtoms.value;
+                            if(countryValue.value > parseInt(this.sign.chart.options.orthoAxisFixedMax)){
+                                this.sign.chart.options.orthoAxisFixedMax = countryValue.value;
+                            }
+                            if(countryValue.value < parseInt(this.chart.options.orthoAxisFixedMin)){
+                                this.chart.options.orthoAxisFixedMin = countryValue.value;
+                            }
+                            return 1.5;
+                        },
+                        // line_lineWidth: 1.5,
                         label_textStyle: function(scene){
                         	var countryKey = scene.firstAtoms.series;
                             if (countryKey == 'EU28') {
@@ -308,7 +317,7 @@ define (function (require) {
                             	return dvtUtils.getColorCountry(1);
                             }
                             return dvtUtils.getChartLightGrayColor();
-                        },                                               
+                        },
                         label_textMargin: function(scene){
                             var countryKey = scene.firstAtoms.series;
 
@@ -322,7 +331,6 @@ define (function (require) {
                             var countryKey = scene.firstAtoms.series;
                             var countryValue = scene.firstAtoms.value;
                             var countryYear = scene.firstAtoms.category;
-
 
                             var resultset = this.chart.resultset;
 
