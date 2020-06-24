@@ -459,6 +459,17 @@ define(function (require) {
 						});
 					}
 				}
+				else
+				{
+					for (var i=0; i<$scope.data.length;i++)
+					{
+						$scope.companySize.push({
+							size: $scope.data[i].size,
+					  		country: $scope.data[i].country,
+					  		value: $scope.data[i].value
+						});
+					}
+				}
 
 			}).catch(function (err) {
 				throw err;
@@ -840,7 +851,7 @@ define(function (require) {
 				});
 
 				var listSize = $scope.data.length;
-				if(listSize%2 == 0){
+				if($scope.data[0].country != $scope.data[listSize/2].country){
 					for(var i=0; i<$scope.data.length/2;i++){
 						$scope.healthAtRiskSector.push({
 							sector: $scope.data[i].sector,
@@ -848,6 +859,16 @@ define(function (require) {
 					  		value: Math.round($scope.data[i].value*10)/10,
 					  		country2: $scope.data[listSize/2+i].country,
 					  		value2: Math.round($scope.data[listSize/2+i].value*10)/10
+						});
+					}
+				}
+				else
+				{
+					for(var i=0; i<$scope.data.length;i++){
+						$scope.healthAtRiskSector.push({
+							sector: $scope.data[i].sector,
+					  		country2: $scope.data[i].country,
+					  		value2: Math.round($scope.data[i].value*10)/10
 						});
 					}
 				}
@@ -869,7 +890,7 @@ define(function (require) {
 				});
 
 				var listSize = $scope.data.length;
-				if(listSize%2 == 0){
+				if($scope.data[0].country != $scope.data[listSize/2].country){
 					for(var i=0; i<$scope.data.length/2;i++){
 						$scope.healthAtRiskAge.push({
 							age: $scope.data[i].age,
@@ -877,6 +898,16 @@ define(function (require) {
 					  		value: Math.round($scope.data[i].value*10)/10,
 					  		country2: $scope.data[listSize/2+i].country,
 					  		value2: Math.round($scope.data[listSize/2+i].value*10)/10
+						});
+					}
+				}
+				else
+				{
+					for(var i=0; i<$scope.data.length;i++){
+						$scope.healthAtRiskAge.push({
+							age: $scope.data[i].age,
+					  		country2: $scope.data[i].country,
+					  		value2: Math.round($scope.data[i].value*10)/10
 						});
 					}
 				}
@@ -906,6 +937,16 @@ define(function (require) {
 					  		value: Math.round($scope.data[i].value*10)/10,
 					  		country2: $scope.data[listSize/2+i].country,
 					  		value2: Math.round($scope.data[listSize/2+i].value*10)/10
+						});
+					}
+				}
+				else
+				{
+					for(var i=0; i<$scope.data.length/2;i++){
+						$scope.healthAtRiskGender.push({
+							gender: $scope.data[i].gender,
+					  		country2: $scope.data[i].country,
+					  		value2: Math.round($scope.data[i].value*10)/10
 						});
 					}
 				}
