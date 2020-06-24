@@ -567,6 +567,11 @@
 		    margin:1rem 0;
 		    page-break-inside: initial !important;
 			}
+			&.IT{
+				.box-rounded.evaluation{
+					page-break-inside: avoid !important;
+				}
+			}
 		}
 		section.social-dialogue{
 			min-height: initial !important;
