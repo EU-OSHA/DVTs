@@ -567,7 +567,7 @@
 		    margin:1rem 0;
 		    page-break-inside: initial !important;
 			}
-			&.IT{
+			&.IT, &.NL{
 				.box-rounded.evaluation{
 					page-break-inside: avoid !important;
 				}
