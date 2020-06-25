@@ -591,10 +591,17 @@
 					}
 				}
 			}
+			&.EE{
+				.box-rounded{
+					&.characteristics{
+						page-break-inside: avoid !important;
+					}
+				}
+			}
 		}
 		section.social-dialogue{
 			min-height: initial !important;
-			&.CY, &.DE, &.CZ, &.DK, &.BG{
+			&.CY, &.DE, &.CZ, &.DK, &.BG, &.EE{
 			page-break-before: initial !important;
 			}
 			header{
