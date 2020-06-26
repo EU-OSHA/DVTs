@@ -583,6 +583,13 @@
 						page-break-inside: avoid !important;
 					}
 				}
+			}			
+			&.PT{
+				.box-rounded{
+					&.resources{
+						page-break-inside: avoid !important;
+					}
+				}
 			}
 			&.DK{
 				.box-rounded{
