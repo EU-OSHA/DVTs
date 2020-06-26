@@ -942,7 +942,7 @@ define(function (require) {
 				}
 				else
 				{
-					for(var i=0; i<$scope.data.length/2;i++){
+					for(var i=0; i<$scope.data.length;i++){
 						$scope.healthAtRiskGender.push({
 							gender: $scope.data[i].gender,
 					  		country2: $scope.data[i].country,
