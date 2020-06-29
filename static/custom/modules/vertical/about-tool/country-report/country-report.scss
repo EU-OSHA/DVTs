@@ -877,6 +877,13 @@
 					}
 				}
 			}
+			&.DK{
+				.content-page{
+					.osh-statistics-items{
+						page-break-inside: initial !important;
+					}
+				}
+			}
 		}
 		section.enforcement-capacity{
 			.header4{
