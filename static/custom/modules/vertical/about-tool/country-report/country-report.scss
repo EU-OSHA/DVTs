@@ -607,11 +607,22 @@
 					}
 				}
 			}
+			&.HU{
+				.box-rounded{
+					&.details, &.box1{
+						page-break-inside: avoid !important;
+					}
+				}
+			}
 		}
 		section.social-dialogue{
 			min-height: initial !important;
 			&.CY, &.DE, &.CZ, &.DK, &.BG, &.EE{
-			page-break-before: initial !important;
+				page-break-before: initial !important;
+			}
+			&.HU{
+				page-break-before: initial !important;
+				page-break-inside: avoid !important;
 			}
 			header{
 				display: flex;
@@ -912,6 +923,13 @@
 				.content{
 					&.inspectorpowers{
 					  page-break-before: always !important;
+					}
+				}
+			}
+			&.HU{
+				.content{
+					&.inspectorpowers{
+					  page-break-inside: avoid !important;
 					}
 				}
 			}
