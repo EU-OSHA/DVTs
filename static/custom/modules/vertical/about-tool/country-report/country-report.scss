@@ -567,9 +567,11 @@
 		    margin:1rem 0;
 		    page-break-inside: initial !important;
 			}
-			&.IT, &.NL {
-				.box-rounded.evaluation{
-					page-break-inside: avoid !important;
+			&.IT, &.NL, &.EL {
+				.box-rounded{
+					&.evaluation{
+						page-break-inside: avoid !important;
+					}
 				}
 			}
 			&.CY, &.BG{
@@ -883,6 +885,9 @@
 						page-break-inside: initial !important;
 					}
 				}
+			}
+			&.EL{
+				page-break-before: initial!important;
 			}
 		}
 		section.enforcement-capacity{
