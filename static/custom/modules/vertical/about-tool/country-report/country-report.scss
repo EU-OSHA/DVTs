@@ -29,7 +29,6 @@
 	   tbody {
 	   	tr{
 	   		td{
- 			    
 	   		}
 	   	}
 	   }	
@@ -200,7 +199,7 @@
 			}
 			tbody{
 				tr:nth-child(2n+1){
-					//background:#EBF3F3 !important;
+					background:#d6e2e2 !important;
 				}
 				th{
 					border-right:2px solid $gray-light;
