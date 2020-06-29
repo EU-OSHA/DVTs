@@ -620,7 +620,7 @@
 			&.CY, &.DE, &.CZ, &.DK, &.BG, &.EE{
 				page-break-before: initial !important;
 			}
-			&.HU{
+			&.HU, &.LT{
 				page-break-before: initial !important;
 				page-break-inside: avoid !important;
 			}
