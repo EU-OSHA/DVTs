@@ -2158,7 +2158,17 @@ INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+413, null, @sectionId, "STRATEGY_ACTORS");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+413, "EN", 1, "<ul><li>Directorate for Safety and Health at Work, <br> Ministry of Labour Social Security and Social Solidarity.</li><li>Labour Inspectorate, <br> Ministry of&nbsp; Labour Social Security and Social Solidarity.</li><li>Public authorities, organizations and associations represented and participating as official members&nbsp; to the National Council <br> for the Health and Safety of Workers&nbsp; (S.Y.A.E.).</li><li>OSH governmental authorities at regional level.</li><li>Other governmental authorities and organizations involved, at national and regional level.</li><li>OSH social partners organizations and institutions operating at national, regional and sectoral level.</li><li>OSH scientific associations.</li><li>OSH professional associations.</li><li>OSH external services providers.</li><li>National OSH Information Network members.</li><li>National Focal Point of EU-OSHA.</li></ul>");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+413, "EN", 1, "    <li>Directorate for Safety and Health at Work,<br>Ministry of Labour Social Security and Social Solidarity.</li>
+    <li>Labour Inspectorate, Ministry of &nbsp;Labour Social Security and Social Solidarity.</li>
+    <li>Public authorities, organizations and associations represented and participating as official members &nbsp;to the National Council for the Health and Safety of Workers &nbsp;(S.Y.A.E.).</li>
+    <li>OSH governmental authorities at regional level.</li>
+    <li>Other governmental authorities and organizations involved, at national and regional level.</li>
+    <li>OSH social partners organizations and institutions operating at national, regional and sectoral level.</li>
+    <li>OSH scientific associations.</li>
+    <li>OSH professional associations.</li>
+    <li>OSH external services providers.</li>
+    <li>National OSH Information Network members.</li>
+    <li>National Focal Point of EU-OSHA.</li>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
@@ -4043,7 +4053,7 @@ INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2108, null, @sectionId, "INTRO_TEXT");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2108, "EN", 1, "<p>The OSH Barometer is an EU-wide public information system on the most important facts and figures of Occupational Safety and Health. The system provides visualised information for important OSH indicators at EU and national level; it is based on statistics, surveys and public data.</p>
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2108, "EN", 1, "<p>The OSH Barometer is an EU-wide public information system on the most important facts and figures of <strong>Occupational Safety and Health</strong>. The system provides visualised information for important OSH indicators at EU and national level; it is based on statistics, surveys and public data.</p>
 <p>The OSH Barometer presents data from several different sources; some dating back to 2010 where trends are presented. At the time these data were collected, the UK was still a member of the European Union and therefore the UK results are included in the OSH Barometer and the EU average is presented as EU28. In successive updates of the OSH Barometer, UK data will be progressively eliminated.</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
