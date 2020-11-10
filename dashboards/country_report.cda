@@ -19,7 +19,7 @@
 	      INNER JOIN value v ON v.profile_id = p.id
 	      INNER JOIN translation t ON n.literal_id=t.literal_id
 	      WHERE v.indicator_id IN (31, 36, 37, 38, 39, 40)
-	      AND n.country_code NOT IN ('EU28')
+	      AND n.country_code NOT IN ('EU28', 'UK')
 	      AND t.language="EN"
 	      ORDER BY country_code ASC;
 	    </Query>
@@ -38,7 +38,7 @@
 	      INNER JOIN value v ON v.profile_id = p.id
 	      INNER JOIN translation t ON n.literal_id=t.literal_id
 	      WHERE v.indicator_id IN (31, 36, 37, 38, 39, 40)
-	      AND n.country_code NOT IN ('EU28')
+	      AND n.country_code NOT IN ('EU28', 'UK')
 	      AND t.language="EN"
 	      ORDER BY country_code ASC;
 	    </Query>
@@ -351,6 +351,7 @@
 	      SELECT t.text as Indicator, IF(n.name = 'European Union', n.country_code, CONCAT(n.name, " (", n.country_code, ")")) as Country, v.value as Value
 		  FROM nuts n, profile p, value v, indicator i, translation t
 		  WHERE n.id = p.nuts_id
+		  AND n.country_code != "UK"
 		  AND v.profile_id = p.id
 		  AND v.indicator_id=i.id
 		  AND t.literal_id=i.literal_id
@@ -373,13 +374,14 @@
 	      SELECT t.text as Indicator, IF(n.name = 'European Union', n.country_code, CONCAT(n.name, " (", n.country_code, ")")) as Country, v.value*100 as Value
 		  FROM nuts n, profile p, value v, indicator i, translation t
 		  WHERE n.id = p.nuts_id
+		  AND n.country_code != "UK"
 		  AND v.profile_id = p.id
 		  AND v.indicator_id=i.id
 		  AND t.literal_id=i.literal_id
 		  AND v.indicator_id = ${pIndicator}
 		  AND v.dataset_id = ${pDataset}
 		  AND t.language="EN"
-		  ORDER BY FIELD(n.country_code, 'EU27_2020', 'EU28') DESC, FIELD(n.country_code, 'CH', 'IS', 'NO', 'UK'), n.country_code ASC, Value DESC
+		  ORDER BY FIELD(n.country_code, 'EU27_2020', 'EU28') DESC, FIELD(n.country_code, 'CH', 'IS', 'NO'), n.country_code ASC, Value DESC
 	    </Query>
 	</DataAccess>
 
@@ -395,7 +397,7 @@
 	      SELECT t.text as Answer, IF(n.name = 'European Union' || n.name='EU27_2020', n.country_code, IF(n.name = 'Macedonia, The former Yugoslav Rep. of', CONCAT('Macedonia', " (", n.country_code, ")"), CONCAT(n.name, " (", n.country_code, ")"))) as Country, v.value*100 as Value
 		  FROM nuts n, profile p, value v, dataset d, translation t, split_answer sa
 		  WHERE n.id = p.nuts_id
-		  AND n.country_code NOT IN('AL', 'ME', 'MK', 'RS', 'TR')
+		  AND n.country_code NOT IN('AL', 'ME', 'MK', 'RS', 'TR', 'UK')
 		  AND v.indicator_id = ${pIndicator}
 		  AND v.profile_id = p.id
 		  AND p.answer_id = sa.id

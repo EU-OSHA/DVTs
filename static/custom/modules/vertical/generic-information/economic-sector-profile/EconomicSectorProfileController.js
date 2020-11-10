@@ -1,4 +1,4 @@
-/**
+ /**
  * @ngdoc controller
  * @name barometer.generic-information-osh-authorities.controller:OSHAuthoritiesController
  * @requires $scope
@@ -30,7 +30,7 @@ define(function (require) {
     $scope.i18nLiterals = i18nLiterals;
 
     // Country parameters
-    if ($stateParams.pCountry1 != null)
+    if ($stateParams.pCountry1 != null && $stateParams.pCountry1 != "UK")
     {
       $scope.pCountry1 = $stateParams.pCountry1;
     }
@@ -43,7 +43,7 @@ define(function (require) {
       $scope.pCountry1 = $rootScope.defaultCountryDefaultValue;
     }
 
-    if ($stateParams.pCountry2 != null)
+    if ($stateParams.pCountry2 != null && $stateParams.pCountry2 != "UK")
     {
       $scope.pCountry2 = $stateParams.pCountry2;
     }
