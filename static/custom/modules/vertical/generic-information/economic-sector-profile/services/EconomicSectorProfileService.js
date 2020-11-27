@@ -93,7 +93,7 @@ define (function (require) {
                                 scene.firstAtoms.value.label = scene.firstAtoms.value.label + '%';
                             }
 
-                            if (countryKey == 'EU28') {
+                            if (countryKey == 'EU28' || countryKey == 'EU27_2020') {
                                 return dvtUtils.getEUColor();
                             } else if(countryKey.match(pCountry1)){
                             	return dvtUtils.getColorCountry(1);
@@ -104,7 +104,7 @@ define (function (require) {
                         },
                         bar_fillStyle: function(scene){
                             var countryKey = scene.firstAtoms.category.label;
-                            if (countryKey == 'EU28') {
+                            if (countryKey == 'EU28' || countryKey == 'EU27_2020') {
                                 return dvtUtils.getEUColor();
                             } else if(countryKey.match(pCountry1)){
                                 return dvtUtils.getColorCountry(1);
@@ -134,7 +134,7 @@ define (function (require) {
                                 scene.firstAtoms.value.label = scene.firstAtoms.value.label + '%';
                             }
 
-                            if (countryKey == 'EU28') {
+                            if (countryKey == 'EU28' || countryKey == 'EU27_2020') {
                                 return dvtUtils.getEUColor();
                             } else if(countryKey == pCountry1){
                             	return dvtUtils.getColorCountry(1);
@@ -151,7 +151,7 @@ define (function (require) {
                                 this.sign.chart.options.orthoAxisFixedMax = countryValue.value;
                             }
 
-                            if (countryKey == 'EU28') {
+                            if (countryKey == 'EU28' || countryKey == 'EU27_2020') {
                                 return dvtUtils.getEUColor();
                             } else if(countryKey == pCountry1){
                             	return dvtUtils.getColorCountry(1);
@@ -195,9 +195,9 @@ define (function (require) {
 				              	if(countryKey.label.match(pCountry1)){
                   					//return 'http://localhost:8080/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/man_orange.svg';
                                     return configService.getImagesPath()+'man_orange.svg';
-				              	}else if(countryKey.label.match(pCountry2)){
+				              	}else if(countryKey.label.match(pCountry2) && pCountry2 != "0"){
 				              		return configService.getImagesPath()+'man.svg'
-				              	}else if(countryKey == 'EU28'){
+				              	}else if(countryKey == 'EU28' || countryKey == 'EU27_2020'){
 				              		return configService.getImagesPath()+'man_blue.svg'
 				              	}
                   				})
@@ -231,14 +231,14 @@ define (function (require) {
                                         }else{
                                             return (barWidth - this.width())/2 +5; //5 is the panel margin
                                         }
-					              	}else if(countryKey.label.match(pCountry2)){
+					              	}else if(countryKey.label.match(pCountry2) && pCountry2 != "0"){
                                         var sibling = scene.previousSibling;
                                         if(sibling == null){
                                             return panelWidth/2 - (barWidth + this.width()/2) + 5;
                                         }else{
                                             return panelWidth/3 + (barWidth - this.width())/2;
                                         }
-					              	}else if(countryKey == 'EU28'){
+					              	}else if(countryKey == 'EU28' || countryKey == 'EU27_2020'){
                                         var firstSibling = scene.previousSibling.previousSibling;
                                         if(!scene.previousSibling.firstAtoms.category.label.match(pCountry2) || firstSibling == null){
                                             return panelWidth/2 + (this.width())/1.5;
@@ -282,7 +282,7 @@ define (function (require) {
                                 this.chart.options.orthoAxisFixedMin = countryValue.value;
                             }
 
-                            if (countryKey == 'EU28') {
+                            if (countryKey == 'EU28' || countryKey == 'EU27_2020') {
                                 return dvtUtils.getEUColor();
                             } else if(countryKey.label.match(pCountry1)){
                                 return dvtUtils.getColorCountry(1);
@@ -304,7 +304,7 @@ define (function (require) {
                                 this.chart.options.orthoAxisFixedMin = countryValue.value;
                             }
 
-                            if (countryKey == 'EU28') {
+                            if (countryKey == 'EU28' || countryKey == 'EU27_2020') {
                                 return dvtUtils.getEUColor();
                             } else if(countryKey.label.match(pCountry1)){
                                 return dvtUtils.getColorCountry(1);
@@ -326,7 +326,7 @@ define (function (require) {
                                 this.chart.options.orthoAxisFixedMin = countryValue.value;
                             }
 
-                            if (countryKey == 'EU28') {
+                            if (countryKey == 'EU28' || countryKey == 'EU27_2020') {
                                 return dvtUtils.getEUColor();
                             } else if(countryKey.label.match(pCountry1)){
                                 return dvtUtils.getColorCountry(1);
@@ -338,7 +338,7 @@ define (function (require) {
                         },
                         label_textStyle: function(scene){
                         	var countryKey = scene.firstAtoms.series;
-                            if (countryKey == 'EU28') {
+                            if (countryKey == 'EU28' || countryKey == 'EU27_2020') {
                                 return dvtUtils.getEUColor();
                             } else if(countryKey.label.match(pCountry1)){
                             	return dvtUtils.getColorCountry(1);
@@ -350,7 +350,7 @@ define (function (require) {
                         label_textMargin: function(scene){
                             var countryKey = scene.firstAtoms.series;
 
-                            if (countryKey == 'EU28') {
+                            if (countryKey == 'EU28' || countryKey == 'EU27_2020') {
                                 return 5;
                             } else if(countryKey.label.match(pCountry1)){
                                 return 8;
@@ -391,7 +391,7 @@ define (function (require) {
                                 /*$log.warn('Country: '+ countryKey);
                                 $log.warn('Value: '+ countryValue);*/
 
-                                if (countryKey == 'EU28') {
+                                if (countryKey == 'EU28' || countryKey == 'EU27_2020') {
                                     var baseline = 'top';
                                     if(difference5 && countryYear == '2010'){
                                         baseline = 'bottom';
@@ -431,7 +431,7 @@ define (function (require) {
                                     this.sign.chart.options.colors = [dvtUtils.getColorCountry(1), dvtUtils.getEUColor()];
                                 }
 
-                                if(countryKey.label.match(pCountry2)){
+                                if(countryKey.label.match(pCountry2) && pCountry2 != "0"){
                                     this.sign.chart.options.colors = [dvtUtils.getColorCountry(2), dvtUtils.getEUColor()];
                                 }
 
@@ -448,7 +448,7 @@ define (function (require) {
                                 /*$log.warn('Country: '+ countryKey);
                                 $log.warn('Value: '+ countryValue);*/
 
-                                if (countryKey == 'EU28') {
+                                if (countryKey == 'EU28' || countryKey == 'EU27_2020') {
 
                                     if(difference3 && countryYear == '2010'){
                                         return 'bottom';

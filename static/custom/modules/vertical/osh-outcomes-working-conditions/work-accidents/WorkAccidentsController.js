@@ -31,7 +31,7 @@ define(function (require) {
     $scope.datasetList = configService.getDatasets();
     $scope.datasetEurostat = $scope.datasetList.EUROSTAT;
     $scope.datasetEurostat2016 = $scope.datasetList.EUROSTAT2016; 
-    $scope.datasetEurostatBetweenDates = $scope.datasetList.EUROSTAT2017BetweenDates;
+    $scope.datasetEurostatBetweenDates = $scope.datasetList.EUROSTAT2018BetweenDates;
 
     $scope.countriesDataFor = [];
     $scope.countriesCompareWith = [];

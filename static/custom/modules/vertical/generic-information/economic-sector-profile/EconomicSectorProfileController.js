@@ -21,9 +21,10 @@ define(function (require) {
     // Datasets
     $scope.datasetList = configService.getDatasets();
     $scope.datasetEurostat = $scope.datasetList.EUROSTAT;
-    $scope.datasetEurostatBetweenDates = $scope.datasetList.EUROSTATBetweenDates;
+    $scope.datasetEurostatBetweenDates = $scope.datasetList.EUROSTAT2019BetweenDates;
     $scope.datasetEurostat2018 = $scope.datasetList.EUROSTAT2018;
     $scope.datasetEurostat2019 = $scope.datasetList.EUROSTAT2019;
+    $scope.datasetEurostat2020 = $scope.datasetList.EUROSTAT2020;
 
     // Literals
     var i18nLiterals = configService.getLiterals();
@@ -141,7 +142,7 @@ define(function (require) {
           }
         }
       },
-      // 4 - GDP PER CAPITA IN RELATION TO EU28 AVERAGE
+      // 4 - GDP PER CAPITA IN RELATION TO EU27_2020 AVERAGE
       {
         color1: dvtUtils.getColorCountry(1),
         color2: $scope.pCountry2=="0"?dvtUtils.getEUColor():dvtUtils.getColorCountry(2),

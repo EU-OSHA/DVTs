@@ -92,11 +92,11 @@ define(function (require) {
     $scope.dataPromises = [
       mapProvider.getEuropeShape(),
       dataService.getMedianAgeData($scope.datasetEurostat2019),
-      dataService.getAgeingWorkersData($scope.datasetEurostat),
-      dataService.getTotalEmploymentData($scope.datasetEurostat),
-      dataService.getMaleEmploymentData($scope.datasetEurostat),
-      dataService.getFemaleEmploymentData($scope.datasetEurostat),
-      dataService.getUnemploymentData($scope.datasetEurostat)
+      dataService.getAgeingWorkersData($scope.datasetEurostat2019),
+      dataService.getTotalEmploymentData($scope.datasetEurostat2019),
+      dataService.getMaleEmploymentData($scope.datasetEurostat2019),
+      dataService.getFemaleEmploymentData($scope.datasetEurostat2019),
+      dataService.getUnemploymentData($scope.datasetEurostat2019)
     ];
 
     $scope.stories = [
@@ -364,7 +364,7 @@ define(function (require) {
         throw err;
     });
 
-    dataService.getAvailableCountries($scope.datasetEurostat).then(function (data) {
+    dataService.getAvailableCountries($scope.datasetEurostat2019).then(function (data) {
       data.data.resultset.map(function (elem) {
         $scope.countries.push({
           country_code: elem[0],
@@ -422,7 +422,7 @@ define(function (require) {
         
         for(var i = 0; i < $scope.countryFilter.length;i++){
           if(angular.element('span#country'+$scope.countryFilter[i]).length<=0){
-            if(valueToJson.country_code == 'EU28'){
+            if(valueToJson.country_code == 'EU27_2020'){
               var html = '<span class="selected-tag" id="country'+$scope.countryFilter[i] +'" data-ng-click="deleteTag($event)">'+ $scope.i18nLiterals['L'+$scope.countryFilter[i]] +'</span>';
             }else{
               var html = '<span class="selected-tag" id="country'+$scope.countryFilter[i] +'" data-ng-click="deleteTag($event)">' + '('+valueToJson.country_code+') ' + $scope.i18nLiterals['L'+$scope.countryFilter[i]] +'</span>';
@@ -493,7 +493,7 @@ define(function (require) {
        */
       function search($event) {
         $scope.matrix = [];
-        dataService.getFilteringCountries($scope.datasetEurostat, $scope.countryFilter)
+        dataService.getFilteringCountries($scope.datasetEurostat2019, $scope.countryFilter)
           .then(function (data) {
             data.data.resultset.map(function (elem) {
               $scope.matrix.push({

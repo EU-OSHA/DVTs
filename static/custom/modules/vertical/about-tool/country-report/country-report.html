@@ -146,7 +146,7 @@
           width="330" height="250"
           orientation="horizontal" axis-percent="1"
           axis-fixed-max="100" step="20"
-          params="[['pIndicator','31'],['pCountry1', pCountry],['pCountry2', 'EU28'],['pDataset', datasetList.EUROSTAT]]"
+          params="[['pIndicator','31'],['pCountry1', pCountry],['pCountry2', 'EU27_2020'],['pDataset', datasetList.EUROSTAT]]"
           color-role="series" colors="[color1, color2, color3, color4, color5]"
           chart-title="{{i18nLiterals.L288}}" id="1"
           base-axis-label-visible="true" css-class="company-size"
@@ -196,7 +196,7 @@
           width="300" height="185"
           orientation="horizontal" axis-percent="1"
           axis-fixed-max="100" step="{{step.chart2}}"
-          params="[['pIndicator','32'],['pCountry1', pCountry],['pCountry2', 'EU28'],['pDataset', datasetList.EUROSTAT2019]]"
+          params="[['pIndicator','32'],['pCountry1', pCountry],['pCountry2', 'EU27_2020'],['pDataset', datasetList.EUROSTAT2020]]"
           color-role="series" colors="[color1, color2, color3, color4, color5, color6, color7]"
           chart-title="{{i18nLiterals.L289}}" id="2"
           stacked="1"
@@ -244,7 +244,7 @@
           width="208" height="208" axis-percent="1"
           orientation="horizontal" axis-fixed-min="50"
           axis-fixed-max="100" step="10" 
-          params="[['pIndicator','33'],['pCountry1', pCountry],['pCountry2', 'EU28'],['pDataset', datasetList.EUROSTAT2018]]"
+          params="[['pIndicator','33'],['pCountry1', pCountry],['pCountry2', 'EU27_2020'],['pDataset', datasetList.EUROSTAT2019]]"
           color-role="category" colors="[colorEU, color1]"
           chart-title="{{i18nLiterals.L290}}" id="3"
           plots="plots.changeLabels"
@@ -260,7 +260,7 @@
           label-text-align="labelLeftAlign"
           multiple-label-colors="true"
           legend="true" custom-label="true"
-          datasource-and-dates="[datasetList.EUROSTAT2018,33]"
+          datasource-and-dates="[datasetList.EUROSTAT2019,33]"
         ></dvt-bar-chart>
         <table class="chart-data">
           <thead>
@@ -286,7 +286,7 @@
           with="208"
           orientation="vertical"
           axis-fixed-max="260" step="{{step.chart5}}"
-          params="[['pIndicator',35],['pCountry1', pCountry],['pCountry2', 'EU28'],['pDataset', datasetList.EUROSTAT2018]]"
+          params="[['pIndicator',35],['pCountry1', pCountry],['pCountry2', 'EU27_2020'],['pDataset', datasetList.EUROSTAT2019]]"
           color-role="category" colors="[color1, colorEU]"
           chart-title="{{i18nLiterals.L292}}" id="5"
           plots="plots.figures"
@@ -304,7 +304,7 @@
           base-axis-label-text-baseline="bottom"
           legend="true" legend-click-mode="none"
           legend-fill-style="#FFF" custom-label="true"
-          datasource-and-dates="[datasetEurostat2018,35]"
+          datasource-and-dates="[datasetEurostat2019,35]"
         ></dvt-bar-chart>
 
         <table class="chart-data">
@@ -330,7 +330,7 @@
           width="208" height="208" type="lines" listen-to="['pSplit', 'pDataset']"
           orientation="vertical" axis-fixed-min="10000"
           axis-fixed-max="25000" step="5000"
-          params="[['pIndicator',36],['pCountry1', pCountry],['pCountry2', 'EU28'],['pDataset', datasetList.EUROSTAT2018BetweenDates], 
+          params="[['pIndicator',36],['pCountry1', pCountry],['pCountry2', 'EU27_2020'],['pDataset', datasetList.EUROSTAT2019BetweenDates], 
           ['pPercent', 0]]"
           color-role="series" colors="[color1, colorEU]"
           chart-title="{{i18nLiterals.L293}}" id="6"
@@ -345,7 +345,7 @@
           base-axis-label-text-baseline="top"
           leaf-content-overflow='visible'
           legend="true"
-          datasource-and-dates="[pDataset, 279]"
+          datasource-and-dates="[EUROSTAT2019BetweenDates, 279]"
         ></dvt-bar-chart>
 
         <table class="chart-data">
@@ -529,7 +529,7 @@
         width="300" height="180" type="lines"
         orientation="vertical" axis-fixed-min="0"
         axis-fixed-max="120" step="20"
-        params="[['pDataset', datasetList.EUROSTAT2017BetweenDates],['pCountry1',pCountry],['pCountry2','EU28'],['pIndicator',53],['pPercent', 1]]"
+        params="[['pDataset', datasetList.EUROSTAT2018BetweenDates],['pCountry1',pCountry],['pCountry2','EU27_2020'],['pIndicator',53],['pPercent', 1]]"
         color-role="series" colors="[color1, colorEU]"
         chart-title="{{i18nLiterals.L310}}" id="1"
         axis-label-font="10px 'OpenSans-bold'"
@@ -541,7 +541,7 @@
         multiple-label-colors="false"
         dimensions="dimensionsOneDecimal"
         legend="true"
-        datasource-and-dates="[datasetList.EUROSTAT2017BetweenDates,53]"
+        datasource-and-dates="[datasetList.EUROSTAT2018BetweenDates,53]"
       ></dvt-bar-chart>
       <p data-ng-bind="i18nLiterals.L20565"></p>
       <table class="w75 chart-data">
@@ -574,7 +574,7 @@
         width="330" height="245"
         orientation="vertical" axis-fixed-min="0"
         axis-fixed-max="5" step="1"
-        params="[['pDataset', datasetList.EUROSTAT2017BetweenDates], ['pIndicator', 54]]"
+        params="[['pDataset', datasetList.EUROSTAT2018BetweenDates], ['pIndicator', 54]]"
         color-role="series" colors="[color5]"
         chart-title="{{i18nLiterals.L311}}" id="4"
         axis-label-font="10px 'OpenSans-bold'"
@@ -589,7 +589,7 @@
         legend="true"
         angle="1"
         base-axis-size="95"
-        datasource-and-dates="[datasetList.EUROSTAT2017BetweenDates,54]"
+        datasource-and-dates="[datasetList.EUROSTAT2018BetweenDates,54]"
       ></dvt-bar-chart>
       <p data-ng-bind-html="i18nLiterals.L20566"></p>
       <table class="w50 chart-data">

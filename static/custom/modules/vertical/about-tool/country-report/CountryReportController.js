@@ -285,11 +285,11 @@ define(function (require) {
 	  	});
 
 	  	// Workforce Profile
-	  	dataService.getCountryReportWorkforceProfileData($scope.pCountry, "EU28").then(function(data)
+	  	dataService.getCountryReportWorkforceProfileData($scope.pCountry, "EU27_2020").then(function(data)
 		{
 			var country = $scope.pCountry;
 			$scope.workforceProfile = {};			
-			$scope.workforceProfile["EU28"]={country_code: "EU28"};
+			$scope.workforceProfile["EU27_2020"]={country_code: "EU27_2020"};
 			$scope.workforceProfile[$scope.pCountry]={country_code: $scope.pCountry};
 			data.data.resultset.map(function (elem) {
 				switch(elem[1])
@@ -436,7 +436,7 @@ define(function (require) {
 		|                            DATA LOAD FOR CHARTS                              |
 		|******************************************************************************/
 			/* COMPANY SIZE */
-			dataService.getCountryReportCompanySizeData($scope.datasetList.EUROSTAT, 31, $scope.pCountry, "EU28").then(function(data)
+			dataService.getCountryReportCompanySizeData($scope.datasetList.EUROSTAT, 31, $scope.pCountry, "EU27_2020").then(function(data)
 			{
 				$scope.data = [];
 				data.data.resultset.map(function (elem) {
@@ -476,7 +476,7 @@ define(function (require) {
 		  	});
 
 		  	/* EMPLOYMENT PER SECTOR */
-		  	dataService.getCountryReportActivitySectorData($scope.datasetList.EUROSTAT2019, 32, $scope.pCountry, "EU28").then(function(data)
+		  	dataService.getCountryReportActivitySectorData($scope.datasetList.EUROSTAT2020, 32, $scope.pCountry, "EU27_2020").then(function(data)
 		  	{
 		  		$scope.data = [];
 				data.data.resultset.map(function (elem) {
@@ -504,7 +504,7 @@ define(function (require) {
 		  	});
 
 		  	/* EMPLOYMENT RATE */
-		  	dataService.getCountryReportData($scope.datasetList.EUROSTAT2018, 33, $scope.pCountry, "EU28").then(function(data){
+		  	dataService.getCountryReportData($scope.datasetList.EUROSTAT2019, 33, $scope.pCountry, "EU27_2020").then(function(data){
 		  		data.data.resultset.map(function (elem) {
 			  		$scope.employmentRate.push({
 				  		country: elem[0],
@@ -516,7 +516,7 @@ define(function (require) {
 		  	});
 
 		  	/* GDP PER CAPITA */
-		  	dataService.getCountryReportDataAsc($scope.datasetList.EUROSTAT2018, 35, $scope.pCountry, "EU28").then(function(data){
+		  	dataService.getCountryReportDataAsc($scope.datasetList.EUROSTAT2019, 35, $scope.pCountry, "EU27_2020").then(function(data){
 		  		data.data.resultset.map(function (elem) {
 			  		$scope.gdpPerCapita.push({
 				  		country: elem[0],
@@ -528,7 +528,7 @@ define(function (require) {
 		  	});
 
 		  	/* INCOME PER CAPITA */
-		  	dataService.getCountryReportYearData($scope.datasetList.EUROSTAT2018BetweenDates, 36, $scope.pCountry, "EU28", 0).then(function(data){
+		  	dataService.getCountryReportYearData($scope.datasetList.EUROSTAT2019BetweenDates, 36, $scope.pCountry, "EU27_2020", 0).then(function(data){
 		  		data.data.resultset.map(function (elem) {
 			  		$scope.incomePerCapita.push({
 				  		country: elem[0],
@@ -541,7 +541,7 @@ define(function (require) {
 		  	});
 
 		  	/* NON FATAL WORK ACCIDENTS */
-		  	dataService.getCountryReportYearData($scope.datasetList.EUROSTAT2017BetweenDates, 53, $scope.pCountry, "EU28", 1).then(function(data){
+		  	dataService.getCountryReportYearData($scope.datasetList.EUROSTAT2018BetweenDates, 53, $scope.pCountry, "EU27_2020", 1).then(function(data){
 		  		$scope.data = [];
 		  		data.data.resultset.map(function (elem) {
 			  		$scope.data.push({
@@ -569,9 +569,9 @@ define(function (require) {
 		  	});
 
 		  	/* ESTIMATION OF NON FATAL ACCIDENTS */
-		  	dataService.getCountryReportAllCountriesOrderValueData($scope.datasetList.EUROSTAT2017BetweenDates, 54).then(function(data){
+		  	dataService.getCountryReportAllCountriesOrderValueData($scope.datasetList.EUROSTAT2018BetweenDates, 54).then(function(data){
 		  		data.data.resultset.map(function (elem) {
-		  			if(elem[1].match($scope.pCountry) || elem[1] == 'EU28'){
+		  			if(elem[1].match($scope.pCountry) || elem[1] == 'EU27_2020'){
 				  		$scope.estimationNonFatal.push({
 					  		country: elem[1],
 					  		value: Math.round(elem[2]*10)/10
