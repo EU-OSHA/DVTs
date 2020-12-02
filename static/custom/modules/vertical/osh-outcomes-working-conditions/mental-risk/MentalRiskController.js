@@ -120,7 +120,7 @@ define(function (require) {
           },{
             title: "L322",
             text:"L20577",
-            link: "overall-opinion",
+            link: "overall-opinion({pIndicator: 'job-satisfaction', pCountry1: '"+$scope.pCountry1+"', pCountry2: '"+$scope.pCountry2+"', pSlit:'sector'})",
             icon: "overall-opinion"
           }],
       "fear-of-job-loss":[{
@@ -131,7 +131,7 @@ define(function (require) {
           },{
             title: "L322",
             text:"L20577",
-            link: "overall-opinion",
+            link: "overall-opinion({pIndicator: 'job-satisfaction', pCountry1: '"+$scope.pCountry1+"', pCountry2: '"+$scope.pCountry2+"', pSlit:'sector'})",
             icon: "overall-opinion"
           }],
       "difficult-clients":[{
@@ -142,7 +142,7 @@ define(function (require) {
           },{
             title: "L20709",
             text:"L20577",
-            link: "overall-opinion",
+            link: "overall-opinion({pIndicator: 'job-satisfaction', pCountry1: '"+$scope.pCountry1+"', pCountry2: '"+$scope.pCountry2+"', pSlit:'sector'})",
             icon: "overall-opinion"
           }],
       "working-hours":[{
