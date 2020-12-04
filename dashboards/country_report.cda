@@ -38,7 +38,7 @@
 	      INNER JOIN value v ON v.profile_id = p.id
 	      INNER JOIN translation t ON n.literal_id=t.literal_id
 	      WHERE v.indicator_id IN (31, 36, 37, 38, 39, 40)
-	      AND n.country_code NOT IN ('EU28', 'UK')
+	      AND n.country_code NOT IN ('EU28','Eu27_2020', 'UK')
 	      AND t.language="EN"
 	      ORDER BY country_code ASC;
 	    </Query>
