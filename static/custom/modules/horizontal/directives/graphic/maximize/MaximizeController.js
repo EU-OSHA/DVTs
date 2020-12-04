@@ -189,7 +189,7 @@ define(function (require) {
                                             return configService.getImagesPath()+'man_orange.svg'
                                         }else if(countryKey.label.match($stateParams.pCountry2) || countryKey.label.match($scope.dashboard.parameters.pCountry2)){
                                             return configService.getImagesPath()+'man.svg'
-                                        }else if(countryKey == 'EU28'){
+                                        }else if(countryKey == 'EU28' || countryKey == 'EU27_2020'){
                                             return configService.getImagesPath()+'man_blue.svg'
                                         }
                                         })
@@ -202,7 +202,7 @@ define(function (require) {
                                                 return dvtUtils.getColorCountry(1);
                                             }else if(countryKey.label.match($stateParams.pCountry2) || countryKey.label.match($scope.dashboard.parameters.pCountry2)){
                                                 return dvtUtils.getColorCountry(2);
-                                            }else if(countryKey == 'EU28'){
+                                            }else if(countryKey == 'EU28' || countryKey == 'EU27_2020'){
                                                 return dvtUtils.getEUColor();
                                             }
                                         };
@@ -243,7 +243,7 @@ define(function (require) {
                                                     //return panelWidth/3 + (barWidth - this.width())/2;
                                                     return panelWidth/2  - this.width()/2 - 10;
                                                 }
-                                            }else if(countryKey == 'EU28'){
+                                            }else if(countryKey == 'EU28' || countryKey == 'EU27_2020'){
                                                 var firstSibling = scene.previousSibling.previousSibling;
                                                 if(!scene.previousSibling.firstAtoms.category.label.match($stateParams.pCountry2) || firstSibling == null){
                                                     return panelWidth - (barWidth + this.width()/2) - 10;
