@@ -1,1121 +1,1148 @@
+SET @sectorId = (SELECT sas.id FROM split_activity_sector sas INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Agriculture, forestry and fishing" AND t.language="EN");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="EU27_2020");
+INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @sectorId);
 
+SET @sectorId = (SELECT sas.id FROM split_activity_sector sas INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Manufacturing" AND t.language="EN");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="EU27_2020");
+INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @sectorId);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Agriculture, forestry and fishing" AND n.country_code="AT" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.02869791178322193);
-
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Manufacturing" AND n.country_code="AT" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.13917650052908634);
-
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Construction, waste management, water and electricity supply" AND n.country_code="AT" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.17669475065968362);
-
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Trade, transport, food/accommodation and recreation activities" AND n.country_code="AT" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.330806220448183);
-
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="IT, Finance, Real estate and other technical scientific or personal service activities" AND n.country_code="AT" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.17840256104584967);
-
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Public administration" AND n.country_code="AT" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.030405722169388003);
-
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Education, human health and social work activities" AND n.country_code="AT" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.1158163333645874);
-
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Agriculture, forestry and fishing" AND n.country_code="BE" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.007757552654150385);
-
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Manufacturing" AND n.country_code="BE" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.11274818132723402);
-
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Construction, waste management, water and electricity supply" AND n.country_code="BE" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.13337780742717367);
-
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Trade, transport, food/accommodation and recreation activities" AND n.country_code="BE" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.3682772642078846);
-
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="IT, Finance, Real estate and other technical scientific or personal service activities" AND n.country_code="BE" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.16689221385685696);
-
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Public administration" AND n.country_code="BE" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.05340703326026875);
-
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Education, human health and social work activities" AND n.country_code="BE" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.15753994726643158);
-
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Agriculture, forestry and fishing" AND n.country_code="BG" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.05291789021421827);
-
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Manufacturing" AND n.country_code="BG" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.1554533406096515);
-
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Construction, waste management, water and electricity supply" AND n.country_code="BG" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.2279913030673146);
-
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Trade, transport, food/accommodation and recreation activities" AND n.country_code="BG" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.29348682899786044);
-
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="IT, Finance, Real estate and other technical scientific or personal service activities" AND n.country_code="BG" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.1359285534852698);
-
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Public administration" AND n.country_code="BG" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.0297029702970297);
-
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Education, human health and social work activities" AND n.country_code="BG" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.10451911332865568);
-
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Agriculture, forestry and fishing" AND n.country_code="CY" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.019078679168365264);
-
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Manufacturing" AND n.country_code="CY" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.07158581328984917);
-
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Construction, waste management, water and electricity supply" AND n.country_code="CY" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.10403587443946187);
-
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Trade, transport, food/accommodation and recreation activities" AND n.country_code="CY" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.3534447615165104);
-
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="IT, Finance, Real estate and other technical scientific or personal service activities" AND n.country_code="CY" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.26979209131675497);
-
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Public administration" AND n.country_code="CY" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.02804728903383612);
-
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Education, human health and social work activities" AND n.country_code="CY" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.15401549123522218);
-
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Agriculture, forestry and fishing" AND n.country_code="HR" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.04749812045777295);
-
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Manufacturing" AND n.country_code="HR" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.1489766936763846);
-
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Construction, waste management, water and electricity supply" AND n.country_code="HR" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.22128477153120038);
-
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Trade, transport, food/accommodation and recreation activities" AND n.country_code="HR" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.28036087210759336);
-
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="IT, Finance, Real estate and other technical scientific or personal service activities" AND n.country_code="HR" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.15784813298805445);
-
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Public administration" AND n.country_code="HR" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.021852810959819564);
-
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Education, human health and social work activities" AND n.country_code="HR" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.12217859827917465);
+SET @sectorId = (SELECT sas.id FROM split_activity_sector sas INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Construction, waste management, water and electricity supply" AND t.language="EN");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="EU27_2020");
+INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @sectorId);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Agriculture, forestry and fishing" AND n.country_code="CZ" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.020730919979055566);
-
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Manufacturing" AND n.country_code="CZ" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.2184321161500882);
-
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Construction, waste management, water and electricity supply" AND n.country_code="CZ" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.2556949026744819);
-
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Trade, transport, food/accommodation and recreation activities" AND n.country_code="CZ" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.2548510251078995);
-
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="IT, Finance, Real estate and other technical scientific or personal service activities" AND n.country_code="CZ" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.13003339925067742);
-
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Public administration" AND n.country_code="CZ" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.019922627611063948);
+SET @sectorId = (SELECT sas.id FROM split_activity_sector sas INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Trade, transport, food/accommodation and recreation activities" AND t.language="EN");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="EU27_2020");
+INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @sectorId);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Education, human health and social work activities" AND n.country_code="CZ" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.10033500922673363);
-
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Agriculture, forestry and fishing" AND n.country_code="DK" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.01801811657622965);
-
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Manufacturing" AND n.country_code="DK" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.1016760021004726);
-
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Construction, waste management, water and electricity supply" AND n.country_code="DK" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.12969324347978295);
-
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Trade, transport, food/accommodation and recreation activities" AND n.country_code="DK" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.40120120777174867);
+SET @sectorId = (SELECT sas.id FROM split_activity_sector sas INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="IT, Finance, Real estate and other technical scientific or personal service activities" AND t.language="EN");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="EU27_2020");
+INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @sectorId);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="IT, Finance, Real estate and other technical scientific or personal service activities" AND n.country_code="DK" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.18382417293891126);
+SET @sectorId = (SELECT sas.id FROM split_activity_sector sas INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Public administration" AND t.language="EN");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="EU27_2020");
+INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @sectorId);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Public administration" AND n.country_code="DK" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.03847584456502714);
+SET @sectorId = (SELECT sas.id FROM split_activity_sector sas INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Education, human health and social work activities" AND t.language="EN");
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="EU27_2020");
+INSERT INTO profile (nuts_id, activity_sector_id) VALUE (@nutsId, @sectorId);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Education, human health and social work activities" AND n.country_code="DK" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
-SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.12711141256782774);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Agriculture, forestry and fishing" AND n.country_code="EE" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Agriculture, forestry and fishing" AND t.language="EN" AND n.country_code="AT" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.027353718046290904);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.03588488034372674);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Manufacturing" AND n.country_code="EE" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Manufacturing" AND t.language="EN" AND n.country_code="AT" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.15333303487487132);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.15785746861573172);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Construction, waste management, water and electricity supply" AND n.country_code="EE" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Construction, waste management, water and electricity supply" AND t.language="EN" AND n.country_code="AT" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.1876259121636746);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.09253258443148268);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Trade, transport, food/accommodation and recreation activities" AND n.country_code="EE" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Trade, transport, food/accommodation and recreation activities" AND t.language="EN" AND n.country_code="AT" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.302323499127009);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.26558411944024385);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="IT, Finance, Real estate and other technical scientific or personal service activities" AND n.country_code="EE" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="IT, Finance, Real estate and other technical scientific or personal service activities" AND t.language="EN" AND n.country_code="AT" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.1758517258360568);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.20052327116487842);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Public administration" AND n.country_code="EE" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Public administration" AND t.language="EN" AND n.country_code="AT" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.02784617450866276);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.0679892465375291);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Education, human health and social work activities" AND n.country_code="EE" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Education, human health and social work activities" AND t.language="EN" AND n.country_code="AT" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.12566593544343466);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.1796284294664074);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Agriculture, forestry and fishing" AND n.country_code="FI" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Agriculture, forestry and fishing" AND t.language="EN" AND n.country_code="BE" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.030011190209756906);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.008228037223597712);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Manufacturing" AND n.country_code="FI" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Manufacturing" AND t.language="EN" AND n.country_code="BE" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.11589009785481298);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.12591778365918213);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Construction, waste management, water and electricity supply" AND n.country_code="FI" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Construction, waste management, water and electricity supply" AND t.language="EN" AND n.country_code="BE" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.1544248946453656);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.08035942969350295);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Trade, transport, food/accommodation and recreation activities" AND n.country_code="FI" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Trade, transport, food/accommodation and recreation activities" AND t.language="EN" AND n.country_code="BE" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.363729435013452);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.23143088875608303);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="IT, Finance, Real estate and other technical scientific or personal service activities" AND n.country_code="FI" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="IT, Finance, Real estate and other technical scientific or personal service activities" AND t.language="EN" AND n.country_code="BE" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.18841218066236515);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.21550840945957486);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Public administration" AND n.country_code="FI" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Public administration" AND t.language="EN" AND n.country_code="BE" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.041177591009737856);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.08579142832749936);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Education, human health and social work activities" AND n.country_code="FI" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Education, human health and social work activities" AND t.language="EN" AND n.country_code="BE" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.1063546106045094);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.25276402288056005);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Agriculture, forestry and fishing" AND n.country_code="FR" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Agriculture, forestry and fishing" AND t.language="EN" AND n.country_code="BG" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.021834561384214968);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.061534861956013105);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Manufacturing" AND n.country_code="FR" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Manufacturing" AND t.language="EN" AND n.country_code="BG" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.10940764874078963);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.1882645898790026);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Construction, waste management, water and electricity supply" AND n.country_code="FR" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Construction, waste management, water and electricity supply" AND t.language="EN" AND n.country_code="BG" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.14577376370101547);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.11949328163647302);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Trade, transport, food/accommodation and recreation activities" AND n.country_code="FR" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Trade, transport, food/accommodation and recreation activities" AND t.language="EN" AND n.country_code="BG" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.3587099967007589);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.30008690420482653);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="IT, Finance, Real estate and other technical scientific or personal service activities" AND n.country_code="FR" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="IT, Finance, Real estate and other technical scientific or personal service activities" AND t.language="EN" AND n.country_code="BG" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.17646358004325674);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.14424426766495085);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Public administration" AND n.country_code="FR" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Public administration" AND t.language="EN" AND n.country_code="BG" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.03539352615565087);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.0771441941306237);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Education, human health and social work activities" AND n.country_code="FR" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Education, human health and social work activities" AND t.language="EN" AND n.country_code="BG" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.15241692327431358);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.10923190052811015);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Agriculture, forestry and fishing" AND n.country_code="DE" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Agriculture, forestry and fishing" AND t.language="EN" AND n.country_code="CY" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.009658440887539189);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.024242424242424242);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Manufacturing" AND n.country_code="DE" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Manufacturing" AND t.language="EN" AND n.country_code="CY" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.164282034282097);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.07736943907156674);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Construction, waste management, water and electricity supply" AND n.country_code="DE" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Construction, waste management, water and electricity supply" AND t.language="EN" AND n.country_code="CY" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.18590790668944981);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.12662798194713087);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Trade, transport, food/accommodation and recreation activities" AND n.country_code="DE" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Trade, transport, food/accommodation and recreation activities" AND t.language="EN" AND n.country_code="CY" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.3312990233499466);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.3052224371373307);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="IT, Finance, Real estate and other technical scientific or personal service activities" AND n.country_code="DE" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="IT, Finance, Real estate and other technical scientific or personal service activities" AND t.language="EN" AND n.country_code="CY" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.14856737309788878);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.24023210831721473);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Public administration" AND n.country_code="DE" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Public administration" AND t.language="EN" AND n.country_code="CY" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.04269332044983487);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.08471953578336558);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Education, human health and social work activities" AND n.country_code="DE" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Education, human health and social work activities" AND t.language="EN" AND n.country_code="CY" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.11759190124324366);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.1415860735009671);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Agriculture, forestry and fishing" AND n.country_code="EL" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Agriculture, forestry and fishing" AND t.language="EN" AND n.country_code="HR" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.09389984017048482);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.055630769230769234);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Manufacturing" AND n.country_code="EL" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Manufacturing" AND t.language="EN" AND n.country_code="HR" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.08237879595098563);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.1792);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Construction, waste management, water and electricity supply" AND n.country_code="EL" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Construction, waste management, water and electricity supply" AND t.language="EN" AND n.country_code="HR" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.19018972355413485);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.10738461538461538);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Trade, transport, food/accommodation and recreation activities" AND n.country_code="EL" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Trade, transport, food/accommodation and recreation activities" AND t.language="EN" AND n.country_code="HR" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.28079677973124956);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.2715692307692308);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="IT, Finance, Real estate and other technical scientific or personal service activities" AND n.country_code="EL" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="IT, Finance, Real estate and other technical scientific or personal service activities" AND t.language="EN" AND n.country_code="HR" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.1864455691706624);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.15646153846153846);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Public administration" AND n.country_code="EL" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Public administration" AND t.language="EN" AND n.country_code="HR" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.01994169182501628);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.07246153846153847);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Education, human health and social work activities" AND n.country_code="EL" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Education, human health and social work activities" AND t.language="EN" AND n.country_code="HR" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.1463475995974664);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.1572923076923077);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Agriculture, forestry and fishing" AND n.country_code="HU" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Agriculture, forestry and fishing" AND t.language="EN" AND n.country_code="CZ" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.0373583355484136);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.025592088998763907);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Manufacturing" AND n.country_code="HU" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Manufacturing" AND t.language="EN" AND n.country_code="CZ" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.17922214435879466);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.27548084054388133);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Construction, waste management, water and electricity supply" AND n.country_code="HU" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Construction, waste management, water and electricity supply" AND t.language="EN" AND n.country_code="CZ" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.23299422468163253);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.1053646477132262);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Trade, transport, food/accommodation and recreation activities" AND n.country_code="HU" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Trade, transport, food/accommodation and recreation activities" AND t.language="EN" AND n.country_code="CZ" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.2727931759418118);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.22930037082818297);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="IT, Finance, Real estate and other technical scientific or personal service activities" AND n.country_code="HU" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="IT, Finance, Real estate and other technical scientific or personal service activities" AND t.language="EN" AND n.country_code="CZ" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.11833361525263995);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.15513473423980223);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Public administration" AND n.country_code="HU" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Public administration" AND t.language="EN" AND n.country_code="CZ" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.02573520527752942);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.06745117428924599);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Education, human health and social work activities" AND n.country_code="HU" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Education, human health and social work activities" AND t.language="EN" AND n.country_code="CZ" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.13356329893917793);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.14167614338689738);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Agriculture, forestry and fishing" AND n.country_code="IE" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Agriculture, forestry and fishing" AND t.language="EN" AND n.country_code="DK" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.03207564910206988);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.018201774444342816);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Manufacturing" AND n.country_code="IE" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Manufacturing" AND t.language="EN" AND n.country_code="DK" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.10053862375585972);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.11372907710600934);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Construction, waste management, water and electricity supply" AND n.country_code="IE" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Construction, waste management, water and electricity supply" AND t.language="EN" AND n.country_code="DK" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.1431718357533345);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.07191072898563981);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Trade, transport, food/accommodation and recreation activities" AND n.country_code="IE" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Trade, transport, food/accommodation and recreation activities" AND t.language="EN" AND n.country_code="DK" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.32849333100511763);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.2541296990761914);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="IT, Finance, Real estate and other technical scientific or personal service activities" AND n.country_code="IE" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="IT, Finance, Real estate and other technical scientific or personal service activities" AND t.language="EN" AND n.country_code="DK" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.2373839809802684);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.2110125308698436);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Public administration" AND n.country_code="IE" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Public administration" AND t.language="EN" AND n.country_code="DK" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.04280782817767869);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.05407481935424861);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Education, human health and social work activities" AND n.country_code="IE" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Education, human health and social work activities" AND t.language="EN" AND n.country_code="DK" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.11552875122567129);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.2769413701637245);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Agriculture, forestry and fishing" AND n.country_code="IT" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Agriculture, forestry and fishing" AND t.language="EN" AND n.country_code="EE" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.03130137836516417);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.030206547473263116);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Manufacturing" AND n.country_code="IT" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Manufacturing" AND t.language="EN" AND n.country_code="EE" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.16132268336613947);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.18205567801453176);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Construction, waste management, water and electricity supply" AND n.country_code="IT" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Construction, waste management, water and electricity supply" AND t.language="EN" AND n.country_code="EE" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.20588205490661013);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.10253898277410398);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Trade, transport, food/accommodation and recreation activities" AND n.country_code="IT" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Trade, transport, food/accommodation and recreation activities" AND t.language="EN" AND n.country_code="EE" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.2831969154614521);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.26720548616213563);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="IT, Finance, Real estate and other technical scientific or personal service activities" AND n.country_code="IT" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="IT, Finance, Real estate and other technical scientific or personal service activities" AND t.language="EN" AND n.country_code="EE" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.17550026219590972);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.20222058943587226);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Public administration" AND n.country_code="IT" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Public administration" AND t.language="EN" AND n.country_code="EE" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.03868086324520004);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.06808719079108497);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Education, human health and social work activities" AND n.country_code="IT" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Education, human health and social work activities" AND t.language="EN" AND n.country_code="EE" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.10411584245952428);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.14768552534900806);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Agriculture, forestry and fishing" AND n.country_code="LV" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Agriculture, forestry and fishing" AND t.language="EN" AND n.country_code="FI" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.061881268990753746);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.0320139817004215);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Manufacturing" AND n.country_code="LV" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Manufacturing" AND t.language="EN" AND n.country_code="FI" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.10807985101447382);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.13206538501079468);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Construction, waste management, water and electricity supply" AND n.country_code="LV" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Construction, waste management, water and electricity supply" AND t.language="EN" AND n.country_code="FI" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.18446760544973373);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.088680991055824);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Trade, transport, food/accommodation and recreation activities" AND n.country_code="LV" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Trade, transport, food/accommodation and recreation activities" AND t.language="EN" AND n.country_code="FI" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.33113340085601334);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.21903978616222883);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="IT, Finance, Real estate and other technical scientific or personal service activities" AND n.country_code="LV" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="IT, Finance, Real estate and other technical scientific or personal service activities" AND t.language="EN" AND n.country_code="FI" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.15421308850916454);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.23754497789657653);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Public administration" AND n.country_code="LV" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Public administration" AND t.language="EN" AND n.country_code="FI" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.02597445028914954);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.04735272951578082);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Education, human health and social work activities" AND n.country_code="LV" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Education, human health and social work activities" AND t.language="EN" AND n.country_code="FI" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.13425033489071128);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.24330214865837363);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Agriculture, forestry and fishing" AND n.country_code="LT" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Agriculture, forestry and fishing" AND t.language="EN" AND n.country_code="FR" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.054508084981439144);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.02358689389281392);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Manufacturing" AND n.country_code="LT" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Manufacturing" AND t.language="EN" AND n.country_code="FR" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.13386883664352678);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.11957021929875446);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Construction, waste management, water and electricity supply" AND n.country_code="LT" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Construction, waste management, water and electricity supply" AND t.language="EN" AND n.country_code="FR" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.20492439336423313);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.08520207117638644);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Trade, transport, food/accommodation and recreation activities" AND n.country_code="LT" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Trade, transport, food/accommodation and recreation activities" AND t.language="EN" AND n.country_code="FR" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.32453178414882244);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.23561951608100634);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="IT, Finance, Real estate and other technical scientific or personal service activities" AND n.country_code="LT" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="IT, Finance, Real estate and other technical scientific or personal service activities" AND t.language="EN" AND n.country_code="FR" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.12118034437197207);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.21118187759332088);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Public administration" AND n.country_code="LT" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Public administration" AND t.language="EN" AND n.country_code="FR" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.03120739917367505);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.0944365170516286);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Education, human health and social work activities" AND n.country_code="LT" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Education, human health and social work activities" AND t.language="EN" AND n.country_code="FR" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.12977915731633147);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.23040290490608942);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Agriculture, forestry and fishing" AND n.country_code="LU" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Agriculture, forestry and fishing" AND t.language="EN" AND n.country_code="DE" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Manufacturing" AND n.country_code="LU" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Manufacturing" AND t.language="EN" AND n.country_code="DE" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.04362212168276047);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Construction, waste management, water and electricity supply" AND n.country_code="LU" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Construction, waste management, water and electricity supply" AND t.language="EN" AND n.country_code="DE" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.04362212168276047);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Trade, transport, food/accommodation and recreation activities" AND n.country_code="LU" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Trade, transport, food/accommodation and recreation activities" AND t.language="EN" AND n.country_code="DE" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.32156121277601457);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="IT, Finance, Real estate and other technical scientific or personal service activities" AND n.country_code="LU" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="IT, Finance, Real estate and other technical scientific or personal service activities" AND t.language="EN" AND n.country_code="DE" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.349449658991154);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Public administration" AND n.country_code="LU" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Public administration" AND t.language="EN" AND n.country_code="DE" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.03403335809305152);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Education, human health and social work activities" AND n.country_code="LU" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Education, human health and social work activities" AND t.language="EN" AND n.country_code="DE" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.20771152677425891);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Agriculture, forestry and fishing" AND n.country_code="MT" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Agriculture, forestry and fishing" AND t.language="EN" AND n.country_code="EL" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.008324015405640454);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.10443122756255693);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Manufacturing" AND n.country_code="MT" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Manufacturing" AND t.language="EN" AND n.country_code="EL" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.10448502919617345);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.09887209987676153);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Construction, waste management, water and electricity supply" AND n.country_code="MT" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Construction, waste management, water and electricity supply" AND t.language="EN" AND n.country_code="EL" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.12312088458193565);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.05539034453196164);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Trade, transport, food/accommodation and recreation activities" AND n.country_code="MT" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Trade, transport, food/accommodation and recreation activities" AND t.language="EN" AND n.country_code="EL" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.32749409864579454);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.3439157691689439);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="IT, Finance, Real estate and other technical scientific or personal service activities" AND n.country_code="MT" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="IT, Finance, Real estate and other technical scientific or personal service activities" AND t.language="EN" AND n.country_code="EL" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.25195676481550505);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.1517306971012163);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Public administration" AND n.country_code="MT" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Public administration" AND t.language="EN" AND n.country_code="EL" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.04149583799229718);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.08834324599474898);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Education, human health and social work activities" AND n.country_code="MT" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Education, human health and social work activities" AND t.language="EN" AND n.country_code="EL" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.14312336936265374);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.15731661576381076);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Agriculture, forestry and fishing" AND n.country_code="NL" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Agriculture, forestry and fishing" AND t.language="EN" AND n.country_code="HU" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.018217829472416937);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.04765353751350854);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Manufacturing" AND n.country_code="NL" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Manufacturing" AND t.language="EN" AND n.country_code="HU" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.09212994427076254);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.21986158055689684);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Construction, waste management, water and electricity supply" AND n.country_code="NL" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Construction, waste management, water and electricity supply" AND t.language="EN" AND n.country_code="HU" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.1180760791471679);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.10289485180842012);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Trade, transport, food/accommodation and recreation activities" AND n.country_code="NL" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Trade, transport, food/accommodation and recreation activities" AND t.language="EN" AND n.country_code="HU" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.38817064409017643);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.24901703800786368);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="IT, Finance, Real estate and other technical scientific or personal service activities" AND n.country_code="NL" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="IT, Finance, Real estate and other technical scientific or personal service activities" AND t.language="EN" AND n.country_code="HU" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.2064467271209149);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.14870892828401278);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Public administration" AND n.country_code="NL" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Public administration" AND t.language="EN" AND n.country_code="HU" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.05365541078467542);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.08533949552781034);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Education, human health and social work activities" AND n.country_code="NL" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Education, human health and social work activities" AND t.language="EN" AND n.country_code="HU" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.12330336511388568);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.14652456830148766);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Agriculture, forestry and fishing" AND n.country_code="PL" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Agriculture, forestry and fishing" AND t.language="EN" AND n.country_code="IE" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.07086605143260633);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.03620012781886242);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Manufacturing" AND n.country_code="PL" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Manufacturing" AND t.language="EN" AND n.country_code="IE" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.16600834547036245);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.11560759609239478);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Construction, waste management, water and electricity supply" AND n.country_code="PL" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Construction, waste management, water and electricity supply" AND t.language="EN" AND n.country_code="IE" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.2535489546864223);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.07450013694878117);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Trade, transport, food/accommodation and recreation activities" AND n.country_code="PL" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Trade, transport, food/accommodation and recreation activities" AND t.language="EN" AND n.country_code="IE" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.27005476817318735);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.26107002647676436);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="IT, Finance, Real estate and other technical scientific or personal service activities" AND n.country_code="PL" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="IT, Finance, Real estate and other technical scientific or personal service activities" AND t.language="EN" AND n.country_code="IE" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.10718703257420245);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.2455035150187163);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Public administration" AND n.country_code="PL" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Public administration" AND t.language="EN" AND n.country_code="IE" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.01974308271255638);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.05247420797954898);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Education, human health and social work activities" AND n.country_code="PL" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Education, human health and social work activities" AND t.language="EN" AND n.country_code="IE" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.11259176495066277);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.21464438966493196);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Agriculture, forestry and fishing" AND n.country_code="PT" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Agriculture, forestry and fishing" AND t.language="EN" AND n.country_code="IT" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.029958964549072844);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.03717988239466164);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Manufacturing" AND n.country_code="PT" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Manufacturing" AND t.language="EN" AND n.country_code="IT" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.1514362407824504);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.19663315895726668);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Construction, waste management, water and electricity supply" AND n.country_code="PT" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Construction, waste management, water and electricity supply" AND t.language="EN" AND n.country_code="IT" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.1919163247045756);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.07934767744522454);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Trade, transport, food/accommodation and recreation activities" AND n.country_code="PT" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Trade, transport, food/accommodation and recreation activities" AND t.language="EN" AND n.country_code="IT" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.3035759464379377);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.26618811754971117);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="IT, Finance, Real estate and other technical scientific or personal service activities" AND n.country_code="PT" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="IT, Finance, Real estate and other technical scientific or personal service activities" AND t.language="EN" AND n.country_code="IT" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.1595014038443738);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.20623350013790934);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Public administration" AND n.country_code="PT" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Public administration" AND t.language="EN" AND n.country_code="IT" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.03098330813612663);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.05573621544445038);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Education, human health and social work activities" AND n.country_code="PT" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Education, human health and social work activities" AND t.language="EN" AND n.country_code="IT" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.132627811545463);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.15868144807077647);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Agriculture, forestry and fishing" AND n.country_code="RO" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Agriculture, forestry and fishing" AND t.language="EN" AND n.country_code="LV" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.14161179986458405);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.0815521403756698);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Manufacturing" AND n.country_code="RO" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Manufacturing" AND t.language="EN" AND n.country_code="LV" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.14342415540146156);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.13230877936760288);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Construction, waste management, water and electricity supply" AND n.country_code="RO" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Construction, waste management, water and electricity supply" AND t.language="EN" AND n.country_code="LV" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.3025583105694473);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.1046340458105164);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Trade, transport, food/accommodation and recreation activities" AND n.country_code="RO" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Trade, transport, food/accommodation and recreation activities" AND t.language="EN" AND n.country_code="LV" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.2533474586164226);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.28781722899369955);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="IT, Finance, Real estate and other technical scientific or personal service activities" AND n.country_code="RO" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="IT, Finance, Real estate and other technical scientific or personal service activities" AND t.language="EN" AND n.country_code="LV" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.07143190679647918);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.1777660012954131);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Public administration" AND n.country_code="RO" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Public administration" AND t.language="EN" AND n.country_code="LV" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.019544839018467933);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.07207207207207207);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Education, human health and social work activities" AND n.country_code="RO" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Education, human health and social work activities" AND t.language="EN" AND n.country_code="LV" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.06808152973313722);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.14384973208502622);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Agriculture, forestry and fishing" AND n.country_code="SK" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Agriculture, forestry and fishing" AND t.language="EN" AND n.country_code="LT" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.021820611603553943);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.0551021190175116);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Manufacturing" AND n.country_code="SK" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Manufacturing" AND t.language="EN" AND n.country_code="LT" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.19731470750984018);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.16549794995593364);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Construction, waste management, water and electricity supply" AND n.country_code="SK" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Construction, waste management, water and electricity supply" AND t.language="EN" AND n.country_code="LT" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.2350048548250697);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.09449361995631682);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Trade, transport, food/accommodation and recreation activities" AND n.country_code="SK" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Trade, transport, food/accommodation and recreation activities" AND t.language="EN" AND n.country_code="LT" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.2842421774673474);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.28658466490401197);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="IT, Finance, Real estate and other technical scientific or personal service activities" AND n.country_code="SK" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="IT, Finance, Real estate and other technical scientific or personal service activities" AND t.language="EN" AND n.country_code="LT" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.11604597989162778);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.1667624631183661);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Public administration" AND n.country_code="SK" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Public administration" AND t.language="EN" AND n.country_code="LT" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.01815600171223938);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.06441353412269611);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Education, human health and social work activities" AND n.country_code="SK" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Education, human health and social work activities" AND t.language="EN" AND n.country_code="LT" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.12741566699032167);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.16714564892516384);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Agriculture, forestry and fishing" AND n.country_code="SI" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Agriculture, forestry and fishing" AND t.language="EN" AND n.country_code="LU" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.03070851242126889);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.008514088789783094);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Manufacturing" AND n.country_code="SI" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Manufacturing" AND t.language="EN" AND n.country_code="LU" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.20174086989430434);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.04419217514696938);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Construction, waste management, water and electricity supply" AND n.country_code="SI" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Construction, waste management, water and electricity supply" AND t.language="EN" AND n.country_code="LU" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.24961479198767333);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.06750456111899451);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Trade, transport, food/accommodation and recreation activities" AND n.country_code="SI" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Trade, transport, food/accommodation and recreation activities" AND t.language="EN" AND n.country_code="LU" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.24956072770524157);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.20048651935941617);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="IT, Finance, Real estate and other technical scientific or personal service activities" AND n.country_code="SI" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="IT, Finance, Real estate and other technical scientific or personal service activities" AND t.language="EN" AND n.country_code="LU" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.1385667558727327);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.3352929251976485);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Public administration" AND n.country_code="SI" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Public administration" AND t.language="EN" AND n.country_code="LU" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.019544238099099834);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.1386580174336104);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Education, human health and social work activities" AND n.country_code="SI" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Education, human health and social work activities" AND t.language="EN" AND n.country_code="LU" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.11026410401967941);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.20535171295357793);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Agriculture, forestry and fishing" AND n.country_code="ES" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Agriculture, forestry and fishing" AND t.language="EN" AND n.country_code="MT" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.03612305544751418);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.009704892057833234);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Manufacturing" AND n.country_code="ES" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Manufacturing" AND t.language="EN" AND n.country_code="MT" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.11448934695013305);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.11012081600316893);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Construction, waste management, water and electricity supply" AND n.country_code="ES" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Construction, waste management, water and electricity supply" AND t.language="EN" AND n.country_code="MT" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.16142917977896015);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.0671420083184789);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Trade, transport, food/accommodation and recreation activities" AND n.country_code="ES" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Trade, transport, food/accommodation and recreation activities" AND t.language="EN" AND n.country_code="MT" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.3199835196342342);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.3351158645276292);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="IT, Finance, Real estate and other technical scientific or personal service activities" AND n.country_code="ES" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="IT, Finance, Real estate and other technical scientific or personal service activities" AND t.language="EN" AND n.country_code="MT" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.1971263899543561);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.2412358882947118);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Public administration" AND n.country_code="ES" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Public administration" AND t.language="EN" AND n.country_code="MT" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.04674151499451935);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.0582293523469994);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Education, human health and social work activities" AND n.country_code="ES" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Education, human health and social work activities" AND t.language="EN" AND n.country_code="MT" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.1241069932402828);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.17845117845117844);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Agriculture, forestry and fishing" AND n.country_code="SE" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Agriculture, forestry and fishing" AND t.language="EN" AND n.country_code="NL" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.012255986242390635);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.01973278123553315);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Manufacturing" AND n.country_code="SE" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Manufacturing" AND t.language="EN" AND n.country_code="NL" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.09402279227131403);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.10162800267475952);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Construction, waste management, water and electricity supply" AND n.country_code="SE" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Construction, waste management, water and electricity supply" AND t.language="EN" AND n.country_code="NL" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.11683998679070116);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.06022709737153439);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Trade, transport, food/accommodation and recreation activities" AND n.country_code="SE" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Trade, transport, food/accommodation and recreation activities" AND t.language="EN" AND n.country_code="NL" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.3514981961830111);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.2661642919602901);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="IT, Finance, Real estate and other technical scientific or personal service activities" AND n.country_code="SE" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="IT, Finance, Real estate and other technical scientific or personal service activities" AND t.language="EN" AND n.country_code="NL" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.21389717931623187);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.23957100972172216);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Public administration" AND n.country_code="SE" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Public administration" AND t.language="EN" AND n.country_code="NL" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.04006405263780976);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.06636747080911475);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Education, human health and social work activities" AND n.country_code="SE" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Education, human health and social work activities" AND t.language="EN" AND n.country_code="NL" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.17142180655854153);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.24630934622704592);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Agriculture, forestry and fishing" AND n.country_code="UK" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Agriculture, forestry and fishing" AND t.language="EN" AND n.country_code="PL" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.008282869629076725);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.0939790996531311);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Manufacturing" AND n.country_code="UK" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Manufacturing" AND t.language="EN" AND n.country_code="PL" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.08678854203034646);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.204788113833484);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Construction, waste management, water and electricity supply" AND n.country_code="UK" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Construction, waste management, water and electricity supply" AND t.language="EN" AND n.country_code="PL" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.10789902443526804);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.11687370633027838);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Trade, transport, food/accommodation and recreation activities" AND n.country_code="UK" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Trade, transport, food/accommodation and recreation activities" AND t.language="EN" AND n.country_code="PL" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.35639614910770545);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.23993182340876654);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="IT, Finance, Real estate and other technical scientific or personal service activities" AND n.country_code="UK" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="IT, Finance, Real estate and other technical scientific or personal service activities" AND t.language="EN" AND n.country_code="PL" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.23716135142401953);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.14190119435054235);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Public administration" AND n.country_code="UK" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Public administration" AND t.language="EN" AND n.country_code="PL" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.043592413790335856);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.06267898718065851);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Education, human health and social work activities" AND n.country_code="UK" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Education, human health and social work activities" AND t.language="EN" AND n.country_code="PL" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.15987964958324807);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.139847075243139);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Agriculture, forestry and fishing" AND n.country_code="EU28" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Agriculture, forestry and fishing" AND t.language="EN" AND n.country_code="PT" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.031582316230488364);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.03385258614876256);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Manufacturing" AND n.country_code="EU28" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Manufacturing" AND t.language="EN" AND n.country_code="PT" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.13524010158433614);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.17888371883921142);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Construction, waste management, water and electricity supply" AND n.country_code="EU28" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Construction, waste management, water and electricity supply" AND t.language="EN" AND n.country_code="PT" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.1800838159602036);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.08193404814889742);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Trade, transport, food/accommodation and recreation activities" AND n.country_code="EU28" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Trade, transport, food/accommodation and recreation activities" AND t.language="EN" AND n.country_code="PT" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.3210233925393676);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.2737091734664059);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="IT, Finance, Real estate and other technical scientific or personal service activities" AND n.country_code="EU28" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="IT, Finance, Real estate and other technical scientific or personal service activities" AND t.language="EN" AND n.country_code="PT" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.16875515674907982);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.17173556319823766);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Public administration" AND n.country_code="EU28" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Public administration" AND t.language="EN" AND n.country_code="PT" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.03676246338539185);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.0648841234517949);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Education, human health and social work activities" AND n.country_code="EU28" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Education, human health and social work activities" AND t.language="EN" AND n.country_code="PT" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.12655275355113263);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.19500078674669002);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Agriculture, forestry and fishing" AND n.country_code="IS" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Agriculture, forestry and fishing" AND t.language="EN" AND n.country_code="RO" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.034235229155162895);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.18595214520449754);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Manufacturing" AND n.country_code="IS" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Manufacturing" AND t.language="EN" AND n.country_code="RO" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.08771791433304411);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.19127946884700195);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Construction, waste management, water and electricity supply" AND n.country_code="IS" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Construction, waste management, water and electricity supply" AND t.language="EN" AND n.country_code="RO" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.12999921116983515);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.1177235258742703);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Trade, transport, food/accommodation and recreation activities" AND n.country_code="IS" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Trade, transport, food/accommodation and recreation activities" AND t.language="EN" AND n.country_code="RO" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.33130866924351193);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.24876839809747117);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="IT, Finance, Real estate and other technical scientific or personal service activities" AND n.country_code="IS" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="IT, Finance, Real estate and other technical scientific or personal service activities" AND t.language="EN" AND n.country_code="RO" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.22079356314585472);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.10715999586934999);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Public administration" AND n.country_code="IS" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Public administration" AND t.language="EN" AND n.country_code="RO" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.03155320659462019);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.05441523966881906);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Education, human health and social work activities" AND n.country_code="IS" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Education, human health and social work activities" AND t.language="EN" AND n.country_code="RO" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.16439220635797117);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.09470122643859);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Agriculture, forestry and fishing" AND n.country_code="CH" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Agriculture, forestry and fishing" AND t.language="EN" AND n.country_code="SK" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.021146460575600965);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.02713092482640636);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Manufacturing" AND n.country_code="CH" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Manufacturing" AND t.language="EN" AND n.country_code="SK" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.11766020712964906);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.2539599476703231);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Construction, waste management, water and electricity supply" AND n.country_code="CH" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Construction, waste management, water and electricity supply" AND t.language="EN" AND n.country_code="SK" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.1468805245297588);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.11444097816242327);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Trade, transport, food/accommodation and recreation activities" AND n.country_code="CH" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Trade, transport, food/accommodation and recreation activities" AND t.language="EN" AND n.country_code="SK" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.34601082384497106);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.23755660662171682);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="IT, Finance, Real estate and other technical scientific or personal service activities" AND n.country_code="CH" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="IT, Finance, Real estate and other technical scientific or personal service activities" AND t.language="EN" AND n.country_code="SK" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.22343992359638842);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.13126698198651504);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Public administration" AND n.country_code="CH" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Public administration" AND t.language="EN" AND n.country_code="SK" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.03231574740749269);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.08614269900372346);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Education, human health and social work activities" AND n.country_code="CH" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Education, human health and social work activities" AND t.language="EN" AND n.country_code="SK" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.11254631291613888);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.14950186172889204);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Agriculture, forestry and fishing" AND n.country_code="NO" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Agriculture, forestry and fishing" AND t.language="EN" AND n.country_code="SI" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.018157984172452298);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.035503576463217244);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Manufacturing" AND n.country_code="NO" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Manufacturing" AND t.language="EN" AND n.country_code="SI" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.07346943729669368);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.2586539967629092);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Construction, waste management, water and electricity supply" AND n.country_code="NO" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Construction, waste management, water and electricity supply" AND t.language="EN" AND n.country_code="SI" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.10195659562072146);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.08901999686733147);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Trade, transport, food/accommodation and recreation activities" AND n.country_code="NO" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Trade, transport, food/accommodation and recreation activities" AND t.language="EN" AND n.country_code="SI" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.448487643831626);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.2340103378060878);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="IT, Finance, Real estate and other technical scientific or personal service activities" AND n.country_code="NO" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="IT, Finance, Real estate and other technical scientific or personal service activities" AND t.language="EN" AND n.country_code="SI" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.17435791620138855);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.1590351380984702);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Public administration" AND n.country_code="NO" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Public administration" AND t.language="EN" AND n.country_code="SI" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.04487303976307229);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.05899859029916984);
 
-SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Education, human health and social work activities" AND n.country_code="NO" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Education, human health and social work activities" AND t.language="EN" AND n.country_code="SI" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2019-01-01");
-INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.13869738311404572);
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.16477836370281418);
+
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Agriculture, forestry and fishing" AND t.language="EN" AND n.country_code="ES" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.041234339024609046);
+
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Manufacturing" AND t.language="EN" AND n.country_code="ES" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.13203197842733772);
+
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Construction, waste management, water and electricity supply" AND t.language="EN" AND n.country_code="ES" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.08023964792197308);
+
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Trade, transport, food/accommodation and recreation activities" AND t.language="EN" AND n.country_code="ES" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.312607883698994);
+
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="IT, Finance, Real estate and other technical scientific or personal service activities" AND t.language="EN" AND n.country_code="ES" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.19798408689955505);
+
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Public administration" AND t.language="EN" AND n.country_code="ES" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.07188893993307474);
+
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Education, human health and social work activities" AND t.language="EN" AND n.country_code="ES" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.16401312409445654);
+
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Agriculture, forestry and fishing" AND t.language="EN" AND n.country_code="SE" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.01281359589964931);
+
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Manufacturing" AND t.language="EN" AND n.country_code="SE" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.1010354630532672);
+
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Construction, waste management, water and electricity supply" AND t.language="EN" AND n.country_code="SE" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.08412359154198916);
+
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Trade, transport, food/accommodation and recreation activities" AND t.language="EN" AND n.country_code="SE" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.21456288518603056);
+
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="IT, Finance, Real estate and other technical scientific or personal service activities" AND t.language="EN" AND n.country_code="SE" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.24990143387769503);
+
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Public administration" AND t.language="EN" AND n.country_code="SE" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.07195326928264613);
+
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Education, human health and social work activities" AND t.language="EN" AND n.country_code="SE" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.2656097611587226);
+
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Agriculture, forestry and fishing" AND t.language="EN" AND n.country_code="UK" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.008346718175046614);
+
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Manufacturing" AND t.language="EN" AND n.country_code="UK" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.09079627978492806);
+
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Construction, waste management, water and electricity supply" AND t.language="EN" AND n.country_code="UK" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.08687413570076227);
+
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Trade, transport, food/accommodation and recreation activities" AND t.language="EN" AND n.country_code="UK" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.24650332640564765);
+
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="IT, Finance, Real estate and other technical scientific or personal service activities" AND t.language="EN" AND n.country_code="UK" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.2528897700465585);
+
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Public administration" AND t.language="EN" AND n.country_code="UK" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.06960011356513168);
+
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Education, human health and social work activities" AND t.language="EN" AND n.country_code="UK" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.24498965632192524);
+
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Agriculture, forestry and fishing" AND t.language="EN" AND n.country_code="EU27_2020" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.04105341381845379);
+
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Manufacturing" AND t.language="EN" AND n.country_code="EU27_2020" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.17088852343374852);
+
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Construction, waste management, water and electricity supply" AND t.language="EN" AND n.country_code="EU27_2020" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.08488917360394012);
+
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Trade, transport, food/accommodation and recreation activities" AND t.language="EN" AND n.country_code="EU27_2020" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.24869567573080412);
+
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="IT, Finance, Real estate and other technical scientific or personal service activities" AND t.language="EN" AND n.country_code="EU27_2020" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.19418735100266446);
+
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Public administration" AND t.language="EN" AND n.country_code="EU27_2020" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.07473132672964394);
+
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Education, human health and social work activities" AND t.language="EN" AND n.country_code="EU27_2020" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.1855545356807452);
+
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Agriculture, forestry and fishing" AND t.language="EN" AND n.country_code="IS" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.03881650380021716);
+
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Manufacturing" AND t.language="EN" AND n.country_code="IS" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.09473398479913141);
+
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Construction, waste management, water and electricity supply" AND t.language="EN" AND n.country_code="IS" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.0730184581976113);
+
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Trade, transport, food/accommodation and recreation activities" AND t.language="EN" AND n.country_code="IS" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.26167209554831705);
+
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="IT, Finance, Real estate and other technical scientific or personal service activities" AND t.language="EN" AND n.country_code="IS" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.21769815418023888);
+
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Public administration" AND t.language="EN" AND n.country_code="IS" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.056731813246471224);
+
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Education, human health and social work activities" AND t.language="EN" AND n.country_code="IS" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.25732899022801303);
+
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Agriculture, forestry and fishing" AND t.language="EN" AND n.country_code="CH" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.023417381053209875);
+
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Manufacturing" AND t.language="EN" AND n.country_code="CH" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.12824621441897197);
+
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Construction, waste management, water and electricity supply" AND t.language="EN" AND n.country_code="CH" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.07860731821771526);
+
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Trade, transport, food/accommodation and recreation activities" AND t.language="EN" AND n.country_code="CH" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.22404459145483055);
+
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="IT, Finance, Real estate and other technical scientific or personal service activities" AND t.language="EN" AND n.country_code="CH" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.26818967391926385);
+
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Public administration" AND t.language="EN" AND n.country_code="CH" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.0491925238351398);
+
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Education, human health and social work activities" AND t.language="EN" AND n.country_code="CH" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.22830229710086872);
+
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Agriculture, forestry and fishing" AND t.language="EN" AND n.country_code="NO" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.020293252877760057);
+
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Manufacturing" AND t.language="EN" AND n.country_code="NO" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.07586909314526204);
+
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Construction, waste management, water and electricity supply" AND t.language="EN" AND n.country_code="NO" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.11689759209793034);
+
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Trade, transport, food/accommodation and recreation activities" AND t.language="EN" AND n.country_code="NO" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.23452543382593158);
+
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="IT, Finance, Real estate and other technical scientific or personal service activities" AND t.language="EN" AND n.country_code="NO" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.19576455214558874);
+
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Public administration" AND t.language="EN" AND n.country_code="NO" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.061321751830428366);
+
+SET @profileID = (SELECT DISTINCT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sas ON p.activity_sector_id=sas.id INNER JOIN translation t ON sas.literal_id=t.literal_id WHERE t.text="Education, human health and social work activities" AND t.language="EN" AND n.country_code="NO" AND age_group_id IS NULL AND answer_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @indicatorID = (SELECT id FROM indicator WHERE name="Employment per sector");
+SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset iid INNER JOIN dataset d ON iid.dataset_id=d.id WHERE indicator_id=@indicatorID AND d.date_from="2020-01-01");
+INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.29532832407709897);

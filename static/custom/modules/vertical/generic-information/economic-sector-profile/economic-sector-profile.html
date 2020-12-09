@@ -46,7 +46,7 @@
               query="getCompanySizeData" cda="{{::cdaGenericInformation }}"
               width="330" height="400"
               orientation="horizontal" axis-percent="1"
-              axis-fixed-max="100" step="{{step.chart1}}"
+              axis-fixed-max="100" axis-fixed-min="0" step="{{step.chart1}}"
               params="[['pIndicator','31'],['pCountry1', pCountry1],['pCountry2', pCountry2],['pDataset', datasetEurostat]]"
               color-role="series" colors="[stories[0].color1, stories[0].color2, 
               stories[0].color3, stories[0].color4, stories[0].color5]"
@@ -61,6 +61,7 @@
               values-font="14px 'OpenSans-bold'"
               values-mask="{value}"
               dimensions="stories[0].dimensions"
+              base-axis-size="60"
               legend="true"
               legend-align="center"
               plots="stories[0].plots"
@@ -79,7 +80,7 @@
               width="300" height="400"
               orientation="horizontal" axis-percent="1"
               axis-fixed-max="100" step="{{step.chart2}}"
-              params="[['pIndicator','32'],['pCountry1', pCountry1],['pCountry2', pCountry2],['pDataset', datasetEurostat2019]]"
+              params="[['pIndicator','32'],['pCountry1', pCountry1],['pCountry2', pCountry2],['pDataset', datasetEurostat2020]]"
               color-role="series" colors="[stories[1].color1, stories[1].color2, stories[1].color3, stories[1].color4, stories[1].color5, stories[1].color6, stories[1].color7]"
               chart-title="{{i18nLiterals.L289}}" id="2"
               stacked="1" plots="stories[1].plots"
@@ -87,11 +88,12 @@
               axis-label-font="12px 'OpenSans-bold'"
               base-axis-label-text-baseline="center"
               dimensions="stories[1].dimensions"
+              base-axis-size="60"
               legend="true"
               legend-align="center"
               legend-item-size="270"
               multiple-label-colors="true"
-              datasource-and-dates="[datasetEurostat2019,32]"
+              datasource-and-dates="[datasetEurostat2020,32]"
             ></dvt-bar-chart>
           </div>
         </div>
@@ -104,7 +106,7 @@
               width="330" height="380" axis-percent="1"
               orientation="horizontal" axis-fixed-min="50"
               axis-fixed-max="100" step="{{step.chart3}}" 
-              params="[['pIndicator','33'],['pCountry1', pCountry1],['pCountry2', pCountry2],['pDataset', datasetEurostat2018]]"
+              params="[['pIndicator','33'],['pCountry1', pCountry1],['pCountry2', pCountry2],['pDataset', datasetEurostat2019]]"
               color-role="category" colors="[stories[2].color3, stories[2].color2, stories[2].color1]"
               chart-title="{{i18nLiterals.L290}}" id="3"
               base-axis-label-visible="true"
@@ -117,10 +119,11 @@
               values-mask="{value}"
               plots="stories[2].plots"
               dimensions="stories[2].dimensions"
+              base-axis-size="60"
               label-text-align="stories[2].labelTextAlign"
               multiple-label-colors="true"
               legend="true" custom-label="true"
-              datasource-and-dates="[datasetEurostat2018,33]"
+              datasource-and-dates="[datasetEurostat2019, 33]"
             ></dvt-bar-chart>
           </div>
         </div>
@@ -153,7 +156,7 @@
           </div>
         </div>
         -->
-        <!-- GDP PER CAPITA IN RELATION TO EU28 AVERAGE -->
+        <!-- GDP PER CAPITA IN RELATION TO EU27_2020 AVERAGE -->
         <div class="card--block--chart">
           <div class="select-filter-chart-wrapper">
             <selector chart="GDP" ng-model="dashboard.parameters.pSplit"></selector>
@@ -165,9 +168,9 @@
               height="370"
               orientation="vertical" listen-to="['pSplit']"
               axis-fixed-max="260" step="{{step.chart5}}"
-              params="[['pIndicator','pSplit'],['pCountry1', pCountry1],['pCountry2', pCountry2],['pDataset', datasetEurostat2018]]"
+              params="[['pIndicator','pSplit'],['pCountry1', pCountry1],['pCountry2', pCountry2],['pDataset', datasetEurostat2019]]"
               color-role="category" colors="[stories[4].color1, stories[4].color2, stories[4].color3]"
-              chart-title="{{i18nLiterals.L292}}" id="5"
+              chart-title="{{i18nLiterals.L22195}}" id="5"
               plots="stories[4].plots"
               base-axis-position="top"
               axis-label-font="12px 'OpenSans-bold'"
@@ -183,10 +186,10 @@
               base-axis-label-text-baseline="bottom"
               legend="true" legend-click-mode="none"
               legend-fill-style="#FFF" custom-label="true"
-              datasource-and-dates="[datasetEurostat2018,35]"
+              datasource-and-dates="[datasetEurostat2019,35]"
             ></dvt-bar-chart>
           </div>
-          <!-- GDP PER CAPITA IN RELATION TO EU28 AVERAGE EURO -->
+          <!-- GDP PER CAPITA IN RELATION TO EU27_2020 AVERAGE EURO -->
           <!--<div class="chart--block" ng-show="pSplit == 'euro'">
             <dvt-bar-chart
               data-ng-cloak
@@ -227,7 +230,7 @@
               width="330" height="370" type="lines" listen-to="['pSplit', 'pDataset']"
               orientation="vertical" axis-fixed-min="10000"
               axis-fixed-max="20000" step="{{step.chart6}}"
-              params="[['pIndicator','pSplit2'],['pCountry1', pCountry1],['pCountry2', pCountry2],['pDataset', 'pDataset']]"
+              params="[['pIndicator','pSplit2'],['pCountry1', pCountry1],['pCountry2', pCountry2],['pDataset', datasetEurostatBetweenDates]]"
               color-role="series" colors="[stories[5].color1, stories[5].color2, stories[5].color3]"
               chart-title="{{i18nLiterals.L293}}" id="6"
               axis-label-font="12px 'OpenSans-bold'"
@@ -241,7 +244,7 @@
               base-axis-label-text-baseline="top"
               leaf-content-overflow='visible'
               legend="true"
-              datasource-and-dates="[pDataset, pSplit2]"
+              datasource-and-dates="[datasetEurostatBetweenDates, pSplit2]"
             ></dvt-bar-chart>
             <!-- DATASETS 17 - 36 y 3 - 279 -->
           </div>

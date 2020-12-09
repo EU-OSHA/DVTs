@@ -38,11 +38,11 @@ define(function (require) {
     $scope.country2Data = {};
 
     // Country parameters
-    if ($stateParams.pCountry1 != null)
+    if ($stateParams.pCountry1 != null && $stateParams.pCountry1 != "UK")
     {
       $scope.pCountry1 = $stateParams.pCountry1;
     }
-    else if ($rootScope.defaultCountry != undefined)
+    else if ($rootScope.defaultCountry != undefined && $rootScope.defaultCountry.code != "UK")
     {
       $scope.pCountry1 = $rootScope.defaultCountry.code;
     }
@@ -50,11 +50,11 @@ define(function (require) {
     {
       $scope.pCountry1 = $rootScope.defaultCountryDefaultValue;
     }
-    if ($stateParams.pCountry2 != null)
+    if ($stateParams.pCountry2 != null && $stateParams.pCountry2 != "UK")
     {
       $scope.pCountry2 = $stateParams.pCountry2;
     }    
-    else if ($rootScope.defaultCountry2 != undefined)
+    else if ($rootScope.defaultCountry2 != undefined && $rootScope.defaultCountry2.code != "UK")
     {
       $scope.pCountry2 = $rootScope.defaultCountry2.code;
     }

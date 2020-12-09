@@ -45,11 +45,11 @@ define(function (require) {
 		$scope.elementsStart=0;
 		$scope.elementsEnd=$scope.pageSize;
 
-		if ($rootScope.defaultCountry.code != undefined && $rootScope.defaultCountry.selectedByUser == true)
+		if ($rootScope.defaultCountry.code != undefined && $rootScope.defaultCountry.selectedByUser == true && $rootScope.defaultCountry.code != "UK")
 		{
 			$scope.pCountry = $rootScope.defaultCountry.code;
 		}
-		else
+		else if ($stateParams.pCountry != "UK")
 		{
 			$scope.pCountry = $stateParams.pCountry;
 		}

@@ -1,4 +1,4 @@
-/**
+ /**
  * @ngdoc controller
  * @name barometer.generic-information-osh-authorities.controller:OSHAuthoritiesController
  * @requires $scope
@@ -21,16 +21,17 @@ define(function (require) {
     // Datasets
     $scope.datasetList = configService.getDatasets();
     $scope.datasetEurostat = $scope.datasetList.EUROSTAT;
-    $scope.datasetEurostatBetweenDates = $scope.datasetList.EUROSTATBetweenDates;
+    $scope.datasetEurostatBetweenDates = $scope.datasetList.EUROSTAT2019BetweenDates;
     $scope.datasetEurostat2018 = $scope.datasetList.EUROSTAT2018;
     $scope.datasetEurostat2019 = $scope.datasetList.EUROSTAT2019;
+    $scope.datasetEurostat2020 = $scope.datasetList.EUROSTAT2020;
 
     // Literals
     var i18nLiterals = configService.getLiterals();
     $scope.i18nLiterals = i18nLiterals;
 
     // Country parameters
-    if ($stateParams.pCountry1 != null)
+    if ($stateParams.pCountry1 != null && $stateParams.pCountry1 != "UK")
     {
       $scope.pCountry1 = $stateParams.pCountry1;
     }
@@ -43,7 +44,7 @@ define(function (require) {
       $scope.pCountry1 = $rootScope.defaultCountryDefaultValue;
     }
 
-    if ($stateParams.pCountry2 != null)
+    if ($stateParams.pCountry2 != null && $stateParams.pCountry2 != "UK")
     {
       $scope.pCountry2 = $stateParams.pCountry2;
     }
@@ -141,7 +142,7 @@ define(function (require) {
           }
         }
       },
-      // 4 - GDP PER CAPITA IN RELATION TO EU28 AVERAGE
+      // 4 - GDP PER CAPITA IN RELATION TO EU27_2020 AVERAGE
       {
         color1: dvtUtils.getColorCountry(1),
         color2: $scope.pCountry2=="0"?dvtUtils.getEUColor():dvtUtils.getColorCountry(2),

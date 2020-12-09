@@ -478,7 +478,8 @@ define(function (require) {
                         var pCountry1 = definition.parameters[1] ? definition.parameters[1][1] : null;
                         var pCountry2 = definition.parameters[2] ? definition.parameters[2][1] : null;
 
-                        if(country == 'EU28'){
+
+                        if(country == 'EU28' || country == 'EU27_2020'){
                             return dvtUtils.getEUColor();
                         }else if(country.match(pCountry1)){
                             return dvtUtils.getColorCountry(1)
@@ -1076,7 +1077,8 @@ define(function (require) {
                         definition.chartDefinition.baseAxisLabel_textStyle='gray';
                     }else{
                         definition.chartDefinition.baseAxisLabel_textStyle= function (){
-                            if(this.scene.vars.tick.label == 'EU28'){
+
+                            if(this.scene.vars.tick.label == 'EU28' || this.scene.vars.tick.label == 'EU27_2020'){
                                 return dvtUtils.getEUColor();
                             }else if(this.scene.vars.tick.label.match(pCountry1)){
                                 return dvtUtils.getColorCountry(1);

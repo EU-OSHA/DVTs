@@ -36,7 +36,7 @@ define (function (require) {
                         label_textMargin: function(scene){
                             var countryKey = scene.firstAtoms.series;
 
-                            if (countryKey == 'EU28') {
+                            if (countryKey == 'EU28' || countryKey == 'EU27_2020') {
                                 return 4;
                             } else if(countryKey == pCountry1){
                                 return 8;
@@ -70,14 +70,14 @@ define (function (require) {
                                 }
                             }
                             //$log.warn(countryKey);
-                            if (countryKey == 'EU28') {
+                            if (countryKey == 'EU28' || countryKey == 'EU27_2020') {
                                 return dvtUtils.getEUColor();
                             }
                             return dvtUtils.getColorCountry(2);
                         }, 
                         label_textStyle: function(scene){
                             var countryKey = scene.firstAtoms.series;
-                            if (countryKey == 'EU28') {
+                            if (countryKey == 'EU28' || countryKey == 'EU27_2020') {
                                 return dvtUtils.getEUColor();
                             }
                             return dvtUtils.getChartLightGrayColor();
@@ -102,7 +102,7 @@ define (function (require) {
                             var countryKey = scene.firstAtoms.category;
 
                             //$log.warn(scene.firstAtoms);
-                            if (countryKey == 'EU28') {
+                            if (countryKey == 'EU28' || countryKey == 'EU27_2020') {
                                 return dvtUtils.getEUColor();
                             }
                             return dvtUtils.getColorCountry(2);

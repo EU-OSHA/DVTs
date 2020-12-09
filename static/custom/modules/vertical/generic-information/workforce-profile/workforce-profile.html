@@ -42,8 +42,8 @@
                 <li data-ng-repeat='country in countries'>
                   <input id='country-filter-{{::country.country_name}}' ng-checked="!!country.param && country.param ==country.country_code"
                     data-ng-click="toggleCountryClick($event, $index)" type="checkbox" value="{{::country}}"/>
-                  <label data-ng-if="country.country_code != 'EU28'" for="country-filter-{{::country.country_name}}" data-ng-bind="('(')+(country.country_code)+(') ')+(i18nLiterals['L'+country.country_name])"></label>
-                  <label data-ng-if="country.country_code == 'EU28'" for="country-filter-{{::country.country_name}}" data-ng-bind="i18nLiterals['L'+country.country_name]"></label>
+                  <label data-ng-if="country.country_code != 'EU27_2020'" for="country-filter-{{::country.country_name}}" data-ng-bind="('(')+(country.country_code)+(') ')+(i18nLiterals['L'+country.country_name])"></label>
+                  <label data-ng-if="country.country_code == 'EU27_2020'" for="country-filter-{{::country.country_name}}" data-ng-bind="i18nLiterals['L'+country.country_name]"></label>
                 </li>
               </ul>
             </div>
@@ -61,48 +61,48 @@
         <div class="map--legend--block map--eu--legend container">
           <div class="matrix--header--elements">
             <img  class="flags--wrapper" src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/flag/eu28.png">
-            <h2 class="country ng-binding title-section main-color">EU28</h2>
+            <h2 class="country ng-binding title-section main-color">EU27_2020</h2>
           </div>
           <ul class="matrix--elements--data">
             <li>
               <label data-ng-bind="i18nLiterals['L20615']"></label>
               <div>                
-                <span class="data" data-ng-bind="data.medianAge['EU28'].value"></span>
+                <span class="data" data-ng-bind="data.medianAge['EU27_2020'].value"></span>
                 <span class="data-text" data-ng-bind="i18nLiterals['L20620']"></span>
               </div>          
             </li>
             <li>
               <label data-ng-bind="i18nLiterals['L20616']"></label>
               <div>
-                <span class="data" data-ng-bind="data.ageingWorkers['EU28'].value"> %</span>
+                <span class="data" data-ng-bind="data.ageingWorkers['EU27_2020'].value"> %</span>
                 <span class="data-text">&percnt;</span>
               </div>
             </li>
             <li>  
               <label data-ng-bind="i18nLiterals['L20619']"></label>
               <div>
-                <span class="data" data-ng-bind="data.femaleEmployment['EU28'].value"></span>
+                <span class="data" data-ng-bind="data.femaleEmployment['EU27_2020'].value"></span>
                 <span class="data-text">&percnt;</span>
               </div>
             </li>
             <li>  
               <label data-ng-bind="i18nLiterals['L20618']"></label>
               <div>
-                <span class="data" data-ng-bind="data.maleEmployment['EU28'].value"></span>
+                <span class="data" data-ng-bind="data.maleEmployment['EU27_2020'].value"></span>
                 <span class="data-text">&percnt;</span>
               </div>
             </li>
             <li>
               <label data-ng-bind="i18nLiterals['L20617']"></label>
               <div>
-                <span class="data" data-ng-bind="data.totalEmployment['EU28'].value"></span>
+                <span class="data" data-ng-bind="data.totalEmployment['EU27_2020'].value"></span>
                 <span class="data-text">&percnt;</span>
               </div>
             </li>
             <li>
               <label data-ng-bind="i18nLiterals['L22125']"></label>
               <div>
-                <span class="data" data-ng-bind="data.unemploymentRate['EU28'].value"></span>
+                <span class="data" data-ng-bind="data.unemploymentRate['EU27_2020'].value"></span>
                 <span class="data-text">&percnt;</span>
               </div>
             </li>

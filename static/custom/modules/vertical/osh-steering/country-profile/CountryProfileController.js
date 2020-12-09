@@ -36,8 +36,8 @@ define(function (require) {
     $scope.country2Data = {};
 
     // Country parameters
-    $scope.pCountry1 = $stateParams.pCountry1;
-    $scope.pCountry2 = $stateParams.pCountry2;
+    $scope.pCountry1 = $stateParams.pCountry1 != "UK" ? $stateParams.pCountry1 : "AT";
+    $scope.pCountry2 = $stateParams.pCountry2 != "UK" ? $stateParams.pCountry2 : 0;
     $scope.pIndicator = $stateParams.pIndicator;
 
     $scope.dashboard = {
