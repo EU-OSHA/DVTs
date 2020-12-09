@@ -488,11 +488,13 @@
 				min-height: initial !important;
 				.content-page{
 					display: flex;
-					justify-content: space-between;
+					justify-content: flex-start;
 					padding-top: 30mm;
+					flex-wrap: wrap;
 					.box-rounded {
-						width: 61mm;
+						width: 60mm;
 						padding: 2rem 2rem 1rem;
+						margin: 0.5rem;
 					  .card--block--chart--wrapper{
 						  h2{
 				  	    min-height: 8rem;
@@ -511,7 +513,7 @@
 			}
 		}
 		section.workforce-profile{
-			page-break-before: initial !important;
+			/* page-break-before: initial !important;*/
 			min-height: initial !important;
 			table{
 				tr{
@@ -521,15 +523,19 @@
 					}
 					td{
 						border-right: 1px solid $gray-light;
-						padding: 1rem;
+						padding: 1.4rem 0.8rem;
 						text-align: center;
+						vertical-align: top;
+						> img {
+							width: 7.28rem;
+						}
 						span.data{
-							font-size: 2.2rem;
+							font-size: 2.1rem;
 							display: block;
 							font-weight: bold;
 							font-style: italic;
 							white-space: nowrap;
-					    margin-top: 1.2rem;
+					    	margin-top: 1.2rem;
 						}
 					}
 				}

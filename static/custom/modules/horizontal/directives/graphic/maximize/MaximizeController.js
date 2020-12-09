@@ -120,7 +120,7 @@ define(function (require) {
 
                             if(country.match(pCountry1)){
                                 return pCountry1;
-                            }else if(country.match(pCountry2)){
+                            }else if(country.match(pCountry2) && pCountry2!="0"){
                                 return pCountry2;
                             }
                         }
@@ -179,6 +179,22 @@ define(function (require) {
                         $scope.parameters.chartDefinition.legend = !$scope.parameters.pyramid ? true : false;
 
                         if ($state.current.name == "economic-sector-profile") {
+                            if ($scope.parameters.chartDefinition.dataAccessId == 'getCompanySizeData')
+                            {
+                                $scope.parameters.baseAxisSize = 90;
+                            }
+
+                            if ($scope.parameters.chartDefinition.dataAccessId == 'getEmploymentPerSectorData')
+                            {
+                                $scope.parameters.baseAxisSize = 90;
+                            }
+
+                            if ($scope.parameters.chartDefinition.dataAccessId == 'getEmploymentRateData')
+                            {
+                                $scope.parameters.baseAxisSize = 90;
+                            }
+
+
                             if($scope.parameters.chartDefinition.dataAccessId == 'getGDPData'){
                                 $scope.parameters.legendClickMode = 'none';
                                 $scope.parameters.chartDefinition.plots[0].bar_call = function(){
@@ -187,9 +203,9 @@ define(function (require) {
                                         var countryKey = scene.firstAtoms.category;
                                         if(countryKey.label.match($stateParams.pCountry1) || countryKey.label.match($scope.dashboard.parameters.pCountry1)){
                                             return configService.getImagesPath()+'man_orange.svg'
-                                        }else if(countryKey.label.match($stateParams.pCountry2) || countryKey.label.match($scope.dashboard.parameters.pCountry2)){
+                                        }else if((countryKey.label.match($stateParams.pCountry2) || countryKey.label.match($scope.dashboard.parameters.pCountry2)) && $scope.dashboard.parameters.pCountry2 != "0"){
                                             return configService.getImagesPath()+'man.svg'
-                                        }else if(countryKey == 'EU28'){
+                                        }else if(countryKey == 'EU28' || countryKey == 'EU27_2020'){
                                             return configService.getImagesPath()+'man_blue.svg'
                                         }
                                         })
@@ -200,9 +216,9 @@ define(function (require) {
                                             var countryKey = scene.firstAtoms.category;
                                             if(countryKey.label.match($stateParams.pCountry1) || countryKey.label.match($scope.dashboard.parameters.pCountry1)){
                                                 return dvtUtils.getColorCountry(1);
-                                            }else if(countryKey.label.match($stateParams.pCountry2) || countryKey.label.match($scope.dashboard.parameters.pCountry2)){
+                                            }else if((countryKey.label.match($stateParams.pCountry2) || countryKey.label.match($scope.dashboard.parameters.pCountry2)) && $scope.dashboard.parameters.pCountry2 != "0"){
                                                 return dvtUtils.getColorCountry(2);
-                                            }else if(countryKey == 'EU28'){
+                                            }else if(countryKey == 'EU28' || countryKey == 'EU27_2020'){
                                                 return dvtUtils.getEUColor();
                                             }
                                         };
@@ -235,7 +251,7 @@ define(function (require) {
                                                     //return (barWidth - this.width())/2 + 5; //5 is the panel margin
                                                     return panelWidth/2 - this.width()/2 - panelWidth/3;
                                                 }
-                                            }else if(countryKey.label.match($stateParams.pCountry2) || countryKey.label.match($scope.dashboard.parameters.pCountry2)){
+                                            }else if((countryKey.label.match($stateParams.pCountry2) || countryKey.label.match($scope.dashboard.parameters.pCountry2)) && $scope.dashboard.parameters.pCountry2 != "0"){
                                                 var sibling = scene.previousSibling;
                                                 if(sibling == null){
                                                     return panelWidth/2 - (barWidth + this.width()/2) - 5;
@@ -243,7 +259,7 @@ define(function (require) {
                                                     //return panelWidth/3 + (barWidth - this.width())/2;
                                                     return panelWidth/2  - this.width()/2 - 10;
                                                 }
-                                            }else if(countryKey == 'EU28'){
+                                            }else if(countryKey == 'EU28' || countryKey == 'EU27_2020'){
                                                 var firstSibling = scene.previousSibling.previousSibling;
                                                 if(!scene.previousSibling.firstAtoms.category.label.match($stateParams.pCountry2) || firstSibling == null){
                                                     return panelWidth - (barWidth + this.width()/2) - 10;

@@ -29,11 +29,11 @@ define(function (require) {
     $scope.countriesDataFor = [];
     $scope.countriesCompareWith = [];
   
-    if ($stateParams.pCountry1 != null)
+    if ($stateParams.pCountry1 != null && $stateParams.pCountry1 != "UK")
     {
       $scope.pCountry1 = $stateParams.pCountry1;
     }
-    else if ($rootScope.defaultCountry.code != undefined)
+    else if ($rootScope.defaultCountry.code != undefined && $rootScope.defaultCountry.code != "UK")
     {
       $scope.pCountry1 = $rootScope.defaultCountry.code;
     }
@@ -41,11 +41,11 @@ define(function (require) {
     {
       $scope.pCountry1 = $rootScope.defaultCountryDefaultValue;
     }
-    if ($stateParams.pCountry2 != null)
+    if ($stateParams.pCountry2 != null && $stateParams.pCountry2 != "UK")
     {
       $scope.pCountry2 = $stateParams.pCountry2;
     }
-    else if ($rootScope.defaultCountry2 != undefined)
+    else if ($rootScope.defaultCountry2 != undefined && $rootScope.defaultCountry2.code != "UK")
     {
       $scope.pCountry2 = $rootScope.defaultCountry2.code;
     }
@@ -54,7 +54,7 @@ define(function (require) {
       $scope.pCountry2 = "0";
     }
     $scope.pSplit = ($stateParams.pSplit != null)?$stateParams.pSplit:'esener';
-    $scope.datasourcesAndDates = $scope.pSplit == 'esener'?[$scope.datasetESENER,123]:[$scope.datasetEurofound,95];
+    $scope.datasourcesAndDates = $scope.pSplit == 'esener'?[$scope.datasetESENER,355]:[$scope.datasetEurofound,95];
     $scope.queryCountrySelect = $scope.pSplit == 'esener'?'getWorkerInvolvementESENERCountries':'getWorkerInvolvementEurofoundCountries';
     $scope.datasetCountrySelect = $scope.pSplit == 'esener'?$scope.datasetESENER:$scope.datasetEurofound;
 

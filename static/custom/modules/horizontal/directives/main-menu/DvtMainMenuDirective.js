@@ -349,7 +349,7 @@ define(function (require) {
                             {
                                 navigator.geolocation.getCurrentPosition(function(position){
                                     $http.get('https://iplist.cc/api/').success(function(coordinates) {
-                                        var availableCountries = ["AT","BG","CH","CY","CZ","DE","DK","EE","EL","ES","FI","FR","HR","HU","IE","IS","IT","LT","LU","LV","MT","NL","NO","PL","PT","RO","SE","SI","SK","UK"];
+                                        var availableCountries = ["AT","BG","CH","CY","CZ","DE","DK","EE","EL","ES","FI","FR","HR","HU","IE","IS","IT","LT","LU","LV","MT","NL","NO","PL","PT","RO","SE","SI","SK"];
                                         if (availableCountries.indexOf(coordinates.countrycode) > -1)
                                         {
                                             $rootScope.defaultCountry = {

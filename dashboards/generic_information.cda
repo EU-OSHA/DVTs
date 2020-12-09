@@ -88,6 +88,7 @@
 	      INNER JOIN nuts n
 	      ON n.id = sp.nuts_id
 	      WHERE sp.page = 'STRATEGY'
+	      AND n.country_code != "UK"
 	      ORDER BY country_code ASC
 	    </Query>
 	</DataAccess>
@@ -106,7 +107,7 @@
 	      INNER JOIN translation t ON n.literal_id=t.literal_id
 	      WHERE sp.page = 'STRATEGY'
 	      AND t.language="EN"
-	      AND n.country_code NOT IN (${pCountry})
+	      AND n.country_code NOT IN (${pCountry}, "UK")
 	      ORDER BY country_code ASC
 	    </Query>
 	</DataAccess>
@@ -153,7 +154,7 @@
 			WHERE (n.id = p.nuts_id AND p.id = v.profile_id
 			AND v.indicator_id = 126 AND n.literal_id=t.literal_id)
 			AND t.language="EN"
-			AND n.country_code NOT IN ('EU28', 'EU27_2020', 'AL', 'ME', 'MK', 'RS', 'TR', ${pCountry})
+			AND n.country_code NOT IN ('EU28', 'EU27_2020', 'AL', 'ME', 'MK', 'RS', 'TR', 'UK', ${pCountry})
 			)UNION(	      
 			SELECT DISTINCT(n.country_code) as country_code, CONCAT ("(",n.country_code, ") ", t.text) as country_name
 			FROM strategies_page sp
@@ -161,7 +162,7 @@
 			INNER JOIN translation t ON n.literal_id=t.literal_id
 			WHERE sp.page = 'STRATEGY_ENFOR_CAPACITY'
 			AND t.language="EN"
-			AND n.country_code NOT IN ('EU28', 'EU27_2020', 'AL', 'ME', 'MK', 'RS', 'TR', ${pCountry})
+			AND n.country_code NOT IN ('EU28', 'EU27_2020', 'AL', 'ME', 'MK', 'RS', 'TR', 'UK', ${pCountry})
 			) ORDER BY country_code ASC
 	    </Query>
 	</DataAccess>
@@ -194,8 +195,8 @@
 	      INNER JOIN value v ON v.profile_id = p.id
 	      INNER JOIN translation t ON n.literal_id=t.literal_id
 	      WHERE v.indicator_id IN (31, 36, 37, 38, 39, 40)
-	      AND n.country_code NOT IN ('EU28')
-	      AND n.country_code NOT IN (${pCountry})
+	      AND n.country_code NOT IN ('EU28','EU27_2020')
+	      AND n.country_code NOT IN (${pCountry}, "UK")
 	      AND t.language="EN"
 	      ORDER BY country_code ASC;
 	    </Query>
@@ -353,6 +354,7 @@
 	      ON n.id = mp.nuts_id
 	      WHERE mp.page = 'MATRIX_AUTHORITY'
 	      AND n.country_code REGEXP ${countries}
+	      AND n.country_code != "UK"
 	      AND (mp.check_1=${institution1}
 		      OR mp.check_2=${institution2}
 		      OR mp.check_3=${institution3}
@@ -371,6 +373,7 @@
 	    INNER JOIN nuts n
 	    ON n.id = mp.nuts_id
 	    WHERE mp.page = 'MATRIX_AUTHORITY'
+	    AND n.country_code != "UK"
 	    ORDER BY FIELD(country_code, 'EU28') DESC, country_code ASC;
 	    </Query>
 	</DataAccess>
@@ -459,8 +462,8 @@
 	      AND v.profile_id = p.id
 	      AND d.id = ${pDataset} AND d.id = v.dataset_id
 	      AND t.literal_id = scs.literal_id
-	      AND n.country_code IN (${pCountry1}, ${pCountry2}, 'EU28') AND i.id = ${pIndicator}
-	      ORDER BY FIELD(n.country_code, ${pCountry1}, ${pCountry2}, 'EU28') DESC
+	      AND n.country_code IN (${pCountry1}, ${pCountry2}, 'EU27_2020') AND i.id = ${pIndicator}
+	      ORDER BY FIELD(n.country_code, ${pCountry1}, ${pCountry2}, 'EU27_2020') DESC
 	    </Query>
 	</DataAccess>
 
@@ -485,8 +488,8 @@
 	      AND t.language = 'EN'
 	      AND t.literal_id = sas.literal_id
 	      AND sas.id IN (1, 2, 3, 4, 18, 6, 7)
-	      AND n.country_code IN (${pCountry1}, ${pCountry2}, 'EU28') AND i.id = ${pIndicator}
-	      ORDER BY FIELD(n.country_code, ${pCountry1}, ${pCountry2}, 'EU28') DESC
+	      AND n.country_code IN (${pCountry1}, ${pCountry2}, 'EU27_2020') AND i.id = ${pIndicator}
+	      ORDER BY FIELD(n.country_code, ${pCountry1}, ${pCountry2}, 'EU27_2020') DESC
 	    </Query>
 	</DataAccess>
 
@@ -501,14 +504,14 @@
 	      <Parameter default="6" name="pDataset" type="Numeric" />
 	    </Parameters>
 	    <Query>
-	      SELECT IF(n.name REGEXP 'European Union', n.country_code, CONCAT("(", n.country_code, ") ", n.name)) as Country, (v.value*100) as Value
+	      SELECT IF(n.name REGEXP 'EU27_2020', n.country_code, CONCAT("(", n.country_code, ") ", n.name)) as Country, (v.value*100) as Value
 	      FROM nuts n, profile p, indicator i, value v, dataset d
 	      WHERE n.id = p.nuts_id
 	      AND i.id = v.indicator_id
 	      AND v.profile_id = p.id
 	      AND d.id = ${pDataset} AND d.id = v.dataset_id
-	      AND n.country_code IN (${pCountry1}, ${pCountry2}, 'EU28') AND i.id = ${pIndicator}
-	      ORDER BY FIELD(n.country_code, ${pCountry1}, ${pCountry2}, 'EU28') DESC
+	      AND n.country_code IN (${pCountry1}, ${pCountry2}, 'EU27_2020') AND i.id = ${pIndicator}
+	      ORDER BY FIELD(n.country_code, ${pCountry1}, ${pCountry2}, 'EU27_2020') DESC
 	    </Query>
 	</DataAccess>
 
@@ -551,8 +554,8 @@
 	      AND i.id = v.indicator_id
 	      AND v.profile_id = p.id
 	      AND d.id = ${pDataset} AND d.id = v.dataset_id
-	      AND n.country_code IN (${pCountry1}, ${pCountry2}, 'EU28') AND i.id = ${pIndicator}
-	      ORDER BY FIELD(n.country_code, ${pCountry1}, ${pCountry2}, 'EU28') ASC
+	      AND n.country_code IN (${pCountry1}, ${pCountry2}, 'EU27_2020') AND i.id = ${pIndicator}
+	      ORDER BY FIELD(n.country_code, ${pCountry1}, ${pCountry2}, 'EU27_2020') ASC
 	    </Query>
 	</DataAccess>
 
@@ -567,14 +570,14 @@
 	      <Parameter default="6" name="pDataset" type="Numeric" />
 	    </Parameters>
 	    <Query>
-	      SELECT IF(n.name REGEXP 'European Union', n.country_code, CONCAT("(", n.country_code, ") ", n.name)) as Country, p.year as Year, v.value as Income
+	      SELECT IF(n.name = 'EU27_2020', n.country_code, CONCAT("(", n.country_code, ") ", n.name)) as Country, p.year as Year, v.value as Income
 	      FROM nuts n, profile p, indicator i, value v, dataset d
 	      WHERE n.id = p.nuts_id
 	      AND i.id = v.indicator_id
 	      AND v.profile_id = p.id
 	      AND d.id = ${pDataset} AND d.id = v.dataset_id
-	      AND n.country_code IN (${pCountry1}, ${pCountry2}, 'EU28') AND i.id = ${pIndicator}
-	      ORDER BY FIELD(n.country_code, ${pCountry1}, ${pCountry2}, 'EU28') ASC, p.year ASC
+	      AND n.country_code IN (${pCountry1}, ${pCountry2}, 'EU27_2020') AND i.id = ${pIndicator}
+	      ORDER BY FIELD(n.country_code, ${pCountry1}, ${pCountry2}, 'EU27_2020') ASC, p.year ASC
 	    </Query>
 	</DataAccess>
 
@@ -605,7 +608,8 @@
 	      AND v.profile_id = p.id 
 	      AND d.id = ${pDataset} AND d.id = v.dataset_id
 	      AND v.indicator_id IN (37, 38, 39)
-	      ORDER BY FIELD(n.country_code, 'EU28') DESC, countryKey ASC;
+	      AND n.country_code NOT IN ("UK","EU28")
+	      ORDER BY FIELD(n.country_code, 'EU27_2020') DESC, countryKey ASC;
 	    </Query>
 	</DataAccess>
 
@@ -625,7 +629,7 @@
 	      AND d.id = ${pDataset} AND d.id = v.dataset_id
 	      AND n.literal_id REGEXP ${countries}
 	      AND v.indicator_id IN (37, 38, 39)
-	      ORDER BY FIELD (countryKey, 'EU28') DESC, country_name ASC
+	      ORDER BY FIELD (countryKey, 'EU27_2020') DESC, country_name ASC
 	    </Query>
 	</DataAccess>
 
@@ -643,6 +647,7 @@
 	      AND v.profile_id = p.id 
 	      AND d.id = ${pDataset} AND d.id = v.dataset_id
 	      AND v.indicator_id = 37
+	      AND n.country_code NOT IN ("UK","EU28")
 	      ORDER BY country_name ASC
 	    </Query>
 	</DataAccess>
@@ -661,6 +666,7 @@
 	      AND v.profile_id = p.id 
 	      AND d.id = ${pDataset} AND d.id = v.dataset_id
 	      AND v.indicator_id = 38
+	      AND n.country_code NOT IN ("UK","EU28")
 	      ORDER BY country_name ASC
 	    </Query>
 	</DataAccess>
@@ -680,6 +686,7 @@
 	      AND d.id = ${pDataset} AND d.id = v.dataset_id
 	      AND v.indicator_id = 39
 	      AND p.gender_id = 1
+	      AND n.country_code NOT IN ("UK","EU28")
 	      ORDER BY country_name ASC
 	    </Query>
 	</DataAccess>
@@ -699,6 +706,7 @@
 	      AND d.id = ${pDataset} AND d.id = v.dataset_id
 	      AND v.indicator_id = 39
 	      AND p.gender_id = 2
+	      AND n.country_code NOT IN ("UK","EU28")
 	      ORDER BY country_name ASC
 	    </Query>
 	</DataAccess>
@@ -718,6 +726,7 @@
 	      AND d.id = ${pDataset} AND d.id = v.dataset_id
 	      AND v.indicator_id = 39
 	      AND p.gender_id = 3
+	      AND n.country_code NOT IN ("UK","EU28")
 	      ORDER BY country_name ASC
 	    </Query>
 	</DataAccess>
@@ -736,6 +745,7 @@
 	      AND v.profile_id = p.id 
 	      AND d.id = ${pDataset} AND d.id = v.dataset_id
 	      AND v.indicator_id = 34
+	      AND n.country_code NOT IN ("UK","EU28")
 	      ORDER BY country_name ASC
 	    </Query>
 	</DataAccess>

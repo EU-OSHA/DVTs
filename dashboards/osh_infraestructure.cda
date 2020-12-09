@@ -99,6 +99,7 @@
 	    INNER JOIN nuts n
 	    ON n.id = mp.nuts_id
 	    WHERE mp.page = 'MATRIX_STATISTICS'
+	    AND n.country_code != "UK"
 	    ORDER BY country_code ASC;
 	    </Query>
 	</DataAccess>
@@ -117,6 +118,7 @@
 	      ON n.id = mp.nuts_id
 	      WHERE mp.page = 'MATRIX_STATISTICS'
 	      AND n.country_code REGEXP ${pCountries}
+	      AND n.country_code != "UK"
 	      ORDER BY country_name ASC, osh_statistics DESC, surveys DESC, research_institutes DESC, id ASC;
 	    </Query>
 	</DataAccess>
@@ -145,7 +147,8 @@
 	      ON l.id = t.literal_id
 	      INNER JOIN translation t2
 	      ON l2.id = t2.literal_id
-	      WHERE mp.page = 'MATRIX_STATISTICS' 
+	      WHERE mp.page = 'MATRIX_STATISTICS'
+	      AND n.country_code != "UK" 
 	      AND n.literal_id REGEXP ${pCountries}
 	      AND (mp.check_1=${category1}
 	      OR mp.check_2=${category2}

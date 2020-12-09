@@ -199,8 +199,7 @@ define (function (require) {
                                     return dvtUtils.getColorCountry(2);
                                 }
                             }else{
-                                //debugger;
-                                if(country == "EU28"){
+                                if(country == "EU27_2020"){
                                     return dvtUtils.getEUColor();
                                 }else if(country.label.match(pCountry)){
                                     return dvtUtils.getColorCountry(1); 
@@ -242,7 +241,7 @@ define (function (require) {
 				              	if(countryKey.label.match(pCountry1)){
                   					//return 'http://localhost:8080/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/man_orange.svg';
                                     return configService.getImagesPath()+'man_orange.svg';
-				              	}else if(countryKey == 'EU28'){
+				              	}else if(countryKey == 'EU28' || countryKey == 'EU27_2020'){
 				              		return configService.getImagesPath()+'man_blue.svg'
 				              	}
                   				})
@@ -253,8 +252,8 @@ define (function (require) {
 				              	var panelHeight = this.root.height();
 				              	var valueKey = scene.firstAtoms.value;
                                 var resul = valueKey * (panelHeight - this.bottom()) / axisFixedMax;
-                                if(valueKey >= 220){
-                                    this.root.sign.chart.options.axisFixedMax = 420;
+                                if(valueKey >= 180){
+                                    this.root.sign.chart.options.axisFixedMax = 580;
                                 }
 				              	return resul;
 				              })
@@ -272,7 +271,7 @@ define (function (require) {
 				              	if(panelWidth != 300){ //Default panel value
 									if(countryKey.label.match(pCountry1)){
                                         return (barWidth - this.width())/2 +5; //5 is the panel margin
-					              	}else if(countryKey == 'EU28'){
+					              	}else if(countryKey == 'EU28' || countryKey == 'EU27_2020'){
                                         var firstSibling = scene.previousSibling;
                                         if(firstSibling == null){
                                             return panelWidth/2 + (this.width())/1.5;
@@ -311,7 +310,7 @@ define (function (require) {
                         // line_lineWidth: 1.5,
                         label_textStyle: function(scene){
                         	var countryKey = scene.firstAtoms.series;
-                            if (countryKey == 'EU28') {
+                            if (countryKey == 'EU28' || countryKey == 'EU27_2020') {
                                 return dvtUtils.getEUColor();
                             } else if(countryKey.label.match(pCountry1)){
                             	return dvtUtils.getColorCountry(1);
@@ -321,7 +320,7 @@ define (function (require) {
                         label_textMargin: function(scene){
                             var countryKey = scene.firstAtoms.series;
 
-                            if (countryKey == 'EU28') {
+                            if (countryKey == 'EU28' || countryKey == 'EU27_2020') {
                                 return 5;
                             } else if(countryKey.label.match(pCountry1)){
                                 return 8;
@@ -353,11 +352,11 @@ define (function (require) {
                                 /*$log.warn('Country: '+ countryKey);
                                 $log.warn('Value: '+ countryValue);*/
 
-                                if (countryKey == 'EU28') {
+                                if (countryKey == 'EU28' || countryKey == 'EU27_2020') {
 
                                     if(difference3 && countryYear == '2010'){
                                         return 'bottom';
-                                    }else if(difference4 && countryYear == '2018'){
+                                    }else if(difference4 && countryYear == '2019'){
                                         return 'bottom';
                                     }
 

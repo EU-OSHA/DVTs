@@ -24,11 +24,11 @@ define(function (require) {
     $scope.i18nSearch = i18nSearch;
     $scope.i18nSearchPlaceholder = i18nSearch['authorities-search-placeholder'];
 
-    if ($rootScope.defaultCountry.code != undefined && $rootScope.defaultCountry.selectedByUser == true)
+    if ($rootScope.defaultCountry.code != undefined && $rootScope.defaultCountry.code != "UK" && $rootScope.defaultCountry.selectedByUser == true)
     {
       $scope.pCountry = $rootScope.defaultCountry.code;
     }
-    else
+    else if ($stateParams.pCountry != "UK")
     {
       $scope.pCountry = $stateParams.pCountry;
     }

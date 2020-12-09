@@ -23,7 +23,7 @@ define(function (require) {
     $scope.i18nSearch = i18nSearch;
     $scope.i18nSearchPlaceholder = i18nSearch['authorities-search-placeholder'];
 
-    $scope.pCountry = $stateParams.pCountry;
+    $scope.pCountry = $stateParams.pCountry != "UK" ? $stateParams.pCountry : 0;
 
     $scope.countries = [];
     $scope.amatrix = [];

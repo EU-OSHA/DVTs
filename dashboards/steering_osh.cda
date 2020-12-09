@@ -80,6 +80,7 @@
 	      FROM matrix_page mp, nuts n
 	      WHERE page = 'MATRIX_STRATEGY'
 	      AND n.id = mp.nuts_id
+	      AND n.country_code != "UK"
 	      ORDER BY country_code ASC;
 	    </Query>
 	</DataAccess>
@@ -96,6 +97,7 @@
 	      FROM matrix_page mp, nuts n
 	      WHERE page = 'MATRIX_STRATEGY'
 	      AND n.id = mp.nuts_id
+	      AND n.country_code != "UK"
 	      AND n.country_code REGEXP ${countries}
 	      ORDER BY country_name ASC, implementation_record DESC, prevention_work DESC, tackling_demographic DESC;
 	    </Query>
@@ -126,6 +128,7 @@
 			LEFT JOIN translation t2
 			ON l2.id = t2.literal_id
 			WHERE mp.page = 'MATRIX_STRATEGY' 
+			AND n.country_code != "UK"
 			AND n.literal_id REGEXP ${countries}
 			AND (mp.check_1=${challenge1}
 			OR mp.check_2=${challenge2}
@@ -152,7 +155,7 @@
 			INNER JOIN value v
 			ON v.profile_id = p.id
 			WHERE v.indicator_id IN (354,355,356,357)
-			AND n.country_code NOT IN ('EU27_2020', 'AL', 'ME', 'MK', 'RS', 'TR')
+			AND n.country_code NOT IN ('EU27_2020', 'AL', 'ME', 'MK', 'RS', 'TR', 'UK')
 			ORDER BY country_code ASC;
 	    </Query>
 	</DataAccess>
@@ -177,7 +180,7 @@
 			AND t1.LANGUAGE="EN" AND t1.TEXT="Yes"
 			/* JOIN CONSULTATIVE */
 			AND n.id = p.nuts_id
-			AND n.country_code NOT IN('AL', 'ME', 'MK', 'RS', 'TR')
+			AND n.country_code NOT IN('AL', 'ME', 'MK', 'RS', 'TR', 'UK')
 			AND v.indicator_id = 354
 			AND v.profile_id = p.id
 			AND d.id = v.dataset_id
@@ -194,7 +197,7 @@
 			AND t1.LANGUAGE="EN" AND t1.TEXT="Yes"
 			/* TRADE UNION */
 			AND n.id = p.nuts_id
-			AND n.country_code NOT IN('AL', 'ME', 'MK', 'RS', 'TR')
+			AND n.country_code NOT IN('AL', 'ME', 'MK', 'RS', 'TR', 'UK')
 			AND v.indicator_id = 355
 			AND v.profile_id = p.id
 			AND d.id = v.dataset_id
@@ -211,7 +214,7 @@
 			AND t1.LANGUAGE="EN" AND t1.TEXT="Yes"
 			/* HEALTH REPRESENTATIVE */
 			AND n.id = p.nuts_id
-			AND n.country_code NOT IN('AL', 'ME', 'MK', 'RS', 'TR')
+			AND n.country_code NOT IN('AL', 'ME', 'MK', 'RS', 'TR', 'UK')
 			AND v.indicator_id = 357
 			AND v.profile_id = p.id
 			AND d.id = v.dataset_id
@@ -228,7 +231,7 @@
 			AND t1.LANGUAGE="EN" AND t1.TEXT="Yes"
 			/* HEALTH COMMITEE */
 			AND n.id = p.nuts_id
-			AND n.country_code NOT IN('AL', 'ME', 'MK', 'RS', 'TR')
+			AND n.country_code NOT IN('AL', 'ME', 'MK', 'RS', 'TR', 'UK')
 			AND v.indicator_id = 356
 			AND v.profile_id = p.id
 			AND d.id = v.dataset_id
@@ -307,7 +310,7 @@
 			AND t1.LANGUAGE="EN" AND t1.TEXT="Yes"
 			/* JOIN CONSULTATIVE */
 			AND n.id = p.nuts_id
-			AND n.country_code NOT IN('AL', 'ME', 'RS', 'TR')
+			AND n.country_code NOT IN('AL', 'ME', 'RS', 'TR', 'UK')
 			AND v.indicator_id = 100
 			AND v.profile_id = p.id
 			AND d.id = v.dataset_id
@@ -325,7 +328,7 @@
 			AND t1.LANGUAGE="EN" AND t1.TEXT="Yes"
 			/* JOIN CONSULTATIVE */
 			AND n.id = p.nuts_id
-			AND n.country_code NOT IN('AL', 'ME', 'RS', 'TR')
+			AND n.country_code NOT IN('AL', 'ME', 'RS', 'TR', 'UK')
 			AND v.indicator_id = 101
 			AND v.profile_id = p.id
 			AND d.id = v.dataset_id
@@ -343,7 +346,7 @@
 			AND t1.LANGUAGE="EN" AND t1.TEXT="Yes"
 			/* JOIN CONSULTATIVE */
 			AND n.id = p.nuts_id
-			AND n.country_code NOT IN('AL', 'ME', 'RS', 'TR')
+			AND n.country_code NOT IN('AL', 'ME', 'RS', 'TR', 'UK')
 			AND v.indicator_id = 102
 			AND v.profile_id = p.id
 			AND d.id = v.dataset_id
@@ -361,7 +364,7 @@
 			AND t1.LANGUAGE="EN" AND t1.TEXT="Yes"
 			/* JOIN CONSULTATIVE */
 			AND n.id = p.nuts_id
-			AND n.country_code NOT IN('AL', 'ME', 'RS', 'TR')
+			AND n.country_code NOT IN('AL', 'ME', 'RS', 'TR', 'UK')
 			AND v.indicator_id = 103
 			AND v.profile_id = p.id
 			AND d.id = v.dataset_id

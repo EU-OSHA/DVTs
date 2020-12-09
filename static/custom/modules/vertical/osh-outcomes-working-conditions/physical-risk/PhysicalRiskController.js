@@ -60,8 +60,8 @@ define(function (require) {
   
     $scope.pIndicator = $stateParams.pIndicator;
     $scope.pSubIndicator = $stateParams.pSubIndicator;
-    $scope.pCountry1 = $stateParams.pCountry1;
-    $scope.pCountry2 = $stateParams.pCountry2;
+    $scope.pCountry1 = $stateParams.pCountry1 != "UK" ? $stateParams.pCountry1 : $rootScope.defaultCountry.code;
+    $scope.pCountry2 = $stateParams.pCountry2 != "UK" ? $stateParams.pCountry2 : 0;
     $scope.pFilter = $stateParams.pFilter;
 
     var resolution = window.resolution;
