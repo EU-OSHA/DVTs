@@ -226,7 +226,7 @@ define (function (require) {
 				              	var countryKey = scene.firstAtoms.category;
 				              	if(panelWidth != 300){ //Default panel value
 									if(countryKey.label.match(pCountry1)){
-                                        if(!scene.nextSibling.firstAtoms.category.label.match(pCountry2)){
+                                        if(!scene.nextSibling.firstAtoms.category.label.match(pCountry2) || pCountry2 == "0"){
                                             return panelWidth/2 - (barWidth + this.width()/2) + 5; //5 is the panel margin
                                         }else{
                                             return (barWidth - this.width())/2 +5; //5 is the panel margin
