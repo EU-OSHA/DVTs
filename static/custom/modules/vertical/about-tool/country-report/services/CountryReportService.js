@@ -253,7 +253,7 @@ define (function (require) {
 				              	var valueKey = scene.firstAtoms.value;
                                 var resul = valueKey * (panelHeight - this.bottom()) / axisFixedMax;
                                 if(valueKey >= 220){
-                                    this.root.sign.chart.options.axisFixedMax = 420;
+                                    this.root.sign.chart.options.axisFixedMax = 580;
                                 }
 				              	return resul;
 				              })
