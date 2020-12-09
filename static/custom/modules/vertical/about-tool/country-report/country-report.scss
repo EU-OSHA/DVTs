@@ -488,8 +488,9 @@
 				min-height: initial !important;
 				.content-page{
 					display: flex;
-					justify-content: space-between;
+					justify-content: flex-start;
 					padding-top: 30mm;
+					flex-wrap: wrap;
 					.box-rounded {
 						width: 60mm;
 						padding: 2rem 2rem 1rem;
