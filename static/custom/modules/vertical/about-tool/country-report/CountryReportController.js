@@ -77,7 +77,9 @@ define(function (require) {
 		$scope.employmentPerSector=[];
 		$scope.employmentRate=[];
 		$scope.gdpPerCapita=[];
+		$scope.gdpPerCapitaEuro=[];
 		$scope.incomePerCapita=[];
+		$scope.incomePerCapitaEuro=[];
 		$scope.nonFatalWorkAccidents=[];
 		$scope.estimationNonFatal=[];
 		$scope.healthAndSafety={};
@@ -527,10 +529,35 @@ define(function (require) {
 				throw err;
 		  	});
 
+		  	/* GDP PER CAPITA EURO */
+		  	dataService.getCountryReportDataAsc($scope.datasetList.EUROSTAT2019, 278, $scope.pCountry, "EU27_2020").then(function(data){
+		  		data.data.resultset.map(function (elem) {
+			  		$scope.gdpPerCapitaEuro.push({
+				  		country: elem[0],
+				  		value: elem[1]
+			  		});
+		  		});
+		  	}).catch(function (err) {
+				throw err;
+		  	});
+
 		  	/* INCOME PER CAPITA */
 		  	dataService.getCountryReportYearData($scope.datasetList.EUROSTAT2019BetweenDates, 36, $scope.pCountry, "EU27_2020", 0).then(function(data){
 		  		data.data.resultset.map(function (elem) {
 			  		$scope.incomePerCapita.push({
+				  		country: elem[0],
+				  		year: elem[1],
+				  		value: elem[2]
+			  		});
+		  		});
+		  	}).catch(function (err) {
+				throw err;
+		  	});
+
+		  	/* INCOME PER CAPITA EURO */
+		  	dataService.getCountryReportYearData($scope.datasetList.EUROSTAT2019BetweenDates, 279, $scope.pCountry, "EU27_2020", 0).then(function(data){
+		  		data.data.resultset.map(function (elem) {
+			  		$scope.incomePerCapitaEuro.push({
 				  		country: elem[0],
 				  		year: elem[1],
 				  		value: elem[2]
