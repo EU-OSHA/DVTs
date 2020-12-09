@@ -521,15 +521,19 @@
 					}
 					td{
 						border-right: 1px solid $gray-light;
-						padding: 1rem;
+						padding: 1.4rem 0.8rem;
 						text-align: center;
+						vertical-align: top;
 						span.data{
-							font-size: 2.2rem;
+							font-size: 2.1rem;
 							display: block;
 							font-weight: bold;
 							font-style: italic;
 							white-space: nowrap;
-					    margin-top: 1.2rem;
+					    	margin-top: 1.2rem;
+						}
+						> img {
+							width: 7.28rem;
 						}
 					}
 				}
