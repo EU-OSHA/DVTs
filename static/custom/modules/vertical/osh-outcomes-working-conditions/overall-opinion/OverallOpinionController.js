@@ -292,9 +292,9 @@ define(function (require) {
           }else{
             $state.go($state.current.name, {
               pIndicator: indicator,
-              pCountry1: null,
-              pCountry2: null,
-              pSplit: null
+              pCountry1: $rootScope.defaultCountry.code != undefined ? $rootScope.defaultCountry.code: 'AT',
+              pCountry2: $rootScope.defaultCountry2 != undefined ? $rootScope.defaultCountry2.code: 0,
+              pSplit: 'sector'
             });
           }
         }

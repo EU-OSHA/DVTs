@@ -104,12 +104,12 @@ define(function (require) {
             squash: 'job-satisfaction'
           },
           pCountry1: {
-            value: null,
-            squash: true
+            value: 'AT',
+            squash: 'AT'
           },
           pCountry2: {
-            value: null,
-            squash: true
+            value: 'BE',
+            squash: 'BE'
           },
           pSplit: {
             value: null,
