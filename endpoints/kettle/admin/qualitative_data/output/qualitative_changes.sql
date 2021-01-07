@@ -2933,7 +2933,7 @@ INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="WORKACC" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+566, null, @sectionId, "CHART FOOTER");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+566, "EN", 1, "<p>This diagram shows the number of fatal accidents for every Member State per 100,000 employees. The EU average was 1,85 accidents per 100,000 employees in the period 2010-2017. The source of the data is the incidence rate as published by Eurostat.</p>");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+566, "EN", 1, "<p>This diagram shows the number of fatal accidents for every Member State per 100,000 employees. The EU average was 1,85 accidents per 100,000 employees in the period 2010-2018. The source of the data is the incidence rate as published by Eurostat.</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="WORKACC" AND tool_id=@toolId);
@@ -4451,11 +4451,6 @@ SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="COUNTRY_REPORT" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2194, null, @sectionId, "PAGE_NAME");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2194, "EN", 1, "Full country report");
-
-SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="ECONOMIC_SECTOR_PROFILE" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2195, null, @sectionId, "CHART TITLE");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2195, "EN", 1, "GDP per capita in relation to EU27_2020 average");
 
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="AT");
@@ -9447,14 +9442,14 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<p>The following <strong>filter options</strong> were applied by EU-OSHA in the Eurostat-table:</p>
 <ul>
-  <li>Gross domestic product at market prices</li>
-  <li><strong>Percentage of EU28 total per capita (based on million purchasing power standards), current prices</strong>/Percentage of EU28 total per capita (based on million euro), current prices</li>
+    <li>Gross domestic product at market prices</li>
+    <li><strong>Percentage of EU27_2020 total per capita (based on million purchasing power standards), current prices</strong>/Percentage of EU27_2020 total per capita (based on million euro), current prices</li>
 </ul>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "<p>Eurostat provides the calculation of percentages by its filtering options, those values are taken as base for the calculation.</p>
 <p>EU-OSHA calculated the percentages in relation to EU 27 average, EU 27 average = 100.</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentages (in relation to EU 28 average, EU 28 average = 100)");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentages (in relation to EU 27_2020 average, EU 27_2020 average = 100)");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "The percentages are visualised as drawing of a person for EU and two selected countries, changing its sizes depending on the percentage calculated, EU = always 100. Split to select between the unit of measures.");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+13, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -9485,14 +9480,14 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<p>The following <strong>filter options</strong> were applied by EU-OSHA in the Eurostat-table:</p>
 <ul>
-<li>Gross domestic product at market prices</li>
-<li>Percentage of EU28 total per capita (based on million purchasing power standards), current prices/<strong>Percentage of EU28 total per capita (based on million euro), current prices</strong></li>
+    <li>Gross domestic product at market prices</li>
+    <li>Percentage of EU27_2020 total per capita (based on million purchasing power standards), current prices/<strong>Percentage of EU27_2020 total per capita (based on million euro), current prices</strong></li>
 </ul>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "<p>Eurostat provides the calculation of percentages by its filtering options, those values are taken as base for the calculation.</p>
 <p>EU-OSHA calculated the percentages in relation to EU 27 average, EU 27 average = 100.</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentages (in relation to EU 28 average, EU 28 average = 100)");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "Percentages (in relation to EU 27_2020 average, EU 27_2020 average = 100)");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+12, "EN", 1, "The percentages are visualised as drawing of a person for EU and two selected countries, changing its sizes depending on the percentage calculated, EU = always 100. Split to select between the unit of measures.");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+13, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -10294,7 +10289,7 @@ SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "2010 was taken as base year to mitigate the strong influence of the crisis 2008 and 2009 on the economic activity and consequently on the work accidents.");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p>The diagram shows the development of non-fatal accidents from 2010 to 2017 in percentages. 2010 is equal to 100. It is possible to select two countries. In each diagram the trend for EU countries average is also displayed.</p>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p>The diagram shows the development of non-fatal accidents from 2010 to 2018 in percentages. 2010 is equal to 100. It is possible to select two countries. In each diagram the trend for EU countries average is also displayed.</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "Eurostat");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -10334,7 +10329,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 </p>
 <p>Future: When data for 2019 is be available, there will be a trend calculated between the two consecutive periods 2010 to 2014 and 2015 to 2019.</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "This bar chart shows the average number of fatal accidents for every Member State per 100,000 workers in the year period 2010-2018");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<p>This bar chart diagram shows the average number of fatal accidents for every Member State per 100,000 employees - incidence rate - in two periods: 2010 to 2014 (five years) and 2015 -2018 (four years)</p><p>This bar chart diagram shows the average number of fatal accidents for every Member State per 100,000 employees - incidence rate - in two periods: 2010 to 2014 (five years) and 2015 -2018 (four years)</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "Eurostat");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -10351,9 +10346,9 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2010 to 2018");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "20/11/2020");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+7, "EN", 1, "14/12/2020");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The <strong>intended coverage</strong> is: All EU countries plus Iceland, Norway and Switzerland. Currently, not all data for Iceland is available.</p>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The <strong>intended coverage</strong> is: 27 EU countries plus Iceland, Norway and Switzerland. Currently, no data for Iceland were available.</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<p><strong>Fatal Accidents</strong>:</p>
 <ul>
@@ -10362,7 +10357,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
     <li>Time: 2010-2018</li>
 </ul>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "<p><strong>Calculation:&nbsp;</strong>Average of the Incident Rate for a 9 years period of “Fatal work accidents” for each country including the average for EU countries. Calculated is the arithmetic mean of the incidence rate for the years 2010 to 2018.</p>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "<p><strong>Calculation: </strong>Average of the Incident Rate for two periods of &ldquo;Fatal work accidents&rdquo; for each country, including the average for EU 27. Calculated is the arithmetic mean of the incidence rate for the years 2010 to 2014 and 2015 to 2018.</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+11, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+11, "EN", 1, "<p>Incidence Rate of Fatal Accidents per 100,000 employees</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+12, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
