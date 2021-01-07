@@ -320,7 +320,8 @@
 	      ON l2.id = t2.literal_id
 	      INNER JOIN translation t3
 	      ON l3.id = t3.literal_id
-	      WHERE mp.page = 'MATRIX_AUTHORITY' 
+	      WHERE mp.page = 'MATRIX_AUTHORITY'
+	      AND n.country_code NOT IN ("UK") 
 	      AND n.country_code REGEXP ${countries}
 	      AND (mp.check_1=${institution1}
 	      OR mp.check_2=${institution2}
