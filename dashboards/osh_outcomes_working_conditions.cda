@@ -151,44 +151,57 @@
 	    	<Parameter default="11" name="pDataset2" type="Numeric"/>
 	    </Parameters>
 	    <Query>
-			SELECT DISTINCT(n.literal_id) as country_name, n.country_code as country_code, (ROUND(v.value*100)) as satisfaction_working, ( ROUND(v2.value*100)) as health_negative, 
-			(ROUND(v3.value*100)) as health_problem, (ROUND(v4.value*100)) as absence, (ROUND(v5.value*100)) as sick_at_work, (ROUND(v6.value*100)) as job_till_60
-			FROM nuts n, profile p, profile p2, profile p3, profile p4, profile p5, profile p6, value v, value v2, value v3, value v4, value v5, value v6, dataset d
+			SELECT DISTINCT(n.literal_id) as country_name, n.country_code as country_code, (ROUND(v.value*100+v2.value*100)) as satisfaction_working, 
+			(ROUND(v3.value*100)) as health_negative, (ROUND(v4.value*100)) as health_problem, (ROUND(v5.value*100)) as absence, 
+			(ROUND(v6.value*100)) as sick_at_work, (ROUND(v7.value*100)) as job_till_60
+			FROM nuts n, profile p, profile p2, profile p3, profile p4, profile p5, profile p6, profile p7, value v, value v2, value v3, value v4, value v5, value v6, value v7, 
+			dataset d
 			WHERE
-			/* SATISFACTION WITH WORKING CONDITIONS */
+			/* SATISFACTION WITH WORKING CONDITIONS - Satisfied */
 			n.id = p.nuts_id
-			AND v.indicator_id = 57
+			AND p.answer_id=12
+			AND v.indicator_id = 65
 			AND v.profile_id = p.id
 			AND d.id = v.dataset_id
-			/* HEALTH NEGATIVE AFFECTION */
+			/* SATISFACTION WITH WORKING CONDITIONS - Very Satisfied */
 			AND n.id = p2.nuts_id
-			AND v2.indicator_id = 58
+			AND p2.answer_id=13
+			AND v2.indicator_id = 65
 			AND v2.profile_id = p2.id
 			AND d.id = v2.dataset_id
-			/* HEALTH PROBLEMS IN LAST 12 MONTHS */
+			/* HEALTH NEGATIVE AFFECTION */
 			AND n.id = p3.nuts_id
-			AND v3.indicator_id = 59
+			AND v3.indicator_id = 58
 			AND v3.profile_id = p3.id
-			AND v3.dataset_id = 11
-			/* MORE THAN 15 DAYS OF ABSENCE */
+			AND p3.answer_id=106
+			AND d.id = v3.dataset_id
+			/* HEALTH PROBLEMS IN LAST 12 MONTHS */
 			AND n.id = p4.nuts_id
-			AND v4.indicator_id = 60
+			AND v4.indicator_id = 59
 			AND v4.profile_id = p4.id
-			AND d.id = v4.dataset_id
-			/* SICK AT WORK */
+			AND v4.dataset_id = 11
+			/* MORE THAN 15 DAYS OF ABSENCE */
 			AND n.id = p5.nuts_id
-			AND v5.indicator_id = 61
+			AND v5.indicator_id = 60
 			AND v5.profile_id = p5.id
+			AND p5.answer_id=108
 			AND d.id = v5.dataset_id
-			/* BE ABLE TO DO CURRENT JOB TIL 60 YEARS OLD */
+			/* SICK AT WORK */
 			AND n.id = p6.nuts_id
-			AND v6.indicator_id = 62
+			AND v6.indicator_id = 61
 			AND v6.profile_id = p6.id
+			AND p6.answer_id=1
 			AND d.id = v6.dataset_id
+			/* BE ABLE TO DO CURRENT JOB TIL 60 YEARS OLD */
+			AND n.id = p7.nuts_id
+			AND v7.indicator_id = 62
+			AND v7.profile_id = p7.id
+			AND p7.answer_id=1
+			AND d.id = v7.dataset_id
 			/* COMMON */
 			AND d.id = 10
 			AND n.country_code != "UK"
-			ORDER BY country_name ASC;
+			ORDER BY country_name ASC
 	    </Query>
 	</DataAccess>
 
@@ -483,6 +496,7 @@
 			AND v.profile_id = p.id
 			AND sas.id IN (9,10,11,12,13,8)
 			AND p.activity_sector_id = sas.id
+			AND p.answer_id = 1
 			AND sas.literal_id = t.literal_id
 			AND d.id = v.dataset_id
 			AND d.id = ${pDataset}
@@ -507,6 +521,7 @@
 			WHERE n.id = p.nuts_id
 			AND v.indicator_id = ${pIndicator}
 			AND v.profile_id = p.id
+			AND p.answer_id = 1
 			AND p.gender_id = sp.id
 			AND sp.literal_id = t.literal_id
 			AND d.id = v.dataset_id
@@ -532,6 +547,7 @@
 			WHERE n.id = p.nuts_id
 			AND v.indicator_id = ${pIndicator}
 			AND v.profile_id = p.id
+			AND p.answer_id = 1
 			AND p.age_group_id = sag.id
 			AND sag.literal_id = t.literal_id
 			AND d.id = v.dataset_id
@@ -810,6 +826,7 @@
             AND n.country_code !=  "UK"
             AND v.indicator_id = ${pIndicator}
             AND v.profile_id = p.id
+            AND p.answer_id = 17
             AND v.dataset_id = ${pDataset}
             ORDER BY FIELD('EU28', n.country_code) DESC, FIELD(n.country_code, 'CH', 'IS', 'NO'), n.country_code ASC, Value DESC;
         </Query>
@@ -830,6 +847,7 @@
             AND n.country_code != "UK"
             AND v.indicator_id = ${pIndicator}
             AND v.profile_id = p.id
+            AND p.answer_id = 17
             AND v.dataset_id = ${pDataset}
             ORDER BY FIELD('EU28',n.country_code) ASC, FIELD(n.country_code,'CH', 'IS', 'NO') DESC, n.country_code DESC;
         </Query>
@@ -920,6 +938,7 @@
 			WHERE n.id = p.nuts_id
 			AND v.indicator_id IN (70, 69, 68, 67)
 			AND v.profile_id = p.id
+			AND p.answer_id = 26
 			AND d.id = v.dataset_id
 			AND d.id = ${pDataset}
 			AND v.indicator_id=i.id
@@ -947,6 +966,7 @@
 			WHERE n.id = p.nuts_id
 			AND v.indicator_id IN (70, 69, 68, 67)
 			AND v.profile_id = p.id
+			AND p.answer_id = 26
 			AND d.id = v.dataset_id
 			AND d.id = ${pDataset}
 			AND v.indicator_id=i.id
@@ -974,6 +994,7 @@
 			WHERE n.id = p.nuts_id
 			AND v.indicator_id IN (70, 69, 68, 67)
 			AND v.profile_id = p.id
+			AND p.answer_id = 26
 			AND d.id = v.dataset_id
 			AND d.id = ${pDataset}
 			AND v.indicator_id=i.id
@@ -1058,6 +1079,7 @@
 			ELSE CASE WHEN v.indicator_id=92 THEN t.literal_id=22165
 			ELSE CASE WHEN v.indicator_id=93 THEN t.literal_id=22164
 			ELSE t.literal_id=22162 END END END END
+			GROUP BY v.indicator_id
 			ORDER BY v.indicator_id ASC;
         </Query>
    	</DataAccess>
@@ -1086,6 +1108,7 @@
 			ELSE CASE WHEN v.indicator_id=92 THEN t.literal_id=22165
 			ELSE CASE WHEN v.indicator_id=93 THEN t.literal_id=22164
 			ELSE t.literal_id=22162 END END END END
+			GROUP BY v.indicator_id
 			ORDER BY v.indicator_id ASC;
         </Query>
    	</DataAccess>
@@ -1587,6 +1610,7 @@
 			WHERE n.id = p.nuts_id
 			AND v.indicator_id IN (95,96,75)
 			AND v.profile_id = p.id
+			AND p.answer_id = 1
 			AND d.id = v.dataset_id
 			AND v.indicator_id=i.id
 			AND i.literal_id=t1.literal_id
@@ -1613,6 +1637,7 @@
 			WHERE n.id = p.nuts_id
 			AND v.indicator_id IN (95,96,75)
 			AND v.profile_id = p.id
+			AND p.answer_id = 1
 			AND d.id = v.dataset_id
 			AND v.indicator_id=i.id
 			AND i.literal_id=t1.literal_id
