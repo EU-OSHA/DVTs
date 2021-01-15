@@ -92,7 +92,7 @@
               query="getFatalAccidentsData" cda="{{::cdaOSHOutcomes }}"
               width="330" height="470"
               orientation="{{orientation}}" axis-fixed-min="0"
-              axis-fixed-max="5" step="{{step.chart3}}"
+              axis-fixed-max="6" step="{{step.chart3}}"
               params="[['pDataset', datasetEurostatBetweenDates]]"
               color-role="series" colors="[stories[2].color1, stories[2].color2]"
               chart-title="{{i18nLiterals.L311}}" id="3"
@@ -104,7 +104,7 @@
               base-axis-label-text-baseline=""
               leaf-content-overflow='visible'
               dimensions="stories[2].dimensions"
-              legend="false"
+              legend="true"
               angle="1"
               base-axis-size="{{axisSize}}"
               datasource-and-dates="[datasetEurostatBetweenDates,54]"

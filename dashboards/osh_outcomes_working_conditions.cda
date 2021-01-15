@@ -67,15 +67,15 @@
 	    	<Parameter default="14" name="pDataset" type="Numeric"/>
 	    </Parameters>
 	    <Query>
-	      	SELECT t.text as Indicator, IF(n.name = 'EU27_2020', n.country_code, CONCAT(n.name, " (", n.country_code, ")")) as Country, v.value as Value
-	      	FROM nuts n, profile p, value v, translation t
+	      	SELECT p.trend AS Trend, IF(n.name = 'EU27_2020', n.country_code, CONCAT(n.name, " (", n.country_code, ")")) as Country, v.value as value
+			FROM nuts n, profile p, value v, translation t
 			WHERE n.id = p.nuts_id
 			AND v.profile_id = p.id
 			AND v.indicator_id = 54
 			AND v.dataset_id = ${pDataset}
 			AND t.literal_id = 311
 			AND n.country_code NOT IN ("UK", "EU28")
-			ORDER BY Value ASC
+			ORDER BY n.country_code, trend
 	    </Query>
 	</DataAccess>
 

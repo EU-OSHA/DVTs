@@ -682,18 +682,21 @@
 			.title-page{
 				//flex-wrap: wrap;
 			}
-		  .chart-data{
-  	    margin: 1mm auto 0mm;
-		  	thead{
-		  		th{
-		  			text-align: center;
-		  		}
-			  	th:nth-child(1), th:nth-child(4){
-						width: 30mm;
-						text-align: right;
-			  	}		  		
-		  	}
-		  }
+		  	.chart-data{
+	  	    	margin: 1mm auto 0mm;
+			  	thead{
+			  		th{
+			  			text-align: center;
+			  		}
+				  	th:nth-child(1), th:nth-child(4){
+							width: 30mm;
+							text-align: right;
+				  	}		  		
+			  	}
+			  	&.w50 tr th{
+			  		white-space: nowrap;
+			  	}
+			}
 		}
 		section.health-perception{
 			.title-page{

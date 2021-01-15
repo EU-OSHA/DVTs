@@ -59,8 +59,8 @@ define (function (require) {
                     {
                         name: "main",
                         dataPart: "0",
-                        line_lineWidth: 1.5,
-                        barSizeMax: 20,
+                        line_lineWidth: 0.8,
+                        barSizeMax: 10,
                         bar_fillStyle: function(scene){
                             var countryKey = scene.firstAtoms.category;
                             
@@ -68,12 +68,35 @@ define (function (require) {
                                 if(!scene.firstAtoms.value.label.match('%')){
                                     scene.firstAtoms.value.label = scene.firstAtoms.value.label + '%';
                                 }
+
+                                //$log.warn(countryKey);
+                                if (countryKey == 'EU28' || countryKey == 'EU27_2020') {
+                                    return dvtUtils.getEUColor();
+                                }
+                                
+                                return dvtUtils.getColorCountry(2);
                             }
-                            //$log.warn(countryKey);
-                            if (countryKey == 'EU28' || countryKey == 'EU27_2020') {
-                                return dvtUtils.getEUColor();
+
+                            // Get the different series of the chart
+                            var series = this.chart.dataEngine.getVisibleSeries();
+                            // Get current Series
+                            var currentSeries = scene.getSeries();
+                            if (currentSeries == series[1])
+                            {
+                                if (countryKey == 'EU28' || countryKey == 'EU27_2020') {
+                                    return dvtUtils.getEUColor(2);
+                                }
+                                
+                                return dvtUtils.getColorCountry(22);
                             }
-                            return dvtUtils.getColorCountry(2);
+                            else
+                            {
+                                if (countryKey == 'EU28' || countryKey == 'EU27_2020') {
+                                    return dvtUtils.getEUColor();
+                                }
+                                
+                                return dvtUtils.getColorCountry(1);
+                            }
                         }, 
                         label_textStyle: function(scene){
                             var countryKey = scene.firstAtoms.series;
@@ -84,7 +107,8 @@ define (function (require) {
                         },
                         visualRoles:{
                             series:'series',
-                            category:'category'
+                            category:'category',
+                            value: 'value'
                         }
                     }
                 ];

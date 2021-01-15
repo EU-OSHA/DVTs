@@ -212,8 +212,8 @@ define(function (require) {
       },
       //2 - Fatal work accidents and level of reporting of non-fatal
       {
-        color1: dvtUtils.getColorCountry(2),
-        color2: dvtUtils.getEUColor(),
+        color1: dvtUtils.getColorCountry(1),
+        color2: dvtUtils.getColorCountry(22),
         plots: WorkAccidentsService.getFatalAccidentsMainPlots(),
         dimensions: {
           value: {

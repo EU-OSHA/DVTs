@@ -1323,15 +1323,15 @@ define(function () {
 
                 /**
                  * @ngdoc method
-                 * @name dvt.configModule.DataService#getCountryReportAllCountriesOrderValueData
+                 * @name dvt.configModule.DataService#getCountryReportAllCountriesTrendData
                  * @methodOf dvt.configModule.DataService
                  * @description
                  * Get data for estimation of non fatal accidents on the full country report
                  */
-                getCountryReportAllCountriesOrderValueData: function(pDataset, pIndicator){
-                    var url = configService.getCountryReportDataPath() + "&dataAccessId=getCountryReportAllCountriesOrderValueData" + 
+                getCountryReportAllCountriesTrendData: function(pDataset, pIndicator){
+                    var url = configService.getCountryReportDataPath() + "&dataAccessId=getCountryReportAllCountriesTrendData" + 
                     "&parampDataset=" + pDataset + "&parampIndicator=" +pIndicator;
-                    $log.debug('getCountryReportAllCountriesOrderValueData url:' + url);
+                    $log.debug('getCountryReportAllCountriesTrendData url:' + url);
                     return promise(url)
                 },
 
