@@ -170,6 +170,53 @@ define (function (require) {
                     }
                 ];
             },
+            getChartAllCountriesTrendsPlots: function (pCountry) {
+                return [
+                    {
+                        name: "main",
+                        dataPart: "0",
+                        line_lineWidth: 1.5,
+                        barSizeMax: 5,
+                        bar_fillStyle: function(scene){
+                            var countryKey = scene.firstAtoms.category.value;
+                            console.log(countryKey);
+                            console.log(pCountry);
+                            console.log(countryKey == pCountry);
+
+                            // Get the different series of the chart
+                            var series = this.chart.dataEngine.getVisibleSeries();
+                            // Get current Series
+                            var currentSeries = scene.getSeries();
+                            if (currentSeries == series[1])
+                            {
+                                if (countryKey == 'EU28' || countryKey == 'EU27_2020') {
+                                    return dvtUtils.getEUColor(2);
+                                }                                
+                                if (countryKey.indexOf(pCountry) > -1)
+                                {
+                                    return dvtUtils.getColorCountry(12);
+                                }
+                                return dvtUtils.getColorCountry(22);
+                            }
+                            else
+                            {
+                                if (countryKey == 'EU28' || countryKey == 'EU27_2020') {
+                                    return dvtUtils.getEUColor();
+                                }
+                                if (countryKey.indexOf(pCountry) > -1)
+                                {
+                                    return dvtUtils.getColorCountry(1);
+                                }                         
+                                return dvtUtils.getColorCountry(2);
+                            }
+                        },
+                        visualRoles:{
+                            series:'series',
+                            category:'category'
+                        }
+                    }
+                ];
+            },
         	getCompanySizeMainPlots: function(pCountry) {
                 var dashboard = this.dashboard;	
                 return [
