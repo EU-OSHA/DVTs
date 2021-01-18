@@ -118,9 +118,9 @@ define(function (require) {
         plots: PhysicalRiskService.getInfoAboutRisksData(),
         promises: {
           story1: [
-            dataService.getCountry1VibrationData($scope.datasetEurofound, $scope.pCountry1), 
-            dataService.getCountry2VibrationData($scope.datasetEurofound, $scope.pCountry2),
-            dataService.getEU28VibrationData($scope.datasetEurofound)           
+            dataService.getCountry1VibrationData(20049, $scope.pCountry1), 
+            dataService.getCountry2VibrationData(20049, $scope.pCountry2),
+            dataService.getEU28VibrationData(20049)           
           ]
         },
         dimensions: {
@@ -136,9 +136,9 @@ define(function (require) {
       {
         promises: {
           story1: [
-            dataService.getCountryRisksInvolvedEurofoundData($scope.datasetEurofound, $scope.pCountry1), 
-            dataService.getCountryRisksInvolvedEurofoundData($scope.datasetEurofound, $scope.pCountry2),
-            dataService.getEU28RisksInvolvedEurofoundData($scope.datasetEurofound)           
+            dataService.getCountryRisksInvolvedEurofoundData(20080, $scope.pCountry1), 
+            dataService.getCountryRisksInvolvedEurofoundData(20080, $scope.pCountry2),
+            dataService.getEU28RisksInvolvedEurofoundData(20080)           
           ],
           story2: [
             dataService.getCountryRisksInvolvedESENERData($scope.datasetESENER, $scope.pCountry1), 

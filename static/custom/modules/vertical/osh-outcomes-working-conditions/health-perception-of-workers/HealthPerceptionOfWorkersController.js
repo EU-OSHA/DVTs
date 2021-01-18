@@ -269,7 +269,7 @@ define(function (require) {
     /******************************************************************************|
     |                                DATA LOAD                                     |
     |******************************************************************************/
-      dataService.getHealthPerceptionData($scope.datasetEurofound, $scope.EUROSTAT).then(function (data) {
+      dataService.getHealthPerceptionData(20026).then(function (data) {
         $log.debug('getHealthPerceptionData');
         data.data.resultset.map(function (elem) {
           var param = (!!$stateParams.filter) ? $stateParams.filter : undefined;
@@ -315,7 +315,7 @@ define(function (require) {
           throw err;
       });
       
-      dataService.getHealthPerceptionCountries().then(function (data) {
+      dataService.getHealthPerceptionCountries(20026).then(function (data) {
 
         data.data.resultset.map(function (elem) {
           var param = (!!$stateParams.filter) ? $stateParams.filter : undefined;

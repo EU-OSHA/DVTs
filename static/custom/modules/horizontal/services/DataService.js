@@ -408,9 +408,9 @@ define(function () {
                  * @description
                  * Get genders for select option list
                  */
-                getFilteringCountries: function(pDataset, countries){
+                getFilteringCountries: function(pChart, countries){
                     var block1 = countries.length <= 0 ? ".*" : countries.join("|");
-                    var url = configService.getGenericInformationDataPath() + "&dataAccessId=getFilteringCountries"+"&parampDataset="+pDataset+"&paramcountries="+block1;
+                    var url = configService.getGenericInformationDataPath() + "&dataAccessId=getFilteringCountries"+"&parampChart="+pChart+"&paramcountries="+block1;
                     $log.debug('getFilteringCountries url:' + url);
                     return promise(url);
                 },
@@ -422,8 +422,8 @@ define(function () {
                  * @description
                  * Get genders for select option list
                  */
-                getMedianAgeData: function(pDataset){
-                    var url = configService.getGenericInformationDataPath() + "&dataAccessId=getMedianAgeData"+"&parampDataset="+pDataset;
+                getMedianAgeData: function(pChart){
+                    var url = configService.getGenericInformationDataPath() + "&dataAccessId=getMedianAgeData"+"&parampChart="+pChart;
                     $log.debug('getMedianAgeData url:' + url);
                     return promise(url);
                 },
@@ -435,8 +435,8 @@ define(function () {
                  * @description
                  * Get genders for select option list
                  */
-                getAgeingWorkersData: function(pDataset){
-                    var url = configService.getGenericInformationDataPath() + "&dataAccessId=getAgeingWorkersData"+"&parampDataset="+pDataset;
+                getAgeingWorkersData: function(pChart){
+                    var url = configService.getGenericInformationDataPath() + "&dataAccessId=getAgeingWorkersData"+"&parampChart="+pChart;
                     $log.debug('getAgeingWorkersData url:' + url);
                     return promise(url);
                 },
@@ -448,8 +448,8 @@ define(function () {
                  * @description
                  * Get genders for select option list
                  */
-                getTotalEmploymentData: function(pDataset){
-                    var url = configService.getGenericInformationDataPath() + "&dataAccessId=getTotalEmploymentData"+"&parampDataset="+pDataset;
+                getTotalEmploymentData: function(pChart){
+                    var url = configService.getGenericInformationDataPath() + "&dataAccessId=getTotalEmploymentData"+"&parampChart="+pChart;
                     $log.debug('getTotalEmploymentData url:' + url);
                     return promise(url);
                 },
@@ -461,8 +461,8 @@ define(function () {
                  * @description
                  * Get genders for select option list
                  */
-                getMaleEmploymentData: function(pDataset){
-                    var url = configService.getGenericInformationDataPath() + "&dataAccessId=getMaleEmploymentData"+"&parampDataset="+pDataset;
+                getMaleEmploymentData: function(pChart){
+                    var url = configService.getGenericInformationDataPath() + "&dataAccessId=getMaleEmploymentData"+"&parampChart="+pChart;
                     $log.debug('getMaleEmploymentData url:' + url);
                     return promise(url);
                 },
@@ -474,8 +474,8 @@ define(function () {
                  * @description
                  * Get genders for select option list
                  */
-                getFemaleEmploymentData: function(pDataset){
-                    var url = configService.getGenericInformationDataPath() + "&dataAccessId=getFemaleEmploymentData"+"&parampDataset="+pDataset;
+                getFemaleEmploymentData: function(pChart){
+                    var url = configService.getGenericInformationDataPath() + "&dataAccessId=getFemaleEmploymentData"+"&parampChart="+pChart;
                     $log.debug('getFemaleEmploymentData url:' + url);
                     return promise(url);
                 },
@@ -487,23 +487,9 @@ define(function () {
                  * @description
                  * Get uneployment rate data
                  */
-                getUnemploymentData: function (pDataset) {
-                    var url = configService.getGenericInformationDataPath() + "&dataAccessId=getUnemploymentData" + "&parampDataset=" + pDataset;
+                getUnemploymentData: function (pChart) {
+                    var url = configService.getGenericInformationDataPath() + "&dataAccessId=getUnemploymentData" + "&parampChart=" + pChart;
                     $log.debug('getUnemploymentData url:' + url);
-                    return promise(url);
-                },
-
-                /**
-                 * @ngdoc method
-                 * @name dvt.configModule.DataService#getMinMaxValues
-                 * @methodOf dvt.configModule.DataService
-                 * @description
-                 * Get genders for select option list
-                 */
-                getMinMaxValues: function(pDataset, pIndicator, pSubIndicator){
-                    var url = configService.getGenericInformationDataPath() + "&dataAccessId=getMinMaxValues"+"&parampDataset="+pDataset+"&parampIndicator="
-                    +pIndicator+"&parampSubIndicator="+pSubIndicator;
-                    $log.debug('getMinMaxValues url:' + url);
                     return promise(url);
                 },
             
@@ -747,8 +733,8 @@ define(function () {
                  * @description
                  * Get Health Perception data
                  */
-                getHealthPerceptionData: function(pDataset1, pDataset2){
-                    var url = configService.getOshOutcomesWorkingConditionsDataPath() + "&dataAccessId=getHealthPerceptionData"+ "&parampDataset1=" + pDataset1+ "&parampDataset2=" + pDataset2;
+                getHealthPerceptionData: function(pChart){
+                    var url = configService.getOshOutcomesWorkingConditionsDataPath() + "&dataAccessId=getHealthPerceptionData"+ "&parampChart=" + pChart;
                     $log.debug('getHealthPerceptionData url:' + url);
                     return promise(url);
                 },
@@ -846,8 +832,8 @@ define(function () {
                  * @description
                  * Get vibrations, loud noise, and temperature data in pyhsical risks
                 */
-                getEU28VibrationData: function (pDataset) {
-                    var url = configService.getOshOutcomesWorkingConditionsDataPath() + "&dataAccessId=getEU28VibrationData" + "&parampDataset=" + pDataset;
+                getEU28VibrationData: function (pChart) {
+                    var url = configService.getOshOutcomesWorkingConditionsDataPath() + "&dataAccessId=getEU28VibrationData" + "&parampChart=" + pChart;
                     $log.debug('getEU28VibrationData url:' + url);
                     return promise(url);
                 },
@@ -860,8 +846,8 @@ define(function () {
                  * @description
                  * Get vibrations, loud noise, and temperature data in pyhsical risks
                  */
-                getCountry1VibrationData: function (pDataset, pCountry) {
-                    var url = configService.getOshOutcomesWorkingConditionsDataPath() + "&dataAccessId=getCountry1VibrationData" + "&parampDataset=" + pDataset + "&parampCountry="+ pCountry;
+                getCountry1VibrationData: function (pChart, pCountry) {
+                    var url = configService.getOshOutcomesWorkingConditionsDataPath() + "&dataAccessId=getCountry1VibrationData" + "&parampChart=" + pChart + "&parampCountry="+ pCountry;
                     $log.debug('getCountryVibrationData url:' + url);
                     return promise(url);
                 },
@@ -873,8 +859,8 @@ define(function () {
                  * @description
                  * Get vibrations, loud noise, and temperature data in pyhsical risks
                  */
-                getCountry2VibrationData: function (pDataset, pCountry) {
-                    var url = configService.getOshOutcomesWorkingConditionsDataPath() + "&dataAccessId=getCountry2VibrationData" + "&parampDataset=" + pDataset + "&parampCountry="+ pCountry;
+                getCountry2VibrationData: function (pChart, pCountry) {
+                    var url = configService.getOshOutcomesWorkingConditionsDataPath() + "&dataAccessId=getCountry2VibrationData" + "&parampChart=" + pChart + "&parampCountry="+ pCountry;
                     $log.debug('getCountryVibrationData url:' + url);
                     return promise(url);
                 },
@@ -912,8 +898,8 @@ define(function () {
                  * @description
                  * Get vibrations, loud noise, and temperature data in pyhsical risks
                  */
-                getEU28RisksInvolvedEurofoundData: function (pDataset) {
-                    var url = configService.getOshOutcomesWorkingConditionsDataPath() + "&dataAccessId=getEU28RisksInvolvedEurofoundData" + "&parampDataset=" + pDataset;
+                getEU28RisksInvolvedEurofoundData: function (pChart) {
+                    var url = configService.getOshOutcomesWorkingConditionsDataPath() + "&dataAccessId=getEU28RisksInvolvedEurofoundData" + "&parampChart=" + pChart;
                     $log.debug('getEU28RisksInvolvedEurofoundData url:' + url);
                     return promise(url);
                 },
@@ -925,8 +911,8 @@ define(function () {
                  * @description
                  * Get vibrations, loud noise, and temperature data in pyhsical risks
                  */
-                getCountryRisksInvolvedEurofoundData: function (pDataset, pCountry) {
-                    var url = configService.getOshOutcomesWorkingConditionsDataPath() + "&dataAccessId=getCountryRisksInvolvedEurofoundData" + "&parampDataset=" + pDataset + "&parampCountry="+ pCountry;
+                getCountryRisksInvolvedEurofoundData: function (pChart, pCountry) {
+                    var url = configService.getOshOutcomesWorkingConditionsDataPath() + "&dataAccessId=getCountryRisksInvolvedEurofoundData" + "&parampChart=" + pChart + "&parampCountry="+ pCountry;
                     $log.debug('getCountryRisksInvolvedEurofoundData url:' + url);
                     return promise(url);
                 },
@@ -1050,8 +1036,8 @@ define(function () {
                  * @description
                  * Get vibrations, loud noise, and temperature data in pyhsical risks
                  */
-                getEU28WorkerInvolvementEurofoundData: function (pDataset) {
-                    var url = configService.getOshOutcomesWorkingConditionsDataPath() + "&dataAccessId=getEU28WorkerInvolvementEurofoundData" + "&parampDataset=" + pDataset;
+                getEU28WorkerInvolvementEurofoundData: function (pChart) {
+                    var url = configService.getOshOutcomesWorkingConditionsDataPath() + "&dataAccessId=getEU28WorkerInvolvementEurofoundData" + "&parampChart=" + pChart;
                     $log.debug('getEU28WorkerInvolvementEurofoundData url:' + url);
                     return promise(url);
                 },
@@ -1063,8 +1049,8 @@ define(function () {
                  * @description
                  * Get vibrations, loud noise, and temperature data in pyhsical risks
                  */
-                getCountryWorkerInvolvementEurofoundData: function (pDataset, pCountry) {
-                    var url = configService.getOshOutcomesWorkingConditionsDataPath() + "&dataAccessId=getCountryWorkerInvolvementEurofoundData" + "&parampDataset=" + pDataset + "&parampCountry="+ pCountry;
+                getCountryWorkerInvolvementEurofoundData: function (pChart, pCountry) {
+                    var url = configService.getOshOutcomesWorkingConditionsDataPath() + "&dataAccessId=getCountryWorkerInvolvementEurofoundData" + "&parampChart=" + pChart + "&parampCountry="+ pCountry;
                     $log.debug('getCountryWorkerInvolvementEurofoundData url:' + url);
                     return promise(url);
                 },

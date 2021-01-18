@@ -74,9 +74,9 @@ define(function (require) {
       {
         promises: {
           story2: [
-            dataService.getCountryWorkerInvolvementEurofoundData($scope.datasetEurofound, $scope.pCountry1), 
-            dataService.getCountryWorkerInvolvementEurofoundData($scope.datasetEurofound, $scope.pCountry2),
-            dataService.getEU28WorkerInvolvementEurofoundData($scope.datasetEurofound)           
+            dataService.getCountryWorkerInvolvementEurofoundData(20069, $scope.pCountry1), 
+            dataService.getCountryWorkerInvolvementEurofoundData(20069, $scope.pCountry2),
+            dataService.getEU28WorkerInvolvementEurofoundData(20069)           
           ]
         }
       }
