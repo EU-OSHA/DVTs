@@ -177,6 +177,50 @@ define (function (require) {
                         dataPart: "0",
                         line_lineWidth: 1.5,
                         barSizeMax: 5,
+                        bar_call: function(){
+                            var resolution = screen.width;
+
+                            $(window).on("resize",function(e){
+                              resolution = screen.width;
+                            });
+
+                            var ticks = this.sign.chart.axes.x.ticks;
+
+                            // Add separator line on desktop
+                            //EU28 stroke separator vertical
+                            this.add(pv.Rule)
+                                //Negative value in top line continues out of the chart
+                                .top(0)
+                                .bottom(0)
+                                .height(null) // clear any inherited value
+                                .width(null)  // clear any inherited value
+                                .strokeStyle('black')
+                                .lineWidth(3)
+                                .left(function(scene){
+                                    //$log.warn(scene);
+                                    var baseScale = this.getContext().chart.axes.base.scale;
+                                    var countryKey = scene.firstAtoms.category;
+                                    var panelWidth = this.root.width();
+                                    //return panelWidth/40;               
+                                    return baseScale('EU28') + 11;
+                                });
+
+                            //Non EU countries stroke separator vertical
+                            this.add(pv.Rule)
+                                .top(0)
+                                .bottom(0)
+                                .height(null) // clear any inherited value
+                                .width(null)  // clear any inherited value
+                                .strokeStyle('black')
+                                .lineWidth(3)
+                                .left(function(scene){
+                                    var baseScale = this.getContext().chart.axes.base.scale;
+                                    var countryKey = scene.firstAtoms.category;
+                                    var panelWidth = this.root.width();
+
+                                    return baseScale('Switzerland (CH)') - this.sign.panel.barWidth - 5; 
+                                });                          
+                        },
                         bar_fillStyle: function(scene){
                             var countryKey = scene.firstAtoms.category.value;
                             console.log(countryKey);
