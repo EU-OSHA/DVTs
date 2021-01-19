@@ -8,7 +8,7 @@
 
 	<!-- Countries for the select -->
 	<DataAccess access="public" connection="dvt_conn" id="getCountryReportCountries" type="sql">
-	    <Cache duration="3600" enabled="true" />
+	    <Cache duration="0" enabled="false" />
 	    <Columns />
 	    <Parameters>
 	    </Parameters>
@@ -27,7 +27,7 @@
 
 	<!-- Countries for the select -->
 	<DataAccess access="public" connection="dvt_conn" id="getCountryReportHomeCountries" type="sql">
-	    <Cache duration="3600" enabled="true" />
+	    <Cache duration="0" enabled="false" />
 	    <Columns />
 	    <Parameters>
 	    </Parameters>
@@ -46,7 +46,7 @@
 
 	<!-- Countries for the select filtered -->
 	<DataAccess access="public" connection="dvt_conn" id="getCountryReportHomeCountriesFilter" type="sql">
-		<Cache duration="3600" enabled="true" />
+		<Cache duration="0" enabled="false" />
 		<Columns />
 		<Parameters>
 			<Parameter default=".*" name="countries" type="String"/>
@@ -67,7 +67,7 @@
 
 	<!-- Load data for Matrix Page -->
 	<DataAccess access="public" connection="dvt_conn" id="getCountryReportMatrixPageData" type="sql">
-	    <Cache duration="3600" enabled="true" />
+	    <Cache duration="0" enabled="false" />
 	    <Columns />
 	    <Parameters>
 	      <Parameter default="AT" name="pCountry" type="String" />
@@ -87,7 +87,7 @@
 
 	<!-- Load data for Strategies Page -->
 	<DataAccess access="public" connection="dvt_conn" id="getCountryReportStrategiesPageData" type="sql">
-	    <Cache duration="3600" enabled="true" />
+	    <Cache duration="0" enabled="false" />
 	    <Columns />
 	    <Parameters>
 	      <Parameter default="AT" name="pCountry" type="String" />
@@ -108,7 +108,7 @@
 
 	<!-- Load data for chart by company size -->
 	<DataAccess access="public" connection="dvt_conn" id="getCountryReportCompanySizeData" type="sql">
-	    <Cache duration="3600" enabled="true" />
+	    <Cache duration="0" enabled="false" />
 	    <Columns />
 	    <Parameters>
 	      <Parameter default="6" name="pDataset" type="Numeric" />
@@ -133,7 +133,7 @@
 
 	<!-- Load data for chart by company size -->
 	<DataAccess access="public" connection="dvt_conn" id="getCountryReportCompanySizeCountryFirstData" type="sql">
-	    <Cache duration="3600" enabled="true" />
+	    <Cache duration="0" enabled="false" />
 	    <Columns />
 	    <Parameters>
 	      <Parameter default="6" name="pDataset" type="Numeric" />
@@ -160,7 +160,7 @@
 
 	<!-- Load data for chart by activity sector with the sector first -->
 	<DataAccess access="public" connection="dvt_conn" id="getCountryReportActivitySectorData" type="sql">
-	    <Cache duration="3600" enabled="true" />
+	    <Cache duration="0" enabled="false" />
 	    <Columns />
 	    <Parameters>
 	      <Parameter default="6" name="pDataset" type="Numeric" />
@@ -186,7 +186,7 @@
 
 	<!-- Load data for chart by activity sector with the country first -->
 	<DataAccess access="public" connection="dvt_conn" id="getCountryReportActivitySectorCountryFirstData" type="sql">
-	    <Cache duration="3600" enabled="true" />
+	    <Cache duration="0" enabled="false" />
 	    <Columns />
 	    <Parameters>
 	      <Parameter default="6" name="pDataset" type="Numeric" />
@@ -224,7 +224,7 @@
 
 	<!-- Load data for chart by gender with the country first -->
 	<DataAccess access="public" connection="dvt_conn" id="getCountryReportGenderCountryFirstData" type="sql">
-	    <Cache duration="3600" enabled="true" />
+	    <Cache duration="0" enabled="false" />
 	    <Columns />
 	    <Parameters>
 	      <Parameter default="6" name="pDataset" type="Numeric" />
@@ -250,7 +250,7 @@
 
 	<!-- Load data for chart by age group with the country first -->
 	<DataAccess access="public" connection="dvt_conn" id="getCountryReportAgeGroupCountryFirstData" type="sql">
-	    <Cache duration="3600" enabled="true" />
+	    <Cache duration="0" enabled="false" />
 	    <Columns />
 	    <Parameters>
 	      <Parameter default="6" name="pDataset" type="Numeric" />
@@ -276,7 +276,7 @@
 
 	<!-- Load data for chart without split filter -->
 	<DataAccess access="public" connection="dvt_conn" id="getCountryReportYearData" type="sql">
-	    <Cache duration="3600" enabled="true" />
+	    <Cache duration="0" enabled="false" />
 	    <Columns />
 	    <Parameters>
 	      <Parameter default="6" name="pDataset" type="Numeric" />
@@ -299,7 +299,7 @@
 
 	<!-- Load data for chart without split filter -->
 	<DataAccess access="public" connection="dvt_conn" id="getCountryReportData" type="sql">
-	    <Cache duration="3600" enabled="true" />
+	    <Cache duration="0" enabled="false" />
 	    <Columns />
 	    <Parameters>
 	      <Parameter default="6" name="pDataset" type="Numeric" />
@@ -321,7 +321,7 @@
 
 	<!-- Load data for chart without split filter -->
 	<DataAccess access="public" connection="dvt_conn" id="getCountryReportDataAsc" type="sql">
-	    <Cache duration="3600" enabled="true" />
+	    <Cache duration="0" enabled="false" />
 	    <Columns />
 	    <Parameters>
 	      <Parameter default="6" name="pDataset" type="Numeric" />
@@ -343,7 +343,7 @@
 
 	<!-- Load data for chart without split filter order by value -->
 	<DataAccess access="public" connection="dvt_conn" id="getCountryReportAllCountriesOrderValueData" type="sql">
-	    <Cache duration="3600" enabled="true" />
+	    <Cache duration="0" enabled="false" />
 	    <Columns />
 	    <Parameters>
 	      <Parameter default="6" name="pDataset" type="Numeric" />
@@ -367,7 +367,7 @@
 
 	<!-- Load data for chart without split filter order by country -->
 	<DataAccess access="public" connection="dvt_conn" id="getCountryReportAllCountriesOrderCountryData" type="sql">
-	    <Cache duration="3600" enabled="true" />
+	    <Cache duration="0" enabled="false" />
 	    <Columns />
 	    <Parameters>
 	      <Parameter default="6" name="pDataset" type="Numeric" />
@@ -391,7 +391,7 @@
 
 	<!-- Load data for chart divided by answer -->
 	<DataAccess access="public" connection="dvt_conn" id="getCountryReportAllCountriesAnswersData" type="sql">
-	    <Cache duration="3600" enabled="true" />
+	    <Cache duration="0" enabled="false" />
 	    <Columns />
 	    <Parameters>
 	      <Parameter default="6" name="pDataset" type="Numeric" />
@@ -430,7 +430,7 @@
 
 	<!-- Load data for workforce profile -->
 	<DataAccess access="public" connection="dvt_conn" id="getCountryReportWorkforceProfileData" type="sql">
-	    <Cache duration="3600" enabled="true" />
+	    <Cache duration="0" enabled="false" />
 	    <Columns />
 	    <Parameters>
 	      <Parameter default="AT" name="pCountry1" type="String" />
@@ -455,7 +455,7 @@
 
 	<!-- Load data for social dialogue -->
 	<DataAccess access="public" connection="dvt_conn" id="getCountryReportSocialDialogueData" type="sql">
-	    <Cache duration="3600" enabled="true" />
+	    <Cache duration="0" enabled="false" />
 	    <Columns />
 	    <Parameters>
 	    	<Parameter default="AT" name="pCountry" type="String" />
@@ -543,7 +543,7 @@
 
 	<!-- get health perception of workers data -->
 	<DataAccess access="public" connection="dvt_conn" id="getCountryReportHealthPerceptionData" type="sql">
-	    <Cache duration="3600" enabled="true" />
+	    <Cache duration="0" enabled="false" />
 	    <Columns />
 	    <Parameters>
 	    	<Parameter default="AT" name="pCountry" type="String" />
@@ -633,7 +633,7 @@
 
 	<!-- GET ENFORCEMENT CAPACITY DATA -->
 	<DataAccess access="public" connection="dvt_conn" id="getEnforcementCapacityData" type="sql">
-	    <Cache duration="3600" enabled="true" />
+	    <Cache duration="0" enabled="false" />
 	    <Columns />
 	    <Parameters>
 	    	<Parameter default="AT" name="pCountry" type="String"/>
