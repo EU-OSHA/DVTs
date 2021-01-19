@@ -356,7 +356,7 @@
 			AND v.dataset_id = ${pDataset}
 			AND t.literal_id = 311
 			AND n.country_code NOT IN ("UK", "EU28")
-			ORDER BY n.country_code, trend
+			ORDER BY FIELD('EU27_2020', n.country_code) DESC, FIELD(n.country_code, 'CH', 'IS', 'NO'), n.country_code ASC, trend ASC
 	    </Query>
 	</DataAccess>
 
