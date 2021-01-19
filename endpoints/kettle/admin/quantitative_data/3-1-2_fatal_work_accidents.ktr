@@ -508,10 +508,10 @@
            </partitioning>
    <typefield>trend</typefield>
     <fields>      <field>        <name>Trend 1</name>
-        <value>2010-2013</value>
+        <value>2010-2014</value>
         <norm>Value</norm>
         </field>      <field>        <name>Trend 2</name>
-        <value>2014-2017</value>
+        <value>2015-2018</value>
         <norm>Value</norm>
         </field>      </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
