@@ -57,7 +57,7 @@
               data-ng-cloak ng-model="pCountry1"
               query="getNonFatalAccidentsData" cda="{{::cdaOSHOutcomes }}"
               listen-to="[pCountry1, pCountry2]" axis-percent="1"
-              width="300" height="300" type="lines"
+              width="300" height="{{fatalAccidentsHeight}}" type="lines"
               orientation="vertical" axis-fixed-min="0"
               axis-fixed-max="120" step="{{step.chart1}}"
               params="[['pDataset', datasetEurostatBetweenDates],['pCountry1', pCountry1],['pCountry2', pCountry2]]"
@@ -89,10 +89,10 @@
           <div class="chart--block">
             <dvt-bar-chart
               data-ng-cloak
-              query="getFatalAccidentsData" cda="{{::cdaOSHOutcomes }}"
+              query="{{fatalAccidentsQuery}}" cda="{{::cdaOSHOutcomes }}"
               width="330" height="470"
               orientation="{{orientation}}" axis-fixed-min="0"
-              axis-fixed-max="5" step="{{step.chart3}}"
+              axis-fixed-max="6" step="{{step.chart3}}"
               params="[['pDataset', datasetEurostatBetweenDates]]"
               color-role="series" colors="[stories[2].color1, stories[2].color2]"
               chart-title="{{i18nLiterals.L311}}" id="3"
@@ -104,7 +104,7 @@
               base-axis-label-text-baseline=""
               leaf-content-overflow='visible'
               dimensions="stories[2].dimensions"
-              legend="false"
+              legend="true"
               angle="1"
               base-axis-size="{{axisSize}}"
               datasource-and-dates="[datasetEurostatBetweenDates,54]"

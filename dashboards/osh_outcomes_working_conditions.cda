@@ -60,22 +60,41 @@
 	</DataAccess>
 
 	<!-- OSH OUTCOMES - WORK ACCIDENTS || DATA FOR FATAL WORK ACCIDENTS INDICATOR -->
-	<DataAccess access="public" connection="dvt_conn" id="getFatalAccidentsData" type="sql">
+	<DataAccess access="public" connection="dvt_conn" id="getFatalAccidentsDataVertical" type="sql">
 	    <Cache duration="3600" enabled="true" />
 	    <Columns />
 	    <Parameters>
 	    	<Parameter default="14" name="pDataset" type="Numeric"/>
 	    </Parameters>
 	    <Query>
-	      	SELECT t.text as Indicator, IF(n.name = 'EU27_2020', n.country_code, CONCAT(n.name, " (", n.country_code, ")")) as Country, v.value as Value
-	      	FROM nuts n, profile p, value v, translation t
+	      	SELECT p.trend AS Trend, IF(n.name = 'EU27_2020', n.country_code, CONCAT(n.name, " (", n.country_code, ")")) as Country, v.value as value
+			FROM nuts n, profile p, value v, translation t
 			WHERE n.id = p.nuts_id
 			AND v.profile_id = p.id
 			AND v.indicator_id = 54
 			AND v.dataset_id = ${pDataset}
 			AND t.literal_id = 311
 			AND n.country_code NOT IN ("UK", "EU28")
-			ORDER BY Value ASC
+			ORDER BY FIELD('EU27_2020', n.country_code) DESC, FIELD(n.country_code, 'CH', 'IS', 'NO'), n.country_code ASC, trend ASC
+	    </Query>
+	</DataAccess>
+
+	<DataAccess access="public" connection="dvt_conn" id="getFatalAccidentsDataHorizontal" type="sql">
+	    <Cache duration="3600" enabled="true" />
+	    <Columns />
+	    <Parameters>
+	    	<Parameter default="14" name="pDataset" type="Numeric"/>
+	    </Parameters>
+	    <Query>
+	      	SELECT p.trend AS Trend, IF(n.name = 'EU27_2020', n.country_code, CONCAT(n.name, " (", n.country_code, ")")) as Country, v.value as value
+			FROM nuts n, profile p, value v, translation t
+			WHERE n.id = p.nuts_id
+			AND v.profile_id = p.id
+			AND v.indicator_id = 54
+			AND v.dataset_id = ${pDataset}
+			AND t.literal_id = 311
+			AND n.country_code NOT IN ("UK", "EU28")
+			ORDER BY FIELD('EU27_2020', n.country_code) ASC, FIELD(n.country_code, 'CH', 'IS', 'NO') DESC, n.country_code DESC, trend ASC
 	    </Query>
 	</DataAccess>
 

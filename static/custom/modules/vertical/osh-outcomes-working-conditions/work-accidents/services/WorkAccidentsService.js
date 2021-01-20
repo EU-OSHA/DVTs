@@ -59,8 +59,91 @@ define (function (require) {
                     {
                         name: "main",
                         dataPart: "0",
-                        line_lineWidth: 1.5,
-                        barSizeMax: 20,
+                        line_lineWidth: 0.8,
+                        barSizeMax: 10,
+                        bar_call: function(){
+                            var resolution = screen.width;
+
+                            $(window).on("resize",function(e){
+                              resolution = screen.width;
+                            });
+
+                            var ticks = this.sign.chart.axes.x.ticks;
+
+                            // Add separator line on responsive
+                            if(resolution <= 768)
+                            {
+                                //Non EU countries stroke separator horizontal
+                                this.add(pv.Rule)
+                                    //Negative value in top line continues out of the chart
+                                    .top(function(scene){
+                                        var baseScale = this.getContext().chart.axes.base.scale;
+                                        return baseScale('Cyprus (CY)') + 33 /*this.sign.panel.barWidth/2*/;
+                                    })
+                                    .height(null) // clear any inherited value
+                                    .width(null)  // clear any inherited value
+                                    .strokeStyle('black')
+                                    .lineWidth(3)
+                                    .left(0)
+                                    .right(0);
+                                
+                                //EU28 stroke separator horizontal
+                                this.add(pv.Rule)
+                                    //Negative value in top line continues out of the chart
+                                    .top(function(scene){
+                                        var baseScale = this.getContext().chart.axes.base.scale;
+                                        
+                                        return baseScale('United Kingdom (UK)') + 6;
+                                    })
+                                    .height(null) // clear any inherited value
+                                    .width(null)  // clear any inherited value
+                                    .strokeStyle('black')
+                                    .lineWidth(3)
+                                    .left(0)
+                                    .right(0);
+                            }
+                            // Add separator line on desktop
+                            else
+                            {
+                                //EU28 stroke separator vertical
+                                this.add(pv.Rule)
+                                    //Negative value in top line continues out of the chart
+                                    .top(0)
+                                    .bottom(0)
+                                    .height(null) // clear any inherited value
+                                    .width(null)  // clear any inherited value
+                                    .strokeStyle('black')
+                                    .lineWidth(3)
+                                    .left(function(scene){
+                                        //$log.warn(scene);
+                                        var baseScale = this.getContext().chart.axes.base.scale;
+                                        var countryKey = scene.firstAtoms.category;
+                                        var panelWidth = this.root.width();
+                                        //return panelWidth/40;               
+                                        return baseScale('EU28') + 17;
+                                    });
+
+                                //Non EU countries stroke separator vertical
+                                this.add(pv.Rule)
+                                    .top(0)
+                                    .bottom(0)
+                                    .height(null) // clear any inherited value
+                                    .width(null)  // clear any inherited value
+                                    .strokeStyle('black')
+                                    .lineWidth(3)
+                                    .left(function(scene){
+                                        var baseScale = this.getContext().chart.axes.base.scale;
+                                        var countryKey = scene.firstAtoms.category;
+                                        var panelWidth = this.root.width();                                        
+
+                                        if(resolution < 960){
+                                            return baseScale('Switzerland (CH)') - 11;
+                                        }
+
+                                        return baseScale('Switzerland (CH)') - this.sign.panel.barWidth - 8; 
+                                    });
+                            }                            
+                        },
                         bar_fillStyle: function(scene){
                             var countryKey = scene.firstAtoms.category;
                             
@@ -68,12 +151,35 @@ define (function (require) {
                                 if(!scene.firstAtoms.value.label.match('%')){
                                     scene.firstAtoms.value.label = scene.firstAtoms.value.label + '%';
                                 }
+
+                                //$log.warn(countryKey);
+                                if (countryKey == 'EU28' || countryKey == 'EU27_2020') {
+                                    return dvtUtils.getEUColor();
+                                }
+                                
+                                return dvtUtils.getColorCountry(2);
                             }
-                            //$log.warn(countryKey);
-                            if (countryKey == 'EU28' || countryKey == 'EU27_2020') {
-                                return dvtUtils.getEUColor();
+
+                            // Get the different series of the chart
+                            var series = this.chart.dataEngine.getVisibleSeries();
+                            // Get current Series
+                            var currentSeries = scene.getSeries();
+                            if (currentSeries == series[1])
+                            {
+                                if (countryKey == 'EU28' || countryKey == 'EU27_2020') {
+                                    return dvtUtils.getEUColor(2);
+                                }
+                                
+                                return dvtUtils.getColorCountry(22);
                             }
-                            return dvtUtils.getColorCountry(2);
+                            else
+                            {
+                                if (countryKey == 'EU28' || countryKey == 'EU27_2020') {
+                                    return dvtUtils.getEUColor();
+                                }
+                                
+                                return dvtUtils.getColorCountry(1);
+                            }
                         }, 
                         label_textStyle: function(scene){
                             var countryKey = scene.firstAtoms.series;
@@ -84,7 +190,8 @@ define (function (require) {
                         },
                         visualRoles:{
                             series:'series',
-                            category:'category'
+                            category:'category',
+                            value: 'value'
                         }
                     }
                 ];
