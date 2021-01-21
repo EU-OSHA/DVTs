@@ -842,9 +842,8 @@ define(function (require) {
 				};
 
 				if(!!scope.datasourceAndDates){
-                    var datasource = scope.datasourceAndDates[0];
-                    var indicator = scope.datasourceAndDates[1];
-                    dataService.getDatasourceAndDates(datasource, indicator).then(function (data) {
+                    var chartID = scope.datasourceAndDates[0];
+                    dataService.getDatasourceAndDates(chartID).then(function (data) {
                         data.data.resultset.map(function (elem) {
                           scope.datasources.push({
                             datasource: elem[0],

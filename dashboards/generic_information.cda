@@ -66,15 +66,13 @@
 	    <Cache duration="5" enabled="true" />
 	    <Columns />
 	   	<Parameters>
-	    	<Parameter default="15" name="pDataset" type="String"/>
-	    	<Parameter default="15" name="pIndicator" type="String"/>
+	    	<Parameter default="20089" name="pChart" type="Numeric"/>
 	    </Parameters>
 	    <Query>
 		    SELECT d.source, YEAR(d.date_from), YEAR(d.date_to) 
-			FROM indicators_in_dataset iid, dataset d
-			WHERE iid.dataset_id = d.id
-			AND iid.indicator_id = ${pIndicator}
-			AND iid.dataset_id = ${pDataset};
+			FROM indicators_by_chart ibc, dataset d
+			WHERE ibc.dataset_id = d.id
+			AND ibc.chart_id=${pChart};
 	    </Query>
 	</DataAccess>
 

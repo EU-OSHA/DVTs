@@ -59,7 +59,9 @@ define(function (require) {
                             "pSplit2": $rootScope.pSplit2,
                             "pDataset": $rootScope.pDataset,
                             "pCountry1": country1,
-                            "pCountry2": country2
+                            "pCountry2": country2,
+                            "pChart": $rootScope.pChart,
+                            "pChart2":$rootScope.pChart2
                             /*"approach": $stateParams.pGroup,
                             "pCountry1": $stateParams.pCountry1,
                             "pCountry2": $stateParams.pCountry2,

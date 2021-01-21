@@ -64,9 +64,9 @@ define(function (require) {
     $scope.pDataset = '20';
     $rootScope.pDataset = $scope.pDataset;
 
-    $scope.pChart = $scope.pSplit==35?20013:20087;
+    $scope.pChart = $stateParams.pChart;
     $rootScope.pChart = $scope.pChart;
-    $scope.pChart2 = $scope.pSplit2==36?20014:20088;
+    $scope.pChart2 = $stateParams.pChart2;
     $rootScope.pChart2 = $scope.pChart2;
 
     //$scope.dashboard = {};

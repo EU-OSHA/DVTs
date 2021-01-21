@@ -22,8 +22,8 @@ define(function () {
              * @description
              * Gets the datasource and year of an indicator
              */
-            getDatasourceAndDates: function(pDataset, pIndicator){
-                var url = configService.getGenericInformationDataPath() + "&dataAccessId=getDatasourceAndDates" + "&parampDataset=" + pDataset + "&parampIndicator=" + pIndicator;
+            getDatasourceAndDates: function(pChart){
+                var url = configService.getGenericInformationDataPath() + "&dataAccessId=getDatasourceAndDates" + "&parampChart=" + pChart;
                 $log.debug('getDatasourceAndDates url:' + url);
 
                 return promise(url);

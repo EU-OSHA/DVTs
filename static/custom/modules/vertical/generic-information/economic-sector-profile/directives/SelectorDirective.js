@@ -28,7 +28,9 @@ define(function (require) {
 
 				scope.chart = attributes.chart;
 				scope.pSplit = $stateParams.pSplit;
+				scope.pChart = $stateParams.pChart;
 				scope.pSplit2 = $stateParams.pSplit2;
+				scope.pChart2 = $stateParams.pChart2;
 				scope.pDataset = 20;
 
 				scope.changeType = function(pChangedFilter, value)
@@ -36,25 +38,24 @@ define(function (require) {
 					switch (pChangedFilter)
 					{
 						case "split1":
+							scope.pChart2=$rootScope.pChart2;
+							scope.pSplit2=$rootScope.pSplit2;
+							
 							console.log('pSplit changed: '+scope.pSplit);
 							scope.pSplit = value;
-							scope.pChart = scope.pSplit==35?20013:20087;
+							scope.pChart = scope.pSplit=='35'?'20013':'20087';
 							dashboard.dashboard.parameters.pSplit = scope.pSplit;
 							dashboard.dashboard.parameters.pChart = scope.pChart;
 							$rootScope.pSplit = scope.pSplit;
 							$rootScope.pChart = scope.pChart;
 							break;
 						case "split2":
+							scope.pChart=$rootScope.pChart;
+							scope.pSplit=$rootScope.pSplit;
+
 							console.log('pSplit2 changed: '+scope.pSplit2);
 							scope.pSplit2 = value;
-							scope.pChart2 = scope.pSplit2==36?20014:20088;
-
-							if(scope.pSplit2 == '36'){
-								scope.pDataset = 20;
-							}else{
-								scope.pDataset = 20;
-							}
-
+							scope.pChart2 = scope.pSplit2=='36'?'20014':'20088';
 							dashboard.dashboard.parameters.pSplit2 = scope.pSplit2;
 							dashboard.dashboard.parameters.pChart2 = scope.pChart2;
 							$rootScope.pSplit2 = scope.pSplit2;
@@ -64,22 +65,15 @@ define(function (require) {
 							break;
 						default:
 							console.log("No change detected");
-					}	
+					}
 
-					ngModel.$setViewValue(scope.pSplit, 'change');
 					dashboard.dashboard.fireChange('pSplit', scope.pSplit);
-
-					ngModel.$setViewValue(scope.pChart, 'change');
 					dashboard.dashboard.fireChange('pChart', scope.pChart);
-
-					ngModel.$setViewValue(scope.pSplit2, 'change');
+					ngModel.$setViewValue(scope.pSplit, 'change');
+					
 					dashboard.dashboard.fireChange('pSplit2', scope.pSplit2);
-
-					ngModel.$setViewValue(scope.pChart2, 'change');
-					dashboard.dashboard.fireChange('pChart2', scope.pChart2);
-
-					ngModel.$setViewValue(scope.pDataset, 'change');
-					dashboard.dashboard.fireChange('pDataset', scope.pDataset);				
+					dashboard.dashboard.fireChange('pChart2', scope.pChart2);				
+					ngModel.$setViewValue(scope.pSplit2, 'change');
 				}
 			}
 		}

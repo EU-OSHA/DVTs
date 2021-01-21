@@ -54,7 +54,7 @@ define(function (require) {
       $scope.pCountry2 = "0";
     }
     $scope.pSplit = ($stateParams.pSplit != null)?$stateParams.pSplit:'esener';
-    $scope.datasourcesAndDates = $scope.pSplit == 'esener'?[$scope.datasetESENER,355]:[$scope.datasetEurofound,95];
+    $scope.datasourcesAndDates = $scope.pSplit == 'esener'?[20106]:[20069];
     $scope.queryCountrySelect = $scope.pSplit == 'esener'?'getWorkerInvolvementESENERCountries':'getWorkerInvolvementEurofoundCountries';
     $scope.datasetCountrySelect = $scope.pSplit == 'esener'?$scope.datasetESENER:$scope.datasetEurofound;
 
