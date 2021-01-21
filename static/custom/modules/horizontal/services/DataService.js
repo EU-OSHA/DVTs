@@ -759,9 +759,9 @@ define(function () {
                  * @description
                  * Apply filters in health perception
                  */
-                applyHealthPerceptionFilters: function(pDataset1, pDataset2, countries){
+                applyHealthPerceptionFilters: function(pChart, countries){
                     var block1 = countries.length <= 0 ? ".*" : countries.join("|");
-                    var url = configService.getOshOutcomesWorkingConditionsDataPath() + "&dataAccessId=applyHealthPerceptionFilters" + "&parampDataset1=" + pDataset1 + "&parampDataset2=" + pDataset2 + "&paramcountries=" + block1;
+                    var url = configService.getOshOutcomesWorkingConditionsDataPath() + "&dataAccessId=applyHealthPerceptionFilters" + "&parampChart=" + pChart + "&paramcountries=" + block1;
                     $log.debug('applyHealthPerceptionFilters url:' + url);
                     return promise(url);
                 },

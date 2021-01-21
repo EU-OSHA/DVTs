@@ -455,7 +455,7 @@
 	      <Parameter default="20089" name="pChart" type="Numeric" />
 	    </Parameters>
 	    <Query>
-	      SELECT t.text AS Size, n.country_code as Country, ROUND((v.value*100),1) as value
+	      SELECT t.text AS Size, n.country_code as Country, ROUND(v.value,1) as value
 				FROM indicators_by_chart ibc, indicator i, value v, profile p, nuts n, split_company_size scs, translation t
 				WHERE ibc.chart_id=${pChart}
 				AND ibc.indicator_id=i.id
@@ -482,7 +482,7 @@
 	      <Parameter default="20010" name="pChart" type="Numeric" />
 	    </Parameters>
 	    <Query>
-	      SELECT t.text as Sector, n.country_code as Country, (v.value*100) as value
+	      SELECT t.text as Sector, n.country_code as Country, v.value as value
 				FROM indicators_by_chart ibc, indicator i, value v, profile p, nuts n, split_activity_sector sas, translation t
 				WHERE ibc.chart_id=${pChart}
 				AND ibc.indicator_id=i.id
@@ -511,7 +511,7 @@
 	      <Parameter default="6" name="pChart" type="Numeric" />
 	    </Parameters>
 	    <Query>
-	      SELECT IF(n.name REGEXP 'EU27_2020', n.country_code, CONCAT("(", n.country_code, ") ", n.name)) as Country, (v.value*100) as value
+	      SELECT IF(n.name REGEXP 'EU27_2020', n.country_code, CONCAT("(", n.country_code, ") ", n.name)) as Country, v.value as value
 				FROM indicators_by_chart ibc, indicator i, value v, profile p, nuts n
 				WHERE ibc.chart_id=${pChart}
 				AND ibc.indicator_id=i.id
@@ -558,7 +558,7 @@
 	      <Parameter default="20013" name="pChart" type="Numeric" />
 	    </Parameters>
 	    <Query>
-	      SELECT n.country_code AS Country, (v.value*100) as value
+	      SELECT n.country_code AS Country, v.value as value
 				FROM indicators_by_chart ibc, indicator i, value v, profile p, nuts n
 				WHERE ibc.chart_id=${pChart}
 				AND ibc.indicator_id=i.id
@@ -706,7 +706,7 @@
 	      <Parameter default="20012" name="pChart" type="Numeric" />
 	    </Parameters>
 	    <Query>
-	      SELECT n.country_code as countryKey, n.literal_id as country_name, (ROUND(value*100, 1)) as value
+	      SELECT n.country_code as countryKey, n.literal_id as country_name, (ROUND(value, 1)) as value
 				FROM indicators_by_chart ibc, indicator i, value v, profile p, nuts n
 				WHERE ibc.chart_id=${pChart}
 				AND ibc.indicator_id=i.id
@@ -729,7 +729,7 @@
 	      <Parameter default="20012" name="pChart" type="Numeric" />
 	    </Parameters>
 	    <Query>
-	      SELECT n.country_code as countryKey, n.literal_id as country_name, (ROUND(value*100, 1)) as value
+	      SELECT n.country_code as countryKey, n.literal_id as country_name, (ROUND(value, 1)) as value
 				FROM indicators_by_chart ibc, indicator i, value v, profile p, nuts n
 				WHERE ibc.chart_id=${pChart}
 				AND ibc.indicator_id=i.id
@@ -752,7 +752,7 @@
 	      <Parameter default="20012" name="pChart" type="Numeric" />
 	    </Parameters>
 	    <Query>
-	      SELECT n.country_code as countryKey, n.literal_id as country_name, (ROUND(value*100, 1)) as value
+	      SELECT n.country_code as countryKey, n.literal_id as country_name, (ROUND(value, 1)) as value
 				FROM indicators_by_chart ibc, indicator i, value v, profile p, nuts n
 				WHERE ibc.chart_id=${pChart}
 				AND ibc.indicator_id=i.id
@@ -775,7 +775,7 @@
 	      <Parameter default="20012" name="pChart" type="Numeric" />
 	    </Parameters>
 	    <Query>
-	      SELECT n.country_code as countryKey, n.literal_id as country_name, ROUND(value*100, 1) as value
+	      SELECT n.country_code as countryKey, n.literal_id as country_name, ROUND(value, 1) as value
 	      FROM indicators_by_chart ibc, indicator i, value v, profile p, nuts n
 				WHERE ibc.chart_id=${pChart}
 				AND ibc.indicator_id=i.id

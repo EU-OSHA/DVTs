@@ -455,7 +455,7 @@ define(function (require) {
        * Apply the filters and load the filtered content
        */
       function search($event,filter) {
-        dataService.applyHealthPerceptionFilters($scope.datasetEurofound, $scope.EUROSTAT, $scope.searchParams.countries)
+        dataService.applyHealthPerceptionFilters(20026, $scope.searchParams.countries)
           .then(function (data) {
             $scope.amatrix = dataService.dataMapper(data);
 
