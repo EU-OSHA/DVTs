@@ -538,6 +538,7 @@
 			AND i.id=${pIndicator}
 			AND n.country_code != "UK"
 			AND n.country_code IN (${pCountry1}, ${pCountry2}, 'EU28')
+			AND p.answer_id=1
 			ORDER BY FIELD(sas.id, 9, 10, 11, 12, 13, 8), FIELD(n.country_code, ${pCountry1}, ${pCountry2}, 'EU28')
 	    </Query>
 	</DataAccess>
@@ -566,6 +567,7 @@
 			AND i.id=${pIndicator}
 			AND n.country_code != "UK"
 			AND n.country_code IN (${pCountry1}, ${pCountry2}, 'EU28')
+			AND p.answer_id=1
 			ORDER BY FIELD(g.id, 3, 2, 1), FIELD(n.country_code, ${pCountry1}, ${pCountry2}, 'EU28')
 	    </Query>
 	</DataAccess>
@@ -594,6 +596,7 @@
 			AND i.id=${pIndicator}
 			AND n.country_code != "UK"
 			AND n.country_code IN (${pCountry1}, ${pCountry2}, 'EU28')
+			AND p.answer_id=1
 			ORDER BY FIELD(ag.id, 1, 2, 3, 4), FIELD(n.country_code, ${pCountry1}, ${pCountry2}, 'EU28')
 	    </Query>
 	</DataAccess>
