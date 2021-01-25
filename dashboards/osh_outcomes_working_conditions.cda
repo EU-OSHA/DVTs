@@ -1185,7 +1185,7 @@
 			AND CASE WHEN v.indicator_id IN (90,91, 93) THEN p.answer_id IN (14,16)
 			ELSE p.answer_id=26 END
 			AND n.country_code=${pCountry}
-			GROUP BY v.indicator_id
+			GROUP BY v.indicator_id, Indicator, Country, Title
 			ORDER BY v.indicator_id ASC;
         </Query>
    	</DataAccess>
