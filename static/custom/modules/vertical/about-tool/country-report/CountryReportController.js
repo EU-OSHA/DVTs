@@ -161,6 +161,7 @@ define(function (require) {
         	figures : CountryReportService.getGPDMainPlots($scope.pCountry),
         	year: CountryReportService.getIncomeMainPlots($scope.pCountry),
         	allCountries : CountryReportService.getChartAllCountriesPlots($scope.pCountry),
+        	allCountriesTrends: CountryReportService.getChartAllCountriesTrendsPlots($scope.pCountry),
         	healthAtRisk: CountryReportService.getHealthAtRiskPlots($scope.pCountry),
         	establishmentsInspected: CountryReportService.getGeneralOSHInfrastructurePlot($scope.pCountry)
         }
@@ -596,11 +597,12 @@ define(function (require) {
 		  	});
 
 		  	/* ESTIMATION OF NON FATAL ACCIDENTS */
-		  	dataService.getCountryReportAllCountriesOrderValueData($scope.datasetList.EUROSTAT2018BetweenDates, 54).then(function(data){
+		  	dataService.getCountryReportAllCountriesTrendData($scope.datasetList.EUROSTAT2018BetweenDates, 54).then(function(data){
 		  		data.data.resultset.map(function (elem) {
 		  			if(elem[1].match($scope.pCountry) || elem[1] == 'EU27_2020'){
 				  		$scope.estimationNonFatal.push({
 					  		country: elem[1],
+					  		trend: elem[0],
 					  		value: Math.round(elem[2]*10)/10
 				  		});
 		  			}

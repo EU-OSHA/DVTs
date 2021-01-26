@@ -661,15 +661,15 @@
     <div class="box-rounded">
       <dvt-bar-chart
         data-ng-cloak
-        query="getCountryReportAllCountriesOrderValueData" cda="{{::cda }}"
+        query="getCountryReportAllCountriesTrendData" cda="{{::cda }}"
         width="330" height="245"
         orientation="vertical" axis-fixed-min="0"
-        axis-fixed-max="5" step="1"
+        axis-fixed-max="6" step="1"
         params="[['pDataset', datasetList.EUROSTAT2018BetweenDates], ['pIndicator', 54]]"
-        color-role="series" colors="[color5]"
+        color-role="series" colors="[color5,color2]"
         chart-title="{{i18nLiterals.L311}}" id="4"
         axis-label-font="10px 'OpenSans-bold'"
-        plots="plots.allCountries"
+        plots="plots.allCountriesTrends"
         color2-axis-legend-shape = "circle"
         values-visible="false"
         values-font="10px 'OpenSans-bold'"
@@ -687,12 +687,14 @@
         <thead>
           <tr>
             <th>Country</th>
+            <th>Trend</th>
             <th>Value (accidents)</th>
           </tr>
         </thead>
         <tbody>
           <tr data-ng-repeat="row in estimationNonFatal">
             <th data-ng-bind="row.country"></th>
+            <th data-ng-bind="row.trend"></th>
             <td data-ng-bind="row.value"></td>
           </tr>
          </tbody>

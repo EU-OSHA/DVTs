@@ -386,18 +386,15 @@
 	      <Parameter default="1" name="pIndicator" type="Numeric" />
 	    </Parameters>
 	    <Query>
-	      SELECT t.text as Indicator, IF(n.name = 'European Union' || n.name='EU27_2020', n.country_code, CONCAT(n.name, " (", n.country_code, ")")) as Country, v.value as Value
-		  FROM nuts n, profile p, value v, indicator i, translation t
-		  WHERE n.id = p.nuts_id
-		  AND n.country_code != "UK"
-		  AND CASE WHEN (${pIndicator} NOT IN (54)) THEN n.country_code != "UK" ELSE n.country_code NOT IN ("EU28","UK") END
-		  AND v.profile_id = p.id
-		  AND v.indicator_id=i.id
-		  AND t.literal_id=i.literal_id
-		  AND v.indicator_id = ${pIndicator}
-		  AND v.dataset_id = ${pDataset}
-		  AND t.language="EN"
-		  ORDER BY Value ASC
+	      SELECT p.trend AS Trend, IF(n.name = 'EU27_2020', n.country_code, CONCAT(n.name, " (", n.country_code, ")")) as Country, v.value as value
+			FROM nuts n, profile p, value v, translation t
+			WHERE n.id = p.nuts_id
+			AND v.profile_id = p.id
+			AND v.indicator_id = ${pIndicator}
+			AND v.dataset_id = ${pDataset}
+			AND t.literal_id = 311
+			AND n.country_code NOT IN ("UK", "EU28")
+			ORDER BY FIELD('EU27_2020', n.country_code) DESC, FIELD(n.country_code, 'CH', 'IS', 'NO'), n.country_code ASC, trend ASC
 	    </Query>
 	</DataAccess>
 

@@ -70,6 +70,9 @@ define(function (require) {
 
     var resolution = window.resolution;
 
+    $scope.fatalAccidentsQuery = resolution > 768 ? "getFatalAccidentsDataVertical" : "getFatalAccidentsDataHorizontal";
+    $scope.fatalAccidentsHeight = resolution > 768 ? 470 : 770;
+
     $scope.orientation = resolution > 768 ? "vertical" : "horizontal";
     $scope.axisSize = resolution > 768 ? 150 : (resolution > 480 ? 160 : 120);
     $scope.axisSizeSmaller = resolution > 768 ? 150 : (resolution > 480 ? 110 : 100);
@@ -212,8 +215,8 @@ define(function (require) {
       },
       //2 - Fatal work accidents and level of reporting of non-fatal
       {
-        color1: dvtUtils.getColorCountry(2),
-        color2: dvtUtils.getEUColor(),
+        color1: dvtUtils.getColorCountry(1),
+        color2: dvtUtils.getColorCountry(22),
         plots: WorkAccidentsService.getFatalAccidentsMainPlots(),
         dimensions: {
           value: {
