@@ -175,6 +175,7 @@
 			AND v2.indicator_id=65
 			AND p2.answer_id=13
 			/* HEALTH NEGATIVE AFFECTION */
+			AND ibc.chart_id=ibc3.chart_id
 			AND ibc3.indicator_id=v3.indicator_id
 			AND ibc3.dataset_id=v3.dataset_id
 			AND v3.profile_id=p3.id
@@ -182,12 +183,14 @@
 			AND v3.indicator_id=58
 			AND p3.answer_id=106
 			/* HEALTH PROBLEMS IN LAST 12 MONTHS */
+			AND ibc4.chart_id=ibc.chart_id
 			AND ibc4.indicator_id=v4.indicator_id
 			AND ibc4.dataset_id=v4.dataset_id
 			AND v4.profile_id=p4.id
 			AND p4.nuts_id=n.id
 			AND v4.indicator_id=59
 			/* MORE THAN 15 DAYS OF ABSENCE */
+			AND ibc5.chart_id=ibc.chart_id
 			AND ibc5.indicator_id=v5.indicator_id
 			AND ibc5.dataset_id=v5.dataset_id
 			AND v5.profile_id=p5.id
@@ -195,6 +198,7 @@
 			AND v5.indicator_id=60
 			AND p5.answer_id=108
 			/* SICK AT WORK */
+			AND ibc6.chart_id=ibc.chart_id
 			AND ibc6.indicator_id=v6.indicator_id
 			AND ibc6.dataset_id=v6.dataset_id
 			AND v6.profile_id=p6.id
@@ -202,6 +206,7 @@
 			AND v6.indicator_id=61
 			AND p6.answer_id=1
 			/* BE ABLE TO DO CURRENT JOB TIL 60 YEARS OLD */
+			AND ibc7.chart_id=ibc.chart_id
 			AND ibc7.indicator_id=v7.indicator_id
 			AND ibc7.dataset_id=v7.dataset_id
 			AND v7.profile_id=p7.id

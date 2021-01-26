@@ -111,22 +111,25 @@
 	    <Cache duration="0" enabled="false" />
 	    <Columns />
 	    <Parameters>
-	      <Parameter default="6" name="pDataset" type="Numeric" />
-	      <Parameter default="1" name="pIndicator" type="Numeric" />
+	      <Parameter default="31" name="pIndicator" type="Numeric" />
+	      <Parameter default="20089" name="pChart" type="Numeric" />
 	      <Parameter default="AT" name="pCountry1" type="String" />
 	      <Parameter default="EU28" name="pCountry2" type="String" />
 	    </Parameters>
 	    <Query>
-	      SELECT t.text as Size, n.country_code as Country, ROUND((v.value*100),1) as Value
-	      FROM nuts n, profile p, indicator i, value v, split_company_size scs, dataset d, translation t
-	      WHERE n.id = p.nuts_id
-	      AND p.company_size_id = scs.id
-	      AND i.id = v.indicator_id
-	      AND v.profile_id = p.id
-	      AND d.id = ${pDataset} AND d.id = v.dataset_id
-	      AND t.literal_id = scs.literal_id
+	      SELECT t.text as Size, n.country_code as Country, ROUND(v.value,1) as Value
+	      FROM indicators_by_chart ibc, indicator i, value v, profile p, nuts n, split_company_size scs, translation t
+	      WHERE ibc.chart_id=${pChart}
+	      AND ibc.indicator_id=i.id
+	      AND i.id=v.indicator_id
+	      AND v.indicator_id=${pIndicator}
+	      AND ibc.dataset_id=v.dataset_id
+	      AND v.profile_id=p.id
+	      AND p.nuts_id=n.id
+	      AND p.company_size_id=scs.id
+	      AND scs.literal_id=t.literal_id
+	      AND t.language='EN'
 	      AND n.country_code IN (${pCountry1}, ${pCountry2}) 
-		  AND i.id = ${pIndicator}
 	      ORDER BY FIELD(n.country_code, ${pCountry1}, ${pCountry2}) DESC
 	    </Query>
 	</DataAccess>
@@ -163,29 +166,60 @@
 	    <Cache duration="0" enabled="false" />
 	    <Columns />
 	    <Parameters>
-	      <Parameter default="6" name="pDataset" type="Numeric" />
+	      <Parameter default="6" name="pChart" type="Numeric" />
 	      <Parameter default="1" name="pIndicator" type="Numeric" />
 	      <Parameter default="AT" name="pCountry1" type="String" />
 	      <Parameter default="EU28" name="pCountry2" type="String" />
 	    </Parameters>
 	    <Query>
-	      SELECT t.text as Sector, n.country_code as Country, (v.value*100) as Value
-	      FROM nuts n, profile p, indicator i, value v, split_activity_sector sas, dataset d, translation t
-	      WHERE n.id = p.nuts_id 
-	      AND p.activity_sector_id = sas.id 
-	      AND i.id = v.indicator_id 
-	      AND v.profile_id = p.id
-	      AND d.id = ${pDataset} AND d.id = v.dataset_id 
-	      AND t.language = 'EN'
-	      AND t.literal_id = sas.literal_id
-	      AND CASE WHEN ${pDataset} IN (21,24) THEN (sas.id IN (1, 2, 3, 4, 18, 6, 7)) ELSE (sas.id IN (8,9,10,11,12,13)) END
-	      AND n.country_code IN (${pCountry1}, ${pCountry2}) AND i.id = ${pIndicator}
+	      SELECT t.text as Sector, n.country_code as Country, v.value as Value
+	      FROM indicators_by_chart ibc, indicator i, value v, profile p, nuts n, split_activity_sector sas, translation t
+	      WHERE ibc.chart_id=${pChart}
+	      AND ibc.indicator_id=i.id
+	      AND i.id=v.indicator_id
+	      AND ibc.dataset_id=v.dataset_id
+	      AND v.profile_id=p.id
+	      AND p.nuts_id=n.id
+	      AND p.activity_sector_id=sas.id
+	      AND sas.literal_id=t.literal_id
+	      AND i.id=${pIndicator}
+	      AND t.language='EN'
+	      AND CASE WHEN v.dataset_id IN (21,24) THEN (sas.id IN (1, 2, 3, 4, 18, 6, 7)) ELSE (sas.id IN (8,9,10,11,12,13)) END
+	      AND n.country_code IN (${pCountry1}, ${pCountry2})
 	      ORDER BY FIELD(n.country_code, ${pCountry1}, ${pCountry2}) DESC
 	    </Query>
 	</DataAccess>
 
-	<!-- Load data for chart by activity sector with the country first -->
+	<!-- Load data for chart by activity sector with the country first for no ESENER indicators -->
 	<DataAccess access="public" connection="dvt_conn" id="getCountryReportActivitySectorCountryFirstData" type="sql">
+	    <Cache duration="0" enabled="false" />
+	    <Columns />
+	    <Parameters>
+	      <Parameter default="6" name="pChart" type="Numeric" />
+	      <Parameter default="1" name="pIndicator" type="Numeric" />
+	      <Parameter default="AT" name="pCountry1" type="String" />
+	      <Parameter default="EU28" name="pCountry2" type="String" />
+	    </Parameters>
+	    <Query>
+	    	SELECT IF(n.name REGEXP 'European Union' || n.name='EU27_2020', n.country_code, CONCAT("(", n.country_code, ") ", n.name)) as Country, sas.literal_id as Sector, v.value as Value
+	    	FROM indicators_by_chart ibc, indicator i, value v, profile p, nuts n, split_activity_sector sas
+	    	WHERE ibc.chart_id=${pChart}
+	    	AND ibc.indicator_id=i.id
+	    	AND i.id=v.indicator_id
+	    	AND ibc.dataset_id=v.dataset_id
+	    	AND v.profile_id=p.id
+	    	AND p.nuts_id=n.id
+	    	AND p.activity_sector_id=sas.id
+	    	AND i.id=${pIndicator}
+	    	AND p.answer_id=1
+	    	AND CASE WHEN ${pIndicator} IN (304,353) THEN (sas.id IN (2, 3, 4, 18, 6, 7,14)) ELSE CASE WHEN ${pDataset}=21 THEN (sas.id IN (1, 2, 3, 4, 18, 6, 7)) ELSE (sas.id IN (8,9,10,11,12,13)) END END
+			AND n.country_code IN (${pCountry1}, ${pCountry2})
+			ORDER BY FIELD(n.country_code, ${pCountry1}, ${pCountry2}) ASC, FIELD (sas.id, 1, 2, 3, 4, 6, 7, 18, 14, 9, 10, 11, 12, 13, 8)
+	    </Query>
+	</DataAccess>
+
+	<!-- Load data for chart by activity sector with the country first for ESENER indicators -->
+	<DataAccess access="public" connection="dvt_conn" id="getCountryReportActivitySectorCountryFirstDataESENER" type="sql">
 	    <Cache duration="0" enabled="false" />
 	    <Columns />
 	    <Parameters>
@@ -195,18 +229,7 @@
 	      <Parameter default="EU28" name="pCountry2" type="String" />
 	    </Parameters>
 	    <Query>
-	    	SELECT IF(n.name REGEXP 'European Union' || n.name='EU27_2020', n.country_code, CONCAT("(", n.country_code, ") ", n.name)) as Country, sas.literal_id as Sector, (v.value*100) as Value
-			FROM nuts n, profile p, value v, split_activity_sector sas, dataset d
-			WHERE n.id = p.nuts_id 
-			AND p.activity_sector_id = sas.id 
-			AND v.indicator_id = ${pIndicator}
-			AND v.profile_id = p.id
-			AND d.id = ${pDataset} AND d.id = v.dataset_id
-			AND p.answer_id=1
-			AND CASE WHEN ${pIndicator} IN (304,353) THEN (sas.id IN (2, 3, 4, 18, 6, 7,14)) ELSE CASE WHEN ${pDataset}=21 THEN (sas.id IN (1, 2, 3, 4, 18, 6, 7)) ELSE (sas.id IN (8,9,10,11,12,13)) END END
-			AND n.country_code IN (${pCountry1}, ${pCountry2})
-			ORDER BY FIELD(n.country_code, ${pCountry1}, ${pCountry2}) ASC, FIELD (sas.id, 1, 2, 3, 4, 6, 7, 18, 14, 9, 10, 11, 12, 13, 8)
-			<!--SELECT IF(n.name REGEXP 'European Union' || n.name='EU27_2020', n.country_code, CONCAT("(", n.country_code, ") ", n.name)) as Country, t.text as Sector, (v.value*100) as Value
+			SELECT IF(n.name REGEXP 'European Union' || n.name='EU27_2020', n.country_code, CONCAT("(", n.country_code, ") ", n.name)) as Country, t.text as Sector, (v.value*100) as Value
 			FROM nuts n, profile p, indicator i, value v, split_activity_sector sas, dataset d, translation t
 			WHERE n.id = p.nuts_id 
 			AND p.activity_sector_id = sas.id 
@@ -218,7 +241,7 @@
 			AND CASE WHEN ${pIndicator} IN (304,353) THEN p.answer_id=1 ELSE p.answer_id IS NULL END
 			AND CASE WHEN ${pIndicator} IN (304,353) THEN (sas.id IN (2, 3, 4, 18, 6, 7,14)) ELSE CASE WHEN ${pDataset}=21 THEN (sas.id IN (1, 2, 3, 4, 18, 6, 7)) ELSE (sas.id IN (8,9,10,11,12,13)) END END
 			AND n.country_code IN (${pCountry1}, ${pCountry2}) AND i.id = ${pIndicator}
-			ORDER BY FIELD(n.country_code, ${pCountry1}, ${pCountry2}) ASC, FIELD (sas.id, 1, 2, 3, 4, 6, 7,18,14)-->
+			ORDER BY FIELD(n.country_code, ${pCountry1}, ${pCountry2}) ASC, FIELD (sas.id, 1, 2, 3, 4, 6, 7,18,14)
 	    </Query>
 	</DataAccess>
 
@@ -227,23 +250,25 @@
 	    <Cache duration="0" enabled="false" />
 	    <Columns />
 	    <Parameters>
-	      <Parameter default="6" name="pDataset" type="Numeric" />
+	      <Parameter default="6" name="pChart" type="Numeric" />
 	      <Parameter default="1" name="pIndicator" type="Numeric" />
 	      <Parameter default="AT" name="pCountry1" type="String" />
 	      <Parameter default="EU28" name="pCountry2" type="String" />
 	    </Parameters>
 	    <Query>
-	      SELECT IF(n.name REGEXP 'European Union' || n.name='EU27_2020', n.country_code, CONCAT("(", n.country_code, ") ", n.name)) as Country, t.text as Gender, (v.value*100) as Value
-	      FROM nuts n, profile p, indicator i, value v, split_gender g, dataset d, translation t
-	      WHERE n.id = p.nuts_id 
-	      AND p.gender_id = g.id 
-	      AND i.id = v.indicator_id 
-	      AND v.profile_id = p.id
-	      AND p.asnwer_id = 1
-	      AND d.id = ${pDataset} AND d.id = v.dataset_id 
-	      AND t.language = 'EN'
-	      AND t.literal_id = g.literal_id
-	      AND n.country_code IN (${pCountry1}, ${pCountry2}) AND i.id = ${pIndicator}
+	      SELECT IF(n.name REGEXP 'European Union' || n.name='EU27_2020', n.country_code, CONCAT("(", n.country_code, ") ", n.name)) as Country, t.text as Gender, v.value as Value
+	      FROM indicators_by_chart ibc, indicator i, value v, profile p, nuts n, split_gender g, translation t
+	      WHERE ibc.chart_id=${pChart}
+	      AND ibc.indicator_id=i.id
+	      AND i.id=v.indicator_id
+	      AND ibc.dataset_id=v.dataset_id
+	      AND v.profile_id=p.id
+	      AND p.nuts_id=n.id
+	      AND p.gender_id=g.id
+	      AND g.literal_id=t.literal_id
+	      AND i.id=${pIndicator}
+	      AND p.answer_id=1
+	      AND t.language="EN"AND n.country_code IN (${pCountry1}, ${pCountry2}) AND i.id = ${pIndicator}
 	      ORDER BY FIELD(n.country_code, ${pCountry1}, ${pCountry2}) ASC, t.text ASC
 	    </Query>
 	</DataAccess>
@@ -253,23 +278,25 @@
 	    <Cache duration="0" enabled="false" />
 	    <Columns />
 	    <Parameters>
-	      <Parameter default="6" name="pDataset" type="Numeric" />
+	      <Parameter default="6" name="pChart" type="Numeric" />
 	      <Parameter default="1" name="pIndicator" type="Numeric" />
 	      <Parameter default="AT" name="pCountry1" type="String" />
 	      <Parameter default="EU28" name="pCountry2" type="String" />
 	    </Parameters>
 	    <Query>
-	      SELECT IF(n.name REGEXP 'European Union' || n.name='EU27_2020', n.country_code, CONCAT("(", n.country_code, ") ", n.name)) as Country, t.text as Age, (v.value*100) as Value
-	      FROM nuts n, profile p, indicator i, value v, split_age_group ag, dataset d, translation t
-	      WHERE n.id = p.nuts_id 
-	      AND p.age_group_id = ag.id 
-	      AND i.id = v.indicator_id 
-	      AND v.profile_id = p.id
-	      AND p.answer_id = 1
-	      AND d.id = ${pDataset} AND d.id = v.dataset_id 
-	      AND t.language = 'EN'
-	      AND t.literal_id = ag.literal_id
-	      AND n.country_code IN (${pCountry1}, ${pCountry2}) AND i.id = ${pIndicator}
+	      SELECT IF(n.name REGEXP 'European Union' || n.name='EU27_2020', n.country_code, CONCAT("(", n.country_code, ") ", n.name)) as Country, t.text as Age, v.value as Value
+	      FROM indicators_by_chart ibc, indicator i, value v, profile p, nuts n, split_age_group ag, translation t
+	      WHERE ibc.chart_id=${pChart}
+	      AND ibc.indicator_id=i.id
+	      AND i.id=v.indicator_id
+	      AND ibc.dataset_id=v.dataset_id
+	      AND v.profile_id=p.id
+	      AND p.nuts_id=n.id
+	      AND p.age_group_id=ag.id
+	      AND ag.literal_id=t.literal_id
+	      AND i.id=${pIndicator}
+	      AND t.language="EN"
+	      AND n.country_code IN (${pCountry1}, ${pCountry2})
 	      ORDER BY FIELD(n.country_code, ${pCountry1}, ${pCountry2}) ASC
 	    </Query>
 	</DataAccess>
@@ -279,20 +306,23 @@
 	    <Cache duration="0" enabled="false" />
 	    <Columns />
 	    <Parameters>
-	      <Parameter default="6" name="pDataset" type="Numeric" />
+	      <Parameter default="6" name="pChart" type="Numeric" />
 	      <Parameter default="1" name="pIndicator" type="Numeric" />
 	      <Parameter default="AT" name="pCountry1" type="String" />
 	      <Parameter default="EU28" name="pCountry2" type="String" />	      
 	      <Parameter default="1" name="pPercent" type="Numeric" />
 	    </Parameters>
 	    <Query>
-	      SELECT IF(n.name REGEXP 'European Union' || n.name='EU27_2020', n.country_code, CONCAT("(", n.country_code, ") ", n.name)) as Country, p.year as Year, IF(${pPercent}=1, v.value*100, v.value) as Value
-	      FROM nuts n, profile p, indicator i, value v, dataset d
-	      WHERE n.id = p.nuts_id
-	      AND i.id = v.indicator_id
-	      AND v.profile_id = p.id
-	      AND d.id = ${pDataset} AND d.id = v.dataset_id
-	      AND n.country_code IN (${pCountry1}, ${pCountry2}) AND i.id = ${pIndicator}
+	      SELECT IF(n.name REGEXP 'European Union' || n.name='EU27_2020', n.country_code, CONCAT("(", n.country_code, ") ", n.name)) as Country, p.year as Year, v.value as Value
+	      FROM indicators_by_chart ibc, indicator i, value v, profile p, nuts n
+	      WHERE ibc.chart_id=${pChart}
+	      AND ibc.indicator_id=i.id
+	      AND i.id=v.indicator_id
+	      AND ibc.dataset_id=v.dataset_id
+	      AND v.profile_id=p.id
+	      AND p.nuts_id=n.id
+	      AND n.country_code IN (${pCountry1}, ${pCountry2}) 
+	      AND i.id = ${pIndicator}
 	      ORDER BY FIELD(n.country_code, ${pCountry1}, ${pCountry2}) ASC, p.year ASC
 	    </Query>
 	</DataAccess>
@@ -302,19 +332,22 @@
 	    <Cache duration="0" enabled="false" />
 	    <Columns />
 	    <Parameters>
-	      <Parameter default="6" name="pDataset" type="Numeric" />
+	      <Parameter default="6" name="pChart" type="Numeric" />
 	      <Parameter default="1" name="pIndicator" type="Numeric" />
 	      <Parameter default="AT" name="pCountry1" type="String" />
 	      <Parameter default="EU28" name="pCountry2" type="String" />
 	    </Parameters>
 	    <Query>
-	      SELECT IF(n.name REGEXP 'European Union' || n.name="EU27_2020", n.country_code, CONCAT("(", n.country_code, ") ", n.name)) as Country, (v.value*100) as Value
-	      FROM nuts n, profile p, indicator i, value v, dataset d
-	      WHERE n.id = p.nuts_id
-	      AND i.id = v.indicator_id
-	      AND v.profile_id = p.id
-	      AND d.id = ${pDataset} AND d.id = v.dataset_id
-	      AND n.country_code IN (${pCountry1}, ${pCountry2}) AND i.id = ${pIndicator}
+	      SELECT IF(n.name REGEXP 'European Union' || n.name="EU27_2020", n.country_code, CONCAT("(", n.country_code, ") ", n.name)) as Country, v.value as Value
+	      FROM indicators_by_chart ibc, indicator i, value v, profile p, nuts n
+	      WHERE ibc.chart_id=${pChart}
+	      AND ibc.indicator_id=i.id
+	      AND i.id=v.indicator_id
+	      AND ibc.dataset_id=v.dataset_id
+	      AND v.profile_id=p.id
+	      AND p.nuts_id=n.id
+	      AND v.indicator_id=${pIndicator}
+	      AND n.country_code IN (${pCountry1}, ${pCountry2})
 	      ORDER BY FIELD(n.country_code, ${pCountry1}, ${pCountry2}) DESC
 	    </Query>
 	</DataAccess>
@@ -324,19 +357,22 @@
 	    <Cache duration="0" enabled="false" />
 	    <Columns />
 	    <Parameters>
-	      <Parameter default="6" name="pDataset" type="Numeric" />
+	      <Parameter default="6" name="pChart" type="Numeric" />
 	      <Parameter default="1" name="pIndicator" type="Numeric" />
 	      <Parameter default="AT" name="pCountry1" type="String" />
 	      <Parameter default="EU28" name="pCountry2" type="String" />
 	    </Parameters>
 	    <Query>
-	      SELECT IF(n.name REGEXP 'European Union' || n.name="EU27_2020", n.country_code, CONCAT("(", n.country_code, ") ", n.name)) as Country, ROUND((v.value*100),1)  as Value
-	      FROM nuts n, profile p, indicator i, value v, dataset d
-	      WHERE n.id = p.nuts_id
-	      AND i.id = v.indicator_id
-	      AND v.profile_id = p.id
-	      AND d.id = ${pDataset} AND d.id = v.dataset_id
-	      AND n.country_code IN (${pCountry1}, ${pCountry2}) AND i.id = ${pIndicator}
+	      SELECT IF(n.name REGEXP 'European Union' || n.name="EU27_2020", n.country_code, CONCAT("(", n.country_code, ") ", n.name)) as Country, ROUND(v.value,1)  as Value
+	      FROM indicators_by_chart ibc, indicator i, value v, profile p, nuts n
+	      WHERE ibc.chart_id=${pChart}
+	      AND ibc.indicator_id=i.id
+	      AND i.id=v.indicator_id
+	      AND ibc.dataset_id=v.dataset_id
+	      AND v.profile_id=p.id
+	      AND p.nuts_id=n.id
+	      AND i.id = ${pIndicator}
+	      AND n.country_code IN (${pCountry1}, ${pCountry2}) 
 	      ORDER BY FIELD(n.country_code, ${pCountry1}, ${pCountry2}) ASC
 	    </Query>
 	</DataAccess>
@@ -370,21 +406,21 @@
 	    <Cache duration="0" enabled="false" />
 	    <Columns />
 	    <Parameters>
-	      <Parameter default="6" name="pDataset" type="Numeric" />
+	      <Parameter default="6" name="pChart" type="Numeric" />
 	      <Parameter default="1" name="pIndicator" type="Numeric" />
 	    </Parameters>
 	    <Query>
-	      SELECT t.text as Indicator, IF(n.name = 'European Union', n.country_code, CONCAT(n.name, " (", n.country_code, ")")) as Country, v.value*100 as Value
-		  FROM nuts n, profile p, value v, indicator i, translation t
-		  WHERE n.id = p.nuts_id
-		  AND n.country_code != "UK"
-		  AND v.profile_id = p.id
-		  AND p.answer_id = 17
-		  AND v.indicator_id=i.id
-		  AND t.literal_id=i.literal_id
-		  AND v.indicator_id = ${pIndicator}
-		  AND v.dataset_id = ${pDataset}
-		  AND t.language="EN"
+	      SELECT t.text as Indicator, IF(n.name = 'European Union', n.country_code, CONCAT(n.name, " (", n.country_code, ")")) as Country, v.value as Value
+	      FROM indicators_by_chart ibc, indicator i, value v, profile p, nuts n, translation t
+	      WHERE ibc.chart_id=${pChart}
+	      AND ibc.indicator_id=i.id
+	      AND i.id=v.indicator_id
+	      AND ibc.dataset_id=v.dataset_id
+	      AND i.literal_id=t.literal_id
+	      AND v.profile_id=p.id
+	      AND p.nuts_id=n.id
+	      AND i.id=${pIndicator}
+	      AND t.language="EN"
 		  ORDER BY FIELD(n.country_code, 'EU27_2020', 'EU28') DESC, FIELD(n.country_code, 'CH', 'IS', 'NO'), n.country_code ASC, Value DESC
 	    </Query>
 	</DataAccess>
@@ -428,6 +464,48 @@
 	    </Query>
 	</DataAccess>
 
+	<!-- Load data for chart divided by answer not ESENER -->
+	<!-- 63 64 83 84 85 86 87 88 -->
+	<DataAccess access="public" connection="dvt_conn" id="getCountryReportAllCountriesAnswersDataNoESENER" type="sql">
+	    <Cache duration="0" enabled="false" />
+	    <Columns />
+	    <Parameters>
+	      <Parameter default="6" name="pChart" type="Numeric" />
+	      <Parameter default="1" name="pIndicator" type="Numeric" />
+	    </Parameters>
+	    <Query>
+	      SELECT t.text as Answer, IF(n.name = 'European Union' || n.name='EU27_2020', n.country_code, IF(n.name = 'Macedonia, The former Yugoslav Rep. of', CONCAT('Macedonia', " (", n.country_code, ")"), CONCAT(n.name, " (", n.country_code, ")"))) as Country, v.value as Value
+	      FROM indicators_by_chart ibc, indicator i, value v, profile p, nuts n, split_answer a, translation t
+	      WHERE ibc.chart_id=${pChart}
+	      AND ibc.indicator_id=i.id
+	      AND i.id=v.indicator_id
+	      AND ibc.dataset_id=v.dataset_id
+	      AND v.profile_id=p.id
+	      AND p.nuts_id=n.id
+	      AND p.answer_id=a.id
+	      AND a.literal_id=t.literal_id
+	      AND t.language="EN"
+	      AND i.id=${pIndicator}
+		  AND n.country_code NOT IN('AL', 'ME', 'MK', 'RS', 'TR', 'UK')
+		  AND CASE WHEN (${pIndicator} NOT IN (63,64,65,83,85,86,87,88,89,71,72,73,74)) THEN p.activity_sector_id = 14 ELSE p.answer_id = a.id END
+		  ORDER BY 
+		  CASE WHEN ${pIndicator}=358 THEN FIELD(Answer, 'Practically never', 'Occasionally', 'Regularly') 
+		  ELSE CASE WHEN ${pIndicator}=328 THEN FIELD(Answer, 'No', 'Yes')
+		  ELSE CASE WHEN ${pIndicator}=63 THEN FIELD(Answer, "No, not required", "Yes, but I don't always use it", "Yes, and I always use it")
+		  ELSE CASE WHEN ${pIndicator}=64 THEN FIELD(Answer, "Not very or not at all well informed", "(very) Well informed")
+		  ELSE CASE WHEN ${pIndicator}=65 THEN FIELD(Answer, "Not at all satisfied","Not very satisfied","Satisfied","Very satisfied")
+		  ELSE CASE WHEN ${pIndicator} IN (83,87) THEN FIELD(Answer, "(Almost) never","Between 1/4 and 3/4 of the time","(Almost) all of the time")
+		  ELSE CASE WHEN ${pIndicator}=85 THEN FIELD(Answer,"Rarely or never","Sometimes","Always or most of the time")
+		  ELSE CASE WHEN ${pIndicator}=86 THEN FIELD(Answer,"Disagree","Neither agree nor disagree","Agree")
+		  ELSE CASE WHEN ${pIndicator}=88 THEN FIELD(Answer,"Never","Once or more")
+		  ELSE CASE WHEN ${pIndicator} IN (71,72,73,74) THEN FIELD(Answer,"Less than 1/4 of the time","At least 1/4 of the time")
+		  ELSE CASE WHEN ${pIndicator}=305 THEN FIELD(Answer,"Both about equally","Contracted mainly to external providers", "Conducted mainly by internal staff")
+		  ELSE CASE WHEN ${pIndicator}=360 THEN FIELD(Answer,"No","Yes, but only some of them","Yes")		  
+		  ELSE (Answer) END END END END END END END END END END END END ASC,
+		  FIELD(n.country_code, 'EU27_2020', 'EU28') DESC, FIELD(n.country_code, 'CH', 'IS', 'NO', 'UK'), n.country_code ASC, Value DESC;
+	    </Query>
+	</DataAccess>
+
 	<!-- Load data for workforce profile -->
 	<DataAccess access="public" connection="dvt_conn" id="getCountryReportWorkforceProfileData" type="sql">
 	    <Cache duration="0" enabled="false" />
@@ -437,19 +515,16 @@
 	      <Parameter default="EU28" name="pCountry2" type="String" />
 	    </Parameters>
 	    <Query>
-	      SELECT n.country_code as countryKey, v.indicator_id, p.gender_id, IF(v.indicator_id IN (37, 38), ROUND(value, 1), ROUND(value*100, 1)) as value
-		  FROM nuts n, profile p, value v, dataset d
-		  WHERE n.id = p.nuts_id 
-		  AND v.profile_id = p.id 
-		  AND d.id = v.dataset_id
-		  AND n.country_code IN (${pCountry1},${pCountry2})
-		  AND ((d.id = 21 AND v.indicator_id = 37)
-		  OR (d.id = 21 AND v.indicator_id = 38)
-		  OR (d.id = 21 AND v.indicator_id = 39 AND p.gender_id=1)
-		  OR (d.id = 21 AND v.indicator_id = 39 AND p.gender_id=2)
-		  OR (d.id = 21 AND v.indicator_id = 39 AND p.gender_id=3)
-		  OR (d.id = 21 AND v.indicator_id = 34))
-		  ORDER BY FIELD(n.country_code,${pCountry2},${pCountry1}) ASC, v.indicator_id ASC, p.gender_id ASC
+		  	SELECT n.country_code as countryKey, v.indicator_id, p.gender_id, ROUND(v.value, 1) as value
+			FROM indicators_by_chart ibc, value v, profile p, nuts n
+			WHERE ibc.chart_id=20012
+			AND ibc.indicator_id=v.indicator_id
+			AND ibc.dataset_id=v.dataset_id
+			AND v.profile_id=p.id
+			AND p.nuts_id=n.id
+			AND n.country_code IN ('AT','EU27_2020')
+			AND v.indicator_id IN (37,38,39,34)
+		  	ORDER BY FIELD(n.country_code,${pCountry2},${pCountry1}) ASC, v.indicator_id ASC, p.gender_id ASC
 	    </Query>
 	</DataAccess>
 
@@ -547,58 +622,70 @@
 	    <Columns />
 	    <Parameters>
 	    	<Parameter default="AT" name="pCountry" type="String" />
+	    	<Parameter default="20026" name="pChart" type="Numeric" />
 	    </Parameters>
 	    <Query>
-			SELECT DISTINCT(n.literal_id) as country_name, n.country_code as country_code, (ROUND(v.value*100+v2.value*100)) as satisfaction_working, 
-			(ROUND(v3.value*100)) as health_negative, (ROUND(v4.value*100)) as health_problem, (ROUND(v5.value*100)) as absence, 
-			(ROUND(v6.value*100)) as sick_at_work, (ROUND(v7.value*100)) as job_till_60
-			FROM nuts n, profile p, profile p2, profile p3, profile p4, profile p5, profile p6, profile p7, value v, value v2, value v3, value v4, value v5, value v6, value v7, 
-			dataset d
-			WHERE
-			/* SATISFACTION WITH WORKING CONDITIONS - Satisfied */
-			n.id = p.nuts_id
-			AND p.answer_id=12
-			AND v.indicator_id = 65
-			AND v.profile_id = p.id
-			AND d.id = v.dataset_id
-			/* SATISFACTION WITH WORKING CONDITIONS - Very Satisfied */
-			AND n.id = p2.nuts_id
-			AND p2.answer_id=13
-			AND v2.indicator_id = 65
-			AND v2.profile_id = p2.id
-			AND d.id = v2.dataset_id
-			/* HEALTH NEGATIVE AFFECTION */
-			AND n.id = p3.nuts_id
-			AND v3.indicator_id = 58
-			AND v3.profile_id = p3.id
-			AND p3.answer_id=106
-			AND d.id = v3.dataset_id
-			/* HEALTH PROBLEMS IN LAST 12 MONTHS */
-			AND n.id = p4.nuts_id
-			AND v4.indicator_id = 59
-			AND v4.profile_id = p4.id
-			AND v4.dataset_id = 11
-			/* MORE THAN 15 DAYS OF ABSENCE */
-			AND n.id = p5.nuts_id
-			AND v5.indicator_id = 60
-			AND v5.profile_id = p5.id
-			AND p5.answer_id=108
-			AND d.id = v5.dataset_id
-			/* SICK AT WORK */
-			AND n.id = p6.nuts_id
-			AND v6.indicator_id = 61
-			AND v6.profile_id = p6.id
-			AND p6.answer_id=1
-			AND d.id = v6.dataset_id
-			/* BE ABLE TO DO CURRENT JOB TIL 60 YEARS OLD */
-			AND n.id = p7.nuts_id
-			AND v7.indicator_id = 62
-			AND v7.profile_id = p7.id
-			AND p7.answer_id=1
-			AND d.id = v7.dataset_id
-			/* COMMON */
-			AND d.id = 10
+			SELECT DISTINCT(n.literal_id) as country_name, n.country_code as country_code, (ROUND(v.value+v2.value)) as satisfaction_working, 
+			(ROUND(v3.value)) as health_negative, (ROUND(v4.value)) as health_problem, (ROUND(v5.value)) as absence, 
+			(ROUND(v6.value)) as sick_at_work, (ROUND(v7.value)) as job_till_60
+			FROM indicators_by_chart ibc, value v, profile p, value v2, profile p2, indicators_by_chart ibc3, value v3, profile p3, indicators_by_chart ibc4, value v4, profile p4,
+			indicators_by_chart ibc5, value v5, profile p5, indicators_by_chart ibc6, value v6, profile p6, indicators_by_chart ibc7, value v7, profile p7, nuts n
+			WHERE ibc.chart_id=${pChart}
+			AND n.country_code IN (${pCountry}, "EU28")
 			AND n.country_code != "UK"
+			/* Job Satisfaction - Satisfied */
+			AND ibc.indicator_id=v.indicator_id
+			AND ibc.dataset_id=v.dataset_id
+			AND v.profile_id=p.id
+			AND p.nuts_id=n.id
+			AND v.indicator_id=65
+			AND p.answer_id=12
+			/* Job Satisfaction - Very Satisfied */
+			AND ibc.indicator_id=v2.indicator_id
+			AND ibc.dataset_id=v2.dataset_id
+			AND v2.profile_id=p2.id
+			AND p2.nuts_id=n.id
+			AND v2.indicator_id=65
+			AND p2.answer_id=13
+			/* HEALTH NEGATIVE AFFECTION */
+			AND ibc.chart_id=ibc3.chart_id
+			AND ibc3.indicator_id=v3.indicator_id
+			AND ibc3.dataset_id=v3.dataset_id
+			AND v3.profile_id=p3.id
+			AND p3.nuts_id=n.id
+			AND v3.indicator_id=58
+			AND p3.answer_id=106
+			/* HEALTH PROBLEMS IN LAST 12 MONTHS */
+			AND ibc4.chart_id=ibc.chart_id
+			AND ibc4.indicator_id=v4.indicator_id
+			AND ibc4.dataset_id=v4.dataset_id
+			AND v4.profile_id=p4.id
+			AND p4.nuts_id=n.id
+			AND v4.indicator_id=59
+			/* MORE THAN 15 DAYS OF ABSENCE */
+			AND ibc5.chart_id=ibc.chart_id
+			AND ibc5.indicator_id=v5.indicator_id
+			AND ibc5.dataset_id=v5.dataset_id
+			AND v5.profile_id=p5.id
+			AND p5.nuts_id=n.id
+			AND v5.indicator_id=60
+			AND p5.answer_id=108
+			/* SICK AT WORK */
+			AND ibc6.chart_id=ibc.chart_id
+			AND ibc6.indicator_id=v6.indicator_id
+			AND ibc6.dataset_id=v6.dataset_id
+			AND v6.profile_id=p6.id
+			AND p6.nuts_id=n.id
+			AND v6.indicator_id=61
+			AND p6.answer_id=1
+			/* BE ABLE TO DO CURRENT JOB TIL 60 YEARS OLD */
+			AND ibc7.chart_id=ibc.chart_id
+			AND ibc7.indicator_id=v7.indicator_id
+			AND ibc7.dataset_id=v7.dataset_id
+			AND v7.profile_id=p7.id
+			AND p7.nuts_id=n.id
+			AND v7.indicator_id=62
+			AND p7.answer_id=1
 			ORDER BY country_name ASC
 	    </Query>
 	</DataAccess>

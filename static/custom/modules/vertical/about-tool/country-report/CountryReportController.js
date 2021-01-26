@@ -167,14 +167,14 @@ define(function (require) {
 
         $scope.radarChartPromises = {
         	vibrations: [
-	            dataService.getCountry1VibrationData($scope.datasetList.Eurofound, $scope.pCountry),
+	            dataService.getCountry1VibrationData(20049, $scope.pCountry),
 	            null,
-	            dataService.getEU28VibrationData($scope.datasetList.Eurofound)           
+	            dataService.getEU28VibrationData(20049)           
 			],
 			risksInvolvedEurofound: [
-				dataService.getCountryRisksInvolvedEurofoundData($scope.datasetList.Eurofound, $scope.pCountry),
+				dataService.getCountryRisksInvolvedEurofoundData(20080, $scope.pCountry),
 				null,
-				dataService.getEU28RisksInvolvedEurofoundData($scope.datasetList.Eurofound)           
+				dataService.getEU28RisksInvolvedEurofoundData(20080)           
 			],
 			risksInvolvedESENER: [
 				dataService.getCountryRisksInvolvedESENERData($scope.datasetList.ESENER, $scope.pCountry),
@@ -187,9 +187,9 @@ define(function (require) {
 				dataService.getCountryWorkerInvolvementESENERData($scope.datasetList.ESENER, 'EU27_2020')
 			],
 			workerInvolvementEurofound: [
-				dataService.getCountryWorkerInvolvementEurofoundData($scope.datasetList.Eurofound, $scope.pCountry), 
+				dataService.getCountryWorkerInvolvementEurofoundData(20069, $scope.pCountry), 
 				null,
-				dataService.getEU28WorkerInvolvementEurofoundData($scope.datasetList.Eurofound)
+				dataService.getEU28WorkerInvolvementEurofoundData(20069)
 			]
         }
 
@@ -381,7 +381,7 @@ define(function (require) {
 	  	});
 
 	  	// Health perception of the workers
-	  	dataService.getCountryReportHealthPerceptionData($scope.pCountry).then(function(data)
+	  	dataService.getCountryReportHealthPerceptionData($scope.pCountry, 20026).then(function(data)
 		{
 			data.data.resultset.map(function (elem) {
 		  		$scope.healthPerception.push({
@@ -438,7 +438,7 @@ define(function (require) {
 		|                            DATA LOAD FOR CHARTS                              |
 		|******************************************************************************/
 			/* COMPANY SIZE */
-			dataService.getCountryReportCompanySizeData($scope.datasetList.EUROSTAT, 31, $scope.pCountry, "EU27_2020").then(function(data)
+			dataService.getCountryReportCompanySizeData(20089, 31, $scope.pCountry, "EU27_2020").then(function(data)
 			{
 				$scope.data = [];
 				data.data.resultset.map(function (elem) {
@@ -478,7 +478,7 @@ define(function (require) {
 		  	});
 
 		  	/* EMPLOYMENT PER SECTOR */
-		  	dataService.getCountryReportActivitySectorData($scope.datasetList.EUROSTAT2020, 32, $scope.pCountry, "EU27_2020").then(function(data)
+		  	dataService.getCountryReportActivitySectorData(20010, 32, $scope.pCountry, "EU27_2020").then(function(data)
 		  	{
 		  		$scope.data = [];
 				data.data.resultset.map(function (elem) {
@@ -506,7 +506,7 @@ define(function (require) {
 		  	});
 
 		  	/* EMPLOYMENT RATE */
-		  	dataService.getCountryReportData($scope.datasetList.EUROSTAT2019, 33, $scope.pCountry, "EU27_2020").then(function(data){
+		  	dataService.getCountryReportData(20011, 33, $scope.pCountry, "EU27_2020").then(function(data){
 		  		data.data.resultset.map(function (elem) {
 			  		$scope.employmentRate.push({
 				  		country: elem[0],
@@ -518,7 +518,7 @@ define(function (require) {
 		  	});
 
 		  	/* GDP PER CAPITA */
-		  	dataService.getCountryReportDataAsc($scope.datasetList.EUROSTAT2019, 35, $scope.pCountry, "EU27_2020").then(function(data){
+		  	dataService.getCountryReportDataAsc(20013, 35, $scope.pCountry, "EU27_2020").then(function(data){
 		  		data.data.resultset.map(function (elem) {
 			  		$scope.gdpPerCapita.push({
 				  		country: elem[0],
@@ -530,7 +530,7 @@ define(function (require) {
 		  	});
 
 		  	/* GDP PER CAPITA EURO */
-		  	dataService.getCountryReportDataAsc($scope.datasetList.EUROSTAT2019, 278, $scope.pCountry, "EU27_2020").then(function(data){
+		  	dataService.getCountryReportDataAsc(20087, 278, $scope.pCountry, "EU27_2020").then(function(data){
 		  		data.data.resultset.map(function (elem) {
 			  		$scope.gdpPerCapitaEuro.push({
 				  		country: elem[0],
@@ -542,7 +542,7 @@ define(function (require) {
 		  	});
 
 		  	/* INCOME PER CAPITA */
-		  	dataService.getCountryReportYearData($scope.datasetList.EUROSTAT2019BetweenDates, 36, $scope.pCountry, "EU27_2020", 0).then(function(data){
+		  	dataService.getCountryReportYearData(20014, 36, $scope.pCountry, "EU27_2020", 0).then(function(data){
 		  		data.data.resultset.map(function (elem) {
 			  		$scope.incomePerCapita.push({
 				  		country: elem[0],
@@ -555,7 +555,7 @@ define(function (require) {
 		  	});
 
 		  	/* INCOME PER CAPITA EURO */
-		  	dataService.getCountryReportYearData($scope.datasetList.EUROSTAT2019BetweenDates, 279, $scope.pCountry, "EU27_2020", 0).then(function(data){
+		  	dataService.getCountryReportYearData(20088, 279, $scope.pCountry, "EU27_2020", 0).then(function(data){
 		  		data.data.resultset.map(function (elem) {
 			  		$scope.incomePerCapitaEuro.push({
 				  		country: elem[0],
@@ -568,7 +568,7 @@ define(function (require) {
 		  	});
 
 		  	/* NON FATAL WORK ACCIDENTS */
-		  	dataService.getCountryReportYearData($scope.datasetList.EUROSTAT2018BetweenDates, 53, $scope.pCountry, "EU27_2020", 1).then(function(data){
+		  	dataService.getCountryReportYearData(20022, 53, $scope.pCountry, "EU27_2020", 1).then(function(data){
 		  		$scope.data = [];
 		  		data.data.resultset.map(function (elem) {
 			  		$scope.data.push({
@@ -755,7 +755,7 @@ define(function (require) {
 		  	});
 
 		  	/* USE OF PERSONAL PROTECTIVE EQUIPMENT */
-		  	dataService.getCountryReportAllCountriesAnswersData($scope.datasetList.Eurofound, 63).then(function(data){
+		  	dataService.getCountryReportAllCountriesAnswersDataNoESENER(20038, 63).then(function(data){
 		  		$scope.useOfEquipment["EU28"]={country: "EU28", value1: 0, value2: 0, value3: 0};
 				$scope.useOfEquipment[$scope.pCountry]={country: $scope.pCountry, value1: 0, value2: 0, value3: 0};
 		  		data.data.resultset.map(function (elem) {
@@ -794,7 +794,7 @@ define(function (require) {
 		  	});
 
 		  	/* INFORMATION ABOUT RISKS */
-		  	dataService.getCountryReportAllCountriesAnswersData($scope.datasetList.Eurofound, 64).then(function(data){
+		  	dataService.getCountryReportAllCountriesAnswersDataNoESENER(20039, 64).then(function(data){
 		  		$scope.data = [];
 		  		data.data.resultset.map(function (elem) {
 		  			if(elem[1].match($scope.pCountry) || elem[1] == 'EU28'){
@@ -821,7 +821,7 @@ define(function (require) {
 		  	});
 
 		  	/* JOB SATISFACTION */
-		  	dataService.getCountryReportAllCountriesAnswersData($scope.datasetList.Eurofound, 65).then(function(data){
+		  	dataService.getCountryReportAllCountriesAnswersDataNoESENER(20040, 65).then(function(data){
 		  		$scope.jobSatisfaction["EU28"]={country: "EU28", value1: 0, value2: 0, value3: 0, value4: 0};
 				$scope.jobSatisfaction[$scope.pCountry]={country: $scope.pCountry, value1: 0, value2: 0, value3: 0, value4: 0};
 		  		data.data.resultset.map(function (elem) {
@@ -866,7 +866,7 @@ define(function (require) {
 		  	});
 
 		  	/* HEALTH AT RISK SECTOR */
-		  	dataService.getCountryReportActivitySectorCountryFirstData($scope.datasetList.Eurofound, 66, $scope.pCountry, "EU28").then(function(data)
+		  	dataService.getCountryReportActivitySectorCountryFirstData(20041, 66, $scope.pCountry, "EU28").then(function(data)
 			{
 				$scope.data = [];
 				data.data.resultset.map(function (elem) {
@@ -905,7 +905,7 @@ define(function (require) {
 		  	});
 
 		  	/* HEALTH AT RISK AGE */
-		  	dataService.getCountryReportAgeGroupCountryFirstData($scope.datasetList.Eurofound, 66, $scope.pCountry, "EU28").then(function(data)
+		  	dataService.getCountryReportAgeGroupCountryFirstData(20041, 66, $scope.pCountry, "EU28").then(function(data)
 			{
 				$scope.data = [];
 				data.data.resultset.map(function (elem) {
@@ -944,7 +944,7 @@ define(function (require) {
 		  	});
 
 		  	/* HEALTH AT RISK GENDER */
-		  	dataService.getCountryReportGenderCountryFirstData($scope.datasetList.Eurofound, 66, $scope.pCountry, "EU28").then(function(data)
+		  	dataService.getCountryReportGenderCountryFirstData(20041, 66, $scope.pCountry, "EU28").then(function(data)
 			{
 				$scope.data = [];
 				data.data.resultset.map(function (elem) {
@@ -1012,7 +1012,7 @@ define(function (require) {
 		  	});
 
 			/* TIME PRESSURE EWCS*/
-		  	dataService.getCountryReportAllCountriesAnswersData($scope.datasetList.Eurofound, 83).then(function(data){
+		  	dataService.getCountryReportAllCountriesAnswersDataNoESENER(20073, 83).then(function(data){
 		  		$scope.timePressureEWCS["EU28"]={country: "EU28", value1: 0, value2: 0, value3: 0};
 				$scope.timePressureEWCS[$scope.pCountry]={country: $scope.pCountry, value1: 0, value2: 0, value3: 0};
 		  		data.data.resultset.map(function (elem) {
@@ -1079,7 +1079,7 @@ define(function (require) {
 		  	});
 
 		  	/* POOR COMMUNICATION EWCS */
-		  	dataService.getCountryReportAllCountriesOrderCountryData($scope.datasetList.Eurofound, 84).then(function(data)
+		  	dataService.getCountryReportAllCountriesOrderCountryData(20074, 84).then(function(data)
 			{
 				data.data.resultset.map(function (elem) {
 					if(elem[1].match($scope.pCountry) || elem[1] == 'EU28'){
@@ -1095,7 +1095,7 @@ define(function (require) {
 		  	});
 
 			/* INFLUENCE */
-		  	dataService.getCountryReportAllCountriesAnswersData($scope.datasetList.Eurofound, 85).then(function(data){
+		  	dataService.getCountryReportAllCountriesAnswersDataNoESENER(20075, 85).then(function(data){
 		  		$scope.influence["EU28"]={country: "EU28", value1: 0, value2: 0, value3: 0};
 				$scope.influence[$scope.pCountry]={country: $scope.pCountry, value1: 0, value2: 0, value3: 0};
 		  		data.data.resultset.map(function (elem) {
@@ -1161,7 +1161,7 @@ define(function (require) {
 		  	});
 
 			/* FEAR OF JOB LOSS EWCS */
-		  	dataService.getCountryReportAllCountriesAnswersData($scope.datasetList.Eurofound, 86).then(function(data){
+		  	dataService.getCountryReportAllCountriesAnswersDataNoESENER(20076, 86).then(function(data){
 		  		$scope.fearJobLossEWCS["EU28"]={country: "EU28", value1: 0, value2: 0, value3: 0};
 				$scope.fearJobLossEWCS[$scope.pCountry]={country: $scope.pCountry, value1: 0, value2: 0, value3: 0};
 		  		data.data.resultset.map(function (elem) {
@@ -1227,7 +1227,7 @@ define(function (require) {
 		  	});
 
 		  	/* DIFFICULT CLIENTS EWCS */
-		  	dataService.getCountryReportAllCountriesAnswersData($scope.datasetList.Eurofound, 87).then(function(data){
+		  	dataService.getCountryReportAllCountriesAnswersDataNoESENER(20077, 87).then(function(data){
 		  		$scope.difficultClientsEWCS["EU28"]={country: "EU28", value1: 0, value2: 0, value3: 0};
 				$scope.difficultClientsEWCS[$scope.pCountry]={country: $scope.pCountry, value1: 0, value2: 0, value3: 0};
 		  		data.data.resultset.map(function (elem) {
@@ -1293,7 +1293,7 @@ define(function (require) {
 		  	});
 
 		  	/* WORKING HOURS EWCS */
-		  	dataService.getCountryReportAllCountriesAnswersData($scope.datasetList.Eurofound, 88).then(function(data)
+		  	dataService.getCountryReportAllCountriesAnswersDataNoESENER(20078, 88).then(function(data)
 			{
 				$scope.data = [];				
 				data.data.resultset.map(function (elem) {
@@ -1321,7 +1321,7 @@ define(function (require) {
 		  	});
 
 		  	/* WORKING HOURS EWCS */
-		  	dataService.getCountryReportAllCountriesAnswersData($scope.datasetList.Eurofound, 89).then(function(data)
+		  	dataService.getCountryReportAllCountriesAnswersDataNoESENER(20079, 89).then(function(data)
 			{
 				$scope.data = [];				
 				data.data.resultset.map(function (elem) {
@@ -1349,7 +1349,7 @@ define(function (require) {
 		  	});
 
 			/* VIBRATIONS, LOUD NOISE AND TEMPERATURE PCOUNTRY */
-		  	dataService.getCountry1VibrationData($scope.datasetList.Eurofound, $scope.pCountry).then(function(data)
+		  	dataService.getCountry1VibrationData(20049, $scope.pCountry).then(function(data)
 			{		
 				data.data.resultset.map(function (elem) {
 			  		$scope.vibrations.push({
@@ -1363,7 +1363,7 @@ define(function (require) {
 		  	});
 
 		  	/* VIBRATIONS, LOUD NOISE AND TEMPERATURE EU28 */
-		  	dataService.getEU28VibrationData($scope.datasetList.Eurofound).then(function(data)
+		  	dataService.getEU28VibrationData(20049).then(function(data)
 			{		
 				data.data.resultset.map(function (elem) {
 			  		$scope.vibrations.push({
@@ -1377,7 +1377,7 @@ define(function (require) {
 		  	});
 
 		  	/* SMOKE, POWDER AND DUST */
-		  	dataService.getCountryReportAllCountriesAnswersData($scope.datasetList.Eurofound, 71).then(function(data)
+		  	dataService.getCountryReportAllCountriesAnswersDataNoESENER(20053, 71).then(function(data)
 			{
 				$scope.data = [];				
 				data.data.resultset.map(function (elem) {
@@ -1405,7 +1405,7 @@ define(function (require) {
 		  	});
 
 		  	/* VAPOURS */
-		  	dataService.getCountryReportAllCountriesAnswersData($scope.datasetList.Eurofound, 72).then(function(data)
+		  	dataService.getCountryReportAllCountriesAnswersDataNoESENER(20054, 72).then(function(data)
 			{
 				$scope.data = [];				
 				data.data.resultset.map(function (elem) {
@@ -1433,7 +1433,7 @@ define(function (require) {
 		  	});
 
 		  	/* CHEMICAL PRODUCTS */
-		  	dataService.getCountryReportAllCountriesAnswersData($scope.datasetList.Eurofound, 73).then(function(data)
+		  	dataService.getCountryReportAllCountriesAnswersDataNoESENER(20055, 73).then(function(data)
 			{
 				$scope.data = [];				
 				data.data.resultset.map(function (elem) {
@@ -1461,7 +1461,7 @@ define(function (require) {
 		  	});
 
 		  	/* INFECTIOUS MATERIALS */
-		  	dataService.getCountryReportAllCountriesAnswersData($scope.datasetList.Eurofound, 74).then(function(data)
+		  	dataService.getCountryReportAllCountriesAnswersDataNoESENER(20056, 74).then(function(data)
 			{
 				$scope.data = [];
 				data.data.resultset.map(function (elem) {
@@ -1518,7 +1518,7 @@ define(function (require) {
 		  	});
 
 		  	/* ERGONOMIC RISKS EUROFOUND PCOUNTRY */
-		  	dataService.getCountryRisksInvolvedEurofoundData($scope.datasetList.Eurofound, $scope.pCountry).then(function(data)
+		  	dataService.getCountryRisksInvolvedEurofoundData(20080, $scope.pCountry).then(function(data)
 			{		
 				data.data.resultset.map(function (elem) {
 			  		$scope.ergonomicRisksEWCS.push({
@@ -1533,7 +1533,7 @@ define(function (require) {
 		  	});
 
 		  	/* ERGONOMIC RISKS EUROFOUND EU28 */
-		  	dataService.getEU28RisksInvolvedEurofoundData($scope.datasetList.Eurofound).then(function(data)
+		  	dataService.getEU28RisksInvolvedEurofoundData(20080).then(function(data)
 			{		
 				data.data.resultset.map(function (elem) {
 			  		$scope.ergonomicRisksEWCS.push({
@@ -1547,7 +1547,7 @@ define(function (require) {
 		  	});
 
 		  	/* RISK ASSESSMENT - SECTOR  */
-			dataService.getCountryReportActivitySectorCountryFirstData($scope.datasetList.ESENER, 304, $scope.pCountry, "EU27_2020").then(function(data)
+			dataService.getCountryReportActivitySectorCountryFirstDataESENER($scope.datasetList.ESENER, 304, $scope.pCountry, "EU27_2020").then(function(data)
 			{
 				$scope.data = [];
 				data.data.resultset.map(function (elem) {
@@ -1681,7 +1681,7 @@ define(function (require) {
 		  	});
 
 		  	/* EMPLOYEE PARTICIPATION IN PREVENTION - SECTOR */
-			dataService.getCountryReportActivitySectorCountryFirstData($scope.datasetList.ESENER, 353, $scope.pCountry, "EU27_2020").then(function(data)
+			dataService.getCountryReportActivitySectorCountryFirstDataESENER($scope.datasetList.ESENER, 353, $scope.pCountry, "EU27_2020").then(function(data)
 			{
 				$scope.data = [];
 				data.data.resultset.map(function (elem) {
@@ -1768,7 +1768,7 @@ define(function (require) {
 		  	});
 
 		  	/* WORKER INVOLVEMENT EWCS - PCOUNTRY */
-		  	dataService.getCountryWorkerInvolvementEurofoundData($scope.datasetList.Eurofound, $scope.pCountry).then(function(data)
+		  	dataService.getCountryWorkerInvolvementEurofoundData(20069, $scope.pCountry).then(function(data)
 			{		
 				data.data.resultset.map(function (elem) {
 			  		$scope.workerInvolvementEWCS.push({
@@ -1783,7 +1783,7 @@ define(function (require) {
 		  	});
 
 		  	/* WORKER INVOLVEMENT EWCS - EU28 */
-		  	dataService.getEU28WorkerInvolvementEurofoundData($scope.datasetList.Eurofound).then(function(data)
+		  	dataService.getEU28WorkerInvolvementEurofoundData(20069).then(function(data)
 			{		
 				data.data.resultset.map(function (elem) {
 			  		$scope.workerInvolvementEWCS.push({
