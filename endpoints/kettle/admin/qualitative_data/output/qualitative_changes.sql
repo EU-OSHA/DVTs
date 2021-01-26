@@ -235,6 +235,9 @@ SET @indicatorId = (SELECT id FROM indicator WHERE name="Income per capita EURO"
 SET @datasetId = (SELECT id FROM dataset WHERE source="Eurostat" AND date_from="2010-01-01" AND date_to="2017-12-31");
 INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20088, @indicatorId, @datasetId);
 
+SET @toolID = (SELECT id FROM tool WHERE name = "osha_dvt_barometer");
+INSERT INTO section (name, tool_id) VALUES ("FATAL_WORK_ACCIDENTS", @toolID);
+
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+70, null, @sectionId, "STRATEGY_BASIC INFO");
@@ -4454,8 +4457,13 @@ INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="ECONOMIC_SECTOR_PROFILE" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2195, null, @sectionId, "CHART TITLE");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2195, null, @sectionId, "CHART_TITLE");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2195, "EN", 1, "GDP per capita in relation to EU27_2020 average");
+
+SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
+SET @sectionId = (SELECT id FROM section WHERE name="FATAL_WORK_ACCIDENTS" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2196, null, @sectionId, "CHART_TITLE");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2196, "EN", 1, "Fatal work accidents per 100 000 employees");
 
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="AT");
@@ -9345,7 +9353,7 @@ INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+8, NULL, @m
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+8, "EN", 1, "<p>The <strong>intended coverage</strong> is: All EU countries plus Iceland, Norway and Switzerland. Currently, not all data for Cyprus, Greece, Ireland, Iceland, Switzerland and Norway is available.</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+9, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+9, "EN", 1, "<ul>
-<li>Time: 2016</li>
+<li>Time: 2017</li>
 </ul>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+10, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+10, "EN", 1, "Eurostat provides absolute numbers, EU-OSHA calculated the percentages per size category.");
@@ -10334,7 +10342,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 </p>
 <p>Future: When data for 2019 is be available, there will be a trend calculated between the two consecutive periods 2010 to 2014 and 2015 to 2019.</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "This bar chart diagram shows the average number of fatal accidents for every Member State per 100,000 employees - incidence rate - in two periods: 2010 to 2014 (five years) and 2015 -2018 (four years)");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "This bar chart diagram shows the average number of fatal accidents for every Member State per 100 000 employees - incidence rate - in two periods: 2010 - 2014 (five years) and 2015 - 2018 (four years)");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "Eurostat");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
