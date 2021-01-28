@@ -235,9 +235,6 @@ SET @indicatorId = (SELECT id FROM indicator WHERE name="Income per capita EURO"
 SET @datasetId = (SELECT id FROM dataset WHERE source="Eurostat" AND date_from="2010-01-01" AND date_to="2017-12-31");
 INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20088, @indicatorId, @datasetId);
 
-SET @toolID = (SELECT id FROM tool WHERE name = "osha_dvt_barometer");
-INSERT INTO section (name, tool_id) VALUES ("FATAL_WORK_ACCIDENTS", @toolID);
-
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+70, null, @sectionId, "STRATEGY_BASIC INFO");
@@ -2936,7 +2933,7 @@ INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="WORKACC" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+566, null, @sectionId, "CHART FOOTER");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+566, "EN", 1, "<p>This diagram shows the average number of fatal accidents for every Member State per 100,000 employees in two periods: 2010 to 2014 and 2015 -2018. The source of the data is the incidence rate as published by Eurostat.</p>");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+566, "EN", 1, "<p>This diagram shows the average number of fatal accidents for every Member State per 100 000 employees in two periods: 2010 - 2014 and 2015 - 2018. The source of the data is the incidence rate as published by Eurostat.</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="WORKACC" AND tool_id=@toolId);
