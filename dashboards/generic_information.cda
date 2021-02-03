@@ -591,7 +591,7 @@
 				AND v.profile_id=p.id
 				AND p.nuts_id=n.id
 				AND n.country_code IN (${pCountry1}, ${pCountry2}, 'EU27_2020')
-				ORDER BY FIELD(n.country_code, ${pCountry1}, ${pCountry2}, 'EU27_2020') ASC
+				ORDER BY FIELD(n.country_code, ${pCountry1}, ${pCountry2}, 'EU27_2020') ASC, Year ASC
 	    </Query>
 	</DataAccess>
 
