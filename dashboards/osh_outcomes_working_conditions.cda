@@ -172,67 +172,22 @@
 	    	<Parameter default="20026" name="pChart" type="Numeric"/>
 	    </Parameters>
 	    <Query>
-			SELECT DISTINCT(n.literal_id) as country_name, n.country_code as country_code, (ROUND(v.value+v2.value)) as satisfaction_working, 
-			(ROUND(v3.value)) as health_negative, (ROUND(v4.value)) as health_problem, (ROUND(v5.value)) as absence, 
-			(ROUND(v6.value)) as sick_at_work, (ROUND(v7.value)) as job_till_60
-			FROM indicators_by_chart ibc, value v, profile p, value v2, profile p2, indicators_by_chart ibc3, value v3, profile p3, indicators_by_chart ibc4, value v4, profile p4,
-			indicators_by_chart ibc5, value v5, profile p5, indicators_by_chart ibc6, value v6, profile p6, indicators_by_chart ibc7, value v7, profile p7, nuts n
+			SELECT n.literal_id AS country_name, n.country_code AS country_code, v.indicator_id AS IndicatorID, ROUND(SUM(v.value)) AS Value
+			FROM indicators_by_chart ibc, value v, profile p, nuts n
 			WHERE ibc.chart_id=${pChart}
-			AND n.country_code != "UK"
-			/* Job Satisfaction - Satisfied */
-			AND ibc.indicator_id=v.indicator_id
-			AND ibc.dataset_id=v.dataset_id
+			AND n.country_code != 'UK'
+			AND v.indicator_id IN (ibc.indicator_id)
+			AND v.dataset_id=ibc.dataset_id
 			AND v.profile_id=p.id
 			AND p.nuts_id=n.id
-			AND v.indicator_id=65
-			AND p.answer_id=12
-			/* Job Satisfaction - Very Satisfied */
-			AND ibc.indicator_id=v2.indicator_id
-			AND ibc.dataset_id=v2.dataset_id
-			AND v2.profile_id=p2.id
-			AND p2.nuts_id=n.id
-			AND v2.indicator_id=65
-			AND p2.answer_id=13
-			/* HEALTH NEGATIVE AFFECTION */
-			AND ibc.chart_id=ibc3.chart_id
-			AND ibc3.indicator_id=v3.indicator_id
-			AND ibc3.dataset_id=v3.dataset_id
-			AND v3.profile_id=p3.id
-			AND p3.nuts_id=n.id
-			AND v3.indicator_id=58
-			AND p3.answer_id=106
-			/* HEALTH PROBLEMS IN LAST 12 MONTHS */
-			AND ibc4.chart_id=ibc.chart_id
-			AND ibc4.indicator_id=v4.indicator_id
-			AND ibc4.dataset_id=v4.dataset_id
-			AND v4.profile_id=p4.id
-			AND p4.nuts_id=n.id
-			AND v4.indicator_id=59
-			/* MORE THAN 15 DAYS OF ABSENCE */
-			AND ibc5.chart_id=ibc.chart_id
-			AND ibc5.indicator_id=v5.indicator_id
-			AND ibc5.dataset_id=v5.dataset_id
-			AND v5.profile_id=p5.id
-			AND p5.nuts_id=n.id
-			AND v5.indicator_id=60
-			AND p5.answer_id=108
-			/* SICK AT WORK */
-			AND ibc6.chart_id=ibc.chart_id
-			AND ibc6.indicator_id=v6.indicator_id
-			AND ibc6.dataset_id=v6.dataset_id
-			AND v6.profile_id=p6.id
-			AND p6.nuts_id=n.id
-			AND v6.indicator_id=61
-			AND p6.answer_id=1
-			/* BE ABLE TO DO CURRENT JOB TIL 60 YEARS OLD */
-			AND ibc7.chart_id=ibc.chart_id
-			AND ibc7.indicator_id=v7.indicator_id
-			AND ibc7.dataset_id=v7.dataset_id
-			AND v7.profile_id=p7.id
-			AND p7.nuts_id=n.id
-			AND v7.indicator_id=62
-			AND p7.answer_id=1
-			ORDER BY country_name ASC
+			AND CASE WHEN v.indicator_id=65 THEN p.answer_id IN (12,13)
+			ELSE CASE WHEN v.indicator_id=58 THEN p.answer_id=106
+			ELSE CASE WHEN v.indicator_id=59 THEN p.answer_id IS NULL
+			ELSE CASE WHEN v.indicator_id=60 THEN p.answer_id=108
+			ELSE p.answer_id=1 END END END END
+			AND p.nuts_id=n.id
+			GROUP BY n.country_code, v.indicator_id
+			ORDER BY n.country_code ASC, v.indicator_id ASC			
 	    </Query>
 	</DataAccess>
 
@@ -245,63 +200,23 @@
 	    	<Parameter default=".*" name="countries" type="String"/>
 	    </Parameters>
 	    <Query>
-			SELECT DISTINCT(n.literal_id) as country_name, n.country_code as country_code, (ROUND(v.value+v2.value)) as satisfaction_working, 
-			(ROUND(v3.value)) as health_negative, (ROUND(v4.value)) as health_problem, (ROUND(v5.value)) as absence, 
-			(ROUND(v6.value)) as sick_at_work, (ROUND(v7.value)) as job_till_60
-			FROM indicators_by_chart ibc, value v, profile p, value v2, profile p2, indicators_by_chart ibc3, value v3, profile p3, indicators_by_chart ibc4, value v4, profile p4,
-			indicators_by_chart ibc5, value v5, profile p5, indicators_by_chart ibc6, value v6, profile p6, indicators_by_chart ibc7, value v7, profile p7, nuts n
+	    	SELECT n.literal_id AS country_name, n.country_code AS country_code, v.indicator_id AS IndicatorID, ROUND(SUM(v.value)) AS Value
+			FROM indicators_by_chart ibc, value v, profile p, nuts n
 			WHERE ibc.chart_id=${pChart}
-			AND n.country_code != "UK"
+			AND n.country_code != 'UK'
 			AND n.literal_id REGEXP ${countries}
-			/* Job Satisfaction - Satisfied */
-			AND ibc.indicator_id=v.indicator_id
-			AND ibc.dataset_id=v.dataset_id
+			AND v.indicator_id IN (ibc.indicator_id)
+			AND v.dataset_id=ibc.dataset_id
 			AND v.profile_id=p.id
 			AND p.nuts_id=n.id
-			AND v.indicator_id=65
-			AND p.answer_id=12
-			/* Job Satisfaction - Very Satisfied */
-			AND ibc.indicator_id=v2.indicator_id
-			AND ibc.dataset_id=v2.dataset_id
-			AND v2.profile_id=p2.id
-			AND p2.nuts_id=n.id
-			AND v2.indicator_id=65
-			AND p2.answer_id=13
-			/* HEALTH NEGATIVE AFFECTION */
-			AND ibc3.indicator_id=v3.indicator_id
-			AND ibc3.dataset_id=v3.dataset_id
-			AND v3.profile_id=p3.id
-			AND p3.nuts_id=n.id
-			AND v3.indicator_id=58
-			AND p3.answer_id=106
-			/* HEALTH PROBLEMS IN LAST 12 MONTHS */
-			AND ibc4.indicator_id=v4.indicator_id
-			AND ibc4.dataset_id=v4.dataset_id
-			AND v4.profile_id=p4.id
-			AND p4.nuts_id=n.id
-			AND v4.indicator_id=59
-			/* MORE THAN 15 DAYS OF ABSENCE */
-			AND ibc5.indicator_id=v5.indicator_id
-			AND ibc5.dataset_id=v5.dataset_id
-			AND v5.profile_id=p5.id
-			AND p5.nuts_id=n.id
-			AND v5.indicator_id=60
-			AND p5.answer_id=108
-			/* SICK AT WORK */
-			AND ibc6.indicator_id=v6.indicator_id
-			AND ibc6.dataset_id=v6.dataset_id
-			AND v6.profile_id=p6.id
-			AND p6.nuts_id=n.id
-			AND v6.indicator_id=61
-			AND p6.answer_id=1
-			/* BE ABLE TO DO CURRENT JOB TIL 60 YEARS OLD */
-			AND ibc7.indicator_id=v7.indicator_id
-			AND ibc7.dataset_id=v7.dataset_id
-			AND v7.profile_id=p7.id
-			AND p7.nuts_id=n.id
-			AND v7.indicator_id=62
-			AND p7.answer_id=1
-			ORDER BY country_name ASC
+			AND CASE WHEN v.indicator_id=65 THEN p.answer_id IN (12,13)
+			ELSE CASE WHEN v.indicator_id=58 THEN p.answer_id=106
+			ELSE CASE WHEN v.indicator_id=59 THEN p.answer_id IS NULL
+			ELSE CASE WHEN v.indicator_id=60 THEN p.answer_id=108
+			ELSE p.answer_id=1 END END END END
+			AND p.nuts_id=n.id
+			GROUP BY n.country_code, v.indicator_id
+			ORDER BY n.country_code ASC, v.indicator_id ASC	
 	    </Query>
 	</DataAccess>
 

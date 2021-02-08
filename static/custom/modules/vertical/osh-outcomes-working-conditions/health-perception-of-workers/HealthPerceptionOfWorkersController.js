@@ -26,7 +26,7 @@ define(function (require) {
 
     $scope.countries = [];
     $scope.amatrix = [];
-    $scope.EUData = {};
+    $scope.EUData = {country_name: 822, country_code: 'EU27_2020', satisfaction_working: '-', health_negative: '-', health_problem: '-', absence: '-', sick_at_work: '-', job_till_60: '-'};
     $scope.searchParams = {
       countries: []
     };
@@ -271,33 +271,95 @@ define(function (require) {
     |******************************************************************************/
       dataService.getHealthPerceptionData(20026).then(function (data) {
         $log.debug('getHealthPerceptionData');
+        var auxAmatrix = [];
         data.data.resultset.map(function (elem) {
           var param = (!!$stateParams.filter) ? $stateParams.filter : undefined;
-          if(elem[1] == 'EU28'){
-            $scope.EUData = {
-              country_name: elem[0],
-              country_code: elem[1],
-              satisfaction_working: elem[2],
-              health_negative: elem[3],
-              health_problem: elem[4],
-              absence: elem[5],
-              sick_at_work: elem[6],
-              job_till_60: elem[7]
+          // debugger;
+          // Check if data for EU28 or EU27_2020
+          if(elem[1] == 'EU28' || elem[1] == 'EU27_2020'){            
+            // elem [2] is the ID of the indicator, elem[3] is the value for that indicator
+            switch(elem[2])
+            {
+              case 65:
+                // Job satisfaction
+                $scope.EUData.satisfaction_working = elem[3];
+                break;
+              case 58:
+                // Health negative affection
+                $scope.EUData.health_negative = elem[3];
+                break;
+              case 59:
+                // Health Problems in the last 12 Months
+                $scope.EUData.health_problem = elem[3];
+                break;
+              case 60:
+                // More than 15 days of absence
+                $scope.EUData.absence = elem[3];
+                break;
+              case 61:
+                // Sick at work
+                $scope.EUData.sick_at_work = elem[3];
+                break;
+              case 62:
+                // Work until 60 years old
+                $scope.EUData.job_till_60 = elem[3];
+                break;
+              default:
+                // Do nothing
+                break;
             }
           }else{
-            $scope.amatrix.push({
-              country_name: elem[0],
-              country_code: elem[1],
-              satisfaction_working: elem[2],
-              health_negative: elem[3],
-              health_problem: elem[4],
-              absence: elem[5],
-              sick_at_work: elem[6],
-              job_till_60: elem[7]
-            });
+            // Check if country already created in the Array
+            if (auxAmatrix[elem[1]] == null || auxAmatrix[elem[1]] == undefined)
+            {
+              // Add the country to the Array
+              auxAmatrix[elem[1]] = {country_name: elem[0], 
+                                        country_code: elem[1], 
+                                        satisfaction_working: null, 
+                                        health_negative: null, 
+                                        health_problem: null, 
+                                        absence: null, 
+                                        sick_at_work: null, 
+                                        job_till_60: null};
+            }
+            // elem [2] is the ID of the indicator, elem[3] is the value for that indicator
+            switch(elem[2])
+            {
+              case 65:
+                // Job satisfaction
+                auxAmatrix[elem[1]].satisfaction_working = elem[3];
+                break;
+              case 58:
+                // Health negative affection
+                auxAmatrix[elem[1]].health_negative = elem[3];
+                break;
+              case 59:
+                // Health Problems in the last 12 Months
+                auxAmatrix[elem[1]].health_problem = elem[3];
+                break;
+              case 60:
+                // More than 15 days of absence
+                auxAmatrix[elem[1]].absence = elem[3];
+                break;
+              case 61:
+                // Sick at work
+                auxAmatrix[elem[1]].sick_at_work = elem[3];
+                break;
+              case 62:
+                // Work until 60 years old
+                auxAmatrix[elem[1]].job_till_60 = elem[3];
+                break;
+              default:
+                // Do nothing
+                break;
+            }
           }
         });
 
+        for (var country in auxAmatrix)
+        {
+          $scope.amatrix.push(auxAmatrix[country]);
+        }
         updateText();
 
         $scope.readMore = function (pMatrix) {
@@ -457,7 +519,62 @@ define(function (require) {
       function search($event,filter) {
         dataService.applyHealthPerceptionFilters(20026, $scope.searchParams.countries)
           .then(function (data) {
-            $scope.amatrix = dataService.dataMapper(data);
+            $scope.amatrix=[];
+
+            var auxAmatrix = [];
+
+            data.data.resultset.map(function (elem) {
+              // Check if country already created in the Array
+              if (auxAmatrix[elem[1]] == null || auxAmatrix[elem[1]] == undefined)
+              {
+                // Add the country to the Array
+                auxAmatrix[elem[1]] = {country_name: elem[0], 
+                                          country_code: elem[1], 
+                                          satisfaction_working: null, 
+                                          health_negative: null, 
+                                          health_problem: null, 
+                                          absence: null, 
+                                          sick_at_work: null, 
+                                          job_till_60: null};
+              }
+
+              // elem [2] is the ID of the indicator, elem[3] is the value for that indicator
+              switch(elem[2])
+              {
+                case 65:
+                  // Job satisfaction
+                  auxAmatrix[elem[1]].satisfaction_working = elem[3];
+                  break;
+                case 58:
+                  // Health negative affection
+                  auxAmatrix[elem[1]].health_negative = elem[3];
+                  break;
+                case 59:
+                  // Health Problems in the last 12 Months
+                  auxAmatrix[elem[1]].health_problem = elem[3];
+                  break;
+                case 60:
+                  // More than 15 days of absence
+                  auxAmatrix[elem[1]].absence = elem[3];
+                  break;
+                case 61:
+                  // Sick at work
+                  auxAmatrix[elem[1]].sick_at_work = elem[3];
+                  break;
+                case 62:
+                  // Work until 60 years old
+                  auxAmatrix[elem[1]].job_till_60 = elem[3];
+                  break;
+                default:
+                  // Do nothing
+                  break;
+              }
+            });
+
+            for (var country in auxAmatrix)
+            {
+              $scope.amatrix.push(auxAmatrix[country]);
+            }
 
             //$log.warn($scope.amatrix);
 
