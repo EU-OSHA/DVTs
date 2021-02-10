@@ -161,7 +161,7 @@ define (function (require) {
                             }
 
                             // Get the different series of the chart
-                            var series = this.chart.dataEngine.getVisibleSeries();
+                            var series = this.chart.dataEngine.getSeries();
                             // Get current Series
                             var currentSeries = scene.getSeries();
                             if (currentSeries == series[1])
@@ -180,7 +180,7 @@ define (function (require) {
                                 
                                 return dvtUtils.getColorCountry(1);
                             }
-                        }, 
+                        },
                         label_textStyle: function(scene){
                             var countryKey = scene.firstAtoms.series;
                             if (countryKey == 'EU28' || countryKey == 'EU27_2020') {
@@ -190,8 +190,7 @@ define (function (require) {
                         },
                         visualRoles:{
                             series:'series',
-                            category:'category',
-                            value: 'value'
+                            category:'category'
                         }
                     }
                 ];
