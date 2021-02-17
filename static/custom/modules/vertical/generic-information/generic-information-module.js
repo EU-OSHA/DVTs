@@ -59,6 +59,14 @@ define(function (require) {
             pSplit2: {
               value: '36',
               squash: '36'
+            },
+            pChart: {
+              value: '20013',
+              squash: '20013'
+            }, 
+            pChart2: {
+              value: '20014',
+              squash: '20014'
             }
           },
           views: {

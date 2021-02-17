@@ -76,35 +76,35 @@ define (function (require) {
                                 this.chart.options.datasourceAndDates[1] == 325  || 
                                 this.chart.options.datasourceAndDates[1] == 326  || 
                                 this.chart.options.datasourceAndDates[1] == 327  || 
-                                this.chart.options.datasourceAndDates[1] == 89)
+                                this.chart.options.datasourceAndDates[0] == 20079)
                             {
                                 splits=["Yes", "No"];
-                            } else if (this.chart.options.datasourceAndDates[1] == 63)
+                            } else if (this.chart.options.datasourceAndDates[0] == 20038)
                             {
                                 splits=["Yes, and I always use it", "Yes, but I don't always use it", "No, not required"];
-                            } else if (this.chart.options.datasourceAndDates[1] == 64)
+                            } else if (this.chart.options.datasourceAndDates[0] == 20039)
                             {
                                 splits=["(very) Well informed", "Not very or not at all well informed"];
-                            } else if (this.chart.options.datasourceAndDates[1] == 65)
+                            } else if (this.chart.options.datasourceAndDates[0] == 20040)
                             {
                                 splits=["Very satisfied","Satisfied","Not very satisfied","Not at all satisfied"];
-                            } else if (this.chart.options.datasourceAndDates[1] == 83  || 
-                                this.chart.options.datasourceAndDates[1] == 87)
+                            } else if (this.chart.options.datasourceAndDates[0] == 20073  || 
+                                this.chart.options.datasourceAndDates[0] == 20077)
                             {
                                 splits=["(Almost) all of the time","Between 1/4 and 3/4 of the time","(Almost) never"];
-                            } else if (this.chart.options.datasourceAndDates[1] == 85)
+                            } else if (this.chart.options.datasourceAndDates[0] == 20075)
                             {
                                 splits=["Always or most of the time","Sometimes","Rarely or never"];
-                            }else if (this.chart.options.datasourceAndDates[1] == 86)
+                            }else if (this.chart.options.datasourceAndDates[0] == 20076)
                             {
                                 splits=["Agree","Neither agree nor disagree","Disagree"];
-                            }else if (this.chart.options.datasourceAndDates[1] == 88)
+                            }else if (this.chart.options.datasourceAndDates[0] == 20078)
                             {
                                 splits=["Once or more","Never"];
-                            }else if (this.chart.options.datasourceAndDates[1] == 71 || 
-                                this.chart.options.datasourceAndDates[1] == 72 || 
-                                this.chart.options.datasourceAndDates[1] == 73 || 
-                                this.chart.options.datasourceAndDates[1] == 74)
+                            }else if (this.chart.options.datasourceAndDates[0] == 20053 || 
+                                this.chart.options.datasourceAndDates[0] == 20054 || 
+                                this.chart.options.datasourceAndDates[0] == 20055 || 
+                                this.chart.options.datasourceAndDates[0] == 20056)
                             {
                                 splits=["At least 1/4 of the time","Less than 1/4 of the time"];
                             }else if (this.chart.options.datasourceAndDates[1] == 305)
