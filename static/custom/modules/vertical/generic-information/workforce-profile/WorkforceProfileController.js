@@ -91,12 +91,12 @@ define(function (require) {
 
     $scope.dataPromises = [
       mapProvider.getEuropeShape(),
-      dataService.getMedianAgeData($scope.datasetEurostat2019),
-      dataService.getAgeingWorkersData($scope.datasetEurostat2019),
-      dataService.getTotalEmploymentData($scope.datasetEurostat2019),
-      dataService.getMaleEmploymentData($scope.datasetEurostat2019),
-      dataService.getFemaleEmploymentData($scope.datasetEurostat2019),
-      dataService.getUnemploymentData($scope.datasetEurostat2019)
+      dataService.getMedianAgeData(20012),
+      dataService.getAgeingWorkersData(20012),
+      dataService.getTotalEmploymentData(20012),
+      dataService.getMaleEmploymentData(20012),
+      dataService.getFemaleEmploymentData(20012),
+      dataService.getUnemploymentData(20012)
     ];
 
     $scope.stories = [
@@ -364,7 +364,7 @@ define(function (require) {
         throw err;
     });
 
-    dataService.getAvailableCountries($scope.datasetEurostat2019).then(function (data) {
+    dataService.getAvailableCountries(20012).then(function (data) {
       data.data.resultset.map(function (elem) {
         $scope.countries.push({
           country_code: elem[0],
@@ -493,7 +493,7 @@ define(function (require) {
        */
       function search($event) {
         $scope.matrix = [];
-        dataService.getFilteringCountries($scope.datasetEurostat2019, $scope.countryFilter)
+        dataService.getFilteringCountries(20012, $scope.countryFilter)
           .then(function (data) {
             data.data.resultset.map(function (elem) {
               $scope.matrix.push({

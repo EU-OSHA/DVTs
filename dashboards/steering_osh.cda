@@ -8,7 +8,7 @@
 
 	<!-- STEERING OF OSH || get regulations indicators for select -->
 	<DataAccess access="public" connection="dvt_conn" id="getRegulationIndicators" type="sql">
-	    <Cache duration="3600" enabled="true" />
+	    <Cache duration="0" enabled="false" />
 	    <Columns />
 	    <Parameters>
 	      <Parameter default="41" name="pIndicator" type="Numeric" />
@@ -22,7 +22,7 @@
 
 	<!-- STEERING OF OSH || get regulations indicators data for select -->
 	<DataAccess access="public" connection="dvt_conn" id="getCountryRegulationData" type="sql">
-	    <Cache duration="3600" enabled="true" />
+	    <Cache duration="0" enabled="false" />
 	    <Columns />
 	    <Parameters>
 	      <Parameter default="AT" name="pCountry" type="String" />
@@ -40,7 +40,7 @@
 
 	<!-- STEERING OF OSH || get strategies indicators for select -->
 	<DataAccess access="public" connection="dvt_conn" id="getStrategiesIndicators" type="sql">
-	    <Cache duration="3600" enabled="true" />
+	    <Cache duration="0" enabled="false" />
 	    <Columns />
 	    <Parameters>
 	      <Parameter default="46" name="pIndicator" type="Numeric" />
@@ -55,7 +55,7 @@
 
 	<!-- STEERING OF OSH || get structure of strategy indicators data for select -->
 	<DataAccess access="public" connection="dvt_conn" id="getStructureStrategiesData" type="sql">
-	    <Cache duration="3600" enabled="true" />
+	    <Cache duration="0" enabled="false" />
 	    <Columns />
 	    <Parameters>
 	      <Parameter default="AT" name="pCountry" type="String" />
@@ -71,7 +71,7 @@
 
 	<!-- STEERING OF OSH || get eu challenges countries with available data -->
 	<DataAccess access="public" connection="dvt_conn" id="getEUChallengesCountries" type="sql">
-	    <Cache duration="3600" enabled="true" />
+	    <Cache duration="0" enabled="false" />
 	    <Columns />
 	    <Parameters>
 	    </Parameters>
@@ -87,7 +87,7 @@
 
 	<!-- STEERING OF OSH || get eu challenges data -->
 	<DataAccess access="public" connection="dvt_conn" id="getEUChallengesData" type="sql">
-	    <Cache duration="3600" enabled="true" />
+	    <Cache duration="0" enabled="false" />
 	    <Columns />
 	    <Parameters>
 	    	<Parameter default=".*" name="countries" type="String"/>
@@ -105,7 +105,7 @@
 
 	<!-- STEERING OF OSH || Applies selected filters to visualize EU challenges data -->
 	<DataAccess access="public" connection="dvt_conn" id="getEUChallengesWithFilters" type="sql">
-	    <Cache duration="3600" enabled="true" />
+	    <Cache duration="0" enabled="false" />
 	    <Columns />
 	    <Parameters>
 	    	<Parameter default=".*" name="term" type="String" />
@@ -143,7 +143,7 @@
 
 	<!-- STEERING OF OSH || get social dialogue countries with available data -->
 	<DataAccess access="public" connection="dvt_conn" id="getSocialDialogueCountries" type="sql">
-	    <Cache duration="3600" enabled="true" />
+	    <Cache duration="0" enabled="false" />
 	    <Columns />
 	    <Parameters>
 	    </Parameters>
@@ -162,7 +162,7 @@
 
 	<!-- STEERING OF OSH || get social dialogue countries with available data -->
 	<DataAccess access="public" connection="dvt_conn" id="getSocialDialogueData" type="sql">
-	    <Cache duration="3600" enabled="true" />
+	    <Cache duration="0" enabled="false" />
 	    <Columns />
 	    <Parameters>
 	    	<Parameter default="15" name="dataset" type="Numeric"/>
@@ -290,7 +290,7 @@
 
 		<!-- STEERING OF OSH || get social dialogue countries with available data -->
 	<DataAccess access="public" connection="dvt_conn" id="applySocialDialogueFilters" type="sql">
-	    <Cache duration="3600" enabled="true" />
+	    <Cache duration="0" enabled="false" />
 	    <Columns />
 	    <Parameters>
 	    	<Parameter default="15" name="dataset" type="Numeric"/>
@@ -424,7 +424,7 @@
 
 	<!-- STEERING OF OSH || get national strategies countries applying filters -->
 	<DataAccess access="public" connection="dvt_conn" id="getStrategiesCountryFilter" type="sql">
-		<Cache duration="3600" enabled="true" />
+		<Cache duration="0" enabled="false" />
 		<Columns />
 		<Parameters>
 			<Parameter default=".*" name="countries" type="String"/>

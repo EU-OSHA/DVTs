@@ -8,7 +8,7 @@
 
    	<!-- OSH INFRASTRUCTURE || ALL INDICATORS IN ENFORCEMENT CAPACITIES -->
 	<DataAccess access="public" connection="dvt_conn" id="getEnforcementCapacityIndicators" type="sql">
-	    <Cache duration="3600" enabled="true" />
+	    <Cache duration="0" enabled="false" />
 	    <Columns />
 	    <Query>
 			SELECT id, literal_id 
@@ -20,7 +20,7 @@
 
 	<!-- OSH INFRASTRUCTURE || ALL INDICATORS IN ENFORCEMENT CAPACITIES -->
 	<!--<DataAccess access="public" connection="dvt_conn" id="getEnforcementCapacityCountries" type="sql">
-	    <Cache duration="3600" enabled="true" />
+	    <Cache duration="0" enabled="false" />
 	    <Columns />
 	    <Query>
 			(	      
@@ -45,7 +45,7 @@
 
 	<!-- OSH INFRASTRUCTURE || GET ENFORCEMENT CAPACITY DATA -->
 	<DataAccess access="public" connection="dvt_conn" id="getEnforcementCapacityData" type="sql">
-	    <Cache duration="3600" enabled="true" />
+	    <Cache duration="0" enabled="false" />
 	    <Columns />
 	    <Parameters>
 	    	<Parameter default="AT" name="pCountry" type="String"/>
@@ -91,7 +91,7 @@
 
 	<!-- OSH INFRASTRUCTURE || GET OSH STATISTICS COUNTRIES -->
 	<DataAccess access="public" connection="dvt_conn" id="getMatrixStatisticsCountries" type="sql">
-	    <Cache duration="3600" enabled="true" />
+	    <Cache duration="0" enabled="false" />
 	    <Columns />
 	    <Query>
 	    SELECT DISTINCT (n.literal_id) AS country, n.country_code AS country_code
@@ -106,7 +106,7 @@
 
 	<!-- OSH INFRASTRUCTURE || GET OSH STATISTICS DATA -->
 	<DataAccess access="public" connection="dvt_conn" id="getAllMatrixStatistics" type="sql">
-	    <Cache duration="3600" enabled="true" />
+	    <Cache duration="0" enabled="false" />
 	    <Columns />
 	    <Parameters>
 	    	<Parameter default=".*" name="pCountries" type="String" />
@@ -125,7 +125,7 @@
 
 	<!-- OSH INFRASTRUCTURE || GET OSH STATISTICS DATA WITH FILTERS -->
 	<DataAccess access="public" connection="dvt_conn" id="getStatisticsFiltersData" type="sql">
-		<Cache duration="3600" enabled="true" />
+		<Cache duration="0" enabled="false" />
 		<Columns/>
 	    <Parameters>
 	      <Parameter default=".*" name="term" type="String" />
