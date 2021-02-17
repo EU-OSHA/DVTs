@@ -39,7 +39,7 @@
               width="330" height="{{horizontalHeight}}" axis-percent="1"
               orientation="{{orientation}}" axis-fixed-min="0"
               axis-fixed-max="100" step="{{step}}"
-              params="[['pDataset', datasetEurofound], ['pIndicator', 65]]"
+              params="[['pChart', 20040], ['pIndicator', 65]]"
               color-role="series" colors="[color1, color2, color3, color4]"
               chart-title="{{resolution > 768 ? i18nLiterals.L22134 : i18nLiterals.L322}}" id="1"
               axis-label-font="12px 'OpenSans-bold'"
@@ -52,7 +52,7 @@
               legend="true"
               stacked="1" angle="{{angle}}"
               base-axis-size="{{axisSize}}"
-              datasource-and-dates="[datasetEurofound,65]"
+              datasource-and-dates="[20040]"
             ></dvt-bar-chart>
           </div>
         </div>
@@ -103,7 +103,7 @@
             width="330" height="470" axis-percent="1"
             orientation="{{orientation}}" axis-fixed-min="0"
             axis-fixed-max="40" step="{{step}}"
-            params="[['pDataset', datasetEurofound], ['pIndicator', 66], ['pCountry1', pCountry1], ['pCountry2', pCountry2]]"
+            params="[['pChart', 20041], ['pIndicator', 66], ['pCountry1', pCountry1], ['pCountry2', pCountry2]]"
             color-role="series" colors="[stories[1].color2, stories[1].color1, stories[1].color3]"
             chart-title="{{resolution > 768 ? i18nLiterals.L22135 : i18nLiterals.L323}}" long-title="{{resolution > 768 ? i18nLiterals.L22135 : i18nLiterals.L323}} - {{i18nLiterals.L20648}}" id="2"
             axis-label-font="12px 'OpenSans-bold'"
@@ -120,7 +120,7 @@
             base-axis-label-text-baseline="top"
             legend="true" axis-label-word-break="{{axisWordBreak}}"
             legend-align="center" base-axis-size="{{axisSizeHealth}}"
-            datasource-and-dates="[datasetEurofound,66]"
+            datasource-and-dates="[20041]"
             ></dvt-bar-chart>
           </div>
           <div class="chart--block" ng-show="pSplit == 'age'">
@@ -130,7 +130,7 @@
               width="330" height="470" axis-percent="1"
               orientation="{{orientation}}" axis-fixed-min="0"
               axis-fixed-max="40" step="{{step}}"
-              params="[['pDataset', datasetEurofound], ['pIndicator', 66], ['pCountry1', pCountry1], ['pCountry2', pCountry2]]"
+              params="[['pChart', 20041], ['pIndicator', 66], ['pCountry1', pCountry1], ['pCountry2', pCountry2]]"
               color-role="series" colors="[stories[1].color2, stories[1].color1, stories[1].color3]"
               chart-title="{{resolution > 768 ? i18nLiterals.L22135 : i18nLiterals.L323}}" long-title="{{resolution > 768 ? i18nLiterals.L22135 : i18nLiterals.L323}} - {{i18nLiterals.L20650}}" id="3"
               axis-label-font="12px 'OpenSans-bold'"
@@ -147,7 +147,7 @@
               base-axis-label-text-baseline="top"
               legend-align="center"
               base-axis-size="{{axisSizeHealth}}"
-              datasource-and-dates="[datasetEurofound,66]"
+              datasource-and-dates="[20041]"
             ></dvt-bar-chart>
           </div>
           <div class="chart--block" ng-show="pSplit == 'gender'">
@@ -157,7 +157,7 @@
               width="330" height="470" axis-percent="1"
               orientation="{{orientation}}" axis-fixed-min="0"
               axis-fixed-max="40" step="{{step}}"
-              params="[['pDataset', datasetEurofound], ['pIndicator', 66], ['pCountry1', pCountry1], ['pCountry2', pCountry2]]"
+              params="[['pChart', 20041], ['pIndicator', 66], ['pCountry1', pCountry1], ['pCountry2', pCountry2]]"
               color-role="series" colors="[stories[2].color2, stories[2].color1, stories[2].color3]"
               chart-title="{{resolution > 768 ? i18nLiterals.L22135 : i18nLiterals.L323}}" long-title="{{resolution > 768 ? i18nLiterals.L22135 : i18nLiterals.L323}} - {{i18nLiterals.L20649}}" id="4"
               axis-label-font="12px 'OpenSans-bold'"
@@ -173,7 +173,7 @@
               legend="true" base-axis-label-text-baseline="top"
               legend-align="center" custom-tooltip="1"
               base-axis-size="{{axisSizeHealth}}"
-              datasource-and-dates="[datasetEurofound,66]"
+              datasource-and-dates="[20041]"
             ></dvt-bar-chart>
           </div>
         </div>

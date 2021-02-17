@@ -64,6 +64,11 @@ define(function (require) {
     $scope.pDataset = '20';
     $rootScope.pDataset = $scope.pDataset;
 
+    $scope.pChart = $stateParams.pChart;
+    $rootScope.pChart = $scope.pChart;
+    $scope.pChart2 = $stateParams.pChart2;
+    $rootScope.pChart2 = $scope.pChart2;
+
     //$scope.dashboard = {};
     $scope.dashboard = {
         parameters: {
@@ -71,7 +76,9 @@ define(function (require) {
             "pCountry2": $scope.pCountry2,
             "pSplit": $scope.pSplit,
             "pSplit2": $rootScope.pSplit2,
-            "pDataset": $rootScope.pDataset
+            "pDataset": $rootScope.pDataset,
+            "pChart": $scope.pChart,
+            "pChart2": $scope.pChart2
         }
     };
 

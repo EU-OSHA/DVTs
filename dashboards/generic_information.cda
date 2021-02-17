@@ -8,7 +8,7 @@
 
 	<!-- GET INDICATORS FOR METHODOLOGY -->
     <DataAccess access="public" connection="dvt_conn" id="getMethodologyIndicators" type="sql">
-        <Cache duration="3600" enabled="true" />
+        <Cache duration="5" enabled="true" />
         <Columns />
            <Parameters>
             <Parameter default="OSH_AUTHORITIES" name="pSubsection" type="String"/>
@@ -27,7 +27,7 @@
 
     <!-- GET DATA OF AN INDICATOR FOR METHODOLOGY -->
     <DataAccess access="public" connection="dvt_conn" id="getMethodologyData" type="sql">
-        <Cache duration="3600" enabled="true" />
+        <Cache duration="5" enabled="true" />
         <Columns />
            <Parameters>
             <Parameter default="27" name="pIndicator" type="Numeric"/>
@@ -45,7 +45,7 @@
 
     <!-- GET METHODOLOGY DATA FOR A SECTION -->
     <DataAccess access="public" connection="dvt_conn" id="getMethodologySectionData" type="sql">
-        <Cache duration="3600" enabled="true" />
+        <Cache duration="5" enabled="true" />
         <Columns />
            <Parameters>
             <Parameter default="OSH_AUTHORITIES" name="pSubsection" type="String"/>
@@ -63,24 +63,22 @@
 
 	<!-- GET DATASOURCE AND DATES -->
 	<DataAccess access="public" connection="dvt_conn" id="getDatasourceAndDates" type="sql">
-	    <Cache duration="3600" enabled="true" />
+	    <Cache duration="5" enabled="true" />
 	    <Columns />
 	   	<Parameters>
-	    	<Parameter default="15" name="pDataset" type="String"/>
-	    	<Parameter default="15" name="pIndicator" type="String"/>
+	    	<Parameter default="20089" name="pChart" type="Numeric"/>
 	    </Parameters>
 	    <Query>
 		    SELECT d.source, YEAR(d.date_from), YEAR(d.date_to) 
-			FROM indicators_in_dataset iid, dataset d
-			WHERE iid.dataset_id = d.id
-			AND iid.indicator_id = ${pIndicator}
-			AND iid.dataset_id = ${pDataset};
+			FROM indicators_by_chart ibc, dataset d
+			WHERE ibc.dataset_id = d.id
+			AND ibc.chart_id=${pChart};
 	    </Query>
 	</DataAccess>
 
 	<!-- HOME || ALL AVAILABLE COUNTRIES FOR NATIONAL STRATEGIES -->
 	<DataAccess access="public" connection="dvt_conn" id="getStrategiesCountries" type="sql">
-	    <Cache duration="3600" enabled="true" />
+	    <Cache duration="5" enabled="true" />
 	    <Columns />
 	    <Query>
 	      SELECT DISTINCT (n.literal_id) AS country, n.country_code AS country_code
@@ -95,7 +93,7 @@
 
 	<!-- HOME || ALL AVAILABLE COUNTRIES FOR NATIONAL STRATEGIES -->
 	<DataAccess access="public" connection="dvt_conn" id="getStrategiesCountriesSelect" type="sql">
-	    <Cache duration="3600" enabled="true" />
+	    <Cache duration="5" enabled="true" />
 	    <Columns />
 	    <Parameters>
 	    	<Parameter default="AT" name="pCountry" type="String"/>
@@ -114,7 +112,7 @@
 
 	<!-- HOME || ALL AVAILABLE COUNTRIES FOR REGULATIONS -->
 	<DataAccess access="public" connection="dvt_conn" id="getRegulationsCountries" type="sql">
-	    <Cache duration="3600" enabled="true" />
+	    <Cache duration="5" enabled="true" />
 	    <Columns />
 	    <Query>
 	      SELECT DISTINCT (n.literal_id) AS country, n.country_code AS country_code
@@ -128,7 +126,7 @@
 
 	<!-- HOME || ALL AVAILABLE COUNTRIES FOR ENFORCE CAPACITIES -->
 	<!--<DataAccess access="public" connection="dvt_conn" id="getCapacitiesCountries" type="sql">
-	    <Cache duration="3600" enabled="true" />
+	    <Cache duration="5" enabled="true" />
 	    <Columns />
 	    <Query>
 	      SELECT DISTINCT (n.literal_id) AS country, n.country_code AS country_code
@@ -142,7 +140,7 @@
 
 	<!-- HOME || ALL COUNTRIES IN ENFORCEMENT CAPACITIES -->
 	<DataAccess access="public" connection="dvt_conn" id="getEnforcementCapacityCountries" type="sql">
-	    <Cache duration="3600" enabled="true" />
+	    <Cache duration="5" enabled="true" />
 	    <Columns />
 	    <Parameters>
 	    	<Parameter default="AT" name="pCountry" type="String"/>
@@ -169,7 +167,7 @@
 
 		<!-- HOME || ALL AVAILABLE COUNTRIES FOR OSH STATISTICS -->
 	<DataAccess access="public" connection="dvt_conn" id="getStatisticsCountries" type="sql">
-	    <Cache duration="3600" enabled="true" />
+	    <Cache duration="5" enabled="true" />
 	    <Columns />
 	    <Query>
 	      SELECT DISTINCT (n.literal_id) AS country, n.country_code AS country_code
@@ -183,28 +181,28 @@
 
 	<!-- HOME || ALL AVAILABLE COUNTRIES FOR ECONOMIC AND SECTOR PROFILES INDICATORS -->
 	<DataAccess access="public" connection="dvt_conn" id="getAvailableEconomicSectorCountries" type="sql">
-	    <Cache duration="3600" enabled="true" />
+	    <Cache duration="5" enabled="true" />
 	    <Parameters>
 	    	<Parameter default="AT" name="pCountry" type="String"/>
 	    </Parameters>
 	    <Columns />
-	    <Query>
-	      SELECT DISTINCT(n.country_code) as country_code, CONCAT ("(",n.country_code, ") ", t.text) as country_name
-	      FROM nuts n
-	      INNER JOIN profile p ON n.id = p.nuts_id
-	      INNER JOIN value v ON v.profile_id = p.id
-	      INNER JOIN translation t ON n.literal_id=t.literal_id
-	      WHERE v.indicator_id IN (31, 36, 37, 38, 39, 40)
-	      AND n.country_code NOT IN ('EU28','EU27_2020')
-	      AND n.country_code NOT IN (${pCountry}, "UK")
-	      AND t.language="EN"
-	      ORDER BY country_code ASC;
+	    <Query>SELECT DISTINCT(n.country_code) as country_code, CONCAT ("(",n.country_code, ") ", t.text) as country_name
+				FROM indicators_by_chart ibc, indicator i, value v, profile p, nuts n, translation t
+				WHERE ibc.chart_id IN (20011, 20089, 20013, 20010, 20014, 20087, 20088)
+				AND ibc.indicator_id=i.id
+				AND ibc.dataset_id=v.dataset_id
+				AND i.id=v.indicator_id
+				AND v.profile_id=p.id
+				AND p.nuts_id=n.id
+				AND n.literal_id=t.literal_id
+				AND t.language="EN"
+				AND n.country_code NOT IN (${pCountry},'UK','EU28','EU27_2020')
 	    </Query>
 	</DataAccess>
 
 		<!-- HOME || get social dialogue EU28 data -->
 	<DataAccess access="public" connection="dvt_conn" id="getSocialDialogueEU28Data" type="sql">
-	    <Cache duration="3600" enabled="true" />
+	    <Cache duration="5" enabled="true" />
 	    <Columns />
 	    <Parameters>
 	    	<Parameter default="15" name="pDataset" type="String"/>
@@ -292,7 +290,7 @@
 
 	<!-- OSH AUTHORITIES || MATRIX OSH AUTHORITIES SEARCHER -->
 	<DataAccess access="public" connection="dvt_conn" id="getSearchTerm" type="sql">
-		<Cache duration="3600" enabled="true" />
+		<Cache duration="5" enabled="true" />
 		<Columns/>
 	    <Parameters>
 	      <Parameter default=".*" name="term" type="String" />
@@ -338,7 +336,7 @@
 
 	<!-- OSH AUTHORITIES || ALL MATRIX DATA OF OSH AUTHORITIES VIEW -->
 	<DataAccess access="public" connection="dvt_conn" id="getAllMatrixAuthorities" type="sql">
-	    <Cache duration="3600" enabled="true" />
+	    <Cache duration="5" enabled="true" />
 	    <Columns />
 	    <Parameters>
 	    	<Parameter default=".*" name="countries" type="String" />
@@ -366,7 +364,7 @@
 
 	<!-- OSH AUTHORITIES || ALL COUNTRIES TO SELECT FROM IN OSH AUTHORITIES VIEW -->
 	<DataAccess access="public" connection="dvt_conn" id="getMatrixAuthsCountries" type="sql">
-	    <Cache duration="3600" enabled="true" />
+	    <Cache duration="5" enabled="true" />
 	    <Columns />
 	    <Query>
 	    SELECT DISTINCT (n.literal_id) AS country, n.country_code AS country_code
@@ -452,19 +450,22 @@
 	      <Parameter default="1" name="pIndicator" type="Numeric" />
 	      <Parameter default="AT" name="pCountry1" type="String" />
 	      <Parameter default="BE" name="pCountry2" type="String" />
-	      <Parameter default="6" name="pDataset" type="Numeric" />
+	      <Parameter default="20089" name="pChart" type="Numeric" />
 	    </Parameters>
 	    <Query>
-	      SELECT t.text as Size, n.country_code as Country, ROUND((v.value*100),1) as Value
-	      FROM nuts n, profile p, indicator i, value v, split_company_size scs, dataset d, translation t
-	      WHERE n.id = p.nuts_id
-	      AND p.company_size_id = scs.id
-	      AND i.id = v.indicator_id
-	      AND v.profile_id = p.id
-	      AND d.id = ${pDataset} AND d.id = v.dataset_id
-	      AND t.literal_id = scs.literal_id
-	      AND n.country_code IN (${pCountry1}, ${pCountry2}, 'EU27_2020') AND i.id = ${pIndicator}
-	      ORDER BY FIELD(n.country_code, ${pCountry1}, ${pCountry2}, 'EU27_2020') DESC
+	      SELECT t.text AS Size, n.country_code as Country, ROUND(v.value,1) as value
+				FROM indicators_by_chart ibc, indicator i, value v, profile p, nuts n, split_company_size scs, translation t
+				WHERE ibc.chart_id=${pChart}
+				AND ibc.indicator_id=i.id
+				AND ibc.dataset_id=v.dataset_id
+				AND i.id=v.indicator_id
+				AND i.id=${pIndicator}
+				AND v.profile_id=p.id
+				AND p.nuts_id=n.id
+				AND n.country_code IN (${pCountry1}, ${pCountry2},'EU27_2020')
+				AND p.company_size_id=scs.id
+				AND scs.literal_id=t.literal_id
+				ORDER BY FIELD(n.country_code, ${pCountry1}, ${pCountry2}, 'EU27_2020') DESC
 	    </Query>
 	</DataAccess>
 
@@ -476,21 +477,24 @@
 	      <Parameter default="1" name="pIndicator" type="Numeric" />
 	      <Parameter default="AT" name="pCountry1" type="String" />
 	      <Parameter default="BE" name="pCountry2" type="String" />
-	      <Parameter default="6" name="pDataset" type="Numeric" />
+	      <Parameter default="20010" name="pChart" type="Numeric" />
 	    </Parameters>
 	    <Query>
-	      SELECT t.text as Sector, n.country_code as Country, (v.value*100) as Value
-	      FROM nuts n, profile p, indicator i, value v, split_activity_sector sas, dataset d, translation t
-	      WHERE n.id = p.nuts_id 
-	      AND p.activity_sector_id = sas.id 
-	      AND i.id = v.indicator_id 
-	      AND v.profile_id = p.id
-	      AND d.id = ${pDataset} AND d.id = v.dataset_id 
-	      AND t.language = 'EN'
-	      AND t.literal_id = sas.literal_id
-	      AND sas.id IN (1, 2, 3, 4, 18, 6, 7)
-	      AND n.country_code IN (${pCountry1}, ${pCountry2}, 'EU27_2020') AND i.id = ${pIndicator}
-	      ORDER BY FIELD(n.country_code, ${pCountry1}, ${pCountry2}, 'EU27_2020') DESC
+	      SELECT t.text as Sector, n.country_code as Country, v.value as value
+				FROM indicators_by_chart ibc, indicator i, value v, profile p, nuts n, split_activity_sector sas, translation t
+				WHERE ibc.chart_id=${pChart}
+				AND ibc.indicator_id=i.id
+				AND ibc.dataset_id=v.dataset_id
+				AND i.id=v.indicator_id
+				AND i.id=${pIndicator}
+				AND v.profile_id=p.id
+				AND p.nuts_id=n.id
+				AND p.activity_sector_id=sas.id
+				AND sas.literal_id=t.literal_id
+				AND t.language="EN"
+				AND sas.id IN (1, 2, 3, 4, 18, 6, 7)
+				AND n.country_code IN (${pCountry1}, ${pCountry2}, 'EU27_2020')
+				ORDER BY FIELD(n.country_code, ${pCountry1}, ${pCountry2}, 'EU27_2020') DESC
 	    </Query>
 	</DataAccess>
 
@@ -502,17 +506,20 @@
 	      <Parameter default="1" name="pIndicator" type="Numeric" />
 	      <Parameter default="AT" name="pCountry1" type="String" />
 	      <Parameter default="BE" name="pCountry2" type="String" />
-	      <Parameter default="6" name="pDataset" type="Numeric" />
+	      <Parameter default="6" name="pChart" type="Numeric" />
 	    </Parameters>
 	    <Query>
-	      SELECT IF(n.name REGEXP 'EU27_2020', n.country_code, CONCAT("(", n.country_code, ") ", n.name)) as Country, (v.value*100) as Value
-	      FROM nuts n, profile p, indicator i, value v, dataset d
-	      WHERE n.id = p.nuts_id
-	      AND i.id = v.indicator_id
-	      AND v.profile_id = p.id
-	      AND d.id = ${pDataset} AND d.id = v.dataset_id
-	      AND n.country_code IN (${pCountry1}, ${pCountry2}, 'EU27_2020') AND i.id = ${pIndicator}
-	      ORDER BY FIELD(n.country_code, ${pCountry1}, ${pCountry2}, 'EU27_2020') DESC
+	      SELECT IF(n.name REGEXP 'EU27_2020', n.country_code, CONCAT("(", n.country_code, ") ", n.name)) as Country, v.value as value
+				FROM indicators_by_chart ibc, indicator i, value v, profile p, nuts n
+				WHERE ibc.chart_id=${pChart}
+				AND ibc.indicator_id=i.id
+				AND ibc.dataset_id=v.dataset_id
+				AND i.id=v.indicator_id
+				AND i.id=${pIndicator}
+				AND v.profile_id=p.id
+				AND p.nuts_id=n.id
+				AND n.country_code IN (${pCountry1}, ${pCountry2}, 'EU27_2020')
+				ORDER BY FIELD(n.country_code,${pCountry1}, ${pCountry2}, 'EU27_2020') DESC
 	    </Query>
 	</DataAccess>
 
@@ -546,17 +553,20 @@
 	      <Parameter default="1" name="pIndicator" type="Numeric" />
 	      <Parameter default="AT" name="pCountry1" type="String" />
 	      <Parameter default="BE" name="pCountry2" type="String" />
-	      <Parameter default="6" name="pDataset" type="Numeric" />
+	      <Parameter default="20013" name="pChart" type="Numeric" />
 	    </Parameters>
 	    <Query>
-	      SELECT n.country_code as Country, (v.value*100) as Value
-	      FROM nuts n, profile p, indicator i, value v, dataset d
-	      WHERE n.id = p.nuts_id
-	      AND i.id = v.indicator_id
-	      AND v.profile_id = p.id
-	      AND d.id = ${pDataset} AND d.id = v.dataset_id
-	      AND n.country_code IN (${pCountry1}, ${pCountry2}, 'EU27_2020') AND i.id = ${pIndicator}
-	      ORDER BY FIELD(n.country_code, ${pCountry1}, ${pCountry2}, 'EU27_2020') ASC
+	      SELECT n.country_code AS Country, v.value as value
+				FROM indicators_by_chart ibc, indicator i, value v, profile p, nuts n
+				WHERE ibc.chart_id=${pChart}
+				AND ibc.indicator_id=i.id
+				AND ibc.dataset_id=v.dataset_id
+				AND i.id=v.indicator_id
+				AND i.id=${pIndicator}
+				AND v.profile_id=p.id
+				AND p.nuts_id=n.id
+				AND n.country_code IN (${pCountry1}, ${pCountry2}, 'EU27_2020')
+				ORDER BY FIELD(n.country_code, ${pCountry1}, ${pCountry2}, 'EU27_2020') ASC
 	    </Query>
 	</DataAccess>
 
@@ -568,23 +578,26 @@
 	      <Parameter default="1" name="pIndicator" type="Numeric" />
 	      <Parameter default="AT" name="pCountry1" type="String" />
 	      <Parameter default="BE" name="pCountry2" type="String" />
-	      <Parameter default="6" name="pDataset" type="Numeric" />
+	      <Parameter default="20014" name="pChart" type="Numeric" />
 	    </Parameters>
 	    <Query>
 	      SELECT IF(n.name = 'EU27_2020', n.country_code, CONCAT("(", n.country_code, ") ", n.name)) as Country, p.year as Year, v.value as Income
-	      FROM nuts n, profile p, indicator i, value v, dataset d
-	      WHERE n.id = p.nuts_id
-	      AND i.id = v.indicator_id
-	      AND v.profile_id = p.id
-	      AND d.id = ${pDataset} AND d.id = v.dataset_id
-	      AND n.country_code IN (${pCountry1}, ${pCountry2}, 'EU27_2020') AND i.id = ${pIndicator}
-	      ORDER BY FIELD(n.country_code, ${pCountry1}, ${pCountry2}, 'EU27_2020') ASC, p.year ASC
+	      FROM indicators_by_chart ibc, indicator i, value v, profile p, nuts n
+				WHERE ibc.chart_id=${pChart}
+				AND ibc.indicator_id=i.id
+				AND ibc.dataset_id=v.dataset_id
+				AND i.id=v.indicator_id
+				AND i.id=${pIndicator}
+				AND v.profile_id=p.id
+				AND p.nuts_id=n.id
+				AND n.country_code IN (${pCountry1}, ${pCountry2}, 'EU27_2020')
+				ORDER BY FIELD(n.country_code, ${pCountry1}, ${pCountry2}, 'EU27_2020') ASC, Year ASC
 	    </Query>
 	</DataAccess>
 
 	<!-- WORKFORCE PROFILE || get genders for select option of employee groups -->
 	<DataAccess access="public" connection="dvt_conn" id="getGenders" type="sql">
-	    <Cache duration="3600" enabled="true" />
+	    <Cache duration="5" enabled="true" />
 	    <Columns />
 	    <Parameters>
 	    </Parameters>
@@ -597,246 +610,180 @@
 
 	<!-- WORKFORCE PROFILE || get countries available for select option in tablets and mobiles -->
 	<DataAccess access="public" connection="dvt_conn" id="getAvailableCountries" type="sql">
-	    <Cache duration="3600" enabled="true" />
+	    <Cache duration="5" enabled="true" />
 	    <Columns />
 	    <Parameters>
-	      <Parameter default="6" name="pDataset" type="Numeric" />
+	      <Parameter default="20012" name="pChart" type="Numeric" />
 	    </Parameters>
 	    <Query>
 	      SELECT distinct(n.country_code) as countryKey, n.literal_id as country_name
-	      FROM nuts n, profile p, value v, dataset d
-	      WHERE n.id = p.nuts_id 
-	      AND v.profile_id = p.id 
-	      AND d.id = ${pDataset} AND d.id = v.dataset_id
-	      AND v.indicator_id IN (37, 38, 39)
-	      AND n.country_code NOT IN ("UK","EU28")
+				FROM indicators_by_chart ibc, indicator i, value v, profile p, nuts n
+				WHERE ibc.chart_id=${pChart}
+				AND ibc.indicator_id=i.id
+				AND ibc.dataset_id=v.dataset_id
+				AND i.id=v.indicator_id
+				AND v.profile_id=p.id
+				AND p.nuts_id=n.id
+				AND n.country_code NOT IN ('UK','EU28')
 	      ORDER BY FIELD(n.country_code, 'EU27_2020') DESC, countryKey ASC;
 	    </Query>
 	</DataAccess>
 
 	<!-- WORKFORCE PROFILE || get countries available for select option in tablets and mobiles -->
 	<DataAccess access="public" connection="dvt_conn" id="getFilteringCountries" type="sql">
-	    <Cache duration="3600" enabled="true" />
+	    <Cache duration="5" enabled="true" />
 	    <Columns />
 	    <Parameters>
-	      <Parameter default="6" name="pDataset" type="Numeric" />
+	      <Parameter default="20012" name="pChart" type="Numeric" />
 	      <Parameter default=".*" name="countries" type="String"/>
 	    </Parameters>
 	    <Query>
 	      SELECT distinct(n.country_code) as countryKey, n.name as country_name
-	      FROM nuts n, profile p, value v, dataset d
-	      WHERE n.id = p.nuts_id 
-	      AND v.profile_id = p.id 
-	      AND d.id = ${pDataset} AND d.id = v.dataset_id
+	      FROM indicators_by_chart ibc, indicator i, value v, profile p, nuts n
+				WHERE ibc.chart_id=${pChart}
+				AND ibc.indicator_id=i.id
+				AND ibc.dataset_id=v.dataset_id
+				AND i.id=v.indicator_id
+				AND v.profile_id=p.id
+				AND p.nuts_id=n.id
+				AND n.country_code NOT IN ('UK','EU28')
 	      AND n.literal_id REGEXP ${countries}
-	      AND v.indicator_id IN (37, 38, 39)
 	      ORDER BY FIELD (countryKey, 'EU27_2020') DESC, country_name ASC
 	    </Query>
 	</DataAccess>
 
 	<!-- WORKFORCE PROFILE || get median age data -->
 	<DataAccess access="public" connection="dvt_conn" id="getMedianAgeData" type="sql">
-	    <Cache duration="3600" enabled="true" />
+	    <Cache duration="5" enabled="true" />
 	    <Columns />
 	    <Parameters>
-	      <Parameter default="6" name="pDataset" type="Numeric" />
+	      <Parameter default="20012" name="pChart" type="Numeric" />
 	    </Parameters>
 	    <Query>
 	      SELECT n.country_code as countryKey, n.literal_id as country_name, ROUND(value, 1) as value
-	      FROM nuts n, profile p, value v, dataset d
-	      WHERE n.id = p.nuts_id 
-	      AND v.profile_id = p.id 
-	      AND d.id = ${pDataset} AND d.id = v.dataset_id
-	      AND v.indicator_id = 37
-	      AND n.country_code NOT IN ("UK","EU28")
-	      ORDER BY country_name ASC
+	      FROM indicators_by_chart ibc, indicator i, value v, profile p, nuts n
+				WHERE ibc.chart_id=${pChart}
+				AND ibc.indicator_id=i.id
+				AND ibc.dataset_id=v.dataset_id
+				AND i.id=v.indicator_id
+				AND i.id=37
+				AND v.profile_id=p.id
+				AND p.nuts_id=n.id
+				AND n.country_code NOT IN ('UK','EU28')
+				ORDER BY country_name ASC
 	    </Query>
 	</DataAccess>
 
 	<!-- WORKFORCE PROFILE || get ageing workers data -->
 	<DataAccess access="public" connection="dvt_conn" id="getAgeingWorkersData" type="sql">
-	    <Cache duration="3600" enabled="true" />
+	    <Cache duration="5" enabled="true" />
 	    <Columns />
 	    <Parameters>
-	      <Parameter default="6" name="pDataset" type="Numeric" />
+	      <Parameter default="20012" name="pChart" type="Numeric" />
 	    </Parameters>
 	    <Query>
 	      SELECT n.country_code as countryKey, n.literal_id as country_name, ROUND(value, 1) as value
-	      FROM nuts n, profile p, value v, dataset d
-	      WHERE n.id = p.nuts_id 
-	      AND v.profile_id = p.id 
-	      AND d.id = ${pDataset} AND d.id = v.dataset_id
-	      AND v.indicator_id = 38
-	      AND n.country_code NOT IN ("UK","EU28")
-	      ORDER BY country_name ASC
+	      FROM indicators_by_chart ibc, indicator i, value v, profile p, nuts n
+				WHERE ibc.chart_id=${pChart}
+				AND ibc.indicator_id=i.id
+				AND ibc.dataset_id=v.dataset_id
+				AND i.id=v.indicator_id
+				AND i.id=38
+				AND v.profile_id=p.id
+				AND p.nuts_id=n.id
+				AND n.country_code NOT IN ('UK','EU28')
+				ORDER BY country_name ASC
 	    </Query>
 	</DataAccess>
 
 	<!-- WORKFORCE PROFILE || get total employment rate data -->
 	<DataAccess access="public" connection="dvt_conn" id="getTotalEmploymentData" type="sql">
-	    <Cache duration="3600" enabled="true" />
+	    <Cache duration="5" enabled="true" />
 	    <Columns />
 	    <Parameters>
-	      <Parameter default="6" name="pDataset" type="Numeric" />
+	      <Parameter default="20012" name="pChart" type="Numeric" />
 	    </Parameters>
 	    <Query>
-	      SELECT n.country_code as countryKey, n.literal_id as country_name, (ROUND(value*100, 1)) as value
-	      FROM nuts n, profile p, value v, dataset d
-	      WHERE n.id = p.nuts_id 
-	      AND v.profile_id = p.id 
-	      AND d.id = ${pDataset} AND d.id = v.dataset_id
-	      AND v.indicator_id = 39
-	      AND p.gender_id = 1
-	      AND n.country_code NOT IN ("UK","EU28")
-	      ORDER BY country_name ASC
+	      SELECT n.country_code as countryKey, n.literal_id as country_name, (ROUND(value, 1)) as value
+				FROM indicators_by_chart ibc, indicator i, value v, profile p, nuts n
+				WHERE ibc.chart_id=${pChart}
+				AND ibc.indicator_id=i.id
+				AND ibc.dataset_id=v.dataset_id
+				AND i.id=v.indicator_id
+				AND i.id=39
+				AND v.profile_id=p.id
+				AND p.nuts_id=n.id
+				AND n.country_code NOT IN ('UK','EU28')
+				AND p.gender_id=1
+				ORDER BY country_name ASC
 	    </Query>
 	</DataAccess>
 
 	<!-- WORKFORCE PROFILE || get male employment rate data -->
 	<DataAccess access="public" connection="dvt_conn" id="getMaleEmploymentData" type="sql">
-	    <Cache duration="3600" enabled="true" />
+	    <Cache duration="5" enabled="true" />
 	    <Columns />
 	    <Parameters>
-	      <Parameter default="6" name="pDataset" type="Numeric" />
+	      <Parameter default="20012" name="pChart" type="Numeric" />
 	    </Parameters>
 	    <Query>
-	      SELECT n.country_code as countryKey, n.literal_id as country_name, (ROUND(value*100, 1)) as value
-	      FROM nuts n, profile p, value v, dataset d
-	      WHERE n.id = p.nuts_id 
-	      AND v.profile_id = p.id 
-	      AND d.id = ${pDataset} AND d.id = v.dataset_id
-	      AND v.indicator_id = 39
-	      AND p.gender_id = 2
-	      AND n.country_code NOT IN ("UK","EU28")
-	      ORDER BY country_name ASC
+	      SELECT n.country_code as countryKey, n.literal_id as country_name, (ROUND(value, 1)) as value
+				FROM indicators_by_chart ibc, indicator i, value v, profile p, nuts n
+				WHERE ibc.chart_id=${pChart}
+				AND ibc.indicator_id=i.id
+				AND ibc.dataset_id=v.dataset_id
+				AND i.id=v.indicator_id
+				AND i.id=39
+				AND v.profile_id=p.id
+				AND p.nuts_id=n.id
+				AND n.country_code NOT IN ('UK','EU28')
+				AND p.gender_id=2
+				ORDER BY country_name ASC
 	    </Query>
 	</DataAccess>
 
 	<!-- WORKFORCE PROFILE || get female employment rate data -->
 	<DataAccess access="public" connection="dvt_conn" id="getFemaleEmploymentData" type="sql">
-	    <Cache duration="3600" enabled="true" />
+	    <Cache duration="5" enabled="true" />
 	    <Columns />
 	    <Parameters>
-	      <Parameter default="6" name="pDataset" type="Numeric" />
+	      <Parameter default="20012" name="pChart" type="Numeric" />
 	    </Parameters>
 	    <Query>
-	      SELECT n.country_code as countryKey, n.literal_id as country_name, (ROUND(value*100, 1)) as value
-	      FROM nuts n, profile p, value v, dataset d
-	      WHERE n.id = p.nuts_id 
-	      AND v.profile_id = p.id 
-	      AND d.id = ${pDataset} AND d.id = v.dataset_id
-	      AND v.indicator_id = 39
-	      AND p.gender_id = 3
-	      AND n.country_code NOT IN ("UK","EU28")
-	      ORDER BY country_name ASC
+	      SELECT n.country_code as countryKey, n.literal_id as country_name, (ROUND(value, 1)) as value
+				FROM indicators_by_chart ibc, indicator i, value v, profile p, nuts n
+				WHERE ibc.chart_id=${pChart}
+				AND ibc.indicator_id=i.id
+				AND ibc.dataset_id=v.dataset_id
+				AND i.id=v.indicator_id
+				AND i.id=39
+				AND v.profile_id=p.id
+				AND p.nuts_id=n.id
+				AND n.country_code NOT IN ('UK','EU28')
+				AND p.gender_id=3
+				ORDER BY country_name ASC
 	    </Query>
 	</DataAccess>
 
 	<!-- WORKFORCE PROFILE || get unemployment rate data -->
 	<DataAccess access="public" connection="dvt_conn" id="getUnemploymentData" type="sql">
-	    <Cache duration="3600" enabled="true" />
+	    <Cache duration="5" enabled="true" />
 	    <Columns />
 	    <Parameters>
-	      <Parameter default="6" name="pDataset" type="Numeric" />
+	      <Parameter default="20012" name="pChart" type="Numeric" />
 	    </Parameters>
 	    <Query>
-	      SELECT n.country_code as countryKey, n.literal_id as country_name, ROUND(value*100, 1) as value
-	      FROM nuts n, profile p, value v, dataset d
-	      WHERE n.id = p.nuts_id 
-	      AND v.profile_id = p.id 
-	      AND d.id = ${pDataset} AND d.id = v.dataset_id
-	      AND v.indicator_id = 34
-	      AND n.country_code NOT IN ("UK","EU28")
-	      ORDER BY country_name ASC
-	    </Query>
-	</DataAccess>
-
-	<!-- WORKFORCE PROFILE || get min and max value of selected indicators -->
-	<DataAccess access="public" connection="dvt_conn" id="getMinMaxValues" type="sql">
-	    <Cache duration="3600" enabled="true" />
-	    <Columns />
-	    <Parameters>
-	      <Parameter default="6" name="pDataset" type="Numeric" />
-	      <Parameter default="37" name="pIndicator" type="Numeric" />
-	      <Parameter default="0" name="pSubIndicator" type="Numeric" />
-	    </Parameters>
-	    <Query>
-	      SELECT IF(${pSubIndicator} != 0, MIN(v.value*100), MIN(v.value)) as min_value, 
-	      IF(${pSubIndicator} != 0, MAX(v.value*100), MAX(v.value)) as max_value,
-	      ((IF(${pSubIndicator} != 0, MAX(v.value*100), MAX(v.value)) - IF(${pSubIndicator} != 0, MIN(v.value*100), MIN(v.value))) /4) as range_value
-	      FROM nuts n, profile p, value v, dataset d
-	      WHERE n.id = p.nuts_id 
-	      AND v.profile_id = p.id 
-	      AND d.id = ${pDataset} AND d.id = v.dataset_id
-	      AND v.indicator_id = ${pIndicator}
-	      AND (p.gender_id IS NULL OR p.gender_id = ${pSubIndicator})
-	    </Query>
-	</DataAccess>
-
-   
-	<!-- WORKFORCE PROFILE || get min and max value of selected indicators -->
-	<DataAccess access="public" connection="dvt_conn" id="getGaussChartValues" type="sql">
-	    <Cache duration="3600" enabled="true" />
-	    <Columns />
-	    <Parameters>
-	      <Parameter default="6" name="pDataset" type="Numeric" />
-	      <Parameter default="37" name="pIndicator" type="Numeric" />
-	      <Parameter default="0" name="pSubIndicator" type="Numeric" />
-	      <Parameter default="0" name="pMinValue" type="Numeric" />
-	      <Parameter default="100" name="pMaxValue" type="Numeric" />
-	      <Parameter default="25" name="pRange" type="Numeric" />
-	    </Parameters>
-	    <Query>
-	      (SELECT IF(${pIndicator} = 37, CONCAT(ROUND(${pMinValue},1), ''), CONCAT(ROUND(${pMinValue},1), '%')) as Distribution, IF(${pSubIndicator} != 0 || ${pIndicator} = 34, COUNT(v.value*100), COUNT(v.value)) as Total
-	      FROM nuts n, profile p, value v, dataset d
-	      WHERE n.id = p.nuts_id 
-	      AND v.profile_id = p.id 
-	      AND d.id = ${pDataset} AND d.id = v.dataset_id
-	      AND v.indicator_id = ${pIndicator}
-	      AND (p.gender_id IS NULL OR p.gender_id = ${pSubIndicator})
-	      AND IF(${pSubIndicator} != 0 || ${pIndicator} = 34, v.value*100, v.value) = ${pMinValue}
-	      ORDER BY v.value ASC
-	      )UNION(
-	      SELECT IF(${pIndicator} = 37, CONCAT(ROUND(${pMinValue}+${pRange},1), ''), CONCAT(ROUND(${pMinValue}+${pRange},1), '%')) , IF(${pSubIndicator} != 0 || ${pIndicator} = 34, COUNT(v.value*100), COUNT(v.value)) 
-	      FROM nuts n, profile p, value v, dataset d
-	      WHERE n.id = p.nuts_id 
-	      AND v.profile_id = p.id 
-	      AND d.id = ${pDataset} AND d.id = v.dataset_id
-	      AND v.indicator_id = ${pIndicator}
-	      AND (p.gender_id IS NULL OR p.gender_id = ${pSubIndicator})
-	      AND (IF(${pSubIndicator} != 0 || ${pIndicator} = 34, v.value*100, v.value) BETWEEN (${pMinValue} + 0.01) AND (${pMinValue} + ${pRange}))
-	      ORDER BY v.value ASC
-	      )UNION(
-	      SELECT IF(${pIndicator} = 37, CONCAT(ROUND(${pMinValue}+${pRange}*2, 1), ''), CONCAT(ROUND(${pMinValue}+${pRange}*2, 1), '%')) , IF(${pSubIndicator} != 0 || ${pIndicator} = 34, COUNT(v.value*100), COUNT(v.value)) 
-	      FROM nuts n, profile p, value v, dataset d
-	      WHERE n.id = p.nuts_id 
-	      AND v.profile_id = p.id 
-	      AND d.id = ${pDataset} AND d.id = v.dataset_id
-	      AND v.indicator_id = ${pIndicator}
-	      AND (p.gender_id IS NULL OR p.gender_id = ${pSubIndicator})
-	      AND (IF(${pSubIndicator} != 0 || ${pIndicator} = 34, v.value*100, v.value) BETWEEN ((${pMinValue} + ${pRange}) + 0.01) AND (${pMinValue}+${pRange}*2))
-	      ORDER BY v.value ASC
-	      )UNION(
-	      SELECT IF(${pIndicator} = 37, CONCAT(ROUND(${pMaxValue} - ${pRange},1), ''), CONCAT(ROUND(${pMaxValue} - ${pRange},1), '%')), IF(${pSubIndicator} != 0 || ${pIndicator} = 34, COUNT(v.value*100), COUNT(v.value)) 
-	      FROM nuts n, profile p, value v, dataset d
-	      WHERE n.id = p.nuts_id 
-	      AND v.profile_id = p.id 
-	      AND d.id = ${pDataset} AND d.id = v.dataset_id
-	      AND v.indicator_id = ${pIndicator}
-	      AND (p.gender_id IS NULL OR p.gender_id = ${pSubIndicator})
-	      AND (IF(${pSubIndicator} != 0 || ${pIndicator} = 34, v.value*100, v.value) BETWEEN ((${pMinValue} + ${pRange}*2) + 0.01) AND (${pMaxValue} - ${pRange}))
-	      ORDER BY v.value ASC
-	      )UNION(
-	      SELECT IF(${pIndicator} = 37, CONCAT(ROUND(${pMaxValue}, 1), ''), CONCAT(ROUND(${pMaxValue}, 1), '%')), IF(${pSubIndicator} != 0 || ${pIndicator} = 34, COUNT(v.value*100), COUNT(v.value)) 
-	      FROM nuts n, profile p, value v, dataset d
-	      WHERE n.id = p.nuts_id 
-	      AND v.profile_id = p.id 
-	      AND d.id = ${pDataset} AND d.id = v.dataset_id
-	      AND v.indicator_id = ${pIndicator}
-	      AND (p.gender_id IS NULL OR p.gender_id = ${pSubIndicator})
-	      AND (IF(${pSubIndicator} != 0 || ${pIndicator} = 34, v.value*100, v.value) BETWEEN ((${pMaxValue} - ${pRange}) + 0.01) AND ${pMaxValue})
-	      ORDER BY v.value ASC
-	      )
+	      SELECT n.country_code as countryKey, n.literal_id as country_name, ROUND(value, 1) as value
+	      FROM indicators_by_chart ibc, indicator i, value v, profile p, nuts n
+				WHERE ibc.chart_id=${pChart}
+				AND ibc.indicator_id=i.id
+				AND ibc.dataset_id=v.dataset_id
+				AND i.id=v.indicator_id
+				AND i.id=34
+				AND v.profile_id=p.id
+				AND p.nuts_id=n.id
+				AND n.country_code NOT IN ('UK','EU28')
+				ORDER BY country_name ASC
 	    </Query>
 	</DataAccess>
 </CDADescriptor>
