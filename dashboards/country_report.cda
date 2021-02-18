@@ -689,7 +689,7 @@
 	</DataAccess>
 
 	<DataAccess access="public" connection="dvt_conn" id="getEstablishmentsInspectedData" type="sql">
-	    <Cache duration="3600" enabled="true"/>
+	    <Cache duration="0" enabled="false"/>
 	    <Columns/>
 	    <Parameters>
 	      <Parameter default="285" name="pIndicator" type="Numeric"/>
