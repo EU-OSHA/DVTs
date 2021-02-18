@@ -8,7 +8,7 @@
 
 	<!-- GET INDICATORS FOR METHODOLOGY -->
     <DataAccess access="public" connection="dvt_conn" id="getMethodologyIndicators" type="sql">
-        <Cache duration="5" enabled="true" />
+        <Cache duration="0" enabled="false" />
         <Columns />
            <Parameters>
             <Parameter default="OSH_AUTHORITIES" name="pSubsection" type="String"/>
@@ -27,7 +27,7 @@
 
     <!-- GET DATA OF AN INDICATOR FOR METHODOLOGY -->
     <DataAccess access="public" connection="dvt_conn" id="getMethodologyData" type="sql">
-        <Cache duration="5" enabled="true" />
+        <Cache duration="0" enabled="false" />
         <Columns />
            <Parameters>
             <Parameter default="27" name="pIndicator" type="Numeric"/>
@@ -45,7 +45,7 @@
 
     <!-- GET METHODOLOGY DATA FOR A SECTION -->
     <DataAccess access="public" connection="dvt_conn" id="getMethodologySectionData" type="sql">
-        <Cache duration="5" enabled="true" />
+        <Cache duration="0" enabled="false" />
         <Columns />
            <Parameters>
             <Parameter default="OSH_AUTHORITIES" name="pSubsection" type="String"/>
@@ -63,7 +63,7 @@
 
 	<!-- GET DATASOURCE AND DATES -->
 	<DataAccess access="public" connection="dvt_conn" id="getDatasourceAndDates" type="sql">
-	    <Cache duration="5" enabled="true" />
+	    <Cache duration="0" enabled="false" />
 	    <Columns />
 	   	<Parameters>
 	    	<Parameter default="20089" name="pChart" type="Numeric"/>
@@ -78,7 +78,7 @@
 
 	<!-- HOME || ALL AVAILABLE COUNTRIES FOR NATIONAL STRATEGIES -->
 	<DataAccess access="public" connection="dvt_conn" id="getStrategiesCountries" type="sql">
-	    <Cache duration="5" enabled="true" />
+	    <Cache duration="0" enabled="false" />
 	    <Columns />
 	    <Query>
 	      SELECT DISTINCT (n.literal_id) AS country, n.country_code AS country_code
@@ -93,7 +93,7 @@
 
 	<!-- HOME || ALL AVAILABLE COUNTRIES FOR NATIONAL STRATEGIES -->
 	<DataAccess access="public" connection="dvt_conn" id="getStrategiesCountriesSelect" type="sql">
-	    <Cache duration="5" enabled="true" />
+	    <Cache duration="0" enabled="false" />
 	    <Columns />
 	    <Parameters>
 	    	<Parameter default="AT" name="pCountry" type="String"/>
@@ -112,7 +112,7 @@
 
 	<!-- HOME || ALL AVAILABLE COUNTRIES FOR REGULATIONS -->
 	<DataAccess access="public" connection="dvt_conn" id="getRegulationsCountries" type="sql">
-	    <Cache duration="5" enabled="true" />
+	    <Cache duration="0" enabled="false" />
 	    <Columns />
 	    <Query>
 	      SELECT DISTINCT (n.literal_id) AS country, n.country_code AS country_code
@@ -126,7 +126,7 @@
 
 	<!-- HOME || ALL AVAILABLE COUNTRIES FOR ENFORCE CAPACITIES -->
 	<!--<DataAccess access="public" connection="dvt_conn" id="getCapacitiesCountries" type="sql">
-	    <Cache duration="5" enabled="true" />
+	    <Cache duration="0" enabled="false" />
 	    <Columns />
 	    <Query>
 	      SELECT DISTINCT (n.literal_id) AS country, n.country_code AS country_code
@@ -140,7 +140,7 @@
 
 	<!-- HOME || ALL COUNTRIES IN ENFORCEMENT CAPACITIES -->
 	<DataAccess access="public" connection="dvt_conn" id="getEnforcementCapacityCountries" type="sql">
-	    <Cache duration="5" enabled="true" />
+	    <Cache duration="0" enabled="false" />
 	    <Columns />
 	    <Parameters>
 	    	<Parameter default="AT" name="pCountry" type="String"/>
@@ -167,7 +167,7 @@
 
 		<!-- HOME || ALL AVAILABLE COUNTRIES FOR OSH STATISTICS -->
 	<DataAccess access="public" connection="dvt_conn" id="getStatisticsCountries" type="sql">
-	    <Cache duration="5" enabled="true" />
+	    <Cache duration="0" enabled="false" />
 	    <Columns />
 	    <Query>
 	      SELECT DISTINCT (n.literal_id) AS country, n.country_code AS country_code
@@ -181,7 +181,7 @@
 
 	<!-- HOME || ALL AVAILABLE COUNTRIES FOR ECONOMIC AND SECTOR PROFILES INDICATORS -->
 	<DataAccess access="public" connection="dvt_conn" id="getAvailableEconomicSectorCountries" type="sql">
-	    <Cache duration="5" enabled="true" />
+	    <Cache duration="0" enabled="false" />
 	    <Parameters>
 	    	<Parameter default="AT" name="pCountry" type="String"/>
 	    </Parameters>
@@ -202,7 +202,7 @@
 
 		<!-- HOME || get social dialogue EU28 data -->
 	<DataAccess access="public" connection="dvt_conn" id="getSocialDialogueEU28Data" type="sql">
-	    <Cache duration="5" enabled="true" />
+	    <Cache duration="0" enabled="false" />
 	    <Columns />
 	    <Parameters>
 	    	<Parameter default="15" name="pDataset" type="String"/>
@@ -290,7 +290,7 @@
 
 	<!-- OSH AUTHORITIES || MATRIX OSH AUTHORITIES SEARCHER -->
 	<DataAccess access="public" connection="dvt_conn" id="getSearchTerm" type="sql">
-		<Cache duration="5" enabled="true" />
+		<Cache duration="0" enabled="false" />
 		<Columns/>
 	    <Parameters>
 	      <Parameter default=".*" name="term" type="String" />
@@ -336,7 +336,7 @@
 
 	<!-- OSH AUTHORITIES || ALL MATRIX DATA OF OSH AUTHORITIES VIEW -->
 	<DataAccess access="public" connection="dvt_conn" id="getAllMatrixAuthorities" type="sql">
-	    <Cache duration="5" enabled="true" />
+	    <Cache duration="0" enabled="false" />
 	    <Columns />
 	    <Parameters>
 	    	<Parameter default=".*" name="countries" type="String" />
@@ -364,7 +364,7 @@
 
 	<!-- OSH AUTHORITIES || ALL COUNTRIES TO SELECT FROM IN OSH AUTHORITIES VIEW -->
 	<DataAccess access="public" connection="dvt_conn" id="getMatrixAuthsCountries" type="sql">
-	    <Cache duration="5" enabled="true" />
+	    <Cache duration="0" enabled="false" />
 	    <Columns />
 	    <Query>
 	    SELECT DISTINCT (n.literal_id) AS country, n.country_code AS country_code
@@ -379,7 +379,7 @@
 
   	<!-- OSH AUTHORITIES || Apply all filters for osh authorities data -->
 	<DataAccess access="public" connection="dvt_conn" id="getSearchList" type="sql">
-	    <Cache duration="3600" enabled="true"/>
+	    <Cache duration="0" enabled="false"/>
 	    <Columns/>
 	    <Parameters>            
 	        <Parameter default=".*" name="countries" type="String"/>
@@ -408,7 +408,7 @@
 
   	<!-- OSH AUTHORITIES || GET MATRIX OSH AUTHORITIES DATA APPLYING PAGE FILTERS -->
 	<DataAccess access="public" connection="dvt_conn" id="getSearchListInstitutions" type="sql">
-    	<Cache duration="3600" enabled="true"/>
+    	<Cache duration="0" enabled="false"/>
     	<Columns/>
     	<Parameters>
 	        <Parameter default="null" name="institution1" type="Numeric"/>
@@ -444,7 +444,7 @@
 
 	<!-- ECONOMIC AND SECTOR PROFILE || Get Company size indicators and values -->
 	<DataAccess access="public" connection="dvt_conn" id="getCompanySizeData" type="sql">
-	    <Cache duration="3600" enabled="true"/>
+	    <Cache duration="0" enabled="false"/>
 	    <Columns/>
 	    <Parameters>
 	      <Parameter default="1" name="pIndicator" type="Numeric" />
@@ -471,7 +471,7 @@
 
 	<!-- ECONOMIC AND SECTOR PROFILE || Get Employment per sector indicators and values -->
 	<DataAccess access="public" connection="dvt_conn" id="getEmploymentPerSectorData" type="sql">
-	    <Cache duration="3600" enabled="true"/>
+	    <Cache duration="0" enabled="false"/>
 	    <Columns/>
 	    <Parameters>
 	      <Parameter default="1" name="pIndicator" type="Numeric" />
@@ -500,7 +500,7 @@
 
 	<!-- ECONOMIC AND SECTOR PROFILE || Get Employment rate indicators and values -->
 	<DataAccess access="public" connection="dvt_conn" id="getEmploymentRateData" type="sql">
-	    <Cache duration="3600" enabled="true"/>
+	    <Cache duration="0" enabled="false"/>
 	    <Columns/>
 	    <Parameters>
 	      <Parameter default="1" name="pIndicator" type="Numeric" />
@@ -525,7 +525,7 @@
 
 	<!-- ECONOMIC AND SECTOR PROFILE || Get unemployment rate indicators and values -->
 	<DataAccess access="public" connection="dvt_conn" id="getUnemploymentRateData" type="sql">
-	    <Cache duration="3600" enabled="true"/>
+	    <Cache duration="0" enabled="false"/>
 	    <Columns/>
 	    <Parameters>
 	      <Parameter default="1" name="pIndicator" type="Numeric" />
@@ -547,7 +547,7 @@
 
     <!-- ECONOMIC AND SECTOR PROFILE || Get GDP per capita indicators and values -->
 	<DataAccess access="public" connection="dvt_conn" id="getGDPData" type="sql">
-	    <Cache duration="3600" enabled="true"/>
+	    <Cache duration="0" enabled="false"/>
 	    <Columns/>
 	    <Parameters>
 	      <Parameter default="1" name="pIndicator" type="Numeric" />
@@ -572,7 +572,7 @@
 
 	<!-- ECONOMIC AND SECTOR PROFILE || Get income per capita indicators and values -->
 	<DataAccess access="public" connection="dvt_conn" id="getIncomePerCapitaData" type="sql">
-	    <Cache duration="3600" enabled="true"/>
+	    <Cache duration="0" enabled="false"/>
 	    <Columns/>
 	    <Parameters>
 	      <Parameter default="1" name="pIndicator" type="Numeric" />
@@ -597,7 +597,7 @@
 
 	<!-- WORKFORCE PROFILE || get genders for select option of employee groups -->
 	<DataAccess access="public" connection="dvt_conn" id="getGenders" type="sql">
-	    <Cache duration="5" enabled="true" />
+	    <Cache duration="0" enabled="false" />
 	    <Columns />
 	    <Parameters>
 	    </Parameters>
@@ -610,7 +610,7 @@
 
 	<!-- WORKFORCE PROFILE || get countries available for select option in tablets and mobiles -->
 	<DataAccess access="public" connection="dvt_conn" id="getAvailableCountries" type="sql">
-	    <Cache duration="5" enabled="true" />
+	    <Cache duration="0" enabled="false" />
 	    <Columns />
 	    <Parameters>
 	      <Parameter default="20012" name="pChart" type="Numeric" />
@@ -631,7 +631,7 @@
 
 	<!-- WORKFORCE PROFILE || get countries available for select option in tablets and mobiles -->
 	<DataAccess access="public" connection="dvt_conn" id="getFilteringCountries" type="sql">
-	    <Cache duration="5" enabled="true" />
+	    <Cache duration="0" enabled="false" />
 	    <Columns />
 	    <Parameters>
 	      <Parameter default="20012" name="pChart" type="Numeric" />
@@ -654,7 +654,7 @@
 
 	<!-- WORKFORCE PROFILE || get median age data -->
 	<DataAccess access="public" connection="dvt_conn" id="getMedianAgeData" type="sql">
-	    <Cache duration="5" enabled="true" />
+	    <Cache duration="0" enabled="false" />
 	    <Columns />
 	    <Parameters>
 	      <Parameter default="20012" name="pChart" type="Numeric" />
@@ -676,7 +676,7 @@
 
 	<!-- WORKFORCE PROFILE || get ageing workers data -->
 	<DataAccess access="public" connection="dvt_conn" id="getAgeingWorkersData" type="sql">
-	    <Cache duration="5" enabled="true" />
+	    <Cache duration="0" enabled="false" />
 	    <Columns />
 	    <Parameters>
 	      <Parameter default="20012" name="pChart" type="Numeric" />
@@ -698,7 +698,7 @@
 
 	<!-- WORKFORCE PROFILE || get total employment rate data -->
 	<DataAccess access="public" connection="dvt_conn" id="getTotalEmploymentData" type="sql">
-	    <Cache duration="5" enabled="true" />
+	    <Cache duration="0" enabled="false" />
 	    <Columns />
 	    <Parameters>
 	      <Parameter default="20012" name="pChart" type="Numeric" />
@@ -721,7 +721,7 @@
 
 	<!-- WORKFORCE PROFILE || get male employment rate data -->
 	<DataAccess access="public" connection="dvt_conn" id="getMaleEmploymentData" type="sql">
-	    <Cache duration="5" enabled="true" />
+	    <Cache duration="0" enabled="false" />
 	    <Columns />
 	    <Parameters>
 	      <Parameter default="20012" name="pChart" type="Numeric" />
@@ -744,7 +744,7 @@
 
 	<!-- WORKFORCE PROFILE || get female employment rate data -->
 	<DataAccess access="public" connection="dvt_conn" id="getFemaleEmploymentData" type="sql">
-	    <Cache duration="5" enabled="true" />
+	    <Cache duration="0" enabled="false" />
 	    <Columns />
 	    <Parameters>
 	      <Parameter default="20012" name="pChart" type="Numeric" />
@@ -767,7 +767,7 @@
 
 	<!-- WORKFORCE PROFILE || get unemployment rate data -->
 	<DataAccess access="public" connection="dvt_conn" id="getUnemploymentData" type="sql">
-	    <Cache duration="5" enabled="true" />
+	    <Cache duration="0" enabled="false" />
 	    <Columns />
 	    <Parameters>
 	      <Parameter default="20012" name="pChart" type="Numeric" />

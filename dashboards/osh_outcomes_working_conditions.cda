@@ -64,7 +64,7 @@
 
 	<!-- OSH OUTCOMES - WORK ACCIDENTS || DATA FOR FATAL WORK ACCIDENTS INDICATOR -->
 	<DataAccess access="public" connection="dvt_conn" id="getFatalAccidentsDataVertical" type="sql">
-	    <Cache duration="3600" enabled="true" />
+	    <Cache duration="0" enabled="false" />
 	    <Columns />
 	    <Parameters>
 	    	<Parameter default="20023" name="pChart" type="Numeric"/>
@@ -83,7 +83,7 @@
 	</DataAccess>
 
 	<DataAccess access="public" connection="dvt_conn" id="getFatalAccidentsDataHorizontal" type="sql">
-	    <Cache duration="3600" enabled="true" />
+	    <Cache duration="0" enabled="false" />
 	    <Columns />
 	    <Parameters>
 	    	<Parameter default="20023" name="pChart" type="Numeric"/>
