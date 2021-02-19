@@ -18,7 +18,7 @@
                 "sref":"osh-authorities",
                 "tabindex":"3",
                 "accesskey":"1",
-                "database_name":"OSH_AUTHORITIES",
+                "database_name":"OSH authorities",
                 "firstIndicatorId": "27"
             },{
                 "id":"economic-sector-profile",
@@ -26,7 +26,7 @@
                 "sref":"economic-sector-profile",
                 "tabindex":"4",
                 "accesskey":"",
-                "database_name":"ECONOMIC_SECTOR_PROFILE",
+                "database_name":"Economic and sector profile",
                 "firstIndicatorId": "31"
             },{
                 "id":"workforce-profile",
@@ -34,7 +34,7 @@
                 "sref":"workforce-profile",
                 "tabindex":"5",
                 "accesskey":"",
-                "database_name":"WORKFORCE_PROFILE",
+                "database_name":"Workforce profile",
                 "firstIndicatorId": "37"
             }
         ]
@@ -65,13 +65,13 @@
             {
                 "id":"structure-strategy",
                 "name":"L20378",
-                "database_name":"STRUCTURE_STRATEGY",
+                "database_name":"Structure of each National strategy",
                 "firstIndicatorId": "46"
             },
             {
                 "id":"response-strategy",
                 "name":"L20379",
-                "database_name":"RESPONSE_STRATEGY",
+                "database_name":"Responses of national strategies to EU challenges",
                 "firstIndicatorId": "52"
             },
             {
@@ -80,7 +80,7 @@
                 "sref":"social-dialogue",
                 "tabindex":"9",
                 "accesskey":"",
-                "database_name":"SOCIAL_DIALOGUE",
+                "database_name":"Social dialogue",
                 "firstIndicatorId": "354"
             }
         ]
@@ -97,7 +97,7 @@
                 "sref":"work-accidents",
                 "tabindex":"11",
                 "accesskey":"3",
-                "database_name":"WORKACC",
+                "database_name":"Work accidents",
                 "firstIndicatorId": "53"
             },
             {
@@ -106,7 +106,7 @@
                 "sref":"health-perception-of-workers",
                 "tabindex":"12",
                 "accesskey":"",
-                "database_name":"HEALTH_PERCEPTION",
+                "database_name":"Health perception of the workers",
                 "firstIndicatorId": "57"
             },
             {
@@ -115,7 +115,7 @@
                 "sref":"osh-culture",
                 "tabindex":"13",
                 "accesskey":"",
-                "database_name":"OSH_CULTURE_HEALTH_AWARENESS",
+                "database_name":"OSH culture and health awareness",
                 "firstIndicatorId": "358"
             },
             {
@@ -128,19 +128,19 @@
             {
                 "id":"overall-opinion",
                 "name":"L20709",
-                "database_name":"OVERALL_OPINION",
+                "database_name":"Working conditions - Overall opinion",
                 "firstIndicatorId": "65"
             },
             {
                 "id":"mental-risk",
                 "name":"L20710",
-                "database_name":"MENTAL_RISKS",
+                "database_name":"Working conditions - Mental risk",
                 "firstIndicatorId": "323"
             },
             {
                 "id":"physical-risk",
                 "name":"L20711",
-                "database_name":"PHYSICAL_RISKS",
+                "database_name":"Working conditions - Physical risk",
                 "firstIndicatorId": "67"
             },
             {
@@ -149,7 +149,7 @@
                 "sref":"prevention-companies({pIndicator: 'risk-assessment', pSplit: 'sector'})",
                 "tabindex":"15",
                 "accesskey":"",
-                "database_name":"PREVENTION_IN_COMPANIES",
+                "database_name":"Prevention in companies",
                 "firstIndicatorId": "304"
             },
             {
@@ -158,7 +158,7 @@
                 "sref":"worker-involvement",
                 "tabindex":"16",
                 "accesskey":"",
-                "database_name":"WORKER_INVOLVEMENT",
+                "database_name":"Worker involvement",
                 "firstIndicatorId": "353"
             }
         ]
@@ -176,7 +176,7 @@
                 "sref":"enforcement-capacity({pIndicator: 'establishments-inspected'})",
                 "tabindex":"18",
                 "accesskey":"4",
-                "database_name":"ENFORCEMENT_CAPACITY",
+                "database_name":"Enforcement capacity",
                 "firstIndicatorId": "285"
             },
             {
@@ -185,7 +185,7 @@
                 "sref":"osh-statistics",
                 "tabindex":"19",
                 "accesskey":"",
-                "database_name":"OSH_STATISTICS",
+                "database_name":"OSH statistics, surveys and research",
                 "firstIndicatorId": "80"
             }
         ]
