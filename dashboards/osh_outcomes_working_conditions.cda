@@ -78,7 +78,7 @@
 			AND v.profile_id=p.id
 			AND p.nuts_id=n.id
 			AND n.country_code NOT IN ("UK", "EU28")
-			ORDER BY FIELD('EU27_2020', n.country_code) DESC, FIELD(n.country_code, 'CH', 'IS', 'NO'), n.country_code ASC, trend ASC
+			ORDER BY FIELD(n.country_code,'EU27_2020') DESC, FIELD(n.country_code, 'CH', 'IS', 'NO'), n.country_code ASC, trend ASC
 	    </Query>
 	</DataAccess>
 
@@ -97,7 +97,7 @@
 			AND v.profile_id=p.id
 			AND p.nuts_id=n.id
 			AND n.country_code NOT IN ("UK", "EU28")
-			ORDER BY FIELD('EU27_2020', n.country_code) ASC, FIELD(n.country_code, 'CH', 'IS', 'NO') DESC, n.country_code DESC, trend ASC
+			ORDER BY FIELD(n.country_code,'EU27_2020') ASC, FIELD(n.country_code, 'CH', 'IS', 'NO') DESC, n.country_code DESC, trend ASC
 	    </Query>
 	</DataAccess>
 
@@ -253,7 +253,7 @@
 			AND t.language = 'EN'
 			AND d.id = v.dataset_id
 			AND d.id = ${pDataset}
-			ORDER BY CASE WHEN ${pIndicator}=358 THEN FIELD(Answer, 'Practically never', 'Occasionally', 'Regularly') ELSE (Answer) END  ASC, FIELD('EU27_2020', 'EU28', n.country_code) DESC, FIELD(n.country_code, 'CH', 'IS', 'NO'), n.country_code ASC, Value DESC;
+			ORDER BY CASE WHEN ${pIndicator}=358 THEN FIELD(Answer, 'Practically never', 'Occasionally', 'Regularly') ELSE (Answer) END  ASC, FIELD(n.country_code,'EU27_2020', 'EU28') DESC, FIELD(n.country_code, 'CH', 'IS', 'NO'), n.country_code ASC, Value DESC;
 	    </Query>
 	</DataAccess>
 
@@ -278,7 +278,7 @@
 			AND t.language = 'EN'
 			AND d.id = v.dataset_id
 			AND d.id = ${pDataset}
-			ORDER BY CASE WHEN ${pIndicator}=358 THEN FIELD(Answer, 'Practically never', 'Occasionally', 'Regularly') ELSE (Answer) END DESC, FIELD('EU27_2020', 'EU28',n.country_code) ASC, FIELD(n.country_code,'CH', 'IS', 'NO') DESC, n.country_code DESC;
+			ORDER BY CASE WHEN ${pIndicator}=358 THEN FIELD(Answer, 'Practically never', 'Occasionally', 'Regularly') ELSE (Answer) END DESC, FIELD(n.country_code,'EU27_2020', 'EU28') ASC, FIELD(n.country_code,'CH', 'IS', 'NO') DESC, n.country_code DESC;
 	    </Query>
 	</DataAccess>
 
@@ -303,7 +303,7 @@
 			AND a.literal_id=t.literal_id
 			AND i.id=${pIndicator}
 			AND n.country_code != "UK"
-			ORDER BY FIELD(a.id, 6, 7, 32), FIELD('EU28', 'EU27_2020', n.country_code) DESC, FIELD(n.country_code, 'CH', 'IS', 'NO'), n.country_code ASC, Value DESC;
+			ORDER BY FIELD(a.id, 6, 7, 32), FIELD(n.country_code,'EU28', 'EU27_2020') DESC, FIELD(n.country_code, 'CH', 'IS', 'NO'), n.country_code ASC, Value DESC;
 	    </Query>
 	</DataAccess>
 
@@ -328,7 +328,7 @@
 			AND a.literal_id=t.literal_id
 			AND i.id=${pIndicator}
 			AND n.country_code != "UK"
-			ORDER BY FIELD(sa.id, 32, 7, 6), FIELD('EU28', 'EU27_2020', ,n.country_code) ASC, FIELD(n.country_code,'CH', 'IS', 'NO') DESC, n.country_code DESC;
+			ORDER BY FIELD(sa.id, 32, 7, 6), FIELD(n.country_code,'EU28', 'EU27_2020') ASC, FIELD(n.country_code,'CH', 'IS', 'NO') DESC, n.country_code DESC;
 	    </Query>
 	</DataAccess>
 
@@ -353,7 +353,7 @@
 			AND a.literal_id=t.literal_id
 			AND i.id=${pIndicator}
 			AND n.country_code != "UK"
-			ORDER BY Answer DESC, FIELD('EU28', 'EU27_2020', n.country_code) DESC, FIELD(n.country_code, 'CH', 'IS', 'NO'), n.country_code ASC, Value DESC;
+			ORDER BY Answer DESC, FIELD(n.country_code,'EU28', 'EU27_2020') DESC, FIELD(n.country_code, 'CH', 'IS', 'NO'), n.country_code ASC, Value DESC;
 	    </Query>
 	</DataAccess>
 
@@ -378,7 +378,7 @@
 			AND a.literal_id=t.literal_id
 			AND i.id=${pIndicator}
 			AND n.country_code != "UK"
-			ORDER BY Answer DESC, FIELD('EU28','EU27_2020',n.country_code) ASC, FIELD(n.country_code,'CH', 'IS', 'NO') DESC, n.country_code DESC;
+			ORDER BY Answer DESC, FIELD(n.country_code,'EU28','EU27_2020') ASC, FIELD(n.country_code,'CH', 'IS', 'NO') DESC, n.country_code DESC;
 	    </Query>
 	</DataAccess>
 
@@ -403,7 +403,7 @@
 			AND a.literal_id=t.literal_id
 			AND i.id=${pIndicator}
 			AND n.country_code != "UK"
-			ORDER BY FIELD('EU28','EU27_2020', n.country_code) DESC, FIELD(n.country_code, 'CH','NO'), n.country_code ASC;
+			ORDER BY FIELD(n.country_code,'EU28','EU27_2020') DESC, FIELD(n.country_code, 'CH','NO'), n.country_code ASC;
 	    </Query>
 	</DataAccess>
 
@@ -428,7 +428,7 @@
 			AND a.literal_id=t.literal_id
 			AND i.id=${pIndicator}
 			AND n.country_code != "UK"
-			ORDER BY Answer DESC, FIELD('EU28','EU27_2020',n.country_code) ASC, FIELD(n.country_code,'CH', 'IS', 'NO') DESC, n.country_code DESC;
+			ORDER BY Answer DESC, FIELD(n.country_code,'EU28','EU27_2020') ASC, FIELD(n.country_code,'CH', 'IS', 'NO') DESC, n.country_code DESC;
 	    </Query>
 	</DataAccess>
 
@@ -624,7 +624,7 @@
 			AND t.language="EN"
 			AND i.id=${pIndicator}
 			AND n.country_code != "UK"
-            ORDER BY Answer ASC, FIELD('EU28', 'EU27_2020', n.country_code) DESC, FIELD(n.country_code, 'CH', 'IS', 'NO'), n.country_code ASC, Value DESC;
+            ORDER BY Answer ASC, FIELD(n.country_code,'EU28', 'EU27_2020') DESC, FIELD(n.country_code, 'CH', 'IS', 'NO'), n.country_code ASC, Value DESC;
         </Query>
     </DataAccess>
 
@@ -650,7 +650,7 @@
 			AND t.language="EN"
 			AND i.id=${pIndicator}
 			AND n.country_code != "UK"
-            ORDER BY Answer DESC, FIELD('EU28', 'EU27_2020',n.country_code) ASC, FIELD(n.country_code,'CH', 'IS', 'NO') DESC, n.country_code DESC;
+            ORDER BY Answer DESC, FIELD(n.country_code,'EU28', 'EU27_2020') ASC, FIELD(n.country_code,'CH', 'IS', 'NO') DESC, n.country_code DESC;
         </Query>
     </DataAccess>
 
@@ -675,7 +675,7 @@
 			AND a.literal_id=t.literal_id
 			AND i.id=${pIndicator}
 			AND n.country_code != "UK"
-			ORDER BY FIELD(a.id, 15, 16, 14), FIELD('EU28','EU27_2020', n.country_code) DESC, FIELD(n.country_code, 'CH', 'IS', 'NO'), n.country_code ASC, Value DESC;
+			ORDER BY FIELD(a.id, 15, 16, 14), FIELD(n.country_code,'EU28','EU27_2020') DESC, FIELD(n.country_code, 'CH', 'IS', 'NO'), n.country_code ASC, Value DESC;
         </Query>
     </DataAccess>
 
@@ -700,7 +700,7 @@
 			AND a.literal_id=t.literal_id
 			AND i.id=${pIndicator}
 			AND n.country_code != "UK"
-            ORDER BY FIELD(sa.id, 14, 16, 15), FIELD('EU28','EU27_2020', n.country_code) ASC, FIELD(n.country_code, 'CH', 'IS', 'NO') DESC, n.country_code DESC, Value DESC;
+            ORDER BY FIELD(sa.id, 14, 16, 15), FIELD(n.country_code,'EU28','EU27_2020') ASC, FIELD(n.country_code, 'CH', 'IS', 'NO') DESC, n.country_code DESC, Value DESC;
         </Query>
     </DataAccess>
 
@@ -726,7 +726,7 @@
 			AND t.language="EN"
 			AND i.id=${pIndicator}
 			AND n.country_code != "UK"
-			ORDER BY FIELD(a.id, 19, 20, 18), FIELD('EU28', 'EU27_2020', n.country_code) DESC, FIELD(n.country_code, 'CH', 'IS', 'NO'), n.country_code ASC, value
+			ORDER BY FIELD(a.id, 19, 20, 18), FIELD(n.country_code,'EU28', 'EU27_2020') DESC, FIELD(n.country_code, 'CH', 'IS', 'NO'), n.country_code ASC, value
         </Query>
     </DataAccess>
 
@@ -752,7 +752,7 @@
 			AND t.language="EN"
 			AND i.id=${pIndicator}
 			AND n.country_code != "UK"
-            ORDER BY FIELD(a.id, 18, 20, 19), FIELD('EU28', 'EU27_2020', n.country_code) ASC, FIELD(n.country_code, 'CH', 'IS', 'NO') DESC, n.country_code DESC, Value DESC;
+            ORDER BY FIELD(a.id, 18, 20, 19), FIELD(n.country_code,'EU28', 'EU27_2020') ASC, FIELD(n.country_code, 'CH', 'IS', 'NO') DESC, n.country_code DESC, Value DESC;
         </Query>
     </DataAccess>
 
@@ -778,7 +778,7 @@
 			AND t.language="EN"
 			AND i.id=${pIndicator}
 			AND n.country_code != "UK"
-            ORDER BY FIELD(a.id, 22,23,21), FIELD('EU28','EU27_2020', n.country_code) DESC, FIELD(n.country_code, 'CH', 'IS', 'NO'), n.country_code ASC, Value DESC;
+            ORDER BY FIELD(a.id, 22,23,21), FIELD(n.country_code,'EU28','EU27_2020') DESC, FIELD(n.country_code, 'CH', 'IS', 'NO'), n.country_code ASC, Value DESC;
         </Query>
     </DataAccess>
 
@@ -804,7 +804,7 @@
 			AND t.language="EN"
 			AND i.id=${pIndicator}
 			AND n.country_code != "UK"
-            ORDER BY FIELD(a.id, 21,23,22), FIELD('EU28','EU27_2020', n.country_code) ASC, FIELD(n.country_code, 'CH', 'IS', 'NO') DESC, n.country_code DESC, Value DESC;
+            ORDER BY FIELD(a.id, 21,23,22), FIELD(n.country_code,'EU28','EU27_2020') ASC, FIELD(n.country_code, 'CH', 'IS', 'NO') DESC, n.country_code DESC, Value DESC;
         </Query>
     </DataAccess>
 
@@ -828,7 +828,7 @@
 			AND i.id=${pIndicator}
 			AND p.answer_id=17
 			AND n.country_code != "UK"
-			ORDER BY FIELD('EU28','EU27_2020', n.country_code) DESC, FIELD(n.country_code, 'CH', 'IS', 'NO'), n.country_code ASC, Value DESC;
+			ORDER BY FIELD(n.country_code,'EU28','EU27_2020') DESC, FIELD(n.country_code, 'CH', 'IS', 'NO'), n.country_code ASC, Value DESC;
         </Query>
    	</DataAccess>
 
@@ -852,7 +852,7 @@
 			AND i.id=${pIndicator}
 			AND p.answer_id=17
 			AND n.country_code != "UK"
-            ORDER BY FIELD('EU28','EU27_2020',n.country_code) ASC, FIELD(n.country_code,'CH', 'IS', 'NO') DESC, n.country_code DESC;
+            ORDER BY FIELD(n.country_code,'EU28','EU27_2020') ASC, FIELD(n.country_code,'CH', 'IS', 'NO') DESC, n.country_code DESC;
         </Query>
    	</DataAccess>
 
@@ -878,7 +878,7 @@
 			AND t.language="EN"
 			AND i.id=${pIndicator}
 			AND n.country_code != "UK"
-            ORDER BY Answer ASC, FIELD('EU28','EU27_2020', n.country_code) DESC, FIELD(n.country_code, 'CH', 'IS', 'NO'), n.country_code ASC, Value DESC;
+            ORDER BY Answer ASC, FIELD(n.country_code,'EU28','EU27_2020') DESC, FIELD(n.country_code, 'CH', 'IS', 'NO'), n.country_code ASC, Value DESC;
         </Query>
     </DataAccess>
 
@@ -902,7 +902,7 @@
             AND t.language = 'EN'
             AND d.id = v.dataset_id
             AND d.id = ${pDataset}
-            ORDER BY Answer DESC, FIELD('EU28','EU27_2020',n.country_code) ASC, FIELD(n.country_code,'CH', 'IS', 'NO') DESC, n.country_code DESC;
+            ORDER BY Answer DESC, FIELD(n.country_code,'EU28','EU27_2020') ASC, FIELD(n.country_code,'CH', 'IS', 'NO') DESC, n.country_code DESC;
         </Query>
     </DataAccess>
 
@@ -1038,7 +1038,7 @@
 			AND n.country_code != 'UK'
 			AND i.id=${pIndicator}
 			AND t.language="EN"
-            ORDER BY Answer DESC, FIELD('EU28','EU27_2020', n.country_code) DESC, FIELD(n.country_code, 'CH', 'IS', 'NO'), n.country_code ASC, Value DESC;
+            ORDER BY Answer DESC, FIELD(n.country_code,'EU28','EU27_2020') DESC, FIELD(n.country_code, 'CH', 'IS', 'NO'), n.country_code ASC, Value DESC;
         </Query>
     </DataAccess>
 
@@ -1062,7 +1062,7 @@
             AND t.language = 'EN'
             AND d.id = v.dataset_id
             AND d.id = ${pDataset}
-            ORDER BY Answer ASC, FIELD('EU28','EU27_2020', n.country_code) ASC, FIELD(n.country_code, 'CH', 'IS', 'NO') DESC, n.country_code DESC, Value DESC;
+            ORDER BY Answer ASC, FIELD(n.country_code,'EU28','EU27_2020') ASC, FIELD(n.country_code, 'CH', 'IS', 'NO') DESC, n.country_code DESC, Value DESC;
         </Query>
     </DataAccess>
 
@@ -1349,7 +1349,7 @@
             AND t.language = 'EN'
             AND d.id = v.dataset_id
             AND d.id = ${pDataset}
-            ORDER BY FIELD(sa.id, 30,29,28) , FIELD('EU27_2020', 'EU28', n.country_code) DESC, FIELD(n.country_code, 'CH', 'IS', 'NO'), n.country_code ASC, Value DESC;
+            ORDER BY FIELD(sa.id, 30,29,28) , FIELD(n.country_code,'EU27_2020', 'EU28') DESC, FIELD(n.country_code, 'CH', 'IS', 'NO'), n.country_code ASC, Value DESC;
 		</Query>
     </DataAccess>
 
@@ -1374,7 +1374,7 @@
             AND t.language = 'EN'
             AND d.id = v.dataset_id
             AND d.id = ${pDataset}
-            ORDER BY FIELD(sa.id, 28,29,30) , FIELD('EU27_2020', 'EU28', n.country_code) ASC, FIELD(n.country_code, 'CH', 'IS', 'NO') DESC, n.country_code DESC, Value DESC;
+            ORDER BY FIELD(sa.id, 28,29,30) , FIELD(n.country_code,'EU27_2020', 'EU28') ASC, FIELD(n.country_code, 'CH', 'IS', 'NO') DESC, n.country_code DESC, Value DESC;
 		</Query>
     </DataAccess>
 
@@ -1399,7 +1399,7 @@
             AND t.language = 'EN'
             AND d.id = v.dataset_id
             AND d.id = ${pDataset}
-            ORDER BY FIELD(sa.id,2,71,1) , FIELD('EU27_2020','EU28', n.country_code) DESC, FIELD(n.country_code, 'CH', 'IS', 'NO'), n.country_code ASC;
+            ORDER BY FIELD(sa.id,2,71,1) , FIELD(n.country_code,'EU27_2020','EU28') DESC, FIELD(n.country_code, 'CH', 'IS', 'NO'), n.country_code ASC;
 		</Query>
     </DataAccess>
 
@@ -1424,7 +1424,7 @@
             AND t.language = 'EN'
             AND d.id = v.dataset_id
             AND d.id = ${pDataset}
-            ORDER BY FIELD(sa.id, 1,71,2), FIELD('EU27_2020','EU28', n.country_code) ASC, FIELD(n.country_code, 'CH', 'IS', 'NO') DESC, n.country_code DESC;
+            ORDER BY FIELD(sa.id, 1,71,2), FIELD(n.country_code,'EU27_2020','EU28') ASC, FIELD(n.country_code, 'CH', 'IS', 'NO') DESC, n.country_code DESC;
 		</Query>
     </DataAccess>
 
