@@ -713,7 +713,7 @@
             <Parameter default="85" name="pIndicator" type="Numeric"/>
         </Parameters>
         <Query>
-            SELECT t.text as Answer, IF(n.name = 'European Union', n.country_code, IF(n.name = 'Macedonia, The former Yugoslav Rep. of', CONCAT('Macedonia', " (", n.country_code, ")"), CONCAT(n.name, " (", n.country_code, ")"))) as Country, v.value as Value
+            SELECT t.text as Answer, IF(n.name = 'European Union' || n.name='EU27_2020', n.country_code, IF(n.name = 'Macedonia, The former Yugoslav Rep. of', CONCAT('Macedonia', " (", n.country_code, ")"), CONCAT(n.name, " (", n.country_code, ")"))) as Country, v.value as Value
             FROM indicators_by_chart ibc, indicator i, value v, profile p, nuts n, split_answer a, translation t
 			WHERE ibc.chart_id=${pChart}
 			AND ibc.indicator_id=i.id
@@ -726,7 +726,7 @@
 			AND t.language="EN"
 			AND i.id=${pIndicator}
 			AND n.country_code != "UK"
-			ORDER BY FIELD(a.id, 19, 20, 18), FIELD('EU28', n.country_code) DESC, FIELD(n.country_code, 'CH', 'IS', 'NO'), n.country_code ASC, value
+			ORDER BY FIELD(a.id, 19, 20, 18), FIELD('EU28', 'EU27_2020', n.country_code) DESC, FIELD(n.country_code, 'CH', 'IS', 'NO'), n.country_code ASC, value
         </Query>
     </DataAccess>
 
@@ -739,7 +739,7 @@
             <Parameter default="85" name="pIndicator" type="Numeric"/>
         </Parameters>
         <Query>
-            SELECT t.text as Answer, IF(n.name = 'European Union', n.country_code, IF(n.name = 'Macedonia, The former Yugoslav Rep. of', CONCAT('Macedonia', " (", n.country_code, ")"), CONCAT(n.name, " (", n.country_code, ")"))) as Country, v.value as Value
+            SELECT t.text as Answer, IF(n.name = 'European Union' || n.name='EU27_2020', n.country_code, IF(n.name = 'Macedonia, The former Yugoslav Rep. of', CONCAT('Macedonia', " (", n.country_code, ")"), CONCAT(n.name, " (", n.country_code, ")"))) as Country, v.value as Value
             FROM indicators_by_chart ibc, indicator i, value v, profile p, nuts n, split_answer a, translation t
 			WHERE ibc.chart_id=${pChart}
 			AND ibc.indicator_id=i.id
@@ -752,7 +752,7 @@
 			AND t.language="EN"
 			AND i.id=${pIndicator}
 			AND n.country_code != "UK"
-            ORDER BY FIELD(a.id, 18, 20, 19), FIELD('EU28', n.country_code) ASC, FIELD(n.country_code, 'CH', 'IS', 'NO') DESC, n.country_code DESC, Value DESC;
+            ORDER BY FIELD(a.id, 18, 20, 19), FIELD('EU28', 'EU27_2020', n.country_code) ASC, FIELD(n.country_code, 'CH', 'IS', 'NO') DESC, n.country_code DESC, Value DESC;
         </Query>
     </DataAccess>
 
