@@ -78,7 +78,7 @@
 			AND v.profile_id=p.id
 			AND p.nuts_id=n.id
 			AND n.country_code NOT IN ("UK", "EU28")
-			ORDER BY FIELD('EU27_2020', n.country_code) DESC, FIELD(n.country_code, 'CH', 'IS', 'NO'), n.country_code ASC, trend ASC
+			ORDER BY FIELD(n.country_code,'EU27_2020') DESC, FIELD(n.country_code, 'CH', 'IS', 'NO'), n.country_code ASC, trend ASC
 	    </Query>
 	</DataAccess>
 
@@ -97,7 +97,7 @@
 			AND v.profile_id=p.id
 			AND p.nuts_id=n.id
 			AND n.country_code NOT IN ("UK", "EU28")
-			ORDER BY FIELD('EU27_2020', n.country_code) ASC, FIELD(n.country_code, 'CH', 'IS', 'NO') DESC, n.country_code DESC, trend ASC
+			ORDER BY FIELD(n.country_code,'EU27_2020') ASC, FIELD(n.country_code, 'CH', 'IS', 'NO') DESC, n.country_code DESC, trend ASC
 	    </Query>
 	</DataAccess>
 
@@ -159,7 +159,7 @@
 			where n.id = p.nuts_id
 			AND v.profile_id = p.id
 			AND v.indicator_id IN (57, 58, 59, 60, 61, 62)
-			AND n.country_code NOT IN ('EU28', 'UK')
+			AND n.country_code NOT IN ('EU28', 'EU27_2020', 'UK')
 			ORDER BY n.country_code ASC;
 	    </Query>
 	</DataAccess>
@@ -253,7 +253,7 @@
 			AND t.language = 'EN'
 			AND d.id = v.dataset_id
 			AND d.id = ${pDataset}
-			ORDER BY CASE WHEN ${pIndicator}=358 THEN FIELD(Answer, 'Practically never', 'Occasionally', 'Regularly') ELSE (Answer) END  ASC, FIELD('EU27_2020', 'EU28', n.country_code) DESC, FIELD(n.country_code, 'CH', 'IS', 'NO'), n.country_code ASC, Value DESC;
+			ORDER BY CASE WHEN ${pIndicator}=358 THEN FIELD(Answer, 'Practically never', 'Occasionally', 'Regularly') ELSE (Answer) END  ASC, FIELD(n.country_code,'EU27_2020', 'EU28') DESC, FIELD(n.country_code, 'CH', 'IS', 'NO'), n.country_code ASC, Value DESC;
 	    </Query>
 	</DataAccess>
 
@@ -278,7 +278,7 @@
 			AND t.language = 'EN'
 			AND d.id = v.dataset_id
 			AND d.id = ${pDataset}
-			ORDER BY CASE WHEN ${pIndicator}=358 THEN FIELD(Answer, 'Practically never', 'Occasionally', 'Regularly') ELSE (Answer) END DESC, FIELD('EU27_2020', 'EU28',n.country_code) ASC, FIELD(n.country_code,'CH', 'IS', 'NO') DESC, n.country_code DESC;
+			ORDER BY CASE WHEN ${pIndicator}=358 THEN FIELD(Answer, 'Practically never', 'Occasionally', 'Regularly') ELSE (Answer) END DESC, FIELD(n.country_code,'EU27_2020', 'EU28') ASC, FIELD(n.country_code,'CH', 'IS', 'NO') DESC, n.country_code DESC;
 	    </Query>
 	</DataAccess>
 
@@ -291,7 +291,7 @@
 	    	<Parameter default="63" name="pIndicator" type="Numeric"/>
 	    </Parameters>
 	    <Query>
-			SELECT t.text as Answer, IF(n.name = 'European Union', n.country_code, CONCAT(n.name, " (", n.country_code, ")")) as Country, v.value as value
+			SELECT t.text as Answer, IF(n.name = 'European Union' || n.name = 'EU27_2020', n.country_code, CONCAT(n.name, " (", n.country_code, ")")) as Country, v.value as value
 			FROM indicators_by_chart ibc, indicator i, value v, profile p, nuts n, split_answer a, translation t
 			WHERE ibc.chart_id=${pChart}
 			AND ibc.indicator_id=i.id
@@ -303,7 +303,7 @@
 			AND a.literal_id=t.literal_id
 			AND i.id=${pIndicator}
 			AND n.country_code != "UK"
-			ORDER BY FIELD(a.id, 6, 7, 32), FIELD('EU28', n.country_code) DESC, FIELD(n.country_code, 'CH', 'IS', 'NO'), n.country_code ASC, Value DESC;
+			ORDER BY FIELD(a.id, 6, 7, 32), FIELD(n.country_code,'EU28', 'EU27_2020') DESC, FIELD(n.country_code, 'CH', 'IS', 'NO'), n.country_code ASC, Value DESC;
 	    </Query>
 	</DataAccess>
 
@@ -316,7 +316,7 @@
 	    	<Parameter default="63" name="pIndicator" type="Numeric"/>
 	    </Parameters>
 	    <Query>
-			SELECT t.text as Answer, IF(n.name = 'European Union', n.country_code, CONCAT(n.name, " (", n.country_code, ")")) as Country, v.value as Value
+			SELECT t.text as Answer, IF(n.name = 'European Union' || n.name='EU27_2020', n.country_code, CONCAT(n.name, " (", n.country_code, ")")) as Country, v.value as Value
 			FROM indicators_by_chart ibc, indicator i, value v, profile p, nuts n, split_answer a, translation t
 			WHERE ibc.chart_id=${pChart}
 			AND ibc.indicator_id=i.id
@@ -328,7 +328,7 @@
 			AND a.literal_id=t.literal_id
 			AND i.id=${pIndicator}
 			AND n.country_code != "UK"
-			ORDER BY FIELD(sa.id, 32, 7, 6), FIELD('EU28',n.country_code) ASC, FIELD(n.country_code,'CH', 'IS', 'NO') DESC, n.country_code DESC;
+			ORDER BY FIELD(sa.id, 32, 7, 6), FIELD(n.country_code,'EU28', 'EU27_2020') ASC, FIELD(n.country_code,'CH', 'IS', 'NO') DESC, n.country_code DESC;
 	    </Query>
 	</DataAccess>
 
@@ -341,7 +341,7 @@
 	    	<Parameter default="64" name="pIndicator" type="Numeric"/>
 	    </Parameters>
 	    <Query>
-			SELECT t.text as Answer, IF(n.name = 'European Union', n.country_code, CONCAT(n.name, " (", n.country_code, ")")) as Country, v.value as Value
+			SELECT t.text as Answer, IF(n.name = 'European Union' || n.name='EU27_2020', n.country_code, CONCAT(n.name, " (", n.country_code, ")")) as Country, v.value as Value
 			FROM indicators_by_chart ibc, indicator i, value v, profile p, nuts n, split_answer a, translation t
 			WHERE ibc.chart_id=${pChart}
 			AND ibc.indicator_id=i.id
@@ -353,7 +353,7 @@
 			AND a.literal_id=t.literal_id
 			AND i.id=${pIndicator}
 			AND n.country_code != "UK"
-			ORDER BY Answer DESC, FIELD('EU28', n.country_code) DESC, FIELD(n.country_code, 'CH', 'IS', 'NO'), n.country_code ASC, Value DESC;
+			ORDER BY Answer DESC, FIELD(n.country_code,'EU28', 'EU27_2020') DESC, FIELD(n.country_code, 'CH', 'IS', 'NO'), n.country_code ASC, Value DESC;
 	    </Query>
 	</DataAccess>
 
@@ -366,7 +366,7 @@
 	    	<Parameter default="64" name="pIndicator" type="Numeric"/>
 	    </Parameters>
 	    <Query>
-			SELECT t.text as Answer, IF(n.name = 'European Union', n.country_code, CONCAT(n.name, " (", n.country_code, ")")) as Country, v.value as Value
+			SELECT t.text as Answer, IF(n.name = 'European Union' || n.name='EU27_2020', n.country_code, CONCAT(n.name, " (", n.country_code, ")")) as Country, v.value as Value
 			FROM indicators_by_chart ibc, indicator i, value v, profile p, nuts n, split_answer a, translation t
 			WHERE ibc.chart_id=${pChart}
 			AND ibc.indicator_id=i.id
@@ -378,7 +378,7 @@
 			AND a.literal_id=t.literal_id
 			AND i.id=${pIndicator}
 			AND n.country_code != "UK"
-			ORDER BY Answer DESC, FIELD('EU28',n.country_code) ASC, FIELD(n.country_code,'CH', 'IS', 'NO') DESC, n.country_code DESC;
+			ORDER BY Answer DESC, FIELD(n.country_code,'EU28','EU27_2020') ASC, FIELD(n.country_code,'CH', 'IS', 'NO') DESC, n.country_code DESC;
 	    </Query>
 	</DataAccess>
 
@@ -391,7 +391,7 @@
 	    	<Parameter default="65" name="pIndicator" type="Numeric"/>
 	    </Parameters>
 	    <Query>
-			SELECT t.text as Answer, IF(n.name = 'European Union', n.country_code, CONCAT(n.name, " (", n.country_code, ")")) as Country, if(v.value = 0, null, v.value) as Value
+			SELECT t.text as Answer, IF(n.name = 'European Union' || n.name='EU27_2020', n.country_code, CONCAT(n.name, " (", n.country_code, ")")) as Country, if(v.value = 0, null, v.value) as Value
 			FROM indicators_by_chart ibc, indicator i, value v, profile p, nuts n, split_answer a, translation t
 			WHERE ibc.chart_id=${pChart}
 			AND ibc.indicator_id=i.id
@@ -403,7 +403,7 @@
 			AND a.literal_id=t.literal_id
 			AND i.id=${pIndicator}
 			AND n.country_code != "UK"
-			ORDER BY FIELD('EU28', n.country_code) DESC, FIELD(n.country_code, 'CH','NO'), n.country_code ASC;
+			ORDER BY FIELD(n.country_code,'EU28','EU27_2020') DESC, FIELD(n.country_code, 'CH','NO'), n.country_code ASC;
 	    </Query>
 	</DataAccess>
 
@@ -416,7 +416,7 @@
 	    	<Parameter default="65" name="pIndicator" type="Numeric"/>
 	    </Parameters>
 	    <Query>
-			SELECT t.text as Answer, IF(n.name = 'European Union', n.country_code, CONCAT(n.name, " (", n.country_code, ")")) as Country, v.value as Value
+			SELECT t.text as Answer, IF(n.name = 'European Union' || n.name='EU27_2020', n.country_code, CONCAT(n.name, " (", n.country_code, ")")) as Country, v.value as Value
 			FROM indicators_by_chart ibc, indicator i, value v, profile p, nuts n, split_answer a, translation t
 			WHERE ibc.chart_id=${pChart}
 			AND ibc.indicator_id=i.id
@@ -428,7 +428,7 @@
 			AND a.literal_id=t.literal_id
 			AND i.id=${pIndicator}
 			AND n.country_code != "UK"
-			ORDER BY Answer DESC, FIELD('EU28',n.country_code) ASC, FIELD(n.country_code,'CH', 'IS', 'NO') DESC, n.country_code DESC;
+			ORDER BY Answer DESC, FIELD(n.country_code,'EU28','EU27_2020') ASC, FIELD(n.country_code,'CH', 'IS', 'NO') DESC, n.country_code DESC;
 	    </Query>
 	</DataAccess>
 
@@ -446,7 +446,7 @@
 			AND n.literal_id=t.literal_id
 			AND v.profile_id = p.id
 			AND v.indicator_id = 66
-			AND n.country_code NOT IN ('EU28')
+			AND n.country_code NOT IN ('EU28', 'EU27_2020')
 			AND n.country_code NOT IN (${pCountry}, 'UK')
 			AND t.language="EN"
 			ORDER BY n.country_code ASC;
@@ -464,7 +464,7 @@
 	    	<Parameter default="BE" name="pCountry2" type="String"/>
 	    </Parameters>
 	    <Query>
-			SELECT IF(n.name REGEXP 'European Union', n.country_code, CONCAT("(", n.country_code, ") ", n.name)) as Country, t.text as Sector, v.value as Value
+			SELECT IF(n.name REGEXP 'European Union' || n.name='EU27_2020', n.country_code, CONCAT("(", n.country_code, ") ", n.name)) as Country, t.text as Sector, v.value as Value
 			FROM indicators_by_chart ibc, indicator i, value v, profile p, nuts n, split_activity_sector sas, translation t
 			WHERE ibc.chart_id=${pChart}
 			AND ibc.indicator_id=i.id
@@ -476,9 +476,9 @@
 			AND sas.literal_id=t.literal_id
 			AND i.id=${pIndicator}
 			AND n.country_code != "UK"
-			AND n.country_code IN (${pCountry1}, ${pCountry2}, 'EU28')
+			AND n.country_code IN (${pCountry1}, ${pCountry2}, 'EU28', 'EU27_2020')
 			AND p.answer_id=1
-			ORDER BY FIELD(sas.id, 9, 10, 11, 12, 13, 8), FIELD(n.country_code, ${pCountry1}, ${pCountry2}, 'EU28')
+			ORDER BY FIELD(sas.id, 9, 10, 11, 12, 13, 8), FIELD(n.country_code, ${pCountry1}, ${pCountry2}, 'EU28', 'EU27_2020')
 	    </Query>
 	</DataAccess>
 
@@ -493,7 +493,7 @@
 	    	<Parameter default="BE" name="pCountry2" type="String"/>
 	    </Parameters>
 	    <Query>
-			SELECT IF(n.name = 'European Union', n.country_code, CONCAT(n.name, " (", n.country_code, ")")) as Country, t.text as Gender, v.value as Value
+			SELECT IF(n.name = 'European Union' || n.name='EU27_2020', n.country_code, CONCAT(n.name, " (", n.country_code, ")")) as Country, t.text as Gender, v.value as Value
 			FROM indicators_by_chart ibc, indicator i, value v, profile p, nuts n, split_gender g, translation t
 			WHERE ibc.chart_id=${pChart}
 			AND ibc.indicator_id=i.id
@@ -505,9 +505,9 @@
 			AND g.literal_id=t.literal_id
 			AND i.id=${pIndicator}
 			AND n.country_code != "UK"
-			AND n.country_code IN (${pCountry1}, ${pCountry2}, 'EU28')
+			AND n.country_code IN (${pCountry1}, ${pCountry2}, 'EU28', 'EU27_2020')
 			AND p.answer_id=1
-			ORDER BY FIELD(g.id, 3, 2, 1), FIELD(n.country_code, ${pCountry1}, ${pCountry2}, 'EU28')
+			ORDER BY FIELD(g.id, 3, 2, 1), FIELD(n.country_code, ${pCountry1}, ${pCountry2}, 'EU28', 'EU27_2020')
 	    </Query>
 	</DataAccess>
 
@@ -522,7 +522,7 @@
 	    	<Parameter default="BE" name="pCountry2" type="String"/>
 	    </Parameters>
 	    <Query>
-			SELECT IF(n.name = 'European Union', n.country_code, CONCAT(n.name, " (", n.country_code, ")")) as Country, t.text as Age, v.value as Value
+			SELECT IF(n.name = 'European Union' || n.name='EU27_2020', n.country_code, CONCAT(n.name, " (", n.country_code, ")")) as Country, t.text as Age, v.value as Value
 			FROM indicators_by_chart ibc, indicator i, value v, profile p, nuts n, split_age_group ag, translation t
 			WHERE ibc.chart_id=${pChart}
 			AND ibc.indicator_id=i.id
@@ -534,9 +534,9 @@
 			AND ag.literal_id=t.literal_id
 			AND i.id=${pIndicator}
 			AND n.country_code != "UK"
-			AND n.country_code IN (${pCountry1}, ${pCountry2}, 'EU28')
+			AND n.country_code IN (${pCountry1}, ${pCountry2}, 'EU28', 'EU27_2020')
 			AND p.answer_id=1
-			ORDER BY FIELD(ag.id, 1, 2, 3, 4), FIELD(n.country_code, ${pCountry1}, ${pCountry2}, 'EU28')
+			ORDER BY FIELD(ag.id, 1, 2, 3, 4), FIELD(n.country_code, ${pCountry1}, ${pCountry2}, 'EU28', 'EU27_2020')
 	    </Query>
 	</DataAccess>
 
@@ -611,7 +611,7 @@
             <Parameter default="88" name="pIndicator" type="Numeric"/>
         </Parameters>
         <Query>
-            SELECT t.text as Answer, IF(n.name = 'European Union', n.country_code, IF(n.name = 'Macedonia, The former Yugoslav Rep. of', CONCAT('Macedonia', " (", n.country_code, ")"), CONCAT(n.name, " (", n.country_code, ")"))) as Country, v.value as Value
+            SELECT t.text as Answer, IF(n.name = 'European Union' || n.name='EU27_2020', n.country_code, IF(n.name = 'Macedonia, The former Yugoslav Rep. of', CONCAT('Macedonia', " (", n.country_code, ")"), CONCAT(n.name, " (", n.country_code, ")"))) as Country, v.value as Value
             FROM indicators_by_chart ibc, indicator i, value v, profile p, nuts n, split_answer a, translation t
 			WHERE ibc.chart_id=${pChart}
 			AND ibc.indicator_id=i.id
@@ -624,7 +624,7 @@
 			AND t.language="EN"
 			AND i.id=${pIndicator}
 			AND n.country_code != "UK"
-            ORDER BY Answer ASC, FIELD('EU28', n.country_code) DESC, FIELD(n.country_code, 'CH', 'IS', 'NO'), n.country_code ASC, Value DESC;
+            ORDER BY Answer ASC, FIELD(n.country_code,'EU28', 'EU27_2020') DESC, FIELD(n.country_code, 'CH', 'IS', 'NO'), n.country_code ASC, Value DESC;
         </Query>
     </DataAccess>
 
@@ -637,7 +637,7 @@
             <Parameter default="88" name="pIndicator" type="Numeric"/>
         </Parameters>
         <Query>
-            SELECT t.text as Answer, IF(n.name = 'European Union', n.country_code, IF(n.name = 'Macedonia, The former Yugoslav Rep. of', CONCAT('Macedonia', " (", n.country_code, ")"), CONCAT(n.name, " (", n.country_code, ")"))) as Country, v.value as Value
+            SELECT t.text as Answer, IF(n.name = 'European Union' || n.name='EU27_2020', n.country_code, IF(n.name = 'Macedonia, The former Yugoslav Rep. of', CONCAT('Macedonia', " (", n.country_code, ")"), CONCAT(n.name, " (", n.country_code, ")"))) as Country, v.value as Value
             FROM indicators_by_chart ibc, indicator i, value v, profile p, nuts n, split_answer a, translation t
             WHERE ibc.chart_id=${pChart}
 			AND ibc.indicator_id=i.id
@@ -650,7 +650,7 @@
 			AND t.language="EN"
 			AND i.id=${pIndicator}
 			AND n.country_code != "UK"
-            ORDER BY Answer DESC, FIELD('EU28',n.country_code) ASC, FIELD(n.country_code,'CH', 'IS', 'NO') DESC, n.country_code DESC;
+            ORDER BY Answer DESC, FIELD(n.country_code,'EU28', 'EU27_2020') ASC, FIELD(n.country_code,'CH', 'IS', 'NO') DESC, n.country_code DESC;
         </Query>
     </DataAccess>
 
@@ -663,7 +663,7 @@
             <Parameter default="83" name="pIndicator" type="Numeric"/>
         </Parameters>
         <Query>
-            SELECT t.text as Answer, IF(n.name = 'European Union', n.country_code, IF(n.name = 'Macedonia, The former Yugoslav Rep. of', CONCAT('Macedonia', " (", n.country_code, ")"), CONCAT(n.name, " (", n.country_code, ")"))) as Country, v.value as Value
+            SELECT t.text as Answer, IF(n.name = 'European Union' || n.name='EU27_2020', n.country_code, IF(n.name = 'Macedonia, The former Yugoslav Rep. of', CONCAT('Macedonia', " (", n.country_code, ")"), CONCAT(n.name, " (", n.country_code, ")"))) as Country, v.value as Value
             FROM indicators_by_chart ibc, indicator i, value v, profile p, nuts n, split_answer a, translation t
 			WHERE ibc.chart_id=${pChart}
 			AND ibc.indicator_id=i.id
@@ -675,7 +675,7 @@
 			AND a.literal_id=t.literal_id
 			AND i.id=${pIndicator}
 			AND n.country_code != "UK"
-			ORDER BY FIELD(a.id, 15, 16, 14), FIELD('EU28', n.country_code) DESC, FIELD(n.country_code, 'CH', 'IS', 'NO'), n.country_code ASC, Value DESC;
+			ORDER BY FIELD(a.id, 15, 16, 14), FIELD(n.country_code,'EU28','EU27_2020') DESC, FIELD(n.country_code, 'CH', 'IS', 'NO'), n.country_code ASC, Value DESC;
         </Query>
     </DataAccess>
 
@@ -688,7 +688,7 @@
             <Parameter default="83" name="pIndicator" type="Numeric"/>
         </Parameters>
         <Query>
-            SELECT t.text as Answer, IF(n.name = 'European Union', n.country_code, IF(n.name = 'Macedonia, The former Yugoslav Rep. of', CONCAT('Macedonia', " (", n.country_code, ")"), CONCAT(n.name, " (", n.country_code, ")"))) as Country, v.value as Value
+            SELECT t.text as Answer, IF(n.name = 'European Union' || n.name='EU27_2020', n.country_code, IF(n.name = 'Macedonia, The former Yugoslav Rep. of', CONCAT('Macedonia', " (", n.country_code, ")"), CONCAT(n.name, " (", n.country_code, ")"))) as Country, v.value as Value
             FROM indicators_by_chart ibc, indicator i, value v, profile p, nuts n, split_answer a, translation t
 			WHERE ibc.chart_id=${pChart}
 			AND ibc.indicator_id=i.id
@@ -700,7 +700,7 @@
 			AND a.literal_id=t.literal_id
 			AND i.id=${pIndicator}
 			AND n.country_code != "UK"
-            ORDER BY FIELD(sa.id, 14, 16, 15), FIELD('EU28', n.country_code) ASC, FIELD(n.country_code, 'CH', 'IS', 'NO') DESC, n.country_code DESC, Value DESC;
+            ORDER BY FIELD(sa.id, 14, 16, 15), FIELD(n.country_code,'EU28','EU27_2020') ASC, FIELD(n.country_code, 'CH', 'IS', 'NO') DESC, n.country_code DESC, Value DESC;
         </Query>
     </DataAccess>
 
@@ -713,7 +713,7 @@
             <Parameter default="85" name="pIndicator" type="Numeric"/>
         </Parameters>
         <Query>
-            SELECT t.text as Answer, IF(n.name = 'European Union', n.country_code, IF(n.name = 'Macedonia, The former Yugoslav Rep. of', CONCAT('Macedonia', " (", n.country_code, ")"), CONCAT(n.name, " (", n.country_code, ")"))) as Country, v.value as Value
+            SELECT t.text as Answer, IF(n.name = 'European Union' || n.name='EU27_2020', n.country_code, IF(n.name = 'Macedonia, The former Yugoslav Rep. of', CONCAT('Macedonia', " (", n.country_code, ")"), CONCAT(n.name, " (", n.country_code, ")"))) as Country, v.value as Value
             FROM indicators_by_chart ibc, indicator i, value v, profile p, nuts n, split_answer a, translation t
 			WHERE ibc.chart_id=${pChart}
 			AND ibc.indicator_id=i.id
@@ -726,7 +726,7 @@
 			AND t.language="EN"
 			AND i.id=${pIndicator}
 			AND n.country_code != "UK"
-			ORDER BY FIELD(a.id, 19, 20, 18), FIELD('EU28', n.country_code) DESC, FIELD(n.country_code, 'CH', 'IS', 'NO'), n.country_code ASC, value
+			ORDER BY FIELD(a.id, 19, 20, 18), FIELD(n.country_code,'EU28', 'EU27_2020') DESC, FIELD(n.country_code, 'CH', 'IS', 'NO'), n.country_code ASC, value
         </Query>
     </DataAccess>
 
@@ -739,7 +739,7 @@
             <Parameter default="85" name="pIndicator" type="Numeric"/>
         </Parameters>
         <Query>
-            SELECT t.text as Answer, IF(n.name = 'European Union', n.country_code, IF(n.name = 'Macedonia, The former Yugoslav Rep. of', CONCAT('Macedonia', " (", n.country_code, ")"), CONCAT(n.name, " (", n.country_code, ")"))) as Country, v.value as Value
+            SELECT t.text as Answer, IF(n.name = 'European Union' || n.name='EU27_2020', n.country_code, IF(n.name = 'Macedonia, The former Yugoslav Rep. of', CONCAT('Macedonia', " (", n.country_code, ")"), CONCAT(n.name, " (", n.country_code, ")"))) as Country, v.value as Value
             FROM indicators_by_chart ibc, indicator i, value v, profile p, nuts n, split_answer a, translation t
 			WHERE ibc.chart_id=${pChart}
 			AND ibc.indicator_id=i.id
@@ -752,12 +752,12 @@
 			AND t.language="EN"
 			AND i.id=${pIndicator}
 			AND n.country_code != "UK"
-            ORDER BY FIELD(a.id, 18, 20, 19), FIELD('EU28', n.country_code) ASC, FIELD(n.country_code, 'CH', 'IS', 'NO') DESC, n.country_code DESC, Value DESC;
+            ORDER BY FIELD(a.id, 18, 20, 19), FIELD(n.country_code,'EU28', 'EU27_2020') ASC, FIELD(n.country_code, 'CH', 'IS', 'NO') DESC, n.country_code DESC, Value DESC;
         </Query>
     </DataAccess>
 
    	<!-- MENTAL RISK || ALL MENTAL RISK VERTICAL DATA -->
-    <DataAccess access="public" connection="dvt_conn" id="getJobInsecurityEurofoundVerticalData" type="sql">
+    <DataAccess access="public" connection="dvt_conn" id="get || n.name='EU27_2020'curityEurofoundVerticalData" type="sql">
         <Cache duration="0" enabled="false" />
         <Columns />
         <Parameters>
@@ -765,7 +765,7 @@
             <Parameter default="86" name="pIndicator" type="Numeric"/>
         </Parameters>
         <Query>
-            SELECT t.text as Answer, IF(n.name = 'European Union', n.country_code, IF(n.name = 'Macedonia, The former Yugoslav Rep. of', CONCAT('Macedonia', " (", n.country_code, ")"), CONCAT(n.name, " (", n.country_code, ")"))) as Country, v.value as Value
+            SELECT t.text as Answer, IF(n.name = 'European Union' || n.name='EU27_2020', n.country_code, IF(n.name = 'Macedonia, The former Yugoslav Rep. of', CONCAT('Macedonia', " (", n.country_code, ")"), CONCAT(n.name, " (", n.country_code, ")"))) as Country, v.value as Value
             FROM indicators_by_chart ibc, indicator i, value v, profile p, nuts n, split_answer a, translation t
 			WHERE ibc.chart_id=${pChart}
 			AND ibc.indicator_id=i.id
@@ -778,7 +778,7 @@
 			AND t.language="EN"
 			AND i.id=${pIndicator}
 			AND n.country_code != "UK"
-            ORDER BY FIELD(a.id, 22,23,21), FIELD('EU28', n.country_code) DESC, FIELD(n.country_code, 'CH', 'IS', 'NO'), n.country_code ASC, Value DESC;
+            ORDER BY FIELD(a.id, 22,23,21), FIELD(n.country_code,'EU28','EU27_2020') DESC, FIELD(n.country_code, 'CH', 'IS', 'NO'), n.country_code ASC, Value DESC;
         </Query>
     </DataAccess>
 
@@ -791,7 +791,7 @@
             <Parameter default="86" name="pIndicator" type="Numeric"/>
         </Parameters>
         <Query>
-            SELECT t.text as Answer, IF(n.name = 'European Union', n.country_code, IF(n.name = 'Macedonia, The former Yugoslav Rep. of', CONCAT('Macedonia', " (", n.country_code, ")"), CONCAT(n.name, " (", n.country_code, ")"))) as Country, v.value as Value
+            SELECT t.text as Answer, IF(n.name = 'European Union' || n.name='EU27_2020', n.country_code, IF(n.name = 'Macedonia, The former Yugoslav Rep. of', CONCAT('Macedonia', " (", n.country_code, ")"), CONCAT(n.name, " (", n.country_code, ")"))) as Country, v.value as Value
             FROM indicators_by_chart ibc, indicator i, value v, profile p, nuts n, split_answer a, translation t
 			WHERE ibc.chart_id=${pChart}
 			AND ibc.indicator_id=i.id
@@ -804,7 +804,7 @@
 			AND t.language="EN"
 			AND i.id=${pIndicator}
 			AND n.country_code != "UK"
-            ORDER BY FIELD(a.id, 21,23,22), FIELD('EU28', n.country_code) ASC, FIELD(n.country_code, 'CH', 'IS', 'NO') DESC, n.country_code DESC, Value DESC;
+            ORDER BY FIELD(a.id, 21,23,22), FIELD(n.country_code,'EU28','EU27_2020') ASC, FIELD(n.country_code, 'CH', 'IS', 'NO') DESC, n.country_code DESC, Value DESC;
         </Query>
     </DataAccess>
 
@@ -817,7 +817,7 @@
             <Parameter default="84" name="pIndicator" type="Numeric"/>
         </Parameters>
         <Query>
-            SELECT IF(n.name = 'European Union', n.country_code, IF(n.name = 'Macedonia, The former Yugoslav Rep. of', CONCAT('Macedonia', " (", n.country_code, ")"), CONCAT(n.name, " (", n.country_code, ")"))) as Country, v.value as Value
+            SELECT IF(n.name = 'European Union' || n.name='EU27_2020', n.country_code, IF(n.name = 'Macedonia, The former Yugoslav Rep. of', CONCAT('Macedonia', " (", n.country_code, ")"), CONCAT(n.name, " (", n.country_code, ")"))) as Country, v.value as Value
             FROM indicators_by_chart ibc, indicator i, value v, profile p, nuts n
 			WHERE ibc.chart_id=${pChart}
 			AND ibc.indicator_id=i.id
@@ -828,7 +828,7 @@
 			AND i.id=${pIndicator}
 			AND p.answer_id=17
 			AND n.country_code != "UK"
-			ORDER BY FIELD('EU28', n.country_code) DESC, FIELD(n.country_code, 'CH', 'IS', 'NO'), n.country_code ASC, Value DESC;
+			ORDER BY FIELD(n.country_code,'EU28','EU27_2020') DESC, FIELD(n.country_code, 'CH', 'IS', 'NO'), n.country_code ASC, Value DESC;
         </Query>
    	</DataAccess>
 
@@ -841,7 +841,7 @@
             <Parameter default="84" name="pIndicator" type="Numeric"/>
         </Parameters>
         <Query>
-            SELECT IF(n.name = 'European Union', n.country_code, IF(n.name = 'Macedonia, The former Yugoslav Rep. of', CONCAT('Macedonia', " (", n.country_code, ")"), CONCAT(n.name, " (", n.country_code, ")"))) as Country, v.value as Value
+            SELECT IF(n.name = 'European Union' || n.name='EU27_2020', n.country_code, IF(n.name = 'Macedonia, The former Yugoslav Rep. of', CONCAT('Macedonia', " (", n.country_code, ")"), CONCAT(n.name, " (", n.country_code, ")"))) as Country, v.value as Value
             FROM indicators_by_chart ibc, indicator i, value v, profile p, nuts n
 			WHERE ibc.chart_id=${pChart}
 			AND ibc.indicator_id=i.id
@@ -852,7 +852,7 @@
 			AND i.id=${pIndicator}
 			AND p.answer_id=17
 			AND n.country_code != "UK"
-            ORDER BY FIELD('EU28',n.country_code) ASC, FIELD(n.country_code,'CH', 'IS', 'NO') DESC, n.country_code DESC;
+            ORDER BY FIELD(n.country_code,'EU28','EU27_2020') ASC, FIELD(n.country_code,'CH', 'IS', 'NO') DESC, n.country_code DESC;
         </Query>
    	</DataAccess>
 
@@ -865,7 +865,7 @@
             <Parameter default="89" name="pIndicator" type="Numeric"/>
         </Parameters>
         <Query>
-            SELECT t.text as Answer, IF(n.name = 'European Union', n.country_code, IF(n.name = 'Macedonia, The former Yugoslav Rep. of', CONCAT('Macedonia', " (", n.country_code, ")"), CONCAT(n.name, " (", n.country_code, ")"))) as Country, v.value as Value
+            SELECT t.text as Answer, IF(n.name = 'European Union' || n.name='EU27_2020', n.country_code, IF(n.name = 'Macedonia, The former Yugoslav Rep. of', CONCAT('Macedonia', " (", n.country_code, ")"), CONCAT(n.name, " (", n.country_code, ")"))) as Country, v.value as Value
             FROM indicators_by_chart ibc, indicator i, value v, profile p, nuts n, split_answer a, translation t
 			WHERE ibc.chart_id=${pChart}
 			AND ibc.indicator_id=i.id
@@ -878,7 +878,7 @@
 			AND t.language="EN"
 			AND i.id=${pIndicator}
 			AND n.country_code != "UK"
-            ORDER BY Answer ASC, FIELD('EU28', n.country_code) DESC, FIELD(n.country_code, 'CH', 'IS', 'NO'), n.country_code ASC, Value DESC;
+            ORDER BY Answer ASC, FIELD(n.country_code,'EU28','EU27_2020') DESC, FIELD(n.country_code, 'CH', 'IS', 'NO'), n.country_code ASC, Value DESC;
         </Query>
     </DataAccess>
 
@@ -891,7 +891,7 @@
             <Parameter default="64" name="pIndicator" type="Numeric"/>
         </Parameters>
         <Query>
-            SELECT t.text as Answer, IF(n.name = 'European Union', n.country_code, IF(n.name = 'Macedonia, The former Yugoslav Rep. of', CONCAT('Macedonia', " (", n.country_code, ")"), CONCAT(n.name, " (", n.country_code, ")"))) as Country, v.value as Value
+            SELECT t.text as Answer, IF(n.name = 'European Union' || n.name='EU27_2020', n.country_code, IF(n.name = 'Macedonia, The former Yugoslav Rep. of', CONCAT('Macedonia', " (", n.country_code, ")"), CONCAT(n.name, " (", n.country_code, ")"))) as Country, v.value as Value
             FROM nuts n, profile p, value v, dataset d, translation t, split_answer sa
             WHERE n.id = p.nuts_id
             AND n.country_code != "UK"
@@ -902,7 +902,7 @@
             AND t.language = 'EN'
             AND d.id = v.dataset_id
             AND d.id = ${pDataset}
-            ORDER BY Answer DESC, FIELD('EU28',n.country_code) ASC, FIELD(n.country_code,'CH', 'IS', 'NO') DESC, n.country_code DESC;
+            ORDER BY Answer DESC, FIELD(n.country_code,'EU28','EU27_2020') ASC, FIELD(n.country_code,'CH', 'IS', 'NO') DESC, n.country_code DESC;
         </Query>
     </DataAccess>
 
@@ -953,7 +953,7 @@
 			ELSE CASE WHEN v.indicator_id=68 THEN t.literal_id=22155
 			ELSE CASE WHEN v.indicator_id=69 THEN t.literal_id=22156
 			ELSE t.literal_id=22154 END END END
-			AND n.country_code='EU28'
+			AND n.country_code IN ('EU28', 'EU27_2020')
 			ORDER BY i.id ASC
         </Query>
    	</DataAccess>
@@ -1025,7 +1025,7 @@
             <Parameter default="72" name="pIndicator" type="Numeric"/>
         </Parameters>
         <Query>
-            SELECT t.text as Answer, IF(n.name = 'European Union', n.country_code, CONCAT(n.name, " (", n.country_code, ")")) as Country, v.value as Value
+            SELECT t.text as Answer, IF(n.name = 'European Union' || n.name='EU27_2020', n.country_code, CONCAT(n.name, " (", n.country_code, ")")) as Country, v.value as Value
             FROM indicators_by_chart ibc, indicator i, value v, profile p, nuts n, split_answer a, translation t
 			WHERE ibc.chart_id=${pChart}
 			AND ibc.indicator_id=i.id
@@ -1038,7 +1038,7 @@
 			AND n.country_code != 'UK'
 			AND i.id=${pIndicator}
 			AND t.language="EN"
-            ORDER BY Answer DESC, FIELD('EU28', n.country_code) DESC, FIELD(n.country_code, 'CH', 'IS', 'NO'), n.country_code ASC, Value DESC;
+            ORDER BY Answer DESC, FIELD(n.country_code,'EU28','EU27_2020') DESC, FIELD(n.country_code, 'CH', 'IS', 'NO'), n.country_code ASC, Value DESC;
         </Query>
     </DataAccess>
 
@@ -1051,7 +1051,7 @@
             <Parameter default="64" name="pIndicator" type="Numeric"/>
         </Parameters>
         <Query>
-            SELECT t.text as Answer, IF(n.name = 'European Union', n.country_code, CONCAT(n.name, " (", n.country_code, ")")) as Country, v.value as Value
+            SELECT t.text as Answer, IF(n.name = 'European Union' || n.name='EU27_2020', n.country_code, CONCAT(n.name, " (", n.country_code, ")")) as Country, v.value as Value
             FROM nuts n, profile p, value v, dataset d, translation t, split_answer sa
             WHERE n.id = p.nuts_id
             AND n.country_code != "UK"
@@ -1062,7 +1062,7 @@
             AND t.language = 'EN'
             AND d.id = v.dataset_id
             AND d.id = ${pDataset}
-            ORDER BY Answer ASC, FIELD('EU28', n.country_code) ASC, FIELD(n.country_code, 'CH', 'IS', 'NO') DESC, n.country_code DESC, Value DESC;
+            ORDER BY Answer ASC, FIELD(n.country_code,'EU28','EU27_2020') ASC, FIELD(n.country_code, 'CH', 'IS', 'NO') DESC, n.country_code DESC, Value DESC;
         </Query>
     </DataAccess>
 
@@ -1091,7 +1091,7 @@
 			ELSE t.literal_id=22162 END END END END
 			AND CASE WHEN v.indicator_id IN (90,91, 93) THEN p.answer_id IN (14,16)
 			ELSE p.answer_id=26 END
-			AND n.country_code='EU28'
+			AND n.country_code IN ('EU28','EU27_2020')
 			GROUP BY v.indicator_id, Indicator, Country, Title
 			ORDER BY v.indicator_id ASC;
         </Query>
@@ -1349,7 +1349,7 @@
             AND t.language = 'EN'
             AND d.id = v.dataset_id
             AND d.id = ${pDataset}
-            ORDER BY FIELD(sa.id, 30,29,28) , FIELD('EU27_2020', 'EU28', n.country_code) DESC, FIELD(n.country_code, 'CH', 'IS', 'NO'), n.country_code ASC, Value DESC;
+            ORDER BY FIELD(sa.id, 30,29,28) , FIELD(n.country_code,'EU27_2020', 'EU28') DESC, FIELD(n.country_code, 'CH', 'IS', 'NO'), n.country_code ASC, Value DESC;
 		</Query>
     </DataAccess>
 
@@ -1374,7 +1374,7 @@
             AND t.language = 'EN'
             AND d.id = v.dataset_id
             AND d.id = ${pDataset}
-            ORDER BY FIELD(sa.id, 28,29,30) , FIELD('EU27_2020', 'EU28', n.country_code) ASC, FIELD(n.country_code, 'CH', 'IS', 'NO') DESC, n.country_code DESC, Value DESC;
+            ORDER BY FIELD(sa.id, 28,29,30) , FIELD(n.country_code,'EU27_2020', 'EU28') ASC, FIELD(n.country_code, 'CH', 'IS', 'NO') DESC, n.country_code DESC, Value DESC;
 		</Query>
     </DataAccess>
 
@@ -1399,7 +1399,7 @@
             AND t.language = 'EN'
             AND d.id = v.dataset_id
             AND d.id = ${pDataset}
-            ORDER BY FIELD(sa.id,2,71,1) , FIELD('EU27_2020','EU28', n.country_code) DESC, FIELD(n.country_code, 'CH', 'IS', 'NO'), n.country_code ASC;
+            ORDER BY FIELD(sa.id,2,71,1) , FIELD(n.country_code,'EU27_2020','EU28') DESC, FIELD(n.country_code, 'CH', 'IS', 'NO'), n.country_code ASC;
 		</Query>
     </DataAccess>
 
@@ -1424,7 +1424,7 @@
             AND t.language = 'EN'
             AND d.id = v.dataset_id
             AND d.id = ${pDataset}
-            ORDER BY FIELD(sa.id, 1,71,2), FIELD('EU27_2020','EU28', n.country_code) ASC, FIELD(n.country_code, 'CH', 'IS', 'NO') DESC, n.country_code DESC;
+            ORDER BY FIELD(sa.id, 1,71,2), FIELD(n.country_code,'EU27_2020','EU28') ASC, FIELD(n.country_code, 'CH', 'IS', 'NO') DESC, n.country_code DESC;
 		</Query>
     </DataAccess>
 
@@ -1658,7 +1658,7 @@
 			AND p.nuts_id=n.id
 			AND i.literal_id=t1.literal_id
 			AND i.id IN (95,96,75)
-			AND n.country_code='EU28'
+			AND n.country_code IN ('EU28','EU27_2020')
 			AND p.answer_id=1
 			AND CASE WHEN v.indicator_id=75 THEN t.literal_id=22176
 			ELSE CASE WHEN v.indicator_id=95 THEN t.literal_id=22177

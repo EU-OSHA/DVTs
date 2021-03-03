@@ -53,7 +53,7 @@ define(function (require) {
 
 					$scope.methodologyType = 0;
 
-					if ($scope.section == "PHYSICAL_RISKS" && $scope.pIndicator != "exposure-to-dangerous-substances")
+					if ($scope.section == "Working conditions - Physical risk" && $scope.pIndicator != "exposure-to-dangerous-substances")
 					{
 						$scope.methodologyType = 2;
 						$scope.group = [];

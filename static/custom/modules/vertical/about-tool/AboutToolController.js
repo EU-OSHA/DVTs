@@ -37,25 +37,25 @@ define(function (require) {
             {
                 id: 'generic-information', 
                 name: 'L22001',
-                firstSubsection: 'osh_authorities',
+                firstSubsection: 'OSH authorities',
                 firstIndicatorId: '27'
             },
             {
                 id: 'osh-steering', 
                 name: 'L22005',
-                firstSubsection: 'structure_strategy',
+                firstSubsection: 'Structure of each National strategy',
                 firstIndicatorId: '46'
             },
             {
                 id: 'osh-outcomes-working-conditions', 
                 name: 'L22009',
-                firstSubsection: 'workacc',
+                firstSubsection: 'Work accidents',
                 firstIndicatorId: '53'
             },
             {
                 id: 'osh-infrastructure', 
                 name: 'L22016',
-                firstSubsection: 'enforcement_capacity',
+                firstSubsection: 'Enforcement capacity',
                 firstIndicatorId: '285'
         }];
 
@@ -77,7 +77,7 @@ define(function (require) {
                             for(var j=0;j<$scope.subsections.length;j++){
                                 $log.warn($scope.subsections[j].database_name);
                                 if($scope.subsections[j].database_name != undefined){
-                                    $scope.subsections[j].database_name = $scope.subsections[j].database_name.toLowerCase();
+                                    $scope.subsections[j].database_name = $scope.subsections[j].database_name;
                                 }                                
                                 $log.warn($scope.subsections[j].database_name);
                                 if($scope.subsections[j].database_name == "" || $scope.subsections[j].database_name == undefined){
@@ -90,7 +90,7 @@ define(function (require) {
                     }
                 });
 
-                dataService.getMethodologyIndicators($scope.pSubsection.toUpperCase()).then(function (data) {
+                dataService.getMethodologyIndicators($scope.pSubsection).then(function (data) {
                     data.data.resultset.map(function (elem) {
                       var param = (!!$stateParams.filter) ? $stateParams.filter : undefined;
                       $scope.indicators.push({
@@ -103,7 +103,7 @@ define(function (require) {
                     throw err;
                 });
 
-                dataService.getMethodologyData($scope.pIndicator, $scope.pSubsection.toUpperCase()).then(function (data) {
+                dataService.getMethodologyData($scope.pIndicator, $scope.pSubsection).then(function (data) {
                     data.data.resultset.map(function (elem) {
                         $scope.data = {
                             diagram: elem[0],
@@ -177,64 +177,64 @@ define(function (require) {
             }
 
             $scope.indicatorIcons = function(subsection){
-                subsection = subsection.toLowerCase();
+                subsection = subsection;
                 switch(subsection) {
                 // GENERIC INFORMATION  
-                  case 'osh_authorities':
+                  case 'OSH authorities':
                     return 'forum-icon';
                     break;
-                  case 'economic_sector_profile':
+                  case 'Economic and sector profile':
                     return 'economic-chart-icon';
                     break;
-                  case 'workforce_profile':
+                  case 'Workforce profile':
                     return 'people-group-icon';
                     break;
 
                 // STEERING OF OSH 
-                  case 'regulation':
+                  case 'Regulation':
                     return 'regulation-icon';
                     break;
-                  case 'structure_strategy':
+                  case 'Structure of each National strategy':
                     return 'national-icon';
                     break;
-                  case 'response_strategy':
+                  case 'Responses of national strategies to EU challenges':
                     return 'national-icon';
                     break;
-                  case 'social_dialogue':
+                  case 'Social dialogue':
                     return 'dialogue-icon';
                     break;
 
                 // OSH OUTCOMES AND WORKING CONDITIONS
-                  case 'workacc':
+                  case 'Work accidents':
                     return 'work-accidents-icon';
                     break;
-                  case 'health_perception':
+                  case 'Health perception of the workers':
                     return 'health-icon';
                     break;
-                  case 'osh_culture_health_awareness':
+                  case 'OSH culture and health awareness':
                     return 'culture-icon';
                     break;
-                  case 'overall_opinion':
+                  case 'Working conditions - Overall opinion':
                     return 'overall-opinion-icon';
                     break;
-                  case 'mental_risks':
+                  case 'Working conditions - Mental risk':
                     return 'mental-risk-icon';
                     break;
-                  case 'physical_risks':
+                  case 'Working conditions - Physical risk':
                     return 'physical-risk-icon';
                     break;
-                  case 'prevention_in_companies':
+                  case 'Prevention in companies':
                     return 'prevention-icon';
                     break;
-                  case 'worker_involvement':
+                  case 'Worker involvement':
                     return 'workers-icon';
                     break;
 
                 // OSH INFRASTRUCTURE
-                  case 'enforcement_capacity':
+                  case 'Enforcement capacity':
                     return 'enforcement-icon';
                     break;
-                  case 'osh_statistics':
+                  case 'OSH statistics, surveys and research':
                     return 'statistics-icon';
                     break;
 
