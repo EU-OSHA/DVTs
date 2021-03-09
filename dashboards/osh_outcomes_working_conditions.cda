@@ -757,7 +757,7 @@
     </DataAccess>
 
    	<!-- MENTAL RISK || ALL MENTAL RISK VERTICAL DATA -->
-    <DataAccess access="public" connection="dvt_conn" id="get || n.name='EU27_2020'curityEurofoundVerticalData" type="sql">
+    <DataAccess access="public" connection="dvt_conn" id="getJobInsecurityEurofoundVerticalData" type="sql">
         <Cache duration="0" enabled="false" />
         <Columns />
         <Parameters>
