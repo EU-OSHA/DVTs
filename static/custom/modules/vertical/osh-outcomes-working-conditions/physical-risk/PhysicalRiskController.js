@@ -286,11 +286,11 @@ define(function (require) {
       {
         if ($scope.pFilter == "esener")
         {
-          return $scope.datasetESENER;
+          return 'ESENER';
         }
         else
         {
-          return $scope.datasetEurofound;
+          return 'European Working Conditions Survey (EWCS)';
         }
       }
     }
