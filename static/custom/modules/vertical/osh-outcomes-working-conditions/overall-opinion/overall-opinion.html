@@ -57,7 +57,7 @@
           </div>
         </div>
         <div class="chart-legend">
-          <p data-ng-bind="i18nLiterals.L20580"></p>
+          <p data-ng-bind-html="i18nLiterals.L20580"></p>
         </div>
       </div>
     </div>
@@ -179,9 +179,9 @@
         </div>
         <!-- Dynamic chart legend depending on split selected -->
         <div class="chart-legend">
-          <p ng-show="pSplit == 'sector'" data-ng-bind="i18nLiterals.L20582"></p>
-          <p ng-show="pSplit == 'gender'" data-ng-bind="i18nLiterals.L20581"></p>
-          <p ng-show="pSplit == 'age'" data-ng-bind="i18nLiterals.L20583"></p>
+          <p ng-show="pSplit == 'sector'" data-ng-bind-html="i18nLiterals.L20582"></p>
+          <p ng-show="pSplit == 'gender'" data-ng-bind-html="i18nLiterals.L20581"></p>
+          <p ng-show="pSplit == 'age'" data-ng-bind-html="i18nLiterals.L20583"></p>
         </div>
       </div>
     </div>
