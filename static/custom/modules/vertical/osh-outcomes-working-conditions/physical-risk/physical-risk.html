@@ -184,10 +184,10 @@
         </div>
         <!-- Dynamic chart legend depending on split selected -->
         <div class="chart-legend">
-          <p ng-show="pSubIndicator == 'smoke-powder-or-dust'" data-ng-bind="i18nLiterals.L20598"></p>
-          <p ng-show="pSubIndicator == 'vapours'" data-ng-bind="i18nLiterals.L20599"></p>
-          <p ng-show="pSubIndicator == 'chemical-products'" data-ng-bind="i18nLiterals.L20600"></p>
-          <p ng-show="pSubIndicator == 'infectious-materials'" data-ng-bind="i18nLiterals.L20601"></p>
+          <p ng-show="pSubIndicator == 'smoke-powder-or-dust'" data-ng-bind-html="i18nLiterals.L20598"></p>
+          <p ng-show="pSubIndicator == 'vapours'" data-ng-bind-html="i18nLiterals.L20599"></p>
+          <p ng-show="pSubIndicator == 'chemical-products'" data-ng-bind-html="i18nLiterals.L20600"></p>
+          <p ng-show="pSubIndicator == 'infectious-materials'" data-ng-bind-html="i18nLiterals.L20601"></p>
         </div>
       </div>
     </div>
