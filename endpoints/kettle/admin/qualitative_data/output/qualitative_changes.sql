@@ -1,25 +1,5 @@
 -- The tool is already created
 
-SET @datasetId = (SELECT id FROM dataset  WHERE source="Eurostat" AND date_from="2016-01-01");
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Company size");
-INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
-
-SET @datasetId = (SELECT id FROM dataset  WHERE source="Eurostat" AND date_from="2010-01-01" AND date_to="2014-12-31");
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Non-fatal work accidents");
-INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
-
-SET @datasetId = (SELECT id FROM dataset  WHERE source="Eurostat" AND date_from="2010-01-01" AND date_to="2014-12-31");
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Fatal work accidents");
-INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
-
-SET @datasetId = (SELECT id FROM dataset  WHERE source="Eurostat" AND date_from="2010-01-01" AND date_to="2014-12-31");
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Estimation of non-fatal accidents based on fatal accidents (estimated)");
-INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
-
-SET @datasetId = (SELECT id FROM dataset  WHERE source="Eurostat" AND date_from="2010-01-01" AND date_to="2014-12-31");
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Level of reporting of non-fatal accidents");
-INSERT INTO indicators_in_dataset (indicator_id, dataset_id)  VALUES (@indicatorId, @datasetId);
-
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+70, null, @sectionId, "STRATEGY_BASIC INFO");
@@ -2286,137 +2266,137 @@ INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+479, null, @sectionId, "Transitional");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+479, null, @sectionId, "REG_TRANSITIONAL");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+479, "EN", 1, "<p>This country has applied the following transitional periods:</p><p>Directive 92/91/EEC (drilling)</p><p>Directive 92/104/EEC (mines and quarries)</p><p>Directive2002/44/EC (vibration)</p><p>Directive 2003/10/EC (noise)</p><p>Directive 90/270/EEC (DSE)</p><p>Directive 1999/92/EC (ATEX)</p><p>&nbsp;</p><p>This country has respected the following transitional periods:</p><p>Directive2002/44/EC (vibration)</p><p>Directive 2003/10/EC (noise)</p><p>Directive 2009/104/EC (work equipment)</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+480, null, @sectionId, "Transitional");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+480, null, @sectionId, "REG_TRANSITIONAL");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+480, "EN", 1, "<p>This country has applied the following transitional periods:</p><p>Directive 92/91/EEC (drilling)</p><p>Directive 92/104/EEC (mines and quarries)</p><p>Directive2002/44/EC (vibration)</p><p>Directive 2009/104/EC (work equipment)</p><p>Directive 90/270/EEC (DSE)</p><p>Directive 1999/92/EC (ATEX)</p><p>&nbsp;</p><p>This country has respected the following transitional periods:</p><p>Directive 92/91/EEC (drilling)</p><p>Directive 92/104/EEC (mines and quarries)</p><p>Directive2002/44/EC (vibration)</p><p>Directive 90/270/EEC (DSE)</p><p>Directive 1999/92/EC (ATEX)</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+481, null, @sectionId, "Transitional");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+481, null, @sectionId, "REG_TRANSITIONAL");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+481, "EN", 1, "<p>This country has applied the following transitional periods:</p><p>Directive2002/44/EC (vibration)</p><p>&nbsp;</p><p>This country has respected the following transitional periods:</p><p>Directive2002/44/EC (vibration)</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+482, null, @sectionId, "Transitional");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+482, null, @sectionId, "REG_TRANSITIONAL");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+482, "EN", 1, "<p>This country has applied the following transitional periods:</p><p>Directive2002/44/EC (vibration)</p><p>Directive 2003/10/EC (noise)</p><p>Directive 2009/104/EC (work equipment)</p><p>Directive 90/270/EEC (DSE)</p><p>Directive 1999/92/EC (ATEX)</p><p>&nbsp;</p><p>This country has respected the following transitional periods:</p><p>Directive2002/44/EC (vibration)</p><p>Directive 2003/10/EC (noise)</p><p>Directive 2009/104/EC (work equipment)</p><p>Directive 90/270/EEC (DSE)</p><p>Directive 1999/92/EC (ATEX)</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+483, null, @sectionId, "Transitional");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+483, null, @sectionId, "REG_TRANSITIONAL");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+483, "EN", 1, "<p>This country has applied the following transitional periods:</p><p>Directive 1999/92/EC (ATEX)</p><p>&nbsp;</p><p>This country has respected the following transitional periods:</p><p>Directive2002/44/EC (vibration)</p><p>Directive 1999/92/EC (ATEX)</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+484, null, @sectionId, "Transitional");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+484, null, @sectionId, "REG_TRANSITIONAL");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+484, "EN", 1, "<p>This country has applied the following transitional periods:</p><p>Directive 93/103/EEC (fishing vessels)</p><p>Directive2002/44/EC (vibration)</p><p>Directive 2003/10/EC (noise)</p><p>Directive 90/270/EEC (DSE)</p><p>&nbsp;</p><p>This country has respected the following transitional periods:</p><p>Directive 93/103/EEC (fishing vessels)</p><p>Directive2002/44/EC (vibration)</p><p>Directive 2003/10/EC (noise)</p><p>Directive 90/270/EEC (DSE)</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+485, null, @sectionId, "Transitional");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+485, null, @sectionId, "REG_TRANSITIONAL");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+485, "EN", 1, "<p>This country has applied the following transitional periods:</p><p>Directive 92/91/EEC (drilling)</p><p>Directive 92/104/EEC (mines and quarries)</p><p>Directive2002/44/EC (vibration)</p><p>Directive 2003/10/EC (noise)</p><p>Directive 90/270/EEC (DSE)</p><p>Directive 1999/92/EC (ATEX)</p><p>&nbsp;</p><p>This country has respected the following transitional periods:</p><p>Directive 92/91/EEC (drilling)</p><p>Directive 92/104/EEC (mines and quarries)</p><p>Directive2002/44/EC (vibration)</p><p>Directive 2003/10/EC (noise)</p><p>Directive 90/270/EEC (DSE)</p><p>Directive 1999/92/EC (ATEX)</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+486, null, @sectionId, "Transitional");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+486, null, @sectionId, "REG_TRANSITIONAL");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+486, "EN", 1, "<p>This country has applied the following transitional periods:</p><p>Directive 93/103/EEC (fishing vessels)</p><p>Directive2002/44/EC (vibration)</p><p>Directive 2009/104/EC (work equipment)</p><p>Directive 1999/92/EC (ATEX)</p><p>&nbsp;</p><p>This country has respected the following transitional periods:</p><p>Directive 93/103/EEC (fishing vessels)</p><p>Directive2002/44/EC (vibration)</p><p>Directive 2009/104/EC (work equipment)</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+487, null, @sectionId, "Transitional");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+487, null, @sectionId, "REG_TRANSITIONAL");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+487, "EN", 1, "<p>This country has applied the following transitional periods:</p><p>Directive 92/91/EEC (drilling)</p><p>Directive 92/104/EEC (mines and quarries)</p><p>Directive 93/103/EEC (fishing vessels)</p><p>Directive2002/44/EC (vibration)</p><p>Directive 2003/10/EC (noise)</p><p>Directive 2009/104/EC (work equipment)</p><p>Directive 90/270/EEC (DSE)</p><p>Directive 1999/92/EC (ATEX)</p><p>&nbsp;</p><p>This country has respected the following transitional periods:</p><p>Directive 92/91/EEC (drilling)</p><p>Directive 92/104/EEC (mines and quarries)</p><p>Directive 93/103/EEC (fishing vessels)</p><p>Directive2002/44/EC (vibration)</p><p>Directive 2003/10/EC (noise)</p><p>Directive 90/270/EEC (DSE)</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+488, null, @sectionId, "Transitional");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+488, null, @sectionId, "REG_TRANSITIONAL");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+488, "EN", 1, "<p>This country has applied the following transitional periods:</p><p>Directive 92/91/EEC (drilling)</p><p>Directive 92/104/EEC (mines and quarries)</p><p>Directive 93/103/EEC (fishing vessels)</p><p>Directive2002/44/EC (vibration)</p><p>Directive 2003/10/EC (noise)</p><p>Directive 2009/104/EC (work equipment)</p><p>Directive 90/270/EEC (DSE)</p><p>Directive 1999/92/EC (ATEX)</p><p>&nbsp;</p><p>This country has respected the following transitional periods:</p><p>Directive 92/91/EEC (drilling)</p><p>Directive 92/104/EEC (mines and quarries)</p><p>Directive 93/103/EEC (fishing vessels)</p><p>Directive2002/44/EC (vibration)</p><p>Directive 2003/10/EC (noise)</p><p>Directive 2009/104/EC (work equipment)</p><p>Directive 1999/92/EC (ATEX)</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+489, null, @sectionId, "Transitional");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+489, null, @sectionId, "REG_TRANSITIONAL");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+489, "EN", 1, "<p>This country has applied the following transitional periods:</p><p>Directive 92/91/EEC (drilling)</p><p>Directive 92/104/EEC (mines and quarries)</p><p>Directive 93/103/EEC (fishing vessels)</p><p>Directive2002/44/EC (vibration)</p><p>Directive 2003/10/EC (noise)</p><p>Directive 2009/104/EC (work equipment)</p><p>Directive 90/270/EEC (DSE)</p><p>Directive 1999/92/EC (ATEX)</p><p>&nbsp;</p><p>This country has respected the following transitional periods:</p><p>Directive 92/91/EEC (drilling)</p><p>Directive 92/104/EEC (mines and quarries)</p><p>Directive 93/103/EEC (fishing vessels)</p><p>Directive2002/44/EC (vibration)</p><p>Directive 2003/10/EC (noise)</p><p>Directive 2009/104/EC (work equipment)</p><p>Directive 90/270/EEC (DSE)</p><p>Directive 1999/92/EC (ATEX)</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+490, null, @sectionId, "Transitional");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+490, null, @sectionId, "REG_TRANSITIONAL");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+490, "EN", 1, "<p>This country has applied the following transitional periods:</p><p>Directive2002/44/EC (vibration)</p><p>Directive 2003/10/EC (noise)</p><p>Directive 2009/104/EC (work equipment)</p><p>&nbsp;</p><p>This country has respected the following transitional periods:</p><p>Directive2002/44/EC (vibration)</p><p>Directive 2003/10/EC (noise)</p><p>Directive 2009/104/EC (work equipment)</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+491, null, @sectionId, "Transitional");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+491, null, @sectionId, "REG_TRANSITIONAL");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+491, "EN", 1, "<p>This country has applied the following transitional periods:</p><p>Directive2002/44/EC (vibration)</p><p>&nbsp;</p><p>This country has respected the following transitional periods:</p><p>Directive2002/44/EC (vibration)</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+492, null, @sectionId, "Transitional");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+492, null, @sectionId, "REG_TRANSITIONAL");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+492, "EN", 1, "<p>This country has applied the following transitional periods:</p><p>Directive 93/103/EEC (fishing vessels)</p><p>Directive2002/44/EC (vibration)</p><p>Directive 2003/10/EC (noise)</p><p>Directive 90/270/EEC (DSE)</p><p>Directive 1999/92/EC (ATEX)</p><p>&nbsp;</p><p>This country has respected the following transitional periods:</p><p>Directive 93/103/EEC (fishing vessels)</p><p>Directive2002/44/EC (vibration)</p><p>Directive 2003/10/EC (noise)</p><p>Directive 90/270/EEC (DSE)</p><p>Directive 1999/92/EC (ATEX)</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+493, null, @sectionId, "Transitional");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+493, null, @sectionId, "REG_TRANSITIONAL");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+493, "EN", 1, "<p>This country has applied the following transitional periods:</p><p>Directive 92/91/EEC (drilling)</p><p>Directive 93/103/EEC (fishing vessels)</p><p>Directive2002/44/EC (vibration)</p><p>Directive 2003/10/EC (noise)</p><p>&nbsp;</p><p>This country has respected the following transitional periods:</p><p>Directive 92/91/EEC (drilling)</p><p>Directive 93/103/EEC (fishing vessels)</p><p>Directive2002/44/EC (vibration)</p><p>Directive 2003/10/EC (noise)</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+494, null, @sectionId, "Transitional");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+494, null, @sectionId, "REG_TRANSITIONAL");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+494, "EN", 1, "<p>This country has applied the following transitional periods:</p><p>Directive 92/91/EEC (drilling)</p><p>&nbsp;Directive 92/104/EEC (mines and quarries)</p><p>Directive 93/103/EEC (fishing vessels)</p><p>Directive2002/44/EC (vibration)</p><p>Directive 2003/10/EC (noise)</p><p>Directive 2009/104/EC (work equipment)</p><p>Directive 1999/92/EC (ATEX)</p><p>&nbsp;</p><p>This country has respected the following transitional periods:</p><p>Directive 92/91/EEC (drilling)</p><p>Directive 92/104/EEC (mines and quarries)</p><p>Directive 93/103/EEC (fishing vessels)</p><p>Directive2002/44/EC (vibration)</p><p>Directive 2003/10/EC (noise)</p><p>Directive 2009/104/EC (work equipment)</p><p>Directive 1999/92/EC (ATEX)</p><p>&nbsp;</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+495, null, @sectionId, "Transitional");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+495, null, @sectionId, "REG_TRANSITIONAL");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+495, "EN", 1, "<p>This country has applied the following transitional periods:</p><p>Directive 92/91/EEC (drilling)</p><p>Directive 92/104/EEC (mines and quarries)</p><p>Directive2002/44/EC (vibration)</p><p>Directive 2003/10/EC (noise)</p><p>Directive 2009/104/EC (work equipment)</p><p>Directive 90/270/EEC (DSE)</p><p>Directive 1999/92/EC (ATEX)</p><p>&nbsp;</p><p>This country has respected the following transitional periods:</p><p>Directive 92/91/EEC (drilling)</p><p>Directive 92/104/EEC (mines and quarries)</p><p>Directive2002/44/EC (vibration)</p><p>Directive 2003/10/EC (noise)</p><p>Directive 2009/104/EC (work equipment)</p><p>Directive 90/270/EEC (DSE)</p><p>Directive 1999/92/EC (ATEX)</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+496, null, @sectionId, "Transitional");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+496, null, @sectionId, "REG_TRANSITIONAL");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+496, "EN", 1, "<p>This country has applied the following transitional periods:</p><p>Directive2002/44/EC (vibration)</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+497, null, @sectionId, "Transitional");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+497, null, @sectionId, "REG_TRANSITIONAL");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+497, "EN", 1, "<p>This country has applied the following transitional periods:</p><p>Directive2002/44/EC (vibration)</p><p>Directive 2003/10/EC (noise)</p><p>&nbsp;</p><p>This country has respected the following transitional periods:</p><p>Directive2002/44/EC (vibration)</p><p>Directive 2003/10/EC (noise)</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+498, null, @sectionId, "Transitional");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+498, null, @sectionId, "REG_TRANSITIONAL");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+498, "EN", 1, "<p>This country has applied the following transitional periods:</p><p>Directive 92/91/EEC (drilling)</p><p>Directive 92/104/EEC (mines and quarries)</p><p>Directive 93/103/EEC (fishing vessels)</p><p>Directive2002/44/EC (vibration)</p><p>Directive 2003/10/EC (noise)</p><p>Directive 2009/104/EC (work equipment)</p><p>Directive 90/270/EEC (DSE)</p><p>Directive 1999/92/EC (ATEX)</p><p>&nbsp;</p><p>This country has respected the following transitional periods:</p><p>Directive 92/91/EEC (drilling)</p><p>Directive 92/104/EEC (mines and quarries)</p><p>Directive 93/103/EEC (fishing vessels)</p><p>Directive2002/44/EC (vibration)</p><p>Directive 2003/10/EC (noise)</p><p>Directive 2009/104/EC (work equipment)</p><p>Directive 90/270/EEC (DSE)</p><p>Directive 1999/92/EC (ATEX)</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+499, null, @sectionId, "Transitional");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+499, null, @sectionId, "REG_TRANSITIONAL");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+499, "EN", 1, "<p>This country has applied the following transitional periods:</p><p>Directive2002/44/EC (vibration)</p><p>Directive 2003/10/EC (noise)</p><p>Directive 1999/92/EC (ATEX)</p><p>&nbsp;</p><p>This country has respected the following transitional periods:</p><p>Directive2002/44/EC (vibration)</p><p>Directive 2003/10/EC (noise)</p><p>Directive 1999/92/EC (ATEX)</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+500, null, @sectionId, "Transitional");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+500, null, @sectionId, "REG_TRANSITIONAL");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+500, "EN", 1, "<p>This country has applied the following transitional periods:</p><p>Directive 93/103/EEC (fishing vessels)</p><p>Directive2002/44/EC (vibration)</p><p>Directive 2003/10/EC (noise)</p><p>Directive 2009/104/EC (work equipment)</p><p>Directive 90/270/EEC (DSE)</p><p>Directive 1999/92/EC (ATEX)</p><p>&nbsp;</p><p>This country has respected the following transitional periods:</p><p>Directive2002/44/EC (vibration)</p><p>Directive 2003/10/EC (noise)</p><p>Directive 90/270/EEC (DSE)</p><p>Directive 1999/92/EC (ATEX)</p><p>&nbsp;</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+501, null, @sectionId, "Transitional");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+501, null, @sectionId, "REG_TRANSITIONAL");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+501, "EN", 1, "<p>This country has applied the following transitional periods:</p><p>Directive2002/44/EC (vibration)</p><p>&nbsp;</p><p>This country has respected the following transitional periods:</p><p>Directive2002/44/EC (vibration)</p><p>&nbsp;</p><p>&nbsp;</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+502, null, @sectionId, "Transitional");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+502, null, @sectionId, "REG_TRANSITIONAL");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+502, "EN", 1, "<p>This country has applied the following transitional periods:</p><p>Directive2002/44/EC (vibration)</p><p>&nbsp;</p><p>This country has respected the following transitional periods:</p><p>Directive2002/44/EC (vibration)</p><p>&nbsp;</p><p>&nbsp;</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+503, null, @sectionId, "Transitional");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+503, null, @sectionId, "REG_TRANSITIONAL");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+503, "EN", 1, "<p>This country has respected the following transitional periods:</p><p>Directive2002/44/EC (vibration)</p><p>&nbsp;</p><p>&nbsp;</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+504, null, @sectionId, "Transitional");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+504, null, @sectionId, "REG_TRANSITIONAL");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+504, "EN", 1, "<p>This country has applied the following transitional periods:</p><p>Directive 93/103/EEC (fishing vessels)</p><p>Directive2002/44/EC (vibration)</p><p>Directive 2003/10/EC (noise)</p><p>Directive 90/270/EEC (DSE)</p><p>Directive 1999/92/EC (ATEX)</p><p>&nbsp;</p><p>This country has respected the following transitional periods:</p><p>Directive2002/44/EC (vibration)</p><p>Directive 2003/10/EC (noise)</p><p>Directive 1999/92/EC (ATEX)</p><p>&nbsp;</p><p>&nbsp;</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+505, null, @sectionId, "Transitional");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+505, null, @sectionId, "REG_TRANSITIONAL");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+505, "EN", 1, "<p>This country has applied the following transitional periods:</p><p>Directive2002/44/EC (vibration)</p><p>Directive 2003/10/EC (noise)</p><p>Directive 2009/104/EC (work equipment)</p><p>Directive 90/270/EEC (DSE)</p><p>Directive 1999/92/EC (ATEX)</p><p>&nbsp;</p><p>This country has respected the following transitional periods:</p><p>Directive2002/44/EC (vibration)</p><p>Directive 2003/10/EC (noise)</p><p>Directive 2009/104/EC (work equipment)</p><p>Directive 90/270/EEC (DSE)</p><p>Directive 1999/92/EC (ATEX)</p><p>&nbsp;</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
@@ -2776,17 +2756,17 @@ INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="Working conditions" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+577, null, @sectionId, "OVERALL OPINION INTRO TEXT");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+577, null, @sectionId, "OVERALL_OP_HEADER");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+577, "EN", 1, "This topic displays data on the workers´ overall general assessment of risks and their overall satisfaction with working conditions. Note: Percentages might not total 100% because of rounding.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="Working conditions" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+578, null, @sectionId, "MENTAL RISK INTRO TEXT");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+578, null, @sectionId, "MENTAL_RISKS_HEADER");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+578, "EN", 1, "This topic displays data from surveys on certain important aspects of mental risks such as time pressure, poor communication or cooperation, employees´ lack of influence, job insecurity, difficult customers or clients, long or irregular working hours and discrimination. Note: Percentages might not total 100% because of rounding.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="Working conditions" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+579, null, @sectionId, "PHYSICAK RISK INTRO TEXT");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+579, null, @sectionId, "PHYSICAL_RISKS_HEADER");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+579, "EN", 1, "	This topic displays data on exposure to chemical and biological substances, exposure to noise, vibrations and high or low temperatures, and working tasks involving carrying, lifting or work in tiring or painful positions.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
