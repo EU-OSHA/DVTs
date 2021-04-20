@@ -248,7 +248,7 @@
     <optimizationLevel>9</optimizationLevel>
     <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
         <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>var chartID &#x3d; &#x22;null&#x22;&#x3b;&#xd;&#xa;&#xd;&#xa;if &#x28;CHART_ID &#x21;&#x3d; undefined&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	chartID &#x3d; 20000&#x2b;CHART_ID&#xd;&#xa;&#x7d;&#xd;&#xa;&#xd;&#xa;</jsScript_script>
+        <jsScript_script>var chartID &#x3d; &#x22;null&#x22;&#x3b;&#xd;&#xa;&#xd;&#xa;if &#x28;CHART_ID &#x21;&#x3d; undefined&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	chartID &#x3d; CHART_ID&#xd;&#xa;&#x7d;&#xd;&#xa;&#xd;&#xa;</jsScript_script>
       </jsScript>    </jsScripts>    <fields>      <field>        <name>chartID</name>
         <rename>chartID</rename>
         <type>String</type>
