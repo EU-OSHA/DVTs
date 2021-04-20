@@ -9107,10 +9107,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "Number of enterprises in the non-financial business economy by size class of employment");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>Eurostat:</p>
-<p>
-  <a target=\"_blank\" href=\"http://ec.europa.eu/eurostat/tgm/table.do?tab=table&amp;init=1&amp;language=en&amp;pcode=tin00145&amp;plugin=1\" rel=\"noopener noreferrer\" target=\"_blank\">http://ec.europa.eu/eurostat/tgm/table.do?tab=table&amp;init=1&amp;language=en&amp;pcode=tin00145&amp;plugin=1</a>
-</p>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>Eurostat:</p><p><a target=\"_blank\" href=\"https://ec.europa.eu/eurostat/databrowser/view/tin00145/default/table?lang=en\">https://ec.europa.eu/eurostat/databrowser/view/tin00145/default/table?lang=en </a></p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2017");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -9145,7 +9142,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "Employment by sex, age and economic activity (from 2008 onwards, NACE Rev. 2) - 1 000’");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>Eurostat:</p><p><a target=\"_blank\" href=\"http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=lfsq_egan2&amp;lang=en\">http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=lfsq_egan2&amp;lang=en</a></p>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>Eurostat:</p><p><a target=\"_blank\" href=\"https://ec.europa.eu/eurostat/databrowser/view/lfsq_egan2/default/table?lang=en\">https://ec.europa.eu/eurostat/databrowser/view/lfsq_egan2/default/table?lang=en</a></p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2020");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -9178,7 +9175,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "Employment rate by sex");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>Eurostat:</p><p><a target=\"_blank\" href=\"https://ec.europa.eu/eurostat/tgm/table.do?tab=table&amp;init=1&amp;language=en&amp;pcode=tesem010&amp;plugin=1\">https://ec.europa.eu/eurostat/tgm/table.do?tab=table&amp;init=1&amp;language=en&amp;pcode=tesem010&amp;plugin=1</a></p>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>Eurostat:</p><p><a target=\"_blank\" href=\"https://ec.europa.eu/eurostat/databrowser/view/lfsi_emp_a/default/table?lang=en\">https://ec.europa.eu/eurostat/databrowser/view/lfsi_emp_a/default/table?lang=en</a></p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2019");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -9211,7 +9208,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "Main GDP aggregates per capita");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>Eurostat:</p><p><a target=\"_blank\" href=\"http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=nama_10_pc&amp;lang=en\">http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=nama_10_pc&amp;lang=en</a></p>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>Eurostat:</p><p><a target=\"_blank\" href=\"https://ec.europa.eu/eurostat/databrowser/view/nama_10_pc/default/table?lang=en\">https://ec.europa.eu/eurostat/databrowser/view/nama_10_pc/default/table?lang=en</a></p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2019");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -9249,7 +9246,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "Main GDP aggregates per capita");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>Eurostat:</p><p><a target=\"_blank\" href=\"http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=nama_10_pc&amp;lang=en\">http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=nama_10_pc&amp;lang=en</a></p>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>Eurostat:</p><p><a target=\"_blank\" href=\"https://ec.europa.eu/eurostat/databrowser/view/nama_10_pc/default/table?lang=en\">https://ec.europa.eu/eurostat/databrowser/view/nama_10_pc/default/table?lang=en</a></p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2019");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -9292,7 +9289,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "Mean and median income by age and sex – EU SILC survey");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>Eurostat:</p><p><a target=\"_blank\" href=\"http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=ilc_di03&amp;lang=en\">http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=ilc_di03&amp;lang=en</a></p>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>Eurostat:</p><p><a target=\"_blank\" href=\"https://ec.europa.eu/eurostat/databrowser/view/ilc_di03/default/table?lang=en\">https://ec.europa.eu/eurostat/databrowser/view/ilc_di03/default/table?lang=enn</a></p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2010 - 2019");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -9330,7 +9327,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "Mean and median income by age and sex – EU SILC survey");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>Eurostat:</p><p><a target=\"_blank\" href=\"http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=ilc_di03&amp;lang=en\">http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=ilc_di03&amp;lang=en</a></p>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>Eurostat:</p><p><a target=\"_blank\" href=\"https://ec.europa.eu/eurostat/databrowser/view/ilc_di03/default/table?lang=en\">https://ec.europa.eu/eurostat/databrowser/view/ilc_di03/default/table?lang=en</a></p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2010 - 2019");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -9363,7 +9360,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "Population: Structure indicators");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>Eurostat:</p><p><a target=\"_blank\" href=\"http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=demo_pjanind&amp;lang=en\">http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=demo_pjanind&amp;lang=en</a>&nbsp;&nbsp;</p>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>Eurostat:</p><p><a target=\"_blank\" href=\"https://ec.europa.eu/eurostat/databrowser/view/demo_pjanind/default/table?lang=en\">https://ec.europa.eu/eurostat/databrowser/view/demo_pjanind/default/table?lang=en</a></p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2019");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -9404,7 +9401,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "Employment and activity by sex and age - annual data");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>Eurostat:</p><p><a target=\"_blank\" href=\"http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=lfsi_emp_a&amp;lang=en\">http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=lfsi_emp_a&amp;lang=en</a></p>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>Eurostat:</p><p><a target=\"_blank\" href=\"https://ec.europa.eu/eurostat/databrowser/view/demo_pjanind/default/table?lang=en\">https://ec.europa.eu/eurostat/databrowser/view/demo_pjanind/default/table?lang=en</a></p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2019");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -9463,7 +9460,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "Employment and activity by sex and age - annual data");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>Eurostat:</p><p><a target=\"_blank\" href=\"http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=lfsi_emp_a&amp;lang=en\">http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=lfsi_emp_a&amp;lang=en</a></p>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>Eurostat:</p><p><a target=\"_blank\" href=\"https://ec.europa.eu/eurostat/databrowser/view/lfsi_emp_a/default/table?lang=en\">https://ec.europa.eu/eurostat/databrowser/view/lfsi_emp_a/default/table?lang=en</a></p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2019");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -9522,7 +9519,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "Unemployment by sex and age - annual average");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>Eurostat:</p><p><a target=\"_blank\" href=\"http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=une_rt_a&amp;lang=en\">http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=une_rt_a&amp;lang=en</a></p>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>Eurostat:</p><p><a target=\"_blank\" href=\"https://ec.europa.eu/eurostat/databrowser/view/une_rt_a/default/table?lang=en\">https://ec.europa.eu/eurostat/databrowser/view/une_rt_a/default/table?lang=en</a></p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2019");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -10074,10 +10071,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "Non-fatal accidents at work by NACE Rev. 2 activity and sex");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p><u>Eurostat:</u></p>
-<p>
-  <a target=\"_blank\" href=\"http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=hsw_n2_01&lang=en\">http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=hsw_n2_01&amp;lang=en</a>
-</p>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>Eurostat:</p><p><a target=\"_blank\" href=\"https://ec.europa.eu/eurostat/databrowser/view/hsw_n2_01/default/table?lang=en\">https://ec.europa.eu/eurostat/databrowser/view/hsw_n2_01/default/table?lang=en</a></p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2010 to 2018");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -10104,7 +10098,7 @@ SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "<p>2010 was taken as base year to mitigate the strong influence of the crisis 2008 and 2009 on the economic activity and the work accidents.&nbsp;</p>
 <p>For the calculation of the Incidence Rate see: 
-  <a href=\"https://ec.europa.eu/eurostat/cache/metadata/Annexes/hsw_acc_work_esms_an2.pdf\" rel=\"noopener noreferrer\" target=\"_blank\">European Statistics on Accidents at Work</a> (ESAW) Method for calculating incidence and standardised incidence rates Eurostat, Luxembourg, June 2015.
+  <a href=\"https://ec.europa.eu/eurostat/cache/metadata/Annexes/hsw_acc_work_esms_an2.docx\" rel=\"noopener noreferrer\" target=\"_blank\">European Statistics on Accidents at Work</a> (ESAW) Method for calculating incidence and standardised incidence rates Eurostat, Luxembourg, June 2015.
 </p>
 <p>Future: When data for 2019 is be available, there will be a trend calculated between the two consecutive periods 2010 to 2014 and 2015 to 2019.</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -10116,12 +10110,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
   <li><em>Fatal Accidents at work by NACE Rev. 2 activity</em></li>
 </ol>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p><u>Eurostat</u></p>
-<ol>
-  <li>
-    <a target=\"_blank\" href=\"http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=hsw_n2_02&amp;lang=en\">http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=hsw_n2_02&amp;lang=en</a>
-  </li>
-</ol>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>Eurostat:</p><p><a target=\"_blank\" href=\"https://ec.europa.eu/eurostat/databrowser/view/hsw_n2_02/default/table?lang=en\">https://ec.europa.eu/eurostat/databrowser/view/hsw_n2_02/default/table?lang=en</a></p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2010 to 2018");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -10234,7 +10223,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to five <strong>EWCS Questions below. Specifically this indicator relates to</strong>:</p><ol><li>How satisfied are you with working conditions in your main paid job?</li><li>Does your work affect your health?</li><li>Over the past 12 months how many days were you absent from work due to sick leave or health related leave?</li><li>Over the past 12 months, did you work when you were sick?</li><li>Do you think you will be able to do your current job or a similar one until you are 60 years old?</li></ol><p>Answer options:</p><ol><li>Very satisfied, satisfied, not very satisfied; Not at all satisfied</li><li>Yes, mainly positively; Yes, mainly negatively; No</li><li>[The respondent could insert a number of days]</li><li>Yes; no; I was not sick</li><li>Yes; No</li></ol><p>Responses are displayed to one <strong>LFS question</strong></p><ol><li><strong>Persons reporting a work-related health problem by sex, age and NACE Rev. 2 activity</strong></li></ol>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>EWCS</p><p><a target=\"_blank\" href=\"https://www.eurofound.europa.eu/data/european-working-conditions-survey\">https://www.eurofound.europa.eu/data/european-working-conditions-survey</a></p><p><strong>Eurostat LFS</strong></p><p><strong><a target=\"_blank\" href=\"http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=hsw_pb6b&amp;lang=en\">http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=hsw_pb6b&amp;lang=en</a></strong></p>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>EWCS</p><p><a target=\"_blank\" href=\"https://www.eurofound.europa.eu/data/european-working-conditions-survey\">https://www.eurofound.europa.eu/data/european-working-conditions-survey</a></p><p><strong>Eurostat LFS</strong></p><p><strong><a target=\"_blank\" href=\"https://ec.europa.eu/eurostat/databrowser/view/hsw_pb6b/default/table?lang=en\">https://ec.europa.eu/eurostat/databrowser/view/hsw_pb6b/default/table?lang=en</a></strong></p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2015 for EWCS and 2013 for LFS");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
