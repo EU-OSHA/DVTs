@@ -1,374 +1,139 @@
 -- The tool is already created
 
-INSERT INTO chart (id, section_id)  VALUES(20010,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="ECONOMIC_SECTOR_PROFILE" AND t.name="osha_dvt_barometer"	) );
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @datasetId = (SELECT id FROM dataset WHERE source="Eurostat" AND date_from="2017-01-01");
-INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20010, @indicatorId, @datasetId);
-
-INSERT INTO chart (id, section_id)  VALUES(20011,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="ECONOMIC_SECTOR_PROFILE" AND t.name="osha_dvt_barometer"	) );
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Employment rate");
-SET @datasetId = (SELECT id FROM dataset WHERE source="Eurostat" AND date_from="2017-01-01");
-INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20011, @indicatorId, @datasetId);
-
-INSERT INTO chart (id, section_id)  VALUES(20012,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="WORKFORCE_PROFILE" AND t.name="osha_dvt_barometer"	) );
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Unemployment rate");
-SET @datasetId = (SELECT id FROM dataset WHERE source="Eurostat" AND date_from="2017-01-01");
-INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20012, @indicatorId, @datasetId);
-
-INSERT INTO chart (id, section_id)  VALUES(20013,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="ECONOMIC_SECTOR_PROFILE" AND t.name="osha_dvt_barometer"	) );
-SET @indicatorId = (SELECT id FROM indicator WHERE name="GDP per capita in relation to EU28 average");
-SET @datasetId = (SELECT id FROM dataset WHERE source="Eurostat" AND date_from="2017-01-01");
-INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20013, @indicatorId, @datasetId);
-
-INSERT INTO chart (id, section_id)  VALUES(20015,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="WORKFORCE_PROFILE" AND t.name="osha_dvt_barometer"	) );
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Median age of population");
-SET @datasetId = (SELECT id FROM dataset WHERE source="Eurostat" AND date_from="2017-01-01");
-INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20015, @indicatorId, @datasetId);
-
-INSERT INTO chart (id, section_id)  VALUES(20016,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="WORKFORCE_PROFILE" AND t.name="osha_dvt_barometer"	) );
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Ageing workers (55 to 64) employment rate");
-SET @datasetId = (SELECT id FROM dataset WHERE source="Eurostat" AND date_from="2017-01-01");
-INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20016, @indicatorId, @datasetId);
-
-INSERT INTO chart (id, section_id)  VALUES(20017,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="WORKFORCE_PROFILE" AND t.name="osha_dvt_barometer"	) );
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Total, male and female employment rate");
-SET @datasetId = (SELECT id FROM dataset WHERE source="Eurostat" AND date_from="2017-01-01");
-INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20017, @indicatorId, @datasetId);
-
-INSERT INTO chart (id, section_id)  VALUES(20014,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="ECONOMIC_SECTOR_PROFILE" AND t.name="osha_dvt_barometer"	) );
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Income per capita");
-SET @datasetId = (SELECT id FROM dataset WHERE source="Eurostat" AND date_from="2010-01-01" AND date_to="2017-12-31");
-INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20014, @indicatorId, @datasetId);
-
-INSERT INTO chart (id, section_id)  VALUES(20022,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="WORK_ACCIDENTS" AND t.name="osha_dvt_barometer"	) );
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Non-fatal work accidents");
-SET @datasetId = (SELECT id FROM dataset WHERE source="Eurostat" AND date_from="2010-01-01" AND date_to="2014-12-31");
-INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20022, @indicatorId, @datasetId);
-
-INSERT INTO chart (id, section_id)  VALUES(20023,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="WORK_ACCIDENTS" AND t.name="osha_dvt_barometer"	) );
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Fatal work accidents");
-SET @datasetId = (SELECT id FROM dataset WHERE source="Eurostat" AND date_from="2010-01-01" AND date_to="2014-12-31");
-INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20023, @indicatorId, @datasetId);
-
-INSERT INTO chart (id, section_id)  VALUES(20024,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="WORK_ACCIDENTS" AND t.name="osha_dvt_barometer"	) );
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Estimation of non-fatal accidents based on fatal accidents (estimated)");
-SET @datasetId = (SELECT id FROM dataset WHERE source="Eurostat" AND date_from="2010-01-01" AND date_to="2014-12-31");
-INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20024, @indicatorId, @datasetId);
-
-INSERT INTO chart (id, section_id)  VALUES(20025,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="WORK_ACCIDENTS" AND t.name="osha_dvt_barometer"	) );
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Level of reporting of non-fatal accidents");
-SET @datasetId = (SELECT id FROM dataset WHERE source="Eurostat" AND date_from="2010-01-01" AND date_to="2014-12-31");
-INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20025, @indicatorId, @datasetId);
-
-INSERT INTO chart (id, section_id)  VALUES(20026,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="HEALTH_PERCEPTION" AND t.name="osha_dvt_barometer"	) );
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Satisfaction with working conditions");
-SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
-INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20026, @indicatorId, @datasetId);
-
-INSERT INTO chart (id, section_id)  VALUES(20027,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="HEALTH_PERCEPTION" AND t.name="osha_dvt_barometer"	) );
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Health affected by work");
-SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
-INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20027, @indicatorId, @datasetId);
-
-INSERT INTO chart (id, section_id)  VALUES(20028,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="HEALTH_PERCEPTION" AND t.name="osha_dvt_barometer"	) );
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Health problem in the last 12 months");
-SET @datasetId = (SELECT id FROM dataset WHERE source="Eurostat" AND date_from="2013-01-01");
-INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20028, @indicatorId, @datasetId);
-
-INSERT INTO chart (id, section_id)  VALUES(20029,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="HEALTH_PERCEPTION" AND t.name="osha_dvt_barometer"	) );
-SET @indicatorId = (SELECT id FROM indicator WHERE name="More than 15 days of absence");
-SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
-INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20029, @indicatorId, @datasetId);
-
-INSERT INTO chart (id, section_id)  VALUES(20030,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="HEALTH_PERCEPTION" AND t.name="osha_dvt_barometer"	) );
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Sick at working");
-SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
-INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20030, @indicatorId, @datasetId);
-
-INSERT INTO chart (id, section_id)  VALUES(20031,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="HEALTH_PERCEPTION" AND t.name="osha_dvt_barometer"	) );
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Be able to do current job until 60 years old");
-SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
-INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20031, @indicatorId, @datasetId);
-
-INSERT INTO chart (id, section_id)  VALUES(20038,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="OSH_CULTURE_HEALTH_AWARENESS" AND t.name="osha_dvt_barometer"	) );
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Use of personal protective equipment");
-SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
-INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20038, @indicatorId, @datasetId);
-
-INSERT INTO chart (id, section_id)  VALUES(20039,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="OSH_CULTURE_HEALTH_AWARENESS" AND t.name="osha_dvt_barometer"	) );
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Information about risks");
-SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
-INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20039, @indicatorId, @datasetId);
-
-INSERT INTO chart (id, section_id)  VALUES(20040,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="OVERALL_OPINION" AND t.name="osha_dvt_barometer"	) );
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Job satisfaction");
-SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
-INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20040, @indicatorId, @datasetId);
-
-INSERT INTO chart (id, section_id)  VALUES(20041,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="OVERALL_OPINION" AND t.name="osha_dvt_barometer"	) );
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Health at risk");
-SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
-INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20041, @indicatorId, @datasetId);
-
-INSERT INTO chart (id, section_id)  VALUES(20049,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer"	) );
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Exposure to vibrations");
-SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
-INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20049, @indicatorId, @datasetId);
-
-INSERT INTO chart (id, section_id)  VALUES(20050,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer"	) );
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Exposure to loud noise");
-SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
-INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20050, @indicatorId, @datasetId);
-
-INSERT INTO chart (id, section_id)  VALUES(20051,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer"	) );
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Exposure to temperatures");
-SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
-INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20051, @indicatorId, @datasetId);
-
-INSERT INTO chart (id, section_id)  VALUES(20052,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer"	) );
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Exposure to low temperatures");
-SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
-INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20052, @indicatorId, @datasetId);
-
-INSERT INTO chart (id, section_id)  VALUES(20053,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer"	) );
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Exposure to breathing in smoke, fumes, powder or dust");
-SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
-INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20053, @indicatorId, @datasetId);
-
-INSERT INTO chart (id, section_id)  VALUES(20054,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer"	) );
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Exposure to breathing in vapours");
-SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
-INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20054, @indicatorId, @datasetId);
-
-INSERT INTO chart (id, section_id)  VALUES(20055,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer"	) );
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Exposure to chemical products or substances");
-SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
-INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20055, @indicatorId, @datasetId);
-
-INSERT INTO chart (id, section_id)  VALUES(20056,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer"	) );
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Exposure to infections materials");
-SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
-INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20056, @indicatorId, @datasetId);
-
-INSERT INTO chart (id, section_id)  VALUES(20069,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="WORKER_INVOLVEMENT" AND t.name="osha_dvt_barometer"	) );
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Does your organisation have a regular meeting in which employees can express their views about what is happening in the organisation?");
-SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
-INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20069, @indicatorId, @datasetId);
-
-INSERT INTO chart (id, section_id)  VALUES(20073,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="MENTAL_RISKS" AND t.name="osha_dvt_barometer"	) );
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Time pressure - Eurofound EWCS Data");
-SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
-INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20073, @indicatorId, @datasetId);
-
-INSERT INTO chart (id, section_id)  VALUES(20074,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="MENTAL_RISKS" AND t.name="osha_dvt_barometer"	) );
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Poor communication - Eurofound EWCS Data");
-SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
-INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20074, @indicatorId, @datasetId);
-
-INSERT INTO chart (id, section_id)  VALUES(20075,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="MENTAL_RISKS" AND t.name="osha_dvt_barometer"	) );
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Influence - Eurofound EWCS Data");
-SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
-INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20075, @indicatorId, @datasetId);
-
-INSERT INTO chart (id, section_id)  VALUES(20076,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="MENTAL_RISKS" AND t.name="osha_dvt_barometer"	) );
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Job insecurity - Eurofound EWCS Data");
-SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
-INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20076, @indicatorId, @datasetId);
-
-INSERT INTO chart (id, section_id)  VALUES(20077,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="MENTAL_RISKS" AND t.name="osha_dvt_barometer"	) );
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Difficult clients - Eurofound EWCS Data");
-SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
-INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20077, @indicatorId, @datasetId);
-
-INSERT INTO chart (id, section_id)  VALUES(20078,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="MENTAL_RISKS" AND t.name="osha_dvt_barometer"	) );
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Working hours - Eurofound EWCS Data");
-SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
-INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20078, @indicatorId, @datasetId);
-
-INSERT INTO chart (id, section_id)  VALUES(20079,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="MENTAL_RISKS" AND t.name="osha_dvt_barometer"	) );
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Discrimination - Eurofound EWCS Data");
-SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
-INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20079, @indicatorId, @datasetId);
-
-INSERT INTO chart (id, section_id)  VALUES(20080,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer"	) );
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Tiring or painful positions - Eurofound EWCS Data");
-SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
-INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20080, @indicatorId, @datasetId);
-
-INSERT INTO chart (id, section_id)  VALUES(20081,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer"	) );
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Does your work involve sitting? - Eurofound EWCS Data");
-SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
-INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20081, @indicatorId, @datasetId);
-
-INSERT INTO chart (id, section_id)  VALUES(20082,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer"	) );
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Carrying or moving heavy loads - Eurofound EWCS Data");
-SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
-INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20082, @indicatorId, @datasetId);
-
-INSERT INTO chart (id, section_id)  VALUES(20083,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer"	) );
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Repetitive hand or arm movements - Eurofound EWCS Data");
-SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
-INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20083, @indicatorId, @datasetId);
-
-INSERT INTO chart (id, section_id)  VALUES(20084,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer"	) );
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Lifting or moving people - Eurofound EWCS Data");
-SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
-INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20084, @indicatorId, @datasetId);
-
-INSERT INTO chart (id, section_id)  VALUES(20085,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="WORKER_INVOLVEMENT" AND t.name="osha_dvt_barometer"	) );
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Does your organisation have a trade union, works council or a similar committee representing employees? - Eurofound EWCS Data");
-SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
-INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20085, @indicatorId, @datasetId);
-
-INSERT INTO chart (id, section_id)  VALUES(20086,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="WORKER_INVOLVEMENT" AND t.name="osha_dvt_barometer"	) );
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Does your organisation have a health and safety delegate or committee? - Eurofound EWCS Data");
-SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01");
-INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20086, @indicatorId, @datasetId);
-
-INSERT INTO chart (id, section_id)  VALUES(20087,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="ECONOMIC_SECTOR_PROFILE" AND t.name="osha_dvt_barometer"	) );
-SET @indicatorId = (SELECT id FROM indicator WHERE name="GDP per capita in relation to EU28 average EURO");
-SET @datasetId = (SELECT id FROM dataset WHERE source="Eurostat" AND date_from="2017-01-01");
-INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20087, @indicatorId, @datasetId);
-
-INSERT INTO chart (id, section_id)  VALUES(20088,	(	SELECT s.id  FROM section s  INNER JOIN tool t ON s.tool_id=t.id  WHERE s.name="ECONOMIC_SECTOR_PROFILE" AND t.name="osha_dvt_barometer"	) );
-SET @indicatorId = (SELECT id FROM indicator WHERE name="Income per capita EURO");
-SET @datasetId = (SELECT id FROM dataset WHERE source="Eurostat" AND date_from="2010-01-01" AND date_to="2017-12-31");
-INSERT INTO indicators_by_chart (chart_id, indicator_id, dataset_id)  VALUES (20088, @indicatorId, @datasetId);
-
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+70, null, @sectionId, "STRATEGY_BASIC INFO");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+70, "EN", 1, "Austrian document:<a target=\"_blank\" href=\"http://www.arbeitsinspektion.gv.at/cms/inspektorat/download.html?channel=CH3631&doc=CMS1450107306020&permalink=strategiedokument_oeas\"><strong> Österreichische ArbeitnehmerInnenschutzstrategie 2013-2020</strong></a><br/>English document: <a target=\"_blank\" href=\"http://www.arbeitsinspektion.gv.at/cms/inspektorat/download.html?channel=CH3631&doc=CMS1450107306020&permalink=occupationa-safety-and-health-strategy_oeas\"><strong> Occupational Safety and Health Strategy 2013 – 2020: Structures processes and tasks </strong></a><br/>Former strategies:<a target=\"_blank\" href=\"http://www.arbeitsinspektion.gv.at/inspektorat/Uebergreifende_Themen/ArbeitnehmerInnenschutzstrategie/Detailed_information_on_the_Occupational_Safety_and_Health_Strategy\"> <strong>Arbeitsschutzstrategie 2007-2012</strong></a>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+71, null, @sectionId, "STRATEGY_BACKGROUND");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+71, "EN", 1, "<p>The strategy links national and regional stakeholders in the field of OSH such as Ministries, accident insurances, social partners as well as OSH representatives. A <a href=\"http://www.auva.at/portal27/portal/auvaportal/content/contentWindow?contentid=10007.670910&amp;action=2\" target=\"_blank\">common resolution</a> was set to define the goals to reduce workplace accidents and occupational diseases .</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+72, null, @sectionId, "STRATEGY_CHARACTERISTICS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+72, "EN", 1, "<p>The <a href=\"http://www.gesundearbeit.at/cms/V02/V02_0.c.a/1342556646526/home/aktuelles/die-oesterreichische-arbeitnehmerinnenschutzstrategie#\" target=\"_blank\">Austrian OSH Strategy</a> is a process and consensus oriented umbrella strategy: with only a few fixed rules and objectives. The given flexibility and room shall support the OSH bodies to act responsible, to be motivated and innovative.<br />There is a fixed structure of the bodies consisting of the Occupational Safety and Health Advisory Board (Arbeitnehmerschutzbeirat ASB), national coordinators, the Strategic Platform, the Network of Labour Inspectorates with regional coordinators and the evaluation team.<br />They follow the <a href=\"http://www.arbeitsinspektion.gv.at/cms/inspektorat/download.html?channel=CH3631&amp;doc=CMS1450104956999&amp;permalink=oeas_gemeinsame-resolution\" target=\"_blank\"> Resolution </a>, laid down by the Federal Minister of Labour, Social Affairs and Consumer Protection, other relevant ministries, social partners, accident insurances and other institutions relevant for OSH issues. <br />The objectives are proposed by the OSH bodies on the basis of the joint resolution and approved by the Occupational Safety and Health Advisory Board. If necessary, the fields of work of the working groups have to be adapted to the Resolution.<br />In the current strategy document three objectives were set:</p><ul><li>The reduction of work-related health risks, particularly strains on the musculoskeletal system and mental stress factors and the reduction of accidents at work</li><li>The improvement of risk assessment and support via preventive specialists</li><li>The strengthening of awareness and improvements in the initial and further education and training (both at school and in universities) for occupational safety and health.</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+73, null, @sectionId, "STRATEGY_DETAILS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+73, "EN", 1, "<p>Four expert committees/working groups were created:<br /><strong> Working group 1: Improvement of risk assessment and risk awareness </strong></p><p>Special focus on micro and SME – developing guidance documents for:</p><ul><ul><li>Temporary and mobile workplaces</li><li>Implementation of the safety and health document (construction sites)</li><li>Classification of measures for risk classes</li><li>Vulnerable groups of workers (pregnant women, psychosocial problems, young workers, older workers)</li><li>Selection of PPE</li><li>Risk assessment of psychosocial risks and stress at work</li></ul></ul><p><strong>Working group 2: Accident prevention </strong><br /><strong>Working group 3: Prevention of work related and occupational diseases </strong><br /><strong>Working group 4: Training and information regarding OSH issues </strong></p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+74, null, @sectionId, "STRATEGY_ACTORS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+74, "EN", 1, "<p>According to the Austrian sources experiences from previous occupational safety and health strategies have shown that good cooperation of all stakeholders involved in the field of safety and health at work is crucial for the success of the strategy. For that reason, the Austrian OSH Strategy 2013 – 2020 will try to further extend the cooperation of all stakeholders. The Occupational Safety and Health Advisory Board officially appoints the leaders of:</p><ul><li>The four working groups</li><li>The strategic platform</li><li>The evaluation team</li></ul><p>The Labour Inspectorate published a list of members of the four working groups. Members of the strategic platform are: AUVA - Austrian Social Insurance for Occupational Risks, WKO - Austrian Federal Economic Chamber, IV - Federation of Austrian Industries, BAK - the Federal Chamber of Labour, ÖGB - Confederation of Austrian Trade Unions, ÖÄK – Austrian Medical Association, ZAI – Central Labour Inspectorate.The evaluation team consists of experts from institutions of the strategic platform.</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+75, null, @sectionId, "STRATEGY_RESOURCES");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+75, "EN", 1, "Time frame: 2013 – 2020<br/>No detailed budget and staff information.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+76, null, @sectionId, "STRATEGY_EVALUATION");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+76, "EN", 1, "<p>No evaluation up to now.<br />The OSH strategy sticks to the main goals and issues of the former OSH strategy 2007 – 2012, including the following adaptions and changes:</p><ul><li>Four instead of five expert committees: repealing the expert committee “OSH strategy”,</li><li>Creating a strategic platform,</li><li>Setting up a committee for evaluation,</li><li>Greater involvement of employers, the chamber of commerce and the Federation of Industries</li></ul><p><a href=\"http://www.arbeitsinspektion.gv.at/cms/inspektorat/download.html?channel=CH3633&amp;doc=CMS1450193974056&amp;permalink=oeas_endbericht\" target=\"_blank\"> Indicators for the evaluation of the OSH strategy 2007-2012</a></p><ul><li>Number of workplace accidents</li><li>Days of absence due to psychosocial stress and MSD</li><li>Compliance with OSH legislation</li><li>Number of accesses on the website of the Labour inspectorate related to OSH</li></ul><p>The evaluation team evaluates regularly the working groups, the strategic platform as well as the overall <a href=\"http://www.arbeitsinspektion.gv.at/cms/inspektorat/download.html?channel=CH3631&amp;doc=CMS1450107306020&amp;permalink=occupationa-safety-and-health-strategy_oeas\" target=\"_blank\"> OSH strategy </a>.</p><p><br />Ex ante indicators for the years 2012 to 2020: No indicators identified</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+77, null, @sectionId, "STRATEGY_EU");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+77, "EN", 1, "Objectives and working group tasks are closely related to Challenge 1 and 2 of the EU-OSH Strategy.<br/>Moreover, a national coordinator is responsible to link with the European OSH Strategy.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+78, null, @sectionId, "STRATEGY_BASIC INFO");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+78, "EN", 1, "French document:<a target=\"_blank\" href=\"http://www.emploi.belgique.be/WorkArea/DownloadAsset.aspx?id=45387\"><strong>La stratégie nationale belge Bien-être au travail 2016-2020<br/>proposée par le Ministre de l’Emploi : Objectifs stratégiques et opérationnels</strong></a><br/>English document: :<a target=\"_blank\" href=\" http://www.employment.belgium.be/WorkArea/DownloadAsset.aspx?id=45387\"><strong>The Belgian National strategy for Wellbeing at Work 2016-2020</strong></a><br/>Former strategies:<a target=\"_blank\" href=\" http://www.emploi.belgique.be/defaultNews.aspx?id=17890\"><strong> National strategy for Well-Being at Work 2008-2012</strong></a>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+79, null, @sectionId, "STRATEGY_BACKGROUND");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+79, "EN", 1, "<p>Main reasons for the strategy:<br />Quote:</p><ul><li>The right to work is a human right. This right means that every worker is entitled to a healthy and safe working environment. The promotion of wellbeing at work in all its aspects is primordial for protecting workers, for preserving their health and for ensuring they are motivated when doing their job.</li><li>The promotion of the wellbeing of workers offers added value to every individual company. Unhealthy and unsafe working conditions reduce productivity, which ultimately results in dismissals, closures and bankruptcies. Poor working conditions are also a form of unfair competition between businesses. And so, a lack of wellbeing at work is also a social-economic injustice.</li><li>Insufficient attention to wellbeing at work inevitably causes an increase in occupational health problems, which in turn has an impact on the expenditure of social security and social protection systems and so on the community as a whole. On the other hand, the promotion of wellbeing at work contributes to improving public health and the availability of workers in companies. As a result, the productivity and the competitiveness of companies is improved. This also has favourable consequences for the prosperity of our society as a whole.</li><li>A global approach to workers’ wellbeing does not end at the entrance to the plant: a healthy employee works better but vice versa healthy and safe working conditions will also improve overall health. As a result, several levels of authority are involved in the implementation of this global plan: the federal Minister for Employment, as well as the federal Minister of Social Affairs and Public Health, the Communities and the Regions. Consultation on various levels will thus be necessary, depending on the proposed actions.</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+80, null, @sectionId, "STRATEGY_CHARACTERISTICS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+80, "EN", 1, "<p>The main objectives are incorporated in this strategy, starting from four strategic axes and thirteen operational objectives. The four strategic objectives are:</p><ol><li>Safe and healthy</li><li>Strengthening participation in the labour market</li><li>Strengthening prevention</li><li>Strengthening the prevention culture</li></ol>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+81, null, @sectionId, "STRATEGY_DETAILS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+81, "EN", 1, "<strong>Axis description</strong><ol><li>Safe and healthy work</li><ul><li>Continuous prevention of occupational accidents </li><li>Continuous prevention of health problems caused by work</li><li>Preventing or minimising new and emerging risks</li></ul><li>Strengthening participation in the labour market</li><ul><li>Sustainable work for all workers</li><li>The re-integration of disabled workers </li><li>Preventing or minimising new and emerging risks</li></ul><li>Strengthening prevention </li><ul><li>Stressing the employer’s responsibility for prevention policy, especially in SMEs </li><li>Integration of wellbeing at work in the company’s management</li><li>Optimising the functioning of prevention services </li><li>Optimisation of social dialogue</li><li>Optimising the functioning of the labour inspection services</li><li>Access to the available data on exposure </li><li>Qualitative regulations </li></ul><li>Strengthening the prevention culture </li><ul><li> The integration of wellbeing at work in all government domains </li></ul></ol><strong>Actions taken in 2016 and priorities and actions for 2017</strong><br/>The High Council for Prevention and Protection at Work is asked to develop a specific action programme, in cooperation with the Directorates General for the Supervision of Wellbeing at Work and the Humanisation of Work.<br/>Actions<ol><li>Monitoring of the new tariff scheme for the services of external services for prevention and protection at work </li><li>Examining the tasks of prevention counsellors.<br/><em>This action contributes to achieving operational objective no. 8 – Optimising the functioning of the prevention services.</em></li><li>The re-integration of disabled workers.<br/><em> This action contributes to achieving operational objective no. 5 – Re-integration of disabled workers.</em></li><li>Exposure to chemical agents:<br/>Supplementing the Royal Decree on carcinogens and mutagens with reproductive toxicants.<br/>Refining the existing legal framework for the protection of workers against asbestos<br/>Monitoring the evolutions in relation to the establishment of binding thresholds values on the European and national level and paying attention to nanotechnology.<br/><em>This action contributes to achieving operational objectives no. 2 - The continuous prevention of health problems caused by work, and no. 3. - Preventing or minimising new and emerging risks.</em></li><li>Psychosocial risks (PSRs) and musculoskeletal disorders (MSDs)<br/>MSD:<br/>Dissemination of the available tools<br/>Raising the awareness of all the stakeholders.<br/>PSR:<br/>Raising awareness and making available tools to employers, employees and prevention services.<br/>Mapping the psychosocial risks in the age group of 25 to 45 years in a study and looking for possible solutions<br/><em>This action contributes to achieving operational objectives no. 2 - The continuous prevention of health problems caused by work, and no. 4. - Sustainable work for everyone</em></li><li>Developing and promoting tools for SMEs<br/>Developing further OiRA tools (Online interactive risk assessment tool)<br/>Developing more specific solutions and implementing actions for existing tools (SOBANE, Déparis)<br/><em>This action contributes to achieving operational objective no. 6. - Emphasising the employer’s responsibility for the prevention policy, especially in SMEs.</em></li><li>The integration of wellbeing at work in education and training programmes<br/>Management programmes should pay more attention to wellbeing at work.<br/>Better embedding wellbeing at work in education<br/>Examining how the Royal Decree of 3 May 1999 about the protection of young people can be adapted to take better account of the reality of young people who receive part of their training on the workfloor.<br/><em>This action contributes to achieving operational objective no. 4. - Sustainable work for all workers, and no. 7 - The integration of wellbeing at work in management.</em></li><li>Data mining<br/>The project about the optimum collection of data and access to these data will be continued.<br/><em>This action contributes to achieving operational objective no. 11 - Better access to the available exposure data</em></li><li>Optimising the inspection for the surveillance of wellbeing at work<br/>Strengthening the capacity of inspection services by increasing the number of employees.<br/>Using the available resources more efficiently by conducting targeted sectoral and local inspection campaigns and contribution of European initiatives.<br/><em>This action contributes to achieving operational objective no. 10 - Optimising the functioning of the labour inspection services.<em></li><li> Qualitative regulations<br/>Making legislation clearer, more transparent, more efficient and more effective without reducing the level of protection for workers: Revising the legislation on control physicians<br/><em>This action contributes to achieving operational objective no. 12. - Qualitative Regulations.</em></li></ol>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+82, null, @sectionId, "STRATEGY_ACTORS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+82, "EN", 1, "The Federal Minister for Employment, as well as the federal Minister of Social Affairs and Public Health, the Communities and the Regions authority are involved in the implementation of the strategy.<br/>The strategy is based on thorough consultation with the main stakeholders, especially the social partners, professional associations and other stakeholders in the platform of the High Council for Prevention and Protection at Work (Hoge Raad voor Preventie en Bescherming op het Werk).other stakeholders in the platform of the High Council for Prevention and Protection at Work (Hoge Raad voor Preventie en Bescherming op het Werk).");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+83, null, @sectionId, "STRATEGY_RESOURCES");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+83, "EN", 1, "Budget: No information detected<br/>Staff<br/>Years 2016-2020");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+84, null, @sectionId, "STRATEGY_EVALUATION");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+84, "EN", 1, "Evaluation<br/>The evaluation is not carried out at regular intervals.<br/>The former strategy was evaluated, the reports and special evaluations are available <a target=\"_blank\" href=\" http://www.emploi.belgique.be/moduleDefault.aspx?id=39435\">here</a>.<br/>Ex ante indicators for the years 2012 to 2020<br/>Indicators are described in the evaluation report for each axis.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+85, null, @sectionId, "STRATEGY_EU");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+85, "EN", 1, "There are relations to all aspects of the European Strategic Framework. The main objectives of the community strategy are incorporated in this strategy, starting from four strategic axes and fifteen operational objectives.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+86, null, @sectionId, "STRATEGY_BASIC INFO");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+86, "EN", 1, "Cyprian document: <a target=\"_blank\" href=\"http://www.mlsi.gov.cy/mlsi/dli/dliup.nsf/index_en/index_en?OpenDocument\"><strong> ΣΤΡΑΤΗΓΙΚΗ ΤΗΣ ΚΥΠΡΟΥ ΓΙΑ ΤΗΝ ΑΣΦΑΛΕΙΑ ΚΑΙ ΥΓΕΙΑ ΣΤΗΝ ΕΡΓΑΣΙΑ 2013 – 2020</strong></a><br/>English document:<a target=\"_blank\"
 href=\"http://www.mlsi.gov.cy/mlsi/dli/dliup.nsf/All/B208115A0B53109FC22580B3002FB4D9/$file/HEALTH_AND_SAFETY_Strategy_2013_2020_EN_1.pdf\"><strong>Strategy of Cyprus for Safety and Health at Work during the period 2013-2020</strong></a><br/>Former strategies: <a target=\"_blank\"href=\"https://oshwiki.eu/wiki/Strategy_of_Cyprus_for_safety_and_health_at_work_during_the_period_2013-2020\"><strong> Cyprian strategy for Safety and Health at Work 2007 to 2012</strong></a>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+87, null, @sectionId, "STRATEGY_BACKGROUND");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+87, "EN", 1, "Defining the perceived problem:<br/>The strategy contains in chapter 2 an analysis of the current situation and the progress achieved during the former strategy<br/>See Ch B, p2, of the Strategy document: Assessment of the strategy 2007 – 2012 <br/>(ΑΞΙΟΛΟΓΗΣΗ ΣΤΡΑΤΗΓΙΚΗΣ ΑΣΦΑΛΕΙΑΣ ΚΑΙ ΥΓΕΙΑΣ ΣΤΗΝ ΕΡΓΑΣΙΑ 2007 – 2012).");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+88, null, @sectionId, "STRATEGY_CHARACTERISTICS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+88, "EN", 1, "Continuous and constant improvement of safety levels and
 health in the workplace (Strategy doc, p 3, Ch. Γ).");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+89, null, @sectionId, "STRATEGY_DETAILS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+89, "EN", 1, "<p><strong>Optimisation of the institutional frame</strong></p><p align=\"left\">The framework is based on:</p><ul><li>Activities of the Labour Advisory Body, which advises the Minister of Labour, Welfare and Social Security on all labour issues and present recommendations and suggestions on the working legislation.</li><li>Activities of the Pan Cyprian Council of Safety and Health, which advises the Minister of Labour Welfare and Social Insurance.</li></ul><p>&nbsp;</p><p><strong>Suitable, adequate and functional legislative frame-work fully harmonized with the Acquis Communautaire</strong><strong><br /></strong></p><p align=\"left\">The legislative framework is fully harmonized to the corresponding European Acquis. However, it will be supplemented due to particular requirements of Cyprus due to activities like offshore, search, extraction and transportation of hydrocarbons.</p><p align=\"left\">In addition, the strategy will promote the simplification of the national legislative framework without deterioration of the level of safety and health.</p><p align=\"left\">&nbsp;</p><p><strong>Appropriate and adequate systems of Labour Inspection</strong></p><p align=\"left\">The implementation of appropriate inspections is based on accurate and factual evidence from inspections, from accidents and other indicators. This includes activities as:</p><ul><li>Implementation of an inspection programme based on accurate and true data from inspections, accidents, as well as other indicators arising from relevant surveys.</li><li>Establishment of proper structures within the Department of Labour Inspection for (a) the enforcement of legislation on health and safety of the workers at offshore hydrocarbon drilling activities and the safety of these installations and (b) the control of installations that could cause major accidents including natural gas installations.</li><li>Arrangements for the provision of suitable and systematic training of the Inspectors covering issues on offshore activities.</li><li>Exchange visits of Inspectors from Cyprus with Inspectors from other Member States of the European Union aiming at acquiring knowledge and experience.</li><li>Further promotion of the cooperation with other Services, such as the Police, the Cyprus Fire Service, the Department of Labour, etc.</li><li>Provision to the Inspectors of suitable technological equipment and supporting them with computerised systems.</li><li>Improvement of the structure and staffing of the Department of Labour Inspection.</li></ul><p>&nbsp;</p><p><strong>Supporting institutions</strong></p><p align=\"left\">Providing targeted support and information to the Safety Officers as well as to the Approved Persons who provide Services for the Protection and prevention on safety and health at work issues.</p><p align=\"left\">Encouraging the setup and well-functioning of Safety Committees in order to enhance the participation of workers' representatives on safety and health issues.</p><p align=\"left\">&nbsp;</p><p><strong>Introduction and implementation of an adequate system of surveillance of the health of employees</strong></p><p align=\"left\">The Health Surveillance Institutions will work on the implementation of an Action Plan, which was prepared after completing a background study and by introduction of new legislation.</p><p align=\"left\">There is a need to concentrate efforts on the recording, monitoring and prevention of occupational diseases. In particular, there should be efforts to tackle:</p><ul><li>Musculoskeletal disorders</li><li>Work-related stress</li><li>Diseases caused by the use hazardous chemicals.</li></ul><p>&nbsp;</p><p><strong>Promoting of a health and safety prevention culture</strong></p><ul><li>Promoting prevention of occupational accidents and diseases and development of a health and safety culture:</li><li>Through regular and specialized inspections at workplaces.</li><li>Through campaigns organized in collaboration with the European Agency for Safety and Health at Work and the Senior Labour Inspectors Commission of the European Union.</li><li>Through effective functioning of the Security Committees</li><li>Publications and articles in media of social partners and other organisations with particular interest in issues of Safety and Health at Work.</li><li>The preparation and distribution of simple, understandable material prepared by the European Agency for Safety and Health at Work.</li><li>Publication of guidance and supporting information on the websites of the Labour Inspection Department and other institutions</li><li>Seminars, workshops and other awareness and information activities</li><li>Through other forms of cooperation with organizations that have special interest in Safety and Health at Work.</li><li>Through education programs and training.</li><li>By using economic incentives and disincentives</li><li>By using voluntary tools, such as competitions, etc.</li><li>By implementing plans and programs for promoting health in the workplace and cooperation with the medical staff.</li><li>By developing partnerships with Agencies representing scholars, designers and constructors.</li><li>By encouraging employees and the public to communicate with the Labour Inspection.</li><li>By integrating management at Work Safety and Health at all business operating levels.</li><li>Support of SMEs through the use simple and operational tools (e.g. interactive risk assessment tool)</li></ul><p>&nbsp;</p><p><strong>Integration of OSH issues into other policy areas</strong></p><p align=\"left\">Mainstreaming of safety and health at work issues into other policy sectors and in particular the following:</p><ul><li><span style=\"text-decoration: underline;\">Education</span><strong><span style=\"text-decoration: underline;\">:</span> </strong>integration of safety and health issues in the curriculum, so that today's pupils and students, but tomorrow's employers and employees, gain knowledge over time in Safety and Health issues as well as developing a safety culture.</li><li><span style=\"text-decoration: underline;\">Employment<strong>:&nbsp;</strong></span>training of new workers concerning OSH issues; inspection of companies in order to improve OSH in the context of the examination procedure of granting alien employment permit.</li><li><span style=\"text-decoration: underline;\">Development<strong>:&nbsp;</strong></span>Integration of OSH issues in the public procurement process<strong>.</strong></li><li><span style=\"text-decoration: underline;\">Certification of professional qualifications</span><strong><span style=\"text-decoration: underline;\">:</span> </strong>inclusion of OSH issues to the subjects under examination in the context of certification of professional qualifications.</li><li><span style=\"text-decoration: underline;\">Provision of subsidies</span><strong>:&nbsp;</strong>inspection of premises, to apply the minimum levels for Safety and Health, in cases financing is provided through upgrade programs for equipment, facilities, reallocation of companies, etc.</li><li><span style=\"text-decoration: underline;\">Exploitation of scientific progress and research</span></li></ul><p align=\"left\">Better collaboration and utilization of scientific research, particularly mentioned are:</p><ul><li>New technologies such as waste management and nanotechnology.</li><li>Demographic change, changes in employment.</li></ul><p>&nbsp;</p><p><strong>Close cooperation with the Social Partners and other stakeholders</strong></p><p align=\"left\">Strengthening of the already well-functioning cooperation.</p><p align=\"left\">&nbsp;</p><p><strong>Active participation in bodies and activities of the European Union</strong></p><p align=\"left\">Active participation in the ACSH and its working groups, in the SLIC, the governing body of EU-OSHA, Eurostat and the ILO.</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+90, null, @sectionId, "STRATEGY_ACTORS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+90, "EN", 1, "Labour inspection and other public institutions, social partners and professional associations.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+91, null, @sectionId, "STRATEGY_RESOURCES");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+91, "EN", 1, "The budget of the Department of Labour inspection of Cyprus is adopted every year to provide for most of the resources required to implement the strategy.<br/>The strategy was approved by the Council of Ministers and was signed by all social partners and stakeholders participating in the Pancyprian Safety and Health Council indicating their commitment to implement the strategy making available all resources needed to promote and implement the strategy. The Pancyprian Council is an advisory body to the Minister of Labour, Welfare and Social Insurance on OSH issues.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+92, null, @sectionId, "STRATEGY_EVALUATION");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+92, "EN", 1, "The implementation of the Strategy is evaluated at regular intervals through an <a target=\"_blank\" href=\" http://www.mlsi.gov.cy/mlsi/dli/dliup.nsf/A2FE2C7752BCCA3CC2257DDC0021A202/$file/Sxedio_Drasis_2013_2020.pdf\">Action Plan</a> prepared for this purpose. The evaluation is carried out on a yearly basis (usually in March) during a meeting of the Pancyprian Council on Safety and Health at Work. They provide information on actions concerning the implementation of the Strategy. The information is used to update the Action Plan and to evaluate the process of the implementation of the strategy.  The most recent evaluation was carried out in March 2016.<br/>Ex ante indicators for the years 2012 to 2020<br/>All objectives are qualitatively defined. The indicators are described in qualitative terminology like ‘improvement’, ‘less risks’, ‘more prevention’, ‘strengthening’ etc.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+93, null, @sectionId, "STRATEGY_EU");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+93, "EN", 1, "Activity 3 and 4 and 6 is related to challenge 1 of the EU-OSH Strategy (Improving the implementation record of Member States, in particular by enhancing the capacity of micro and small enterprises to put in place effective and efficient risk prevention measures).<br/>Activity 5 has a particularly strong relation to the EU Activities and bodies mentioned on page 6 of the EU Strategic Framework.<br/>Activity 8 is related to challenge 3 of the EU Strategic Framework (Tackling demographic change) and to further EU Strategic Framework topics such as nanomaterials, and wellbeing at work.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+94, null, @sectionId, "STRATEGY_BASIC INFO");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+94, "EN", 1, "<p>Czech document:<a href=\"http://www.bozpinfo.cz/sites/default/files/obsah/super-obsah/narodni-akcni-program-bezpecnosti-ochrany-zdravi-pri-praci-pro-obdobi-2017-2018/soubory/napbozp2017-2018.pdf\" target=\"_blank\"><strong> Národní akční program bezpečnosti a ochrany zdraví při práci pro období 2017 –2018</strong></a>.<br />Former strategy: :<a href=\"http://www.ceskyfocalpoint.cz/wp-content/uploads/2015/12/syst_nap_bozp_2015-2016111.pdf\" target=\"_blank\"><strong>Národní akční program bezpečnosti a ochrany zdraví při práci pro období 2015 -2016</strong></a>.<br />The strategy is regarded as extension of the strategy from 2008: <strong>National Policy of Occupational Safety and Health of the Czech Republic (Národní politika bezpečnosti a ochrany zdraví při práci České republiky)</strong>.<br />For more information see the<a href=\"http://www.mpsv.cz/en/\" target=\"_blank\"> Czech and English website of the Ministry of Labour and Social Affairs of the Czech Republic</a>.</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+95, null, @sectionId, "STRATEGY_BACKGROUND");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+95, "EN", 1, "Defining the perceived problem<br/><strong> A description can be found in chapter II of the 2008 strategy:</strong><br/>Evaluation of the current situation and development trend in OSH in the Czech Republic<ol><li>Strengths of the Czech OSH system</li><li> <a target=\"_blank\" href=\"http://www.mpsv.cz/files/clanky/5599/narodni_politika_CR.pdf\">Weaknesses of the Czech OSH system</a></li></ol>The current strategy for the years 2017-2018 include the ongoing tasks of the previous period, including the ongoing implementation of the National Health and Safety Policy, and 10 new tasks that respond to the needs of OSH practice in the Czech Republic. These include, topics related to legislation, employment, education, science and research, and professional OSH competences in OSH with special regard to ergonomics.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+96, null, @sectionId, "STRATEGY_CHARACTERISTICS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+96, "EN", 1, "The NAP for the period 2017-2018 includes seven priority areas with the following tasks:<ol>
 	<li>Introduction of the Accident Insurance System - measure 1</li>
@@ -384,187 +149,187 @@ INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+
 </ol> Attention will be paid to risk prevention in education to ensure the safety and health of children, pupils and students in schools and educational establishments and in preparation for future occupations.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+97, null, @sectionId, "STRATEGY_DETAILS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+97, "EN", 1, "<p><strong> Abbreviations used </strong><br />MoLSA (in Czech: MPSV): Ministry of Labour and Social Affairs<br />MoF (MF): Ministry of Finance<br />MoH (MZ): Ministry of Health<br />MoEYS (MŠMT): Ministry of Education, Youth and Sports<br />MoIT (MPO): Ministry of Industry and Trade<br />CMA (ČBÚ): Czech Mining Authority<br />MoT (MD): Ministry of Transport<br />MoI (MV): Ministry of the Interior<br />MoD (MO): Ministry of Defence<br />NIPH (SZÚ): National Institute for Public Health<br />OSRI (VÚBP): Occupational Safety Research Institute<br /><strong>Priority I - Introduction of the Accident Insurance System</strong><br /><span style=\"text-decoration: underline;\">Measure n.1:</span> To monitor progress in the preparation of the legal regulation of an accident insurance system and take part in its preparation, while promoting application of prevention, rehabilitation and related motivation instruments to improve the quality of OSH.<br /><span style=\"text-decoration: underline;\">Responsibility:</span> Council of the Government for OSH<br /><span style=\"text-decoration: underline;\">Cooperation:</span> MoLSA, MoF, MoH, Working Group of the Council of the Government for national OSH documents and for accident insurance<br /><span style=\"text-decoration: underline;\">Deadline:</span> continuously until the task is completed<br /><strong>Priority II – Ensuring the financing of the OSH system</strong> <br /> <span style=\"text-decoration: underline;\">Measure n.2</span>:Prepare and discuss in the Council of the Government a draft update of the National Occupational Safety and Health Policy, including securing funding for its implementation.<br /><span style=\"text-decoration: underline;\">Responsibility:</span> MoLSA, MoF<br />To be prepared by: Working Group of the Council of the Government for national OSH documents and for accident insurance<br /><span style=\"text-decoration: underline;\">Cooperation:</span> MoH, MoEYS, MoIT, CMA, social partners<br /><span style=\"text-decoration: underline;\">Deadline:</span> 30 June 2017, thereafter on a continuous basis until completion of action.<br /><span style=\"text-decoration: underline;\">Measure n.3:</span> During the 2014–2020 programming period of the European Social Fund, pursue the OSH topic for projects focussing on programmes for prevention and physiotherapy after occupational damage to health as part of the Operational Programme “Employment” and the Operational Programme “Research, Development and Education”.<br /><span style=\"text-decoration: underline;\">Responsibility:</span> MoLSA, MoEYS<br /><span style=\"text-decoration: underline;\">Cooperation:</span> OSH Council of the Government<br /><span style=\"text-decoration: underline;\">Review deadline:</span> 31 December 2017, thereafter on a continuous basis until completion of action.<br /><strong>Priority III – Prevention of occupational risks</strong><br /><span style=\"text-decoration: underline;\">Measure n.4:</span> Prepare and submit a draft legislative act aimed at ensuring operational safety of technical equipment posing increased risk to life and health.<br /><span style=\"text-decoration: underline;\">Responsibility:</span> MoLSA<br /><span style=\"text-decoration: underline;\">Cooperation</span>: CMA, MoIT, MoT, MoI, MoD, MoEYS, Chamber of Commerce of the Czech Republic<br /><span style=\"text-decoration: underline;\">Review deadline:</span> 30 June 2017, thereafter on a continuous basis until completion of action.<br /><span style=\"text-decoration: underline;\">Measure n.5:</span> Prepare and submit a draft legislative act governing special professional competence for operators of construction machines and devices posing increased risk to life and health, in connection of the legislative act aimed at ensuring operational safety of technical equipment.<br /><span style=\"text-decoration: underline;\">Responsibility:</span> MoIT<br /><span style=\"text-decoration: underline;\">Cooperation:</span> MoLSA, CMA, MoT, MoI, MoD<br /><span style=\"text-decoration: underline;\">Review deadline:</span> 30 June 2017, thereafter on a continuous basis until completion of action.<br /><span style=\"text-decoration: underline;\">Measure n.6:</span> Prepare a proposal for a new government order, laying down the design and location of safety labels, markings and introduction of signals.<br /><span style=\"text-decoration: underline;\">Responsibility:</span> MoLSA<br /><span style=\"text-decoration: underline;\">Collaboration:</span> MoH, State Labour Inspection Office<br /><span style=\"text-decoration: underline;\">Review deadline:</span> 31 December 2017<br /><span style=\"text-decoration: underline;\">Measure n.7:</span> Prepare a draft update of the list of occupational diseases.<br /><span style=\"text-decoration: underline;\">Responsibility:</span> MoLSA, MoH<br /><span style=\"text-decoration: underline;\">Cooperation:</span> Working Group in charge of updating the list of occupational diseases of the Government Council for OSH<br /><span style=\"text-decoration: underline;\">Deadline:</span> 31 December 2018<br /><strong>Priority IV – Safety and health protection of children, pupils and students</strong><br /><span style=\"text-decoration: underline;\">Measure n.8:</span> Submit a draft legislative act to ensure safety and health protection of children, pupils and students at schools and educational institutions in terms of Section 29 of Act No. 561/2004 Coll., on preschool, primary, secondary, higher vocational and other education (the Education Act).<br />Responsibility: MoEYS<br /><span style=\"text-decoration: underline;\">Cooperation:</span> MoLSA, MoH<br /><span style=\"text-decoration: underline;\">Review deadline:</span> 30 June 2017, thereafter on a continuous basis until completion of action<br /><span style=\"text-decoration: underline;\">Measure n.9:</span> Prepare a draft legislative act governing safety and health protection of university students, including recording and documentation of their accidents occurred during the studies.Responsibility: MoEYS<br /><span style=\"text-decoration: underline;\">Cooperation:</span> MoH, MoLSA<br /><span style=\"text-decoration: underline;\">Review deadline:</span> 30 June 2017, thereafter on a continuous basis until completion of action<br /><span style=\"text-decoration: underline;\">Measure n.10:</span> Prepare a draft National strategy for Safety and Health Protection of Children, Pupils and Students in the Czech Republic.<br /><span style=\"text-decoration: underline;\">Responsibility:</span> MoEYS<br /> <span style=\"text-decoration: underline;\">Cooperation:</span> MoH, MoLSA<br /><span style=\"text-decoration: underline;\">Review deadline:</span> 30 June 2017, thereafter on a continuous basis until completion of action<br /><strong>Priority V – Rehabilitation after Occupational Injury and Occupational Disease </strong><br /><span style=\"text-decoration: underline;\">Measure n.11:</span> As part of the preparations for a draft legislative act governing the system of damage compensation for occupational accidents and illnesses, monitor the implementation of systemic solution for a comprehensive physiotherapy process after an occupational accident or illness aimed at mitigating the social and economic consequences of occupational damage to health and reintegrating the person in the labour market.<br /><span style=\"text-decoration: underline;\">Responsibility:</span> MoLSA<br /><span style=\"text-decoration: underline;\">Cooperation:</span> MoH, MoEYS, MoF<br /><span style=\"text-decoration: underline;\">Review deadline:</span> 30 June 2017, thereafter on a continuous basis until completion of action.<br /><strong>Priority VI –Training of workers in occupational health and safety</strong><br /><span style=\"text-decoration: underline;\">Measure n.12:</span> MoLSA will continue to participate in the relevant MoEYS sector councils in order to develop proposals for further OSH professional qualifications or proposals to review the existing OSH professional qualifications in force.<br /> <span style=\"text-decoration: underline;\">Responsibility:</span> MoLSA, MoEYS<br /><span style=\"text-decoration: underline;\">Cooperation:</span> MoH, CMA, Standing Committee for Education and Research of the Government Council for Occupational Safety and Health, social partners, expert businesses<br /><span style=\"text-decoration: underline;\">Deadline:</span> period 2017–2018<br /><span style=\"text-decoration: underline;\">Measure n.13:</span> Continue in the development of standards for further education of competent persons pursuant to Act No. 309/2006 Coll., as amended, and cooperation in this matter with accredited persons under that Act.<br /> <span style=\"text-decoration: underline;\">Responsibility:</span> MoLSA, MoEYS<br /><span style=\"text-decoration: underline;\">Cooperation:</span> MoH, CMA, Standing Committee for Education and Research of the Government Council for Occupational Safety and Health, social partners, expert institutions, accredited entities<br /><span style=\"text-decoration: underline;\">Deadline:</span> period 2017–2018<br /><span style=\"text-decoration: underline;\">Measure n.14:</span> Conduct a comparison of selected national OSH legislation with the legislation in the field in other EU member states based on the current needs and in view of developing new legal regulations.<br /><span style=\"text-decoration: underline;\">Responsibility:</span> Occupational Safety Research Institute (VÚBP, v.v.i.)<br /><span style=\"text-decoration: underline;\">Cooperation</span>: MoLSA<br /><span style=\"text-decoration: underline;\">Review deadline:</span> 30 September 2017, thereafter on a continuous basis in the period 2017–2018<br /><span style=\"text-decoration: underline;\">Measure n.15:</span> Analyse the situation regarding professional liability insurance of competent individuals based on their activities carried out under Act No. 309/2006 Coll., as amended, in relation to the performance of their activities.<br /><span style=\"text-decoration: underline;\">Responsibility:</span> Occupational Safety Research Institute (VÚBP, v.v.i.)<br /><span style=\"text-decoration: underline;\">Cooperation:</span> MoLSA<br /><span style=\"text-decoration: underline;\">Deadline:</span> 30 September 2017<br /><span style=\"text-decoration: underline;\">Measure n.16:</span> Propose classification for the professional qualification of “Ergonomics specialist” in the National Occupations System and prepare an accredited training programme for this profession.<br /><span style=\"text-decoration: underline;\">Responsibility:</span> MoLSA<br /><span style=\"text-decoration: underline;\">Cooperation:</span> Czech Ergonomics Society, MoEYS<br /><span style=\"text-decoration: underline;\">Deadline:</span> 30 June 2018<br /><strong>Priority VII – Research and development </strong><br /><span style=\"text-decoration: underline;\">Measure n.17:</span> Promote introduction of financing for research needs at the different departments so that the relevant departments have the possibility to directly influence the assignment and progress of science and research projects, including the top qualitative indicators used for the evaluation of results.<br /><span style=\"text-decoration: underline;\">Responsibility:</span> Government Council for Occupational Safety and Health<br /><span style=\"text-decoration: underline;\">Cooperation:</span> MoLSA, MoH, MoEYS, MoE, Standing<br />Committee for Education and Research of the Government Council<br /><span style=\"text-decoration: underline;\">Deadline:</span> period 2017–2018<br /><span style=\"text-decoration: underline;\">Measure n.18:</span> Carry out an OSH impact analysis of Industry 4.0 and Employment 4.0, respectively.<br /><span style=\"text-decoration: underline;\">Responsibility:</span> Occupational Safety Research Institute (VÚBP, v.v.i.)<br /><span style=\"text-decoration: underline;\">Cooperation:</span> MoLSA, National Institute of Public Health, social partners<br /><span style=\"text-decoration: underline;\">Review deadline:</span> 30 September 2017<br /><span style=\"text-decoration: underline;\">Measure n.19:</span> Prepare a draft update of OSH research and development priorities in the context of the challenges and key objectives of the EU Strategic Framework on Health and Safety at Work 2014–2020 and current needs in this field. Discuss these priorities in the Government Council for Occupational Safety and Health and recommend specific actions for their implementation.<br /><span style=\"text-decoration: underline;\">Responsibility:</span> Standing Committee for Education and Research of the Government Council<br /><span style=\"text-decoration: underline;\">Cooperation:</span> MoLSA, MoH, MEYS, CMA, MT, MoE, MoI<br /><span style=\"text-decoration: underline;\">Review deadline:</span> 30 September 2017<br /><span style=\"text-decoration: underline;\">Deadline:</span> 31 March 2018<br /><span style=\"text-decoration: underline;\">Measure n.20:</span> Continue in OSH research of working with nano-materials – monitoring of working with nano-materials as part of state health supervision, research of health impact of exposure to nano-materials, development of exposure measurement and estimation methods, development of prevention tools (PPE).<br /><span style=\"text-decoration: underline;\">Responsibility:</span> MoH, MoLSA<br /><span style=\"text-decoration: underline;\">Cooperation:</span> National Institute of Public Health, Occupational Safety Research Institute<br /><span style=\"text-decoration: underline;\">Deadline:</span> 31 December 2018<br /><span style=\"text-decoration: underline;\">Measure n.21:</span> Continue in research of musculoskeletal diseases, with focus on upper limb diseases related to work, development of burden quantification methods and ergonomic prevention tools.<br /><span style=\"text-decoration: underline;\">Responsibility:</span> MoH, MoLSA<br /><span style=\"text-decoration: underline;\">Cooperation:</span> National Institute of Public Health, Occupational Safety Research Institute<br /><span style=\"text-decoration: underline;\">Deadline:</span> 31 December 2018<br /><span style=\"text-decoration: underline;\">Measure n.22:</span>Develop labour-physiological standards adapted to the ageing population, with a view to evaluating health capacity for work.<br /><span style=\"text-decoration: underline;\">Responsibility:</span> MoH, MoLSA<br /><span style=\"text-decoration: underline;\">Cooperation:</span> National Institute of Public Health, Occupational Safety Research Institute<br /><span style=\"text-decoration: underline;\">Deadline:</span> 31 December 2018<br /><span style=\"text-decoration: underline;\">Measure n. 23:</span> Update the recommendations for health risk prevention as regards mental load when working in irregular and night shifts – initiate the introduction of a research programme in this field.<br />Responsibility: Society of Occupational Medicine and Society of Occupational Diseases of the Czech Medical Association of J. E. Purkyně<br /><span style=\"text-decoration: underline;\">Cooperation:</span> MoH, National Institute of Public Health, MoLSA, Occupational Safety Research Institute, Czech Ergonomics Society<br /><span style=\"text-decoration: underline;\">Deadline:</span> 31 December 2018<br /><span style=\"text-decoration: underline;\">Measure n.24:</span> Prepare a proposal establishing an expert assessment committee for difficult cases of occupational diseases and difficult cases of evaluating health capacity for work, and submit it to the Government Council for Occupational Safety and Health for discussion.<br />Responsibility: Standing Committee for Social and Health Issues of the Government Council for Occupational Safety and Health<br /><span style=\"text-decoration: underline;\">Cooperation:</span> Society of Occupational Medicine and Society of Occupational Diseases of the Czech Medical Association of J. E. Purkyně, MoH, MoLSA<br /><span style=\"text-decoration: underline;\">Deadline:</span> 31 December 2017<br /><span style=\"text-decoration: underline;\">Review deadline:</span> 30 June 2017<br /><strong> Priority VIII- Medical services</strong><br /><span style=\"text-decoration: underline;\">Measure n.25:</span> As part of the lifelong learning system and in cooperation with the educational institutions, continue developing the existing courses and workshops designed to enhance professional qualifications of providers of occupational medicine services and providers of health care services assessing the health capacity of pupils and students preparing for future professions.<br /><span style=\"text-decoration: underline;\">Responsibility:</span> MoH<br /><span style=\"text-decoration: underline;\">Cooperation:</span> National Institute of Public Health, expert societies of the Czech Medical Association of J. E. Purkyně, post-gradual education institutes<br /><span style=\"text-decoration: underline;\">Deadline:</span> 2017–2018 on a continuous basis<br /><span style=\"text-decoration: underline;\">Measure n.26:</span> Recommend, among providers of occupational medicine services with competence in general practice medicine and providers in practice medicine for children and adolescents, that they attend a certified occupational medicine course in the scope of at least 150 hours.<br /><span style=\"text-decoration: underline;\">Responsibility</span>: MoH<br /><span style=\"text-decoration: underline;\">Cooperation:</span> National Institute of Public Health, expert societies of the Czech Medical Association of J. E. Purkyně, post-gradual education institutes<br /><span style=\"text-decoration: underline;\">Deadline:</span> 2017–2018 on a continuous basis<br /><span style=\"text-decoration: underline;\">Measure n.27:</span> Further efforts to maintain a basic post-gradual education field in occupational medicine (4 years in EU countries); issue the proposed education programme for occupational medicine as soon as possible.<br /><span style=\"text-decoration: underline;\">Responsibility:</span> MoH<br /><span style=\"text-decoration: underline;\">Cooperation:</span> expert societies of the Czech Medical Association of J. E. Purkyně<br /><span style=\"text-decoration: underline;\">Deadline:</span> 2017–2018 on a continuous basis<br /><strong> Priority IX- OSH Education and Promotion</strong><br /><span style=\"text-decoration: underline;\">Measure n.28:</span> Through preventive programmes “Safe Business”, “OSH Professional”, OSH Coordinator on Site”, “Safe Town”, “Safe School”, “Health Promoting Business” and “Golden Permon”, contribute to increased OSH level and improved working conditions and promote these programmes in Europe.<br /><span style=\"text-decoration: underline;\">Responsibility:</span> MoLSA, State Labour Inspection Office, MoH supervision bodies, CMA, MEYS<br /><span style=\"text-decoration: underline;\">Cooperation</span>: National Institute of Public Health, Occupational Safety Research Institute, social partners<br /><span style=\"text-decoration: underline;\">Deadline:</span> 2017–2018 on a continuous basis<br /><span style=\"text-decoration: underline;\">Measure n.29</span>: Continue in the development of single OSH terminology in the form of OSH Encyclopaedia, taking into account the activities of the European Agency for Safety and Health at Work (OSH Wiki project), in cooperation with the relevant stakeholders.<br /><span style=\"text-decoration: underline;\">Responsibility:</span> MoLSA, Occupational Safety Research Institute<br /><span style=\"text-decoration: underline;\">Cooperation:</span> MoH, MoIT, MoRD, MT, MD, MoI<br /><span style=\"text-decoration: underline;\">Deadline:</span> on a continuous basis<br /><strong>Priority X- International cooperation </strong><br /><span style=\"text-decoration: underline;\">Measure n.30:</span>Evaluate the functioning of the national network of the European Agency for Safety and Health at Work (Focal Point) and the Advisory Committee on Health and Safety at Work attached to the European Commission, and propose modifications in cooperation at the national level within the Czech Republic, if appropriate.<br /><span style=\"text-decoration: underline;\">Responsibility:</span> MoLSA<br /><span style=\"text-decoration: underline;\">Cooperation:</span> MoH, Government Council for Occupational Safety and Health, social partners<br /><span style=\"text-decoration: underline;\">Deadline:</span> 30 June 2017<br /><span style=\"text-decoration: underline;\">Measure n.31:</span> Implement European information and control campaigns targeting OSH, in close cooperation with stakeholder departments and social partners, such as the European Campaign on Risk Assessment, European Network for Worksite Health Promotion, international campaign of the Senior Labour Inspectors’ Committee (SLIC), and coordinate nationwide campaigns for employers, which will be aimed at healthy lifestyle of employees.<br /><span style=\"text-decoration: underline;\">Responsibility:</span> MoLSA, State Labour Inspection Office, MoH, CMA<br /><span style=\"text-decoration: underline;\">Cooperation:</span> social partners<br /><span style=\"text-decoration: underline;\">Deadline:</span> 2017–2018 on a continuous basis.</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+98, null, @sectionId, "STRATEGY_ACTORS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+98, "EN", 1, "MoLSA (in Czech: MPSV):Ministry of Labour and Social Affairs<br/>MoF (MF): Ministry of Finance<br/>MoH (MZ): Ministry of Health<br/>MoEYS (MŠMT): Ministry of Education, Youth and Sports<br/>MoIT (MPO): Ministry of Industry and Trade<br/>CMA (ČBÚ): Czech Mining Authority<br/>MoT (MD): Ministry of Transport<br/>MoI (MV): Ministry of the Interior<br/>MoD (MO): Ministry of Defence<br/>NIPH (SZÚ): National Institute for Public Health<br/>OSRI (VÚBP): Occupational Safety Research Institute");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+99, null, @sectionId, "STRATEGY_RESOURCES & STRATEGY_EVALUATION");
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+99, null, @sectionId, "COMMON LITERAL");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+99, "EN", 1, "No information identified.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+101, null, @sectionId, "STRATEGY_EU");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+101, "EN", 1, "Looking at the many detailed activities, it can be said that the Czech OSH strategy is related to all three challenges.<br/>Challenge 1 is covered by measure 3 and 4 and the main priority III (Prevention of occupational risks) and IX (OSH Education and Promotion)<br/>The relation to Challenges 2 and 3 of the EU Strategic Framework is obvious in the main priority No. VII: Research and development.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+102, null, @sectionId, "STRATEGY_BASIC INFO");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+102, "EN", 1, "Danish document: <a target=\"_blank\" href=\" http://bm.dk/~/media/BEM/Files/Dokumenter/Pressemeddelelser/2011/Aftaletekst.ashx \"><strong>En strategi for arbejdsmiljøindsatsen frem til 2020</strong></a><br/>English document:<a target=\"_blank\" href=\"https://amid.dk/media/2953/strategy-working-environment-efforts-2020.pdf\"><strong>A strategy for working environment efforts up to 2020</strong></a><br/><a target=\"_blank\" href=\"http://www.ftf.dk/fileadmin/Bruger_filbibliotek/Uddannelse_og_ledelse/Uddannelse/Aftaletekst_arbejdsmiljoe_pdf.pdf\">En styrket arbejdsmiljøindsats – Alle har ret til et sikkert og sundt arbejdsmiljø </a>(Agreement between the Danish government, Denmarks’s Liberal Party, the Danish People’s Party and the Conservative People’s Party).<br/>Former strategies: <ol><li> Action Programme for a Clean Working Environment 2005 (1996)</li><li> New National Action Plan and the prioritisation of the overall WE-Efforts in Denmark up to 2010</li></ol>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+103, null, @sectionId, "STRATEGY_BACKGROUND");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+103, "EN", 1, "Defining the perceived problem:<br/>Background report:  Fremtidens arbejdsmiljø 2020<br/>The former two OSH strategies already aimed at improving safety and health at work mainly regarding the development of OSH prevention tools, structuring OSH research and improving OSH knowledge.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+104, null, @sectionId, "STRATEGY_CHARACTERISTICS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+104, "EN", 1, "<p>Overall 19 different initiatives, from ‘Differentiated fines’ to ‘More help for smaller enterprises’.<br />There are three priority areas:</p><ul><li>Accidents at work</li><li>Psychosocial working environment</li><li>Musculoskeletal disorders</li></ul><p>Following ambitious targets have been set up to 2020:</p><ul><li>25% fewer serious industrial accidents.</li><li>20% fewer people with occupational psychological problems</li><li>20% fewer people with musculoskeletal strain and overload.</li></ul><p>An agreement between the Danish government, Denmark’s Liberal Party, the Danish People’s Party and the Conservative People’s Party decided in 2015 to strengthen the health and safety initiatives further. The parties supplemented the 2011 Agreement with 15 new initiatives. The aim of the 15 new initiatives is to supplement the 2020 strategy with stronger health and safety initiatives and ensure that poor working conditions are not a competitive factor.</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+105, null, @sectionId, "STRATEGY_DETAILS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+105, "EN", 1, "<p><strong>Priorities</strong></p><ul><li>Less Accidents at work: The number of serious accidents at work is to be reduced by 25% in proportion to the number of employees</li><li>Psychosocial working environment: The number of employees who are psychologically overloaded is to be reduced by 20%</li><li>Musculoskeletal disorders: The number of employees who experience musculoskeletal disorders is to be reduced by 20%</li></ul><p><strong>Initiatives 1-19 (2011 Agreement)</strong></p><ul><li><span style=\"text-decoration: underline;\">Initiative 1:</span> Inspections</li>Risk-based inspection in two tiers focusing on enterprises with health and safety issues.<li><span style=\"text-decoration: underline;\">Initiative 2:</span> De minimis limits:</li>LI (Danish Working Environment Authority) will ‘issue improvement notices concerning working environment problems that are considered to be minor’.<li><span style=\"text-decoration: underline;\">Initiative 3:</span> Differentiated fines</li>Fines to larger enterprises will be higher than to smaller<li><span style=\"text-decoration: underline;\">Initiative 4:</span> Intensified dialogue with enterprises</li>Enhanced communication with enterprises, also during inspections.<li><span style=\"text-decoration: underline;\">Initiative 5:</span> Focus on psychosocial working environment</li>The parties agree on high relevance of the issue and the important role of social partners. The LI will intensify their efforts to find ways to resolve problems.<li><span style=\"text-decoration: underline;\">Initiative 6:</span> More help for smaller enterprises</li>More advice to MSE with less than 5 emp., better connections to sector organisations.<li><span style=\"text-decoration: underline;\">Initiative 7:</span> Starter kit for new enterprises</li>Preparation of a special starter kid for small enterprises plus specific info material concerning inspections and selected working environment issues in the areas of forestry, agriculture, nurseries and construction, particularly to foreign enterprises (languages: Danish, Lithuanian, Polish, English and German).<li><span style=\"text-decoration: underline;\">Initiative 8:</span> Simplified health and safety consultancy scheme</li>Consultancy notices are only issued when the Danish Working Environment Authority assesses that enterprises need to consult an authorised health and safety consultant. Violations will still be prosecuted.<li><span style=\"text-decoration: underline;\">Initiative 9:</span> Modified Smiley scheme</li>Expiration of the green Smiley after five years. Enterprises can request a new inspection to receive a new Smiley.<li><span style=\"text-decoration: underline;\">Initiative 10:</span> Analysis of the experiences with the H&amp;S Organisation at the enterprise level</li>Evaluation of new legislation on H&amp;S organisation from 2010.<li><span style=\"text-decoration: underline;\">Initiative 11:</span> Dialogue concerning health promotion</li>Inclusion of health promotion in inspection activities.<li><span style=\"text-decoration: underline;\">Initiative 12:</span> Focus on young and new employees</li>Better instruction and training, better and more intense ways of communication.<li><span style=\"text-decoration: underline;\">Initiative 13:</span> Focus on foreign enterprises</li>Strengthening of the inspection of foreign enterprises, particularly in construction<li><span style=\"text-decoration: underline;\">Initiative 14:</span> Improved guidance and information on the working environment</li>Quote: “An external study will be initiated to clarify how the various working environment stakeholders can enhance their cooperation on providing information and guidance to Enterprise”.<li><span style=\"text-decoration: underline;\">Initiative 15:</span> Coordina-tion of guidance and inspections of enterprises by various authorities</li>Launch of a study to clarify whether enterprises would find it more simple and efficient if authorities coordinated their guidance and control activities.<li><span style=\"text-decoration: underline;\">Initiative 16:</span> Danish Centre for Nano-Safety</li>A Danish Centre for Nano-Safety was established by the Danish Working Environment Research Fund, financed with a sum of DKK 10 million for a period of three years.<li><span style=\"text-decoration: underline;\">Initiative 17:</span> Targeting the resources of the Danish Working Environ-ment Research Fund</li>Quote: “The basis of the new strategy of the Danish Working Environment Research Fund in 2011 is that the resources of the Fund should be targeted towards projects that primarily relate to the three focus areas for the working environment and measures. However, continued research in key areas such as indoor environment, chemicals and noise should be ensured.<li><span style=\"text-decoration: underline;\">Initiative 18:</span> Measuring progress with regard to the working environment</li>Quote: “The Danish Working Environment Authority, the National Research Centre for the Working Environment and the National Board of Industrial Injuries will adapt the existing measurement programme for progress with regard to the working environment. Information about the relevant working environment factors will be gathered to enable the regular monitoring of progress within the focus areas. Monitoring areas that are not focus areas will also be possible”.<li><span style=\"text-decoration: underline;\">Initiative 19:</span> Impact measurement of specific activities</li>Impact measurement of strategic activities of the actors, e.g. the bullying and harassment hotline of the Danish Working Environment Authority (LI).</ul><p><br /><strong> Additional initiatives 1-15 (2015 Agreement)</strong></p><ul><ul><li><span style=\"text-decoration: underline;\">New initiative 1:</span> More inspection of enterprises with biggest health and safety problems</li>80% of the enterprises will be inspected annually using the index model . The remaining 20% will be inspected randomly. Follow-up inspections will be organised more flexible (no longer bound to 12-18 months follow-up).<li><span style=\"text-decoration: underline;\">New initiative 2:</span>Including more information to select companies for inspection</li>Reports of occupational diseases will be included in the selection of enterprises for the inspection. It will be investigated how reported and recognised OSH injuries can be included as parameters in the index model and how information about work-load can be used to prepare inspection visits.<li><span style=\"text-decoration: underline;\">New initiative 3:</span> Inspection where work is being performed</li>The risk-based inspection has to be carried out on-site. The Danish WEA (Working Environment Authority) will be able to contact all companies with temporary and mobile workplaces before the risk-based inspection.<li><span style=\"text-decoration: underline;\">New initiative 4:</span> Earlier inspection of newly established enterprises</li>No grace period of two years for new enterprises: new established enterprises with high health and safety problems will be selected for an inspection in line with other enterprises with high health and safety problems. However, new established enterprises will continue to receive a starter kit immediately after they employ staff.<li><span style=\"text-decoration: underline;\">New initiative 5:</span> Enterprises with a working environment certificate but with problems can be inspected</li>If a company with a “crown” smiley, indicating that the company holds a recognised health and safety certificate (working environment certification), breaks the OSH rules it will lose its certificate. The Danish WEA must always check by new inspection whether the company fulfils the improvement notes before re-issuing the certificate.</ul></ul><ul><ul>Companies with a “crown” smiley will not be selected for OSH inspections.<li><span style=\"text-decoration: underline;\">New initiative 6:</span> Better control of working environment certification</li>An investigation has been initiated on July 2015 to check whether there is a need to improve the quality of certification and auditing by the certification bodies. The investigation lasted one year and results were submitted to the Parties.</ul><ul>The report was drawn up by DANAK in April 2016 and revealed that there is room for improvement of the inspections carried out by the certification bodies.<li><span style=\"text-decoration: underline;\">New initiative 7:</span> The Danish WEA and the sector working environment councils are to coordinate their work</li>The Danish WEA will stipulate focus areas for relevant sectors in the framework of risk-based inspections annually. The relevant Sector Work Environment Councils (Branchearbejdsmiljørådet) will be involved and will be able to submit proposals prior to stipulating areas.<li><span style=\"text-decoration: underline;\">New initiative 8:</span> Access to targeted guidelines from the Danish WEA</li>Companies shall access easier targeted information to comply with OSH regulations. Companies will be allowed to set up “personal” pages on the Danish WEA website containing OSH regulations, information material and guidelines from the Branchearbejdsmiljørådet especially aimed at their sector and company size.<li><span style=\"text-decoration: underline;\">New initiative 9:</span> Risk-based inspection to be notified digitally</li>Notifications of risk-based inspections by phone will be replaced by digital notifications.<li><span style=\"text-decoration: underline;\">New initiative 10:</span>&nbsp;Trial with announced risk-based inspection</li>The Danish WEA will conduct a trial with selected sectors (in 2016 and 2017 with about 2-3,000 companies) with advance notice (date and time) of risk-based inspections in order to gain information about preparations by companies and benefits of inspections for companies.<li><span style=\"text-decoration: underline;\">New initiative 11:</span> Investigation of a method to select enterprises for inspection</li>The Danish WEA should initiate an analysis to examine whether there is a basis for making the selection of enterprises for a new risk-based inspection following reactions more targeted and differentiated. The analysis was conducted from July 2015 to autumn 2016.</ul><ul>The overall result of the analysis showed no basis to modify the existing principle for selection of enterprises for risk-based inspection. The analysis has shown that material decisions given to enterprises are a good risk parameter in the index model.</ul><li><span style=\"text-decoration: underline;\">New initiative 12:</span> Serious violations to result in higher fines</li>Companies which commit serious violations of the Working Environment Act should be sanctioned harder. In future the total increased fines will be differentiated and not just standard fines. The fines in situations with aggravating or especially aggravating circumstances should be differentiated on the basis of the size of the company.<li><span style=\"text-decoration: underline;\">New initiative 13:</span> Inspection of enterprises that commit serious violations of the regulations</li>Companies that have been issued with a prohibition notice as a result of a gross violation of OSH regulations are to be subject to stricter inspection (unless, for example, the work has been completed). This means more rapid follow-up inspections than today, i.e. a few days/weeks after the gross violation was ascertained. The inspections will be carried out without announcement.<li><span style=\"text-decoration: underline;\">New initiative 14:</span> Breaches of the occupational safety and health regulations to be followed up rapidly</li>Companies will get a simpler and faster follow-up to sanctionable breaches so that they do not have to wait for a police case or court proceedings.<li><span style=\"text-decoration: underline;\">New initiative 15:</span> Regulations on cooperation concerning health and safety are to be toughened</li>The cooperation OSH stakeholders concerning the safety and health at work shall be enhanced.</ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+106, null, @sectionId, "STRATEGY_ACTORS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+106, "EN", 1, "Ministries and their departments (particularly the Ministry of Employment), unions and employer associations on a national and sectoral and professional level, the Danish Working Environment Authority (LI), the Working Environment Council, Research Organisations like the Danish Working Environment Research Fund, the National Research Centre for the Work Environment,  the 11 Sector Councils for  Working Environment , the Working Environment Information Centre, professional OSH associations like Arbejdsmiljørådgiverne – The Danish Association Of Occupational Health And Safety Consultants with 39 authorised companies , the Fund for Better Working Environment and Labour Retention, the nine Occupational Health clinics.<br/>The Agreement was negotiated between the Danish government (the Danish Social Democrats and the Danish Social-Liberal Party), Denmark's Liberal Party, the Danish People's Party and the Conservative People's Party.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+107, null, @sectionId, "STRATEGY_RESOURCES");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+107, "EN", 1, "Years:  2011 – 2020<br/>In kind contribution from all institutions and associations.<br/>Additional financing of activities of the sectoral working environment councils and the National Working Environment Council (‘Arbejdsmiljørådet’), supporting the activities of the strategy.<br/>Founding of the Nano Centre.<br/>Studies to clarify the status quo, measure the impact, or evaluate.<br/>Campaign support.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+108, null, @sectionId, "STRATEGY_EVALUATION");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+108, "EN", 1, "<p>Evaluation: No overall evaluation or impact measurement was done until now.<br />However, all initiatives on OSH are systematically evaluated by a general monitoring including <a href=\"https://at.dk/om-os/formaal-strategi-organisation/om-strategi-for-arbejdsmiljoeindsatsen-frem-til-2020/\" target=\"_blank\">two large surveys programs</a>:</p><ul><li>One of workplace-subject (Workplaces)&nbsp;</li><li>One of individual-subject and of statistics on occupational accidents.</li></ul><p>The outcomes of the reduction targets on the experienced impact on MSD and on psychologically overload are every second year assessed by the individual-subject OSH survey (Work environment and health) with qualitative indicators.<br />The outcome of the reduction target on serious accidents (absence of work for more than four weeks) is every second year assessed by interconnection of multiple databases with quantitative indicators.<br />The midterm evaluation in 2015 showed a decrease on experienced impact on MSD and a smaller increase on psychologically overload. Regarding accidents the evaluation showed a significant decrease.<br /><br /> Ex ante indicators for the years 2012 to 2020<br />Accidents at work: The number of serious accidents at work is to be reduced by 25% in proportion to the number of employees.<br />Psychosocial working environment: The number of employees who are psychologically overloaded is to be reduced by 20%.<br />Musculoskeletal disorders: The number of employees who experience musculoskeletal disorders is to be reduced by 20%.</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+109, null, @sectionId, "STRATEGY_EU");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+109, "EN", 1, "Very strong relation to EU OSH Strategy Challenge 1 (Improving the implementation record of Member States, in particular by enhancing the capacity of micro and small enterprises to put in place effective and efficient risk prevention measures).<br/>Due to the broad and general approach of the Danish Strategy there are relations to practically every aspect of the EU-OSH Strategic Framework including simplification.<br/>There is a particularly strong relation to ergonomic and psychosocial issues (mentioned on p6 of the EU-strategy) and the nano-debate.<br/>The weakest direct relation seems to be to the demographic challenge (EU-OSH Strategic Framework: ‘Third Challenge: Tackling demographic change’) and to chemicals (p6 of the EU-strategy).");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+110, null, @sectionId, "STRATEGY_BASIC INFO");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+110, "EN", 1, "<p><strong>Current strategies:</strong><br />Original version: <a href=\" https://www.sm.ee/et/heaolu-arengukava-2016-2023\" target=\"_blank\"><strong> Heaolu arengukava 2016-2023</strong></a><br />English version: <a href=\" https://www.sm.ee/sites/default/files/content-editors/eesmargid_ja_tegevused/Sotsiaalse_turvalisuse_kaasatuse_ja_vordsete_voimaluste_arengukava_2016_2023/wdp.pdf\" target=\"_blank\"><strong>Welfare Development Plan 2016–2023</strong></a><br />Occupational health and safety activities are regulated in the Welfare Development Plan. The Welfare Development Plan focuses on the strategic objectives of labour market (incl. occupational health and safety), social protection, gender equality, and equal treatment policies for 2016–2023.<br />Original version: <a href=\" https://www.sm.ee/sites/default/files/content-editors/eesmargid_ja_tegevused/Tervis/2012_rta_pohitekst_ok_5.pdf \" target=\"_blank\"><strong> Rahvastiku tervise arengukava 2009–2020</strong></a><br />English version: <a href=\" http://www.sm.ee/sites/default/files/content-editors/eesmargid_ja_tegevused/Tervis/Aruanded/rta_2009-2020_2012_eng.pdf\" target=\"_blank\"><strong>National Health Plan 2009-2020</strong></a><br />The Occupational Health and Safety Strategy 2010-2013: the goals and activities of the strategy are integrated into the application plan 2013–2016 of the NHP 2009–2020.<br />Former strategy: Occupational Health and Safety Strategy for 2010-2013</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+111, null, @sectionId, "STRATEGY_BACKGROUND");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+111, "EN", 1, "<strong>Welfare Development Plan 2016–2023</strong><br/>Work affects people’s health. Decreasing work ability prevents the employee from participating in working life actively and for a long time. A decrease in work ability and physical harm related to employment are caused by the risk factors existing in a work environment and their impact on the employee’s health. Work-related health damages cause absence from work, causing expenses for the employee, employer, and society. Lack of awareness about occupational health and safety does not support the protection of the employee’s health in the work environment. Employers and employees do not know enough about occupational health and safety, their rights and obligations, requirements resulting from legislation, or workplace risks. Employers sense the lack of information, the inability to find the necessary materials on their own, and the inability to keep themselves constantly up to date with the changes in the acquis.<br/><strong>National Health Plan 2009-2020</strong><br/>A person's health is significantly influenced by working environment. It is possible to improve the conditions thereof with the help of an efficient health protection and work safety system. If such a system is not present, the number of accidents at work and occupational diseases increases, which result in the loss of working time and an increase in incapacity for work. The above has a direct negative influence on all the economy. The number of sick days caused by accidents at work and associated with work is large and causes loss to the economy of the state. Compliance with occupational health and safety requirements is insufficient, and therefore the state supervision requires enhancement.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+112, null, @sectionId, "STRATEGY_CHARACTERISTICS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+112, "EN", 1, "<p><strong>Welfare Development Plan 2016–2023</strong><br />The priority of the Development Plan is to support participation in the workforce and a long-term working life. One of the main objective of the Welfare Development Plan is high employment rate and a high-quality working life.</p><p>The related sub-objective is: “Correlation between the demand and supply of the workforce ensures a high level of employment, and high-quality working conditions support long-term participation in working life”. This sub-objective also covers all the relevant occupational health and safety policy instruments.<br />The related measure in the implementation plan: “Maintaining employees' work ability, keeping them in the labour market, and bringing people with reduced work ability into the labour market”.<br />Indicator: The number of sick days related to work accidents per each accident.<br /><strong> National Health Plan 2009-2020</strong><br />The sub-objective is: “Health risks from the living, working and learning environment are reduced”. The following measure was used in the period 2013-2016 to achieve the objectives: “Development of health-supporting working environment and decrease of health risks based on the working environment”.<br />Indicators:</p><ol><li>Number of fatal occupational accidents per 100,000 employees;</li><li>Number of working days lost due to occupational accidents per 100 employees;</li><li>Health impact of work: percentage of employed persons who believe that their work deteriorates their health.</li></ol>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+113, null, @sectionId, "STRATEGY_DETAILS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+113, "EN", 1, "<strong>Welfare Development Plan 2016-2023</strong><br/>Objectives:<ol><li>High employment rate and a high quality of working life </li><li>Reducing social inequalities and poverty, gender equality, and greater social inclusion </li></ol>Four sub-objectives: the relation to OSH can be found in sub-objective 1: Correlation between the demand and supply of the workforce ensures a high level of employment, and high quality of working conditions support long-term participation in working life.<br/>The main policy instruments related to occupational health and safety are:<ol><li>The capacity of working life participants must be increased for the implementation of rules for working environment, including for coping with new working environment risks, and for the prevention of the employee’s loss of ability to work;</li><li>The monitoring of the work environments shall be enhanced to identify and eliminate violations related to the work environment;</li><li>The legal framework regulating the working environment must be made clearer and compatible with the changing labour market situation and economy;</li><li>Monitoring, outreach, and counselling activities must be made more efficient; </li><li>Employers must be supported in improving working environments and conditions and in preventing employees’ loss of work ability, including reducing the employer’s occupational health and safety management burden;</li><li>Greater attention shall be paid to shaping the work safety culture for the participants in working life, including compiling a risk analysis, assessment of new risks, and to the safety in using flexible forms of work;</li><li>The possibility of developing a compensation system for an incapacity for work shall be analysed to motivate preventing work interruptions and to encourage returning to work, including analysing the principles of the occupational health system and for compensating incapacity for work due to the employee’s health damage in order to enable early intervention.</li></ol><strong>National Health Plan 2009-2020</strong><br/>The priorities of the field of occupational health are: <ol><li>Increasing the awareness of various target groups of the health risks from the living, working and learning environment and measures for management thereof.</li><li>Enhancement of the system of evaluation, management and information of health risks from the living, working and learning environment.</li><li>Enhancement of supervision in the living, working and learning environment.</li><li>Improvement of the organisation of occupational health and significant improvement of the quality of occupational health services and ensuring the availability thereof for all employees.</li></ol><strong> Sub-objective SO3:</strong> Health risks from the living, working and learning environment are reduced<br/><strong> Measures M (2009-2012) </strong><ol><li>Modernise the legal system facilitating the maintenance and improvement of the living, working and learning environment.</li><li>Enhance the system of evaluation, management and information system of health risks from the living environment (including climate changes) and working and learning environment. </li><li>Enhance the surveillance system of the living, working and learning environment (at different levels), develop strong and coordinated cooperation. </li><li>Increase the awareness of people of health risks from the living, working and learning environment.</li><li>Train experts for evaluation of health risks from the living, working and learning environment and enhance the quality of evaluation service of health risks.</li><li>Organise training sessions for specialists of county and rural municipality governments on environmental health risks and management possibilities thereof. </li><li>Organise surveys in order to assess the influence of environmental factors in the living, working or learning environment on health and publish the results of the surveys. </li><li> Develop the cooperation of family physicians with occupational health doctors and health protection specialists to ensure prevention and effective treatment of health disorders and illnesses, considering the connection of negative impacts on health and the living, working or learning environment. </li><li>Increase the share of people included in immunisation.</li><li>Ensure state-level preparedness to prevent spreading of communicable diseases, epidemics and pandemics, including updating of the necessary laboratory base.</li><li>Include occupational health and safety in the curricula of establishments providing general and professional education.</li><li>Improve the organisation of occupational health, significantly improve the quality of occupational health services and availability of the services for all employees </li><li>Develop an insurance system for accidents at work and occupational diseases and coordinate the application thereof. </li><li>Ensure access to the living, working and learning environment and usability thereof by all members of the society </li><li>Make instruction materials on making the living, working and learning environment safer for health available to relevant target groups. </li></ol><strong>Measures M (2013-2016)</strong><ol><li>Development of health-supporting living environment and reducing of health risks based on the living environment. </li><li>Development of healthy learning environment and reducing of health risks based on the studying environment. </li><li>Development of health-supporting working environment and reducing of health risks based on the working environment.</li><li>Organisation of surveillance, prevention and control of spreading of communicable diseases.</li></ol>The measures are shown as activities in the <a target=\"_blank\" href=\" http://www.sm.ee/sites/default/files/content-editors/eesmargid_ja_tegevused/Tervis/taiendatud_rta_2013-2016_rakendusplaan_eng_8.04.15.pdf \">implementation plan 2013-2016</a>:<ol><li>Ensuring of the legal system necessary for the achievement of working environment promoting the maintenance and improvement of health.</li><li>Significant improvement of the quality of occupational health services and the availability of those services for all employees. Improvement of the organisation of occupational health.</li><li>Creation and development of information technology solutions in the field of working environment.</li><li>Development of instruction materials on occupational health and safety.</li><li>Organisation of an in-service professional training for occupational healthcare professionals and employers.</li><li>Organisation of thematic campaigns of occupational health and safety, collection and distribution of best practices in the field.</li><li>Increasing of the quality of evaluating health risks based on the working environment </li><li>Development of cooperation between healthcare service providers of different professions to ensure prevention and effective treatment of health disorders and illnesses, considering the connection of negative impacts on health and the living, working or learning environment.</li><li>Increasing of the efficiency of supervision of the working environment by improving the system and increasing effectiveness.</li><li>Organisation of surveys in order to evaluate the impact of working environment based risk factors on health, and publishing of the results of the surveys.</li></ol>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+114, null, @sectionId, "STRATEGY_ACTORS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+114, "EN", 1, "The strategies are implemented by the Ministry of Social Affairs and Labour Inspectorate.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+115, null, @sectionId, "STRATEGY_RESOURCES");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+115, "EN", 1, "Welfare Development Plan budget (occupational health and safety activities) for 2016-2020: 3 596 297 EUR<br/>National Health Plan (occupational health and safety activities) budget for 2013-2016: 2 170 000 EUR.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+116, null, @sectionId, "STRATEGY_EVALUATION");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+116, "EN", 1, "<p><strong>Welfare Development Plan</strong> is reviewed regularly – to provide an overview of the achievement of the objectives of the Development Plan, a report on its fulfilment is compiled each year. A performance report on the implementation of measures and activities is compiled.<br /><strong>National Health Plan</strong> is reviewed regularly:</p><ul><li>Annually, including an overview of the activities in the development plan and current management decisions regarding the financing and implementation of activities;</li><li>Biennially, including (in addition to current management decisions) also updating of the indicators in the development plan, drafting of a fulfilment report and a decision of the government regarding the previous activities and possible new directions. Biennial updating of the indicators is based on the frequency of the population survey taking place with such frequency;</li><li>Every four years a comprehensive evaluation of the National Health Plan and reviewing of objectives is organised.</li></ul><p>Ex ante indicators for the years 2012 to 2020<br />Indicator that is measured in the <strong>Welfare Development Plan</strong>: The number of sick days related to work accidents per each accident.<br />Indicators that are measured in the <strong>National Health Plan</strong>:</p><ul><li>Number of fatal occupational accidents per 100,000 employees;</li><li>Number of working days lost due to occupational accidents per 100 employees;</li><li>Health impact of work: percentage of employed persons who believe that their work deteriorates their health.</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+117, null, @sectionId, "STRATEGY_EU");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+117, "EN", 1, "Estonian occupational health and safety priorities in the strategies are in accordance with the EU OSH strategy.<br/>Estonia has taken into account the following EU OSH Strategy objectives in designing OSH policy and relevant legislation: <ol><li>Facilitate compliance with OSH legislation, particularly by micro and small enterprises;</li><li>Better enforcement of OSH legislation;</li><li>Simplify existing OSH legislation and eliminate unnecessary administrative burden;</li><li>Take into account the ageing of the workforce (welfare development plan 2016-2023 – sub-objective 1 (Correlation between the demand and supply of the workforce ensures a high level of employment and high-quality working conditions support long term participation in working life), emerging new risks, prevention of work-related and occupational diseases;</li><li>Collect reliable statistical data on work-related accidents and diseases, occupational exposures, work-related ill-health, and to analyse the costs and benefits in this area.</li></ol>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+118, null, @sectionId, "STRATEGY_BASIC INFO");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+118, "EN", 1, "<p>Main strategic document:<a href=\"http://urn.fi/URN:ISBN:978-952-00-3175-6\" target=\"_blank\"><strong> Policies for the working environment and wellbeing at work until 2020</strong></a><br />The main related national programmes in the OSH field are:</p><ul><li><a href=\"http://urn.fi/URN:ISBN:978-952-00-3175-6\" target=\"_blank\">Policies for the working environment and wellbeing at work until 2020</a></li><li><a href=\"http://urn.fi/URN:ISBN:978-952-00-3136-7\" target=\"_blank\">Strategy for social and health policy: Socially Sustainable Finland 2020</a></li><li><a href=\" http://julkaisut.valtioneuvosto.fi/handle/10024/74003\" target=\"_blank\">The Strategy for the development of working life up until 2020</a></li><li>Strategy from the National Institute for Health and Welfaret</li><li><a href=\"http://julkaisut.valtioneuvosto.fi/handle/10024/74003\" target=\"_blank\">National working Life Development Strategy 2020</a></li></ul><p>Former strategies: <a href=\"http://urn.fi/URN:ISBN:978-952-00-3145-9\" target=\"_blank\"><strong>Occupational Safety and health strategy 1998 </strong></a> with <a href=\"http://urn.fi/URN:ISBN:978-952-00-3145-9\" target=\"_blank\"><strong>follow-up reports </strong></a>&nbsp;Developed and monitored mainly by the Ministry of Social Affairs and Health.</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+119, null, @sectionId, "STRATEGY_BACKGROUND");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+119, "EN", 1, "<p><strong> Vision</strong>: Health, safety and well-being are important common values, which are put into practice in every workplace and for every employee.<br />The activities of a workplace are guided by a common idea of good work and a good workplace.<br />Good work: fair treatment of employees, adoption of common values, mutual trust, genuine cooperation and equality in the workplace.<br />Good workplace: productive and profitable, healthy, safe and pleasant, meaningful, interesting, compatible with private life, good management and leadership.<br /><strong>Targets for 2020 compared to the situation at 2010</strong>:</p><ul><li>The number of occupational diseases decreases by 10%</li><li>The frequency of workplace accidents is reduced by 25%</li><li>Perceived physical strain is reduced by 20%</li><li>Perceived psychic strain is reduced by 20%</li><li>Extending employees’ lifelong time at work by three years until the year 2020.</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+120, null, @sectionId, "STRATEGY_CHARACTERISTICS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+120, "EN", 1, "<a target=\"_blank\" href=\" http://www.ilo.org/safework/areasofwork/national-occupational-safety-and-health-systems-and-programmes/WCMS_179869/lang--en/index.htm \">The strategy is not a single document, but consists of the strategy and several national programmes</a>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+121, null, @sectionId, "STRATEGY_DETAILS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+121, "EN", 1, "<p>The strategy defines the objectives, focal areas and principles of developing the activity in the next few years.<br />Six focal areas or actions of occupational safety and health have been formed:</p><ol><li>Maintenance and promotion of work ability and functional capacity</li><li>Prevention of occupational accidents and diseases</li><li>Prevention of musculoskeletal disorders</li><li>Mental well-being at work</li><li>Coping at work</li><li>Job control</li></ol><p>Creating good work environments and well-being presupposes that people in the workplaces have adequate and proper knowledge, will and competence needed for reaching the goals. Improving well-being at work ultimately depends on the actions taken in the workplace. The first step in fulfilling the vision and reaching the objectives is that the workplaces meet the minimum requirements of legislation and get the basic conditions in order. The regional occupational safety and health administration is responsible for supervising that employers fulfil their <a href=\"https://julkaisut.valtioneuvosto.fi/handle/10024/161451\" target=\"_blank\">statutory obligations</a>.<br /><strong>Focus Area 1: Leadership, the corner stone of well-being at work </strong><br />“The quality of leadership in enterprises and other organisations will be improved together with interest groups and by influencing training and instruction. The conditions mentioned in the vision of these policies – health, safety and well-being – generally belong to a good leadership. Leadership will be developed with the object of creating a better safety climate. Improved leadership can be achieved mainly by cooperation and communication”.<br /><strong> Focus Area 2: Occupational health care, an efficient partner</strong></p><p>“The preventive role of occupational health care will be strengthened. The impact of occupational health care will be appraised on the basis of occupational health care reports and by monitoring sickness absence rates, occupational accidents and occupational diseases. To promote and support employees’ work ability, models of early support will be put into practice at workplaces. Cooperation between the line management and experts for promoting health and work ability will be improved. Cooperation includes mutual awareness and common forms of action (e.g. workplace surveys, risk assessment expertise and early support to employees and management) as part of improving health and safety. Successful cooperation with occupational health care requires a smooth flow of information and awareness of the state of affairs”.<br /><strong>Focus Area 3: Knowledge, will and competence through cooperation </strong><br />“A form of network cooperation for the work environment and well-being at work will be created for the different parties and actors, who all recognize their roles and tasks in the network. This occupational safety and health network operates in a result-oriented and efficient way for the work environment and well-being at work. It will be ascertained that the cooperation is functional both on the national and regional level and in workplaces as well”.<br /><strong>Focus Area 4: Effectiveness through communication </strong><br />“Together with interest groups it will be investigated what kind of communication best corresponds to the needs and brings good results in different contexts. Communication will be intensified by using various means and channels”.<br /><strong>Focus Area 5: Good legislation, the foundation for the minimum level of working conditions </strong><br />“Occupational safety and health legislation will be prepared in close cooperation with labour market parties so as to make legislation up-to-date and meet the needs of working life. The up-to-dateness of decrees will be evaluated at least every fifth year and that of acts at least every tenth year from the date of entry into force. In the EU politics, Finland will support the efforts for simplifying directives and transferring the focus to the member states when this is possible without reducing the basic regulation, such as that on risk assessment and cooperation at workplaces”.<br /><strong>Focus Area 6: Competent occupational safety and health administration ensures enforcement of legislation </strong>“By developing enforcement practices and personnel’s competence, the occupational safety and health administration ensures that enforcement is effective, competent and has a uniform quality. Evaluation of the impact of enforcement will be developed and the effects of the different actions monitored. Feedback from workplaces will be monitored by means of client questionnaires”.<br /><strong>Additional info from other programmes </strong><br />Other programs related to Health and Safety at Work<br />The Ministry of Social Affairs and Health has set a goal to extend employees’ lifelong time at work by three years until the year 2020. Several actions were or will be set up to reach this goal.</p><ul><li><a href=\"http://www.ttl.fi/partner/thf/eng/sivut/default.aspx\" target=\"_blank\">Forum for well-being at work - Acting together (2011-2015)</a></li><li>Well-being at work network in Finland (2011-)</li><li>The Mielekäs programme - Making the social and health sector more attractive (2011-2015)</li><li><a href=\"http://stm.fi/osatyokykyiset?p_p_id=56_INSTANCE_3GJ2TdoJVRDn&amp;p_p_lifecycle=0&amp;p_p_state=normal&amp;p_p_mode=view&amp;p_p_col_id=column-2&amp;p_p_col_count=1&amp;_56_INSTANCE_3GJ2TdoJVRDn_languageId=en_US\" target=\"_blank\">Programme for persons with partial work capacity 2012-2015</a></li><li>Government’s key project “Career opportunities for people with partial work capacity” (2016-2018)</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+122, null, @sectionId, "STRATEGY_ACTORS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+122, "EN", 1, "The <a target=\"_blank\" href=\"http://www.ilo.org/safework/areasofwork/national-occupational-safety-and-health-systems-and-programmes/WCMS_179869/lang--en/index.htm \">Ministry of Social Affairs and Health and the Occupational Safety and Health Inspectorates </a> work out the performance targets and agree on them, the emphasis being on the effects of the safety and health supervision.<br/>The Inspectorates target their supervision at such practices in the workplaces which support and promote safety and health at work and, on the other hand, at essential issues dealing with the supervision of compliance with statutory requirements, such as the supervision of employment relations.<br/>Finnish Institute of Occupational Health<br/>Finnish Work Environment Fund<br/>Federation of Accident Insurance Institutions<br/>Centre for Occupational Safety<br/>All the key policies related to work life, the labour market, social security, and occupational health and safety are negotiated collectively between the three partners (Government, Employers and Trade Unions) and agreements are usually made on a consensus basis.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+123, null, @sectionId, "STRATEGY_RESOURCES");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+123, "EN", 1, "<ul><li>No specific time span; policies set up until 2020</li><li>Complemented with the central government budget.</li></ul><p>Enforcement is mainly carried out by means of workplace inspections.<br />Other measures include issuing of licences and submitting of statements to other authorities.<br />In <a href=\"http://www.e-julkaisu.fi/tyosuojeluhallinto/annual_report/2014/\" target=\"_blank\">2014</a> the OSH Divisions had 449 and the OSH Department had 60 person-years available. The total operating expenditure for the OSH department was 44 million Euro for the OSH divisions: 285 million Euro.<br />Occupational safety and health activities are based on cooperation. OSH actors contribute to the achievement of OSH objectives through their own operations. The OSH administration works in close cooperation with labour market organisations and other important stakeholders in such tasks as the setting of enforcement priorities, preparing of legislation and communications. Cooperation takes place at national and regional level in working groups and <a href=\"http://www.e-julkaisu.fi/tyosuojeluhallinto/annual_report/2014/\" target=\"_blank\">projects.</a><br />Budget:<br />Public and private organisations and NGOs have their own budget plan for the implementation of the OSH strategy. Additionally the <a href=\"https://ttk.fi/en/about_ttk \" target=\"_blank\">Centre for Occupational Safety TTK </a> provides training, information, materials and development services based on the latest knowledge. TTK get finance for example from The Finnish Work Environment Fund. The total amount of finance from The Finnish Work Environment Fund has been in 17 650 000 euros (2.75 million. euros/2010, 3.1 million euros/2011, 3.1 million euros/2012, 2.8 million euros/2013, 2.8 million euros/2014, 3.1 million euros/2015) during 2010-2015.<br />Moreover, as you can see from the page on <a href=\"http://www.stat.fi/til/tkker/index_en.html\" target=\"_blank\"> R&amp;D-expenditure </a> billions were invested in R&amp;D in Finland during the new OSH strategy time 2010-2020. Some of these R&amp;D activities are on the area of OSH. A precise assignment on activities related to OSH is not possible.</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+124, null, @sectionId, "STRATEGY_EVALUATION");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+124, "EN", 1, "The Department of Occupational Safety and Health has chosen a number of indicator and statistics that are followed in the department and also regularly presented and discussed in the three partite Finnish national advisory board on safety and health at work.<br/>Ex ante indicators for the years 2012 to 2020<br/><strong> Targets for 2020 compared to the situation at 2010</strong>:<ul><li>The number of occupational diseases decreases by 10%</li><li>The frequency of workplace accidents is reduced by 25%</li><li>Perceived physical strain is reduced by 20%</li><li>Perceived psychic strain is reduced by 20%</li><li>Extending employees’ lifelong time at work by three years until the year 2020.</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+125, null, @sectionId, "STRATEGY_EU");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+125, "EN", 1, "Due to the broad and general approach of the Finnish Strategy there are relations to practically every aspect of the EU-OSH Strategic Framework.<br/>The Finnish strategy is entirely focused on SMEs (Challenge 1), as over 90 % of the enterprises are SMEs. The implementation of the strategy is focusing on improved reach-out, tools suitable for SMEs and increasing OSH awareness. The mandatory system of the workplace health system as well as the target on perceived strain are addressing Challenge 2. Challenge 3 is continued to be addressed in programmes related to the ageing workforce and specifically through the target to extend work careers by three years.<br/>There is a particularly strong relation to accidents, occupational diseases, ergonomic and psychosocial issues (mentioned on p6 of the EU-strategy).");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+126, null, @sectionId, "STRATEGY_BASIC INFO");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+126, "EN", 1, "French document: <a target=\"_blank\" href=\"http://travail-emploi.gouv.fr/sante-au-travail/plans-de-sante-au-travail/article/plan-de-sante-au-travail-2016-2020-pst-3\"><strong>Plan santé au travail 2016- 2020, PST 3)</strong></a><br/>No official English translation: <strong>Occupational Health Plan 2016-2020</strong><br/>Former strategies:<br/><a target=\"_blank\" href=\"http://travail-emploi.gouv.fr/IMG/pdf/pst.pdf \"><strong> Occupational Health Plan2005-2009, PST 1</strong></a><br/><a target=\"_blank\" href=\"http://travail-emploi.gouv.fr/IMG/pdf/pst_2010-2014.pdf\"><strong>Occupational Health Plan2010-2014, PST 2</strong></a>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+127, null, @sectionId, "STRATEGY_BACKGROUND");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+127, "EN", 1, "Defining the perceived problem:<br/>The former two OSH strategies already improved safety and health at work mainly regarding the development of OSH prevention tools, structuring OSH research and improving OSH knowledge.<br/>However, 25 years after the implementation of the Framework Directive 89/391 EEC, the prevention culture still remains in an initial stage. In 2014, more than 620 000 workplace related accidents including 530 fatalities and more than 51,000 occupational diseases have been reported.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+128, null, @sectionId, "STRATEGY_CHARACTERISTICS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+128, "EN", 1, "<p>The overall objective of the PST3 is to put prevention at the core of safety and health at work. Promoting prevention culture with a special focus on work health promotion (improve the health and well-being of people at work).<br />Important instruments for an effective prevention culture are information, training and risk assessment.<br />Prevention will focus on:</p><ol><li>Classic risks (slip, trips and falls, dangerous substances, risks in transport)</li><li>Management and organisational risks (psychosocial risks, work-related strain)</li><li>Emergent risks (endocrine disruptors, nanomaterial, digital technologies)</li></ol><p><strong>Vision</strong><br />A positive and modern view of work. Work shall be a place of individual development and emancipation.<br />Focus on occupational health promotion and prevention to guaranty safety and health of workers, for the benefit of employees, as well as of productivity.</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+129, null, @sectionId, "STRATEGY_DETAILS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+129, "EN", 1, "<p><strong>Overview</strong><br />The strategy includes 3 strategic axes and 10 objectives 3 of the hazard reduction and health protection-type, 7 of the Systems/ Structures/ Processes-type. Each objective is supported by concrete actions (between two and five).<br /><strong>Strategic axis 1</strong>: Primary prevention and prevention culture<br />Operational objective 1: Promotion of prevention culture<br />Operational objective 2: Prevention of work-related strain<br />Operational objective 3: Target priority risks<br /><strong>Strategic axis 2</strong>: Quality of working life, job retention and performance<br />Operational objective 4: Quality of working life<br />Operational objective 5: Job retention<br />Operational objective 6: Tansversality: OSH and public health<br /><strong>Supporting axis</strong>: Social dialogue and system of actors<br />Operational objective 7: Social dialogue<br />Operational objective 8: System of actors and offers for micro and SMEs<br />Operational objective 9: Simplification <br />Operational objective 10: Knowledge, data and research</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+130, null, @sectionId, "STRATEGY_ACTORS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+130, "EN", 1, "The approach adopted for the elaboration and implementation of the PST3 is inclusive, associating the government, social partners (Employers and trade unions), social security and prevention institutions, occupational safety and health bodies (French National Health Insurance Fund for Employees (CNAMTS), National Institute for Research and Safety (INRS), National Agency for Working Conditions (Anact), National French Agency for Food, Environmental and Occupational Health & Safety (Anses), National Public Health Agency (ANSP), Occupational safety administration for the building and public works sector), Agricultural Mutual Assistance Fund).<br/><a target=\"_blank\" href=\"http://travail-emploi.gouv.fr/ministere/acteurs/instances-rattachees/article/coct-conseil-d-orientation-des-conditions-de-travail\">The national Council on Working conditions</a> (social partners) drew guidelines, adopted by consensus, providing a basis for the elaboration of the strategy.<br/>The strategy is the fruit of a broad consultation with all the actors and stakeholders (9 working parties).<br/>The implementation of the strategy is as well inclusive, and based on a territorial deployment with regional services (regional plans elaborated and implemented by regional services, Direccte) according to the partnership framework at the core of the implementation of PST3.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+131, null, @sectionId, "STRATEGY_RESOURCES");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+131, "EN", 1, "Time frame: 2016 – 2020<br/>Budget: no information<br/>Staff: no information<br/>Contributing institutions: Government (Ministerial departments (Labor, Health, Environment, Social Affairs) and regional services, Social partners (Employers and trade unions), Social security, Prevention institutions, occupational safety and health bodies (French National Health Insurance Fund for Employees (CNAMTS), National Institute for Research and Safety (INRS), National Agency for Working Conditions (Anact), National French Agency for Food, Environmental and Occupational Health & Safety (Anses), National Public Health Agency (ANSP), Occupational safety administration for the building and public works sector), Agricultural Mutual Assistance Fund).");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+132, null, @sectionId, "STRATEGY_EVALUATION");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+132, "EN", 1, "<p><strong>Evaluation</strong>:<br />For the current strategy three evaluation methods should be combined:</p><ol><li>An annual report is planned, in consultation with all the actors and stakeholders mentioned above;</li><li>A qualitative evaluation of selected actions as the efficiency or the impact of produced tools/working method/documents, etc… each time with the most appropriate methodology (focus group, poll, etc.)</li><li>An external mid-term review and a final review of the plan’s impact on OSH</li></ol><p><strong> Lessons learned from PST2</strong>:<br />PST3 should</p><ul><li>Be more strategic aligned around objectives and priority actions;</li><li>Be a multiannual guidance document, related to other guidance documents and tools (such as Convention d’Objectifs et de Gestion de la branche accidents du travail 2014-2017, 3èmePlan national santé environnement, 3èmePlan cancer, Contrat d’objectifs et de performance de l’Agence nationale pour l‘amélioration des conditions de travail 2014-2017),</li><li>Be more flexible and reactive to be able to evolve according to changes</li></ul><p>Changes:</p><ul><li>The new strategy is based on a renewal of social dialogue, including more social partners.</li><li>The new strategy highlights the link between safety health and the quality of working life, compared to the former strategy.</li><li>Simpler regulations</li><li>The new strategy is structured around three axes and ten operational objectives leading to actions, to improve the consistency as well as the effectivity (applicability) of the plan.</li><li>Extended to different types of work such as independent work, and a specific focus on SME’s</li></ul><p>Ex ante indicators for the years 2012 to 2020: No indicators identified</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+133, null, @sectionId, "STRATEGY_EU");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+133, "EN", 1, "The PST 3 was developed in compliance with the EU Strategic Framework. The <a target=\"_blank\" href=\"http://travail-emploi.gouv.fr/sante-au-travail/plans-de-sante-au-travail/article/plan-de-sante-au-travail-2016-2020-pst-3\"> guidelines</a> of the national Council on Working conditions (social partners),providing the basis for the strategy, refer for each strategic objective to the related objective of the EU strategic framework.<br/>Therefore, the PST3 includes many related topics such as: <ul><li>Focusing on safety and health of micro and small enterprises. </li><li>Simplifying legislation </li><li>Tackling new and emerging risks </li><li>Tackling demographic change </li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+134, null, @sectionId, "STRATEGY_BASIC INFO");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+134, "EN", 1, "<p>German version: <a href=\"http://www.gda-portal.de/de/Startseite.html\" target=\"_blank\"><strong>Gemeinsame Deutsche Arbeitsschutzstrategie (GDA)</strong></a><br>English version:<a href=\"https://www.gda-portal.de/EN/Download/Download_node.html\" target=\"_blank\">&nbsp;<strong>Joint German Occupational Safety and Health Strategy</strong></a></p>
 <p>Since 2008 the development, evaluation and updating of the GDA have been enshrined by law.</p>
@@ -572,12 +337,12 @@ INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+
 <p>Former Strategies: <a href=\"http://www.gda-portal.de/en/Homepage.html\" target=\"_blank\">Joint German Occupational Safety and Health Strategy 2008 - 2012.</a> <a href=\"/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/modules/vertical/osh-steering/country-profile/pdf/National-Strategies-Mapping_2017_Germany.pdf\" target=\"_blank\">Joint German Occupational Safety and Health Strategy 2013 &ndash; 2018</a>.</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+135, null, @sectionId, "STRATEGY_BACKGROUND");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+135, "EN", 1, "A background report with the basic concept of the strategy and their goals was published in December, 17 2007:<br/><a target=\"_blank\" href=\"http://www.gda-portal.de/de/pdf/GDA-Fachkonzept-gesamt.pdf?__blob=publicationFile&v=2\">Gemeinsame Deutsche Arbeitsschutzstrategie </a><br/>Fachkonzept und Arbeitsschutzziele 2008 – 2012<br/>Stand: 12. Dezember 2007.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+136, null, @sectionId, "STRATEGY_CHARACTERISTICS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+136, "EN", 1, "<p>Quote:</p>
 <p>&ldquo;The overarching goal of the <a href=\"http://www.gda-portal.de/DE/Downloads/pdf/Faltblatt-Ziele.html\" target=\"_blank\">&nbsp;Joint German OSH Strategy&nbsp;</a>is to maintain, improve and promote the safety and health of workers by means of the efficient and systematic implementation of occupational safety and health &ndash; supplemented by workplace health promotion measures.</p>
@@ -585,7 +350,7 @@ INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+
 <p>For periods up to five years specific objectives are set and implemented through work programmes.</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+137, null, @sectionId, "STRATEGY_DETAILS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+137, "EN", 1, "<p><strong>Priorities</strong><br>Quote:<br>&ldquo;The Joint German OSH Strategy compromises five core elements which are:</p>
 <ul>
@@ -652,12 +417,12 @@ INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+
 </ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+138, null, @sectionId, "STRATEGY_ACTORS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+138, "EN", 1, "German government, federal states and public accident insurance have the decision power in the National strategy Conference NAK. Social partners are advisers. There is support from professional organisations, other public bodies and sector organisations.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+139, null, @sectionId, "STRATEGY_RESOURCES");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+139, "EN", 1, "<p>Since 2008 the devolpment, evaluation and updating of the GDA have been enshrined by law.</p>
 <p>Time frame of current work programme: 2019 &ndash; 2024.</p>
@@ -666,7 +431,7 @@ INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+
 <p>No detailed information published.</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+140, null, @sectionId, "STRATEGY_EVALUATION");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+140, "EN", 1, "<p><strong>Evaluation is ongoing.</strong></p>
 <p>It is required that every strategy period &quot;the attainment of the objectives of the Joint German OSH Strategy would be quality-assured and evaluated&quot; and that the Joint German OSH Strategy in its entirety would be evaluated as regards interdisciplinary effects on the occupational safety and health system and safety and health at work. Evaluation reports of the strategy periods <a href=\"http://www.gda-portal.de/DE/GDA/Evaluation/2008-2012/2008-2012_node.html\" target=\"_blank\">2007 - 2012</a> and <a href=\"http://%3A%20http%3A//www.gda-portal.de/DE/GDA/Evaluation/2013-2018/2013-2018_node.html\" target=\"_blank\">2013 &ndash; 2018</a> are available <a href=\"http://www.gda-portal.de/SharedDocs/Meldungen/DE/19-08-16-Dachevaluation.html\" target=\"_blank\">online</a>.</p>
@@ -674,57 +439,57 @@ INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+
 <p>IIn the evaluation concept effect-chains, including indicators for every chain link, are described for all strategy areas. As regards the three work-programmes (Carcinogens, MSL, Psyche) specific targets and indicators are described in the work plans (chapter: Monitoring).</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+141, null, @sectionId, "STRATEGY_EU");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+141, "EN", 1, "<p>In principle, the overarching target, core elements and the governance structure of the Joint German OSH Strategy (GDA) provide a well-established framework to ensure that Germany addresses the expectations respectively the challenges and key objectives of the EU Strategic Framework.</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+142, null, @sectionId, "STRATEGY_BASIC INFO");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+142, "EN", 1, "Hungarian version: <a target=\"_blank\" href=\" www.ommf.gov.hu/letoltes.php?d_id=7021\"><strong>Munkavédelem nemzeti politikája 2016-2022</strong></a><br/>English version: <a target=\"_blank\" href=\" http://www.ommf.gov.hu/letoltes.php?d_id=7146\"><strong> National Occupational Safety and Health Policy 2016-2022</strong></a><br/>Former strategies: <a target=\"_blank\" href=\" http://www.ommf.gov.hu/letoltes.php?d_id=500\"><strong>OGY határozat a munkavédelem országos programjáról</strong></a>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+143, null, @sectionId, "STRATEGY_BACKGROUND");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+143, "EN", 1, "Defining the perceived problem:<br/>The growth in the economy and production, and the impact of increased burdens on workers, has led to an increase in the number of accidents at the workplace, including fatal accidents at work and occupational diseases. Most accidents at work occur in the processing industry, transportation, warehousing and retail sectors. Activities involving elevated psychological stress represent an increasing proportion of accidents at work, and absence from work due to psychosocial factors is also occurring more frequently.<br/>Main reasons for accidents are: <ul><li>Lack or inoperability of safety equipment used to prevent mechanical hazards</li><li>Lack of or failure to wear personal protective equipment </li><li>Deficiency in occupational safety and health knowledge</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+144, null, @sectionId, "STRATEGY_CHARACTERISTICS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+144, "EN", 1, "<p>Main objectives (goals, priorities, visions)<br />The main objectives are:</p><ol><li>To reduce risks that represent a threat to safety and health of employees. Prevention is seen as the only option for avoiding accidents at work and occupational diseases.</li><li>And to ensure that occupational safety and health development contributes to greater productivity, competitiveness and carrying capacity of society, as well as to the preservation of a high-quality workforce. The improvement of working conditions is highlighted.</li></ol><p>Quote: “The prevention of accidents at work and occupational diseases is important for the entire national economy as adequate conditions in the workplace are not expected to carry negative consequences or additional costs. It is a natural and fundamental common social and individual interest to ensure that employees are able to work under safe and healthy conditions”.</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+145, null, @sectionId, "STRATEGY_DETAILS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+145, "EN", 1, "<p><strong>Priorities</strong><br />Activities and implementation measures<br />In order to increase the level of safety at work, to reduce the number of accidents, to prevent the occurrence of occupational diseases, and to preserve and increase Hungary’s competitiveness, the following tasks are defined in the OSH policy:</p><ol><li>Developing the competitiveness of enterprises</li><li>Maintaining the working capacity of employees</li><li>Occupational safety and health training and education</li><li>Information, communication</li><li>Occupational safety and health research and development</li></ol><p>Ministry for National Economy Department of Occupational Safety and Health coordinates the implementation of the OSH policy. The tasks are scheduled in the department’s internal work plan.</p><ul><li><strong>Developing the competitiveness of enterprises</strong></li></ul><ol><ol><li>Supporting introduction of free online tools to be used to carry out occupational safety and health tasks</li><li>Encouraging the development of an effective occupational safety and health management system</li><li>Communication of good practices and promotion of adoption</li><li>Developing a concept for accident insurance within the scope of social security</li></ol></ol><ul><li><strong>Maintaining the working capacity of employees</strong></li></ul><ol><ol><li>Reducing absence from work as a result of psychosocial risks</li><li>Reducing absence from work as a result of psychosocial risks</li><li>Encouraging research to determine work-related musculoskeletal disorders and work-related cancer, and promoting research results</li><li>Encouraging and supporting the elaboration of new methods of ergonomics</li></ol></ol><ul><li><strong>Occupational safety and health training and education</strong></li></ul><ol><ol><li>Elaborating a mandatory further training system for occupational safety and health professionals</li><li>Expanding knowledge on safety and health and chemical safety at work in education</li><li>Reducing occupational risks affecting employees of vulnerable groups and employees working in atypical types of employment</li></ol></ol><ul><li><strong>Information, communication</strong></li></ul><ol><ol><li>Preparing information and publications promoting safe and healthy employment</li><li>Regular distribution of timely and professional information targeted at micro, small and medium-sized enterprises, with the involvement of the public information system of occupational safety and health</li><li>Supporting the publication of research results relating to occupational safety and health</li></ol></ol><ul><li><strong>Occupational safety and health research and development</strong></li></ul><ol><ol><li>Statistical data collection and development of the information base</li><li>Encouraging research on the impacts of climate change on employees</li><li>Coping with the increasing average age of employees and analysis of the impact of newly emerging risks</li><li>Establishing a database of occupational safety and health service providers</li><li>Establishing a database of occupational health service providers</li><li>Improving the professional and operational conditions of the integrated occupational safety and health authority</li><li>Developing cooperation among organisations interested in maintaining safe and healthy working conditions and lawful employment</li><li>Introduction and development of a risk-based inspection strategy</li><li>Complex evaluation of all 24 directives comprising Hungarian legislation on occupational safety and health and simplification of existing laws and regulation.</li></ol></ol>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+146, null, @sectionId, "STRATEGY_ACTORS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+146, "EN", 1, "Main actor is the Labour Committee, it consists of the interest representation organs of employees and employers, as well as the representatives of the Government. Their work can be supported by temporary and permanent experts.<br/>Representatives of the side of employers and side of employees have to be members of the Hungarian Economic and Social Council (a consultative, proposal-making and advisory body independent from Parliament and the Government, with members representing the Hungarian civil society). Members of the side of employers are interest groups (e.g. National Association of Entrepreneurs and Employers, Hungarian Association of Craftmen’s Corporations, Agrarian Employers’ Federation, Confederation of Hungarian Employers and Industrialists), members of the side of employees are trade union federations (e.g. Democratic Confederation of Free Trade Unions, National Federation of Workers’ Councils, Confederation of Unions of Professionals, The Forum for the Cooperation of Trade Unions). The side of the Government consists of representatives of supervisory ministries of certain sectors, and national level authorities (e.g. labour inspectorate, mining authority, national health insurance fund).");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+147, null, @sectionId, "STRATEGY_RESOURCES");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+147, "EN", 1, "The Ministry for National Economy is responsible for the performance of public tasks related to OSH, therefore resources are provided by the Government. However, most of the tasks arising from the OSH policy 2016-2022 are also covered by tenders.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+148, null, @sectionId, "STRATEGY_EVALUATION");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+148, "EN", 1, "As National Occupational Safety and Health Policy sets out OSH priorities for the period of 2016-2022, evaluation of the strategy does not exist yet.<br/>Ex ante indicators for the years 2012 to 2020: Ex ante indicators are not available.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+149, null, @sectionId, "STRATEGY_EU");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+149, "EN", 1, "There is a direct reference to the EU-OSH Strategic Framework made. Due to the broad approach, there are relations to all aspects of the European Strategic Framework.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+150, null, @sectionId, "STRATEGY_BASIC INFO");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+150, "EN", 1, "Strategy document: <a target=\"_blank\" href=\"https://www.hsa.ie/eng/publications_and_forms/publications/corporate/hsa_strategy_statement_2019-21.pdf\"> <strong>Health and Safety Authority (2019), Statement of Strategy 2019 – 2021</strong></a><br/>Former strategies: <a target=\"_blank\" href=\"http://www.hsa.ie/eng/Publications_and_Forms/Publications/Corporate/HSA_Strategy_Statement_2016.pdf\"> <strong>Health and Safety Authority (2016), Statement of Strategy 2016-2018</strong></a><br/><a target=\"_blank\" href=\"http://www.hsa.ie/eng/Publications_and_Forms/Publications/Corporate/Strategy_Statement_2013.pdf\"> <strong> Health and Safety Authority (2012), Statement of Strategy 2013-2015</strong></a><br/><a target=\"_blank\" href=\"http://www.hsa.ie/eng/Publications_and_Forms/Publications/Corporate/Strategy_Statement_2010_-_2012.html\"><strong> Health and Safety Authority (2010), Statement of Strategy 2010-2012</strong></a>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+151, null, @sectionId, "STRATEGY_BACKGROUND");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+151, "EN", 1, "<p>Following problems are perceived:</p>
 <ul>
@@ -747,7 +512,7 @@ INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+
 <p>Report from May 2015 <a href=\"%20http%3A//www.hsa.ie/eng/Publications_and_Forms/Publications/Corporate/Trends_and_Patterns_in_Occupational_Health_and_Safety_in_Ireland.html\" target=\"_blank\">&quot;Trends and Patterns in Occupational Health and Safety in Ireland&quot;</a></p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+152, null, @sectionId, "STRATEGY_CHARACTERISTICS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+152, "EN", 1, "<p>The Authority's Strategy Statement 2019-2021 was developed in the context of a fast-changing economy and workforce as well as the evolving political and social environment in Ireland and within the EU.</p>
 <p><strong>Vision</strong></p>
@@ -778,7 +543,7 @@ INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+
 <p><br></p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+153, null, @sectionId, "STRATEGY_DETAILS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+153, "EN", 1, "<p><strong>Priorities</strong></p>
 <p>Five strategic priorities will direct the activity for the period 2019&ndash;2021:</p>
@@ -840,7 +605,7 @@ INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+
 </ol>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+154, null, @sectionId, "STRATEGY_ACTORS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+154, "EN", 1, "<p>Occupational safety and health policy at national level is determined by a twelve-member, tripartite Board, with nominees from the social partners and other interests concerned with <a href=\"https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Ireland\" target=\"_blank\">safety and health in the workplace.</a></p>
 <p>The main actor is the HSA (Health and Safety Authority) reporting to the Department of Business, Enterprise and Innovation. Because safety is everybody&#39;s responsibility there is always wide consultation with employers, employees and their respective organisations. The HSA conducted a public consultation and had positive and supportive comments of other authorities, social partners and professional organisations and individuals that have been reflected in the strategy. The submissions and the Authority&rsquo;s response to consultation are published under the Public Consultation area of <a href=\"http://www.hsa.ie\" rel=\"noopener noreferrer\" target=\"_blank\">www.hsa.ie.</a></p>
@@ -848,7 +613,7 @@ INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+
 <p><br></p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+155, null, @sectionId, "STRATEGY_RESOURCES");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+155, "EN", 1, "<p>Annual grant provided by the Department of Business.</p>
 <p>Enterprise and Innovation.</p>
@@ -856,7 +621,7 @@ INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+
 <p>They will improve the way HSA works through people, processes &amp; technology (see Priority 5).</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+156, null, @sectionId, "STRATEGY_EVALUATION");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+156, "EN", 1, "<p>A review of the <a href=\"http://www.hsa.ie/eng/Publications_and_Forms/Publications/Corporate/HSA_Strategy_Statement_2016.pdf\" target=\"_blank\">strategy 2016-2018</a> is included in the new strategy 2019-2020.</p>
 <p>Progress on the annual programmes of work that implement this strategy will be monitored using a range of qualitative and quantitative measures.</p>
@@ -878,7 +643,7 @@ INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+
 </ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+157, null, @sectionId, "STRATEGY_EU");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+157, "EN", 1, "<p>The key strategic objectives of the Framework are broadly in line with the strategic policy being adopted by the Authority in its Strategy Statement 2019-2021. HSA particularly welcome the focus on providing practical support to small and micro enterprises to help them to comply with safety and health requirements. To support SMEs HSA has developed in the last few years online tools for interactive risk assessments. HSA will continue to put in place supports and tools and social networks to facilitate companies in achieving high levels of compliance in occupational safety, health, welfare and the safe use of chemicals.</p>
 <p>The priorities are related to challenge 1 of the EU-OSH Strategy <em>(Improving the implementation record of Member States, in particular by enhancing the capacity of micro and small enterprises to put in place effective and efficient risk prevention measures.) </em></p>
@@ -887,47 +652,47 @@ INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+
 <p>Strategic Priority 2 is related to challenge 2 and 3 and several strategic objectives of the EU-OSH Strategy. Strategic Priority 1 has a particularly strong relation to the safe use of chemicals (mentioned on p6 of the EU-strategy)</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+158, null, @sectionId, "STRATEGY_BASIC INFO");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+158, "EN", 1, "<p>Original document: <a href=\" http://www.salute.gov.it/imgs/C_17_pubblicazioni_2285_allegato.pdf \" target=\"_blank\"> <strong>Piano Nazionale della Prevenzione 2014 – 2018-Macro obiettivo 7: Prevenire gli infortuni e le malattie professionali </strong></a><br />English document: <strong> National Prevention Plan 2014 -2018– Macro objective 7 : Prevention of work-related accidents and diseases</strong><br /><strong>5 Piani di prevenzione specifici:</strong><br />5 specific prevention plans have been realized:</p><ol><li>NATIONAL PREVENTION PLAN IN BUILDING (PIANO NAZIONALE DI PREVENZIONE IN EDILIZIA)</li><li>NATIONAL PLAN FOR PREVENTION IN AGRICULTURE AND SELVICULTURE (Piano Nazionale di Prevenzione in Agricoltura e Selvicoltura)</li><li>NATIONAL PLAN FOR THE EMERGENCE AND PREVENTION OF PATHOLOGY OF SCHELETRIC MUSCULAR PAPER (Piano nazionale per l’emersione e la prevenzione delle patologie dell’apparato muscolo scheletrico)</li><li>NATIONAL PLAN FOR PREVENTION ON OCCUPATIONAL RASES AND PROFESSIONAL TUMORS (Piano Nazionale di Prevenzione SUI CANCEROGENI OCCUPAZIONALI E I TUMORI PROFESSIONALI)</li><li>NATIONAL STRESS FOR PREVENTION OF RISK STRESS RELATED WORK / PROMOTION ORGANIZING WELLNESS (Piano Nazionale di Prevenzione DEL RISCHIO STRESS LAVORO CORRELATO /PROMOZIONE BENESSERE ORGANIZZATIVO)</li></ol><p>Former strategies: <a href=\" http://www.salute.gov.it/imgs/C_17_pubblicazioni_1383_allegato.pdf \" target=\"_blank\"> <strong>Piano Nazionale della Prevenzione 2010-2013 </strong></a></p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+159, null, @sectionId, "STRATEGY_BACKGROUND");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+159, "EN", 1, "<p><strong>Vision:</strong><br />To affirm the crucial role of health promotion and prevention in the sustainable development of society by addressing inequalities and carrying out people oriented interventions, in terms of cost-effectiveness and responsible use of resources.<br />The promotion of human health and prevention:</p><ul><li>To affirm the critical role of health promotion and prevention as factors of sustainable development of society;</li><li>To adopt a public health approach that ensures fairness and addresses inequalities;</li><li>To address evidence based interventions of health prevention, promotion and protection</li></ul><p>In this perspective the Legislative Decree 9 April 2008 n. 81 introduced in the Italian system a comprehensive discipline of protection of health and safety at work, which involved over the years the various central and local governments in a gradual and complex process of implementation.<br />This path requires a constant attention by the various actors who, although from different perspectives and responsibilities, contribute to guarantee a set of protections suitable for the complexity of our productive and occupational system.<br />Specific attention is dedicated to the constant evolution of organizational models and their impact on the modalities of performance of working tasks in different productive contexts.</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+160, null, @sectionId, "STRATEGY_CHARACTERISTICS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+160, "EN", 1, "The OSH objectives are part of the National Prevention Plan 2014-2018. It is one of the macro-objectives (macro obiettivi). There are four priorities for action upstream to the macro objectives:<ul><li>Reducing the burden of disease </li><li>Investing in the health of young people </li><li>Strengthen and confirm the common heritage of preventive practices </li><li>Strengthen and put attention to vulnerable groups in the system </li><li>Consider the individual and the populations in relation to their environment </li></ul>Main objectives are: <ol><li>Improvement of tools and systems about occupational risks and injuries </li><li>Strengthening coordination between institutions and the socio-economic and scientific-technical partnership </li><li>Improving the effectiveness of the control activities and compliance by recipients of the rules </li></ol>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+161, null, @sectionId, "STRATEGY_DETAILS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+161, "EN", 1, "<p><strong>Objective 1</strong>: Improvement of the knowledge of risks and work related diseases.</p><ul><li>Implementing the use of OSH surveillance systems already in place in all regions and autonomous provinces (such as the National Information System for Prevention SINP).</li><li>Extending the activities of the Centro Operativo Regionale (COR) to detect cases of suspected occupational cancer and to improve the epidemiological surveillance activities through the use of the Occupational Cancer Monitoring system (OCCAM).</li><li>Strengthening the monitoring of risks and work-related diseases, through the collection of health surveillance data and intensifying risk assessment to control risks and exposure to dangerous substances at the workplace (spreading, strengthening and use of exposure registers).</li><li>Implementation of integrated information systems of the Ministry of economic development- Ministry of labour and social policies – the National Institute for the insurance against Accidents at work and the Regions related to safety of machines and installations, included the database on reporting the non-compliance of the labour installations to the related European directives.</li></ul><p><strong>Objective 2</strong>: Strengthening coordination between institutions and the socio-economic and scientific-technical partnership.</p><ul><li>Supporting regional activities and programs with the social partners, through memoranda of understanding between the public authorities, and in particular between regions, Regional Directorates of Labour and INAIL Regional Directorates.</li><li>Supporting training programs with regard to the role of safety representatives (RLS, RLST), especially for the manual professions (handicraft sector).</li><li>Supporting programs and memorandum of understandings to identify and recognise occupational diseases addressed to Prevention Services of the ASL, occupational physicians, general practitioners, hospital physicians and the regional medical services of INAIL and INPS.</li><li>Supporting mainstreaming osh into education programs for all school curricula, enhancing learning models of knowledge and acquisition of skills and abilities, for the future workers (ex art. 37).</li><li>Supporting companies to implement voluntary policies of social responsibility and to enhance existing good practices.</li></ul><p><strong>Objective 3</strong>: Improving the effectiveness of the control activities and compliance by recipients of the rules.</p><ul><li>Supporting the coordinated planning of supervisory activities. Development of integrated information systems to seek out supervisory activities and requirements.</li><li>Improving the quality and consistency of supervisory activities by sharing control methodologies ensuring at the same time certainty and transparency of the administrative action.</li><li>Adoption of computer-based systems that simplify the transmission of documentation and communication between citizens and enterprises, as provided in the Legislative Decree n. 81/08.</li><li>Improving the quality and homogeneity of the regular checks of machines and installations. Developing control methods to guarantee substantial improvements in the safety of work equipment.</li><li>Promotion of a proactive approach of the ASL Services oriented to support employment, notably by facilitating access by citizens and enterprises to information and assistance through the development of internet technologies.</li><li>Supporting the audit methodology to evaluate prevention programs adopted by companies.</li><li>Implementing programs between the ASL Services and competent physicians focused on healthier lifestyles in order to prevent cardiovascular disease, cancer and chronic degenerative diseases in general and to improve the perception of the risks towards occupational diseases.</li><li>Supporting the dissemination of self-assessment of safety levels in risk management by employers</li><li>Implementing programs to evaluate the effectiveness of training:</li></ul><ol><li>Promoting programs in cooperation with social partners, INAIL and the Labour Directorate to prevent stress at work risks and improve workplace wellbeing with a focus on temporary and precarious workers.</li><li>Implementation of integrated control programs, promoting health and safety, communication, with priority given to the determinants of diseases and injuries, with particular reference to the improvement and development in all regions of the Plans of National Prevention in Construction and Agriculture, and the prevention of occupational cancers.</li><li>Implementation of specific cross-cutting strategies with the macro objective on \"environment and health\" with particular regard to the National Plan on Asbestos and Chemical Risk Prevention.</li><li>Supporting programs that empower work capacity of workers suffering from work-related accidents, diseases or serious chronic diseases.</li></ol>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+162, null, @sectionId, "STRATEGY_ACTORS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+162, "EN", 1, "National strategies and programmes of prevention of accidents and occupational diseases are developed by the Steering and Evalutation Committee for Active Policies and the national coordination of surveillance activities related to health and safety at work.<br/>The Ministry of Health, General Directorate of Prevention (Ministero della salute, Direzione generale della prevenzione) coordinates the implementation of the National Prevention Plan 2014-2018.<br/>Participation of all institutions and social partners at national, regional and territorial level, both in the planning phase and in the operational one. Bodies involved are: Ministry of Labour and Social Policies, Ministry of Health, Ministry of Interiors, Autonomous Regions and Trento and Bozen Provinces, INAIL (Istituto nazionale per l’Assicurazione contro gli Infortuni sul Lavoro – Italian Workers’ compensation Authority) and with the contribution of CNEL (National Council for Economy and Labour), Joint Committees and sectoral Bodies and Institutions.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+163, null, @sectionId, "STRATEGY_RESOURCES");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+163, "EN", 1, "Budget: special grants: <a target=\"_blank\" href=\"http://mission-innovation.net/participating-countries/italy/\"> The PNR has been recently approved by CIPE (Comitato Interministeriale per la Programmazione Economica) for an overall amount of public funding of EUR 2.5 billion</a> (for the period 2005 – 2007, 440 million € were provided (240 mill € from the Committee for Economic Programming CIPE (Comitato Interministeriale per la Programmazione Economica), 200 mill € from regional health fund (<a target=\"_blank\" href=\"http://www.salute.gov.it/imgs/C_17_pubblicazioni_2285_allegato.pdf \"> fondo sanitario regionale</a>).<br/>Staff: no information<br/>Time frame: 2014-2018.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+164, null, @sectionId, "STRATEGY_EVALUATION");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+164, "EN", 1, "<p><strong>Evaluation</strong>: regular evaluation by the responsible institutions themselves. Two evaluations are planned: one in the midterm of the runtime (2016) and one at the end (2018).<br />There are two kinds of indicators:</p><ul><li>Central indicators for central objectives, including both outcome indicators or early outcomes and output indicators of healthcare processes.</li><li>Regional indicators for specific objectives, including both outcome indicators or early outcomes and output indicators of healthcare processes.</li></ul><p>Evaluation of the National Prevention Plan:<br /><a href=\" http://www.trovanorme.salute.gov.it/norme/renderNormsanPdf?anno=0&amp;codLeg=51787&amp;parte=1%20&amp;serie=\" target=\"_blank\">La Conferenza permanente per i rapporti tra lo Stato, le regioni e le province autonome di Trento e Bolzano </a><br />Lessons learned:</p><ol><li>The Central objectives have to include evidence based and person oriented action</li><li>Responsibilities both at national and regional level in the implementation of the objectives</li><li>Evaluation process including three major action steps: theoretical evidence (efficacy); monitoring and evaluation of interventions; impact on the outcome measure (effectiveness).</li></ol><p><strong>Ex ante indicators for the years 2012 to 2020 </strong></p><ul><li>Producing annual regional reports about the monitoring of risks and of work related diseases</li><li>Strengthen the role of safety representatives (RLS/RLST)</li><li>Promotion of corporate social responsibility</li><li>Prevention of risks due to organisational inconsistencies</li><li>Mainstreaming OSH into education programs</li><li>Reduction of the accident frequency rates with particular attention to serious and fatal injuries particularly in the agriculture and construction sector</li><li>Adoption of national and regional acts to ensure uniformity and transparency in supervisory and control systems and their monitoring</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+165, null, @sectionId, "STRATEGY_EU");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+165, "EN", 1, "<p>The objectives are partly related to some core aspects of the EU-strategy.<br />Ageing is referred in the priorities for action upstream to the macro objectives:</p><ul><li>Strengthen and put attention to vulnerable groups in the system</li></ul><p>New and emerging risks: Examples:</p><ul><li>Stress (National Plan on work-related stress prevention)</li><li>Risks in the confined spaces</li><li>MSDs</li></ul><p>Simplification of OSH legislation<br />Better coordination of EU and international efforts to address OSH</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+166, null, @sectionId, "STRATEGY_BASIC INFO");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+166, "EN", 1, "<p>Original version: <a href=\"https://likumi.lv/ta/id/279509-par-darba-aizsardzibas-politikas-pamatnostadnem-2016-2020-gadam\" target=\"_blank\">Par Darba aizsardzības politikas pamatnostādnēm 2016-2020. gadam.</a></p>
 <p>Official translation: <a href=\"https://likumi.lv/ta/en/en/id/279509\" target=\"_blank\">Labour Protection Policy Strategy for 2016-2020.</a></p>
@@ -938,7 +703,7 @@ INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+
 <p>English version: <a href=\"http://www.lm.gov.lv/upload/legislation/leg_health_1.pdf\" target=\"_blank\">Strategy for the Development of the Labour Protection Field 2008-2013.</a></p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+167, null, @sectionId, "STRATEGY_BACKGROUND");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+167, "EN", 1, "<p>Problems identified:</p>
 <p>Public information:</p>
@@ -987,12 +752,12 @@ INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+
 </ol>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+168, null, @sectionId, "STRATEGY_CHARACTERISTICS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+168, "EN", 1, "The main objective of the labour protection policy is the creation of safe workplaces which also promote a prolongation of the working life of workers, improve the economic situation in the State and enterprises and increase the level of welfare of the whole society.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+169, null, @sectionId, "STRATEGY_DETAILS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+169, "EN", 1, "<p>The following Action Directions have been set in order to achieve the policy objective and result:</p>
 <p><strong>Public information</strong></p>
@@ -1028,7 +793,7 @@ INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+
 </ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+170, null, @sectionId, "STRATEGY_ACTORS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+170, "EN", 1, "<p>Requirements set by article 24 of the Labour Protection Law foresee that the Ministry of Welfare shall formulate state policy in the field of labour protection and coordinate its implementation. The labour protection policy strategy for 2016-2020 has been developed and adopted by the Cabinet of Ministers.</p>
 <p>The Ministry of Welfare is the responsible authority for the supervision of the tasks laid down in the Strategy.</p>
@@ -1043,78 +808,78 @@ INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+
 </ol>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+171, null, @sectionId, "STRATEGY_RESOURCES");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+171, "EN", 1, "<p>Granted State budget funds.</p>
 <p>Additional funds from the State budget for the implementation of the measures provided for the Strategy 2017 to 2020 shall be examined during the preparation process of the Cabinet draft law on the State budget for the current year and draft law on medium-term budget framework together with the proposals from all ministries and other central State institutions for new policy initiatives in conformity with the financial possibilities of the State budget.</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+172, null, @sectionId, "STRATEGY_EVALUATION");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+172, "EN", 1, "In the assessment of the implementation process it was concluded that the situation in the field of labour protection in general has improved. In order to ensure further improvement of the situation, it is necessary to continue implementation of appropriate measures for the reduction of the number of accidents at work and occupational diseases, by taking into account the most current environmental problems in Latvia, the groups of employed persons most exposed to risk, as well as the groups of those enterprises, in which the laws and regulations governing the labour protection are often infringed, identified in the studies <a target=\"_blank\" href=\"http://www.lm.gov.lv/text/3114\">Working Conditions and Risks in Latvia, 2012-2013</a><br/>The Ministry of Welfare shall draw up and submit to the Cabinet the following reports: <ul><li>By 30 September 2019 — an informative report on interim period assessment of the implementation of the Strategy;</li><li>By 30 September 2021 — an informative report on final assessment of the implementation of the Strategy.</li></ul><strong> Ex ante indicators for the years 2012 to 2020</strong><br/> Policy result (PR) — Those working conditions have improved in enterprises of Latvia, which ensure safe and harmless work environment for employees<br/> <strong> Performance indicator (PI)</strong><ol><li>The number expressed as a percentage of inhabitants of all the surveyed inhabitants who are well informed about the labour protection requirements. Source: The study “Working Conditions and Risks in Latvia” (2013: 36.5%, 2014: no data, 2018: 38.5%, 2020: 40%)</li><li>The total number of persons suffered in serious accidents at work and died in fatal accidents at work per 100 000 employed persons. Source: SLI (2013: 33.02, 2014: 32.46, 2018: 31.37, 2020: 29.72)</li><li>The number of persons suffering from occupa-tionaldiseases in the age group of up to 44 years expressed as a percentage of all the persons suffering from occupationaldiseases.<br/>Source: SLI (2013: 9.1%, 2014: 8.8%, 2018: 8.5%, 2020: 8.1%)</li></ol> Link-up: Policy result and objective comply with the following documents: <ul><li>EU Strategic Framework on Health and Safety at Work 2014-2020 (published on 6 June 2014);</li><li>Council conclusions “EU Strategic Framework on Health and Safety at Work 2014-2020: Adapting to New Challenges”;</li><li>National Development Plan of Latvia for 2014-2020 (Action direction “Decent Work”, Task 3 “Promotion of registered employment and socially responsible business, including elimination of hidden forms of employment, improvements in the workplace by strengthening the capacity of the Labour Inspectorate and the monitoring system, social dialogue, awareness-raising campaigns and support for the training of businesses and employees, including on various types of employment, matters relating to age diversity and workplace suitability. Involvement of the public in addressing social issues through facilitating the establishment and operation of social enterprises”.</li><li>In the situation description of the Strategy for Inclusive Employment 2015-2020 the quality of workplaces is referred to in Paragraph 1.5 as a significant problem.</li><li>The 4th defined sub-objective of the Strategy for Public Health 2014-2020: To facilitate healthy and safe life and work environment, to reduce injury and mortality due to external causes of death. Action direction: mitigation of injuries and impact of environmental risks on the public health, 4.10. To improve knowledge of medical practitioners (general practitioners, neurologists etc.) regarding factors causing occupational diseases and timely diagnostics of occupational diseases</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+173, null, @sectionId, "STRATEGY_EU");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+173, "EN", 1, "The Latvian OSH strategy was developed on the basis of the EU framework (EU Strategic Framework on Health and Safety at Work 2014-2020) – following partly.<br/>Action Direction 1, 2 and 4 is related to Challenge 1<br/>Action Direction 3 is related to Challenge 2");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+174, null, @sectionId, "STRATEGY_BASIC INFO");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+174, "EN", 1, "Strategy document:<br/>Original version: <a target=\"_blank\" href=\"https://www.e-tar.lt/portal/lt/legalAct/1c12ca80447711e7b66ae890e1368363\"> <strong> Nacionalinis Darbuotojų Saugos ir Sveikatos 2017-2021 Metų Veiksmų Planas </strong></a>.<br/>English version: <a target=\"_blank\" href=\"http://www.vdi.lt/Forms/Tema.aspx?Tema_ID=50\"> <strong>National Action Plan on Health and Safety at work for 2017–2021 </strong></a>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+175, null, @sectionId, "STRATEGY_BACKGROUND");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+175, "EN", 1, "The purpose of the National Action Plan on Health and Safety at Work for 2017-2021 is to implement the health and safety at work (OSH) policies on a national level, to promote interest in OSH as a component of good governance and a key factor of increasing production efficiency and competitiveness, and ensure OSH so that working conditions are improved and productivity is increased.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+176, null, @sectionId, "STRATEGY_CHARACTERISTICS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+176, "EN", 1, "The Action Plan consists of an overview of the OSH situation (Section II), a table of the objectives, tasks, measures and allocations of/for the Action Plan and entities responsible for implementation (Section III), and a list of the objectives’ and tasks’ evaluation criteria and their values (Section IV). It consists of three main objectives broken down into tasks and measures.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+177, null, @sectionId, "STRATEGY_DETAILS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+177, "EN", 1, "<p><strong>Abbreviations used</strong>:<br />SLI: State Labour Inspectorate of the Republic of Lithuania under the Ministry of Social Security and Labour<br /> HSW: Health and safety at work</p><ol><li><strong>Objective: Improving the HSW legal framework and implementation of HSW regulations at enterprises, in particular micro and small enterprises and, in particular, by strengthening their capacities for implementing efficient occupational risk prevention measures</strong></li><ol><li>Task: Improving legal acts and implementing accidents at work prevention policy and initiatives. Measures:</li><ul><li>Formulating safety requirements for forestry works. <br />Responsible: Ministry of Environment of the Republic of Lithuania (the ‘Ministry of Environment‘). Implementation frame: 2017-2018</li><li>Formulating methodological guidance for health and safety at work for forestry works having regard to the Safety Requirements for Forestry Works.<br />Responsible: SLI, social partners. Implementation frame: 2018-2019</li><li>Drafting amendments to the Regulations on the Fitting out of Workplaces at Construction Sites approved by Order of the Minister of Social Security and Labour and the Minister of Environment of the Republic of Lithuania No A1-22/D1-34 of 15 January 2008 ‘on the approval of the Regulations on the Fitting out of Workplaces at Construction Sites‘ by updating rights and responsibilities of HSW Coordinators. <br />Responsible: Ministry of Social Security and Labour, Ministry of Environment, SLI, social partners. Implementation frame: 2018</li></ul><li>Task: Formulating recommendations and providing practical measures to help ensure compliance with HSW regulations. Measures:</li><ul><li>Analysing causes of accidents at work involving employees with less than one year service record with the employer. <br />Responsible: SLI, Implementation frame: 2017</li><li>Formulating interactive methodological guidance online for the prevention of accidents at work involving employees with less than one year service record with the employer, having regard to occupational risks that have led to lethal and serious accidents and to the victims‘ age, and publish it on SLI‘s website and social networks. Responsible: SLI, Implementation frame: 2018-2019</li><li>Formulating interactive methodological guidance online for the prevention of falls from a height in the construction sector and publish it on SLI‘s website and social networks.<br />Responsible: SLI, Implementation frame: 2018-2019</li></ul><li>Task: Developing, with the help of the European Agency for Safety and Health at Work (EU-OSHA), online interactive risk assessment tools (OiRA) and other tools based on information technologies (IT). Measures:</li><ul><li>Developing an OiRA tool for furniture production enterprises.<br />Responsible: SLI, social partners. Implementation frame: 2017</li><li>Developing an OiRA tool for plastic articles production enterprises<br />Responsible: SLI, social partners. Implementation frame: 2017</li><li>Developing an OiRA tool for enterprises providing cleaning services<br />Responsible: SLI, social partners. Implementation frame: 2017</li><li>Developing an OiRA tool for enterprises providing sewing services<br />Responsible: SLI, social partners. Implementation frame: 2017</li><li>Developing an OiRA tool for quarry operating enterprises<br />Responsible: SLI, social partners. Implementation frame: 2017</li><li>Developing an OiRA tool for agricultural enterprises <br />Responsible: SLI, social partners. Implementation frame: 2018</li><li>Developing an OiRA tool for educational establishments<br />Responsible: SLI, social partners. Implementation frame: 2019</li></ul><li>Task: Providing information to enterprises, in particular micro and small enterprises, using all appropriate means such as awareness raising campaigns, training and exchange of best practices as well as various IT-based measures and social networks. Measures:</li><ul><li>Organising round-table discussions/training for heads of enterprises and employees and providing consulting to them on matters of participation in management of the enterprise.<br />Responsible: SLI, social partners. Implementation frame: 2018-2021</li><li>Improving the SLI website in order to increase its accessibility and dissemination of information, in particular to micro and small enterprises.<br />Responsible: SLI. Implementation frame: 2018-2019</li></ul><li>Task: Ensuring effective implementation of HSW regulations and monitoring by the efficient methods, providing consulting, using new communications means as well as imposing effective, proportional and deterring sanctions. Measure:</li><ul><li>Ensuring consistent control over compliance with HSW regulations on construction sites at enterprises engaged in construction works and ensuring prevention of falls from a height (during site inspections, special questionnaires aimed at preventing falls from a height shall be used and information to social partners shall be provided).<br />Responsible: SLI. Implementation frame: 2018-2021</li></ul><li>Task: Propagating HSW preventive measures in cooperation with social partners. Measures:</li><ul><li>Implementing HSW information/consulting activities aimed at farmers and farm workers.<br />Responsible: Ministry of Agriculture. Implementation frame: 2017- 2020</li><li>Implementing HSW information/consulting activities aimed at forestry sector workers and self-employed persons.<br />Responsible: SLI, social partners. Implementation frame: 2018- 2021</li><li>Organising an information campaign aimed at promoting responsible and safe behaviour of workers working at a height.<br />Responsible: SLI, social partners. Implementation frame: 2018-2019</li><li>Organising a promotional campaign aimed at promoting responsible and safe behaviour of workers with a less than one year record of work with the employer.<br />Responsible: SLI, social partners. Implementation frame: 2019-2020</li></ul><li>Task: Providing information to enterprises, in particular micro and small enterprises, about the benefits of proper HSW management. Measures:</li><ul><li>Formulating online interactive methodological guidance for heads of micro enterprises in the manufacturing industry sector for the implementation of HSW measures at enterprises, considering potential occupational risks, and publish it on SLI website and social networks.<br />Responsible: SLI, social partners, higher educational establishments, scientific institutions. Implementation frame: 2018-2019</li><li>Formulating online interactive methodological guidance for heads of micro enterprises in the transport and warehousing sector for the implementation of HSW measures at enterprises, considering potential occupational risks, and publishing it on SLI website and social networks.<br />Responsible: SLI, social partners, higher educational establishments, scientific institutions. Implementation frame: 2018-2019</li></ul></ol><li><strong>Objective: Improving prevention of work-related diseases by eliminating existing, new and arising occupational risks (inter alia, psychosocial risk and risk related to the use of new technologies and materials) having regard to, inter alia, gender mainstreaming, and prevention of occupational and work-related diseases, in particular occupational cancers and diseases related to the use of other chemical substances as well as disorders of the skeletal-muscular system</strong></li><ol><li>Task: Improving legal acts as part of implementation of policies and initiatives of preventing occupational and work-related diseases. Measures:</li><ul><li>Drafting amendments to the Criteria for Diagnosing Occupational Diseases approved by Order of the Minister of Health of the Republic of Lithuania No V-1087 of 29 December 2007 ‚On the approval of the Criteria for Diagnosing Occupational Diseases‘<br />Responsible: Ministry of Health, Hygiene Institute, higher educational establishments. Implementation frame: 2018</li><li>Drafting amendments to the Methodological Guidance on the Investigation of Psychosocial Risks approved by Order of the Minister of Health of the Republic of Lithuania and the Minister of Social Security and Labour of the Republic of Lithuania No V-699/A1-241 of 24 August 2005 ‘On the approval of the Methodological Guidance on the Investigation of Psychosocial Risks, having regard to changed working conditions and needs of enterprises, and adding provisions on the evaluation of psychosocial risks in ships in order to implement the International Labour Organisation‘s Maritime Labour Convention.<br />Responsible: The Ministry of Health, Hygiene Institute, higher educational establishments. Implementation frame: 2018</li><li>Drafting amendments to the Lithuanian Medical Standard 73:2007 ‘Occupational Physician. Rights, Responsibilities, Competences and Liability’ approved by Order of the Minister of Health of the Republic of Lithuania No V-516 of 20 June 2007 ‘On the approval of the Lithuanian Medical Standard 73:2007 ‘Occupational Physician. Rights, Responsibilities, Competences and Liability‘.<br />Responsible: Ministry of Health. Implementation frame: 2019</li><li>Drafting amendments to the Methodological Guidance on the Investigation of Ergonomic Risks approved by Order of the Minister of Health of the Republic of Lithuania and the Minister of Social Security and Labour of the Republic of Lithuania No V-592/A1-210 of 15 July 2005 ‘On the approval of the Methodological Guidance on the Investigation of Ergonomic Risks‘, having regard to changed working conditions and needs of enterprises<br />Responsible: Ministry of Health, Ministry of Social Security and Labour, Hygiene Institute, social partners. Implementation frame: 2020</li></ul><li>Task: Improving HSW for workers of relevant categories that are exposed to specific occupational risks. Measure:</li><ul><li>Upon assessing ergonomic occupational risks that have led to occupational diseases diagnosed in 2010-2015, prepared an online interactive guide on the implementation of HSW measures at enterprises, considering potential occupational risks to which the workers are exposed, and publishing it on SLI website and social networks.<br />Responsible: SLI, social partners. Implementation frame: 2020-2021</li></ul><li>Task: Promoting the application of measures of employees‘ health promotion and welfare at work at workplaces having regard to the needs of vulnerable employee groups and age-related needs as well as related risks. Measure:</li><ul><li>Preparing informational and methodological publications on health promotion and ensuring welfare at work having regard to the needs of vulnerable employee groups and age-related needs, and publish them on the website of the Hygiene Institute.<br />Responsible: Hygiene <br />Institute, social partners. Implementation frame: 2017-2021</li></ul><li>Task: Disseminating best practices related to the prevention of mental health issues at work. Measure:</li><ul><li>Presenting results of investigations into the impact of working environment upon mental health to representatives of enterprises concerned.<br />Responsible: Hygiene Institute, Ministry of Health, social partners. Implementation frame: 2017-2021</li></ul><li>Task: Increasing access to quality occupational health care services, in particular, for micro and small enterprises. Measures:</li><ul><li>Formulating procedures for occupational health care specialists in accordance with the Model Regulations on Enterprises‘ Health and Safety at Works Services approved by Order of the Minister of Health of the Republic of Lithuania and the Minister of Social Security and Labour of the Republic of Lithuania No A1-266/V-575 of 2 June 2011 ‘On the approval of the Model Regulations on Enterprises‘ Health and Safety at Works Services‘<br />Responsible: Hygiene Institute, Ministry of Health, social partners. Implementation frame: 2017</li><li>Developing a model for the provision of occupational health care services to micro and small enterprises.<br />Responsible : Ministry of Health, Hygiene Institute, social partners. Implementation frame: 2019</li><li>Compiling a list of indicators for the monitoring of occupational health care activities.<br />Responsible : Hygiene Institute. Implementation frame: 2021</li></ul><li>Task: Improving monitoring of work-related occupational diseases. Measure:</li><ul><li>Conduct a work-related health issues monitoring feasibility study, considering best practices of the Nordic Countries.<br />Responsible : Hygiene Institute. Implementation frame: 2021</li></ul></ol><li><strong>Objective: Ensuring appropriate competences of SLI inspectors and occupational healthcare specialists for dealing with new arising tasks</strong></li><ol><li>Task: Organising HSW training for SLI inspectors, in particular, on new occupational risks and new technologies. Measures:</li><ul><li>Organising training for SLI inspectors in order to build their capacities to effectively and efficiently carry out inspections of construction sites.<br />Responsible : SLI. Implementation frame: 2018-2021</li><li>Organising training for SLI inspectors in order to build their capacities to identify occupational risks at workplaces and to assess efficiency of risk elimination/reduction measures.<br />Responsible : SLI. Implementation frame: 2018-2021</li></ul><li>Task: Organising improvement of competences of occupational health specialists. Measures:</li><ul><li>Organising skills improvement events for enterprises’ occupational health specialists.<br />Responsible : Hygiene Institute. Implementation frame: 2017-2021</li><li>Organising skills improvement events on occupational medicine and occupational health for physicians carrying out mandatory health checks for employees and other physicians. <br />Responsible : Hygiene Institute. Implementation frame: 2017-2021</li></ul></ol><li><strong>Objective: Improving employers’ and employees’ HSW training</strong></li><ol><li>Task: Organising checks of HSW knowledge of employers and employers’ representatives. Measure:</li><ul><li>Developing and implementing a system for the checking of HSW knowledge of employers and employers‘ representatives.<br />Responsible : SLI, Ministry of Social Security and Labour. Implementation frame: 2018-2019</li></ul></ol></ol>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+178, null, @sectionId, "STRATEGY_ACTORS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+178, "EN", 1, "Responsibility for coordinating the implementation of the Action Plan: The Ministry of Social Security and Labour of the Republic of Lithuania.<br/>Other stakeholders are:<br/>SLI, Ministry of Environment, Ministry of Health, Hygiene Institute, Ministry of Social Security and Labour, Ministry of Agriculture, social partners, higher educational establishments, scientific institutions");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+179, null, @sectionId, "STRATEGY_RESOURCES");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+179, "EN", 1, "A detailed breakdown of the resources and time frame are laid down in the <a target=\"_blank\" href=\"https://www.e-tar.lt/portal/lt/legalAct/1c12ca80447711e7b66ae890e1368363\"><strong>strategy</strong></a>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+180, null, @sectionId, "STRATEGY_EVALUATION");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+180, "EN", 1, "Evaluation: a report about the implementation of the strategy has to be provided to the Ministry of Social Security and Labour of the Republic of Lithuania by 30 January every year.<br/>Ex ante indicators for the years 2012 to 2020<br/>Number of prepared requirements, guidances, orders.<br/>Number of developed OiRA tools, Occupational healthcare services provision model for micro and small enterprises. Number of held training. Number of inspections, events concerning mental health carried out. Number of implemented campaigns.<br/>A detailed list of indicators assigned to the tasks/measures are provided in the <a target=\"_blank\" href=\"https://www.e-tar.lt/portal/lt/legalAct/1c12ca80447711e7b66ae890e1368363\">strategy</a>.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+181, null, @sectionId, "STRATEGY_EU");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+181, "EN", 1, "<p>The Action Plan has been prepared in accordance with the provisions of the EU Strategic Framework on Health and Safety at Work 2014-2020.<br />Objective 1 is related to challenge 1of the EU Strategic Framework on Health and Safety at Work<br />Objective 2 is related to challenge 2 EU Strategic Framework on Health and Safety at Work<br />Task 2.3 is related to challenge 3 of the EU Strategic Framework on Health and Safety at Work<br /><br /></p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+182, null, @sectionId, "STRATEGY_BASIC INFO");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+182, "EN", 1, "Strategy document: <a target=\"_blank\" href=\" http://ohsa.org.mt/Portals/0/Docs/PoliciesProcedures/OHSA%20Strategic%20Plan%202014_%202020.pdf\"> <strong> Strategic Plan for Occupational Health and Safety 2014-2020</strong></a>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+183, null, @sectionId, "STRATEGY_BACKGROUND");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+183, "EN", 1, "<a target=\"_blank\" href=\"http://ohsa.org.mt/Portals/0/docs/RSFR.pdf\"> Poor standards of OHS</a>, industrial injuries, fatalities and occupational diseases place a large burden on the national economy.<br/>Focus on the construction and manufacturing sectors which are responsible for around 45% of the total number of injuries.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+184, null, @sectionId, "STRATEGY_CHARACTERISTICS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+184, "EN", 1, "<p><a href=\"http://ohsa.org.mt/Portals/0/Docs/PoliciesProcedures/OHSA%20Strategic%20Plan%202014_%202020.pdf\" target=\"_blank\"><strong>Vision</strong></a><strong>: Working with others to ensure healthier and safer workplaces in Malta.</strong><br>The development of a culture, which goes beyond the workplace, which adopts a holistic view of health and that values risk prevention.<br>Appropriate preventative measures will be in place in all workplaces in Malta to minimize the possibility and severity of occupational incidents and illness. The ultimate goal is zero preventable incidents that can affect health and safety.<br>Objective 1: Legislation, compliance and enforcement<br>Objective 2: Capacity Building<br>Objective 3: Communicating the benefits of OSH<br>Objective 4: Taking appropriate action against existing and emerging risks<br>Objective 5: Evaluating effectiveness of actions taken</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+185, null, @sectionId, "STRATEGY_DETAILS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+185, "EN", 1, "<p><strong>Objective 1: Legislation, compliance and enforcement&nbsp;</strong><br>Activities:</p>
 <ul>
@@ -1168,7 +933,7 @@ INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+
 </ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+186, null, @sectionId, "STRATEGY_ACTORS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+186, "EN", 1, "<ul>
     <li>The Employment Relations Board (ERB), the Malta Council for Economic and Social Development (MCESD) and the Occupational Health and Safety Authority (OHSA) are the three main tripartite social dialogue institutions that deal with working conditions. During the last years, these three bodies were instrumental in bringing significant changes at both enterprises, sectoral and national levels <a href=\"https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Malta#cite_note-thirtyfour-12\" target=\"_blank\">[12]</a>.</li>
@@ -1178,193 +943,193 @@ INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+
 </ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+187, null, @sectionId, "STRATEGY_RESOURCES");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+187, "EN", 1, "Time frame 2014 to 2020.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+188, null, @sectionId, "STRATEGY_EVALUATION");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+188, "EN", 1, "<p>Evaluating effectiveness of actions taken: Actions will be assessed against <a href=\"http://ohsa.org.mt/Portals/0/Docs/PoliciesProcedures/OHSA%20Strategic%20Plan%202014_%202020.pdf\" target=\"_blank\">KPIs determined or adopted by the Authority</a>, whilst ensuring the efficiency of all services provided.<br /><br />Quote:<br />“The KPIs are a mix between ‘leading’ indicators that relate more to the progress of OHSA actions and productivity as well as the ‘lagging’ indicators that relate to the effect the OHSA actions are having in the workplace.<br />Most KPI information is already available, through statistics and OHSA activity tracking.<br />Target setting is also a critical KPI requirement as this is the performance benchmark that each KPI is expected to achieve. Target setting is an annual process, where all targets will be agreed with the KPI ‘owners’.\"<br /><br />Ex ante indicators for the years 2012 to 2020: No indicators identified.</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+189, null, @sectionId, "STRATEGY_EU");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+189, "EN", 1, "Objective 1, 2 and 3 are closely related to challenge 1 of the EU-OSH Strategy (Improving the implementation record of Member States, in particular by enhancing the capacity of micro and small enterprises to put in place effective and efficient risk prevention measures). <br/>Objective 4 is related to Challenge 2.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+190, null, @sectionId, "STRATEGY_BASIC INFO");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+190, "EN", 1, "<p>Strategy document:<br />Original version: <a href=\" https://www.arboineuropa.nl/wp-content/uploads/2016/10/160728_Visie_en_Strategie_NL_DEF.pdf\" target=\"_blank\"> <strong> Visie en strategie gezond en veilig werken </strong></a><br />English version: <a href=\" https://www.arboportaal.nl/documenten/publicatie/2016/07/28/dutch-vision-and-strategy-for-occupational-safety-and-health \" target=\"_blank\"> <strong> Dutch vision and strategy for occupational safety and health</strong></a></p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+191, null, @sectionId, "STRATEGY_BACKGROUND");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+191, "EN", 1, "Currently no reference made, but in the Netherlands many surveys and background studies surveys on working conditions are available.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+192, null, @sectionId, "STRATEGY_CHARACTERISTICS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+192, "EN", 1, "<p><strong>Vision</strong><br />“Employers are responsible for working conditions. In 2012, the State Secretary for Social Affairs and Employment sent a letter to the House containing the ministry's vision of healthy and safe working conditions. <br />No one should become sick from work, and every employee who dies in a work-related incident is one too many. Having sound working conditions at every workplace in the Netherlands is the ultimate goal. It is important to create a level playing field, both at a national and international level, in order to prevent competitive advantages through bad working conditions”.<br /><strong> Major objectives (‘targets’): </strong></p><ol><li>Setting the agenda and stimulating</li><li>Supporting employers and employees in creating healthy and safe work</li><li>Establishing frameworks</li><li>Monitoring</li><li>Enforcement</li></ol>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+193, null, @sectionId, "STRATEGY_DETAILS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+193, "EN", 1, "<ol><li><strong>Setting the agenda and stimulating</strong> a healthy and safe working environment through campaigns, projects</li><ol><li><span style=\"text-decoration: underline;\">Sustainable employability:</span> main focus on a cultural change. Awareness rising among employers and employees through communication campaigns, sharing scientific knowledge and good practice experiences. The programme has two main points:</li><ul><li>Tackling work-related psycho-social risks</li><li>Raising awareness of sustainable employability, especially in SME.</li><li>Other activities: e.g. raising awareness for employees with a low socio-economic status and low-skilled employees</li></ul><li><span style=\"text-decoration: underline;\">Self-regulation</span>: main focus on Self-activation and personal responsibility of employers and employees. Making information available to all industries, sharing knowledge, experiences and tools from previous projects.</li><li><span style=\"text-decoration: underline;\">Responsible commissioning</span>: focuses on the responsibility of commissioning parties: sufficient attention paid to health and safety aspects and planning will reduce workplace risks.</li><li>I<span style=\"text-decoration: underline;\">mprovement of corporate culture:</span> improve corporate culture with help of tools developed to raise awareness among employees.</li><li><span style=\"text-decoration: underline;\">Health and safety educational programme in vocational and other education:</span> exploring ways to promote the incorporation of health and safety at work and awareness in vocational education and recognised training companies.</li></ol><li><strong>Supporting employers and employees in creating healthy and safe work</strong> through tools, projects and training</li><ol><li><span style=\"text-decoration: underline;\">Support centre risk assessment tools</span> (Steunpunt RI&amp;E-instrumenten)</li><li><span style=\"text-decoration: underline;\">Prevention employee project</span></li><ul><li>Reinforcing the position of the prevention employee</li><li>Improving the quality of the advice of prevention employee</li></ul><li><span style=\"text-decoration: underline;\">OSH portal:</span> Arboportaal – portal with current OSH information</li></ol><li><strong>Establishing frameworks</strong>: to create an equal level of protection for all employees and to provide normative preconditions for health and safety at work (legislation, regulation, working conditions catalogues).</li><ol><li><span style=\"text-decoration: underline;\">Improvement of the work-related care system</span><strong><span style=\"text-decoration: underline;\">:</span> </strong>review the Working Conditions Act</li><ul><li>Promotion of cooperation between occupational health care and regular health care and of regional or sectoral occupational health care, of which self-employed persons can become members.</li></ul><li><span style=\"text-decoration: underline;\">Certification:</span> tools to reinforce personal responsibility and enhance self-activation in quality ensurance.</li><li><span style=\"text-decoration: underline;\">Working conditions catalogue: </span>employers and workers descriptions of initiatives on how they meet OSH regulations of the government.</li><li><span style=\"text-decoration: underline;\">Hazardous substances:</span> special attention to carcinogens: establishing more and better limit values Organising a conference concerning prevention of risks to exposure to carcinogens.</li></ol><li><strong>Monitoring</strong>: “The information gathered through monitoring enables us</li><ul><li>To keep an overview of the situation,</li><li>Establish compliance levels,</li><li>Provide periodic accountability information,</li><li>Answer evaluation questions,</li><li>Contribute to information, detection and facilitation of the field.”</li></ul><li><strong>Enforcement</strong>:“The government is responsible for establishing the occupational health and safety system and for the enforcement policy. The SZW Inspectorate (SocialeZakenenWerkgelegenheid – Social Affairs and Employment)) monitors compliance with legislation and upholds the law. The ministry's activities are mainly centered on the leaders and middle group of companies. Notorious violators who refuse to comply require a firm enforcement by the Inspectorate”.</li></ol>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+194, null, @sectionId, "STRATEGY_ACTORS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+194, "EN", 1, "The strategy was mainly developed by the SZW.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+195, null, @sectionId, "STRATEGY_RESOURCES");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+195, "EN", 1, "<p>The total amount of financial resources dedicated to the strategy is about 40% of its operational budget. The total amount of financial resources dedicated to the strategy is about 40% of its operational budget.<br />The total expenditure on activities related to the strategy amounted to € 6.8 mln in the year 2015, and that included amongst other activities € 2.5 mln for the project on Sustainable Employability and € 2 mln for the project on self-regulation.</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+196, null, @sectionId, "STRATEGY_EVALUATION");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+196, "EN", 1, "No evaluation up to now.<br/>Ex ante indicators for the years 2012 to 2020<br/>No indicators identified");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+197, null, @sectionId, "STRATEGY_EU");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+197, "EN", 1, "Objective 2 and 3 are closely related to challenge 1 and 2 of the EU-OSH Strategic Framework. Objective 1 is related to Challenge 3.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+198, null, @sectionId, "STRATEGY_BASIC INFO");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+198, "EN", 1, "<p>Polish document: <a href=\" http://www.ciop.pl/CIOPPortalWAR/appmanager/ciop/pl?_nfpb=true&amp;_pageLabel=P26800385591408696399667&amp;html_tresc_root_id=21639&amp;html_tresc_id=21642&amp;html_klucz=21639&amp;html_klucz_spis=\" target=\"_blank\"> <strong> Program Wieloletni, Poprawa bezpieczeństwa i warunków pracy” - III etap (2014-2016) , IV etap (2017-2019) </strong></a><br />English document: <a href=\" https://www.ciop.pl/CIOPPortalWAR/appmanager/ciop/en?_nfpb=true&amp;_pageLabel=P26400121511406886174136\" target=\"_blank\"> <strong>National programme, Improvement of safety and working conditions” – phase III (2014-2016), continued as phase IV (2017-2019)</strong></a><br />All documents and for more information see the <a href=\"https://www.ciop.pl/CIOPPortalWAR/appmanager/ciop/en?_nfpb=true&amp;_pageLabel=P26400121511406886174136\" target=\"_blank\">CIOP-PIB-website</a></p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+199, null, @sectionId, "STRATEGY_BACKGROUND");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+199, "EN", 1, "Quote: “Phase III is the continuation of the national programme, Improvement of safety and working conditions”, with phase I (execution 2008-2010) established by resolution 117/2007 of the Council of Ministers of 3rd July 2007, and phase II established by resolution 154/2010 of the Council of Ministers of 21st September 2010 (execution 2011-2013). The results of phases I and II were positively evaluated by the Ministry of Labour and Social Policy, and the Ministry of Science and Higher Education. It is expected to significantly add to the reduction of occupational risk related to exposure to harmful, dangerous and onerous factors at workplaces. It will also influence the opportunities to extend the professional activity age with good health.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+200, null, @sectionId, "STRATEGY_CHARACTERISTICS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+200, "EN", 1, "Quote: “The Programme’s main objective is to develop innovative technical and organisational solutions, aiming at development of human resources, new products, technologies, and management methods and systems whose application will help reduce the number of workers exposed to harmful, dangerous and onerous factors, and reduce the related number of work accidents, occupational diseases and resulting economic and social losses.<br/>For this aim, a new challenge is the extension of professional activity age, according to the 2012 revision of the act on pensions and disability benefits from the Social Insurance Fund.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+201, null, @sectionId, "STRATEGY_DETAILS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+201, "EN", 1, "<p><strong> Detailed objectives </strong></p><ol><li>Creating opportunities for fulfilling the requirements of new strategic documents from the EU</li><li>Developing and improving solutions for improvement and preservation of work ability in order to prevent labour market exclusion, particularly for elderly people</li><li>Developing methods and tools for preventing and reducing occupational risk in the working environment, including new and emerging risks</li><li>Widening the knowledge on causes and results of work accidents and occupational diseases, and on profitability of preventive actions on societal and enterprises level</li><li>Shaping and promoting a safety culture by improving OSH management and developing a modern system of educating and informing the society</li></ol><p><strong>Activities </strong><br /><strong>Tasks related to the services of the state </strong></p><ol><li>Establishing standards in OSH</li><li>Developing methods and tools for preventing and reducing occupational risks in the working environment</li><li>Developing a system of testing machinery and appliances, tools and personal and collective protection equipment</li><li>Developing a system of OSH education, information and promotion</li></ol><p><strong>Research and development tasks </strong><br />The research and development programme includes projects within the following main research areas:</p><ol><li>Developing and preserving working abilities</li><li>New and emerging risks related to new technologies and work processes</li><li>Material engineering and science, and new technologies for OSH purposes</li><li>Shaping a safety culture</li></ol><p><strong> Examples of projects (selection)</strong></p><ul><li>Rating speech intelligibility and directional hearing ability of workers over the age of 50 years.</li><li>Rating exposure to low-frequency vibration having general impact for selected physiological functions of the body worker.</li><li>Research nuisance and noise exposure, including to low-frequency noise emitted by turbines and wind turbines.</li><li>The study of sound propagation and methods of shaping the acoustic conditions in rooms for activities requiring concentration of attention.</li><li>The method of preventing the reduced level of alertness of employees aged 55+ by exposure to different color and intensity of light.</li><li>Research on the influence of torque hand-held machines for the formation of the burden of the musculoskeletal system operators.</li><li>Mechatronic support system rehabilitation segments of the musculoskeletal system of the upper limb in the fingers and wrist.</li><li>The use of virtual reality techniques to support the professional activation of older people.</li><li>Rules for the use of techniques for monitoring places of residence of the worker-high-speed communications technology (UWB) to ensure the safety of the use of machinery.</li><li>Simulate touch sensations associated with the interaction of the control components and manipulated objects in the environment of virtual reality for training in the safe use of production machines for metal.</li><li>Toxicity in vitro studies of selected compounds on senescent cells.</li><li>The rating methods in vitro potential remote effects of exposure to selected ceramic nanomaterials.</li><li>Study the spread of the nano-objects in the air space work.</li><li>Modeling distribution of ventilation air in the environment emission sources associated with the processing of nanomaterials.</li><li>Identifying risk groups associated with exposure to carcinogens typed.</li><li>The rating methods in vitro harmful effects of second generation biofuels obtained in the transesterification of fats waste.</li><li>Examination of the distribution of concentrations of carcinogens in fractions of fine particles emitted during the operation of motor vehicles.</li><li>Research flammability and explosiveness of thermostable plastics in the context of prevention of major industrial accidents.</li><li>Study of the sources and pathways of harmful microbiological agents in the working environment with the use of biochemical methods and gene profiling.</li><li>Evaluation of the possibilities of using fiber aerosol transport and elimination of harmful microbiological agents from the environment.</li><li>Evaluation of the impact of professional and non-professional factors on the ability of people to work with chronic diseases.</li><li>Performing work under time pressure and the load on the eyesight of employees of different ages.</li><li>Explore the possibility of physical and psychomotor skills of older workers in terms of extension activity.</li><li>The static load of the lower extremities of the position during operation and the occurrence of chronic venous insufficiency, depending on age.&nbsp;</li><li>Lifestyle and psycho-physical working conditions as determinants of ability to work.</li><li>Identification of individual and organizational determinants of motivation of older people to continue working.</li><li>The impact of stereotypes on the functioning of the professional employees 50+.</li><li>Type of employment contract and the welfare of employees and attitude toward work requirements.</li><li>Requirement profile psychological conditioning efficiency and safety of professional drivers over the age of 55.</li><li>Innovative device for local cooling of personnel operating theaters, taking into account the specificity of selected procedures.</li><li>Modeling and assessment of electromagnetic hazards in the working environment for users of personal medical devices (OUM) to support the vital functions of the body.</li><li>Experimental and modeling human exposure to the indirect impact of electromagnetic fields of small and medium frequencies.</li><li>Investigation of ergonomic gloves using surface electromyography.</li><li>Model organic vapor sensor based on thin films of carbon nanotubes.</li><li>Polymer hybrid materials involving nanoparticles for use in plant protection.</li><li>Bioactive nonwoven filter for use in respiratory protection equipment reusable.</li><li>Active clothing materials with shape memory (SMM) to protect workers against heat.</li><li>Develop a model to estimate the thermal insulation using artificial neural networks to design clothing Heat.</li><li>Developing a model material with marked paths for implementation in smart clothing.</li><li>Development of a model of an optical filter, variable rate transmission in the visible range, for use in eye protection measures positions risk of hazardous infrared.</li><li>Development of methods for designing components safety footwear and facial masks and respirators using digital mapping anthropometric measurements.</li><li>Development of the system architecture monitoring and management of occupational health and safety with regard to advanced technologies and solutions in the field of intelligent working environment.</li><li>Age management in terms of shaping and working conditions of its effectiveness.</li><li>Innovative methods of communication in the management of health and safety.</li><li>The use of the concept of adaptability (resilience) in the management of health and safety.</li><li>The role of organisational factors in shaping behaviors and attitudes of employees of different ages against risks to safety and health.</li><li>Examination of the relationship between the level of safety culture and the economic results of enterprises.</li><li>The effectiveness of postgraduate studies in the field of ergonomics, safety and health at work.</li></ul><p><strong>Expected results</strong></p><ul><li>Increased efficiency of activities for prevention of occupational hazards, taking into account the need for ability to work in the extended period of professional activity</li><li>Improved quality of OSH management in enterprises, taking into account age management</li><li>Ensuring a modern approach to the OSH and ergonomics issues in teaching curricula on all levels, and improvement of competences of specialists</li><li>Widening the offer of Polish manufacturers of PPE, and therefore improved safety of their users by making available new, improved products</li><li>Continuation of legislation and standardization work in view of ensuring the compliance of Polish law with EU regulations on OSH, as well as implementing respective EU standards in Polish OSH standards</li><li>Development of a national system of conformity assessment of products and services with EU directives</li><li>Ensuring Poland’s active participation in European and international research cooperation, as well as exchange of best practices in OSH and ergonomics</li><li>Improving the efficiency of promotion and information actions in OSH, including development of the activities of the National Focal Point of the European Agency for Safety and Health at Work</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+202, null, @sectionId, "STRATEGY_ACTORS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+202, "EN", 1, "<p>All tasks related to the services for the state are executed by CIOP-PIB - the main programme performer and coordinator. The research part of the Programme is executed by 17 scientific institutions – universities and research institutes, by the Polish Academy of Sciences, cooperating with enterprises, government bodies and labour supervision bodies. These institutes are:</p><ul><li>AGH University of Science and Technology, Faculty of Mechanical Engineering and Robotics</li><li>Koźmiński University w Warszawie</li><li>Academy of Special Education</li><li>Central Institute for Labour Protection – National Research Institute (CIOP-PIB)</li><li>Nencki Institute of Experimental Biology</li><li>Nofer Institute of Occupational Medicine in Lodz</li><li>Institute of Occupational Medicine and Environmental Health</li><li>Institute of Rural Health in Lublin</li><li>Oil and Gas Institute</li><li>Białystok University of Technology, Faculty of Electricity</li><li>Łodz University of Technology, Faculty of Material Technologies and Textile Design</li><li>Warsaw University of Technology: Faculty of Electronics and Information Technology and Faculty of Mechatronics.</li><li>Industrial Research Institute for Automation and Measurements</li><li>Warsaw School of Economics</li><li>Medical University of Silesia in Katowice</li><li>Medical University in Lodz</li><li>Military Institute of Hygiene and Epidemiology</li></ul><p>The following Ministries, institutions, social partners and business associations cooperate in disseminating and implementing the program results:</p><ul><li>Ministry of Family, Labour and Social Policy</li><li>Ministry of Science and Higher Education</li><li>Ministry of National Education</li><li>Ministry of Development and Finance</li><li>Ministry of Infrastructure and Construction</li><li>Ministry of Maritime Economy and Inland Navigation</li><li>Ministry of Health</li><li>Ministry of Sport and Tourism</li><li>Ministry of Energy</li><li>National Labour Inspectorate</li><li>State Sanitary Inspection</li><li>State Fire Service</li><li>Polish Committee for Standardization (PKN)</li><li>Office of Technical Inspection (UDT)</li><li>State Mining Authority (WUG)</li><li>Transportation Technical Supervision (TDT)</li><li>Polish Social Insurance Institution (ZUS)</li><li>Agricultural Social Insurance Fund (KRUS)</li><li>Polish Engineering Association (NOT)</li><li>Polish Craft Association</li><li>NSZZ “Solidarność” National Commission</li><li>All-Poland Alliance of Trade Unions – OPZZ</li><li>Trade Unions Forum</li><li>Polish Confederation Lewiatan</li><li>Employers of Poland</li><li>Business Centre Club – Employers’ Association</li><li>Polish Association of OSH services Employees</li><li>Network of OSH Experts (48 members)</li><li>Network of Regional OSH Centres (16 centres)</li><li>Safe Work Leaders Forum (109 companies)</li><li>Polish Association of Personal Protective Equipment Producers and Distributors (35 companies)</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+203, null, @sectionId, "STRATEGY_RESOURCES");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+203, "EN", 1, "No information identified.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+204, null, @sectionId, "STRATEGY_EVALUATION");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+204, "EN", 1, "The programme is monitored and evaluated by the Coordination Board composed of representatives of ministries and other public bodies, organizations of employers and employees, representatives of institutions interested in implementing the results of the Programme as well as scientific experts. The Coordination Board meets once a year in order to monitor the progress and evaluate the outcomes of tasks related to the services of the state and research projects. The Coordination Board can suggest some modifications, however without altering the main objective of the Programme.<br/> Ex ante indicators for the years 2015 to 2020<br/>The programme continues as phase IV (2017-2019) and the following strategic indicators have been adopted: the reduction in the number of persons employed in hazardous conditions, the reduction in the number of fatal accidents at work and in the number of severe accidents at work.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+205, null, @sectionId, "STRATEGY_EU");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+205, "EN", 1, "There is a direct reference to the EU-OSH Strategic Framework made. Due to the broad approach there are relations to all aspects of the European Strategic Framework.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+206, null, @sectionId, "STRATEGY_BASIC INFO");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+206, "EN", 1, "Portuguese document: <a target=\"_blank\" href=\"http://www.act.gov.pt/%28pt-PT%29/Itens/Noticias/Documents/ENSST%202015-20120.pdf\"> <strong>Estratégia Nacional para a Segurança e Saúde no Trabalho 2015 -2020 — «Por um trabalho seguro, saudável e produtivo» </strong></a><br/>English document: <strong>National strategy for Health and Safety at Work 2015-2020 – “For a safe, healthy and productive work”</strong>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+207, null, @sectionId, "STRATEGY_BACKGROUND");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+207, "EN", 1, "Defining the perceived problem:<br/>Short description in the introduction of the strategy and in the rationale for the specific objectives");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+208, null, @sectionId, "STRATEGY_CHARACTERISTICS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+208, "EN", 1, "<p>Objective 1: <strong>To develop and implement public policies of health and safety at work</strong><br />Objective 2: <strong>To improve the prevention of occupational diseases and work accidents </strong><br />Objective 3: <strong>To support companies in the implementation of health and safety at work, particularly micro, small and medium-sized enterprises </strong><br />Objective 4: <strong>To promote information, training, participation and cooperation at the workplace </strong><br />Objective 5: <strong>To promote compliance with health and safety at work legislation </strong><br />Objective 6: <strong>To strengthen international cooperation on health and safety </strong></p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+209, null, @sectionId, "STRATEGY_DETAILS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+209, "EN", 1, "<p><strong> Details of the activity plan </strong><br />Every measure is accompanied by Indicators, Targets and Entities to be involved. (in this short description, we only present the indicators and targets).<br /><strong> Objective 1: To develop and implement public policies of health and safety at work</strong><br /> <span style=\"text-decoration: underline;\">Measure 1</span> - To promote the inclusion of health and safety at work as a learning subject, in all levels of education, including permanent awareness campaigns throughout schooling.<br /><span style=\"text-decoration: underline;\">Indicators:</span> Creation of a health and safety at work benchmark<br /><span style=\"text-decoration: underline;\">Targets</span>: 1 Health and safety at work benchmark.<br /><span style=\"text-decoration: underline;\">Measure 2</span> - To promote the training of the educative community, including teaching and non-teaching staff on health and safety at work, ensuring, whenever possible, that training courses in this field are accredited for professional development purposes<br /><span style=\"text-decoration: underline;\">Indicators:</span> Number of people trained; number of training sessions; number of training tools produced with informative content and teaching materials produced to help teachers to raise awareness among students. <br /><span style=\"text-decoration: underline;\">Targets:</span> 7,500/year; 250/year; 15/year<br /><span style=\"text-decoration: underline;\">Measure 3</span> - To develop preventive actions aimed at specific targets, namely the following categories of workers: young; over 55 years old; women; civil servants; fixed-term contracted; temporary; part-time; teleworkers; self- employed; migrants; disabled; with chronic medical conditions<br /><span style=\"text-decoration: underline;\">Indicators:</span> Number of specific actions developed; number of entities/services; number of recipients. <br /><span style=\"text-decoration: underline;\">Targets:</span> 50/year; 6; 1500/year<br /><span style=\"text-decoration: underline;\">Measure 4</span> - To complete the national survey of work conditions<br /><span style=\"text-decoration: underline;\">Indicators:</span> Publication of the results<br /><span style=\"text-decoration: underline;\">Targets:</span> Report. <br /><span style=\"text-decoration: underline;\">Measure 5</span> - To assess and promote the health and safety at work system in the public administration<br /><span style=\"text-decoration: underline;\">Indicators:</span> Report with data on the public administration; number of good practices disclosed; number of awareness activities carried out<br /><span style=\"text-decoration: underline;\">Targets:</span> 1 annual report; 2/year; 10/year<br /><span style=\"text-decoration: underline;\">Measure 6</span> - To invest in partnerships with the media and in the communication of messages on social network about health and safety at work<br /><span style=\"text-decoration: underline;\">Indicators</span>: Number of partnerships; number of health and safety at work messages posted on social networks; number of campaigns<br /><span style=\"text-decoration: underline;\">Targets:</span> 10/year; 200/year; 6/year<br /><span style=\"text-decoration: underline;\">Measure 7</span> - To promote partnerships between public and private institutions and research entities in the context of health and safety at work, as well as develop and disseminate research projects in areas identified as priorities within health and safety at work aimed at workplaces<br /><span style=\"text-decoration: underline;\">Indicators</span>: Number of projects developed; number of partnerships<br /><span style=\"text-decoration: underline;\">Targets:</span> 4/year; 10/year<br /><span style=\"text-decoration: underline;\">Measure 8</span> - Publication of regulations and safety at work standards for construction sites<br /><span style=\"text-decoration: underline;\">Indicators:</span> Number of regulations or standards published<br /><span style=\"text-decoration: underline;\">Targets:</span> 1 law<br /><span style=\"text-decoration: underline;\">Measure 9</span> - Publication of the rules for carrying out duties related to safety coordination in construction<br /><span style=\"text-decoration: underline;\">Indicators:</span> Number of regulations or standards published<br /><span style=\"text-decoration: underline;\">Targets</span>: 1 law<br /><strong> Objective 2: To improve the prevention of occupational diseases and work accidents </strong><br /> <span style=\"text-decoration: underline;\">Measure 10</span> - To institutionalise social dialogue with the creation of sector-based forums for construction, manufacturing, agriculture and transport to analyse accident rates, identify specific needs and adopt specific measures aimed at these sectors<br /><span style=\"text-decoration: underline;\">Indicators</span>: Number of forums created<br /><span style=\"text-decoration: underline;\">Targets</span>: 4 forums with 2 annual meetings<br /><span style=\"text-decoration: underline;\">Measure 11</span> - To develop a prevention and awareness campaign for industrial accidents at work and occupational diseases and their redress, including information on technical support for rehabilitation and professional reintegration<br /><span style=\"text-decoration: underline;\">Indicators:</span> Number of awareness measures; number of recipients<br /><span style=\"text-decoration: underline;\">Targets:</span> 40/year; 1,000/year<br />Entities to be involved: MSESS; ACT; IEFP, I.P.; Social partners; Institutional partners<br />Strategic Objective: 2; 3<br /><span style=\"text-decoration: underline;\">Measure 12</span> - To promote the setting-up of joint committees for major construction and public works projects<br /><span style=\"text-decoration: underline;\">Indicators:</span> Number of committees<br /><span style=\"text-decoration: underline;\">Targets:</span> 3 during the period ENSST 2015-2020<br /><span style=\"text-decoration: underline;\">Measure 13</span> - To develop preventive activities for specific hazards such as chemical, psychosocial, nano-technologies, biological and musculoskeletal disorders<br /><span style=\"text-decoration: underline;\">Indicators:</span> Number of specific actions developed<br /><span style=\"text-decoration: underline;\">Targets:</span> 40/year<br /><span style=\"text-decoration: underline;\">Measure 14</span> - To create a common and integrated information system for work accidents and occupational diseases, in order to ensure reliable information processing, including those involving public employees and private sector employees<br /><span style=\"text-decoration: underline;\">Indicators:</span> Creation of a common and integrated information <br /> system<br /><span style=\"text-decoration: underline;\">Targets:</span> 1 in 2020<br /><span style=\"text-decoration: underline;\">Measure 15</span> - To promote the production and analysis of statistics related to occupational diseases<br /><span style=\"text-decoration: underline;\">Indicators:</span> Number of statistical indicators made available; number of periodical assessments or actions carried out<br /><span style=\"text-decoration: underline;\">Targets:</span> 5/year<br /><span style=\"text-decoration: underline;\">Measure 16</span> - To assess the impact of the organisation model of health and safety services at work on the improvement in health and safety conditions at work<br /><span style=\"text-decoration: underline;\">Indicators:</span> Number of assessment reports produced<br /><span style=\"text-decoration: underline;\">Targets:</span> 2 reports (2017 and 2020) <br /><strong>Objective 3: To support companies in the implementation of health and safety at work, particularly micro, small and medium-sized enterprises </strong><br /> <span style=\"text-decoration: underline;\">Measure 17</span> - To disseminate information on the forms of organisation of health and safety at work services best suited to their size/activity/risk<br /><span style=\"text-decoration: underline;\">Indicators:</span> Number of companies covered<br /><span style=\"text-decoration: underline;\">Targets:</span> 5,000/year<br /><span style=\"text-decoration: underline;\">Measure 18</span> – To streamline the intervention of the Authority for Working Conditions prevention experts in the workplaces, in coordination with health and safety at work services and other prevention agents<br />Indicators: Number of visits made; number of measures implemented<br /><span style=\"text-decoration: underline;\">Targets:</span> 150/year; 450/year<br /><span style=\"text-decoration: underline;\">Measure 19</span> - To identify and promote information sharing and good practices in health and safety at work<br /><span style=\"text-decoration: underline;\">Indicators:</span> Information or good practices made available on the ACT website<br /><span style=\"text-decoration: underline;\">Targets:</span> 50<br /><span style=\"text-decoration: underline;\">Measure 20</span> - Production and dissemination of simple documents adapted to each sector, as well as law enforcement tools for health and safety at work<br /><span style=\"text-decoration: underline;\">Indicators</span>: Number of tools disseminated<br /><span style=\"text-decoration: underline;\">Targets:</span> 6/year<br /><strong> Objective 4: To promote information, training, participation and cooperation at the workplace </strong><br /> <span style=\"text-decoration: underline;\">Measure 21</span> - To organise training/awareness/information activities for employers and workers on health and safety at work<br /><span style=\"text-decoration: underline;\">Indicators:</span> Number of activities organised; number of targets<br /><span style=\"text-decoration: underline;\">Targets:</span> 20/year; 500/year<br /><span style=\"text-decoration: underline;\">Measure 22</span> - To provide online self-assessment tools<br /><span style=\"text-decoration: underline;\">Indicators:</span> Number of tools provided<br /><span style=\"text-decoration: underline;\">Targets:</span> 5 during the period ENSST 2015-2020<br /><span style=\"text-decoration: underline;\">Measure 23</span> - To promote the integration and adaptation of training offer on health and safety at work aimed at specific sectors of activity in the National Qualifications Catalogue, as well as the development of health and safety at work training courses<br /><span style=\"text-decoration: underline;\">Indicators:</span> Number of training courses with health and safety at work content; number of training activities developed<br /><span style=\"text-decoration: underline;\">Targets</span>: 20 during the period ENSST 2015-2020; 100 during the period ENSST 2015-2020<br /><strong> Objective 5: To promote compliance with health and safety at work legislation </strong><br /> <span style=\"text-decoration: underline;\">Measure 24</span> - To assemble and provide support kits for new employers on their main labour and health and safety at work obligations<br /><span style=\"text-decoration: underline;\">Indicators:</span> Number of kits provided<br /><span style=\"text-decoration: underline;\">Targets:</span> 5/year<br /><span style=\"text-decoration: underline;\">Entities to be involved</span>: MSESS; ACT; Social partners; ISS, I.P.; IEFP, I.P.; AMA, I.P. <br />Strategic Objective: 1<br /><span style=\"text-decoration: underline;\">Measure 25</span> - To follow up and monitor the activity of external services, in both safety at work and health at work<br /><span style=\"text-decoration: underline;\">Indicators</span>: Number of entities audited; number of non-conformities corrected<br /><span style=\"text-decoration: underline;\">Targets:</span> Total universe<br /><span style=\"text-decoration: underline;\">Entities to be involved:</span> MSESS, ACT; MS; DGS<br />Strategic Objective: 2; 3<br /><span style=\"text-decoration: underline;\">Measure 26</span> - To follow up and monitor the activity of certified health and safety at work training providers<br /><span style=\"text-decoration: underline;\">Indicators:</span> Number of entities audited; number of non-conformities corrected<br /><span style=\"text-decoration: underline;\">Targets:</span> Total universe<br /><span style=\"text-decoration: underline;\">Measure 27</span> - Assessment of the resources and activities developed in terms of internal and common health and safety at work services<br /><span style=\"text-decoration: underline;\">Indicators:</span> Number of entities followed up<br /><span style=\"text-decoration: underline;\">Targets:</span> 500 Companies during the period ENSST 2015-2020<br /><span style=\"text-decoration: underline;\">Measure 28</span> - To promote compliance with health and safety at work requirements by all parties in the hiring chain<br /><span style=\"text-decoration: underline;\">Indicators:</span> Number of monitoring tools made available<br /><span style=\"text-decoration: underline;\">Targets:</span> 3/year<br /><span style=\"text-decoration: underline;\">Measure 29</span> - To ensure the improvement in working conditions through the continuous adaptation of human, logistics and technical resources, from the Authority for Working Conditions. <br /><span style=\"text-decoration: underline;\">Indicators:</span> Interventions of ACT in health and safety at work; number of active prevention experts/workers; indicative ratio of active inspectors/workers of 10,000 or less; number of workers with specific health and safety at work training<br /><span style=\"text-decoration: underline;\">Targets</span>: 50% or more; 100<br /><strong> Objective 6: To strengthen international cooperation on health and safety at work </strong><br /><span style=\"text-decoration: underline;\">Measure 30</span> - To carry out cooperation activities on health and safety at work<br /><span style=\"text-decoration: underline;\">Indicators:</span> Number of activities organised<br /><span style=\"text-decoration: underline;\">Targets:</span> 2/year<br /><span style=\"text-decoration: underline;\">Measure 31</span> - To promote exchanges activities between Portuguese and other countries experts <br /><span style=\"text-decoration: underline;\">Indicators:</span> Number of exchanges<br /><span style=\"text-decoration: underline;\">Targets:</span> 5/year</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+210, null, @sectionId, "STRATEGY_ACTORS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+210, "EN", 1, "<p><strong>ACT</strong> – Autoridade para as Condições do Trabalho (Authority for Working Conditions) <br /><strong>AMA, I.P</strong>. – Agência para a Modernização Administrativa, I.P. (Agency for the Administrative Modernisation) <br />ANQEP, I.P. – Agência Nacional para a Qualificação e o Ensino Profissional, I.P. (National Agency for Qualification and Vocational Education and Training) <br /><strong>ANSR</strong> – Autoridade Nacional de Segurança Rodoviária (National Road Safety Authority) <br /><strong>ASF</strong> – Autoridade de Supervisão de Seguros e Fundos de Pensões (Insurance and Pension Funds Supervisory Authority) <br /><strong>DGAEP</strong> – Direção-Geral da Administração e do Emprego Público (Directorate-General of Administration and Public Employment)<br /><strong>DGS</strong> – Direção-Geral da Saúde (Directorate-General of Health) <br /><strong>GEE/GEP</strong> – Gabinete de Estratégia e Estudos/Gabinete de Estratégia e Planeamento (Office for Strategy and Studies/Office for Strategy and Planning) <br /><strong>GEE/GEP</strong> – Gabinete de Estratégia e Estudos/Gabinete de Estratégia e Planeamento (Office for Strategy and Studies/Office for Strategy and Planning) <br /><strong>IEFP, I.P.</strong> – Instituto do Emprego e da Formação Profissional, I.P. (Institute of Employment and Vocational Training) <br /><strong>INE, I.P.</strong> – Instituto Nacional de Estatística, I.P. (National Institute of Statistics) <br /><strong>INSA, I.P</strong>. – Instituto Nacional de Saúde Dr. Ricardo Jorge, I.P. <br />(National Institute of Health Dr. Ricardo Jorge) <br /><strong>ISS, I.P.</strong> – Instituto da Segurança Social, I.P. (Social Security <br /> Institute)<br /><strong>ME</strong> – Ministry of Economic Affairs<br /><strong>MEC</strong> – Ministry of Education and Science<br /><strong>MF</strong> – Ministry of Finance<br /><strong>MNE</strong> – Ministry of Foreign Affairs<br /><strong>MS</strong> – Ministry of Health<br /><strong>MSESS</strong> – Ministry of Solidarity, Employment and Social Security</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+211, null, @sectionId, "STRATEGY_RESOURCES");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+211, "EN", 1, "The National strategy for Health and Safety at Work 2015-2020 foresees a schedule of implementation of each measure and the contributing entities to be involved in that implementation.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+212, null, @sectionId, "STRATEGY_EVALUATION");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+212, "EN", 1, "ENSST 2015 – 2020 will be monitored on three occasions, namely: <ul><li>Initial assessment – before the end of 2016;</li><li> Interim assessment – before the end of 2018;</li><li> Final assessment – after 31 May 2022.</li></ul> Ex ante indicators for the years 2012 to 2020<br/>Promote the quality of working life and the competitiveness of companies; <br/>Reduce the number of work accidents by 30% and it incidence rate of by 30%;<br/>Reduce the hazard factors associated with occupational diseases.<br/>(for details see under ‘Measures’) <br/>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+213, null, @sectionId, "STRATEGY_EU");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+213, "EN", 1, "The objectives are closely related to all aspects of Challenge 1, 2 and 3 of the EU-strategy. <br/>Challenge 3 (Tackling demographic change): the National strategy for Health and Safety at Work 2015-2020 deals with this issue in the 3rd measure of the strategy (objective 1) by foreseeing Preventive Actions tackling with different targets including older people. <br/>Measure 6 is related to the key objective 7 of the EU-OSH Strategic Framework by foreseeing to strengthen international cooperation on health and safety at work. <br/>Measure 14 and 15 of the strategy are related to key objective 6 of the EU-strategy (Improve statistical data collection and develop the information base) by foreseeing the creation of a common and integrated information system for work accidents and occupational diseases and to promote the production and analysis of statistics related to occupational diseases.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+214, null, @sectionId, "STRATEGY_BASIC INFO");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+214, "EN", 1, "Slovakian document: <a target=\"_blank\" href=\"http://www.rokovania.sk/Rokovanie.aspx/BodRokovaniaDetail?idMaterial=25987\"> <strong>Stratégia bezpečnosti a ochrany zdravia pri práci v Slovenskej republike na roky 2016 až 2020 a program jej realizácie</strong></a><br/>English documents: <strong>Occupational Safety and Health Strategy (OSH) in the Slovak Republic for the period 2016 – 2020 and the Programme of its Implementation)</strong><br/>Former strategies: <a target=\"_blank\" href=\"http://www.rokovania.sk/Rokovanie.aspx/BodRokovaniaDetail?idMaterial=22602\"> Stratégia bezpečnosti a ochrany zdravia pri práci v Slovenskej republike do roku 2020 a program jejrealizácie naroky 2013 až 2015 s výhľadom do roku 2020</a>, <a target=\"_blank\" href=\"https://www.employment.gov.sk/en/analyses-statistics/\"> Concept on Health and Safety at Work in the Slovak Republic from 2008 to 2012</a> (Occupational Safety and Health Protection Strategy (OSHP) in the Slovak Republic until 2020) and the <a target=\"_blank\" href=\"https://www.employment.gov.sk/sk/praca-zamestnanost/bezpecnost-ochrana-zdravia-pri-praci/dokumenty-2.html\"> Programme of its Implementation for the period 2013 - 2015 with prospects until 2020</a>.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+215, null, @sectionId, "STRATEGY_BACKGROUND");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+215, "EN", 1, "Defining the perceived problem: <br/>Outcomes of the former strategy <br/>Results from supervision<br/>A background description can be found in the first chapter of the strategy document: “CURRENT STATUS OF OSHP IN THE SLOVAK REPUBLIC”");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+216, null, @sectionId, "STRATEGY_CHARACTERISTICS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+216, "EN", 1, "Quote: “The basic goal of the OSHP Strategy include a support for long-term sustainable decent work conditions and a maintenance the low number of occupational accidents, particularly fatal occupational accidents and accidents with lifelong consequences, and all in comparison with the status achieved in 2012, as well as the elimination of the causes to occupational diseases, the improvement of prevention and the strengthening labour culture.” (unofficial translation).");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+217, null, @sectionId, "STRATEGY_DETAILS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+217, "EN", 1, "<p><strong>Priority 1: Improving the publicity, promotion and culture of prevention in the area of OSHP </strong><br />Care for OSHP by employers is regarded as ‘frequently minimal and formal’. <br />The objective is the enhancement of the awareness of the experts and lay public regarding OSHP, as part of the efforts to strengthen the prevention culture. <br />Improving OSHP publicity and promotion, not only through the bodies of labour inspection and supervision over the OSHP, but particularly through professional preventative services, employers’ representatives and professional employee associations and the academic community, research, the media and inside the employer through senior staff. <br /><strong>Priority 2: Improving the personal and material conditions for quality and effective operations of labour inspection bodies and other supervision bodies in the area of OSHP </strong><br />Pursuant to the International Labour Organization (ILO) and the Senior Labour Inspectors Committee (SLIC), conditions must be improved to promote effectively legal and other requirements for ensuring healthy and safe conditions at workplaces. That requires a sufficient quantity and quality of labour inspectors and other employees of bodies supervising OSHP. Language skills, English in particular, are also necessary<br />The performance of labour inspections and state supervision over OSHP must be intensified and its quality must be improved to the level of standards achieved in the EU Member States<br />The effective use of existing financial, technical and personnel resources of the state inspection bodies and supervisory organs should be achieved by better coordination and the gradual creation of conditions for the suitable institutional integration of present inspection and supervisory organs. <br /><strong>Priority 3: Improving the quality of activities of specialized subjects eligible to perform activities in the area of OSHP </strong><br />According to legal requirements, small and medium-sized organizations which do not have their own experts in the area of OSHP are obliged to fulfil certain obligations in the area of OSHP; these tasks are frequently ensured through outsourced/supply companies which are authorized to perform activities related to preventative and protective services (safety technical service, occupational health service). <br />As a result, labour inspectorates and public health authorities must intensively verify the quality of services and carry out controls in these companies focused on the professional qualifications of their employees and the quality and professional standards of their methods. <br /><strong> Priority 4: Applying system approach to OSHP-related issues </strong><br />Fulfilling the obligations in the area of OSHP is often insufficient, especially among small and medium-size employers and the level of legal awareness is low. It has been demonstrated that the application of a system approach to OSHP and its verification by an independent third party will increase the level of OSHP among individual subjects. In addition to the OSHP management system pursuant to the OHSAS 18 001 standard, the level of protection of employees in organizations in Slovakia can be verified through the Safe Enterprise project implemented by the National Labour Inspectorate (hereinafter referred to as the “NLI”). <br /><strong>Priority 5: The Focus of attention on sectors with a high number of occupational accidents and diseases </strong><br />Prevention, monitoring, punitive and repressive activities of the labour inspection and other state OSH institutions will focus on sectors and jobs with a higher incidence of health damage.</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+218, null, @sectionId, "STRATEGY_ACTORS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+218, "EN", 1, "Labour inspection and other public institutions, social partners and professional associations.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+219, null, @sectionId, "STRATEGY_RESOURCES");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+219, "EN", 1, "Chapter 7 contains information about resources. The budget for OSH is provided by the current household and special funds.
 (7. Financovanie: Realizácia úloh stratégie BOZP bude financovaná z rozpočtových a mimorozpočtových zdrojo).");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+220, null, @sectionId, "STRATEGY_EVALUATION");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+220, "EN", 1, "Evaluation: No overall evaluation or impact measurement done until now. <br/>The evaluation of the all previous years is prepared by the Ministry of Labour, Social Affairs and Family of SK. The evaluation performed regularly every year. The evaluation is based on the partial evaluations provided by the actors and stakeholders. As to the new strategy, the first evaluation is expected on 2018.<br/>Ex ante indicators for the years 2012 to 2020: No quantitative indicators");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+221, null, @sectionId, "STRATEGY_EU");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+221, "EN", 1, "All four priorities are related to challenge 1 of the EU-OSH Strategy (Improving the implementation record of Member States, in particular by enhancing the capacity of micro and small enterprises to put in place effective and efficient risk prevention measures). <br/>Priority 2 to 4 are related to the improvement of the work of public institutions and OSH-specialists, e.g. in enterprises or prevention services. Priority 1 aims at a better prevention culture. <br/>Priority 5 is related to challenge 2 of the EU-OSH Strategy.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+222, null, @sectionId, "STRATEGY_BASIC INFO");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+222, "EN", 1, "<p>Spanish document: <a href=\" http://www.insht.es/InshtWeb/Contenidos/Documentacion/ESTRATEGIA%20SST%2015_20.pdf \" target=\"_blank\"> <strong> Estrategia Española de Seguridad y Salud en el Trabajo 2015 – 2020 </strong></a><br />Strategy abstract in English: <a href=\"http://www.insht.es/InshtWeb/Contenidos/Documentacion/FICHAS%20DE%20PUBLICACIONES/EN%20CATALOGO/GENERALIDAD/Spanish%20Strategy%20on%20Occupational%20Safety%20and%20Health.pdf\" target=\"_blank\"> <strong> Spanish Strategy on Safety and Health at Work </strong></a><br />Former strategies: Primera Estrategia Española de Seguridad y Salud en el Trabajo 2007-2012.<br />All documents and more information see on the <a href=\"http://www.insht.es/portal/site/Insht\" target=\"_blank\"> INSHT-website</a>.</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+223, null, @sectionId, "STRATEGY_BACKGROUND");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+223, "EN", 1, "<p>Defining the perceived problem:<br />Chapter ‘Analysis of the prevention of work related risks on the state level” (Diagnóstico de la prevención de riesgos laborales en el ámbito del Estado) (p11 –p16 of the strategy document):<br />Priority issues mentioned to improve occupational safety and health at work:</p><ul><li>Sectors and activities with higher risk</li><li>Musculo-skeletal disorders</li><li>Dangerous substances</li><li>Vulnerable groups of workers</li><li>Psychosocial risks</li><li>Emerging risks</li><li>Wellbeing at work</li><li>Small and medium enterprises</li></ul><p>and<br />English: Annex I. Status of Safety and Health- Woirk in Figures (Basic indicators: 2007-2012)<br />Spanish: Anexo I. Situación de la Seguridad y Salud en el Trabajo en cifras (Indicadores básicos: 2007-2012)</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+224, null, @sectionId, "STRATEGY_CHARACTERISTICS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+224, "EN", 1, "<strong>General objectives</strong>:</ul>
 	<li>Promote better enforcement of legislation on safety and health at work and consolidation in the autonomous regions, especially in small and medium enterprises.</li>
@@ -1372,222 +1137,222 @@ INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+
 </ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+225, null, @sectionId, "STRATEGY_DETAILS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+225, "EN", 1, "<p><strong>Objective 1: Improve the effectiveness of the institutions dedicated to occupational risk prevention </strong>.</p><ul><li>Strengthen and enhance public institutions dedicated to the prevention of occupational hazards and adjust their functions to the current demands of society.</li><li>Create and implement mechanisms for coordination among institutions competent in prevention, both in the workplace and in the health, education and industry.</li><li>Promote institutional collaboration in the development of public policies preventive.</li><li>Strengthen the leadership of the government in managing the prevention of occupational hazards</li></ul><p><strong>Objective 2: Boost action by the public authorities in the area of analysis, research, promotion, support, technical assistance, supervision and control of occupational risk prevention </strong><br />2.A Promotion, Support and Technical Assistance</p><ul><li>Inform and make aware businesses with particular attention to SMEs and micro enterprises about the prevention of occupational hazards and the availability of official tools that facilitate enforcement.</li><li>Improve accessibility and enforcement in the prevention of occupational hazards</li></ul><p>2.B Surveillance and control of compliance</p><ul><li>Adjust the penalties and procedural rules for offenses in the Social policy legislation</li><li>Develop specific inspection activities designed to promote, facilitate and ensure compliance with norms</li><li>Improve and strengthen complementarity between analysis and assistance, monitoring and control</li><li>Develop procedures for cooperation between public authorities to enhance joint action and new tools actions</li></ul><p>2.C Incentive development</p><ul><li>Promote excellence in the management of safety and health at work by recognizing, exchange and dissemination of good practice.</li><li>To promote the analysis and efficiency of incentive measures</li></ul><p>2.D Awareness</p><ul><li>Enhance the awareness of society in the prevention of occupational risks, with greater involvement of the media</li></ul><p>2.E Education and training</p><ul><li>Consolidate the integration of training related to the prevention of occupational risks into different stages of the education system.</li><li>Design and promote the education of specific groups.</li><li>Adapt the rules on training in PRL to changes</li></ul><p>2.F Information and Research</p><ul><li>Improve the coordination of the activities developed by governmental institutions in the collection, analysis and dissemination of information about the prevention of occupational risks and about studies and research in that area, setting up a quality information system</li><li>Strengthen and revitalize the network of public research institutes dealing with OSH. Strengthen their cooperation to optimise R &amp; D in OSH.</li><li>Promote the generation of knowledge on safety and health work and improve its accessibility.</li></ul><p><strong>Objective 3: Promote the improvement of occupational safety and health conditions with the participation of the social partners and regional governments, particularly in the sectors, activities, groups and companies at greatest risk </strong><br />3.A Strengthen actions of the government, with the&nbsp;participation of the social partners, aimed at sectors, activities, groups and companies most at risK:</p><ul><li>Promote the improvement of working conditions in sectors and activities with high incidence rates of occupational accidents and diseases.</li><li>Promote road safety in cooperation with the Directorate General of Traffic, with the aim of reducing work related traffic accidents</li><li>Design and implement an action plan for reducing musculoskeletal disorders</li><li>Promote safety and health of specific groups.</li><li>Develop and disseminate reference methodologies for assessing</li><li>Psychosocial risks reference, enabling a better understanding and prevention of such risks.</li><li>Studying emerging risks, their causes and impact on safety and health workers, particularly those derived from new technologies.</li></ul><p>3.B Occupational diseases</p><ul><li>Improve and promote the research on occupational diseases,&nbsp;as well as detection and communication, with the aim of preferring prevention to rehabilitation.</li></ul><p>3.C Health Surveillance</p><ul><li>Promote more efficient monitoring of health.</li><li>Health promotion: promote the culture of healthy behaviour in the workplace.</li></ul><p>3.D Prevention management in SMEs</p><ul><li>Develop tools to facilitate and harmonize preventive management in small businesses regardless of preventive methodologies</li><li>Promote the integration of prevention in the business processes, especially in SMEs and micro-enterprises.</li><li>Develop and disseminate tools to facilitate the coordination of business activities</li></ul><p><strong> Objective 4: Strengthen the engagement of the social partners and the involvement of employers and workers in improving occupational safety and health</strong><br />4.A Institutional participation.&nbsp;</p><ul><li>Strengthen the role of consultative bodies and institutional participation in prevention of occupational hazards:</li><li>Set up Working Groups in the National Commission on Safety and Health at Work to promote compliance with the objectives and priorities agreed upon in this strategy.</li><li>Promote the actions of the Foundation for the Prevention of Occupational Hazards.</li></ul><p>4.B Collective bargaining</p><ul><li>Enhance collective bargaining to reach agreements to promote the integration of prevention of occupational risks in enterprises and the involvement of workers and employers in complying with their preventive obligations.</li><li>Promote the inclusion of the corresponding collective bargaining agreements (through its Monitoring Committee) criteria and guidelines on prevention of occupational hazards.</li><li>Strengthen the commitment of the workers and employers to comply with the plan of prevention of occupational risks of the enterprise.</li></ul><p>4.C Support for SMEs</p><ul><li>Promote the integration of risk prevention in SMEs with greater involvement of employers and workers</li><li>Develop sectoral programs that foster greater involvement of employers, workers and their representatives in preventive activities through specific agreements of the parties in the collective bargaining aimed at SMEs and in cross-cutting programs.</li></ul><p>4.D Business leadership and participation of workers.</p><ul><li>Encourage the commitment of the company in the management of prevention and collaboration of workers in preventive activity to achieve integrated prevention management</li><li>Design and implement formulas recognition and incentives to companies that promote collaboration and involvement of workers, through their representatives in the preventive management.</li></ul><p>4.E OSH culture in companies</p><ul><li>Promote the culture of safety and health in the company:</li><li>Promote training in prevention of occupational risks for prevention delegates and middle managers to achieve a dynamic effect on strengthening preventive culture.</li><li>Promote awareness of employers about the benefits of management leadership in improving working conditions and the importance of a results-oriented prevention policy.</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+226, null, @sectionId, "STRATEGY_ACTORS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+226, "EN", 1, "The strategy is a “result of commitment by the central government, regional governments, employers’ organisations and most representative trade unions, which working through the National Occupational Safety and Health Commission (CNSST), the joint body on which institutions participate in the area of occupational safety and health, …”");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+227, null, @sectionId, "STRATEGY_RESOURCES");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+227, "EN", 1, "<p>2015 – 2020. The strategy period is divided into three biannual action periods (2015/2016, 2017/2018, 2019/2020)<br />In the strategy document there are some explanations on the budget, i.e. about the funding from the Ministry or from the Foundation for Occupational Health and Safety (Fundación para la Prevención de Riesgos Laborales).<br />“Certain actions planned throughout the strategy require the corresponding financial support. The Government of Spain, through the Ministry of Employment and Social Security and the National Institute for Occupational Safety and Health&nbsp;is committed to ensuring stable financing to undertake the above actions and achieve the objectives”. (p38).<br />“On the other hand, to ensure the implementation of the actions of the Foundation for Occupational Health and Safety aimed at small and medium enterprises and sectoral programs, funding will be at least up to a maximum of 25 million euros annually”:<br />Moreover, it is stated that for each of the three biannual action periods 12 m Euro will be made available (p38).</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+228, null, @sectionId, "STRATEGY_EVALUATION");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+228, "EN", 1, "<p>An evaluation of the former strategy has been performed and is <a href=\"http://www.insht.es/InshtWeb/Contenidos/Instituto/Comision/GruposTrabajo/ficheros/Balance%20FINAL%20EESST.pdf \" target=\"_blank\"> published </a> (in Spanish)<br />Quote:<br />“The EESST 2015-2020 will be monitored through a four-party working group (central government, regional governments, employers and trade unions) that has been set up as part of the functions of the National Occupational Safety and Health Commission. At the end of each Action Plan the level of achievement of the targets will be assessed, and the plan’s contents may be extended into the following plans until 2020, the completion date of the Strategy”.</p><p><br />Ex ante indicators for the years 2015 to 2020: There are no quantitative targets set. If the same indicators are used as in the evaluation of the strategy 2007 to 2012 indicators, then it will be:</p><ul><li>Number of accidents at work and commuting accidents (accident and fatal accidents)</li><li>Working conditions according to the results of the national survey on working conditions (Encuesta Nacional de Condiciones de Trabajo)</li><li>Other indicators from the national health survey (Encuesta Nacional de Salud)</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+229, null, @sectionId, "STRATEGY_EU");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+229, "EN", 1, "The second and the third of the four objectives priorities are related to challenge 1 and 2 of the EU-OSH Strategy (1. Improving the implementation record of Member States, in particular by enhancing the capacity of micro and small enterprises to put in place effective and efficient risk prevention measures; and 2: Improving the prevention of work-related diseases by tackling existing, new and emerging risks).<br/>Objectives 1 and 4 deal with the improvement of the institutional collaboration and engagement, and a better involvement of all parties. This should create at least better conditions to achieve the objectives 2 and 3.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+230, null, @sectionId, "STRATEGY_BASIC INFO");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+230, "EN", 1, "Swedish version: <a target=\"_blank\" href=\"http://www.regeringen.se/contentassets/414e55ccaf03458fb6716bc7fedc24c9/en-arbetsmiljostrategi-for-det-moderna-arbetslivet-skr.-20151680\"> <strong>En arbetsmiljöstrategi för det moderna arbetslivet 2016–2020</strong></a><br/>English version: <a target=\"_blank\" href=\" http://www.government.se/legal-documents/2016/05/skr.-20151680/\"> <strong>A Work Environment Strategy for Modern Working Life 2016–2020 </strong></a>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+231, null, @sectionId, "STRATEGY_BACKGROUND");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+231, "EN", 1, "Defining the perceived problem:<br/>Background report published by Arbetsmiljöverket (Swedish Work Environment Authority):<br/><a target=\"_blank\" href=\"https://www.regeringen.se/regeringsuppdrag/2015/02/a2015409arm/\"><strong>Redovisning av uppdraget att ta fram en lägesbeskrivning på arbetsmiljöområdet</strong></a></a> (Report about the mandate to provide a description of the current situation of the work environment).<br/>Furthermore there exist many so called ‘<a target=\"_blank\" href=\"https://www.av.se/arbetsmiljoarbete-och-inspektioner/kunskapssammanstallningar/\"> Knowledge summaries</a>’  (‘Kunskapssammanställningar’) about important OSH-Issues.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+232, null, @sectionId, "STRATEGY_CHARACTERISTICS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+232, "EN", 1, "Quote: “The Government's assessment: A work environment strategy should be introduced.  The work environment shall prevent ill health, accidents and premature exclusion from working life”. (p. 17)");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+233, null, @sectionId, "STRATEGY_DETAILS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+233, "EN", 1, "<p><strong>Zero vision for fatal accidents, prevention against work accidents </strong> (Nollvision mot dödsolyckor och förebyggande av arbetsolyckor)</p><ul><li>Accident prevention measures for employees working at or on roads</li><li>Foreign workers in the green sectors (forest, agriculture, horticulture etc.)</li><li>Market supervision against unfair competition</li><li>Provision on of information form the authorities to foreign employees, employers and self-employed</li></ul><p><strong> Sustainable Working Life (Ett hållbart arbetsliv)</strong></p><ul><li>Completed criteria for the inspection</li><li>Series of seminars in collaboration with EU-OSHA during its campaign on a sustainable working life 2016/2017 (‘Healthy work places for all ages’)</li><li>Knowledge summaries on new ways of work organisation</li><li>Supervision of the personal services sector</li><li>Employers’ actions for adaptation and rehabilitation</li></ul><p><a href=\"https://www.av.se/globalassets/filer/nyheter/hallbart-arbetsliv-i-sverige-2020-konferensdokumentation.pdf\" target=\"_blank\"><strong> Psycho social work environment (Psykosocial arbetsmiljö) </strong></a></p><ul><li>Guidance on work without borders</li><li>Strengthened inspection and information campaigns concerning the working time</li><li>Supervision of psycho social working conditions in the elderly care sector</li><li>An analysis of the working conditions in household services</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+234, null, @sectionId, "STRATEGY_ACTORS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+234, "EN", 1, "Ministries and their departments and national authorities (particularly the Labour Market Ministry of Employment), unions and employer associations on a national and sectoral and professional level, the Swedish Working Environment Authority.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+235, null, @sectionId, "STRATEGY_RESOURCES");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+235, "EN", 1, "<p>Years: 2016 – 2020<br />In kind contribution from institutions and associations.<br />More financial resources (100 m Swedish crowns SEK per year):</p><ul><li>60 m SEK for the Swedish Working Environment Authority</li><li>10 m SEK for regional OSH committees (skyddsombud)</li><li>10 m SEK for competence development of Occupational Health Services</li><li>Over the whole period between 2015 and 2018: 55 m SEK for Work Environment Research</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+236, null, @sectionId, "STRATEGY_EVALUATION");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+236, "EN", 1, "Evaluation: No overall evaluation or impact measurement done until now. A midterm evaluation is planned for 2018 (Strategie, p 33)<br/>Ex ante indicators for the years 2012 to 2020: The objectives are qualitatively defined. The wording consists of terms like improvement, less risks, more prevention, strengthening etc. The objectives are not accompanied by quantitative targets. However, ‘Zero fatal accidents’ can be regarded as quantitative target.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+237, null, @sectionId, "STRATEGY_EU");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+237, "EN", 1, "<p>Objective 1 (Zero vision for fatal accidents, prevention against work accidents (is related to challenge 1 of the EU-OSH Strategy (Improving the implementation record of Member States, in particular by enhancing the capacity of micro and small enterprises to put in place effective and efficient risk prevention measures) <br />Objective 2 (Sustainable working life) has a strong relation to the demographic challenge (EU-OSH Strategic Framework: ‘Third Challenge: Tackling demographic change’)<br />Objective 3 has a particularly strong relation to psychosocial issues (mentioned on p. 6 of the EU-strategy)</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+238, null, @sectionId, "STRATEGY_BASIC INFO");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+238, "EN", 1, "<p>Strategy document: <a href=\"http://www.hse.gov.uk/strategy/assets/docs/hse-helping-great-britain-work-well-strategy-2016.pdf\" target=\"_blank\"> <strong> Helping Great Britain work well </strong></a><br />Former strategies: <a href=\"http://www.hse.gov.uk/aboutus/strategiesandplans/strategy.htm\" target=\"_blank\"> <strong>A strategy for workplace health and safety in Great Britain to 2010 and beyond</strong></a><br />All documents and more information see on the <a href=\"http://www.hse.gov.uk/strategy/strategy-document.htm\" target=\"_blank\"> HSE-website</a></p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+239, null, @sectionId, "STRATEGY_BACKGROUND");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+239, "EN", 1, "Defining the perceived problem:<br/>The problems are summarised in six key points:<ul><li>There needs to be broader ownership of health and safety.</li><li>It is important to highlight and tackle the costs of work-related ill health.</li><li>Wider recognition is needed of the business benefits that come with proportionate approaches to risk.</li><li>Too many SMEs are still unaware that straightforward advice and simple guidance is available that can help them manage their health and safety responsibilities.</li><li>We all need to horizon scan and ‘design-in’ effective risk management of new or emerging technologies and business models.</li><li>There are benefits for Great Britain and British industries by promoting our health and safety approach around the world. </li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+240, null, @sectionId, "STRATEGY_CHARACTERISTICS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+240, "EN", 1, "<p>Promote better enforcement of legislation on safety and health at work and consolidation in the autonomous regions, especially in small and medium enterprises.</p><p>Encourage continuous improvement of working conditions of all workers with special attention to the prevention of occupational diseases and work-related diseases.</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+241, null, @sectionId, "STRATEGY_DETAILS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+241, "EN", 1, "<p><strong> Strategic theme 1: <a href=\"http://www.hse.gov.uk/strategy/acting-together.htm\" target=\"_blank\">Acting together</a>: Promoting broader ownership of health and safety in Great Britain </strong> <br />Quote: <br />“Health and safety should not be a responsibility assigned to a particular individual or part of an organisation, but an integral part of everyone’s role. There needs to be much broader ownership of the issues. This means engaging everyone who shares the responsibility for helping Great Britain work well, because they have a vital role in managing risk and preventing damage to individuals, businesses and the economy. <br />Across each nation, region or sector, we need collective ownership that best reflects local circumstances. The regulators will retain their key roles, providing targeted advice and guidance for key audience groups and taking enforcement action when and where necessary. Encouraging others to take ownership of health and safety will be critical in making this theme successful. This means everyone collaborating to reach those who may have been less engaged”. <br /><strong>Strategic theme 2: <a href=\"http://www.hse.gov.uk/strategy/tackling-ill-health.htm\" target=\"_blank\">Tackling ill health</a>: Highlighting and tackling the costs of work-related ill health </strong> <br />Quote: <br />“Work-related ill health is a problem for every section of society, with conditions ranging from cancer and other long-latency diseases, to stress and musculo-skeletal disorders. Greater awareness of the harm, costs and preventability of work-related ill health should drive collective action to improve health outcomes. <br />This will require long-term and coordinated action across all sectors, bringing in additional partners such as the NHS and others to support the substantial behaviour change and awareness programmes that will be required. A key element of this theme will be in earlier prevention, which is more cost-effective than trying to intervene when a person is suffering from more serious ill health. This will involve a greater focus on health issues at work, while continuing to ensure that maintaining standards around safety remains a priority”. <br /><strong> Strategic theme 3: <a href=\"http://www.hse.gov.uk/strategy/managing-risk-well.htm\" target=\"_blank\">Managing risk well</a>: Simplifying risk management and helping business to grow </strong><br />Quote:<br />“Successful organisations understand that sensible and proportionate risk management is integral to delivering their business. This approach supports growth, enables innovation and protects an organisation’s most vital asset, its people. Positive outcomes can include reduced sickness absence, lower costs and a good reputation. Promoting this compelling business case should help even more businesses to make the most of the many benefits a good health and safety culture can bring. Sharing examples of practice, supported by targeted, relevant advice and information will allow the system to set a common understanding of what proportionate health and safety looks like. Health and safety professionals have an important role to play. Helping businesses of all sizes get it right in an efficient and effective way will build trust and improve standards”. <br /><strong> Strategic theme 4: <a href=\"http://www.hse.gov.uk/strategy/supporting-small-employers.htm\" target=\"_blank\">Supporting small employers:</a> Giving SMEs simple advice so they know what they have to do </strong><br />Quote:<br />Reaching micro and small businesses can be difficult, but not impossible. Working together, much has already been done to help small businesses, but there are opportunities to work smarter. Already many large businesses and intermediaries have developed efficient supply chains and productive relationships by working with and supporting small businesses. Many organisations also provide free help and support to SMEs outside their supply chains through cross-sector initiatives. <br />For SMEs, managing workplace risks shouldn’t be complicated or costly. Making support available which is quick and easy for small businesses to understand, so that they can fulfil their obligations, remains a challenge for all sectors. It will also be important to identify who the key influencers are for SMEs, working with them to raise awareness levels about the peer and expert support that is out there”. <br /><strong> Strategic theme 5: <a href=\"http://www.hse.gov.uk/strategy/keeping-pace-with-change.htm\" target=\"_blank\">Keeping pace with change</a>: Anticipating and tackling new health and safety challenges </strong><br />Quote: <br />“Great Britain leads the world in anticipating and tackling the new health and safety challenges that come with social, economic and technological change. <br />This ability to horizon scan, when combined with the deep knowledge and unrivalled expertise of the system, means that anticipating new health and safety challenges is an area where Great Britain can play a leading role, for example through HSE’s world-leading research capabilities. They are already being put to use helping Great Britain, as well as countries around the world, to improve health and safety, as well as better business outcomes. <br />To remain a world leader in risk management, Great Britain needs to develop high-quality capability, anticipating the workplace challenges of tomorrow and using the flexibility of our goal-setting approach to solve them in ways that enable innovation and the use of new technologies. <br />Tackling the problems of tomorrow today is a responsible investment that protects workers, enables new and different approaches and provides the new knowledge, skills and expertise Great Britain can share internationally.” <br /><strong> Strategic theme 6: <a href=\"http://www.hse.gov.uk/strategy/sharing-our-success.htm\" target=\"_blank\">Sharing our success</a>: Promoting the benefits of Great Britain’s world-class health and safety system </strong><br />Quote: <br />“Everyone can take pride in Great Britain’s world-class reputation for health and safety and promote its success at home and abroad. Creating a world-class system is a goal we can all unite around and benefit from as a source of inspiration and achievement, and can also be pleased to support. <br />This strategy has largely concerned itself with improving standards in Great Britain. But we should also look to share best practice and the latest thinking and innovation around the world. This can help influence health and safety systems overseas and make it easier for British businesses to expand into new markets and territories. The work can also bring commercial opportunities for selling British health and safety ‘products’ or consultancy.</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+242, null, @sectionId, "STRATEGY_ACTORS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+242, "EN", 1, "The strategy was mainly developed by the HSE in collaboration Minister for Disabled People (covering HSE). <br/>Ministry of Employment and Social Security and the National OSH Institute. The detailed action plan practically includes the involvement of all institutions that are active in the field of OSH.<br/>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+244, null, @sectionId, "STRATEGY_EVALUATION");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+244, "EN", 1, "No indicators identified.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+245, null, @sectionId, "STRATEGY_EU");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+245, "EN", 1, "Strategic themes 3 and 4 relate well to Challenges 1of the EU Strategic Framework, strategic theme 5 to Challenge 2.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+246, null, @sectionId, "SECTION_NAME");
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+246, null, @sectionId, "SECTION NAME");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+246, "EN", 1, "Basic information");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+247, null, @sectionId, "SECTION_NAME");
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+247, null, @sectionId, "SECTION NAME");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+247, "EN", 1, "Background");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+248, null, @sectionId, "SECTION_NAME");
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+248, null, @sectionId, "SECTION NAME");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+248, "EN", 1, "Characteristics and objectives");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+249, null, @sectionId, "SECTION_NAME");
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+249, null, @sectionId, "SECTION NAME");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+249, "EN", 1, "Details and activity");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+250, null, @sectionId, "SECTION_NAME");
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+250, null, @sectionId, "SECTION NAME");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+250, "EN", 1, "Actors and stakeholders");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+251, null, @sectionId, "SECTION_NAME");
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+251, null, @sectionId, "SECTION NAME");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+251, "EN", 1, "Resources and timeframe");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+252, null, @sectionId, "SECTION_NAME");
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+252, null, @sectionId, "SECTION NAME");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+252, "EN", 1, "Evaluation");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+253, null, @sectionId, "SECTION_NAME");
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+253, null, @sectionId, "SECTION NAME");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+253, "EN", 1, "Relation to EU Strategic Framework");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+254, null, @sectionId, "MATRIX_OB");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+254, "EN", 1, "<p><strong>Objective</strong>:</p><ul><li>Improvement of risk assessment and support via preventive specialists.</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+255, null, @sectionId, "MATRIX_DET");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+255, "EN", 1, "<p><strong>Working Group</strong>:</p><ul><li>Improvement of risk assessment and risk awareness</li></ul><p><strong> Activities</strong>:</p><ul><li>Special focus on micro and SME.</li><li>Temporary and mobile workplaces and implementation of the safety and health document (construction sites).</li><li>Vulnerable groups of workers (pregnant women, psychosocial problems, young workers, older workers).</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+256, null, @sectionId, "MATRIX_OB");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+256, "EN", 1, "<p><strong>Axis</strong>:</p><ul><li>Safe and healthy work.</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+257, null, @sectionId, "MATRIX_DET");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+257, "EN", 1, "<p><strong> Operational Objectives</strong>:</p><ul><li>Continuous prevention of occupational accidents.</li><li>Continuous prevention of health problems caused by work.</li><li>Preventing or minimising new and emerging risks.</li></ul><p><strong> Activity</strong>:</p><ul><li>Developing and promoting tools for SMEs.</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+258, null, @sectionId, "MATRIX_OB");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+258, "EN", 1, "<p><strong> Axis</strong>:</p><ul><li>Continuous and constant improvement of safety levels and health in the workplace.</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+259, null, @sectionId, "MATRIX_DET");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+259, "EN", 1, "<p><strong>Activities</strong>:</p><ul><li>Suitable, adequate and functional legislative frame-work fully harmonized with the Acquis Communautaire.</li><li>Appropriate and adequate systems of Labour Inspection.</li><li>Promoting of a health and safety prevention culture. Sub-activity: Support of SMEs through the use simple and operational tools.</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+260, null, @sectionId, "MATRIX_OB");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+260, "EN", 1, "<p><strong>Priority</strong>:</p><ul><li>Training of workers in occupational health and safety.</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+261, null, @sectionId, "MATRIX_DET");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+261, "EN", 1, "<p><strong> Other priorities</strong>:</p><ul><li>Safety and health of children, pupils and students.</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+262, null, @sectionId, "MATRIX_OB");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+262, "EN", 1, "<p><strong>Priority</strong>:</p><ul><li>Prevention of accidents at work.</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+263, null, @sectionId, "MATRIX_DET");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+263, "EN", 1, "<p><strong>Initiatives</strong>: </p><ul><li>De minimis limits.</li><li>Differentiated fines.</li><li>Intensified dialogue with enterprises.</li><li>More help for smaller enterprises.</li><li>Starter kit for new enterprises.</li><li>Simplified health and safety consultancy scheme.</li><li>Modified Smiley scheme.</li><li>Analysis of the experiences with the H&amp;S Organisation at the enterprise level.</li><li>Focus on young and new employees.</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+264, null, @sectionId, "MATRIX_OB");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+264, "EN", 1, "<p><strong>Sub-objective:</strong></p><ul><li>Health risks from the living, working and learning environment are reduced.</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+265, null, @sectionId, "MATRIX_DET");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+265, "EN", 1, "<p><strong>Measures</strong>:</p><ul><li>Modernise the legal system facilitating the maintenance and improvement of the living, working and learning environment.</li><li>Enhance the system of evaluation, management and information system of health risks from the living environment (including climate changes) and working and learning environment.</li><li>Enhance the surveillance system of the living, working and learning environment (at different levels), develop strong and coordinated cooperation.</li><li>Train experts for evaluation of health risks from the living, working and learning environment and enhance the quality of evaluation service of health risks.</li><li>Organise training sessions for specialists of county and rural municipality governments on environmental health risks and management possibilities thereof.</li><li>Organise surveys in order to assess the influence of environmental factors in the living, working or learning environment on health and publish the results of the surveys.</li><li>Develop the cooperation of family physicians with occupational health doctors and health protection specialists to ensure prevention and effective treatment of health disorders and illnesses, considering the connection of negative impacts on health and the living, working or learning environment.</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+266, null, @sectionId, "MATRIX_OB");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+266, "EN", 1, "<p><strong>Focus Areas</strong>:</p><ul><li>Good legislation, the foundation for the minimum level of working conditions.</li><li>Competent occupational safety and health administration ensures enforcement of legislation.</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+268, null, @sectionId, "MATRIX_OB");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+268, "EN", 1, "<p><strong>Operational objective</strong>:</p><ul><li>Promotion of prevention culture.</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+269, null, @sectionId, "MATRIX_DET");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+269, "EN", 1, "<p><strong> Other operational objectives</strong>:</p><ul><li>System of actors and offers for micro and SMEs.</li><li>Simplification.</li><li>Knowledge, data and research.</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+270, null, @sectionId, "MATRIX_OB");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+270, "EN", 1, "<p><strong>Work Programme</strong>:</p>
 <ul>
@@ -1595,212 +1360,212 @@ INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+
 </ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+271, null, @sectionId, "MATRIX_DET");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+271, "EN", 1, "<p><strong>Specific objectives and activities</strong>:</p><ul><li>Joint inspections of companies according to the joint guidelines on risk assessment and OSH organisation, collaboration between OSH Institutions and optimisation of rules and regulations.</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+272, null, @sectionId, "MATRIX_OB");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+272, "EN", 1, "<p><strong>Task</strong>:</p><ul><li>Developing the competitiveness of enterprises.</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+273, null, @sectionId, "MATRIX_DET");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+273, "EN", 1, "<p><strong>Other tasks</strong>: </p><ul><li>Supporting introduction of free online tools to be used to carry out occupational safety and health tasks.</li><li>Encouraging the development of an effective occupational safety and health management system.</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+274, null, @sectionId, "MATRIX_OB");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+274, "EN", 1, "<p><strong> Objectives</strong>:</p><ul><li>Improvement of the knowledge of risks and work related diseases.</li><li>Improving the effectiveness of the control activities and compliance by persons subject to the rules.</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+275, null, @sectionId, "MATRIX_DET");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+275, "EN", 1, "<p><strong> Other objectives</strong>:</p><ul><li>Implementing programs between the ASL Services and competent physicians to implement healthier lifestyles in order to prevent cardiovascular disease, cancer and chronic degenerative diseases in general and to improve the perception of the risks towards occupational diseases.</li><li>Promoting programs in cooperation with social partners, INAIL and the Labour Directorate to prevent risks and improve WHP and OSH of workers working in temporary and precarious work situations.</li><li>Implementation of integrated control programs, promoting health and safety, communication, with priority given to the determinants of diseases and injuries described in the previous paragraph, with particular reference to the improvement and development in all regions of the Plans of National Prevention in Construction and Agriculture, and the prevention of occupational cancers.</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+276, null, @sectionId, "MATRIX_OB");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+276, "EN", 1, "<p><strong>Priority</strong>:</p><ul><li>Increase the focus on work-related health risks.</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+277, null, @sectionId, "MATRIX_DET");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+277, "EN", 1, "<p><strong> Other priorities</strong>:</p><ul><li>Maintain and develop the advances achieved in the management of work-related safety risks.</li><li>Continue to change and transform the way we work.</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+278, null, @sectionId, "MATRIX_OB");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+278, "EN", 1, "<p><strong> Action Directions</strong>:</p><ul><li>Public information.</li><li>Promoting efficient introduction of the labour protection requirements.</li><li>Supervision and control of the field of the labour protection.</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+279, null, @sectionId, "MATRIX_DET");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+279, "EN", 1, "<p><strong> Other Action Directions</strong>:</p><ul><li>To ensure increase in public awareness and level of understanding regarding labour protection issues, especially regarding working environment risk factors, and issues of labour rights, by facilitating the preventive culture.</li><li>To ensure support for enterprises in the implementation of the labour protection requirements.</li><li>To ensure efficient State supervision and control, by strengthening the capacity of the State Labour Inspectorate.</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+280, null, @sectionId, "MATRIX_OB");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+280, "EN", 1, "<p><strong> Objective</strong>:</p><ul><li>Improving the implementation record of Member States, in particular by enhancing the capacity of micro and small enterprises to put in place effective and efficient risk prevention measures.</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+281, null, @sectionId, "MATRIX_DET");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+281, "EN", 1, "<p><strong> Tasks</strong>:</p><ul><li>Improving legal acts and implementing accidents at work prevention policy and initiatives.</li><li>Formulating recommendations and providing practical measures to help ensure compliance with HSW regulations.</li><li>Developing, with the help of the European Agency for Safety and Health at Work (EU-OSHA), online interactive risk assessment tools (OiRA) and other tools based on information technologies (IT).</li><li>Providing information to enterprises, in particular micro and small enterprises, using all appropriate means such as awareness raising campaigns, training and exchange of best practices as well as various IT-based measures and social networks.</li><li>Ensuring effective implementation of HSW regulations and monitoring by the efficient methods, providing consulting, using new communications means as well as imposing effective, proportional and deterring sanctions.</li><li>Propagating HSW preventive measures in cooperation with social partners.</li><li>Providing information to enterprises, in particular micro and small enterprises, about the benefits of proper HSW management.</li><li>Improving legal acts as part of implementation of policies and initiatives of preventing occupational and work-related diseases.</li><li>Increasing access to quality occupational health care services, in particular, for micro and small enterprises.</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+282, null, @sectionId, "MATRIX_OB");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+282, "EN", 1, "<p><strong> Objective</strong>:</p><ul><li>Legislation, compliance and enforcement.</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+283, null, @sectionId, "MATRIX_DET");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+283, "EN", 1, "<p><strong> Other objectives</strong>:</p><ul><li>Capacity Building.</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+284, null, @sectionId, "MATRIX_OB");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+284, "EN", 1, "<p><strong> Targets</strong>:</p><ul><li>Supporting employers and employees in creating healthy and safe work environments.</li><li>Enforcement.</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+285, null, @sectionId, "MATRIX_DET");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+285, "EN", 1, "<p><strong> Activities</strong>:</p><ul><li>Support centre risk assessment tools.</li><li>Prevention employee project.</li><li>OSH portal.</li><li>Stricter enforcement to uncompliant enterprises.</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+286, null, @sectionId, "MATRIX_OB");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+286, "EN", 1, "<p><strong> Activity</strong>:</p><ul><li>Shaping and promoting a safety culture by improving OSH management and developing a modern system of educating and informing the society.</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+288, null, @sectionId, "MATRIX_OB");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+288, "EN", 1, "<p><strong> Objective</strong>:</p><ul><li>To develop and implement public policies of health and safety at work.</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+289, null, @sectionId, "MATRIX_DET");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+289, "EN", 1, "<p><strong> Other objectives</strong>:</p><ul><li>To support companies in the implementation of health and safety at work, particularly micro, small and medium-sized enterprises.</li><li>To promote information, training, participation and cooperation at the workplace.</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+290, null, @sectionId, "MATRIX_OB");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+290, "EN", 1, "<p><strong>Priority</strong>:</p><ul><li>Improving the publicity, promotion and culture of prevention in the area of OSHP.</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+291, null, @sectionId, "MATRIX_DET");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+291, "EN", 1, "<p><strong>Other priorities</strong>:</p><ul><li>Improving the personal and material conditions for quality and effective operations of labour inspection bodies and other supervision bodies in the area of OSHP.</li><li>Improving the quality of activities of specialized subjects eligible to perform activities in the area of OSHP.</li><li>Applying a system approach to OSHP-related issues.</li></ul><p><strong> Implementation Programme</strong>:</p><ul><li>To provide specialised counselling for employers and employees targeted on the prevention of health risks and the protection of health at work, with a special focus on small and medium-size enterprises.</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+292, null, @sectionId, "MATRIX_OB");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+292, "EN", 1, "<p><strong> Objectives : </strong></p><ul><li>Boost action by the public authorities in the area of analysis, research, promotion, support, technical assistance, supervision and control of occupational risk prevention.</li><li>Promote the improvement of occupational safety and health conditions with the participation of the social partners and regional governments, particularly in the sectors, activities, groups and companies at greatest risk.</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+293, null, @sectionId, "MATRIX_DET");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+293, "EN", 1, "<p><strong> Activities</strong>:</p><ul><li>Inform and boost awareness in the companies, with special attention to SMEs and micro-enterprises, on the prevention of occupational risks and the availability of official tools that facilitate the application of the regulations.</li><li>To develop instruments that facilitate the preventive management in small companies independently of the chosen preventive modality.</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+294, null, @sectionId, "MATRIX_OB");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+294, "EN", 1, "<p><strong> Objective</strong>:</p><ul><li>Zero vision for fatal accidents, prevention against work accidents.</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+295, null, @sectionId, "MATRIX_DET");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+295, "EN", 1, "<p><strong> Activities</strong>:</p><ul><li>Accident prevention measures for employees working at or on roads.</li><li>Foreign workers in the green sectors (Forest, agriculture, horticulture etc.).</li><li>Provision on of information form the authorities to foreign employees, employers and self-employed.</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+296, null, @sectionId, "MATRIX_OB");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+296, "EN", 1, "<p><strong> Strategic theme</strong>:</p><ul><li>Supporting small employers by giving SMEs simple advice so they know what they have to do.</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+297, null, @sectionId, "MATRIX_DET");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+297, "EN", 1, "<p><strong> Activity</strong>:</p><ul><li>Managing risks well by simplifying risk management and helping business to grow.</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+298, null, @sectionId, "MATRIX_OB");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+298, "EN", 1, "<p><strong> Objectives</strong>:</p><ul><li>The reduction of work-related health risks, particularly strains on the musculoskeletal system.</li><li>The reduction of work-related health risks, particularly mental stress factors.</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+299, null, @sectionId, "MATRIX_DET");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+299, "EN", 1, "<p><strong> Working Group</strong>:</p><ul><li>Prevention of work related and occupational diseases.</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+300, null, @sectionId, "MATRIX_OB");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+300, "EN", 1, "<p><strong> Axis</strong>:</p><ul><li>Safe and healthy work.</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+301, null, @sectionId, "MATRIX_DET");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+301, "EN", 1, "<p><strong> Operational Objective</strong>:</p><ul><li>Preventing or minimising new and emerging risks.</li></ul><p><strong> Activity</strong>:</p><ul><li>Exposure to chemical agents.</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+302, null, @sectionId, "MATRIX_OB");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+302, "EN", 1, "<p><strong>Axis</strong>:</p><ul><li>Introduction and implementation of an adequate system of surveillance of the health of employees.</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+303, null, @sectionId, "MATRIX_DET");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+303, "EN", 1, "<p><strong>Priorities</strong>:</p><ul><li>Musculoskeletal disorders.</li><li>Work-related stress.</li><li>Diseases caused by the use hazardous chemicals.</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+304, null, @sectionId, "MATRIX_OB");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+304, "EN", 1, "<p><strong>Priority</strong>:</p><ul><li>Prevention of occupational risks (Measures No. 4, 5, 6, 7,8).</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+305, null, @sectionId, "MATRIX_DET");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+305, "EN", 1, "<p><strong>Other priorities</strong>:</p><ul><li>Research and development (Measures No. 18, 19, 20, 21, 22, 23, 24, 25).</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+306, null, @sectionId, "MATRIX_OB");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+306, "EN", 1, "<p><strong>Priorities</strong>: </p><ul><li>Psychosocial working environment.</li><li>Musculoskeletal disorders.</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+307, null, @sectionId, "MATRIX_DET");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+307, "EN", 1, "<p><strong>Initiatives</strong>:</p><ul><li>Focus on psychosocial working environment.</li><li>Danish Centre for Nano-Safety.</li><li>Targeting the resources of the Danish Working Environment Research Fund.</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+308, null, @sectionId, "MATRIX_OB");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+308, "EN", 1, "<p><strong> Sub- Objective</strong>:</p><ul><li>Correlation between the demand and supply of the workforce ensures a high level of employment and high-quality working conditions support long-term participation in working life (WDP).</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+309, null, @sectionId, "MATRIX_DET");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+309, "EN", 1, "<p><strong> Policy Instrument</strong>:</p><ul><li>Achievement and maintenance of a high employment rate (”the capacity of working life participants must be increased for the implementation of rules for employment relationships and the working environment, including for coping with new working environment risks, and for the prevention of the employees loss of ability to work”) .</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+310, null, @sectionId, "MATRIX_OB");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+310, "EN", 1, "<p><strong> Focus Area</strong>:</p><ul><li>Occupational health care, an efficient partner.</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+312, null, @sectionId, "MATRIX_OB");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+312, "EN", 1, "<p><strong> Operational Objective</strong>:</p><ul><li>Prevention of work-related strain.</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+313, null, @sectionId, "MATRIX_DET");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+313, "EN", 1, "<p><strong> Other operational objectives</strong>:</p><ul><li>Target priority risks.</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+314, null, @sectionId, "MATRIX_OB");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+314, "EN", 1, "<p><strong>Work Programme</strong>:</p>
 <p>Dedicated work programmes on three topics</p>
@@ -1811,352 +1576,356 @@ INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+
 </ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+316, null, @sectionId, "MATRIX_OB");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+316, "EN", 1, "<p><strong>Tasks</strong>:</p><ul><li>Maintaining the working capacity of employees.</li><li>Occupational safety and health research and development.</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+317, null, @sectionId, "MATRIX_DET");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+317, "EN", 1, "<p><strong>Other tasks</strong>:</p><ul><li>Reducing absence from work as a result of psychosocial risks.</li><li>Reducing absence from work as a result of psychosocial risks.</li><li>Encouraging research to determine work-related musculoskeletal disorders and work-related cancer, and promoting research results.</li><li>Coping with the increasing average age of employees and analysis of the impact of newly emerging risks.</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+318, null, @sectionId, "MATRIX_OB");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+318, "EN", 1, "<p><strong>Objective</strong>:</p><ul><li>Improvement of the knowledge of risks and work related diseases.</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+319, null, @sectionId, "MATRIX_DET");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+319, "EN", 1, "<p><strong>Other objectives</strong>:</p><ul><li>Implementing programs between the ASL Services and competent physicians to implement healthier lifestyles in order to prevent cardiovascular disease, cancer and chronic degenerative diseases in general and to improve the perception of the risks towards occupational diseases.</li><li>To promote / encourage the adoption of best practice companies and routes of Social Responsibility.</li><li>To promote / encourage improvement of organizational wellness programs in companies.</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+320, null, @sectionId, "MATRIX_OB");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+320, "EN", 1, "<p><strong> Strategic theme</strong>:</p><ul><li>Increase the focus on work-related health risks.</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+321, null, @sectionId, "MATRIX_DET");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+321, "EN", 1, "<p><strong> Strategic theme</strong>:</p><ul><li>Maintain and develop the advances achieved in the management of work-related safety risks.</li></ul><p><strong>Priority</strong>:</p><ul><li>Focus on the risks to human safety and health arising from chemicals used at work and by the general public.</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+322, null, @sectionId, "MATRIX_OB");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+322, "EN", 1, "<p><strong> Action Direction</strong>:</p><ul><li>Promoting health protection of employed persons.</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+323, null, @sectionId, "MATRIX_DET");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+323, "EN", 1, "<p><strong> Other Action Directions</strong>:</p><ul><li>To facilitate improvement and updating the knowledge of physicians of occupational diseases and occupational health, general practitioners and other medical treatment persons regarding factors causing occupational diseases, timely diagnostics of occupational diseases and current issues in the field of occupational health.</li><li>To improve knowledge and skills of employees in the issues of health promotion at work.</li><li>To improve prevention, diagnostics and medical treatment of occupational diseases.</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+324, null, @sectionId, "MATRIX_OB");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+324, "EN", 1, "<p><strong> Objectives</strong>:</p><ul><li>Improving prevention of work-related diseases by eliminating existing, new and arising occupational risks (inter alia, psychosocial risk and risk related to the use of new technologies and materials) having regard to, inter alia, gender mainstreaming, and prevention of occupational and work-related diseases, in particular occupational cancers and diseases related to the use of other chemical substances as well as disorders of the skeletal-muscular system.</li><li>Ensuring appropriate competences of SLI inspectors and occupational healthcare specialists for dealing with new arising tasks.</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+325, null, @sectionId, "MATRIX_DET");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+325, "EN", 1, "<p><strong>Tasks</strong>:</p><ul><li>Improving HSW for workers of relevant categories that are exposed to specific occupational risks.</li><li>Promoting the application of measures of employees‘ health promotion and welfare at work at workplaces having regard to the needs of vulnerable employee groups and age-related needs as well as related risks.</li><li>Disseminating best practices related to the prevention of mental health issues at work.</li><li>Improving monitoring of work-related occupational diseases.</li><li>Organising HSW training for SLI inspectors, in particular, on new occupational risks and new technologies.</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+326, null, @sectionId, "MATRIX_OB");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+326, "EN", 1, "<p><strong>Objective</strong>:</p><ul><li>Taking appropriate action against existing and emerging risks.</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+327, null, @sectionId, "MATRIX_DET");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+327, "EN", 1, "<p><strong>Activities</strong>:</p><ul><li>Fostering and promoting action against both traditional risks and emerging ones, based on appropriate research.</li><li>Improving the quality of service provided by occupational health service providers, and improving the effectiveness of health surveillance.</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+328, null, @sectionId, "MATRIX_OB");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+328, "EN", 1, "<p><strong> Targets</strong>:</p><ul><li>Setting the agenda and stimulating.</li><li>Establishing frameworks.</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+329, null, @sectionId, "MATRIX_DET");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+329, "EN", 1, "<p><strong> Activities</strong>:</p><ul><li>Sustainable employability.</li><li>Psycho-social risks.</li><li>Sustainable employability in SME.</li><li>Improvement of the work-related care system.</li><li>Working conditions catalogue.</li><li>Hazardous substances.</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+330, null, @sectionId, "MATRIX_OB");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+330, "EN", 1, "<p><strong> Objective</strong>:</p><ul><li>Developing methods and tools for preventing and reducing occupational risk in the working environment, including new and emerging risks.</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+331, null, @sectionId, "MATRIX_DET");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+331, "EN", 1, "<p><strong> Other objectives</strong>:</p><ul><li>Widening the knowledge on causes and results of work accidents and occupational diseases, and on profitability of preventive actions on societal and enterprises level.</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+332, null, @sectionId, "MATRIX_OB");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+332, "EN", 1, "<p><strong>Objective</strong>:</p><ul><li>To improve the prevention of occupational diseases and work accidents.</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+333, null, @sectionId, "MATRIX_DET");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+333, "EN", 1, "<p><strong>Measures</strong>:</p><ul><li>To develop preventive activities for specific hazards such as chemical, psychosocial, nano-technologies, biological and musculoskeletal disorders.</li><li>To create a common and integrated information system for work accidents and occupational diseases, in order to ensure reliable information processing, including those involving public employees and private sector employees.</li><li>To promote the production and analysis of statistics related to occupational diseases.</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+334, null, @sectionId, "MATRIX_OB");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+334, "EN", 1, "<p><strong>Objective</strong>:</p><ul><li>Maintenance the low number of occupational accidents, particularly fatal occupational accidents and accidents with lifelong consequences as well as the elimination of the causes to occupational diseases, the improvement of prevention and the strengthening labour culture.</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+335, null, @sectionId, "MATRIX_DET");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+335, "EN", 1, "<p><strong>Priorities</strong>:</p><ul><li>Improving the personal and material conditions for quality and effective operations of labour inspection bodies and other supervision bodies in the area of OSHP.</li><li>Improving the quality of activities of specialized subjects eligible to perform activities in the area of OSHP.</li><li>Applying a system approach to OSHP-related issues.</li><li>The Focus of attention on sectors with a high number of occupational accidents and diseases.</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+336, null, @sectionId, "MATRIX_OB");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+336, "EN", 1, "<p><strong>Objective</strong>:</p><ul><li>Promote the improvement of OSH conditions with the participation of the social partners and regional governments, particularly in the sectors, activities, groups and companies at greatest risk.</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+337, null, @sectionId, "MATRIX_DET");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+337, "EN", 1, "<p><strong>Activities</strong>:</p><ul><li>Promote the improvement of working conditions in sectors and activities with high incidence rates of occupational accidents and diseases.</li><li>Design and implement a plan of action to reduce musculoskeletal disorders.</li><li>Develop and disseminate psychosocial risk assessment methodologies that allow a better knowledge and prevention othose risks.</li><li>To study emerging risks, their causes and impact on the safety and health of workers, in particular those derived from new technologies.</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+338, null, @sectionId, "MATRIX_OB");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+338, "EN", 1, "<p><strong>Objective</strong>:</p><ul><li>Better psycho social working life.</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+339, null, @sectionId, "MATRIX_DET");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+339, "EN", 1, "<p><strong>Activities</strong>:</p><ul><li>Strengthened inspection and information campaigns concerning the working time.</li><li>Supervision of psycho social working conditions in the elderly care sector.</li><li>Analysis of the working conditions in household services.</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+340, null, @sectionId, "MATRIX_OB");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+340, "EN", 1, "<p><strong>Strategic theme</strong>:</p><ul><li>Keeping pace with change: Anticipating and tackling new health and safety challenges.</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+342, null, @sectionId, "MATRIX_OB");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+342, "EN", 1, "<p><strong> Working Group</strong>:</p><ul><li>Improvement of risk assessment and risk awareness.</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+343, null, @sectionId, "MATRIX_DET");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+343, "EN", 1, "<p><strong>Activity</strong>:</p><ul><li>Special focus on micro and SME – developing guidance documents for vulnerable groups of workers (pregnant women, psychosocial problems, young workers, older workers).</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+344, null, @sectionId, "MATRIX_OB");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+344, "EN", 1, "<p><strong>Axis</strong>:</p><ul><li>Strengthening participation in the labour market.</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+345, null, @sectionId, "MATRIX_DET");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+345, "EN", 1, "<p><strong>Operational Objectives</strong>:</p><ul><li>Sustainable work for all workers.</li><li>The re-integration of disabled workers.</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+346, null, @sectionId, "MATRIX_OB");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+346, "EN", 1, "<p><strong>Axis</strong>:</p><ul><li>Encouragement of scientific progress and research in the field of demographic change.</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+348, null, @sectionId, "MATRIX_OB");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+348, "EN", 1, "<p><strong>Priority</strong>:</p><ul><li>Research and development.</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+349, null, @sectionId, "MATRIX_DET");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+349, "EN", 1, "<p><strong>Measures</strong>:</p><ul><li>OSH impact analysis of Industry 4.0 and employment 4.0.</li><li>Labour physiological standards adapted to the ageing population</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+350, null, @sectionId, "MATRIX_OB");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+350, "EN", 1, "<p><strong>Objective</strong>:</p><ul><li>High employment rate and high-quality working life (WDP).</li></ul><p><strong>Sub-Objective</strong>:</p><ul><li>Correlation between the demand and supply of the workforce ensures a high level of employment and high-quality working conditions support long-term participation in working life. (WDP).</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+351, null, @sectionId, "MATRIX_DET");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+351, "EN", 1, "<p><strong> Policy Instrument</strong>:</p><ul><li>Achievement and maintenance of a high employment rate.</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+352, null, @sectionId, "MATRIX_OB");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+352, "EN", 1, "<ul><li><strong>Many related programmes </strong></li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+354, null, @sectionId, "MATRIX_OB");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+354, "EN", 1, "<p><strong> Operational Objectives</strong>:</p><ul><li>Quality of working life.</li><li>Job retention.</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+356, null, @sectionId, "MATRIX_OB");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+356, "EN", 1, "<p><strong>Activity</strong>:</p><ul><li>No specific work programme but an overarching objective.</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+358, null, @sectionId, "MATRIX_OB");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+358, "EN", 1, "<p><strong>Tasks</strong>:</p><ul><li>Occupational safety and health training and education.</li><li>Occupational safety and health research and development.</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+359, null, @sectionId, "MATRIX_DET");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+359, "EN", 1, "<p><strong>Tasks</strong>:</p><ul><li>Reducing occupational risks affecting employees of vulnerable groups and employees working in atypical types of employment.</li><li>Coping with the increasing average age of employees and analysis of the impact of newly emerging risks.</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+360, null, @sectionId, "MATRIX_OB");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+360, "EN", 1, "<p><strong>Strategic theme</strong>:</p><ul><li>Changing world of work.</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+362, null, @sectionId, "MATRIX_OB");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+362, "EN", 1, "<p><strong>Objective</strong>:</p><ul><li>Strengthen and put attention to vulnerable groups in the system.</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+364, null, @sectionId, "MATRIX_OB");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+364, "EN", 1, "<p><strong>Objective</strong>:</p><ul><li>Improving prevention of work-related diseases by eliminating existing, new and arising occupational risks (inter alia, psychosocial risk and risk related to the use of new technologies and materials) having regard to, inter alia, gender mainstreaming, and prevention of occupational and work-related diseases, in particular occupational cancers and diseases related to the use of other chemical substances as well as disorders of the skeletal-muscular system.</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+365, null, @sectionId, "MATRIX_DET");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+365, "EN", 1, "<p><strong>Task</strong>:</p><ul><li>Promoting the application of measures of employees‘ health promotion and welfare at work at workplaces having regard to the needs of vulnerable employee groups and age-related needs as well as related risks.</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+366, null, @sectionId, "MATRIX_OB");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+366, "EN", 1, "<p><strong>Activity</strong>:</p><ul><li>Sustainable employability.</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+368, null, @sectionId, "MATRIX_OB");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+368, "EN", 1, "<p><strong>Objective</strong>:</p><ul><li>Developing and improving solutions for improvement and preservation of work ability in order to prevent labour market exclusion, particularly for elderly people.</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+370, null, @sectionId, "MATRIX_OB");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+370, "EN", 1, "<p><strong>Measures</strong>:</p><ul><li>To develop a prevention and awareness campaign for industrial accidents at work and occupational diseases and their redress, including information on technical support for rehabilitation and professional reintegration.</li><li>To develop preventive activities for specific hazards such as chemical, psychosocial, nano-technologies, biological and musculoskeletal disorders (includes actions regarding older workers).</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+372, null, @sectionId, "MATRIX_OB");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+372, "EN", 1, "<p><strong>Basic goal</strong>:</p><ul><li>Support for long-term sustainable decent work conditions.</li></ul><p><strong>Objective</strong>:</p><ul><li>Taking into consideration the changes on the labour market arising from demographic developments, the aging of the productive population and technological development.</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+373, null, @sectionId, "MATRIX_DET");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+373, "EN", 1, "<p><strong>Implementation Programme</strong>:</p><ul><li>To promote research targeted on new technologies, on changes in the world of labour and new combinations of risk factors, such as demographic changes and the aging of the productive labour force and mental health in the context of Safety and Security.</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+374, null, @sectionId, "MATRIX_OB");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+374, "EN", 1, "<p><strong>Priority</strong>:</p><ul><li>Specific Vulnerable and Collective Workers.</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+376, null, @sectionId, "MATRIX_OB");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+376, "EN", 1, "<p><strong>Objective</strong>:</p><ul><li>Sustainable Working Life.</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+377, null, @sectionId, "MATRIX_DET");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+377, "EN", 1, "<p><strong>Activities</strong>:</p><ul><li>Seminars within the European campaign 2016/2017.</li><li>New knowledge compilation about risks with new ways of organising work.</li><li>Inspection and information campaign towards temporary agencies.</li><li>Analyse results from inspection of employers work with adaptation and rehabilitation.</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+378, null, @sectionId, "SECTION_TITLE");
+SET @sectionId = (SELECT id FROM section WHERE name="National strategies" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+378, null, @sectionId, "TITLE");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+378, "EN", 1, "Structure of each National strategy");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+379, null, @sectionId, "SECTION_TITLE");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+379, "EN", 1, "Response of national strategies to EU challenges");
+SET @sectionId = (SELECT id FROM section WHERE name="National strategies" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+379, null, @sectionId, "TITLE");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+379, "EN", 1, "Responses of national strategies to EU challenges");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+381, null, @sectionId, "SECTION_MESSAGE");
+SET @sectionId = (SELECT id FROM section WHERE name="Not used" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+381, null, @sectionId, "Introduction message");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+381, "EN", 1, "National strategies are well-known as a policy instrument to enhance the effectiveness of an OSH System through a collaborative and smart use of resources. They include approaches such as priority setting, prior action defining and action plans. You will find here a short harmonised description of all current National strategies (Dec 2017) and the full mapping report of EU OSHA on National strategies (Dec 2017). The issue of up taking the EU OSH Strategy by National strategies is also reflected.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+382, null, @sectionId, "SECTION_MESSAGE");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+382, "EN", 1, "<p>You can see if and how a national OSH strategy of a Member State responds to the challenges of the EU strategic framework. These three EU challenges are:</p><ul><li><strong>	Improve implementation of existing health and safety rules, in particular by enhancing the capacity of micro-enterprises and small businesses to put in place effective and efficient risk prevention strategies</li><li><strong>•	To improve the prevention of work-related diseases by tackling new and emerging risks without neglecting existing risks</li><li•	To take account of the ageing of the EU’s workfoe.</li></ul>");
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+382, null, @sectionId, "INTRO TEXT");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+382, "EN", 1, "<p>You can see if and how a national OSH strategy of a Member State responds to the challenges of the EU strategic framework. These three EU challenges are:</p>
+<ul>
+    <li><strong>Improve implementation of existing health and safety rules, in particular by enhancing the capacity of micro-enterprises and small businesses to put in place effective and efficient risk prevention strategies</strong></li>
+    <li><strong><strong>To improve the prevention of work-related diseases by tackling new and emerging risks without neglecting existing risks</strong></strong></li>
+</ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="DOWNLOAD" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Common literals" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+387, null, @sectionId, "NOTE");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+387, "EN", 1, "NOTE: the figures are in English and uses commas for thousands and dots for decimals. If you have your computer in other language, please go to advanced options in Excel, and change the system separators to view the data properly.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+400, null, @sectionId, "STRATEGY_BASIC INFO");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+400, "EN", 1, "<p>Bulgarian document: <a href=\"https://www.mlsp.government.bg/ckfinder/userfiles/files/dokumenti/strategii/NPBZR1820.doc\" target=\"_blank\">Национална програма за безопасност и здраве при работа 2018-2020 </a><br />English document: <a href=\"https://www.mlsp.government.bg/ckfinder/userfiles/files/TPOOUT/EN_TPOOUT%3DNORMATIVE%20DOCUMENTS/NPBZR1820EN.pdf\" target=\"_blank\">National Programme for Occupational Safety and Health, 2018-2020 (NP OSH 2018-2020) </a><br />Former strategies:<br /><a href=\"http://ncphp.government.bg/index.php?option=com_content&amp;view=article&amp;id=265&amp;catid=127&amp;Itemid=527&amp;lang=bg\"target=\"_blank\">Национална програма по безопасност и здраве при работа (НПБЗР) 2016-2018 </a><br /><a href=\"http://www.strategy.bg/StrategicDocuments/View.aspx?lang=bg-BG&amp;Id=457\"target=\"_blank\">Стратегия за безопасност и здраве при работа 2008 - 2012 г. </a><br /><a href=\"http://www.strategy.bg/strategicdocuments/View.aspx?lang=bg-BG&amp;Id=901\"target=\"_blank\">Национална програма по безопасност и здраве при работа 2014 година</a> <br /><a href=\"http://www.strategy.bg/StrategicDocuments/View.aspx?lang=bg-BG&amp;Id=859\"target=\"_blank\">Национална програма по безопасност и здраве при работа - 2013 г.</a></p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+401, null, @sectionId, "STRATEGY_BASIC INFO");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+401, "EN", 1, "<p><strong>Current strategy in greek:</strong></p><p><a href=\"http://www.et.gr/idocs-nph/search/pdfViewerForm.html?args=5C7QrtC22wEsrjP0JAlxBXdtvSoClrL8bReVM9NqpX_3U4LPcASlceJInJ48_97uHrMts-zFzeyCiBSQOpYnTy36MacmUFCx2ppFvBej56Mmc8Qdb8ZfRJqZnsIAdk8Lv_e6czmhEembNmZCMxLMteg4qiK6queFJfXza5ZKd11w0E97FM7_RXZ_zBXpQd1c\" target=\"_blank\">Εθνική Στρατηγική για την Υγεία και Ασφάλεια στην Εργασία 2016 – 2020</a><a title=\"\" name=\"_ftnref1\" href=\"http://www.et.gr/idocs-nph/search/pdfViewerForm.html?args=5C7QrtC22wEsrjP0JAlxBXdtvSoClrL8bReVM9NqpX_3U4LPcASlceJInJ48_97uHrMts-zFzeyCiBSQOpYnTy36MacmUFCx2ppFvBej56Mmc8Qdb8ZfRJqZnsIAdk8Lv_e6czmhEembNmZCMxLMteg4qiK6queFJfXza5ZKd11w0E97FM7_RXZ_zBXpQd1c\"><br /></a></p><p>Title in english: “National strategy for Health and Safety at Work 2016 – 2020”</p><p><strong>Former OSH strategies:</strong></p><p>“Εθνική Στρατηγική για την Ασφάλεια και Υγεία στην Εργασία&nbsp;2010 – 2013»</p><p>“National strategy for Safety and Health at Work 2010 – 2013</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+402, null, @sectionId, "STRATEGY_BASIC INFO");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+402, "EN", 1, "<p><a href=\"http://www.pisrs.si/Pis.web/pregledPredpisa?id=RESO26\" target=\"_blank\">Resolucija o Nacionalnem programu varnosti in zdravja pri delu (ReNPVZD)</a></p><p>English version: Resolution on the National programme for safety and health at work, Official Gazette of the Republic of Slovenia, 23/18</p><p>Former versions: <a href=\"https://www.uradni-list.si/glasilo-uradni-list-rs/vsebina?urlid=2003126&amp;stevilka=5394\" target=\"_blank\">Resolution on national programme for safety and health at work, Official Gazette of the Republic of Slovenia, 2003. </a></p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+403, null, @sectionId, "STRATEGY_BACKGROUND");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+403, "EN", 1, "<p>Over the last few years the efforts have been focused on practical enforcement in the country. Considerable progress has been made on ensuring occupational health and safety for workers because of the purposeful policy pursued by the government and the social partners.</p><p>The following can be added to the positive findings from the application of the occupational safety and health legislation:</p><ul><li>Most of the requirements and principles for ensuring health and safety at work contained in the Health and Safety at Work Act are applied in practice.</li><li>Labour inspectors report that there is evidence of general improvement in the activities for ensuring occupational safety and health in the country.</li><li>The European health and safety at work standards are a goal but also an achievement for many enterprises.</li><li>The number of enterprises investing in safe technologies and working equipment is constantly rising.</li><li>Considerable experience has been gained in preparing risk assessments and this has effect on the quality of assessments. The share of enterprises with implemented programmes for eliminating and minimising the production risks is increasing.</li><li>Many enterprises have in place developed and approved internal statutory instruments – regulations on internal working procedures, work safety rules and instructions, wage organisation rules, etc.</li></ul><p>The range of enterprises having occupational health services for their workers has been extended.</p><p>Despite the upward trend in the number of enterprises which do fulfil their obligations to ensure occupational safety and health for their workers, the economic and social changes give rise to new challenges for employers, as well as for the entire system of ensuring occupational safety and health. In this context, the focus in the next period should be on improving the work of prevention services which are the most direct contributors to the working conditions of every workplace. It is also necessary to change the existing system for medical surveillance of workers, taking into account the changes planned in the medical assessment and workability assessment system, as well as to envisage measures to enhance the capacity of the relevant bodies and services concerned by the problem.</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+404, null, @sectionId, "STRATEGY_BACKGROUND");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+404, "EN", 1, "<p>The current OSH strategy, in Chapter 1 “The current OSH situation at national level”, apart from a brief presentation of the common European OSH Strategic Framework 2014-2020, contains an extended analysis and diagnosis of the current situation at national level and the progress achieved during the former OSH strategy.</p><p>In specific:</p><p>Section 1.1 presents an “Overview of the European approach on OSH and the general OSH principles”.</p><p>Section 1.2 presents a “Brief presentation of the common European OSH Framework 2014-2020.</p><p>Section 1.3 presents the “National OSH infrastructure”, and,</p><p>Section 1.4 presents an “Analysis and diagnosis (problems-challenges-observations for the future) of the current national OSH situation”.</p><p>Based on the general conclusions of the above section 1.4, the perceived problem can be described as in the following:</p><p>“In the current programming period the Hellenic State should intensify the scope and the effectiveness of its efforts in the field of OSH, by taking into serious consideration the general socio-economic environment which creates additional barriers to the enforcement of the national institutional and legislative OSH framework across to the whole spectrum of economic activities, mainly due to the negative impacts of the crisis and of the austerity measures implemented during the last years.</p><p>In this context, it is necessary to officially establish the <strong>“National System for Health and Safety at Work, (ESystYAE)” </strong>by creating institutional, administrative and operational links between the main OSH stakeholders and by upgrading all the individual existing structures for OSH, into a single, coherent, multidimensional and multi-purpose mechanism.</p><p>In this way and based on the national tripartite OSH social dialogue, a new methodological and integrated strategic approach to the complexity of OSH issues will be launched, which clearly reflects the political choice of the Hellenic Ministry of Labour, Social Security and Social Solidarity to promote the protection of workers and to contribute to the creation of healthier, safer and more productive workplaces.</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+405, null, @sectionId, "STRATEGY_BACKGROUND");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+405, "EN", 1, "<p><strong>Vision</strong>: Safety, health and well-being at work are the highest priorities in a working environment and the foundation of permanent business success.</p><p>The efficient assurance of health and safety at work, with no accidents at work, occupational diseases or work-related diseases is in the national interest, the interest of workers and an obligation of employers.</p><p>The efforts to raise the level of the preventive culture in working environment must become a joint commitment of the Government of the Republic of Slovenia, social partners, enterprises and workers.</p><p>The aim of the&nbsp; National OSH Programme is to connect all stakeholders in the system of health and safety at work in order to join forces and cooperate in the realisation of the generally accepted vision in the field of health and safety at work in Slovenia according to their best abilities and in compliance with their mission:&nbsp; to create and maintain a working environment, which will preserve workers’ health throughout the entire period of their employment, so they will be able to work longer and the work performed will be to their personal satisfaction.</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+406, null, @sectionId, "STRATEGY_CHARACTERISTICS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+406, "EN", 1, "<p><strong>Strategic Objective</strong>: Improving the occupational safety and health of every worker and every workplace</p><p><strong>Priority areas</strong>:</p><ol><li>Improving the application of the OSH legislation</li><li>Prevention of occupational risks, including new and emerging risks;</li></ol><p>Prevention of occupational diseases and occupational accidents.</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+407, null, @sectionId, "STRATEGY_CHARACTERISTICS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+407, "EN", 1, "<p>The <span style=\"text-decoration: underline;\">main strategic policy objective </span>of the Hellenic Ministry of Labour, Social Security &amp; Social Solidarity in the field of OSH for the programming period 2016-2020 is the&nbsp;“<strong>official</strong>&nbsp;<strong>establishment of the National System for Health and Safety at Work, ESystYAE)”.</strong></p><p>In addition, under the&nbsp;<span style=\"text-decoration: underline;\">vision</span>&nbsp;for:</p><p>&nbsp;\"creating safer, healthier and more productive workplaces in the private and public sector that will ensure the health and will promote the well-being of workers, while contributing in parallel to the sustainability of the enterprises and supporting the development of the economy\",</p><p>the following (4) <span style=\"text-decoration: underline;\">four more&nbsp;specific strategic objectives</span> have been set:</p><ol><li>Strengthening of policies and measures to prevent accidents at work, occupational diseases and other work-related illnesses for all workers, with emphasis to the more vulnerable groups.</li><li>Fostering of a participative occupational risks prevention culture through the provision of information, education and training on OSH.</li><li>Improving reporting procedures and systems for recording accidents at work and occupational diseases.</li></ol><p>Establishment of an occupational risks insurance body.</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+408, null, @sectionId, "STRATEGY_CHARACTERISTICS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+408, "EN", 1, "<ol><li>Strategic objectives aimed at ensuring safety at work</li><li>Strategic objectives aimed at ensuring health at work</li><li>Strategic objectives aimed at promoting a culture of prevention in the working environment and the consideration of worker’s diverstity</li><li>Strategic objectives aimed at ensuring health and safety for workers working in new forms of work employment</li><li>Strategic objectives aimed at promoting social dialogue in the field of health and safety at work</li></ol>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+409, null, @sectionId, "STRATEGY_DETAILS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+409, "EN", 1, "<p><strong>Priority Area 1: Improving the application of the OSH legislation.</strong></p><p class=\"numberedlist\">Developing national legislation in line with the better regulation principles, the EU law and the international standards of the International Labour Organisation (ILO)</p><p>1. Harmonising the occupational exposure limit values with regard to chemical agents and carcinogens/mutagens, in line with the amendments to the occupational safety and health directives on protecting the health of workers with regard to risks related to exposure to chemical agents and carcinogens/mutagens.&nbsp;</p><p>Implementation: In accordance with the deadlines laid down by the European Parliament and the European Commission in the relevant directives.</p><p class=\"numberedlist\"><em>Responsibility:&nbsp;</em>MH, MLSP</p><p class=\"numberedlist\"><em>Budget</em><em>:&nbsp;</em>Within the approved budgets of the respective institutions.</p><p class=\"numberedlist\">2. Improving the quality and control of the activities of the occupation al medicine services for workers and employees.</p><p class=\"numberedlist\">Implementation: 2018-2019.</p><p class=\"numberedlist\">Responsibility: MH, MLSP.</p><p class=\"numberedlist\">Budget: Within the approved budgets of the respective institutions.</p><p>3. Improving the system of compulsory preliminary and regular health checks of workers and employees Implementation: 2018-2020.</p><p class=\"numberedlist\">Responsibility: MH/MLSP, social partners. Implementation 2018-2019.</p><p>4. Improving the system for training of representatives in working conditions committees and groups in enterprises</p><p class=\"numberedlist\">Implementation: 2019</p><p class=\"numberedlist\">Responsibility: MLSP, MH</p><p class=\"numberedlist\">Budget: Within the approved budgets of the respective institutions</p><p>5. Setting OSH requirements for blasting operations and operations with explosives, products containing explosives, ammunition and&nbsp;pyrotechnic products Implementation: 2020</p><p class=\"numberedlist\">Responsibility: MLSP, MoI, GLI EA</p><p class=\"numberedlist\">Budget: Within the approved budgets of the respective institutions</p><p class=\"numberedlist\">6. Setting minimum requirements for lighting at work</p><p class=\"numberedlist\">Implementation: 2020</p><p class=\"numberedlist\">Responsibility: MLSP, MH</p><p class=\"numberedlist\">Budget: Within the approved budgets of the respective institutions</p><p class=\"numberedlist\">7. Improving the minimum OSH requirements for handling operations</p><p class=\"numberedlist\">Implementation: 2019</p><p class=\"numberedlist\">Responsibility: MLSP</p><p class=\"numberedlist\">Budget: Within the approved budgets of the respective institutions</p><p class=\"numberedlist\">8.&nbsp;Improving the OSH regulatory basis in metallurgy, metal casting and the energy sector</p><p class=\"numberedlist\">Implementation: 2019-2020</p><p class=\"numberedlist\">Responsibility: MLSP, MH, ME, MEn, GLI EA, social partners in the industry - BAMI, BBCMB, TUF “Metal Workers”, NF „Metallurgy\", OSH officials in enterprises, external experts</p><p class=\"numberedlist\">Budget: Within the approved budgets of the respective institutions</p><p class=\"numberedlist\">9. Drafting an Ordinance amending and supplementing Ordinance No. 2 / 2004 on minimum OSH requirements in construction and assembly works</p><p class=\"numberedlist\">Implementation: 2019</p><p class=\"numberedlist\">Responsibility: MRDPW/MLSP, social partners</p><p class=\"numberedlist\">Budget: Within the approved budgets of the respective institutions</p><p class=\"numberedlist\">10. Amending the legislation related to the State (Uniform) OSH Rules</p><p class=\"numberedlist\">Implementation: 2018-2019</p><p class=\"numberedlist\">Responsibility: MLSP, MH, social partners</p><p class=\"numberedlist\"><em>Budget:</em>&nbsp;Within the approved budgets of the respective institutions</p><p class=\"numberedlist\">11. Updating Ordinance No 12 of 27 December 2004 on the provision of health and safety at work with motor vehicles</p><p class=\"numberedlist\">Implementation: 2018-2019</p><p class=\"numberedlist\">Responsibility: MLSP, MTITC, social partners</p><p class=\"numberedlist\">Budget: Within the approved budgets of the respective institutions</p><p class=\"numberedlist\">&nbsp;</p><p class=\"numberedlist\">Ensuring effective and efficient control for compliance with OSH legislation</p><p class=\"numberedlist\">1. Strengthening the administrative capacity of GLI EA</p><p class=\"numberedlist\">Implementation:2018-2010</p><p class=\"numberedlist\">Responsibility: GLI EA, CHRDRI at MLSP</p><p class=\"numberedlist\">Budget: Within the approved budgets of the respective institutions</p><p class=\"numberedlist\">2. Provision of effective control</p><p class=\"numberedlist\">Implementation:2018 – 2020</p><p class=\"numberedlist\">Responsibility: GLI EA</p><p class=\"numberedlist\">Budget: Within the approved budgets of GLI EA</p><p class=\"numberedlist\">3. Development of criteria to evaluate the likelihood of committing violations of the labour legislation and the gravity (risk) of control sites</p><p class=\"numberedlist\">Implementation: 2018</p><p class=\"numberedlist\">Responsibility: GLI EA</p><p class=\"numberedlist\">Budget: Project BG05M9OP001-3.004 “Optimization and Innovation in GLI EA”</p><p class=\"numberedlist\">4.&nbsp;Joint participation of inspectors in national control campaigns and in (pilot) projects of the ЕСНА</p><p class=\"numberedlist\">Implementation: According to approved national control plans and planned (pilot) ЕСНА</p><p class=\"numberedlist\">Responsibility: RIEW, GLI EA, RHI</p><p class=\"numberedlist\">Budget: Within the approved budgets of the relevant control bodies</p><p class=\"numberedlist\">5. Investigation of accidents</p><p class=\"numberedlist\">Implementation: 2018-2020</p><p class=\"numberedlist\">Responsibility: MoI, FSSP, MEW, MD, RIEW, GLI EA</p><p class=\"numberedlist\">Budget: Within the approved budgets of the relevant control bodies</p><p class=\"numberedlist\">&nbsp;</p><p class=\"numberedlist\">Information support of the OSH policy</p><p class=\"numberedlist\">1. Supporting software for online registrations of one-day employment contracts under Article 114а of LC</p><p class=\"numberedlist\">Implementation: 2018-2020</p><p class=\"numberedlist\">Responsibility: MoI, FSSP, MEW, MD, RIEW, GLI EA</p><p class=\"numberedlist\">Budget: Within the approved budget of GLI EA</p><p class=\"numberedlist\">2. Processing and systematisation of statistical and operational information about occupational accidents and occupational diseases</p><p class=\"numberedlist\">Implementation: 18 month after the end of the reference phase</p><p class=\"numberedlist\">Responsibility: NSSI</p><p class=\"numberedlist\">Budget: Within the approved budget of NSSI</p><p>3. Upgrading the Occupational Accident Information System with a Control Activities module</p><p class=\"numberedlist\">Implementation: 2018</p><p class=\"numberedlist\">Responsibility: NSSI</p><p class=\"numberedlist\">Budget: Within the approved budget of NSSI</p><p class=\"numberedlist\">4. Processing and publication of information about temporary incapacity</p><p class=\"numberedlist\">Implementation: 2018 - 2020</p><p class=\"numberedlist\">Responsibility: NSSI</p><p class=\"numberedlist\">Budget: Within the approved budget of NSSI</p><p class=\"numberedlist\">&nbsp;</p><p class=\"numberedlist\">Addressing the challenges related to the application of legislation in SMEs</p><p class=\"numberedlist\">1. Ensuring safety at work in enterprises, improving the workplace environment, the organisation of work and the management of human resources</p><p class=\"numberedlist\">Implementation: 2018 – 2020</p><p class=\"numberedlist\">Responsibility: MLSP/all enterprises in their capacity as employers</p><p class=\"numberedlist\">Budget: Operation “Good and safe working conditions” under OPHRD 2014-2020</p><p class=\"numberedlist\">2. Encouraging employers to improve the working conditions in enterprises, including in SMEs Implementation: 2018 – 2020</p><p class=\"numberedlist\">Responsibility: WCF /employers</p><p class=\"numberedlist\">Budget: Within the approved budget of the WCF</p><p class=\"numberedlist\">&nbsp;</p><p class=\"numberedlist\"><strong>Priority Area 2: Prevention of occupational risks, including new and emerging risks</strong></p><p>Extending the role of social dialogue for ensuring better protection against occupational hazards</p><p>1. Improving the role of social dialogue at sectoral and ranch level</p><p class=\"numberedlist\">Implementation: 2018 - 2020</p><p>Responsibility: sectoral /branch working conditions council</p><p>Budget: Within the approved budgets of the respective institutions</p><p>2. Strengthening and extending the role of social dialogue for enhancing the motivation for OSH enforcement</p><p class=\"numberedlist\">Implementation: 2018 – 2020</p><p class=\"numberedlist\">Responsibility: social partners/WCF, EEA, WCC</p><p class=\"numberedlist\">Budget: Within the approved budgets of the WCF and respective institutions</p><p class=\"numberedlist\">3. Development and improvement of non-judicial methods for settlement of collective labour disputes.</p><p class=\"numberedlist\">Implementation: 2018 – 2020</p><p class=\"numberedlist\">Responsibility: GLI EA</p><p class=\"numberedlist\">Budget: Within the approved budget of GLI EA</p><p class=\"numberedlist\">4. Organising competitive initiatives to award companies with achievements in the field of OSH in sectors with higher work-related traumatism – for example in construction</p><p class=\"numberedlist\">Implementation: 2018</p><p class=\"numberedlist\">Responsibility: MLSP, GLI EA, social partners</p><p class=\"numberedlist\">Budget: Within the approved budgets of the respective institutions</p><p class=\"numberedlist\">&nbsp;</p><p class=\"numberedlist\">Developing and implementing practical tools for control of occupational hazards</p><p class=\"numberedlist\">1. Updating the instructions on the control for application of Regulations REACH and CLP</p><p class=\"numberedlist\">Implementation: 2018</p><p class=\"numberedlist\">Responsibility: MEW/MH and GLI EA</p><p class=\"numberedlist\">Budget: Within the approved budgets of the respective institutions</p><p class=\"numberedlist\">2. Designing a specialized brochure/manual for OSH in handling chemical substances and reactants / sampling water samples from larger water basins and by climbing. Implementation: 2019</p><p class=\"numberedlist\">Responsibility: EEA</p><p class=\"numberedlist\">Budget: with the approved budgets of the respective institutions.</p><p class=\"numberedlist\">3. Limiting the risk of asbestos-related illnesses Implementation: 2018-2020</p><p class=\"numberedlist\">Responsibility: MH, NCPHA, RHI, GLI EA, OHS, NCPHA</p><p class=\"numberedlist\">Budget: Within the approved budgets of the respective institutions</p><p class=\"numberedlist\">&nbsp;</p><p class=\"numberedlist\">Awareness raising and culture of prevention</p><p class=\"numberedlist\">1. Improving the awareness and competence of those active in the area of ensuring OSH</p><p class=\"numberedlist\">Implementation: 2018-2020</p><p class=\"numberedlist\">Responsibility: NCPHA</p><p class=\"numberedlist\">Budget: Within the approved budget of NCPH</p><p class=\"numberedlist\">2. Improving the competence of managers and of those active in the integration of OSH management systems and quality standards</p><p class=\"numberedlist\">Implementation: 2018-2020</p><p class=\"numberedlist\">Responsibility: social partners</p><p class=\"numberedlist\">Budget: Within the approved budgets of the respective institutions</p><p class=\"numberedlist\">3. Holding national events within the ЕU OSHA campaign “Healthy Workplaces Manage Dangerous Substances” 2018-2019</p><p class=\"numberedlist\">Implementation: 2018-2019</p><p class=\"numberedlist\">Responsibility: MLSP/MH social partners</p><p class=\"numberedlist\">Budget: EU OSHA, MLSP-NFP</p><p class=\"numberedlist\">4. Holding national events within EU OSHA 2020-2021 campaign “Healthy Workplaces – Prevention of Work-Related Musculoskeletal Disorders”</p><p class=\"numberedlist\">Implementation: 2018-2020</p><p class=\"numberedlist\">Responsibility: MLSP/MH social partners</p><p class=\"numberedlist\">Budget: EU OSHA - NFP</p><p class=\"numberedlist\">5. Distribution of publicity and information materials via the EA OSHA national focal point network</p><p class=\"numberedlist\">Implementation: 2018-2020</p><p class=\"numberedlist\">Responsibility: MLSP-NFP network</p><p class=\"numberedlist\">Budget:&nbsp; EU OSHA - NFP</p><p class=\"numberedlist\">6. Holding upskilling trainings in the field of accidents prevention and rescue</p><p class=\"numberedlist\">Implementation: 2018-2020</p><p class=\"numberedlist\">Responsibility: MLSP, GLI EA, professional organisations</p><p class=\"numberedlist\">Budget: Within the approved budgets of the respective institutions</p><p class=\"numberedlist\">7. Holding meetings and training seminars on dangerous/hazardous chemical substances for the industry and the control bodies at central and regional level</p><p class=\"numberedlist\">Implementation: 2018-2020</p><p class=\"numberedlist\">Responsibility: MEW/MLSP, MH, RIEW, GLI EA, RHI, social partners</p><p class=\"numberedlist\">Budget: Within the approved budgets of the respective institutions</p><p class=\"numberedlist\"><strong>&nbsp;</strong></p><p class=\"numberedlist\"><strong>Priority Area 3: Prevention of occupational diseases and occupational accidents</strong></p><p class=\"numberedlist\">1. Provision of health surveillance in economic sectors at risk</p><p class=\"numberedlist\">Implementation: 2018 – 2020</p><p class=\"numberedlist\">Responsibility: WCF/MH</p><p class=\"numberedlist\">Bud<em>get:&nbsp;</em>Within the approved budget of the WCF</p><p class=\"numberedlist\">2. Rehabilitation and reintegration of workers with health problems and victims of occupational accidents or occupational diseases</p><p class=\"numberedlist\">Implementation: 2018 – 2020</p><p class=\"numberedlist\">Responsibility: NSSI</p><p class=\"numberedlist\">Bud<em>get:&nbsp;</em>Within the approved budget</p><p class=\"numberedlist\">3. Ensuring health surveillance in the Healthcare Sector</p><p class=\"numberedlist\">Implementation: 2018 - 2020</p><p class=\"numberedlist\">Responsibility: NCPHA; social partners, MH, MLSP,</p><p class=\"numberedlist\">Budget: Within the approved budgets of the WCF and of NCPHA</p><p class=\"numberedlist\">&nbsp;</p><p><strong>Abbreviations used in the action plan:</strong></p><p>BAMI: Bulgarian Association of the Metallurgical Industry</p><p>BBCMB: Bulgarian Branch Chamber – Machine Building</p><p>CHRDRI: Centre for Human Resources Development and Regional Initiatives</p><p>ECHA: European Chemicals Agency</p><p>EEA: Environment Executive Agency</p><p>FSPP: Fire Safety and Protection of the Population</p><p>GLI EA: General Labour Inspectorate Executive Agency</p><p>LC: Labour Code</p><p>MD: Ministry of Defence</p><p>ME: Ministry of Economy</p><p>MEn: Ministry of Energy</p><p>MEW: Ministry of Environment and Water</p><p>MH: Ministry of Health</p><p>MLSP: Ministry of Labour and Social Policy</p><p>MoI: Ministry of Interior</p><p>MTITC: Ministry of Transport, Information Technologies and Communications</p><p>NCPHA: National Centre for Public Health and Analyses</p><p>NF: National Federation</p><p>NFP: National Focal Point</p><p>NSSI: National Social Security Institute</p><p>OHS: Occupational Health Service</p><p>OPHRD: Operational Programme “Human Resources Development</p><p>RHI: Regional Health Inspectorate</p><p>RIEW: Regional Inspectorate for Environment and Water</p><p>TUF: Trade Union Federation</p><p>WCC: Working Conditions Committees</p><p>WCF: Working Conditions Fund</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+410, null, @sectionId, "STRATEGY_DETAILS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+410, "EN", 1, "<p><span lang=\"EN-US\">Specific <strong>tasks</strong> or <strong>activities</strong> in the form of <strong>measures</strong></span><span lang=\"EN-US\">&nbsp;to be implemented during each one year of the period 2016-2020 have been included in the&nbsp;following<strong> (12) twelve priority axes,</strong>&nbsp;consisting the official multi-annual programming document <strong>“National OSH Operational Action Plan“</strong> of the&nbsp;National OSH Strategy 2016-2020:</span></p><p><strong><span lang=\"EN-US\">Priority axes</span></strong></p><p><span lang=\"EN-US\">Axis 1<sup>st</sup>. Official establishment of the National System for Health and Safety at Work.</span></p><p><span lang=\"EN-US\">Axis 2<sup>nd</sup>. Simplifying and improving the legislative framework on OSH.</span></p><p><span lang=\"EN-US\">Axis 3<sup>rd</sup>. Strengthening the implementation of the OSH legislation.</span></p><p><span lang=\"EN-US\">Axis 4<sup>th</sup>. Strengthening prevention and improving the reporting procedures and systems for recording accidents at work and occupational diseases.</span></p><p><span lang=\"EN-US\">Axis 5<sup>th</sup>. Supporting micro, small and medium-sized companies.</span></p><p><span lang=\"EN-US\">Axis 6<sup>th</sup>. Fostering and promoting of an OSH risks prevention culture.</span></p><p><span lang=\"EN-US\">Axis 7<sup>th</sup>. Mainstreaming OSH into education and vocational training.</span></p><p><span lang=\"EN-US\">Axis 8<sup>th</sup>. Provision of training to the OSH stakeholders.</span></p><p><span lang=\"EN-US\">Axis 9<sup>th</sup>. Workplace health promotion and tackling of the demographic change.</span></p><p><span lang=\"EN-US\">Axis 10<sup>th</sup>. Encouraging scientific progress and research on OSH- Tackling of new and emerging risks.</span></p><p><span lang=\"EN-US\">Axis 11<sup>th</sup>. Strengthening the role of the OSH social partners and of the workers participation.</span></p><p><span lang=\"EN-US\">Axis 12<sup>th</sup>. Networking and development of synergies on OSH.</span></p><p><span lang=\"EN-US\">More details for the planned measures/activities under each specific axis of priority are provided through the full text of the National OSH Strategy and the National OSH Operational Action Plan 2016-2020.</span></p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+411, null, @sectionId, "STRATEGY_DETAILS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+411, "EN", 1, "<p><strong>Strategic objectives aimed at ensuring safety at work</strong></p><p>To reduce the number of work accidents by 20 per cent in the next 10 years&nbsp;</p><p>Measures:</p><ol><li>Preparation and implementation of a programme of targeted supervision campaigns and consulting of the IRSD and other competent inspection authorities relating to the quality and suitability of risk assessment in organisations.</li><li>Preparation and implementation of the programme for raising awareness campaigns on health and safety at work in transport, particularly in cooperation with the AVP and the Police, including targeted supervision campaigns and consulting the inspection authorities.</li><li>Preparation and implementation of programmes for awareness-raising campaigns for employers and employees in the construction sector to prevent work-related accidents, including targeted supervision campaigns and consulting the IRSD.</li><li>Preparation and implementation of a programme for awareness-raising campaigns for employers and employees regarding risks of falling from a height and into a cavity, including targeted supervision campaigns and consulting the IRSD.</li><li>Preparation and implementation of a programme for awareness-raising campaigns for small employers and their employees to prevent work-related accidents, including targeted supervision campaigns and consulting the IRSD.</li><li>Introduction of a differentiated contribution rate for health and pension and disability insurance on the basis of a preliminary analysis and simulation.</li><li>Examination of possibilities for tax relief for investments in safe and healthy working environment and the promotion of health in the workplace.</li><li>Preparation and implementation of a programme for preparing practical e-tools for risk assessment, OiRA, including a plan for their upgrading, promotion, training of employers to work with the tools, and the introduction and operation of the user support service.</li><li>Preparation and drafting of practical e-tools in the field of health and safety at work.</li><li>Introduction of a national award for employers’ achievements in regards to a comprehensive approach to ensuring health and safety at work.</li></ol><p>To ensure the safe use of hazardous chemical substances in work processes and to replace hazardous chemicals with less hazardous ones</p><p>Measures:</p><ol><li>Review and preparation of a new list of binding limit values for occupational exposure to hazardous chemical substances.</li><li>Preparation and implementation of a targeted supervision programme and consulting of the IRSD regarding the correct use and implementation of regulations in the field of hazardous substances, i.e. chemical, carcinogenic and mutagenic substances, substances toxic to reproduction and asbestos.</li><li>Preparation and implementation of a programme of awareness-raising campaigns for employers, employees and the wider public on risks when working with nanomaterials and endocrine disrupters.</li><li>Preparation of practical guidelines for an assessment of risk due to exposure to hazardous chemical substances.</li><li>Preparation and implementation of a programme of tighter supervision campaigns of the IRSD relating to the quality of risk. assessment regarding exposure to hazardous chemical substances.</li><li>Conclusion of, and implementation of, the Agreement on raising awareness and exchanging good practice in the field of reducing exposure to carcinogens in the workplace.</li></ol><p>To ensure the high-quality implementation of expert tasks relating to safety at work</p><p>Measures:</p><ol><li>Reinforcement of the staff of the Health and Safety at Work Section within the MDDSZ, which will also assume the responsibi-lity of the doctrine relating to health and safety at work.</li><li>Reinforcement of the staff of the Inspection for Safety and Health at Work within the IRSD.</li><li>Preparation and implementation of a training programme for labour inspectors and other competent inspectors for supervision and consultation.</li><li>Preparation and implementation of a training programme for expert workers.</li><li>Preparation and implementation of a programme of targeted supervision campaigns of the IRSD of the quality and suitability of performance of expert tasks of safety at work by legal entities and sole traders with permits to implement expert tasks.</li><li>Development of a modern interdisciplinary study in the field of health and safety at work.</li><li>Increase budgetary resources earmarked for basic and applied research in the field of health and safety at work.</li><li>Promotion of interdisciplinary scientific and research work relating to health and safety at work.</li><li>Dissemination of findings of foreign research in the field of health and safety at work.</li><li>Monitoring public procurements from the viewpoint of meeting obligations defined in regulations regarding health and safety at work.</li></ol><p><strong>Strategic objectives aimed at ensuring health at work</strong></p><p>Arranging, enforcing, monitoring and upgrading the system of establishing, confirming and reporting occupational diseases.</p><p>Measures:</p><ol><li>Preparation, adoption and enforcement of regulations governing the establishment, confirmation and reporting of occupational diseases.</li><li>Revision of the regulation on preventive medical examinations.</li><li>Preparation of expert groundwork for adopting a regulation on implementing biological monitoring regarding workers’ exposure to hazardous chemical substances.</li></ol><p>Implementing, monitoring and upgrading programmes promoting physical and mental health in the workplace directed at preventing chronic diseases and maintaining the ability to work.</p><p>Measures:</p><ol><li>Establishment of a national platform for providing expert support to employers when implementing workplace health promotion programmes</li><li>Preparation and implementation of training programmes for employers when implementing workplace health promotion adjusted to small enterprises</li><li>Promotion of examples of good practice regarding workplace health promotion, particularly examples of good practice from small enterprises</li></ol><p>Establishing mechanisms for early detection and assistance in the event of work-related mental overload</p><p>Measures<strong>:</strong></p><ol><li>Preparation of practical guidelines for the early detection of work-related mental overload</li><li>Approach to concluding a social partners’ agreement on work-related stress prevention.</li><li>Approach to concluding a social partners’ agreement on implementing the European social partners’ autonomous framework agreement on active ageing and an intergenerational approach</li><li>Preparation and implementation of training programmes for managers on measures regarding work organisation and treatment of people at work which enable the improvement of the working environment and reduce the presence of psychosocial risks</li><li>Preparation and implementation of a campaign programme for identifying, detecting and assisting in preventing employee burnout.</li><li>Promotion of scientific and research work relating to psychosocial risks in the workplace.</li></ol><p>Adjusting workplaces to prevent musculoskeletal disorders; reducing sick leave due to musculoskeletal disorders by 5 per cent in the next 10 years</p><p>Measure:</p><ol><li>Preparation and implementation of programme of targeted supervision campaigns, consulting of the IRSD and other compe-tent inspection authorities regarding the correct use and implementation of regulations in the field of preventing musculoskeletal disorders, high-quality risk assessment and execution of workplace health promotion</li></ol><p>Establishing mechanisms to assist workers when returning to work after long-term sick leave</p><p>Measures:</p><ol><li>Preparation and implementation of training programmes for employers on how to recognise labour law and health consequen-ces of chronic diseases in workplaces and how to adapt workplace</li><li>Preparation and implementation of training programmes for occupational health providers, expert workers, HR departments and managers on how to help workers return to work after lengthy sick leaves and how to adapt workplaces</li><li>Collection and dissemination of information on measures and good practices intended to facilitate workers’ return to work after lengthy sick leave</li><li>Preparation of practical guidelines to assist workers when returning to work after lengthy sick leave</li></ol><p>Ensuring high-quality implementation of expert tasks by occupational health providers</p><p>Measures:</p><ol><li>Preparation of a situation analysis of the field of occupational medicine and the adoption of suitable systemic changes</li><li>Adoption of quality standards in occupational medicine</li><li>Preparation and implementation of a programme of targeted supervision campaigns and consultation with inspection authorities regarding the quality and suitability of implementing expert tasks of providing health at work</li><li>Review and update of national legislation with the objective of reducing administrative burdens, when this is possible, particularly for micro and small employers</li></ol><p><strong>Strategic objectives aimed at promoting a culture of prevention at the working environment and the consideration of worker’s diversity</strong></p><p>Implementation of thematic campaigns directed at promoting a culture of prevention in a working environment</p><p>Measures:</p><ol><li>Preparation and implementation of a programme of national campaigns aimed at promoting a preventive culture in the field of health and safety at work</li><li>Continued participation in Healthy Workplaces Campaigns implemented on the initiative of the EU-OSHA&nbsp;</li><li>Preparation of material with fundamental principles of culture of prevention in the field of health and safety at work</li></ol><p>Introduction of health and safety at work and healthy lifestyle in education at all levels and directions</p><p>Measure:</p><ol><li>Preparation and implementation of a modern programme for introducing health and safety at work in education, in cooperation with the Ministry of Education, Science and Sport, the National Education Institute Slovenia and other relevant institutions</li></ol><p>Promotion of the recognition of diversity when ensuring health and safety at work; promotion of providing workplaces for all generations and of intergenerational cooperation</p><p>Measures:</p><ol><li>Preparation of practical guidelines for assessing risk while taking into account workers’ diversity – particularly when considering differences in gender, age and reduced work capacity, including special risks to which migrant workers and posted workers are exposed</li><li>Consideration of special risks to which certain groups of workers are exposed (e.g. pregnant workers, workers with reduced work capacity, elderly and young workers, migrant workers, posted workers, women) when preparing practical OiRA e-tools for risk assessment</li><li>Preparation of practical guidelines for managing health and safety at work while taking into account the age structure, and the promotion of intergenerational cooperation</li><li>Introduction and promotion of risk assessment which will consider the particular features of elderly workers’ work in the workplace</li><li>Preparation and implementation of training programmes for managerial and HR staff for intergenerational cooperation</li></ol><p><strong>Strategic objectives aimed at ensuring health and safety for workers working in new forms of work employment</strong></p><p>Raising the awareness of workers working in new forms of work and employment about the basics of health and safety at work&nbsp;</p><p>Measures:</p><ol><li>Preparation and implementation of a campaign on health and safety at work for workers working in new forms of work and employment</li><li>Promotion of lifelong learning regarding health and safety at work, including the promotion of exchanging knowledge and experience between younger and older workers through mentoring and reverse mentoring</li></ol><p>Dissemination of the latest findings on how the working environment is changing and new forms of work and employment</p><p>Measures:</p><ol><li>Disseminating among the wider and expert public the findings of the latest research on new forms of work and employment implemented by ILO, Eurofound, EU-OSHA and other research institutions</li><li>Promotion of research on the consequences of new forms of work and employment for health and safety at work</li></ol><p><strong>Strategic objectives aimed at promoting social dialogue in the field of health and safety at work</strong></p><p>Promotion of social dialogue in the field of health and safety at work&nbsp;</p><p>Measures:</p><ol><li>Preparation and implementation of training programmes for employers, employees and their representatives for social dialogue in the field of health and safety at work in organisations</li><li>Conclusion of social agreements in fields which contribute to improving health and safety at work</li></ol>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+412, null, @sectionId, "STRATEGY_ACTORS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+412, "EN", 1, "<p>The <strong>Council of Ministers</strong> determines the government policy in the field of occupational safety and health in the Republic of Bulgaria.</p><p>The <strong>Ministry of Labour and Social Policy</strong> designs, directs, coordinates and implements the government policy for ensuring occupational safety and health.</p><p>The <strong>General Labour Inspectorate Executive Agency</strong> exercises overall control for compliance with the labour legislation on ensuring health and safety at work and on employment relations, as well as specialised control under the Employment Promotion Act and the other statutory instruments on employment and unemployment containing explicit provisions to that end.</p><p>The <strong>Ministry of Health</strong> manages and coordinates the policy and activities on protection and improvement of health at work. The Ministry of Health includes following institutions:</p><ul><li>Regional Health Inspectorates (RHI),</li><li>National Centre of Public Health and Analyses (NCPHA),</li><li>National Centre for Radiobiology and Radiation Protection (NCRRP).</li></ul><p>The effective trilateral cooperation at national, sectoral and regional level is an important factor for the implementation of the national occupational safety and health policy. <strong>The National Council on Working Conditions</strong> is a permanent body at the national level for coordination, consultation and cooperation in designing and implementing the policy for ensuring safety and health at work.</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+413, null, @sectionId, "STRATEGY_ACTORS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+413, "EN", 1, "    <li>Directorate for Safety and Health at Work,<br>Ministry of Labour Social Security and Social Solidarity.</li>
     <li>Labour Inspectorate, Ministry of &nbsp;Labour Social Security and Social Solidarity.</li>
@@ -2171,1548 +1940,1548 @@ INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+
     <li>National Focal Point of EU-OSHA.</li>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+414, null, @sectionId, "STRATEGY_ACTORS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+414, "EN", 1, "<p>The <strong>Ministry of Labour, Family, Social Affairs and Equal Opportunities </strong>and the<strong> Ministry of Health </strong>determine the policy and priorities in the field of health and safety at work, set the rules and ensure these rules are correctly and consistently implemented in practice in consultation with the tripartite Economic and Social Council.</p><p>The <strong>Economic and Social Council</strong> participates in the preparation of legislation and provides opinions, recommendations and incentives for the adoption of new or amendment of the applicable regulations on health and safety at work.</p><p>The key holders of measures for realising objectives defined in this National Programme are the <strong>Ministry of Labour, Family, Social Affairs and Equal Opportunities</strong>, the <strong>Ministry of Health </strong>and the<strong> Labour Inspectorate of the Republic of Slovenia</strong>.</p><p>Other ministries and bodies within the ministries also participate in realising the set objectives:</p><ul><li>The Ministry of Economic Development and Technology,</li><li>The Ministry of Agriculture, Forestry and Food,</li><li>The Ministry of Finance,</li><li>The Ministry of Education, Science and Sport, Chemical Office of the Republic of Slovenia,</li><li>The National Institute of Public Health</li><li>The Statistical Office of the Republic of Slovenia,</li><li>The National Education Institute Slovenia as the national development, research and consulting institution in the field of pre-school, primary and general secondary school education.</li></ul><p>The mining inspectorate, the maritime inspectorate, the inspectorate responsible for supervising aviation security and the inspectorate responsible for protection against natural and other disasters.</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+415, null, @sectionId, "STRATEGY_RESOURCES");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+415, "EN", 1, "<p>Time frame: 2018-2020</p><p>Resources:</p><p>Budget: see activity plan&nbsp;</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+416, null, @sectionId, "STRATEGY_RESOURCES");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+416, "EN", 1, "<p><span style=\"text-decoration: underline;\">Budget: </span></p><p>Any effort will be paid to exploit the opportunities offered by the running European and national financial resources programmes, to implement the Operational Programme of the National OSH Strategy 2014-2020 to the fullest extent possible. The “Partnership and Cooperation Agreement” 2014-2020 programme (the new National strategic Reference Framework, ESPA), -which is consisting&nbsp; of (5) five sectoral operational programmes and (13) thirteen regional operational programmes- has been identified as the main source of funding at national level (especially the sectoral operational programme &nbsp;“Competitiveness, Entrepreneurship and Innovation”, EPAnEK).</p><p><span style=\"text-decoration: underline;\">Staff:</span></p><p>The staff of Directorate for Health and Safety at Work, thecompetent OSH administrative authority of the Ministry of Labour, Social Security and Social Solidarity, will be actively&nbsp; involved to the planning, coordination, monitoring and evaluation phases of the current OSH strategy implementation.</p><p><span style=\"text-decoration: underline;\">Timeframe:</span></p><p>The implementation of the measures and activities included in the current National OSH Strategy has started by the year 2016 and will cover the period till the year 2020.</p><p>The National OSH Strategy 2016-2020 has been officially approved with the ministerial decision (M.D.48416/2564/2017) published in the official gazette (FEK Β’ 3757/25.10.2017) by the Minister of Labour, Social Security and Social Solidarity.</p><p>In a previous phase, the strategy had been approved by the members of the National Council for the Health and Safety of Workers (S.Y.A.E.), following a two years period of preparation, elaboration and tripartite dialogue upon a draft document submitted by the Directorate for Health and Safety at Work (the competent OSH administrative authority of the Ministry of Labour, Social Security and Social Solidarity) and an ad-hoc committee which was formed by a specific number of SYAE members (representing OSH governmental agencies, OSH social partners organizations and OSH scientific associations).</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+417, null, @sectionId, "STRATEGY_RESOURCES");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+417, "EN", 1, "<p>Time frame of the National Programme is 2018-2027; however, on the basis of the evaluation of the three 3-year action plans a new national programme can be sumbitted earlier.</p><p>While taking into account the limited funds available to Slovenia for basic and applied research, special attention will be dedicated to disseminating the findings of European research institutions, particularly Eurofound and EU-OSHA. Slovenia will try to increase the share of budgetary resources earmarked for basic and applied research in the field of health and safety at work. The ministries and institutions mentioned as stakeholders plan and provide budgetary resources for implementing measures to realise the objectives of the National Programme.</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+418, null, @sectionId, "STRATEGY_EVALUATION");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+418, "EN", 1, "<p>The results obtained from implementing the annual National Occupational Safety and Health Programmes over the period 2008-2014 have proven the importance of the strategic planning approach in pursuing a nationally responsible policy aimed at ensuring well-being at work as part of the measures to improve the functioning of the labour market.</p><p>The comparative analysis of results of 2016 against 2015 shows that the relative share of the enterprises which have taken measures to remove occupational risks and bring the working conditions in line with the statutory requirements remains constant. A detailed description of the evaluation is provided in chapter 4.1 <em>Results of control activities </em>of the National Programme for Occupational Safety and Health 2018-2020.</p><p>Ex ante indicators for the years 2012 to 2020</p><ul><li>Number of inspected enterprises</li><li>Number of violations of compliance with the requirements and standards of the labor legislation e.g.:<ul><li>OSH rules</li><li>Safe work equipment</li><li>Safe use of electricity</li><li>Protective interlocking devices</li><li>Personal protective equipment</li><li>Prophylactic health checks</li><li>Provision of sanitary services</li></ul></li><li>Quality of risk assessments</li><li>Number of work related accidents</li><li>Number of work related fatalities</li><li>Number of work related diseases</li><li>Number of workers covered by rehabilitation</li><li>Number of trainings &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li><li>Number of information materials</li><li>Number of information campaigns</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+419, null, @sectionId, "STRATEGY_EVALUATION");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+419, "EN", 1, "<p><span style=\"text-decoration: underline;\">Evaluation:</span></p><p>Monitoring and evaluation of the strategy&nbsp; implementation will be carried out under the responsibility of the competent OSH administrative authority of the Ministry of Labour, Social Security and Social Solidarity, which has also undertaken the responsibilities related to the Central Coordination Unit of the Occupational Health and Safety System, ESystYAE.</p><p>The evaluation of the National OSH Strategy will cover three areas: a) the implementation level of the planned actions/measures, b ) the strategy’s functionality and c) the degree of achievement of the identified strategic objectives.</p><p>In order to optimize the implementation of the National OSH Strategy, its implementation process will be evaluated at regular through a monitoring system with specific qualitative and quantitative indicators to be determined by the competent OSH administrative authority of the Ministry of Labour, Social Security and Social Solidarity.</p><p>Ex ante indicators for the years 2012 to 2020</p><p>A mid-term evaluation exercises has been planned to be executed within 2018. The gathered information and the conclusions will be used to update the activities/measures included in the multi-annual programming document “Operational Programme” on annual basis and/or of the National OSH Strategy2016-2020 (if it will proved that it is necessary).</p><p><span style=\"text-decoration: underline;\">Lessons learned:</span></p><p>The former OSH strategy 2010-2013 was post-evaluated and the general observations and conclusions were taken into consideration in the process of developing the current OSH strategy 2016-2020.</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+420, null, @sectionId, "STRATEGY_EVALUATION");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+420, "EN", 1, "<p>The monitoring of the implementation of the National Programme and individual measures will be determined in more detail in three-year action plans. Every three years an analysis of the implementation of the action plan will be prepared.&nbsp;</p><p>The monitoring and evaluation of this National Programme is based on statistical data collected on the basis of legislation. When this is possible, direct impact indicators are used. They are not specified in the programme.</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+421, null, @sectionId, "STRATEGY_EU");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+421, "EN", 1, "<p>The Bulgarian National Programme for Occupational Safety and Health, 2018-2020 follows the EU-OSH Strategic Framework 2014-2020. It is related to all three challenges of the EU-OSH Strategic Framework.</p><p>The priority area I of the Bulgarian OSH strategy is related to challenge 1 of the EU-OSH Strategic Framework.&nbsp; Challenge 2 is covered by the priority area II of the Bulgarian OSH strategy.&nbsp;&nbsp; And the strategic objective “Improving the occupational safety and health of every worker and every workplace” addresses vulnerable groups of workers (young or older workers, disabled workers, etc.) – challenge 3 of the EU-OSH Strategic Framework.</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+422, null, @sectionId, "STRATEGY_EU");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+422, "EN", 1, "<p><span lang=\"EN-US\">The current National OSH Strategy 2016-2020 has been developed to effectively tackle the national needs and priorities and in parallel is in compliance with the challenges and priorities of the existing European OSH Strategic Framework 2014-2020. There are direct relations to almost all aspects of the European OSH Strategic Framework, as it is represented by the following examples:</span></p><ul><li>The main strategic policy objective of the “Official establishment of the National System for Health and Safety at Work” supported mainly by the planned measures under the Axis 1. as well as from all the other Axes of priority, is directly related to key strategic objectives 1., 3., 5., and 6. of the European OSH Strategic Framework.</li><li>The provision of practical support (e.g. e-knowledge platform for MSEs and SMEs or new OiRA tools) and guidance (e.g. practical guide to manage OSH) to micro, small and medium size enterprises, to help them to comply with the national OSH legislation requirements (Axis 5.) and to develop an OSH prevention culture (Axis 6.) are related to the challenge 1. and the key strategic objective 2. of the European OSH Strategic Framework.</li><li>The efforts for simplifying OSH (e.g. e-guide to the national OSH legislation, e-guide for the enterprises under the Seveso directive) and for improving the legislative framework on OSH (Axis 2.) are related to the challenge 1. and the key strategic objectives 3. and 4. of the European OSH Strategic Framework.</li></ul><ul><li>The better enforcement (Axis 3.) of the national OSH legislation (e.g. special focus on the public sector and the organizations of the 2<sup>nd</sup> &amp; 1<sup>st</sup> level of Regional and Local Administration, strengthening of the Safety and Health at Work inspection services of the Labour Inspectorate), is related to the key strategic objective 3. of the European OSH Strategic Framework.</li><li>The initiatives and measures for improving the reporting procedures and systems for recording accidents at work and especially, for the occupational diseases (Axis 4.) are related to the key strategic objective 6. of the European OSH Strategic Framework.</li><li>Measures under the Axis 9. “Workplace health promotion and tackling of the demographic change” and Axis 10. “Encouraging scientific progress and research on OSH- Tackling of new and emerging risks” are related to challenges 2. and 3. as well as to the key strategic objectives&nbsp; 5. and 6. of the European OSH Strategic Framework.</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+423, null, @sectionId, "STRATEGY_EU");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+423, "EN", 1, "<p>There is a close relationship to the EU Strategic Framework. There are relations to practically every aspect of the EU-OSH Strategic Framework.<br>Challenge 1 of the EU-OSH Strategic Framework is covered by the strategic objective 1.1 and its related measures.<br>Challenge 2 of the EU-OSH Strategic Framework is covered by the strategic objective 1.2 and its related measures as well as by all strategic objectives under No. 2 with their related measures.<br>Challenge 3 of the EU-OSH Strategic Framework is covered by the strategic objectives of No 3 and their related measures.</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+424, null, @sectionId, "MATRIX_OB");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+424, "EN", 1, "<p><strong> Strategic Objective&nbsp;</strong>:</p><ul><li>Strengthening of policies and measures to prevent accidents at work, occupational diseases and other work-related illnesses for all workers, with emphasis to the more vulnerable groups.</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+425, null, @sectionId, "MATRIX_DET");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+425, "EN", 1, "<p><strong>Axis: </strong></p><ul><li>Official establishment of the National System for Health and Safety at Work</li><li>Simplifying and improving the legislative framework on OSH.</li><li>Strengthening the implementation of the OSH legislation.</li><li>Supporting micro, small and medium-sized companies</li></ul><p>&nbsp;</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+426, null, @sectionId, "MATRIX_OB");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+426, "EN", 1, "<p><strong>Strategic Objectives:</strong></p><ul><li>Aimed at ensuring safety at work</li><li>Aimed at ensuring health at work</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+427, null, @sectionId, "MATRIX_DET");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+427, "EN", 1, "<p><strong>Other Strategic Objectives:</strong></p><ul><li>To reduce the number of work accidents by 20 per cent in the next 10 years&nbsp;</li><li>To ensure the safe use of hazardous chemical substances in work processes and to replace hazardous chemicals with less hazardous ones</li><li>Implementing, monitoring and upgrading programmes promoting physical and mental health in the workplace directed at preventing chronic diseases and maintaining the ability to work</li><li>Ensuring high-quality implementation of expert tasks by occupational health providers</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+428, null, @sectionId, "MATRIX_OB");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+428, "EN", 1, "<p><strong>Priority:</strong></p><ul><li>Improving the application oft he OSH legislation</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+429, null, @sectionId, "MATRIX_DET");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+429, "EN", 1, "<p><strong>Activity:</strong></p><ul><li>Addressing the challenges related to the application of legislation in SMEs</li></ul><p><strong>Measures:</strong></p><ul><li>Ensuring safety at work in enterprises, improving the workplace environment, the organisation of work and the management of human resources</li><li>Encouraging employers to improve the working conditions in enterprises, including in SMEs</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+430, null, @sectionId, "MATRIX_OB");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+430, "EN", 1, "<p><strong>Priority:</strong></p><ul><li>Prevention of occupational risks, including new and emerging risks</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+431, null, @sectionId, "MATRIX_DET");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+431, "EN", 1, "<p><strong>Activities: </strong></p><ul><li>Developing and implementing practical tools for control of occupational hazards</li><li>Awareness raising and culture of prevention</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+432, null, @sectionId, "MATRIX_OB");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+432, "EN", 1, "<p><strong>Strategic Objectives:</strong></p><ul><li>Strengthening of policies and measures to prevent accidents at work, occupational diseases and other work-related illnesses for all workers, with emphasis to the more vulnerable groups</li><li>Improving reporting procedures and systems for recording accidents at work and occupational diseases</li><li>Establishment of an occupational risks insurance body</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+433, null, @sectionId, "MATRIX_DET");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+433, "EN", 1, "<p><strong>Axis:</strong></p><ul><li>Official establishment of the National System for Health and Safety at Work</li><li>Strengthening prevention and improving the reporting procedures and systems for recording accidents at work and occupational diseases.</li><li>Encouraging scientific progress and research on OSH-Tackling of new and emerging risks</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+434, null, @sectionId, "MATRIX_OB");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+434, "EN", 1, "<p><strong>Strategic objectives:</strong></p><ul><li>Strategic objectives aiming at ensuring safety at work</li><li>Strategic objectives aiming at ensuring health at work</li><li>Strategic objectives aimed at ensuring health and safety for workers working in new forms of work employment</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+435, null, @sectionId, "MATRIX_DET");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+435, "EN", 1, "<p><strong>Other Strategic Objectives:</strong></p><ul><li>To ensure the safe use of hazardous chemical substances in work processes and to replace hazardous chemicals with less hazardous ones</li><li>To ensure the high-quality implementation of expert tasks relating to safety at work</li><li>Arranging, enforcing, monitoring and upgrading the system of establishing, confirming and reporting occupational diseases</li><li>Implementing, monitoring and upgrading programmes promoting physical and mental health in the workplace directed at preventing chronic diseases and maintaining the ability to work</li><li>Establishing mechanisms for early detection and assistance in the event of work-related mental overload</li><li>Adjusting workplaces to prevent musculoskeletal disorders; reducing sick leave due to musculoskeletal disorders by 5 per cent in the next 10 years ((The objective must be attained in the 2018–2027 period.)</li><li>Establishing mechanisms to assist workers when returning to work after long-term sick leave</li><li>Ensuring high-quality implementation of expert tasks by occupational health providers</li><li>Raising the awareness of workers working in new forms of work and employment about the basics of health and safety at work&nbsp;</li><li>Dissemination of the latest findings on how the working environment is changing and new forms of work and employment</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+436, null, @sectionId, "MATRIX_OB");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+436, "EN", 1, "<p><strong>Strategic Objectives</strong>:</p><ul><li>Improving the occupational safety and health of every worker and every workplace by addressing vulnerable groups of workers (young or older workers, disabled workers, etc.)</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+437, null, @sectionId, "MATRIX_DET");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+437, "EN", 1, "<p><strong>Priority:</strong></p><ul><li>Prevention of occupational diseases and occupational accidents.</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+438, null, @sectionId, "MATRIX_OB");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+438, "EN", 1, "<p><strong>Strategic Objective:</strong></p><ul><li>Strengthening of policies and measures to prevent accidents at work, occupational diseases and other work-related illnesses for all workers, with emphasis to the more vulnerable groups</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+439, null, @sectionId, "MATRIX_DET");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+439, "EN", 1, "<p><strong>Axis:</strong></p><ul><li>Workplace health promotion and tackling of the demographic change.</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+440, null, @sectionId, "MATRIX_OB");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+440, "EN", 1, "<p><strong>Strategic objectives:&nbsp;</strong></p><ul><li>Aimed at promoting a culture of prevention in the working environment and the consideration of worker’s diverstity</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+441, null, @sectionId, "MATRIX_DET");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+441, "EN", 1, "<p><strong>Other strategic objectives:&nbsp;</strong></p><ul><li>Promotion of the recognition of diversity when ensuring health and safety at work; promotion of providing workplaces for all generations and of intergenerational cooperation</li></ul><p><strong>Measure:&nbsp;</strong></p><ul><li>Promotion of lifelong learning regarding health and safety at work, including the promotion of exchanging knowledge and experience between younger and older workers through mentoring and reverse mentoring</li></ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+442, null, @sectionId, "REG_SECONDARY");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+442, "EN", 1, "This country has not introduced secondary legislation");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+443, null, @sectionId, "REG_SECONDARY");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+443, "EN", 1, "<p>This country has introduced separated secondary legislation in: </p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+444, null, @sectionId, "REG_SECONDARY");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+444, "EN", 1, "<p><ul><li>Risk Assessment</li></ul></p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+445, null, @sectionId, "REG_SECONDARY");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+445, "EN", 1, "<p><ul><li>Preventive and protective services</li></ul></p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+446, null, @sectionId, "REG_SECONDARY");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+446, "EN", 1, "<p><ul><li>Information for workers</li></ul></p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+447, null, @sectionId, "REG_SECONDARY");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+447, "EN", 1, "<p><ul><li>Training of workers</li></ul></p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+448, null, @sectionId, "REG_SECONDARY");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+448, "EN", 1, "<p><ul><li>Health Surveillance</li></ul></p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+449, null, @sectionId, "REG_SECONDARY");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+449, "EN", 1, "<p><ul><li>Consultation of workers</li></ul></p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+450, null, @sectionId, "REG_DEROGATIONS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+450, "EN", 1, "No derogations have been permitted to this country");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+451, null, @sectionId, "REG_DEROGATIONS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+451, "EN", 1, "<p>Derogations permitted to this country: </p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+452, null, @sectionId, "REG_DEROGATIONS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+452, "EN", 1, "<p>Directive 94/33/EC&nbsp; &nbsp;(young people):</p><p>Art. 5(3),&nbsp;Art. 7(3),&nbsp;Art. 9(2) and&nbsp;Art. 13</p><p>Directive 2002/44/EC (vibration):</p><p>Art. 10(2)</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+453, null, @sectionId, "REG_DEROGATIONS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+453, "EN", 1, "<p>Directive 92/57/EEC (construction):</p><p>Art. 3(2)</p><p>Directive 92/58/EEC&nbsp; &nbsp;(OSH signs):</p><p>Art. 6(2)</p><p>Directive 94/33/EC&nbsp; &nbsp;(young people):</p><p>Art. 7(3),&nbsp;Art. 9(2) and&nbsp;Art. 10(3)</p><p>Directive 98/24/EC (chemical agents):</p><p>Art. 9(2)</p><p>Directive 2002/44/EC (vibration):</p><p>Art. 10(1) and&nbsp;Art. 10(2)</p><p>Directive 2003/10/EC (noise)</p><p>Art. 11(1) and 11(2)</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+454, null, @sectionId, "REG_DEROGATIONS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+454, "EN", 1, "<p>Directive 92/58/EEC&nbsp; &nbsp;(OSH signs):</p><p>Art. 6(2)</p><p>Directive 92/85/EEC (pregnant/breast feeding workers):</p><p>Art. 11(4)</p><p>Directive 98/24/EC (chemical agents):</p><p>Art. 9(2)</p><p>Directive 2002/44/EC (vibration):</p><p>Art. 10(1) and&nbsp;Art. 10(2)</p><p>Directive 2003/10/EC (noise):</p><p>Art. 11(1) and 11(2)</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+455, null, @sectionId, "REG_DEROGATIONS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+455, "EN", 1, "<p>Directive 94/33/EC&nbsp; &nbsp;(young people):</p><p>Art. 8(5),&nbsp;Art. 9(2) and&nbsp;Art. 10(3)</p><p>&nbsp;</p><p>&nbsp;</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+456, null, @sectionId, "REG_DEROGATIONS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+456, "EN", 1, "<p>Directive 92/57/EEC (construction):</p><p>Art. 3(2)</p><p>Directive 94/33/EC&nbsp; &nbsp;(young people):</p><p>Art. 7(3) and&nbsp;Art. 9(2)</p><p>Directive 98/24/EC (chemical agents):</p><p>Art. 9(2)</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+457, null, @sectionId, "REG_DEROGATIONS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+457, "EN", 1, "<p>Directive 92/58/EEC&nbsp; &nbsp;(OSH signs):</p><p>Art. 6(2)</p><p>Directive 92/85/EEC (pregnant/breast feeding workers).</p><p>Art. 11(4)</p><p>Directive 94/33/EC&nbsp; &nbsp;(young people):</p><p>Art. 7(3) and&nbsp;Art. 9(2)</p><p>Directive 98/24/EC (chemical agents):</p><p>Art. 9(2)</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+458, null, @sectionId, "REG_DEROGATIONS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+458, "EN", 1, "<p>Directive 89/656/EEC&nbsp; (Use of PPE):</p><p>Art.&nbsp; 4(6), second indent</p><p>Directive 92/57/EEC (construction)</p><p>Art. 3(2)</p><p>Directive 92/58/EEC&nbsp; &nbsp;(OSH signs):</p><p>Art. 6(2)</p><p>Directive 94/33/EC&nbsp; &nbsp;(young people):</p><p>Art. 5(3),&nbsp;Art. 7(3),&nbsp;Art. 8(5),&nbsp;Art. 9(2),&nbsp;Art. 10(3), Art. 10(4) and&nbsp;Art. 13</p><p>Directive 2002/44/EC (vibration):</p><p>Art. 10(1) and&nbsp;Art. 10(2)</p><p>Directive 2003/10/EC (noise):</p><p>Art. 11(1) and 11(2)</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+459, null, @sectionId, "REG_DEROGATIONS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+459, "EN", 1, "<p>Directive 92/57/EEC (construction):</p><p>Art. 3(2)</p><p>Directive 92/85/EEC (pregnant/breast feeding workers):</p><p>Art. 11(4)</p><p>Directive 94/33/EC&nbsp; &nbsp;(young people):</p><p>Art. 7(3) and&nbsp;Art. 9(2)</p><p>Directive 98/24/EC (chemical agents):</p><p>Art. 9(2)</p><p>Directive 2003/10/EC (noise):</p><p>Art. 11(1) and 11(2)</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+460, null, @sectionId, "REG_DEROGATIONS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+460, "EN", 1, "<p>Directive 94/33/EC (young people):</p><p>Art. 7(3),&nbsp;Art. 9(2),&nbsp;Art. 10(3),&nbsp;Art. 10(4) and Art. 13</p><p>Directive 98/24/EC (chemical agents):</p><p>Art. 9(2)</p><p>Directive 2002/44/EC (vibration):</p><p>Art. 10(1) and&nbsp;Art. 10(2)</p><p>Directive 2003/10/EC (noise):</p><p>Art. 11(1) and 11(2)</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+461, null, @sectionId, "REG_DEROGATIONS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+461, "EN", 1, "<p>Directive 92/57/EEC (construction):</p><p>Art. 3(2)</p><p>Directive 94/33/EC&nbsp; &nbsp;(young people):</p><p>Art. 5(3)</p><p>Directive 98/24/EC (chemical agents):</p><p>Art. 9(2)</p><p>Directive 2002/44/EC (vibration):</p><p>Art. 10(1) and&nbsp;Art. 10(2)</p><p>Directive 2003/10/EC (noise):</p><p>Art. 11(1) and 11(2)</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+462, null, @sectionId, "REG_DEROGATIONS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+462, "EN", 1, "<p>Directive 94/33/EC&nbsp; &nbsp;(young people):</p><p>Art. 7(3),&nbsp;Art. 8(5),&nbsp;Art. 9(2),&nbsp;Art. 10(4) and&nbsp;Art. 13</p><p>Directive 2002/44/EC (vibration):</p><p>Art. 10(1)</p><p>Directive 2003/10/EC (noise):</p><p>Art. 11(1) and 11(2)</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+463, null, @sectionId, "REG_DEROGATIONS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+463, "EN", 1, "<p>Directive 2002/44/EC (vibration):</p><p>Art. 10(1)</p><p>Directive 2003/10/EC (noise):</p><p>Art. 11(1) and 11(2)</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+464, null, @sectionId, "REG_DEROGATIONS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+464, "EN", 1, "<p>Directive 98/24/EC (chemical agents):</p><p>Art. 9(2)</p><p>Directive 2002/44/EC (vibration):</p><p>Art. 10(2)</p><p>Directive 2003/10/EC (noise):</p><p>Art. 11(1) and 11(2)</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+465, null, @sectionId, "REG_DEROGATIONS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+465, "EN", 1, "<p>Directive 94/33/EC&nbsp; &nbsp;(young people):</p><p>Art. 5(3),&nbsp;Art. 10(3)</p><p>Directive 98/24/EC (chemical agents):</p><p>Art. 9(2)</p><p>Directive 2002/44/EC (vibration):</p><p>Art. 10(1) and&nbsp;Art. 10(2)</p><p>Directive 2003/10/EC (noise):</p><p>Art. 11(1) and 11(2)&nbsp;</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+466, null, @sectionId, "REG_DEROGATIONS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+466, "EN", 1, "<p>Directive 92/57/EEC (construction):</p><p>Art. 3(2)</p><p>Directive 94/33/EC&nbsp; &nbsp;(young people):</p><p>Art. 7(3),&nbsp;Art. 9(2),&nbsp;Art. 10(3) and&nbsp;Art. 13</p><p>Directive 98/24/EC (chemical agents):</p><p>Art. 9(2)</p><p>Directive 2002/44/EC (vibration):</p><p>Art. 10(2)</p><p>Directive 2003/10/EC (noise):</p><p>Art. 11(1) and 11(2)</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+467, null, @sectionId, "REG_DEROGATIONS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+467, "EN", 1, "<p>Directive 92/58/EEC&nbsp; &nbsp;(OSH signs):</p><p>Art. 6(2)</p><p>Directive 92/85/EEC (pregnant/breast feeding workers):</p><p>Art. 11(4)</p><p>Directive 98/24/EC (chemical agents):</p><p>Art. 9(2)</p><p>Directive 2002/44/EC (vibration):</p><p>Art. 10(2)</p><p>Directive 2003/10/EC (noise):</p><p>Art. 11(1) and 11(2)</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+468, null, @sectionId, "REG_DEROGATIONS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+468, "EN", 1, "<p>Directive 92/57/EEC (construction):</p><p>Art. 3(2)</p><p>Directive 92/58/EEC&nbsp; &nbsp;(OSH signs):</p><p>Art. 6(2)</p><p>Directive 92/85/EEC (pregnant/breast feeding workers):</p><p>Art. 11(4)</p><p>Directive 94/33/EC&nbsp; &nbsp;(young people):</p><p>Art. 5(3),&nbsp;Art. 7(3),&nbsp;Art. 8(5),&nbsp;Art. 9(2),&nbsp;Art. 10(3),&nbsp;Art. 10(4) and&nbsp;Art. 13</p><p>Directive 98/24/EC (chemical agents):</p><p>Art. 9(2)</p><p>Directive 2002/44/EC (vibration):</p><p>Art. 10(2)</p><p>Directive 2003/10/EC (noise):</p><p>Art. 11(1) and 11(2)</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+469, null, @sectionId, "REG_DEROGATIONS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+469, "EN", 1, "<p>Directive 92/85/EEC (pregnant/breast feeding workers):</p><p>Art. 11(4)</p><p>Directive 94/33/EC&nbsp; &nbsp;(young people):</p><p>Art. 7(3)</p><p>Directive 98/24/EC (chemical agents):</p><p>Art. 9(2)</p><p>Directive 2002/44/EC (vibration):</p><p>Art. 10(1) and&nbsp;Art. 10(2)</p><p>Directive 2003/10/EC (noise):</p><p>Art. 11(1) and 11(2)</p><p>&nbsp;</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+470, null, @sectionId, "REG_DEROGATIONS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+470, "EN", 1, "<p>Directive 92/57/EEC (construction):</p><p>Art. 3(2)</p><p>Directive 98/24/EC (chemical agents):</p><p>Art. 9(2)</p><p>Directive 2002/44/EC (vibration):</p><p>Art. 10(1) and&nbsp;Art. 10(2)</p><p>Directive 2003/10/EC (noise):</p><p>Art. 11(1) and 11(2)</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+471, null, @sectionId, "REG_DEROGATIONS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+471, "EN", 1, "<p>Directive 94/33/EC&nbsp; &nbsp;(young people):</p><p>Art. 7(3) and&nbsp;Art. 10(4)</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+472, null, @sectionId, "REG_DEROGATIONS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+472, "EN", 1, "<p>Directive 94/33/EC&nbsp; &nbsp;(young people):</p><p>Art. 7(3)&nbsp;</p><p>Directive 98/24/EC (chemical agents):</p><p>Art. 9(2)</p><p>Directive 2003/10/EC (noise):</p><p>Art. 11(1) and 11(2)</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+473, null, @sectionId, "REG_DEROGATIONS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+473, "EN", 1, "<p>Directive 94/33/EC&nbsp; &nbsp;(young people):</p><p>Art. 5(3),&nbsp;Art. 7(3),&nbsp;Art. 10(3),&nbsp;Art. 10(4) and&nbsp;Art. 13</p><p>Directive 98/24/EC (chemical agents):</p><p>Art. 9(2)</p><p>Directive 2002/44/EC (vibration):</p><p>Art. 10(2)</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+474, null, @sectionId, "REG_DEROGATIONS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+474, "EN", 1, "<p>Directive 89/656/EEC&nbsp; (Use of PPE):</p><p>Art.&nbsp; 4(6), second indent</p><p>Directive 2003/10/EC (noise):</p><p>Art. 11(1) and 11(2)</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+475, null, @sectionId, "REG_DEROGATIONS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+475, "EN", 1, "<p>Directive 94/33/EC&nbsp; &nbsp;(young people):</p><p>Art. 5(3),&nbsp;Art. 7(3)&nbsp;</p><p>Directive 98/24/EC (chemical agents):</p><p>Art. 9(2)</p><p>Directive 2002/44/EC (vibration):</p><p>Art. 10(1)</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+476, null, @sectionId, "REG_DEROGATIONS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+476, "EN", 1, "<p>Directive 92/85/EEC (pregnant/breast feeding workers):</p><p>Art. 11(4)</p><p>Directive 94/33/EC&nbsp; &nbsp;(young people):</p><p>Art. 5(3),&nbsp;Art. 7(3),&nbsp;Art. 9(2)</p><p>Directive 98/24/EC (chemical agents):</p><p>Art. 9(2)</p><p>Directive 2002/44/EC (vibration):</p><p>Art. 10(1)</p><p>&nbsp;</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+477, null, @sectionId, "REG_DEROGATIONS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+477, "EN", 1, "<p>Directive 92/57/EEC (construction):</p><p>Art. 3(2)</p><p>Directive 92/58/EEC&nbsp; &nbsp;(OSH signs):</p><p>Art. 6(2)</p><p>Directive 94/33/EC&nbsp; &nbsp;(young people):</p><p>Art. 7(3),&nbsp;Art. 9(2) and&nbsp;Art. 13</p><p>Directive 98/24/EC (chemical agents):</p><p>Art. 9(2)</p><p>Directive 2002/44/EC (vibration):</p><p>Art. 10(2)</p><p>Directive 2003/10/EC (noise):</p><p>Art. 11(1) and 11(2)</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+478, null, @sectionId, "REG_DEROGATIONS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+478, "EN", 1, "<p>Directive 92/58/EEC&nbsp; &nbsp;(OSH signs):</p><p>Art. 6(2)</p><p>Directive 94/33/EC&nbsp; &nbsp;(young people):</p><p>Art. 5(3),&nbsp;Art. 7(3),&nbsp;Art. 8(5),&nbsp;Art. 9(2),&nbsp;Art. 10(3),&nbsp;Art. 10(4) and&nbsp;Art. 13</p><p>Directive 98/24/EC (chemical agents):</p><p>Art. 9(2)</p><p>Directive 2002/44/EC (vibration):</p><p>Art. 10(1) and&nbsp;Art. 10(2)</p><p>Directive 2003/10/EC (noise):</p><p>Art. 11(1) and 11(2)</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+479, null, @sectionId, "REG_TRANSITIONAL");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+479, "EN", 1, "<p>This country has applied the following transitional periods:</p><p>Directive 92/91/EEC (drilling)</p><p>Directive 92/104/EEC (mines and quarries)</p><p>Directive2002/44/EC (vibration)</p><p>Directive 2003/10/EC (noise)</p><p>Directive 90/270/EEC (DSE)</p><p>Directive 1999/92/EC (ATEX)</p><p>&nbsp;</p><p>This country has respected the following transitional periods:</p><p>Directive2002/44/EC (vibration)</p><p>Directive 2003/10/EC (noise)</p><p>Directive 2009/104/EC (work equipment)</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+480, null, @sectionId, "REG_TRANSITIONAL");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+480, "EN", 1, "<p>This country has applied the following transitional periods:</p><p>Directive 92/91/EEC (drilling)</p><p>Directive 92/104/EEC (mines and quarries)</p><p>Directive2002/44/EC (vibration)</p><p>Directive 2009/104/EC (work equipment)</p><p>Directive 90/270/EEC (DSE)</p><p>Directive 1999/92/EC (ATEX)</p><p>&nbsp;</p><p>This country has respected the following transitional periods:</p><p>Directive 92/91/EEC (drilling)</p><p>Directive 92/104/EEC (mines and quarries)</p><p>Directive2002/44/EC (vibration)</p><p>Directive 90/270/EEC (DSE)</p><p>Directive 1999/92/EC (ATEX)</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+481, null, @sectionId, "REG_TRANSITIONAL");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+481, "EN", 1, "<p>This country has applied the following transitional periods:</p><p>Directive2002/44/EC (vibration)</p><p>&nbsp;</p><p>This country has respected the following transitional periods:</p><p>Directive2002/44/EC (vibration)</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+482, null, @sectionId, "REG_TRANSITIONAL");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+482, "EN", 1, "<p>This country has applied the following transitional periods:</p><p>Directive2002/44/EC (vibration)</p><p>Directive 2003/10/EC (noise)</p><p>Directive 2009/104/EC (work equipment)</p><p>Directive 90/270/EEC (DSE)</p><p>Directive 1999/92/EC (ATEX)</p><p>&nbsp;</p><p>This country has respected the following transitional periods:</p><p>Directive2002/44/EC (vibration)</p><p>Directive 2003/10/EC (noise)</p><p>Directive 2009/104/EC (work equipment)</p><p>Directive 90/270/EEC (DSE)</p><p>Directive 1999/92/EC (ATEX)</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+483, null, @sectionId, "REG_TRANSITIONAL");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+483, "EN", 1, "<p>This country has applied the following transitional periods:</p><p>Directive 1999/92/EC (ATEX)</p><p>&nbsp;</p><p>This country has respected the following transitional periods:</p><p>Directive2002/44/EC (vibration)</p><p>Directive 1999/92/EC (ATEX)</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+484, null, @sectionId, "REG_TRANSITIONAL");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+484, "EN", 1, "<p>This country has applied the following transitional periods:</p><p>Directive 93/103/EEC (fishing vessels)</p><p>Directive2002/44/EC (vibration)</p><p>Directive 2003/10/EC (noise)</p><p>Directive 90/270/EEC (DSE)</p><p>&nbsp;</p><p>This country has respected the following transitional periods:</p><p>Directive 93/103/EEC (fishing vessels)</p><p>Directive2002/44/EC (vibration)</p><p>Directive 2003/10/EC (noise)</p><p>Directive 90/270/EEC (DSE)</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+485, null, @sectionId, "REG_TRANSITIONAL");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+485, "EN", 1, "<p>This country has applied the following transitional periods:</p><p>Directive 92/91/EEC (drilling)</p><p>Directive 92/104/EEC (mines and quarries)</p><p>Directive2002/44/EC (vibration)</p><p>Directive 2003/10/EC (noise)</p><p>Directive 90/270/EEC (DSE)</p><p>Directive 1999/92/EC (ATEX)</p><p>&nbsp;</p><p>This country has respected the following transitional periods:</p><p>Directive 92/91/EEC (drilling)</p><p>Directive 92/104/EEC (mines and quarries)</p><p>Directive2002/44/EC (vibration)</p><p>Directive 2003/10/EC (noise)</p><p>Directive 90/270/EEC (DSE)</p><p>Directive 1999/92/EC (ATEX)</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+486, null, @sectionId, "REG_TRANSITIONAL");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+486, "EN", 1, "<p>This country has applied the following transitional periods:</p><p>Directive 93/103/EEC (fishing vessels)</p><p>Directive2002/44/EC (vibration)</p><p>Directive 2009/104/EC (work equipment)</p><p>Directive 1999/92/EC (ATEX)</p><p>&nbsp;</p><p>This country has respected the following transitional periods:</p><p>Directive 93/103/EEC (fishing vessels)</p><p>Directive2002/44/EC (vibration)</p><p>Directive 2009/104/EC (work equipment)</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+487, null, @sectionId, "REG_TRANSITIONAL");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+487, "EN", 1, "<p>This country has applied the following transitional periods:</p><p>Directive 92/91/EEC (drilling)</p><p>Directive 92/104/EEC (mines and quarries)</p><p>Directive 93/103/EEC (fishing vessels)</p><p>Directive2002/44/EC (vibration)</p><p>Directive 2003/10/EC (noise)</p><p>Directive 2009/104/EC (work equipment)</p><p>Directive 90/270/EEC (DSE)</p><p>Directive 1999/92/EC (ATEX)</p><p>&nbsp;</p><p>This country has respected the following transitional periods:</p><p>Directive 92/91/EEC (drilling)</p><p>Directive 92/104/EEC (mines and quarries)</p><p>Directive 93/103/EEC (fishing vessels)</p><p>Directive2002/44/EC (vibration)</p><p>Directive 2003/10/EC (noise)</p><p>Directive 90/270/EEC (DSE)</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+488, null, @sectionId, "REG_TRANSITIONAL");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+488, "EN", 1, "<p>This country has applied the following transitional periods:</p><p>Directive 92/91/EEC (drilling)</p><p>Directive 92/104/EEC (mines and quarries)</p><p>Directive 93/103/EEC (fishing vessels)</p><p>Directive2002/44/EC (vibration)</p><p>Directive 2003/10/EC (noise)</p><p>Directive 2009/104/EC (work equipment)</p><p>Directive 90/270/EEC (DSE)</p><p>Directive 1999/92/EC (ATEX)</p><p>&nbsp;</p><p>This country has respected the following transitional periods:</p><p>Directive 92/91/EEC (drilling)</p><p>Directive 92/104/EEC (mines and quarries)</p><p>Directive 93/103/EEC (fishing vessels)</p><p>Directive2002/44/EC (vibration)</p><p>Directive 2003/10/EC (noise)</p><p>Directive 2009/104/EC (work equipment)</p><p>Directive 1999/92/EC (ATEX)</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+489, null, @sectionId, "REG_TRANSITIONAL");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+489, "EN", 1, "<p>This country has applied the following transitional periods:</p><p>Directive 92/91/EEC (drilling)</p><p>Directive 92/104/EEC (mines and quarries)</p><p>Directive 93/103/EEC (fishing vessels)</p><p>Directive2002/44/EC (vibration)</p><p>Directive 2003/10/EC (noise)</p><p>Directive 2009/104/EC (work equipment)</p><p>Directive 90/270/EEC (DSE)</p><p>Directive 1999/92/EC (ATEX)</p><p>&nbsp;</p><p>This country has respected the following transitional periods:</p><p>Directive 92/91/EEC (drilling)</p><p>Directive 92/104/EEC (mines and quarries)</p><p>Directive 93/103/EEC (fishing vessels)</p><p>Directive2002/44/EC (vibration)</p><p>Directive 2003/10/EC (noise)</p><p>Directive 2009/104/EC (work equipment)</p><p>Directive 90/270/EEC (DSE)</p><p>Directive 1999/92/EC (ATEX)</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+490, null, @sectionId, "REG_TRANSITIONAL");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+490, "EN", 1, "<p>This country has applied the following transitional periods:</p><p>Directive2002/44/EC (vibration)</p><p>Directive 2003/10/EC (noise)</p><p>Directive 2009/104/EC (work equipment)</p><p>&nbsp;</p><p>This country has respected the following transitional periods:</p><p>Directive2002/44/EC (vibration)</p><p>Directive 2003/10/EC (noise)</p><p>Directive 2009/104/EC (work equipment)</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+491, null, @sectionId, "REG_TRANSITIONAL");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+491, "EN", 1, "<p>This country has applied the following transitional periods:</p><p>Directive2002/44/EC (vibration)</p><p>&nbsp;</p><p>This country has respected the following transitional periods:</p><p>Directive2002/44/EC (vibration)</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+492, null, @sectionId, "REG_TRANSITIONAL");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+492, "EN", 1, "<p>This country has applied the following transitional periods:</p><p>Directive 93/103/EEC (fishing vessels)</p><p>Directive2002/44/EC (vibration)</p><p>Directive 2003/10/EC (noise)</p><p>Directive 90/270/EEC (DSE)</p><p>Directive 1999/92/EC (ATEX)</p><p>&nbsp;</p><p>This country has respected the following transitional periods:</p><p>Directive 93/103/EEC (fishing vessels)</p><p>Directive2002/44/EC (vibration)</p><p>Directive 2003/10/EC (noise)</p><p>Directive 90/270/EEC (DSE)</p><p>Directive 1999/92/EC (ATEX)</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+493, null, @sectionId, "REG_TRANSITIONAL");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+493, "EN", 1, "<p>This country has applied the following transitional periods:</p><p>Directive 92/91/EEC (drilling)</p><p>Directive 93/103/EEC (fishing vessels)</p><p>Directive2002/44/EC (vibration)</p><p>Directive 2003/10/EC (noise)</p><p>&nbsp;</p><p>This country has respected the following transitional periods:</p><p>Directive 92/91/EEC (drilling)</p><p>Directive 93/103/EEC (fishing vessels)</p><p>Directive2002/44/EC (vibration)</p><p>Directive 2003/10/EC (noise)</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+494, null, @sectionId, "REG_TRANSITIONAL");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+494, "EN", 1, "<p>This country has applied the following transitional periods:</p><p>Directive 92/91/EEC (drilling)</p><p>&nbsp;Directive 92/104/EEC (mines and quarries)</p><p>Directive 93/103/EEC (fishing vessels)</p><p>Directive2002/44/EC (vibration)</p><p>Directive 2003/10/EC (noise)</p><p>Directive 2009/104/EC (work equipment)</p><p>Directive 1999/92/EC (ATEX)</p><p>&nbsp;</p><p>This country has respected the following transitional periods:</p><p>Directive 92/91/EEC (drilling)</p><p>Directive 92/104/EEC (mines and quarries)</p><p>Directive 93/103/EEC (fishing vessels)</p><p>Directive2002/44/EC (vibration)</p><p>Directive 2003/10/EC (noise)</p><p>Directive 2009/104/EC (work equipment)</p><p>Directive 1999/92/EC (ATEX)</p><p>&nbsp;</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+495, null, @sectionId, "REG_TRANSITIONAL");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+495, "EN", 1, "<p>This country has applied the following transitional periods:</p><p>Directive 92/91/EEC (drilling)</p><p>Directive 92/104/EEC (mines and quarries)</p><p>Directive2002/44/EC (vibration)</p><p>Directive 2003/10/EC (noise)</p><p>Directive 2009/104/EC (work equipment)</p><p>Directive 90/270/EEC (DSE)</p><p>Directive 1999/92/EC (ATEX)</p><p>&nbsp;</p><p>This country has respected the following transitional periods:</p><p>Directive 92/91/EEC (drilling)</p><p>Directive 92/104/EEC (mines and quarries)</p><p>Directive2002/44/EC (vibration)</p><p>Directive 2003/10/EC (noise)</p><p>Directive 2009/104/EC (work equipment)</p><p>Directive 90/270/EEC (DSE)</p><p>Directive 1999/92/EC (ATEX)</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+496, null, @sectionId, "REG_TRANSITIONAL");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+496, "EN", 1, "<p>This country has applied the following transitional periods:</p><p>Directive2002/44/EC (vibration)</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+497, null, @sectionId, "REG_TRANSITIONAL");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+497, "EN", 1, "<p>This country has applied the following transitional periods:</p><p>Directive2002/44/EC (vibration)</p><p>Directive 2003/10/EC (noise)</p><p>&nbsp;</p><p>This country has respected the following transitional periods:</p><p>Directive2002/44/EC (vibration)</p><p>Directive 2003/10/EC (noise)</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+498, null, @sectionId, "REG_TRANSITIONAL");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+498, "EN", 1, "<p>This country has applied the following transitional periods:</p><p>Directive 92/91/EEC (drilling)</p><p>Directive 92/104/EEC (mines and quarries)</p><p>Directive 93/103/EEC (fishing vessels)</p><p>Directive2002/44/EC (vibration)</p><p>Directive 2003/10/EC (noise)</p><p>Directive 2009/104/EC (work equipment)</p><p>Directive 90/270/EEC (DSE)</p><p>Directive 1999/92/EC (ATEX)</p><p>&nbsp;</p><p>This country has respected the following transitional periods:</p><p>Directive 92/91/EEC (drilling)</p><p>Directive 92/104/EEC (mines and quarries)</p><p>Directive 93/103/EEC (fishing vessels)</p><p>Directive2002/44/EC (vibration)</p><p>Directive 2003/10/EC (noise)</p><p>Directive 2009/104/EC (work equipment)</p><p>Directive 90/270/EEC (DSE)</p><p>Directive 1999/92/EC (ATEX)</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+499, null, @sectionId, "REG_TRANSITIONAL");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+499, "EN", 1, "<p>This country has applied the following transitional periods:</p><p>Directive2002/44/EC (vibration)</p><p>Directive 2003/10/EC (noise)</p><p>Directive 1999/92/EC (ATEX)</p><p>&nbsp;</p><p>This country has respected the following transitional periods:</p><p>Directive2002/44/EC (vibration)</p><p>Directive 2003/10/EC (noise)</p><p>Directive 1999/92/EC (ATEX)</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+500, null, @sectionId, "REG_TRANSITIONAL");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+500, "EN", 1, "<p>This country has applied the following transitional periods:</p><p>Directive 93/103/EEC (fishing vessels)</p><p>Directive2002/44/EC (vibration)</p><p>Directive 2003/10/EC (noise)</p><p>Directive 2009/104/EC (work equipment)</p><p>Directive 90/270/EEC (DSE)</p><p>Directive 1999/92/EC (ATEX)</p><p>&nbsp;</p><p>This country has respected the following transitional periods:</p><p>Directive2002/44/EC (vibration)</p><p>Directive 2003/10/EC (noise)</p><p>Directive 90/270/EEC (DSE)</p><p>Directive 1999/92/EC (ATEX)</p><p>&nbsp;</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+501, null, @sectionId, "REG_TRANSITIONAL");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+501, "EN", 1, "<p>This country has applied the following transitional periods:</p><p>Directive2002/44/EC (vibration)</p><p>&nbsp;</p><p>This country has respected the following transitional periods:</p><p>Directive2002/44/EC (vibration)</p><p>&nbsp;</p><p>&nbsp;</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+502, null, @sectionId, "REG_TRANSITIONAL");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+502, "EN", 1, "<p>This country has applied the following transitional periods:</p><p>Directive2002/44/EC (vibration)</p><p>&nbsp;</p><p>This country has respected the following transitional periods:</p><p>Directive2002/44/EC (vibration)</p><p>&nbsp;</p><p>&nbsp;</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+503, null, @sectionId, "REG_TRANSITIONAL");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+503, "EN", 1, "<p>This country has respected the following transitional periods:</p><p>Directive2002/44/EC (vibration)</p><p>&nbsp;</p><p>&nbsp;</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+504, null, @sectionId, "REG_TRANSITIONAL");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+504, "EN", 1, "<p>This country has applied the following transitional periods:</p><p>Directive 93/103/EEC (fishing vessels)</p><p>Directive2002/44/EC (vibration)</p><p>Directive 2003/10/EC (noise)</p><p>Directive 90/270/EEC (DSE)</p><p>Directive 1999/92/EC (ATEX)</p><p>&nbsp;</p><p>This country has respected the following transitional periods:</p><p>Directive2002/44/EC (vibration)</p><p>Directive 2003/10/EC (noise)</p><p>Directive 1999/92/EC (ATEX)</p><p>&nbsp;</p><p>&nbsp;</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+505, null, @sectionId, "REG_TRANSITIONAL");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+505, "EN", 1, "<p>This country has applied the following transitional periods:</p><p>Directive2002/44/EC (vibration)</p><p>Directive 2003/10/EC (noise)</p><p>Directive 2009/104/EC (work equipment)</p><p>Directive 90/270/EEC (DSE)</p><p>Directive 1999/92/EC (ATEX)</p><p>&nbsp;</p><p>This country has respected the following transitional periods:</p><p>Directive2002/44/EC (vibration)</p><p>Directive 2003/10/EC (noise)</p><p>Directive 2009/104/EC (work equipment)</p><p>Directive 90/270/EEC (DSE)</p><p>Directive 1999/92/EC (ATEX)</p><p>&nbsp;</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+506, null, @sectionId, "REG_RA");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+506, "EN", 1, "This country has very good quantitative compliance (90%-100%)");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+507, null, @sectionId, "REG_RA");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+507, "EN", 1, "This country has good quantitative compliance (75%-89%)");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+508, null, @sectionId, "REG_RA");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+508, "EN", 1, "This country has moderate quantitative compliance (60%-74%)");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+509, null, @sectionId, "REG_RA");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+509, "EN", 1, "This country has poor quantitative compliance (40%-59%)");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+510, null, @sectionId, "REG_RA");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+510, "EN", 1, "This country has very poor quantitative compliance (0%-39%)");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+511, null, @sectionId, "REG_EXEMPTIONS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+511, "EN", 1, "No comments made");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+512, null, @sectionId, "REG_EXEMPTIONS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+512, "EN", 1, "<p>This country has provided the following&nbsp;lighter regimes for SMEs and micro enterprises:</p><p>Directive 89/391/EEC (framework)</p><p>Directive 93/103/EC (fishing vessels)</p><p>&nbsp;</p><p>This country has provided the following&nbsp;incentives for SMEs and micro enterprises:</p><p>Directive 89/391/EEC (framework)</p><p>Directive 2002/44/EC (vibration)</p><p>Directive 2003/10/EC (noise)</p><p>Directive 2006/25/EC (artificial optical radiation)</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+513, null, @sectionId, "REG_EXEMPTIONS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+513, "EN", 1, "<p>This country has provided the following&nbsp;exemptions&nbsp;for SMEs and micro enterprises:</p><p>Directive 89/391/EEC (framework)</p><p>&nbsp;</p><p>This country has provided the following&nbsp;incentives for SMEs and micro enterprises:</p><p>Directive 89/391/EEC (framework)</p><p>&nbsp;</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+514, null, @sectionId, "REG_EXEMPTIONS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+514, "EN", 1, "<p>This country has provided the following&nbsp;incentives&nbsp;for SMEs and micro enterprises:</p><p>Directive 2009/104/EC (work equipment)</p><p>Directive 92/57/EEC (construction)</p><p>&nbsp;</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+515, null, @sectionId, "REG_EXEMPTIONS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+515, "EN", 1, "<p>This country has provided the following&nbsp;exemptions&nbsp;for SMEs and micro enterprises:</p><p>&nbsp;Directive 89/391/EEC (framework)</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+516, null, @sectionId, "REG_EXEMPTIONS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+516, "EN", 1, "<p>This country has provided the following&nbsp;exemptions&nbsp;for SMEs and micro enterprises:</p><p>&nbsp;Directive 89/391/EEC (framework)</p><p>Directive 2000/54/EC (biological agents)</p><p>&nbsp;</p><p>This country has provided the following&nbsp;lighter regimes&nbsp;for SMEs and micro enterprises:</p><p>&nbsp;Directive 89/391/EEC (framework)</p><p>This country has provided the following&nbsp;incentives&nbsp;for SMEs and micro enterprises:</p><p>Directive 89/391/EEC (framework)</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+517, null, @sectionId, "REG_EXEMPTIONS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+517, "EN", 1, "<p>This country has provided the following&nbsp;exemptions&nbsp;for SMEs and micro enterprises:</p><p>Directive 89/391/EEC (framework)</p><p>&nbsp;</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+518, null, @sectionId, "REG_EXEMPTIONS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+518, "EN", 1, "<p>This country has provided the following&nbsp;incentives&nbsp;for SMEs and micro enterprises:</p><p>Directive 89/391/EEC (framework)</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+519, null, @sectionId, "REG_EXEMPTIONS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+519, "EN", 1, "<p>This country has provided the following&nbsp;incentives&nbsp;for SMEs and micro enterprises:</p><p>Directive 89/391/EEC (framework)</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+520, null, @sectionId, "REG_EXEMPTIONS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+520, "EN", 1, "<p>This country has provided the following&nbsp;exemptions&nbsp;for SMEs and micro enterprises:</p><p>Directive 89/391/EEC (framework)</p><p>Directive 89/654/EEC (workplace)</p><p>&nbsp;</p><p>This country has provided the following&nbsp;lighter regimes&nbsp;for SMEs and micro enterprises:</p><p>Directive 89/391/EEC (framework)</p><p>&nbsp;</p><p>This country has provided the following&nbsp;incentives&nbsp;for SMEs and micro enterprises:</p><p>Directive 89/391/EEC (framework)</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+521, null, @sectionId, "REG_EXEMPTIONS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+521, "EN", 1, "<p>This country has provided the following&nbsp;exemptions&nbsp;for SMEs and micro enterprises:</p><p>Directive 89/391/EEC (framework)</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+522, null, @sectionId, "REG_EXEMPTIONS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+522, "EN", 1, "<p>This country has provided the following&nbsp;exemptions&nbsp;for SMEs and micro enterprises:</p><p>Directive 89/391/EEC (framework)</p><p>&nbsp;</p><p>This country has provided the following&nbsp;incentives&nbsp;for SMEs and micro enterprises:</p><p>Directive 89/391/EEC (framework)</p><p>Directive 2009/104/EC (work equipment)</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+523, null, @sectionId, "REG_EXEMPTIONS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+523, "EN", 1, "<p>This country has provided the following&nbsp;lighter regimes&nbsp;for SMEs and micro enterprises:</p><p>Directive 89/391/EEC (framework)</p><p>&nbsp;</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+524, null, @sectionId, "REG_EXEMPTIONS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+524, "EN", 1, "<p>This country has provided the following&nbsp;lighter regimes&nbsp;for SMEs and micro enterprises:</p><p>Directive 89/391/EEC (framework)</p><p>&nbsp;</p><p>&nbsp;</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+525, null, @sectionId, "REG_EXEMPTIONS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+525, "EN", 1, "<p>This country has provided the following&nbsp;lighter regimes&nbsp;for SMEs and micro enterprises:</p><p>Directive 89/391/EEC (framework)</p><p>&nbsp;</p><p>This country has provided the following&nbsp;incentives&nbsp;for SMEs and micro enterprises:</p><p>Directive 89/391/EEC (framework)</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+526, null, @sectionId, "REG_EXEMPTIONS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+526, "EN", 1, "<p>This country has provided the following&nbsp;lighter regimes&nbsp;for SMEs and micro enterprises:</p><p>Directive 89/391/EEC (framework)</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+527, null, @sectionId, "REG_EXEMPTIONS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+527, "EN", 1, "<p>This country has provided the following&nbsp;lighter regimes&nbsp;for SMEs and micro enterprises:</p><p>Directive 89/391/EEC (framework)</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+528, null, @sectionId, "REG_EXEMPTIONS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+528, "EN", 1, "<p>This country has provided the following&nbsp;lighter regimes&nbsp;for SMEs and micro enterprises:</p><p>Directive 89/391/EEC (framework)</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+529, null, @sectionId, "REG_EXEMPTIONS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+529, "EN", 1, "<p>This country has provided the following&nbsp;exemptions&nbsp;for SMEs and micro enterprises:</p><p>Directive 92/57/EEC (construction)</p><p>&nbsp;</p><p>This country has provided the following&nbsp;incentives&nbsp;for SMEs and micro enterprises:</p><p>Directive 89/391/EEC (framework)</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+530, null, @sectionId, "REG_EXEMPTIONS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+530, "EN", 1, "<p>This country has provided the following&nbsp;exemptions&nbsp;for SMEs and micro enterprises:</p><p>&nbsp;Directive 89/391/EEC (framework)</p><p>&nbsp;</p><p>This country has provided the following&nbsp;lighter regimes&nbsp;for SMEs and micro enterprises:</p><p>&nbsp;Directive 89/391/EEC (framework)</p><p>&nbsp;</p><p>This country has provided the following&nbsp;incentives&nbsp;for SMEs and micro enterprises:</p><p>Directive 89/391/EEC (framework)</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+531, null, @sectionId, "REG_EXEMPTIONS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+531, "EN", 1, "<p>This country has provided the following&nbsp;exemptions&nbsp;for SMEs and micro enterprises:</p><p>Directive 89/391/EEC (framework)</p><p>&nbsp;</p><p>This country has provided the following&nbsp;lighter regimes&nbsp;for SMEs and micro enterprises:</p><p>Directive 89/391/EEC (framework)</p><p>&nbsp;</p><p>This country has provided the following&nbsp;incentives&nbsp;for SMEs and micro enterprises:</p><p>Directive 89/391/EEC (framework)</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+532, null, @sectionId, "REG_EXEMPTIONS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+532, "EN", 1, "<p>This country has provided the following&nbsp;lighter regimes&nbsp;for SMEs and micro enterprises:</p><p>Directive 89/391/EEC (framework)</p><p>&nbsp;</p><p>This country has provided the following&nbsp;incentives&nbsp;for SMEs and micro enterprises:</p><p>Directive 89/391/EEC (framework)</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+533, null, @sectionId, "REG_EXEMPTIONS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+533, "EN", 1, "<p>This country has provided the following&nbsp;exemptions&nbsp;for SMEs and micro enterprises:</p><p>Directive 89/391/EEC (framework)</p><p>Directive 92/57/EEC (construction)</p><p>&nbsp;</p><p>This country has provided the following&nbsp;lighter regimes&nbsp;for SMEs and micro enterprises:</p><p>&nbsp;Directive 92/29/EEC (medical treatment on board vessels)</p><p>Directive 93/103/EC (fishing vessels)</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+534, null, @sectionId, "REG_EXEMPTIONS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+534, "EN", 1, "<p>This country has provided the following&nbsp;exemptions&nbsp;for SMEs and micro enterprises:</p><p>Directive 89/391/EEC (framework)</p><p>&nbsp;</p><p>This country has provided the following&nbsp;lighter regimes&nbsp;for SMEs and micro enterprises:</p><p>Directive 89/391/EEC (framework)</p><p>&nbsp;</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+535, null, @sectionId, "REG_EXEMPTIONS");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+535, "EN", 1, "<p>This country has provided the following&nbsp;lighter regimes&nbsp;for SMEs and micro enterprises:</p><p>Directive 89/391/EEC (framework)</p><p>&nbsp;</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+536, null, @sectionId, "REG_SMES");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+536, "EN", 1, "Note: No comment made");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+537, null, @sectionId, "REG_SMES");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+537, "EN", 1, "Successfully reaching SMEs is and continues to be a weak point. Implementation is good when there are large in-house preventive services; in SMEs, however, risk assessment poses problems and the number of visits by external services to SMEs is unsatisfactory. ‘Emerging risks’ such as psychosocial stress and MSDs are increasing in all enterprises and are not being adequately countered by the Directives.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+538, null, @sectionId, "REG_SMES");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+538, "EN", 1, "Good organisation of OSH management has been ensured in most large and medium-sized enterprises. The micro and small enterprises and a percentage of the medium-sized ones are experiencing difficulties in this respect, due to the fact that they have no established traditions, that the employers do not possess sufficient managerial experience and that they are not well informed about the labour legislation and the requirements for safety and health at work.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+539, null, @sectionId, "REG_SMES");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+539, "EN", 1, "The practical difficulties encountered in ensuring that the directives achieve their aims relate to the inability of small businesses to comply with the requirements of the directives, due to the lack of know-how, equipment, appropriate means, suitably qualified staff, and capital. In addition, small businesses fail to provide sufficient documentation of the measures taken to ensure the compliance of employers with the relevant legislation. One example is the lack of appropriate risk assessment reporting and the absence of equipment maintenance documents, accident records and personnel training.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+540, null, @sectionId, "REG_SMES");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+540, "EN", 1, "The information available indicates that small and medium-sized enterprises have no difficulties in meeting the requirements set out in applicable legislation stemming from the relevant Directives. Any difficulties that small and medium- sized enterprises do face have no basis in the Directives, as these lay down only minimum standards.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+541, null, @sectionId, "REG_SMES");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+541, "EN", 1, "The federal state supervisory authorities found that Directives with insufficiently detailed targets cause problems for SMEs. As the OSH Directives allow latitude for interpretation, the type and scope of precautions caused difficult discussions in  some  cases.  Employers  often  ask  if  and  when  and  to  what  extent  the provisions of the Directives are binding in other EU Member States. Often SMEs have no overview of the transposition of the OSH Directives into national law, in terms of scope, complexity and application in selected areas. Often SMEs do not have well-trained OSH officers. There is little acceptance of the cost and time needed to implement OSH provisions. Compared with large companies and groups, SMEs generally have to pay handsomely for advice from experienced OSH experts. This makes it difficult and costly for SMEs to implement OSH standards. The DGB also complains of inadequate implementation of OSH obligations in SMEs, which it ascribes in part to inadequate specification in OSH rules or to inadequate supervision by the competent authorities.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+542, null, @sectionId, "REG_SMES");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+542, "EN", 1, "In the course of its inspection work, the Danish Working Environment Authority has become aware that it can be difficult for small undertakings to have the necessary working-environment expertise themselves.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+543, null, @sectionId, "REG_SMES");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+543, "EN", 1, "The problems are firstly related to the scarcity of financial possibilities for investing in the working environment, understanding of the need for the compliance with the requirements, lack of the required knowledge as well as high market prices of mandatory services (training courses for working environment representatives and first aid providers, medical examinations of workers, etc.) provided to the employer.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+544, null, @sectionId, "REG_SMES");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+544, "EN", 1, "The main difficulty faced by SMEs in following the Directive’s requirements is the lack of financial and human resources.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+545, null, @sectionId, "REG_SMES");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+545, "EN", 1, "However, the negative aspects of the new framework’s introduction included the fact that the speed with which the Community legislation on health and safety at work was transposed into Spanish law, as well as the multitude and complexity of legislation on occupational risk prevention, make compliance difficult, particularly For small and medium-sized enterprises.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+546, null, @sectionId, "REG_SMES");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+546, "EN", 1, "Note: While Finland does not answer the question in the general section 1, the answer 'no' has been provided for the Framework Directive and all other OSH Directives (with one note for the Medical treatment on board vessels Directive.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+547, null, @sectionId, "REG_SMES");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+547, "EN", 1, "Microenterprises and SMEs encounter difficulties when they try to meet their occupational-risk prevention obligations, chiefly for want of human, technical and financial resources, for want of information or, conversely, because they are bombarded with too much fragmented information.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+548, null, @sectionId, "REG_SMES");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+548, "EN", 1, "A lot of SMEs, however, have cut back on their health and safety expenditure (laying off health and safety experts, cancelling service contracts, failure to carry out instrumental occupational hygiene tests of the work environment or the examination of the biological exposure/impact indicators, deficiencies of the supply of personal protective equipment and information etc.), which poses direct risks to the health and safety of workers.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+549, null, @sectionId, "REG_SMES");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+549, "EN", 1, "A frustration among many small firms is that there appears to be little synergy between the current implementation of directives. There also appears to be little or no regard for the small business environment, where little or no account is taken for the additional administrative and compliance burden that is placed on them relative to larger organisations.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+550, null, @sectionId, "REG_SMES");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+550, "EN", 1, "Note: Question not included");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+551, null, @sectionId, "REG_SMES");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+551, "EN", 1, "Note:  No clear response is provided, but for most individual Directives the answer is 'no'.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+552, null, @sectionId, "REG_SMES");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+552, "EN", 1, "Luxembourg has no information on any particular difficulties encountered by SMEs.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+553, null, @sectionId, "REG_SMES");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+553, "EN", 1, "Information on the potential difficulties of SMEs in following the requirements of specific directives is not available in Latvia; however, according to the survey of work conditions and risks in Latvia all work safety measures are implemented by micro enterprises less often than the country average.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+554, null, @sectionId, "REG_SMES");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+554, "EN", 1, "Studies have shown that contrary to small enterprises, large companies are generally better equipped to have and develop safe work practices");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+555, null, @sectionId, "REG_SMES");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+555, "EN", 1, "Compliance in SMEs is lagging behind for each of the obligations. It also appears here that the degree of compliance is linked to the size of the undertaking.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+556, null, @sectionId, "REG_SMES");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+556, "EN", 1, "Difficulties in following the requirements of Directives regarding health and safety of workers in SMEs are linked primarily with a lack of sufficient financial resources for the performance of obligations in respect of health and safety at work. Furthermore, in accordance with applicable provisions, employers who employ up to 100 workers are not obliged to create a health and safety at work service. (They can entrust the performance of health and safety at work tasks to a staff member already carrying out another job, or - in the event of absence of competent workers - to external specialists). As a result, at such employers premises some duties in the field of health and safety at work are not performed or their performance is not satisfactory.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+557, null, @sectionId, "REG_SMES");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+557, "EN", 1, "Yes. In general, small and micro-enterprises which represent about 90 % of companies in Portugal, do not, as a rule, have sufficient technical skills in the areas of health and safety at work, in the absence of a recognised culture of risk prevention.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+558, null, @sectionId, "REG_SMES");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+558, "EN", 1, "The main difficulties for SMEs are financial: insufficient funds to replace and modernise all work equipment, high cost of modern work equipment for handling load, and insufficient financial resources to conduct the medical examinations provided for in the Directive, etc.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+559, null, @sectionId, "REG_SMES");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+559, "EN", 1, "During the investigations that have been carried out, small undertakings have, among other things, reported a lack of time for work environment management and a perception of the regulations as being complicated. The Swedish Work 22 (31) Environment Authority has found, through its inspections, some major shortcomings in knowledge of work environment management among small and medium-sized enterprises.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+560, null, @sectionId, "REG_SMES");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+560, "EN", 1, "Substantive reasons for these problems, besides the current economic crisis, include the following factors: - they lack funding and do not have resources set aside to keep equipment in a safe and working condition, or to verify the safety of work equipment or other facilities used; - they do not employ their own occupational safety and health specialists, instead hiring external technical safety services; - it is up to them to choose a quality business authorised to provide safety technical services (they do not always select a quality outfit).");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+561, null, @sectionId, "REG_SMES");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+561, "EN", 1, "Note: Comment is from q2.8: We can summarise, from the annual reports on the work of the Labour Inspectorate, that employers are too frequently unaware of the importance of ensuring health and safety at work; this applies in particular to those employers who entrust all health and safety at work tasks to outside contractors. When they sign contracts with an outside contractor, employers often seem to believe that they have done everything required to ensure health and safety at work.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+562, null, @sectionId, "REG_SMES");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+562, "EN", 1, "Allocating sufficient time and resources to document the risk assessment, particularly where various activities are involved or they are complex or technical in nature. Accessing external occupational safety and health services and the cost of such services, particularly where assistance might be needed to evaluate and control multiple risks in the workplace.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="AUTHORITY" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="OSH authorities" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+563, null, @sectionId, "BUTTON");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+563, "EN", 1, "<strong>Download the country data</strong>");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+563, "EN", 1, "Download the country data");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRATEGIES" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+564, null, @sectionId, "BUTTON");
+SET @sectionId = (SELECT id FROM section WHERE name="Not used" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+564, null, @sectionId, "National strategies");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+564, "EN", 1, "<strong>Full country report</strong>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="WORKACC" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+565, null, @sectionId, "CHART FOOTER");
+SET @sectionId = (SELECT id FROM section WHERE name="Work accidents" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+565, 20022, @sectionId, "CHART FOOTER");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+565, "EN", 1, "The diagram shows the development of non-fatal work accidents between 2010 until the latest available year. The year 2010 has been set as baseline (2010 = 100). The country lines and the EU line (dark blue) show the trend as percentage of the value of this base year.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="WORKACC" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+566, null, @sectionId, "CHART FOOTER");
+SET @sectionId = (SELECT id FROM section WHERE name="Work accidents" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+566, 20023, @sectionId, "CHART FOOTER");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+566, "EN", 1, "<p>This diagram shows the average number of fatal accidents for every Member State per 100 000 employees in two periods: 2010 - 2014 and 2015 - 2018. The source of the data is the incidence rate as published by Eurostat.</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="WORKACC" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+567, null, @sectionId, "CHART FOOTER");
+SET @sectionId = (SELECT id FROM section WHERE name="Not used" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+567, null, @sectionId, "Work accidents");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+567, "EN", 1, "This chart combines registered data with estimated data. It shows an estimate of the number of non-fatal accidents based on the number of fatal accidents.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="WORKACC" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+568, null, @sectionId, "CHART FOOTER");
+SET @sectionId = (SELECT id FROM section WHERE name="Not used" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+568, null, @sectionId, "Work accidents");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+568, "EN", 1, "This chart shows the level of reporting of non-fatal accidents. It is based on the number of fatal accidents.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="OSH_CULTURE" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+569, null, @sectionId, "CHART FOOTER");
+SET @sectionId = (SELECT id FROM section WHERE name="Not used" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+569, null, @sectionId, "OSH culture and health awareness");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+569, "EN", 1, "The diagram displays the responses in the ESENER 2019 Survey to the question: “Are sickness absences routinely analysed with a view to improving the working conditions?”");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="OSH_CULTURE" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+570, null, @sectionId, "CHART FOOTER");
+SET @sectionId = (SELECT id FROM section WHERE name="OSH culture and health awareness" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+570, 20091, @sectionId, "CHART FOOTER");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+570, "EN", 1, "The diagram presents the responses in the ESENER 2019 Survey to the question: “How often is health and safety discussed between employee representatives and the management? Do such discussions take place regularly, only when particular health and safety issues arise or not at all?”");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="OSH_CULTURE" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+571, null, @sectionId, "CHART FOOTER");
+SET @sectionId = (SELECT id FROM section WHERE name="OSH culture and health awareness" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+571, 20092, @sectionId, "CHART FOOTER");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+571, "EN", 1, "The diagram presents the responses in the ESENER 2019 Survey to the question: “Does your establishment have an action plan to prevent work-related stress?”");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="OSH_CULTURE" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+572, null, @sectionId, "CHART FOOTER");
+SET @sectionId = (SELECT id FROM section WHERE name="OSH culture and health awareness" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+572, 20093, @sectionId, "CHART FOOTER");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+572, "EN", 1, "The diagram presents the responses in the ESENER 2019 Survey to the question: “Is there a procedure in place to deal with possible cases of bullying or harassment?”");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="OSH_CULTURE" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+573, null, @sectionId, "CHART FOOTER");
+SET @sectionId = (SELECT id FROM section WHERE name="OSH culture and health awareness" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+573, 20094, @sectionId, "CHART FOOTER");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+573, "EN", 1, "The diagram presents the responses in the ESENER 2019 Survey to the question: “Is there a procedure to deal with possible cases of threats, abuse or assaults by clients, patients pupils or members in public?”");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="OSH_CULTURE" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+574, null, @sectionId, "CHART FOOTER");
+SET @sectionId = (SELECT id FROM section WHERE name="OSH culture and health awareness" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+574, 20095, @sectionId, "CHART FOOTER");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+574, "EN", 1, "The diagram is based on the ESENER 2019 Survey. It presents one of the possible responses to the question: “In the last 3 years, has your establishment used any of the following measures to prevent psychosocial risks?” The diagram shows the response to the following answer option: “Reorganisation of work in order to reduce job demands and work pressure”");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="OSH_CULTURE" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+575, null, @sectionId, "CHART FOOTER");
+SET @sectionId = (SELECT id FROM section WHERE name="OSH culture and health awareness" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+575, 20038, @sectionId, "CHART FOOTER");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+575, "EN", 1, "The diagram presents the responses in the European Working Conditions Survey 2015 (EWCS) to the question : “Does your job ever require that you wear personal protective equipment and do you use it?”");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="OSH_CULTURE" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+576, null, @sectionId, "CHART FOOTER");
+SET @sectionId = (SELECT id FROM section WHERE name="OSH culture and health awareness" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+576, 20039, @sectionId, "CHART FOOTER");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+576, "EN", 1, "The diagram presents the responses in the European Working Conditions Survey 2015 (EWCS) to the question: “How well informed are you about health and safety risks related to your job?”");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="WORKING_CONDITIONS" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Working conditions" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+577, null, @sectionId, "OVERALL_OP_HEADER");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+577, "EN", 1, "This topic displays data on the workers´ overall general assessment of risks and their overall satisfaction with working conditions. Note: Percentages might not total 100% because of rounding.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="WORKING_CONDITIONS" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Working conditions" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+578, null, @sectionId, "MENTAL_RISKS_HEADER");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+578, "EN", 1, "This topic displays data from surveys on certain important aspects of mental risks such as time pressure, poor communication or cooperation, employees´ lack of influence, job insecurity, difficult customers or clients, long or irregular working hours and discrimination. Note: Percentages might not total 100% because of rounding.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="WORKING_CONDITIONS" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Working conditions" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+579, null, @sectionId, "PHYSICAL_RISKS_HEADER");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+579, "EN", 1, "	This topic displays data on exposure to chemical and biological substances, exposure to noise, vibrations and high or low temperatures, and working tasks involving carrying, lifting or work in tiring or painful positions.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="OVERALL_OP" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+580, null, @sectionId, "CHART FOOTER");
+SET @sectionId = (SELECT id FROM section WHERE name="Working conditions - Overall opinion" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+580, 20040, @sectionId, "CHART FOOTER");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+580, "EN", 1, "The diagram presents the responses in the European Working Conditions Survey 2015 (EWCS) to the question: “How satisfied are you with working conditions in your main paid job?”");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="OVERALL_OP" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+581, null, @sectionId, "CHART FOOTER");
+SET @sectionId = (SELECT id FROM section WHERE name="Working conditions - Overall opinion" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+581, 20041, @sectionId, "CHART FOOTER");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+581, "EN", 1, "The diagram presents the 'yes' responses in the European Working Conditions Survey 2015 (EWCS) - by Member State and gender- to the question: “Do you think your health or safety is at risk because of your work?”");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="OVERALL_OP" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+582, null, @sectionId, "CHART FOOTER");
+SET @sectionId = (SELECT id FROM section WHERE name="Working conditions - Overall opinion" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+582, 20041, @sectionId, "CHART FOOTER");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+582, "EN", 1, "The diagram presents the 'yes' responses in the European Working Conditions Survey 2015 (EWCS) - by Member State and sector - to the question : “Do you think your health or safety is at risk because of your work?”");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="OVERALL_OP" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+583, null, @sectionId, "CHART FOOTER");
+SET @sectionId = (SELECT id FROM section WHERE name="Working conditions - Overall opinion" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+583, 20041, @sectionId, "CHART FOOTER");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+583, "EN", 1, "The diagram presents the 'yes' responses in the European Working Conditions Survey 2015 (EWCS) - by Member State and age - to the question : “Do you think your health or safety is at risk because of your work?”");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="MENTAL_RISKS" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+584, null, @sectionId, "CHART FOOTER");
+SET @sectionId = (SELECT id FROM section WHERE name="Working conditions - Mental risk" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+584, 20073, @sectionId, "CHART FOOTER");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+584, "EN", 1, "The diagram presents the responses in the European Working Conditions Survey 2015 (EWCS) to the question: “Does your job involve working to tight deadlines?”");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="MENTAL_RISKS" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+585, null, @sectionId, "CHART FOOTER");
+SET @sectionId = (SELECT id FROM section WHERE name="Working conditions - Mental risk" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+585, 20096, @sectionId, "CHART FOOTER");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+585, "EN", 1, "The diagram is based on the ESENER 2019 Survey. It presents one of the possible responses to the question: “Please tell me for each of the following risks whether or not it is present in the establishment?” The diagram shows the response to the following answer option: “Time pressure”.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="MENTAL_RISKS" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+586, null, @sectionId, "CHART FOOTER");
+SET @sectionId = (SELECT id FROM section WHERE name="Working conditions - Mental risk" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+586, 20074, @sectionId, "CHART FOOTER");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+586, "EN", 1, "The diagram presents a composite indicator “Level of fairness, cooperation and trust” based on responses to a number of questions in the European Working Conditions Survey 2015 (EWCS).");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="MENTAL_RISKS" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+587, null, @sectionId, "CHART FOOTER");
+SET @sectionId = (SELECT id FROM section WHERE name="Working conditions - Mental risk" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+587, 20097, @sectionId, "CHART FOOTER");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+587, "EN", 1, "The diagram is based on the ESENER 2019 Survey. It presents one of the possible responses to the question: “Please tell me for each of the following risks whether or not it is present in the establishment?” The diagram shows the response to the following answer option: “Poor communication or cooperation.”");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="MENTAL_RISKS" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+588, null, @sectionId, "CHART FOOTER");
+SET @sectionId = (SELECT id FROM section WHERE name="Working conditions - Mental risk" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+588, 20075, @sectionId, "CHART FOOTER");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+588, "EN", 1, "The diagram presents the responses in the European Working Conditions Survey 2015 (EWCS) to the question: “Can you influence decisions that are important for your work?”");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="MENTAL_RISKS" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+589, null, @sectionId, "CHART FOOTER");
+SET @sectionId = (SELECT id FROM section WHERE name="Not used" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+589, null, @sectionId, "Working conditions - Mental risk");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+589, "EN", 1, "The diagram is based on the ESENER 2019 Survey. It presents one of the possible responses to the question: “Please tell me for each of the following risks whether or not it is present in the establishment?” The diagram shows the response to the following answer option: “Employees’ lack of influence over their work pace or work processes.”");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="MENTAL_RISKS" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+590, null, @sectionId, "CHART FOOTER");
+SET @sectionId = (SELECT id FROM section WHERE name="Working conditions - Mental risk" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+590, 20076, @sectionId, "CHART FOOTER");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+590, "EN", 1, "The diagram presents the responses in the European Working Conditions Survey 2015 (EWCS) to the question: “I might lose my job in the next 6 months”");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="MENTAL_RISKS" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+591, null, @sectionId, "CHART FOOTER");
+SET @sectionId = (SELECT id FROM section WHERE name="Working conditions - Mental risk" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+591, 20098, @sectionId, "CHART FOOTER");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+591, "EN", 1, "The diagram is based on the ESENER 2019 Survey. It presents one of the possible responses to the question: “Please tell me for each of the following risks whether or not it is present in the establishment?” The diagram shows the response to the following answer option: “Fear of job loss.”");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="MENTAL_RISKS" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+592, null, @sectionId, "CHART FOOTER");
+SET @sectionId = (SELECT id FROM section WHERE name="Working conditions - Mental risk" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+592, 20077, @sectionId, "CHART FOOTER");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+592, "EN", 1, "The diagram presents the responses in the European Working Conditions Survey 2015 (EWCS) to the question: “Does your work involve handling angry clients?”");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="MENTAL_RISKS" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+593, null, @sectionId, "CHART FOOTER");
+SET @sectionId = (SELECT id FROM section WHERE name="Working conditions - Mental risk" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+593, 20099, @sectionId, "CHART FOOTER");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+593, "EN", 1, "The diagram is based on the ESENER 2019 Survey. It presents one of the possible responses to the question: “Please tell me for each of the following risks whether or not it is present in the establishment?” The diagram shows the response to the following answer option: “Having to deal with difficult customers, patients, pupils etc“.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="MENTAL_RISKS" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+594, null, @sectionId, "CHART FOOTER");
+SET @sectionId = (SELECT id FROM section WHERE name="Working conditions - Mental risk" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+594, 20078, @sectionId, "CHART FOOTER");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+594, "EN", 1, "The diagram presents the responses in the European Working Conditions Survey 2015 (EWCS) to the question: “How many times a month do you work more than 10 hours a day?”");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="MENTAL_RISKS" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+595, null, @sectionId, "CHART FOOTER");
+SET @sectionId = (SELECT id FROM section WHERE name="Working conditions - Mental risk" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+595, 20100, @sectionId, "CHART FOOTER");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+595, "EN", 1, "The diagram is based on the ESENER 2019 Survey. It presents one of the possible responses to the question: “Please tell me for each of the following risks whether or not it is present in the establishment?” The diagram shows the response to the following answer option: “Long or irregular working hours.“");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="MENTAL_RISKS" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+596, null, @sectionId, "CHART FOOTER");
+SET @sectionId = (SELECT id FROM section WHERE name="Working conditions - Mental risk" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+596, 20079, @sectionId, "CHART FOOTER");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+596, "EN", 1, "The diagram presents the responses in the European Working Conditions Survey 2015 (EWCS) to the question: “Have you been subjected to discrimination at work in the last 12 months?”");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="MENTAL_RISKS" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+597, null, @sectionId, "CHART FOOTER");
+SET @sectionId = (SELECT id FROM section WHERE name="Not used" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+597, null, @sectionId, "Working conditions - Mental risk");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+597, "EN", 1, "The diagram presents the responses in the ESENER 2019 Survey to the question: “Have you been subjected to discrimination at work in the last 12 months?”");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="PHYSICAL_RISKS" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+598, null, @sectionId, "CHART FOOTER");
+SET @sectionId = (SELECT id FROM section WHERE name="Working conditions - Physical risk" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+598, 20053, @sectionId, "CHART FOOTER");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+598, "EN", 1, "The diagram presents the responses in the European Working Conditions Survey 2015 (EWCS) to the question: “Are you exposed to breathing in smoke, fumes, powder or dust?”");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="PHYSICAL_RISKS" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+599, null, @sectionId, "CHART FOOTER");
+SET @sectionId = (SELECT id FROM section WHERE name="Working conditions - Physical risk" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+599, 20054, @sectionId, "CHART FOOTER");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+599, "EN", 1, "The diagram presents the responses in the European Working Conditions Survey 2015 (EWCS) to the question: “Are you exposed to breathing in vapours?”");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="PHYSICAL_RISKS" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+600, null, @sectionId, "CHART FOOTER");
+SET @sectionId = (SELECT id FROM section WHERE name="Working conditions - Physical risk" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+600, 20055, @sectionId, "CHART FOOTER");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+600, "EN", 1, "The diagram presents the responses in the European Working Conditions Survey 2015 (EWCS) to the question: “Are you exposed to chemical products or substances?”");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="PHYSICAL_RISKS" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+601, null, @sectionId, "CHART FOOTER");
+SET @sectionId = (SELECT id FROM section WHERE name="Working conditions - Physical risk" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+601, 20056, @sectionId, "CHART FOOTER");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+601, "EN", 1, "The diagram presents the responses in the European Working Conditions Survey 2015 (EWCS) to the question: “Are you exposed to materials which can be infectious?”");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="PREVENTION" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+602, null, @sectionId, "CHART FOOTER");
+SET @sectionId = (SELECT id FROM section WHERE name="Prevention in companies" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+602, 20102, @sectionId, "CHART FOOTER");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+602, "EN", 1, "The diagram presents the 'yes' responses in the ESENER 2019 Survey - by Member State and company size - to the question : “Does your establishment regularly carry out workplace risk assessments?”");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="PREVENTION" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+603, null, @sectionId, "CHART FOOTER");
+SET @sectionId = (SELECT id FROM section WHERE name="Prevention in companies" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+603, 20102, @sectionId, "CHART FOOTER");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+603, "EN", 1, "The diagram displays 'yes' the responses in the ESENER 2019 Survey - by Member State and sector - to the question : “Does your establishment regularly carry out workplace risk assessments?”");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="PREVENTION" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+604, null, @sectionId, "CHART FOOTER");
+SET @sectionId = (SELECT id FROM section WHERE name="Prevention in companies" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+604, 20103, @sectionId, "CHART FOOTER");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+604, "EN", 1, "The diagram displays the responses in the ESENER 2019 Survey to the question: “Are workplace risk assessments mainly conducted by internal staff or are they contracted to external service providers?”");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="PREVENTION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Prevention in companies" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+605, null, @sectionId, "CHART FOOTER");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+605, "EN", 1, "<p>Responses to Evaluated aspects can be found in <a href=\"https://visualisation.osha.europa.eu/esener#!/en/survey/detailpage-european-map/2019/osh-management/en_1/E3Q252_1/activity-sector/14/11/1\" target=\"_blank\">ESENER 2019 Survey</a> in the section OSH Management – Aspects evaluated in the workplace risk assessment. For further information please, check the <a target=\"blank\" href=\"https://oshwiki.eu/wiki/ESENER-3_Methodology\">ESENER methodology.</a></p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="PREVENTION" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+606, null, @sectionId, "CHART FOOTER");
+SET @sectionId = (SELECT id FROM section WHERE name="Prevention in companies" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+606, 20104, @sectionId, "CHART FOOTER");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+606, "EN", 1, "<p>The diagram displays the responses in the ESENER 2019 Survey to the question: “Are the health and safety representatives provided with any training during work time?”. additional information about this indicator can be obtained in ESENER 2019 Survey in the section OSH Management – Lack of information or adequate tools to deal with the risk effectively</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="PREVENTION" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+607, null, @sectionId, "CHART FOOTER");
+SET @sectionId = (SELECT id FROM section WHERE name="Prevention in companies" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+607, 20105, @sectionId, "CHART FOOTER");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+607, "EN", 1, "The diagram displays the 'yes' responses in the ESENER 2019 Survey - by Member State and company size - to the question : “Did the employees have a role in the design and set-up of measures to address psychosocial risks?”");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="PREVENTION" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+608, null, @sectionId, "CHART FOOTER");
+SET @sectionId = (SELECT id FROM section WHERE name="Prevention in companies" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+608, 20105, @sectionId, "CHART FOOTER");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+608, "EN", 1, "The diagram displays the 'yes' responses in the ESENER 2019 Survey - by Member State and sector - to the question : “Did the employees have a role in the design and set-up of measures to address psychosocial risks?”");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="CROSS_SECTION" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+609, null, @sectionId, "FILTER_MESSAGE");
+SET @sectionId = (SELECT id FROM section WHERE name="Common literals" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+609, null, @sectionId, "FILTER MESSAGE");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+609, "EN", 1, "DATA FOR");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="CROSS_SECTION" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+610, null, @sectionId, "FILTER_MESSAGE");
+SET @sectionId = (SELECT id FROM section WHERE name="Common literals" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+610, null, @sectionId, "FILTER MESSAGE");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+610, "EN", 1, "COMPARE WITH");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="OSH_AUTHORITIES" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+611, null, @sectionId, "INSTITUTION_TYPE");
+SET @sectionId = (SELECT id FROM section WHERE name="OSH authorities" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+611, null, @sectionId, "INSTITUTION TYPE");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+611, "EN", 1, "	Compensation and insurance body");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="OSH_AUTHORITIES" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+612, null, @sectionId, "INSTITUTION_TYPE");
+SET @sectionId = (SELECT id FROM section WHERE name="OSH authorities" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+612, null, @sectionId, "INSTITUTION TYPE");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+612, "EN", 1, "Prevention institute");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="OSH_AUTHORITIES" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+613, null, @sectionId, "INSTITUTION_TYPE");
+SET @sectionId = (SELECT id FROM section WHERE name="OSH authorities" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+613, null, @sectionId, "INSTITUTION TYPE");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+613, "EN", 1, "Standardisation body");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="OSH_AUTHORITIES" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+614, null, @sectionId, "INSTITUTION_TYPE");
+SET @sectionId = (SELECT id FROM section WHERE name="OSH authorities" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+614, null, @sectionId, "INSTITUTION TYPE");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+614, "EN", 1, "OSH authority");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="WORKFORCE_PROFILE" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+615, null, @sectionId, "TOOLTIP");
+SET @sectionId = (SELECT id FROM section WHERE name="Workforce profile" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+615, 20012, @sectionId, "TOOLTIP");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+615, "EN", 1, "Median age of population:");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="WORKFORCE_PROFILE" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+616, null, @sectionId, "TOOLTIP");
+SET @sectionId = (SELECT id FROM section WHERE name="Workforce profile" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+616, 20012, @sectionId, "TOOLTIP");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+616, "EN", 1, "Employment rate (55 - 64):");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="WORKFORCE_PROFILE" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+617, null, @sectionId, "TOOLTIP");
+SET @sectionId = (SELECT id FROM section WHERE name="Workforce profile" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+617, 20012, @sectionId, "TOOLTIP");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+617, "EN", 1, "Employment rate (total):");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="WORKFORCE_PROFILE" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+618, null, @sectionId, "TOOLTIP");
+SET @sectionId = (SELECT id FROM section WHERE name="Workforce profile" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+618, 20012, @sectionId, "TOOLTIP");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+618, "EN", 1, "Employment rate (male):");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="WORKFORCE_PROFILE" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+619, null, @sectionId, "TOOLTIP");
+SET @sectionId = (SELECT id FROM section WHERE name="Workforce profile" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+619, 20012, @sectionId, "TOOLTIP");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+619, "EN", 1, "Employment rate (female):");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="WORKFORCE_PROFILE" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+620, null, @sectionId, "TOOLTIP");
+SET @sectionId = (SELECT id FROM section WHERE name="Workforce profile" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+620, 20012, @sectionId, "TOOLTIP");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+620, "EN", 1, "years");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="WORKFORCE_PROFILE" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+621, null, @sectionId, "FILTER_LITERAL");
+SET @sectionId = (SELECT id FROM section WHERE name="Workforce profile" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+621, 20012, @sectionId, "FILTER LITERAL");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+621, "EN", 1, "Employment rate");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="WORKFORCE_PROFILE" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+622, null, @sectionId, "FILTER_LITERAL");
+SET @sectionId = (SELECT id FROM section WHERE name="Workforce profile" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+622, 20012, @sectionId, "FILTER LITERAL");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+622, "EN", 1, "EMPLOYEE GROUP");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="WORKFORCE_PROFILE" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+623, null, @sectionId, "FILTER_TOP");
+SET @sectionId = (SELECT id FROM section WHERE name="Workforce profile" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+623, 20012, @sectionId, "FILTER TOP");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+623, "EN", 1, "SELECT THE INDICATOR");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="NATIONAL_STRATEGIES_HOMEPAGE" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="National strategies" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+625, null, @sectionId, "BUTTON");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+625, "EN", 1, "Responses to EU Challenges");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="NATIONAL_STRATEGIES_HOMEPAGE" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="National strategies" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+626, null, @sectionId, "BUTTON");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+626, "EN", 1, "Explore National strategies");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="NATIONAL_STRATEGIES_HOMEPAGE" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+627, null, @sectionId, "FILTER_LITERAL");
+SET @sectionId = (SELECT id FROM section WHERE name="Not used" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+627, null, @sectionId, "National strategies");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+627, "EN", 1, "FILTER BY LETTER");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="NATIONAL_STRATEGIES_HOMEPAGE" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+628, null, @sectionId, "FILTER_LITERAL");
+SET @sectionId = (SELECT id FROM section WHERE name="National strategies" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+628, null, @sectionId, "FILTER BUTTON");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+628, "EN", 1, "RESET FILTER");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="RESPONSE_STRATEGY" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+629, null, @sectionId, "FILTER_TOP");
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+629, null, @sectionId, "FILTER TOP");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+629, "EN", 1, "Challenges");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="RESPONSE_STRATEGY" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+630, null, @sectionId, "FILTER_TOP");
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+630, null, @sectionId, "FILTER TOP");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+630, "EN", 1, "Country");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="RESPONSE_STRATEGY" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+631, null, @sectionId, "FILTER_LITERAL");
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+631, null, @sectionId, "FILTER LITERAL");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+631, "EN", 1, "Implementation record");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="RESPONSE_STRATEGY" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+632, null, @sectionId, "FILTER_LITERAL");
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+632, null, @sectionId, "FILTER LITERAL");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+632, "EN", 1, "Prevention of work-related diseases");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="RESPONSE_STRATEGY" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+633, null, @sectionId, "FILTER_LITERAL");
+SET @sectionId = (SELECT id FROM section WHERE name="Responses of national strategies to EU challenges" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+633, null, @sectionId, "FILTER LITERAL");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+633, "EN", 1, "Tackling demographic change");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="RESPONSE_STRATEGY" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+636, null, @sectionId, "FILTER_LITERAL");
+SET @sectionId = (SELECT id FROM section WHERE name="Not used" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+636, null, @sectionId, "Responses of national strategies to EU challenges");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+636, "EN", 1, "Confirm");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="SOCIAL_DIALOGUE" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Social dialogue" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+637, null, @sectionId, "BUTTON");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+637, "EN", 1, "Download report");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="WORKACC" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+638, null, @sectionId, "BUTTON");
+SET @sectionId = (SELECT id FROM section WHERE name="Not used" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+638, null, @sectionId, "Work accidents");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+638, "EN", 1, "Zoom");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="WORKACC" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+639, null, @sectionId, "BUTTON");
+SET @sectionId = (SELECT id FROM section WHERE name="Not used" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+639, null, @sectionId, "Work accidents");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+639, "EN", 1, "Download");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="STRUCTURE_STRATEGY" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+640, null, @sectionId, "BUTTON");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+640, "EN", 1, "Download strategy description");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="WORKACC" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+645, null, @sectionId, "FILTER_LITERAL");
+SET @sectionId = (SELECT id FROM section WHERE name="Work accidents" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+645, null, @sectionId, "FILTER LITERAL");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+645, "EN", 1, "ESENER");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="WORKACC" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+646, null, @sectionId, "FILTER_LITERAL");
+SET @sectionId = (SELECT id FROM section WHERE name="Work accidents" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+646, null, @sectionId, "FILTER LITERAL");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+646, "EN", 1, "EWCS");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="PREVENTION" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+647, null, @sectionId, "FILTER_LITERAL");
+SET @sectionId = (SELECT id FROM section WHERE name="Prevention in companies" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+647, 20102, @sectionId, "FILTER LITERAL");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+647, "EN", 1, "Establishment size");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="PREVENTION" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+648, null, @sectionId, "FILTER_LITERAL");
+SET @sectionId = (SELECT id FROM section WHERE name="Prevention in companies" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+648, 20102, @sectionId, "FILTER LITERAL");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+648, "EN", 1, "Sector");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="WORKACC" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+649, null, @sectionId, "FILTER_LITERAL");
+SET @sectionId = (SELECT id FROM section WHERE name="Working conditions - Overall opinion" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+649, null, @sectionId, "FILTER LITERAL");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+649, "EN", 1, "Gender");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="WORKACC" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+650, null, @sectionId, "FILTER_LITERAL");
+SET @sectionId = (SELECT id FROM section WHERE name="Working conditions - Overall opinion" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+650, null, @sectionId, "FILTER LITERAL");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+650, "EN", 1, "Age");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="WORKACC" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+651, null, @sectionId, "FILTER_LITERAL");
+SET @sectionId = (SELECT id FROM section WHERE name="Common literals" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+651, null, @sectionId, "FILTER LITERAL");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+651, "EN", 1, "Category");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="WORKFORCE_PROFILE" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+653, null, @sectionId, "FILTER_LITERAL");
+SET @sectionId = (SELECT id FROM section WHERE name="Workforce profile" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+653, 20012, @sectionId, "FILTER LITERAL");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+653, "EN", 1, "Ageing workforce");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="PHYSICAL_RISKS" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+654, null, @sectionId, "GROUP_NAME");
+SET @sectionId = (SELECT id FROM section WHERE name="Working conditions - Physical risk" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+654, 20049, @sectionId, "GROUP NAME");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+654, "EN", 1, "Vibrations, loud noise and temperature");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="PHYSICAL_RISKS" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+655, null, @sectionId, "GROUP_NAME");
+SET @sectionId = (SELECT id FROM section WHERE name="Working conditions - Physical risk" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+655, null, @sectionId, "GROUP NAME");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+655, "EN", 1, "Exposure to dangerous substances");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="PHYSICAL_RISKS" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+656, null, @sectionId, "GROUP_NAME");
+SET @sectionId = (SELECT id FROM section WHERE name="Working conditions - Physical risk" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+656, 20080, @sectionId, "GROUP NAME");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+656, "EN", 1, "Ergonomic risks");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="PHYSICAL_RISKS" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+657, null, @sectionId, "ARROW_LITERAL");
+SET @sectionId = (SELECT id FROM section WHERE name="Not used" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+657, null, @sectionId, "Working conditions");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+657, "EN", 1, "Next indicator");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="PHYSICAL_RISKS" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+658, null, @sectionId, "ARROW_LITERAL");
+SET @sectionId = (SELECT id FROM section WHERE name="Not used" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+658, null, @sectionId, "Working conditions");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+658, "EN", 1, "Previous indicator");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+659, null, @sectionId, "ESENER_LITERAL");
+SET @sectionId = (SELECT id FROM section WHERE name="Social dialogue" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+659, 20090, @sectionId, "ESENER LITERAL");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+659, "EN", 1, "Joint consultative, employment forum or similar");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+660, null, @sectionId, "ESENER_LITERAL");
+SET @sectionId = (SELECT id FROM section WHERE name="Social dialogue" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+660, 20090, @sectionId, "ESENER LITERAL");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+660, "EN", 1, "Trade union representation");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+661, null, @sectionId, "ESENER_LITERAL");
+SET @sectionId = (SELECT id FROM section WHERE name="Social dialogue" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+661, 20090, @sectionId, "ESENER LITERAL");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+661, "EN", 1, "Health and safety representative");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+662, null, @sectionId, "ESENER_LITERAL");
+SET @sectionId = (SELECT id FROM section WHERE name="Social dialogue" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+662, 20090, @sectionId, "ESENER LITERAL");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+662, "EN", 1, "Health and safety committee");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="OSH_CULTURE" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+663, null, @sectionId, "ESENER_LITERAL_INDICATOR");
+SET @sectionId = (SELECT id FROM section WHERE name="Not used" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+663, null, @sectionId, "OSH culture and health awareness");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+663, "EN", 1, "Sickness absences analysed");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="OSH_CULTURE" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+664, null, @sectionId, "ESENER_LITERAL_INDICATOR");
+SET @sectionId = (SELECT id FROM section WHERE name="OSH culture and health awareness" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+664, 20091, @sectionId, "ESENER LITERAL_INDICATOR");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+664, "EN", 1, "Health and safety discussed");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="OSH_CULTURE" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+665, null, @sectionId, "ESENER_LITERAL_INDICATOR");
+SET @sectionId = (SELECT id FROM section WHERE name="OSH culture and health awareness" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+665, 20092, @sectionId, "ESENER LITERAL_INDICATOR");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+665, "EN", 1, "Action plan to prevent stress");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="OSH_CULTURE" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+666, null, @sectionId, "ESENER_LITERAL_INDICATOR");
+SET @sectionId = (SELECT id FROM section WHERE name="OSH culture and health awareness" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+666, 20093, @sectionId, "ESENER LITERAL_INDICATOR");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+666, "EN", 1, "Procedure against bullying");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="OSH_CULTURE" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+667, null, @sectionId, "ESENER_LITERAL_INDICATOR");
+SET @sectionId = (SELECT id FROM section WHERE name="OSH culture and health awareness" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+667, 20094, @sectionId, "ESENER LITERAL_INDICATOR");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+667, "EN", 1, "Procedures to deal with threats");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="OSH_CULTURE" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+668, null, @sectionId, "ESENER_LITERAL_INDICATOR");
+SET @sectionId = (SELECT id FROM section WHERE name="OSH culture and health awareness" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+668, 20095, @sectionId, "ESENER LITERAL_INDICATOR");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+668, "EN", 1, "Measures to reduce work pressure");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="MENTAL_RISKS" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+669, null, @sectionId, "ESENER_LITERAL");
+SET @sectionId = (SELECT id FROM section WHERE name="Working conditions - Mental risk" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+669, null, @sectionId, "ESENER LITERAL");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+669, "EN", 1, "Time pressure");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="MENTAL_RISKS" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+670, null, @sectionId, "ESENER_LITERAL");
+SET @sectionId = (SELECT id FROM section WHERE name="Working conditions - Mental risk" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+670, null, @sectionId, "ESENER LITERAL");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+670, "EN", 1, "Poor communication");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="MENTAL_RISKS" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+671, null, @sectionId, "ESENER_LITERAL");
+SET @sectionId = (SELECT id FROM section WHERE name="Working conditions - Mental risk" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+671, null, @sectionId, "ESENER LITERAL");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+671, "EN", 1, "Influence");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="MENTAL_RISKS" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+672, null, @sectionId, "ESENER_LITERAL");
+SET @sectionId = (SELECT id FROM section WHERE name="Working conditions - Mental risk" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+672, null, @sectionId, "ESENER LITERAL");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+672, "EN", 1, "Fear of job loss");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="MENTAL_RISKS" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+673, null, @sectionId, "ESENER_LITERAL");
+SET @sectionId = (SELECT id FROM section WHERE name="Working conditions - Mental risk" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+673, null, @sectionId, "ESENER LITERAL");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+673, "EN", 1, "Difficult clients");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="MENTAL_RISKS" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+674, null, @sectionId, "ESENER_LITERAL");
+SET @sectionId = (SELECT id FROM section WHERE name="Working conditions - Mental risk" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+674, null, @sectionId, "ESENER LITERAL");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+674, "EN", 1, "Working hours");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="MENTAL_RISKS" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+675, null, @sectionId, "ESENER_LITERAL");
+SET @sectionId = (SELECT id FROM section WHERE name="Working conditions - Mental risk" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+675, null, @sectionId, "ESENER LITERAL");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+675, "EN", 1, "Discrimination");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="MENTAL_RISKS" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+676, null, @sectionId, "ESENER_LITERAL");
+SET @sectionId = (SELECT id FROM section WHERE name="Not used" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+676, 20101, @sectionId, "Working conditions - Physical risk");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+676, "EN", 1, "Tiring or painful positions");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="PHYSICAL_RISKS" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+677, null, @sectionId, "ESENER_LITERAL");
+SET @sectionId = (SELECT id FROM section WHERE name="Not used" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+677, 20101, @sectionId, "Working conditions - Physical risk");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+677, "EN", 1, "Repetitive hand or arm movements");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="PHYSICAL_RISKS" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+678, null, @sectionId, "ESENER_LITERAL");
+SET @sectionId = (SELECT id FROM section WHERE name="Not used" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+678, 20101, @sectionId, "Working conditions - Physical risk");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+678, "EN", 1, "Lifting or moving people");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="PREVENTION" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+679, null, @sectionId, "ESENER_LITERAL_INDICATOR");
+SET @sectionId = (SELECT id FROM section WHERE name="Prevention in companies" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+679, 20102, @sectionId, "ESENER LITERAL_INDICATOR");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+679, "EN", 1, "Risk Assessment");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="PREVENTION" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+680, null, @sectionId, "ESENER_LITERAL_INDICATOR");
+SET @sectionId = (SELECT id FROM section WHERE name="Prevention in companies" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+680, 20103, @sectionId, "ESENER LITERAL_INDICATOR");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+680, "EN", 1, "Internal or external RA");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="PREVENTION" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+681, null, @sectionId, "ESENER_LITERAL_INDICATOR");
+SET @sectionId = (SELECT id FROM section WHERE name="Prevention in companies" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+681, null, @sectionId, "ESENER LITERAL_INDICATOR");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+681, "EN", 1, "Evaluated aspects in risk assessments");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="PREVENTION" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+682, null, @sectionId, "ESENER_LITERAL_INDICATOR");
+SET @sectionId = (SELECT id FROM section WHERE name="Prevention in companies" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+682, 20104, @sectionId, "ESENER LITERAL_INDICATOR");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+682, "EN", 1, "Training in OSH");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="PREVENTION" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+683, null, @sectionId, "ESENER_LITERAL_INDICATOR");
+SET @sectionId = (SELECT id FROM section WHERE name="Prevention in companies" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+683, 20105, @sectionId, "ESENER LITERAL_INDICATOR");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+683, "EN", 1, "Employees participation in prevention");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="WORKER_INVOLVEMENT" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+684, null, @sectionId, "ESENER_LITERAL_TOOLTIP");
+SET @sectionId = (SELECT id FROM section WHERE name="Worker involvement" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+684, 20106, @sectionId, "ESENER LITERAL_TOOLTIP");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+684, "EN", 1, "Does your organisation have a trade union, works council or a similar committee representing employees?");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="WORKER_INVOLVEMENT" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+685, null, @sectionId, "ESENER_LITERAL_TOOLTIP");
+SET @sectionId = (SELECT id FROM section WHERE name="Worker involvement" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+685, 20106, @sectionId, "ESENER LITERAL_TOOLTIP");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+685, "EN", 1, "Does your organisation have a health and safety delegate or committee?");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="WORKER_INVOLVEMENT" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+686, null, @sectionId, "ESENER_LITERAL_TOOLTIP");
+SET @sectionId = (SELECT id FROM section WHERE name="Worker involvement" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+686, 20106, @sectionId, "ESENER LITERAL_TOOLTIP");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+686, "EN", 1, "Did the employees have a role in the design and set-up of the measures to address psychosocial risks?");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="WORKER_INVOLVEMENT" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+687, null, @sectionId, "ESENER_LITERAL_TOOLTIP");
+SET @sectionId = (SELECT id FROM section WHERE name="Worker involvement" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+687, 20106, @sectionId, "ESENER LITERAL_TOOLTIP");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+687, "EN", 1, "Are health and safety issues regularly discussed in staff or team meetings? (Regularly and Occasionally)");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="WORKER_INVOLVEMENT" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+688, null, @sectionId, "ESENER_LITERAL_TOOLTIP");
+SET @sectionId = (SELECT id FROM section WHERE name="Worker involvement" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+688, 20106, @sectionId, "ESENER LITERAL_TOOLTIP");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+688, "EN", 1, "How often controversies related to health and safety arise? (Sum of often and sometimes)");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="PHYSICAL_RISKS" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+689, null, @sectionId, "ESENER_LITERAL_TOOLTIP");
+SET @sectionId = (SELECT id FROM section WHERE name="Not used" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+689, null, @sectionId, "Working conditions - Physical risk");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+689, "EN", 1, "Tiring or painful positions, including sitting for long periods");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="PHYSICAL_RISKS" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+690, null, @sectionId, "ESENER_LITERAL_TOOLTIP");
+SET @sectionId = (SELECT id FROM section WHERE name="Not used" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+690, null, @sectionId, "Working conditions - Physical risk");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+690, "EN", 1, "Lifting or moving people or heavy loads");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="PHYSICAL_RISKS" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+691, null, @sectionId, "ESENER_LITERAL_TOOLTIP");
+SET @sectionId = (SELECT id FROM section WHERE name="Not used" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+691, null, @sectionId, "Working conditions - Physical risk");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+691, "EN", 1, "Repetitive hand or arm movements");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="ENFORCEMENT_CAPACITY" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+692, null, @sectionId, "ESENER_LITERAL");
+SET @sectionId = (SELECT id FROM section WHERE name="Enforcement capacity" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+692, 20107, @sectionId, "ESENER LITERAL_INDICATOR");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+692, "EN", 1, "% of establishments inspected");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="ENFORCEMENT_CAPACITY" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+693, null, @sectionId, "ESENER_LITERAL");
+SET @sectionId = (SELECT id FROM section WHERE name="Enforcement capacity" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+693, 20107, @sectionId, "ESENER LITERAL_TITLE");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+693, "EN", 1, "Have you been visited by the labour inspectorate in the last 3 years?");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="WORKFORCE_PROFILE" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+694, null, @sectionId, "FILTER_LITERAL");
+SET @sectionId = (SELECT id FROM section WHERE name="Workforce profile" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+694, 20012, @sectionId, "KEY MESSAGE");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+694, "EN", 1, "Not applied to Median Age");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="CROSS_SECTION" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+696, null, @sectionId, "BOX_MESSAGE");
+SET @sectionId = (SELECT id FROM section WHERE name="Common literals" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+696, null, @sectionId, "BOX MESSAGE");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+696, "EN", 1, "Source: EUROSTAT.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="CROSS_SECTION" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+699, null, @sectionId, "BOX_MESSAGE");
+SET @sectionId = (SELECT id FROM section WHERE name="Common literals" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+699, null, @sectionId, "BOX MESSAGE");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+699, "EN", 1, "Sources: ESENER 2019 Survey and Senior Labour Inspectors' Committee.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="CROSS_SECTION" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+700, null, @sectionId, "BOX_MESSAGE");
+SET @sectionId = (SELECT id FROM section WHERE name="Common literals" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+700, null, @sectionId, "IBOX MESSAGE");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+700, "EN", 1, "Sources: ESENER 2019 Survey and European Working Conditions Survey 2015 (EWCS).");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="CROSS_SECTION" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+701, null, @sectionId, "BOX_MESSAGE");
+SET @sectionId = (SELECT id FROM section WHERE name="Common literals" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+701, null, @sectionId, "BOX MESSAGE");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+701, "EN", 1, "Source: European Working Conditions Survey 2015 (EWCS).");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="CROSS_SECTION" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+702, null, @sectionId, "BOX_MESSAGE");
+SET @sectionId = (SELECT id FROM section WHERE name="Common literals" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+702, null, @sectionId, "BOX MESSAGE");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+702, "EN", 1, "Source: ESENER 2019 Survey.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="CROSS_SECTION" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+704, null, @sectionId, "BOX_MESSAGE");
+SET @sectionId = (SELECT id FROM section WHERE name="Common literals" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+704, null, @sectionId, "BOX MESSAGE");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+704, "EN", 1, "For further information refer to");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="CROSS_SECTION" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+705, null, @sectionId, "BOX_MESSAGE");
+SET @sectionId = (SELECT id FROM section WHERE name="Common literals" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+705, null, @sectionId, "BOX MESSAGE");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+705, "EN", 1, "Methodology");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="CROSS_SECTION" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+706, null, @sectionId, "BOX_MESSAGE");
+SET @sectionId = (SELECT id FROM section WHERE name="Common literals" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+706, null, @sectionId, "BOX MESSAGE");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+706, "EN", 1, "No information available");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="WORKACC" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+707, null, @sectionId, "CARROUSEL_INDICATOR");
+SET @sectionId = (SELECT id FROM section WHERE name="Not used" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+707, null, @sectionId, "Work accidents");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+707, "EN", 1, "Estimation of non-fatal accidents");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="WORKING_CONDITIONS" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+708, null, @sectionId, "BOX_MESSAGE");
+SET @sectionId = (SELECT id FROM section WHERE name="Working conditions" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+708, null, @sectionId, "SUBTITLE");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+708, "EN", 1, "Topics");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="WORKING_CONDITIONS" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+709, null, @sectionId, "BOX_MESSAGE");
+SET @sectionId = (SELECT id FROM section WHERE name="Working conditions" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+709, null, @sectionId, "BOX TITLE");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+709, "EN", 1, "Overall opinion");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="WORKING_CONDITIONS" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+710, null, @sectionId, "BOX_MESSAGE");
+SET @sectionId = (SELECT id FROM section WHERE name="Working conditions" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+710, null, @sectionId, "BOX TITLE");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+710, "EN", 1, "Mental risk");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="WORKING_CONDITIONS" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+711, null, @sectionId, "BOX_MESSAGE");
+SET @sectionId = (SELECT id FROM section WHERE name="Working conditions" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+711, null, @sectionId, "BOX TITLE");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+711, "EN", 1, "Physical risk");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="WORKING_CONDITIONS" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+712, null, @sectionId, "BOX_MESSAGE");
+SET @sectionId = (SELECT id FROM section WHERE name="Common literals" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+712, null, @sectionId, "BOX MESSAGE");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+712, "EN", 1, "Explore also following topics:");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="OSH_STATISTICS" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+714, null, @sectionId, "FILTER_LITERAL");
+SET @sectionId = (SELECT id FROM section WHERE name="OSH statistics, surveys and research" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+714, null, @sectionId, "FILTER LITERAL");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+714, "EN", 1, "OSH statistics");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="OSH_STATISTICS" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+715, null, @sectionId, "FILTER_LITERAL");
+SET @sectionId = (SELECT id FROM section WHERE name="OSH statistics, surveys and research" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+715, null, @sectionId, "FILTER LITERAL");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+715, "EN", 1, "Surveys");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="OSH_STATISTICS" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+716, null, @sectionId, "FILTER_LITERAL");
+SET @sectionId = (SELECT id FROM section WHERE name="OSH statistics, surveys and research" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+716, null, @sectionId, "FILTER LITERAL");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+716, "EN", 1, "Research Institutes");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="METHODOLOGY" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+719, null, @sectionId, "TITLE");
+SET @sectionId = (SELECT id FROM section WHERE name="Not used" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+719, null, @sectionId, "null");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+719, "EN", 1, "Introduction");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="METHODOLOGY" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Methodology" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+720, null, @sectionId, "TITLE");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+720, "EN", 1, "Indicator");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="METHODOLOGY" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Methodology" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+721, null, @sectionId, "TITLE");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+721, "EN", 1, "Description");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="METHODOLOGY" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Methodology" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+722, null, @sectionId, "TITLE");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+722, "EN", 1, "Data source");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="METHODOLOGY" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Methodology" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+723, null, @sectionId, "TITLE");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+723, "EN", 1, "Specific table/Question");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="METHODOLOGY" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Methodology" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+724, null, @sectionId, "TITLE");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+724, "EN", 1, "URL/source file");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="METHODOLOGY" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Methodology" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+725, null, @sectionId, "TITLE");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+725, "EN", 1, "Reference year/period");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="METHODOLOGY" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Methodology" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+726, null, @sectionId, "TITLE");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+726, "EN", 1, "Last update");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="METHODOLOGY" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Methodology" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+727, null, @sectionId, "TITLE");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+727, "EN", 1, "Coverage");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="METHODOLOGY" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Methodology" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+728, null, @sectionId, "TITLE");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+728, "EN", 1, "Filtering options applied");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="METHODOLOGY" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Methodology" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+729, null, @sectionId, "TITLE");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+729, "EN", 1, "Calculations on the data source");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="METHODOLOGY" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Methodology" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+730, null, @sectionId, "TITLE");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+730, "EN", 1, "Unit of measure");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="METHODOLOGY" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Methodology" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+731, null, @sectionId, "TITLE");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+731, "EN", 1, "Visualisation");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="METHODOLOGY" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Methodology" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+732, null, @sectionId, "TITLE");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+732, "EN", 1, "Additional comments");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="METHODOLOGY" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+733, null, @sectionId, "BUTTON");
+SET @sectionId = (SELECT id FROM section WHERE name="Not used" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+733, null, @sectionId, "Methodology");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+733, "EN", 1, "Access to Indicator Methodology");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="ENFORCEMENT_CAPACITY" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+734, null, @sectionId, "ESENER_LITERAL");
+SET @sectionId = (SELECT id FROM section WHERE name="Not used" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+734, null, @sectionId, "Enforcement capacity");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+734, "EN", 1, "% of establishments NOT inspected");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="METHODOLOGY" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="General information" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+735, null, @sectionId, "TITLE");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+735, "EN", 1, "General information");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="METHODOLOGY" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="General information" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+736, null, @sectionId, "BUTTON");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+736, "EN", 1, "Go to methodology");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="METHODOLOGY" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+737, null, @sectionId, "KEY_MESSAGE");
+SET @sectionId = (SELECT id FROM section WHERE name="General information" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+737, null, @sectionId, "KEY MESSAGE");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+737, "EN", 1, "<p>The <strong>development and provision of the OSH BAROMETER — Status of Occupational Safety and Health in Europe</strong> is a long-term activity of the European Commission’s Directorate-General for Employment, Social Affairs and Inclusion (<strong>DG Employment, Social Affairs and Inclusion</strong>) and the European Agency for Safety and Health at Work (<strong>EU-OSHA</strong>). It aims to provide up-to-date online information for all interested parties and stakeholders about the status of OSH in the European Union.</p>
 <p>&nbsp;</p>
 <p>The overall objective of this activity is to design and develop a reliable and stable information system on OSH in Europe, based on data from the relevant national and European data providers. From 2016 to 2018, two contractors of DG Employment, Social Affairs and Inclusion (Kooperationsstelle Hamburg IFE and Eurogip) developed the structure of the system, collected data for a selected number of indicators and assessed their reliability.</p>
@@ -3750,716 +3519,716 @@ INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+
 </ul>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="PREVENTION" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+738, null, @sectionId, "TITLE");
+SET @sectionId = (SELECT id FROM section WHERE name="Prevention in companies" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+738, null, @sectionId, "MAP LITERAL");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+738, "EN", 1, "Click on the map to access ESENER data");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="METHODOLOGY" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+739, null, @sectionId, "BOX_MESSAGE");
+SET @sectionId = (SELECT id FROM section WHERE name="Not used" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+739, null, @sectionId, "Abouth the system");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+739, "EN", 1, "Go to the introduction");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="ENFORCEMENT_CAPACITY" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+740, null, @sectionId, "KEY_MESSAGE");
+SET @sectionId = (SELECT id FROM section WHERE name="Enforcement capacity" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+740, null, @sectionId, "KEY MESSAGE");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+740, "EN", 1, "SLIC does not cover all the countries");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="WORKFORCE_PROFILE" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+741, null, @sectionId, "KEY_MESSAGE");
+SET @sectionId = (SELECT id FROM section WHERE name="Workforce profile" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+741, 20012, @sectionId, "KEY MESSAGE");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+741, "EN", 1, "Not applied to Unemployment rate");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="ECONOMIC_AND_SECTOR_PROFILE" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+742, null, @sectionId, "FILTER_LITERAL");
+SET @sectionId = (SELECT id FROM section WHERE name="Economic and sector profile" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+742, null, @sectionId, "FILTER LITERAL");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+742, "EN", 1, "Euro (€)");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="ECONOMIC_AND_SECTOR_PROFILE" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+743, null, @sectionId, "FILTER_LITERAL");
+SET @sectionId = (SELECT id FROM section WHERE name="Economic and sector profile" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+743, null, @sectionId, "FILTER LITERAL");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+743, "EN", 1, "Purchasing Power Standards (PPS)");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Homepage" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2001, null, @sectionId, "MENU");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2001, "EN", 1, "Generic information");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="OSH authorities" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2002, null, @sectionId, "MENU");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2002, "EN", 1, "OSH authorities");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Economic and sector profile" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2003, null, @sectionId, "MENU");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2003, "EN", 1, "Economic and sector profile");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Workforce profile" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2004, null, @sectionId, "MENU");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2004, "EN", 1, "Workforce profile");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Homepage" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2005, null, @sectionId, "MENU");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2005, "EN", 1, "Steering of OSH");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2006, null, @sectionId, "MENU");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2006, "EN", 1, "Regulation");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="National strategies" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2007, null, @sectionId, "MENU");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2007, "EN", 1, "National strategies");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Social dialogue" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2008, null, @sectionId, "MENU");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2008, "EN", 1, "Social dialogue");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Homepage" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2009, null, @sectionId, "MENU");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2009, "EN", 1, "OSH outcomes and working conditions");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Work accidents" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2010, null, @sectionId, "MENU");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2010, "EN", 1, "Work accidents");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Health perception of the workers" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2011, null, @sectionId, "MENU");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2011, "EN", 1, "Health perception of the workers");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="OSH culture and health awareness" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2012, null, @sectionId, "MENU");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2012, "EN", 1, "OSH culture and health awareness");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Working conditions" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2013, null, @sectionId, "MENU");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2013, "EN", 1, "Working conditions");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Prevention in companies" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2014, null, @sectionId, "MENU");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2014, "EN", 1, "Prevention in companies");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Worker involvement" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2015, null, @sectionId, "MENU");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2015, "EN", 1, "Worker involvement");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Homepage" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2016, null, @sectionId, "MENU");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2016, "EN", 1, "OSH infrastructure");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Enforcement capacity" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2017, null, @sectionId, "MENU");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2017, "EN", 1, "Enforcement capacity");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="OSH statistics, surveys and research" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2018, null, @sectionId, "MENU");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2018, "EN", 1, "OSH statistics, surveys and research");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Homepage" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2019, null, @sectionId, "MENU");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2019, "EN", 1, "About the system");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Homepage" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2020, null, @sectionId, "TITLE");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2020, "EN", 1, "OSH BAROMETER");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2021, null, @sectionId, "KEY_MESSAGE");
+SET @sectionId = (SELECT id FROM section WHERE name="Homepage" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2021, null, @sectionId, "KEY MESSAGE");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2021, "EN", 1, "	The system has been built up in close collaboration with the European and Member State data providers");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2022, null, @sectionId, "KEY_BUTTON");
+SET @sectionId = (SELECT id FROM section WHERE name="Not used" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2022, null, @sectionId, "Common literals");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2022, "EN", 1, "Know more about tool");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2024, null, @sectionId, "BANNER");
+SET @sectionId = (SELECT id FROM section WHERE name="Not used" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2024, null, @sectionId, "Homepage");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2024, "EN", 1, "Status of Occupational Safety and Health in the European Union");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2025, null, @sectionId, "BOX_MESSAGE");
+SET @sectionId = (SELECT id FROM section WHERE name="OSH authorities" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2025, null, @sectionId, "INTRO TEXT");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2025, "EN", 1, "This indicator is an overview of OSH authorities and relevant OSH institutions in the different Member States and at EU level.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2026, null, @sectionId, "BUTTON");
+SET @sectionId = (SELECT id FROM section WHERE name="Common literals" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2026, null, @sectionId, "Button");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2026, "EN", 1, "Know more");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2028, null, @sectionId, "BOX_MESSAGE");
+SET @sectionId = (SELECT id FROM section WHERE name="Economic and sector profile" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2028, null, @sectionId, "INTRO TEXT");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2028, "EN", 1, "<p>The indicator &lsquo;Economic and sector profile&rsquo; displays relevant data on the economy and sectoral structure of the EU and its Member States, e.g. percentages of company size, employment per sector and information on gross domestic product. Note: Not all data is available for every country.</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2030, null, @sectionId, "BOX_MESSAGE");
+SET @sectionId = (SELECT id FROM section WHERE name="Workforce profile" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2030, 20012, @sectionId, "INTRO TEXT");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2030, "EN", 1, "This indicator includes a few key data on ageing workers and the workforce: median age, employment rate of different age groups, total and sex.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2033, null, @sectionId, "BOX_MESSAGE");
+SET @sectionId = (SELECT id FROM section WHERE name="Not used" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2033, null, @sectionId, "Regulation");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2033, "EN", 1, "The regulation indicator provides an overview of the implementation of regulations. It displays the results of the large-scale evaluation of the EU OSH acquis that was finished in 2015.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2034, null, @sectionId, "BOX_MESSAGE");
+SET @sectionId = (SELECT id FROM section WHERE name="Not used" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2034, null, @sectionId, "Regulation");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2034, "EN", 1, "Select the country you are interested in");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2035, null, @sectionId, "FILTER");
+SET @sectionId = (SELECT id FROM section WHERE name="Not used" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2035, null, @sectionId, "Regulation");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2035, "EN", 1, "Select country");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2036, null, @sectionId, "BUTTON");
+SET @sectionId = (SELECT id FROM section WHERE name="Not used" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2036, null, @sectionId, "Regulation");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2036, "EN", 1, "See Regulation details");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2038, null, @sectionId, "BOX_MESSAGE");
+SET @sectionId = (SELECT id FROM section WHERE name="National strategies" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2038, null, @sectionId, "INTRO TEXT");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2038, "EN", 1, "National strategies are well known as a policy instrument to enhance the effectiveness of an OSH system through the collaborative and smart use of resources. They include approaches such as priority setting, prior action defining and action plans. You will find here a short harmonised description of current national strategies based on the full mapping report of EU-OSHA on national strategies (December 2017) plus later updates as received from Member States.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="SOCIAL DIALOGUE" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2041, null, @sectionId, "INTROTEXT");
+SET @sectionId = (SELECT id FROM section WHERE name="Social dialogue" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2041, null, @sectionId, "INTRO TEXT");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2041, "EN", 1, "This indicator consists of text-based descriptions of the social dialogue plus quantitative data, e.g. responses to ESENER 2019 questions. Note: When no data is available for the indicator displayed, '-' will appear.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2042, null, @sectionId, "BOX_MESSAGE");
+SET @sectionId = (SELECT id FROM section WHERE name="Not used" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2042, null, @sectionId, "Common literals");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2042, "EN", 1, "Europe");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2047, null, @sectionId, "BUTTON");
+SET @sectionId = (SELECT id FROM section WHERE name="Not used" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2047, null, @sectionId, "Social dialogue");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2047, "EN", 1, "Explore Social dialogue");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2050, null, @sectionId, "BOX_MESSAGE");
+SET @sectionId = (SELECT id FROM section WHERE name="Work accidents" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2050, null, @sectionId, "INTRO TEXT");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2050, "EN", 1, "This indicator consists of two data sets: trends in non-fatal work accidents from 2010, and fatal work accidents (Eurostat data).");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="HEALTH_PERCEPTION" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2052, null, @sectionId, "INTROTEXT");
+SET @sectionId = (SELECT id FROM section WHERE name="Health perception of the workers" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2052, null, @sectionId, "INTRO TEXT");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2052, "EN", 1, "	This indicator contains six data sets based on responses in the European Working Conditions Survey (EWCS) 2015 from Eurofound and the Labour Force Survey 2013 from Eurostat. Every 8 years this survey has an ad hoc module on OSH-related questions. All data are from the latest OSH ad hoc module. Note: When no data is available for the indicator displayed, '-' will appear.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2054, null, @sectionId, "BOX_MESSAGE");
+SET @sectionId = (SELECT id FROM section WHERE name="OSH culture and health awareness" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2054, null, @sectionId, "INTRO TEXT");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2054, "EN", 1, "This indicator provides data on typical aspects of OSH culture and health awareness such as sickness absence analysis, existence of prevention plans, or the implementation of measures for better safety and health. Note: Percentages might not total 100% because of rounding.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2056, null, @sectionId, "BOX_MESSAGE");
+SET @sectionId = (SELECT id FROM section WHERE name="Working conditions" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2056, null, @sectionId, "INTRO TEXT");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2056, "EN", 1, "This indicator includes a variety of data and data sources. You will find data on aspects such as workers’ overall perception, physical risks and mental risks (stress, harassment, violence, etc.).");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2058, null, @sectionId, "BOX_MESSAGE");
+SET @sectionId = (SELECT id FROM section WHERE name="Prevention in companies" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2058, null, @sectionId, "INTRO TEXT");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2058, "EN", 1, "This indicator visualises data on how OSH is implemented on company/enterprise level, mainly focusing on risk assessment, related questions and OSH training for workers.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2060, null, @sectionId, "BOX_MESSAGE");
+SET @sectionId = (SELECT id FROM section WHERE name="Worker involvement" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2060, null, @sectionId, "INTRO TEXT");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2060, "EN", 1, "This section displays mainly quantitative data that show how workers are represented at company level and how they are involved in the prevention policy of the companies.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2063, null, @sectionId, "BOX_MESSAGE");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2063, "EN", 1, "This indicator mainly contains the non-confidential parts of Senior Labour Inspectors Committee reports about enforcement in Member States");
+SET @sectionId = (SELECT id FROM section WHERE name="Enforcement capacity" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2063, null, @sectionId, "INTRO TEXT");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2063, "EN", 1, "This indicator mainly contains the non-confidential parts of Senior Labour Inspectors Committee reports about enforcement in Member States.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2065, null, @sectionId, "BOX_MESSAGE");
+SET @sectionId = (SELECT id FROM section WHERE name="OSH statistics, surveys and research" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2065, null, @sectionId, "INTRO TEXT");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2065, "EN", 1, "Here you will find a comprehensive overview of availability of OSH statistics and surveys on working conditions and research capacities in the different Member States and the EU.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2067, null, @sectionId, "BUTTON");
+SET @sectionId = (SELECT id FROM section WHERE name="Not used" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2067, null, @sectionId, "OSH statistics, surveys and research");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2067, "EN", 1, "See OSH statistics, surveys and research");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Header" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2081, null, @sectionId, "HEADER");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2081, "EN", 1, "<p>The translations of this website from the original English are made by a machine translation service developed by Google. Consequently, the quality of those translations might not be accurate in all instances. You can know more about this system on <a title=\"Open in a new window\" href=\"https://en.wikipedia.org/wiki/Google_Translate\" target=\"_blank\">https://en.wikipedia.org/wiki/Google_Translate</a></p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2099, null, @sectionId, "POP_UP");
+SET @sectionId = (SELECT id FROM section WHERE name="Not used" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2099, null, @sectionId, "Homepage");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2099, "EN", 1, "POP UP MESSAGE TO BE DEFINED");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2100, null, @sectionId, "BUTTON");
+SET @sectionId = (SELECT id FROM section WHERE name="Not used" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2100, null, @sectionId, "Enforcement capacity");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2100, "EN", 1, "See Enforcement capacity");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="METHODOLOGY" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Methodology" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2101, null, @sectionId, "BUTTON");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2101, "EN", 1, "Detailed information and Methodology");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="METHODOLOGY" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Methodology" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2102, null, @sectionId, "BUTTON");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2102, "EN", 1, "Discover all the Methodology");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="WORKFORCE PROFILE" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2103, null, @sectionId, "BOX_MESSAGE");
+SET @sectionId = (SELECT id FROM section WHERE name="Workforce profile" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2103, 20012, @sectionId, "BOX MESSAGE");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2103, "EN", 1, "Click on a country to compare the data");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="WORKFORCE PROFILE" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2104, null, @sectionId, "LEGEND");
+SET @sectionId = (SELECT id FROM section WHERE name="Workforce profile" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2104, 20012, @sectionId, "LEGEND");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2104, "EN", 1, "Non EU countries");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2105, null, @sectionId, "TITLE");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2105, "EN", 1, "Regulation (Coming soon)");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="REGULATION" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2106, null, @sectionId, "INTRO_TEXT");
+SET @sectionId = (SELECT id FROM section WHERE name="Regulation" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2106, null, @sectionId, "INTRO TEXT");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2106, "EN", 1, "<p>Coming with the next substantial update - The section (or part) on ‘Regulation’ needs a thorough revision due to recent major changes in the Occupational Safety and Health legislation in several Member States.</p>
 <p>The regulation indicator will provide an overview of the implementation of regulations. It will display the results of the large-scale evaluation of the EU OSH acquis that was finished in 2015.</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Homepage" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2107, null, @sectionId, "SUBTITLE");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2107, "EN", 1, "Data visualisation tool");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2108, null, @sectionId, "INTRO_TEXT");
+SET @sectionId = (SELECT id FROM section WHERE name="Homepage" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2108, null, @sectionId, "INTRO TEXT");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2108, "EN", 1, "<p>The OSH Barometer is an EU-wide public information system on the most important facts and figures of <strong>Occupational Safety and Health</strong>. The system provides visualised information for important OSH indicators at EU and national level; it is based on statistics, surveys and public data.</p>
 <p>The OSH Barometer presents data from several different sources; some dating back to 2010 where trends are presented. At the time these data were collected, the UK was still a member of the European Union and therefore the UK results are included in the OSH Barometer and the EU average is presented as EU28. In successive updates of the OSH Barometer, UK data will be progressively eliminated.</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2109, null, @sectionId, "KEY_MESSAGE");
+SET @sectionId = (SELECT id FROM section WHERE name="Homepage" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2109, null, @sectionId, "KEY MESSAGE");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2109, "EN", 1, "The OSH BAROMETER is a reliable public information system on facts and figures of OSH in the EU.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Homepage" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2110, null, @sectionId, "BUTTON");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2110, "EN", 1, "Discover the tool");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Homepage" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2111, null, @sectionId, "TITLE");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2111, "EN", 1, "Select your preferences");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2112, null, @sectionId, "EXPLANATORY_TEXT");
+SET @sectionId = (SELECT id FROM section WHERE name="Homepage" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2112, null, @sectionId, "EXPLANATORY TEXT");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2112, "EN", 1, "<p>The countries selected will always be shown first be kept while navigating through the tool.</p>
 <p>You can change the country selection on every page. To change your preferences please return to this page. </p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2113, null, @sectionId, "PREFERENCE_BUTTON");
+SET @sectionId = (SELECT id FROM section WHERE name="Homepage" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2113, null, @sectionId, "PREFERENCE BUTTON");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2113, "EN", 1, "Choose country of interest");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Homepage" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2114, null, @sectionId, "TITLE");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2114, "EN", 1, "METHODOLOGY");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Homepage" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2115, null, @sectionId, "SUBTITLE");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2115, "EN", 1, "EU-OSHA ensures the highest possible transparency and data quality");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2116, null, @sectionId, "INTRO_TEXT");
+SET @sectionId = (SELECT id FROM section WHERE name="Homepage" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2116, null, @sectionId, "INTRO TEXT");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2116, "EN", 1, "This methodology informs about our approach, the sources and selection of data, calculation methods and it contains all references and data sources that were used to provide texts, diagrams and tables.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Homepage" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2117, null, @sectionId, "BUTTON");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2117, "EN", 1, "Discover the methodology");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="CHARTS" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2118, null, @sectionId, "REMARK_MESSAGE");
+SET @sectionId = (SELECT id FROM section WHERE name="Common literals" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2118, null, @sectionId, "REMARK MESSAGE");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2118, "EN", 1, "Click on each value on the legend to hide/show it on the chart");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Homepage" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2119, null, @sectionId, "TITLE");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2119, "EN", 1, "Discover some of our charts");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="METHODOLOGY" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="General information" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2120, null, @sectionId, "MENU");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2120, "EN", 1, "General information");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="METHODOLOGY" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Methodology" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2121, null, @sectionId, "MENU");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2121, "EN", 1, "Methodology");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2122, null, @sectionId, "SECTION_TITLE");
+SET @sectionId = (SELECT id FROM section WHERE name="Homepage" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2122, null, @sectionId, "SECTION TITLE");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2122, "EN", 1, "ABOUT US");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2124, null, @sectionId, "PROMOTION_RIBBON");
+SET @sectionId = (SELECT id FROM section WHERE name="Homepage" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2124, null, @sectionId, "PROMOTION RIBBON");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2124, "EN", 1, "");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="WORKFORCE_PROFILE" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2125, null, @sectionId, "TOOLTIP");
+SET @sectionId = (SELECT id FROM section WHERE name="Workforce profile" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2125, 20012, @sectionId, "TOOLTIP");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2125, "EN", 1, "Unemployment rate:");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="OSH_CULTURE" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2126, null, @sectionId, "EWCS_LITERAL_TITLE");
+SET @sectionId = (SELECT id FROM section WHERE name="OSH culture and health awareness" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2126, 20038, @sectionId, "EWCS LITERAL_TITLE");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2126, "EN", 1, "Does your job ever require that you wear personal protective equipment and do you use it?");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="OSH_CULTURE" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2127, null, @sectionId, "EWCS_LITERAL_TITLE");
+SET @sectionId = (SELECT id FROM section WHERE name="OSH culture and health awareness" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2127, 20039, @sectionId, "EWCS LITERAL_TITLE");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2127, "EN", 1, "How well informed are you about health and safety risks related to your job?");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="OSH_CULTURE" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2128, null, @sectionId, "ESENER_LITERAL_TITLE");
+SET @sectionId = (SELECT id FROM section WHERE name="OSH culture and health awareness" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2128, null, @sectionId, "ESENER LITERAL_TITLE");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2128, "EN", 1, "Are sickness absences routinely analysed with a view to improving the working conditions?");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="OSH_CULTURE" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2129, null, @sectionId, "ESENER_LITERAL_TITLE");
+SET @sectionId = (SELECT id FROM section WHERE name="OSH culture and health awareness" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2129, 20091, @sectionId, "ESENER LITERAL_TITLE");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2129, "EN", 1, "How often is health and safety discussed between employee representatives and the management? Do such discussions take place regularly, only when particular health and safety issues arise or not at all?");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="OSH_CULTURE" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2130, null, @sectionId, "ESENER_LITERAL_TITLE");
+SET @sectionId = (SELECT id FROM section WHERE name="OSH culture and health awareness" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2130, 20092, @sectionId, "ESENER LITERAL_TITLE");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2130, "EN", 1, "Does your establishment have an action plan to prevent work-related stress?");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="OSH_CULTURE" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2131, null, @sectionId, "ESENER_LITERAL_TITLE");
+SET @sectionId = (SELECT id FROM section WHERE name="OSH culture and health awareness" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2131, 20093, @sectionId, "ESENER LITERAL_TITLE");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2131, "EN", 1, "Is there a procedure in place to deal with possible cases of bullying or harassment?");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="OSH_CULTURE" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2132, null, @sectionId, "ESENER_LITERAL_TITLE");
+SET @sectionId = (SELECT id FROM section WHERE name="OSH culture and health awareness" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2132, 20094, @sectionId, "ESENER LITERAL_TITLE");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2132, "EN", 1, "Is there a procedure to deal with possible cases of threats, abuse or assaults by clients, patients pupils or members in public?");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="OSH_CULTURE" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2133, null, @sectionId, "ESENER_LITERAL_TITLE");
+SET @sectionId = (SELECT id FROM section WHERE name="OSH culture and health awareness" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2133, 20095, @sectionId, "ESENER LITERAL_TITLE");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2133, "EN", 1, "In the last 3 years, has your establishment used any of the following measures to prevent psychosocial risks? Reorganisation of work in order to reduce job demands and work pressure");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="OVERALL_OP" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2134, null, @sectionId, "EWCS_LITERAL_TITLE");
+SET @sectionId = (SELECT id FROM section WHERE name="Working conditions - Overall opinion" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2134, 20040, @sectionId, "EWCS LITERAL_TITLE");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2134, "EN", 1, "How satisfied are you with working conditions in your main paid job?");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="OVERALL_OP" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2135, null, @sectionId, "EWCS_LITERAL_TITLE");
+SET @sectionId = (SELECT id FROM section WHERE name="Working conditions - Overall opinion" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2135, 20041, @sectionId, "EWCS LITERAL_TITLE");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2135, "EN", 1, "Do you think your health or safety is at risk because of your work?");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="MENTAL_RISKS" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2136, null, @sectionId, "ESENER_LITERAL_TITLE");
+SET @sectionId = (SELECT id FROM section WHERE name="Working conditions - Mental risk" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2136, 20096, @sectionId, "ESENER LITERAL_TITLE");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2136, "EN", 1, "Please tell me for each of the following risks whether or not it is present in the establishment? Time pressure");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="MENTAL_RISKS" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2137, null, @sectionId, "ESENER_LITERAL_TITLE");
+SET @sectionId = (SELECT id FROM section WHERE name="Working conditions - Mental risk" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2137, 20097, @sectionId, "ESENER LITERAL_TITLE");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2137, "EN", 1, "Please tell me for each of the following risks whether or not it is present in the establishment? Poor communication");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="MENTAL_RISKS" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2138, null, @sectionId, "ESENER_LITERAL_TITLE");
+SET @sectionId = (SELECT id FROM section WHERE name="Not used" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2138, null, @sectionId, "ESENER LITERAL_TITLE");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2138, "EN", 1, "Please tell me for each of the following risks whether or not it is present in the establishment? Influence");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="MENTAL_RISKS" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2139, null, @sectionId, "ESENER_LITERAL_TITLE");
+SET @sectionId = (SELECT id FROM section WHERE name="Working conditions - Mental risk" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2139, 20098, @sectionId, "ESENER LITERAL_TITLE");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2139, "EN", 1, "Please tell me for each of the following risks whether or not it is present in the establishment? Fear of job loss");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="MENTAL_RISKS" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2140, null, @sectionId, "ESENER_LITERAL_TITLE");
+SET @sectionId = (SELECT id FROM section WHERE name="Working conditions - Mental risk" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2140, 20099, @sectionId, "ESENER LITERAL_TITLE");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2140, "EN", 1, "Please tell me for each of the following risks whether or not it is present in the establishment? Difficult clients");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="MENTAL_RISKS" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2141, null, @sectionId, "ESENER_LITERAL_TITLE");
+SET @sectionId = (SELECT id FROM section WHERE name="Working conditions - Mental risk" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2141, 20100, @sectionId, "ESENER LITERAL_TITLE");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2141, "EN", 1, "Please tell me for each of the following risks whether or not it is present in the establishment? Working hours");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="MENTAL_RISKS" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2142, null, @sectionId, "ESENER_LITERAL_TITLE");
+SET @sectionId = (SELECT id FROM section WHERE name="Not used" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2142, null, @sectionId, "ESENER LITERAL_TITLE");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2142, "EN", 1, "Please tell me for each of the following risks whether or not it is present in the establishment? Discrimination");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="PHYSICAL_RISKS" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2143, null, @sectionId, "EWCS_LITERAL_TITLE");
+SET @sectionId = (SELECT id FROM section WHERE name="Working conditions - Physical risk" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2143, 20053, @sectionId, "EWCS LITERAL_TITLE");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2143, "EN", 1, "Are you exposed to breathing in smoke, fumes, powder or dust?");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="PHYSICAL_RISKS" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2144, null, @sectionId, "EWCS_LITERAL_TITLE");
+SET @sectionId = (SELECT id FROM section WHERE name="Working conditions - Physical risk" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2144, 20054, @sectionId, "EWCS LITERAL_TITLE");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2144, "EN", 1, "Are you exposed to breathing in vapours?");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="PHYSICAL_RISKS" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2145, null, @sectionId, "EWCS_LITERAL_TITLE");
+SET @sectionId = (SELECT id FROM section WHERE name="Working conditions - Physical risk" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2145, 20055, @sectionId, "EWCS LITERAL_TITLE");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2145, "EN", 1, "Are you exposed to chemical products or substances?");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="PHYSICAL_RISKS" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2146, null, @sectionId, "EWCS_LITERAL_TITLE");
+SET @sectionId = (SELECT id FROM section WHERE name="Working conditions - Physical risk" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2146, 20056, @sectionId, "EWCS LITERAL_TITLE");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2146, "EN", 1, "Are you exposed to materials which can be infectious?");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="PREVENTION" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2147, null, @sectionId, "ESENER_LITERAL_TITLE");
+SET @sectionId = (SELECT id FROM section WHERE name="Prevention in companies" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2147, 20102, @sectionId, "ESENER LITERAL_TITLE");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2147, "EN", 1, "Does your establishment regularly carry out workplace risk assessments?");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="PREVENTION" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2148, null, @sectionId, "ESENER_LITERAL_TITLE");
+SET @sectionId = (SELECT id FROM section WHERE name="Prevention in companies" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2148, 20103, @sectionId, "ESENER LITERAL_TITLE");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2148, "EN", 1, "Are workplace risk assessments mainly conducted by internal staff or are they contracted to external service providers?");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="PREVENTION" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2149, null, @sectionId, "ESENER_LITERAL_TITLE");
+SET @sectionId = (SELECT id FROM section WHERE name="Prevention in companies" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2149, 20104, @sectionId, "ESENER LITERAL_TITLE");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2149, "EN", 1, "Are the health and safety representatives provided with any training during work time?");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="PREVENTION" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2150, null, @sectionId, "ESENER_LITERAL_TITLE");
+SET @sectionId = (SELECT id FROM section WHERE name="Prevention in companies" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2150, 20105, @sectionId, "ESENER LITERAL_TITLE");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2150, "EN", 1, "Did the employees have a role in the design and set-up of measures to address psychosocial risks?");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="SOCIAL_DIALOGUE" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2151, null, @sectionId, "LITERAL");
+SET @sectionId = (SELECT id FROM section WHERE name="Social dialogue" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2151, null, @sectionId, "INTRO TEXT");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2151, "EN", 1, "Note: When no data is available for the indicator displayed, '-' will appear");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="PHYSICAL_RISK" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2152, null, @sectionId, "LITERAL_TITLE");
+SET @sectionId = (SELECT id FROM section WHERE name="Not used" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2152, null, @sectionId, "Working conditions - Physical risk");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2152, "EN", 1, "Exposure to vibrations, loud noise and temperature");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="PHYSICAL_RISK" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2153, null, @sectionId, "LITERAL_QUESTION");
+SET @sectionId = (SELECT id FROM section WHERE name="Working conditions - Physical risk" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2153, 20049, @sectionId, "EWCS LITERAL_QUESTION");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2153, "EN", 1, "Vibrations from tools or machinery");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="PHYSICAL_RISK" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2154, null, @sectionId, "LITERAL_QUESTION");
+SET @sectionId = (SELECT id FROM section WHERE name="Working conditions - Physical risk" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2154, 20049, @sectionId, "EWCS LITERAL_QUESTION");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2154, "EN", 1, "Low temperatures");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="PHYSICAL_RISK" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2155, null, @sectionId, "LITERAL_QUESTION");
+SET @sectionId = (SELECT id FROM section WHERE name="Working conditions - Physical risk" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2155, 20049, @sectionId, "EWCS LITERAL_QUESTION");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2155, "EN", 1, "Loud noise");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="PHYSICAL_RISK" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2156, null, @sectionId, "LITERAL_QUESTION");
+SET @sectionId = (SELECT id FROM section WHERE name="Working conditions - Physical risk" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2156, 20049, @sectionId, "EWCS LITERAL_QUESTION");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2156, "EN", 1, "High temperatures");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="PHYSICAL_RISK" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2157, null, @sectionId, "ESENER_LITERAL_QUESTION");
+SET @sectionId = (SELECT id FROM section WHERE name="Working conditions - Physical risk" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2157, 20101, @sectionId, "ESENER LITERAL_QUESTION");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2157, "EN", 1, "Positions");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="PHYSICAL_RISK" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2158, null, @sectionId, "ESENER_LITERAL_QUESTION");
+SET @sectionId = (SELECT id FROM section WHERE name="Working conditions - Physical risk" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2158, 20101, @sectionId, "ESENER LITERAL_QUESTION");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2158, "EN", 1, "Movements");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="PHYSICAL_RISK" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2159, null, @sectionId, "ESENER_LITERAL_QUESTION");
+SET @sectionId = (SELECT id FROM section WHERE name="Working conditions - Physical risk" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2159, 20101, @sectionId, "ESENER LITERAL_QUESTION");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2159, "EN", 1, "Loads");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="PHYSICAL_RISK" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2161, null, @sectionId, "EWCS_LITERAL_QUESTION");
+SET @sectionId = (SELECT id FROM section WHERE name="Working conditions - Physical risk" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2161, 20080, @sectionId, "EWCS LITERAL_QUESTION");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2161, "EN", 1, "Positions");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="PHYSICAL_RISK" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2162, null, @sectionId, "EWCS_LITERAL_QUESTION");
+SET @sectionId = (SELECT id FROM section WHERE name="Working conditions - Physical risk" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2162, 20080, @sectionId, "EWCS LITERAL_QUESTION");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2162, "EN", 1, "Lifting and moving");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="PHYSICAL_RISK" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2163, null, @sectionId, "EWCS_LITERAL_QUESTION");
+SET @sectionId = (SELECT id FROM section WHERE name="Working conditions - Physical risk" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2163, 20080, @sectionId, "EWCS LITERAL_QUESTION");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2163, "EN", 1, "Sitting");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="PHYSICAL_RISK" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2164, null, @sectionId, "EWCS_LITERAL_QUESTION");
+SET @sectionId = (SELECT id FROM section WHERE name="Working conditions - Physical risk" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2164, 20080, @sectionId, "EWCS LITERAL_QUESTION");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2164, "EN", 1, "Movements");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="PHYSICAL_RISK" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2165, null, @sectionId, "EWCS_LITERAL_QUESTION");
+SET @sectionId = (SELECT id FROM section WHERE name="Working conditions - Physical risk" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2165, 20080, @sectionId, "EWCS LITERAL_QUESTION");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2165, "EN", 1, "Loads");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="WORKER_INVOLVEMENT" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2171, null, @sectionId, "ESENER_LITERAL_QUESTION");
+SET @sectionId = (SELECT id FROM section WHERE name="Worker involvement" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2171, 20106, @sectionId, "ESENER LITERAL_QUESTION");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2171, "EN", 1, "Employees role and psychosocial risks");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="WORKER_INVOLVEMENT" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2172, null, @sectionId, "ESENER_LITERAL_QUESTION");
+SET @sectionId = (SELECT id FROM section WHERE name="Worker involvement" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2172, 20106, @sectionId, "ESENER LITERAL_QUESTION");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2172, "EN", 1, "H&S delegate or committee");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="WORKER_INVOLVEMENT" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2173, null, @sectionId, "ESENER_LITERAL_QUESTION");
+SET @sectionId = (SELECT id FROM section WHERE name="Worker involvement" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2173, 20106, @sectionId, "ESENER LITERAL_QUESTION");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2173, "EN", 1, "Employee representation");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="WORKER_INVOLVEMENT" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2174, null, @sectionId, "ESENER_LITERAL_QUESTION");
+SET @sectionId = (SELECT id FROM section WHERE name="Worker involvement" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2174, 20106, @sectionId, "ESENER LITERAL_QUESTION");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2174, "EN", 1, "Regular H&S discussions");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="WORKER_INVOLVEMENT" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2175, null, @sectionId, "ESENER_LITERAL_QUESTION");
+SET @sectionId = (SELECT id FROM section WHERE name="Worker involvement" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2175, 20106, @sectionId, "ESENER LITERAL_QUESTION");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2175, "EN", 1, "Controversial H&S discussions");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="WORKER_INVOLVEMENT" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2176, null, @sectionId, "EWCS_LITERAL_QUESTION");
+SET @sectionId = (SELECT id FROM section WHERE name="Worker involvement" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2176, 20069, @sectionId, "EWCS LITERAL_QUESTION");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2176, "EN", 1, "Employee meetings");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="WORKER_INVOLVEMENT" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2177, null, @sectionId, "EWCS_LITERAL_QUESTION");
+SET @sectionId = (SELECT id FROM section WHERE name="Worker involvement" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2177, 20069, @sectionId, "EWCS LITERAL_QUESTION");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2177, "EN", 1, "Representation of employees");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="WORKER_INVOLVEMENT" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2178, null, @sectionId, "EWCS_LITERAL_QUESTION");
+SET @sectionId = (SELECT id FROM section WHERE name="Worker involvement" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2178, 20069, @sectionId, "EWCS LITERAL_QUESTION");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2178, "EN", 1, "H&S delegate or committee");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="MENTAL_RISK" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2179, null, @sectionId, "EWCS_LITERAL_TITLE");
+SET @sectionId = (SELECT id FROM section WHERE name="Working conditions - Mental risk" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2179, 20073, @sectionId, "EWCS LITERAL_TITLE");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2179, "EN", 1, "Does your job involve working to tight deadlines?");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="MENTAL_RISK" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2180, null, @sectionId, "EWCS_LITERAL_TITLE");
+SET @sectionId = (SELECT id FROM section WHERE name="Working conditions - Mental risk" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2180, 20074, @sectionId, "EWCS LITERAL_TITLE");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2180, "EN", 1, "Level of fairness, cooperation and trust");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="MENTAL_RISK" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2181, null, @sectionId, "EWCS_LITERAL_TITLE");
+SET @sectionId = (SELECT id FROM section WHERE name="Working conditions - Mental risk" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2181, 20075, @sectionId, "EWCS LITERAL_TITLE");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2181, "EN", 1, "Can you influence decisions that are important for your work?");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="MENTAL_RISK" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2182, null, @sectionId, "EWCS_LITERAL_TITLE");
+SET @sectionId = (SELECT id FROM section WHERE name="Working conditions - Mental risk" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2182, 20076, @sectionId, "EWCS LITERAL_TITLE");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2182, "EN", 1, "I might lose my job in the next 6 months");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="MENTAL_RISK" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2183, null, @sectionId, "EWCS_LITERAL_TITLE");
+SET @sectionId = (SELECT id FROM section WHERE name="Working conditions - Mental risk" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2183, 20077, @sectionId, "EWCS LITERAL_TITLE");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2183, "EN", 1, "Does your work involve handling angry clients?");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="MENTAL_RISK" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2184, null, @sectionId, "EWCS_LITERAL_TITLE");
+SET @sectionId = (SELECT id FROM section WHERE name="Working conditions - Mental risk" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2184, 20078, @sectionId, "EWCS LITERAL_TITLE");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2184, "EN", 1, "How many times a month do you work more than 10 hours a day?");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="MENTAL_RISK" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2185, null, @sectionId, "EWCS_LITERAL_TITLE");
+SET @sectionId = (SELECT id FROM section WHERE name="Working conditions - Mental risk" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2185, 20079, @sectionId, "EWCS LITERAL_TITLE");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2185, "EN", 1, "Have you been subjected to discrimination at work in the last 12 months?");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="HOMEPAGE" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Homepage" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2186, null, @sectionId, "MESSAGE");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2186, "EN", 1, "Country selected!");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="PHYSICAL_RISK" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2187, null, @sectionId, "ESENER_LITERAL_QUESTION");
+SET @sectionId = (SELECT id FROM section WHERE name="Working conditions - Physical risk" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2187, 20101, @sectionId, "ESENER LITERAL_QUESTION");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2187, "EN", 1, "Sitting");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="COUNTRY_REPORT" AND tool_id=@toolId);
+SET @sectionId = (SELECT id FROM section WHERE name="Country reports" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2188, null, @sectionId, "BUTTON");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2188, "EN", 1, "All country data");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="COUNTRY_REPORT" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2189, null, @sectionId, "LITERAL");
+SET @sectionId = (SELECT id FROM section WHERE name="Country reports" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2189, null, @sectionId, "MENU");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2189, "EN", 1, "Country reports");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="COUNTRY_REPORT" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2190, null, @sectionId, "LITERAL");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2190, "EN", 1, "Country Report");
+SET @sectionId = (SELECT id FROM section WHERE name="Country reports" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2190, null, @sectionId, "TITLE");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2190, "EN", 1, "Country reports");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="COUNTRY_REPORT" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2191, null, @sectionId, "LITERAL");
+SET @sectionId = (SELECT id FROM section WHERE name="Not used" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2191, null, @sectionId, "Country reports");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2191, "EN", 1, "Index");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="COUNTRY_REPORT" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2192, null, @sectionId, "LITERAL");
+SET @sectionId = (SELECT id FROM section WHERE name="Not used" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2192, null, @sectionId, "Country reports");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2192, "EN", 1, "This document contains the OSH Barometer Country Report Summary of");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="COUNTRY_REPORT" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2193, null, @sectionId, "INTRO_TEXT");
+SET @sectionId = (SELECT id FROM section WHERE name="Country reports" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2193, null, @sectionId, "INTRO TEXT");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2193, "EN", 1, "The OSH-Barometer provides also an offline version of its data as ‘Full country report’. You can download all texts, diagrams and statistical data of one country in a comprehensive report.");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="COUNTRY_REPORT" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2194, null, @sectionId, "PAGE_NAME");
+SET @sectionId = (SELECT id FROM section WHERE name="Not used" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2194, null, @sectionId, "Country reports");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2194, "EN", 1, "Full country report");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="ECONOMIC_SECTOR_PROFILE" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2195, null, @sectionId, "CHART_TITLE");
+SET @sectionId = (SELECT id FROM section WHERE name="Economic and sector profile" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2195, 20013, @sectionId, "CHART TITLE");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2195, "EN", 1, "GDP per capita in relation to EU27_2020 average");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
-SET @sectionId = (SELECT id FROM section WHERE name="FATAL_WORK_ACCIDENTS" AND tool_id=@toolId);
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2196, null, @sectionId, "CHART_TITLE");
+SET @sectionId = (SELECT id FROM section WHERE name="Work accidents" AND tool_id=@toolId);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+2196, null, @sectionId, "CHART TITLE");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+2196, "EN", 1, "Fatal work accidents per 100 000 employees");
 
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -9161,7 +8930,7 @@ SET @nutsId = (SELECT id FROM nuts WHERE country_code="UK");
 INSERT INTO strategies_page(page, nuts_id, text_1_literal_id, text_2_literal_id, text_3_literal_id, text_4_literal_id, text_5_literal_id, text_6_literal_id, text_7_literal_id, text_8_literal_id, text_9_literal_id, text_10_literal_id, text_11_literal_id, text_12_literal_id, text_13_literal_id)  VALUES ("STRATEGY_REGULATION", @nutsId, 20443, 20449, null, null, null, null, null, 20451, 20478, 20505, 20506, 20511, 20562);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="OSH authorities and inspection services");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="OSH_AUTHORITIES" AND t.name="osha_dvt_barometer");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="OSH authorities" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
 SET @datasetId = (SELECT id FROM dataset WHERE source="KOOP and Eurogip files" AND date_from="2016-01-01" AND date_to="2017-12-31");
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -9202,7 +8971,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Compensation and insurance bodies");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="OSH_AUTHORITIES" AND t.name="osha_dvt_barometer");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="OSH authorities" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
 SET @datasetId = (SELECT id FROM dataset WHERE source="KOOP and Eurogip files" AND date_from="2016-01-01" AND date_to="2017-12-31");
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -9243,7 +9012,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Prevention institute");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="OSH_AUTHORITIES" AND t.name="osha_dvt_barometer");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="OSH authorities" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
 SET @datasetId = (SELECT id FROM dataset WHERE source="KOOP and Eurogip files" AND date_from="2016-01-01" AND date_to="2017-12-31");
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -9284,7 +9053,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Standardisation bodies");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="OSH_AUTHORITIES" AND t.name="osha_dvt_barometer");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="OSH authorities" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
 SET @datasetId = (SELECT id FROM dataset WHERE source="KOOP and Eurogip files" AND date_from="2016-01-01" AND date_to="2017-12-31");
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -9325,7 +9094,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Company size");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="ECONOMIC_SECTOR_PROFILE" AND t.name="osha_dvt_barometer");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="Economic and sector profile" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
 SET @datasetId = (SELECT id FROM dataset WHERE source="Eurostat" AND date_from="2017-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -9338,10 +9107,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "Number of enterprises in the non-financial business economy by size class of employment");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>Eurostat:</p>
-<p>
-  <a target=\"_blank\" href=\"http://ec.europa.eu/eurostat/tgm/table.do?tab=table&amp;init=1&amp;language=en&amp;pcode=tin00145&amp;plugin=1\" rel=\"noopener noreferrer\" target=\"_blank\">http://ec.europa.eu/eurostat/tgm/table.do?tab=table&amp;init=1&amp;language=en&amp;pcode=tin00145&amp;plugin=1</a>
-</p>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>Eurostat:</p><p><a target=\"_blank\" href=\"https://ec.europa.eu/eurostat/databrowser/view/tin00145/default/table?lang=en\">https://ec.europa.eu/eurostat/databrowser/view/tin00145/default/table?lang=en </a></p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2017");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -9363,7 +9129,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Employment per sector");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="ECONOMIC_SECTOR_PROFILE" AND t.name="osha_dvt_barometer");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="Economic and sector profile" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
 SET @datasetId = (SELECT id FROM dataset WHERE source="Eurostat" AND date_from="2020-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -9376,7 +9142,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "Employment by sex, age and economic activity (from 2008 onwards, NACE Rev. 2) - 1 000’");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>Eurostat:</p><p><a target=\"_blank\" href=\"http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=lfsq_egan2&amp;lang=en\">http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=lfsq_egan2&amp;lang=en</a></p>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>Eurostat:</p><p><a target=\"_blank\" href=\"https://ec.europa.eu/eurostat/databrowser/view/lfsq_egan2/default/table?lang=en\">https://ec.europa.eu/eurostat/databrowser/view/lfsq_egan2/default/table?lang=en</a></p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2020");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -9396,7 +9162,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Employment rate");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="ECONOMIC_SECTOR_PROFILE" AND t.name="osha_dvt_barometer");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="Economic and sector profile" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
 SET @datasetId = (SELECT id FROM dataset WHERE source="Eurostat" AND date_from="2019-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -9409,7 +9175,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "Employment rate by sex");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>Eurostat:</p><p><a target=\"_blank\" href=\"https://ec.europa.eu/eurostat/tgm/table.do?tab=table&amp;init=1&amp;language=en&amp;pcode=tesem010&amp;plugin=1\">https://ec.europa.eu/eurostat/tgm/table.do?tab=table&amp;init=1&amp;language=en&amp;pcode=tesem010&amp;plugin=1</a></p>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>Eurostat:</p><p><a target=\"_blank\" href=\"https://ec.europa.eu/eurostat/databrowser/view/lfsi_emp_a/default/table?lang=en\">https://ec.europa.eu/eurostat/databrowser/view/lfsi_emp_a/default/table?lang=en</a></p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2019");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -9429,7 +9195,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="GDP per capita in relation to EU28 average");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="ECONOMIC_SECTOR_PROFILE" AND t.name="osha_dvt_barometer");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="Economic and sector profile" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
 SET @datasetId = (SELECT id FROM dataset WHERE source="Eurostat" AND date_from="2019-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -9442,7 +9208,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "Main GDP aggregates per capita");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>Eurostat:</p><p><a target=\"_blank\" href=\"http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=nama_10_pc&amp;lang=en\">http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=nama_10_pc&amp;lang=en</a></p>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>Eurostat:</p><p><a target=\"_blank\" href=\"https://ec.europa.eu/eurostat/databrowser/view/nama_10_pc/default/table?lang=en\">https://ec.europa.eu/eurostat/databrowser/view/nama_10_pc/default/table?lang=en</a></p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2019");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -9467,7 +9233,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="GDP per capita in relation to EU28 average EURO");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="ECONOMIC_SECTOR_PROFILE" AND t.name="osha_dvt_barometer");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="Economic and sector profile" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
 SET @datasetId = (SELECT id FROM dataset WHERE source="Eurostat" AND date_from="2019-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -9480,7 +9246,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "Main GDP aggregates per capita");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>Eurostat:</p><p><a target=\"_blank\" href=\"http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=nama_10_pc&amp;lang=en\">http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=nama_10_pc&amp;lang=en</a></p>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>Eurostat:</p><p><a target=\"_blank\" href=\"https://ec.europa.eu/eurostat/databrowser/view/nama_10_pc/default/table?lang=en\">https://ec.europa.eu/eurostat/databrowser/view/nama_10_pc/default/table?lang=en</a></p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2019");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -9505,7 +9271,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Income per capita");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="ECONOMIC_SECTOR_PROFILE" AND t.name="osha_dvt_barometer");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="Economic and sector profile" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
 SET @datasetId = (SELECT id FROM dataset WHERE source="Eurostat" AND date_from="2010-01-01" AND date_to="2019-12-31");
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -9523,7 +9289,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "Mean and median income by age and sex – EU SILC survey");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>Eurostat:</p><p><a target=\"_blank\" href=\"http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=ilc_di03&amp;lang=en\">http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=ilc_di03&amp;lang=en</a></p>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>Eurostat:</p><p><a target=\"_blank\" href=\"https://ec.europa.eu/eurostat/databrowser/view/ilc_di03/default/table?lang=en\">https://ec.europa.eu/eurostat/databrowser/view/ilc_di03/default/table?lang=enn</a></p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2010 - 2019");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -9543,7 +9309,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Income per capita EURO");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="ECONOMIC_SECTOR_PROFILE" AND t.name="osha_dvt_barometer");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="Economic and sector profile" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
 SET @datasetId = (SELECT id FROM dataset WHERE source="Eurostat" AND date_from="2010-01-01" AND date_to="2019-12-31");
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -9561,7 +9327,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "Mean and median income by age and sex – EU SILC survey");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>Eurostat:</p><p><a target=\"_blank\" href=\"http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=ilc_di03&amp;lang=en\">http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=ilc_di03&amp;lang=en</a></p>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>Eurostat:</p><p><a target=\"_blank\" href=\"https://ec.europa.eu/eurostat/databrowser/view/ilc_di03/default/table?lang=en\">https://ec.europa.eu/eurostat/databrowser/view/ilc_di03/default/table?lang=en</a></p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2010 - 2019");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -9581,7 +9347,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Median age of population");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="WORKFORCE_PROFILE" AND t.name="osha_dvt_barometer");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="Workforce profile" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
 SET @datasetId = (SELECT id FROM dataset WHERE source="Eurostat" AND date_from="2019-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -9594,7 +9360,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "Population: Structure indicators");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>Eurostat:</p><p><a target=\"_blank\" href=\"http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=demo_pjanind&amp;lang=en\">http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=demo_pjanind&amp;lang=en</a>&nbsp;&nbsp;</p>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>Eurostat:</p><p><a target=\"_blank\" href=\"https://ec.europa.eu/eurostat/databrowser/view/demo_pjanind/default/table?lang=en\">https://ec.europa.eu/eurostat/databrowser/view/demo_pjanind/default/table?lang=en</a></p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2019");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -9622,7 +9388,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Ageing workers (55 to 64) employment rate");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="WORKFORCE_PROFILE" AND t.name="osha_dvt_barometer");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="Workforce profile" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
 SET @datasetId = (SELECT id FROM dataset WHERE source="Eurostat" AND date_from="2019-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -9635,7 +9401,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "Employment and activity by sex and age - annual data");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>Eurostat:</p><p><a target=\"_blank\" href=\"http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=lfsi_emp_a&amp;lang=en\">http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=lfsi_emp_a&amp;lang=en</a></p>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>Eurostat:</p><p><a target=\"_blank\" href=\"https://ec.europa.eu/eurostat/databrowser/view/LFSI_EMP_A__custom_838692/default/table?lang=en\">https://ec.europa.eu/eurostat/databrowser/view/LFSI_EMP_A__custom_838692/default/table?lang=en</a></p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2019");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -9681,7 +9447,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Total, male and female employment rate");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="WORKFORCE_PROFILE" AND t.name="osha_dvt_barometer");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="Workforce profile" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
 SET @datasetId = (SELECT id FROM dataset WHERE source="Eurostat" AND date_from="2019-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -9694,7 +9460,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "Employment and activity by sex and age - annual data");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>Eurostat:</p><p><a target=\"_blank\" href=\"http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=lfsi_emp_a&amp;lang=en\">http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=lfsi_emp_a&amp;lang=en</a></p>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>Eurostat:</p><p><a target=\"_blank\" href=\"https://ec.europa.eu/eurostat/databrowser/view/lfsi_emp_a/default/table?lang=en\">https://ec.europa.eu/eurostat/databrowser/view/lfsi_emp_a/default/table?lang=en</a></p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2019");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -9740,7 +9506,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Unemployment rate");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="WORKFORCE_PROFILE" AND t.name="osha_dvt_barometer");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="Workforce profile" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
 SET @datasetId = (SELECT id FROM dataset WHERE source="Eurostat" AND date_from="2019-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -9753,7 +9519,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "Unemployment by sex and age - annual average");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>Eurostat:</p><p><a target=\"_blank\" href=\"http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=une_rt_a&amp;lang=en\">http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=une_rt_a&amp;lang=en</a></p>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>Eurostat:</p><p><a target=\"_blank\" href=\"https://ec.europa.eu/eurostat/databrowser/view/une_rt_a/default/table?lang=en\">https://ec.europa.eu/eurostat/databrowser/view/une_rt_a/default/table?lang=en</a></p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2019");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -9781,7 +9547,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Basic information");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="STRUCTURE_STRATEGY" AND t.name="osha_dvt_barometer");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="Structure of each National strategy" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
 SET @datasetId = (SELECT id FROM dataset WHERE source="National Strategies reports" AND date_from="2016-01-01" AND date_to="2020-12-31");
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -9814,7 +9580,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Background");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="STRUCTURE_STRATEGY" AND t.name="osha_dvt_barometer");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="Structure of each National strategy" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
 SET @datasetId = (SELECT id FROM dataset WHERE source="National Strategies reports" AND date_from="2016-01-01" AND date_to="2020-12-31");
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -9847,7 +9613,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Characteristics and objectives");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="STRUCTURE_STRATEGY" AND t.name="osha_dvt_barometer");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="Structure of each National strategy" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
 SET @datasetId = (SELECT id FROM dataset WHERE source="National Strategies reports" AND date_from="2016-01-01" AND date_to="2020-12-31");
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -9880,7 +9646,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Details and activity");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="STRUCTURE_STRATEGY" AND t.name="osha_dvt_barometer");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="Structure of each National strategy" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
 SET @datasetId = (SELECT id FROM dataset WHERE source="National Strategies reports" AND date_from="2016-01-01" AND date_to="2020-12-31");
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -9913,7 +9679,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Actors and stakeholders");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="STRUCTURE_STRATEGY" AND t.name="osha_dvt_barometer");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="Structure of each National strategy" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
 SET @datasetId = (SELECT id FROM dataset WHERE source="National Strategies reports" AND date_from="2016-01-01" AND date_to="2020-12-31");
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -9946,7 +9712,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Resources and timeframe");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="STRUCTURE_STRATEGY" AND t.name="osha_dvt_barometer");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="Structure of each National strategy" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
 SET @datasetId = (SELECT id FROM dataset WHERE source="National Strategies reports" AND date_from="2016-01-01" AND date_to="2020-12-31");
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -9979,7 +9745,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Evaluation");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="STRUCTURE_STRATEGY" AND t.name="osha_dvt_barometer");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="Structure of each National strategy" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
 SET @datasetId = (SELECT id FROM dataset WHERE source="National Strategies reports" AND date_from="2016-01-01" AND date_to="2020-12-31");
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -10012,7 +9778,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Relationship to EU Strategic Framework");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="STRUCTURE_STRATEGY" AND t.name="osha_dvt_barometer");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="Structure of each National strategy" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
 SET @datasetId = (SELECT id FROM dataset WHERE source="National Strategies reports" AND date_from="2016-01-01" AND date_to="2020-12-31");
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -10045,7 +9811,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Response to EU Challenges");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="RESPONSE_STRATEGY" AND t.name="osha_dvt_barometer");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="Responses of national strategies to EU challenges" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
 SET @datasetId = (SELECT id FROM dataset WHERE source="National Strategies reports" AND date_from="2016-01-01" AND date_to="2020-12-31");
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -10078,7 +9844,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="E3Q350_1");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="SOCIAL_DIALOGUE" AND t.name="osha_dvt_barometer");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="Social dialogue" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
 SET @datasetId = (SELECT id FROM dataset WHERE source="ESENER" AND date_from="2019-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -10129,7 +9895,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="E3Q350_2");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="SOCIAL_DIALOGUE" AND t.name="osha_dvt_barometer");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="Social dialogue" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
 SET @datasetId = (SELECT id FROM dataset WHERE source="ESENER" AND date_from="2019-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -10190,7 +9956,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="E3Q350_4");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="SOCIAL_DIALOGUE" AND t.name="osha_dvt_barometer");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="Social dialogue" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
 SET @datasetId = (SELECT id FROM dataset WHERE source="ESENER" AND date_from="2019-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -10241,7 +10007,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="E3Q350_3");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="SOCIAL_DIALOGUE" AND t.name="osha_dvt_barometer");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="Social dialogue" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
 SET @datasetId = (SELECT id FROM dataset WHERE source="ESENER" AND date_from="2019-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -10292,7 +10058,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Non-fatal work accidents");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="WORKACC" AND t.name="osha_dvt_barometer");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="Work accidents" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
 SET @datasetId = (SELECT id FROM dataset WHERE source="Eurostat" AND date_from="2010-01-01" AND date_to="2018-12-31");
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -10305,10 +10071,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "Non-fatal accidents at work by NACE Rev. 2 activity and sex");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p><u>Eurostat:</u></p>
-<p>
-  <a target=\"_blank\" href=\"http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=hsw_n2_01&lang=en\">http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=hsw_n2_01&amp;lang=en</a>
-</p>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>Eurostat:</p><p><a target=\"_blank\" href=\"https://ec.europa.eu/eurostat/databrowser/view/hsw_n2_01/default/table?lang=en\">https://ec.europa.eu/eurostat/databrowser/view/hsw_n2_01/default/table?lang=en</a></p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2010 to 2018");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -10328,14 +10091,14 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Fatal work accidents");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="WORKACC" AND t.name="osha_dvt_barometer");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="Work accidents" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
 SET @datasetId = (SELECT id FROM dataset WHERE source="Eurostat" AND date_from="2010-01-01" AND date_to="2018-12-31");
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "<p>2010 was taken as base year to mitigate the strong influence of the crisis 2008 and 2009 on the economic activity and the work accidents.&nbsp;</p>
 <p>For the calculation of the Incidence Rate see: 
-  <a href=\"https://ec.europa.eu/eurostat/cache/metadata/Annexes/hsw_acc_work_esms_an2.pdf\" rel=\"noopener noreferrer\" target=\"_blank\">European Statistics on Accidents at Work</a> (ESAW) Method for calculating incidence and standardised incidence rates Eurostat, Luxembourg, June 2015.
+  <a href=\"https://ec.europa.eu/eurostat/cache/metadata/Annexes/hsw_acc_work_esms_an2.docx\" rel=\"noopener noreferrer\" target=\"_blank\">European Statistics on Accidents at Work</a> (ESAW) Method for calculating incidence and standardised incidence rates Eurostat, Luxembourg, June 2015.
 </p>
 <p>Future: When data for 2019 is be available, there will be a trend calculated between the two consecutive periods 2010 to 2014 and 2015 to 2019.</p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -10344,15 +10107,10 @@ INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, @m
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "Eurostat");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<ol>
-  <li><em>Fatal Accidents at work by NACE Rev. 2 activity</em></li>
+  <li>Fatal Accidents at work by NACE Rev. 2 activity</li>
 </ol>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p><u>Eurostat</u></p>
-<ol>
-  <li>
-    <a target=\"_blank\" href=\"http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=hsw_n2_02&amp;lang=en\">http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=hsw_n2_02&amp;lang=en</a>
-  </li>
-</ol>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>Eurostat:</p><p><a target=\"_blank\" href=\"https://ec.europa.eu/eurostat/databrowser/view/hsw_n2_02/default/table?lang=en\">https://ec.europa.eu/eurostat/databrowser/view/hsw_n2_02/default/table?lang=en</a></p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2010 to 2018");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -10377,7 +10135,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Satisfaction with working conditions");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="HEALTH_PERCEPTION" AND t.name="osha_dvt_barometer");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="Health perception of the workers" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
 SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -10399,7 +10157,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to five <strong>EWCS Questions below. Specifically this indicator relates to</strong>:</p><ol><li><strong>How satisfied are you with working conditions in your main paid job?</strong></li><li>Does your work affect your health?</li><li>Over the past 12 months how many days were you absent from work due to sick leave or health related leave?</li><li>Over the past 12 months, did you work when you were sick?</li><li>Do you think you will be able to do your current job or a similar one until you are 60 years old?</li></ol><p>Answer options:</p><ol><li><strong>Very satisfied, satisfied, not very satisfied; Not at all satisfied</strong></li><li>Yes, mainly positively; Yes, mainly negatively; No</li><li>[The respondent could insert a number of days]</li><li>Yes; no; I was not sick</li><li>Yes; No</li></ol><p>Responses are displayed to one <strong>LFS question</strong></p><ol><li>Persons reporting a work-related health problem by sex, age and NACE Rev. 2 activity</li></ol>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p><strong>EWCS</strong></p><p><strong><a target=\"_blank\" href=\"https://www.eurofound.europa.eu/data/european-working-conditions-survey\">https://www.eurofound.europa.eu/data/european-working-conditions-survey</a></strong></p><p>Eurostat LFS</p><p><a target=\"_blank\" href=\"http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=hsw_pb6b&amp;lang=en\">http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=hsw_pb6b&amp;lang=en</a></p>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p><strong>EWCS</strong></p><p><strong><a target=\"_blank\" href=\"https://www.eurofound.europa.eu/data/european-working-conditions-survey\">https://www.eurofound.europa.eu/data/european-working-conditions-survey</a></strong></p><p>Eurostat LFS</p><p><a target=\"_blank\" href=\"https://ec.europa.eu/eurostat/databrowser/view/hsw_pb6b/default/table?lang=en\">https://ec.europa.eu/eurostat/databrowser/view/hsw_pb6b/default/table?lang=en</a></p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2015 for EWCS and 2013 for LFS");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -10419,7 +10177,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Health affected by work");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="HEALTH_PERCEPTION" AND t.name="osha_dvt_barometer");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="Health perception of the workers" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
 SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -10432,7 +10190,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to five <strong>EWCS Questions below. Specifically this indicator relates to</strong>:</p><ol><li>How satisfied are you with working conditions in your main paid job?</li><li><strong>Does your work affect your health?</strong></li><li>Over the past 12 months how many days were you absent from work due to sick leave or health related leave?</li><li>Over the past 12 months, did you work when you were sick?</li><li>Do you think you will be able to do your current job or a similar one until you are 60 years old?</li></ol><p>Answer options:</p><ol><li>Very satisfied, satisfied, not very satisfied; Not at all satisfied</li><li><strong>Yes, mainly positively; Yes, mainly negatively; No</strong></li><li>[The respondent could insert a number of days]</li><li>Yes; no; I was not sick</li><li>Yes; No</li></ol><p>Responses are displayed to one <strong>LFS question</strong></p><ol><li>Persons reporting a work-related health problem by sex, age and NACE Rev. 2 activity</li></ol>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p><strong>EWCS</strong></p><p><strong><a target=\"_blank\" href=\"https://www.eurofound.europa.eu/data/european-working-conditions-survey\">https://www.eurofound.europa.eu/data/european-working-conditions-survey</a></strong></p><p>Eurostat LFS</p><p><a target=\"_blank\" href=\"http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=hsw_pb6b&amp;lang=en\">http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=hsw_pb6b&amp;lang=en</a></p>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p><strong>EWCS</strong></p><p><strong><a target=\"_blank\" href=\"https://www.eurofound.europa.eu/data/european-working-conditions-survey\">https://www.eurofound.europa.eu/data/european-working-conditions-survey</a></strong></p><p>Eurostat LFS</p><p><a target=\"_blank\" href=\"https://ec.europa.eu/eurostat/databrowser/view/hsw_pb6b/default/table?lang=en\">https://ec.europa.eu/eurostat/databrowser/view/hsw_pb6b/default/table?lang=enn</a></p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2015 for EWCS and 2013 for LFS");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -10452,7 +10210,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Health problem in the last 12 months");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="HEALTH_PERCEPTION" AND t.name="osha_dvt_barometer");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="Health perception of the workers" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
 SET @datasetId = (SELECT id FROM dataset WHERE source="Eurostat" AND date_from="2013-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -10465,7 +10223,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to five <strong>EWCS Questions below. Specifically this indicator relates to</strong>:</p><ol><li>How satisfied are you with working conditions in your main paid job?</li><li>Does your work affect your health?</li><li>Over the past 12 months how many days were you absent from work due to sick leave or health related leave?</li><li>Over the past 12 months, did you work when you were sick?</li><li>Do you think you will be able to do your current job or a similar one until you are 60 years old?</li></ol><p>Answer options:</p><ol><li>Very satisfied, satisfied, not very satisfied; Not at all satisfied</li><li>Yes, mainly positively; Yes, mainly negatively; No</li><li>[The respondent could insert a number of days]</li><li>Yes; no; I was not sick</li><li>Yes; No</li></ol><p>Responses are displayed to one <strong>LFS question</strong></p><ol><li><strong>Persons reporting a work-related health problem by sex, age and NACE Rev. 2 activity</strong></li></ol>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>EWCS</p><p><a target=\"_blank\" href=\"https://www.eurofound.europa.eu/data/european-working-conditions-survey\">https://www.eurofound.europa.eu/data/european-working-conditions-survey</a></p><p><strong>Eurostat LFS</strong></p><p><strong><a target=\"_blank\" href=\"http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=hsw_pb6b&amp;lang=en\">http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=hsw_pb6b&amp;lang=en</a></strong></p>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p>EWCS</p><p><a target=\"_blank\" href=\"https://www.eurofound.europa.eu/data/european-working-conditions-survey\">https://www.eurofound.europa.eu/data/european-working-conditions-survey</a></p><p><strong>Eurostat LFS</strong></p><p><strong><a target=\"_blank\" href=\"https://ec.europa.eu/eurostat/databrowser/view/hsw_pb6b/default/table?lang=en\">https://ec.europa.eu/eurostat/databrowser/view/hsw_pb6b/default/table?lang=en</a></strong></p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2015 for EWCS and 2013 for LFS");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -10485,7 +10243,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="More than 15 days of absence");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="HEALTH_PERCEPTION" AND t.name="osha_dvt_barometer");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="Health perception of the workers" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
 SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -10498,7 +10256,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to five <strong>EWCS Questions below. Specifically this indicator relates to</strong>:</p><ol><li>How satisfied are you with working conditions in your main paid job?</li><li>Does your work affect your health?</li><li><strong>Over the past 12 months how many days were you absent from work due to sick leave or health related leave?</strong></li><li>Over the past 12 months, did you work when you were sick?</li><li>Do you think you will be able to do your current job or a similar one until you are 60 years old?</li></ol><p>Answer options:</p><ol><li>Very satisfied, satisfied, not very satisfied; Not at all satisfied</li><li>Yes, mainly positively; Yes, mainly negatively; No</li><li><strong>[The respondent could insert a number of days]</strong></li><li>Yes; no; I was not sick</li><li>Yes; No</li></ol><p>Responses are displayed to one <strong>LFS question</strong></p><ol><li>Persons reporting a work-related health problem by sex, age and NACE Rev. 2 activity</li></ol>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p><strong>EWCS</strong></p><p><strong><a target=\"_blank\" href=\"https://www.eurofound.europa.eu/data/european-working-conditions-survey\">https://www.eurofound.europa.eu/data/european-working-conditions-survey</a></strong></p><p>Eurostat LFS</p><p><a target=\"_blank\" href=\"http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=hsw_pb6b&amp;lang=en\">http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=hsw_pb6b&amp;lang=en</a></p>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p><strong>EWCS</strong></p><p><strong><a target=\"_blank\" href=\"https://www.eurofound.europa.eu/data/european-working-conditions-survey\">https://www.eurofound.europa.eu/data/european-working-conditions-survey</a></strong></p><p>Eurostat LFS</p><p><a target=\"_blank\" href=\"https://ec.europa.eu/eurostat/databrowser/view/hsw_pb6b/default/table?lang=en\">https://ec.europa.eu/eurostat/databrowser/view/hsw_pb6b/default/table?lang=en</a></p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2015 for EWCS and 2013 for LFS");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -10518,7 +10276,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Sick at working");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="HEALTH_PERCEPTION" AND t.name="osha_dvt_barometer");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="Health perception of the workers" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
 SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -10531,7 +10289,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to five <strong>EWCS Questions below. Specifically this indicator relates to</strong>:</p><ol><li>How satisfied are you with working conditions in your main paid job?</li><li>Does your work affect your health?</li><li>Over the past 12 months how many days were you absent from work due to sick leave or health related leave?</li><li><strong>Over the past 12 months, did you work when you were sick?</strong></li><li>Do you think you will be able to do your current job or a similar one until you are 60 years old?</li></ol><p>Answer options:</p><ol><li>Very satisfied, satisfied, not very satisfied; Not at all satisfied</li><li>Yes, mainly positively; Yes, mainly negatively; No</li><li>[The respondent could insert a number of days]</li><li><strong>Yes; no; I was not sick</strong></li><li>Yes; No</li></ol><p>Responses are displayed to one <strong>LFS question</strong></p><ol><li>Persons reporting a work-related health problem by sex, age and NACE Rev. 2 activity</li></ol>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p><strong>EWCS</strong></p><p><strong><a target=\"_blank\" href=\"https://www.eurofound.europa.eu/data/european-working-conditions-survey\">https://www.eurofound.europa.eu/data/european-working-conditions-survey</a></strong></p><p>Eurostat LFS</p><p><a target=\"_blank\" href=\"http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=hsw_pb6b&amp;lang=en\">http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=hsw_pb6b&amp;lang=en</a></p>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p><strong>EWCS</strong></p><p><strong><a target=\"_blank\" href=\"https://www.eurofound.europa.eu/data/european-working-conditions-survey\">https://www.eurofound.europa.eu/data/european-working-conditions-survey</a></strong></p><p>Eurostat LFS</p><p><a target=\"_blank\" href=\"https://ec.europa.eu/eurostat/databrowser/view/hsw_pb6b/default/table?lang=en\">https://ec.europa.eu/eurostat/databrowser/view/hsw_pb6b/default/table?lang=en</a></p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2015 for EWCS and 2013 for LFS");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -10551,7 +10309,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Be able to do current job until 60 years old");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="HEALTH_PERCEPTION" AND t.name="osha_dvt_barometer");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="Health perception of the workers" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
 SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -10564,7 +10322,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+4, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+4, "EN", 1, "<p>Responses are displayed to five <strong>EWCS Questions below. Specifically this indicator relates to</strong>:</p><ol><li>How satisfied are you with working conditions in your main paid job?</li><li>Does your work affect your health?</li><li>Over the past 12 months how many days were you absent from work due to sick leave or health related leave?</li><li>Over the past 12 months, did you work when you were sick?</li><li><strong>Do you think you will be able to do your current job or a similar one until you are 60 years old?</strong></li></ol><p>Answer options:</p><ol><li>Very satisfied, satisfied, not very satisfied; Not at all satisfied</li><li>Yes, mainly positively; Yes, mainly negatively; No</li><li>[The respondent could insert a number of days]</li><li>Yes; no; I was not sick</li><li><strong>Yes; No</strong></li></ol><p>Responses are displayed to one <strong>LFS question</strong></p><ol><li>Persons reporting a work-related health problem by sex, age and NACE Rev. 2 activity</li></ol>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+5, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p><strong>EWCS</strong></p><p><strong><a target=\"_blank\" href=\"https://www.eurofound.europa.eu/data/european-working-conditions-survey\">https://www.eurofound.europa.eu/data/european-working-conditions-survey</a></strong></p><p>Eurostat LFS</p><p><a target=\"_blank\" href=\"http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=hsw_pb6b&amp;lang=en\">http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=hsw_pb6b&amp;lang=en</a></p>");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+5, "EN", 1, "<p><strong>EWCS</strong></p><p><strong><a target=\"_blank\" href=\"https://www.eurofound.europa.eu/data/european-working-conditions-survey\">https://www.eurofound.europa.eu/data/european-working-conditions-survey</a></strong></p><p>Eurostat LFS</p><p><a target=\"_blank\" href=\"https://ec.europa.eu/eurostat/databrowser/view/hsw_pb6b/default/table?lang=en\">https://ec.europa.eu/eurostat/databrowser/view/hsw_pb6b/default/table?lang=en</a></p>");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+6, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+6, "EN", 1, "2015 for EWCS and 2013 for LFS");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+7, NULL, @methodologySectionId, "METHODOLOGY_TEXT");
@@ -10584,7 +10342,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="E3Q352");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="OSH_CULTURE_HEALTH_AWARENESS" AND t.name="osha_dvt_barometer");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="OSH culture and health awareness" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
 SET @datasetId = (SELECT id FROM dataset WHERE source="ESENER" AND date_from="2019-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -10656,7 +10414,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="E3Q300");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="OSH_CULTURE_HEALTH_AWARENESS" AND t.name="osha_dvt_barometer");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="OSH culture and health awareness" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
 SET @datasetId = (SELECT id FROM dataset WHERE source="ESENER" AND date_from="2019-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -10728,7 +10486,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="E3Q301");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="OSH_CULTURE_HEALTH_AWARENESS" AND t.name="osha_dvt_barometer");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="OSH culture and health awareness" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
 SET @datasetId = (SELECT id FROM dataset WHERE source="ESENER" AND date_from="2019-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -10800,7 +10558,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="E3Q302");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="OSH_CULTURE_HEALTH_AWARENESS" AND t.name="osha_dvt_barometer");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="OSH culture and health awareness" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
 SET @datasetId = (SELECT id FROM dataset WHERE source="ESENER" AND date_from="2019-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -10872,7 +10630,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="E3Q304_1");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="OSH_CULTURE_HEALTH_AWARENESS" AND t.name="osha_dvt_barometer");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="OSH culture and health awareness" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
 SET @datasetId = (SELECT id FROM dataset WHERE source="ESENER" AND date_from="2019-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -10944,7 +10702,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Use of personal protective equipment");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="OSH_CULTURE_HEALTH_AWARENESS" AND t.name="osha_dvt_barometer");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="OSH culture and health awareness" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
 SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -11016,7 +10774,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Information about risks");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="OSH_CULTURE_HEALTH_AWARENESS" AND t.name="osha_dvt_barometer");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="OSH culture and health awareness" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
 SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -11088,7 +10846,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Job satisfaction");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="OVERALL_OPINION" AND t.name="osha_dvt_barometer");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="Working conditions - Overall opinion" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
 SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -11121,7 +10879,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Health at risk");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="OVERALL_OPINION" AND t.name="osha_dvt_barometer");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="Working conditions - Overall opinion" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
 SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -11154,7 +10912,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="E3Q201_1");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="MENTAL_RISKS" AND t.name="osha_dvt_barometer");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="Working conditions - Mental risk" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
 SET @datasetId = (SELECT id FROM dataset WHERE source="ESENER" AND date_from="2019-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -11187,7 +10945,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Time pressure - Eurofound EWCS Data");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="MENTAL_RISKS" AND t.name="osha_dvt_barometer");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="Working conditions - Mental risk" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
 SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -11220,7 +10978,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="E3Q201_2");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="MENTAL_RISKS" AND t.name="osha_dvt_barometer");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="Working conditions - Mental risk" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
 SET @datasetId = (SELECT id FROM dataset WHERE source="ESENER" AND date_from="2019-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -11253,7 +11011,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Poor communication - Eurofound EWCS Data");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="MENTAL_RISKS" AND t.name="osha_dvt_barometer");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="Working conditions - Mental risk" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
 SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -11286,7 +11044,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Q201_3");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="MENTAL_RISKS" AND t.name="osha_dvt_barometer");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="Working conditions - Mental risk" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
 SET @datasetId = (SELECT id FROM dataset WHERE source="ESENER" AND date_from="2014-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -11319,7 +11077,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Influence - Eurofound EWCS Data");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="MENTAL_RISKS" AND t.name="osha_dvt_barometer");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="Working conditions - Mental risk" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
 SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -11352,7 +11110,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="E3Q201_3");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="MENTAL_RISKS" AND t.name="osha_dvt_barometer");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="Working conditions - Mental risk" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
 SET @datasetId = (SELECT id FROM dataset WHERE source="ESENER" AND date_from="2019-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -11402,7 +11160,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Job insecurity - Eurofound EWCS Data");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="MENTAL_RISKS" AND t.name="osha_dvt_barometer");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="Working conditions - Mental risk" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
 SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -11452,7 +11210,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="E3Q201_4");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="MENTAL_RISKS" AND t.name="osha_dvt_barometer");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="Working conditions - Mental risk" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
 SET @datasetId = (SELECT id FROM dataset WHERE source="ESENER" AND date_from="2019-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -11485,7 +11243,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Difficult clients - Eurofound EWCS Data");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="MENTAL_RISKS" AND t.name="osha_dvt_barometer");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="Working conditions - Mental risk" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
 SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -11518,7 +11276,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="E3Q201_5");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="MENTAL_RISKS" AND t.name="osha_dvt_barometer");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="Working conditions - Mental risk" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
 SET @datasetId = (SELECT id FROM dataset WHERE source="ESENER" AND date_from="2019-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -11551,7 +11309,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Working hours - Eurofound EWCS Data");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="MENTAL_RISKS" AND t.name="osha_dvt_barometer");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="Working conditions - Mental risk" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
 SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -11584,7 +11342,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Q201_7");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="MENTAL_RISKS" AND t.name="osha_dvt_barometer");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="Working conditions - Mental risk" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
 SET @datasetId = (SELECT id FROM dataset WHERE source="ESENER" AND date_from="2014-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -11617,7 +11375,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Discrimination - Eurofound EWCS Data");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="MENTAL_RISKS" AND t.name="osha_dvt_barometer");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="Working conditions - Mental risk" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
 SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -11650,7 +11408,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Exposure to vibrations");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="Working conditions - Physical risk" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
 SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -11683,7 +11441,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Exposure to loud noise");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="Working conditions - Physical risk" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
 SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -11716,7 +11474,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Exposure to temperatures");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="Working conditions - Physical risk" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
 SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -11749,7 +11507,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Exposure to low temperatures");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="Working conditions - Physical risk" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
 SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -11782,7 +11540,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Exposure to breathing in smoke, fumes, powder or dust");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="Working conditions - Physical risk" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
 SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -11815,7 +11573,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Exposure to breathing in vapours");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="Working conditions - Physical risk" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
 SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -11848,7 +11606,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Exposure to chemical products or substances");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="Working conditions - Physical risk" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
 SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -11881,7 +11639,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Exposure to infections materials");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="Working conditions - Physical risk" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
 SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -11919,7 +11677,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="E3Q200_34");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="Working conditions - Physical risk" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
 SET @datasetId = (SELECT id FROM dataset WHERE source="ESENER" AND date_from="2019-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -11972,7 +11730,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Tiring or painful positions - Eurofound EWCS Data");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="Working conditions - Physical risk" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
 SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -12025,7 +11783,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Does your work involve sitting? - Eurofound EWCS Data");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="Working conditions - Physical risk" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
 SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -12078,7 +11836,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="E3Q200_1");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="Working conditions - Physical risk" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
 SET @datasetId = (SELECT id FROM dataset WHERE source="ESENER" AND date_from="2019-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -12131,7 +11889,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Lifting or moving people - Eurofound EWCS Data");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="Working conditions - Physical risk" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
 SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -12184,7 +11942,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Carrying or moving heavy loads - Eurofound EWCS Data");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="Working conditions - Physical risk" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
 SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -12237,7 +11995,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="E3Q200_2");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="Working conditions - Physical risk" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
 SET @datasetId = (SELECT id FROM dataset WHERE source="ESENER" AND date_from="2019-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -12290,7 +12048,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Repetitive hand or arm movements - Eurofound EWCS Data");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="PHYSICAL_RISKS" AND t.name="osha_dvt_barometer");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="Working conditions - Physical risk" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
 SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -12343,7 +12101,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="E3Q250");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="PREVENTION_IN_COMPANIES" AND t.name="osha_dvt_barometer");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="Prevention in companies" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
 SET @datasetId = (SELECT id FROM dataset WHERE source="ESENER" AND date_from="2019-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -12380,7 +12138,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="E3Q251");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="PREVENTION_IN_COMPANIES" AND t.name="osha_dvt_barometer");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="Prevention in companies" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
 SET @datasetId = (SELECT id FROM dataset WHERE source="ESENER" AND date_from="2019-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -12415,7 +12173,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="E3Q354");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="PREVENTION_IN_COMPANIES" AND t.name="osha_dvt_barometer");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="Prevention in companies" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
 SET @datasetId = (SELECT id FROM dataset WHERE source="ESENER" AND date_from="2019-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -12457,7 +12215,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="E3Q306");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="PREVENTION_IN_COMPANIES" AND t.name="osha_dvt_barometer");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="Prevention in companies" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
 SET @datasetId = (SELECT id FROM dataset WHERE source="ESENER" AND date_from="2019-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -12512,7 +12270,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="E3Q306");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="WORKER_INVOLVEMENT" AND t.name="osha_dvt_barometer");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="Worker involvement" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
 SET @datasetId = (SELECT id FROM dataset WHERE source="ESENER" AND date_from="2019-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -12575,7 +12333,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="E3Q350_2");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="WORKER_INVOLVEMENT" AND t.name="osha_dvt_barometer");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="Worker involvement" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
 SET @datasetId = (SELECT id FROM dataset WHERE source="ESENER" AND date_from="2019-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -12638,7 +12396,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Does your organisation have a trade union, works council or a similar committee representing employees? - Eurofound EWCS Data");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="WORKER_INVOLVEMENT" AND t.name="osha_dvt_barometer");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="Worker involvement" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
 SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -12671,7 +12429,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="E3Q357");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="WORKER_INVOLVEMENT" AND t.name="osha_dvt_barometer");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="Worker involvement" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
 SET @datasetId = (SELECT id FROM dataset WHERE source="ESENER" AND date_from="2019-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -12734,7 +12492,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Does your organisation have a regular meeting in which employees can express their views about what is happening in the organisation?");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="WORKER_INVOLVEMENT" AND t.name="osha_dvt_barometer");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="Worker involvement" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
 SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -12794,7 +12552,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="E3Q350_4");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="WORKER_INVOLVEMENT" AND t.name="osha_dvt_barometer");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="Worker involvement" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
 SET @datasetId = (SELECT id FROM dataset WHERE source="ESENER" AND date_from="2019-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -12830,7 +12588,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Does your organisation have a health and safety delegate or committee? - Eurofound EWCS Data");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="WORKER_INVOLVEMENT" AND t.name="osha_dvt_barometer");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="Worker involvement" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
 SET @datasetId = (SELECT id FROM dataset WHERE source="European Working Conditions Survey (EWCS)" AND date_from="2015-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -12891,7 +12649,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="E3Q353");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="WORKER_INVOLVEMENT" AND t.name="osha_dvt_barometer");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="Worker involvement" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
 SET @datasetId = (SELECT id FROM dataset WHERE source="ESENER" AND date_from="2019-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -12954,7 +12712,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="E3Q154");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="ENFORCEMENT_CAPACITY" AND t.name="osha_dvt_barometer");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="Enforcement capacity" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
 SET @datasetId = (SELECT id FROM dataset WHERE source="ESENER" AND date_from="2019-01-01" AND date_to IS NULL);
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -12991,7 +12749,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Authority");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="ENFORCEMENT_CAPACITY" AND t.name="osha_dvt_barometer");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="Enforcement capacity" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
 SET @datasetId = (SELECT id FROM dataset WHERE source="SLIC Reports (DG EMPL)" AND date_from="2016-01-01" AND date_to="2017-12-31");
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -13024,7 +12782,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Scope of the Labor Inspection");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="ENFORCEMENT_CAPACITY" AND t.name="osha_dvt_barometer");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="Enforcement capacity" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
 SET @datasetId = (SELECT id FROM dataset WHERE source="SLIC Reports (DG EMPL)" AND date_from="2016-01-01" AND date_to="2017-12-31");
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -13057,7 +12815,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Inspector powers");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="ENFORCEMENT_CAPACITY" AND t.name="osha_dvt_barometer");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="Enforcement capacity" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
 SET @datasetId = (SELECT id FROM dataset WHERE source="SLIC Reports (DG EMPL)" AND date_from="2016-01-01" AND date_to="2017-12-31");
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -13090,7 +12848,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Strategy/Plan");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="ENFORCEMENT_CAPACITY" AND t.name="osha_dvt_barometer");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="Enforcement capacity" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
 SET @datasetId = (SELECT id FROM dataset WHERE source="SLIC Reports (DG EMPL)" AND date_from="2016-01-01" AND date_to="2017-12-31");
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -13123,7 +12881,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="OSH statistics");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="OSH_STATISTICS" AND t.name="osha_dvt_barometer");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="OSH statistics, surveys and research" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
 SET @datasetId = (SELECT id FROM dataset WHERE source="DG EMPL" AND date_from="2016-01-01" AND date_to="2017-12-31");
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -13156,7 +12914,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Surveys on Working conditions");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="OSH_STATISTICS" AND t.name="osha_dvt_barometer");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="OSH statistics, surveys and research" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
 SET @datasetId = (SELECT id FROM dataset WHERE source="DG EMPL" AND date_from="2016-01-01" AND date_to="2017-12-31");
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
@@ -13189,7 +12947,7 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO methodology(indicator_id,dataset_id,section_id,additional_comments_literal_id,description_literal_id,source_methodology_literal_id,specific_table_literal_id,url_literal_id,reference_year_literal_id,last_update_literal_id,coverage_literal_id,filtering_options_literal_id,calculations_literal_id,unit_measure_literal_id,visualisation_literal_id,indicator_name_displayed_literal_id)  VALUES (@indicatorId, @datasetId, @sectionId, @maxId+1, @maxId+2, @maxId+3, @maxId+4, @maxId+5, @maxId+6, @maxId+7, @maxId+8, @maxId+9, @maxId+10, @maxId+11, @maxId+12, @maxId+13);
 
 SET @indicatorId = (SELECT id FROM indicator WHERE name="Research institutes");
-SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="OSH_STATISTICS" AND t.name="osha_dvt_barometer");
+SET @sectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="OSH statistics, surveys and research" AND t.name="osha_dvt_barometer");
 SET @methodologySectionId = (SELECT s.id FROM section s INNER JOIN tool t ON s.tool_id=t.id WHERE s.name="METHODOLOGY" AND t.name="osha_dvt_barometer");
 SET @datasetId = (SELECT id FROM dataset WHERE source="DG EMPL" AND date_from="2016-01-01" AND date_to="2017-12-31");
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);

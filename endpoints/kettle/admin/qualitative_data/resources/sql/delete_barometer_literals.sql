@@ -1,7 +1,5 @@
 -- Delete the literals from Barometer (Literal id 20000-29999)
 DELETE FROM literal WHERE id >= 20000 AND id < 30000;
--- Delete the charts from Barometer (Chart id 20000-29999)
-DELETE FROM chart WHERE id >= 20000 AND id < 30000;
 
 -- Create Database Table for the pages
 -- Enforcement Capacity, Regulation, Strategy and Methodology
