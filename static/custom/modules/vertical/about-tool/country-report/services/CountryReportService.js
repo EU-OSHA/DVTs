@@ -223,9 +223,6 @@ define (function (require) {
                         },
                         bar_fillStyle: function(scene){
                             var countryKey = scene.firstAtoms.category.value;
-                            console.log(countryKey);
-                            console.log(pCountry);
-                            console.log(countryKey == pCountry);
 
                             // Get the different series of the chart
                             var series = this.chart.dataEngine.getVisibleSeries();
