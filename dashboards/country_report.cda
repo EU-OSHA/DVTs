@@ -520,7 +520,7 @@
 			AND ibc.dataset_id=v.dataset_id
 			AND v.profile_id=p.id
 			AND p.nuts_id=n.id
-			AND n.country_code IN ('AT','EU27_2020')
+			AND n.country_code IN (${pCountry1},${pCountry2})
 			AND v.indicator_id IN (37,38,39,34)
 		  	ORDER BY FIELD(n.country_code,${pCountry2},${pCountry1}) ASC, v.indicator_id ASC, p.gender_id ASC
 	    </Query>

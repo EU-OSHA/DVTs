@@ -2118,7 +2118,7 @@
         </thead>
         <tbody>
           <tr data-ng-repeat="row in riskAssesmentSector">
-            <th data-ng-bind="i18nLiterals['L'+row.indicator]"></th>
+            <th data-ng-bind="row.indicator"></th>
             <td data-ng-bind="row.country"></td>
             <td data-ng-bind="row.value"></td>
             <td data-ng-bind="row.country2"></td>
@@ -2320,7 +2320,7 @@
         </thead>
         <tbody>
           <tr data-ng-repeat="row in employeeParticipationSector">
-            <th data-ng-bind="i18nLiterals['L'+row.indicator]"></th>
+            <th data-ng-bind="row.indicator"></th>
             <td data-ng-bind="row.country"></td>
             <td data-ng-bind="row.value"></td>
             <td data-ng-bind="row.country2"></td>
