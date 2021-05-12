@@ -1412,9 +1412,9 @@ define(function () {
                  * @description
                  * Get data for Health at risk by gender on the full country report
                  */
-                getCountryReportAllCountriesOrderCountryData: function(pDataset, pIndicator){
+                getCountryReportAllCountriesOrderCountryData: function(pChart, pIndicator){
                     var url = configService.getCountryReportDataPath() + "&dataAccessId=getCountryReportAllCountriesOrderCountryData" + 
-                    "&parampDataset=" + pDataset + "&parampIndicator=" + pIndicator;
+                    "&parampChart=" + pChart + "&parampIndicator=" + pIndicator;
                     $log.debug('getCountryReportAllCountriesOrderCountryData url:' + url);
                     return promise(url)
                 },
