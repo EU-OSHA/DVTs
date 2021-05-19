@@ -310,7 +310,7 @@
 			AND t1.LANGUAGE="EN" AND t1.TEXT="Yes"
 			/* JOIN CONSULTATIVE */
 			AND n.id = p.nuts_id
-			AND n.country_code NOT IN('AL', 'ME', 'RS', 'TR', 'UK')
+			AND n.country_code NOT IN('AL', 'ME', 'RS', 'TR', 'UK', 'EU28', 'EU27_2020')
 			AND v.indicator_id = 100
 			AND v.profile_id = p.id
 			AND d.id = v.dataset_id
@@ -328,7 +328,7 @@
 			AND t1.LANGUAGE="EN" AND t1.TEXT="Yes"
 			/* JOIN CONSULTATIVE */
 			AND n.id = p.nuts_id
-			AND n.country_code NOT IN('AL', 'ME', 'RS', 'TR', 'UK')
+			AND n.country_code NOT IN('AL', 'ME', 'RS', 'TR', 'UK', 'EU28', 'EU27_2020')
 			AND v.indicator_id = 101
 			AND v.profile_id = p.id
 			AND d.id = v.dataset_id
@@ -346,7 +346,7 @@
 			AND t1.LANGUAGE="EN" AND t1.TEXT="Yes"
 			/* JOIN CONSULTATIVE */
 			AND n.id = p.nuts_id
-			AND n.country_code NOT IN('AL', 'ME', 'RS', 'TR', 'UK')
+			AND n.country_code NOT IN('AL', 'ME', 'RS', 'TR', 'UK', 'EU28', 'EU27_2020')
 			AND v.indicator_id = 102
 			AND v.profile_id = p.id
 			AND d.id = v.dataset_id
@@ -364,7 +364,7 @@
 			AND t1.LANGUAGE="EN" AND t1.TEXT="Yes"
 			/* JOIN CONSULTATIVE */
 			AND n.id = p.nuts_id
-			AND n.country_code NOT IN('AL', 'ME', 'RS', 'TR', 'UK')
+			AND n.country_code NOT IN('AL', 'ME', 'RS', 'TR', 'UK', 'EU28', 'EU27_2020')
 			AND v.indicator_id = 103
 			AND v.profile_id = p.id
 			AND d.id = v.dataset_id
