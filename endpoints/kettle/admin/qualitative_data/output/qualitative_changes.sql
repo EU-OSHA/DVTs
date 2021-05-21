@@ -4745,16 +4745,6 @@ INSERT INTO matrix_page(page, nuts_id, check_1, check_2, check_3, check_4, text_
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="EE");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "n/a");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "See more in <a target=\"_blank\" href=\"https://oshwiki.eu/wiki/OSH_system_at_national_level_–_Estonia\">OSHwiki</a>");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "In Estonia, unlike in some European countries, there are no prevention institutes. However, preventive activities are included and implemented in the work of the Ministry of Social Affairs and the Labour Inspectorate, most commonly through awareness-raising campaigns.");
-INSERT INTO matrix_page(page, nuts_id, check_1, check_2, check_3, check_4, text_1_literal_id, text_2_literal_id, text_3_literal_id)  VALUES ("MATRIX_AUTHORITY", @nutsId, 0, 0, 1, 0, @maxId+1, @maxId+2, @maxId+3);
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="EE");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "In Estonia, unlike in some European countries, there are no prevention institutes. However, preventive activities are included and implemented in the work of the Ministry of Social Affairs and the Labour Inspectorate, most commonly through awareness-raising campaigns.");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "See more in its <a target=\"_blank\" href=\"http://www.evs.ee/Esileht/tabid/111/language/en-US/Default.aspx\">website</a> and in <a target=\"_blank\" href=\"https://oshwiki.eu/wiki/OSH_system_at_national_level_–_Estonia\">OSHwiki</a>");
