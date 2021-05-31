@@ -2687,7 +2687,7 @@ INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="OSH authorities" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+563, null, @sectionId, "BUTTON");
-INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+563, "EN", 1, "Download the country data");
+INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+563, "EN", 1, "Download all country data");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="Not used" AND tool_id=@toolId);
