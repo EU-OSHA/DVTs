@@ -408,7 +408,7 @@ INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+
 <p>One important requirement for the effective implementation of occupational safety and health regulations is that they are practicable, consistent and, above all, easily manageable by the users and self-explanatory. The German government, federal states and public accident insurance institutions set themselves the task under the Joint German Occupational Safety and Health Strategy of optimising the rules and regulations relating to safety and health at work.&nbsp;</p>
 <p>One important module is the guideline paper on the restructuring of the set of rules and regulations in occupational safety and health passed in August 2011. The guideline paper defines the relationship of state law to autonomous law of the public accident insurance institutions and describes the procedures with which the two areas of law are harmonised.</p>
 <p><br><strong>Activity Improvement of the cooperation and coordination of the actions of the public occupational safety and health authorities and accident insurance funds&nbsp;</strong></p>
-<p><br>The occupational safety and health authorities and accident insurance institutions have undertaken to adopt a work-sharing and coordinated approach in advising and supervising companies. This approach aims at coordination, standardisation and transparency in consultancy. Activities are carried out accordingly to a <a href=\"%3A%20http%3A//www.gda-portal.de/en/SupportCompanies/SupportCompanies.html\" target=\"_blank\">programmatic approach</a>:</p>
+<p><br>The occupational safety and health authorities and accident insurance institutions have undertaken to adopt a work-sharing and coordinated approach in advising and supervising companies. This approach aims at coordination, standardisation and transparency in consultancy. Activities are carried out accordingly to a <a href=\"https://www.gda-portal.de/EN/Companies/Companies_node.html\" target=\"_blank\">programmatic approach</a>:</p>
 <p><br>Key tools of the joint consultancy and supervisory strategy are:</p>
 <ul>
     <li>Framework agreements on the interaction of the state occupational safety and health authorities and the public accident insurance institutions</li>
@@ -434,9 +434,8 @@ SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (20000+140, null, @sectionId, "STRATEGY_EVALUATION");
 INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+140, "EN", 1, "<p><strong>Evaluation is ongoing.</strong></p>
-<p>It is required that every strategy period &quot;the attainment of the objectives of the Joint German OSH Strategy would be quality-assured and evaluated&quot; and that the Joint German OSH Strategy in its entirety would be evaluated as regards interdisciplinary effects on the occupational safety and health system and safety and health at work. Evaluation reports of the strategy periods <a href=\"http://www.gda-portal.de/DE/GDA/Evaluation/2008-2012/2008-2012_node.html\" target=\"_blank\">2007 - 2012</a> and <a href=\"http://%3A%20http%3A//www.gda-portal.de/DE/GDA/Evaluation/2013-2018/2013-2018_node.html\" target=\"_blank\">2013 &ndash; 2018</a> are available <a href=\"http://www.gda-portal.de/SharedDocs/Meldungen/DE/19-08-16-Dachevaluation.html\" target=\"_blank\">online</a>.</p>
-<p>Ex ante indicators for the years of the strategy or 2019 to 2024</p>
-<p>IIn the evaluation concept effect-chains, including indicators for every chain link, are described for all strategy areas. As regards the three work-programmes (Carcinogens, MSL, Psyche) specific targets and indicators are described in the work plans (chapter: Monitoring).</p>");
+<p>It is required that every strategy period &quot;the attainment of the objectives of the Joint German OSH Strategy would be quality-assured and evaluated&quot; and that the Joint German OSH Strategy in its entirety would be evaluated as regards interdisciplinary effects on the occupational safety and health system and safety and health at work. Evaluation reports of the strategy periods <a href=\"http://www.gda-portal.de/DE/GDA/Evaluation/2008-2012/2008-2012_node.html\" target=\"_blank\">2007 - 2012</a> and <a href=\"https://www.gda-portal.de/DE/GDA/Evaluation/2013-2018/2013-2018_node.html \" target=\"_blank\">2013 &ndash; 2018</a> are available <a href=\"http://www.gda-portal.de/SharedDocs/Meldungen/DE/19-08-16-Dachevaluation.html\" target=\"_blank\">online</a>.</p>
+<p>Ex ante indicators for the years of the strategy or 2019 to 2024</p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
@@ -509,7 +508,7 @@ INSERT INTO translation (literal_id, language, is_default, text)  VALUES (20000+
 <p>Statistics report 2017:<a href=\"https://www.hsa.ie/eng/Publications_and_Forms/Publications/Corporate/HSA_Stats_Report_2017.pdf\" target=\"_blank\">Summary of workplace injury, illness and fatality statistics 2016-2017</a></p>
 <p>Statistics report 2015: <a href=\"http://www.hsa.ie/eng/Publications_and_Forms/Publications/Corporate/Statistics_Report_2015.html\" target=\"_blank\">Summary of workplace injury, illness and fatality statistics 2014-2015</a></p>
 <p>Health and Safety Authority (2015), Summary of Workplace Injury, Illness and Fatality Statistics 2013-2014.</p>
-<p>Report from May 2015 <a href=\"%20http%3A//www.hsa.ie/eng/Publications_and_Forms/Publications/Corporate/Trends_and_Patterns_in_Occupational_Health_and_Safety_in_Ireland.html\" target=\"_blank\">&quot;Trends and Patterns in Occupational Health and Safety in Ireland&quot;</a></p>");
+<p>Report from May 2015 <a href=\"https://www.hsa.ie/eng/Publications_and_Forms/Publications/Corporate/Trends_and_Patterns_in_Occupational_Health_and_Safety_in_Ireland.html\" target=\"_blank\">&quot;Trends and Patterns in Occupational Health and Safety in Ireland&quot;</a></p>");
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_barometer");
 SET @sectionId = (SELECT id FROM section WHERE name="Structure of each National strategy" AND tool_id=@toolId);
@@ -6455,6 +6454,23 @@ INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+
 INSERT INTO matrix_page(page, nuts_id, check_1, check_2, check_3, check_4, text_1_literal_id, text_2_literal_id, text_3_literal_id)  VALUES ("MATRIX_AUTHORITY", @nutsId, 1, 0, 0, 0, @maxId+1, @maxId+2, @maxId+3);
 
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
+SET @nutsId = (SELECT id FROM nuts WHERE country_code="SE");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "Swedish Agency for Work Environment Expertise (SAWEE)");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "See more in its <a target=\"blank\" href=\"https://sawee.se/\">website</a> and in <a target=\"blank\" href=\"https://oshwiki.eu/wiki/OSH_system_at_national_level_-_Sweden\">OSHwiki</a>");
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+3, NULL, NULL, "MATRIX_AUTHORITY_TEXT");
+INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+3, "EN", 1, "<p>Established on June 1st 2018, the Swedish Agency for Work Environment Expertise (SAWEE) is a government agency under the Ministry of Labour and Employment. Governmental directives and an annual letter of appropriation guide their operations. On behalf of the government, SAWEE have the following tasks:</p>
+<ul>
+    <li>collect, compile and spread existing research-based knowledge about work and the work-environment.</li>
+    <li>evaluate and analyse effects of implemented reforms and government initiatives.</li>
+    <li>help to identify and address knowledge gaps and development areas.</li>
+    <li>monitor and promote the development of knowledge nationally and internationally.</li>
+    <li>monitor and encourage the development of occupational health organizations.</li>
+</ul>");
+INSERT INTO matrix_page(page, nuts_id, check_1, check_2, check_3, check_4, text_1_literal_id, text_2_literal_id, text_3_literal_id)  VALUES ("MATRIX_AUTHORITY", @nutsId, 1, 0, 0, 0, @maxId+1, @maxId+2, @maxId+3);
+
+SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
 SET @nutsId = (SELECT id FROM nuts WHERE country_code="AT");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, NULL, "MATRIX_STATISTICS_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "Statistisches Handbuch der österreichischen Sozialversicherung (HVB-ÖS)");
@@ -7664,14 +7680,6 @@ INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, NU
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "Working conditions. Accidents at work");
 INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, NULL, "MATRIX_STATISTICS_TEXT");
 INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<ul><li><a href=\"https://stat.gov.pl/en/topics/labour-market/working-conditions-accidents-at-work/working-conditions-in-2016,1,11.html\" target=\"_blank\">Link&nbsp;</a>to the survey</li><li><strong>Time span</strong>:&nbsp;annual since 2006</li><li><strong>Contact person:</strong>&nbsp;Central Institute for Labour Protection - National Research Institute <br /><br /></li></ul>");
-INSERT INTO matrix_page(page, nuts_id, check_1, check_2, check_3, check_4, text_1_literal_id, text_2_literal_id, text_3_literal_id) VALUES ("MATRIX_STATISTICS", @nutsId, 0, 1, 0, false, @maxId+1, @maxId+2, null);
-
-SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="PL");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+1, NULL, NULL, "MATRIX_STATISTICS_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+1, "EN", 1, "relevant information about working conditions in Poland is collected as a part of the Programme of ad hoc modules for the Labour Force Survey");
-INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxId+2, NULL, NULL, "MATRIX_STATISTICS_TEXT");
-INSERT INTO translation(literal_id, language, is_default, text)  VALUES (@maxId+2, "EN", 1, "<ul><li><a href=\"http://stat.gov.pl/en/topics/labour-market/working-conditions-accidents-at-work/accidents-at-work-and-work-related-health-problems,2,3.html\" target=\"_blank\">Link&nbsp;</a>to the survey</li></ul>");
 INSERT INTO matrix_page(page, nuts_id, check_1, check_2, check_3, check_4, text_1_literal_id, text_2_literal_id, text_3_literal_id) VALUES ("MATRIX_STATISTICS", @nutsId, 0, 1, 0, false, @maxId+1, @maxId+2, null);
 
 SET @maxId = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 20000 AND l.id < 30000),1);
